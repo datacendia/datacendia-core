@@ -1,0 +1,137 @@
+# =============================================================================
+# DATACENDIA DEMO — Zero-Config Quick Start
+# =============================================================================
+#
+# One command, no .env required:
+#
+#   docker compose -f docker-compose.demo.yml up
+#
+# Opens:
+#   Frontend:  http://localhost:5173
+#   API:       http://localhost:3001
+#
+# Demo login: sarah.chen@acme.demo (dev auth bypass, no password)
+#
+# Pre-seeded with:
+#   - Acme Corporation (5 users, 6 Council agents)
+#   - 7 decisions (approved, pending, blocked, deferred)
+#   - 5 Council deliberations across 5 verticals:
+#       🔋 Energy — Heartland Grid Emergency (0.82 confidence)
+#       🏭 Manufacturing — Brake Caliper Safety Defect (0.88)
+#       🏦 Financial Services — $1.7B CRE Acquisition (0.58, HUMAN REVIEWED)
+#       🏛️  Government — $340M Veterans IT Modernization (0.71)
+#       🏥 Healthcare — SepsisSense SaMD Deployment (0.54)
+#   - Full agent transcripts, cross-examinations, decision packets
+#   - Chain-hashed audit trails, executive summaries
+#   - 7 data sources, 8 metrics, 50 audit entries, 7 alerts, 5 teams
+#
+# Requirements: Docker with ~6GB RAM available
+# =============================================================================
+
+networks:
+  demo:
+    driver: bridge
+
+volumes:
+  demo_postgres:
+  demo_redis:
+
+services:
+  # ---------------------------------------------------------------------------
+  # PostgreSQL — pre-configured, no .env needed
+  # ---------------------------------------------------------------------------
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: datacendia-demo-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: datacendia_demo
+      POSTGRES_PASSWORD: demo_password_not_for_production
+      POSTGRES_DB: datacendia_demo
+    volumes:
+      - demo_postgres:/var/lib/postgresql/data
+    networks:
+      - demo
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U datacendia_demo -d datacendia_demo"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  # ---------------------------------------------------------------------------
+  # Redis — pre-configured
+  # ---------------------------------------------------------------------------
+  redis:
+    image: redis:7-alpine
+    container_name: datacendia-demo-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - demo_redis:/data
+    networks:
+      - demo
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  # ---------------------------------------------------------------------------
+  # Backend API — auto-migrates + auto-seeds demo data on startup
+  # ---------------------------------------------------------------------------
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: datacendia-demo-api
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development
+      PORT: 3001
+      DATABASE_URL: postgresql://datacendia_demo:demo_password_not_for_production@postgres:5432/datacendia_demo
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: demo-jwt-secret-not-for-production-use-only
+      JWT_REFRESH_SECRET: demo-refresh-secret-not-for-production-use-only
+      OLLAMA_BASE_URL: http://host.docker.internal:11434
+      INFERENCE_PROVIDER: ollama
+      # All optional infra disabled for demo simplicity
+      KAFKA_ENABLED: "false"
+      TEMPORAL_ENABLED: "false"
+      OPENBAO_ENABLED: "false"
+      OPA_ENABLED: "false"
+      RAPIDS_ENABLED: "false"
+      CC_ENABLED: "false"
+      FLINK_ENABLED: "false"
+      NEMO_GUARDRAILS_ENABLED: "false"
+    ports:
+      - "3001:3001"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - demo
+    # Override entrypoint to use demo script (migrate + seed + start)
+    entrypoint: ["dumb-init", "--", "./docker-entrypoint.demo.sh"]
+    command: ["node", "--import", "tsx", "src/index.ts"]
+
+  # ---------------------------------------------------------------------------
+  # Frontend — connects to backend API
+  # ---------------------------------------------------------------------------
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: datacendia-demo-frontend
+    restart: unless-stopped
+    environment:
+      VITE_API_URL: http://localhost:3001/api/v1
+      VITE_WS_URL: ws://localhost:3001
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api
+    networks:
+      - demo
+    command: npm run dev -- --host

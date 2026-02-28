@@ -10,11 +10,32 @@ Multi-agent deliberation · Immutable audit trails · 29 industry verticals · S
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
-[![NVIDIA Inception](https://img.shields.io/badge/NVIDIA-Inception%20Program-76b900.svg)](https://www.nvidia.com/en-us/startups/)
+[![Node.js](https://img.shields.io/badge/Node.js-20.x+-339933.svg?logo=node.js&logoColor=white)](https://nodejs.org/)
+[![React](https://img.shields.io/badge/React-18-61DAFB.svg?logo=react&logoColor=white)](https://react.dev/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16+-4169E1.svg?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Redis](https://img.shields.io/badge/Redis-7+-DC382D.svg?logo=redis&logoColor=white)](https://redis.io/)
+[![Docker](https://img.shields.io/badge/Docker-Required-2496ED.svg?logo=docker&logoColor=white)](https://www.docker.com/)
+[![NVIDIA Inception](https://img.shields.io/badge/NVIDIA-Inception%20Program-76b900.svg?logo=nvidia&logoColor=white)](https://www.nvidia.com/en-us/startups/)
 
 [Getting Started](#-getting-started) · [Architecture](#-architecture) · [Verticals](#-industry-verticals) · [Infrastructure](#-infrastructure) · [Contributing](#contributing) · [Enterprise Edition](#-enterprise-edition)
 
 </div>
+
+---
+
+## Requirements
+
+| Requirement | Version | Required |
+|-------------|---------|:--------:|
+| **Node.js** | 20.x or later | ✅ |
+| **Docker** & Docker Compose | Latest | ✅ |
+| **PostgreSQL** | 16+ | ✅ (via Docker) |
+| **Redis** | 7+ | ✅ (via Docker) |
+| **Ollama** | Latest | ✅ (or Triton/NIM) |
+| **Neo4j** | 5+ | Optional (knowledge graph) |
+| **NVIDIA GPU** | CUDA 12+ | Optional (RAPIDS, Triton, CC) |
+
+> **Quickest path:** Install Node.js 20+, Docker, and Ollama. Everything else runs in Docker containers.
 
 ---
 

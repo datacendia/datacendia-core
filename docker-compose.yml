@@ -1,0 +1,177 @@
+services:
+  # PostgreSQL - Primary Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: datacendia-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: datacendia
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-datacendia_secure_2024}
+      POSTGRES_DB: datacendia
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/prisma/migrations:/docker-entrypoint-initdb.d
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U datacendia -d datacendia"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis - Caching, Sessions, Real-time Pub/Sub
+  redis:
+    image: redis:7-alpine
+    container_name: datacendia-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-datacendia_redis_2024}
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6380:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "--pass", "${REDIS_PASSWORD:-datacendia_redis_2024}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Neo4j - Knowledge Graph Database
+  neo4j:
+    image: neo4j:5-community
+    container_name: datacendia-neo4j
+    restart: unless-stopped
+    environment:
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:-datacendia_graph_2024}
+      NEO4J_PLUGINS: '["apoc", "graph-data-science"]'
+      NEO4J_dbms_security_procedures_unrestricted: apoc.*,gds.*
+      NEO4J_dbms_memory_heap_initial__size: 512m
+      NEO4J_dbms_memory_heap_max__size: 1G
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+    ports:
+      - "7474:7474"  # HTTP
+      - "7687:7687"  # Bolt
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:7474 || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+
+  # Ollama - Local LLM for AI Agents
+  ollama:
+    image: ollama/ollama:latest
+    container_name: datacendia-ollama
+    restart: unless-stopped
+    volumes:
+      - ollama_data:/root/.ollama
+    ports:
+      - "11434:11434"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    # If no GPU, comment out the deploy section above
+
+  # ClamAV - Malware Scanning for DataDiode
+  clamav:
+    image: clamav/clamav:latest
+    container_name: datacendia-clamav
+    restart: unless-stopped
+    ports:
+      - "3310:3310"
+    volumes:
+      - clamav_data:/var/lib/clamav
+    healthcheck:
+      test: ["CMD-SHELL", "echo PING | nc localhost 3310 | grep -q PONG"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 120s
+
+  # HAPI FHIR R4 Server - Healthcare Data Connector
+  fhir:
+    image: hapiproject/hapi:latest
+    container_name: datacendia-fhir
+    restart: unless-stopped
+    environment:
+      hapi.fhir.default_encoding: JSON
+      hapi.fhir.allow_multiple_delete: "true"
+      hapi.fhir.fhir_version: R4
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:8080/fhir/metadata || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+
+  # Backend API Server
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: datacendia-api
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development
+      PORT: 3001
+      DATABASE_URL: postgresql://datacendia:${POSTGRES_PASSWORD:-datacendia_secure_2024}@postgres:5432/datacendia
+      REDIS_URL: redis://:${REDIS_PASSWORD:-datacendia_redis_2024}@redis:6379
+      NEO4J_URI: bolt://neo4j:7687
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: ${NEO4J_PASSWORD:-datacendia_graph_2024}
+      OLLAMA_BASE_URL: http://ollama:11434
+      CLAMAV_HOST: clamav
+      CLAMAV_PORT: "3310"
+      FHIR_BASE_URL: http://fhir:8080/fhir
+      FHIR_TOKEN_URL: http://fhir:8080/fhir/auth/token
+      JWT_SECRET: ${JWT_SECRET:-your-super-secret-jwt-key-change-in-production}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:-your-refresh-secret-key-change-in-production}
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    ports:
+      - "3001:3001"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      neo4j:
+        condition: service_healthy
+    command: npm run dev
+
+  # Frontend Development Server
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: datacendia-frontend
+    restart: unless-stopped
+    environment:
+      VITE_API_URL: http://localhost:3001/api/v1
+      VITE_WS_URL: ws://localhost:3001
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api
+    command: npm run dev -- --host
+
+volumes:
+  postgres_data:
+  redis_data:
+  neo4j_data:
+  neo4j_logs:
+  ollama_data:
+  clamav_data:
+
+networks:
+  default:
+    name: datacendia-network
