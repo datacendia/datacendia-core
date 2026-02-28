@@ -1,0 +1,661 @@
+{
+  "common": {
+    "appName": "Datacendia",
+    "loading": "Laddar...",
+    "error": "Ett fel uppstod",
+    "retry": "Försök igen",
+    "save": "Spara",
+    "cancel": "Avbryt",
+    "delete": "Ta bort",
+    "edit": "Redigera",
+    "create": "Skapa",
+    "update": "Uppdatera",
+    "close": "Stäng",
+    "back": "Tillbaka",
+    "next": "Nästa",
+    "previous": "Föregående",
+    "search": "Sök",
+    "filter": "Filtrera",
+    "sort": "Sortera",
+    "export": "Exportera",
+    "import": "Importera",
+    "download": "Ladda ner",
+    "upload": "Ladda upp",
+    "yes": "Ja",
+    "no": "Nej",
+    "confirm": "Bekräfta",
+    "submit": "Skicka",
+    "apply": "Tillämpa",
+    "reset": "Återställ",
+    "clear": "Rensa",
+    "all": "Alla",
+    "none": "Ingen",
+    "select": "Välj",
+    "selected": "Vald",
+    "view": "Visa",
+    "details": "Detaljer",
+    "more": "Mer",
+    "less": "Mindre",
+    "showAll": "Visa alla",
+    "hideAll": "Dölj alla",
+    "viewMore": "Visa mer",
+    "learnMore": "Läs mer",
+    "and": "och",
+    "or": "eller",
+    "continue": "Fortsätt",
+    "completed": "slutförd",
+    "queried": "frågad"
+  },
+  "nav": {
+    "home": "Hem",
+    "product": "Produkt",
+    "pricing": "Priser",
+    "about": "Om oss",
+    "demo": "Begär demo",
+    "login": "Logga in",
+    "register": "Registrera",
+    "logout": "Logga ut",
+    "downloads": "Nedladdningar",
+    "documentation": "Dokumentation",
+    "support": "Support",
+    "contact": "Kontakt",
+    "manifesto": "Manifest",
+    "services": "Tjänster",
+    "packages": "Paket"
+  },
+  "auth": {
+    "login": {
+      "title": "Välkommen tillbaka",
+      "subtitle": "Logga in på ditt konto",
+      "email": "E-postadress",
+      "password": "Lösenord",
+      "rememberMe": "Kom ihåg mig",
+      "forgotPassword": "Glömt lösenord?",
+      "submitButton": "Logga in",
+      "noAccount": "Har du inget konto?",
+      "signUp": "Registrera dig",
+      "orContinueWith": "Eller fortsätt med",
+      "errors": {
+        "invalidCredentials": "Ogiltig e-post eller lösenord",
+        "accountLocked": "Kontot har låsts",
+        "networkError": "Kunde inte ansluta till servern. Försök igen."
+      }
+    },
+    "register": {
+      "title": "Skapa ditt konto",
+      "subtitle": "Starta din kostnadsfria 14-dagars provperiod idag.",
+      "headline": "Lås upp din organisations intelligens.",
+      "subheadline": "Gå med tusentals företag som använder Datacendia för att fatta bättre beslut med AI-drivna insikter.",
+      "step1Subtitle": "Ange dina uppgifter för att komma igång",
+      "step2Subtitle": "Ställ in ditt lösenord",
+      "firstName": "Förnamn",
+      "lastName": "Efternamn",
+      "fullName": "Fullständigt namn",
+      "email": "Jobbe-post",
+      "password": "Lösenord",
+      "confirmPassword": "Bekräfta lösenord",
+      "passwordHint": "Minst 8 tecken",
+      "company": "Företag (valfritt)",
+      "companySize": "Företagsstorlek",
+      "industry": "Bransch",
+      "submitButton": "Skapa konto",
+      "signUpWith": "Registrera med",
+      "hasAccount": "Har du redan ett konto?",
+      "signIn": "Logga in",
+      "agreeToTerms": "Jag godkänner",
+      "features": {
+        "council": "AI-råd - Få strategiska råd från specialiserade AI-agenter",
+        "graph": "Grafutforskare - Visualisera alla dina datarelationer",
+        "lens": "Linsen - Förutse framtida resultat med ML",
+        "bridge": "Bron - Automatisera arbetsflöden mellan system"
+      },
+      "errors": {
+        "fullNameRequired": "Vänligen ange ditt fullständiga namn",
+        "validEmailRequired": "Vänligen ange en giltig e-postadress",
+        "passwordMinLength": "Lösenordet måste vara minst 8 tecken",
+        "passwordMismatch": "Lösenorden matchar inte",
+        "acceptTerms": "Du måste acceptera villkoren",
+        "registrationFailed": "Registreringen misslyckades. Försök igen."
+      },
+      "passwordRequirements": {
+        "title": "Lösenordet måste innehålla:",
+        "minLength": "Minst 12 tecken",
+        "uppercase": "En stor bokstav",
+        "lowercase": "En liten bokstav",
+        "number": "En siffra",
+        "special": "Ett specialtecken"
+      }
+    },
+    "forgotPassword": {
+      "title": "Återställ ditt lösenord",
+      "subtitle": "Ange din e-postadress så skickar vi en länk för att återställa ditt lösenord.",
+      "email": "E-postadress",
+      "sendResetLink": "Skicka återställningslänk",
+      "submitButton": "Skicka återställningslänk",
+      "backToLogin": "Tillbaka till inloggning",
+      "checkEmail": "Kolla din e-post",
+      "emailSentTo": "Om ett konto finns för",
+      "linkExpiry": "Länken går ut om 1 timme. Om du inte ser e-postmeddelandet, kolla din skräppost.",
+      "success": "Om ett konto finns får du ett e-postmeddelande snart."
+    },
+    "mfa": {
+      "title": "Tvåfaktorsautentisering",
+      "subtitle": "Ange koden från din autentiseringsapp.",
+      "code": "Autentiseringskod",
+      "submitButton": "Verifiera",
+      "useBackupCode": "Använd en reservkod",
+      "resendCode": "Skicka kod igen"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Din organisations intelligens,",
+      "titleHighlight": "Suverän och hel",
+      "subtitle": "Datacendia är kommandocentralen för företagsintelligens. Anslut dina data, konsultera AI-rådgivare och se möjliga framtider — allt medan du behåller full kontroll.",
+      "ctaPrimary": "Begär demo",
+      "ctaSecondary": "Utforska plattformen"
+    },
+    "problem": {
+      "title": "Problemet med företagsintelligens",
+      "subtitle": "Organisationer kämpar med fragmenterade data, isolerade verktyg och reaktivt beslutsfattande",
+      "dataChaos": {
+        "title": "Datakaos",
+        "description": "Dina data finns i dussintals system utan enhetlig vy. Ingen vet vad som är sant."
+      },
+      "toolSprawl": {
+        "title": "Verktygskaos",
+        "description": "BI-verktyg, analysplattformar, instrumentpaneler — inget av dem kommunicerar med varandra."
+      },
+      "noForesight": {
+        "title": "Ingen framsyn",
+        "description": "Du tittar alltid i backspegeln. Hur är det med det som kommer?"
+      }
+    },
+    "solution": {
+      "title": "Cortex: Ditt intelligenskommandocenter",
+      "subtitle": "Fem integrerade utrymmen som ger dig fullständig synlighet och kontroll"
+    },
+    "pillars": {
+      "title": "De 8 pelarna för suverän intelligens",
+      "subtitle": "Alla förmågor du behöver, arbetande tillsammans som en"
+    },
+    "cta": {
+      "title": "Redo att ta kontroll över din intelligens?",
+      "subtitle": "Se hur Datacendia kan transformera din organisations beslutsfattande",
+      "button": "Boka en demo"
+    }
+  },
+  "spaces": {
+    "graph": {
+      "name": "Grafen",
+      "description": "Navigera ditt kunskapsuniversum"
+    },
+    "council": {
+      "name": "Rådet",
+      "description": "AI-rådgivare som resonerar tillsammans"
+    },
+    "pulse": {
+      "name": "Pulsen",
+      "description": "Organisationshälsa i realtid"
+    },
+    "lens": {
+      "name": "Linsen",
+      "description": "Se möjliga framtider"
+    },
+    "bridge": {
+      "name": "Bron",
+      "description": "Agera över system"
+    }
+  },
+  "pillars": {
+    "helm": {
+      "name": "Rodret",
+      "description": "Strategiskt beslutsstöd",
+      "longDescription": "Ditt kommandocenter för strategiska beslut. Spåra KPI:er, övervaka prestanda och styr din organisation med tillförsikt."
+    },
+    "lineage": {
+      "name": "Härkomst",
+      "description": "Spåra varje datapunkt till dess källa",
+      "longDescription": "Fullständig spårning av dataursprung. Vet var dina data kommer ifrån, hur de transformeras och vart de går."
+    },
+    "predict": {
+      "name": "Prognos",
+      "description": "AI-driven prognostisering",
+      "longDescription": "Maskininlärningsmodeller som förutser trender, upptäcker anomalier och surfar insikter innan de blir uppenbara."
+    },
+    "flow": {
+      "name": "Flödet",
+      "description": "Automatiserade arbetsflöden",
+      "longDescription": "Intelligent arbetsflödesautomation som ansluter dina system och processer med AI-drivna beslutspunkter."
+    },
+    "health": {
+      "name": "Hälsan",
+      "description": "Organisatoriska vitalitetsmått",
+      "longDescription": "Realtidsövervakning av din organisations vitala tecken över data, system och processer."
+    },
+    "guard": {
+      "name": "Vakten",
+      "description": "Datastyrning och efterlevnad",
+      "longDescription": "Automatisk policyefterlevnad, åtkomstkontroller och efterlevnadsövervakning för att hålla dina data säkra."
+    },
+    "ethics": {
+      "name": "Etiken",
+      "description": "Inbyggd etisk tillsyn",
+      "longDescription": "Etiska skyddsräcken som säkerställer ansvarsfull AI-användning, rättvisa algoritmer och transparent beslutsfattande."
+    },
+    "agents": {
+      "name": "Agenterna",
+      "description": "AI-rådgivare för varje domän",
+      "longDescription": "Specialiserade AI-agenter som tillhandahåller domänspecifik expertis och samarbetar för att lösa komplexa problem."
+    }
+  },
+  "pricing": {
+    "title": "Enkla, transparenta priser",
+    "subtitle": "Välj den plan som passar din organisation. Alla planer inkluderar en 14-dagars kostnadsfri provperiod.",
+    "monthly": "Månadsvis",
+    "annual": "Årsvis",
+    "annualDiscount": "Spara 20%",
+    "perMonth": "/månad",
+    "startTrial": "Starta kostnadsfri provperiod",
+    "contactSales": "Kontakta försäljning",
+    "mostPopular": "Mest populär",
+    "plans": {
+      "foundation": {
+        "name": "Grund",
+        "description": "Väsentliga intelligensförmågor för växande team"
+      },
+      "intelligence": {
+        "name": "Intelligens",
+        "description": "Avancerad analys och prognostisering för skalande organisationer"
+      },
+      "governance": {
+        "name": "Styrning",
+        "description": "Komplett styrning och efterlevnad för reglerade branscher"
+      },
+      "sovereign": {
+        "name": "Suverän",
+        "description": "Full plattform med komplett datasuveränitet"
+      }
+    },
+    "faq": {
+      "title": "Vanliga frågor",
+      "questions": {
+        "trial": {
+          "q": "Kan jag prova innan jag köper?",
+          "a": "Ja! Alla planer inkluderar en 14-dagars kostnadsfri provperiod med full tillgång till funktioner."
+        },
+        "data": {
+          "q": "Vad händer med mina data om jag avbryter?",
+          "a": "Dina data förblir dina. Exportera allt innan avslut, eller så behåller vi dem i 30 dagar."
+        },
+        "nonprofit": {
+          "q": "Erbjuder ni rabatter för ideella organisationer?",
+          "a": "Ja, vi erbjuder 50% rabatt för kvalificerade ideella organisationer och utbildningsinstitutioner."
+        },
+        "upgrade": {
+          "q": "Kan jag uppgradera eller nedgradera när som helst?",
+          "a": "Absolut. Ändringar träder i kraft vid nästa faktureringsperiod, proportionellt vid uppgradering."
+        }
+      }
+    }
+  },
+  "downloads": {
+    "title": "Nedladdningar",
+    "subtitle": "Hämta Datacendia för din plattform",
+    "desktop": {
+      "title": "Skrivbordsapplikation",
+      "windows": "Windows",
+      "mac": "macOS",
+      "linux": "Linux",
+      "download": "Ladda ner"
+    },
+    "mobile": {
+      "title": "Mobilappar",
+      "ios": "iOS",
+      "android": "Android",
+      "appStore": "App Store",
+      "playStore": "Google Play"
+    },
+    "cli": {
+      "title": "Kommandoradsgränssnitt"
+    },
+    "selfHosted": {
+      "title": "Egen hosting",
+      "docker": "Docker Compose",
+      "kubernetes": "Kubernetes (Helm)",
+      "airgapped": "Air-gapped-paket"
+    },
+    "systemRequirements": {
+      "title": "Systemkrav",
+      "minimum": "Minimum",
+      "recommended": "Rekommenderat"
+    }
+  },
+  "dashboard": {
+    "title": "Instrumentpanel",
+    "welcome": "Välkommen tillbaka",
+    "subtitle": "Här är hur {{company}} mår idag",
+    "health_score": "Organisationshälsa",
+    "healthScore": "Hälsopoäng",
+    "data": "Data",
+    "operations": "Drift",
+    "security": "Säkerhet",
+    "people": "Människor",
+    "fromLastWeek": "från förra veckan",
+    "alerts": "Aktiva varningar",
+    "activeAlerts": "Aktiva varningar",
+    "critical": "Kritisk",
+    "warning": "Varning",
+    "info": "Info",
+    "pending_approvals": "Väntande godkännanden",
+    "pendingApprovals": "Väntande godkännanden",
+    "workflows": "Arbetsflöden",
+    "access": "Åtkomst",
+    "budget": "Budget",
+    "by": "av",
+    "approve": "Godkänn",
+    "reject": "Avvisa",
+    "keyMetrics": "Nyckelmått",
+    "askTheCouncil": "Fråga rådet",
+    "whatToKnow": "Vad vill du veta?",
+    "recentQueries": "Senaste förfrågningar:",
+    "recentActivity": "Senaste aktivitet",
+    "viewFullLog": "Visa fullständig logg",
+    "quickActions": "Snabbåtgärder",
+    "greetings": {
+      "morning": "God morgon",
+      "afternoon": "God eftermiddag",
+      "evening": "God kväll"
+    },
+    "sampleAlerts": {
+      "databaseCpu": "Databas-CPU > 90% i 15 min",
+      "paymentLatency": "Topp i betalningsbehandlingslatens",
+      "diskUsage": "Diskanvändning på 78% på prod-db-01",
+      "apiErrors": "API-felfrekvens över tröskelvärde",
+      "memoryLeak": "Minnesläcka upptäckt i autentiseringstjänsten"
+    },
+    "sampleApprovals": {
+      "monthlyClose": "Månadsavslutningsprocess",
+      "prodDbAccess": "Produktionsdatabasåtkomst",
+      "budgetIncrease": "Q4 marknadsföringsbudgetökning",
+      "newHire": "Onboarding av nyanställd: Dev-team"
+    },
+    "sampleMetrics": {
+      "revenue": "Intäkter",
+      "pipeline": "Pipeline",
+      "burnRate": "Burn rate",
+      "nps": "NPS",
+      "activeUsers": "Aktiva användare",
+      "churnRate": "Churn rate"
+    },
+    "sampleActivity": {
+      "workflowCompleted": "Arbetsflöde \"{{name}}\" slutfört",
+      "userQueried": "{{user}} frågade om {{topic}}",
+      "alertResolved": "Varning \"{{alert}}\" löst",
+      "reportGenerated": "Rapport \"{{report}}\" genererad"
+    },
+    "sampleQueries": {
+      "churnIncrease": "Varför ökade churn?",
+      "forecastRevenue": "Prognostisera Q4-intäkter",
+      "biggestRisk": "Vilken är vår största risk?",
+      "customerSentiment": "Vad är kundsentimenttrenden?",
+      "competitorAnalysis": "Analysera konkurrentpriser"
+    }
+  },
+  "button": {
+    "view_all": "Visa alla",
+    "viewAll": "Visa alla",
+    "viewMore": "Visa mer",
+    "approve": "Godkänn",
+    "reject": "Avvisa",
+    "save": "Spara",
+    "cancel": "Avbryt",
+    "submit": "Skicka",
+    "edit": "Redigera",
+    "delete": "Ta bort"
+  },
+  "commandPalette": {
+    "searchPlaceholder": "Sök kommandon, sidor, agenter...",
+    "noResults": "Inga resultat för",
+    "navigate": "navigera",
+    "select": "välj",
+    "toggle": "växla",
+    "newQuery": "Ny rådsfråga",
+    "askCouncil": "Ställ en fråga till rådet",
+    "refresh": "Uppdatera data",
+    "reloadPage": "Ladda om sidans data",
+    "fullscreen": "Växla helskärm",
+    "toggleFullscreen": "Gå in/ut ur helskärmsläge",
+    "switchTo": "Byt till",
+    "changeLanguage": "Ändra språk till",
+    "categories": {
+      "navigation": "Navigering",
+      "actions": "Åtgärder",
+      "agents": "Agenter",
+      "modes": "Rådslägen",
+      "recent": "Senaste"
+    },
+    "agents": {
+      "chief": "Chefstrategisk agent",
+      "chiefDesc": "Strategisk syntes",
+      "cfo": "Finansiell intelligens",
+      "cfoDesc": "Finansiell analys",
+      "coo": "Driftsagent",
+      "cooDesc": "Driftseffektivitet",
+      "ciso": "Säkerhetsagent",
+      "cisoDesc": "Säkerhet och efterlevnad",
+      "cmo": "Marknadsintelligens",
+      "cmoDesc": "Marknadsanalys"
+    }
+  },
+  "cortex": {
+    "sidebar": {
+      "spaces": "Utrymmen",
+      "pillars": "Pelare",
+      "system": "System",
+      "data": "Data",
+      "security": "Säkerhet"
+    }
+  },
+  "sidebar": {
+    "dashboard": "Instrumentpanel",
+    "the_council": "Rådet",
+    "the_graph": "Grafen",
+    "the_pulse": "Pulsen",
+    "the_lens": "Linsen",
+    "the_bridge": "Bron",
+    "settings": "Inställningar",
+    "help": "Hjälp och support",
+    "cortex": "Cortex",
+    "spaces": "Utrymmen",
+    "pillars": "Pelare",
+    "sovereign": "Suverän",
+    "admin": "Admin"
+  },
+  "council": {
+    "title": "Rådet",
+    "subtitle": "AI-driven strategisk rådgivningspanel",
+    "askQuestion": "Ställ en fråga",
+    "questionPlaceholder": "Vilken strategisk fråga vill du att rådet ska överväga?",
+    "selectAgents": "Välj agenter att delta",
+    "startDeliberation": "Starta överläggning",
+    "quickAnswer": "Snabbt svar",
+    "fullDeliberation": "Full överläggning",
+    "selectedAgents": "Valda agenter",
+    "clearAll": "Rensa alla",
+    "selectAll": "Välj alla",
+    "agents": {
+      "domain": "Domänagenter",
+      "custom": "Anpassade agenter",
+      "premium": "Premiumagenter",
+      "createCustom": "Skapa anpassad agent"
+    },
+    "modes": {
+      "title": "Rådslägesbibliotek",
+      "subtitle": "Samma 10 agenter med olika lägen producerar radikalt olika resultat.",
+      "cultureNote": "Prompten ÄR företagskulturen.",
+      "quickReference": "Snabbreferens",
+      "mode": "Läge",
+      "primeDirective": "Huvuddirektiv",
+      "bestFor": "Bäst för",
+      "agentBehavior": "Agentbeteende"
+    },
+    "deliberation": {
+      "phases": {
+        "initial_analysis": "Inledande analys",
+        "cross_examination": "Korsförhör",
+        "synthesis": "Syntes",
+        "ethics_check": "Etikkontroll"
+      },
+      "inProgress": "Överläggning pågår",
+      "completed": "Överläggning slutförd",
+      "confidence": "Tillförsikt"
+    },
+    "customAgent": {
+      "title": "Skapa anpassad agent",
+      "editTitle": "Redigera anpassad agent",
+      "subtitle": "Designa din egen AI-agent med specialiserad expertis",
+      "premium": "Agentbyggarpaket",
+      "avatar": "Agentavatar",
+      "color": "Agentfärg",
+      "name": "Agentnamn",
+      "namePlaceholder": "t.ex. Marknadsanalytiker",
+      "role": "Roll / Titel",
+      "rolePlaceholder": "t.ex. Marknadsundersökning och analys",
+      "description": "Beskrivning",
+      "descriptionPlaceholder": "Beskriv vad denna agent gör och dess fokusområden...",
+      "expertise": "Expertis och instruktioner",
+      "capabilities": "Förmågor",
+      "addCapability": "Lägg till",
+      "save": "Spara agent",
+      "delete": "Ta bort agent"
+    },
+    "status": {
+      "online": "Online",
+      "offline": "Offline",
+      "busy": "Upptagen"
+    }
+  },
+  "agent": {
+    "chief": { "name": "Chefstrategisk agent", "role": "Strategisk tillsyn och syntes", "description": "Syntetiserar insikter från alla domänagenter för att ge holistiska strategiska rekommendationer." },
+    "cfo": { "name": "Finansiell intelligensagent", "role": "Finansiell analys och risk", "description": "Analyserar finansiella data, budgetar, prognoser och ger insikter om finansiell hälsa." },
+    "coo": { "name": "Driftsintelligensagent", "role": "Driftseffektivitet", "description": "Fokuserar på driftsmått, processeffektivitet och resursallokering." },
+    "ciso": { "name": "Säkerhets- och efterlevnadsagent", "role": "Säkerhets- och riskhantering", "description": "Övervakar säkerhetsposition, efterlevnadskrav och hotbedömning." },
+    "cmo": { "name": "Marknadsintelligensagent", "role": "Marknadsföring och kundinsikter", "description": "Analyserar marknadstrender, kundbeteende och konkurrensintelligens." },
+    "cro": { "name": "Intäktsintelligensagent", "role": "Intäkter och tillväxt", "description": "Fokuserar på intäktsoptimering, försäljningsprestanda och prisstrategier." },
+    "cdo": { "name": "Datakvalitetsagent", "role": "Datastyrning och kvalitet", "description": "Övervakar datakvalitet, styrningspolicyer och säkerställer dataintegritet." },
+    "risk": { "name": "Riskbedömningsagent", "role": "Företagsriskanalys", "description": "Utvärderar företagsrisker, utför konsekvensanalys och tillhandahåller mitigeringsstrategier." },
+    "clo": { "name": "Juridisk intelligensagent", "role": "Juridisk analys och efterlevnad", "description": "Analyserar juridiska risker, avtalsimplikationer och regelefterlevnad." },
+    "cpo": { "name": "Produktstrategiagent", "role": "Produktinnovation och roadmap", "description": "Driver produktstrategi, funktionsprioritering och insikter om användarupplevelse." },
+    "caio": { "name": "AI-strategiagent", "role": "AI/ML-styrning och innovation", "description": "Guidar AI-strategi, modellstyrning och etisk AI-implementering." },
+    "cso": { "name": "Hållbarhetsagent", "role": "ESG och miljöpåverkan", "description": "Övervakar miljö-, sociala och styrningsmetriker och hållbarhetsinitiativ." },
+    "cio": { "name": "Investeringsintelligensagent", "role": "Kapitalallokering och portfölj", "description": "Analyserar investeringsmöjligheter, portföljallokering och kapitaldistribution." },
+    "cco": { "name": "Kommunikationsagent", "role": "Företagskommunikation och PR", "description": "Skapar företagsmeddelanden, hanterar intressentkommunikation och övervakar varumärkesuppfattning." },
+    "ext-auditor": { "name": "Extern revisor", "role": "Oberoende tredjepartsrevision", "description": "Tillhandahåller oberoende, objektiv bedömning från ett externt perspektiv." },
+    "int-auditor": { "name": "Intern revisor", "role": "Interna kontroller och processrevision", "description": "Utvärderar interna kontroller, driftseffektivitet och efterlevnad." },
+    "cmio": { "name": "Medicinsk informationschef", "role": "Hälso-IT och kliniska system", "description": "Expert på hälsovårdsteknologi, EHR-system och klinisk informatik." },
+    "pso": { "name": "Patientsäkerhetsansvarig", "role": "Klinisk säkerhet och kvalitet", "description": "Specialist på patientsäkerhet, förebyggande av biverkningar och kvalitetsförbättring." },
+    "hco": { "name": "Hälsovårdsefterlevnadsansvarig", "role": "HIPAA och hälsovårdsregler", "description": "Expert på regelefterlevnad inom hälsovård, HIPAA och faktureringsefterlevnad." },
+    "cod": { "name": "Klinisk driftschef", "role": "Hälsovårdsdrift och effektivitet", "description": "Expert på klinisk drift, patientflöde och bemanningsoptimering." },
+    "quant": { "name": "Kvantitativ analytiker", "role": "Finansiell modellering och riskanalys", "description": "Expert på kvantitativ finans, derivatprissättning och riskmodellering." },
+    "pm": { "name": "Portföljförvaltare", "role": "Investeringsstrategi och tillgångsallokering", "description": "Expert på portföljkonstruktion, tillgångsallokering och investeringsstrategi." },
+    "cro-finance": { "name": "Kreditriskansvarig", "role": "Kreditanalys och riskbedömning", "description": "Expert på kreditanalys, låneunderwriting och kreditriskmodellering." },
+    "treasury": { "name": "Treasuryanalytiker", "role": "Kontanthantering och likviditet", "description": "Expert på företagstreasury, kontanthantering och valutasäkring." },
+    "contracts": { "name": "Avtalsspecialist", "role": "Avtalsanalys och förhandling", "description": "Expert på kommersiella avtal, avtalsskrivande och förhandling." },
+    "ip": { "name": "Immaterialrättslig rådgivare", "role": "Patent, varumärken och IP-strategi", "description": "Expert på immaterialrätt, patentstrategi och varumärkesskydd." },
+    "litigation": { "name": "Tvistexpert", "role": "Tvistlösning och rättegångsstrategi", "description": "Expert på kommersiella tvister, tvistlösning och e-discovery." },
+    "regulatory": { "name": "Regulatorisk rådgivare", "role": "Myndighetsrelationer och efterlevnad", "description": "Expert på regelefterlevnad, myndighetsärenden och förvaltningsrätt." }
+  },
+  "label": {
+    "online": "Online",
+    "offline": "Offline",
+    "busy": "Upptagen",
+    "premium": "Premium",
+    "locked": "Låst",
+    "custom": "Anpassad",
+    "unlock": "Lås upp",
+    "required": "Obligatoriskt"
+  },
+  "settings": {
+    "title": "Inställningar",
+    "organization": "Organisation",
+    "users": "Användare",
+    "teams": "Team",
+    "roles": "Roller och behörigheter",
+    "billing": "Fakturering",
+    "apiKeys": "API-nycklar",
+    "integrations": "Integrationer",
+    "preferences": "Preferenser",
+    "security": "Säkerhet"
+  },
+  "errors": {
+    "notFound": {
+      "title": "Sidan hittades inte",
+      "message": "Sidan du letar efter finns inte eller har flyttats.",
+      "backHome": "Tillbaka till hem"
+    },
+    "serverError": {
+      "title": "Serverfel",
+      "message": "Något gick fel på vår sida. Försök igen senare."
+    },
+    "networkError": {
+      "title": "Anslutningsfel",
+      "message": "Kunde inte ansluta till servern. Kontrollera din internetanslutning."
+    },
+    "unauthorized": {
+      "title": "Ej auktoriserad",
+      "message": "Du har inte behörighet att komma åt denna resurs."
+    },
+    "sessionExpired": {
+      "title": "Sessionen har gått ut",
+      "message": "Din session har gått ut. Logga in igen."
+    }
+  },
+  "footer": {
+    "company": "Företag",
+    "product": "Produkt",
+    "resources": "Resurser",
+    "legal": "Juridiskt",
+    "about": "Om oss",
+    "careers": "Karriär",
+    "contact": "Kontakt",
+    "press": "Press",
+    "features": "Funktioner",
+    "integrations": "Integrationer",
+    "enterprise": "Företag",
+    "documentation": "Dokumentation",
+    "apiReference": "API-referens",
+    "status": "Systemstatus",
+    "community": "Community",
+    "privacy": "Integritetspolicy",
+    "terms": "Användarvillkor",
+    "security": "Säkerhet",
+    "cookies": "Cookiepolicy",
+    "copyright": "© {{year}} Datacendia. Alla rättigheter förbehållna.",
+    "tagline": "Suverän företagsintelligens"
+  },
+  "time": {
+    "justNow": "Just nu",
+    "minutesAgo": "{{count}} minut sedan",
+    "minutesAgo_plural": "{{count}} minuter sedan",
+    "hoursAgo": "{{count}} timme sedan",
+    "hoursAgo_plural": "{{count}} timmar sedan",
+    "daysAgo": "{{count}} dag sedan",
+    "daysAgo_plural": "{{count}} dagar sedan",
+    "weeksAgo": "{{count}} vecka sedan",
+    "weeksAgo_plural": "{{count}} veckor sedan"
+  },
+  "accessibility": {
+    "skipToMain": "Hoppa till huvudinnehåll",
+    "skipToNav": "Hoppa till navigering",
+    "openMenu": "Öppna meny",
+    "closeMenu": "Stäng meny",
+    "expandSection": "Expandera sektion",
+    "collapseSection": "Minimera sektion",
+    "loading": "Laddar innehåll",
+    "newWindow": "Öppnas i nytt fönster",
+    "externalLink": "Extern länk",
+    "required": "Obligatoriskt fält",
+    "optional": "Valfritt"
+  }
+}

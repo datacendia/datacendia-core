@@ -1,0 +1,1212 @@
+{
+  "common": {
+    "appName": "Datacendia",
+    "loading": "Inapakia...",
+    "error": "Hitilafu imetokea",
+    "retry": "Jaribu tena",
+    "save": "Hifadhi",
+    "cancel": "Ghairi",
+    "delete": "Futa",
+    "edit": "Hariri",
+    "create": "Unda",
+    "update": "Sasisha",
+    "close": "Funga",
+    "back": "Rudi",
+    "next": "Ifuatayo",
+    "previous": "Iliyotangulia",
+    "search": "Tafuta",
+    "filter": "Chuja",
+    "sort": "Panga",
+    "export": "Hamisha",
+    "import": "Ingiza",
+    "download": "Pakua",
+    "upload": "Pakia",
+    "yes": "Ndiyo",
+    "no": "Hapana",
+    "confirm": "Thibitisha",
+    "submit": "Wasilisha",
+    "apply": "Tumia",
+    "reset": "Weka upya",
+    "clear": "Futa",
+    "all": "Zote",
+    "none": "Hakuna",
+    "select": "Chagua",
+    "selected": "Imechaguliwa",
+    "view": "Tazama",
+    "details": "Maelezo",
+    "more": "Zaidi",
+    "less": "Kidogo",
+    "showAll": "Onyesha zote",
+    "hideAll": "Ficha zote",
+    "viewMore": "Ona zaidi",
+    "learnMore": "Jifunze zaidi",
+    "and": "na",
+    "or": "au",
+    "continue": "Endelea",
+    "completed": "Imekamilika",
+    "queried": "Imeulizwa"
+  },
+  "nav": {
+    "home": "Nyumbani",
+    "product": "Bidhaa",
+    "pricing": "Bei",
+    "about": "Kuhusu sisi",
+    "demo": "Omba Demo",
+    "login": "Ingia",
+    "register": "Jisajili",
+    "logout": "Toka",
+    "downloads": "Vipakuliwa",
+    "documentation": "Nyaraka",
+    "support": "Msaada",
+    "contact": "Wasiliana nasi",
+    "manifesto": "Ilani",
+    "services": "Huduma",
+    "packages": "Vifurushi"
+  },
+  "auth": {
+    "login": {
+      "title": "Karibu tena",
+      "subtitle": "Ingia kwenye akaunti yako",
+      "email": "Anwani ya barua pepe",
+      "password": "Nenosiri",
+      "rememberMe": "Nikumbuke",
+      "forgotPassword": "Umesahau nenosiri?",
+      "submitButton": "Ingia",
+      "noAccount": "Huna akaunti?",
+      "signUp": "Jisajili",
+      "orContinueWith": "Au endelea na",
+      "errors": {
+        "invalidCredentials": "Barua pepe au nenosiri si sahihi",
+        "accountLocked": "Akaunti imefungwa",
+        "networkError": "Haiwezi kuunganisha na seva. Tafadhali jaribu tena."
+      }
+    },
+    "register": {
+      "title": "Unda akaunti yako",
+      "subtitle": "Anza jaribio lako la bure la siku 14 leo.",
+      "headline": "Fungua akili ya shirika lako.",
+      "subheadline": "Jiunge na maelfu ya makampuni yanayotumia Datacendia.",
+      "firstName": "Jina la kwanza",
+      "lastName": "Jina la mwisho",
+      "fullName": "Jina kamili",
+      "email": "Barua pepe ya kazi",
+      "password": "Nenosiri",
+      "confirmPassword": "Thibitisha nenosiri",
+      "passwordHint": "Angalau herufi 8",
+      "company": "Kampuni (hiari)",
+      "companySize": "Ukubwa wa kampuni",
+      "industry": "Sekta",
+      "submitButton": "Unda Akaunti",
+      "hasAccount": "Tayari una akaunti?",
+      "signIn": "Ingia",
+      "agreeToTerms": "Ninakubaliana na",
+      "errors": {
+        "fullNameRequired": "Tafadhali ingiza jina lako kamili",
+        "validEmailRequired": "Tafadhali ingiza barua pepe halali",
+        "passwordMinLength": "Nenosiri lazima liwe na herufi 8 au zaidi",
+        "passwordMismatch": "Nenosiri hazifanani",
+        "acceptTerms": "Lazima ukubali masharti",
+        "registrationFailed": "Usajili umeshindwa. Tafadhali jaribu tena."
+      }
+    },
+    "forgotPassword": {
+      "title": "Weka upya Nenosiri",
+      "subtitle": "Ingiza barua pepe yako na tutakutumia kiungo cha kuweka upya.",
+      "email": "Anwani ya barua pepe",
+      "sendResetLink": "Tuma Kiungo",
+      "backToLogin": "Rudi kuingia",
+      "checkEmail": "Angalia barua pepe yako"
+    },
+    "mfa": {
+      "title": "Uthibitishaji wa hatua mbili",
+      "subtitle": "Ingiza msimbo kutoka programu yako ya uthibitishaji.",
+      "code": "Msimbo wa uthibitishaji",
+      "submitButton": "Thibitisha"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Akili ya shirika lako,",
+      "titleHighlight": "Huru na Kamili",
+      "subtitle": "Datacendia ni kituo cha amri kwa akili ya biashara.",
+      "ctaPrimary": "Omba Demo",
+      "ctaSecondary": "Gundua Jukwaa"
+    },
+    "problem": {
+      "title": "Tatizo la Akili ya Biashara",
+      "subtitle": "Mashirika yanakabiliana na data iliyotawanyika na zana zilizotengwa"
+    },
+    "solution": { "title": "Cortex: Kituo chako cha Amri ya Akili" },
+    "pillars": { "title": "Nguzo 8 za Akili Huru" },
+    "cta": { "title": "Uko tayari kudhibiti akili yako?", "button": "Panga Demo" }
+  },
+  "spaces": {
+    "graph": { "name": "Grafu", "description": "Pitia ulimwengu wako wa maarifa" },
+    "council": { "name": "Baraza", "description": "Washauri wa AI wanaofikiria pamoja" },
+    "pulse": { "name": "Mapigo", "description": "Afya ya shirika kwa wakati halisi" },
+    "lens": { "name": "Lenzi", "description": "Tazama mustakabali unaowezekana" },
+    "bridge": { "name": "Daraja", "description": "Chukua hatua katika mifumo" }
+  },
+  "pillars": {
+    "helm": { "name": "Usukani", "description": "Msaada wa maamuzi ya kimkakati" },
+    "lineage": { "name": "Nasaba", "description": "Fuatilia kila data hadi chanzo chake" },
+    "predict": { "name": "Utabiri", "description": "Utabiri unaoendeshwa na AI" },
+    "flow": { "name": "Mtiririko", "description": "Mtiririko wa kazi wa kiotomatiki" },
+    "health": { "name": "Afya", "description": "Vipimo vya nguvu za shirika" },
+    "guard": { "name": "Mlinzi", "description": "Usimamizi wa data na uzingatiaji" },
+    "ethics": { "name": "Maadili", "description": "Usimamizi wa kimaadili uliojengwa ndani" },
+    "agents": { "name": "Mawakala", "description": "Washauri wa AI kwa kila uwanja" }
+  },
+  "pricing": {
+    "title": "Bei rahisi, wazi",
+    "subtitle": "Chagua mpango unaofaa shirika lako.",
+    "monthly": "Kwa mwezi",
+    "annual": "Kwa mwaka",
+    "annualDiscount": "Okoa 20%",
+    "perMonth": "/mwezi",
+    "startTrial": "Anza Jaribio la Bure",
+    "contactSales": "Wasiliana na Mauzo",
+    "mostPopular": "Maarufu zaidi"
+  },
+  "dashboard": {
+    "title": "Dashibodi",
+    "welcome": "Karibu tena",
+    "subtitle": "Hali ya {{company}} leo",
+    "health_score": "Afya ya Shirika",
+    "healthScore": "Alama ya Afya",
+    "data": "Data",
+    "operations": "Operesheni",
+    "security": "Usalama",
+    "people": "Watu",
+    "fromLastWeek": "kutoka wiki iliyopita",
+    "alerts": "Arifa Hai",
+    "activeAlerts": "Arifa Hai",
+    "critical": "Muhimu",
+    "warning": "Onyo",
+    "info": "Habari",
+    "pending_approvals": "Idhini Zinazosubiri",
+    "pendingApprovals": "Idhini Zinazosubiri",
+    "workflows": "Mtiririko wa Kazi",
+    "access": "Upatikanaji",
+    "budget": "Bajeti",
+    "by": "na",
+    "approve": "Idhinisha",
+    "reject": "Kataa",
+    "keyMetrics": "Vipimo Muhimu",
+    "askTheCouncil": "Uliza Baraza",
+    "whatToKnow": "Unataka kujua nini?",
+    "recentQueries": "Maswali ya hivi karibuni:",
+    "recentActivity": "Shughuli za Hivi Karibuni",
+    "viewFullLog": "Tazama Logi Kamili",
+    "quickActions": "Vitendo vya Haraka",
+    "greetings": { "morning": "Habari za asubuhi", "afternoon": "Habari za mchana", "evening": "Habari za jioni" },
+    "sampleAlerts": {
+      "databaseCpu": "CPU ya database > 90% kwa dakika 15",
+      "paymentLatency": "Ongezeko la ucheleweshaji wa malipo",
+      "diskUsage": "Matumizi ya diski 78% kwenye prod-db-01",
+      "apiErrors": "Kiwango cha makosa ya API juu ya kizingiti",
+      "memoryLeak": "Uvujaji wa kumbukumbu umegunduliwa katika huduma ya auth"
+    },
+    "sampleApprovals": {
+      "monthlyClose": "Mchakato wa Kufunga Mwezi",
+      "prodDbAccess": "Upatikanaji wa DB ya Uzalishaji",
+      "budgetIncrease": "Ongezeko la Bajeti ya Masoko Q4",
+      "newHire": "Kuingiza Mfanyakazi Mpya: Timu ya Dev"
+    },
+    "sampleMetrics": { "revenue": "Mapato", "pipeline": "Pipeline", "burnRate": "Kiwango cha Matumizi", "nps": "NPS", "activeUsers": "Watumiaji Hai", "churnRate": "Kiwango cha Kuondoka" },
+    "sampleActivity": {
+      "workflowCompleted": "Mtiririko wa kazi \"{{name}}\" umekamilika",
+      "userQueried": "{{user}} aliuliza kuhusu {{topic}}",
+      "alertResolved": "Arifa \"{{alert}}\" imetatuliwa",
+      "reportGenerated": "Ripoti \"{{report}}\" imetengenezwa"
+    },
+    "sampleQueries": {
+      "churnIncrease": "Kwa nini churn iliongezeka?",
+      "forecastRevenue": "Utabiri wa mapato Q4",
+      "biggestRisk": "Hatari yetu kubwa zaidi ni nini?",
+      "customerSentiment": "Mwelekeo wa hisia za wateja ni upi?",
+      "competitorAnalysis": "Changanua bei za washindani"
+    }
+  },
+  "downloads": {
+    "title": "Upakuaji",
+    "subtitle": "Pata Datacendia kwa jukwaa lako",
+    "desktop": { "title": "Programu ya Desktop", "windows": "Windows", "mac": "macOS", "linux": "Linux", "download": "Pakua" },
+    "mobile": { "title": "Programu za Simu", "ios": "iOS", "android": "Android", "appStore": "App Store", "playStore": "Google Play" },
+    "cli": { "title": "Kiolesura cha Mstari wa Amri" },
+    "selfHosted": { "title": "Kujihifadhi", "docker": "Docker Compose", "kubernetes": "Kubernetes (Helm)", "airgapped": "Kifurushi Kilichotengwa" },
+    "systemRequirements": { "title": "Mahitaji ya Mfumo", "minimum": "Kiwango cha Chini", "recommended": "Kilichopendekezwa" }
+  },
+  "button": {
+    "view_all": "Tazama Zote",
+    "viewAll": "Tazama Zote",
+    "viewMore": "Ona Zaidi",
+    "approve": "Idhinisha",
+    "reject": "Kataa",
+    "save": "Hifadhi",
+    "cancel": "Ghairi",
+    "submit": "Wasilisha",
+    "edit": "Hariri",
+    "delete": "Futa"
+  },
+  "commandPalette": {
+    "searchPlaceholder": "Tafuta amri, kurasa, mawakala...",
+    "noResults": "Hakuna matokeo ya",
+    "navigate": "abiri",
+    "select": "chagua",
+    "toggle": "badilisha",
+    "newQuery": "Swali Jipya la Baraza",
+    "askCouncil": "Uliza Baraza",
+    "refresh": "Onyesha Data Upya",
+    "reloadPage": "Pakia upya data ya ukurasa",
+    "fullscreen": "Skrini Kamili",
+    "toggleFullscreen": "Ingia/toka hali ya skrini kamili",
+    "switchTo": "Badilisha hadi",
+    "changeLanguage": "Badilisha lugha hadi",
+    "categories": { "navigation": "Uabiri", "actions": "Vitendo", "agents": "Mawakala", "modes": "Modi za Baraza", "recent": "Hivi Karibuni" },
+    "agents": {
+      "chief": "Wakala Mkuu wa Kimkakati",
+      "chiefDesc": "Usanisi wa kimkakati",
+      "cfo": "Akili ya Kifedha",
+      "cfoDesc": "Uchambuzi wa kifedha",
+      "coo": "Wakala wa Uendeshaji",
+      "cooDesc": "Ufanisi wa uendeshaji",
+      "ciso": "Wakala wa Usalama",
+      "cisoDesc": "Usalama na utiifu",
+      "cmo": "Akili ya Soko",
+      "cmoDesc": "Uchambuzi wa soko"
+    }
+  },
+  "cortex": {
+    "sidebar": { "spaces": "Nafasi", "pillars": "Nguzo", "system": "Mfumo", "data": "Data", "security": "Usalama" }
+  },
+  "sidebar": {
+    "dashboard": "Dashibodi",
+    "the_council": "Baraza",
+    "the_graph": "Grafu",
+    "the_pulse": "Mapigo",
+    "the_lens": "Lenzi",
+    "the_bridge": "Daraja",
+    "settings": "Mipangilio",
+    "help": "Msaada"
+  },
+  "council": {
+    "title": "Baraza",
+    "subtitle": "Jopo la ushauri wa kimkakati linaloendeshwa na AI",
+    "askQuestion": "Uliza swali",
+    "questionPlaceholder": "Swali gani la kimkakati ungependa Baraza lijadiliane?",
+    "selectAgents": "Chagua mawakala kushiriki",
+    "startDeliberation": "Anza Mjadala",
+    "quickAnswer": "Jibu la Haraka",
+    "fullDeliberation": "Mjadala Kamili",
+    "selectedAgents": "Mawakala Waliochaguliwa",
+    "clearAll": "Futa Yote",
+    "selectAll": "Chagua Yote",
+    "agents": { "domain": "Mawakala wa Eneo", "custom": "Mawakala wa Kibinafsi", "premium": "Mawakala wa Premium", "createCustom": "Unda Wakala wa Kibinafsi" },
+    "modes": {
+      "title": "Maktaba ya Modi za Baraza",
+      "subtitle": "Mawakala sawa katika modi tofauti hutoa matokeo tofauti.",
+      "cultureNote": "Prompt ni utamaduni wa kampuni.",
+      "quickReference": "Rejea ya Haraka",
+      "mode": "Modi",
+      "primeDirective": "Maelekezo Makuu",
+      "bestFor": "Bora Kwa",
+      "agentBehavior": "Tabia ya Wakala"
+    },
+    "deliberation": {
+      "phases": { "initial_analysis": "Uchambuzi wa Awali", "cross_examination": "Uchunguzi Mtambuka", "synthesis": "Usanisi", "ethics_check": "Ukaguzi wa Maadili" },
+      "inProgress": "Mjadala Unaendelea",
+      "completed": "Mjadala Umekamilika",
+      "confidence": "Uhakika"
+    },
+    "customAgent": {
+      "title": "Unda Wakala wa Kibinafsi",
+      "editTitle": "Hariri Wakala wa Kibinafsi",
+      "subtitle": "Sanidi wakala wako wa AI na utaalamu maalum",
+      "premium": "Kifurushi cha Kujenga Wakala",
+      "avatar": "Picha ya Wakala",
+      "color": "Rangi ya Wakala",
+      "name": "Jina la Wakala",
+      "namePlaceholder": "mf., Mchambuzi wa Soko",
+      "role": "Jukumu / Cheo",
+      "rolePlaceholder": "mf., Utafiti na Uchambuzi wa Soko",
+      "description": "Maelezo",
+      "descriptionPlaceholder": "Eleza wakala huyu anafanya nini na maeneo yake ya kuzingatia...",
+      "expertise": "Utaalamu na Maelekezo",
+      "capabilities": "Uwezo",
+      "addCapability": "Ongeza",
+      "save": "Hifadhi Wakala",
+      "delete": "Futa Wakala"
+    },
+    "status": { "online": "Mtandaoni", "offline": "Nje ya Mtandao", "busy": "Shughuli" }
+  },
+  "agent": {
+    "chief": { "name": "Wakala Mkuu wa Mkakati", "role": "Usimamizi wa Kimkakati na Usanisi", "description": "Anasanisi maarifa kutoka wakala wote wa eneo kutoa mapendekezo ya kimkakati ya jumla." },
+    "cfo": { "name": "Wakala wa Akili ya Fedha", "role": "Uchambuzi wa Fedha na Hatari", "description": "Anachambua data ya fedha, bajeti, utabiri na kutoa maarifa kuhusu afya ya kifedha." },
+    "coo": { "name": "Wakala wa Akili ya Uendeshaji", "role": "Ufanisi wa Uendeshaji", "description": "Anazingatia vipimo vya uendeshaji, ufanisi wa mchakato na ugawaji wa rasilimali." },
+    "ciso": { "name": "Wakala wa Usalama na Utiifu", "role": "Usalama na Usimamizi wa Hatari", "description": "Anafuatilia hali ya usalama, mahitaji ya utiifu na tathmini ya vitisho." },
+    "cmo": { "name": "Wakala wa Akili ya Soko", "role": "Uuzaji na Maarifa ya Wateja", "description": "Anachambua mitindo ya soko, tabia ya wateja na akili ya ushindani." },
+    "cro": { "name": "Wakala wa Akili ya Mapato", "role": "Mapato na Ukuaji", "description": "Anazingatia uboreshaji wa mapato, utendaji wa mauzo na mikakati ya bei." },
+    "cdo": { "name": "Wakala wa Ubora wa Data", "role": "Utawala na Ubora wa Data", "description": "Anafuatilia ubora wa data, sera za utawala na kuhakikisha uadilifu wa data." },
+    "risk": {
+      "name": "Wakala wa Tathmini ya Hatari",
+      "role": "Uchambuzi wa Hatari ya Biashara",
+      "description": "Anatathmini hatari za biashara, anafanya uchambuzi wa athari na kutoa mikakati ya kupunguza."
+    },
+    "clo": { "name": "Wakala wa Akili ya Kisheria", "role": "Uchambuzi wa Kisheria na Utiifu", "description": "Anachambua hatari za kisheria, athari za mkataba na utiifu wa udhibiti." },
+    "cpo": { "name": "Wakala wa Mkakati wa Bidhaa", "role": "Ubunifu wa Bidhaa na Ramani", "description": "Anaendesha mkakati wa bidhaa, kipaumbele cha vipengele na maarifa ya uzoefu wa mtumiaji." },
+    "caio": { "name": "Wakala wa Mkakati wa AI", "role": "Utawala na Ubunifu wa AI/ML", "description": "Anaongoza mkakati wa AI, utawala wa modeli na utekelezaji wa kimaadili wa AI." },
+    "cso": { "name": "Wakala wa Uendelevu", "role": "ESG na Athari za Mazingira", "description": "Anafuatilia vipimo vya mazingira, kijamii na utawala na mipango ya uendelevu." },
+    "cio": { "name": "Wakala wa Akili ya Uwekezaji", "role": "Ugawaji wa Mtaji na Kwingineko", "description": "Anachambua fursa za uwekezaji, ugawaji wa kwingineko na uwekaji wa mtaji." },
+    "cco": { "name": "Wakala wa Mawasiliano", "role": "Mawasiliano ya Shirika na PR", "description": "Anaunda ujumbe wa shirika, anasimamia mawasiliano ya wadau na kufuatilia mtazamo wa chapa." },
+    "ext-auditor": { "name": "Mkaguzi wa Nje", "role": "Ukaguzi Huru wa Nje", "description": "Anatoa tathmini huru na lengo kutoka mtazamo wa nje." },
+    "int-auditor": { "name": "Mkaguzi wa Ndani", "role": "Udhibiti wa Ndani na Ukaguzi wa Mchakato", "description": "Anatathmini udhibiti wa ndani, ufanisi wa uendeshaji na utiifu." },
+    "cmio": { "name": "Mkurugenzi wa Habari za Matibabu", "role": "IT ya Afya na Mifumo ya Kliniki", "description": "Mtaalamu wa teknolojia ya afya, mifumo ya EHR na informatiki ya kliniki." },
+    "pso": { "name": "Afisa wa Usalama wa Mgonjwa", "role": "Usalama wa Kliniki na Ubora", "description": "Mtaalamu wa usalama wa mgonjwa, kuzuia matukio mabaya na uboreshaji wa ubora." },
+    "hco": { "name": "Afisa wa Utiifu wa Afya", "role": "HIPAA na Kanuni za Afya", "description": "Mtaalamu wa utiifu wa udhibiti wa afya, HIPAA na utiifu wa bili." },
+    "cod": {
+      "name": "Mkurugenzi wa Uendeshaji wa Kliniki",
+      "role": "Uendeshaji na Ufanisi wa Afya",
+      "description": "Mtaalamu wa uendeshaji wa kliniki, mtiririko wa wagonjwa na uboreshaji wa wafanyakazi."
+    },
+    "quant": { "name": "Mchambuzi wa Kiasi", "role": "Uundaji wa Kifedha na Uchambuzi wa Hatari", "description": "Mtaalamu wa fedha za kiasi, bei ya derivatives na uundaji wa hatari." },
+    "pm": { "name": "Meneja wa Kwingineko", "role": "Mkakati wa Uwekezaji na Ugawaji wa Mali", "description": "Mtaalamu wa ujenzi wa kwingineko, ugawaji wa mali na mkakati wa uwekezaji." },
+    "cro-finance": {
+      "name": "Afisa wa Hatari ya Mikopo",
+      "role": "Uchambuzi wa Mikopo na Tathmini ya Hatari",
+      "description": "Mtaalamu wa uchambuzi wa mikopo, underwriting ya mikopo na uundaji wa hatari ya mikopo."
+    },
+    "treasury": { "name": "Mchambuzi wa Hazina", "role": "Usimamizi wa Pesa na Ukwasi", "description": "Mtaalamu wa hazina ya shirika, usimamizi wa pesa na hedging ya sarafu." },
+    "contracts": { "name": "Mtaalamu wa Mikataba", "role": "Uchambuzi na Mazungumzo ya Mikataba", "description": "Mtaalamu wa mikataba ya biashara, kuandika mikataba na mazungumzo." },
+    "ip": {
+      "name": "Mshauri wa Mali ya Kiakili",
+      "role": "Hataza, Alama za Biashara na Mkakati wa IP",
+      "description": "Mtaalamu wa sheria ya mali ya kiakili, mkakati wa hataza na ulinzi wa alama za biashara."
+    },
+    "litigation": { "name": "Mtaalamu wa Kesi", "role": "Utatuzi wa Migogoro na Mkakati wa Kesi", "description": "Mtaalamu wa kesi za biashara, utatuzi wa migogoro na e-discovery." },
+    "regulatory": { "name": "Mshauri wa Mambo ya Udhibiti", "role": "Uhusiano wa Serikali na Utiifu", "description": "Mtaalamu wa utiifu wa udhibiti, mambo ya serikali na sheria ya utawala." }
+  },
+  "label": { "online": "Mtandaoni", "offline": "Nje ya Mtandao", "busy": "Shughuli", "premium": "Premium", "locked": "Imefungwa", "custom": "Maalum", "unlock": "Fungua", "required": "Inahitajika" },
+  "settings": { "title": "Mipangilio", "organization": "Shirika", "users": "Watumiaji", "teams": "Timu", "billing": "Malipo", "security": "Usalama" },
+  "errors": {
+    "notFound": { "title": "Ukurasa Haujapatikana", "message": "Ukurasa unaoutafuta haupo.", "backHome": "Rudi Nyumbani" },
+    "serverError": { "title": "Hitilafu ya Seva", "message": "Kitu kimekwenda vibaya upande wetu." },
+    "networkError": { "title": "Hitilafu ya Muunganisho", "message": "Haiwezi kuunganisha na seva." },
+    "unauthorized": { "title": "Haujaidhinishwa", "message": "Huna ruhusa ya kufikia rasilimali hii." }
+  },
+  "footer": {
+    "company": "Kampuni",
+    "product": "Bidhaa",
+    "resources": "Rasilimali",
+    "legal": "Kisheria",
+    "about": "Kuhusu",
+    "careers": "Kazi",
+    "contact": "Wasiliana",
+    "privacy": "Sera ya Faragha",
+    "terms": "Masharti ya Huduma",
+    "copyright": "© {{year}} Datacendia. Haki zote zimehifadhiwa."
+  },
+  "time": {
+    "justNow": "Sasa hivi",
+    "minutesAgo": "dakika {{count}} zilizopita",
+    "hoursAgo": "saa {{count}} zilizopita",
+    "daysAgo": "siku {{count}} zilizopita",
+    "weeksAgo": "wiki {{count}} zilizopita"
+  },
+  "tooltips": {
+    "pillars": {
+      "helm": {
+        "title": "Helm - Kituo cha Amri ya Kimkakati",
+        "summary": "Mfumo wako wa msaada wa maamuzi ya kimkakati.",
+        "features": ["Dashibodi ya KPI ya wakati halisi", "Ufuatiliaji wa malengo ya kimkakati"],
+        "guidance": "Anza kwa kufafanua vipimo vyako muhimu."
+      },
+      "lineage": {
+        "title": "Lineage - Ufuatiliaji wa Nasaba ya Data",
+        "summary": "Uonaji kamili wa safari ya data yako.",
+        "features": ["Uchoraji wa mtiririko wa data", "Ufuatiliaji kutoka chanzo hadi ripoti"],
+        "guidance": "Kwanza unganisha vyanzo vya data yako."
+      },
+      "predict": {
+        "title": "Predict - Injini ya Utabiri ya AI",
+        "summary": "Miundo ya ML inayoona zaidi ya upeo.",
+        "features": ["Utabiri wa mfululizo wa wakati", "Ugunduzi wa anomalia"],
+        "guidance": "Utabiri mzuri unahitaji data nzuri."
+      },
+      "flow": {
+        "title": "Flow - Automatisesheni ya Akili",
+        "summary": "Mtiririko wa kazi unaofikiria.",
+        "features": ["Kijenzi cha mtiririko wa kazi wa kuona", "Nodi za maamuzi za AI"],
+        "guidance": "Kwanza chora michakato yako ya mikono."
+      },
+      "health": {
+        "title": "Health - Mfuatiliaji wa Ishara Muhimu",
+        "summary": "Mapigo ya wakati halisi ya ishara muhimu za biashara.",
+        "features": ["Dashibodi ya afya ya vipengele", "Uchambuzi wa mwenendo wa utendaji"],
+        "guidance": "Sanidi ukaguzi wa afya kwa mifumo muhimu."
+      },
+      "guard": {
+        "title": "Guard - Ngao ya Usalama na Utiifu",
+        "summary": "Ulinzi wa kiotomatiki kwa data yako.",
+        "features": ["Injini ya utekelezaji wa sera", "Ugunduzi wa vitisho"],
+        "guidance": "Fafanua sera zako za usalama."
+      },
+      "ethics": {
+        "title": "Ethics - Kituo cha Utawala wa AI",
+        "summary": "AI yenye uwajibikaji iliyojengwa ndani.",
+        "features": ["Ugunduzi wa upendeleo", "Zana za ufafanuzi"],
+        "guidance": "Kwanza weka kanuni zako za kimaadili."
+      },
+      "agents": {
+        "title": "Agents - Baraza la Washauri wa AI",
+        "summary": "Washauri wa AI wataalam kwa kila eneo.",
+        "features": ["Mawakala wa AI wataalam wa eneo", "Ushirikiano wa mawakala wengi"],
+        "guidance": "Chagua wakala sahihi kwa swali lako."
+      }
+    },
+    "spaces": {
+      "graph": { "title": "Graph - Navigeta ya Maarifa", "summary": "Tembelea ulimwengu wa maarifa wa biashara yako.", "guidance": "Bonyeza nodi yoyote kuanza kuchunguza." },
+      "council": { "title": "Council - Chumba cha Ushirikiano wa AI", "summary": "Ambapo washauri wa AI wanajadiliana pamoja.", "guidance": "Wasilisha swali lako kwa Baraza." },
+      "pulse": { "title": "Pulse - Kituo cha Operesheni za Wakati Halisi", "summary": "Mtazamo wa moja kwa moja wa mapigo ya moyo ya biashara.", "guidance": "Sanidi vipimo muhimu vya kuonyesha." },
+      "lens": { "title": "Lens - Mchunguzi wa Hali za Siku Zijazo", "summary": "Ona siku zijazo zinazowezekana kabla hazijafika.", "guidance": "Fafanua vigezo vya hali." },
+      "bridge": { "title": "Bridge - Kituo cha Amri ya Hatua", "summary": "Geuza maarifa kuwa hatua.", "guidance": "Chagua hatua na hakiki athari yake." }
+    },
+    "sovereign": {
+      "mirror": {
+        "title": "Cendia Mirror - Injini ya Pacha wa Dijitali",
+        "summary": "Unda nakala hai ya dijitali ya biashara yako.",
+        "features": ["Usawazishaji wa data wa wakati halisi", "Mazingira ya uigaji wa hali"],
+        "useCases": ["Jaribu mabadiliko bila kugusa uzalishaji", "Iga kushindikana kwa mfumo"],
+        "guidance": "Mirror inaunda sanduku salama."
+      },
+      "witness": {
+        "title": "Cendia Witness - Leja Isiyobadilika ya Ukaguzi",
+        "summary": "Ushahidi wa blockchain wa kila hatua.",
+        "features": ["Mihuri ya wakati ya kriptografia", "Rekodi za ukaguzi zisizobadilika"],
+        "useCases": ["Ukaguzi wa utiifu wa kanuni", "Ukusanyaji wa ushahidi wa kisheria"],
+        "guidance": "Witness inarekodi hatua muhimu kiotomatiki."
+      },
+      "oracle": {
+        "title": "Cendia Oracle - Kituo cha Akili ya Utabiri",
+        "summary": "AI ya juu inayosema ukweli kwa nguvu.",
+        "features": ["Kiolesura cha maswali ya lugha ya asili", "Mantiki ya maeneo mbalimbali"],
+        "useCases": ["Pata majibu ya maswali ya kimkakati", "Unganisha data kwa maamuzi"],
+        "guidance": "Uliza Oracle chochote kuhusu biashara."
+      },
+      "legacy": {
+        "title": "Cendia Legacy - Uhifadhi wa Maarifa",
+        "summary": "Kamata maarifa ya shirika kabla hayajapotea.",
+        "features": ["Ukusanyaji wa maarifa ya wataalam", "Uhifadhi wa mantiki ya maamuzi"],
+        "useCases": ["Hifadhi maarifa ya wataalam wanaostaafu", "Dumisha muktadha wa maamuzi"],
+        "guidance": "Kamata maarifa muhimu yanapozaliwa."
+      },
+      "mirage": {
+        "title": "Cendia Mirage - Jenereta ya Data Bandia",
+        "summary": "Unda data halisi bila hatari ya faragha.",
+        "features": ["Usanisi wa data ya takwimu", "Uzalishaji unaohifadhi faragha"],
+        "useCases": ["Unda seti za majaribio kwa usalama", "Data halisi kwa maonyesho"],
+        "guidance": "Fafanua mahitaji yako ya data."
+      },
+      "key": {
+        "title": "Cendia Key - Hazina ya Utambulisho na Ufikiaji",
+        "summary": "Ufunguo mmoja kudhibiti kila kitu.",
+        "features": ["Kituo cha kuingia mara moja", "Udhibiti wa ufikiaji kulingana na jukumu"],
+        "useCases": ["Usimamizi wa utambulisho uliounganiswha", "Ukaguzi wa utiifu wa usalama"],
+        "guidance": "Unganisha watoa utambulisho wako."
+      },
+      "mesh": {
+        "title": "Cendia Mesh - Kitambaa cha Muungano",
+        "summary": "Unganisha kila kitu na kila kitu.",
+        "features": ["Lango la API ya ulimwengu wote", "Usanifu unaoendeshwa na matukio"],
+        "useCases": ["Muungano wa mifumo ya zamani", "Usawazishaji wa data kati ya majukwaa"],
+        "guidance": "Sanidi miunganisho ya mfumo kupitia Mesh."
+      },
+      "blackbox": {
+        "title": "Cendia BlackBox - Sajili ya Miundo",
+        "summary": "Usimamizi wa kati wa miundo yote ya AI.",
+        "features": ["Utoaji wa matoleo ya miundo", "Uratibu wa kusambaza"],
+        "useCases": ["Simamia mzunguko wa maisha wa miundo ya ML", "Fuatilia miundo ya uzalishaji"],
+        "guidance": "Sajili miundo katika BlackBox."
+      },
+      "glass": {
+        "title": "Cendia Glass - Paneli ya Uwazi",
+        "summary": "Uonaji kamili wa maamuzi ya AI.",
+        "features": ["Ufafanuzi wa maamuzi", "Uchambuzi wa mchango wa sababu"],
+        "useCases": ["Eleza maamuzi ya AI", "Elewa tabia ya miundo"],
+        "guidance": "Chagua uamuzi wa AI katika Glass."
+      }
+    },
+    "enterprise": {
+      "apotheosis": {
+        "title": "CendiaApotheosis™ - Akili Kuu ya Shirika",
+        "summary": "Mzunguko wa kujiboresha ambao hauishii kamwe. Mashambulizi ya usiku, viraka vya kiotomatiki, uboreshaji wa ujuzi wa binadamu, na kupiga marufuku mifumo.",
+        "features": [
+          "Simulazioni za timu nyekundu za usiku (mazingira 1000+)",
+          "Kurekebisha udhaifu kiotomatiki",
+          "Ugunduzaji wa pengo la ujuzi na mafunzo",
+          "Kupiga marufuku mifumo ya maamuzi",
+          "Ufuatiliaji wa Alama ya Apotheosis"
+        ],
+        "useCases": ["Uboreshaji endelevu wa shirika", "Kupunguza hatari kwa njia ya kujiandaa", "Uimarishaji wa kiotomatiki wa utiifu", "Msaada wa maamuzi ya watendaji"],
+        "guidance": "Apotheosis inaendesha kila usiku, kushambulia shirika lako kutoka pembe 1000+, kurekebisha inachopata, na kukufanya kinga ya kudumu dhidi ya makosa yako mwenyewe."
+      },
+      "dissent": {
+        "title": "CendiaDissent™ - Kutokubaliana Kulindwa",
+        "summary": "Haki ya kutokubaliana rasmi, salama, na bila kubadilishwa dhidi ya uamuzi wowote — imerekodiwa milele.",
+        "features": [
+          "Usajili wa kutokubaliana bila jina au kwa jina",
+          "Uthibitisho wa lazima ndani ya masaa 72",
+          "Rekodi ya ledger isiyobadilishwa",
+          "Ugunduzaji na ulinzi dhidi ya kulipiza kisasi",
+          "Ufuatiliaji wa usahihi wa kutokubaliana"
+        ],
+        "useCases": ["Hakikisha sauti za wachache zinasikika", "Unda kumbukumbu ya shirika", "Linda washtaki", "Boresha ubora wa maamuzi"],
+        "guidance": "Faili upingaji dhidi ya uamuzi wowote usiokubaliani nao. Pingamizi lako litarekodiwa kabisa, kuthibitishwa, na kufuatiliwa kwa usahihi kwa wakati."
+      },
+      "connectors": {
+        "title": "Viunganishi vya Data za Biashara",
+        "summary": "Viunganishi 156+ vilivyojengwa tayari katika sekta 11 za viwanda. Unganisha na vyanzo vya data za serikali, fedha, afya, na ulimwengu.",
+        "features": [
+          "Serikali: NOAA, FAA, FEMA, SEC, Census, USGS, EIA",
+          "Fedha: Bloomberg, SWIFT, FIX Protocol, Refinitiv",
+          "Afya: HL7 FHIR, Epic, Cerner, CDC, FDA, WHO",
+          "Msururu wa Ugavi: CBP, Maersk, Port APIs",
+          "Nishati: CAISO, PJM, ERCOT, ENTSO-E, Nord Pool",
+          "Avioniki: ARINC 429/664, ADS-B, ACARS, MIL-STD-1553"
+        ],
+        "useCases": [
+          "Ujumuishaji wa data ya hali ya hewa kwa wakati halisi",
+          "Data ya soko la fedha na milisho ya udhibiti",
+          "Ushirikiano wa afya na data ya kliniki",
+          "Uwazi wa msururu wa ugavi",
+          "Uchambuzi wa gridi ya umeme na soko la nishati",
+          "Usalama wa anga na shughuli za ndege"
+        ],
+        "guidance": "Vinjari viunganishi kwa tasnia au tafuta vyanzo maalum. Kila kiunganishi kinajumuisha uthibitisho, kuzuia kiwango, na ramani ya utiifu."
+      },
+      "evidence": {
+        "title": "Miundombinu ya Ushahidi",
+        "summary": "Ledger ya ushahidi isiyobadilishwa na muunganisho wa hash wa mtindo wa blockchain, saini za kidijitali za TPM, na ushahidi wa mti wa Merkle.",
+        "features": [
+          "Maingizo ya ledger yaliyotiwa saini kwa kriptografia",
+          "Kunasa utambulisho wa kujenga na utekelezaji",
+          "Msaada wa uthibitisho wa maunzi wa TPM",
+          "Uthibitisho wa uadilifu wa mti wa Merkle",
+          "Uzalishaji wa vifurushi vya ushahidi wa kisheria"
+        ],
+        "useCases": ["Ushahidi wa majaribio ulio tayari kwa ukaguzi", "Nyaraka za ukaguzi wa usalama", "Ushahidi wa SOC 2 / ISO 27001 / GDPR", "Rekodi za utekelezaji zinazopinga uharibifu"],
+        "guidance": "Utekelezaji wote wa majaribio huandikwa kiotomatiki na saini za kriptografia. Unda vifurushi vya ushahidi wa kisheria kwa kubofya moja."
+      },
+      "sovereignArch": {
+        "title": "Mifumo ya Usanifu wa Uhuru",
+        "summary": "Mifumo 11 ya biashara kwa usambazaji wa air-gapped, zero-trust, na uhuru kamili.",
+        "features": [
+          "Data Diode: Kuingiza upande mmoja na karantini",
+          "Local RLHF: Ujifunzaji wa kuimarisha bila wingu",
+          "Decision DNA: Usafirishaji wa ukaguzi kwa kubofya moja",
+          "Shadow Council: Hali ya sanduku la mchanga",
+          "QR Air-Gap Bridge: Uhamisho bila vyombo vya habari",
+          "TPM Attestation: Maamuzi yaliyotiwa saini na maunzi"
+        ],
+        "useCases": ["Usambazaji wa vituo salama vya air-gapped", "Programu za ulinzi na ujasusi", "Utiifu wa tasnia iliyodhibitiwa", "Usanifu wa biashara wa zero-trust"],
+        "guidance": "Mifumo ya Usanifu wa Uhuru inawezesha usambazaji katika mazingira yenye vikwazo zaidi. Kila mfumo unaweza kutumika kwa kujitegemea au kuunganishwa."
+      },
+      "cascade": {
+        "title": "CendiaCascade™ - Athari ya Kipepeo",
+        "summary": "Uchambuzi wa matokeo ya mpangilio wa pili na tatu. Tabiri matokeo yasiyokusudiwa kabla hayajawa matukio.",
+        "features": [
+          "Uchambuzi wa lenzi nyingi (CFO, COO, CISO, Watu, Maadili)",
+          "Ugunduzi wa athari ya kipepeo (athari za kushangaza za mpangilio 3+)",
+          "Uzalishaji wa kupunguza kiotomatiki (zuia, gundua, jibu)",
+          "Mapendekezo ya guardrail (canary, tripwire, circuit breaker, rollback)",
+          "Taswira ya muda (T+0, T+30, T+90, T+1Mwaka)",
+          "Njia ya ukaguzi na SHA-256 hash"
+        ],
+        "useCases": [
+          "Chambua mabadiliko ya wafanyakazi kabla ya utekelezaji",
+          "Tabiri matokeo ya kubadilisha muuzaji",
+          "Fanya mfano wa mabadiliko ya sera katika grafu ya shirika",
+          "Gundua vitanzi vya maoni"
+        ],
+        "guidance": "Pakia grafu yako ya shirika, pendekeza mabadiliko na uache CendiaCascade ifuate matokeo. Washindani wako wanacheza chess hatua moja mbele — CendiaCascade inaiga hatua 5 mbele."
+      },
+      "adapters": {
+        "title": "Adapta za Uhuru - Viunganishi vya Ulimwengu",
+        "summary": "Adapta 5 za ulimwengu badala ya viunganishi 156 vya muuzaji maalum. Tunatoa soketi; mteja analeta plagi.",
+        "features": [
+          "File Watcher: Avioniki, ulinzi, kuingiza kwa faili",
+          "Webhook Ingest: SaaS, matukio ya kusukuma ya lango la kifedha",
+          "Database Adapter: ERP, msururu wa ugavi SQL/ODBC",
+          "Itifaki ya FHIR: Kiwango cha afya",
+          "Itifaki ya FIX: Kiwango cha kifedha",
+          "Itifaki ya MQTT: IoT na gridi ya nishati"
+        ],
+        "useCases": [
+          "Unganisha na mfumo wowote kupitia viwango vya wazi",
+          "Epuka dhima ya leseni ya API ya umiliki",
+          "Saidia mazingira ya air-gapped na yaliyodhibitiwa",
+          "BYO-keys kwa adapta zilizodhibitiwa"
+        ],
+        "guidance": "Chagua aina ya adapta inayolingana na muundo wako wa ujumuishaji. Kila adapta inatumia kiotomatiki viwango vya hatari, uwekaji wa ushahidi, na udhibiti wa ujazo."
+      }
+    }
+  },
+  "narratives": {
+    "welcome": {
+      "title": "Karibu Datacendia",
+      "subtitle": "Safari yako kuelekea akili huru inaanza hapa",
+      "steps": [
+        { "title": "Jua Kituo Chako cha Amri", "description": "Cortex ni mtazamo wako wa umoja wa akili ya biashara.", "action": "Chunguza Cortex" },
+        { "title": "Elewa Nguzo Nane", "description": "Kila nguzo inatoa uwezo muhimu.", "action": "Tazama muhtasari wa nguzo" },
+        { "title": "Unganisha Chanzo Chako cha Kwanza cha Data", "description": "Akili inahitaji data.", "action": "Ongeza chanzo" },
+        { "title": "Fafanua Vipimo Vyako Muhimu", "description": "Nini kinachohusika zaidi kwa shirika lako?", "action": "Unda kipimo cha kwanza" }
+      ]
+    },
+    "executive": {
+      "title": "Safari ya Uongozi wa Utendaji",
+      "subtitle": "Kufanya maamuzi ya kimkakati na akili kamili",
+      "persona": "Mkurugenzi wa C-Level",
+      "duration": "Dakika 15",
+      "steps": [
+        { "title": "Anza na Pulse", "description": "Haraka angalia afya ya shirika.", "space": "pulse", "keyActions": ["Angalia kiashiria cha afya", "Thibitisha tahadhari zinazofanya kazi"] },
+        { "title": "Zama katika Helm", "description": "Kagua KPI za kimkakati.", "pillar": "helm", "keyActions": ["Ona hali ya KPI", "Tambua malengo yaliyo hatarini"] },
+        { "title": "Shauriana na Council", "description": "Kusanya washauri wa AI kwa maamuzi magumu.", "space": "council", "keyActions": ["Tayarisha swali", "Omba muhtasari"] },
+        { "title": "Chunguza na Lens", "description": "Unda mfano wa hali mbalimbali.", "space": "lens", "keyActions": ["Fafanua vigezo", "Linganisha matokeo"] },
+        { "title": "Chukua Hatua na Bridge", "description": "Geuza maamuzi kuwa hatua.", "space": "bridge", "keyActions": ["Chagua hatua", "Idhinisha utekelezaji"] }
+      ]
+    },
+    "dataEngineer": {
+      "title": "Safari ya Mhandisi wa Data",
+      "subtitle": "Jenga na usimamie miundombinu ya data ya kiwango cha biashara",
+      "persona": "Mhandisi wa Data / Mbunifu wa Data",
+      "duration": "Dakika 30",
+      "steps": [
+        {
+          "title": "Chora Mandhari ya Data katika Lineage",
+          "description": "Elewa kile kilichopo kabla ya kujenga.",
+          "pillar": "lineage",
+          "keyActions": ["Chunguza vyanzo vilivyopo", "Tambua mapungufu ya data", "Chora utegemezi"]
+        },
+        {
+          "title": "Jenga Mabomba katika Flow",
+          "description": "Unda mtiririko wa data unaotegemewa.",
+          "pillar": "flow",
+          "keyActions": ["Unda bomba jipya", "Sanidi ushughulikiaji wa makosa", "Weka ratiba"]
+        },
+        {
+          "title": "Fuatilia Ubora wa Data katika Health",
+          "description": "Health inafuatilia vipimo vya ubora kila wakati.",
+          "pillar": "health",
+          "keyActions": ["Fafanua sheria za ubora", "Weka vizingiti vya tahadhari", "Fuatilia mwenendo"]
+        },
+        {
+          "title": "Unganisha Mifumo na Mesh",
+          "description": "Mesh inashughulikia ugumu wa mifumo tofauti.",
+          "sovereign": "mesh",
+          "keyActions": ["Sanidi miunganisho", "Chora schema", "Jaribu usawazishaji"]
+        },
+        {
+          "title": "Andika katika Legacy",
+          "description": "Maarifa yasiyoandikwa ni maarifa yaliyopotea.",
+          "sovereign": "legacy",
+          "keyActions": ["Andika usanifu", "Rekodi maamuzi", "Unda vitabu vya kuendesha"]
+        }
+      ]
+    },
+    "complianceOfficer": {
+      "title": "Safari ya Afisa wa Utiifu",
+      "subtitle": "Dumisha utiifu wa kanuni kwa ujasiri",
+      "persona": "Afisa wa Utiifu / Meneja wa Hatari",
+      "duration": "Dakika 20",
+      "steps": [
+        {
+          "title": "Weka Msimamo wa Utawala katika Guard",
+          "description": "Guard ni ngao yako ya utiifu.",
+          "pillar": "guard",
+          "keyActions": ["Kagua hali ya utiifu", "Angalia ukiukaji wa hivi karibuni", "Thibitisha utekelezaji wa sera"]
+        },
+        {
+          "title": "Thibitisha Njia ya Ukaguzi katika Witness",
+          "description": "Wadhibiti wanahitaji ushahidi.",
+          "sovereign": "witness",
+          "keyActions": ["Zalisha ripoti za ukaguzi", "Hamisha vifurushi vya ushahidi", "Thibitisha uadilifu wa rekodi"]
+        },
+        {
+          "title": "Kagua Utawala wa AI katika Ethics",
+          "description": "Kanuni za AI zinahitaji michakato iliyoandikwa.",
+          "pillar": "ethics",
+          "keyActions": ["Kagua magogo ya maamuzi ya AI", "Angalia ripoti za upendeleo", "Andika usimamizi wa binadamu"]
+        },
+        {
+          "title": "Fuatilia Nasaba ya Data kwa GDPR/CCPA",
+          "description": "Sheria za faragha zinataka kujua data ya kibinafsi iko wapi.",
+          "pillar": "lineage",
+          "keyActions": ["Pata data ya kibinafsi", "Fuatilia mtiririko wa data", "Andika msingi wa kisheria"]
+        },
+        {
+          "title": "Zalisha Ripoti za Utiifu",
+          "description": "Geuza data ya utiifu kuwa ripoti.",
+          "pillar": "guard",
+          "keyActions": ["Chagua kiolezo cha ripoti", "Binafsisha kipindi", "Hamisha kwa wadau"]
+        }
+      ]
+    },
+    "quickStart": {
+      "title": "Kuanza Haraka Dakika 5",
+      "subtitle": "Mwelekeo wa haraka kupata thamani mara moja",
+      "duration": "Dakika 5",
+      "steps": [
+        { "title": "Tazama Dashibodi", "description": "Kituo chako cha amri kilichobinafsishwa kinaonyesha kinachohusika zaidi.", "action": "Fungua Dashibodi" },
+        { "title": "Angalia Afya ya Shirika", "description": "Nambari moja inakuambia hali ya shirika.", "action": "Ona Kiashiria cha Afya" },
+        { "title": "Uliza Swali", "description": "Andika swali lolote kuhusu shirika lako.", "action": "Fungua Msaidizi wa AI" },
+        { "title": "Chunguza Kipimo", "description": "Bonyeza kipimo chochote kuona maelezo.", "action": "Chagua Kipimo" }
+      ]
+    },
+    "crisisResponse": {
+      "title": "Itifaki ya Jibu la Dharura",
+      "subtitle": "Mambo yakienda vibaya, songa haraka na habari kamili",
+      "persona": "Kiongozi wa Tukio",
+      "duration": "Jibu la papo hapo",
+      "steps": [
+        { "title": "Tathmini Hali katika Pulse", "description": "Elewa mara moja kinachotokea.", "space": "pulse", "keyActions": ["Tambua mifumo iliyoathirika", "Thibitisha kiwango cha ukali"] },
+        { "title": "Fuatilia Chanzo na Lineage", "description": "Fuatilia njia ya data nyuma.", "pillar": "lineage", "keyActions": ["Fuatilia mtiririko wa data", "Andika chanzo kikuu"] },
+        {
+          "title": "Kusanya Ushahidi kutoka Witness",
+          "description": "Kamata rekodi zisizobadilika za kilichotokea.",
+          "sovereign": "witness",
+          "keyActions": ["Hamisha ratiba ya tukio", "Hifadhi magogo ya ukaguzi"]
+        },
+        { "title": "Ratibu Jibu na Council", "description": "Kusanya wataalam wa AI kutoka maeneo mbalimbali.", "space": "council", "keyActions": ["Unda timu ya jibu", "Unda mpango wa hatua"] },
+        { "title": "Tekeleza Urejeshaji na Bridge", "description": "Sukuma marekebisho kwa mifumo iliyoathirika.", "space": "bridge", "keyActions": ["Sambaza marekebisho", "Thibitisha urejeshaji"] }
+      ]
+    },
+    "strategist": {
+      "title": "Mwongozo wa Mkakati",
+      "subtitle": "Kutoka maarifa hadi mkakati na uchambuzi unaoendeshwa na AI",
+      "persona": "Mkakati / Kupanga",
+      "duration": "Dakika 45",
+      "steps": [
+        {
+          "title": "Kusanya Habari kutoka Graph",
+          "description": "Chunguza msingi wako wa maarifa.",
+          "space": "graph",
+          "keyActions": ["Tafuta mada", "Chunguza miunganisho", "Hifadhi maarifa muhimu"]
+        },
+        {
+          "title": "Tabiri Mwenendo na Predict",
+          "description": "Tumia miundo ya AI kutabiri vipimo muhimu.",
+          "pillar": "predict",
+          "keyActions": ["Chagua lengo la utabiri", "Kagua makadirio", "Chambua vipindi vya kuamini"]
+        },
+        {
+          "title": "Uliza Oracle",
+          "description": "Pata majibu yanayoendeshwa na AI kwa maswali ya kimkakati.",
+          "sovereign": "oracle",
+          "keyActions": ["Tengeneza swali la kimkakati", "Kagua jibu", "Thibitisha vyanzo"]
+        },
+        {
+          "title": "Unda Mfano wa Hali katika Lens",
+          "description": "Unda hali za kimkakati.",
+          "space": "lens",
+          "keyActions": ["Fafanua vigezo vya hali", "Endesha siku zijazo mbalimbali", "Tambua mkakati bora"]
+        },
+        { "title": "Jaribu katika Mirror", "description": "Iga mipango kabla ya kujitolea.", "sovereign": "mirror", "keyActions": ["Unda uigaji", "Endesha jaribio la mpango", "Chambua matokeo"] }
+      ]
+    },
+    "aiModelLaunch": {
+      "title": "Safari ya Kusambaza Mfano wa AI",
+      "subtitle": "Kutoka mfano hadi uzalishaji kwa ujasiri",
+      "persona": "Mhandisi wa ML / Mwanasayansi wa Data",
+      "duration": "Saa 1-2",
+      "steps": [
+        {
+          "title": "Sajili Mfano katika BlackBox",
+          "description": "Pakia mfano wako ulioelimishwa kwenye sajili.",
+          "sovereign": "blackbox",
+          "keyActions": ["Pakia artifact ya mfano", "Rekodi metadata", "Unganisha data ya mafunzo"]
+        },
+        {
+          "title": "Thibitisha Upendeleo katika Ethics",
+          "description": "Kabla ya uzalishaji, pita ukaguzi wa maadili.",
+          "pillar": "ethics",
+          "keyActions": ["Endesha tathmini ya upendeleo", "Kagua vipimo vya haki", "Andika utiifu"]
+        },
+        {
+          "title": "Jaribu na Data Bandia kutoka Mirage",
+          "description": "Zalisha hali za pembeni na mifano ya adui.",
+          "sovereign": "mirage",
+          "keyActions": ["Zalisha data ya jaribio", "Endesha majaribio ya mkazo", "Thibitisha hali za pembeni"]
+        },
+        {
+          "title": "Iga katika Mirror",
+          "description": "Kwanza sambaza kwa pacha wa dijitali.",
+          "sovereign": "mirror",
+          "keyActions": ["Sambaza kwenye Mirror", "Iga mzigo wa uzalishaji", "Linganisha utabiri"]
+        },
+        { "title": "Sanidi Ufafanuzi katika Glass", "description": "Kila utabiri lazima uelezwe.", "sovereign": "glass", "keyActions": ["Wezesha ufafanuzi", "Sanidi sababu", "Jaribu maelezo"] },
+        {
+          "title": "Sambaza na Fuatilia na Predict",
+          "description": "Nenda uzalishaji kwa ujasiri.",
+          "pillar": "predict",
+          "keyActions": ["Pandisha hadi uzalishaji", "Sanidi ufuatiliaji", "Weka tahadhari za mwenendo"]
+        }
+      ]
+    },
+    "boardPresentation": {
+      "title": "Maandalizi ya Uwasilishaji kwa Bodi",
+      "subtitle": "Vutia bodi na maarifa yanayoendeshwa na data",
+      "persona": "CEO / CFO / Mwasilishaji wa Bodi",
+      "duration": "Dakika 30",
+      "steps": [
+        {
+          "title": "Toa KPI za Kimkakati kutoka Helm",
+          "description": "Kusanya vipimo vyote muhimu mahali pamoja.",
+          "pillar": "helm",
+          "keyActions": ["Hamisha dashibodi ya KPI", "Zalisha uchambuzi wa mwenendo", "Onyesha mafanikio"]
+        },
+        {
+          "title": "Unda Utabiri na Predict",
+          "description": "Onyesha si tu ulipo, bali unaenda wapi.",
+          "pillar": "predict",
+          "keyActions": ["Zalisha utabiri", "Unda makadirio ya mapato", "Unda hali"]
+        },
+        {
+          "title": "Thibitisha Data na Lineage",
+          "description": "Wanachama wa bodi wanauliza maswali magumu.",
+          "pillar": "lineage",
+          "keyActions": ["Fuatilia nambari muhimu", "Andika vyanzo", "Tayarisha nasaba ya data"]
+        },
+        {
+          "title": "Unda Mfano wa Hali za What-If katika Lens",
+          "description": "Kuwa tayari kwa maswali ya 'Ikiwa...?'.",
+          "space": "lens",
+          "keyActions": ["Unda mfano wa hali za ukuaji", "Chambua sababu za hatari", "Tayarisha mipango mbadala"]
+        },
+        {
+          "title": "Pata Muhtasari wa AI kutoka Oracle",
+          "description": "Unganisha data kuwa maarifa muhimu.",
+          "sovereign": "oracle",
+          "keyActions": ["Zalisha maarifa", "Omba hoja za mazungumzo", "Tambua maeneo ya upofu"]
+        },
+        {
+          "title": "Hakikisha Utiifu na Guard",
+          "description": "Hakikisha unachowasilisha hakiundi hatari.",
+          "pillar": "guard",
+          "keyActions": ["Endesha ukaguzi wa utiifu", "Thibitisha uainishaji wa data", "Idhinisha uwasilishaji"]
+        }
+      ]
+    },
+    "newEmployeeOnboarding": {
+      "title": "Kuingiza Mwanachama Mpya wa Timu",
+      "subtitle": "Uzalishaji kwa siku, si miezi",
+      "persona": "Mfanyakazi Mpya / Meneja wa Kuajiri",
+      "duration": "Kujiongoza",
+      "steps": [
+        {
+          "title": "Fikia Nafasi ya Kazi na Key",
+          "description": "Kuingia moja kunakupa ufikiaji wa kila kitu.",
+          "sovereign": "key",
+          "keyActions": ["Maliza usanidi wa SSO", "Thibitisha ugawaji wa jukumu", "Fikia mifumo iliyoruhusiwa"]
+        },
+        {
+          "title": "Chunguza Maarifa ya Shirika katika Graph",
+          "description": "Tembea ulimwengu wa maarifa.",
+          "space": "graph",
+          "keyActions": ["Pata rasilimali za jukumu", "Tafuta maarifa ya timu", "Tambua mawasiliano muhimu"]
+        },
+        {
+          "title": "Jifunze kutoka Legacy",
+          "description": "Fikia maarifa ya kitaasisi ya watangulizi.",
+          "sovereign": "legacy",
+          "keyActions": ["Kagua vitabu vya timu", "Soma maamuzi ya zamani", "Jifunze mazoea bora"]
+        },
+        {
+          "title": "Elewa Vipimo Vyako katika Helm",
+          "description": "Kila jukumu lina KPI.",
+          "pillar": "helm",
+          "keyActions": ["Kagua vipimo vilivyopewa", "Elewa malengo", "Sanidi dashibodi ya kibinafsi"]
+        },
+        {
+          "title": "Weka Mtiririko wa Kiotomatiki katika Flow",
+          "description": "Unganisha na mtiririko uliopo.",
+          "pillar": "flow",
+          "keyActions": ["Jiunge na mtiririko wa timu", "Sanidi arifa", "Otomatisha ripoti"]
+        },
+        {
+          "title": "Kutana na Wasaidizi wa AI katika Agents",
+          "description": "Wenzako wa AI wako tayari kusaidia.",
+          "pillar": "agents",
+          "keyActions": ["Kutana na wakala wa eneo", "Uliza swali la kwanza", "Hifadhi majibu muhimu"]
+        }
+      ]
+    },
+    "mergerIntegration": {
+      "title": "Muungano wa Data ya M&A",
+      "subtitle": "Unganya mashirika bila kupoteza akili",
+      "persona": "Kiongozi wa Muungano / CIO",
+      "duration": "Inayoendelea",
+      "steps": [
+        {
+          "title": "Chora Mandhari Zote Mbili za Data na Lineage",
+          "description": "Elewa pande zote mbili kabla ya kuunganisha.",
+          "pillar": "lineage",
+          "keyActions": ["Skana data ya mnunuzi", "Skana data ya lengo", "Tambua kuingiliana"]
+        },
+        {
+          "title": "Unganya Vipimo katika Helm",
+          "description": "Mashirika tofauti yanapima tofauti.",
+          "pillar": "helm",
+          "keyActions": ["Chora ufafanuzi wa vipimo", "Suluhisha migogoro", "Unda dashibodi iliyounganiswha"]
+        },
+        { "title": "Unganisha Mifumo na Mesh", "description": "Unda tabaka la muungano.", "sovereign": "mesh", "keyActions": ["Chora mifumo ya chanzo", "Unda muungano", "Jaribu mtiririko wa data"] },
+        {
+          "title": "Hifadhi Maarifa ya Kitaasisi katika Legacy",
+          "description": "M&A mara nyingi inamaanisha kupoteza watu muhimu.",
+          "sovereign": "legacy",
+          "keyActions": ["Hoji wafanyakazi muhimu", "Andika michakato", "Hifadhi maarifa ya kabila"]
+        },
+        {
+          "title": "Unganya Mifumo ya Utambulisho na Key",
+          "description": "Unganya nani ana ufikiaji wa nini.",
+          "sovereign": "key",
+          "keyActions": ["Unganya vyanzo vya utambulisho", "Patanisha ruhusa", "Wezesha ufikiaji uliounganiswha"]
+        },
+        {
+          "title": "Fuatilia Afya ya Muungano",
+          "description": "Fuatilia afya ya muungano kwa wakati halisi.",
+          "pillar": "health",
+          "keyActions": ["Fuatilia ubora wa data", "Fuatilia hali ya usawazishaji", "Tahadharisha juu ya anomalia"]
+        }
+      ]
+    },
+    "regulatoryAudit": {
+      "title": "Maandalizi ya Ukaguzi wa Kanuni",
+      "subtitle": "Geuza msimu wa ukaguzi kutoka ndoto mbaya hadi tukio la kawaida",
+      "persona": "Afisa Mkuu wa Utiifu",
+      "duration": "Saa 2-4",
+      "steps": [
+        {
+          "title": "Toa Ushahidi wa Ukaguzi kutoka Witness",
+          "description": "Kila hatua imeandikwa.",
+          "sovereign": "witness",
+          "keyActions": ["Fafanua wigo wa ukaguzi", "Hamisha kifurushi cha ushahidi", "Zalisha uthibitisho"]
+        },
+        {
+          "title": "Thibitisha Utiifu wa Sera katika Guard",
+          "description": "Onyesha wakaguzi sera zinatekelezwa.",
+          "pillar": "guard",
+          "keyActions": ["Zalisha ripoti ya utiifu", "Onyesha utekelezaji wa sera", "Andika makosa"]
+        },
+        {
+          "title": "Onyesha Utawala wa AI katika Ethics",
+          "description": "Kanuni za AI zimefika.",
+          "pillar": "ethics",
+          "keyActions": ["Hamisha ukaguzi wa maadili", "Onyesha matokeo ya mtihani wa upendeleo", "Andika utawala wa AI"]
+        },
+        {
+          "title": "Eleza Maamuzi ya AI na Glass",
+          "description": "Wakaguzi wanapouliza 'Kwa nini mfumo uliamua hivi?'.",
+          "sovereign": "glass",
+          "keyActions": ["Zalisha ripoti ya uamuzi", "Onyesha mchango wa sababu", "Toa hali za kinyume"]
+        },
+        {
+          "title": "Fuatilia Nasaba ya Data kwa Usahihi",
+          "description": "Thibitisha usahihi kwa kuonyesha nambari zinatoka wapi.",
+          "pillar": "lineage",
+          "keyActions": ["Hamisha ramani ya nasaba", "Andika mabadiliko", "Thibitisha usahihi wa data"]
+        },
+        {
+          "title": "Kagua Udhibiti wa Ufikiaji na Key",
+          "description": "Nani alifikia nini lini?",
+          "sovereign": "key",
+          "keyActions": ["Hamisha magogo ya ufikiaji", "Onyesha historia ya ruhusa", "Andika udhibiti"]
+        }
+      ]
+    },
+    "customerChurnPrevention": {
+      "title": "Kuzuia Kuondoka kwa Wateja",
+      "subtitle": "Baki na wateja kabla hawajaondoka",
+      "persona": "Mafanikio ya Wateja / Mapato Ops",
+      "duration": "Mtiririko wa kila siku",
+      "steps": [
+        {
+          "title": "Tambua Wateja Walio Hatarini na Predict",
+          "description": "Miundo ya ML inachambua mamia ya ishara.",
+          "pillar": "predict",
+          "keyActions": ["Kagua alama za hatari", "Tambua hatari za juu", "Elewa sababu za hatari"]
+        },
+        {
+          "title": "Elewa Afya ya Mteja katika Helm",
+          "description": "Fuatilia vipimo vya afya ya wateja.",
+          "pillar": "helm",
+          "keyActions": ["Kagua alama za afya", "Angalia vipimo vya ushiriki", "Tambua mwenendo"]
+        },
+        {
+          "title": "Chunguza Safari ya Mteja katika Graph",
+          "description": "Ona historia kamili ya mteja.",
+          "space": "graph",
+          "keyActions": ["Ona ratiba ya mteja", "Chunguza mwingiliano", "Pata mifumo"]
+        },
+        {
+          "title": "Pata Mapendekezo ya Kubaki kutoka Council",
+          "description": "Kusanya washauri wa AI kwa mkakati wa kubaki.",
+          "space": "council",
+          "keyActions": ["Wasilisha wasifu wa mteja", "Pata mawazo ya kubaki", "Weka kipaumbele hatua"]
+        },
+        {
+          "title": "Amilisha Mtiririko wa Kubaki katika Flow",
+          "description": "Geuza mapendekezo kuwa hatua.",
+          "pillar": "flow",
+          "keyActions": ["Anzisha mawasiliano", "Panga ufuatiliaji", "Pandisha kwa timu"]
+        },
+        {
+          "title": "Unda Mfano wa Athari ya Mapato katika Lens",
+          "description": "Thamini kilicho hatarini.",
+          "space": "lens",
+          "keyActions": ["Unda mfano wa athari ya kuondoka", "Hesabu ROI ya kuingilia kati", "Weka kipaumbele juhudi"]
+        }
+      ]
+    },
+    "productLaunch": {
+      "title": "Uratibu wa Uzinduzi wa Bidhaa",
+      "subtitle": "Zinduza kwa ujasiri na uonaji wa wakati halisi",
+      "persona": "Meneja wa Bidhaa / Kiongozi wa Uzinduzi",
+      "duration": "Siku ya uzinduzi + ufuatiliaji",
+      "steps": [
+        {
+          "title": "Fafanua KPI za Uzinduzi katika Helm",
+          "description": "Fafanua mafanikio kabla ya uzinduzi.",
+          "pillar": "helm",
+          "keyActions": ["Fafanua vipimo vya mafanikio", "Weka malengo", "Sanidi dashibodi"]
+        },
+        {
+          "title": "Thibitisha Utayari wa Mfumo katika Health",
+          "description": "Kila kitu kijani kabla ya uzinduzi?",
+          "pillar": "health",
+          "keyActions": ["Angalia mifumo yote", "Thibitisha uwezo", "Thibitisha utegemezi"]
+        },
+        {
+          "title": "Iga Mzigo wa Uzinduzi katika Mirror",
+          "description": "Jaribu hali za uzinduzi kwenye pacha wa dijitali.",
+          "sovereign": "mirror",
+          "keyActions": ["Unda uigaji wa uzinduzi", "Endesha jaribio la mzigo", "Tambua vikwazo"]
+        },
+        {
+          "title": "Fuatilia kwa Wakati Halisi katika Pulse",
+          "description": "Uonaji wa siku ya uzinduzi.",
+          "space": "pulse",
+          "keyActions": ["Fuatilia vipimo vya uzinduzi", "Angalia anomalia", "Fuatilia kupitishwa"]
+        },
+        {
+          "title": "Jibu Matatizo na Bridge",
+          "description": "Ikiwa marekebisho yanahitajika, songa haraka.",
+          "space": "bridge",
+          "keyActions": ["Sambaza marekebisho ya haraka", "Rekebisha usanidi", "Panua rasilimali"]
+        },
+        {
+          "title": "Kamata Masomo katika Legacy",
+          "description": "Andika kilichofanya kazi na kisichofanya kazi.",
+          "sovereign": "legacy",
+          "keyActions": ["Andika kumbukumbu za uzinduzi", "Rekodi matatizo", "Andika maboresho"]
+        }
+      ]
+    },
+    "dataQualityImprovement": {
+      "title": "Mpango wa Kuboresha Ubora wa Data",
+      "subtitle": "Geuza data kutoka deni kuwa mali",
+      "persona": "Msimamizi wa Data / Kiongozi wa Ubora",
+      "duration": "Mpango unaoendelea",
+      "steps": [
+        {
+          "title": "Tathmini Ubora wa Sasa katika Lineage",
+          "description": "Huwezi kuboresha usichokipima.",
+          "pillar": "lineage",
+          "keyActions": ["Endesha tathmini ya ubora", "Tambua maeneo ya tatizo", "Weka kipaumbele matatizo"]
+        },
+        {
+          "title": "Fuatilia Vipimo vya Ubora katika Helm",
+          "description": "Fanya ubora wa data kuwa KPI ya daraja la kwanza.",
+          "pillar": "helm",
+          "keyActions": ["Unda dashibodi ya ubora", "Weka malengo ya kuboresha", "Fuatilia maendeleo"]
+        },
+        {
+          "title": "Weka Sheria za Ubora katika Guard",
+          "description": "Fafanua na tekeleza viwango vya ubora.",
+          "pillar": "guard",
+          "keyActions": ["Fafanua sheria za ubora", "Sanidi uthibitisho", "Weka kengele"]
+        },
+        {
+          "title": "Otomatisha Ukaguzi wa Ubora katika Flow",
+          "description": "Jenga ubora ndani ya bomba.",
+          "pillar": "flow",
+          "keyActions": ["Unda mtiririko wa ubora", "Ongeza hatua za uthibitisho", "Sanidi utatuzi"]
+        },
+        {
+          "title": "Fuatilia Afya ya Ubora",
+          "description": "Ona mwenendo wa ubora katika mali yote ya data.",
+          "pillar": "health",
+          "keyActions": ["Fuatilia mwenendo wa ubora", "Tahadharisha juu ya kupungua", "Ripoti maboresho"]
+        },
+        {
+          "title": "Andika Viwango katika Legacy",
+          "description": "Kodifisha viwango vya ubora kwa shirika.",
+          "sovereign": "legacy",
+          "keyActions": ["Andika viwango", "Unda vitabu vya mchezo", "Fundisha timu"]
+        }
+      ]
+    },
+    "securityThreatResponse": {
+      "title": "Jibu la Tishio la Usalama",
+      "subtitle": "Gundua, zuia, na ondoa vitisho kwa utaratibu",
+      "persona": "Mchambuzi wa Usalama / CISO",
+      "duration": "Jibu la papo hapo",
+      "steps": [
+        {
+          "title": "Gundua Tishio na Guard",
+          "description": "Injini ya kugundua vitisho ya Guard inabainisha shughuli za mashaka.",
+          "pillar": "guard",
+          "keyActions": ["Kagua tahadhari za vitisho", "Tathmini ukali", "Thibitisha tishio"]
+        },
+        {
+          "title": "Tathmini Eneo la Mlipuko na Lineage",
+          "description": "Mifumo na data gani inaweza kuathirika?",
+          "pillar": "lineage",
+          "keyActions": ["Chora mifumo iliyoathirika", "Tambua data nyeti", "Tathmini uwazi"]
+        },
+        {
+          "title": "Kagua Magogo ya Ufikiaji na Key",
+          "description": "Nani alifikia nini lini?",
+          "sovereign": "key",
+          "keyActions": ["Toa magogo ya ufikiaji", "Tambua anomalia", "Fuatilia njia ya mashambulizi"]
+        },
+        {
+          "title": "Hifadhi Ushahidi na Witness",
+          "description": "Kamata ushahidi kabla ya kuzuia kubadilisha.",
+          "sovereign": "witness",
+          "keyActions": ["Kamata hali ya mfumo", "Hamisha magogo ya ukaguzi", "Hifadhi ratiba"]
+        },
+        { "title": "Tekeleza Uzuiaji na Bridge", "description": "Tenga tishio.", "space": "bridge", "keyActions": ["Futa ufikiaji ulioathirika", "Tenga mifumo", "Sambaza marekebisho"] },
+        {
+          "title": "Ratibu na Council",
+          "description": "Kusanya wataalam wa AI wa usalama.",
+          "space": "council",
+          "keyActions": ["Chambua mfumo wa mashambulizi", "Pata mpango wa utatuzi", "Tathmini hatari"]
+        }
+      ]
+    }
+  },
+  "accessibility": {
+    "skipToMain": "Ruka hadi maudhui kuu",
+    "skipToNav": "Ruka hadi urambazaji",
+    "openMenu": "Fungua menyu",
+    "closeMenu": "Funga menyu",
+    "expandSection": "Panua sehemu",
+    "collapseSection": "Kunja sehemu",
+    "loading": "Inapakia",
+    "newWindow": "Inafungua dirisha jipya",
+    "externalLink": "Kiungo cha nje",
+    "required": "Sehemu inayohitajika",
+    "optional": "Hiari"
+  },
+  "_meta": { "direction": "ltr", "language": "Kiswahili", "completeness": "100%" }
+}

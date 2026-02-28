@@ -1,0 +1,1183 @@
+{
+  "common": {
+    "appName": "Datacendia",
+    "loading": "Memuat...",
+    "error": "Terjadi kesalahan",
+    "retry": "Coba lagi",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "delete": "Hapus",
+    "edit": "Edit",
+    "create": "Buat",
+    "update": "Perbarui",
+    "close": "Tutup",
+    "back": "Kembali",
+    "next": "Selanjutnya",
+    "previous": "Sebelumnya",
+    "search": "Cari",
+    "filter": "Filter",
+    "sort": "Urutkan",
+    "export": "Ekspor",
+    "import": "Impor",
+    "download": "Unduh",
+    "upload": "Unggah",
+    "yes": "Ya",
+    "no": "Tidak",
+    "confirm": "Konfirmasi",
+    "submit": "Kirim",
+    "apply": "Terapkan",
+    "reset": "Reset",
+    "clear": "Hapus",
+    "all": "Semua",
+    "none": "Tidak ada",
+    "select": "Pilih",
+    "selected": "Dipilih",
+    "view": "Lihat",
+    "details": "Detail",
+    "more": "Lebih",
+    "less": "Kurang",
+    "showAll": "Tampilkan semua",
+    "hideAll": "Sembunyikan semua",
+    "viewMore": "Lihat lebih",
+    "learnMore": "Pelajari lebih",
+    "and": "dan",
+    "or": "atau",
+    "continue": "Lanjutkan",
+    "completed": "Selesai",
+    "queried": "Ditanyakan"
+  },
+  "nav": {
+    "home": "Beranda",
+    "product": "Produk",
+    "pricing": "Harga",
+    "about": "Tentang Kami",
+    "demo": "Minta Demo",
+    "login": "Masuk",
+    "register": "Daftar",
+    "logout": "Keluar",
+    "downloads": "Unduhan",
+    "documentation": "Dokumentasi",
+    "support": "Dukungan",
+    "contact": "Kontak",
+    "manifesto": "Manifesto",
+    "services": "Layanan",
+    "packages": "Paket"
+  },
+  "auth": {
+    "login": {
+      "title": "Selamat datang kembali",
+      "subtitle": "Masuk ke akun Anda",
+      "email": "Alamat email",
+      "password": "Kata sandi",
+      "rememberMe": "Ingat saya",
+      "forgotPassword": "Lupa kata sandi?",
+      "submitButton": "Masuk",
+      "noAccount": "Belum punya akun?",
+      "signUp": "Daftar",
+      "orContinueWith": "Atau lanjutkan dengan",
+      "errors": {
+        "invalidCredentials": "Email atau kata sandi tidak valid",
+        "accountLocked": "Akun telah dikunci",
+        "networkError": "Tidak dapat terhubung ke server. Silakan coba lagi."
+      }
+    },
+    "register": {
+      "title": "Buat akun Anda",
+      "subtitle": "Mulai uji coba gratis 14 hari Anda hari ini.",
+      "headline": "Bebaskan kecerdasan organisasi Anda.",
+      "subheadline": "Bergabunglah dengan ribuan perusahaan yang menggunakan Datacendia.",
+      "firstName": "Nama depan",
+      "lastName": "Nama belakang",
+      "fullName": "Nama lengkap",
+      "email": "Email kerja",
+      "password": "Kata sandi",
+      "confirmPassword": "Konfirmasi kata sandi",
+      "passwordHint": "Minimal 8 karakter",
+      "company": "Perusahaan (opsional)",
+      "companySize": "Ukuran perusahaan",
+      "industry": "Industri",
+      "submitButton": "Buat Akun",
+      "hasAccount": "Sudah punya akun?",
+      "signIn": "Masuk",
+      "agreeToTerms": "Saya setuju dengan",
+      "errors": {
+        "fullNameRequired": "Silakan masukkan nama lengkap Anda",
+        "validEmailRequired": "Silakan masukkan email yang valid",
+        "passwordMinLength": "Kata sandi harus minimal 8 karakter",
+        "passwordMismatch": "Kata sandi tidak cocok",
+        "acceptTerms": "Anda harus menyetujui syarat dan ketentuan",
+        "registrationFailed": "Pendaftaran gagal. Silakan coba lagi."
+      }
+    },
+    "forgotPassword": {
+      "title": "Reset Kata Sandi",
+      "subtitle": "Masukkan email Anda dan kami akan mengirimkan tautan reset.",
+      "email": "Alamat email",
+      "sendResetLink": "Kirim Tautan",
+      "backToLogin": "Kembali ke login",
+      "checkEmail": "Periksa email Anda"
+    },
+    "mfa": {
+      "title": "Autentikasi dua faktor",
+      "subtitle": "Masukkan kode dari aplikasi autentikator Anda.",
+      "code": "Kode autentikasi",
+      "submitButton": "Verifikasi"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Kecerdasan organisasi Anda,",
+      "titleHighlight": "Berdaulat dan Lengkap",
+      "subtitle": "Datacendia adalah pusat komando untuk kecerdasan perusahaan.",
+      "ctaPrimary": "Minta Demo",
+      "ctaSecondary": "Jelajahi Platform"
+    },
+    "problem": {
+      "title": "Masalah Kecerdasan Perusahaan",
+      "subtitle": "Organisasi berjuang dengan data yang terfragmentasi dan alat yang terisolasi"
+    },
+    "solution": { "title": "Cortex: Pusat Komando Kecerdasan Anda" },
+    "pillars": { "title": "8 Pilar Kecerdasan Berdaulat" },
+    "cta": { "title": "Siap mengendalikan kecerdasan Anda?", "button": "Jadwalkan Demo" }
+  },
+  "spaces": {
+    "graph": { "name": "Graf", "description": "Navigasi alam semesta pengetahuan Anda" },
+    "council": { "name": "Dewan", "description": "Penasihat AI yang berpikir bersama" },
+    "pulse": { "name": "Denyut", "description": "Kesehatan organisasi real-time" },
+    "lens": { "name": "Lensa", "description": "Lihat masa depan yang mungkin" },
+    "bridge": { "name": "Jembatan", "description": "Ambil tindakan lintas sistem" }
+  },
+  "pillars": {
+    "helm": { "name": "Kemudi", "description": "Dukungan keputusan strategis" },
+    "lineage": { "name": "Silsilah", "description": "Lacak setiap data ke sumbernya" },
+    "predict": { "name": "Prediksi", "description": "Peramalan berbasis AI" },
+    "flow": { "name": "Aliran", "description": "Alur kerja otomatis" },
+    "health": { "name": "Kesehatan", "description": "Metrik vitalitas organisasi" },
+    "guard": { "name": "Penjaga", "description": "Tata kelola data dan kepatuhan" },
+    "ethics": { "name": "Etika", "description": "Pengawasan etis bawaan" },
+    "agents": { "name": "Agen", "description": "Penasihat AI untuk setiap domain" }
+  },
+  "pricing": {
+    "title": "Harga sederhana dan transparan",
+    "subtitle": "Pilih paket yang sesuai untuk organisasi Anda.",
+    "monthly": "Bulanan",
+    "annual": "Tahunan",
+    "annualDiscount": "Hemat 20%",
+    "perMonth": "/bulan",
+    "startTrial": "Mulai Uji Coba Gratis",
+    "contactSales": "Hubungi Sales",
+    "mostPopular": "Paling populer"
+  },
+  "dashboard": {
+    "title": "Dasbor",
+    "welcome": "Selamat datang kembali",
+    "subtitle": "Bagaimana kabar {{company}} hari ini",
+    "health_score": "Kesehatan Organisasi",
+    "healthScore": "Skor Kesehatan",
+    "data": "Data",
+    "operations": "Operasi",
+    "security": "Keamanan",
+    "people": "Orang",
+    "fromLastWeek": "dari minggu lalu",
+    "alerts": "Peringatan Aktif",
+    "activeAlerts": "Peringatan Aktif",
+    "critical": "Kritis",
+    "warning": "Peringatan",
+    "info": "Info",
+    "pending_approvals": "Persetujuan Tertunda",
+    "pendingApprovals": "Persetujuan Tertunda",
+    "workflows": "Alur Kerja",
+    "access": "Akses",
+    "budget": "Anggaran",
+    "by": "oleh",
+    "approve": "Setujui",
+    "reject": "Tolak",
+    "keyMetrics": "Metrik Kunci",
+    "askTheCouncil": "Tanya Dewan",
+    "whatToKnow": "Apa yang ingin Anda ketahui?",
+    "recentQueries": "Kueri terbaru:",
+    "recentActivity": "Aktivitas Terbaru",
+    "viewFullLog": "Lihat Log Lengkap",
+    "quickActions": "Tindakan Cepat",
+    "greetings": { "morning": "Selamat pagi", "afternoon": "Selamat siang", "evening": "Selamat malam" },
+    "sampleAlerts": {
+      "databaseCpu": "CPU Database > 90% selama 15 menit",
+      "paymentLatency": "Lonjakan latensi pemrosesan pembayaran",
+      "diskUsage": "Penggunaan disk 78% di prod-db-01",
+      "apiErrors": "Tingkat kesalahan API di atas ambang batas",
+      "memoryLeak": "Kebocoran memori terdeteksi di layanan auth"
+    },
+    "sampleApprovals": {
+      "monthlyClose": "Proses Tutup Bulanan",
+      "prodDbAccess": "Akses DB Produksi",
+      "budgetIncrease": "Kenaikan Anggaran Pemasaran Q4",
+      "newHire": "Onboarding Karyawan Baru: Tim Dev"
+    },
+    "sampleMetrics": { "revenue": "Pendapatan", "pipeline": "Pipeline", "burnRate": "Burn Rate", "nps": "NPS", "activeUsers": "Pengguna Aktif", "churnRate": "Tingkat Churn" },
+    "sampleActivity": {
+      "workflowCompleted": "Alur kerja \"{{name}}\" selesai",
+      "userQueried": "{{user}} bertanya tentang {{topic}}",
+      "alertResolved": "Peringatan \"{{alert}}\" terselesaikan",
+      "reportGenerated": "Laporan \"{{report}}\" dibuat"
+    },
+    "sampleQueries": {
+      "churnIncrease": "Mengapa churn meningkat?",
+      "forecastRevenue": "Perkiraan pendapatan Q4",
+      "biggestRisk": "Apa risiko terbesar kita?",
+      "customerSentiment": "Bagaimana tren sentimen pelanggan?",
+      "competitorAnalysis": "Analisis harga pesaing"
+    }
+  },
+  "downloads": {
+    "title": "Unduhan",
+    "subtitle": "Dapatkan Datacendia untuk platform Anda",
+    "desktop": { "title": "Aplikasi Desktop", "windows": "Windows", "mac": "macOS", "linux": "Linux", "download": "Unduh" },
+    "mobile": { "title": "Aplikasi Seluler", "ios": "iOS", "android": "Android", "appStore": "App Store", "playStore": "Google Play" },
+    "cli": { "title": "Antarmuka Baris Perintah" },
+    "selfHosted": { "title": "Self-Hosted", "docker": "Docker Compose", "kubernetes": "Kubernetes (Helm)", "airgapped": "Bundel Terisolasi" },
+    "systemRequirements": { "title": "Persyaratan Sistem", "minimum": "Minimum", "recommended": "Direkomendasikan" }
+  },
+  "button": {
+    "view_all": "Lihat Semua",
+    "viewAll": "Lihat Semua",
+    "viewMore": "Lihat Lebih",
+    "approve": "Setujui",
+    "reject": "Tolak",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "submit": "Kirim",
+    "edit": "Edit",
+    "delete": "Hapus"
+  },
+  "commandPalette": {
+    "searchPlaceholder": "Cari perintah, halaman, agen...",
+    "noResults": "Tidak ada hasil untuk",
+    "navigate": "navigasi",
+    "select": "pilih",
+    "toggle": "alihkan",
+    "newQuery": "Kueri Dewan Baru",
+    "askCouncil": "Tanyakan Dewan",
+    "refresh": "Segarkan Data",
+    "reloadPage": "Muat ulang data halaman saat ini",
+    "fullscreen": "Alihkan Layar Penuh",
+    "toggleFullscreen": "Masuk/keluar mode layar penuh",
+    "switchTo": "Beralih ke",
+    "changeLanguage": "Ubah bahasa ke",
+    "categories": { "navigation": "Navigasi", "actions": "Tindakan", "agents": "Agen", "modes": "Mode Dewan", "recent": "Terbaru" },
+    "agents": {
+      "chief": "Agen Strategis Utama",
+      "chiefDesc": "Sintesis strategis",
+      "cfo": "Intelijen Keuangan",
+      "cfoDesc": "Analisis keuangan",
+      "coo": "Agen Operasi",
+      "cooDesc": "Efisiensi operasional",
+      "ciso": "Agen Keamanan",
+      "cisoDesc": "Keamanan & kepatuhan",
+      "cmo": "Intelijen Pasar",
+      "cmoDesc": "Analisis pasar"
+    }
+  },
+  "cortex": {
+    "sidebar": { "spaces": "Ruang", "pillars": "Pilar", "system": "Sistem", "data": "Data", "security": "Keamanan" }
+  },
+  "sidebar": { "dashboard": "Dasbor", "the_council": "Dewan", "the_graph": "Graf", "the_pulse": "Denyut", "the_lens": "Lensa", "the_bridge": "Jembatan", "settings": "Pengaturan", "help": "Bantuan" },
+  "council": {
+    "title": "Dewan",
+    "subtitle": "Panel penasihat strategis berbasis AI",
+    "askQuestion": "Ajukan pertanyaan",
+    "questionPlaceholder": "Pertanyaan strategis apa yang ingin Anda diskusikan dengan Dewan?",
+    "selectAgents": "Pilih agen untuk berpartisipasi",
+    "startDeliberation": "Mulai Deliberasi",
+    "quickAnswer": "Jawaban Cepat",
+    "fullDeliberation": "Deliberasi Lengkap",
+    "selectedAgents": "Agen Terpilih",
+    "clearAll": "Hapus Semua",
+    "selectAll": "Pilih Semua",
+    "agents": { "domain": "Agen Domain", "custom": "Agen Kustom", "premium": "Agen Premium", "createCustom": "Buat Agen Kustom" },
+    "modes": {
+      "title": "Perpustakaan Mode Dewan",
+      "subtitle": "Agen yang sama dalam mode berbeda menghasilkan output berbeda.",
+      "cultureNote": "Prompt adalah budaya perusahaan.",
+      "quickReference": "Referensi Cepat",
+      "mode": "Mode",
+      "primeDirective": "Direktif Utama",
+      "bestFor": "Terbaik Untuk",
+      "agentBehavior": "Perilaku Agen"
+    },
+    "deliberation": {
+      "phases": { "initial_analysis": "Analisis Awal", "cross_examination": "Pemeriksaan Silang", "synthesis": "Sintesis", "ethics_check": "Pemeriksaan Etika" },
+      "inProgress": "Deliberasi Berlangsung",
+      "completed": "Deliberasi Selesai",
+      "confidence": "Kepercayaan"
+    },
+    "customAgent": {
+      "title": "Buat Agen Kustom",
+      "editTitle": "Edit Agen Kustom",
+      "subtitle": "Rancang agen AI Anda sendiri dengan keahlian khusus",
+      "premium": "Paket Agent Builder",
+      "avatar": "Avatar Agen",
+      "color": "Warna Agen",
+      "name": "Nama Agen",
+      "namePlaceholder": "mis., Analis Pasar",
+      "role": "Peran / Jabatan",
+      "rolePlaceholder": "mis., Riset & Analisis Pasar",
+      "description": "Deskripsi",
+      "descriptionPlaceholder": "Jelaskan apa yang dilakukan agen ini dan area fokusnya...",
+      "expertise": "Keahlian & Instruksi",
+      "capabilities": "Kemampuan",
+      "addCapability": "Tambah",
+      "save": "Simpan Agen",
+      "delete": "Hapus Agen"
+    },
+    "status": { "online": "Daring", "offline": "Luring", "busy": "Sibuk" }
+  },
+  "agent": {
+    "chief": { "name": "Agen Strategi Utama", "role": "Pengawasan Strategis & Sintesis", "description": "Mensintesis wawasan dari semua agen domain untuk memberikan rekomendasi strategis holistik." },
+    "cfo": {
+      "name": "Agen Intelijen Keuangan",
+      "role": "Analisis Keuangan & Risiko",
+      "description": "Menganalisis data keuangan, anggaran, perkiraan dan memberikan wawasan tentang kesehatan fiskal."
+    },
+    "coo": { "name": "Agen Intelijen Operasional", "role": "Efisiensi Operasional", "description": "Berfokus pada metrik operasional, efisiensi proses dan alokasi sumber daya." },
+    "ciso": { "name": "Agen Keamanan & Kepatuhan", "role": "Keamanan & Manajemen Risiko", "description": "Memantau postur keamanan, persyaratan kepatuhan dan penilaian ancaman." },
+    "cmo": { "name": "Agen Intelijen Pasar", "role": "Pemasaran & Wawasan Pelanggan", "description": "Menganalisis tren pasar, perilaku pelanggan dan intelijen kompetitif." },
+    "cro": { "name": "Agen Intelijen Pendapatan", "role": "Pendapatan & Pertumbuhan", "description": "Berfokus pada optimalisasi pendapatan, kinerja penjualan dan strategi harga." },
+    "cdo": { "name": "Agen Kualitas Data", "role": "Tata Kelola & Kualitas Data", "description": "Memantau kualitas data, kebijakan tata kelola dan memastikan integritas data." },
+    "risk": { "name": "Agen Penilaian Risiko", "role": "Analisis Risiko Perusahaan", "description": "Mengevaluasi risiko perusahaan, melakukan analisis dampak dan memberikan strategi mitigasi." },
+    "clo": { "name": "Agen Intelijen Hukum", "role": "Analisis Hukum & Kepatuhan", "description": "Menganalisis risiko hukum, implikasi kontrak dan kepatuhan regulasi." },
+    "cpo": { "name": "Agen Strategi Produk", "role": "Inovasi Produk & Peta Jalan", "description": "Mendorong strategi produk, prioritas fitur dan wawasan pengalaman pengguna." },
+    "caio": { "name": "Agen Strategi AI", "role": "Tata Kelola & Inovasi AI/ML", "description": "Memandu strategi AI, tata kelola model dan implementasi AI etis." },
+    "cso": { "name": "Agen Keberlanjutan", "role": "ESG & Dampak Lingkungan", "description": "Memantau metrik lingkungan, sosial dan tata kelola serta inisiatif keberlanjutan." },
+    "cio": { "name": "Agen Intelijen Investasi", "role": "Alokasi Modal & Portofolio", "description": "Menganalisis peluang investasi, alokasi portofolio dan penempatan modal." },
+    "cco": { "name": "Agen Komunikasi", "role": "Komunikasi Korporat & PR", "description": "Menyusun pesan korporat, mengelola komunikasi pemangku kepentingan dan memantau persepsi merek." },
+    "ext-auditor": { "name": "Auditor Eksternal", "role": "Audit Independen Pihak Ketiga", "description": "Memberikan penilaian independen dan objektif dari perspektif eksternal." },
+    "int-auditor": { "name": "Auditor Internal", "role": "Kontrol Internal & Audit Proses", "description": "Mengevaluasi kontrol internal, efisiensi operasional dan kepatuhan." },
+    "cmio": { "name": "Kepala Informasi Medis", "role": "IT Kesehatan & Sistem Klinis", "description": "Ahli dalam teknologi kesehatan, sistem EHR dan informatika klinis." },
+    "pso": { "name": "Petugas Keselamatan Pasien", "role": "Keselamatan Klinis & Kualitas", "description": "Spesialis dalam keselamatan pasien, pencegahan kejadian buruk dan peningkatan kualitas." },
+    "hco": { "name": "Petugas Kepatuhan Kesehatan", "role": "HIPAA & Regulasi Kesehatan", "description": "Ahli dalam kepatuhan regulasi kesehatan, HIPAA dan kepatuhan penagihan." },
+    "cod": { "name": "Direktur Operasi Klinis", "role": "Operasi & Efisiensi Kesehatan", "description": "Ahli dalam operasi klinis, alur pasien dan optimalisasi staf." },
+    "quant": { "name": "Analis Kuantitatif", "role": "Pemodelan Keuangan & Analitik Risiko", "description": "Ahli dalam keuangan kuantitatif, penetapan harga derivatif dan pemodelan risiko." },
+    "pm": { "name": "Manajer Portofolio", "role": "Strategi Investasi & Alokasi Aset", "description": "Ahli dalam konstruksi portofolio, alokasi aset dan strategi investasi." },
+    "cro-finance": { "name": "Petugas Risiko Kredit", "role": "Analisis Kredit & Penilaian Risiko", "description": "Ahli dalam analisis kredit, underwriting pinjaman dan pemodelan risiko kredit." },
+    "treasury": { "name": "Analis Treasury", "role": "Manajemen Kas & Likuiditas", "description": "Ahli dalam treasury korporat, manajemen kas dan lindung nilai mata uang." },
+    "contracts": { "name": "Spesialis Kontrak", "role": "Analisis & Negosiasi Kontrak", "description": "Ahli dalam kontrak komersial, penyusunan kontrak dan negosiasi." },
+    "ip": {
+      "name": "Penasihat Kekayaan Intelektual",
+      "role": "Paten, Merek Dagang & Strategi KI",
+      "description": "Ahli dalam hukum kekayaan intelektual, strategi paten dan perlindungan merek dagang."
+    },
+    "litigation": { "name": "Ahli Litigasi", "role": "Penyelesaian Sengketa & Strategi Sidang", "description": "Ahli dalam litigasi komersial, penyelesaian sengketa dan e-discovery." },
+    "regulatory": { "name": "Penasihat Urusan Regulasi", "role": "Hubungan Pemerintah & Kepatuhan", "description": "Ahli dalam kepatuhan regulasi, urusan pemerintah dan hukum administrasi." }
+  },
+  "label": { "online": "Daring", "offline": "Luring", "busy": "Sibuk", "premium": "Premium", "locked": "Terkunci", "custom": "Kustom", "unlock": "Buka Kunci", "required": "Wajib" },
+  "settings": { "title": "Pengaturan", "organization": "Organisasi", "users": "Pengguna", "teams": "Tim", "billing": "Tagihan", "security": "Keamanan" },
+  "errors": {
+    "notFound": { "title": "Halaman Tidak Ditemukan", "message": "Halaman yang Anda cari tidak ada.", "backHome": "Kembali ke Beranda" },
+    "serverError": { "title": "Kesalahan Server", "message": "Terjadi kesalahan dari kami." },
+    "networkError": { "title": "Kesalahan Koneksi", "message": "Tidak dapat terhubung ke server." },
+    "unauthorized": { "title": "Tidak Diotorisasi", "message": "Anda tidak memiliki izin untuk mengakses sumber daya ini." }
+  },
+  "footer": {
+    "company": "Perusahaan",
+    "product": "Produk",
+    "resources": "Sumber Daya",
+    "legal": "Hukum",
+    "about": "Tentang",
+    "careers": "Karir",
+    "contact": "Kontak",
+    "privacy": "Kebijakan Privasi",
+    "terms": "Ketentuan Layanan",
+    "copyright": "© {{year}} Datacendia. Semua hak dilindungi."
+  },
+  "time": { "justNow": "Baru saja", "minutesAgo": "{{count}} menit yang lalu", "hoursAgo": "{{count}} jam yang lalu", "daysAgo": "{{count}} hari yang lalu", "weeksAgo": "{{count}} minggu yang lalu" },
+  "tooltips": {
+    "pillars": {
+      "helm": {
+        "title": "Helm - Pusat Komando Strategis",
+        "summary": "Sistem pendukung keputusan strategis Anda.",
+        "features": ["Dasbor KPI real-time", "Pelacakan sasaran strategis"],
+        "guidance": "Mulai dengan mendefinisikan metrik kunci Anda."
+      },
+      "lineage": {
+        "title": "Lineage - Pelacakan Silsilah Data",
+        "summary": "Visibilitas penuh perjalanan data Anda.",
+        "features": ["Pemetaan visual aliran data", "Pelacakan dari sumber ke laporan"],
+        "guidance": "Pertama hubungkan sumber data Anda."
+      },
+      "predict": {
+        "title": "Predict - Mesin Prediksi AI",
+        "summary": "Model ML yang melihat melampaui cakrawala.",
+        "features": ["Prakiraan deret waktu", "Deteksi anomali"],
+        "guidance": "Prediksi baik membutuhkan data yang baik."
+      },
+      "flow": {
+        "title": "Flow - Otomatisasi Cerdas",
+        "summary": "Alur kerja yang berpikir.",
+        "features": ["Pembuat alur kerja visual", "Node keputusan AI"],
+        "guidance": "Pertama petakan proses manual Anda."
+      },
+      "health": {
+        "title": "Health - Monitor Tanda Vital",
+        "summary": "Denyut real-time tanda vital perusahaan.",
+        "features": ["Dasbor kesehatan komponen", "Analisis tren kinerja"],
+        "guidance": "Atur pemeriksaan kesehatan untuk sistem kritis."
+      },
+      "guard": {
+        "title": "Guard - Perisai Keamanan & Kepatuhan",
+        "summary": "Perlindungan otomatis untuk data Anda.",
+        "features": ["Mesin penegakan kebijakan", "Deteksi ancaman"],
+        "guidance": "Definisikan kebijakan keamanan Anda."
+      },
+      "ethics": {
+        "title": "Ethics - Pusat Tata Kelola AI",
+        "summary": "AI bertanggung jawab bawaan.",
+        "features": ["Deteksi bias", "Alat explainability"],
+        "guidance": "Pertama tetapkan prinsip etis Anda."
+      },
+      "agents": {
+        "title": "Agents - Dewan Penasihat AI",
+        "summary": "Penasihat AI ahli untuk setiap domain.",
+        "features": ["Agen AI ahli domain", "Kolaborasi multi-agen"],
+        "guidance": "Pilih agen yang tepat untuk pertanyaan Anda."
+      }
+    },
+    "spaces": {
+      "graph": { "title": "Graph - Navigator Pengetahuan", "summary": "Navigasi semesta pengetahuan perusahaan Anda.", "guidance": "Klik node mana pun untuk mulai menjelajah." },
+      "council": { "title": "Council - Ruang Kolaborasi AI", "summary": "Tempat penasihat AI berdeliberasi bersama.", "guidance": "Sampaikan pertanyaan Anda ke Council." },
+      "pulse": { "title": "Pulse - Pusat Operasi Real-Time", "summary": "Tampilan langsung detak jantung perusahaan.", "guidance": "Konfigurasikan metrik kunci untuk ditampilkan." },
+      "lens": { "title": "Lens - Penjelajah Skenario Masa Depan", "summary": "Lihat masa depan yang mungkin sebelum tiba.", "guidance": "Definisikan parameter skenario." },
+      "bridge": { "title": "Bridge - Pusat Komando Aksi", "summary": "Ubah wawasan menjadi aksi.", "guidance": "Pilih aksi dan pratinjau dampaknya." }
+    },
+    "sovereign": {
+      "mirror": {
+        "title": "Cendia Mirror - Mesin Digital Twin",
+        "summary": "Buat replika digital hidup perusahaan Anda.",
+        "features": ["Sinkronisasi data real-time", "Lingkungan simulasi skenario"],
+        "useCases": ["Uji perubahan tanpa menyentuh produksi", "Simulasi kegagalan sistem"],
+        "guidance": "Mirror membuat sandbox yang aman."
+      },
+      "witness": {
+        "title": "Cendia Witness - Buku Besar Audit Immutable",
+        "summary": "Bukti blockchain setiap tindakan.",
+        "features": ["Timestamp kriptografis", "Log audit immutable"],
+        "useCases": ["Audit kepatuhan regulasi", "Pengumpulan bukti hukum"],
+        "guidance": "Witness mencatat tindakan kritis secara otomatis."
+      },
+      "oracle": {
+        "title": "Cendia Oracle - Hub Kecerdasan Prediktif",
+        "summary": "AI canggih yang berkata jujur pada kekuasaan.",
+        "features": ["Antarmuka kueri bahasa alami", "Penalaran lintas domain"],
+        "useCases": ["Dapatkan jawaban pertanyaan strategis", "Sintesis data untuk keputusan"],
+        "guidance": "Tanya Oracle apa saja tentang perusahaan."
+      },
+      "legacy": {
+        "title": "Cendia Legacy - Pelestarian Pengetahuan",
+        "summary": "Tangkap pengetahuan organisasi sebelum hilang.",
+        "features": ["Penangkapan pengetahuan ahli", "Pengarsipan logika keputusan"],
+        "useCases": ["Lestarikan pengetahuan ahli pensiun", "Pertahankan konteks keputusan"],
+        "guidance": "Tangkap pengetahuan kritis saat terbentuk."
+      },
+      "mirage": {
+        "title": "Cendia Mirage - Generator Data Sintetis",
+        "summary": "Buat data realistis tanpa risiko privasi.",
+        "features": ["Sintesis data statistik", "Generasi pelestarian privasi"],
+        "useCases": ["Buat dataset pengujian dengan aman", "Data realistis untuk demo"],
+        "guidance": "Definisikan kebutuhan data Anda."
+      },
+      "key": {
+        "title": "Cendia Key - Brankas Identitas & Akses",
+        "summary": "Satu kunci untuk mengontrol semuanya.",
+        "features": ["Hub single sign-on", "Kontrol akses berbasis peran"],
+        "useCases": ["Manajemen identitas terpadu", "Audit kepatuhan keamanan"],
+        "guidance": "Hubungkan penyedia identitas Anda."
+      },
+      "mesh": {
+        "title": "Cendia Mesh - Fabric Integrasi",
+        "summary": "Hubungkan segalanya ke segalanya.",
+        "features": ["Gateway API universal", "Arsitektur event-driven"],
+        "useCases": ["Integrasi sistem legacy", "Sinkronisasi data lintas platform"],
+        "guidance": "Konfigurasikan koneksi sistem melalui Mesh."
+      },
+      "blackbox": {
+        "title": "Cendia BlackBox - Registri Model",
+        "summary": "Manajemen terpusat semua model AI.",
+        "features": ["Versioning model", "Orkestrasi deployment"],
+        "useCases": ["Kelola siklus hidup model ML", "Lacak model produksi"],
+        "guidance": "Daftarkan model di BlackBox."
+      },
+      "glass": {
+        "title": "Cendia Glass - Panel Transparansi",
+        "summary": "Visibilitas penuh keputusan AI.",
+        "features": ["Explainability keputusan", "Analisis kontribusi faktor"],
+        "useCases": ["Jelaskan keputusan AI", "Pahami perilaku model"],
+        "guidance": "Pilih keputusan AI di Glass."
+      }
+    },
+    "enterprise": {
+      "apotheosis": {
+        "title": "CendiaApotheosis™ - Superinteligensi Organisasi",
+        "summary": "Siklus perbaikan diri yang tidak pernah berhenti. Serangan malam, patch otomatis, peningkatan skill manusia, dan larangan pola.",
+        "features": ["Simulasi red-team malam (1000+ skenario)", "Patch kelemahan otomatis", "Deteksi kesenjangan skill dan pelatihan", "Larangan pola keputusan", "Tracking Skor Apotheosis"],
+        "useCases": ["Perbaikan organisasi berkelanjutan", "Mitigasi risiko proaktif", "Penguatan kepatuhan otomatis", "Dukungan keputusan eksekutif"],
+        "guidance": "Apotheosis berjalan setiap malam, menyerang organisasi Anda dari 1000+ sudut, menambal apa yang ditemukan, dan membuat Anda kebal permanen terhadap kesalahan sendiri."
+      },
+      "dissent": {
+        "title": "CendiaDissent™ - Ketidaksetujuan Terlindungi",
+        "summary": "Hak untuk tidak setuju secara formal, aman, dan tidak dapat diubah terhadap keputusan apa pun — tercatat selamanya.",
+        "features": [
+          "Pengajuan ketidaksetujuan anonim atau bernama",
+          "Pengakuan wajib dalam 72 jam",
+          "Pencatatan ledger tidak dapat diubah",
+          "Deteksi dan perlindungan retaliasi",
+          "Tracking akurasi ketidaksetujuan"
+        ],
+        "useCases": ["Pastikan suara minoritas didengar", "Buat memori organisasi", "Lindungi whistleblower", "Tingkatkan kualitas keputusan"],
+        "guidance": "Ajukan ketidaksetujuan terhadap keputusan yang tidak Anda setujui. Keberatan Anda akan dicatat secara permanen, diakui, dan dilacak akurasinya seiring waktu."
+      },
+      "connectors": {
+        "title": "Konektor Data Enterprise",
+        "summary": "156+ konektor siap pakai di 11 vertikal industri. Hubungkan ke sumber data pemerintah, keuangan, kesehatan, dan global.",
+        "features": [
+          "Pemerintah: NOAA, FAA, FEMA, SEC, Census, USGS, EIA",
+          "Keuangan: Bloomberg, SWIFT, FIX Protocol, Refinitiv",
+          "Kesehatan: HL7 FHIR, Epic, Cerner, CDC, FDA, WHO",
+          "Rantai Pasokan: CBP, Maersk, Port APIs",
+          "Energi: CAISO, PJM, ERCOT, ENTSO-E, Nord Pool",
+          "Avionik: ARINC 429/664, ADS-B, ACARS, MIL-STD-1553"
+        ],
+        "useCases": [
+          "Integrasi data cuaca real-time",
+          "Data pasar keuangan dan feed regulasi",
+          "Interoperabilitas kesehatan dan data klinis",
+          "Visibilitas rantai pasokan",
+          "Analitik jaringan listrik dan pasar energi",
+          "Keselamatan penerbangan dan operasi penerbangan"
+        ],
+        "guidance": "Jelajahi konektor berdasarkan industri atau cari sumber spesifik. Setiap konektor mencakup autentikasi, pembatasan rate, dan pemetaan kepatuhan."
+      },
+      "evidence": {
+        "title": "Infrastruktur Bukti",
+        "summary": "Ledger bukti tidak dapat diubah dengan hash chaining gaya blockchain, tanda tangan digital TPM, dan bukti Merkle tree.",
+        "features": [
+          "Entri ledger bertanda tangan kriptografis",
+          "Capture identitas build dan eksekusi",
+          "Dukungan atestasi hardware TPM",
+          "Verifikasi integritas Merkle tree",
+          "Generasi bundle bukti hukum"
+        ],
+        "useCases": ["Bukti test siap audit", "Dokumentasi review keamanan", "Bukti SOC 2 / ISO 27001 / GDPR", "Catatan eksekusi tahan manipulasi"],
+        "guidance": "Semua eksekusi test secara otomatis dicatat dengan tanda tangan kriptografis. Buat bundle bukti hukum dalam satu klik."
+      },
+      "sovereignArch": {
+        "title": "Pola Arsitektur Sovereign",
+        "summary": "11 pola enterprise untuk deployment air-gapped, zero-trust, dan sepenuhnya sovereign.",
+        "features": [
+          "Data Diode: Ingest satu arah dengan karantina",
+          "Local RLHF: Pembelajaran penguatan tanpa cloud",
+          "Decision DNA: Ekspor audit satu klik",
+          "Shadow Council: Mode sandbox",
+          "QR Air-Gap Bridge: Transfer tanpa media",
+          "TPM Attestation: Keputusan bertanda hardware"
+        ],
+        "useCases": ["Deployment fasilitas aman air-gapped", "Aplikasi pertahanan dan intelijen", "Kepatuhan industri teregulasi", "Arsitektur enterprise zero-trust"],
+        "guidance": "Pola Arsitektur Sovereign memungkinkan deployment di lingkungan paling ketat. Setiap pola dapat digunakan secara mandiri atau dikombinasikan."
+      },
+      "cascade": {
+        "title": "CendiaCascade™ - Efek Kupu-Kupu",
+        "summary": "Analisis konsekuensi orde kedua dan ketiga. Prediksi konsekuensi tidak disengaja sebelum menjadi insiden.",
+        "features": [
+          "Analisis multi-lensa (CFO, COO, CISO, People, Ethics)",
+          "Deteksi efek kupu-kupu (dampak mengejutkan orde 3+)",
+          "Generasi mitigasi otomatis (cegah, deteksi, respons)",
+          "Proposal guardrail (canary, tripwire, circuit breaker, rollback)",
+          "Visualisasi timeline (T+0, T+30, T+90, T+1Tahun)",
+          "Audit trail dengan SHA-256 hash"
+        ],
+        "useCases": ["Analisis perubahan staf sebelum implementasi", "Prediksi konsekuensi pergantian vendor", "Model perubahan kebijakan dalam graf organisasi", "Deteksi feedback loop"],
+        "guidance": "Muat graf organisasi Anda, usulkan perubahan dan biarkan CendiaCascade melacak konsekuensi. Pesaing Anda bermain catur satu langkah ke depan — CendiaCascade mensimulasikan 5 langkah ke depan."
+      },
+      "adapters": {
+        "title": "Sovereign Adapter - Konektor Universal",
+        "summary": "5 adapter universal sebagai ganti 156 konektor vendor-spesifik. Kami menyediakan soket; klien membawa steker.",
+        "features": [
+          "File Watcher: Avionik, pertahanan, ingest berbasis file",
+          "Webhook Ingest: SaaS, event push gateway finansial",
+          "Database Adapter: ERP, supply chain SQL/ODBC",
+          "Protokol FHIR: Standar kesehatan",
+          "Protokol FIX: Standar finansial",
+          "Protokol MQTT: IoT dan grid energi"
+        ],
+        "useCases": ["Koneksi ke sistem apa pun via standar terbuka", "Hindari kewajiban lisensi API proprietary", "Dukung lingkungan air-gapped dan teregulasi", "BYO-keys untuk adapter teregulasi"],
+        "guidance": "Pilih tipe adapter yang sesuai dengan pola integrasi Anda. Setiap adapter secara otomatis menerapkan tingkat risiko, logging bukti, dan kontrol kuota."
+      }
+    }
+  },
+  "narratives": {
+    "welcome": {
+      "title": "Selamat Datang di Datacendia",
+      "subtitle": "Perjalanan Anda menuju kecerdasan berdaulat dimulai di sini",
+      "steps": [
+        { "title": "Kenali Pusat Komando Anda", "description": "Cortex adalah tampilan terpadu kecerdasan perusahaan Anda.", "action": "Jelajahi Cortex" },
+        { "title": "Pahami Delapan Pilar", "description": "Setiap pilar menyediakan kemampuan esensial.", "action": "Lihat gambaran pilar" },
+        { "title": "Hubungkan Sumber Data Pertama", "description": "Kecerdasan membutuhkan data.", "action": "Tambah sumber" },
+        { "title": "Definisikan Metrik Kunci", "description": "Apa yang paling penting bagi organisasi Anda?", "action": "Buat metrik pertama" }
+      ]
+    },
+    "executive": {
+      "title": "Perjalanan Kepemimpinan Eksekutif",
+      "subtitle": "Pengambilan keputusan strategis dengan kecerdasan penuh",
+      "persona": "Eksekutif C-Level",
+      "duration": "15 menit",
+      "steps": [
+        { "title": "Mulai dengan Pulse", "description": "Cek kesehatan organisasi dengan cepat.", "space": "pulse", "keyActions": ["Periksa indikator kesehatan", "Verifikasi alert aktif"] },
+        { "title": "Gali di Helm", "description": "Tinjau KPI strategis.", "pillar": "helm", "keyActions": ["Lihat status KPI", "Identifikasi sasaran berisiko"] },
+        { "title": "Konsultasi Council", "description": "Kumpulkan penasihat AI untuk keputusan kompleks.", "space": "council", "keyActions": ["Siapkan pertanyaan", "Minta sintesis"] },
+        { "title": "Eksplorasi dengan Lens", "description": "Model berbagai skenario.", "space": "lens", "keyActions": ["Definisikan parameter", "Bandingkan hasil"] },
+        { "title": "Bertindak dengan Bridge", "description": "Ubah keputusan menjadi aksi.", "space": "bridge", "keyActions": ["Pilih aksi", "Setujui eksekusi"] }
+      ]
+    },
+    "dataEngineer": {
+      "title": "Perjalanan Data Engineer",
+      "subtitle": "Bangun dan kelola infrastruktur data kelas enterprise",
+      "persona": "Data Engineer / Data Architect",
+      "duration": "30 menit",
+      "steps": [
+        {
+          "title": "Petakan Lanskap Data di Lineage",
+          "description": "Pahami apa yang ada sebelum membangun.",
+          "pillar": "lineage",
+          "keyActions": ["Eksplorasi sumber yang ada", "Identifikasi gap data", "Petakan dependensi"]
+        },
+        {
+          "title": "Bangun Pipeline di Flow",
+          "description": "Buat aliran data yang andal.",
+          "pillar": "flow",
+          "keyActions": ["Buat pipeline baru", "Konfigurasikan error handling", "Atur penjadwalan"]
+        },
+        {
+          "title": "Monitor Kualitas Data di Health",
+          "description": "Health terus memantau metrik kualitas.",
+          "pillar": "health",
+          "keyActions": ["Definisikan aturan kualitas", "Atur threshold alert", "Lacak tren waktu"]
+        },
+        {
+          "title": "Hubungkan Sistem dengan Mesh",
+          "description": "Mesh menangani kompleksitas sistem berbeda.",
+          "sovereign": "mesh",
+          "keyActions": ["Konfigurasikan koneksi", "Petakan skema", "Uji sinkronisasi"]
+        },
+        {
+          "title": "Dokumentasikan di Legacy",
+          "description": "Pengetahuan tak terdokumentasi adalah pengetahuan hilang.",
+          "sovereign": "legacy",
+          "keyActions": ["Dokumentasikan arsitektur", "Catat keputusan", "Buat runbook"]
+        }
+      ]
+    },
+    "complianceOfficer": {
+      "title": "Perjalanan Compliance Officer",
+      "subtitle": "Pertahankan kepatuhan regulasi dengan percaya diri",
+      "persona": "Compliance Officer / Risk Manager",
+      "duration": "20 menit",
+      "steps": [
+        {
+          "title": "Tetapkan Postur Governance di Guard",
+          "description": "Guard adalah perisai kepatuhan Anda.",
+          "pillar": "guard",
+          "keyActions": ["Tinjau status kepatuhan", "Periksa pelanggaran terkini", "Verifikasi penegakan kebijakan"]
+        },
+        {
+          "title": "Verifikasi Jejak Audit di Witness",
+          "description": "Regulator membutuhkan bukti.",
+          "sovereign": "witness",
+          "keyActions": ["Generate laporan audit", "Ekspor paket bukti", "Verifikasi integritas record"]
+        },
+        {
+          "title": "Tinjau AI Governance di Ethics",
+          "description": "Regulasi AI membutuhkan proses terdokumentasi.",
+          "pillar": "ethics",
+          "keyActions": ["Tinjau log keputusan AI", "Periksa laporan bias", "Dokumentasikan pengawasan manusia"]
+        },
+        {
+          "title": "Lacak Data Lineage untuk GDPR/CCPA",
+          "description": "Hukum privasi ingin tahu di mana data pribadi berada.",
+          "pillar": "lineage",
+          "keyActions": ["Temukan data pribadi", "Lacak aliran data", "Dokumentasikan dasar hukum"]
+        },
+        {
+          "title": "Generate Laporan Kepatuhan",
+          "description": "Ubah data kepatuhan menjadi laporan.",
+          "pillar": "guard",
+          "keyActions": ["Pilih template laporan", "Kustomisasi periode", "Ekspor untuk stakeholder"]
+        }
+      ]
+    },
+    "quickStart": {
+      "title": "Mulai Cepat 5 Menit",
+      "subtitle": "Orientasi cepat untuk mendapat nilai segera",
+      "duration": "5 menit",
+      "steps": [
+        { "title": "Lihat Dasbor", "description": "Pusat komando personal Anda menampilkan yang paling penting.", "action": "Buka Dasbor" },
+        { "title": "Periksa Kesehatan Organisasi", "description": "Satu angka memberi tahu Anda bagaimana kondisi organisasi.", "action": "Lihat Indikator Kesehatan" },
+        { "title": "Ajukan Pertanyaan", "description": "Ketik pertanyaan apa pun tentang organisasi Anda.", "action": "Buka Asisten AI" },
+        { "title": "Eksplorasi Metrik", "description": "Klik metrik mana pun untuk melihat detail.", "action": "Pilih Metrik" }
+      ]
+    },
+    "crisisResponse": {
+      "title": "Protokol Respons Krisis",
+      "subtitle": "Saat terjadi masalah, bergerak cepat dengan informasi lengkap",
+      "persona": "Incident Leader",
+      "duration": "Respons segera",
+      "steps": [
+        { "title": "Nilai Situasi di Pulse", "description": "Pahami segera apa yang terjadi.", "space": "pulse", "keyActions": ["Identifikasi sistem terdampak", "Konfirmasi tingkat keparahan"] },
+        { "title": "Lacak Akar Masalah dengan Lineage", "description": "Telusuri balik jalur data.", "pillar": "lineage", "keyActions": ["Lacak aliran data", "Dokumentasikan akar masalah"] },
+        {
+          "title": "Kumpulkan Bukti dari Witness",
+          "description": "Tangkap catatan immutable tentang apa yang terjadi.",
+          "sovereign": "witness",
+          "keyActions": ["Ekspor timeline insiden", "Amankan log audit"]
+        },
+        { "title": "Koordinasi Respons dengan Council", "description": "Kumpulkan ahli AI dari berbagai domain.", "space": "council", "keyActions": ["Bentuk tim respons", "Buat rencana aksi"] },
+        {
+          "title": "Eksekusi Pemulihan dengan Bridge",
+          "description": "Push perbaikan dan rollback ke sistem terdampak.",
+          "space": "bridge",
+          "keyActions": ["Deploy perbaikan", "Verifikasi pemulihan"]
+        }
+      ]
+    },
+    "strategist": {
+      "title": "Panduan Strategist",
+      "subtitle": "Dari wawasan ke strategi dengan analisis berbasis AI",
+      "persona": "Strategi / Perencanaan",
+      "duration": "45 menit",
+      "steps": [
+        {
+          "title": "Kumpulkan Intelijen dari Graph",
+          "description": "Eksplorasi basis pengetahuan Anda.",
+          "space": "graph",
+          "keyActions": ["Cari topik", "Eksplorasi koneksi", "Simpan wawasan kunci"]
+        },
+        {
+          "title": "Prediksi Tren dengan Predict",
+          "description": "Gunakan model AI untuk proyeksi metrik kunci.",
+          "pillar": "predict",
+          "keyActions": ["Pilih target prediksi", "Tinjau proyeksi", "Analisis interval kepercayaan"]
+        },
+        {
+          "title": "Tanya Oracle",
+          "description": "Dapatkan jawaban berbasis AI untuk pertanyaan strategis.",
+          "sovereign": "oracle",
+          "keyActions": ["Rumuskan pertanyaan strategis", "Tinjau jawaban", "Verifikasi sumber"]
+        },
+        {
+          "title": "Model Skenario di Lens",
+          "description": "Buat skenario strategis.",
+          "space": "lens",
+          "keyActions": ["Definisikan variabel skenario", "Jalankan berbagai masa depan", "Identifikasi strategi optimal"]
+        },
+        {
+          "title": "Uji di Mirror",
+          "description": "Simulasikan inisiatif strategis sebelum commit.",
+          "sovereign": "mirror",
+          "keyActions": ["Buat simulasi", "Jalankan uji inisiatif", "Analisis hasil"]
+        }
+      ]
+    },
+    "aiModelLaunch": {
+      "title": "Perjalanan Deployment Model AI",
+      "subtitle": "Dari prototipe ke produksi dengan percaya diri",
+      "persona": "ML Engineer / Data Scientist",
+      "duration": "1-2 jam",
+      "steps": [
+        {
+          "title": "Daftarkan Model di BlackBox",
+          "description": "Upload model terlatih Anda ke registry.",
+          "sovereign": "blackbox",
+          "keyActions": ["Upload artefak model", "Catat metadata", "Tautkan data training"]
+        },
+        {
+          "title": "Verifikasi Bias di Ethics",
+          "description": "Sebelum produksi, lolos tinjauan etis.",
+          "pillar": "ethics",
+          "keyActions": ["Jalankan penilaian bias", "Tinjau metrik keadilan", "Dokumentasikan kepatuhan"]
+        },
+        {
+          "title": "Uji dengan Data Sintetis dari Mirage",
+          "description": "Generate edge case dan contoh adversarial.",
+          "sovereign": "mirage",
+          "keyActions": ["Generate data uji", "Jalankan stress test", "Verifikasi edge case"]
+        },
+        {
+          "title": "Simulasikan di Mirror",
+          "description": "Deploy ke digital twin dulu.",
+          "sovereign": "mirror",
+          "keyActions": ["Deploy ke Mirror", "Simulasikan beban produksi", "Bandingkan prediksi"]
+        },
+        {
+          "title": "Konfigurasikan Explainability di Glass",
+          "description": "Setiap prediksi harus bisa dijelaskan.",
+          "sovereign": "glass",
+          "keyActions": ["Aktifkan explainability", "Konfigurasikan faktor", "Uji penjelasan"]
+        },
+        {
+          "title": "Deploy dan Monitor dengan Predict",
+          "description": "Ke produksi dengan percaya diri.",
+          "pillar": "predict",
+          "keyActions": ["Promosikan ke produksi", "Konfigurasikan monitoring", "Atur alert drift"]
+        }
+      ]
+    },
+    "boardPresentation": {
+      "title": "Persiapan Presentasi Board",
+      "subtitle": "Impresi board dengan wawasan berbasis data",
+      "persona": "CEO / CFO / Presenter Board",
+      "duration": "30 menit",
+      "steps": [
+        {
+          "title": "Ekstrak KPI Strategis dari Helm",
+          "description": "Kumpulkan semua metrik kunci di satu tempat.",
+          "pillar": "helm",
+          "keyActions": ["Ekspor dasbor KPI", "Generate analisis tren", "Highlight pencapaian"]
+        },
+        {
+          "title": "Buat Forecast dengan Predict",
+          "description": "Tunjukkan bukan hanya di mana Anda, tapi ke mana akan pergi.",
+          "pillar": "predict",
+          "keyActions": ["Generate forecast", "Buat proyeksi pendapatan", "Buat skenario"]
+        },
+        {
+          "title": "Validasi Data dengan Lineage",
+          "description": "Anggota board mengajukan pertanyaan sulit.",
+          "pillar": "lineage",
+          "keyActions": ["Lacak angka kunci", "Dokumentasikan sumber", "Siapkan data lineage"]
+        },
+        {
+          "title": "Model Skenario What-If di Lens",
+          "description": "Siap untuk pertanyaan 'Bagaimana jika...?'.",
+          "space": "lens",
+          "keyActions": ["Model skenario pertumbuhan", "Analisis faktor risiko", "Siapkan rencana alternatif"]
+        },
+        {
+          "title": "Dapatkan Ringkasan AI dari Oracle",
+          "description": "Sintesis data menjadi wawasan kunci.",
+          "sovereign": "oracle",
+          "keyActions": ["Generate wawasan", "Minta poin pembicaraan", "Identifikasi blind spot"]
+        },
+        {
+          "title": "Pastikan Kepatuhan dengan Guard",
+          "description": "Pastikan yang Anda presentasikan tidak menimbulkan risiko.",
+          "pillar": "guard",
+          "keyActions": ["Jalankan cek kepatuhan", "Verifikasi klasifikasi data", "Setujui presentasi"]
+        }
+      ]
+    },
+    "newEmployeeOnboarding": {
+      "title": "Onboarding Anggota Tim Baru",
+      "subtitle": "Produktif dalam hari, bukan bulan",
+      "persona": "Karyawan Baru / Hiring Manager",
+      "duration": "Self-directed",
+      "steps": [
+        {
+          "title": "Akses Workspace dengan Key",
+          "description": "Satu login memberi akses ke semuanya.",
+          "sovereign": "key",
+          "keyActions": ["Selesaikan setup SSO", "Verifikasi assignment peran", "Akses sistem yang diizinkan"]
+        },
+        {
+          "title": "Eksplorasi Pengetahuan Organisasi di Graph",
+          "description": "Navigasi semesta pengetahuan.",
+          "space": "graph",
+          "keyActions": ["Temukan resource peran", "Cari pengetahuan tim", "Identifikasi kontak kunci"]
+        },
+        {
+          "title": "Belajar dari Legacy",
+          "description": "Akses pengetahuan institusional pendahulu.",
+          "sovereign": "legacy",
+          "keyActions": ["Tinjau playbook tim", "Pelajari keputusan masa lalu", "Pelajari best practice"]
+        },
+        {
+          "title": "Pahami Metrik Anda di Helm",
+          "description": "Setiap peran punya KPI.",
+          "pillar": "helm",
+          "keyActions": ["Tinjau metrik yang ditugaskan", "Pahami target", "Konfigurasikan dasbor personal"]
+        },
+        {
+          "title": "Setup Workflow Otomatis di Flow",
+          "description": "Terhubung ke workflow yang ada.",
+          "pillar": "flow",
+          "keyActions": ["Gabung workflow tim", "Konfigurasikan notifikasi", "Otomatisasi pelaporan"]
+        },
+        {
+          "title": "Temui Asisten AI di Agents",
+          "description": "Rekan AI siap membantu.",
+          "pillar": "agents",
+          "keyActions": ["Temui agen domain", "Ajukan pertanyaan pertama", "Simpan jawaban berguna"]
+        }
+      ]
+    },
+    "mergerIntegration": {
+      "title": "Integrasi Data M&A",
+      "subtitle": "Gabungkan organisasi tanpa kehilangan kecerdasan",
+      "persona": "Integration Lead / CIO",
+      "duration": "Berkelanjutan",
+      "steps": [
+        {
+          "title": "Petakan Kedua Lanskap Data dengan Lineage",
+          "description": "Pahami kedua sisi sebelum menggabungkan.",
+          "pillar": "lineage",
+          "keyActions": ["Scan data acquirer", "Scan data target", "Identifikasi overlap"]
+        },
+        {
+          "title": "Satukan Metrik di Helm",
+          "description": "Organisasi berbeda mengukur secara berbeda.",
+          "pillar": "helm",
+          "keyActions": ["Petakan definisi metrik", "Selesaikan konflik", "Buat dasbor terpadu"]
+        },
+        { "title": "Hubungkan Sistem dengan Mesh", "description": "Buat layer integrasi.", "sovereign": "mesh", "keyActions": ["Petakan sistem sumber", "Buat integrasi", "Uji aliran data"] },
+        {
+          "title": "Lestarikan Pengetahuan Institusional di Legacy",
+          "description": "M&A sering berarti kehilangan orang kunci.",
+          "sovereign": "legacy",
+          "keyActions": ["Wawancarai personel kunci", "Dokumentasikan proses", "Arsipkan tribal knowledge"]
+        },
+        {
+          "title": "Gabungkan Sistem Identitas dengan Key",
+          "description": "Satukan siapa dapat akses apa.",
+          "sovereign": "key",
+          "keyActions": ["Gabungkan sumber identitas", "Rekonsiliasi permission", "Aktifkan akses terpadu"]
+        },
+        {
+          "title": "Monitor Kesehatan Integrasi",
+          "description": "Lacak kesehatan integrasi real-time.",
+          "pillar": "health",
+          "keyActions": ["Monitor kualitas data", "Lacak status sinkronisasi", "Alert pada anomali"]
+        }
+      ]
+    },
+    "regulatoryAudit": {
+      "title": "Persiapan Audit Regulasi",
+      "subtitle": "Ubah musim audit dari mimpi buruk jadi kejadian rutin",
+      "persona": "Chief Compliance Officer",
+      "duration": "2-4 jam",
+      "steps": [
+        {
+          "title": "Ekstrak Bukti Audit dari Witness",
+          "description": "Setiap tindakan tercatat.",
+          "sovereign": "witness",
+          "keyActions": ["Definisikan scope audit", "Ekspor paket bukti", "Generate attestation"]
+        },
+        {
+          "title": "Verifikasi Kepatuhan Kebijakan di Guard",
+          "description": "Tunjukkan auditor kebijakan ditegakkan.",
+          "pillar": "guard",
+          "keyActions": ["Generate laporan kepatuhan", "Tunjukkan penegakan kebijakan", "Dokumentasikan pengecualian"]
+        },
+        {
+          "title": "Demonstrasikan AI Governance di Ethics",
+          "description": "Regulasi AI sudah datang.",
+          "pillar": "ethics",
+          "keyActions": ["Ekspor tinjauan etis", "Tunjukkan hasil uji bias", "Dokumentasikan AI governance"]
+        },
+        {
+          "title": "Jelaskan Keputusan AI dengan Glass",
+          "description": "Saat auditor bertanya 'Mengapa sistem memutuskan ini?'.",
+          "sovereign": "glass",
+          "keyActions": ["Generate laporan keputusan", "Tunjukkan atribusi faktor", "Sediakan counterfactual"]
+        },
+        {
+          "title": "Lacak Data Lineage untuk Akurasi",
+          "description": "Buktikan akurasi dengan menunjukkan asal angka.",
+          "pillar": "lineage",
+          "keyActions": ["Ekspor peta lineage", "Dokumentasikan transformasi", "Buktikan akurasi data"]
+        },
+        {
+          "title": "Tinjau Kontrol Akses dengan Key",
+          "description": "Siapa mengakses apa kapan?",
+          "sovereign": "key",
+          "keyActions": ["Ekspor log akses", "Tunjukkan riwayat permission", "Dokumentasikan kontrol"]
+        }
+      ]
+    },
+    "customerChurnPrevention": {
+      "title": "Pencegahan Churn Pelanggan",
+      "subtitle": "Pertahankan pelanggan sebelum mereka pergi",
+      "persona": "Customer Success / Revenue Ops",
+      "duration": "Workflow harian",
+      "steps": [
+        {
+          "title": "Identifikasi Pelanggan Berisiko dengan Predict",
+          "description": "Model ML menganalisis ratusan sinyal.",
+          "pillar": "predict",
+          "keyActions": ["Tinjau skor risiko", "Identifikasi risiko teratas", "Pahami faktor risiko"]
+        },
+        {
+          "title": "Pahami Kesehatan Pelanggan di Helm",
+          "description": "Lacak metrik kesehatan pelanggan.",
+          "pillar": "helm",
+          "keyActions": ["Tinjau skor kesehatan", "Periksa metrik engagement", "Identifikasi tren"]
+        },
+        {
+          "title": "Eksplorasi Perjalanan Pelanggan di Graph",
+          "description": "Lihat riwayat lengkap pelanggan.",
+          "space": "graph",
+          "keyActions": ["Lihat timeline pelanggan", "Eksplorasi interaksi", "Temukan pola"]
+        },
+        {
+          "title": "Dapatkan Rekomendasi Retensi dari Council",
+          "description": "Kumpulkan penasihat AI untuk strategi retensi.",
+          "space": "council",
+          "keyActions": ["Presentasikan profil pelanggan", "Dapatkan ide retensi", "Prioritaskan aksi"]
+        },
+        {
+          "title": "Aktifkan Workflow Retensi di Flow",
+          "description": "Ubah rekomendasi menjadi aksi.",
+          "pillar": "flow",
+          "keyActions": ["Trigger outreach", "Jadwalkan follow-up", "Eskalasi ke tim"]
+        },
+        {
+          "title": "Model Dampak Pendapatan di Lens",
+          "description": "Kuantifikasi apa yang dipertaruhkan.",
+          "space": "lens",
+          "keyActions": ["Model dampak churn", "Hitung ROI intervensi", "Prioritaskan effort"]
+        }
+      ]
+    },
+    "productLaunch": {
+      "title": "Orkestrasi Peluncuran Produk",
+      "subtitle": "Luncurkan dengan percaya diri dan visibilitas real-time",
+      "persona": "Product Manager / Launch Lead",
+      "duration": "Hari launch + monitoring",
+      "steps": [
+        {
+          "title": "Definisikan KPI Launch di Helm",
+          "description": "Definisikan sukses sebelum launch.",
+          "pillar": "helm",
+          "keyActions": ["Definisikan metrik sukses", "Atur target", "Konfigurasikan dasbor"]
+        },
+        {
+          "title": "Verifikasi Kesiapan Sistem di Health",
+          "description": "Semua hijau sebelum launch?",
+          "pillar": "health",
+          "keyActions": ["Periksa semua sistem", "Verifikasi kapasitas", "Konfirmasi dependensi"]
+        },
+        {
+          "title": "Simulasikan Beban Launch di Mirror",
+          "description": "Uji skenario launch di digital twin.",
+          "sovereign": "mirror",
+          "keyActions": ["Buat simulasi launch", "Jalankan load test", "Identifikasi bottleneck"]
+        },
+        { "title": "Monitor Real-Time di Pulse", "description": "Visibilitas hari launch.", "space": "pulse", "keyActions": ["Monitor metrik launch", "Awasi anomali", "Lacak adopsi"] },
+        {
+          "title": "Respons Masalah dengan Bridge",
+          "description": "Jika perlu penyesuaian, bertindak cepat.",
+          "space": "bridge",
+          "keyActions": ["Deploy hotfix", "Sesuaikan konfigurasi", "Scale resource"]
+        },
+        {
+          "title": "Tangkap Pembelajaran di Legacy",
+          "description": "Dokumentasikan apa yang berhasil dan tidak.",
+          "sovereign": "legacy",
+          "keyActions": ["Dokumentasikan log launch", "Catat masalah", "Catat perbaikan"]
+        }
+      ]
+    },
+    "dataQualityImprovement": {
+      "title": "Program Peningkatan Kualitas Data",
+      "subtitle": "Ubah data dari liability menjadi aset",
+      "persona": "Data Steward / Quality Lead",
+      "duration": "Program berkelanjutan",
+      "steps": [
+        {
+          "title": "Nilai Kualitas Saat Ini di Lineage",
+          "description": "Tidak bisa memperbaiki apa yang tidak diukur.",
+          "pillar": "lineage",
+          "keyActions": ["Jalankan penilaian kualitas", "Identifikasi area masalah", "Prioritaskan isu"]
+        },
+        {
+          "title": "Lacak Metrik Kualitas di Helm",
+          "description": "Jadikan kualitas data sebagai KPI kelas satu.",
+          "pillar": "helm",
+          "keyActions": ["Buat dasbor kualitas", "Atur target perbaikan", "Lacak progress"]
+        },
+        {
+          "title": "Setup Aturan Kualitas di Guard",
+          "description": "Definisikan dan tegakkan standar kualitas.",
+          "pillar": "guard",
+          "keyActions": ["Definisikan aturan kualitas", "Konfigurasikan validasi", "Atur alarm"]
+        },
+        {
+          "title": "Otomatisasi Cek Kualitas di Flow",
+          "description": "Bangun kualitas ke dalam pipeline.",
+          "pillar": "flow",
+          "keyActions": ["Buat workflow kualitas", "Tambahkan langkah validasi", "Konfigurasikan remediasi"]
+        },
+        {
+          "title": "Monitor Kesehatan Kualitas",
+          "description": "Lihat tren kualitas di seluruh estate data.",
+          "pillar": "health",
+          "keyActions": ["Monitor tren kualitas", "Alert pada degradasi", "Laporkan perbaikan"]
+        },
+        {
+          "title": "Dokumentasikan Standar di Legacy",
+          "description": "Kodifikasi standar kualitas untuk organisasi.",
+          "sovereign": "legacy",
+          "keyActions": ["Dokumentasikan standar", "Buat playbook", "Latih tim"]
+        }
+      ]
+    },
+    "securityThreatResponse": {
+      "title": "Respons Ancaman Keamanan",
+      "subtitle": "Deteksi, contain, dan eliminasi ancaman secara sistematis",
+      "persona": "Security Analyst / CISO",
+      "duration": "Respons segera",
+      "steps": [
+        {
+          "title": "Deteksi Ancaman dengan Guard",
+          "description": "Mesin deteksi ancaman Guard mengidentifikasi aktivitas mencurigakan.",
+          "pillar": "guard",
+          "keyActions": ["Tinjau alert ancaman", "Nilai keparahan", "Konfirmasi ancaman"]
+        },
+        {
+          "title": "Nilai Blast Radius dengan Lineage",
+          "description": "Sistem dan data mana yang mungkin terdampak?",
+          "pillar": "lineage",
+          "keyActions": ["Petakan sistem terdampak", "Identifikasi data sensitif", "Nilai eksposur"]
+        },
+        {
+          "title": "Tinjau Log Akses dengan Key",
+          "description": "Siapa mengakses apa kapan?",
+          "sovereign": "key",
+          "keyActions": ["Ekstrak log akses", "Identifikasi anomali", "Lacak jalur serangan"]
+        },
+        {
+          "title": "Amankan Bukti dengan Witness",
+          "description": "Tangkap bukti sebelum containment mengubahnya.",
+          "sovereign": "witness",
+          "keyActions": ["Tangkap state sistem", "Ekspor log audit", "Amankan timeline"]
+        },
+        { "title": "Eksekusi Containment dengan Bridge", "description": "Isolasi ancaman.", "space": "bridge", "keyActions": ["Cabut akses terkompromi", "Isolasi sistem", "Deploy patch"] },
+        {
+          "title": "Koordinasi dengan Council",
+          "description": "Kumpulkan ahli AI keamanan.",
+          "space": "council",
+          "keyActions": ["Analisis pola serangan", "Dapatkan rencana remediasi", "Nilai risiko"]
+        }
+      ]
+    }
+  },
+  "accessibility": {
+    "skipToMain": "Langsung ke konten utama",
+    "skipToNav": "Langsung ke navigasi",
+    "openMenu": "Buka menu",
+    "closeMenu": "Tutup menu",
+    "expandSection": "Perluas bagian",
+    "collapseSection": "Ciutkan bagian",
+    "loading": "Memuat",
+    "newWindow": "Buka di jendela baru",
+    "externalLink": "Tautan eksternal",
+    "required": "Bidang wajib",
+    "optional": "Opsional"
+  },
+  "_meta": { "direction": "ltr", "language": "Bahasa Indonesia", "completeness": "100%" }
+}

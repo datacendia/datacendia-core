@@ -1,0 +1,661 @@
+{
+  "common": {
+    "appName": "Datacendia",
+    "loading": "Laden...",
+    "error": "Er is een fout opgetreden",
+    "retry": "Opnieuw proberen",
+    "save": "Opslaan",
+    "cancel": "Annuleren",
+    "delete": "Verwijderen",
+    "edit": "Bewerken",
+    "create": "Maken",
+    "update": "Bijwerken",
+    "close": "Sluiten",
+    "back": "Terug",
+    "next": "Volgende",
+    "previous": "Vorige",
+    "search": "Zoeken",
+    "filter": "Filteren",
+    "sort": "Sorteren",
+    "export": "Exporteren",
+    "import": "Importeren",
+    "download": "Downloaden",
+    "upload": "Uploaden",
+    "yes": "Ja",
+    "no": "Nee",
+    "confirm": "Bevestigen",
+    "submit": "Verzenden",
+    "apply": "Toepassen",
+    "reset": "Resetten",
+    "clear": "Wissen",
+    "all": "Alle",
+    "none": "Geen",
+    "select": "Selecteren",
+    "selected": "Geselecteerd",
+    "view": "Bekijken",
+    "details": "Details",
+    "more": "Meer",
+    "less": "Minder",
+    "showAll": "Alles tonen",
+    "hideAll": "Alles verbergen",
+    "viewMore": "Meer bekijken",
+    "learnMore": "Meer informatie",
+    "and": "en",
+    "or": "of",
+    "continue": "Doorgaan",
+    "completed": "voltooid",
+    "queried": "opgevraagd"
+  },
+  "nav": {
+    "home": "Home",
+    "product": "Product",
+    "pricing": "Prijzen",
+    "about": "Over ons",
+    "demo": "Demo aanvragen",
+    "login": "Inloggen",
+    "register": "Registreren",
+    "logout": "Uitloggen",
+    "downloads": "Downloads",
+    "documentation": "Documentatie",
+    "support": "Ondersteuning",
+    "contact": "Contact",
+    "manifesto": "Manifest",
+    "services": "Diensten",
+    "packages": "Pakketten"
+  },
+  "auth": {
+    "login": {
+      "title": "Welkom terug",
+      "subtitle": "Log in op uw account",
+      "email": "E-mailadres",
+      "password": "Wachtwoord",
+      "rememberMe": "Onthoud mij",
+      "forgotPassword": "Wachtwoord vergeten?",
+      "submitButton": "Inloggen",
+      "noAccount": "Geen account?",
+      "signUp": "Registreren",
+      "orContinueWith": "Of ga verder met",
+      "errors": {
+        "invalidCredentials": "Ongeldige e-mail of wachtwoord",
+        "accountLocked": "Account is vergrendeld",
+        "networkError": "Kan geen verbinding maken met de server. Probeer het opnieuw."
+      }
+    },
+    "register": {
+      "title": "Maak uw account aan",
+      "subtitle": "Start vandaag uw gratis proefperiode van 14 dagen.",
+      "headline": "Ontgrendel de intelligentie van uw organisatie.",
+      "subheadline": "Sluit u aan bij duizenden bedrijven die Datacendia gebruiken om betere beslissingen te nemen met AI-gestuurde inzichten.",
+      "step1Subtitle": "Voer uw gegevens in om te beginnen",
+      "step2Subtitle": "Stel uw wachtwoord in",
+      "firstName": "Voornaam",
+      "lastName": "Achternaam",
+      "fullName": "Volledige naam",
+      "email": "Werk-e-mail",
+      "password": "Wachtwoord",
+      "confirmPassword": "Bevestig wachtwoord",
+      "passwordHint": "Minimaal 8 tekens",
+      "company": "Bedrijf (optioneel)",
+      "companySize": "Bedrijfsgrootte",
+      "industry": "Sector",
+      "submitButton": "Account aanmaken",
+      "signUpWith": "Registreren met",
+      "hasAccount": "Heeft u al een account?",
+      "signIn": "Inloggen",
+      "agreeToTerms": "Ik ga akkoord met de",
+      "features": {
+        "council": "AI Raad - Krijg strategisch advies van gespecialiseerde AI-agenten",
+        "graph": "Graafverkenner - Visualiseer al uw datarelaties",
+        "lens": "De Lens - Voorspel toekomstige resultaten met ML",
+        "bridge": "De Brug - Automatiseer workflows tussen systemen"
+      },
+      "errors": {
+        "fullNameRequired": "Voer uw volledige naam in",
+        "validEmailRequired": "Voer een geldig e-mailadres in",
+        "passwordMinLength": "Wachtwoord moet minimaal 8 tekens bevatten",
+        "passwordMismatch": "Wachtwoorden komen niet overeen",
+        "acceptTerms": "U moet de voorwaarden accepteren",
+        "registrationFailed": "Registratie mislukt. Probeer het opnieuw."
+      },
+      "passwordRequirements": {
+        "title": "Wachtwoord moet bevatten:",
+        "minLength": "Minimaal 12 tekens",
+        "uppercase": "Eén hoofdletter",
+        "lowercase": "Eén kleine letter",
+        "number": "Eén cijfer",
+        "special": "Eén speciaal teken"
+      }
+    },
+    "forgotPassword": {
+      "title": "Wachtwoord resetten",
+      "subtitle": "Voer uw e-mailadres in en wij sturen u een link om uw wachtwoord te resetten.",
+      "email": "E-mailadres",
+      "sendResetLink": "Resetlink versturen",
+      "submitButton": "Resetlink versturen",
+      "backToLogin": "Terug naar inloggen",
+      "checkEmail": "Controleer uw e-mail",
+      "emailSentTo": "Als er een account bestaat voor",
+      "linkExpiry": "De link verloopt over 1 uur. Controleer uw spammap als u de e-mail niet ziet.",
+      "success": "Als er een account bestaat, ontvangt u binnenkort een e-mail."
+    },
+    "mfa": {
+      "title": "Tweefactorauthenticatie",
+      "subtitle": "Voer de code van uw authenticator-app in.",
+      "code": "Authenticatiecode",
+      "submitButton": "Verifiëren",
+      "useBackupCode": "Gebruik een back-upcode",
+      "resendCode": "Code opnieuw versturen"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "De intelligentie van uw organisatie,",
+      "titleHighlight": "Soeverein en compleet",
+      "subtitle": "Datacendia is het commandocentrum voor bedrijfsintelligentie. Verbind uw data, raadpleeg AI-adviseurs en zie mogelijke toekomsten — met behoud van volledige controle.",
+      "ctaPrimary": "Demo aanvragen",
+      "ctaSecondary": "Platform verkennen"
+    },
+    "problem": {
+      "title": "Het probleem met bedrijfsintelligentie",
+      "subtitle": "Organisaties worstelen met gefragmenteerde data, geïsoleerde tools en reactieve besluitvorming",
+      "dataChaos": {
+        "title": "Datachaos",
+        "description": "Uw data leeft in tientallen systemen zonder uniforme weergave. Niemand weet wat waar is."
+      },
+      "toolSprawl": {
+        "title": "Toolwildgroei",
+        "description": "BI-tools, analyseplatforms, dashboards — geen ervan communiceert met elkaar."
+      },
+      "noForesight": {
+        "title": "Geen vooruitziendheid",
+        "description": "U kijkt altijd in de achteruitkijkspiegel. Hoe zit het met wat komt?"
+      }
+    },
+    "solution": {
+      "title": "De Cortex: Uw intelligentie-commandocentrum",
+      "subtitle": "Vijf geïntegreerde ruimtes die u volledige zichtbaarheid en controle geven"
+    },
+    "pillars": {
+      "title": "De 8 pijlers van soevereine intelligentie",
+      "subtitle": "Elke capaciteit die u nodig heeft, samen werkend als één"
+    },
+    "cta": {
+      "title": "Klaar om de controle over uw intelligentie te nemen?",
+      "subtitle": "Ontdek hoe Datacendia de besluitvorming van uw organisatie kan transformeren",
+      "button": "Demo plannen"
+    }
+  },
+  "spaces": {
+    "graph": {
+      "name": "De Graaf",
+      "description": "Navigeer door uw kennisuniversum"
+    },
+    "council": {
+      "name": "De Raad",
+      "description": "AI-adviseurs die samen redeneren"
+    },
+    "pulse": {
+      "name": "De Puls",
+      "description": "Real-time organisatiegezondheid"
+    },
+    "lens": {
+      "name": "De Lens",
+      "description": "Zie mogelijke toekomsten"
+    },
+    "bridge": {
+      "name": "De Brug",
+      "description": "Onderneem actie tussen systemen"
+    }
+  },
+  "pillars": {
+    "helm": {
+      "name": "Het Roer",
+      "description": "Strategische beslissingsondersteuning",
+      "longDescription": "Uw commandocentrum voor strategische beslissingen. Volg KPI's, monitor prestaties en stuur uw organisatie met vertrouwen."
+    },
+    "lineage": {
+      "name": "De Lijn",
+      "description": "Traceer elk datapunt naar de bron",
+      "longDescription": "Volledige tracking van dataherkomst. Weet waar uw data vandaan komt, hoe het transformeert en waar het naartoe gaat."
+    },
+    "predict": {
+      "name": "De Voorspeller",
+      "description": "AI-gestuurde voorspelling",
+      "longDescription": "Machine learning-modellen die trends voorspellen, anomalieën detecteren en inzichten naar boven halen voordat ze duidelijk worden."
+    },
+    "flow": {
+      "name": "De Stroom",
+      "description": "Geautomatiseerde workflows",
+      "longDescription": "Intelligente workflowautomatisering die uw systemen en processen verbindt met AI-gestuurde beslispunten."
+    },
+    "health": {
+      "name": "De Gezondheid",
+      "description": "Organisatorische vitaliteitsmetrieken",
+      "longDescription": "Real-time monitoring van de vitale tekenen van uw organisatie op het gebied van data, systemen en processen."
+    },
+    "guard": {
+      "name": "De Bewaker",
+      "description": "Datagovernance en compliance",
+      "longDescription": "Geautomatiseerde beleidshandhaving, toegangscontroles en compliancemonitoring om uw data veilig te houden."
+    },
+    "ethics": {
+      "name": "De Ethiek",
+      "description": "Ingebouwd ethisch toezicht",
+      "longDescription": "Ethische vangrails die verantwoord AI-gebruik, eerlijke algoritmen en transparante besluitvorming garanderen."
+    },
+    "agents": {
+      "name": "De Agenten",
+      "description": "AI-adviseurs voor elk domein",
+      "longDescription": "Gespecialiseerde AI-agenten die domeinspecifieke expertise bieden en samenwerken om complexe problemen op te lossen."
+    }
+  },
+  "pricing": {
+    "title": "Eenvoudige, transparante prijzen",
+    "subtitle": "Kies het plan dat bij uw organisatie past. Alle plannen bevatten een gratis proefperiode van 14 dagen.",
+    "monthly": "Maandelijks",
+    "annual": "Jaarlijks",
+    "annualDiscount": "Bespaar 20%",
+    "perMonth": "/maand",
+    "startTrial": "Gratis proefperiode starten",
+    "contactSales": "Contact verkoop",
+    "mostPopular": "Meest populair",
+    "plans": {
+      "foundation": {
+        "name": "Fundament",
+        "description": "Essentiële intelligentiecapaciteiten voor groeiende teams"
+      },
+      "intelligence": {
+        "name": "Intelligentie",
+        "description": "Geavanceerde analyses en voorspellingen voor opschalende organisaties"
+      },
+      "governance": {
+        "name": "Governance",
+        "description": "Complete governance en compliance voor gereguleerde sectoren"
+      },
+      "sovereign": {
+        "name": "Soeverein",
+        "description": "Volledig platform met complete datasoevereiniteit"
+      }
+    },
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "questions": {
+        "trial": {
+          "q": "Kan ik uitproberen voordat ik koop?",
+          "a": "Ja! Alle plannen bevatten een gratis proefperiode van 14 dagen met volledige toegang tot functies."
+        },
+        "data": {
+          "q": "Wat gebeurt er met mijn data als ik annuleer?",
+          "a": "Uw data blijft van u. Exporteer alles voor annulering, of we bewaren het 30 dagen."
+        },
+        "nonprofit": {
+          "q": "Bieden jullie kortingen voor non-profits?",
+          "a": "Ja, we bieden 50% korting voor gekwalificeerde non-profits en onderwijsinstellingen."
+        },
+        "upgrade": {
+          "q": "Kan ik op elk moment upgraden of downgraden?",
+          "a": "Absoluut. Wijzigingen gaan in bij uw volgende factureringscyclus, naar rato bij upgrade."
+        }
+      }
+    }
+  },
+  "downloads": {
+    "title": "Downloads",
+    "subtitle": "Download Datacendia voor uw platform",
+    "desktop": {
+      "title": "Desktop-applicatie",
+      "windows": "Windows",
+      "mac": "macOS",
+      "linux": "Linux",
+      "download": "Downloaden"
+    },
+    "mobile": {
+      "title": "Mobiele apps",
+      "ios": "iOS",
+      "android": "Android",
+      "appStore": "App Store",
+      "playStore": "Google Play"
+    },
+    "cli": {
+      "title": "Opdrachtregelinterface"
+    },
+    "selfHosted": {
+      "title": "Zelf gehost",
+      "docker": "Docker Compose",
+      "kubernetes": "Kubernetes (Helm)",
+      "airgapped": "Air-gapped bundel"
+    },
+    "systemRequirements": {
+      "title": "Systeemvereisten",
+      "minimum": "Minimum",
+      "recommended": "Aanbevolen"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welkom terug",
+    "subtitle": "Hier is hoe {{company}} het vandaag doet",
+    "health_score": "Organisatiegezondheid",
+    "healthScore": "Gezondheidsscore",
+    "data": "Data",
+    "operations": "Operaties",
+    "security": "Beveiliging",
+    "people": "Mensen",
+    "fromLastWeek": "van vorige week",
+    "alerts": "Actieve waarschuwingen",
+    "activeAlerts": "Actieve waarschuwingen",
+    "critical": "Kritiek",
+    "warning": "Waarschuwing",
+    "info": "Info",
+    "pending_approvals": "Openstaande goedkeuringen",
+    "pendingApprovals": "Openstaande goedkeuringen",
+    "workflows": "Workflows",
+    "access": "Toegang",
+    "budget": "Budget",
+    "by": "door",
+    "approve": "Goedkeuren",
+    "reject": "Afwijzen",
+    "keyMetrics": "Belangrijkste metrieken",
+    "askTheCouncil": "Vraag de Raad",
+    "whatToKnow": "Wat wilt u weten?",
+    "recentQueries": "Recente zoekopdrachten:",
+    "recentActivity": "Recente activiteit",
+    "viewFullLog": "Volledig logboek bekijken",
+    "quickActions": "Snelle acties",
+    "greetings": {
+      "morning": "Goedemorgen",
+      "afternoon": "Goedemiddag",
+      "evening": "Goedenavond"
+    },
+    "sampleAlerts": {
+      "databaseCpu": "Database CPU > 90% voor 15 min",
+      "paymentLatency": "Piek in betalingsverwerkingslatentie",
+      "diskUsage": "Schijfgebruik op 78% op prod-db-01",
+      "apiErrors": "API-foutpercentage boven drempel",
+      "memoryLeak": "Geheugenlek gedetecteerd in auth-service"
+    },
+    "sampleApprovals": {
+      "monthlyClose": "Maandelijks afsluitproces",
+      "prodDbAccess": "Productiedatabase-toegang",
+      "budgetIncrease": "Q4 marketing budgetverhoging",
+      "newHire": "Onboarding nieuwe medewerker: Dev-team"
+    },
+    "sampleMetrics": {
+      "revenue": "Omzet",
+      "pipeline": "Pipeline",
+      "burnRate": "Burn rate",
+      "nps": "NPS",
+      "activeUsers": "Actieve gebruikers",
+      "churnRate": "Churn rate"
+    },
+    "sampleActivity": {
+      "workflowCompleted": "Workflow \"{{name}}\" voltooid",
+      "userQueried": "{{user}} heeft {{topic}} opgevraagd",
+      "alertResolved": "Waarschuwing \"{{alert}}\" opgelost",
+      "reportGenerated": "Rapport \"{{report}}\" gegenereerd"
+    },
+    "sampleQueries": {
+      "churnIncrease": "Waarom is de churn toegenomen?",
+      "forecastRevenue": "Voorspel Q4-omzet",
+      "biggestRisk": "Wat is ons grootste risico?",
+      "customerSentiment": "Wat is de trend in klanttevredenheid?",
+      "competitorAnalysis": "Analyseer concurrentenprijzen"
+    }
+  },
+  "button": {
+    "view_all": "Alles bekijken",
+    "viewAll": "Alles bekijken",
+    "viewMore": "Meer bekijken",
+    "approve": "Goedkeuren",
+    "reject": "Afwijzen",
+    "save": "Opslaan",
+    "cancel": "Annuleren",
+    "submit": "Verzenden",
+    "edit": "Bewerken",
+    "delete": "Verwijderen"
+  },
+  "commandPalette": {
+    "searchPlaceholder": "Zoek opdrachten, pagina's, agenten...",
+    "noResults": "Geen resultaten voor",
+    "navigate": "navigeren",
+    "select": "selecteren",
+    "toggle": "wisselen",
+    "newQuery": "Nieuwe Raadsvraag",
+    "askCouncil": "Stel de Raad een vraag",
+    "refresh": "Data vernieuwen",
+    "reloadPage": "Huidige paginadata herladen",
+    "fullscreen": "Volledig scherm wisselen",
+    "toggleFullscreen": "Volledig scherm in/uit",
+    "switchTo": "Overschakelen naar",
+    "changeLanguage": "Taal wijzigen naar",
+    "categories": {
+      "navigation": "Navigatie",
+      "actions": "Acties",
+      "agents": "Agenten",
+      "modes": "Raadsmodi",
+      "recent": "Recent"
+    },
+    "agents": {
+      "chief": "Hoofd Strategisch Agent",
+      "chiefDesc": "Strategische synthese",
+      "cfo": "Financiële Intelligentie",
+      "cfoDesc": "Financiële analyse",
+      "coo": "Operaties Agent",
+      "cooDesc": "Operationele efficiëntie",
+      "ciso": "Beveiligingsagent",
+      "cisoDesc": "Beveiliging en compliance",
+      "cmo": "Marktintelligentie",
+      "cmoDesc": "Marktanalyse"
+    }
+  },
+  "cortex": {
+    "sidebar": {
+      "spaces": "Ruimtes",
+      "pillars": "Pijlers",
+      "system": "Systeem",
+      "data": "Data",
+      "security": "Beveiliging"
+    }
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "the_council": "De Raad",
+    "the_graph": "De Graaf",
+    "the_pulse": "De Puls",
+    "the_lens": "De Lens",
+    "the_bridge": "De Brug",
+    "settings": "Instellingen",
+    "help": "Help en ondersteuning",
+    "cortex": "Cortex",
+    "spaces": "Ruimtes",
+    "pillars": "Pijlers",
+    "sovereign": "Soeverein",
+    "admin": "Admin"
+  },
+  "council": {
+    "title": "De Raad",
+    "subtitle": "AI-gestuurd strategisch adviespanel",
+    "askQuestion": "Stel een vraag",
+    "questionPlaceholder": "Welke strategische vraag wilt u dat de raad bespreekt?",
+    "selectAgents": "Selecteer agenten om deel te nemen",
+    "startDeliberation": "Start beraadslaging",
+    "quickAnswer": "Snel antwoord",
+    "fullDeliberation": "Volledige beraadslaging",
+    "selectedAgents": "Geselecteerde agenten",
+    "clearAll": "Alles wissen",
+    "selectAll": "Alles selecteren",
+    "agents": {
+      "domain": "Domeinagenten",
+      "custom": "Aangepaste agenten",
+      "premium": "Premium agenten",
+      "createCustom": "Aangepaste agent maken"
+    },
+    "modes": {
+      "title": "Raadsmodibibliotheek",
+      "subtitle": "Dezelfde 10 agenten met verschillende modi produceren radicaal verschillende outputs.",
+      "cultureNote": "De prompt IS de bedrijfscultuur.",
+      "quickReference": "Snelle referentie",
+      "mode": "Modus",
+      "primeDirective": "Hoofdrichtlijn",
+      "bestFor": "Het beste voor",
+      "agentBehavior": "Agentgedrag"
+    },
+    "deliberation": {
+      "phases": {
+        "initial_analysis": "Initiële analyse",
+        "cross_examination": "Kruisverhoor",
+        "synthesis": "Synthese",
+        "ethics_check": "Ethiekcontrole"
+      },
+      "inProgress": "Beraadslaging bezig",
+      "completed": "Beraadslaging voltooid",
+      "confidence": "Vertrouwen"
+    },
+    "customAgent": {
+      "title": "Aangepaste agent maken",
+      "editTitle": "Aangepaste agent bewerken",
+      "subtitle": "Ontwerp uw eigen AI-agent met gespecialiseerde expertise",
+      "premium": "Agent Builder Pack",
+      "avatar": "Agent-avatar",
+      "color": "Agentkleur",
+      "name": "Agentnaam",
+      "namePlaceholder": "bijv. Marktanalist",
+      "role": "Rol / Titel",
+      "rolePlaceholder": "bijv. Marktonderzoek en -analyse",
+      "description": "Beschrijving",
+      "descriptionPlaceholder": "Beschrijf wat deze agent doet en de focusgebieden...",
+      "expertise": "Expertise en instructies",
+      "capabilities": "Mogelijkheden",
+      "addCapability": "Toevoegen",
+      "save": "Agent opslaan",
+      "delete": "Agent verwijderen"
+    },
+    "status": {
+      "online": "Online",
+      "offline": "Offline",
+      "busy": "Bezig"
+    }
+  },
+  "agent": {
+    "chief": { "name": "Hoofd Strategie Agent", "role": "Strategisch toezicht en synthese", "description": "Synthetiseert inzichten van alle domeinagenten om holistische strategische aanbevelingen te geven." },
+    "cfo": { "name": "Financiële Intelligentie Agent", "role": "Financiële analyse en risico", "description": "Analyseert financiële data, budgetten, prognoses en biedt inzicht in fiscale gezondheid." },
+    "coo": { "name": "Operaties Intelligentie Agent", "role": "Operationele efficiëntie", "description": "Richt zich op operationele metrieken, procesefficiëntie en resourceallocatie." },
+    "ciso": { "name": "Beveiliging en Compliance Agent", "role": "Beveiliging en risicobeheer", "description": "Monitort beveiligingshouding, compliance-eisen en dreigingsbeoordeling." },
+    "cmo": { "name": "Marktintelligentie Agent", "role": "Marketing en klantinzichten", "description": "Analyseert markttrends, klantgedrag en concurrentie-intelligentie." },
+    "cro": { "name": "Omzetintelligentie Agent", "role": "Omzet en groei", "description": "Richt zich op omzetoptimalisatie, verkoopprestaties en prijsstrategieën." },
+    "cdo": { "name": "Datakwaliteit Agent", "role": "Datagovernance en kwaliteit", "description": "Monitort datakwaliteit, governancebeleid en zorgt voor data-integriteit." },
+    "risk": { "name": "Risicobeoordeling Agent", "role": "Bedrijfsrisicoanalyse", "description": "Evalueert bedrijfsrisico's, voert impactanalyse uit en biedt mitigatiestrategieën." },
+    "clo": { "name": "Juridische Intelligentie Agent", "role": "Juridische en compliance-analyse", "description": "Analyseert juridische risico's, contractimplicaties en regelgevende compliance." },
+    "cpo": { "name": "Productstrategie Agent", "role": "Productinnovatie en roadmap", "description": "Stuurt productstrategie, functieprioritering en gebruikerservaringsinzichten." },
+    "caio": { "name": "AI-Strategie Agent", "role": "AI/ML-governance en innovatie", "description": "Begeleidt AI-strategie, modelgovernance en ethische AI-implementatie." },
+    "cso": { "name": "Duurzaamheidsagent", "role": "ESG en milieu-impact", "description": "Monitort milieu-, sociale en governance-metrieken en duurzaamheidsinitiatieven." },
+    "cio": { "name": "Investerings Intelligentie Agent", "role": "Kapitaalallocatie en portefeuille", "description": "Analyseert investeringsmogelijkheden, portefeuilleallocatie en kapitaalinzet." },
+    "cco": { "name": "Communicatie Agent", "role": "Bedrijfscommunicatie en PR", "description": "Creëert bedrijfsberichten, beheert stakeholdercommunicatie en monitort merkperceptie." },
+    "ext-auditor": { "name": "Externe Auditor", "role": "Onafhankelijke externe audit", "description": "Biedt onafhankelijke, objectieve beoordeling vanuit extern perspectief." },
+    "int-auditor": { "name": "Interne Auditor", "role": "Interne controles en procesaudit", "description": "Evalueert interne controles, operationele efficiëntie en compliance." },
+    "cmio": { "name": "Hoofd Medische Informatie", "role": "Gezondheidszorg IT en klinische systemen", "description": "Expert in gezondheidszorgtechnologie, EHR-systemen en klinische informatica." },
+    "pso": { "name": "Patiëntveiligheidsfunctionaris", "role": "Klinische veiligheid en kwaliteit", "description": "Specialist in patiëntveiligheid, preventie van bijwerkingen en kwaliteitsverbetering." },
+    "hco": { "name": "Gezondheidszorg Compliance Functionaris", "role": "HIPAA en gezondheidszorgregels", "description": "Expert in regelgevende compliance gezondheidszorg, HIPAA en facturatiecompliance." },
+    "cod": { "name": "Klinisch Operatiedirecteur", "role": "Gezondheidszorgoperaties en efficiëntie", "description": "Expert in klinische operaties, patiëntenstroom en personeelsoptimalisatie." },
+    "quant": { "name": "Kwantitatief Analist", "role": "Financiële modellering en risicoanalyse", "description": "Expert in kwantitatieve financiën, derivaatprijzen en risicomodellering." },
+    "pm": { "name": "Portefeuillemanager", "role": "Investeringsstrategie en activaallocatie", "description": "Expert in portefeuillebouw, activaallocatie en investeringsstrategie." },
+    "cro-finance": { "name": "Kredietrisicofunctionaris", "role": "Kredietanalyse en risicobeoordeling", "description": "Expert in kredietanalyse, leningacceptatie en kredietrisicomodellering." },
+    "treasury": { "name": "Treasury Analist", "role": "Kasbeheer en liquiditeit", "description": "Expert in bedrijfstreasury, kasbeheer en valutahedging." },
+    "contracts": { "name": "Contractspecialist", "role": "Contractanalyse en onderhandeling", "description": "Expert in commerciële contracten, contractopstelling en onderhandeling." },
+    "ip": { "name": "Intellectueel Eigendom Raadsman", "role": "Patenten, merken en IE-strategie", "description": "Expert in intellectueel eigendomsrecht, patentstrategie en merkbescherming." },
+    "litigation": { "name": "Procesvoeringsexpert", "role": "Geschillenbeslechting en processtrategie", "description": "Expert in commerciële procesvoering, geschillenbeslechting en e-discovery." },
+    "regulatory": { "name": "Regelgevend Raadsman", "role": "Overheidsrelaties en compliance", "description": "Expert in regelgevende compliance, overheidsaangelegenheden en bestuursrecht." }
+  },
+  "label": {
+    "online": "Online",
+    "offline": "Offline",
+    "busy": "Bezig",
+    "premium": "Premium",
+    "locked": "Vergrendeld",
+    "custom": "Aangepast",
+    "unlock": "Ontgrendelen",
+    "required": "Verplicht"
+  },
+  "settings": {
+    "title": "Instellingen",
+    "organization": "Organisatie",
+    "users": "Gebruikers",
+    "teams": "Teams",
+    "roles": "Rollen en machtigingen",
+    "billing": "Facturering",
+    "apiKeys": "API-sleutels",
+    "integrations": "Integraties",
+    "preferences": "Voorkeuren",
+    "security": "Beveiliging"
+  },
+  "errors": {
+    "notFound": {
+      "title": "Pagina niet gevonden",
+      "message": "De pagina die u zoekt bestaat niet of is verplaatst.",
+      "backHome": "Terug naar home"
+    },
+    "serverError": {
+      "title": "Serverfout",
+      "message": "Er ging iets mis aan onze kant. Probeer het later opnieuw."
+    },
+    "networkError": {
+      "title": "Verbindingsfout",
+      "message": "Kan geen verbinding maken met de server. Controleer uw internetverbinding."
+    },
+    "unauthorized": {
+      "title": "Niet geautoriseerd",
+      "message": "U heeft geen toestemming om deze bron te openen."
+    },
+    "sessionExpired": {
+      "title": "Sessie verlopen",
+      "message": "Uw sessie is verlopen. Log opnieuw in."
+    }
+  },
+  "footer": {
+    "company": "Bedrijf",
+    "product": "Product",
+    "resources": "Bronnen",
+    "legal": "Juridisch",
+    "about": "Over ons",
+    "careers": "Carrières",
+    "contact": "Contact",
+    "press": "Pers",
+    "features": "Functies",
+    "integrations": "Integraties",
+    "enterprise": "Enterprise",
+    "documentation": "Documentatie",
+    "apiReference": "API-referentie",
+    "status": "Systeemstatus",
+    "community": "Community",
+    "privacy": "Privacybeleid",
+    "terms": "Servicevoorwaarden",
+    "security": "Beveiliging",
+    "cookies": "Cookiebeleid",
+    "copyright": "© {{year}} Datacendia. Alle rechten voorbehouden.",
+    "tagline": "Soevereine bedrijfsintelligentie"
+  },
+  "time": {
+    "justNow": "Zojuist",
+    "minutesAgo": "{{count}} minuut geleden",
+    "minutesAgo_plural": "{{count}} minuten geleden",
+    "hoursAgo": "{{count}} uur geleden",
+    "hoursAgo_plural": "{{count}} uur geleden",
+    "daysAgo": "{{count}} dag geleden",
+    "daysAgo_plural": "{{count}} dagen geleden",
+    "weeksAgo": "{{count}} week geleden",
+    "weeksAgo_plural": "{{count}} weken geleden"
+  },
+  "accessibility": {
+    "skipToMain": "Ga naar hoofdinhoud",
+    "skipToNav": "Ga naar navigatie",
+    "openMenu": "Menu openen",
+    "closeMenu": "Menu sluiten",
+    "expandSection": "Sectie uitvouwen",
+    "collapseSection": "Sectie invouwen",
+    "loading": "Inhoud laden",
+    "newWindow": "Opent in nieuw venster",
+    "externalLink": "Externe link",
+    "required": "Verplicht veld",
+    "optional": "Optioneel"
+  }
+}

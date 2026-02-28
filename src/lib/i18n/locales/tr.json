@@ -1,0 +1,1323 @@
+{
+  "common": {
+    "appName": "Datacendia",
+    "loading": "Yükleniyor...",
+    "error": "Bir hata oluştu",
+    "retry": "Tekrar dene",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "create": "Oluştur",
+    "update": "Güncelle",
+    "close": "Kapat",
+    "back": "Geri",
+    "next": "Sonraki",
+    "previous": "Önceki",
+    "search": "Ara",
+    "filter": "Filtrele",
+    "sort": "Sırala",
+    "export": "Dışa aktar",
+    "import": "İçe aktar",
+    "download": "İndir",
+    "upload": "Yükle",
+    "yes": "Evet",
+    "no": "Hayır",
+    "confirm": "Onayla",
+    "submit": "Gönder",
+    "apply": "Uygula",
+    "reset": "Sıfırla",
+    "clear": "Temizle",
+    "all": "Tümü",
+    "none": "Hiçbiri",
+    "select": "Seç",
+    "selected": "Seçildi",
+    "view": "Görüntüle",
+    "details": "Detaylar",
+    "more": "Daha fazla",
+    "less": "Daha az",
+    "showAll": "Tümünü göster",
+    "hideAll": "Tümünü gizle",
+    "viewMore": "Daha fazla gör",
+    "learnMore": "Daha fazla bilgi",
+    "and": "ve",
+    "or": "veya",
+    "continue": "Devam et",
+    "completed": "Tamamlandı",
+    "queried": "Sorgulandı"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "product": "Ürün",
+    "pricing": "Fiyatlandırma",
+    "about": "Hakkımızda",
+    "demo": "Demo İste",
+    "login": "Giriş Yap",
+    "register": "Kayıt Ol",
+    "logout": "Çıkış Yap",
+    "downloads": "İndirmeler",
+    "documentation": "Dokümantasyon",
+    "support": "Destek",
+    "contact": "İletişim",
+    "manifesto": "Manifesto",
+    "services": "Hizmetler",
+    "packages": "Paketler"
+  },
+  "auth": {
+    "login": {
+      "title": "Tekrar hoş geldiniz",
+      "subtitle": "Hesabınıza giriş yapın",
+      "email": "E-posta adresi",
+      "password": "Şifre",
+      "rememberMe": "Beni hatırla",
+      "forgotPassword": "Şifremi unuttum?",
+      "submitButton": "Giriş Yap",
+      "noAccount": "Hesabınız yok mu?",
+      "signUp": "Kayıt ol",
+      "orContinueWith": "Veya şununla devam et",
+      "errors": {
+        "invalidCredentials": "Geçersiz e-posta veya şifre",
+        "accountLocked": "Hesap kilitlendi",
+        "networkError": "Sunucuya bağlanılamıyor. Lütfen tekrar deneyin."
+      }
+    },
+    "register": {
+      "title": "Hesap oluşturun",
+      "subtitle": "14 günlük ücretsiz denemenize bugün başlayın.",
+      "headline": "Kuruluşunuzun zekasını serbest bırakın.",
+      "subheadline": "Datacendia kullanan binlerce şirkete katılın.",
+      "firstName": "Ad",
+      "lastName": "Soyad",
+      "fullName": "Tam ad",
+      "email": "İş e-postası",
+      "password": "Şifre",
+      "confirmPassword": "Şifreyi onayla",
+      "passwordHint": "En az 8 karakter",
+      "company": "Şirket (isteğe bağlı)",
+      "companySize": "Şirket büyüklüğü",
+      "industry": "Sektör",
+      "submitButton": "Hesap Oluştur",
+      "hasAccount": "Zaten hesabınız var mı?",
+      "signIn": "Giriş yap",
+      "agreeToTerms": "Kabul ediyorum",
+      "errors": {
+        "fullNameRequired": "Lütfen tam adınızı girin",
+        "validEmailRequired": "Lütfen geçerli bir e-posta girin",
+        "passwordMinLength": "Şifre en az 8 karakter olmalıdır",
+        "passwordMismatch": "Şifreler eşleşmiyor",
+        "acceptTerms": "Şartları kabul etmelisiniz",
+        "registrationFailed": "Kayıt başarısız. Lütfen tekrar deneyin."
+      }
+    },
+    "forgotPassword": {
+      "title": "Şifre Sıfırla",
+      "subtitle": "E-postanızı girin, size sıfırlama bağlantısı gönderelim.",
+      "email": "E-posta adresi",
+      "sendResetLink": "Bağlantı Gönder",
+      "backToLogin": "Girişe dön",
+      "checkEmail": "E-postanızı kontrol edin"
+    },
+    "mfa": {
+      "title": "İki faktörlü kimlik doğrulama",
+      "subtitle": "Doğrulama uygulamanızdan kodu girin.",
+      "code": "Doğrulama kodu",
+      "submitButton": "Doğrula"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Kuruluşunuzun zekası,",
+      "titleHighlight": "Egemen ve Eksiksiz",
+      "subtitle": "Datacendia kurumsal zeka için komuta merkezidir.",
+      "ctaPrimary": "Demo İste",
+      "ctaSecondary": "Platformu Keşfet"
+    },
+    "problem": {
+      "title": "Kurumsal Zeka Sorunu",
+      "subtitle": "Kuruluşlar parçalanmış veriler ve izole araçlarla mücadele ediyor"
+    },
+    "solution": { "title": "Cortex: Zeka Komuta Merkeziniz" },
+    "pillars": { "title": "Egemen Zekanın 8 Sütunu" },
+    "cta": { "title": "Zekanızın kontrolünü almaya hazır mısınız?", "button": "Demo Planla" }
+  },
+  "spaces": {
+    "graph": { "name": "Graf", "description": "Bilgi evreninizde gezinin" },
+    "council": { "name": "Konsey", "description": "Birlikte akıl yürüten AI danışmanlar" },
+    "pulse": { "name": "Nabız", "description": "Gerçek zamanlı organizasyonel sağlık" },
+    "lens": { "name": "Mercek", "description": "Olası gelecekleri görün" },
+    "bridge": { "name": "Köprü", "description": "Sistemler arası eylem alın" }
+  },
+  "pillars": {
+    "helm": { "name": "Dümen", "description": "Stratejik karar desteği" },
+    "lineage": { "name": "Soy", "description": "Her veri noktasını kaynağına kadar izleyin" },
+    "predict": { "name": "Tahmin", "description": "AI destekli öngörüler" },
+    "flow": { "name": "Akış", "description": "Otomatik iş akışları" },
+    "health": { "name": "Sağlık", "description": "Organizasyonel canlılık metrikleri" },
+    "guard": { "name": "Koruyucu", "description": "Veri yönetişimi ve uyumluluk" },
+    "ethics": { "name": "Etik", "description": "Yerleşik etik gözetim" },
+    "agents": { "name": "Ajanlar", "description": "Her alan için AI danışmanlar" }
+  },
+  "pricing": {
+    "title": "Basit, şeffaf fiyatlandırma",
+    "subtitle": "Kuruluşunuz için doğru planı seçin. Tüm planlar 14 günlük ücretsiz deneme içerir.",
+    "monthly": "Aylık",
+    "annual": "Yıllık",
+    "annualDiscount": "%20 tasarruf edin",
+    "perMonth": "/ay",
+    "startTrial": "Ücretsiz Denemeyi Başlat",
+    "contactSales": "Satışla İletişime Geç",
+    "mostPopular": "En popüler",
+    "plans": {
+      "foundation": { "name": "Foundation", "description": "Büyüyen ekipler için temel zeka yetenekleri" },
+      "intelligence": { "name": "Intelligence", "description": "Ölçeklenen organizasyonlar için gelişmiş analitik ve tahmin" },
+      "governance": { "name": "Governance", "description": "Düzenlemeye tabi sektörler için tam yönetişim ve uyumluluk" },
+      "sovereign": { "name": "Sovereign", "description": "Tam veri egemenliği ile tam platform" }
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "questions": {
+        "trial": { "q": "Satın almadan önce deneyebilir miyim?", "a": "Evet! Tüm planlar özelliklere tam erişimli 14 günlük ücretsiz deneme içerir." },
+        "data": { "q": "İptal edersem verilerime ne olur?", "a": "Verileriniz sizin kalır. İptalden önce her şeyi dışa aktarın veya 30 gün saklarız." },
+        "nonprofit": { "q": "Kar amacı gütmeyen kuruluşlar için indirim var mı?", "a": "Evet, nitelikli kar amacı gütmeyen ve eğitim kurumları için %50 indirim sunuyoruz." },
+        "upgrade": { "q": "İstediğim zaman yükseltebilir veya düşürebilir miyim?", "a": "Kesinlikle. Değişiklikler bir sonraki faturalandırma döngünüzde geçerli olur, yükseltmede orantılı." }
+      }
+    }
+  },
+  "downloads": {
+    "title": "İndirmeler",
+    "subtitle": "Platformunuz için Datacendia'yı edinin",
+    "desktop": { "title": "Masaüstü Uygulaması", "windows": "Windows", "mac": "macOS", "linux": "Linux", "download": "İndir" },
+    "mobile": { "title": "Mobil Uygulamalar", "ios": "iOS", "android": "Android", "appStore": "App Store", "playStore": "Google Play" },
+    "cli": { "title": "Komut Satırı Arayüzü" },
+    "selfHosted": { "title": "Kendi Sunucunuzda", "docker": "Docker Compose", "kubernetes": "Kubernetes (Helm)", "airgapped": "Air-Gapped Paketi" },
+    "systemRequirements": { "title": "Sistem Gereksinimleri", "minimum": "Minimum", "recommended": "Önerilen" }
+  },
+  "commandPalette": {
+    "searchPlaceholder": "Komut, sayfa, ajan ara...",
+    "noResults": "Sonuç bulunamadı:",
+    "navigate": "git",
+    "select": "seç",
+    "toggle": "değiştir",
+    "newQuery": "Yeni Konsey Sorgusu",
+    "askCouncil": "Konseye soru sor",
+    "refresh": "Veriyi Yenile",
+    "reloadPage": "Mevcut sayfa verilerini yeniden yükle",
+    "fullscreen": "Tam Ekranı Aç/Kapat",
+    "toggleFullscreen": "Tam ekran moduna gir/çık",
+    "switchTo": "Şuna geç:",
+    "changeLanguage": "Dili değiştir:",
+    "categories": { "navigation": "Gezinme", "actions": "İşlemler", "agents": "Ajanlar", "modes": "Konsey Modları", "recent": "Son" },
+    "agents": {
+      "chief": "Baş Strateji Ajanı",
+      "chiefDesc": "Stratejik sentez",
+      "cfo": "Finansal Zeka",
+      "cfoDesc": "Finansal analiz",
+      "coo": "Operasyonlar Ajanı",
+      "cooDesc": "Operasyonel verimlilik",
+      "ciso": "Güvenlik Ajanı",
+      "cisoDesc": "Güvenlik ve uyumluluk",
+      "cmo": "Pazar Zekası",
+      "cmoDesc": "Pazar analizi"
+    }
+  },
+  "cortex": {
+    "sidebar": { "spaces": "Alanlar", "pillars": "Sütunlar", "system": "Sistem", "data": "Veri", "security": "Güvenlik" }
+  },
+  "dashboard": {
+    "title": "Gösterge Paneli",
+    "welcome": "Tekrar hoş geldiniz",
+    "subtitle": "Bugün {{company}} nasıl gidiyor",
+    "health_score": "Kurum Sağlığı",
+    "healthScore": "Sağlık Puanı",
+    "data": "Veri",
+    "operations": "Operasyonlar",
+    "security": "Güvenlik",
+    "people": "İnsanlar",
+    "fromLastWeek": "geçen haftadan",
+    "alerts": "Aktif Uyarılar",
+    "activeAlerts": "Aktif Uyarılar",
+    "critical": "Kritik",
+    "warning": "Uyarı",
+    "info": "Bilgi",
+    "pending_approvals": "Bekleyen Onaylar",
+    "pendingApprovals": "Bekleyen Onaylar",
+    "workflows": "İş Akışları",
+    "access": "Erişim",
+    "budget": "Bütçe",
+    "by": "tarafından",
+    "approve": "Onayla",
+    "reject": "Reddet",
+    "keyMetrics": "Temel Metrikler",
+    "askTheCouncil": "Konseye Sor",
+    "whatToKnow": "Ne öğrenmek istersiniz?",
+    "recentQueries": "Son sorgular:",
+    "recentActivity": "Son Etkinlik",
+    "viewFullLog": "Tam Günlüğü Görüntüle",
+    "quickActions": "Hızlı İşlemler",
+    "greetings": { "morning": "Günaydın", "afternoon": "İyi günler", "evening": "İyi akşamlar" },
+    "sampleAlerts": {
+      "databaseCpu": "Veritabanı CPU > 90% 15 dakikadır",
+      "paymentLatency": "Ödeme işleme gecikmesi artışı",
+      "diskUsage": "prod-db-01'de disk kullanımı %78",
+      "apiErrors": "API hata oranı eşiğin üzerinde",
+      "memoryLeak": "auth servisinde bellek sızıntısı tespit edildi"
+    },
+    "sampleApprovals": { "monthlyClose": "Aylık Kapanış Süreci", "prodDbAccess": "Üretim Veritabanı Erişimi", "budgetIncrease": "Q4 Pazarlama Bütçesi Artışı", "newHire": "Yeni İşe Alım: Dev Ekibi" },
+    "sampleMetrics": { "revenue": "Gelir", "pipeline": "Pipeline", "burnRate": "Burn Rate", "nps": "NPS", "activeUsers": "Aktif Kullanıcılar", "churnRate": "Churn Oranı" },
+    "sampleActivity": {
+      "workflowCompleted": "\"{{name}}\" iş akışı tamamlandı",
+      "userQueried": "{{user}} {{topic}} hakkında sordu",
+      "alertResolved": "\"{{alert}}\" uyarısı çözüldü",
+      "reportGenerated": "\"{{report}}\" raporu oluşturuldu"
+    },
+    "sampleQueries": {
+      "churnIncrease": "Churn neden arttı?",
+      "forecastRevenue": "Q4 gelir tahmini",
+      "biggestRisk": "En büyük riskimiz ne?",
+      "customerSentiment": "Müşteri duyarlılık trendi nedir?",
+      "competitorAnalysis": "Rakip fiyatlandırmasını analiz et"
+    }
+  },
+  "button": {
+    "view_all": "Tümünü Gör",
+    "viewAll": "Tümünü Gör",
+    "viewMore": "Daha Fazla Gör",
+    "approve": "Onayla",
+    "reject": "Reddet",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "submit": "Gönder",
+    "edit": "Düzenle",
+    "delete": "Sil"
+  },
+  "sidebar": {
+    "dashboard": "Gösterge Paneli",
+    "the_council": "Konsey",
+    "the_graph": "Graf",
+    "the_pulse": "Nabız",
+    "the_lens": "Mercek",
+    "the_bridge": "Köprü",
+    "settings": "Ayarlar",
+    "help": "Yardım"
+  },
+  "council": {
+    "title": "Konsey",
+    "subtitle": "AI destekli stratejik danışma paneli",
+    "askQuestion": "Soru sor",
+    "questionPlaceholder": "Konseyin hangi stratejik soruyu değerlendirmesini istiyorsunuz?",
+    "selectAgents": "Katılacak ajanları seçin",
+    "startDeliberation": "Müzakere Başlat",
+    "quickAnswer": "Hızlı Cevap",
+    "fullDeliberation": "Tam Müzakere",
+    "selectedAgents": "Seçili Ajanlar",
+    "clearAll": "Tümünü Temizle",
+    "selectAll": "Tümünü Seç",
+    "agents": { "domain": "Alan Ajanları", "custom": "Özel Ajanlar", "premium": "Premium Ajanlar", "createCustom": "Özel Ajan Oluştur" },
+    "modes": {
+      "title": "Konsey Modları Kütüphanesi",
+      "subtitle": "Aynı ajanlar farklı modlarda farklı çıktılar üretir.",
+      "cultureNote": "Prompt şirket kültürüdür.",
+      "quickReference": "Hızlı Referans",
+      "mode": "Mod",
+      "primeDirective": "Ana Direktif",
+      "bestFor": "En İyi",
+      "agentBehavior": "Ajan Davranışı"
+    },
+    "deliberation": {
+      "phases": { "initial_analysis": "İlk Analiz", "cross_examination": "Çapraz İnceleme", "synthesis": "Sentez", "ethics_check": "Etik Kontrolü" },
+      "inProgress": "Müzakere Devam Ediyor",
+      "completed": "Müzakere Tamamlandı",
+      "confidence": "Güven"
+    },
+    "customAgent": {
+      "title": "Özel Ajan Oluştur",
+      "editTitle": "Özel Ajanı Düzenle",
+      "subtitle": "Özel uzmanlıkla kendi AI ajanınızı tasarlayın",
+      "premium": "Ajan Oluşturucu Paketi",
+      "avatar": "Ajan Avatarı",
+      "color": "Ajan Rengi",
+      "name": "Ajan Adı",
+      "namePlaceholder": "örn., Pazar Analisti",
+      "role": "Rol / Unvan",
+      "rolePlaceholder": "örn., Pazar Araştırma ve Analizi",
+      "description": "Açıklama",
+      "descriptionPlaceholder": "Bu ajanın ne yaptığını ve odak alanlarını açıklayın...",
+      "expertise": "Uzmanlık ve Talimatlar",
+      "capabilities": "Yetenekler",
+      "addCapability": "Ekle",
+      "save": "Ajanı Kaydet",
+      "delete": "Ajanı Sil"
+    },
+    "status": { "online": "Çevrimiçi", "offline": "Çevrimdışı", "busy": "Meşgul" }
+  },
+  "agent": {
+    "chief": { "name": "Baş Strateji Ajanı", "role": "Stratejik Gözetim ve Sentez", "description": "Bütünsel stratejik öneriler sunmak için tüm alan ajanlarının içgörülerini sentezler." },
+    "cfo": { "name": "Finansal İstihbarat Ajanı", "role": "Finansal Analiz ve Risk", "description": "Finansal verileri, bütçeleri, tahminleri analiz eder ve mali sağlık hakkında içgörüler sunar." },
+    "coo": { "name": "Operasyon İstihbaratı Ajanı", "role": "Operasyonel Verimlilik", "description": "Operasyonel metrikler, süreç verimliliği ve kaynak tahsisine odaklanır." },
+    "ciso": { "name": "Güvenlik ve Uyumluluk Ajanı", "role": "Güvenlik ve Risk Yönetimi", "description": "Güvenlik duruşunu, uyumluluk gereksinimlerini ve tehdit değerlendirmesini izler." },
+    "cmo": { "name": "Pazar İstihbaratı Ajanı", "role": "Pazarlama ve Müşteri İçgörüleri", "description": "Pazar trendlerini, müşteri davranışlarını ve rekabetçi istihbaratı analiz eder." },
+    "cro": { "name": "Gelir İstihbaratı Ajanı", "role": "Gelir ve Büyüme", "description": "Gelir optimizasyonu, satış performansı ve fiyatlandırma stratejilerine odaklanır." },
+    "cdo": { "name": "Veri Kalitesi Ajanı", "role": "Veri Yönetişimi ve Kalitesi", "description": "Veri kalitesini, yönetişim politikalarını izler ve veri bütünlüğünü sağlar." },
+    "risk": { "name": "Risk Değerlendirme Ajanı", "role": "Kurumsal Risk Analizi", "description": "Kurumsal riskleri değerlendirir, etki analizi yapar ve azaltma stratejileri sunar." },
+    "clo": { "name": "Hukuki İstihbarat Ajanı", "role": "Hukuki Analiz ve Uyumluluk", "description": "Hukuki riskleri, sözleşme etkilerini ve düzenleyici uyumluluğu analiz eder." },
+    "cpo": {
+      "name": "Ürün Stratejisi Ajanı",
+      "role": "Ürün İnovasyonu ve Yol Haritası",
+      "description": "Ürün stratejisini, özellik önceliklendirmesini ve kullanıcı deneyimi içgörülerini yönlendirir."
+    },
+    "caio": { "name": "AI Strateji Ajanı", "role": "AI/ML Yönetişimi ve İnovasyon", "description": "AI stratejisini, model yönetişimini ve etik AI uygulamasını yönlendirir." },
+    "cso": { "name": "Sürdürülebilirlik Ajanı", "role": "ESG ve Çevresel Etki", "description": "Çevre, sosyal ve yönetişim metriklerini ve sürdürülebilirlik girişimlerini izler." },
+    "cio": { "name": "Yatırım İstihbaratı Ajanı", "role": "Sermaye Tahsisi ve Portföy", "description": "Yatırım fırsatlarını, portföy tahsisini ve sermaye dağıtımını analiz eder." },
+    "cco": { "name": "İletişim Ajanı", "role": "Kurumsal İletişim ve PR", "description": "Kurumsal mesajlar oluşturur, paydaş iletişimini yönetir ve marka algısını izler." },
+    "ext-auditor": { "name": "Dış Denetçi", "role": "Bağımsız Üçüncü Taraf Denetimi", "description": "Dış perspektiften bağımsız, objektif değerlendirme sağlar." },
+    "int-auditor": { "name": "İç Denetçi", "role": "İç Kontroller ve Süreç Denetimi", "description": "İç kontrolleri, operasyonel verimliliği ve uyumluluğu değerlendirir." },
+    "cmio": { "name": "Baş Tıbbi Bilgi Sorumlusu", "role": "Sağlık BT ve Klinik Sistemler", "description": "Sağlık teknolojisi, EHR sistemleri ve klinik bilişim uzmanı." },
+    "pso": { "name": "Hasta Güvenliği Sorumlusu", "role": "Klinik Güvenlik ve Kalite", "description": "Hasta güvenliği, advers olay önleme ve kalite iyileştirme uzmanı." },
+    "hco": { "name": "Sağlık Uyumluluğu Sorumlusu", "role": "HIPAA ve Sağlık Düzenlemeleri", "description": "Sağlık düzenleyici uyumluluk, HIPAA ve faturalandırma uyumluluğu uzmanı." },
+    "cod": { "name": "Klinik Operasyonlar Direktörü", "role": "Sağlık Operasyonları ve Verimlilik", "description": "Klinik operasyonlar, hasta akışı ve personel optimizasyonu uzmanı." },
+    "quant": { "name": "Kantitatif Analist", "role": "Finansal Modelleme ve Risk Analitiği", "description": "Kantitatif finans, türev fiyatlaması ve risk modelleme uzmanı." },
+    "pm": { "name": "Portföy Yöneticisi", "role": "Yatırım Stratejisi ve Varlık Tahsisi", "description": "Portföy oluşturma, varlık tahsisi ve yatırım stratejisi uzmanı." },
+    "cro-finance": { "name": "Kredi Riski Sorumlusu", "role": "Kredi Analizi ve Risk Değerlendirmesi", "description": "Kredi analizi, kredi sigortası ve kredi riski modelleme uzmanı." },
+    "treasury": { "name": "Hazine Analisti", "role": "Nakit Yönetimi ve Likidite", "description": "Kurumsal hazine, nakit yönetimi ve FX riskinden korunma uzmanı." },
+    "contracts": { "name": "Sözleşme Uzmanı", "role": "Sözleşme Analizi ve Müzakere", "description": "Ticari sözleşmeler, sözleşme taslağı hazırlama ve müzakere uzmanı." },
+    "ip": { "name": "Fikri Mülkiyet Danışmanı", "role": "Patentler, Markalar ve FM Stratejisi", "description": "Fikri mülkiyet hukuku, patent stratejisi ve marka koruma uzmanı." },
+    "litigation": { "name": "Dava Uzmanı", "role": "Uyuşmazlık Çözümü ve Dava Stratejisi", "description": "Ticari dava, uyuşmazlık çözümü ve e-discovery uzmanı." },
+    "regulatory": { "name": "Düzenleyici İşler Danışmanı", "role": "Hükümet İlişkileri ve Uyumluluk", "description": "Düzenleyici uyumluluk, hükümet işleri ve idare hukuku uzmanı." }
+  },
+  "label": { "online": "Çevrimiçi", "offline": "Çevrimdışı", "busy": "Meşgul", "premium": "Premium", "locked": "Kilitli", "custom": "Özel", "unlock": "Kilidi Aç", "required": "Gerekli" },
+  "settings": { "title": "Ayarlar", "organization": "Organizasyon", "users": "Kullanıcılar", "teams": "Takımlar", "billing": "Faturalandırma", "security": "Güvenlik" },
+  "errors": {
+    "notFound": { "title": "Sayfa Bulunamadı", "message": "Aradığınız sayfa mevcut değil.", "backHome": "Ana Sayfaya Dön" },
+    "serverError": { "title": "Sunucu Hatası", "message": "Bizim tarafımızda bir sorun oluştu." },
+    "networkError": { "title": "Bağlantı Hatası", "message": "Sunucuya bağlanılamıyor." },
+    "unauthorized": { "title": "Yetkisiz", "message": "Bu kaynağa erişim izniniz yok." }
+  },
+  "footer": {
+    "company": "Şirket",
+    "product": "Ürün",
+    "resources": "Kaynaklar",
+    "legal": "Yasal",
+    "about": "Hakkımızda",
+    "careers": "Kariyer",
+    "contact": "İletişim",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Hizmet Şartları",
+    "copyright": "© {{year}} Datacendia. Tüm hakları saklıdır."
+  },
+  "time": {
+    "justNow": "Az önce",
+    "minutesAgo": "{{count}} dakika önce",
+    "minutesAgo_plural": "{{count}} dakika önce",
+    "hoursAgo": "{{count}} saat önce",
+    "hoursAgo_plural": "{{count}} saat önce",
+    "daysAgo": "{{count}} gün önce",
+    "daysAgo_plural": "{{count}} gün önce",
+    "weeksAgo": "{{count}} hafta önce",
+    "weeksAgo_plural": "{{count}} hafta önce"
+  },
+  "tooltips": {
+    "pillars": {
+      "helm": {
+        "title": "The Helm - Stratejik Komuta Merkezi",
+        "summary": "Kurumunuzun stratejik karar destek sistemi. Güvenle izleyin, analiz edin ve yönlendirin.",
+        "features": [
+          "Trend analizi ile gerçek zamanlı KPI panosu",
+          "Stratejik hedef takibi ve hizalama",
+          "Sektör karşılaştırmaları ile performans kıyaslama",
+          "Otomatik bildirimlerle uyarı eşikleri",
+          "Yönetici özet oluşturma"
+        ],
+        "useCases": ["Tüm departmanlarda çeyreklik hedefleri izleme", "Gelir metrikleri ve büyüme göstergelerini izleme", "Stratejik kilometre taşlarını belirleme ve takip etme"],
+        "guidance": "Temel metriklerinizi tanımlayarak başlayın. Helm, net ve ölçülebilir hedefleriniz olduğunda en iyi çalışır."
+      },
+      "lineage": {
+        "title": "The Lineage - Veri Soyağacı Takibi",
+        "summary": "Veri yolculuğunuzun tam görünürlüğü. Her sayının nereden geldiğini ve nereye gittiğini bilin.",
+        "features": [
+          "Veri akışının görsel haritalanması",
+          "Kaynaktan rapora izleme",
+          "Veri değişiklikleri için etki analizi",
+          "Her aşamada veri kalitesi puanlaması",
+          "Otomatik dokümantasyon oluşturma"
+        ],
+        "useCases": ["Düzenleyici uyum için denetim izleri", "Sistemler arası veri tutarsızlıklarını ayıklama", "Tam etki görünürlüğü ile sistem geçiş planlaması"],
+        "guidance": "Önce veri kaynaklarınızı bağlayın. Lineage otomatik olarak ilişkileri keşfeder ve veri haritanızı oluşturur."
+      },
+      "predict": {
+        "title": "The Predict - AI Tahmin Motoru",
+        "summary": "Ufkun ötesini gören makine öğrenmesi modelleri. Trendleri belirgin hale gelmeden önce tahmin edin.",
+        "features": ["Güven aralıkları ile zaman serisi tahmini", "Anomali tespiti ve erken uyarı sistemi", "What-if senaryo modelleme", "Özellik önem analizi", "Model performans izleme"],
+        "useCases": ["Talep tahmini ve envanter optimizasyonu", "Müşteri kaybını gerçekleşmeden önce tahmin etme", "Stratejik planlama için finansal senaryo modelleme"],
+        "guidance": "Kaliteli tahminler kaliteli veri gerektirir. Temiz geçmiş verilerle başlayın ve Predict'in kalıplarınızı öğrenmesine izin verin."
+      },
+      "flow": {
+        "title": "The Flow - Akıllı Otomasyon",
+        "summary": "Düşünen iş akışları. Sistemleri bağlayın, kararları otomatikleştirin ve işin akmasını sağlayın.",
+        "features": [
+          "Görsel sürükle-bırak iş akışı oluşturucu",
+          "AI destekli karar düğümleri",
+          "Çoklu sistem entegrasyon konektörleri",
+          "Eskalasyon kuralları ile onay zincirleri",
+          "İş akışı analizi ve optimizasyonu"
+        ],
+        "useCases": ["Veri pipeline orkestrasyonunu otomatikleştirme", "Akıllı onay süreçleri oluşturma", "AI içgörülerine dayalı eylemleri tetikleme"],
+        "guidance": "Önce mevcut manuel süreçlerinizi haritalayın. Flow, otomasyon fırsatlarını belirlemenize ve kademeli olarak uygulamanıza yardımcı olur."
+      },
+      "health": {
+        "title": "The Health - Hayati İşaretler Monitörü",
+        "summary": "Kurumsal hayati işaretlerinizin gerçek zamanlı nabzı. Bir şey bozulmadan önce ne zaman yanlış olduğunu bilin.",
+        "features": ["Bileşen sağlık panosu", "Performans trend analizi", "Olay takibi ve çözümü", "Kapasite planlama araçları", "Çalışma süresi ve SLA izleme"],
+        "useCases": ["Tüm platformlarda sistem sağlığını izleme", "Olay yanıt ve çözüm sürelerini izleme", "Proaktif altyapı kapasite planlaması"],
+        "guidance": "Kritik sistemleriniz için sağlık kontrolleri yapılandırın. Health, birleşik bir görünüm sağlamak için sinyalleri toplar."
+      },
+      "guard": {
+        "title": "The Guard - Güvenlik ve Uyum Kalkanı",
+        "summary": "Verileriniz için otomatik koruma. Politikaları uygulayın, erişimi izleyin ve uyumu sürdürün.",
+        "features": ["Politika uygulama motoru", "Erişim denetim günlüğü", "Tehdit tespiti ve uyarı", "Uyum çerçevesi haritalama", "Güvenlik duruşu puanlaması"],
+        "useCases": ["Veri erişim politikalarını otomatik uygulama", "Denetçiler için uyum raporları oluşturma", "Güvenlik tehditlerini tespit etme ve yanıtlama"],
+        "guidance": "Güvenlik politikalarınızı ve uyum gereksinimlerinizi tanımlayın. Guard sürekli izler ve ihlallerde uyarır."
+      },
+      "ethics": {
+        "title": "The Ethics - AI Yönetişim Merkezi",
+        "summary": "Yerleşik sorumlu AI. Her kararda adalet, şeffaflık ve hesap verebilirlik sağlayın.",
+        "features": ["Önyargı tespiti ve izleme", "Model açıklanabilirlik araçları", "Etik değerlendirme iş akışları", "Adalet metrik takibi", "Karar denetim izleri"],
+        "useCases": ["Dağıtımdan önce AI modellerini önyargı açısından değerlendirme", "Uyum için karar gerekçelerini belgeleme", "Üretimdeki adalet metriklerini izleme"],
+        "guidance": "Önce etik ilkelerinizi belirleyin. Ethics, bunları tüm AI sistemlerinizde operasyonelleştirmenize yardımcı olur."
+      },
+      "agents": {
+        "title": "The Agents - AI Danışman Konseyi",
+        "summary": "Her alan için uzman AI danışmanları. İstek üzerine uzman rehberliği alın.",
+        "features": ["Alan uzmanı AI ajanları", "Çoklu ajan işbirliği", "Bağlam farkında öneriler", "Doğal dil etkileşimi", "Geri bildirimden sürekli öğrenme"],
+        "useCases": ["İş analistinden stratejik tavsiye alma", "Mimari kararları için teknik uzmanlara danışma", "Düzenleme uzmanlarından uyum rehberliği alma"],
+        "guidance": "Sorunuz için doğru ajanı seçin. Her ajanın uzmanlık alanı vardır - Council ne zaman işbirliği yapılacağını bilir."
+      }
+    },
+    "spaces": {
+      "graph": {
+        "title": "The Graph - Bilgi Navigatörü",
+        "summary": "Kurumunuzun bilgi evreninde gezinin. Başkalarının kaçırdığı bağlantıları görün.",
+        "features": ["Etkileşimli bilgi görselleştirme", "Tüm veriler üzerinde semantik arama", "İlişki keşfi", "Bağlam farkında keşif", "Bilgi boşluğu belirleme"],
+        "guidance": "Herhangi bir düğüme tıklayarak keşfedin. Graph bağlantıları ortaya çıkarır ve detaylara inmenizi sağlar."
+      },
+      "council": {
+        "title": "The Council - AI İşbirliği Odası",
+        "summary": "AI danışmanlarının birlikte müzakere ettiği yer. Karmaşık sorunlar çoklu bakış açıları gerektirir.",
+        "features": ["Çoklu ajan muhakeme oturumları", "Yapılandırılmış tartışma çerçeveleri", "Çatışma çözüm protokolleri", "Uzlaşı oluşturma araçları", "Karar dokümantasyonu"],
+        "guidance": "Sorunuzu Konseye sunun. Farklı bakış açılarının ortaya çıkmasını ve önerilere sentezlenmesini izleyin."
+      },
+      "pulse": {
+        "title": "The Pulse - Gerçek Zamanlı Operasyon Merkezi",
+        "summary": "Kurumunuzun kalp atışının canlı görünümü. Her metrik, her an.",
+        "features": ["Gerçek zamanlı metrik akışı", "Özelleştirilebilir uyarı eşikleri", "Trend görselleştirme", "Anomali vurgulama", "Geçmiş karşılaştırmaları"],
+        "guidance": "Pulse'da görüntülemek için temel metriklerinizi yapılandırın. Değişikliklerden haberdar olmak için uyarı eşikleri ayarlayın."
+      },
+      "lens": {
+        "title": "The Lens - Gelecek Senaryo Kaşifi",
+        "summary": "Olası gelecekleri gelmeden önce görün. Senaryoları modelleyin ve buna göre planlayın.",
+        "features": ["Senaryo modelleme araçları", "Monte Carlo simülasyonları", "Duyarlılık analizi", "Karar ağacı görselleştirme", "Sonuç olasılık haritalama"],
+        "guidance": "Senaryo parametrelerinizi tanımlayın. Lens birden fazla gelecek oluşturur ve en olası sonuçları gösterir."
+      },
+      "bridge": {
+        "title": "The Bridge - Eylem Komuta Merkezi",
+        "summary": "İçgörüleri eyleme dönüştürün. Tüm bağlı sistemlerinizde yürütün.",
+        "features": ["Sistemler arası eylem yürütme", "Onay iş akışı entegrasyonu", "Eylem etki önizlemesi", "Geri alma yetenekleri", "Yürütme denetim izleri"],
+        "guidance": "Eyleminizi seçin ve etkisini önizleyin. Bridge, tam izlenebilirlik ile güvenli yürütme sağlar."
+      }
+    },
+    "sovereign": {
+      "mirror": {
+        "title": "Cendia Mirror - Dijital İkiz Motoru",
+        "summary": "Kurumunuzun canlı dijital kopyasını oluşturun. Değişiklikleri canlıya almadan önce test edin.",
+        "features": ["Gerçek zamanlı veri senkronizasyonu", "Senaryo simülasyon ortamları", "Değişiklik etki modelleme", "A/B test çerçeveleri", "Performans tahminleri"],
+        "guidance": "Mirror kurumunuzun güvenli bir sandbox'ını oluşturur. Özgürce deneyin - buradaki değişiklikler üretime etki etmez."
+      },
+      "witness": {
+        "title": "Cendia Witness - Değişmez Denetim Defteri",
+        "summary": "Her eylemin blockchain destekli kanıtı. Neyin ne zaman olduğunu kanıtlayın.",
+        "features": ["Kriptografik zaman damgaları", "Kurcalanamaz denetim günlükleri", "Gözetim zinciri takibi", "Yasal için kanıt dışa aktarımı", "Uyum tasdiki"],
+        "guidance": "Witness kritik eylemleri otomatik olarak kaydeder. Denetimler veya soruşturmalar için değişmez kayıtlara her an erişin."
+      },
+      "oracle": {
+        "title": "Cendia Oracle - Tahminsel Zeka Merkezi",
+        "summary": "Güce doğruyu söyleyen gelişmiş AI. Önemli yanıtları alın.",
+        "features": ["Doğal dil sorgu arayüzü", "Alanlar arası muhakeme", "Tahminsel soru yanıtlama", "Güven puanlaması", "Kaynak alıntıları"],
+        "guidance": "Oracle'a kurumunuz hakkında her şeyi sorun. Kesin yanıtlar sağlamak için tüm kaynaklardan bilgiyi sentezler."
+      },
+      "legacy": {
+        "title": "Cendia Legacy - Bilgi Koruma",
+        "summary": "Kurumsal bilgiyi ayrılmadan önce yakalayın. Geleceğe bilgeliği koruyun.",
+        "features": ["Uzman bilgi yakalama", "Karar gerekçe arşivleme", "En iyi uygulama dokümantasyonu", "Bilgi transfer süreçleri", "Halef onboarding araçları"],
+        "guidance": "Kritik bilgiyi oluşturulduğunda kaydedin. Legacy, kurumsal bilgeliğinizin herhangi bir bireyden daha uzun yaşamasını sağlar."
+      },
+      "mirage": {
+        "title": "Cendia Mirage - Sentetik Veri Oluşturucu",
+        "summary": "Güvenlik riskleri olmadan gerçekçi veriler oluşturun. Güvenle eğitin, test edin ve geliştirin.",
+        "features": ["İstatistiksel veri sentezi", "Gizlilik korumalı oluşturma", "Korelasyon bakımı", "Uç durum amplifikasyonu", "Kalite doğrulama"],
+        "guidance": "Veri gereksinimlerinizi tanımlayın. Mirage, gerçek veri özelliklerinize uyan sentetik veri kümeleri oluşturur."
+      },
+      "key": {
+        "title": "Cendia Key - Kimlik ve Erişim Kasası",
+        "summary": "Hepsini yönetecek tek anahtar. Tüm ekosisteeminizde birleşik kimlik yönetimi.",
+        "features": ["Tek oturum açma merkezi", "Rol tabanlı erişim kontrolü", "Ayrıcalıklı erişim yönetimi", "Kimlik yaşam döngüsü otomasyonu", "Sıfır güven uygulaması"],
+        "guidance": "Kimlik sağlayıcılarınızı bağlayın. Key, tüm sistemlerde erişim kontrollerini birleştirir ve politikaları uygular."
+      },
+      "mesh": {
+        "title": "Cendia Mesh - Entegrasyon Katmanı",
+        "summary": "Her şeyi her şeye bağlayın. İşletmeniz için akıllı entegrasyon katmanı.",
+        "features": ["Evrensel API gateway", "Olay güdümlü mimari", "Veri dönüştürme motoru", "Service mesh yönetimi", "Entegrasyon izleme"],
+        "guidance": "Sistem bağlantılarınızı Mesh üzerinden yapılandırın. Protokolleri, dönüşümleri ve yönlendirmeyi otomatik olarak işler."
+      },
+      "blackbox": {
+        "title": "Cendia BlackBox - Model Kayıt Defteri",
+        "summary": "Tüm AI modelleriniz için komuta merkezi. Güvenle sürüm kontrolü yapın, dağıtın ve izleyin.",
+        "features": ["Model sürümleme ve soyağacı", "Dağıtım orkestrasyonu", "A/B test çerçeveleri", "Performans izleme", "Geri alma otomasyonu"],
+        "guidance": "Modellerinizi BlackBox'a kaydedin. Sürümleri izler, dağıtımları yönetir ve performansı otomatik olarak izler."
+      },
+      "glass": {
+        "title": "Cendia Glass - Şeffaflık Panosu",
+        "summary": "AI kararlarına tam görünürlük. Kararların neden ve nasıl verildiğini tam olarak görün.",
+        "features": ["Karar açıklamaları", "Faktör katkı analizi", "Karşı olgusal keşif", "Paydaş raporlaması", "Denetime hazır dokümantasyon"],
+        "guidance": "Glass'ta herhangi bir AI kararı seçin. Faktörleri ayrıştırır, alternatifleri gösterir ve muhakemeyi açıklar."
+      }
+    },
+    "enterprise": {
+      "apotheosis": {
+        "title": "CendiaApotheosis™ - Organizasyonel Süper Zeka",
+        "summary": "Hiç durmayan kendi kendini geliştirme döngüsü. Gece saldırıları, otomatik yamalar, insan becerileri geliştirme ve desen yasaklama.",
+        "features": ["Gecelik red-team simülasyonları (1000+ senaryo)", "Otomatik zayıflık yamalama", "Beceri açığı tespiti ve eğitim", "Karar deseni yasaklama", "Apotheosis Skoru takibi"],
+        "useCases": ["Sürekli organizasyonel iyileştirme", "Proaktif risk azaltma", "Otomatik uyum güçlendirme", "Yönetici karar desteği"],
+        "guidance": "Apotheosis her gece çalışır, organizasyonunuzu 1000+ açıdan saldırır, bulduklarını yamalar ve kendi hatalarınıza karşı kalıcı olarak bağışık kılar."
+      },
+      "dissent": {
+        "title": "CendiaDissent™ - Korunan İtiraz",
+        "summary": "Herhangi bir karara karşı resmi, güvenli ve değiştirilemez şekilde itiraz etme hakkı — sonsuza dek kayıtlı.",
+        "features": ["Anonim veya isimli itiraz kaydı", "72 saat içinde zorunlu onay", "Değiştirilemez defter kaydı", "İntikam tespiti ve koruma", "İtiraz doğruluğu takibi"],
+        "useCases": ["Azınlık seslerinin duyulmasını sağlama", "Organizasyonel hafıza oluşturma", "İhbarcıları koruma", "Karar kalitesini iyileştirme"],
+        "guidance": "Katılmadığınız herhangi bir karara itiraz edin. İtirazınız kalıcı olarak kaydedilecek, kabul edilecek ve zaman içinde doğruluğu takip edilecek."
+      },
+      "connectors": {
+        "title": "Kurumsal Veri Bağlayıcıları",
+        "summary": "11 sektör dikeyinde 156+ önceden oluşturulmuş bağlayıcı. Hükümet, finans, sağlık ve küresel veri kaynaklarına bağlanın.",
+        "features": [
+          "Hükümet: NOAA, FAA, FEMA, SEC, Census, USGS, EIA",
+          "Finans: Bloomberg, SWIFT, FIX Protokolü, Refinitiv",
+          "Sağlık: HL7 FHIR, Epic, Cerner, CDC, FDA, WHO",
+          "Tedarik Zinciri: CBP, Maersk, Liman API'leri",
+          "Enerji: CAISO, PJM, ERCOT, ENTSO-E, Nord Pool",
+          "Aviyonik: ARINC 429/664, ADS-B, ACARS, MIL-STD-1553"
+        ],
+        "useCases": [
+          "Gerçek zamanlı hava durumu veri entegrasyonu",
+          "Finansal piyasa verileri ve düzenleyici beslemeler",
+          "Sağlık birlikte çalışabilirliği ve klinik veriler",
+          "Tedarik zinciri görünürlüğü",
+          "Elektrik şebekesi ve enerji piyasası analizi",
+          "Havacılık güvenliği ve uçuş operasyonları"
+        ],
+        "guidance": "Bağlayıcılara sektöre göre göz atın veya belirli kaynakları arayın. Her bağlayıcı kimlik doğrulama, hız sınırlama ve uyumluluk eşlemesi içerir."
+      },
+      "evidence": {
+        "title": "Kanıt Altyapısı",
+        "summary": "Blockchain tarzı hash zincirleme, TPM dijital imzalar ve Merkle ağacı kanıtlarıyla değiştirilemez kanıt defteri.",
+        "features": [
+          "Kriptografik olarak imzalanmış defter girişleri",
+          "Derleme ve yürütme kimliği yakalama",
+          "TPM donanım kanıtlama desteği",
+          "Merkle ağacı bütünlük doğrulaması",
+          "Yasal kanıt paketi oluşturma"
+        ],
+        "useCases": ["Denetim için hazır test kanıtları", "Güvenlik inceleme belgeleri", "SOC 2 / ISO 27001 / KVKK kanıtları", "Kurcalamaya dayanıklı yürütme kayıtları"],
+        "guidance": "Tüm test yürütmeleri kriptografik imzalarla otomatik olarak kaydedilir. Tek tıklamayla yasal kanıt paketleri oluşturun."
+      },
+      "sovereignArch": {
+        "title": "Egemen Mimari Kalıpları",
+        "summary": "Air-gap, sıfır güven ve tam egemen dağıtımlar için 11 kurumsal kalıp.",
+        "features": [
+          "Veri Diyotu: Karantinalı tek yönlü veri alımı",
+          "Yerel RLHF: Bulut gerektirmeyen pekiştirmeli öğrenme",
+          "Karar DNA'sı: Tek tıkla denetim dışa aktarımı",
+          "Gölge Konsey: Sandbox modu",
+          "QR Air-Gap Köprüsü: Medyasız veri aktarımı",
+          "TPM Kanıtlama: Donanım imzalı kararlar"
+        ],
+        "useCases": ["Air-gap güvenli tesis dağıtımları", "Savunma ve istihbarat uygulamaları", "Düzenlenen sektör uyumluluğu", "Sıfır güven kurumsal mimarisi"],
+        "guidance": "Egemen Mimari kalıpları en kısıtlı ortamlarda dağıtımı mümkün kılar. Her kalıp bağımsız veya birlikte kullanılabilir."
+      },
+      "cascade": {
+        "title": "CendiaCascade™ - Kelebek Etkisi",
+        "summary": "İkinci ve üçüncü derece sonuç analizi. İstenmeyen sonuçları olay olmadan önce tahmin edin.",
+        "features": [
+          "Çoklu lens analizi (CFO, COO, CISO, İnsan, Etik)",
+          "Kelebek etkisi algılama (şaşırtıcı 3+ derece etkiler)",
+          "Otomatik oluşturulan azaltmalar (önle, algıla, yanıtla)",
+          "Koruyucu öneriler (canary, tripwire, devre kesici, geri alma)",
+          "Zaman çizelgesi görselleştirme (T+0, T+30, T+90, T+1Yıl)",
+          "SHA-256 hash ile denetim izi"
+        ],
+        "useCases": [
+          "Uygulamadan önce personel değişikliklerini analiz edin",
+          "Tedarikçi değişikliği sonuçlarını tahmin edin",
+          "Organizasyon grafiğinde politika değişikliklerini modelleyin",
+          "Geri bildirim döngülerini algılayın"
+        ],
+        "guidance": "Organizasyon grafiğinizi yükleyin, bir değişiklik önerin ve CendiaCascade'in sonuçları izlemesine izin verin. Rakipleriniz bir hamle ileri satranç oynuyor — CendiaCascade 5 hamle ileriyi simüle eder."
+      },
+      "adapters": {
+        "title": "Egemen Adaptörler - Evrensel Bağlayıcılar",
+        "summary": "156 satıcıya özgü bağlayıcı yerine 5 evrensel adaptör. Biz soketi sağlıyoruz; müşteri fişi getiriyor.",
+        "features": [
+          "Dosya İzleyici: Aviyonik, savunma, dosya tabanlı veri alımı",
+          "Webhook Alımı: SaaS, finansal geçit push olayları",
+          "Veritabanı Adaptörü: ERP, tedarik zinciri SQL/ODBC",
+          "FHIR Protokolü: Sağlık standardı",
+          "FIX Protokolü: Finans standardı",
+          "MQTT Protokolü: IoT ve enerji şebekesi"
+        ],
+        "useCases": [
+          "Açık standartlar aracılığıyla herhangi bir sisteme bağlanın",
+          "Tescilli API lisans yükümlülüklerinden kaçının",
+          "Air-gap ve düzenlenen ortamları destekleyin",
+          "Düzenlenen adaptörler için BYO-keys"
+        ],
+        "guidance": "Entegrasyon modelinize uygun adaptör türünü seçin. Her adaptör otomatik olarak risk seviyeleri, kanıt günlüğü ve kota kontrolleri uygular."
+      }
+    }
+  },
+  "narratives": {
+    "welcome": {
+      "title": "Datacendia'ya Hoş Geldiniz",
+      "subtitle": "Egemen zekaya yolculuğunuz burada başlıyor",
+      "steps": [
+        { "title": "Komuta Merkezinizi Tanıyın", "description": "Cortex, kurumsal zekanın birleşik görünümüdür. Beş bağlı alan size tam görünürlük ve kontrol sağlar.", "action": "Cortex'i Keşfedin" },
+        {
+          "title": "8 Sütunu Anlayın",
+          "description": "Her sütun temel yetenekler sunar - stratejik metriklerden (Helm) AI yönetişimine (Ethics). Bir sistem olarak birlikte çalışırlar.",
+          "action": "Sütun Genel Görünümüne Bakın"
+        },
+        {
+          "title": "İlk Veri Kaynağınızı Bağlayın",
+          "description": "Zeka veri gerektirir. Bilgi tabanınızı oluşturmaya başlamak için veritabanı, API veya dosya kaynağı bağlayın.",
+          "action": "Veri Kaynağı Ekle"
+        },
+        { "title": "Temel Metriklerinizi Tanımlayın", "description": "Kurumunuz için en önemli ne? Yönetici panonuzda görünecek KPI'ları tanımlayın.", "action": "İlk Metriği Oluştur" }
+      ]
+    },
+    "executive": {
+      "title": "Yönetici Komuta Yolculuğu",
+      "subtitle": "Tam zeka ile stratejik kararlar alın",
+      "persona": "C-Suite Yönetici",
+      "duration": "15 dakika",
+      "steps": [
+        {
+          "title": "The Pulse ile Başlayın",
+          "description": "Her güne kurumsal sağlığın gerçek zamanlı görünümüyle başlayın. Kırmızı göstergeler acil dikkat gerektirir.",
+          "space": "pulse",
+          "keyActions": ["Sağlık puanlarını görüntüle", "Aktif uyarıları kontrol et", "Trend metriklerini not al"]
+        },
+        {
+          "title": "The Helm'e Dalın",
+          "description": "Stratejik KPI'larınızı gözden geçirin. Çeyreklik hedeflerinize ulaşıyor musunuz? Boşluklar nerede?",
+          "pillar": "helm",
+          "keyActions": ["KPI durumunu gözden geçir", "Hedeflerle karşılaştır", "Risk altındaki hedefleri belirle"]
+        },
+        {
+          "title": "The Council'a Danışın",
+          "description": "Karmaşık kararlar için AI danışmanlarınızı toplayın. Durumu sunun ve çoklu bakış açılarını dinleyin.",
+          "space": "council",
+          "keyActions": ["Sorunuzu sorun", "Ajan bakış açılarını gözden geçirin", "Sentez isteyin"]
+        },
+        {
+          "title": "The Lens ile Keşfedin",
+          "description": "Farklı senaryoları modelleyin. Yatırımı artırsanız? Lansmani ertelesez? Lens olası gelecekleri gösterir.",
+          "space": "lens",
+          "keyActions": ["Senaryo parametrelerini tanımla", "Simülasyonları çalıştır", "Sonuçları karşılaştır"]
+        },
+        {
+          "title": "The Bridge ile Harekete Geçin",
+          "description": "Kararları eyleme dönüştürün. Bridge tam denetim izi ile sistemler arasında yürütür.",
+          "space": "bridge",
+          "keyActions": ["Eylemi seç", "Etkiyi önizle", "Yürütmeyi onayla"]
+        }
+      ]
+    },
+    "dataEngineer": {
+      "title": "Veri Mühendisi İş Akışı",
+      "subtitle": "Veri temelini oluşturun ve sürdürün",
+      "persona": "Veri Mühendisi / Mimar",
+      "duration": "30 dakika",
+      "steps": [
+        {
+          "title": "The Lineage ile Veriyi Haritalayın",
+          "description": "Verinin kurumunuzda nasıl aktığını anlayın. Lineage kaynakları, dönüşümleri ve hedefleri otomatik olarak keşfeder.",
+          "pillar": "lineage",
+          "keyActions": ["Veri kaynaklarını bağla", "Keşfedilen varlıkları gözden geçir", "Dönüşümleri belgele"]
+        },
+        {
+          "title": "The Health'de Kaliteyi İzleyin",
+          "description": "Tüm pipeline'larda veri kalite metriklerini izleyin. Tazelik, bütünlük ve doğruluk için uyarılar ayarlayın.",
+          "pillar": "health",
+          "keyActions": ["Kalite kontrollerini yapılandır", "Uyarı eşiklerini ayarla", "Kalite puanlarını gözden geçir"]
+        },
+        {
+          "title": "Cendia Mesh ile Sistemleri Bağlayın",
+          "description": "Sistemler arasında entegrasyonlar oluşturun. Mesh protokolleri, dönüşümleri ve güvenilirliği yönetir.",
+          "sovereign": "mesh",
+          "keyActions": ["Kaynak/hedefleri tanımla", "Eşlemeleri yapılandır", "Entegrasyonları test et"]
+        },
+        {
+          "title": "The Flow ile Otomatikleştirin",
+          "description": "Otomatik veri pipeline'ları oluşturun. İşleri zamanlayın, hataları yönetin ve karmaşık süreçleri orkestre edin.",
+          "pillar": "flow",
+          "keyActions": ["İş akışını tasarla", "Tetikleyicileri yapılandır", "Hata işlemeyi ayarla"]
+        }
+      ]
+    },
+    "complianceOfficer": {
+      "title": "Uyum Görevlisi Kontrol Listesi",
+      "subtitle": "Otomatik izleme ile düzenleyici uyumu sürdürün",
+      "persona": "Uyum / Risk Görevlisi",
+      "duration": "20 dakika",
+      "steps": [
+        {
+          "title": "The Guard'da Güvenlik Duruşunu Gözden Geçirin",
+          "description": "Kurumunuzun güvenlik duruşunu kontrol edin. Politika uyumu, erişim kalıpları ve aktif tehditleri gözden geçirin.",
+          "pillar": "guard",
+          "keyActions": ["Uyum puanını gözden geçir", "Politika ihlallerini kontrol et", "Erişim günlüklerini denetle"]
+        },
+        {
+          "title": "The Ethics'te AI Etiğini Doğrulayın",
+          "description": "Tüm AI modellerinin etik standartları karşıladığından emin olun. Önyargıyı kontrol edin, kararları gözden geçirin ve uyumu belgeleyin.",
+          "pillar": "ethics",
+          "keyActions": ["Önyargı kontrollerini gözden geçir", "Model kararlarını denetle", "Bulguları belgele"]
+        },
+        {
+          "title": "Cendia Witness'tan Denetim İzleri Alın",
+          "description": "Tüm sistem eylemlerinin değişmez kayıtlarına erişin. Kriptografik kanıtlarla denetçiler için raporlar oluşturun.",
+          "sovereign": "witness",
+          "keyActions": ["Denetim kapsamını seç", "Kanıt raporu oluştur", "Denetçilere dışa aktar"]
+        },
+        {
+          "title": "Cendia Glass ile Kararları Açıklayın",
+          "description": "Düzenleyiciler neden diye sorduğunda, Glass cevaplar sağlar. Her AI kararı için tam açıklamalar.",
+          "sovereign": "glass",
+          "keyActions": ["Kararı seç", "Açıklama oluştur", "Uyum belgesi oluştur"]
+        }
+      ]
+    },
+    "strategist": {
+      "title": "Stratejik Planlayıcı Rehberi",
+      "subtitle": "AI destekli analiz ile içgörüden stratejiye",
+      "persona": "Strateji / Planlama",
+      "duration": "45 dakika",
+      "steps": [
+        {
+          "title": "The Graph'tan Zeka Toplayın",
+          "description": "Bilgi tabanınızı keşfedin. Pazar verileri, dahili metrikler ve rekabet zekası arasındaki bağlantıları keşfedin.",
+          "space": "graph",
+          "keyActions": ["Konuya göre ara", "Bağlantıları keşfet", "Önemli içgörüleri kaydet"]
+        },
+        {
+          "title": "The Predict ile Trendleri Tahmin Edin",
+          "description": "Önemli metrikleri tahmin etmek için AI modellerini kullanın. Mevcut trendlerin nereye gittiğini anlayın.",
+          "pillar": "predict",
+          "keyActions": ["Tahmin hedefini seç", "Tahminleri gözden geçir", "Güven aralıklarını analiz et"]
+        },
+        {
+          "title": "The Oracle'a Sorun",
+          "description": "Stratejik sorulara AI destekli yanıtlar alın. Oracle mevcut tüm bilgiyi sentezler.",
+          "sovereign": "oracle",
+          "keyActions": ["Stratejik sorular sor", "Yanıtları gözden geçir", "Kaynakları kontrol et"]
+        },
+        {
+          "title": "The Lens'te Senaryoları Modelleyin",
+          "description": "Stratejik senaryolar oluşturun. Rakip hareket ederse? Pazar değişirse? Yeni düzenlemeler çıkarsa?",
+          "space": "lens",
+          "keyActions": ["Senaryo değişkenlerini tanımla", "Birden fazla gelecek çalıştır", "Optimal stratejiyi belirle"]
+        },
+        {
+          "title": "Cendia Mirror'da Test Edin",
+          "description": "Taahhüt etmeden önce stratejik girişimlerinizi simüle edin. Mirror risksiz test yapmanızı sağlar.",
+          "sovereign": "mirror",
+          "keyActions": ["Simülasyon oluştur", "Girişim testlerini çalıştır", "Sonuçları analiz et"]
+        }
+      ]
+    },
+    "quickStart": {
+      "title": "5 Dakikada Hızlı Başlangıç",
+      "subtitle": "Oryantasyon alın ve anında değer görün",
+      "duration": "5 dakika",
+      "steps": [
+        {
+          "title": "Panonuzu Görüntüleyin",
+          "description": "Kişiselleştirilmiş komuta merkeziniz en önemli olanı gösterir. Temel metrikler, uyarılar ve son aktivite bir bakışta.",
+          "action": "Panoyu Aç"
+        },
+        {
+          "title": "Kurumsal Sağlığı Kontrol Edin",
+          "description": "Tek bir sayı kurumunuzun nasıl performans gösterdiğini söyler. Yeşil iyidir. Detaylar için tıklayın.",
+          "action": "Sağlık Puanını Gör"
+        },
+        { "title": "Bir Soru Sorun", "description": "Kurumunuz hakkında herhangi bir soru yazın. AI ajanlarımız cevabı bulacak.", "action": "AI Asistanını Aç" },
+        {
+          "title": "Bir Metriği Keşfedin",
+          "description": "Derinlemesine incelemek için herhangi bir metriğe tıklayın. Geçmişi, trendi ve değişimi neyin sürüklediğini görün.",
+          "action": "Bir Metrik Seçin"
+        }
+      ]
+    },
+    "crisisResponse": {
+      "title": "Kriz Yanıt Protokolü",
+      "subtitle": "İşler ters gittiğinde, tam bilgiyle hızlı hareket edin",
+      "persona": "Olay Komutanı",
+      "duration": "Gerçek zamanlı",
+      "steps": [
+        {
+          "title": "The Pulse'da Durumu Değerlendirin",
+          "description": "Ne olduğuna anında görünürlük kazanın. Kırmızı göstergeler sorunu belirler. Dalgalanma etkisi gerçek zamanlı gösterilir.",
+          "space": "pulse",
+          "keyActions": ["Etkilenen sistemleri belirle", "Ciddiyeti kontrol et", "Dalgalanma uyarılarını gözden geçir"]
+        },
+        {
+          "title": "The Lineage ile Kök Nedeni İzleyin",
+          "description": "Veri izini geriye doğru takip edin. Ne değişti? Nerede başladı? Lineage tam hata noktasını gösterir.",
+          "pillar": "lineage",
+          "keyActions": ["Veri akışını izle", "Kırıcı değişikliği belirle", "Kök nedeni belgele"]
+        },
+        {
+          "title": "Cendia Witness ile Kanıt Toplayın",
+          "description": "Ne olduğunun değişmez kaydını yakalayın. Olaysonrası analiz ve uyum gereksinimleri için buna ihtiyacınız olacak.",
+          "sovereign": "witness",
+          "keyActions": ["Olay zaman çizelgesini dışa aktar", "Sistem durumunu yakala", "Denetim günlüklerini koru"]
+        },
+        {
+          "title": "The Council'da Yanıtı Koordine Edin",
+          "description": "Farklı alanlardan AI uzmanlarını toplayın. Güvenlik, Operasyon ve İş Sürekliliği ajanları yanıt planı üzerinde işbirliği yapar.",
+          "space": "council",
+          "keyActions": ["Yanıt ekibini topla", "Etki değerlendirmesi al", "Eylem planı oluştur"]
+        },
+        {
+          "title": "The Bridge ile Kurtarmayı Yürütün",
+          "description": "Etkilenen sistemlerde düzeltmeleri ve geri almaları gönderin. Bridge denetim izini korurken yanıtı koordine eder.",
+          "space": "bridge",
+          "keyActions": ["Düzeltmeleri dağıt", "Geri almaları yürüt", "Kurtarmayı doğrula"]
+        },
+        {
+          "title": "Cendia Legacy'de Belgeleyin ve Öğrenin",
+          "description": "Ne olduğunu ve ne öğrendiğinizi yakalayın. Gelecekteki ekipler benzer durumlarla karşılaştıklarında size teşekkür edecek.",
+          "sovereign": "legacy",
+          "keyActions": ["Olay raporu oluştur", "Öğrenilen dersleri belgele", "Runbook'ları güncelle"]
+        }
+      ]
+    },
+    "aiModelLaunch": {
+      "title": "AI Model Dağıtım Yolculuğu",
+      "subtitle": "Prototipten üretime güvenle",
+      "persona": "ML Mühendisi / Veri Bilimci",
+      "duration": "1-2 saat",
+      "steps": [
+        {
+          "title": "Cendia BlackBox'a Model Kaydedin",
+          "description": "Eğitilmiş modelinizi kayıt defterine yükleyin. BlackBox sürümleri, bağımlılıkları ve eğitim kökenini otomatik olarak izler.",
+          "sovereign": "blackbox",
+          "keyActions": ["Model artifaktını yükle", "Meta verileri kaydet", "Eğitim verisini bağla"]
+        },
+        {
+          "title": "The Ethics'te Önyargı Kontrol Edin",
+          "description": "Herhangi bir model canlıya geçmeden önce etik değerlendirmeden geçmelidir. Demografik segmentlerde önyargı tespiti çalıştırın ve bulguları belgeleyin.",
+          "pillar": "ethics",
+          "keyActions": ["Önyargı değerlendirmesi çalıştır", "Adalet metriklerini gözden geçir", "Uyumu belgele"]
+        },
+        {
+          "title": "Cendia Mirage'dan Sentetik Veri ile Test Edin",
+          "description": "Uç durumlar ve karşı örnekler oluşturun. Modelinizin beklenmedik durumları güvenlik riskleri olmadan yönettiğinden emin olun.",
+          "sovereign": "mirage",
+          "keyActions": ["Test verisi oluştur", "Stres testleri çalıştır", "Uç durumları doğrula"]
+        },
+        {
+          "title": "Cendia Mirror'da Simüle Edin",
+          "description": "Önce dijital ikize dağıtın. Üretime dokunmadan önce modelinizin gerçek trafik kalıplarıyla nasıl performans gösterdiğini görün.",
+          "sovereign": "mirror",
+          "keyActions": ["Mirror'a dağıt", "Üretim yükünü simüle et", "Tahminleri karşılaştır"]
+        },
+        {
+          "title": "Cendia Glass'ta Açıklanabilirliği Yapılandırın",
+          "description": "Her tahmin açıklanabilir olmalıdır. Şeffaflık için faktör atıfı ve karşıolgusal üretimi ayarlayın.",
+          "sovereign": "glass",
+          "keyActions": ["Açıklanabilirliği etkinleştir", "Faktörleri yapılandır", "Açıklamaları test et"]
+        },
+        {
+          "title": "The Predict ile Dağıtın ve İzleyin",
+          "description": "Güvenle canlıya geçin. Predict performansı izler, kaymayı tespit eder ve herhangi bir bozulma için sizi uyarır.",
+          "pillar": "predict",
+          "keyActions": ["Üretime yükselt", "İzlemeyi ayarla", "Kayma uyarılarını yapılandır"]
+        }
+      ]
+    },
+    "boardPresentation": {
+      "title": "Yönetim Kurulu Toplantısı Hazırlığı",
+      "subtitle": "Veri odaklı içgörülerle kurulu etkileyin",
+      "persona": "CEO / CFO / Kurul Sunucusu",
+      "duration": "30 dakika",
+      "steps": [
+        {
+          "title": "The Helm'den Stratejik KPI'ları Alın",
+          "description": "Tüm önemli metriklerinizi tek yerde toplayın. Helm, trend analizi ile stratejik hedeflere karşı ilerlemeyi gösterir.",
+          "pillar": "helm",
+          "keyActions": ["KPI panosunu dışa aktar", "Trend analizi oluştur", "Başarıları vurgula"]
+        },
+        {
+          "title": "The Predict ile Tahminler Oluşturun",
+          "description": "Sadece nerede olduğunuzu değil - nereye gittiğinizi gösterin. Güven aralıkları ile projeksiyonlar oluşturun.",
+          "pillar": "predict",
+          "keyActions": ["Tahminler oluştur", "Gelir projeksiyonları oluştur", "Senaryolar oluştur"]
+        },
+        {
+          "title": "The Lineage ile Veriyi Doğrulayın",
+          "description": "Kurul üyeleri zor sorular soracak. Her sayının nereden geldiğini tam olarak bilin.",
+          "pillar": "lineage",
+          "keyActions": ["Önemli rakamları izle", "Kaynakları belgele", "Veri soyağacı hazırla"]
+        },
+        {
+          "title": "The Lens'te What-If Senaryolarını Modelleyin",
+          "description": "'Eğer biz...' sorularına hazır olun. Yanıtlarınız hazır olması için stratejik senaryoları önceden modelleyin.",
+          "space": "lens",
+          "keyActions": ["Büyüme senaryolarını modelle", "Risk faktörlerini analiz et", "Acil durumları hazırla"]
+        },
+        {
+          "title": "Cendia Oracle'dan AI Sentezi Alın",
+          "description": "Oracle'dan verilerinizi önemli içgörüler ve konuşma noktalarına sentezlemesini isteyin. İnsanların kaçırdığı kalıpları görür.",
+          "sovereign": "oracle",
+          "keyActions": ["İçgörüler oluştur", "Konuşma noktaları iste", "Kör noktaları belirle"]
+        },
+        {
+          "title": "The Guard ile Uyumu Sağlayın",
+          "description": "Sunduğunuz hiçbir şeyin uyum riski oluşturmadığından emin olun. Guard tüm verilerin yönetişim gereksinimlerini karşıladığını doğrular.",
+          "pillar": "guard",
+          "keyActions": ["Uyum kontrolü çalıştır", "Veri sınıflandırmalarını doğrula", "Sunum için onay al"]
+        }
+      ]
+    },
+    "newEmployeeOnboarding": {
+      "title": "Yeni Ekip Üyesi Oryantasyonu",
+      "subtitle": "Aylarda değil günlerde üretken olun",
+      "persona": "Yeni Çalışan / İşe Alım Müdürü",
+      "duration": "Kendi hızınızda",
+      "steps": [
+        {
+          "title": "Cendia Key ile Çalışma Alanınıza Erişin",
+          "description": "Tek giriş ihtiyacınız olan her şeye erişim sağlar. Key, rolünüze göre izinlerinizi yönetir.",
+          "sovereign": "key",
+          "keyActions": ["SSO kurulumunu tamamla", "Rol atamalarını doğrula", "Verilen sistemlere eriş"]
+        },
+        {
+          "title": "The Graph'ta Kurumsal Bilgiyi Keşfedin",
+          "description": "Bilgi evreninde gezinin. Yeni rolünüz için dokümantasyon, uzmanlar ve bağlam bulun.",
+          "space": "graph",
+          "keyActions": ["Rol kaynaklarını ara", "Ekip bilgisini bul", "Önemli kişileri belirle"]
+        },
+        {
+          "title": "Cendia Legacy'den Öğrenin",
+          "description": "Sizden öncekilerin kurumsal bilgisine erişin. En iyi uygulamalar, karar gerekçeleri ve öğrenilen dersler.",
+          "sovereign": "legacy",
+          "keyActions": ["Ekip oyun kitaplarını gözden geçir", "Geçmiş kararları incele", "En iyi uygulamaları öğren"]
+        },
+        {
+          "title": "The Helm'de Metriklerinizi Anlayın",
+          "description": "Her rolün KPI'ları vardır. Neyle ölçüldüğünüzü ve ilerlemenizi nasıl izleyeceğinizi öğrenin.",
+          "pillar": "helm",
+          "keyActions": ["Atanan metrikleri gözden geçir", "Hedefleri anla", "Kişisel pano kur"]
+        },
+        {
+          "title": "The Flow'da Otomatik İş Akışları Kurun",
+          "description": "Süreçleri yeniden icat etmeyin. Mevcut iş akışlarına bağlanın ve tekrarlayan görevleri ilk günden otomatikleştirin.",
+          "pillar": "flow",
+          "keyActions": ["Ekip iş akışlarına katıl", "Bildirimleri kur", "Raporları otomatikleştir"]
+        },
+        {
+          "title": "The Agents'ta AI Asistanlarınızla Tanışın",
+          "description": "Yardıma hazır AI takım arkadaşlarınız var. Rolünüzle ilgili ajanlarla tanışın ve işbirliği yapmayı öğrenin.",
+          "pillar": "agents",
+          "keyActions": ["Alan ajanlarıyla tanış", "İlk soruları sor", "Yararlı yanıtları kaydet"]
+        }
+      ]
+    },
+    "mergerIntegration": {
+      "title": "M&A Veri Entegrasyonu",
+      "subtitle": "Zekayı kaybetmeden kuruluşları birleştirin",
+      "persona": "Entegrasyon Lideri / CIO",
+      "duration": "Sürekli",
+      "steps": [
+        {
+          "title": "The Lineage ile Her İki Veri Manzarasını Haritalayın",
+          "description": "Birleştirmeden önce her iki tarafı da anlamanız gerekir. Lineage varlıkların ve ilişkilerin eksiksiz haritasını oluşturur.",
+          "pillar": "lineage",
+          "keyActions": ["Alıcı verisini tara", "Hedef veriyi tara", "Örtüşmeleri belirle"]
+        },
+        {
+          "title": "The Helm'de Metrikleri Birleştirin",
+          "description": "Farklı kuruluşlar farklı ölçer. Tek bir doğruluk kaynağı için KPI tanımlarını uyumlaştırın.",
+          "pillar": "helm",
+          "keyActions": ["Metrik tanımlarını eşle", "Çatışmaları çöz", "Birleşik pano oluştur"]
+        },
+        {
+          "title": "Cendia Mesh ile Sistemleri Bağlayın",
+          "description": "Entegrasyon katmanını oluşturun. Mesh, farklı protokollere sahip farklı sistemleri bağlamanın karmaşıklığını yönetir.",
+          "sovereign": "mesh",
+          "keyActions": ["Kaynak sistemleri eşle", "Entegrasyonları oluştur", "Veri akışlarını test et"]
+        },
+        {
+          "title": "Cendia Legacy'de Kurumsal Bilgiyi Koruyun",
+          "description": "M&A genellikle kilit insanları kaybetmek demektir. Geçişler olmadan önce bilgilerini yakalayın.",
+          "sovereign": "legacy",
+          "keyActions": ["Kilit personelle görüş", "Süreçleri belgele", "Tribal bilgiyi arşivle"]
+        },
+        {
+          "title": "Cendia Key ile Kimlik Sistemlerini Birleştirin",
+          "description": "Kimin neye erişimi olduğunu birleştirin. Key kimlik sağlayıcılarını entegre eder ve izinleri uyumlaştırır.",
+          "sovereign": "key",
+          "keyActions": ["Kimlik kaynaklarını birleştir", "İzinleri uzlaştır", "Birleşik erişimi etkinleştir"]
+        },
+        {
+          "title": "Entegrasyon Sağlığını İzleyin",
+          "description": "Entegrasyonunuzun sağlığını gerçek zamanlı izleyin. Sorunları sorun haline gelmeden önce yakalayın.",
+          "pillar": "health",
+          "keyActions": ["Veri kalitesini izle", "Senkronizasyon durumunu takip et", "Anomalilerde uyar"]
+        }
+      ]
+    },
+    "regulatoryAudit": {
+      "title": "Düzenleyici Denetim Hazırlığı",
+      "subtitle": "Denetim sezonunu kabusdan önemsiz hale getirin",
+      "persona": "Baş Uyum Görevlisi",
+      "duration": "2-4 saat",
+      "steps": [
+        {
+          "title": "Cendia Witness'tan Denetim Kanıtı Alın",
+          "description": "Kurumunuzdaki her eylem kaydedilir. Witness, denetçiler için kriptografik olarak kanıtlanmış delil sağlar.",
+          "sovereign": "witness",
+          "keyActions": ["Denetim kapsamını tanımla", "Delil paketini dışa aktar", "Tasdikler oluştur"]
+        },
+        {
+          "title": "The Guard'da Politika Uyumunu Doğrulayın",
+          "description": "Denetçilere politikalarınızın gerçekten uygulandığını gösterin. Guard gerçek zamanlı uyum duruşu ve ihlal geçmişi sağlar.",
+          "pillar": "guard",
+          "keyActions": ["Uyum raporu oluştur", "Politika uygulamasını göster", "İstisnaları belgele"]
+        },
+        {
+          "title": "The Ethics'te AI Yönetişimini Gösterin",
+          "description": "AI düzenlemeleri burada. Önyargı testlerinizi, karar dokümantasyonunuzu ve etik değerlendirme süreçlerinizi gösterin.",
+          "pillar": "ethics",
+          "keyActions": ["Etik değerlendirmeleri dışa aktar", "Önyargı test sonuçlarını göster", "AI yönetişimini belgele"]
+        },
+        {
+          "title": "Cendia Glass ile AI Kararlarını Açıklayın",
+          "description": "Denetçiler 'sistem neden buna karar verdi?' diye sorduğunda, Glass eksiksiz açıklamalar sağlar.",
+          "sovereign": "glass",
+          "keyActions": ["Karar raporları oluştur", "Faktör atıfını göster", "Karşıolgusları sağla"]
+        },
+        {
+          "title": "Doğruluk için Veri Soyağacını İzleyin",
+          "description": "Sayılarınızın nereden geldiğini göstererek doğru olduğunu kanıtlayın. Lineage kaynaktan rapora izlenebilirlik sağlar.",
+          "pillar": "lineage",
+          "keyActions": ["Soyağacı haritalarını dışa aktar", "Dönüşümleri belgele", "Veri doğruluğunu kanıtla"]
+        },
+        {
+          "title": "Cendia Key ile Erişim Kontrollerini Gözden Geçirin",
+          "description": "Kim neye ne zaman erişti? Key herhangi bir dönem için eksiksiz erişim denetim izleri sağlar.",
+          "sovereign": "key",
+          "keyActions": ["Erişim günlüklerini dışa aktar", "İzin geçmişini göster", "Kontrolleri belgele"]
+        }
+      ]
+    },
+    "customerChurnPrevention": {
+      "title": "Müşteri Kaybı Önleme",
+      "subtitle": "Müşterileri ayrılmadan önce kurtarın",
+      "persona": "Müşteri Başarısı / Gelir Operasyonları",
+      "duration": "Günlük iş akışı",
+      "steps": [
+        {
+          "title": "The Predict ile Risk Altındaki Müşterileri Belirleyin",
+          "description": "ML modelleri kayıp riskini puanlamak için yüzlerce sinyali analiz eder. Kimin risk altında olduğunu kendileri bilmeden önce bilin.",
+          "pillar": "predict",
+          "keyActions": ["Risk puanlarını gözden geçir", "En yüksek riskleri belirle", "Risk faktörlerini anla"]
+        },
+        {
+          "title": "The Helm'de Müşteri Sağlığını Anlayın",
+          "description": "Müşteri sağlık metriklerini izleyin. Kullanım trendleri, destek biletleri, etkileşim puanları - tek görünümde.",
+          "pillar": "helm",
+          "keyActions": ["Sağlık puanlarını gözden geçir", "Etkileşim metriklerini kontrol et", "Trendleri belirle"]
+        },
+        {
+          "title": "The Graph'ta Müşteri Yolculuğunu Keşfedin",
+          "description": "Tam müşteri hikayesini görün. Her etkileşim, her temas noktası, her sinyal - bağlamda bağlı.",
+          "space": "graph",
+          "keyActions": ["Müşteri zaman çizelgesini görüntüle", "Etkileşimleri keşfet", "Kalıpları bul"]
+        },
+        {
+          "title": "The Council'dan Tutundurma Önerileri Alın",
+          "description": "AI danışmanlarınızı tutundurma stratejileri üzerine beyin fırtınası için toplayın. Her müşteri benzersizdir - kişiselleştirilmiş yaklaşımlar alın.",
+          "space": "council",
+          "keyActions": ["Müşteri profilini sun", "Tutundurma fikirleri al", "Eylemleri önceliklendir"]
+        },
+        {
+          "title": "The Flow'da Tutundurma İş Akışlarını Tetikleyin",
+          "description": "Önerileri eyleme dönüştürün. Otomatik ulaşım, eskalasyonlar ve takipler hiçbir şeyin gözden kaçmamasını sağlar.",
+          "pillar": "flow",
+          "keyActions": ["Ulaşımı tetikle", "Takipleri zamanla", "Ekibe eskale et"]
+        },
+        {
+          "title": "The Lens'te Gelir Etkisini Modelleyin",
+          "description": "Neyin risk altında olduğunu ölçün. Lens, kayıp senaryolarının ve müdahale başarısının gelir etkisini gösterir.",
+          "space": "lens",
+          "keyActions": ["Kayıp etkisini modelle", "Müdahale ROI'sini hesapla", "Çabaları önceliklendir"]
+        }
+      ]
+    },
+    "productLaunch": {
+      "title": "Ürün Lansmanı Orkestrasyonu",
+      "subtitle": "Güvenle ve gerçek zamanlı görünürlükle lansman yapın",
+      "persona": "Ürün Müdürü / Lansman Lideri",
+      "duration": "Lansman günü + izleme",
+      "steps": [
+        {
+          "title": "The Helm'de Lansman KPI'larını Ayarlayın",
+          "description": "Lansmandan önce başarıyı tanımlayın. Benimseme, performans ve iş metriklerini gerçek zamanlı izleyin.",
+          "pillar": "helm",
+          "keyActions": ["Başarı metriklerini tanımla", "Hedefleri ayarla", "Panoyu yapılandır"]
+        },
+        {
+          "title": "The Health'de Sistemlerin Hazır Olduğunu Doğrulayın",
+          "description": "Lansmandan önce her şey yeşil mi? Health, tüm sistemlerin hazır olduğuna güven verir.",
+          "pillar": "health",
+          "keyActions": ["Tüm sistemleri kontrol et", "Kapasiteyi doğrula", "Bağımlılıkları onayla"]
+        },
+        {
+          "title": "Cendia Mirror'da Lansman Yükünü Simüle Edin",
+          "description": "Lansman senaryonuzu dijital ikizde test edin. Sistemlerin beklenen yük altında nasıl davrandığını görün.",
+          "sovereign": "mirror",
+          "keyActions": ["Lansman simülasyonu oluştur", "Yük testi çalıştır", "Darboğazları belirle"]
+        },
+        {
+          "title": "The Pulse'da Gerçek Zamanlı İzleyin",
+          "description": "Lansman günü görünürlüğü. Lansman yaparken metrikleri, hataları ve kullanıcı davranışını akışta izleyin.",
+          "space": "pulse",
+          "keyActions": ["Lansman metriklerini izle", "Anomalileri gözle", "Benimseyi takip et"]
+        },
+        {
+          "title": "The Bridge ile Sorunlara Yanıt Verin",
+          "description": "Ayarlama gerektiğinde hızlı hareket edin. Bridge, değişiklikleri sistemler arasında anında göndermenizi sağlar.",
+          "space": "bridge",
+          "keyActions": ["Hotfix'leri dağıt", "Yapılandırmaları ayarla", "Kaynakları ölçekle"]
+        },
+        {
+          "title": "Cendia Legacy'de Dersleri Yakalayın",
+          "description": "Neyin işe yaradığını ve yaramadığını belgeleyin. Gelecekteki lansmanlar bunun için daha iyi olacak.",
+          "sovereign": "legacy",
+          "keyActions": ["Lansman günlüğünü belgele", "Sorunları kaydet", "İyileştirmeleri not al"]
+        }
+      ]
+    },
+    "dataQualityImprovement": {
+      "title": "Veri Kalitesi İyileştirme Programı",
+      "subtitle": "Veriyi yükten varlığa dönüştürün",
+      "persona": "Veri Sorumlusu / Kalite Lideri",
+      "duration": "Sürekli program",
+      "steps": [
+        {
+          "title": "The Lineage'da Mevcut Kaliteyi Değerlendirin",
+          "description": "Ölçmediğinizi iyileştiremezsiniz. Lineage, veri yolculuğunuzun her aşamasında kaliteyi puanlar.",
+          "pillar": "lineage",
+          "keyActions": ["Kalite değerlendirmesi çalıştır", "Sorunlu alanları belirle", "Sorunları önceliklendir"]
+        },
+        {
+          "title": "The Helm'de Kalite Metriklerini İzleyin",
+          "description": "Veri kalitesini birinci sınıf KPI yapın. Zaman içinde bütünlük, doğruluk, zamanındalık ve tutarlılığı izleyin.",
+          "pillar": "helm",
+          "keyActions": ["Kalite panosu oluştur", "İyileştirme hedefleri belirle", "İlerlemeyi izle"]
+        },
+        {
+          "title": "The Guard'da Kalite Kuralları Belirleyin",
+          "description": "Kalite standartlarını tanımlayın ve uygulayın. Guard, verileri kurallarınıza göre otomatik olarak doğrular.",
+          "pillar": "guard",
+          "keyActions": ["Kalite kurallarını tanımla", "Doğrulamayı yapılandır", "Uyarıları kur"]
+        },
+        {
+          "title": "The Flow'da Kalite Kontrollerini Otomatikleştirin",
+          "description": "Kaliteyi pipeline'larınıza entegre edin. Otomatik kontroller sürekli çalışır, sorunları yayılmadan önce yakalar.",
+          "pillar": "flow",
+          "keyActions": ["Kalite iş akışları oluştur", "Doğrulama adımları ekle", "Düzeltmeyi yapılandır"]
+        },
+        {
+          "title": "Kalite Sağlığını İzleyin",
+          "description": "Veri varlığınız genelinde kalite trendlerini izleyin. Bozulmayı erken yakalayın ve iyileştirmeleri kutlayın.",
+          "pillar": "health",
+          "keyActions": ["Kalite trendlerini izle", "Bozulmada uyar", "İyileştirmeleri raporla"]
+        },
+        {
+          "title": "Cendia Legacy'de Standartları Belgeleyin",
+          "description": "Kalite standartlarınızı kurum için kodlayın. Kaliteyi bireysel değil kurumsal yapın.",
+          "sovereign": "legacy",
+          "keyActions": ["Standartları belgele", "Oyun kitapları oluştur", "Ekipleri eğit"]
+        }
+      ]
+    },
+    "securityThreatResponse": {
+      "title": "Güvenlik Tehdidi Yanıtı",
+      "subtitle": "Tehditleri sistematik olarak tespit edin, kontrol altına alın ve ortadan kaldırın",
+      "persona": "Güvenlik Analisti / CISO",
+      "duration": "Acil yanıt",
+      "steps": [
+        {
+          "title": "The Guard'da Tehditleri Tespit Edin",
+          "description": "Guard'ın tehdit tespit motoru şüpheli aktiviteyi ortaya çıkarır. Ciddiyete ve güvene göre önceliklendirilir.",
+          "pillar": "guard",
+          "keyActions": ["Tehdit uyarılarını gözden geçir", "Ciddiyeti değerlendir", "Tehdidi onayla"]
+        },
+        {
+          "title": "The Lineage'da Etki Alanını Değerlendirin",
+          "description": "Hangi sistemler ve veriler etkilenebilir? Lineage, tehdidin potansiyel etkisini haritalandırır.",
+          "pillar": "lineage",
+          "keyActions": ["Etkilenen sistemleri haritalandır", "Hassas verileri belirle", "Maruziyeti değerlendir"]
+        },
+        {
+          "title": "Cendia Key'de Erişim Günlüklerini Gözden Geçirin",
+          "description": "Kim neye ne zaman erişti? Key, saldırı vektörünü anlamak için adli iz sağlar.",
+          "sovereign": "key",
+          "keyActions": ["Erişim günlüklerini al", "Anomalileri belirle", "Saldırı yolunu izle"]
+        },
+        {
+          "title": "Cendia Witness'ta Kanıtı Koruyun",
+          "description": "Kontrol altına alma kanıtı değiştirmeden önce değişmez kaydı yakalayın. Soruşturma için buna ihtiyacınız olacak.",
+          "sovereign": "witness",
+          "keyActions": ["Sistem durumunu yakala", "Denetim günlüklerini dışa aktar", "Zaman çizelgesini koru"]
+        },
+        {
+          "title": "The Bridge ile Kontrol Altına Almayı Yürütün",
+          "description": "Tehdidi izole edin. Bridge erişimi iptal edebilir, sistemleri karantinaya alabilir ve karşı önlemleri dağıtabilir.",
+          "space": "bridge",
+          "keyActions": ["Tehlikeye atılan erişimi iptal et", "Sistemleri izole et", "Yamaları dağıt"]
+        },
+        {
+          "title": "The Council ile Koordine Edin",
+          "description": "AI güvenlik uzmanlarınızı getirin. Saldırıyı analiz etmeye ve kapsamlı yanıt önermeye yardımcı olurlar.",
+          "space": "council",
+          "keyActions": ["Saldırı kalıbını analiz et", "Düzeltme planı al", "Riski değerlendir"]
+        }
+      ]
+    }
+  },
+  "accessibility": {
+    "skipToMain": "Ana içeriğe geç",
+    "skipToNav": "Navigasyona geç",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat",
+    "expandSection": "Bölümü genişlet",
+    "collapseSection": "Bölümü daralt",
+    "loading": "Yükleniyor",
+    "newWindow": "Yeni pencerede açılır",
+    "externalLink": "Dış bağlantı",
+    "required": "Zorunlu alan",
+    "optional": "İsteğe bağlı"
+  },
+  "_meta": { "direction": "ltr", "language": "Türkçe", "completeness": "100%" }
+}

@@ -1,0 +1,1450 @@
+{
+  "common": {
+    "appName": "Datacendia",
+    "loading": "Đang tải...",
+    "error": "Đã xảy ra lỗi",
+    "retry": "Thử lại",
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "delete": "Xóa",
+    "edit": "Chỉnh sửa",
+    "create": "Tạo",
+    "update": "Cập nhật",
+    "close": "Đóng",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "previous": "Trước đó",
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "sort": "Sắp xếp",
+    "export": "Xuất",
+    "import": "Nhập",
+    "download": "Tải xuống",
+    "upload": "Tải lên",
+    "yes": "Có",
+    "no": "Không",
+    "confirm": "Xác nhận",
+    "submit": "Gửi",
+    "apply": "Áp dụng",
+    "reset": "Đặt lại",
+    "clear": "Xóa",
+    "all": "Tất cả",
+    "none": "Không có",
+    "select": "Chọn",
+    "selected": "Đã chọn",
+    "view": "Xem",
+    "details": "Chi tiết",
+    "more": "Thêm",
+    "less": "Ít hơn",
+    "showAll": "Hiện tất cả",
+    "hideAll": "Ẩn tất cả",
+    "viewMore": "Xem thêm",
+    "learnMore": "Tìm hiểu thêm",
+    "and": "và",
+    "or": "hoặc",
+    "continue": "Tiếp tục",
+    "completed": "Hoàn thành",
+    "queried": "Đã truy vấn"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "product": "Sản phẩm",
+    "pricing": "Bảng giá",
+    "about": "Về chúng tôi",
+    "demo": "Yêu cầu Demo",
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "logout": "Đăng xuất",
+    "downloads": "Tải xuống",
+    "documentation": "Tài liệu",
+    "support": "Hỗ trợ",
+    "contact": "Liên hệ",
+    "manifesto": "Tuyên ngôn",
+    "services": "Dịch vụ",
+    "packages": "Gói"
+  },
+  "auth": {
+    "login": {
+      "title": "Chào mừng trở lại",
+      "subtitle": "Đăng nhập vào tài khoản của bạn",
+      "email": "Địa chỉ email",
+      "password": "Mật khẩu",
+      "rememberMe": "Ghi nhớ tôi",
+      "forgotPassword": "Quên mật khẩu?",
+      "submitButton": "Đăng nhập",
+      "noAccount": "Chưa có tài khoản?",
+      "signUp": "Đăng ký",
+      "orContinueWith": "Hoặc tiếp tục với",
+      "errors": {
+        "invalidCredentials": "Email hoặc mật khẩu không hợp lệ",
+        "accountLocked": "Tài khoản đã bị khóa",
+        "networkError": "Không thể kết nối đến máy chủ. Vui lòng thử lại."
+      }
+    },
+    "register": {
+      "title": "Tạo tài khoản của bạn",
+      "subtitle": "Bắt đầu dùng thử miễn phí 14 ngày ngay hôm nay.",
+      "headline": "Giải phóng trí tuệ của tổ chức bạn.",
+      "subheadline": "Tham gia cùng hàng nghìn công ty đang sử dụng Datacendia để đưa ra quyết định tốt hơn với thông tin chi tiết được hỗ trợ bởi AI.",
+      "step1Subtitle": "Nhập thông tin của bạn để bắt đầu",
+      "step2Subtitle": "Thiết lập mật khẩu của bạn",
+      "firstName": "Tên",
+      "lastName": "Họ",
+      "fullName": "Họ và tên",
+      "email": "Email công việc",
+      "password": "Mật khẩu",
+      "confirmPassword": "Xác nhận mật khẩu",
+      "passwordHint": "Tối thiểu 8 ký tự",
+      "company": "Công ty (tùy chọn)",
+      "companySize": "Quy mô công ty",
+      "industry": "Ngành",
+      "submitButton": "Tạo tài khoản",
+      "signUpWith": "Đăng ký với",
+      "hasAccount": "Đã có tài khoản?",
+      "signIn": "Đăng nhập",
+      "agreeToTerms": "Tôi đồng ý với",
+      "features": {
+        "council": "AI Council - Nhận tư vấn chiến lược từ các đại lý AI chuyên biệt",
+        "graph": "Graph Explorer - Trực quan hóa tất cả các mối quan hệ dữ liệu của bạn",
+        "lens": "The Lens - Dự báo kết quả tương lai với ML",
+        "bridge": "The Bridge - Tự động hóa quy trình làm việc xuyên hệ thống"
+      },
+      "errors": {
+        "fullNameRequired": "Vui lòng nhập họ và tên của bạn",
+        "validEmailRequired": "Vui lòng nhập email hợp lệ",
+        "passwordMinLength": "Mật khẩu phải có ít nhất 8 ký tự",
+        "passwordMismatch": "Mật khẩu không khớp",
+        "acceptTerms": "Bạn phải chấp nhận các điều khoản",
+        "registrationFailed": "Đăng ký thất bại. Vui lòng thử lại."
+      },
+      "passwordRequirements": {
+        "title": "Mật khẩu phải chứa:",
+        "minLength": "Ít nhất 12 ký tự",
+        "uppercase": "Một chữ hoa",
+        "lowercase": "Một chữ thường",
+        "number": "Một số",
+        "special": "Một ký tự đặc biệt"
+      }
+    },
+    "forgotPassword": {
+      "title": "Đặt lại Mật khẩu của Bạn",
+      "subtitle": "Nhập địa chỉ email của bạn và chúng tôi sẽ gửi cho bạn liên kết để đặt lại mật khẩu.",
+      "email": "Địa chỉ email",
+      "sendResetLink": "Gửi Liên kết Đặt lại",
+      "submitButton": "Gửi Liên kết Đặt lại",
+      "backToLogin": "Quay lại Đăng nhập",
+      "checkEmail": "Kiểm tra Email của Bạn",
+      "emailSentTo": "Nếu có tài khoản tồn tại cho",
+      "linkExpiry": "Liên kết sẽ hết hạn sau 1 giờ. Nếu bạn không thấy email, hãy kiểm tra thư mục spam.",
+      "success": "Nếu tài khoản tồn tại, bạn sẽ nhận được email ngay."
+    },
+    "mfa": {
+      "title": "Xác thực hai yếu tố",
+      "subtitle": "Nhập mã từ ứng dụng xác thực của bạn.",
+      "code": "Mã xác thực",
+      "submitButton": "Xác minh",
+      "useBackupCode": "Sử dụng mã dự phòng",
+      "resendCode": "Gửi lại mã"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Trí tuệ của Tổ chức Bạn,",
+      "titleHighlight": "Chủ quyền và Hoàn chỉnh",
+      "subtitle": "Datacendia là trung tâm chỉ huy cho trí tuệ doanh nghiệp. Kết nối dữ liệu của bạn, tham vấn cố vấn AI, và nhìn thấy các tương lai có thể — tất cả trong khi giữ quyền kiểm soát hoàn toàn.",
+      "ctaPrimary": "Yêu cầu Demo",
+      "ctaSecondary": "Khám phá Nền tảng"
+    },
+    "problem": {
+      "title": "Vấn đề của Trí tuệ Doanh nghiệp",
+      "subtitle": "Các tổ chức đang vật lộn với dữ liệu phân mảnh, công cụ tách biệt, và ra quyết định phản ứng",
+      "dataChaos": {
+        "title": "Hỗn loạn Dữ liệu",
+        "description": "Dữ liệu của bạn nằm trong hàng chục hệ thống mà không có cái nhìn thống nhất. Không ai biết điều gì là đúng."
+      },
+      "toolSprawl": {
+        "title": "Công cụ Lan tràn",
+        "description": "Công cụ BI, nền tảng phân tích, bảng điều khiển — không cái nào giao tiếp với nhau."
+      },
+      "noForesight": {
+        "title": "Không có Tầm nhìn",
+        "description": "Bạn luôn nhìn vào gương chiếu hậu. Còn những gì sắp đến thì sao?"
+      }
+    },
+    "solution": {
+      "title": "Cortex: Trung tâm Chỉ huy Trí tuệ của Bạn",
+      "subtitle": "Năm không gian tích hợp mang đến cho bạn khả năng hiển thị và kiểm soát hoàn toàn"
+    },
+    "pillars": {
+      "title": "8 Trụ cột của Trí tuệ Chủ quyền",
+      "subtitle": "Mọi khả năng bạn cần, làm việc cùng nhau như một"
+    },
+    "cta": {
+      "title": "Sẵn sàng kiểm soát trí tuệ của bạn?",
+      "subtitle": "Xem cách Datacendia có thể chuyển đổi việc ra quyết định của tổ chức bạn",
+      "button": "Đặt lịch Demo"
+    }
+  },
+  "spaces": {
+    "graph": { "name": "Đồ thị", "description": "Điều hướng vũ trụ kiến thức của bạn" },
+    "council": { "name": "Hội đồng", "description": "Cố vấn AI cùng suy luận" },
+    "pulse": { "name": "Nhịp đập", "description": "Sức khỏe tổ chức thời gian thực" },
+    "lens": { "name": "Ống kính", "description": "Xem các tương lai có thể" },
+    "bridge": { "name": "Cầu nối", "description": "Hành động xuyên các hệ thống" }
+  },
+  "pillars": {
+    "helm": {
+      "name": "The Helm",
+      "description": "Hỗ trợ quyết định chiến lược",
+      "longDescription": "Trung tâm chỉ huy của bạn cho các quyết định chiến lược. Theo dõi KPI, giám sát hiệu suất, và điều hướng tổ chức của bạn với sự tự tin."
+    },
+    "lineage": {
+      "name": "The Lineage",
+      "description": "Theo dõi mọi điểm dữ liệu đến nguồn",
+      "longDescription": "Theo dõi nguồn gốc dữ liệu hoàn chỉnh. Biết dữ liệu của bạn đến từ đâu, nó biến đổi như thế nào, và nó đi đâu."
+    },
+    "predict": {
+      "name": "The Predict",
+      "description": "Dự báo được hỗ trợ bởi AI",
+      "longDescription": "Các mô hình machine learning dự báo xu hướng, phát hiện bất thường, và đưa ra thông tin chi tiết trước khi chúng trở nên rõ ràng."
+    },
+    "flow": {
+      "name": "The Flow",
+      "description": "Quy trình làm việc tự động",
+      "longDescription": "Tự động hóa quy trình làm việc thông minh kết nối các hệ thống và quy trình của bạn với các điểm quyết định được hỗ trợ bởi AI."
+    },
+    "health": {
+      "name": "The Health",
+      "description": "Chỉ số sức sống tổ chức",
+      "longDescription": "Giám sát thời gian thực các dấu hiệu sống của tổ chức bạn xuyên suốt dữ liệu, hệ thống, và quy trình."
+    },
+    "guard": {
+      "name": "The Guard",
+      "description": "Quản trị dữ liệu và tuân thủ",
+      "longDescription": "Thực thi chính sách tự động, kiểm soát truy cập, và giám sát tuân thủ để giữ dữ liệu của bạn an toàn."
+    },
+    "ethics": {
+      "name": "The Ethics",
+      "description": "Giám sát đạo đức tích hợp",
+      "longDescription": "Các rào cản đạo đức đảm bảo việc sử dụng AI có trách nhiệm, các thuật toán công bằng, và ra quyết định minh bạch."
+    },
+    "agents": {
+      "name": "The Agents",
+      "description": "Cố vấn AI cho mọi lĩnh vực",
+      "longDescription": "Các đại lý AI chuyên biệt cung cấp chuyên môn theo lĩnh vực cụ thể và hợp tác để giải quyết các vấn đề phức tạp."
+    }
+  },
+  "pricing": {
+    "title": "Bảng giá Đơn giản, Minh bạch",
+    "subtitle": "Chọn gói phù hợp với tổ chức của bạn. Tất cả các gói đều bao gồm dùng thử miễn phí 14 ngày.",
+    "monthly": "Hàng tháng",
+    "annual": "Hàng năm",
+    "annualDiscount": "Tiết kiệm 20%",
+    "perMonth": "/tháng",
+    "startTrial": "Bắt đầu Dùng thử Miễn phí",
+    "contactSales": "Liên hệ Bán hàng",
+    "mostPopular": "Phổ biến nhất",
+    "plans": {
+      "foundation": { "name": "Foundation", "description": "Khả năng trí tuệ thiết yếu cho các nhóm đang phát triển" },
+      "intelligence": { "name": "Intelligence", "description": "Phân tích và dự báo nâng cao cho các tổ chức mở rộng" },
+      "governance": { "name": "Governance", "description": "Quản trị và tuân thủ hoàn chỉnh cho các ngành được quản lý" },
+      "sovereign": { "name": "Sovereign", "description": "Nền tảng đầy đủ với chủ quyền dữ liệu hoàn toàn" }
+    },
+    "faq": {
+      "title": "Câu hỏi Thường gặp",
+      "questions": {
+        "trial": { "q": "Tôi có thể dùng thử trước khi mua không?", "a": "Có! Tất cả các gói đều bao gồm dùng thử miễn phí 14 ngày với quyền truy cập đầy đủ các tính năng." },
+        "data": { "q": "Điều gì xảy ra với dữ liệu của tôi nếu tôi hủy?", "a": "Dữ liệu của bạn vẫn là của bạn. Xuất mọi thứ trước khi hủy, hoặc chúng tôi sẽ giữ lại trong 30 ngày." },
+        "nonprofit": { "q": "Bạn có giảm giá cho tổ chức phi lợi nhuận không?", "a": "Có, chúng tôi giảm 50% cho các tổ chức phi lợi nhuận và giáo dục đủ điều kiện." },
+        "upgrade": { "q": "Tôi có thể nâng cấp hoặc hạ cấp bất cứ lúc nào không?", "a": "Hoàn toàn có thể. Thay đổi có hiệu lực vào chu kỳ thanh toán tiếp theo, được tính theo tỷ lệ nếu nâng cấp." }
+      }
+    }
+  },
+  "downloads": {
+    "title": "Tải xuống",
+    "subtitle": "Tải Datacendia cho nền tảng của bạn",
+    "desktop": { "title": "Ứng dụng Desktop", "windows": "Windows", "mac": "macOS", "linux": "Linux", "download": "Tải xuống" },
+    "mobile": { "title": "Ứng dụng Di động", "ios": "iOS", "android": "Android", "appStore": "App Store", "playStore": "Google Play" },
+    "cli": { "title": "Giao diện Dòng lệnh" },
+    "selfHosted": { "title": "Tự lưu trữ", "docker": "Docker Compose", "kubernetes": "Kubernetes (Helm)", "airgapped": "Gói Cách ly" },
+    "systemRequirements": { "title": "Yêu cầu Hệ thống", "minimum": "Tối thiểu", "recommended": "Khuyến nghị" }
+  },
+  "dashboard": {
+    "title": "Bảng điều khiển",
+    "welcome": "Chào mừng trở lại",
+    "subtitle": "Đây là cách {{company}} đang hoạt động hôm nay",
+    "health_score": "Sức khỏe Tổ chức",
+    "healthScore": "Điểm Sức khỏe",
+    "data": "Dữ liệu",
+    "operations": "Vận hành",
+    "security": "Bảo mật",
+    "people": "Nhân sự",
+    "fromLastWeek": "so với tuần trước",
+    "alerts": "Cảnh báo Đang hoạt động",
+    "activeAlerts": "Cảnh báo Đang hoạt động",
+    "critical": "Nghiêm trọng",
+    "warning": "Cảnh báo",
+    "info": "Thông tin",
+    "pending_approvals": "Phê duyệt Đang chờ",
+    "pendingApprovals": "Phê duyệt Đang chờ",
+    "workflows": "Quy trình làm việc",
+    "access": "Truy cập",
+    "budget": "Ngân sách",
+    "by": "bởi",
+    "approve": "Phê duyệt",
+    "reject": "Từ chối",
+    "keyMetrics": "Chỉ số Chính",
+    "askTheCouncil": "Hỏi Hội đồng",
+    "whatToKnow": "Bạn muốn biết điều gì?",
+    "recentQueries": "Truy vấn gần đây:",
+    "recentActivity": "Hoạt động Gần đây",
+    "viewFullLog": "Xem Nhật ký Đầy đủ",
+    "quickActions": "Hành động Nhanh",
+    "greetings": { "morning": "Chào buổi sáng", "afternoon": "Chào buổi chiều", "evening": "Chào buổi tối" },
+    "sampleAlerts": {
+      "databaseCpu": "CPU cơ sở dữ liệu > 90% trong 15 phút",
+      "paymentLatency": "Độ trễ xử lý thanh toán tăng đột biến",
+      "diskUsage": "Sử dụng ổ đĩa đạt 78% trên prod-db-01",
+      "apiErrors": "Tỷ lệ lỗi API vượt ngưỡng",
+      "memoryLeak": "Phát hiện rò rỉ bộ nhớ trong dịch vụ xác thực"
+    },
+    "sampleApprovals": {
+      "monthlyClose": "Quy trình Đóng sổ Hàng tháng",
+      "prodDbAccess": "Truy cập Cơ sở dữ liệu Production",
+      "budgetIncrease": "Tăng Ngân sách Marketing Q4",
+      "newHire": "Onboarding Nhân viên Mới: Nhóm Dev"
+    },
+    "sampleMetrics": {
+      "revenue": "Doanh thu",
+      "pipeline": "Pipeline",
+      "burnRate": "Tỷ lệ Tiêu hao",
+      "nps": "NPS",
+      "activeUsers": "Người dùng Hoạt động",
+      "churnRate": "Tỷ lệ Rời bỏ"
+    },
+    "sampleActivity": {
+      "workflowCompleted": "Quy trình \"{{name}}\" đã hoàn thành",
+      "userQueried": "{{user}} đã truy vấn {{topic}}",
+      "alertResolved": "Cảnh báo \"{{alert}}\" đã được giải quyết",
+      "reportGenerated": "Báo cáo \"{{report}}\" đã được tạo"
+    },
+    "sampleQueries": {
+      "churnIncrease": "Tại sao tỷ lệ rời bỏ tăng?",
+      "forecastRevenue": "Dự báo doanh thu Q4",
+      "biggestRisk": "Rủi ro lớn nhất của chúng ta là gì?",
+      "customerSentiment": "Xu hướng cảm nhận khách hàng là gì?",
+      "competitorAnalysis": "Phân tích giá của đối thủ"
+    }
+  },
+  "button": {
+    "view_all": "Xem tất cả",
+    "viewAll": "Xem tất cả",
+    "viewMore": "Xem thêm",
+    "approve": "Phê duyệt",
+    "reject": "Từ chối",
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "submit": "Gửi",
+    "edit": "Chỉnh sửa",
+    "delete": "Xóa"
+  },
+  "commandPalette": {
+    "searchPlaceholder": "Tìm kiếm lệnh, trang, đại lý...",
+    "noResults": "Không có kết quả cho",
+    "navigate": "điều hướng",
+    "select": "chọn",
+    "toggle": "chuyển đổi",
+    "newQuery": "Truy vấn Hội đồng Mới",
+    "askCouncil": "Hỏi Hội đồng một câu hỏi",
+    "refresh": "Làm mới Dữ liệu",
+    "reloadPage": "Tải lại dữ liệu trang hiện tại",
+    "fullscreen": "Chuyển đổi Toàn màn hình",
+    "toggleFullscreen": "Vào/thoát chế độ toàn màn hình",
+    "switchTo": "Chuyển sang",
+    "changeLanguage": "Đổi ngôn ngữ sang",
+    "categories": { "navigation": "Điều hướng", "actions": "Hành động", "agents": "Đại lý", "modes": "Chế độ Hội đồng", "recent": "Gần đây" },
+    "agents": {
+      "chief": "Đại lý Chiến lược Trưởng",
+      "chiefDesc": "Tổng hợp chiến lược",
+      "cfo": "Trí tuệ Tài chính",
+      "cfoDesc": "Phân tích tài chính",
+      "coo": "Đại lý Vận hành",
+      "cooDesc": "Hiệu quả vận hành",
+      "ciso": "Đại lý Bảo mật",
+      "cisoDesc": "Bảo mật & tuân thủ",
+      "cmo": "Trí tuệ Thị trường",
+      "cmoDesc": "Phân tích thị trường"
+    }
+  },
+  "cortex": {
+    "sidebar": { "spaces": "Không gian", "pillars": "Trụ cột", "system": "Hệ thống", "data": "Dữ liệu", "security": "Bảo mật" }
+  },
+  "sidebar": {
+    "dashboard": "Bảng điều khiển",
+    "the_council": "Hội đồng",
+    "the_graph": "Đồ thị",
+    "the_pulse": "Nhịp đập",
+    "the_lens": "Ống kính",
+    "the_bridge": "Cầu nối",
+    "settings": "Cài đặt",
+    "help": "Trợ giúp & Hỗ trợ",
+    "cortex": "Cortex",
+    "spaces": "Không gian",
+    "pillars": "Trụ cột",
+    "sovereign": "Chủ quyền",
+    "admin": "Quản trị"
+  },
+  "council": {
+    "title": "Hội đồng",
+    "subtitle": "Bảng cố vấn chiến lược được hỗ trợ bởi AI",
+    "askQuestion": "Đặt câu hỏi",
+    "questionPlaceholder": "Bạn muốn hội đồng thảo luận về câu hỏi chiến lược nào?",
+    "selectAgents": "Chọn đại lý tham gia",
+    "startDeliberation": "Bắt đầu Thảo luận",
+    "quickAnswer": "Trả lời Nhanh",
+    "fullDeliberation": "Thảo luận Đầy đủ",
+    "selectedAgents": "Đại lý Đã chọn",
+    "clearAll": "Xóa Tất cả",
+    "selectAll": "Chọn Tất cả",
+    "agents": { "domain": "Đại lý Lĩnh vực", "custom": "Đại lý Tùy chỉnh", "premium": "Đại lý Premium", "createCustom": "Tạo Đại lý Tùy chỉnh" },
+    "modes": {
+      "title": "Thư viện Chế độ Hội đồng",
+      "subtitle": "10 đại lý giống nhau với các chế độ khác nhau tạo ra đầu ra hoàn toàn khác biệt.",
+      "cultureNote": "Prompt CHÍNH LÀ văn hóa công ty.",
+      "quickReference": "Tham khảo Nhanh",
+      "mode": "Chế độ",
+      "primeDirective": "Chỉ thị Chính",
+      "bestFor": "Tốt nhất Cho",
+      "agentBehavior": "Hành vi Đại lý"
+    },
+    "deliberation": {
+      "phases": { "initial_analysis": "Phân tích Ban đầu", "cross_examination": "Xem xét Chéo", "synthesis": "Tổng hợp", "ethics_check": "Kiểm tra Đạo đức" },
+      "inProgress": "Đang Thảo luận",
+      "completed": "Thảo luận Hoàn thành",
+      "confidence": "Độ tin cậy"
+    },
+    "customAgent": {
+      "title": "Tạo Đại lý Tùy chỉnh",
+      "editTitle": "Chỉnh sửa Đại lý Tùy chỉnh",
+      "subtitle": "Thiết kế đại lý AI của riêng bạn với chuyên môn chuyên biệt",
+      "premium": "Gói Agent Builder",
+      "avatar": "Avatar Đại lý",
+      "color": "Màu Đại lý",
+      "name": "Tên Đại lý",
+      "namePlaceholder": "vd: Nhà Phân tích Thị trường",
+      "role": "Vai trò / Chức danh",
+      "rolePlaceholder": "vd: Nghiên cứu & Phân tích Thị trường",
+      "description": "Mô tả",
+      "descriptionPlaceholder": "Mô tả những gì đại lý này làm và các lĩnh vực tập trung...",
+      "expertise": "Chuyên môn & Hướng dẫn",
+      "capabilities": "Khả năng",
+      "addCapability": "Thêm",
+      "save": "Lưu Đại lý",
+      "delete": "Xóa Đại lý"
+    },
+    "status": { "online": "Trực tuyến", "offline": "Ngoại tuyến", "busy": "Bận" }
+  },
+  "agent": {
+    "chief": {
+      "name": "Đặc vụ Chiến lược Trưởng",
+      "role": "Giám sát Chiến lược & Tổng hợp",
+      "description": "Tổng hợp thông tin từ tất cả đặc vụ lĩnh vực để đưa ra khuyến nghị chiến lược toàn diện."
+    },
+    "cfo": {
+      "name": "Đặc vụ Tài chính Thông minh",
+      "role": "Phân tích Tài chính & Rủi ro",
+      "description": "Phân tích dữ liệu tài chính, ngân sách, dự báo và cung cấp thông tin về sức khỏe tài chính."
+    },
+    "coo": { "name": "Đặc vụ Vận hành Thông minh", "role": "Hiệu quả Vận hành", "description": "Tập trung vào các chỉ số vận hành, hiệu quả quy trình và phân bổ nguồn lực." },
+    "ciso": { "name": "Đặc vụ Bảo mật & Tuân thủ", "role": "Bảo mật & Quản lý Rủi ro", "description": "Giám sát tư thế bảo mật, yêu cầu tuân thủ và đánh giá mối đe dọa." },
+    "cmo": { "name": "Đặc vụ Thị trường Thông minh", "role": "Marketing & Thông tin Khách hàng", "description": "Phân tích xu hướng thị trường, hành vi khách hàng và thông tin cạnh tranh." },
+    "cro": { "name": "Đặc vụ Doanh thu Thông minh", "role": "Doanh thu & Tăng trưởng", "description": "Tập trung vào tối ưu hóa doanh thu, hiệu suất bán hàng và chiến lược giá." },
+    "cdo": { "name": "Đặc vụ Chất lượng Dữ liệu", "role": "Quản trị & Chất lượng Dữ liệu", "description": "Giám sát chất lượng dữ liệu, chính sách quản trị và đảm bảo tính toàn vẹn dữ liệu." },
+    "risk": {
+      "name": "Đặc vụ Đánh giá Rủi ro",
+      "role": "Phân tích Rủi ro Doanh nghiệp",
+      "description": "Đánh giá rủi ro doanh nghiệp, thực hiện phân tích tác động và cung cấp chiến lược giảm thiểu."
+    },
+    "clo": { "name": "Đặc vụ Pháp lý Thông minh", "role": "Phân tích Pháp lý & Tuân thủ", "description": "Phân tích rủi ro pháp lý, hàm ý hợp đồng và tuân thủ quy định." },
+    "cpo": { "name": "Đặc vụ Chiến lược Sản phẩm", "role": "Đổi mới Sản phẩm & Lộ trình", "description": "Thúc đẩy chiến lược sản phẩm, ưu tiên tính năng và thông tin trải nghiệm người dùng." },
+    "caio": { "name": "Đặc vụ Chiến lược AI", "role": "Quản trị & Đổi mới AI/ML", "description": "Hướng dẫn chiến lược AI, quản trị mô hình và triển khai AI đạo đức." },
+    "cso": { "name": "Đặc vụ Bền vững", "role": "ESG & Tác động Môi trường", "description": "Giám sát các chỉ số môi trường, xã hội, quản trị và các sáng kiến bền vững." },
+    "cio": { "name": "Đặc vụ Đầu tư Thông minh", "role": "Phân bổ Vốn & Danh mục", "description": "Phân tích cơ hội đầu tư, phân bổ danh mục và triển khai vốn." },
+    "cco": {
+      "name": "Đặc vụ Truyền thông",
+      "role": "Truyền thông Doanh nghiệp & PR",
+      "description": "Soạn thảo thông điệp doanh nghiệp, quản lý truyền thông với các bên liên quan và giám sát nhận thức thương hiệu."
+    },
+    "ext-auditor": { "name": "Kiểm toán viên Bên ngoài", "role": "Kiểm toán Độc lập Bên thứ ba", "description": "Cung cấp đánh giá độc lập, khách quan từ góc nhìn bên ngoài." },
+    "int-auditor": { "name": "Kiểm toán viên Nội bộ", "role": "Kiểm soát Nội bộ & Kiểm toán Quy trình", "description": "Đánh giá kiểm soát nội bộ, hiệu quả vận hành và tuân thủ." },
+    "cmio": { "name": "Giám đốc Thông tin Y tế", "role": "CNTT Y tế & Hệ thống Lâm sàng", "description": "Chuyên gia về công nghệ y tế, hệ thống EHR và tin học lâm sàng." },
+    "pso": { "name": "Chuyên viên An toàn Bệnh nhân", "role": "An toàn Lâm sàng & Chất lượng", "description": "Chuyên gia về an toàn bệnh nhân, phòng ngừa sự cố bất lợi và cải tiến chất lượng." },
+    "hco": { "name": "Chuyên viên Tuân thủ Y tế", "role": "HIPAA & Quy định Y tế", "description": "Chuyên gia về tuân thủ quy định y tế, HIPAA và tuân thủ thanh toán." },
+    "cod": { "name": "Giám đốc Vận hành Lâm sàng", "role": "Vận hành & Hiệu quả Y tế", "description": "Chuyên gia về vận hành lâm sàng, luồng bệnh nhân và tối ưu hóa nhân sự." },
+    "quant": { "name": "Phân tích viên Định lượng", "role": "Mô hình Tài chính & Phân tích Rủi ro", "description": "Chuyên gia về tài chính định lượng, định giá phái sinh và mô hình rủi ro." },
+    "pm": { "name": "Quản lý Danh mục Đầu tư", "role": "Chiến lược Đầu tư & Phân bổ Tài sản", "description": "Chuyên gia về xây dựng danh mục, phân bổ tài sản và chiến lược đầu tư." },
+    "cro-finance": {
+      "name": "Chuyên viên Rủi ro Tín dụng",
+      "role": "Phân tích Tín dụng & Đánh giá Rủi ro",
+      "description": "Chuyên gia về phân tích tín dụng, bảo lãnh cho vay và mô hình rủi ro tín dụng."
+    },
+    "treasury": { "name": "Phân tích viên Ngân quỹ", "role": "Quản lý Tiền mặt & Thanh khoản", "description": "Chuyên gia về ngân quỹ doanh nghiệp, quản lý tiền mặt và phòng ngừa ngoại hối." },
+    "contracts": { "name": "Chuyên gia Hợp đồng", "role": "Phân tích & Đàm phán Hợp đồng", "description": "Chuyên gia về hợp đồng thương mại, soạn thảo hợp đồng và đàm phán." },
+    "ip": { "name": "Tư vấn Sở hữu Trí tuệ", "role": "Bằng sáng chế, Nhãn hiệu & Chiến lược SHTT", "description": "Chuyên gia về luật sở hữu trí tuệ, chiến lược bằng sáng chế và bảo vệ nhãn hiệu." },
+    "litigation": { "name": "Chuyên gia Tranh tụng", "role": "Giải quyết Tranh chấp & Chiến lược Xét xử", "description": "Chuyên gia về tranh tụng thương mại, giải quyết tranh chấp và e-discovery." },
+    "regulatory": { "name": "Tư vấn Pháp quy", "role": "Quan hệ Chính phủ & Tuân thủ", "description": "Chuyên gia về tuân thủ quy định, quan hệ chính phủ và luật hành chính." }
+  },
+  "label": { "online": "Trực tuyến", "offline": "Ngoại tuyến", "busy": "Bận", "premium": "Premium", "locked": "Đã khóa", "custom": "Tùy chỉnh", "unlock": "Mở khóa", "required": "Bắt buộc" },
+  "settings": {
+    "title": "Cài đặt",
+    "organization": "Tổ chức",
+    "users": "Người dùng",
+    "teams": "Nhóm",
+    "roles": "Vai trò & Quyền hạn",
+    "billing": "Thanh toán",
+    "apiKeys": "Khóa API",
+    "integrations": "Tích hợp",
+    "preferences": "Tùy chọn",
+    "security": "Bảo mật"
+  },
+  "errors": {
+    "notFound": { "title": "Không tìm thấy Trang", "message": "Trang bạn đang tìm không tồn tại hoặc đã được di chuyển.", "backHome": "Quay lại Trang chủ" },
+    "serverError": { "title": "Lỗi Máy chủ", "message": "Đã xảy ra sự cố từ phía chúng tôi. Vui lòng thử lại sau." },
+    "networkError": { "title": "Lỗi Kết nối", "message": "Không thể kết nối đến máy chủ. Vui lòng kiểm tra kết nối internet của bạn." },
+    "unauthorized": { "title": "Không được Phép", "message": "Bạn không có quyền truy cập tài nguyên này." },
+    "sessionExpired": { "title": "Phiên đã Hết hạn", "message": "Phiên của bạn đã hết hạn. Vui lòng đăng nhập lại." }
+  },
+  "footer": {
+    "company": "Công ty",
+    "product": "Sản phẩm",
+    "resources": "Tài nguyên",
+    "legal": "Pháp lý",
+    "about": "Về Chúng tôi",
+    "careers": "Tuyển dụng",
+    "contact": "Liên hệ",
+    "press": "Báo chí",
+    "features": "Tính năng",
+    "integrations": "Tích hợp",
+    "enterprise": "Doanh nghiệp",
+    "documentation": "Tài liệu",
+    "apiReference": "Tham khảo API",
+    "status": "Trạng thái Hệ thống",
+    "community": "Cộng đồng",
+    "privacy": "Chính sách Bảo mật",
+    "terms": "Điều khoản Dịch vụ",
+    "security": "Bảo mật",
+    "cookies": "Chính sách Cookie",
+    "copyright": "© {{year}} Datacendia. Mọi quyền được bảo lưu.",
+    "tagline": "Trí tuệ Doanh nghiệp Chủ quyền"
+  },
+  "time": {
+    "justNow": "Vừa xong",
+    "minutesAgo": "{{count}} phút trước",
+    "minutesAgo_plural": "{{count}} phút trước",
+    "hoursAgo": "{{count}} giờ trước",
+    "hoursAgo_plural": "{{count}} giờ trước",
+    "daysAgo": "{{count}} ngày trước",
+    "daysAgo_plural": "{{count}} ngày trước",
+    "weeksAgo": "{{count}} tuần trước",
+    "weeksAgo_plural": "{{count}} tuần trước"
+  },
+  "tooltips": {
+    "pillars": {
+      "helm": {
+        "title": "The Helm - Trung tâm Chỉ huy Chiến lược",
+        "summary": "Hệ thống hỗ trợ quyết định chiến lược của tổ chức bạn. Giám sát, phân tích và điều hướng với sự tự tin.",
+        "features": [
+          "Bảng điều khiển KPI thời gian thực với phân tích xu hướng",
+          "Theo dõi mục tiêu chiến lược và căn chỉnh",
+          "So sánh hiệu suất với tiêu chuẩn ngành",
+          "Ngưỡng cảnh báo với thông báo tự động",
+          "Tạo tóm tắt điều hành"
+        ],
+        "useCases": ["Theo dõi mục tiêu quý trên tất cả các phòng ban", "Giám sát chỉ số doanh thu và chỉ báo tăng trưởng", "Đặt và theo dõi các cột mốc chiến lược"],
+        "guidance": "Bắt đầu bằng cách xác định các chỉ số chính của bạn. Helm hoạt động tốt nhất khi bạn có các mục tiêu rõ ràng, có thể đo lường được."
+      },
+      "lineage": {
+        "title": "The Lineage - Theo dõi Nguồn gốc Dữ liệu",
+        "summary": "Khả năng hiển thị đầy đủ hành trình dữ liệu của bạn. Biết mọi con số đến từ đâu và đi về đâu.",
+        "features": [
+          "Lập bản đồ trực quan luồng dữ liệu",
+          "Theo dõi từ nguồn đến báo cáo",
+          "Phân tích tác động cho các thay đổi dữ liệu",
+          "Chấm điểm chất lượng dữ liệu ở mỗi giai đoạn",
+          "Tạo tài liệu tự động"
+        ],
+        "useCases": ["Dấu vết kiểm toán cho tuân thủ quy định", "Gỡ lỗi sai lệch dữ liệu giữa các hệ thống", "Lập kế hoạch di chuyển hệ thống với khả năng hiển thị tác động đầy đủ"],
+        "guidance": "Kết nối các nguồn dữ liệu của bạn trước. Lineage tự động khám phá các mối quan hệ và xây dựng bản đồ dữ liệu."
+      },
+      "predict": {
+        "title": "The Predict - Công cụ Dự báo AI",
+        "summary": "Các mô hình machine learning nhìn xa hơn đường chân trời. Dự báo xu hướng trước khi chúng trở nên rõ ràng.",
+        "features": [
+          "Dự báo chuỗi thời gian với khoảng tin cậy",
+          "Hệ thống phát hiện bất thường và cảnh báo sớm",
+          "Mô hình hóa kịch bản what-if",
+          "Phân tích tầm quan trọng của đặc trưng",
+          "Giám sát hiệu suất mô hình"
+        ],
+        "useCases": ["Dự báo nhu cầu và tối ưu hóa hàng tồn kho", "Dự đoán rời bỏ khách hàng trước khi nó xảy ra", "Mô hình hóa kịch bản tài chính cho lập kế hoạch chiến lược"],
+        "guidance": "Dự đoán chất lượng đòi hỏi dữ liệu chất lượng. Bắt đầu với dữ liệu lịch sử sạch và để Predict học các mẫu của bạn."
+      },
+      "flow": {
+        "title": "The Flow - Tự động hóa Thông minh",
+        "summary": "Quy trình làm việc biết suy nghĩ. Kết nối các hệ thống, tự động hóa quyết định, và giữ cho công việc luôn chảy.",
+        "features": [
+          "Trình tạo quy trình làm việc trực quan kéo-thả",
+          "Nút quyết định được hỗ trợ bởi AI",
+          "Trình kết nối tích hợp đa hệ thống",
+          "Chuỗi phê duyệt với quy tắc leo thang",
+          "Phân tích và tối ưu hóa quy trình làm việc"
+        ],
+        "useCases": ["Tự động hóa điều phối pipeline dữ liệu", "Tạo quy trình phê duyệt thông minh", "Kích hoạt hành động dựa trên thông tin chi tiết AI"],
+        "guidance": "Lập bản đồ các quy trình thủ công hiện tại của bạn trước. Flow giúp bạn xác định cơ hội tự động hóa và triển khai từng bước."
+      },
+      "health": {
+        "title": "The Health - Giám sát Dấu hiệu Sống",
+        "summary": "Nhịp đập thời gian thực của các dấu hiệu sống tổ chức bạn. Biết khi nào có vấn đề trước khi nó hỏng.",
+        "features": ["Bảng điều khiển sức khỏe thành phần", "Phân tích xu hướng hiệu suất", "Theo dõi sự cố và giải quyết", "Công cụ lập kế hoạch năng lực", "Giám sát uptime và SLA"],
+        "useCases": ["Giám sát sức khỏe hệ thống trên tất cả các nền tảng", "Theo dõi thời gian phản hồi và giải quyết sự cố", "Lập kế hoạch năng lực hạ tầng chủ động"],
+        "guidance": "Cấu hình kiểm tra sức khỏe cho các hệ thống quan trọng của bạn. Health tổng hợp các tín hiệu để cung cấp cái nhìn thống nhất."
+      },
+      "guard": {
+        "title": "The Guard - Lá chắn Bảo mật & Tuân thủ",
+        "summary": "Bảo vệ tự động cho dữ liệu của bạn. Thực thi chính sách, theo dõi truy cập, và duy trì tuân thủ.",
+        "features": ["Công cụ thực thi chính sách", "Ghi nhật ký kiểm toán truy cập", "Phát hiện và cảnh báo mối đe dọa", "Ánh xạ khung tuân thủ", "Chấm điểm tư thế bảo mật"],
+        "useCases": ["Tự động thực thi chính sách truy cập dữ liệu", "Tạo báo cáo tuân thủ cho kiểm toán viên", "Phát hiện và phản hồi các mối đe dọa bảo mật"],
+        "guidance": "Xác định các chính sách bảo mật và yêu cầu tuân thủ của bạn. Guard giám sát liên tục và cảnh báo về các vi phạm."
+      },
+      "ethics": {
+        "title": "The Ethics - Trung tâm Quản trị AI",
+        "summary": "AI có trách nhiệm được tích hợp sẵn. Đảm bảo sự công bằng, minh bạch và trách nhiệm trong mọi quyết định.",
+        "features": ["Phát hiện và giám sát thiên vị", "Công cụ giải thích mô hình", "Quy trình đánh giá đạo đức", "Theo dõi chỉ số công bằng", "Dấu vết kiểm toán quyết định"],
+        "useCases": ["Đánh giá mô hình AI về thiên vị trước khi triển khai", "Ghi nhận lý do quyết định cho tuân thủ", "Giám sát chỉ số công bằng trong sản xuất"],
+        "guidance": "Thiết lập các nguyên tắc đạo đức của bạn trước. Ethics giúp bạn vận hành hóa chúng trên tất cả các hệ thống AI."
+      },
+      "agents": {
+        "title": "The Agents - Hội đồng Cố vấn AI",
+        "summary": "Cố vấn AI chuyên biệt cho mọi lĩnh vực. Nhận hướng dẫn chuyên gia theo yêu cầu.",
+        "features": ["Đại lý AI chuyên gia lĩnh vực", "Hợp tác đa đại lý", "Khuyến nghị nhận thức ngữ cảnh", "Tương tác ngôn ngữ tự nhiên", "Học liên tục từ phản hồi"],
+        "useCases": ["Nhận tư vấn chiến lược từ nhà phân tích kinh doanh", "Tham vấn chuyên gia kỹ thuật cho quyết định kiến trúc", "Nhận hướng dẫn tuân thủ từ chuyên gia quy định"],
+        "guidance": "Chọn đại lý phù hợp cho câu hỏi của bạn. Mỗi đại lý có kiến thức chuyên biệt - Council biết khi nào cần hợp tác."
+      }
+    },
+    "spaces": {
+      "graph": {
+        "title": "The Graph - Trình điều hướng Tri thức",
+        "summary": "Điều hướng vũ trụ tri thức tổ chức của bạn. Nhìn thấy các kết nối mà người khác bỏ lỡ.",
+        "features": ["Trực quan hóa tri thức tương tác", "Tìm kiếm ngữ nghĩa trên tất cả dữ liệu", "Khám phá mối quan hệ", "Khám phá nhận thức ngữ cảnh", "Xác định khoảng trống tri thức"],
+        "guidance": "Khám phá bằng cách nhấp vào bất kỳ nút nào. Graph tiết lộ các kết nối và cho phép bạn đào sâu vào chi tiết."
+      },
+      "council": {
+        "title": "The Council - Phòng Hợp tác AI",
+        "summary": "Nơi các cố vấn AI cùng thảo luận. Vấn đề phức tạp cần nhiều góc nhìn.",
+        "features": ["Phiên suy luận đa đại lý", "Khung thảo luận có cấu trúc", "Giao thức giải quyết xung đột", "Công cụ xây dựng đồng thuận", "Tài liệu quyết định"],
+        "guidance": "Trình bày câu hỏi của bạn cho Council. Xem các góc nhìn khác nhau xuất hiện và tổng hợp thành khuyến nghị."
+      },
+      "pulse": {
+        "title": "The Pulse - Trung tâm Vận hành Thời gian Thực",
+        "summary": "Chế độ xem trực tiếp nhịp tim tổ chức của bạn. Mọi chỉ số, mọi khoảnh khắc.",
+        "features": ["Phát trực tuyến chỉ số thời gian thực", "Ngưỡng cảnh báo có thể tùy chỉnh", "Trực quan hóa xu hướng", "Làm nổi bật bất thường", "So sánh lịch sử"],
+        "guidance": "Cấu hình các chỉ số chính của bạn để hiển thị trên Pulse. Đặt ngưỡng cảnh báo để được thông báo về các thay đổi."
+      },
+      "lens": {
+        "title": "The Lens - Trình khám phá Kịch bản Tương lai",
+        "summary": "Xem các tương lai có thể trước khi chúng đến. Mô hình hóa kịch bản và lập kế hoạch phù hợp.",
+        "features": ["Công cụ mô hình hóa kịch bản", "Mô phỏng Monte Carlo", "Phân tích độ nhạy", "Trực quan hóa cây quyết định", "Ánh xạ xác suất kết quả"],
+        "guidance": "Xác định các tham số kịch bản của bạn. Lens tạo nhiều tương lai và hiển thị kết quả có khả năng nhất."
+      },
+      "bridge": {
+        "title": "The Bridge - Trung tâm Chỉ huy Hành động",
+        "summary": "Biến thông tin chi tiết thành hành động. Thực thi trên tất cả các hệ thống kết nối của bạn.",
+        "features": ["Thực thi hành động xuyên hệ thống", "Tích hợp quy trình phê duyệt", "Xem trước tác động hành động", "Khả năng hoàn tác", "Dấu vết kiểm toán thực thi"],
+        "guidance": "Chọn hành động của bạn và xem trước tác động của nó. Bridge đảm bảo thực thi an toàn với khả năng truy vết đầy đủ."
+      }
+    },
+    "sovereign": {
+      "mirror": {
+        "title": "Cendia Mirror - Công cụ Song sinh Kỹ thuật số",
+        "summary": "Tạo bản sao kỹ thuật số sống của tổ chức bạn. Kiểm thử thay đổi trước khi chúng đi vào hoạt động.",
+        "features": ["Đồng bộ hóa dữ liệu thời gian thực", "Môi trường mô phỏng kịch bản", "Mô hình hóa tác động thay đổi", "Khung thử nghiệm A/B", "Dự đoán hiệu suất"],
+        "guidance": "Mirror tạo sandbox an toàn của tổ chức bạn. Thử nghiệm tự do - các thay đổi ở đây không ảnh hưởng đến sản xuất."
+      },
+      "witness": {
+        "title": "Cendia Witness - Sổ cái Kiểm toán Bất biến",
+        "summary": "Bằng chứng được blockchain hỗ trợ của mọi hành động. Chứng minh điều gì đã xảy ra và khi nào.",
+        "features": ["Dấu thời gian mật mã", "Nhật ký kiểm toán không thể giả mạo", "Theo dõi chuỗi giám sát", "Xuất bằng chứng cho pháp lý", "Chứng thực tuân thủ"],
+        "guidance": "Witness tự động ghi lại các hành động quan trọng. Truy cập bản ghi bất biến bất cứ lúc nào cho kiểm toán hoặc điều tra."
+      },
+      "oracle": {
+        "title": "Cendia Oracle - Trung tâm Trí tuệ Dự đoán",
+        "summary": "AI tiên tiến nói sự thật với quyền lực. Nhận câu trả lời quan trọng.",
+        "features": ["Giao diện truy vấn ngôn ngữ tự nhiên", "Suy luận xuyên lĩnh vực", "Trả lời câu hỏi dự đoán", "Chấm điểm độ tin cậy", "Trích dẫn nguồn"],
+        "guidance": "Hỏi Oracle bất cứ điều gì về tổ chức của bạn. Nó tổng hợp tri thức từ tất cả các nguồn để cung cấp câu trả lời chính xác."
+      },
+      "legacy": {
+        "title": "Cendia Legacy - Bảo tồn Tri thức",
+        "summary": "Nắm bắt tri thức tổ chức trước khi nó rời đi. Bảo tồn sự khôn ngoan cho tương lai.",
+        "features": ["Nắm bắt tri thức chuyên gia", "Lưu trữ lý do quyết định", "Tài liệu thực hành tốt nhất", "Quy trình chuyển giao tri thức", "Công cụ onboarding người kế nhiệm"],
+        "guidance": "Ghi lại tri thức quan trọng khi nó được tạo ra. Legacy đảm bảo sự khôn ngoan của tổ chức bạn tồn tại lâu hơn bất kỳ cá nhân nào."
+      },
+      "mirage": {
+        "title": "Cendia Mirage - Bộ tạo Dữ liệu Tổng hợp",
+        "summary": "Tạo dữ liệu thực tế mà không có rủi ro bảo mật. Huấn luyện, kiểm thử và phát triển an toàn.",
+        "features": ["Tổng hợp dữ liệu thống kê", "Tạo bảo tồn quyền riêng tư", "Duy trì tương quan", "Khuếch đại trường hợp biên", "Xác thực chất lượng"],
+        "guidance": "Xác định yêu cầu dữ liệu của bạn. Mirage tạo bộ dữ liệu tổng hợp phù hợp với đặc điểm dữ liệu thực của bạn."
+      },
+      "key": {
+        "title": "Cendia Key - Kho Danh tính & Truy cập",
+        "summary": "Một chìa khóa để cai trị tất cả. Quản lý danh tính thống nhất trên toàn bộ hệ sinh thái của bạn.",
+        "features": ["Trung tâm đăng nhập một lần", "Kiểm soát truy cập dựa trên vai trò", "Quản lý truy cập đặc quyền", "Tự động hóa vòng đời danh tính", "Thực thi zero-trust"],
+        "guidance": "Kết nối các nhà cung cấp danh tính của bạn. Key thống nhất kiểm soát truy cập và thực thi chính sách trên tất cả các hệ thống."
+      },
+      "mesh": {
+        "title": "Cendia Mesh - Lớp Tích hợp",
+        "summary": "Kết nối mọi thứ với mọi thứ. Lớp tích hợp thông minh cho doanh nghiệp của bạn.",
+        "features": ["Cổng API phổ quát", "Kiến trúc hướng sự kiện", "Công cụ chuyển đổi dữ liệu", "Quản lý service mesh", "Giám sát tích hợp"],
+        "guidance": "Cấu hình các kết nối hệ thống của bạn thông qua Mesh. Nó xử lý giao thức, chuyển đổi và định tuyến tự động."
+      },
+      "blackbox": {
+        "title": "Cendia BlackBox - Đăng ký Mô hình",
+        "summary": "Trung tâm chỉ huy cho tất cả các mô hình AI của bạn. Phiên bản, triển khai và giám sát với sự tự tin.",
+        "features": ["Phiên bản mô hình và dòng dõi", "Điều phối triển khai", "Khung thử nghiệm A/B", "Giám sát hiệu suất", "Tự động hóa hoàn tác"],
+        "guidance": "Đăng ký các mô hình của bạn trong BlackBox. Nó theo dõi phiên bản, quản lý triển khai và giám sát hiệu suất tự động."
+      },
+      "glass": {
+        "title": "Cendia Glass - Bảng điều khiển Minh bạch",
+        "summary": "Khả năng hiển thị đầy đủ vào các quyết định AI. Xem chính xác tại sao và như thế nào các quyết định được đưa ra.",
+        "features": ["Giải thích quyết định", "Phân tích đóng góp yếu tố", "Khám phá phản thực", "Báo cáo các bên liên quan", "Tài liệu sẵn sàng kiểm toán"],
+        "guidance": "Chọn bất kỳ quyết định AI nào trong Glass. Nó phân tích các yếu tố, hiển thị các lựa chọn thay thế và giải thích lý luận."
+      }
+    },
+    "enterprise": {
+      "apotheosis": {
+        "title": "CendiaApotheosis™ - Siêu trí tuệ Tổ chức",
+        "summary": "Chu kỳ tự cải thiện không bao giờ dừng. Tấn công ban đêm, vá lỗi tự động, nâng cao kỹ năng, cấm mẫu.",
+        "features": ["Mô phỏng red-team hàng đêm (1000+ kịch bản)", "Tự động vá điểm yếu", "Phát hiện khoảng trống kỹ năng và đào tạo", "Cấm mẫu quyết định", "Theo dõi điểm Apotheosis"],
+        "useCases": ["Cải thiện tổ chức liên tục", "Giảm thiểu rủi ro chủ động", "Tăng cường tuân thủ tự động", "Hỗ trợ quyết định điều hành"],
+        "guidance": "Apotheosis chạy mỗi đêm, tấn công tổ chức của bạn từ 1000+ góc độ, vá những gì tìm thấy, và làm bạn miễn nhiễm vĩnh viễn với sai lầm của mình."
+      },
+      "dissent": {
+        "title": "CendiaDissent™ - Phản đối được Bảo vệ",
+        "summary": "Quyền phản đối chính thức, an toàn và bất biến đối với bất kỳ quyết định nào — ghi lại mãi mãi.",
+        "features": ["Đăng ký phản đối ẩn danh hoặc có tên", "Xác nhận bắt buộc trong 72 giờ", "Ghi sổ cái bất biến", "Phát hiện và bảo vệ trả thù", "Theo dõi độ chính xác phản đối"],
+        "useCases": ["Đảm bảo tiếng nói thiểu số được lắng nghe", "Tạo bộ nhớ tổ chức", "Bảo vệ người tố giác", "Cải thiện chất lượng quyết định"],
+        "guidance": "Nộp phản đối đối với bất kỳ quyết định nào bạn không đồng ý. Phản đối của bạn sẽ được ghi lại vĩnh viễn, được thừa nhận và theo dõi độ chính xác theo thời gian."
+      },
+      "connectors": {
+        "title": "Trình Kết Nối Dữ Liệu Doanh Nghiệp",
+        "summary": "156+ trình kết nối dựng sẵn trên 11 ngành dọc. Kết nối với nguồn dữ liệu chính phủ, tài chính, y tế và toàn cầu.",
+        "features": [
+          "Chính phủ: NOAA, FAA, FEMA, SEC, Census, USGS, EIA",
+          "Tài chính: Bloomberg, SWIFT, FIX Protocol, Refinitiv",
+          "Y tế: HL7 FHIR, Epic, Cerner, CDC, FDA, WHO",
+          "Chuỗi cung ứng: CBP, Maersk, API Cảng",
+          "Năng lượng: CAISO, PJM, ERCOT, ENTSO-E, Nord Pool",
+          "Hàng không: ARINC 429/664, ADS-B, ACARS, MIL-STD-1553"
+        ],
+        "useCases": [
+          "Tích hợp dữ liệu thời tiết thời gian thực",
+          "Dữ liệu thị trường tài chính và nguồn cấp quy định",
+          "Khả năng tương tác y tế và dữ liệu lâm sàng",
+          "Khả năng hiển thị chuỗi cung ứng",
+          "Phân tích lưới điện và thị trường năng lượng",
+          "An toàn hàng không và vận hành bay"
+        ],
+        "guidance": "Duyệt trình kết nối theo ngành hoặc tìm kiếm nguồn cụ thể. Mỗi trình kết nối bao gồm xác thực, giới hạn tốc độ và ánh xạ tuân thủ."
+      },
+      "evidence": {
+        "title": "Cơ Sở Hạ Tầng Bằng Chứng",
+        "summary": "Sổ cái bằng chứng bất biến với chuỗi hash blockchain, chữ ký số TPM và bằng chứng cây Merkle.",
+        "features": ["Mục sổ cái được ký mật mã", "Nắm bắt danh tính build và thực thi", "Hỗ trợ chứng thực phần cứng TPM", "Xác minh tính toàn vẹn cây Merkle", "Tạo gói bằng chứng pháp lý"],
+        "useCases": ["Bằng chứng kiểm tra sẵn sàng kiểm toán", "Tài liệu đánh giá bảo mật", "Bằng chứng SOC 2 / ISO 27001 / GDPR", "Bản ghi thực thi chống giả mạo"],
+        "guidance": "Tất cả các lần thực thi kiểm tra được ghi lại tự động với chữ ký mật mã. Tạo gói bằng chứng pháp lý chỉ với một cú nhấp."
+      },
+      "sovereignArch": {
+        "title": "Mô Hình Kiến Trúc Chủ Quyền",
+        "summary": "11 mô hình doanh nghiệp cho triển khai air-gap, zero-trust và chủ quyền hoàn toàn.",
+        "features": [
+          "Data Diode: Nhập dữ liệu một chiều với cách ly",
+          "RLHF Cục bộ: Học tăng cường không đám mây",
+          "Decision DNA: Xuất kiểm toán một cú nhấp",
+          "Shadow Council: Chế độ sandbox",
+          "QR Air-Gap Bridge: Truyền dữ liệu không phương tiện",
+          "Chứng thực TPM: Quyết định ký bằng phần cứng"
+        ],
+        "useCases": ["Triển khai cơ sở air-gap", "Ứng dụng quốc phòng và tình báo", "Tuân thủ ngành được quản lý", "Kiến trúc doanh nghiệp zero-trust"],
+        "guidance": "Các mô hình Kiến Trúc Chủ Quyền cho phép triển khai trong môi trường hạn chế nhất. Mỗi mô hình có thể sử dụng độc lập hoặc kết hợp."
+      },
+      "cascade": {
+        "title": "CendiaCascade™ - Hiệu Ứng Cánh Bướm",
+        "summary": "Phân tích hậu quả bậc hai và ba. Dự đoán hậu quả không mong muốn trước khi trở thành sự cố.",
+        "features": [
+          "Phân tích đa góc nhìn (CFO, COO, CISO, Con người, Đạo đức)",
+          "Phát hiện hiệu ứng cánh bướm (tác động bất ngờ bậc 3+)",
+          "Tự động tạo giảm thiểu (ngăn ngừa, phát hiện, phản hồi)",
+          "Đề xuất guardrail (canary, tripwire, circuit breaker, rollback)",
+          "Trực quan hóa dòng thời gian (T+0, T+30, T+90, T+1Năm)",
+          "Audit trail với SHA-256 hash"
+        ],
+        "useCases": ["Phân tích thay đổi nhân sự trước khi triển khai", "Dự đoán hậu quả thay đổi nhà cung cấp", "Mô hình thay đổi chính sách trong đồ thị tổ chức", "Phát hiện vòng phản hồi"],
+        "guidance": "Tải đồ thị tổ chức của bạn, đề xuất thay đổi và để CendiaCascade theo dõi hậu quả. Đối thủ của bạn chơi cờ vua một nước đi trước — CendiaCascade mô phỏng 5 nước đi trước."
+      },
+      "adapters": {
+        "title": "Sovereign Adapter - Bộ Kết Nối Đa Năng",
+        "summary": "5 adapter đa năng thay vì 156 connector riêng từng nhà cung cấp. Chúng tôi cung cấp ổ cắm; khách hàng mang phích cắm.",
+        "features": [
+          "File Watcher: Hàng không, quốc phòng, nhập từ file",
+          "Webhook Ingest: SaaS, sự kiện push từ cổng tài chính",
+          "Database Adapter: ERP, chuỗi cung ứng SQL/ODBC",
+          "Giao thức FHIR: Tiêu chuẩn y tế",
+          "Giao thức FIX: Tiêu chuẩn tài chính",
+          "Giao thức MQTT: IoT và lưới điện"
+        ],
+        "useCases": ["Kết nối với bất kỳ hệ thống nào qua tiêu chuẩn mở", "Tránh nghĩa vụ cấp phép API độc quyền", "Hỗ trợ môi trường air-gap và được quản lý", "BYO-keys cho adapter được quản lý"],
+        "guidance": "Chọn loại adapter phù hợp với mô hình tích hợp của bạn. Mỗi adapter tự động áp dụng các cấp độ rủi ro, ghi nhật ký bằng chứng và kiểm soát hạn mức."
+      }
+    }
+  },
+  "narratives": {
+    "welcome": {
+      "title": "Chào mừng đến Datacendia",
+      "subtitle": "Hành trình của bạn đến trí tuệ chủ quyền bắt đầu từ đây",
+      "steps": [
+        {
+          "title": "Làm quen với Trung tâm Chỉ huy của bạn",
+          "description": "Cortex là chế độ xem thống nhất của trí tuệ tổ chức. Năm không gian kết nối mang đến cho bạn khả năng hiển thị và kiểm soát hoàn toàn.",
+          "action": "Khám phá Cortex"
+        },
+        {
+          "title": "Hiểu 8 Trụ cột",
+          "description": "Mỗi trụ cột cung cấp các khả năng thiết yếu - từ chỉ số chiến lược (Helm) đến quản trị AI (Ethics). Chúng hoạt động cùng nhau như một hệ thống.",
+          "action": "Xem Tổng quan Trụ cột"
+        },
+        {
+          "title": "Kết nối Nguồn Dữ liệu Đầu tiên",
+          "description": "Trí tuệ đòi hỏi dữ liệu. Kết nối cơ sở dữ liệu, API, hoặc nguồn tệp để bắt đầu xây dựng cơ sở tri thức của bạn.",
+          "action": "Thêm Nguồn Dữ liệu"
+        },
+        {
+          "title": "Xác định Chỉ số Chính",
+          "description": "Điều gì quan trọng nhất với tổ chức của bạn? Xác định các KPI sẽ xuất hiện trên bảng điều khiển điều hành của bạn.",
+          "action": "Tạo Chỉ số Đầu tiên"
+        }
+      ]
+    },
+    "executive": {
+      "title": "Hành trình Chỉ huy Điều hành",
+      "subtitle": "Ra quyết định chiến lược với trí tuệ hoàn chỉnh",
+      "persona": "C-Suite Executive",
+      "duration": "15 phút",
+      "steps": [
+        {
+          "title": "Bắt đầu tại The Pulse",
+          "description": "Bắt đầu mỗi ngày với chế độ xem thời gian thực về sức khỏe tổ chức. Các chỉ báo đỏ cần chú ý ngay lập tức.",
+          "space": "pulse",
+          "keyActions": ["Xem điểm sức khỏe", "Kiểm tra cảnh báo đang hoạt động", "Ghi nhận các chỉ số xu hướng"]
+        },
+        {
+          "title": "Đi sâu vào The Helm",
+          "description": "Xem xét các KPI chiến lược của bạn. Bạn có đang đúng hướng cho các mục tiêu quý? Những khoảng trống ở đâu?",
+          "pillar": "helm",
+          "keyActions": ["Xem lại trạng thái KPI", "So sánh với mục tiêu", "Xác định mục tiêu có rủi ro"]
+        },
+        {
+          "title": "Tham vấn The Council",
+          "description": "Cho các quyết định phức tạp, triệu tập các cố vấn AI của bạn. Trình bày tình huống và lắng nghe nhiều góc nhìn.",
+          "space": "council",
+          "keyActions": ["Đặt câu hỏi của bạn", "Xem xét góc nhìn đại lý", "Yêu cầu tổng hợp"]
+        },
+        {
+          "title": "Khám phá với The Lens",
+          "description": "Mô hình hóa các kịch bản khác nhau. Nếu bạn tăng đầu tư? Trì hoãn ra mắt? Lens hiển thị các tương lai có thể.",
+          "space": "lens",
+          "keyActions": ["Xác định tham số kịch bản", "Chạy mô phỏng", "So sánh kết quả"]
+        },
+        {
+          "title": "Hành động qua The Bridge",
+          "description": "Biến quyết định thành hành động. Bridge thực thi trên các hệ thống với dấu vết kiểm toán đầy đủ.",
+          "space": "bridge",
+          "keyActions": ["Chọn hành động", "Xem trước tác động", "Phê duyệt thực thi"]
+        }
+      ]
+    },
+    "dataEngineer": {
+      "title": "Quy trình của Kỹ sư Dữ liệu",
+      "subtitle": "Xây dựng và duy trì nền tảng dữ liệu",
+      "persona": "Kỹ sư Dữ liệu / Kiến trúc sư",
+      "duration": "30 phút",
+      "steps": [
+        {
+          "title": "Lập bản đồ Dữ liệu với The Lineage",
+          "description": "Hiểu cách dữ liệu chảy qua tổ chức của bạn. Lineage tự động khám phá nguồn, biến đổi và đích.",
+          "pillar": "lineage",
+          "keyActions": ["Kết nối nguồn dữ liệu", "Xem xét thực thể đã khám phá", "Tài liệu hóa các biến đổi"]
+        },
+        {
+          "title": "Giám sát Chất lượng trong The Health",
+          "description": "Theo dõi chỉ số chất lượng dữ liệu trên tất cả các pipeline. Thiết lập cảnh báo cho độ tươi, độ hoàn chỉnh và độ chính xác.",
+          "pillar": "health",
+          "keyActions": ["Cấu hình kiểm tra chất lượng", "Đặt ngưỡng cảnh báo", "Xem xét điểm chất lượng"]
+        },
+        {
+          "title": "Kết nối Hệ thống qua Cendia Mesh",
+          "description": "Xây dựng tích hợp giữa các hệ thống. Mesh xử lý giao thức, biến đổi và độ tin cậy.",
+          "sovereign": "mesh",
+          "keyActions": ["Xác định nguồn/đích", "Cấu hình ánh xạ", "Kiểm thử tích hợp"]
+        },
+        {
+          "title": "Tự động hóa với The Flow",
+          "description": "Tạo pipeline dữ liệu tự động. Lên lịch công việc, xử lý lỗi và điều phối quy trình phức tạp.",
+          "pillar": "flow",
+          "keyActions": ["Thiết kế quy trình làm việc", "Cấu hình trigger", "Đặt xử lý lỗi"]
+        }
+      ]
+    },
+    "complianceOfficer": {
+      "title": "Danh sách kiểm tra của Cán bộ Tuân thủ",
+      "subtitle": "Duy trì tuân thủ quy định với giám sát tự động",
+      "persona": "Cán bộ Tuân thủ / Rủi ro",
+      "duration": "20 phút",
+      "steps": [
+        {
+          "title": "Xem xét Tư thế Bảo mật trong The Guard",
+          "description": "Kiểm tra tư thế bảo mật của tổ chức. Xem xét tuân thủ chính sách, mẫu truy cập và các mối đe dọa đang hoạt động.",
+          "pillar": "guard",
+          "keyActions": ["Xem xét điểm tuân thủ", "Kiểm tra vi phạm chính sách", "Kiểm toán nhật ký truy cập"]
+        },
+        {
+          "title": "Xác minh Đạo đức AI trong The Ethics",
+          "description": "Đảm bảo tất cả các mô hình AI đáp ứng tiêu chuẩn đạo đức. Kiểm tra thiên vị, xem xét quyết định và ghi nhận tuân thủ.",
+          "pillar": "ethics",
+          "keyActions": ["Xem xét kiểm tra thiên vị", "Kiểm toán quyết định mô hình", "Ghi nhận phát hiện"]
+        },
+        {
+          "title": "Lấy Dấu vết Kiểm toán từ Cendia Witness",
+          "description": "Truy cập bản ghi bất biến của tất cả hành động hệ thống. Tạo báo cáo cho kiểm toán viên với bằng chứng mật mã.",
+          "sovereign": "witness",
+          "keyActions": ["Chọn phạm vi kiểm toán", "Tạo báo cáo bằng chứng", "Xuất cho kiểm toán viên"]
+        },
+        {
+          "title": "Giải thích Quyết định với Cendia Glass",
+          "description": "Khi cơ quan quản lý hỏi tại sao, Glass cung cấp câu trả lời. Giải thích đầy đủ cho mọi quyết định AI.",
+          "sovereign": "glass",
+          "keyActions": ["Chọn quyết định", "Tạo giải thích", "Tạo tài liệu tuân thủ"]
+        }
+      ]
+    },
+    "strategist": {
+      "title": "Hướng dẫn của Nhà Lập kế hoạch Chiến lược",
+      "subtitle": "Từ thông tin chi tiết đến chiến lược với phân tích được hỗ trợ bởi AI",
+      "persona": "Chiến lược / Lập kế hoạch",
+      "duration": "45 phút",
+      "steps": [
+        {
+          "title": "Thu thập Trí tuệ từ The Graph",
+          "description": "Khám phá cơ sở tri thức của bạn. Khám phá các kết nối giữa dữ liệu thị trường, chỉ số nội bộ và trí tuệ cạnh tranh.",
+          "space": "graph",
+          "keyActions": ["Tìm kiếm theo chủ đề", "Khám phá kết nối", "Lưu thông tin chi tiết chính"]
+        },
+        {
+          "title": "Dự báo Xu hướng với The Predict",
+          "description": "Sử dụng mô hình AI để dự báo các chỉ số chính. Hiểu xu hướng hiện tại đang hướng về đâu.",
+          "pillar": "predict",
+          "keyActions": ["Chọn mục tiêu dự báo", "Xem xét dự báo", "Phân tích khoảng tin cậy"]
+        },
+        {
+          "title": "Hỏi The Oracle",
+          "description": "Nhận câu trả lời được hỗ trợ bởi AI cho các câu hỏi chiến lược. Oracle tổng hợp tất cả tri thức có sẵn.",
+          "sovereign": "oracle",
+          "keyActions": ["Đặt câu hỏi chiến lược", "Xem xét câu trả lời", "Kiểm tra nguồn"]
+        },
+        {
+          "title": "Mô hình hóa Kịch bản trong The Lens",
+          "description": "Xây dựng kịch bản chiến lược. Nếu đối thủ di chuyển? Thị trường thay đổi? Quy định mới xuất hiện?",
+          "space": "lens",
+          "keyActions": ["Xác định biến kịch bản", "Chạy nhiều tương lai", "Xác định chiến lược tối ưu"]
+        },
+        {
+          "title": "Kiểm thử trong Cendia Mirror",
+          "description": "Mô phỏng các sáng kiến chiến lược của bạn trước khi cam kết. Mirror cho phép bạn kiểm thử mà không có rủi ro.",
+          "sovereign": "mirror",
+          "keyActions": ["Tạo mô phỏng", "Chạy kiểm thử sáng kiến", "Phân tích kết quả"]
+        }
+      ]
+    },
+    "quickStart": {
+      "title": "Bắt đầu Nhanh 5 Phút",
+      "subtitle": "Định hướng và nhìn thấy giá trị ngay lập tức",
+      "duration": "5 phút",
+      "steps": [
+        {
+          "title": "Xem Bảng điều khiển của bạn",
+          "description": "Trung tâm chỉ huy cá nhân hóa của bạn hiển thị những gì quan trọng nhất. Chỉ số chính, cảnh báo và hoạt động gần đây một cái nhìn.",
+          "action": "Mở Bảng điều khiển"
+        },
+        {
+          "title": "Kiểm tra Sức khỏe Tổ chức",
+          "description": "Một con số cho bạn biết tổ chức của bạn đang hoạt động như thế nào. Xanh là tốt. Nhấp để xem chi tiết.",
+          "action": "Xem Điểm Sức khỏe"
+        },
+        { "title": "Đặt một Câu hỏi", "description": "Nhập bất kỳ câu hỏi nào về tổ chức của bạn. Các đại lý AI của chúng tôi sẽ tìm câu trả lời.", "action": "Mở Trợ lý AI" },
+        { "title": "Khám phá một Chỉ số", "description": "Nhấp vào bất kỳ chỉ số nào để đào sâu. Xem lịch sử, xu hướng và những gì đang thúc đẩy thay đổi.", "action": "Chọn một Chỉ số" }
+      ]
+    },
+    "crisisResponse": {
+      "title": "Giao thức Phản hồi Khủng hoảng",
+      "subtitle": "Khi mọi thứ xảy ra sai, di chuyển nhanh với thông tin đầy đủ",
+      "persona": "Chỉ huy Sự cố",
+      "duration": "Thời gian thực",
+      "steps": [
+        {
+          "title": "Đánh giá Tình huống trong The Pulse",
+          "description": "Nhận khả năng hiển thị tức thì vào những gì đang xảy ra. Các chỉ báo đỏ xác định vấn đề. Tác động lan truyền được hiển thị thời gian thực.",
+          "space": "pulse",
+          "keyActions": ["Xác định hệ thống bị ảnh hưởng", "Kiểm tra mức độ nghiêm trọng", "Xem xét cảnh báo lan truyền"]
+        },
+        {
+          "title": "Truy vết Nguyên nhân Gốc với The Lineage",
+          "description": "Theo dấu vết dữ liệu ngược lại. Điều gì đã thay đổi? Nó bắt đầu từ đâu? Lineage cho bạn thấy điểm thất bại chính xác.",
+          "pillar": "lineage",
+          "keyActions": ["Truy vết luồng dữ liệu", "Xác định thay đổi phá vỡ", "Ghi nhận nguyên nhân gốc"]
+        },
+        {
+          "title": "Thu thập Bằng chứng với Cendia Witness",
+          "description": "Nắm bắt bản ghi bất biến của những gì đã xảy ra. Bạn sẽ cần điều này cho hậu phân tích và bất kỳ yêu cầu tuân thủ nào.",
+          "sovereign": "witness",
+          "keyActions": ["Xuất dòng thời gian sự cố", "Nắm bắt trạng thái hệ thống", "Bảo tồn nhật ký kiểm toán"]
+        },
+        {
+          "title": "Phối hợp Phản hồi trong The Council",
+          "description": "Tập hợp các chuyên gia AI từ các lĩnh vực khác nhau. Các đại lý Bảo mật, Vận hành và Kinh doanh Liên tục hợp tác về kế hoạch phản hồi.",
+          "space": "council",
+          "keyActions": ["Triệu tập nhóm phản hồi", "Nhận đánh giá tác động", "Tạo kế hoạch hành động"]
+        },
+        {
+          "title": "Thực thi Phục hồi qua The Bridge",
+          "description": "Đẩy các bản sửa lỗi và hoàn tác trên các hệ thống bị ảnh hưởng. Bridge phối hợp phản hồi trong khi duy trì dấu vết kiểm toán.",
+          "space": "bridge",
+          "keyActions": ["Triển khai bản sửa lỗi", "Thực thi hoàn tác", "Xác minh phục hồi"]
+        },
+        {
+          "title": "Ghi nhận và Học trong Cendia Legacy",
+          "description": "Nắm bắt những gì đã xảy ra và những gì bạn đã học. Các nhóm tương lai sẽ cảm ơn bạn khi họ đối mặt với tình huống tương tự.",
+          "sovereign": "legacy",
+          "keyActions": ["Tạo báo cáo sự cố", "Ghi nhận bài học kinh nghiệm", "Cập nhật runbook"]
+        }
+      ]
+    },
+    "aiModelLaunch": {
+      "title": "Hành trình Triển khai Mô hình AI",
+      "subtitle": "Từ nguyên mẫu đến sản xuất với sự tự tin",
+      "persona": "ML Engineer / Data Scientist",
+      "duration": "1-2 giờ",
+      "steps": [
+        {
+          "title": "Đăng ký Mô hình trong Cendia BlackBox",
+          "description": "Tải mô hình đã huấn luyện của bạn lên registry. BlackBox tự động theo dõi phiên bản, phụ thuộc và nguồn gốc huấn luyện.",
+          "sovereign": "blackbox",
+          "keyActions": ["Tải lên artifact mô hình", "Đăng ký metadata", "Liên kết dữ liệu huấn luyện"]
+        },
+        {
+          "title": "Kiểm tra Thiên vị trong The Ethics",
+          "description": "Trước khi bất kỳ mô hình nào đi vào hoạt động, nó phải vượt qua đánh giá đạo đức. Chạy phát hiện thiên vị trên các phân đoạn nhân khẩu học và ghi nhận phát hiện.",
+          "pillar": "ethics",
+          "keyActions": ["Chạy đánh giá thiên vị", "Xem xét chỉ số công bằng", "Ghi nhận tuân thủ"]
+        },
+        {
+          "title": "Kiểm thử với Dữ liệu Tổng hợp từ Cendia Mirage",
+          "description": "Tạo các trường hợp biên và ví dụ đối nghịch. Đảm bảo mô hình của bạn xử lý điều bất ngờ mà không có rủi ro bảo mật.",
+          "sovereign": "mirage",
+          "keyActions": ["Tạo dữ liệu kiểm thử", "Chạy kiểm thử stress", "Xác thực trường hợp biên"]
+        },
+        {
+          "title": "Mô phỏng trong Cendia Mirror",
+          "description": "Triển khai đến song sinh kỹ thuật số trước. Xem mô hình của bạn hoạt động như thế nào với mẫu lưu lượng thực trước khi chạm vào sản xuất.",
+          "sovereign": "mirror",
+          "keyActions": ["Triển khai đến mirror", "Mô phỏng tải sản xuất", "So sánh dự đoán"]
+        },
+        {
+          "title": "Cấu hình Giải thích trong Cendia Glass",
+          "description": "Mọi dự đoán cần có thể giải thích. Thiết lập phân bổ yếu tố và tạo phản thực cho minh bạch.",
+          "sovereign": "glass",
+          "keyActions": ["Bật giải thích", "Cấu hình yếu tố", "Kiểm thử giải thích"]
+        },
+        {
+          "title": "Triển khai và Giám sát với The Predict",
+          "description": "Đi vào hoạt động với sự tự tin. Predict giám sát hiệu suất, phát hiện trôi dạt và cảnh báo bạn về bất kỳ suy giảm nào.",
+          "pillar": "predict",
+          "keyActions": ["Thăng cấp lên sản xuất", "Thiết lập giám sát", "Cấu hình cảnh báo trôi dạt"]
+        }
+      ]
+    },
+    "boardPresentation": {
+      "title": "Chuẩn bị Họp Hội đồng Quản trị",
+      "subtitle": "Gây ấn tượng với hội đồng bằng thông tin chi tiết dựa trên dữ liệu",
+      "persona": "CEO / CFO / Người Trình bày Hội đồng",
+      "duration": "30 phút",
+      "steps": [
+        {
+          "title": "Lấy KPI Chiến lược từ The Helm",
+          "description": "Tập hợp tất cả các chỉ số chính của bạn ở một nơi. Helm hiển thị tiến độ so với mục tiêu chiến lược với phân tích xu hướng.",
+          "pillar": "helm",
+          "keyActions": ["Xuất bảng điều khiển KPI", "Tạo phân tích xu hướng", "Làm nổi bật thành tựu"]
+        },
+        {
+          "title": "Xây dựng Dự báo với The Predict",
+          "description": "Không chỉ hiển thị bạn đang ở đâu - mà còn bạn đang đi đâu. Tạo dự báo với khoảng tin cậy.",
+          "pillar": "predict",
+          "keyActions": ["Tạo dự báo", "Xây dựng dự báo doanh thu", "Tạo kịch bản"]
+        },
+        {
+          "title": "Xác thực Dữ liệu với The Lineage",
+          "description": "Thành viên hội đồng sẽ đặt câu hỏi khó. Biết chính xác mọi con số đến từ đâu.",
+          "pillar": "lineage",
+          "keyActions": ["Truy vết số liệu chính", "Ghi nhận nguồn", "Chuẩn bị dòng dõi dữ liệu"]
+        },
+        {
+          "title": "Mô hình hóa Kịch bản What-If trong The Lens",
+          "description": "Sẵn sàng cho câu hỏi 'Nếu chúng ta...'. Mô hình hóa trước các kịch bản chiến lược để bạn có câu trả lời sẵn.",
+          "space": "lens",
+          "keyActions": ["Mô hình hóa kịch bản tăng trưởng", "Phân tích yếu tố rủi ro", "Chuẩn bị kế hoạch dự phòng"]
+        },
+        {
+          "title": "Nhận Tổng hợp AI từ Cendia Oracle",
+          "description": "Yêu cầu Oracle tổng hợp dữ liệu của bạn thành thông tin chi tiết chính và điểm nói chuyện. Nó nhìn thấy các mẫu mà con người bỏ lỡ.",
+          "sovereign": "oracle",
+          "keyActions": ["Tạo thông tin chi tiết", "Yêu cầu điểm nói chuyện", "Xác định điểm mù"]
+        },
+        {
+          "title": "Đảm bảo Tuân thủ với The Guard",
+          "description": "Đảm bảo không có gì bạn trình bày tạo ra rủi ro tuân thủ. Guard xác minh tất cả dữ liệu đáp ứng yêu cầu quản trị.",
+          "pillar": "guard",
+          "keyActions": ["Chạy kiểm tra tuân thủ", "Xác minh phân loại dữ liệu", "Xóa cho trình bày"]
+        }
+      ]
+    },
+    "newEmployeeOnboarding": {
+      "title": "Onboarding Thành viên Nhóm Mới",
+      "subtitle": "Trở nên hiệu quả trong vài ngày, không phải vài tháng",
+      "persona": "Nhân viên Mới / Quản lý Tuyển dụng",
+      "duration": "Tự điều chỉnh",
+      "steps": [
+        {
+          "title": "Truy cập Không gian Làm việc qua Cendia Key",
+          "description": "Một đăng nhập cho phép bạn truy cập mọi thứ bạn cần. Key quản lý quyền của bạn dựa trên vai trò.",
+          "sovereign": "key",
+          "keyActions": ["Hoàn tất thiết lập SSO", "Xác minh phân công vai trò", "Truy cập hệ thống được cấp"]
+        },
+        {
+          "title": "Khám phá Tri thức Tổ chức trong The Graph",
+          "description": "Điều hướng vũ trụ tri thức. Tìm tài liệu, chuyên gia và ngữ cảnh cho vai trò mới của bạn.",
+          "space": "graph",
+          "keyActions": ["Tìm kiếm tài nguyên vai trò", "Tìm tri thức nhóm", "Xác định liên hệ chính"]
+        },
+        {
+          "title": "Học từ Cendia Legacy",
+          "description": "Truy cập tri thức tổ chức từ những người đi trước. Thực hành tốt nhất, lý do quyết định và bài học kinh nghiệm.",
+          "sovereign": "legacy",
+          "keyActions": ["Xem xét playbook nhóm", "Nghiên cứu quyết định quá khứ", "Học thực hành tốt nhất"]
+        },
+        {
+          "title": "Hiểu Chỉ số của bạn trong The Helm",
+          "description": "Mọi vai trò đều có KPI. Học những gì bạn được đo lường và cách theo dõi tiến độ của bạn.",
+          "pillar": "helm",
+          "keyActions": ["Xem xét chỉ số được phân công", "Hiểu mục tiêu", "Thiết lập bảng điều khiển cá nhân"]
+        },
+        {
+          "title": "Thiết lập Quy trình Tự động trong The Flow",
+          "description": "Đừng tái tạo quy trình. Kết nối với các quy trình làm việc hiện có và tự động hóa các nhiệm vụ lặp đi lặp lại từ ngày đầu tiên.",
+          "pillar": "flow",
+          "keyActions": ["Tham gia quy trình làm việc nhóm", "Thiết lập thông báo", "Tự động hóa báo cáo"]
+        },
+        {
+          "title": "Gặp Trợ lý AI trong The Agents",
+          "description": "Bạn có đồng đội AI sẵn sàng giúp đỡ. Gặp các đại lý liên quan đến vai trò của bạn và học cách hợp tác.",
+          "pillar": "agents",
+          "keyActions": ["Gặp đại lý lĩnh vực", "Đặt câu hỏi đầu tiên", "Lưu phản hồi hữu ích"]
+        }
+      ]
+    },
+    "mergerIntegration": {
+      "title": "Tích hợp Dữ liệu M&A",
+      "subtitle": "Sáp nhập tổ chức mà không mất trí tuệ",
+      "persona": "Trưởng Tích hợp / CIO",
+      "duration": "Liên tục",
+      "steps": [
+        {
+          "title": "Lập bản đồ Cả hai Cảnh quan Dữ liệu với The Lineage",
+          "description": "Trước khi bạn có thể sáp nhập, bạn cần hiểu cả hai bên. Lineage tạo bản đồ hoàn chỉnh của các thực thể và mối quan hệ.",
+          "pillar": "lineage",
+          "keyActions": ["Quét dữ liệu bên mua", "Quét dữ liệu mục tiêu", "Xác định chồng lấn"]
+        },
+        {
+          "title": "Thống nhất Chỉ số trong The Helm",
+          "description": "Các tổ chức khác nhau đo lường khác nhau. Hài hòa định nghĩa KPI cho một nguồn sự thật duy nhất.",
+          "pillar": "helm",
+          "keyActions": ["Ánh xạ định nghĩa chỉ số", "Giải quyết xung đột", "Tạo bảng điều khiển thống nhất"]
+        },
+        {
+          "title": "Kết nối Hệ thống qua Cendia Mesh",
+          "description": "Xây dựng lớp tích hợp. Mesh xử lý sự phức tạp của việc kết nối các hệ thống khác nhau với các giao thức khác nhau.",
+          "sovereign": "mesh",
+          "keyActions": ["Ánh xạ hệ thống nguồn", "Xây dựng tích hợp", "Kiểm thử luồng dữ liệu"]
+        },
+        {
+          "title": "Bảo tồn Tri thức Tổ chức trong Cendia Legacy",
+          "description": "M&A thường có nghĩa là mất người chủ chốt. Nắm bắt tri thức của họ trước khi chuyển đổi xảy ra.",
+          "sovereign": "legacy",
+          "keyActions": ["Phỏng vấn nhân sự chủ chốt", "Ghi nhận quy trình", "Lưu trữ tri thức bộ lạc"]
+        },
+        {
+          "title": "Sáp nhập Hệ thống Danh tính qua Cendia Key",
+          "description": "Thống nhất ai có quyền truy cập gì. Key tích hợp các nhà cung cấp danh tính và hài hòa quyền.",
+          "sovereign": "key",
+          "keyActions": ["Sáp nhập nguồn danh tính", "Đối chiếu quyền", "Bật truy cập thống nhất"]
+        },
+        {
+          "title": "Giám sát Sức khỏe Tích hợp",
+          "description": "Theo dõi sức khỏe tích hợp của bạn theo thời gian thực. Bắt vấn đề trước khi chúng trở thành vấn đề.",
+          "pillar": "health",
+          "keyActions": ["Giám sát chất lượng dữ liệu", "Theo dõi trạng thái đồng bộ", "Cảnh báo về bất thường"]
+        }
+      ]
+    },
+    "regulatoryAudit": {
+      "title": "Chuẩn bị Kiểm toán Quy định",
+      "subtitle": "Biến mùa kiểm toán từ ác mộng thành không có gì",
+      "persona": "Chief Compliance Officer",
+      "duration": "2-4 giờ",
+      "steps": [
+        {
+          "title": "Lấy Bằng chứng Kiểm toán từ Cendia Witness",
+          "description": "Mọi hành động trong tổ chức của bạn được ghi lại. Witness cung cấp bằng chứng được chứng minh bằng mật mã cho kiểm toán viên.",
+          "sovereign": "witness",
+          "keyActions": ["Xác định phạm vi kiểm toán", "Xuất gói bằng chứng", "Tạo chứng thực"]
+        },
+        {
+          "title": "Xác minh Tuân thủ Chính sách trong The Guard",
+          "description": "Cho kiểm toán viên thấy chính sách của bạn thực sự được thực thi. Guard cung cấp tư thế tuân thủ thời gian thực và lịch sử vi phạm.",
+          "pillar": "guard",
+          "keyActions": ["Tạo báo cáo tuân thủ", "Hiển thị thực thi chính sách", "Ghi nhận ngoại lệ"]
+        },
+        {
+          "title": "Chứng minh Quản trị AI trong The Ethics",
+          "description": "Các quy định AI đã đến. Hiển thị kiểm tra thiên vị, tài liệu quyết định và quy trình đánh giá đạo đức của bạn.",
+          "pillar": "ethics",
+          "keyActions": ["Xuất đánh giá đạo đức", "Hiển thị kết quả kiểm tra thiên vị", "Ghi nhận quản trị AI"]
+        },
+        {
+          "title": "Giải thích Quyết định AI với Cendia Glass",
+          "description": "Khi kiểm toán viên hỏi 'tại sao hệ thống quyết định điều này?', Glass cung cấp giải thích đầy đủ.",
+          "sovereign": "glass",
+          "keyActions": ["Tạo báo cáo quyết định", "Hiển thị phân bổ yếu tố", "Cung cấp phản thực"]
+        },
+        {
+          "title": "Truy vết Dòng dõi Dữ liệu cho Độ chính xác",
+          "description": "Chứng minh các con số của bạn chính xác bằng cách hiển thị chúng đến từ đâu. Lineage cung cấp khả năng truy vết từ nguồn đến báo cáo.",
+          "pillar": "lineage",
+          "keyActions": ["Xuất bản đồ dòng dõi", "Ghi nhận biến đổi", "Chứng minh độ chính xác dữ liệu"]
+        },
+        {
+          "title": "Xem xét Kiểm soát Truy cập qua Cendia Key",
+          "description": "Ai có quyền truy cập gì và khi nào? Key cung cấp dấu vết kiểm toán truy cập hoàn chỉnh cho bất kỳ khoảng thời gian nào.",
+          "sovereign": "key",
+          "keyActions": ["Xuất nhật ký truy cập", "Hiển thị lịch sử quyền", "Ghi nhận kiểm soát"]
+        }
+      ]
+    },
+    "customerChurnPrevention": {
+      "title": "Ngăn chặn Rời bỏ Khách hàng",
+      "subtitle": "Cứu khách hàng trước khi họ rời đi",
+      "persona": "Customer Success / Revenue Operations",
+      "duration": "Quy trình hàng ngày",
+      "steps": [
+        {
+          "title": "Xác định Khách hàng Có Rủi ro với The Predict",
+          "description": "Mô hình ML phân tích hàng trăm tín hiệu để chấm điểm rủi ro rời bỏ. Biết ai có rủi ro trước khi họ tự biết.",
+          "pillar": "predict",
+          "keyActions": ["Xem xét điểm rủi ro", "Xác định rủi ro hàng đầu", "Hiểu yếu tố rủi ro"]
+        },
+        {
+          "title": "Hiểu Sức khỏe Khách hàng trong The Helm",
+          "description": "Theo dõi chỉ số sức khỏe khách hàng. Xu hướng sử dụng, ticket hỗ trợ, điểm tương tác - tất cả trong một chế độ xem.",
+          "pillar": "helm",
+          "keyActions": ["Xem xét điểm sức khỏe", "Kiểm tra chỉ số tương tác", "Xác định xu hướng"]
+        },
+        {
+          "title": "Khám phá Hành trình Khách hàng trong The Graph",
+          "description": "Xem toàn bộ câu chuyện khách hàng. Mọi tương tác, mọi điểm chạm, mọi tín hiệu - được kết nối trong ngữ cảnh.",
+          "space": "graph",
+          "keyActions": ["Xem dòng thời gian khách hàng", "Khám phá tương tác", "Tìm mẫu"]
+        },
+        {
+          "title": "Nhận Khuyến nghị Giữ chân từ The Council",
+          "description": "Triệu tập các cố vấn AI của bạn để động não chiến lược giữ chân. Mỗi khách hàng là duy nhất - nhận các phương pháp cá nhân hóa.",
+          "space": "council",
+          "keyActions": ["Trình bày hồ sơ khách hàng", "Nhận ý tưởng giữ chân", "Ưu tiên hành động"]
+        },
+        {
+          "title": "Kích hoạt Quy trình Giữ chân trong The Flow",
+          "description": "Biến khuyến nghị thành hành động. Tiếp cận tự động, leo thang và theo dõi giữ cho không có gì lọt qua kẽ hở.",
+          "pillar": "flow",
+          "keyActions": ["Kích hoạt tiếp cận", "Lên lịch theo dõi", "Leo thang lên nhóm"]
+        },
+        {
+          "title": "Mô hình hóa Tác động Doanh thu trong The Lens",
+          "description": "Định lượng những gì đang bị đe dọa. Lens hiển thị tác động doanh thu của các kịch bản rời bỏ và thành công can thiệp.",
+          "space": "lens",
+          "keyActions": ["Mô hình hóa tác động rời bỏ", "Tính toán ROI can thiệp", "Ưu tiên nỗ lực"]
+        }
+      ]
+    },
+    "productLaunch": {
+      "title": "Điều phối Ra mắt Sản phẩm",
+      "subtitle": "Ra mắt với sự tự tin và khả năng hiển thị thời gian thực",
+      "persona": "Product Manager / Trưởng Ra mắt",
+      "duration": "Ngày ra mắt + giám sát",
+      "steps": [
+        {
+          "title": "Đặt KPI Ra mắt trong The Helm",
+          "description": "Xác định thành công trước khi bạn ra mắt. Theo dõi adoption, hiệu suất và chỉ số kinh doanh thời gian thực.",
+          "pillar": "helm",
+          "keyActions": ["Xác định chỉ số thành công", "Đặt mục tiêu", "Cấu hình bảng điều khiển"]
+        },
+        {
+          "title": "Xác minh Hệ thống Sẵn sàng trong The Health",
+          "description": "Mọi thứ có xanh trước khi ra mắt? Health cho bạn sự tự tin rằng tất cả các hệ thống sẵn sàng.",
+          "pillar": "health",
+          "keyActions": ["Kiểm tra tất cả hệ thống", "Xác minh năng lực", "Xác nhận phụ thuộc"]
+        },
+        {
+          "title": "Mô phỏng Tải Ra mắt trong Cendia Mirror",
+          "description": "Kiểm thử kịch bản ra mắt của bạn trong song sinh kỹ thuật số. Xem hệ thống hoạt động như thế nào dưới tải dự kiến.",
+          "sovereign": "mirror",
+          "keyActions": ["Tạo mô phỏng ra mắt", "Chạy kiểm thử tải", "Xác định nghẽn cổ chai"]
+        },
+        {
+          "title": "Giám sát Thời gian Thực trong The Pulse",
+          "description": "Khả năng hiển thị ngày ra mắt. Xem chỉ số, lỗi và hành vi người dùng phát trực tuyến khi bạn ra mắt.",
+          "space": "pulse",
+          "keyActions": ["Giám sát chỉ số ra mắt", "Theo dõi bất thường", "Theo dõi adoption"]
+        },
+        {
+          "title": "Phản hồi Vấn đề qua The Bridge",
+          "description": "Khi cần điều chỉnh, hành động nhanh. Bridge cho phép bạn đẩy thay đổi trên các hệ thống ngay lập tức.",
+          "space": "bridge",
+          "keyActions": ["Triển khai hotfix", "Điều chỉnh cấu hình", "Mở rộng tài nguyên"]
+        },
+        {
+          "title": "Nắm bắt Bài học trong Cendia Legacy",
+          "description": "Ghi nhận những gì hiệu quả và những gì không. Các lần ra mắt tương lai sẽ tốt hơn vì điều đó.",
+          "sovereign": "legacy",
+          "keyActions": ["Ghi nhận nhật ký ra mắt", "Ghi lại vấn đề", "Ghi chú cải tiến"]
+        }
+      ]
+    },
+    "dataQualityImprovement": {
+      "title": "Chương trình Cải thiện Chất lượng Dữ liệu",
+      "subtitle": "Chuyển đổi dữ liệu từ gánh nặng thành tài sản",
+      "persona": "Data Steward / Trưởng Chất lượng",
+      "duration": "Chương trình liên tục",
+      "steps": [
+        {
+          "title": "Đánh giá Chất lượng Hiện tại trong The Lineage",
+          "description": "Bạn không thể cải thiện những gì bạn không đo lường. Lineage chấm điểm chất lượng ở mọi giai đoạn của hành trình dữ liệu.",
+          "pillar": "lineage",
+          "keyActions": ["Chạy đánh giá chất lượng", "Xác định khu vực có vấn đề", "Ưu tiên vấn đề"]
+        },
+        {
+          "title": "Theo dõi Chỉ số Chất lượng trong The Helm",
+          "description": "Biến chất lượng dữ liệu thành KPI hạng nhất. Theo dõi độ hoàn chỉnh, độ chính xác, tính kịp thời và tính nhất quán theo thời gian.",
+          "pillar": "helm",
+          "keyActions": ["Tạo bảng điều khiển chất lượng", "Đặt mục tiêu cải thiện", "Theo dõi tiến độ"]
+        },
+        {
+          "title": "Đặt Quy tắc Chất lượng trong The Guard",
+          "description": "Xác định và thực thi tiêu chuẩn chất lượng. Guard tự động xác thực dữ liệu theo quy tắc của bạn.",
+          "pillar": "guard",
+          "keyActions": ["Xác định quy tắc chất lượng", "Cấu hình xác thực", "Thiết lập cảnh báo"]
+        },
+        {
+          "title": "Tự động hóa Kiểm tra Chất lượng trong The Flow",
+          "description": "Xây dựng chất lượng vào pipeline của bạn. Kiểm tra tự động chạy liên tục, bắt vấn đề trước khi chúng lan rộng.",
+          "pillar": "flow",
+          "keyActions": ["Xây dựng quy trình chất lượng", "Thêm bước xác thực", "Cấu hình khắc phục"]
+        },
+        {
+          "title": "Giám sát Sức khỏe Chất lượng",
+          "description": "Theo dõi xu hướng chất lượng trên toàn bộ tài sản dữ liệu của bạn. Bắt suy giảm sớm và ăn mừng cải thiện.",
+          "pillar": "health",
+          "keyActions": ["Giám sát xu hướng chất lượng", "Cảnh báo về suy giảm", "Báo cáo cải thiện"]
+        },
+        {
+          "title": "Ghi nhận Tiêu chuẩn trong Cendia Legacy",
+          "description": "Mã hóa tiêu chuẩn chất lượng của bạn cho tổ chức. Làm cho chất lượng trở thành tổ chức, không phải cá nhân.",
+          "sovereign": "legacy",
+          "keyActions": ["Ghi nhận tiêu chuẩn", "Tạo playbook", "Đào tạo nhóm"]
+        }
+      ]
+    },
+    "securityThreatResponse": {
+      "title": "Phản hồi Mối đe dọa Bảo mật",
+      "subtitle": "Phát hiện, ngăn chặn và loại bỏ mối đe dọa một cách có hệ thống",
+      "persona": "Security Analyst / CISO",
+      "duration": "Phản hồi ngay lập tức",
+      "steps": [
+        {
+          "title": "Phát hiện Mối đe dọa trong The Guard",
+          "description": "Công cụ phát hiện mối đe dọa của Guard phát hiện hoạt động đáng ngờ. Được ưu tiên theo mức độ nghiêm trọng và độ tin cậy.",
+          "pillar": "guard",
+          "keyActions": ["Xem xét cảnh báo mối đe dọa", "Đánh giá mức độ nghiêm trọng", "Xác nhận mối đe dọa"]
+        },
+        {
+          "title": "Đánh giá Phạm vi Ảnh hưởng trong The Lineage",
+          "description": "Những hệ thống và dữ liệu nào có thể bị ảnh hưởng? Lineage ánh xạ tác động tiềm năng của mối đe dọa.",
+          "pillar": "lineage",
+          "keyActions": ["Ánh xạ hệ thống bị ảnh hưởng", "Xác định dữ liệu nhạy cảm", "Đánh giá mức độ phơi nhiễm"]
+        },
+        {
+          "title": "Xem xét Nhật ký Truy cập trong Cendia Key",
+          "description": "Ai đã truy cập gì và khi nào? Key cung cấp dấu vết pháp y để hiểu vector tấn công.",
+          "sovereign": "key",
+          "keyActions": ["Lấy nhật ký truy cập", "Xác định bất thường", "Truy vết đường tấn công"]
+        },
+        {
+          "title": "Bảo tồn Bằng chứng trong Cendia Witness",
+          "description": "Trước khi ngăn chặn thay đổi bằng chứng, nắm bắt bản ghi bất biến. Bạn sẽ cần điều này cho điều tra.",
+          "sovereign": "witness",
+          "keyActions": ["Nắm bắt trạng thái hệ thống", "Xuất nhật ký kiểm toán", "Bảo tồn dòng thời gian"]
+        },
+        {
+          "title": "Thực thi Ngăn chặn qua The Bridge",
+          "description": "Cô lập mối đe dọa. Bridge có thể thu hồi truy cập, cách ly hệ thống và triển khai biện pháp đối phó.",
+          "space": "bridge",
+          "keyActions": ["Thu hồi truy cập bị xâm phạm", "Cô lập hệ thống", "Triển khai bản vá"]
+        },
+        {
+          "title": "Phối hợp với The Council",
+          "description": "Mời các chuyên gia bảo mật AI của bạn. Họ giúp phân tích cuộc tấn công và đề xuất phản hồi toàn diện.",
+          "space": "council",
+          "keyActions": ["Phân tích mẫu tấn công", "Nhận kế hoạch khắc phục", "Đánh giá rủi ro"]
+        }
+      ]
+    }
+  },
+  "accessibility": {
+    "skipToMain": "Chuyển đến nội dung chính",
+    "skipToNav": "Chuyển đến điều hướng",
+    "openMenu": "Mở menu",
+    "closeMenu": "Đóng menu",
+    "expandSection": "Mở rộng phần",
+    "collapseSection": "Thu gọn phần",
+    "loading": "Đang tải",
+    "newWindow": "Mở trong cửa sổ mới",
+    "externalLink": "Liên kết bên ngoài",
+    "required": "Trường bắt buộc",
+    "optional": "Tùy chọn"
+  },
+  "_meta": { "direction": "ltr", "language": "Tiếng Việt", "completeness": "100%" }
+}

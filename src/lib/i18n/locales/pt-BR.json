@@ -1,0 +1,661 @@
+{
+  "common": {
+    "appName": "Datacendia",
+    "loading": "Carregando...",
+    "error": "Ocorreu um erro",
+    "retry": "Tentar novamente",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "create": "Criar",
+    "update": "Atualizar",
+    "close": "Fechar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "previous": "Anterior",
+    "search": "Pesquisar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "export": "Exportar",
+    "import": "Importar",
+    "download": "Baixar",
+    "upload": "Enviar",
+    "yes": "Sim",
+    "no": "Não",
+    "confirm": "Confirmar",
+    "submit": "Enviar",
+    "apply": "Aplicar",
+    "reset": "Redefinir",
+    "clear": "Limpar",
+    "all": "Todos",
+    "none": "Nenhum",
+    "select": "Selecionar",
+    "selected": "Selecionado",
+    "view": "Visualizar",
+    "details": "Detalhes",
+    "more": "Mais",
+    "less": "Menos",
+    "showAll": "Mostrar Todos",
+    "hideAll": "Ocultar Todos",
+    "viewMore": "Ver Mais",
+    "learnMore": "Saiba Mais",
+    "and": "e",
+    "or": "ou",
+    "continue": "Continuar",
+    "completed": "concluído",
+    "queried": "consultado"
+  },
+  "nav": {
+    "home": "Início",
+    "product": "Produto",
+    "pricing": "Preços",
+    "about": "Sobre",
+    "demo": "Solicitar Demo",
+    "login": "Entrar",
+    "register": "Cadastrar",
+    "logout": "Sair",
+    "downloads": "Downloads",
+    "documentation": "Documentação",
+    "support": "Suporte",
+    "contact": "Contato",
+    "manifesto": "Manifesto",
+    "services": "Serviços",
+    "packages": "Pacotes"
+  },
+  "auth": {
+    "login": {
+      "title": "Bem-vindo de volta",
+      "subtitle": "Entre na sua conta",
+      "email": "Endereço de e-mail",
+      "password": "Senha",
+      "rememberMe": "Lembrar-me",
+      "forgotPassword": "Esqueceu a senha?",
+      "submitButton": "Entrar",
+      "noAccount": "Não tem uma conta?",
+      "signUp": "Cadastre-se",
+      "orContinueWith": "Ou continue com",
+      "errors": {
+        "invalidCredentials": "E-mail ou senha inválidos",
+        "accountLocked": "Conta foi bloqueada",
+        "networkError": "Não foi possível conectar ao servidor. Por favor, tente novamente."
+      }
+    },
+    "register": {
+      "title": "Crie sua conta",
+      "subtitle": "Comece seu teste gratuito de 14 dias hoje.",
+      "headline": "Desbloqueie a inteligência da sua organização.",
+      "subheadline": "Junte-se a milhares de empresas usando Datacendia para tomar melhores decisões com insights alimentados por IA.",
+      "step1Subtitle": "Digite seus dados para começar",
+      "step2Subtitle": "Configure sua senha",
+      "firstName": "Nome",
+      "lastName": "Sobrenome",
+      "fullName": "Nome completo",
+      "email": "E-mail corporativo",
+      "password": "Senha",
+      "confirmPassword": "Confirmar senha",
+      "passwordHint": "Pelo menos 8 caracteres",
+      "company": "Empresa (opcional)",
+      "companySize": "Tamanho da empresa",
+      "industry": "Setor",
+      "submitButton": "Criar Conta",
+      "signUpWith": "Cadastre-se com",
+      "hasAccount": "Já tem uma conta?",
+      "signIn": "Entrar",
+      "agreeToTerms": "Eu concordo com os",
+      "features": {
+        "council": "Conselho de IA - Obtenha conselhos estratégicos de agentes de IA especializados",
+        "graph": "Explorador de Grafos - Visualize todas as relações dos seus dados",
+        "lens": "A Lente - Preveja resultados futuros com ML",
+        "bridge": "A Ponte - Automatize fluxos de trabalho entre sistemas"
+      },
+      "errors": {
+        "fullNameRequired": "Por favor, digite seu nome completo",
+        "validEmailRequired": "Por favor, digite um endereço de e-mail válido",
+        "passwordMinLength": "A senha deve ter pelo menos 8 caracteres",
+        "passwordMismatch": "As senhas não coincidem",
+        "acceptTerms": "Você deve aceitar os termos e condições",
+        "registrationFailed": "Falha no cadastro. Por favor, tente novamente."
+      },
+      "passwordRequirements": {
+        "title": "A senha deve conter:",
+        "minLength": "Pelo menos 12 caracteres",
+        "uppercase": "Uma letra maiúscula",
+        "lowercase": "Uma letra minúscula",
+        "number": "Um número",
+        "special": "Um caractere especial"
+      }
+    },
+    "forgotPassword": {
+      "title": "Redefinir Sua Senha",
+      "subtitle": "Digite seu endereço de e-mail e enviaremos um link para redefinir sua senha.",
+      "email": "Endereço de e-mail",
+      "sendResetLink": "Enviar Link de Redefinição",
+      "submitButton": "Enviar Link de Redefinição",
+      "backToLogin": "Voltar ao Login",
+      "checkEmail": "Verifique Seu E-mail",
+      "emailSentTo": "Se uma conta existir para",
+      "linkExpiry": "O link expirará em 1 hora. Se você não vir o e-mail, verifique sua pasta de spam.",
+      "success": "Se uma conta existir, você receberá um e-mail em breve."
+    },
+    "mfa": {
+      "title": "Autenticação de dois fatores",
+      "subtitle": "Digite o código do seu aplicativo autenticador.",
+      "code": "Código de autenticação",
+      "submitButton": "Verificar",
+      "useBackupCode": "Usar um código de backup",
+      "resendCode": "Reenviar código"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "A Inteligência da Sua Organização,",
+      "titleHighlight": "Soberana e Completa",
+      "subtitle": "Datacendia é o centro de comando para inteligência empresarial. Conecte seus dados, consulte conselheiros de IA e veja futuros possíveis — tudo mantendo controle total.",
+      "ctaPrimary": "Solicitar Demo",
+      "ctaSecondary": "Explorar Plataforma"
+    },
+    "problem": {
+      "title": "O Problema com Inteligência Empresarial",
+      "subtitle": "Organizações lutam com dados fragmentados, ferramentas isoladas e tomada de decisão reativa",
+      "dataChaos": {
+        "title": "Caos de Dados",
+        "description": "Seus dados vivem em dezenas de sistemas sem visão unificada. Ninguém sabe o que é verdade."
+      },
+      "toolSprawl": {
+        "title": "Proliferação de Ferramentas",
+        "description": "Ferramentas de BI, plataformas de análise, painéis — nenhum deles se comunica."
+      },
+      "noForesight": {
+        "title": "Sem Previsão",
+        "description": "Você está sempre olhando pelo retrovisor. E quanto ao que está por vir?"
+      }
+    },
+    "solution": {
+      "title": "O Cortex: Seu Centro de Comando de Inteligência",
+      "subtitle": "Cinco espaços integrados que lhe dão visibilidade e controle completos"
+    },
+    "pillars": {
+      "title": "Os 8 Pilares da Inteligência Soberana",
+      "subtitle": "Toda capacidade que você precisa, trabalhando juntas como uma só"
+    },
+    "cta": {
+      "title": "Pronto para assumir o controle da sua inteligência?",
+      "subtitle": "Veja como Datacendia pode transformar a tomada de decisão da sua organização",
+      "button": "Agendar uma Demo"
+    }
+  },
+  "spaces": {
+    "graph": {
+      "name": "O Grafo",
+      "description": "Navegue seu universo de conhecimento"
+    },
+    "council": {
+      "name": "O Conselho",
+      "description": "Conselheiros de IA que raciocinam juntos"
+    },
+    "pulse": {
+      "name": "O Pulso",
+      "description": "Saúde organizacional em tempo real"
+    },
+    "lens": {
+      "name": "A Lente",
+      "description": "Veja futuros possíveis"
+    },
+    "bridge": {
+      "name": "A Ponte",
+      "description": "Tome ação entre sistemas"
+    }
+  },
+  "pillars": {
+    "helm": {
+      "name": "O Leme",
+      "description": "Suporte à decisão estratégica",
+      "longDescription": "Seu centro de comando para decisões estratégicas. Acompanhe KPIs, monitore desempenho e direcione sua organização com confiança."
+    },
+    "lineage": {
+      "name": "A Linhagem",
+      "description": "Rastreie cada ponto de dados até sua origem",
+      "longDescription": "Rastreamento completo de proveniência de dados. Saiba de onde vêm seus dados, como se transformam e para onde vão."
+    },
+    "predict": {
+      "name": "O Preditor",
+      "description": "Previsão alimentada por IA",
+      "longDescription": "Modelos de aprendizado de máquina que preveem tendências, detectam anomalias e revelam insights antes de se tornarem óbvios."
+    },
+    "flow": {
+      "name": "O Fluxo",
+      "description": "Fluxos de trabalho automatizados",
+      "longDescription": "Automação inteligente de fluxos de trabalho que conecta seus sistemas e processos com pontos de decisão alimentados por IA."
+    },
+    "health": {
+      "name": "A Saúde",
+      "description": "Métricas de vitalidade organizacional",
+      "longDescription": "Monitoramento em tempo real dos sinais vitais da sua organização em dados, sistemas e processos."
+    },
+    "guard": {
+      "name": "O Guardião",
+      "description": "Governança de dados e conformidade",
+      "longDescription": "Aplicação automatizada de políticas, controles de acesso e monitoramento de conformidade para manter seus dados seguros."
+    },
+    "ethics": {
+      "name": "A Ética",
+      "description": "Supervisão ética integrada",
+      "longDescription": "Guardrails éticos que garantem uso responsável de IA, algoritmos justos e tomada de decisão transparente."
+    },
+    "agents": {
+      "name": "Os Agentes",
+      "description": "Conselheiros de IA para cada domínio",
+      "longDescription": "Agentes de IA especializados que fornecem expertise específica de domínio e colaboram para resolver problemas complexos."
+    }
+  },
+  "pricing": {
+    "title": "Preços Simples e Transparentes",
+    "subtitle": "Escolha o plano que se encaixa na sua organização. Todos os planos incluem um teste gratuito de 14 dias.",
+    "monthly": "Mensal",
+    "annual": "Anual",
+    "annualDiscount": "Economize 20%",
+    "perMonth": "/mês",
+    "startTrial": "Iniciar Teste Gratuito",
+    "contactSales": "Contatar Vendas",
+    "mostPopular": "Mais Popular",
+    "plans": {
+      "foundation": {
+        "name": "Fundação",
+        "description": "Capacidades essenciais de inteligência para equipes em crescimento"
+      },
+      "intelligence": {
+        "name": "Inteligência",
+        "description": "Análises avançadas e previsões para organizações em expansão"
+      },
+      "governance": {
+        "name": "Governança",
+        "description": "Governança e conformidade completas para setores regulamentados"
+      },
+      "sovereign": {
+        "name": "Soberano",
+        "description": "Plataforma completa com soberania total de dados"
+      }
+    },
+    "faq": {
+      "title": "Perguntas Frequentes",
+      "questions": {
+        "trial": {
+          "q": "Posso experimentar antes de comprar?",
+          "a": "Sim! Todos os planos incluem um teste gratuito de 14 dias com acesso total aos recursos."
+        },
+        "data": {
+          "q": "O que acontece com meus dados se eu cancelar?",
+          "a": "Seus dados permanecem seus. Exporte tudo antes do cancelamento, ou os reteremos por 30 dias."
+        },
+        "nonprofit": {
+          "q": "Vocês oferecem descontos para organizações sem fins lucrativos?",
+          "a": "Sim, oferecemos 50% de desconto para organizações sem fins lucrativos e instituições educacionais qualificadas."
+        },
+        "upgrade": {
+          "q": "Posso fazer upgrade ou downgrade a qualquer momento?",
+          "a": "Com certeza. As alterações entram em vigor no próximo ciclo de faturamento, proporcional se for upgrade."
+        }
+      }
+    }
+  },
+  "downloads": {
+    "title": "Downloads",
+    "subtitle": "Obtenha Datacendia para sua plataforma",
+    "desktop": {
+      "title": "Aplicativo Desktop",
+      "windows": "Windows",
+      "mac": "macOS",
+      "linux": "Linux",
+      "download": "Baixar"
+    },
+    "mobile": {
+      "title": "Apps Móveis",
+      "ios": "iOS",
+      "android": "Android",
+      "appStore": "App Store",
+      "playStore": "Google Play"
+    },
+    "cli": {
+      "title": "Interface de Linha de Comando"
+    },
+    "selfHosted": {
+      "title": "Auto-Hospedado",
+      "docker": "Docker Compose",
+      "kubernetes": "Kubernetes (Helm)",
+      "airgapped": "Pacote Air-Gapped"
+    },
+    "systemRequirements": {
+      "title": "Requisitos do Sistema",
+      "minimum": "Mínimo",
+      "recommended": "Recomendado"
+    }
+  },
+  "dashboard": {
+    "title": "Painel",
+    "welcome": "Bem-vindo de volta",
+    "subtitle": "Veja como {{company}} está indo hoje",
+    "health_score": "Saúde da Organização",
+    "healthScore": "Pontuação de Saúde",
+    "data": "Dados",
+    "operations": "Operações",
+    "security": "Segurança",
+    "people": "Pessoas",
+    "fromLastWeek": "da última semana",
+    "alerts": "Alertas Ativos",
+    "activeAlerts": "Alertas Ativos",
+    "critical": "Crítico",
+    "warning": "Aviso",
+    "info": "Info",
+    "pending_approvals": "Aprovações Pendentes",
+    "pendingApprovals": "Aprovações Pendentes",
+    "workflows": "Fluxos de Trabalho",
+    "access": "Acesso",
+    "budget": "Orçamento",
+    "by": "por",
+    "approve": "Aprovar",
+    "reject": "Rejeitar",
+    "keyMetrics": "Métricas Principais",
+    "askTheCouncil": "Pergunte ao Conselho",
+    "whatToKnow": "O que você gostaria de saber?",
+    "recentQueries": "Consultas recentes:",
+    "recentActivity": "Atividade Recente",
+    "viewFullLog": "Ver Log Completo",
+    "quickActions": "Ações Rápidas",
+    "greetings": {
+      "morning": "Bom dia",
+      "afternoon": "Boa tarde",
+      "evening": "Boa noite"
+    },
+    "sampleAlerts": {
+      "databaseCpu": "CPU do banco de dados > 90% por 15 min",
+      "paymentLatency": "Pico de latência no processamento de pagamentos",
+      "diskUsage": "Uso de disco em 78% em prod-db-01",
+      "apiErrors": "Taxa de erro de API acima do limite",
+      "memoryLeak": "Vazamento de memória detectado no serviço de autenticação"
+    },
+    "sampleApprovals": {
+      "monthlyClose": "Processo de Fechamento Mensal",
+      "prodDbAccess": "Acesso ao Banco de Produção",
+      "budgetIncrease": "Aumento do Orçamento de Marketing Q4",
+      "newHire": "Onboarding de Nova Contratação: Equipe Dev"
+    },
+    "sampleMetrics": {
+      "revenue": "Receita",
+      "pipeline": "Pipeline",
+      "burnRate": "Taxa de Queima",
+      "nps": "NPS",
+      "activeUsers": "Usuários Ativos",
+      "churnRate": "Taxa de Churn"
+    },
+    "sampleActivity": {
+      "workflowCompleted": "Fluxo de trabalho \"{{name}}\" concluído",
+      "userQueried": "{{user}} consultou {{topic}}",
+      "alertResolved": "Alerta \"{{alert}}\" resolvido",
+      "reportGenerated": "Relatório \"{{report}}\" gerado"
+    },
+    "sampleQueries": {
+      "churnIncrease": "Por que o churn aumentou?",
+      "forecastRevenue": "Previsão de receita Q4",
+      "biggestRisk": "Qual é nosso maior risco?",
+      "customerSentiment": "Qual é a tendência de sentimento do cliente?",
+      "competitorAnalysis": "Analisar preços dos concorrentes"
+    }
+  },
+  "button": {
+    "view_all": "Ver Todos",
+    "viewAll": "Ver Todos",
+    "viewMore": "Ver Mais",
+    "approve": "Aprovar",
+    "reject": "Rejeitar",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "submit": "Enviar",
+    "edit": "Editar",
+    "delete": "Excluir"
+  },
+  "commandPalette": {
+    "searchPlaceholder": "Pesquisar comandos, páginas, agentes...",
+    "noResults": "Sem resultados para",
+    "navigate": "navegar",
+    "select": "selecionar",
+    "toggle": "alternar",
+    "newQuery": "Nova Consulta ao Conselho",
+    "askCouncil": "Faça uma pergunta ao Conselho",
+    "refresh": "Atualizar Dados",
+    "reloadPage": "Recarregar dados da página atual",
+    "fullscreen": "Alternar Tela Cheia",
+    "toggleFullscreen": "Entrar/sair do modo tela cheia",
+    "switchTo": "Mudar para",
+    "changeLanguage": "Mudar idioma para",
+    "categories": {
+      "navigation": "Navegação",
+      "actions": "Ações",
+      "agents": "Agentes",
+      "modes": "Modos do Conselho",
+      "recent": "Recente"
+    },
+    "agents": {
+      "chief": "Agente Estratégico Chefe",
+      "chiefDesc": "Síntese estratégica",
+      "cfo": "Inteligência Financeira",
+      "cfoDesc": "Análise financeira",
+      "coo": "Agente de Operações",
+      "cooDesc": "Eficiência operacional",
+      "ciso": "Agente de Segurança",
+      "cisoDesc": "Segurança e conformidade",
+      "cmo": "Inteligência de Mercado",
+      "cmoDesc": "Análise de mercado"
+    }
+  },
+  "cortex": {
+    "sidebar": {
+      "spaces": "Espaços",
+      "pillars": "Pilares",
+      "system": "Sistema",
+      "data": "Dados",
+      "security": "Segurança"
+    }
+  },
+  "sidebar": {
+    "dashboard": "Painel",
+    "the_council": "O Conselho",
+    "the_graph": "O Grafo",
+    "the_pulse": "O Pulso",
+    "the_lens": "A Lente",
+    "the_bridge": "A Ponte",
+    "settings": "Configurações",
+    "help": "Ajuda e Suporte",
+    "cortex": "Cortex",
+    "spaces": "Espaços",
+    "pillars": "Pilares",
+    "sovereign": "Soberano",
+    "admin": "Admin"
+  },
+  "council": {
+    "title": "O Conselho",
+    "subtitle": "Painel consultivo estratégico alimentado por IA",
+    "askQuestion": "Faça uma pergunta",
+    "questionPlaceholder": "Qual questão estratégica você gostaria que o conselho deliberasse?",
+    "selectAgents": "Selecione agentes para participar",
+    "startDeliberation": "Iniciar Deliberação",
+    "quickAnswer": "Resposta Rápida",
+    "fullDeliberation": "Deliberação Completa",
+    "selectedAgents": "Agentes Selecionados",
+    "clearAll": "Limpar Todos",
+    "selectAll": "Selecionar Todos",
+    "agents": {
+      "domain": "Agentes de Domínio",
+      "custom": "Agentes Personalizados",
+      "premium": "Agentes Premium",
+      "createCustom": "Criar Agente Personalizado"
+    },
+    "modes": {
+      "title": "Biblioteca de Modos do Conselho",
+      "subtitle": "Os mesmos 10 agentes com modos diferentes produzem saídas radicalmente diferentes.",
+      "cultureNote": "O prompt É a cultura da empresa.",
+      "quickReference": "Referência Rápida",
+      "mode": "Modo",
+      "primeDirective": "Diretiva Primária",
+      "bestFor": "Melhor Para",
+      "agentBehavior": "Comportamento do Agente"
+    },
+    "deliberation": {
+      "phases": {
+        "initial_analysis": "Análise Inicial",
+        "cross_examination": "Exame Cruzado",
+        "synthesis": "Síntese",
+        "ethics_check": "Verificação Ética"
+      },
+      "inProgress": "Deliberação em Progresso",
+      "completed": "Deliberação Concluída",
+      "confidence": "Confiança"
+    },
+    "customAgent": {
+      "title": "Criar Agente Personalizado",
+      "editTitle": "Editar Agente Personalizado",
+      "subtitle": "Projete seu próprio agente de IA com expertise especializada",
+      "premium": "Pacote Construtor de Agentes",
+      "avatar": "Avatar do Agente",
+      "color": "Cor do Agente",
+      "name": "Nome do Agente",
+      "namePlaceholder": "ex., Analista de Mercado",
+      "role": "Cargo / Título",
+      "rolePlaceholder": "ex., Pesquisa e Análise de Mercado",
+      "description": "Descrição",
+      "descriptionPlaceholder": "Descreva o que este agente faz e suas áreas de foco...",
+      "expertise": "Expertise e Instruções",
+      "capabilities": "Capacidades",
+      "addCapability": "Adicionar",
+      "save": "Salvar Agente",
+      "delete": "Excluir Agente"
+    },
+    "status": {
+      "online": "Online",
+      "offline": "Offline",
+      "busy": "Ocupado"
+    }
+  },
+  "agent": {
+    "chief": { "name": "Agente de Estratégia Chefe", "role": "Supervisão Estratégica e Síntese", "description": "Sintetiza insights de todos os agentes de domínio para fornecer recomendações estratégicas holísticas." },
+    "cfo": { "name": "Agente de Inteligência Financeira", "role": "Análise Financeira e Risco", "description": "Analisa dados financeiros, orçamentos, previsões e fornece insights sobre saúde fiscal." },
+    "coo": { "name": "Agente de Inteligência de Operações", "role": "Eficiência Operacional", "description": "Foca em métricas operacionais, eficiência de processos e alocação de recursos." },
+    "ciso": { "name": "Agente de Segurança e Conformidade", "role": "Gestão de Segurança e Risco", "description": "Monitora postura de segurança, requisitos de conformidade e avaliação de ameaças." },
+    "cmo": { "name": "Agente de Inteligência de Mercado", "role": "Marketing e Insights do Cliente", "description": "Analisa tendências de mercado, comportamento do cliente e inteligência competitiva." },
+    "cro": { "name": "Agente de Inteligência de Receita", "role": "Receita e Crescimento", "description": "Foca em otimização de receita, desempenho de vendas e estratégias de precificação." },
+    "cdo": { "name": "Agente de Qualidade de Dados", "role": "Governança e Qualidade de Dados", "description": "Monitora qualidade de dados, políticas de governança e garante integridade dos dados." },
+    "risk": { "name": "Agente de Avaliação de Risco", "role": "Análise de Risco Empresarial", "description": "Avalia riscos empresariais, realiza análise de impacto e fornece estratégias de mitigação." },
+    "clo": { "name": "Agente de Inteligência Jurídica", "role": "Análise Jurídica e Conformidade", "description": "Analisa riscos legais, implicações contratuais e conformidade regulatória." },
+    "cpo": { "name": "Agente de Estratégia de Produto", "role": "Inovação de Produto e Roadmap", "description": "Dirige estratégia de produto, priorização de recursos e insights de experiência do usuário." },
+    "caio": { "name": "Agente de Estratégia de IA", "role": "Governança e Inovação de IA/ML", "description": "Guia estratégia de IA, governança de modelos e implementação ética de IA." },
+    "cso": { "name": "Agente de Sustentabilidade", "role": "ESG e Impacto Ambiental", "description": "Monitora métricas ambientais, sociais e de governança e iniciativas de sustentabilidade." },
+    "cio": { "name": "Agente de Inteligência de Investimentos", "role": "Alocação de Capital e Portfólio", "description": "Analisa oportunidades de investimento, alocação de portfólio e implantação de capital." },
+    "cco": { "name": "Agente de Comunicações", "role": "Comunicações Corporativas e RP", "description": "Elabora mensagens corporativas, gerencia comunicações com stakeholders e monitora percepção de marca." },
+    "ext-auditor": { "name": "Auditor Externo", "role": "Auditoria Independente de Terceiros", "description": "Fornece avaliação independente e objetiva de uma perspectiva externa." },
+    "int-auditor": { "name": "Auditor Interno", "role": "Controles Internos e Auditoria de Processos", "description": "Avalia controles internos, eficiência operacional e conformidade." },
+    "cmio": { "name": "Diretor de Informações Médicas", "role": "TI de Saúde e Sistemas Clínicos", "description": "Especialista em tecnologia de saúde, sistemas EHR e informática clínica." },
+    "pso": { "name": "Oficial de Segurança do Paciente", "role": "Segurança Clínica e Qualidade", "description": "Especialista em segurança do paciente, prevenção de eventos adversos e melhoria de qualidade." },
+    "hco": { "name": "Oficial de Conformidade de Saúde", "role": "HIPAA e Regulamentações de Saúde", "description": "Especialista em conformidade regulatória de saúde, HIPAA e conformidade de faturamento." },
+    "cod": { "name": "Diretor de Operações Clínicas", "role": "Operações de Saúde e Eficiência", "description": "Especialista em operações clínicas, fluxo de pacientes e otimização de pessoal." },
+    "quant": { "name": "Analista Quantitativo", "role": "Modelagem Financeira e Análise de Risco", "description": "Especialista em finanças quantitativas, precificação de derivativos e modelagem de risco." },
+    "pm": { "name": "Gestor de Portfólio", "role": "Estratégia de Investimento e Alocação de Ativos", "description": "Especialista em construção de portfólio, alocação de ativos e estratégia de investimento." },
+    "cro-finance": { "name": "Oficial de Risco de Crédito", "role": "Análise de Crédito e Avaliação de Risco", "description": "Especialista em análise de crédito, subscrição de empréstimos e modelagem de risco de crédito." },
+    "treasury": { "name": "Analista de Tesouraria", "role": "Gestão de Caixa e Liquidez", "description": "Especialista em tesouraria corporativa, gestão de caixa e hedge de câmbio." },
+    "contracts": { "name": "Especialista em Contratos", "role": "Análise e Negociação de Contratos", "description": "Especialista em contratos comerciais, redação de contratos e negociação." },
+    "ip": { "name": "Advogado de Propriedade Intelectual", "role": "Patentes, Marcas e Estratégia de PI", "description": "Especialista em direito de propriedade intelectual, estratégia de patentes e proteção de marcas." },
+    "litigation": { "name": "Especialista em Litígios", "role": "Resolução de Disputas e Estratégia de Julgamento", "description": "Especialista em litígios comerciais, resolução de disputas e e-discovery." },
+    "regulatory": { "name": "Advogado de Assuntos Regulatórios", "role": "Relações Governamentais e Conformidade", "description": "Especialista em conformidade regulatória, assuntos governamentais e direito administrativo." }
+  },
+  "label": {
+    "online": "Online",
+    "offline": "Offline",
+    "busy": "Ocupado",
+    "premium": "Premium",
+    "locked": "Bloqueado",
+    "custom": "Personalizado",
+    "unlock": "Desbloquear",
+    "required": "Obrigatório"
+  },
+  "settings": {
+    "title": "Configurações",
+    "organization": "Organização",
+    "users": "Usuários",
+    "teams": "Equipes",
+    "roles": "Funções e Permissões",
+    "billing": "Faturamento",
+    "apiKeys": "Chaves de API",
+    "integrations": "Integrações",
+    "preferences": "Preferências",
+    "security": "Segurança"
+  },
+  "errors": {
+    "notFound": {
+      "title": "Página Não Encontrada",
+      "message": "A página que você está procurando não existe ou foi movida.",
+      "backHome": "Voltar ao Início"
+    },
+    "serverError": {
+      "title": "Erro do Servidor",
+      "message": "Algo deu errado do nosso lado. Por favor, tente novamente mais tarde."
+    },
+    "networkError": {
+      "title": "Erro de Conexão",
+      "message": "Não foi possível conectar ao servidor. Por favor, verifique sua conexão com a internet."
+    },
+    "unauthorized": {
+      "title": "Não Autorizado",
+      "message": "Você não tem permissão para acessar este recurso."
+    },
+    "sessionExpired": {
+      "title": "Sessão Expirada",
+      "message": "Sua sessão expirou. Por favor, entre novamente."
+    }
+  },
+  "footer": {
+    "company": "Empresa",
+    "product": "Produto",
+    "resources": "Recursos",
+    "legal": "Legal",
+    "about": "Sobre Nós",
+    "careers": "Carreiras",
+    "contact": "Contato",
+    "press": "Imprensa",
+    "features": "Recursos",
+    "integrations": "Integrações",
+    "enterprise": "Empresarial",
+    "documentation": "Documentação",
+    "apiReference": "Referência de API",
+    "status": "Status do Sistema",
+    "community": "Comunidade",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Serviço",
+    "security": "Segurança",
+    "cookies": "Política de Cookies",
+    "copyright": "© {{year}} Datacendia. Todos os direitos reservados.",
+    "tagline": "Inteligência Empresarial Soberana"
+  },
+  "time": {
+    "justNow": "Agora mesmo",
+    "minutesAgo": "{{count}} minuto atrás",
+    "minutesAgo_plural": "{{count}} minutos atrás",
+    "hoursAgo": "{{count}} hora atrás",
+    "hoursAgo_plural": "{{count}} horas atrás",
+    "daysAgo": "{{count}} dia atrás",
+    "daysAgo_plural": "{{count}} dias atrás",
+    "weeksAgo": "{{count}} semana atrás",
+    "weeksAgo_plural": "{{count}} semanas atrás"
+  },
+  "accessibility": {
+    "skipToMain": "Pular para conteúdo principal",
+    "skipToNav": "Pular para navegação",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "expandSection": "Expandir seção",
+    "collapseSection": "Recolher seção",
+    "loading": "Carregando conteúdo",
+    "newWindow": "Abre em nova janela",
+    "externalLink": "Link externo",
+    "required": "Campo obrigatório",
+    "optional": "Opcional"
+  }
+}

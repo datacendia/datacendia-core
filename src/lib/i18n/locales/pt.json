@@ -1,0 +1,1510 @@
+{
+  "common": {
+    "appName": "Datacendia",
+    "loading": "Carregando...",
+    "error": "Ocorreu um erro",
+    "retry": "Tentar novamente",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "create": "Criar",
+    "update": "Atualizar",
+    "close": "Fechar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "previous": "Anterior",
+    "search": "Pesquisar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "export": "Exportar",
+    "import": "Importar",
+    "download": "Baixar",
+    "upload": "Enviar",
+    "yes": "Sim",
+    "no": "Não",
+    "confirm": "Confirmar",
+    "submit": "Enviar",
+    "apply": "Aplicar",
+    "reset": "Redefinir",
+    "clear": "Limpar",
+    "all": "Todos",
+    "none": "Nenhum",
+    "select": "Selecionar",
+    "selected": "Selecionado",
+    "view": "Visualizar",
+    "details": "Detalhes",
+    "more": "Mais",
+    "less": "Menos",
+    "showAll": "Mostrar tudo",
+    "hideAll": "Ocultar tudo",
+    "viewMore": "Ver mais",
+    "learnMore": "Saiba mais",
+    "and": "e",
+    "or": "ou",
+    "continue": "Continuar",
+    "completed": "concluído",
+    "queried": "consultado"
+  },
+  "nav": {
+    "home": "Início",
+    "product": "Produto",
+    "pricing": "Preços",
+    "about": "Sobre",
+    "demo": "Solicitar Demo",
+    "login": "Entrar",
+    "register": "Cadastrar",
+    "logout": "Sair",
+    "downloads": "Downloads",
+    "documentation": "Documentação",
+    "support": "Suporte",
+    "contact": "Contato",
+    "manifesto": "Manifesto",
+    "services": "Serviços",
+    "packages": "Pacotes"
+  },
+  "auth": {
+    "login": {
+      "title": "Bem-vindo de volta",
+      "subtitle": "Entre na sua conta",
+      "email": "E-mail",
+      "password": "Senha",
+      "rememberMe": "Lembrar-me",
+      "forgotPassword": "Esqueceu a senha?",
+      "submitButton": "Entrar",
+      "noAccount": "Não tem uma conta?",
+      "signUp": "Cadastre-se",
+      "orContinueWith": "Ou continue com",
+      "errors": {
+        "invalidCredentials": "E-mail ou senha inválidos",
+        "accountLocked": "A conta foi bloqueada",
+        "networkError": "Não foi possível conectar ao servidor. Tente novamente."
+      }
+    },
+    "register": {
+      "title": "Crie sua conta",
+      "subtitle": "Comece seu teste gratuito de 14 dias hoje.",
+      "headline": "Libere a inteligência da sua organização.",
+      "subheadline": "Junte-se a milhares de empresas usando Datacendia para tomar melhores decisões.",
+      "step1Subtitle": "Digite seus dados para começar",
+      "step2Subtitle": "Configure sua senha",
+      "firstName": "Nome",
+      "lastName": "Sobrenome",
+      "fullName": "Nome completo",
+      "email": "E-mail corporativo",
+      "password": "Senha",
+      "confirmPassword": "Confirmar senha",
+      "passwordHint": "Mínimo 8 caracteres",
+      "company": "Empresa (opcional)",
+      "companySize": "Tamanho da empresa",
+      "industry": "Setor",
+      "submitButton": "Criar Conta",
+      "signUpWith": "Cadastrar com",
+      "hasAccount": "Já tem uma conta?",
+      "signIn": "Entrar",
+      "agreeToTerms": "Eu concordo com os",
+      "features": {
+        "council": "Conselho de IA - Obtenha aconselhamento estratégico de agentes especializados",
+        "graph": "Explorador de Grafo - Visualize todas as relações de dados",
+        "lens": "A Lente - Preveja resultados futuros com ML",
+        "bridge": "A Ponte - Automatize fluxos de trabalho entre sistemas"
+      },
+      "errors": {
+        "fullNameRequired": "Por favor, digite seu nome completo",
+        "validEmailRequired": "Por favor, digite um e-mail válido",
+        "passwordMinLength": "A senha deve ter pelo menos 8 caracteres",
+        "passwordMismatch": "As senhas não coincidem",
+        "acceptTerms": "Você deve aceitar os termos e condições",
+        "registrationFailed": "Falha no cadastro. Tente novamente."
+      },
+      "passwordRequirements": {
+        "title": "A senha deve conter:",
+        "minLength": "Pelo menos 12 caracteres",
+        "uppercase": "Uma letra maiúscula",
+        "lowercase": "Uma letra minúscula",
+        "number": "Um número",
+        "special": "Um caractere especial"
+      }
+    },
+    "forgotPassword": {
+      "title": "Redefinir Senha",
+      "subtitle": "Digite seu e-mail e enviaremos um link de redefinição.",
+      "email": "E-mail",
+      "sendResetLink": "Enviar Link",
+      "submitButton": "Enviar Link",
+      "backToLogin": "Voltar ao login",
+      "checkEmail": "Verifique seu e-mail",
+      "emailSentTo": "Se existir uma conta para",
+      "linkExpiry": "O link expirará em 1 hora.",
+      "success": "Se a conta existir, você receberá um e-mail em breve."
+    },
+    "mfa": {
+      "title": "Autenticação de dois fatores",
+      "subtitle": "Digite o código do seu app de autenticação.",
+      "code": "Código de autenticação",
+      "submitButton": "Verificar",
+      "useBackupCode": "Usar código de backup",
+      "resendCode": "Reenviar código"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "A inteligência da sua organização,",
+      "titleHighlight": "Soberana e Completa",
+      "subtitle": "Datacendia é o centro de comando para inteligência empresarial. Conecte seus dados, consulte conselheiros de IA e veja futuros possíveis.",
+      "ctaPrimary": "Solicitar Demo",
+      "ctaSecondary": "Explorar Plataforma"
+    },
+    "problem": {
+      "title": "O Problema da Inteligência Empresarial",
+      "subtitle": "Organizações lutam com dados fragmentados e ferramentas isoladas",
+      "dataChaos": { "title": "Caos de Dados", "description": "Seus dados vivem em dezenas de sistemas sem uma visão unificada." },
+      "toolSprawl": { "title": "Proliferação de Ferramentas", "description": "Ferramentas de BI, plataformas de análise — nenhuma se comunica." },
+      "noForesight": { "title": "Sem Previsão", "description": "Você está sempre olhando pelo retrovisor." }
+    },
+    "solution": { "title": "Cortex: Seu Centro de Comando de Inteligência", "subtitle": "Cinco espaços integrados que dão visibilidade e controle completos" },
+    "pillars": { "title": "Os 8 Pilares da Inteligência Soberana", "subtitle": "Todas as capacidades que você precisa, trabalhando juntas" },
+    "cta": { "title": "Pronto para assumir o controle da sua inteligência?", "subtitle": "Veja como Datacendia pode transformar a tomada de decisão da sua organização", "button": "Agendar Demo" }
+  },
+  "spaces": {
+    "graph": { "name": "O Grafo", "description": "Navegue pelo seu universo de conhecimento" },
+    "council": { "name": "O Conselho", "description": "Conselheiros de IA que raciocinam juntos" },
+    "pulse": { "name": "O Pulso", "description": "Saúde organizacional em tempo real" },
+    "lens": { "name": "A Lente", "description": "Veja futuros possíveis" },
+    "bridge": { "name": "A Ponte", "description": "Tome ação através dos sistemas" }
+  },
+  "pillars": {
+    "helm": { "name": "O Leme", "description": "Suporte a decisões estratégicas", "longDescription": "Seu centro de comando para decisões estratégicas." },
+    "lineage": { "name": "A Linhagem", "description": "Rastreie cada dado até sua origem", "longDescription": "Rastreamento completo de procedência de dados." },
+    "predict": { "name": "A Previsão", "description": "Previsões com IA", "longDescription": "Modelos ML que preveem tendências." },
+    "flow": { "name": "O Fluxo", "description": "Fluxos de trabalho automatizados", "longDescription": "Automação inteligente de fluxos de trabalho." },
+    "health": { "name": "A Saúde", "description": "Métricas de vitalidade organizacional", "longDescription": "Monitoramento em tempo real dos sinais vitais." },
+    "guard": { "name": "O Guardião", "description": "Governança de dados e conformidade", "longDescription": "Aplicação automática de políticas." },
+    "ethics": { "name": "A Ética", "description": "Supervisão ética integrada", "longDescription": "Salvaguardas éticas para IA responsável." },
+    "agents": { "name": "Os Agentes", "description": "Conselheiros de IA para cada domínio", "longDescription": "Agentes especializados com expertise de domínio." }
+  },
+  "pricing": {
+    "title": "Preços Simples e Transparentes",
+    "subtitle": "Escolha o plano que se adapta à sua organização.",
+    "monthly": "Mensal",
+    "annual": "Anual",
+    "annualDiscount": "Economize 20%",
+    "perMonth": "/mês",
+    "startTrial": "Iniciar Teste Gratuito",
+    "contactSales": "Contatar Vendas",
+    "mostPopular": "Mais Popular",
+    "plans": {
+      "foundation": { "name": "Fundação", "description": "Capacidades essenciais para equipes em crescimento" },
+      "intelligence": { "name": "Inteligência", "description": "Análises avançadas para organizações em expansão" },
+      "governance": { "name": "Governança", "description": "Governança e conformidade completas" },
+      "sovereign": { "name": "Soberano", "description": "Plataforma completa com soberania total de dados" }
+    },
+    "faq": {
+      "title": "Perguntas Frequentes",
+      "questions": {
+        "trial": { "q": "Posso testar antes de comprar?", "a": "Sim! Todos os planos incluem 14 dias de teste gratuito." },
+        "data": { "q": "O que acontece com meus dados se eu cancelar?", "a": "Seus dados são seus. Mantemos por 30 dias." },
+        "nonprofit": { "q": "Vocês oferecem descontos para ONGs?", "a": "Sim, oferecemos 50% de desconto." },
+        "upgrade": { "q": "Posso fazer upgrade a qualquer momento?", "a": "Claro. As mudanças entram em vigor no próximo ciclo de faturamento." }
+      }
+    }
+  },
+  "downloads": {
+    "title": "Downloads",
+    "subtitle": "Obtenha Datacendia para sua plataforma",
+    "desktop": { "title": "Aplicativo Desktop", "windows": "Windows", "mac": "macOS", "linux": "Linux", "download": "Baixar" },
+    "mobile": { "title": "Apps Móveis", "ios": "iOS", "android": "Android", "appStore": "App Store", "playStore": "Google Play" },
+    "cli": { "title": "Interface de Linha de Comando" },
+    "selfHosted": { "title": "Auto-hospedado", "docker": "Docker Compose", "kubernetes": "Kubernetes (Helm)", "airgapped": "Pacote Isolado" },
+    "systemRequirements": { "title": "Requisitos do Sistema", "minimum": "Mínimo", "recommended": "Recomendado" }
+  },
+  "dashboard": {
+    "title": "Painel",
+    "welcome": "Bem-vindo de volta",
+    "subtitle": "Veja como está {{company}} hoje",
+    "health_score": "Saúde da Organização",
+    "healthScore": "Pontuação de Saúde",
+    "data": "Dados",
+    "operations": "Operações",
+    "security": "Segurança",
+    "people": "Pessoas",
+    "fromLastWeek": "desde a semana passada",
+    "alerts": "Alertas Ativos",
+    "activeAlerts": "Alertas Ativos",
+    "critical": "Crítico",
+    "warning": "Aviso",
+    "info": "Informação",
+    "pending_approvals": "Aprovações Pendentes",
+    "pendingApprovals": "Aprovações Pendentes",
+    "workflows": "Fluxos de Trabalho",
+    "access": "Acesso",
+    "budget": "Orçamento",
+    "by": "por",
+    "approve": "Aprovar",
+    "reject": "Rejeitar",
+    "keyMetrics": "Métricas Principais",
+    "askTheCouncil": "Perguntar ao Conselho",
+    "whatToKnow": "O que você gostaria de saber?",
+    "recentQueries": "Consultas recentes:",
+    "recentActivity": "Atividade Recente",
+    "viewFullLog": "Ver Log Completo",
+    "quickActions": "Ações Rápidas",
+    "greetings": { "morning": "Bom dia", "afternoon": "Boa tarde", "evening": "Boa noite" },
+    "sampleAlerts": {
+      "databaseCpu": "CPU do banco > 90% por 15 min",
+      "paymentLatency": "Pico de latência no processamento de pagamentos",
+      "diskUsage": "Uso de disco em 78% no prod-db-01",
+      "apiErrors": "Taxa de erros de API acima do limite",
+      "memoryLeak": "Vazamento de memória detectado no serviço de auth"
+    },
+    "sampleApprovals": {
+      "monthlyClose": "Processo de Fechamento Mensal",
+      "prodDbAccess": "Acesso ao BD de Produção",
+      "budgetIncrease": "Aumento de Orçamento de Marketing Q4",
+      "newHire": "Integração de Novo Funcionário: Equipe Dev"
+    },
+    "sampleMetrics": { "revenue": "Receita", "pipeline": "Pipeline", "burnRate": "Taxa de Queima", "nps": "NPS", "activeUsers": "Usuários Ativos", "churnRate": "Taxa de Churn" },
+    "sampleActivity": {
+      "workflowCompleted": "Fluxo de trabalho \"{{name}}\" concluído",
+      "userQueried": "{{user}} consultou {{topic}}",
+      "alertResolved": "Alerta \"{{alert}}\" resolvido",
+      "reportGenerated": "Relatório \"{{report}}\" gerado"
+    },
+    "sampleQueries": {
+      "churnIncrease": "Por que o churn aumentou?",
+      "forecastRevenue": "Prever receita Q4",
+      "biggestRisk": "Qual é nosso maior risco?",
+      "customerSentiment": "Qual é a tendência de sentimento do cliente?",
+      "competitorAnalysis": "Analisar preços dos concorrentes"
+    }
+  },
+  "button": {
+    "view_all": "Ver Tudo",
+    "viewAll": "Ver Tudo",
+    "viewMore": "Ver Mais",
+    "approve": "Aprovar",
+    "reject": "Rejeitar",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "submit": "Enviar",
+    "edit": "Editar",
+    "delete": "Excluir"
+  },
+  "commandPalette": {
+    "searchPlaceholder": "Pesquisar comandos, páginas, agentes...",
+    "noResults": "Sem resultados para",
+    "navigate": "navegar",
+    "select": "selecionar",
+    "toggle": "alternar",
+    "newQuery": "Nova Consulta ao Conselho",
+    "askCouncil": "Perguntar ao Conselho",
+    "refresh": "Atualizar Dados",
+    "reloadPage": "Recarregar dados da página",
+    "fullscreen": "Tela Cheia",
+    "toggleFullscreen": "Entrar/sair de tela cheia",
+    "switchTo": "Mudar para",
+    "changeLanguage": "Mudar idioma para",
+    "categories": { "navigation": "Navegação", "actions": "Ações", "agents": "Agentes", "modes": "Modos do Conselho", "recent": "Recente" },
+    "agents": {
+      "chief": "Agente Estratégico Principal",
+      "chiefDesc": "Síntese estratégica",
+      "cfo": "Inteligência Financeira",
+      "cfoDesc": "Análise financeira",
+      "coo": "Agente de Operações",
+      "cooDesc": "Eficiência operacional",
+      "ciso": "Agente de Segurança",
+      "cisoDesc": "Segurança e conformidade",
+      "cmo": "Inteligência de Mercado",
+      "cmoDesc": "Análise de mercado"
+    }
+  },
+  "cortex": { "sidebar": { "spaces": "Espaços", "pillars": "Pilares", "system": "Sistema", "data": "Dados", "security": "Segurança" } },
+  "sidebar": {
+    "dashboard": "Painel",
+    "the_council": "O Conselho",
+    "the_graph": "O Grafo",
+    "the_pulse": "O Pulso",
+    "the_lens": "A Lente",
+    "the_bridge": "A Ponte",
+    "settings": "Configurações",
+    "help": "Ajuda e Suporte",
+    "cortex": "Cortex",
+    "spaces": "Espaços",
+    "pillars": "Pilares",
+    "sovereign": "Soberano",
+    "admin": "Admin"
+  },
+  "council": {
+    "title": "O Conselho",
+    "subtitle": "Painel de consultoria estratégica com IA",
+    "askQuestion": "Fazer uma pergunta",
+    "questionPlaceholder": "Qual pergunta estratégica você gostaria que o conselho deliberasse?",
+    "selectAgents": "Selecionar agentes para participar",
+    "startDeliberation": "Iniciar Deliberação",
+    "quickAnswer": "Resposta Rápida",
+    "fullDeliberation": "Deliberação Completa",
+    "selectedAgents": "Agentes Selecionados",
+    "clearAll": "Limpar Tudo",
+    "selectAll": "Selecionar Tudo",
+    "agents": { "domain": "Agentes de Domínio", "custom": "Agentes Personalizados", "premium": "Agentes Premium", "createCustom": "Criar Agente Personalizado" },
+    "modes": {
+      "title": "Biblioteca de Modos do Conselho",
+      "subtitle": "Os mesmos agentes com modos diferentes produzem resultados diferentes.",
+      "cultureNote": "O prompt É a cultura da empresa.",
+      "quickReference": "Referência Rápida",
+      "mode": "Modo",
+      "primeDirective": "Diretiva Principal",
+      "bestFor": "Melhor Para",
+      "agentBehavior": "Comportamento do Agente"
+    },
+    "deliberation": {
+      "phases": { "initial_analysis": "Análise Inicial", "cross_examination": "Exame Cruzado", "synthesis": "Síntese", "ethics_check": "Verificação Ética" },
+      "inProgress": "Deliberação em Andamento",
+      "completed": "Deliberação Concluída",
+      "confidence": "Confiança"
+    },
+    "customAgent": {
+      "title": "Criar Agente Personalizado",
+      "editTitle": "Editar Agente Personalizado",
+      "subtitle": "Projete seu próprio agente de IA com expertise especializada",
+      "premium": "Pacote Construtor de Agentes",
+      "avatar": "Avatar do Agente",
+      "color": "Cor do Agente",
+      "name": "Nome do Agente",
+      "namePlaceholder": "ex., Analista de Mercado",
+      "role": "Cargo / Título",
+      "rolePlaceholder": "ex., Pesquisa e Análise de Mercado",
+      "description": "Descrição",
+      "descriptionPlaceholder": "Descreva o que este agente faz...",
+      "expertise": "Expertise e Instruções",
+      "capabilities": "Capacidades",
+      "addCapability": "Adicionar",
+      "save": "Salvar Agente",
+      "delete": "Excluir Agente"
+    },
+    "status": { "online": "Online", "offline": "Offline", "busy": "Ocupado" }
+  },
+  "agent": {
+    "chief": {
+      "name": "Agente Estratégico Chefe",
+      "role": "Supervisão Estratégica e Síntese",
+      "description": "Sintetiza insights de todos os agentes de domínio para fornecer recomendações estratégicas holísticas."
+    },
+    "cfo": {
+      "name": "Agente de Inteligência Financeira",
+      "role": "Análise Financeira e Risco",
+      "description": "Analisa dados financeiros, orçamentos, previsões e fornece insights sobre saúde fiscal."
+    },
+    "coo": { "name": "Agente de Inteligência Operacional", "role": "Eficiência Operacional", "description": "Foca em métricas operacionais, eficiência de processos e alocação de recursos." },
+    "ciso": {
+      "name": "Agente de Segurança e Conformidade",
+      "role": "Segurança e Gestão de Riscos",
+      "description": "Monitora postura de segurança, requisitos de conformidade e avaliação de ameaças."
+    },
+    "cmo": {
+      "name": "Agente de Inteligência de Mercado",
+      "role": "Marketing e Insights de Clientes",
+      "description": "Analisa tendências de mercado, comportamento do cliente e inteligência competitiva."
+    },
+    "cro": { "name": "Agente de Inteligência de Receita", "role": "Receita e Crescimento", "description": "Foca em otimização de receita, desempenho de vendas e estratégias de preços." },
+    "cdo": { "name": "Agente de Qualidade de Dados", "role": "Governança e Qualidade de Dados", "description": "Monitora qualidade de dados, políticas de governança e garante integridade de dados." },
+    "risk": {
+      "name": "Agente de Avaliação de Riscos",
+      "role": "Análise de Riscos Empresariais",
+      "description": "Avalia riscos empresariais, realiza análise de impacto e fornece estratégias de mitigação."
+    },
+    "clo": { "name": "Agente de Inteligência Jurídica", "role": "Análise Jurídica e Conformidade", "description": "Analisa riscos legais, implicações contratuais e conformidade regulatória." },
+    "cpo": {
+      "name": "Agente de Estratégia de Produto",
+      "role": "Inovação de Produto e Roadmap",
+      "description": "Impulsiona estratégia de produto, priorização de recursos e insights de experiência do usuário."
+    },
+    "caio": { "name": "Agente de Estratégia de IA", "role": "Governança e Inovação de IA/ML", "description": "Orienta estratégia de IA, governança de modelos e implementação ética de IA." },
+    "cso": { "name": "Agente de Sustentabilidade", "role": "ESG e Impacto Ambiental", "description": "Monitora métricas ambientais, sociais e de governança e iniciativas de sustentabilidade." },
+    "cio": {
+      "name": "Agente de Inteligência de Investimentos",
+      "role": "Alocação de Capital e Portfólio",
+      "description": "Analisa oportunidades de investimento, alocação de portfólio e implantação de capital."
+    },
+    "cco": {
+      "name": "Agente de Comunicações",
+      "role": "Comunicações Corporativas e RP",
+      "description": "Elabora mensagens corporativas, gerencia comunicações com stakeholders e monitora percepção da marca."
+    },
+    "ext-auditor": { "name": "Auditor Externo", "role": "Auditoria Independente de Terceiros", "description": "Fornece avaliação independente e objetiva de uma perspectiva externa." },
+    "int-auditor": { "name": "Auditor Interno", "role": "Controles Internos e Auditoria de Processos", "description": "Avalia controles internos, eficiência operacional e conformidade." },
+    "cmio": { "name": "Diretor de Informação Médica", "role": "TI em Saúde e Sistemas Clínicos", "description": "Especialista em tecnologia de saúde, sistemas EHR e informática clínica." },
+    "pso": {
+      "name": "Oficial de Segurança do Paciente",
+      "role": "Segurança Clínica e Qualidade",
+      "description": "Especialista em segurança do paciente, prevenção de eventos adversos e melhoria de qualidade."
+    },
+    "hco": {
+      "name": "Oficial de Conformidade em Saúde",
+      "role": "HIPAA e Regulamentações de Saúde",
+      "description": "Especialista em conformidade regulatória em saúde, HIPAA e conformidade de faturamento."
+    },
+    "cod": { "name": "Diretor de Operações Clínicas", "role": "Operações e Eficiência em Saúde", "description": "Especialista em operações clínicas, fluxo de pacientes e otimização de pessoal." },
+    "quant": {
+      "name": "Analista Quantitativo",
+      "role": "Modelagem Financeira e Análise de Risco",
+      "description": "Especialista em finanças quantitativas, precificação de derivativos e modelagem de risco."
+    },
+    "pm": {
+      "name": "Gestor de Portfólio",
+      "role": "Estratégia de Investimento e Alocação de Ativos",
+      "description": "Especialista em construção de portfólios, alocação de ativos e estratégia de investimento."
+    },
+    "cro-finance": {
+      "name": "Oficial de Risco de Crédito",
+      "role": "Análise de Crédito e Avaliação de Risco",
+      "description": "Especialista em análise de crédito, subscrição de empréstimos e modelagem de risco de crédito."
+    },
+    "treasury": { "name": "Analista de Tesouraria", "role": "Gestão de Caixa e Liquidez", "description": "Especialista em tesouraria corporativa, gestão de caixa e hedge cambial." },
+    "contracts": { "name": "Especialista em Contratos", "role": "Análise e Negociação de Contratos", "description": "Especialista em contratos comerciais, elaboração de contratos e negociação." },
+    "ip": {
+      "name": "Consultor de Propriedade Intelectual",
+      "role": "Patentes, Marcas e Estratégia de PI",
+      "description": "Especialista em direito de propriedade intelectual, estratégia de patentes e proteção de marcas."
+    },
+    "litigation": {
+      "name": "Especialista em Litígios",
+      "role": "Resolução de Disputas e Estratégia de Julgamento",
+      "description": "Especialista em litígios comerciais, resolução de disputas e e-discovery."
+    },
+    "regulatory": {
+      "name": "Consultor de Assuntos Regulatórios",
+      "role": "Relações Governamentais e Conformidade",
+      "description": "Especialista em conformidade regulatória, assuntos governamentais e direito administrativo."
+    }
+  },
+  "label": { "online": "Online", "offline": "Offline", "busy": "Ocupado", "premium": "Premium", "locked": "Bloqueado", "custom": "Personalizado", "unlock": "Desbloquear", "required": "Obrigatório" },
+  "settings": {
+    "title": "Configurações",
+    "organization": "Organização",
+    "users": "Usuários",
+    "teams": "Equipes",
+    "roles": "Funções e Permissões",
+    "billing": "Faturamento",
+    "apiKeys": "Chaves de API",
+    "integrations": "Integrações",
+    "preferences": "Preferências",
+    "security": "Segurança"
+  },
+  "errors": {
+    "notFound": { "title": "Página Não Encontrada", "message": "A página que você procura não existe.", "backHome": "Voltar ao Início" },
+    "serverError": { "title": "Erro do Servidor", "message": "Algo deu errado do nosso lado. Tente novamente mais tarde." },
+    "networkError": { "title": "Erro de Conexão", "message": "Não foi possível conectar ao servidor." },
+    "unauthorized": { "title": "Não Autorizado", "message": "Você não tem permissão para acessar este recurso." },
+    "sessionExpired": { "title": "Sessão Expirada", "message": "Sua sessão expirou. Por favor, faça login novamente." }
+  },
+  "footer": {
+    "company": "Empresa",
+    "product": "Produto",
+    "resources": "Recursos",
+    "legal": "Legal",
+    "about": "Sobre",
+    "careers": "Carreiras",
+    "contact": "Contato",
+    "press": "Imprensa",
+    "features": "Recursos",
+    "integrations": "Integrações",
+    "enterprise": "Enterprise",
+    "documentation": "Documentação",
+    "apiReference": "Referência da API",
+    "status": "Status do Sistema",
+    "community": "Comunidade",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Serviço",
+    "security": "Segurança",
+    "cookies": "Política de Cookies",
+    "copyright": "© {{year}} Datacendia. Todos os direitos reservados.",
+    "tagline": "Inteligência Empresarial Soberana"
+  },
+  "time": {
+    "justNow": "Agora mesmo",
+    "minutesAgo": "Há {{count}} minuto",
+    "minutesAgo_plural": "Há {{count}} minutos",
+    "hoursAgo": "Há {{count}} hora",
+    "hoursAgo_plural": "Há {{count}} horas",
+    "daysAgo": "Há {{count}} dia",
+    "daysAgo_plural": "Há {{count}} dias",
+    "weeksAgo": "Há {{count}} semana",
+    "weeksAgo_plural": "Há {{count}} semanas"
+  },
+  "tooltips": {
+    "pillars": {
+      "helm": {
+        "title": "Helm - Centro de Comando Estratégico",
+        "summary": "Seu sistema de apoio à decisão estratégica. Monitore, analise e lidere com confiança.",
+        "features": [
+          "Dashboards KPI em tempo real com análise de tendências",
+          "Rastreamento e alinhamento de objetivos estratégicos",
+          "Benchmarking contra padrões do setor",
+          "Limites de alerta com notificações automáticas",
+          "Geração de resumos executivos"
+        ],
+        "useCases": ["Acompanhar metas trimestrais em todos os departamentos", "Monitorar métricas de receita e indicadores de crescimento", "Identificar e acompanhar marcos estratégicos"],
+        "guidance": "Comece definindo suas métricas-chave. O Helm funciona melhor quando você tem objetivos claros e mensuráveis."
+      },
+      "lineage": {
+        "title": "Lineage - Rastreamento de Linhagem de Dados",
+        "summary": "Visibilidade completa da jornada dos seus dados. Saiba de onde cada número vem e para onde vai.",
+        "features": [
+          "Mapeamento visual de fluxos de dados",
+          "Rastreamento da fonte ao relatório",
+          "Análise de impacto de mudanças de dados",
+          "Pontuação de qualidade em cada etapa",
+          "Geração automática de documentação"
+        ],
+        "useCases": ["Trilhas de auditoria para conformidade regulatória", "Debug de inconsistências de dados entre sistemas", "Planejamento de migração com visibilidade completa de impacto"],
+        "guidance": "Comece conectando suas fontes de dados. O Lineage descobrirá automaticamente relacionamentos e construirá seu mapa de dados."
+      },
+      "predict": {
+        "title": "Predict - Motor de Previsão com IA",
+        "summary": "Modelos de ML que veem além do horizonte. Preveja tendências antes que se tornem óbvias.",
+        "features": [
+          "Previsão de séries temporais com intervalos de confiança",
+          "Detecção de anomalias e sistemas de alerta precoce",
+          "Modelagem de cenários hipotéticos",
+          "Análise de importância de características",
+          "Monitoramento de performance de modelos"
+        ],
+        "useCases": ["Previsão de demanda e otimização de estoque", "Prever churn de clientes antes que aconteça", "Modelagem de cenários financeiros para planejamento estratégico"],
+        "guidance": "Boas previsões requerem bons dados. Comece com dados históricos limpos e deixe o Predict aprender os padrões."
+      },
+      "flow": {
+        "title": "Flow - Automação Inteligente",
+        "summary": "Workflows que pensam. Conecte sistemas, automatize decisões e mantenha o trabalho fluindo.",
+        "features": [
+          "Construtor visual de workflows com arrastar e soltar",
+          "Nós de decisão alimentados por IA",
+          "Conectores de integração entre sistemas",
+          "Cadeias de aprovação com regras de escalonamento",
+          "Análise e otimização de workflows"
+        ],
+        "useCases": ["Automatizar orquestração de pipelines de dados", "Criar workflows de aprovação inteligentes", "Disparar ações baseadas em insights de IA"],
+        "guidance": "Comece mapeando seus processos manuais atuais. O Flow ajudará a identificar oportunidades de automação."
+      },
+      "health": {
+        "title": "Health - Monitor de Sinais Vitais",
+        "summary": "Pulso em tempo real dos sinais vitais da sua empresa. Detecte problemas antes que algo quebre.",
+        "features": [
+          "Dashboard de saúde de componentes",
+          "Análise de tendências de performance",
+          "Rastreamento e resolução de incidentes",
+          "Ferramentas de planejamento de capacidade",
+          "Monitoramento de uptime e SLA"
+        ],
+        "useCases": ["Monitorar saúde de sistemas em todas as plataformas", "Rastrear tempos de resposta e resolução de incidentes", "Planejar proativamente capacidade de infraestrutura"],
+        "guidance": "Configure verificações de saúde para sistemas críticos. O Health agrega sinais para dar uma visão unificada."
+      },
+      "guard": {
+        "title": "Guard - Escudo de Segurança e Conformidade",
+        "summary": "Proteção automática para seus dados. Aplique políticas, rastreie acessos, mantenha conformidade.",
+        "features": [
+          "Motor de aplicação de políticas",
+          "Logs de auditoria de acesso",
+          "Detecção e alertas de ameaças",
+          "Mapeamento de frameworks de conformidade",
+          "Pontuação de postura de segurança"
+        ],
+        "useCases": ["Aplicar automaticamente políticas de acesso a dados", "Gerar relatórios de conformidade para auditores", "Detectar e responder a ameaças de segurança"],
+        "guidance": "Defina suas políticas de segurança e requisitos de conformidade. O Guard monitora continuamente e alerta sobre violações."
+      },
+      "ethics": {
+        "title": "Ethics - Centro de Governança de IA",
+        "summary": "IA responsável incorporada. Garanta equidade, transparência e responsabilização em cada decisão.",
+        "features": [
+          "Detecção e monitoramento de viés",
+          "Ferramentas de explicabilidade de modelos",
+          "Workflows de revisão ética",
+          "Rastreamento de métricas de equidade",
+          "Logs de auditoria de decisões"
+        ],
+        "useCases": ["Revisar viés de modelos de IA antes do deploy", "Documentar raciocínio de decisões para conformidade", "Monitorar métricas de equidade em produção"],
+        "guidance": "Comece estabelecendo seus princípios éticos. O Ethics ajuda a operacionalizá-los em todos os sistemas."
+      },
+      "agents": {
+        "title": "Agents - Conselho de Consultores de IA",
+        "summary": "Consultores de IA especializados para cada domínio. Obtenha orientação especializada sob demanda.",
+        "features": [
+          "Agentes de IA especializados por domínio",
+          "Colaboração multi-agentes",
+          "Recomendações sensíveis ao contexto",
+          "Interação em linguagem natural",
+          "Aprendizado contínuo com feedback"
+        ],
+        "useCases": [
+          "Obter aconselhamento estratégico de analistas de negócios",
+          "Consultar especialistas técnicos para decisões de arquitetura",
+          "Orientação de conformidade de especialistas regulatórios"
+        ],
+        "guidance": "Escolha o agente certo para sua pergunta. Cada um tem especialização, e o Council sabe quando colaborar."
+      }
+    },
+    "spaces": {
+      "graph": {
+        "title": "Graph - Navegador de Conhecimento",
+        "summary": "Navegue pelo universo de conhecimento da sua empresa. Encontre conexões que outros perdem.",
+        "features": [
+          "Visualização interativa de conhecimento",
+          "Busca semântica em todos os dados",
+          "Descoberta de relacionamentos",
+          "Exploração sensível ao contexto",
+          "Identificação de lacunas de conhecimento"
+        ],
+        "guidance": "Clique em qualquer nó para começar a explorar. O Graph revela conexões e permite aprofundar."
+      },
+      "council": {
+        "title": "Council - Sala de Colaboração de IA",
+        "summary": "Onde consultores de IA deliberam juntos. Problemas complexos precisam de múltiplas perspectivas.",
+        "features": [
+          "Sessões de pensamento multi-agentes",
+          "Frameworks de deliberação estruturada",
+          "Protocolos de resolução de conflitos",
+          "Ferramentas de construção de consenso",
+          "Documentação de decisões"
+        ],
+        "guidance": "Apresente sua pergunta ao Council. Observe como diferentes perspectivas emergem e sintetizam em recomendações."
+      },
+      "pulse": {
+        "title": "Pulse - Centro de Operações em Tempo Real",
+        "summary": "Visão ao vivo do batimento cardíaco da empresa. Cada métrica, cada momento.",
+        "features": ["Streaming de métricas em tempo real", "Limites de alerta configuráveis", "Visualização de tendências", "Destaque de anomalias", "Comparação histórica"],
+        "guidance": "Configure métricas-chave para mostrar no Pulse. Defina limites de alerta para ser notificado de mudanças."
+      },
+      "lens": {
+        "title": "Lens - Explorador de Cenários Futuros",
+        "summary": "Veja futuros possíveis antes que cheguem. Modele cenários e planeje adequadamente.",
+        "features": ["Motor de modelagem de cenários", "Simulações Monte Carlo", "Análise de sensibilidade", "Visualização de árvores de decisão", "Mapeamento de probabilidade de resultados"],
+        "guidance": "Defina parâmetros do cenário. O Lens gerará múltiplos futuros e mostrará os resultados mais prováveis."
+      },
+      "bridge": {
+        "title": "Bridge - Centro de Comando de Ação",
+        "summary": "Transforme insights em ação. Execute em todos os sistemas conectados.",
+        "features": ["Execução de ações entre sistemas", "Integração de workflows de aprovação", "Prévia de impacto de ações", "Capacidades de rollback", "Logs de auditoria de execução"],
+        "guidance": "Selecione uma ação e visualize seu impacto. O Bridge garante execução segura com rastreamento completo."
+      }
+    },
+    "sovereign": {
+      "mirror": {
+        "title": "Cendia Mirror - Motor de Gêmeo Digital",
+        "summary": "Crie uma réplica digital viva da sua empresa. Teste mudanças antes de se tornarem realidade.",
+        "features": ["Sincronização de dados em tempo real", "Ambiente de simulação de cenários", "Modelagem de impacto de mudanças", "Framework de testes A/B", "Previsão de performance"],
+        "guidance": "O Mirror cria um sandbox seguro da sua empresa. Experimente livremente - mudanças aqui não afetam produção."
+      },
+      "witness": {
+        "title": "Cendia Witness - Registro de Auditoria Imutável",
+        "summary": "Prova blockchain de cada ação. Demonstre o que aconteceu e quando.",
+        "features": [
+          "Timestamps criptográficos",
+          "Logs de auditoria à prova de adulteração",
+          "Rastreamento de cadeia de custódia",
+          "Exportação de evidências para jurídico",
+          "Certificação de conformidade"
+        ],
+        "guidance": "O Witness registra automaticamente ações críticas. Acesse registros imutáveis quando precisar."
+      },
+      "oracle": {
+        "title": "Cendia Oracle - Hub de Inteligência Preditiva",
+        "summary": "IA avançada que fala a verdade ao poder. Obtenha respostas que importam.",
+        "features": ["Interface de consulta em linguagem natural", "Raciocínio entre domínios", "Perguntas e respostas preditivas", "Pontuação de confiança", "Citação de fontes"],
+        "guidance": "Pergunte ao Oracle qualquer coisa sobre a empresa. Ele sintetiza conhecimento de todas as fontes para respostas precisas."
+      },
+      "legacy": {
+        "title": "Cendia Legacy - Preservação de Conhecimento",
+        "summary": "Capture conhecimento organizacional antes que se perca. Preserve sabedoria para o futuro.",
+        "features": [
+          "Captura de conhecimento especializado",
+          "Arquivo de raciocínio de decisões",
+          "Documentação de melhores práticas",
+          "Workflows de transferência de conhecimento",
+          "Ferramentas de onboarding de sucessores"
+        ],
+        "guidance": "Capture conhecimento crítico quando for criado. O Legacy garante que a sabedoria organizacional sobreviva além de indivíduos."
+      },
+      "mirage": {
+        "title": "Cendia Mirage - Gerador de Dados Sintéticos",
+        "summary": "Crie dados realistas sem risco de privacidade. Treine, teste e desenvolva com segurança.",
+        "features": ["Síntese estatística de dados", "Geração preservadora de privacidade", "Preservação de correlações", "Amplificação de casos extremos", "Validação de qualidade"],
+        "guidance": "Defina seus requisitos de dados. O Mirage gera datasets sintéticos que correspondem às características dos dados reais."
+      },
+      "key": {
+        "title": "Cendia Key - Cofre de Identidade e Acesso",
+        "summary": "Uma chave para governar tudo. Gestão unificada de identidade em todo o ecossistema.",
+        "features": ["Hub de single sign-on", "Controle de acesso baseado em funções", "Gestão de acesso privilegiado", "Automação de ciclo de vida de identidade", "Aplicação de zero trust"],
+        "guidance": "Conecte seus provedores de identidade. O Key unifica controles de acesso e aplica políticas em todos os sistemas."
+      },
+      "mesh": {
+        "title": "Cendia Mesh - Malha de Integração",
+        "summary": "Conecte tudo a tudo. A camada de integração inteligente da empresa.",
+        "features": ["Gateway de API universal", "Arquitetura orientada a eventos", "Motor de transformação de dados", "Gestão de service mesh", "Monitoramento de integrações"],
+        "guidance": "Configure conexões de sistemas através do Mesh. Ele lida automaticamente com protocolos, transformações e roteamento."
+      },
+      "blackbox": {
+        "title": "Cendia BlackBox - Registro de Modelos",
+        "summary": "Gestão central de todos os modelos de IA. Versione, implante e monitore com confiança.",
+        "features": ["Versionamento e linhagem de modelos", "Orquestração de deploy", "Framework de testes A/B", "Monitoramento de performance", "Automação de rollback"],
+        "guidance": "Registre modelos no BlackBox. Ele rastreia versões, gerencia deploys e monitora performance automaticamente."
+      },
+      "glass": {
+        "title": "Cendia Glass - Painel de Transparência",
+        "summary": "Visibilidade completa das decisões de IA. Veja exatamente por que e como decisões foram tomadas.",
+        "features": ["Explicabilidade de decisões", "Análise de contribuição de fatores", "Exploração contrafactual", "Relatórios para stakeholders", "Documentação pronta para auditoria"],
+        "guidance": "Selecione uma decisão de IA no Glass. Ele decompõe fatores, mostra alternativas e explica a lógica."
+      }
+    },
+    "enterprise": {
+      "apotheosis": {
+        "title": "CendiaApotheosis™ - Superinteligência Organizacional",
+        "summary": "O ciclo de auto-melhoria que nunca para. Ataques noturnos, patches automáticos, capacitação humana e banimento de padrões.",
+        "features": [
+          "Simulações red-team noturnas (1000+ cenários)",
+          "Patch automático de fraquezas",
+          "Detecção de lacunas e treinamento",
+          "Banimento de padrões de decisão",
+          "Rastreamento do Score Apotheosis"
+        ],
+        "useCases": ["Melhoria organizacional contínua", "Mitigação proativa de riscos", "Endurecimento automatizado de compliance", "Suporte a decisões executivas"],
+        "guidance": "Apotheosis roda toda noite, atacando sua organização de 1000+ ângulos, corrigindo o que encontra, e tornando você permanentemente imune aos seus próprios erros."
+      },
+      "dissent": {
+        "title": "CendiaDissent™ - Discordância Protegida",
+        "summary": "O direito de discordar formal, segura e imutavelmente de qualquer decisão — registrado para sempre.",
+        "features": [
+          "Registro de dissidência anônimo ou nomeado",
+          "Reconhecimento obrigatório em 72 horas",
+          "Registro imutável no ledger",
+          "Detecção e proteção contra retaliação",
+          "Rastreamento de precisão da dissidência"
+        ],
+        "useCases": ["Garantir que vozes minoritárias sejam ouvidas", "Criar memória organizacional", "Proteger denunciantes", "Melhorar qualidade das decisões"],
+        "guidance": "Registre uma dissidência contra qualquer decisão com a qual você discorda. Sua objeção será registrada permanentemente, reconhecida e rastreada para precisão ao longo do tempo."
+      },
+      "connectors": {
+        "title": "Conectores de Dados Empresariais",
+        "summary": "156+ conectores pré-construídos em 11 verticais industriais. Conecte a fontes governamentais, financeiras, saúde e globais.",
+        "features": [
+          "Governo: NOAA, FAA, FEMA, SEC, Census, USGS, EIA",
+          "Finanças: Bloomberg, SWIFT, Protocolo FIX, Refinitiv",
+          "Saúde: HL7 FHIR, Epic, Cerner, CDC, FDA, OMS",
+          "Supply Chain: CBP, Maersk, APIs Portuárias",
+          "Energia: CAISO, PJM, ERCOT, ENTSO-E, Nord Pool",
+          "Aviônica: ARINC 429/664, ADS-B, ACARS, MIL-STD-1553"
+        ],
+        "useCases": [
+          "Integração de dados meteorológicos em tempo real",
+          "Dados de mercados financeiros e feeds regulatórios",
+          "Interoperabilidade de saúde e dados clínicos",
+          "Visibilidade da cadeia de suprimentos",
+          "Análise de rede elétrica e mercado de energia",
+          "Segurança aérea e operações de voo"
+        ],
+        "guidance": "Navegue pelos conectores por vertical ou pesquise fontes específicas. Cada conector inclui autenticação, limitação de taxa e mapeamento de compliance."
+      },
+      "evidence": {
+        "title": "Infraestrutura de Evidências",
+        "summary": "Ledger imutável com encadeamento hash blockchain, assinaturas digitais TPM e provas de árvore Merkle.",
+        "features": [
+          "Entradas de ledger assinadas criptograficamente",
+          "Captura de identidade de build e execução",
+          "Suporte a atestação de hardware TPM",
+          "Verificação de integridade de árvore Merkle",
+          "Geração de pacotes de evidência legal"
+        ],
+        "useCases": ["Evidência de testes pronta para auditoria", "Documentação de revisão de segurança", "Evidência SOC 2 / ISO 27001 / LGPD", "Registros de execução à prova de adulteração"],
+        "guidance": "Todas as execuções de teste são automaticamente registradas com assinaturas criptográficas. Gere pacotes de evidência legal com um clique."
+      },
+      "sovereignArch": {
+        "title": "Padrões de Arquitetura Soberana",
+        "summary": "11 padrões empresariais para implantações air-gap, zero-trust e totalmente soberanas.",
+        "features": [
+          "Diodo de Dados: Ingestão unidirecional com quarentena",
+          "RLHF Local: Aprendizado por reforço sem nuvem",
+          "DNA de Decisão: Exportação de auditoria com um clique",
+          "Conselho Sombra: Modo sandbox",
+          "Ponte QR Air-Gap: Transferência sem mídia",
+          "Atestação TPM: Decisões assinadas por hardware"
+        ],
+        "useCases": ["Implantações em instalações air-gap", "Aplicações de defesa e inteligência", "Compliance de indústrias reguladas", "Arquitetura empresarial zero-trust"],
+        "guidance": "Padrões de Arquitetura Soberana permitem implantação nos ambientes mais restritos. Cada padrão pode ser usado independentemente ou combinado."
+      },
+      "cascade": {
+        "title": "CendiaCascade™ - O Efeito Borboleta",
+        "summary": "Análise de consequências de segunda e terceira ordem. Preveja consequências não intencionais antes que se tornem incidentes.",
+        "features": [
+          "Análise multi-perspectiva (CFO, COO, CISO, Pessoas, Ética)",
+          "Detecção do efeito borboleta (impactos surpreendentes de 3ª+ ordem)",
+          "Geração automática de mitigações (prevenir, detectar, responder)",
+          "Propostas de guardrails (canário, tripwire, disjuntor, rollback)",
+          "Visualização de linha do tempo (T+0, T+30, T+90, T+1A)",
+          "Trilha de auditoria com hash SHA-256"
+        ],
+        "useCases": [
+          "Analisar mudanças de pessoal antes da implementação",
+          "Prever consequências de mudança de fornecedor",
+          "Modelar mudanças de política no grafo organizacional",
+          "Detectar loops de feedback"
+        ],
+        "guidance": "Carregue seu grafo organizacional, proponha uma mudança e deixe o CendiaCascade rastrear consequências. Seus concorrentes jogam xadrez um movimento à frente — CendiaCascade simula 5 movimentos à frente."
+      },
+      "adapters": {
+        "title": "Adaptadores Soberanos - Conectores Universais",
+        "summary": "5 adaptadores universais em vez de 156 conectores específicos. Nós fornecemos o soquete; o cliente traz o plugue.",
+        "features": [
+          "File Watcher: Aviônica, defesa, ingestão baseada em arquivos",
+          "Webhook Ingest: SaaS, eventos push de gateways financeiros",
+          "Database Adapter: ERP, cadeia de suprimentos SQL/ODBC",
+          "Protocolo FHIR: Padrão de saúde",
+          "Protocolo FIX: Padrão financeiro",
+          "Protocolo MQTT: IoT e rede de energia"
+        ],
+        "useCases": [
+          "Conectar a qualquer sistema via padrões abertos",
+          "Evitar responsabilidade de licenças de APIs proprietárias",
+          "Suportar ambientes air-gap e regulados",
+          "BYO-keys para adaptadores regulados"
+        ],
+        "guidance": "Escolha o tipo de adaptador que corresponde ao seu padrão de integração. Cada adaptador aplica níveis de risco, registro de evidências e controles de cota automaticamente."
+      }
+    }
+  },
+  "narratives": {
+    "welcome": {
+      "title": "Bem-vindo ao Datacendia",
+      "subtitle": "Sua jornada para inteligência soberana começa aqui",
+      "steps": [
+        {
+          "title": "Conheça Seu Centro de Comando",
+          "description": "O Cortex é sua visão unificada de inteligência empresarial. Cinco espaços interconectados dão visibilidade e controle completos.",
+          "action": "Explorar Cortex"
+        },
+        {
+          "title": "Entenda os Oito Pilares",
+          "description": "Cada pilar fornece capacidades essenciais - de métricas estratégicas (Helm) a governança de IA (Ethics). Eles trabalham juntos como sistema.",
+          "action": "Ver Visão dos Pilares"
+        },
+        {
+          "title": "Conecte Sua Primeira Fonte de Dados",
+          "description": "Inteligência requer dados. Conecte um banco de dados, API ou fonte de arquivos para começar a construir sua base de conhecimento.",
+          "action": "Adicionar Fonte de Dados"
+        },
+        {
+          "title": "Defina Suas Métricas-Chave",
+          "description": "O que mais importa para sua organização? Defina os KPIs que aparecerão no seu dashboard executivo.",
+          "action": "Criar Primeira Métrica"
+        }
+      ]
+    },
+    "executive": {
+      "title": "Jornada de Liderança Executiva",
+      "subtitle": "Tomada de decisão estratégica com inteligência completa",
+      "persona": "Executivo C-Level",
+      "duration": "15 minutos",
+      "steps": [
+        {
+          "title": "Comece no Pulse",
+          "description": "Todo dia, primeiro verifique rapidamente a saúde da organização. Métricas vermelhas precisam de atenção imediata.",
+          "space": "pulse",
+          "keyActions": ["Verificar indicadores de saúde", "Checar alertas ativos", "Observar métricas de tendência"]
+        },
+        {
+          "title": "Mergulhe no Helm",
+          "description": "Revise KPIs estratégicos. Está no caminho das metas trimestrais? Onde estão as lacunas?",
+          "pillar": "helm",
+          "keyActions": ["Ver status de KPIs", "Comparar com metas", "Identificar objetivos em risco"]
+        },
+        {
+          "title": "Consulte o Council",
+          "description": "Para decisões complexas, reúna consultores de IA. Apresente a situação, ouça múltiplas perspectivas.",
+          "space": "council",
+          "keyActions": ["Formular pergunta", "Revisar perspectivas", "Solicitar síntese"]
+        },
+        {
+          "title": "Explore com Lens",
+          "description": "Modele diferentes cenários. E se aumentar investimento? E se atrasar lançamento? O Lens mostra futuros possíveis.",
+          "space": "lens",
+          "keyActions": ["Definir parâmetros", "Rodar simulações", "Comparar resultados"]
+        },
+        {
+          "title": "Aja via Bridge",
+          "description": "Transforme decisões em ação. O Bridge executa em sistemas mantendo trilha de auditoria completa.",
+          "space": "bridge",
+          "keyActions": ["Selecionar ação", "Prever impacto", "Aprovar execução"]
+        }
+      ]
+    },
+    "dataEngineer": {
+      "title": "Workflow do Engenheiro de Dados",
+      "subtitle": "Construindo e mantendo a fundação de dados",
+      "persona": "Engenheiro/Arquiteto de Dados",
+      "duration": "30 minutos",
+      "steps": [
+        {
+          "title": "Mapeie Dados com Lineage",
+          "description": "Entenda como os dados fluem pela organização. O Lineage descobre automaticamente fontes, transformações e destinos.",
+          "pillar": "lineage",
+          "keyActions": ["Conectar fontes", "Revisar entidades descobertas", "Documentar transformações"]
+        },
+        {
+          "title": "Monitore Qualidade com Health",
+          "description": "Rastreie métricas de qualidade em todos os pipelines. Configure alertas para frescor, completude e precisão.",
+          "pillar": "health",
+          "keyActions": ["Configurar verificações", "Definir limites de alerta", "Revisar scores"]
+        },
+        {
+          "title": "Conecte Sistemas via Mesh",
+          "description": "Construa integrações entre sistemas. O Mesh lida com protocolos, transformações e confiabilidade.",
+          "sovereign": "mesh",
+          "keyActions": ["Definir origem/destino", "Configurar mapeamento", "Testar integração"]
+        },
+        {
+          "title": "Automatize com Flow",
+          "description": "Crie pipelines de dados automatizados. Agende tarefas, lide com erros, orquestre workflows complexos.",
+          "pillar": "flow",
+          "keyActions": ["Projetar workflow", "Configurar triggers", "Definir tratamento de erros"]
+        }
+      ]
+    },
+    "complianceOfficer": {
+      "title": "Checklist do Oficial de Conformidade",
+      "subtitle": "Mantendo conformidade regulatória com monitoramento automatizado",
+      "persona": "Oficial de Conformidade/Risco",
+      "duration": "20 minutos",
+      "steps": [
+        {
+          "title": "Verifique Postura de Segurança no Guard",
+          "description": "Veja a posição de segurança da organização. Revise conformidade de políticas, padrões de acesso e ameaças ativas.",
+          "pillar": "guard",
+          "keyActions": ["Ver score de conformidade", "Checar violações de política", "Auditar logs de acesso"]
+        },
+        {
+          "title": "Valide Ética de IA",
+          "description": "Garanta que todos os modelos de IA atendam padrões éticos. Verifique viés, revise decisões, documente conformidade.",
+          "pillar": "ethics",
+          "keyActions": ["Revisar verificações de viés", "Auditar decisões de modelo", "Documentar descobertas"]
+        },
+        {
+          "title": "Extraia Logs de Auditoria do Witness",
+          "description": "Acesse registros imutáveis de todas as ações do sistema. Gere relatórios para auditores com evidência criptográfica.",
+          "sovereign": "witness",
+          "keyActions": ["Definir escopo de auditoria", "Exportar pacote de evidências", "Gerar certificações"]
+        },
+        {
+          "title": "Explique Decisões com Glass",
+          "description": "Quando reguladores perguntarem por quê, o Glass tem as respostas. Explicabilidade completa de todas as decisões de IA.",
+          "sovereign": "glass",
+          "keyActions": ["Selecionar decisão", "Gerar explicação", "Criar documentação de conformidade"]
+        }
+      ]
+    },
+    "quickStart": {
+      "title": "Início Rápido em 5 Minutos",
+      "subtitle": "Orientação rápida para obter valor imediato",
+      "duration": "5 minutos",
+      "steps": [
+        {
+          "title": "Veja o Dashboard",
+          "description": "Seu centro de comando personalizado mostra o que mais importa. Métricas-chave, alertas e atividade recente em um olhar.",
+          "action": "Abrir Dashboard"
+        },
+        { "title": "Verifique Saúde da Organização", "description": "Um número conta como a organização está. Verde é bom. Clique para detalhes.", "action": "Ver Indicador de Saúde" },
+        { "title": "Faça uma Pergunta", "description": "Digite qualquer pergunta sobre sua organização. Agentes de IA encontrarão respostas.", "action": "Abrir Assistente de IA" },
+        { "title": "Explore uma Métrica", "description": "Clique em qualquer métrica para aprofundar. Veja histórico, tendências e o que causou mudanças.", "action": "Selecionar Métrica" }
+      ]
+    },
+    "crisisResponse": {
+      "title": "Protocolo de Resposta a Crises",
+      "subtitle": "Quando as coisas dão errado, mova-se rápido com informação completa",
+      "persona": "Líder de Incidente",
+      "duration": "Resposta imediata",
+      "steps": [
+        {
+          "title": "Avalie Situação no Pulse",
+          "description": "Entenda instantaneamente o que está acontecendo. Métricas vermelhas localizam o problema. Impactos em cascata aparecem em tempo real.",
+          "space": "pulse",
+          "keyActions": ["Identificar sistemas afetados", "Confirmar nível de severidade", "Checar alertas em cascata"]
+        },
+        {
+          "title": "Rastreie Causa Raiz com Lineage",
+          "description": "Trace caminhos de dados de volta. O que mudou? Onde começou? O Lineage mostra o ponto exato de falha.",
+          "pillar": "lineage",
+          "keyActions": ["Rastrear fluxo de dados", "Identificar mudança causadora", "Documentar causa raiz"]
+        },
+        {
+          "title": "Colete Evidências com Witness",
+          "description": "Capture registros imutáveis do que aconteceu. Necessário para post-mortem e requisitos de conformidade.",
+          "sovereign": "witness",
+          "keyActions": ["Exportar timeline do incidente", "Capturar estados do sistema", "Preservar logs de auditoria"]
+        },
+        {
+          "title": "Coordene Resposta com Council",
+          "description": "Reúna especialistas de IA de diferentes domínios. Segurança, operações e continuidade de negócio colaboram no plano.",
+          "space": "council",
+          "keyActions": ["Montar equipe de resposta", "Obter avaliação de impacto", "Criar plano de ação"]
+        },
+        {
+          "title": "Execute Recuperação via Bridge",
+          "description": "Envie correções e rollbacks para sistemas afetados. O Bridge coordena resposta mantendo trilha de auditoria.",
+          "space": "bridge",
+          "keyActions": ["Implantar correções", "Executar rollbacks", "Verificar recuperação"]
+        },
+        {
+          "title": "Documente e Aprenda com Legacy",
+          "description": "Capture o que aconteceu e o que foi aprendido. Equipes futuras agradecerão quando enfrentarem situações similares.",
+          "sovereign": "legacy",
+          "keyActions": ["Criar relatório de incidente", "Documentar lições aprendidas", "Atualizar playbooks"]
+        }
+      ]
+    },
+    "boardPresentation": {
+      "title": "Preparação para Apresentação ao Conselho",
+      "subtitle": "Impressione o conselho com insights baseados em dados",
+      "persona": "CEO / CFO / Apresentador ao Conselho",
+      "duration": "30 minutos",
+      "steps": [
+        {
+          "title": "Extraia KPIs Estratégicos do Helm",
+          "description": "Reúna todas as métricas-chave em um só lugar. O Helm mostra progresso contra objetivos estratégicos com análise de tendências.",
+          "pillar": "helm",
+          "keyActions": ["Exportar dashboard de KPIs", "Gerar análise de tendências", "Destacar conquistas"]
+        },
+        {
+          "title": "Construa Previsões com Predict",
+          "description": "Mostre não apenas onde está, mas para onde vai. Gere previsões com intervalos de confiança.",
+          "pillar": "predict",
+          "keyActions": ["Gerar previsões", "Criar projeções de receita", "Construir cenários"]
+        },
+        {
+          "title": "Valide Dados com Lineage",
+          "description": "Membros do conselho fazem perguntas difíceis. Saiba exatamente de onde cada número vem.",
+          "pillar": "lineage",
+          "keyActions": ["Rastrear números-chave", "Documentar fontes", "Preparar linhagem de dados"]
+        },
+        {
+          "title": "Modele Cenários Hipotéticos com Lens",
+          "description": "Esteja preparado para perguntas 'E se...?'. Modele cenários estratégicos antecipadamente e tenha respostas prontas.",
+          "space": "lens",
+          "keyActions": ["Modelar cenários de crescimento", "Analisar fatores de risco", "Preparar planos alternativos"]
+        },
+        {
+          "title": "Obtenha Síntese de IA do Oracle",
+          "description": "Peça ao Oracle para sintetizar dados em insights-chave e pontos de discussão. Ele encontra padrões que humanos podem perder.",
+          "sovereign": "oracle",
+          "keyActions": ["Gerar insights", "Solicitar pontos de discussão", "Identificar pontos cegos"]
+        },
+        {
+          "title": "Garanta Conformidade com Guard",
+          "description": "Certifique-se de que o que você está apresentando não cria risco de conformidade. O Guard verifica se todos os dados atendem requisitos de governança.",
+          "pillar": "guard",
+          "keyActions": ["Executar verificações de conformidade", "Verificar classificação de dados", "Aprovar apresentação"]
+        }
+      ]
+    },
+    "strategist": {
+      "title": "Guia do Planejador Estratégico",
+      "subtitle": "Do insight à estratégia com análise impulsionada por IA",
+      "persona": "Estratégia / Planejamento",
+      "duration": "45 minutos",
+      "steps": [
+        {
+          "title": "Colete Inteligência do Graph",
+          "description": "Explore sua base de conhecimento. Descubra conexões entre dados de mercado, métricas internas e inteligência competitiva.",
+          "space": "graph",
+          "keyActions": ["Buscar tópico", "Explorar conexões", "Salvar insights-chave"]
+        },
+        {
+          "title": "Preveja Tendências com Predict",
+          "description": "Use modelos de IA para projetar métricas-chave. Entenda para onde as tendências atuais estão indo.",
+          "pillar": "predict",
+          "keyActions": ["Selecionar alvo de previsão", "Revisar projeções", "Analisar intervalos de confiança"]
+        },
+        {
+          "title": "Pergunte ao Oracle",
+          "description": "Obtenha respostas impulsionadas por IA para perguntas estratégicas. O Oracle sintetiza todo o conhecimento disponível.",
+          "sovereign": "oracle",
+          "keyActions": ["Formular pergunta estratégica", "Revisar resposta", "Verificar fontes"]
+        },
+        {
+          "title": "Modele Cenários no Lens",
+          "description": "Construa cenários estratégicos. E se os concorrentes agirem? Mercados mudarem? Novas regulações surgirem?",
+          "space": "lens",
+          "keyActions": ["Definir variáveis de cenário", "Executar múltiplos futuros", "Identificar estratégia ótima"]
+        },
+        {
+          "title": "Teste no Mirror",
+          "description": "Simule iniciativas estratégicas antes de se comprometer. O Mirror permite testar sem risco.",
+          "sovereign": "mirror",
+          "keyActions": ["Criar simulação", "Executar teste de iniciativa", "Analisar resultados"]
+        }
+      ]
+    },
+    "aiModelLaunch": {
+      "title": "Jornada de Implantação de Modelo de IA",
+      "subtitle": "Do protótipo à produção com confiança",
+      "persona": "Engenheiro de ML / Cientista de Dados",
+      "duration": "1-2 horas",
+      "steps": [
+        {
+          "title": "Registre seu Modelo no BlackBox",
+          "description": "Carregue seu modelo treinado no registro. O BlackBox rastreia versões, dependências e proveniência automaticamente.",
+          "sovereign": "blackbox",
+          "keyActions": ["Carregar artefatos do modelo", "Registrar metadados", "Vincular dados de treinamento"]
+        },
+        {
+          "title": "Verifique Viés no Ethics",
+          "description": "Antes de qualquer modelo ir para produção, deve passar por revisão ética. Execute detecção de viés em grupos demográficos.",
+          "pillar": "ethics",
+          "keyActions": ["Executar avaliação de viés", "Revisar métricas de equidade", "Documentar conformidade"]
+        },
+        {
+          "title": "Teste com Dados Sintéticos do Mirage",
+          "description": "Gere casos extremos e exemplos adversários. Garanta que seu modelo lida com o inesperado sem riscos de privacidade.",
+          "sovereign": "mirage",
+          "keyActions": ["Gerar dados de teste", "Executar testes de stress", "Validar casos extremos"]
+        },
+        {
+          "title": "Simule no Mirror",
+          "description": "Implante primeiro em um gêmeo digital. Veja como seu modelo performa com padrões de tráfego reais antes de tocar produção.",
+          "sovereign": "mirror",
+          "keyActions": ["Implantar no Mirror", "Simular carga de produção", "Comparar previsões"]
+        },
+        {
+          "title": "Configure Explicabilidade no Glass",
+          "description": "Toda previsão precisa ser explicável. Configure atribuição de fatores e geração contrafactual para transparência.",
+          "sovereign": "glass",
+          "keyActions": ["Habilitar explicabilidade", "Configurar fatores", "Testar explicações"]
+        },
+        {
+          "title": "Implante e Monitore com Predict",
+          "description": "Vá para produção com confiança. O Predict monitora performance, detecta deriva e alerta sobre degradação.",
+          "pillar": "predict",
+          "keyActions": ["Promover para produção", "Configurar monitoramento", "Configurar alertas de deriva"]
+        }
+      ]
+    },
+    "newEmployeeOnboarding": {
+      "title": "Onboarding de Novos Membros da Equipe",
+      "subtitle": "Seja produtivo em dias, não meses",
+      "persona": "Novo Funcionário / Gerente de Contratação",
+      "duration": "Autodirigido",
+      "steps": [
+        {
+          "title": "Acesse seu Workspace via Key",
+          "description": "Um login dá acesso a tudo que você precisa. O Key gerencia suas permissões baseado no seu papel.",
+          "sovereign": "key",
+          "keyActions": ["Completar configuração SSO", "Verificar atribuições de papel", "Acessar sistemas concedidos"]
+        },
+        {
+          "title": "Explore Conhecimento Organizacional no Graph",
+          "description": "Navegue o universo de conhecimento. Encontre documentação, especialistas e contexto para seu novo papel.",
+          "space": "graph",
+          "keyActions": ["Buscar recursos do papel", "Encontrar conhecimento da equipe", "Identificar contatos-chave"]
+        },
+        {
+          "title": "Aprenda do Legacy",
+          "description": "Acesse conhecimento institucional de predecessores. Melhores práticas, razões de decisão e lições aprendidas.",
+          "sovereign": "legacy",
+          "keyActions": ["Revisar playbooks da equipe", "Estudar decisões passadas", "Aprender melhores práticas"]
+        },
+        {
+          "title": "Entenda suas Métricas no Helm",
+          "description": "Todo papel tem KPIs. Aprenda em que é medido e como rastrear seu progresso.",
+          "pillar": "helm",
+          "keyActions": ["Revisar métricas atribuídas", "Entender objetivos", "Configurar dashboard pessoal"]
+        },
+        {
+          "title": "Configure Workflows Automatizados no Flow",
+          "description": "Não reinvente processos. Conecte-se a workflows existentes e automatize tarefas repetitivas desde o dia um.",
+          "pillar": "flow",
+          "keyActions": ["Juntar-se a workflows da equipe", "Configurar notificações", "Automatizar relatórios"]
+        },
+        {
+          "title": "Conheça seus Assistentes de IA nos Agents",
+          "description": "Você tem colegas de IA prontos para ajudar. Conheça os agentes relevantes para seu papel e aprenda a colaborar.",
+          "pillar": "agents",
+          "keyActions": ["Conhecer agentes de domínio", "Fazer primeiras perguntas", "Salvar respostas úteis"]
+        }
+      ]
+    },
+    "mergerIntegration": {
+      "title": "Integração de Dados de M&A",
+      "subtitle": "Funda organizações sem perder inteligência",
+      "persona": "Líder de Integração / CIO",
+      "duration": "Contínuo",
+      "steps": [
+        {
+          "title": "Mapeie Ambos os Cenários de Dados com Lineage",
+          "description": "Antes de fundir, precisa entender os dois lados. O Lineage cria um mapa completo de entidades e relacionamentos.",
+          "pillar": "lineage",
+          "keyActions": ["Escanear dados do adquirente", "Escanear dados do alvo", "Identificar sobreposições"]
+        },
+        {
+          "title": "Unifique Métricas no Helm",
+          "description": "Organizações diferentes medem diferentemente. Harmonize definições de KPIs para uma única fonte de verdade.",
+          "pillar": "helm",
+          "keyActions": ["Mapear definições de métricas", "Resolver conflitos", "Criar dashboard unificado"]
+        },
+        {
+          "title": "Conecte Sistemas via Mesh",
+          "description": "Construa a camada de integração. O Mesh lida com a complexidade de conectar sistemas díspares com protocolos diferentes.",
+          "sovereign": "mesh",
+          "keyActions": ["Mapear sistemas fonte", "Construir integrações", "Testar fluxos de dados"]
+        },
+        {
+          "title": "Preserve Conhecimento Institucional no Legacy",
+          "description": "M&A frequentemente significa perder pessoas-chave. Capture seu conhecimento antes das transições.",
+          "sovereign": "legacy",
+          "keyActions": ["Entrevistar pessoal-chave", "Documentar processos", "Arquivar conhecimento tribal"]
+        },
+        {
+          "title": "Funda Sistemas de Identidade via Key",
+          "description": "Unifique quem tem acesso a quê. O Key integra provedores de identidade e harmoniza permissões.",
+          "sovereign": "key",
+          "keyActions": ["Fundir fontes de identidade", "Reconciliar permissões", "Habilitar acesso unificado"]
+        },
+        {
+          "title": "Monitore Saúde da Integração",
+          "description": "Rastreie a saúde da integração em tempo real. Detecte problemas antes que se tornem problemas.",
+          "pillar": "health",
+          "keyActions": ["Monitorar qualidade de dados", "Rastrear status de sincronização", "Alertar sobre anomalias"]
+        }
+      ]
+    },
+    "regulatoryAudit": {
+      "title": "Preparação para Auditoria Regulatória",
+      "subtitle": "Transforme a temporada de auditoria de pesadelo em não-evento",
+      "persona": "Diretor de Conformidade",
+      "duration": "2-4 horas",
+      "steps": [
+        {
+          "title": "Extraia Evidências de Auditoria do Witness",
+          "description": "Toda ação na sua organização é registrada. O Witness fornece evidências criptograficamente comprovadas para auditores.",
+          "sovereign": "witness",
+          "keyActions": ["Definir escopo de auditoria", "Exportar pacote de evidências", "Gerar atestações"]
+        },
+        {
+          "title": "Verifique Conformidade de Políticas no Guard",
+          "description": "Mostre aos auditores que suas políticas são realmente aplicadas. O Guard fornece postura de conformidade em tempo real e histórico de violações.",
+          "pillar": "guard",
+          "keyActions": ["Gerar relatório de conformidade", "Mostrar aplicação de políticas", "Documentar exceções"]
+        },
+        {
+          "title": "Demonstre Governança de IA no Ethics",
+          "description": "Regulações de IA chegaram. Mostre seus testes de viés, documentação de decisões e processos de revisão ética.",
+          "pillar": "ethics",
+          "keyActions": ["Exportar revisões de ética", "Mostrar resultados de testes de viés", "Documentar governança de IA"]
+        },
+        {
+          "title": "Explique Decisões de IA com Glass",
+          "description": "Quando auditores perguntarem 'por que o sistema decidiu isso?', o Glass fornece explicações completas.",
+          "sovereign": "glass",
+          "keyActions": ["Gerar relatórios de decisão", "Mostrar atribuição de fatores", "Fornecer contrafactuais"]
+        },
+        {
+          "title": "Rastreie Linhagem de Dados para Precisão",
+          "description": "Prove que seus números são precisos mostrando de onde vieram. O Lineage fornece rastreabilidade da fonte ao relatório.",
+          "pillar": "lineage",
+          "keyActions": ["Exportar mapas de linhagem", "Documentar transformações", "Provar precisão de dados"]
+        },
+        {
+          "title": "Revise Controles de Acesso via Key",
+          "description": "Quem teve acesso a quê e quando? O Key fornece trilhas de auditoria de acesso completas para qualquer período.",
+          "sovereign": "key",
+          "keyActions": ["Exportar logs de acesso", "Mostrar histórico de permissões", "Documentar controles"]
+        }
+      ]
+    },
+    "customerChurnPrevention": {
+      "title": "Prevenção de Churn de Clientes",
+      "subtitle": "Retenha clientes antes que partam",
+      "persona": "Sucesso do Cliente / Operações de Receita",
+      "duration": "Workflow diário",
+      "steps": [
+        {
+          "title": "Identifique Clientes em Risco com Predict",
+          "description": "Modelos de ML analisam centenas de sinais para pontuar risco de churn. Saiba quem está em risco antes que eles saibam.",
+          "pillar": "predict",
+          "keyActions": ["Revisar pontuações de risco", "Identificar maiores riscos", "Entender fatores de risco"]
+        },
+        {
+          "title": "Entenda Saúde do Cliente no Helm",
+          "description": "Rastreie métricas de saúde do cliente. Tendências de uso, tickets de suporte, pontuações de engajamento - tudo em uma visão.",
+          "pillar": "helm",
+          "keyActions": ["Revisar pontuações de saúde", "Verificar métricas de engajamento", "Identificar tendências"]
+        },
+        {
+          "title": "Explore Jornada do Cliente no Graph",
+          "description": "Veja a história completa do cliente. Toda interação, todo ponto de contato, todo sinal - conectados em contexto.",
+          "space": "graph",
+          "keyActions": ["Ver timeline do cliente", "Explorar interações", "Encontrar padrões"]
+        },
+        {
+          "title": "Obtenha Recomendações de Retenção do Council",
+          "description": "Reúna seus conselheiros de IA para estratégias de retenção. Cada cliente é único - obtenha abordagens personalizadas.",
+          "space": "council",
+          "keyActions": ["Apresentar perfil do cliente", "Obter ideias de retenção", "Priorizar ações"]
+        },
+        {
+          "title": "Acione Workflows de Retenção no Flow",
+          "description": "Transforme recomendações em ação. Alcance automatizado, escalações e acompanhamentos.",
+          "pillar": "flow",
+          "keyActions": ["Acionar alcance", "Agendar acompanhamentos", "Escalar para equipe"]
+        },
+        {
+          "title": "Modele Impacto de Receita no Lens",
+          "description": "Quantifique o que está em jogo. O Lens mostra impacto de receita de cenários de churn e sucesso de intervenção.",
+          "space": "lens",
+          "keyActions": ["Modelar impacto de churn", "Calcular ROI de intervenção", "Priorizar esforços"]
+        }
+      ]
+    },
+    "productLaunch": {
+      "title": "Orquestração de Lançamento de Produto",
+      "subtitle": "Lance com confiança e visibilidade em tempo real",
+      "persona": "Gerente de Produto / Líder de Lançamento",
+      "duration": "Dia do lançamento + monitoramento",
+      "steps": [
+        {
+          "title": "Defina KPIs de Lançamento no Helm",
+          "description": "Defina sucesso antes de lançar. Rastreie adoção, performance e métricas de negócio em tempo real.",
+          "pillar": "helm",
+          "keyActions": ["Definir métricas de sucesso", "Estabelecer objetivos", "Configurar dashboard"]
+        },
+        {
+          "title": "Verifique Prontidão de Sistemas no Health",
+          "description": "Tudo está verde antes do lançamento? O Health dá confiança de que todos os sistemas estão prontos.",
+          "pillar": "health",
+          "keyActions": ["Verificar todos os sistemas", "Verificar capacidade", "Confirmar dependências"]
+        },
+        {
+          "title": "Simule Carga de Lançamento no Mirror",
+          "description": "Teste seu cenário de lançamento em um gêmeo digital. Veja como os sistemas se comportam sob carga esperada.",
+          "sovereign": "mirror",
+          "keyActions": ["Criar simulação de lançamento", "Executar teste de carga", "Identificar gargalos"]
+        },
+        {
+          "title": "Monitore em Tempo Real no Pulse",
+          "description": "Visibilidade no dia do lançamento. Observe métricas, erros e comportamento de usuário enquanto lança.",
+          "space": "pulse",
+          "keyActions": ["Monitorar métricas de lançamento", "Observar anomalias", "Rastrear adoção"]
+        },
+        {
+          "title": "Responda a Problemas via Bridge",
+          "description": "Quando algo precisa de ajuste, aja rápido. O Bridge permite empurrar mudanças através dos sistemas instantaneamente.",
+          "space": "bridge",
+          "keyActions": ["Implantar hotfixes", "Ajustar configurações", "Escalar recursos"]
+        },
+        {
+          "title": "Capture Aprendizados no Legacy",
+          "description": "Documente o que funcionou e o que não funcionou. Lançamentos futuros serão melhores por isso.",
+          "sovereign": "legacy",
+          "keyActions": ["Documentar log de lançamento", "Registrar problemas", "Anotar melhorias"]
+        }
+      ]
+    },
+    "dataQualityImprovement": {
+      "title": "Programa de Melhoria de Qualidade de Dados",
+      "subtitle": "Transforme dados de passivo em ativo",
+      "persona": "Steward de Dados / Líder de Qualidade",
+      "duration": "Programa contínuo",
+      "steps": [
+        {
+          "title": "Avalie Qualidade Atual no Lineage",
+          "description": "Você não pode melhorar o que não mede. O Lineage pontua qualidade em cada estágio da jornada de dados.",
+          "pillar": "lineage",
+          "keyActions": ["Executar avaliação de qualidade", "Identificar áreas problemáticas", "Priorizar problemas"]
+        },
+        {
+          "title": "Rastreie Métricas de Qualidade no Helm",
+          "description": "Faça da qualidade de dados um KPI de primeira classe. Rastreie completude, precisão, atualidade e consistência.",
+          "pillar": "helm",
+          "keyActions": ["Criar dashboard de qualidade", "Definir metas de melhoria", "Rastrear progresso"]
+        },
+        {
+          "title": "Defina Regras de Qualidade no Guard",
+          "description": "Defina e aplique padrões de qualidade. O Guard valida dados automaticamente contra suas regras.",
+          "pillar": "guard",
+          "keyActions": ["Definir regras de qualidade", "Configurar validação", "Configurar alertas"]
+        },
+        {
+          "title": "Automatize Verificações de Qualidade no Flow",
+          "description": "Construa qualidade em seus pipelines. Verificações automatizadas rodam continuamente, capturando problemas cedo.",
+          "pillar": "flow",
+          "keyActions": ["Construir workflows de qualidade", "Adicionar etapas de validação", "Configurar remediação"]
+        },
+        {
+          "title": "Monitore Saúde de Qualidade",
+          "description": "Observe tendências de qualidade em seu patrimônio de dados. Detecte degradação cedo e celebre melhorias.",
+          "pillar": "health",
+          "keyActions": ["Monitorar tendências de qualidade", "Alertar sobre degradação", "Reportar melhorias"]
+        },
+        {
+          "title": "Documente Padrões no Legacy",
+          "description": "Codifique seus padrões de qualidade para a organização. Faça qualidade institucional, não individual.",
+          "sovereign": "legacy",
+          "keyActions": ["Documentar padrões", "Criar playbooks", "Treinar equipes"]
+        }
+      ]
+    },
+    "securityThreatResponse": {
+      "title": "Resposta a Ameaças de Segurança",
+      "subtitle": "Detecte, contenha e elimine ameaças sistematicamente",
+      "persona": "Analista de Segurança / CISO",
+      "duration": "Resposta imediata",
+      "steps": [
+        {
+          "title": "Detecte Ameaça com Guard",
+          "description": "O motor de detecção de ameaças do Guard identifica atividade suspeita. Classificado por severidade e confiança.",
+          "pillar": "guard",
+          "keyActions": ["Revisar alertas de ameaça", "Avaliar severidade", "Confirmar ameaça"]
+        },
+        {
+          "title": "Avalie Raio de Explosão com Lineage",
+          "description": "Quais sistemas e dados podem ser afetados? O Lineage mapeia o impacto potencial da ameaça.",
+          "pillar": "lineage",
+          "keyActions": ["Mapear sistemas afetados", "Identificar dados sensíveis", "Avaliar exposição"]
+        },
+        {
+          "title": "Revise Logs de Acesso com Key",
+          "description": "Quem acessou o quê e quando? O Key fornece trilha forense para entender o vetor de ataque.",
+          "sovereign": "key",
+          "keyActions": ["Extrair logs de acesso", "Identificar anomalias", "Rastrear caminho do ataque"]
+        },
+        {
+          "title": "Preserve Evidências com Witness",
+          "description": "Capture registros imutáveis antes que contenção altere evidências. Necessário para investigações.",
+          "sovereign": "witness",
+          "keyActions": ["Capturar estado do sistema", "Exportar logs de auditoria", "Preservar timeline"]
+        },
+        {
+          "title": "Execute Contenção via Bridge",
+          "description": "Isole a ameaça. O Bridge pode revogar acesso, isolar sistemas e implantar contramedidas.",
+          "space": "bridge",
+          "keyActions": ["Revogar acesso comprometido", "Isolar sistemas", "Implantar patches"]
+        },
+        {
+          "title": "Coordene com Council",
+          "description": "Reúna especialistas de segurança de IA. Eles ajudam a analisar o ataque e recomendar resposta abrangente.",
+          "space": "council",
+          "keyActions": ["Analisar padrões de ataque", "Obter plano de remediação", "Avaliar riscos"]
+        }
+      ]
+    }
+  },
+  "accessibility": {
+    "skipToMain": "Pular para o conteúdo principal",
+    "skipToNav": "Pular para navegação",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "expandSection": "Expandir seção",
+    "collapseSection": "Recolher seção",
+    "loading": "Carregando conteúdo",
+    "newWindow": "Abre em nova janela",
+    "externalLink": "Link externo",
+    "required": "Campo obrigatório",
+    "optional": "Opcional"
+  },
+  "_meta": { "direction": "ltr", "language": "Português", "completeness": "100%" }
+}
