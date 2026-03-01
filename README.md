@@ -68,6 +68,16 @@ Datacendia is an **AI-native decision intelligence platform** where multiple AI 
 └─────────────────────────────────────────────────────────┘
 ```
 
+### See It in Action
+
+<div align="center">
+
+<img src="docs/screenshots/council-deliberation.png" alt="Datacendia Council Deliberation — five demo decisions loaded" width="900">
+
+*The Council deliberation dashboard with five pre-seeded decisions — `docker compose -f docker-compose.demo.yml up -d`*
+
+</div>
+
 ### Key Capabilities
 
 - **The Council** — Multi-agent deliberation with configurable agent panels (financial, legal, ethical, adversarial, domain-specific)
