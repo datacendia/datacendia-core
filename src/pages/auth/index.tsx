@@ -565,5 +565,6 @@ export const ResetPasswordPage: React.FC = () => {
 
 // Re-export enhanced pages
 export { VerifyEmailPage } from './VerifyEmailPage';
+export { FindAccountPage } from './FindAccountPage';
 
 export default LoginPage;

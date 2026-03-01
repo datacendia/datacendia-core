@@ -42,6 +42,14 @@ export const authApi = {
     return response;
   },
 
+  async findAccount(data: { name: string; organizationName: string }) {
+    return api.post<{
+      found: boolean;
+      message: string;
+      accounts: Array<{ name: string; maskedEmail: string }>;
+    }>('/auth/find-account', data);
+  },
+
   async logout() {
     await api.post('/auth/logout');
     tokenManager.clearTokens();

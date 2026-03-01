@@ -295,12 +295,18 @@ export const LoginPage: React.FC = () => {
             </button>
           </form>
 
-          {/* Request Access */}
-          <div className="mt-8 text-center">
+          {/* Account Links */}
+          <div className="mt-8 text-center space-y-2">
             <p className="text-xs text-gray-600">
-              Don't have access?{' '}
-              <Link to="/" className="text-[#c9a84c]/70 hover:text-[#c9a84c] transition-colors">
-                Request Access →
+              Don't have an account?{' '}
+              <Link to="/register" className="text-[#c9a84c]/70 hover:text-[#c9a84c] transition-colors">
+                Create one →
+              </Link>
+            </p>
+            <p className="text-xs text-gray-600">
+              Can't remember your email?{' '}
+              <Link to="/find-account" className="text-[#c9a84c]/70 hover:text-[#c9a84c] transition-colors">
+                Find my account →
               </Link>
             </p>
           </div>

@@ -25,6 +25,9 @@ const ResetPasswordPage = lazy(() =>
 const VerifyEmailPage = lazy(() =>
   import('../pages/auth/VerifyEmailPage').then((m) => ({ default: m.VerifyEmailPage }))
 );
+const FindAccountPage = lazy(() =>
+  import('../pages/auth/FindAccountPage').then((m) => ({ default: m.FindAccountPage }))
+);
 const OnboardingWizard = lazy(() =>
   import('../pages/onboarding').then((m) => ({ default: m.OnboardingWizard }))
 );
@@ -39,11 +42,13 @@ export const authRoutes: RouteObject[] = [
   { path: '/forgot-password', element: w(ForgotPasswordPage) },
   { path: '/reset-password', element: w(ResetPasswordPage) },
   { path: '/verify-email', element: w(VerifyEmailPage) },
+  { path: '/find-account', element: w(FindAccountPage) },
   { path: '/auth/login', element: w(LoginPage) },
   { path: '/auth/register', element: w(RegisterPage) },
   { path: '/auth/forgot-password', element: w(ForgotPasswordPage) },
   { path: '/auth/reset-password', element: w(ResetPasswordPage) },
   { path: '/auth/verify-email', element: w(VerifyEmailPage) },
+  { path: '/auth/find-account', element: w(FindAccountPage) },
   { path: '/onboarding', element: w(OnboardingWizard) },
   { path: '/welcome', element: w(OnboardingWizard) },
   { path: '/get-started', element: w(OnboardingWizard) },
