@@ -4,7 +4,7 @@
 
 <img src="docs/Inception Badges/for-screen/nvidia-inception-program-badge-rgb-for-screen.svg" alt="NVIDIA Inception Program Member" height="60">
 
-**Open-Source AI Decision Intelligence Engine**
+**Open-Source AI Decision Intelligence Platform � sovereign-first.**
 
 Multi-agent deliberation · Immutable audit trails · 29 industry verticals · Sovereign-first
 
@@ -41,7 +41,7 @@ Multi-agent deliberation · Immutable audit trails · 29 industry verticals · S
 
 ## What is Datacendia?
 
-Datacendia is an **AI-native decision intelligence platform** where multiple AI agents with distinct perspectives deliberate on your behalf — then every decision is recorded in an immutable, auditable ledger.
+Datacendia is an open-core AI decision intelligence platform where multiple AI agents with distinct perspectives deliberate on your behalf — then every decision is recorded in an immutable, auditable ledger.
 
 **This is not another chatbot.** It's an operating system for enterprise decisions.
 
