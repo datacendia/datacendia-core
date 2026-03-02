@@ -1,0 +1,106 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist-community"
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "dist-community",
+    "src/__tests__/**/*",
+    "src/**/__tests__/**/*",
+    "src/**/*.test.ts",
+    "src/**/*.spec.ts",
+
+    // =========================================================================
+    // ENTERPRISE DIRECTORIES — excluded from Community Edition build
+    // See COMMUNITY.md for the full boundary definition
+    // =========================================================================
+
+    // Sovereign architecture patterns (22 patterns)
+    "src/services/sovereign/**",
+
+    // Enterprise services (18 services)
+    "src/services/enterprise/**",
+
+    // Advanced modules
+    "src/services/collapse/**",
+    "src/services/sgas/**",
+    "src/services/dcii/**",
+    "src/services/scge/**",
+    "src/services/cortex/**",
+    "src/services/apotheosis/**",
+    "src/services/crucible/**",
+    "src/services/panopticon/**",
+
+    // Full vertical packs (enterprise) — NOT the vertical definitions in verticals/
+    "src/services/legal/**",
+    "src/services/strategic/**",
+    "src/services/forecasting/**",
+    "src/services/insurance/**",
+
+    // Premium product services
+    "src/services/CendiaCascadeService.ts",
+    "src/services/CendiaCrucibleService.ts",
+    "src/services/CendiaHorizonService.ts",
+    "src/services/CendiaPanopticonService.ts",
+    "src/services/CendiaAegisService.ts",
+    "src/services/CendiaEternalService.ts",
+    "src/services/CendiaSymbiontService.ts",
+    "src/services/CendiaPredictService.ts",
+    "src/services/CendiaRewindService.ts",
+    "src/services/CendiaApotheosisService.ts",
+    "src/services/CendiaOrbitService.ts",
+    "src/services/CendiaVoxService.ts",
+    "src/services/CendiaOmniTranslateService.ts",
+
+    // Licensing
+    "src/services/licensing.service.ts",
+
+    // =========================================================================
+    // ENTERPRISE ROUTE FILES — wire enterprise services to HTTP endpoints
+    // Domain routers load these dynamically via mountEnterpriseRoutes()
+    // =========================================================================
+    "src/routes/enterprise.ts",
+    "src/routes/enterprise-connectors.ts",
+    "src/routes/strategic.ts",
+    "src/routes/sso.ts",
+    "src/routes/cascade.ts",
+    "src/routes/legal.ts",
+    "src/routes/legal-research.ts",
+    "src/routes/legal-services.ts",
+    "src/routes/sovereign-organs.ts",
+    "src/routes/sovereign-arch.ts",
+    "src/routes/sovereign-security.ts",
+    "src/routes/vault.ts",
+    "src/routes/eternal.ts",
+    "src/routes/symbiont.ts",
+    "src/routes/crucible.ts",
+    "src/routes/crucible-enterprise.ts",
+    "src/routes/aegis.ts",
+    "src/routes/panopticon.ts",
+    "src/routes/dcii.ts",
+    "src/routes/sgas.ts",
+    "src/routes/scge.ts",
+    "src/routes/collapse.ts",
+    "src/routes/forecasting.ts",
+    "src/routes/horizon.ts",
+    "src/routes/cortex-core.ts",
+    "src/routes/omnitranslate.ts",
+    "src/routes/vertical-config.ts",
+    "src/routes/vox.ts",
+    "src/routes/apotheosis.ts",
+    "src/routes/express.ts",
+    "src/routes/ai-insurance.ts",
+    "src/routes/bias-detection.ts",
+    "src/routes/clamav.ts",
+
+    // Enterprise adapter files
+    "src/adapters/ClientHostedAdapter.ts",
+    "src/adapters/DataAdapter.ts",
+
+    // Enterprise test files
+    "src/tests/legal-deliberation-test.ts"
+  ]
+}

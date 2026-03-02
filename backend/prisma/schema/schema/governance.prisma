@@ -1,0 +1,891 @@
+// Governance Domain - Compliance, Panopticon, Regulatory, Ethics
+
+model approvals {
+  id                  String              @id
+  organization_id     String
+  type                ApprovalType
+  reference_id        String
+  requester_id        String
+  title               String
+  description         String?
+  status              ApprovalStatus      @default(PENDING)
+  reviewer_id         String?
+  reviewed_at         DateTime?
+  comments            String?
+  created_at          DateTime            @default(now())
+  workflow_executions workflow_executions @relation(fields: [reference_id], references: [id], map: "approval_execution_fkey")
+  deliberations       deliberations       @relation(fields: [reference_id], references: [id])
+  users               users               @relation(fields: [requester_id], references: [id])
+
+  @@index([organization_id, status])
+}
+
+model panopticon_regulations {
+  id               String                     @id @default(uuid())
+  organization_id  String
+  framework_code   String // NIST, EU_AI_ACT, BASEL, DORA, SOX, HIPAA, GDPR, etc.
+  framework_name   String
+  jurisdiction     String // US, EU, UK, Global, etc.
+  version          String
+  effective_date   DateTime?
+  sunset_date      DateTime?
+  source_url       String?
+  raw_content      String?                    @db.Text
+  parsed_content   Json? // Structured extraction
+  status           PanopticonRegulationStatus @default(ACTIVE)
+  last_ingested_at DateTime                   @default(now())
+  created_at       DateTime                   @default(now())
+  updated_at       DateTime                   @updatedAt
+
+  organization organizations            @relation(fields: [organization_id], references: [id])
+  obligations  panopticon_obligations[]
+  violations   panopticon_violations[]
+
+  @@unique([organization_id, framework_code, version])
+  @@index([organization_id, status])
+  @@index([framework_code])
+  @@index([jurisdiction])
+}
+
+model panopticon_obligations {
+  id                 String                     @id @default(uuid())
+  regulation_id      String
+  obligation_code    String // Unique identifier within framework
+  title              String
+  description        String                     @db.Text
+  requirement_type   PanopticonRequirementType
+  priority           PanopticonPriority         @default(MEDIUM)
+  due_date           DateTime?
+  recurring          Boolean                    @default(false)
+  recurrence_pattern String? // CRON pattern
+  controls           Json                       @default("[]") // Mapped control IDs
+  evidence_required  Json                       @default("[]") // Required documentation
+  automation_status  PanopticonAutomationStatus @default(MANUAL)
+  created_at         DateTime                   @default(now())
+  updated_at         DateTime                   @updatedAt
+
+  regulation panopticon_regulations  @relation(fields: [regulation_id], references: [id], onDelete: Cascade)
+  alignments panopticon_alignments[]
+  violations panopticon_violations[]
+
+  @@unique([regulation_id, obligation_code])
+  @@index([regulation_id])
+  @@index([requirement_type])
+}
+
+model panopticon_alignments {
+  id               String   @id @default(uuid())
+  obligation_id    String
+  entity_type      String // process, data_flow, system, policy
+  entity_id        String
+  entity_name      String
+  alignment_score  Float    @default(0) // 0-100
+  gap_analysis     Json? // What's missing
+  remediation_plan Json? // How to fix
+  last_assessed_at DateTime @default(now())
+  created_at       DateTime @default(now())
+
+  obligation panopticon_obligations @relation(fields: [obligation_id], references: [id], onDelete: Cascade)
+
+  @@index([obligation_id])
+  @@index([entity_type, entity_id])
+}
+
+model panopticon_violations {
+  id                String                    @id @default(uuid())
+  organization_id   String
+  regulation_id     String
+  obligation_id     String?
+  violation_type    PanopticonViolationType
+  severity          PanopticonPriority
+  title             String
+  description       String                    @db.Text
+  affected_entities Json                      @default("[]")
+  detected_at       DateTime                  @default(now())
+  evidence          Json?
+  status            PanopticonViolationStatus @default(OPEN)
+  resolution        String?
+  resolved_at       DateTime?
+  resolved_by       String?
+  created_at        DateTime                  @default(now())
+
+  organization organizations           @relation(fields: [organization_id], references: [id])
+  regulation   panopticon_regulations  @relation(fields: [regulation_id], references: [id])
+  obligation   panopticon_obligations? @relation(fields: [obligation_id], references: [id])
+
+  @@index([organization_id, status])
+  @@index([severity])
+}
+
+model panopticon_forecasts {
+  id                  String                 @id @default(uuid())
+  organization_id     String
+  forecast_type       PanopticonForecastType
+  title               String
+  description         String                 @db.Text
+  source              String // News, regulatory body, expert analysis
+  probability         Float // 0-1
+  impact_score        Float // 0-100
+  affected_frameworks Json                   @default("[]")
+  recommended_actions Json                   @default("[]")
+  horizon_days        Int // Days until expected
+  confidence          Float                  @default(0.7)
+  created_at          DateTime               @default(now())
+
+  organization organizations @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id])
+  @@index([forecast_type])
+}
+
+model ethics_principles {
+  id              String          @id @default(uuid())
+  organization_id String
+  name            String
+  description     String
+  category        EthicsCategory
+  weight          Float           @default(1.0)
+  status          PrincipleStatus @default(ACTIVE)
+  requirements    Json            @default("[]")
+  created_at      DateTime        @default(now())
+  updated_at      DateTime        @updatedAt
+
+  reviews ethics_reviews[]
+
+  @@unique([organization_id, name])
+}
+
+model ethics_reviews {
+  id              String        @id @default(uuid())
+  organization_id String
+  principle_id    String?
+  subject_type    String
+  subject_id      String
+  subject_name    String
+  status          ReviewStatus  @default(PENDING)
+  result          ReviewResult?
+  reviewer        String?
+  notes           String?
+  violations      Json          @default("[]")
+  submitted_at    DateTime      @default(now())
+  completed_at    DateTime?
+
+  principle ethics_principles? @relation(fields: [principle_id], references: [id])
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model bias_checks {
+  id              String          @id @default(uuid())
+  organization_id String
+  model_id        String
+  model_name      String
+  status          BiasCheckStatus @default(PENDING)
+  overall_score   Float?
+  dimensions      Json            @default("{}")
+  recommendations Json            @default("[]")
+  checked_at      DateTime?
+  created_at      DateTime        @default(now())
+
+  @@index([organization_id])
+  @@index([model_id])
+}
+
+model govern_policies {
+  id              String          @id @default(uuid())
+  organization_id String
+  name            String
+  description     String
+  category        String
+  status          String          @default("draft")
+  effective_date  DateTime?
+  rules           Json            @default("[]")
+  version         Int             @default(1)
+  created_by      String
+  created_at      DateTime        @default(now())
+  audits          govern_audits[]
+
+  @@index([organization_id])
+}
+
+model govern_audits {
+  id              String           @id @default(uuid())
+  organization_id String
+  policy_id       String?
+  audit_type      String
+  status          String           @default("pending")
+  findings        Json             @default("[]")
+  risk_score      Float?
+  created_at      DateTime         @default(now())
+  policy          govern_policies? @relation(fields: [policy_id], references: [id])
+
+  @@index([organization_id])
+}
+
+model regulatory_items {
+  id                String   @id @default(uuid())
+  organization_id   String
+  regulation_id     String
+  title             String
+  description       String
+  jurisdiction      String
+  category          String
+  compliance_status String   @default("pending")
+  impact_level      String   @default("medium")
+  required_actions  Json     @default("[]")
+  created_at        DateTime @default(now())
+
+  @@index([organization_id])
+}
+
+model regulatory_documents {
+  id              String @id @default(uuid())
+  organization_id String
+
+  // Document metadata
+  name            String
+  filename        String
+  mime_type       String
+  jurisdiction    String? // e.g., "US", "EU", "UK", "GDPR"
+  regulation_type String? // e.g., "privacy", "financial", "healthcare", "security"
+  effective_date  DateTime?
+
+  // Provenance - cryptographic proof
+  content_hash     String // SHA-256 of original document
+  content_size     Int // bytes
+  original_content String @db.Text // stored for verification
+
+  // Versioning
+  version           Int     @default(1)
+  parent_version_id String? // previous version of same regulation
+  changelog         String? @db.Text // what changed from previous version
+
+  // Processing status
+  status               RegulatoryDocStatus @default(PENDING)
+  processing_started   DateTime?
+  processing_completed DateTime?
+  processing_error     String?             @db.Text
+
+  // Review workflow
+  review_status   RegulatoryReviewStatus @default(DRAFT)
+  reviewed_by     String?
+  reviewed_at     DateTime?
+  review_comments String?                @db.Text
+
+  // Language detection
+  detected_language String? // ISO 639-1 code
+
+  // Metadata
+  uploaded_by String
+  created_at  DateTime @default(now())
+  updated_at  DateTime @default(now()) @updatedAt
+
+  // Relations
+  organization      organizations             @relation(fields: [organization_id], references: [id], onDelete: Cascade)
+  requirements      regulatory_requirements[]
+  triggers          regulatory_triggers[]
+  constraints       regulatory_constraints[]
+  conflicts_as_doc1 regulatory_conflicts[]    @relation("ConflictDoc1")
+  conflicts_as_doc2 regulatory_conflicts[]    @relation("ConflictDoc2")
+  audit_logs        regulatory_audit_logs[]
+
+  @@index([organization_id])
+  @@index([status])
+  @@index([review_status])
+  @@index([jurisdiction])
+  @@index([content_hash])
+}
+
+model regulatory_requirements {
+  id          String @id @default(uuid())
+  document_id String
+
+  // Requirement details
+  title              String
+  description        String @db.Text
+  original_text      String @db.Text // exact text from source
+  original_text_hash String // SHA-256 for verification
+
+  // Classification
+  category String // e.g., "data_protection", "reporting", "consent"
+  severity RegulatorySeverity @default(MEDIUM)
+
+  // Verification scores (anti-hallucination)
+  verification_score  Float   @default(0) // 0-1, how well original_text matches source
+  verification_method String? // "exact", "fuzzy", "semantic"
+  is_verified         Boolean @default(false)
+
+  // Compliance details
+  deadline            DateTime?
+  penalty_amount      Float?
+  penalty_currency    String?
+  penalty_description String?   @db.Text
+
+  // Process mapping
+  affected_processes Json @default("[]") // ["Customer Data Handling", "Financial Reporting"]
+  affected_agents    Json @default("[]") // ["CISO", "Legal", "CFO"]
+
+  // Status
+  is_active Boolean @default(true)
+
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt
+
+  document regulatory_documents  @relation(fields: [document_id], references: [id], onDelete: Cascade)
+  triggers regulatory_triggers[]
+
+  @@index([document_id])
+  @@index([category])
+  @@index([severity])
+  @@index([is_verified])
+}
+
+model regulatory_triggers {
+  id             String  @id @default(uuid())
+  document_id    String
+  requirement_id String?
+
+  // Trigger details
+  name         String
+  description  String      @db.Text
+  trigger_type TriggerType @default(MANUAL)
+
+  // Conditions
+  condition_expression String? @db.Text // e.g., "data.contains_pii && jurisdiction == 'EU'"
+
+  // Actions
+  action_type   String // "alert", "block", "require_approval", "log"
+  action_config Json   @default("{}")
+
+  is_active Boolean @default(true)
+
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt
+
+  document    regulatory_documents     @relation(fields: [document_id], references: [id], onDelete: Cascade)
+  requirement regulatory_requirements? @relation(fields: [requirement_id], references: [id], onDelete: SetNull)
+
+  @@index([document_id])
+  @@index([trigger_type])
+  @@index([is_active])
+}
+
+model regulatory_constraints {
+  id          String @id @default(uuid())
+  document_id String
+
+  // Constraint details
+  name            String
+  description     String         @db.Text
+  constraint_type ConstraintType @default(ADVISORY)
+
+  // Rule definition
+  rule_expression String @db.Text // e.g., "BLOCK if data_transfer_outside_eu && !adequacy_decision"
+
+  // Scope
+  applies_to_agents    Json @default("[]") // which Council agents this affects
+  applies_to_decisions Json @default("[]") // decision types this affects
+
+  // Status - constraints are INACTIVE until document is approved
+  is_active    Boolean   @default(false)
+  activated_at DateTime?
+  activated_by String?
+
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt
+
+  document regulatory_documents @relation(fields: [document_id], references: [id], onDelete: Cascade)
+
+  @@index([document_id])
+  @@index([is_active])
+  @@index([constraint_type])
+}
+
+model regulatory_conflicts {
+  id              String @id @default(uuid())
+  organization_id String
+
+  document1_id String
+  document2_id String
+
+  // Conflict details
+  conflict_type ConflictType @default(POTENTIAL)
+  description   String       @db.Text
+
+  // Which requirements conflict
+  requirement1_summary String? @db.Text
+  requirement2_summary String? @db.Text
+
+  // Resolution
+  resolution_status ConflictResolution @default(UNRESOLVED)
+  resolution_notes  String?            @db.Text
+  resolved_by       String?
+  resolved_at       DateTime?
+
+  // AI analysis
+  ai_recommendation String? @db.Text
+  confidence_score  Float?
+
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt
+
+  document1 regulatory_documents @relation("ConflictDoc1", fields: [document1_id], references: [id], onDelete: Cascade)
+  document2 regulatory_documents @relation("ConflictDoc2", fields: [document2_id], references: [id], onDelete: Cascade)
+
+  @@index([organization_id])
+  @@index([resolution_status])
+}
+
+model regulatory_audit_logs {
+  id          String @id @default(uuid())
+  document_id String
+
+  // Audit entry
+  action     String // "uploaded", "processed", "approved", "rejected", "constraint_activated"
+  actor_id   String?
+  actor_type String  @default("user") // "user", "system", "ai"
+
+  // Details
+  details Json @default("{}")
+
+  // Tamper-evident chain
+  previous_hash String? // hash of previous audit entry
+  entry_hash    String // SHA-256(previous_hash + action + timestamp + details)
+
+  created_at DateTime @default(now())
+
+  document regulatory_documents @relation(fields: [document_id], references: [id], onDelete: Cascade)
+
+  @@index([document_id])
+  @@index([action])
+  @@index([created_at])
+}
+
+enum ApprovalStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  CANCELLED
+}
+
+enum ApprovalType {
+  WORKFLOW
+  DELIBERATION
+  ACCESS
+  BUDGET
+  DATA_EXPORT
+}
+
+enum PanopticonRegulationStatus {
+  DRAFT
+  ACTIVE
+  SUPERSEDED
+  RETIRED
+}
+
+enum PanopticonRequirementType {
+  MANDATORY
+  RECOMMENDED
+  OPTIONAL
+  CONDITIONAL
+}
+
+enum PanopticonPriority {
+  CRITICAL
+  HIGH
+  MEDIUM
+  LOW
+}
+
+enum PanopticonAutomationStatus {
+  FULLY_AUTOMATED
+  PARTIALLY_AUTOMATED
+  MANUAL
+  NOT_APPLICABLE
+}
+
+enum PanopticonViolationType {
+  PROCESS_VIOLATION
+  DATA_VIOLATION
+  DOCUMENTATION_GAP
+  TIMELINE_BREACH
+  CONTROL_FAILURE
+}
+
+enum PanopticonViolationStatus {
+  OPEN
+  INVESTIGATING
+  REMEDIATION
+  RESOLVED
+  ACCEPTED_RISK
+}
+
+enum PanopticonForecastType {
+  NEW_REGULATION
+  AMENDMENT
+  ENFORCEMENT_ACTION
+  INDUSTRY_TREND
+  GEOPOLITICAL
+}
+
+enum EthicsCategory {
+  FAIRNESS
+  TRANSPARENCY
+  PRIVACY
+  ACCOUNTABILITY
+  SAFETY
+  HUMAN_OVERSIGHT
+}
+
+enum PrincipleStatus {
+  ACTIVE
+  DRAFT
+  DEPRECATED
+  UNDER_REVIEW
+}
+
+enum ReviewStatus {
+  PENDING
+  IN_REVIEW
+  COMPLETED
+  CANCELLED
+}
+
+enum ReviewResult {
+  APPROVED
+  REJECTED
+  CONDITIONAL
+  NEEDS_REVISION
+}
+
+enum BiasCheckStatus {
+  PENDING
+  RUNNING
+  COMPLETED
+  FAILED
+}
+
+enum RegulatoryDocStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+}
+
+enum RegulatoryReviewStatus {
+  DRAFT
+  PENDING_REVIEW
+  APPROVED
+  REJECTED
+  CHANGES_REQUESTED
+}
+
+enum RegulatorySeverity {
+  CRITICAL
+  HIGH
+  MEDIUM
+  LOW
+  INFO
+}
+
+enum TriggerType {
+  AUTOMATIC
+  MANUAL
+  SCHEDULED
+}
+
+enum ConstraintType {
+  MANDATORY // Must be followed, blocks decisions if violated
+  ADVISORY // Warns but doesn't block
+  CONDITIONAL // Applies only under certain conditions
+}
+
+enum ConflictType {
+  DIRECT // Regulations directly contradict
+  POTENTIAL // May conflict depending on interpretation
+  SUPERSEDED // One regulation replaces another
+}
+
+enum ConflictResolution {
+  UNRESOLVED
+  RESOLVED_PRIORITY // One takes priority
+  RESOLVED_MERGED // Combined into unified rule
+  RESOLVED_EXCEPTION // Exception granted
+  FALSE_POSITIVE // Not actually a conflict
+}
+
+// =============================================================================
+// AI Constitutional Court - Dispute Resolution
+// =============================================================================
+
+model constitutional_disputes {
+  id              String    @id @default(uuid())
+  case_number     String    @unique
+  title           String
+  category        String    // confidence_conflict, methodology_dispute, data_interpretation, etc.
+  status          String    @default("filed") // filed, under_review, hearing_scheduled, deliberating, opinion_drafted, resolved, appealed
+  petitioner      Json      // DisputeParty object
+  respondent      Json      // DisputeParty object
+  deliberation_id String?
+  vertical_id     String?
+  organization_id String
+  precedents_applied String[] // Case numbers
+  data            Json?     // Full Dispute object
+  filed_at        DateTime  @default(now())
+  hearing_at      DateTime?
+  resolved_at     DateTime?
+  created_at      DateTime  @default(now())
+  updated_at      DateTime  @default(now()) @updatedAt
+
+  opinions constitutional_opinions[]
+
+  @@index([organization_id])
+  @@index([status])
+  @@index([category])
+  @@index([case_number])
+}
+
+model constitutional_opinions {
+  id                  String   @id @default(uuid())
+  dispute_id          String
+  case_number         String
+  title               String
+  ruling              String   // petitioner, respondent, partial_petitioner, partial_respondent, remanded
+  summary             String   @db.Text
+  rationale           String   @db.Text
+  holdings            String[]
+  principles_applied  String[]
+  precedent_strength  String   @default("binding") // binding, persuasive, distinguishable, overruled
+  authoring_judge     String
+  opinion_hash        String
+  data                Json     // Full CourtOpinion object
+  drafted_at          DateTime @default(now())
+  finalized_at        DateTime?
+  created_at          DateTime @default(now())
+
+  dispute constitutional_disputes @relation(fields: [dispute_id], references: [id])
+
+  @@index([dispute_id])
+  @@index([case_number])
+}
+
+// =============================================================================
+// Override Accountability — Primitive C
+// =============================================================================
+
+model accountability_records {
+  id                   String   @id @default(uuid())
+  decision_id          String
+  deliberation_id      String?
+  organization_id      String
+  human_authority_name String
+  human_authority_role String
+  human_authority_dept String?
+  action_taken         String   // APPROVE, OVERRIDE, DEFER, REJECT, ESCALATE
+  justification        String   @db.Text
+  accepted_risks       String[] // FailureCategory[]
+  risk_acknowledgment  String   @db.Text
+  ai_recommendation    String?  @db.Text
+  ai_confidence_score  Float?
+  dissents_overridden  String[]
+  signature_algorithm  String   @default("RSA-SHA256")
+  signature            String
+  public_key_fp        String?
+  previous_record_hash String?
+  record_hash          String
+  witnesses            Json?    // HumanAuthority[]
+  created_at           DateTime @default(now())
+
+  @@index([decision_id])
+  @@index([deliberation_id])
+  @@index([organization_id, action_taken])
+  @@index([created_at])
+}
+
+model delegation_records {
+  id               String   @id @default(uuid())
+  organization_id  String
+  from_name        String
+  from_role        String
+  to_name          String
+  to_role          String
+  scope            String[]
+  constraints      String[]
+  valid_from       DateTime
+  valid_until      DateTime
+  signature        String
+  created_at       DateTime @default(now())
+
+  @@index([organization_id])
+  @@index([valid_until])
+}
+
+// =============================================================================
+// Drift Detection — Primitive E (longitudinal tracking)
+// =============================================================================
+
+model drift_snapshots {
+  id               String   @id @default(uuid())
+  organization_id  String
+  snapshot_type    String   // "iiss", "compliance", "override_rate", "gate_pass_rate"
+  primitive        String?  // Which DCII primitive, if applicable
+  score            Float
+  max_score        Float?
+  metadata         Json?    // Additional context (band, controls, etc.)
+  created_at       DateTime @default(now())
+
+  @@index([organization_id, snapshot_type])
+  @@index([organization_id, primitive])
+  @@index([created_at])
+}
+
+// =============================================================================
+// Cognitive Bias Mitigation — Primitive F
+// =============================================================================
+
+model bias_analyses {
+  id                    String   @id @default(uuid())
+  organization_id       String
+  deliberation_id       String
+  deliberation_title    String
+  analyzed_by           String
+  biases_detected       Json     // BiasDetection[]
+  overall_risk          String   // none, low, medium, high, critical
+  bias_count            Int
+  high_risk_count       Int
+  rubber_stamp_detected Boolean  @default(false)
+  rubber_stamp_reason   String?
+  duration_minutes      Float?
+  min_expected_minutes  Float?
+  groupthink_indicators Json?    // { unanimousVote, dissentCount, ... }
+  recommendations       String[]
+  analysis_hash         String
+  created_at            DateTime @default(now())
+
+  @@index([organization_id])
+  @@index([deliberation_id])
+  @@index([overall_risk])
+  @@index([created_at])
+}
+
+// =============================================================================
+// Meta-Governance Reports — SGAS Class V
+// =============================================================================
+
+model meta_governance_reports {
+  id                  String   @id @default(uuid())
+  agent_id            String
+  agent_name          String
+  drift_warnings      Json     // DriftWarning[]
+  risk_report         Json     // GovernanceRiskReport
+  recommendations     Json     // StructuralRecommendation[]
+  health_score        Json     // SystemHealthScore
+  interventions       Json     // Intervention[]
+  analysis_window     Json     // TimeRange
+  execution_seed      Int?
+  execution_ms        Int?
+  created_at          DateTime @default(now())
+
+  @@index([agent_id])
+  @@index([created_at])
+}
+
+// =============================================================================
+// Deterministic Replay — Continuity Memory / Primitive D
+// =============================================================================
+
+model deterministic_replay_states {
+  id                  String   @id
+  organization_id     String
+  deliberation_id     String
+  master_seed         String
+  execution_env       Json     // ExecutionEnvironment
+  random_state        Json     // RandomState (seeds, pinned timestamp)
+  model_state         Json     // ModelState (models, inference params)
+  input_state         Json     // InputState (question, docs, agents)
+  output_state        Json     // OutputState (responses, hashes)
+  state_hash          String
+  verified            Boolean  @default(false)
+  verified_at         DateTime?
+  created_at          DateTime @default(now())
+
+  @@index([organization_id])
+  @@index([deliberation_id])
+  @@index([created_at])
+}
+
+// =============================================================================
+// Data Diode — Sovereign Ingest Events
+// =============================================================================
+
+model data_diode_events {
+  id                  String   @id @default(uuid())
+  source_id           String
+  source_name         String
+  file_name           String
+  file_size           Int
+  file_hash           String   // SHA-256
+  status              String   // IngestStatus enum
+  format              String   // DataFormat enum
+  signature_valid     Boolean?
+  signed_by           String?
+  scan_result         String?  // clean, suspicious, malicious
+  scan_engine         String?
+  records_extracted   Int?
+  bytes_processed     Int?
+  target_system       String?
+  error_message       String?
+  ledger_hash         String?
+  detected_at         DateTime
+  quarantined_at      DateTime?
+  scanned_at          DateTime?
+  parsed_at           DateTime?
+  completed_at        DateTime?
+  created_at          DateTime @default(now())
+
+  @@index([source_id])
+  @@index([status])
+  @@index([file_hash])
+  @@index([created_at])
+}
+
+// =============================================================================
+// Generic Service Records — shared persistence for many services
+// =============================================================================
+
+model service_records {
+  id                  String   @id @default(uuid())
+  service_name        String   // e.g. "CendiaGuardian", "CendiaNerve", "TimeLock"
+  record_type         String   // e.g. "customer_health", "alert", "assessment", "lock"
+  organization_id     String?
+  reference_id        String?  // deliberation_id, customer_id, etc.
+  data                Json     // The actual record payload
+  hash                String?  // SHA-256 of data for integrity
+  created_at          DateTime @default(now())
+  updated_at          DateTime @updatedAt
+
+  @@index([service_name, record_type])
+  @@index([organization_id])
+  @@index([reference_id])
+  @@index([created_at])
+}
+
+// =============================================================================
+// Continuous Compliance Monitor — Snapshots
+// =============================================================================
+
+model compliance_monitor_snapshots {
+  id                  String   @id @default(uuid())
+  organization_id     String
+  framework           String   // GDPR, SOX, HIPAA, etc.
+  overall_score       Float
+  dimension_scores    Json     // { dimension: score }
+  gaps                Json     // ComplianceGap[]
+  recommendations     Json     // string[]
+  assessed_by         String?
+  created_at          DateTime @default(now())
+
+  @@index([organization_id, framework])
+  @@index([created_at])
+}

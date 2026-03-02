@@ -1,0 +1,241 @@
+// Copyright (c) 2024-2026 Datacendia, LLC All Rights Reserved.
+// Proprietary and confidential. Unauthorized copying is strictly prohibited.
+// See LICENSE file for details.
+
+/**
+ * =============================================================================
+ * FINANCIAL & BANKING CONNECTORS
+ * =============================================================================
+ * Market Data, Banking Networks, Payment Systems, Regulatory Feeds
+ */
+
+import { ConnectorMetadata } from '../BaseConnector.js';
+
+export const FINANCIAL_CONNECTORS: ConnectorMetadata[] = [
+  // Market Data Providers
+  {
+    id: 'bloomberg-terminal',
+    name: 'Bloomberg Terminal API',
+    description: 'Real-time market data, news, analytics',
+    vertical: 'financial',
+    category: 'market-data',
+    provider: 'Bloomberg LP',
+    region: 'Global',
+    dataTypes: ['equities', 'fixed-income', 'fx', 'commodities', 'derivatives', 'news'],
+    updateFrequency: 'real-time',
+    documentationUrl: 'https://www.bloomberg.com/professional/support/api-library/',
+    requiredCredentials: ['api_key', 'terminal_id'],
+    complianceFrameworks: ['SOC2', 'ISO27001'],
+    compatibilityLabel: 'license_required',
+    integrationNotes: 'BYO Bloomberg Terminal license (~$24k/user/year); data via File Watcher or Webhook',
+  },
+  {
+    id: 'refinitiv-eikon',
+    name: 'Refinitiv Eikon',
+    description: 'Reuters market data, news, analytics',
+    vertical: 'financial',
+    category: 'market-data',
+    provider: 'LSEG (Refinitiv)',
+    region: 'Global',
+    dataTypes: ['equities', 'fixed-income', 'fx', 'news', 'fundamentals'],
+    updateFrequency: 'real-time',
+    documentationUrl: 'https://developers.refinitiv.com/',
+    requiredCredentials: ['app_key', 'username', 'password'],
+    complianceFrameworks: ['SOC2', 'ISO27001'],
+    compatibilityLabel: 'license_required',
+    integrationNotes: 'BYO Refinitiv license; redistribution restrictions apply',
+  },
+  {
+    id: 'ice-data',
+    name: 'ICE Data Services',
+    description: 'Intercontinental Exchange market data',
+    vertical: 'financial',
+    category: 'market-data',
+    provider: 'ICE',
+    region: 'Global',
+    dataTypes: ['futures', 'options', 'fixed-income', 'reference-data'],
+    updateFrequency: 'real-time',
+    documentationUrl: 'https://www.ice.com/market-data',
+    requiredCredentials: ['api_key', 'subscription_id'],
+    complianceFrameworks: ['SOC2'],
+    compatibilityLabel: 'license_required',
+    integrationNotes: 'BYO ICE Data subscription; ingestion via Webhook Adapter',
+  },
+  {
+    id: 'factset',
+    name: 'FactSet',
+    description: 'Financial data and analytics platform',
+    vertical: 'financial',
+    category: 'market-data',
+    provider: 'FactSet',
+    region: 'Global',
+    dataTypes: ['fundamentals', 'estimates', 'ownership', 'esg'],
+    updateFrequency: 'daily',
+    documentationUrl: 'https://developer.factset.com/',
+    requiredCredentials: ['api_key', 'username', 'password'],
+    complianceFrameworks: ['SOC2', 'ISO27001'],
+    compatibilityLabel: 'license_required',
+    integrationNotes: 'BYO FactSet license; ingestion via Webhook or Database Adapter',
+  },
+
+  // Banking Networks
+  {
+    id: 'swift-gpi',
+    name: 'SWIFT gpi',
+    description: 'Global Payments Innovation - cross-border payment tracking',
+    vertical: 'financial',
+    category: 'payments',
+    provider: 'SWIFT',
+    region: 'Global',
+    dataTypes: ['payment-tracking', 'confirmations', 'status-updates'],
+    updateFrequency: 'real-time',
+    documentationUrl: 'https://developer.swift.com/',
+    requiredCredentials: ['bic', 'certificate', 'api_key'],
+    complianceFrameworks: ['ISO20022', 'PCI-DSS'],
+    compatibilityLabel: 'client_gateway',
+    integrationNotes: 'Requires client SWIFT membership and CSP compliance; ingestion via client gateway',
+  },
+  {
+    id: 'swift-sanctions',
+    name: 'SWIFT Sanctions Screening',
+    description: 'Real-time sanctions and compliance screening',
+    vertical: 'financial',
+    category: 'compliance',
+    provider: 'SWIFT',
+    region: 'Global',
+    dataTypes: ['sanctions-lists', 'pep-lists', 'adverse-media'],
+    updateFrequency: 'real-time',
+    documentationUrl: 'https://www.swift.com/our-solutions/compliance-and-shared-services',
+    requiredCredentials: ['bic', 'certificate'],
+    complianceFrameworks: ['FATF', 'OFAC'],
+    compatibilityLabel: 'client_gateway',
+    integrationNotes: 'Requires client SWIFT membership; ingestion via client gateway',
+  },
+  {
+    id: 'fed-fedwire',
+    name: 'Fedwire Funds Service',
+    description: 'Federal Reserve wire transfer system',
+    vertical: 'financial',
+    category: 'payments',
+    provider: 'Federal Reserve',
+    region: 'US',
+    dataTypes: ['wire-transfers', 'settlement-status'],
+    updateFrequency: 'real-time',
+    documentationUrl: 'https://www.frbservices.org/financial-services/wires/',
+    requiredCredentials: ['fed_id', 'certificate'],
+    complianceFrameworks: ['FedRAMP', 'SOC2'],
+    compatibilityLabel: 'client_gateway',
+    integrationNotes: 'Requires Fed membership and client gateway; file export ingestion',
+  },
+  {
+    id: 'chips',
+    name: 'CHIPS',
+    description: 'Clearing House Interbank Payments System',
+    vertical: 'financial',
+    category: 'payments',
+    provider: 'The Clearing House',
+    region: 'US',
+    dataTypes: ['interbank-payments', 'settlement'],
+    updateFrequency: 'real-time',
+    requiredCredentials: ['participant_id', 'certificate'],
+    complianceFrameworks: ['SOC2'],
+    compatibilityLabel: 'client_gateway',
+    integrationNotes: 'Requires CHIPS participant membership; file export ingestion',
+  },
+
+  // Trading Protocols
+  {
+    id: 'fix-protocol',
+    name: 'FIX Protocol',
+    description: 'Financial Information eXchange - order routing',
+    vertical: 'financial',
+    category: 'trading',
+    provider: 'FIX Trading Community',
+    region: 'Global',
+    dataTypes: ['orders', 'executions', 'market-data', 'positions'],
+    updateFrequency: 'real-time',
+    documentationUrl: 'https://www.fixtrading.org/',
+    requiredCredentials: ['sender_comp_id', 'target_comp_id', 'certificate'],
+    complianceFrameworks: ['MiFID II', 'Reg NMS'],
+    compatibilityLabel: 'native_protocol',
+    integrationNotes: 'Native FIX 4.2/4.4/5.0 protocol support via Sovereign FIX Adapter',
+  },
+  {
+    id: 'fpml',
+    name: 'FpML',
+    description: 'Financial products Markup Language - derivatives',
+    vertical: 'financial',
+    category: 'trading',
+    provider: 'ISDA',
+    region: 'Global',
+    dataTypes: ['derivatives', 'confirmations', 'valuations'],
+    updateFrequency: 'real-time',
+    documentationUrl: 'https://www.fpml.org/',
+    requiredCredentials: ['lei', 'certificate'],
+    complianceFrameworks: ['EMIR', 'Dodd-Frank'],
+    compatibilityLabel: 'native_protocol',
+    integrationNotes: 'Native FpML XML parsing via File Watcher Adapter',
+  },
+
+  // Credit & Risk
+  {
+    id: 'moodys-analytics',
+    name: "Moody's Analytics",
+    description: 'Credit ratings, risk models, economic forecasts',
+    vertical: 'financial',
+    category: 'credit-risk',
+    provider: "Moody's",
+    region: 'Global',
+    dataTypes: ['credit-ratings', 'default-probabilities', 'economic-forecasts'],
+    updateFrequency: 'daily',
+    documentationUrl: 'https://www.moodysanalytics.com/',
+    requiredCredentials: ['api_key', 'subscription_id'],
+    complianceFrameworks: ['SOC2'],
+    compatibilityLabel: 'license_required',
+    integrationNotes: 'BYO Moody\'s subscription; ingestion via Webhook or File Watcher',
+  },
+  {
+    id: 'sp-global',
+    name: 'S&P Global Market Intelligence',
+    description: 'Credit ratings, market data, research',
+    vertical: 'financial',
+    category: 'credit-risk',
+    provider: 'S&P Global',
+    region: 'Global',
+    dataTypes: ['credit-ratings', 'financials', 'news', 'research'],
+    updateFrequency: 'daily',
+    documentationUrl: 'https://www.spglobal.com/marketintelligence/',
+    requiredCredentials: ['api_key', 'username', 'password'],
+    complianceFrameworks: ['SOC2', 'ISO27001'],
+    compatibilityLabel: 'license_required',
+    integrationNotes: 'BYO S&P subscription; ingestion via Webhook or Database Adapter',
+  },
+
+  // Crypto & Digital Assets
+  {
+    id: 'chainalysis',
+    name: 'Chainalysis',
+    description: 'Blockchain analytics and compliance',
+    vertical: 'financial',
+    category: 'crypto',
+    provider: 'Chainalysis',
+    region: 'Global',
+    dataTypes: ['wallet-risk', 'transaction-monitoring', 'sanctions'],
+    updateFrequency: 'real-time',
+    documentationUrl: 'https://www.chainalysis.com/',
+    requiredCredentials: ['api_key'],
+    complianceFrameworks: ['FATF', 'FinCEN'],
+    compatibilityLabel: 'license_required',
+    integrationNotes: 'BYO Chainalysis subscription; direct API or Webhook ingestion',
+  },
+];
+
+export class FinancialConnectorFactory {
+  static getAvailableConnectors(): ConnectorMetadata[] {
+    return FINANCIAL_CONNECTORS;
+  }
+
+  static getByCategory(category: string): ConnectorMetadata[] {
+    return FINANCIAL_CONNECTORS.filter(c => c.category === category);
+  }
+}

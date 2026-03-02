@@ -1,0 +1,435 @@
+// Platform Domain - Admin, Workflows, Tenants, Ledger, Omnitranslate
+
+model admin_settings {
+  id              String   @id @default(uuid())
+  organization_id String?
+  key             String
+  value           String
+  encrypted       Boolean  @default(false)
+  category        String
+  updated_by      String?
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+
+  @@unique([organization_id, key])
+  @@index([category])
+}
+
+model api_keys {
+  id              String        @id
+  organization_id String
+  user_id         String
+  name            String
+  key_hash        String
+  key_prefix      String
+  scopes          Json          @default("[]")
+  last_used_at    DateTime?
+  expires_at      DateTime?
+  created_at      DateTime      @default(now())
+  revoked_at      DateTime?
+  organizations   organizations @relation(fields: [organization_id], references: [id])
+  users           users         @relation(fields: [user_id], references: [id])
+}
+
+model audit_logs {
+  id              String        @id
+  organization_id String
+  user_id         String?
+  action          String
+  resource_type   String
+  resource_id     String?
+  details         Json          @default("{}")
+  ip_address      String?
+  user_agent      String?
+  created_at      DateTime      @default(now())
+  organizations   organizations @relation(fields: [organization_id], references: [id])
+  users           users?        @relation(fields: [user_id], references: [id])
+
+  @@index([action])
+  @@index([organization_id, created_at])
+  @@index([resource_type, resource_id])
+}
+
+model chain_of_thought_logs {
+  id              String   @id
+  organization_id String?
+  session_id      String
+  agent_id        String
+  query           String
+  steps           Json
+  final_answer    String
+  confidence      Float?
+  model           String
+  tokens_used     Int
+  latency_ms      Int
+  created_at      DateTime @default(now())
+
+  @@index([agent_id])
+  @@index([organization_id])
+  @@index([session_id])
+}
+
+model demo_requests {
+  id                String   @id
+  first_name        String
+  last_name         String
+  email             String
+  company           String
+  job_title         String
+  company_size      String
+  industry          String
+  primary_interest  String
+  additional_notes  String?
+  marketing_consent Boolean  @default(false)
+  status            String   @default("new")
+  created_at        DateTime @default(now())
+}
+
+model execution_nodes {
+  id                  String              @id
+  execution_id        String
+  node_id             String
+  status              ExecutionStatus     @default(PENDING)
+  input               Json                @default("{}")
+  output              Json                @default("{}")
+  error               String?
+  duration            Int?
+  started_at          DateTime?
+  completed_at        DateTime?
+  workflow_executions workflow_executions @relation(fields: [execution_id], references: [id], onDelete: Cascade)
+
+  @@unique([execution_id, node_id])
+}
+
+model scenarios {
+  id          String     @id
+  forecast_id String?
+  name        String
+  assumptions Json       @default("[]")
+  projections Json?
+  created_at  DateTime   @default(now())
+  forecasts   forecasts? @relation(fields: [forecast_id], references: [id])
+}
+
+model workflow_executions {
+  id              String            @id
+  workflow_id     String
+  status          ExecutionStatus   @default(PENDING)
+  parameters      Json              @default("{}")
+  current_node    String?
+  progress        Int               @default(0)
+  outputs         Json              @default("{}")
+  error           String?
+  started_at      DateTime?
+  completed_at    DateTime?
+  created_at      DateTime          @default(now())
+  approvals       approvals[]
+  execution_nodes execution_nodes[]
+  workflows       workflows         @relation(fields: [workflow_id], references: [id])
+
+  @@index([workflow_id, status])
+}
+
+model workflows {
+  id                  String                @id
+  organization_id     String
+  name                String
+  description         String?
+  category            String?
+  trigger             Json
+  definition          Json
+  status              WorkflowStatus        @default(DRAFT)
+  created_at          DateTime              @default(now())
+  updated_at          DateTime
+  workflow_executions workflow_executions[]
+  organizations       organizations         @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id, status])
+}
+
+model ledger_entries {
+  id              String   @id @default(uuid())
+  organization_id String
+  entry_type      String
+  reference_type  String
+  reference_id    String
+  actor_id        String
+  actor_name      String
+  action          String
+  data_hash       String
+  previous_hash   String?
+  metadata        Json     @default("{}")
+  timestamp       DateTime @default(now())
+
+  @@index([organization_id])
+  @@index([timestamp])
+}
+
+model omnitranslate_glossaries {
+  id              String   @id @default(uuid())
+  organization_id String
+  name            String
+  description     String   @default("")
+  created_at      DateTime @default(now())
+  updated_at      DateTime @default(now()) @updatedAt
+
+  organizations organizations            @relation(fields: [organization_id], references: [id])
+  terms         omnitranslate_glossary[]
+
+  @@index([organization_id])
+}
+
+model omnitranslate_glossary {
+  id              String   @id @default(uuid())
+  glossary_id     String
+  organization_id String
+  source_text     String
+  translations    Json     @default("{}")
+  case_sensitive  Boolean  @default(false)
+  context         String?
+  created_at      DateTime @default(now())
+
+  glossary      omnitranslate_glossaries @relation(fields: [glossary_id], references: [id], onDelete: Cascade)
+  organizations organizations            @relation(fields: [organization_id], references: [id])
+
+  @@index([glossary_id])
+  @@index([organization_id])
+  @@index([source_text])
+}
+
+model omnitranslate_memory {
+  id              String   @id @default(uuid())
+  organization_id String
+  source_text     String   @db.Text
+  source_language String
+  target_text     String   @db.Text
+  target_language String
+  context         String   @default("general")
+  quality         Decimal  @db.Decimal(3, 2)
+  usage_count     Int      @default(1)
+  created_at      DateTime @default(now())
+  updated_at      DateTime @default(now()) @updatedAt
+
+  organizations organizations @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id])
+  @@index([source_language, target_language])
+  @@index([created_at])
+}
+
+model schema_mappings {
+  id              String   @id @default(uuid())
+  data_source_id  String
+  organization_id String
+  name            String
+  description     String?  @db.Text
+  table_mappings  Json     @default("[]") // Array of TableMapping objects
+  version         Int      @default(1)
+  is_active       Boolean  @default(true)
+  created_at      DateTime @default(now())
+  updated_at      DateTime @default(now()) @updatedAt
+
+  organizations organizations @relation(fields: [organization_id], references: [id])
+
+  @@unique([data_source_id, organization_id])
+  @@index([organization_id])
+  @@index([data_source_id])
+  @@index([is_active])
+}
+
+model tenants {
+  id                   String       @id @default(uuid())
+  name                 String
+  slug                 String       @unique
+  plan                 TenantPlan   @default(TRIAL)
+  status               TenantStatus @default(TRIAL)
+  user_count           Int          @default(0)
+  user_limit           Int          @default(10)
+  mrr                  Decimal      @default(0) @db.Decimal(10, 2)
+  billing_email        String?
+  primary_contact      String?
+  industry             String?
+  company_size         String?
+  country              String?
+  timezone             String       @default("UTC")
+  settings             Json         @default("{}")
+  metadata             Json         @default("{}")
+  trial_ends_at        DateTime?
+  subscription_ends_at DateTime?
+  created_at           DateTime     @default(now())
+  updated_at           DateTime     @default(now()) @updatedAt
+  deleted_at           DateTime?
+
+  licenses      licenses[]
+  tenant_usage  tenant_usage[]
+  feature_flags tenant_feature_flags[]
+
+  @@index([status])
+  @@index([plan])
+  @@index([created_at])
+}
+
+model licenses {
+  id            String        @id @default(uuid())
+  tenant_id     String
+  license_key   String        @unique
+  type          LicenseType   @default(TRIAL)
+  status        LicenseStatus @default(ACTIVE)
+  seats         Int           @default(10)
+  seats_used    Int           @default(0)
+  features      Json          @default("[]")
+  billing_cycle BillingCycle  @default(MONTHLY)
+  revenue       Decimal       @default(0) @db.Decimal(10, 2)
+  start_date    DateTime      @default(now())
+  expires_at    DateTime
+  auto_renew    Boolean       @default(false)
+  renewal_price Decimal?      @db.Decimal(10, 2)
+  notes         String?       @db.Text
+  created_at    DateTime      @default(now())
+  updated_at    DateTime      @default(now()) @updatedAt
+
+  tenant tenants @relation(fields: [tenant_id], references: [id], onDelete: Cascade)
+
+  @@index([tenant_id])
+  @@index([status])
+  @@index([expires_at])
+}
+
+model tenant_usage {
+  id                String   @id @default(uuid())
+  tenant_id         String
+  period            String // YYYY-MM format
+  api_calls         Int      @default(0)
+  deliberations     Int      @default(0)
+  active_users      Int      @default(0)
+  storage_used_mb   Int      @default(0)
+  agent_invocations Int      @default(0)
+  created_at        DateTime @default(now())
+  updated_at        DateTime @default(now()) @updatedAt
+
+  tenant tenants @relation(fields: [tenant_id], references: [id], onDelete: Cascade)
+
+  @@unique([tenant_id, period])
+  @@index([tenant_id])
+  @@index([period])
+}
+
+model feature_flags {
+  id                 String          @id @default(uuid())
+  key                String          @unique
+  name               String
+  description        String?         @db.Text
+  type               FeatureFlagType @default(BOOLEAN)
+  enabled            Boolean         @default(false)
+  value              Json            @default("null")
+  rollout_percentage Int?
+  category           String          @default("core")
+  environment        String          @default("all")
+  created_by         String?
+  last_toggled_at    DateTime?
+  last_toggled_by    String?
+  created_at         DateTime        @default(now())
+  updated_at         DateTime        @default(now()) @updatedAt
+
+  tenant_overrides tenant_feature_flags[]
+
+  @@index([category])
+  @@index([enabled])
+}
+
+model tenant_feature_flags {
+  id              String   @id @default(uuid())
+  tenant_id       String
+  feature_flag_id String
+  enabled         Boolean  @default(false)
+  value           Json     @default("null")
+  created_at      DateTime @default(now())
+  updated_at      DateTime @default(now()) @updatedAt
+
+  tenant       tenants       @relation(fields: [tenant_id], references: [id], onDelete: Cascade)
+  feature_flag feature_flags @relation(fields: [feature_flag_id], references: [id], onDelete: Cascade)
+
+  @@unique([tenant_id, feature_flag_id])
+  @@index([tenant_id])
+  @@index([feature_flag_id])
+}
+
+model system_alerts {
+  id              String        @id @default(uuid())
+  severity        AlertSeverity @default(INFO)
+  service         String
+  title           String
+  message         String        @db.Text
+  acknowledged    Boolean       @default(false)
+  acknowledged_at DateTime?
+  acknowledged_by String?
+  resolved        Boolean       @default(false)
+  resolved_at     DateTime?
+  metadata        Json          @default("{}")
+  created_at      DateTime      @default(now())
+
+  @@index([severity])
+  @@index([acknowledged])
+  @@index([created_at])
+}
+
+enum ExecutionStatus {
+  PENDING
+  RUNNING
+  COMPLETED
+  FAILED
+  SKIPPED
+  AWAITING_APPROVAL
+}
+
+enum WorkflowStatus {
+  DRAFT
+  ACTIVE
+  PAUSED
+  ARCHIVED
+}
+
+enum TenantPlan {
+  PILOT
+  TRIAL
+  FOUNDATION
+  ENTERPRISE
+  STRATEGIC
+  CUSTOM
+}
+
+enum TenantStatus {
+  PENDING
+  TRIAL
+  ACTIVE
+  SUSPENDED
+  CHURNED
+}
+
+enum LicenseType {
+  PILOT
+  TRIAL
+  FOUNDATION
+  ENTERPRISE
+  STRATEGIC
+  CUSTOM
+}
+
+enum LicenseStatus {
+  ACTIVE
+  EXPIRING
+  EXPIRED
+  SUSPENDED
+}
+
+enum BillingCycle {
+  MONTHLY
+  ANNUAL
+}
+
+enum FeatureFlagType {
+  BOOLEAN
+  PERCENTAGE
+  USER_LIST
+  TENANT_LIST
+}

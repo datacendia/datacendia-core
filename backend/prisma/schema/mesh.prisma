@@ -1,0 +1,328 @@
+// Mesh Domain - Network Nodes, Connections, Channels, AR, Blackbox
+
+model mesh_nodes {
+  id               String          @id @default(uuid())
+  organization_id  String
+  name             String
+  node_type        MeshNodeType
+  status           NodeStatus      @default(ONLINE)
+  location         Json            @default("{}")
+  public_key       String
+  capabilities     Json            @default("[]")
+  bandwidth_mbps   Int             @default(100)
+  latency_ms       Int             @default(10)
+  encryption_level EncryptionLevel @default(HIGH)
+  last_heartbeat   DateTime        @default(now())
+  created_at       DateTime        @default(now())
+
+  connections_from mesh_connections[] @relation("source_node")
+  connections_to   mesh_connections[] @relation("target_node")
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model mesh_connections {
+  id                  String           @id @default(uuid())
+  organization_id     String
+  source_node_id      String
+  target_node_id      String
+  status              ConnectionStatus @default(ACTIVE)
+  encryption_protocol String
+  bandwidth_util      Float            @default(0)
+  latency_ms          Int              @default(0)
+  packet_loss         Float            @default(0)
+  established_at      DateTime         @default(now())
+  last_activity       DateTime         @default(now())
+
+  source_node mesh_nodes @relation("source_node", fields: [source_node_id], references: [id], onDelete: Cascade)
+  target_node mesh_nodes @relation("target_node", fields: [target_node_id], references: [id], onDelete: Cascade)
+
+  @@unique([source_node_id, target_node_id])
+}
+
+model secure_channels {
+  id              String          @id @default(uuid())
+  organization_id String
+  name            String
+  participants    Json            @default("[]")
+  encryption_key  String
+  protocol        ChannelProtocol
+  status          ChannelStatus   @default(ACTIVE)
+  message_count   Int             @default(0)
+  expires_at      DateTime
+  created_at      DateTime        @default(now())
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model blackbox_units {
+  id                String         @id @default(uuid())
+  organization_id   String
+  serial_number     String         @unique
+  name              String
+  status            BlackboxStatus @default(OPERATIONAL)
+  location          Json           @default("{}")
+  specifications    Json           @default("{}")
+  health_metrics    Json           @default("{}")
+  last_sync         DateTime       @default(now())
+  last_verification DateTime       @default(now())
+  created_at        DateTime       @default(now())
+
+  backup_jobs    backup_jobs[]
+  stored_records stored_records[]
+  recoveries     recovery_procedures[]
+  reports        integrity_reports[]
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model backup_jobs {
+  id                String           @id @default(uuid())
+  organization_id   String
+  blackbox_id       String
+  source_type       BackupSourceType
+  source_path       String
+  status            BackupStatus     @default(SCHEDULED)
+  priority          BackupPriority   @default(NORMAL)
+  bytes_transferred BigInt           @default(0)
+  error_message     String?
+  scheduled_at      DateTime
+  started_at        DateTime?
+  completed_at      DateTime?
+
+  blackbox blackbox_units @relation(fields: [blackbox_id], references: [id], onDelete: Cascade)
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model ar_devices {
+  id                 String            @id @default(uuid())
+  organization_id    String
+  device_type        ARDeviceType
+  serial_number      String            @unique
+  assigned_to        String?
+  assigned_name      String?
+  status             ARDeviceStatus    @default(PAIRING)
+  capabilities       Json              @default("[]")
+  security_clearance SecurityClearance @default(BASIC)
+  last_connected     DateTime?
+  created_at         DateTime          @default(now())
+
+  sessions ar_sessions[]
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model ar_overlays {
+  id               String      @id @default(uuid())
+  organization_id  String
+  name             String
+  overlay_type     OverlayType
+  data_source      String
+  refresh_interval Int         @default(60)
+  visual_config    Json        @default("{}")
+  permissions      Json        @default("[]")
+  enabled          Boolean     @default(true)
+  created_at       DateTime    @default(now())
+
+  @@index([organization_id])
+  @@index([overlay_type])
+}
+
+model ar_sessions {
+  id              String        @id @default(uuid())
+  organization_id String
+  device_id       String
+  user_id         String
+  session_type    SessionType   @default(INDIVIDUAL)
+  status          SessionStatus @default(ACTIVE)
+  active_overlays Json          @default("[]")
+  participants    Json          @default("[]")
+  interactions    Json          @default("[]")
+  started_at      DateTime      @default(now())
+  ended_at        DateTime?
+
+  device ar_devices @relation(fields: [device_id], references: [id], onDelete: Cascade)
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model mesh_network_stats {
+  id                 String   @id @default(uuid())
+  recorded_at        DateTime @default(now())
+  total_participants Int      @default(0)
+  active_today       Int      @default(0)
+  data_points_shared BigInt   @default(0)
+  insights_generated Int      @default(0)
+  avg_response_ms    Int      @default(0)
+  privacy_score      Float    @default(99.9)
+  uptime_percent     Float    @default(99.99)
+
+  @@index([recorded_at])
+}
+
+model mesh_participants {
+  id                 String   @id @default(uuid())
+  anonymous_id       String   @unique
+  industry           String
+  region             String
+  employee_range     String
+  revenue_range      String
+  contribution_score Float    @default(0)
+  data_quality       Float    @default(0)
+  last_active        DateTime @default(now())
+  joined_at          DateTime @default(now())
+
+  @@index([industry])
+}
+
+model mesh_benchmarks {
+  id            String   @id @default(uuid())
+  name          String
+  category      String
+  industry      String
+  p25_value     Float
+  p50_value     Float
+  p75_value     Float
+  p90_value     Float
+  trend         String   @default("stable")
+  trend_percent Float    @default(0)
+  unit          String
+  participants  Int      @default(0)
+  updated_at    DateTime @default(now())
+
+  @@unique([name, industry])
+  @@index([category])
+}
+
+model mesh_risk_signals {
+  id                  String   @id @default(uuid())
+  title               String
+  description         String
+  category            String
+  severity            String
+  affected_industries String[] @default([])
+  affected_regions    String[] @default([])
+  confidence          Float    @default(0)
+  sources             Int      @default(0)
+  recommendations     Json     @default("[]")
+  detected_at         DateTime @default(now())
+  valid_until         DateTime
+
+  @@index([severity])
+}
+
+enum MeshNodeType {
+  DCU
+  GATEWAY
+  ENDPOINT
+  SENSOR
+}
+
+enum NodeStatus {
+  ONLINE
+  OFFLINE
+  DEGRADED
+  MAINTENANCE
+}
+
+enum EncryptionLevel {
+  STANDARD
+  HIGH
+  QUANTUM_RESISTANT
+}
+
+enum ConnectionStatus {
+  ACTIVE
+  INACTIVE
+  DEGRADED
+}
+
+enum ChannelProtocol {
+  AES256
+  CHACHA20
+  KYBER
+  DILITHIUM
+}
+
+enum ChannelStatus {
+  ACTIVE
+  EXPIRED
+  REVOKED
+}
+
+enum BlackboxStatus {
+  OPERATIONAL
+  DEGRADED
+  OFFLINE
+  RECOVERY_MODE
+}
+
+enum BackupSourceType {
+  LEDGER
+  CHRONOS
+  WITNESS
+  CUSTOM
+}
+
+enum BackupStatus {
+  SCHEDULED
+  RUNNING
+  COMPLETED
+  FAILED
+}
+
+enum BackupPriority {
+  CRITICAL
+  HIGH
+  NORMAL
+  LOW
+}
+
+enum ARDeviceType {
+  VISION_PRO
+  META_QUEST
+  HOLOLENS
+  CUSTOM
+}
+
+enum ARDeviceStatus {
+  ACTIVE
+  INACTIVE
+  PAIRING
+  MAINTENANCE
+}
+
+enum SecurityClearance {
+  BASIC
+  STANDARD
+  ELEVATED
+  EXECUTIVE
+}
+
+enum OverlayType {
+  HEALTH_SCORE
+  RISK_INDICATOR
+  COUNCIL_INSIGHT
+  METRIC
+  ALERT
+  CUSTOM
+}
+
+enum SessionType {
+  INDIVIDUAL
+  COLLABORATIVE
+  PRESENTATION
+}
+
+enum SessionStatus {
+  ACTIVE
+  PAUSED
+  ENDED
+}

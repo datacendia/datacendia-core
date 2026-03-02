@@ -1,0 +1,206 @@
+// Copyright (c) 2024-2026 Datacendia, LLC All Rights Reserved.
+// Proprietary and confidential. Unauthorized copying is strictly prohibited.
+// See LICENSE file for details.
+
+/**
+ * =============================================================================
+ * ENTERPRISE CONNECTORS - Real OAuth2-Based Integrations
+ * =============================================================================
+ * All connectors use real OAuth2 flows and actual API calls.
+ * Credentials must be configured via environment variables or passed at runtime.
+ */
+
+export { SalesforceConnector, type SalesforceConfig, type SalesforceRecord, type SalesforceQueryResult } from './SalesforceConnector.js';
+export { SlackConnector, type SlackConfig, type SlackMessage, type SlackChannel, type SlackUser } from './SlackConnector.js';
+export { JiraConnector, type JiraConfig, type JiraIssue, type JiraProject, type JiraSearchResult } from './JiraConnector.js';
+export { GitHubConnector, type GitHubConfig, type GitHubRepository, type GitHubIssue, type GitHubPullRequest } from './GitHubConnector.js';
+export { MicrosoftTeamsConnector, type TeamsConfig, type TeamsTeam, type TeamsChannel, type TeamsMessage, type TeamsUser } from './MicrosoftTeamsConnector.js';
+export { ServiceNowConnector, type ServiceNowConfig, type ServiceNowIncident, type ServiceNowChange, type ServiceNowCMDBItem } from './ServiceNowConnector.js';
+export { HubSpotConnector, type HubSpotConfig, type HubSpotContact, type HubSpotCompany, type HubSpotDeal } from './HubSpotConnector.js';
+export { SAPConnector, type SAPConfig, type SAPEntity, type SAPODataResponse } from './SAPConnector.js';
+export { OracleConnector, type OracleConfig, type OracleEntity, type OracleResponse } from './OracleConnector.js';
+export { WorkdayConnector, type WorkdayConfig, type WorkdayWorker, type WorkdayOrganization, type WorkdayJob } from './WorkdayConnector.js';
+
+import { ConnectorMetadata } from '../BaseConnector.js';
+
+/**
+ * Enterprise connector metadata for discovery/listing
+ */
+export const ENTERPRISE_CONNECTORS: ConnectorMetadata[] = [
+  {
+    id: 'salesforce',
+    name: 'Salesforce',
+    description: 'Salesforce CRM - accounts, contacts, opportunities, leads, cases',
+    vertical: 'enterprise',
+    category: 'crm',
+    provider: 'Salesforce, Inc.',
+    region: 'Global',
+    dataTypes: ['accounts', 'contacts', 'opportunities', 'leads', 'cases', 'tasks', 'events', 'custom_objects'],
+    updateFrequency: 'Real-time via API',
+    documentationUrl: 'https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/',
+    apiVersion: 'v59.0',
+    requiredCredentials: ['clientId', 'clientSecret', 'redirectUri'],
+    optionalCredentials: ['instanceUrl', 'sandbox'],
+    complianceFrameworks: ['SOC2', 'ISO27001', 'GDPR', 'HIPAA'],
+    compatibilityLabel: 'native_protocol',
+    integrationNotes: 'Full REST API support with OAuth2 PKCE flow',
+  },
+  {
+    id: 'slack',
+    name: 'Slack',
+    description: 'Slack messaging - channels, messages, users, files, reactions',
+    vertical: 'enterprise',
+    category: 'messaging',
+    provider: 'Slack Technologies (Salesforce)',
+    region: 'Global',
+    dataTypes: ['channels', 'messages', 'users', 'files', 'reactions', 'threads'],
+    updateFrequency: 'Real-time via Events API or polling',
+    documentationUrl: 'https://api.slack.com/docs',
+    apiVersion: 'Web API',
+    requiredCredentials: ['clientId', 'clientSecret', 'redirectUri'],
+    optionalCredentials: ['botToken', 'signingSecret'],
+    complianceFrameworks: ['SOC2', 'ISO27001', 'GDPR', 'HIPAA'],
+    compatibilityLabel: 'native_protocol',
+    integrationNotes: 'Full Web API support with OAuth2 and Events API',
+  },
+  {
+    id: 'jira',
+    name: 'Jira',
+    description: 'Atlassian Jira - issues, projects, sprints, boards, workflows',
+    vertical: 'enterprise',
+    category: 'project-management',
+    provider: 'Atlassian',
+    region: 'Global',
+    dataTypes: ['issues', 'projects', 'sprints', 'boards', 'workflows', 'users', 'comments'],
+    updateFrequency: 'Real-time via API or webhooks',
+    documentationUrl: 'https://developer.atlassian.com/cloud/jira/platform/rest/v3/',
+    apiVersion: 'v3',
+    requiredCredentials: ['clientId', 'clientSecret', 'redirectUri'],
+    optionalCredentials: ['cloudId'],
+    complianceFrameworks: ['SOC2', 'ISO27001', 'GDPR'],
+    compatibilityLabel: 'native_protocol',
+    integrationNotes: 'Full REST API v3 support with OAuth2 and webhooks',
+  },
+  {
+    id: 'microsoft-teams',
+    name: 'Microsoft Teams',
+    description: 'Microsoft Teams - channels, messages, meetings, users',
+    vertical: 'enterprise',
+    category: 'messaging',
+    provider: 'Microsoft',
+    region: 'Global',
+    dataTypes: ['teams', 'channels', 'messages', 'meetings', 'users', 'files'],
+    updateFrequency: 'Real-time via Graph API',
+    documentationUrl: 'https://learn.microsoft.com/en-us/graph/teams-concept-overview',
+    apiVersion: 'v1.0',
+    requiredCredentials: ['clientId', 'clientSecret', 'tenantId', 'redirectUri'],
+    complianceFrameworks: ['SOC2', 'ISO27001', 'GDPR', 'HIPAA', 'FedRAMP'],
+    compatibilityLabel: 'native_protocol',
+    integrationNotes: 'Microsoft Graph API with OAuth2',
+  },
+  {
+    id: 'github',
+    name: 'GitHub',
+    description: 'GitHub - repositories, issues, pull requests, actions, code',
+    vertical: 'enterprise',
+    category: 'development',
+    provider: 'GitHub (Microsoft)',
+    region: 'Global',
+    dataTypes: ['repositories', 'issues', 'pull_requests', 'commits', 'actions', 'releases'],
+    updateFrequency: 'Real-time via API or webhooks',
+    documentationUrl: 'https://docs.github.com/en/rest',
+    apiVersion: 'v3',
+    requiredCredentials: ['clientId', 'clientSecret', 'redirectUri'],
+    optionalCredentials: ['personalAccessToken'],
+    complianceFrameworks: ['SOC2', 'ISO27001'],
+    compatibilityLabel: 'native_protocol',
+    integrationNotes: 'REST and GraphQL API with OAuth2 or PAT',
+  },
+  {
+    id: 'servicenow',
+    name: 'ServiceNow',
+    description: 'ServiceNow ITSM - incidents, changes, problems, assets',
+    vertical: 'enterprise',
+    category: 'itsm',
+    provider: 'ServiceNow',
+    region: 'Global',
+    dataTypes: ['incidents', 'changes', 'problems', 'assets', 'cmdb', 'users'],
+    updateFrequency: 'Real-time via API',
+    documentationUrl: 'https://developer.servicenow.com/dev.do',
+    apiVersion: 'REST API',
+    requiredCredentials: ['instanceUrl', 'clientId', 'clientSecret', 'redirectUri'],
+    complianceFrameworks: ['SOC2', 'ISO27001', 'GDPR', 'HIPAA', 'FedRAMP'],
+    compatibilityLabel: 'native_protocol',
+    integrationNotes: 'Full REST API with OAuth2',
+  },
+  {
+    id: 'workday',
+    name: 'Workday',
+    description: 'Workday HCM - employees, org structure, compensation, time off',
+    vertical: 'enterprise',
+    category: 'hcm',
+    provider: 'Workday',
+    region: 'Global',
+    dataTypes: ['workers', 'organizations', 'compensation', 'time_off', 'recruiting'],
+    updateFrequency: 'Real-time via API',
+    documentationUrl: 'https://community.workday.com/sites/default/files/file-hosting/restapi/',
+    apiVersion: 'REST API v1',
+    requiredCredentials: ['tenantUrl', 'clientId', 'clientSecret', 'refreshToken'],
+    complianceFrameworks: ['SOC2', 'ISO27001', 'GDPR', 'HIPAA'],
+    compatibilityLabel: 'native_protocol',
+    integrationNotes: 'Workday REST API with OAuth2 (requires Workday subscription)',
+  },
+  {
+    id: 'sap',
+    name: 'SAP S/4HANA',
+    description: 'SAP ERP - financials, materials, sales, procurement',
+    vertical: 'enterprise',
+    category: 'erp',
+    provider: 'SAP',
+    region: 'Global',
+    dataTypes: ['financials', 'materials', 'sales_orders', 'purchase_orders', 'master_data'],
+    updateFrequency: 'Real-time via OData',
+    documentationUrl: 'https://api.sap.com/',
+    apiVersion: 'OData v4',
+    requiredCredentials: ['systemUrl', 'clientId', 'clientSecret'],
+    optionalCredentials: ['sapClient', 'sapLanguage'],
+    complianceFrameworks: ['SOC2', 'ISO27001', 'GDPR'],
+    compatibilityLabel: 'native_protocol',
+    integrationNotes: 'SAP OData APIs with OAuth2 (requires SAP subscription)',
+  },
+  {
+    id: 'oracle-fusion',
+    name: 'Oracle Fusion Cloud',
+    description: 'Oracle Fusion - ERP, HCM, CX, SCM applications',
+    vertical: 'enterprise',
+    category: 'erp',
+    provider: 'Oracle',
+    region: 'Global',
+    dataTypes: ['financials', 'hrm', 'procurement', 'projects', 'scm'],
+    updateFrequency: 'Real-time via REST',
+    documentationUrl: 'https://docs.oracle.com/en/cloud/saas/index.html',
+    apiVersion: 'REST v1',
+    requiredCredentials: ['instanceUrl', 'clientId', 'clientSecret'],
+    complianceFrameworks: ['SOC2', 'ISO27001', 'GDPR', 'FedRAMP'],
+    compatibilityLabel: 'native_protocol',
+    integrationNotes: 'Oracle REST APIs with OAuth2 (requires Oracle subscription)',
+  },
+  {
+    id: 'hubspot',
+    name: 'HubSpot',
+    description: 'HubSpot CRM - contacts, companies, deals, tickets, marketing',
+    vertical: 'enterprise',
+    category: 'crm',
+    provider: 'HubSpot',
+    region: 'Global',
+    dataTypes: ['contacts', 'companies', 'deals', 'tickets', 'marketing', 'emails'],
+    updateFrequency: 'Real-time via API',
+    documentationUrl: 'https://developers.hubspot.com/docs/api/overview',
+    apiVersion: 'v3',
+    requiredCredentials: ['clientId', 'clientSecret', 'redirectUri'],
+    optionalCredentials: ['privateAppToken'],
+    complianceFrameworks: ['SOC2', 'GDPR'],
+    compatibilityLabel: 'native_protocol',
+    integrationNotes: 'Full REST API v3 with OAuth2',
+  },
+];

@@ -1,0 +1,249 @@
+// Verticals Domain - Sports, Industry-Specific Models
+
+model sports_transfer_decisions {
+  id              String               @id
+  organization_id String
+  template_id     String
+  status          SportsDecisionStatus @default(DRAFT)
+  created_at      DateTime             @default(now())
+  updated_at      DateTime             @updatedAt
+  created_by      String
+  locked_at       DateTime?
+  audit_hash      String?
+
+  // Transaction details
+  transaction_type     TransferType
+  player_name          String
+  player_dob           DateTime?
+  player_position      String?
+  player_nationality   String?
+  counterparty_club    String
+  counterparty_country String?
+  counterparty_league  String?
+
+  // Financial
+  transfer_fee          Decimal  @default(0) @db.Decimal(15, 2)
+  add_ons               Decimal  @default(0) @db.Decimal(15, 2)
+  agent_fee             Decimal  @default(0) @db.Decimal(15, 2)
+  weekly_wage           Decimal? @db.Decimal(12, 2)
+  contract_length_years Int?
+  total_commitment      Decimal? @db.Decimal(15, 2)
+  sell_on_percentage    Decimal? @db.Decimal(5, 2)
+  buyback_clause        Decimal? @db.Decimal(15, 2)
+  release_clause        Decimal? @db.Decimal(15, 2)
+
+  // Scouting
+  scouting_matches_observed Int                     @default(0)
+  scouting_video_analysis   Boolean                 @default(false)
+  scouting_data_profile     String?
+  scouting_character_refs   Int                     @default(0)
+  scouting_recommendation   ScoutingRecommendation?
+
+  // Valuation
+  valuation_methodology        String?
+  valuation_market_comparables String?
+  valuation_internal           Decimal? @db.Decimal(15, 2)
+  valuation_data_model         Decimal? @db.Decimal(15, 2)
+  valuation_negotiated         Decimal? @db.Decimal(15, 2)
+  valuation_premium_pct        Decimal? @db.Decimal(5, 2)
+
+  // JSON fields for complex data
+  alternatives_considered Json @default("[]")
+  compliance_checks       Json @default("[]")
+  timeline                Json @default("[]")
+
+  // Relations
+  approvals    sports_decision_approvals[]
+  evidence     sports_decision_evidence[]
+  organization organizations               @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id])
+  @@index([status])
+  @@index([transaction_type])
+  @@index([created_at])
+  @@index([player_name])
+}
+
+model sports_contract_decisions {
+  id              String               @id
+  organization_id String
+  template_id     String
+  status          SportsDecisionStatus @default(DRAFT)
+  created_at      DateTime             @default(now())
+  updated_at      DateTime             @updatedAt
+  created_by      String
+  locked_at       DateTime?
+  audit_hash      String?
+
+  // Contract type
+  contract_type String // new, renewal, termination
+
+  // Player
+  player_name     String
+  player_dob      DateTime?
+  player_position String?
+
+  // Current contract (for renewals)
+  current_weekly_wage     Decimal?  @db.Decimal(12, 2)
+  current_expiry_date     DateTime?
+  current_remaining_value Decimal?  @db.Decimal(15, 2)
+
+  // Proposed contract
+  proposed_weekly_wage  Decimal  @db.Decimal(12, 2)
+  proposed_length_years Int
+  signing_bonus         Decimal? @db.Decimal(12, 2)
+  loyalty_bonus         Decimal? @db.Decimal(12, 2)
+  performance_bonuses   String?
+  release_clause        Decimal? @db.Decimal(15, 2)
+  total_value           Decimal  @db.Decimal(15, 2)
+
+  // Justification
+  performance_assessment String?
+  market_benchmarking    String?
+  strategic_rationale    String?
+
+  // JSON fields
+  timeline Json @default("[]")
+
+  // Relations
+  approvals    sports_decision_approvals[]
+  evidence     sports_decision_evidence[]
+  organization organizations               @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id])
+  @@index([status])
+  @@index([contract_type])
+  @@index([created_at])
+  @@index([player_name])
+}
+
+model sports_decision_approvals {
+  id                   String    @id @default(uuid())
+  transfer_decision_id String?
+  contract_decision_id String?
+  role                 String // board, ceo, cfo, sporting_director
+  user_id              String?
+  user_name            String?
+  decision             String    @default("pending") // pending, approved, rejected
+  timestamp            DateTime?
+  comments             String?
+  created_at           DateTime  @default(now())
+
+  transfer_decision sports_transfer_decisions? @relation(fields: [transfer_decision_id], references: [id], onDelete: Cascade)
+  contract_decision sports_contract_decisions? @relation(fields: [contract_decision_id], references: [id], onDelete: Cascade)
+
+  @@index([transfer_decision_id])
+  @@index([contract_decision_id])
+  @@index([role])
+  @@index([decision])
+}
+
+model sports_decision_evidence {
+  id                   String   @id @default(uuid())
+  transfer_decision_id String?
+  contract_decision_id String?
+  evidence_type        String // scouting_report, valuation_analysis, medical_report, etc.
+  filename             String
+  mime_type            String?
+  size_bytes           Int?
+  storage_path         String?
+  hash                 String // SHA-256 for integrity
+  description          String?
+  uploaded_by          String
+  uploaded_at          DateTime @default(now())
+
+  transfer_decision sports_transfer_decisions? @relation(fields: [transfer_decision_id], references: [id], onDelete: Cascade)
+  contract_decision sports_contract_decisions? @relation(fields: [contract_decision_id], references: [id], onDelete: Cascade)
+
+  @@index([transfer_decision_id])
+  @@index([contract_decision_id])
+  @@index([evidence_type])
+}
+
+model sports_ffp_assessments {
+  id                   String   @id @default(uuid())
+  transfer_decision_id String
+  assessed_at          DateTime @default(now())
+  assessed_by          String?
+
+  // Current position
+  current_break_even       Decimal @db.Decimal(15, 2)
+  current_squad_cost_ratio Decimal @db.Decimal(5, 2)
+
+  // Impact
+  cash_outflow          Decimal @db.Decimal(15, 2)
+  annual_wage_cost      Decimal @db.Decimal(15, 2)
+  amortization_per_year Decimal @db.Decimal(15, 2)
+  ffp_charge_year1      Decimal @db.Decimal(15, 2)
+
+  // Projected
+  projected_break_even       Decimal @db.Decimal(15, 2)
+  projected_squad_cost_ratio Decimal @db.Decimal(5, 2)
+  remaining_headroom         Decimal @db.Decimal(15, 2)
+
+  // Risk
+  risk_level String // low, medium, high, critical
+  notes      String?
+
+  @@index([transfer_decision_id])
+  @@index([risk_level])
+}
+
+enum TransferType {
+  INBOUND
+  OUTBOUND
+  LOAN_OUT
+  LOAN_IN
+}
+
+enum SportsDecisionStatus {
+  DRAFT
+  PENDING_APPROVAL
+  APPROVED
+  REJECTED
+  COMPLETED
+  WITHDRAWN
+}
+
+enum ScoutingRecommendation {
+  STRONG_BUY
+  BUY
+  CONDITIONAL
+  PASS
+}
+
+// =============================================================================
+// FHIR R4 — Healthcare Data Connector Audit
+// =============================================================================
+
+model fhir_access_logs {
+  id            String   @id @default(uuid())
+  user_id       String
+  action        String   // read, search, create, update, delete
+  resource_type String   // Patient, Practitioner, Organization, etc.
+  resource_id   String?
+  patient_id    String?
+  purpose       String   @default("treatment")
+  access_hash   String
+  created_at    DateTime @default(now())
+
+  @@index([user_id])
+  @@index([resource_type])
+  @@index([patient_id])
+  @@index([created_at])
+}
+
+model fhir_audit_events {
+  id            String   @id @default(uuid())
+  user_id       String
+  action        String   // C, R, U, D, E
+  resource_type String
+  resource_id   String?
+  outcome       String   // 0 (success), 8 (failure)
+  event_data    Json     // Full FHIR AuditEvent resource
+  created_at    DateTime @default(now())
+
+  @@index([user_id])
+  @@index([resource_type])
+  @@index([created_at])
+}

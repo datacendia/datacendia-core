@@ -1,4 +1,4 @@
-﻿# Datacendia Core
+# Datacendia Core
 
 <div align="center">
 
@@ -6,7 +6,7 @@
 
 **The Defensible AI Platform -- open-source core, sovereign-first.**
 
-Multi-agent deliberation &middot; Immutable audit trails &middot; 29 industry verticals &middot; Sovereign-first
+Multi-agent deliberation &middot; Immutable audit trails &middot; 30 industry verticals &middot; Sovereign-first
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
@@ -82,7 +82,7 @@ Datacendia is the only AI platform where every decision is auditable, explainabl
 
 - **The Council** -- Multi-agent deliberation with configurable agent panels (financial, legal, ethical, adversarial, domain-specific)
 - **Immutable Audit Ledger** -- Every decision cryptographically signed with Merkle tree integrity
-- **29 Industry Verticals** -- Financial, Healthcare, Legal, Defense, Insurance, Energy, Government, Manufacturing, Pharmaceutical, Sports, and 19 more
+- **30 Industry Verticals** -- Financial, Healthcare, Legal, Defense, Insurance, Energy, Government, Manufacturing, Pharmaceutical, Sports, and 19 more
 - **Sovereign-First** -- Runs fully air-gapped. No cloud dependency. Your data stays yours.
 - **LLM-Agnostic** -- Works with Ollama, NVIDIA Triton, NVIDIA NIM, or any OpenAI-compatible API
 - **Enterprise Infrastructure** -- Kafka event streaming, Temporal workflows, OPA policies, OpenBao secrets, NeMo Guardrails, RAPIDS GPU analytics, Flink CEP
@@ -136,8 +136,8 @@ docker compose -f docker-compose.demo.yml up -d
 ```
 datacendia-core/
 |-- src/                          # React frontend (Vite + TypeScript + Tailwind)
-|   |-- components/               # 85 reusable UI components
-|   |-- pages/                    # 197 page components
+|   |-- components/               # 99 reusable UI components
+|   |-- pages/                    # 210 page components
 |   +-- services/                 # Frontend API clients
 |-- backend/                      # Node.js backend (Express + Prisma)
 |   |-- src/
@@ -151,8 +151,8 @@ datacendia-core/
 |   |   |   |-- vault/            # OpenBao/Vault secrets management
 |   |   |   |-- gpu/              # RAPIDS analytics + Confidential Computing
 |   |   |   |-- streaming/        # Flink CEP real-time processing
-|   |   |   +-- verticals/        # 29 industry verticals
-|   |   |-- routes/               # 155 API route files
+|   |   |   +-- verticals/        # 30 industry verticals
+|   |   |-- routes/               # 156 API route files
 |   |   |-- security/             # Casbin RBAC, Keycloak SSO
 |   |   +-- middleware/           # Auth, rate limiting, security
 |   +-- prisma/                   # 260 database models
@@ -181,7 +181,7 @@ datacendia-core/
 
 ## Industry Verticals
 
-Datacendia ships with **29 industry vertical definitions**. Each vertical provides domain-specific agents, compliance frameworks, decision schemas, and knowledge bases.
+Datacendia ships with **30 industry vertical definitions**. Each vertical provides domain-specific agents, compliance frameworks, decision schemas, and knowledge bases.
 
 | Vertical | Compliance Frameworks | Status |
 |----------|----------------------|:------:|

@@ -1,0 +1,33 @@
+// Copyright (c) 2024-2026 Datacendia, LLC All Rights Reserved.
+// Proprietary and confidential. Unauthorized copying is strictly prohibited.
+// See LICENSE file for details.
+
+// =============================================================================
+// ENTERPRISE ROUTE MOUNTING UTILITY
+// Conditionally loads enterprise route modules via dynamic import.
+// In Community Edition builds, enterprise route files are excluded,
+// so the imports fail silently and those endpoints simply don't exist.
+// =============================================================================
+
+import { Router } from 'express';
+
+/**
+ * Mount multiple enterprise routes on a router.
+ * Each route is loaded via dynamic import — if the module doesn't exist
+ * (community build), it is silently skipped.
+ */
+export function mountEnterpriseRoutes(
+  router: Router,
+  routes: Array<[string, () => Promise<any>]>
+): void {
+  (async () => {
+    for (const [path, loader] of routes) {
+      try {
+        const mod = await loader();
+        router.use(path, mod.default);
+      } catch {
+        // Enterprise module not available — Community Edition
+      }
+    }
+  })();
+}

@@ -1,0 +1,787 @@
+// Enterprise Domain - Contracts, Customers, Incidents, Services
+
+model enterprise_contracts {
+  id               String   @id @default(uuid())
+  organization_id  String
+  vendor_name      String
+  vendor_email     String?
+  category         String // cloud, software, hardware, services, supplies, other
+  annual_value     Decimal  @db.Decimal(15, 2)
+  currency         String   @default("USD")
+  start_date       DateTime
+  end_date         DateTime
+  renewal_date     DateTime
+  auto_renew       Boolean  @default(false)
+  usage_percent    Decimal  @db.Decimal(5, 2)
+  market_benchmark Decimal? @db.Decimal(15, 2)
+  terms            String?  @db.Text
+  status           String   @default("active") // active, expiring, negotiating, renewed, canceled
+  created_at       DateTime @default(now())
+  updated_at       DateTime @default(now()) @updatedAt
+
+  organizations organizations             @relation(fields: [organization_id], references: [id])
+  negotiations  enterprise_negotiations[]
+
+  @@index([organization_id])
+  @@index([status])
+  @@index([renewal_date])
+}
+
+model enterprise_negotiations {
+  id                 String    @id @default(uuid())
+  contract_id        String
+  current_price      Decimal   @db.Decimal(15, 2)
+  target_price       Decimal   @db.Decimal(15, 2)
+  savings_estimate   Decimal   @db.Decimal(15, 2)
+  leverage           Json      @default("[]")
+  negotiation_script String?   @db.Text
+  draft_email        String?   @db.Text
+  priority           String    @default("medium") // low, medium, high
+  deadline_days      Int
+  status             String    @default("pending") // pending, in_progress, completed, abandoned
+  final_price        Decimal?  @db.Decimal(15, 2)
+  savings_achieved   Decimal?  @db.Decimal(15, 2)
+  completed_at       DateTime?
+  created_at         DateTime  @default(now())
+
+  contract enterprise_contracts @relation(fields: [contract_id], references: [id], onDelete: Cascade)
+
+  @@index([contract_id])
+  @@index([status])
+}
+
+model enterprise_customers {
+  id              String    @id @default(uuid())
+  organization_id String
+  company         String
+  industry        String
+  tier            String // enterprise, business, startup, smb
+  arr             Decimal   @db.Decimal(15, 2)
+  mrr             Decimal   @db.Decimal(15, 2)
+  contract_start  DateTime
+  contract_end    DateTime
+  csm_id          String?
+  csm_name        String?
+  health_score    Int       @default(80)
+  nps_score       Int?
+  last_activity   DateTime?
+  created_at      DateTime  @default(now())
+  updated_at      DateTime  @default(now()) @updatedAt
+
+  organizations  organizations                     @relation(fields: [organization_id], references: [id])
+  health_records enterprise_customer_health[]
+  engagements    enterprise_customer_engagements[]
+
+  @@index([organization_id])
+  @@index([tier])
+  @@index([health_score])
+}
+
+model enterprise_customer_health {
+  id                  String   @id @default(uuid())
+  customer_id         String
+  overall_score       Int
+  trend               String // up, stable, down
+  components          Json     @default("[]")
+  risk_factors        Json     @default("[]")
+  opportunities       Json     @default("[]")
+  recommended_actions Json     @default("[]")
+  assessed_at         DateTime @default(now())
+
+  customer enterprise_customers @relation(fields: [customer_id], references: [id], onDelete: Cascade)
+
+  @@index([customer_id])
+  @@index([assessed_at])
+}
+
+model enterprise_customer_engagements {
+  id               String   @id @default(uuid())
+  customer_id      String
+  period_start     DateTime
+  period_end       DateTime
+  login_count      Int      @default(0)
+  active_users     Int      @default(0)
+  feature_adoption Json     @default("[]")
+  support_tickets  Int      @default(0)
+  nps_response     Int?
+  created_at       DateTime @default(now())
+
+  customer enterprise_customers @relation(fields: [customer_id], references: [id], onDelete: Cascade)
+
+  @@index([customer_id])
+  @@index([period_start])
+}
+
+model enterprise_services {
+  id                String   @id @default(uuid())
+  organization_id   String
+  name              String
+  type              String // api, database, cache, queue, storage, compute, network, security
+  status            String   @default("healthy") // healthy, degraded, down, maintenance
+  uptime            Decimal  @db.Decimal(5, 2)
+  latency           Int // ms
+  error_rate        Decimal  @db.Decimal(5, 2)
+  throughput        Int // requests/second
+  dependencies      Json     @default("[]")
+  metadata          Json     @default("{}")
+  last_health_check DateTime @default(now())
+  created_at        DateTime @default(now())
+  updated_at        DateTime @default(now()) @updatedAt
+
+  organizations organizations          @relation(fields: [organization_id], references: [id])
+  incidents     enterprise_incidents[]
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model enterprise_incidents {
+  id              String    @id @default(uuid())
+  organization_id String
+  service_id      String?
+  title           String
+  severity        String // p1, p2, p3, p4
+  status          String    @default("detected") // detected, investigating, identified, monitoring, resolved, postmortem
+  description     String?   @db.Text
+  root_cause      String?   @db.Text
+  customer_impact Json      @default("{}")
+  timeline        Json      @default("[]")
+  assignee        String?
+  detected_at     DateTime  @default(now())
+  resolved_at     DateTime?
+
+  organizations organizations        @relation(fields: [organization_id], references: [id])
+  service       enterprise_services? @relation(fields: [service_id], references: [id])
+
+  @@index([organization_id])
+  @@index([severity])
+  @@index([status])
+}
+
+model enterprise_legal_matters {
+  id              String   @id @default(uuid())
+  organization_id String
+  title           String
+  type            String // litigation, contract, regulatory, ip, employment, corporate, compliance
+  status          String   @default("open") // open, discovery, negotiation, trial, appeal, closed, settled
+  jurisdiction    String
+  description     String?  @db.Text
+  parties         Json     @default("[]")
+  risk_exposure   Decimal  @db.Decimal(15, 2)
+  estimated_cost  Decimal  @db.Decimal(15, 2)
+  actual_cost     Decimal  @default(0) @db.Decimal(15, 2)
+  win_probability Int?
+  timeline        Json     @default("[]")
+  documents       Json     @default("[]")
+  created_at      DateTime @default(now())
+  updated_at      DateTime @default(now()) @updatedAt
+
+  organizations organizations @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id])
+  @@index([type])
+  @@index([status])
+}
+
+model enterprise_investors {
+  id                String    @id @default(uuid())
+  organization_id   String
+  name              String
+  type              String // institutional, retail, activist, insider, index
+  investment_style  String? // value, growth, momentum, quant, passive
+  shares_held       BigInt    @default(0)
+  ownership_percent Decimal   @db.Decimal(5, 2)
+  avg_cost_basis    Decimal?  @db.Decimal(15, 2)
+  sentiment         String    @default("neutral") // bullish, neutral, bearish, unknown
+  last_contact      DateTime?
+  notes             String?   @db.Text
+  created_at        DateTime  @default(now())
+  updated_at        DateTime  @default(now()) @updatedAt
+
+  organizations organizations                     @relation(fields: [organization_id], references: [id])
+  outreach      enterprise_shareholder_outreach[]
+
+  @@index([organization_id])
+  @@index([type])
+}
+
+model enterprise_shareholder_outreach {
+  id             String   @id @default(uuid())
+  investor_id    String
+  type           String // meeting, call, roadshow, conference, site_visit
+  scheduled_date DateTime
+  attendees      Json     @default("[]")
+  topics         Json     @default("[]")
+  status         String   @default("scheduled") // scheduled, completed, cancelled
+  outcome        String?  @db.Text
+  follow_up      String?
+  created_at     DateTime @default(now())
+
+  investor enterprise_investors @relation(fields: [investor_id], references: [id], onDelete: Cascade)
+
+  @@index([investor_id])
+  @@index([scheduled_date])
+}
+
+model enterprise_production_lines {
+  id              String   @id @default(uuid())
+  organization_id String
+  name            String
+  location        String
+  status          String   @default("idle") // running, idle, maintenance, down, changeover
+  shift           String   @default("day") // day, evening, night
+  product         String?
+  capacity        Int
+  current_output  Int      @default(0)
+  efficiency      Decimal  @db.Decimal(5, 2)
+  quality         Decimal  @db.Decimal(5, 2)
+  equipment       Json     @default("[]")
+  created_at      DateTime @default(now())
+  updated_at      DateTime @default(now()) @updatedAt
+
+  organizations  organizations                    @relation(fields: [organization_id], references: [id])
+  failures       enterprise_predictive_failures[]
+  quality_events enterprise_quality_events[]
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model enterprise_predictive_failures {
+  id                    String    @id @default(uuid())
+  line_id               String
+  equipment_name        String
+  failure_type          String
+  probability           Decimal   @db.Decimal(5, 2)
+  confidence            Decimal   @db.Decimal(5, 2)
+  predicted_date        DateTime
+  priority              String    @default("medium") // low, medium, high, critical
+  status                String    @default("predicted") // predicted, scheduled, prevented, occurred
+  indicators            Json      @default("[]")
+  estimated_downtime    Int // hours
+  estimated_cost        Decimal   @db.Decimal(15, 2)
+  maintenance_scheduled DateTime?
+  created_at            DateTime  @default(now())
+
+  line enterprise_production_lines @relation(fields: [line_id], references: [id], onDelete: Cascade)
+
+  @@index([line_id])
+  @@index([priority])
+  @@index([status])
+}
+
+model enterprise_quality_events {
+  id                String    @id @default(uuid())
+  line_id           String
+  type              String // defect, deviation, contamination, out_of_spec
+  severity          String // minor, major, critical
+  batch_affected    String?
+  units_affected    Int       @default(0)
+  description       String    @db.Text
+  root_cause        String?   @db.Text
+  corrective_action String?   @db.Text
+  status            String    @default("investigating") // investigating, contained, resolved, closed
+  timestamp         DateTime  @default(now())
+  resolved_at       DateTime?
+
+  line enterprise_production_lines @relation(fields: [line_id], references: [id], onDelete: Cascade)
+
+  @@index([line_id])
+  @@index([severity])
+  @@index([status])
+}
+
+model enterprise_travel_requests {
+  id                 String    @id @default(uuid())
+  organization_id    String
+  employee_id        String
+  employee_name      String
+  department         String
+  vip_level          String    @default("standard") // standard, executive, c_suite, board
+  destinations       Json      @default("[]")
+  purpose            String
+  status             String    @default("pending") // pending, approved, denied, in_progress, completed, cancelled
+  risk_assessment    Json?
+  emergency_contacts Json      @default("[]")
+  approved_by        String?
+  approved_at        DateTime?
+  created_at         DateTime  @default(now())
+  updated_at         DateTime  @default(now()) @updatedAt
+
+  organizations organizations              @relation(fields: [organization_id], references: [id])
+  security_plan enterprise_security_plans?
+
+  @@index([organization_id])
+  @@index([employee_id])
+  @@index([status])
+}
+
+model enterprise_security_plans {
+  id                     String   @id @default(uuid())
+  travel_request_id      String   @unique
+  level                  String   @default("standard") // standard, enhanced, executive, high_risk
+  measures               Json     @default("[]")
+  ground_transport       Json     @default("[]")
+  safe_locations         Json     @default("[]")
+  communication_protocol Json     @default("{}")
+  check_in_schedule      Json     @default("[]")
+  extraction_plan        Json?
+  security_personnel     Json     @default("[]")
+  created_at             DateTime @default(now())
+
+  travel_request enterprise_travel_requests @relation(fields: [travel_request_id], references: [id], onDelete: Cascade)
+}
+
+model enterprise_skill_profiles {
+  id              String   @id @default(uuid())
+  organization_id String
+  employee_id     String
+  name            String
+  role            String
+  department      String
+  skills          Json     @default("[]")
+  certifications  Json     @default("[]")
+  assessments     Json     @default("[]")
+  created_at      DateTime @default(now())
+  updated_at      DateTime @default(now()) @updatedAt
+
+  organizations  organizations               @relation(fields: [organization_id], references: [id])
+  learning_paths enterprise_learning_paths[]
+
+  @@unique([organization_id, employee_id])
+  @@index([organization_id])
+  @@index([department])
+}
+
+model enterprise_learning_paths {
+  id              String    @id @default(uuid())
+  profile_id      String
+  target_skill    String
+  current_level   Int
+  target_level    Int
+  difficulty      String // beginner, intermediate, advanced, expert
+  estimated_hours Int
+  modules         Json      @default("[]")
+  progress        Decimal   @default(0) @db.Decimal(5, 2)
+  status          String    @default("not_started") // not_started, in_progress, completed
+  started_at      DateTime?
+  completed_at    DateTime?
+  created_at      DateTime  @default(now())
+
+  profile enterprise_skill_profiles @relation(fields: [profile_id], references: [id], onDelete: Cascade)
+
+  @@index([profile_id])
+  @@index([status])
+}
+
+model enterprise_campaigns {
+  id               String    @id @default(uuid())
+  organization_id  String
+  name             String
+  type             String // internal, external, crisis, product_launch, corporate, investor
+  status           String    @default("draft") // draft, scheduled, active, paused, completed
+  objectives       Json      @default("[]")
+  target_audiences Json      @default("[]")
+  channels         Json      @default("[]")
+  timeline         Json      @default("[]")
+  metrics          Json      @default("{}")
+  start_date       DateTime?
+  end_date         DateTime?
+  created_at       DateTime  @default(now())
+  updated_at       DateTime  @default(now()) @updatedAt
+
+  organizations organizations                  @relation(fields: [organization_id], references: [id])
+  messages      enterprise_campaign_messages[]
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model enterprise_campaign_messages {
+  id              String    @id @default(uuid())
+  campaign_id     String
+  version         Int       @default(1)
+  content         String    @db.Text
+  tone            String // formal, professional, casual, urgent, inspirational
+  audience        String
+  channel         String
+  status          String    @default("draft") // draft, approved, published
+  sentiment_score Int?
+  approved_by     String?
+  published_at    DateTime?
+  created_at      DateTime  @default(now())
+
+  campaign enterprise_campaigns @relation(fields: [campaign_id], references: [id], onDelete: Cascade)
+
+  @@index([campaign_id])
+  @@index([status])
+}
+
+model enterprise_crisis_responses {
+  id                 String    @id @default(uuid())
+  organization_id    String
+  crisis_type        String
+  severity           String // minor, moderate, major, catastrophic
+  status             String    @default("identified") // identified, responding, managed, resolved, post_mortem
+  stakeholders       Json      @default("[]")
+  timeline           Json      @default("[]")
+  holding_statements Json      @default("[]")
+  media_inquiries    Json      @default("[]")
+  social_monitoring  Json      @default("{}")
+  internal_comms     Json      @default("{}")
+  recommendations    Json      @default("[]")
+  lessons_learned    Json      @default("[]")
+  created_at         DateTime  @default(now())
+  resolved_at        DateTime?
+
+  organizations organizations @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id])
+  @@index([severity])
+  @@index([status])
+}
+
+model enterprise_ideas {
+  id                String   @id @default(uuid())
+  organization_id   String
+  title             String
+  description       String   @db.Text
+  category          String // product, process, technology, business_model
+  inventor_id       String
+  inventor_name     String
+  department        String?
+  novelty_score     Int?
+  feasibility_score Int?
+  business_value    Int?
+  patent_potential  Boolean  @default(false)
+  status            String   @default("captured") // captured, evaluating, approved, developing, patented, archived
+  linked_patents    Json     @default("[]")
+  linked_projects   Json     @default("[]")
+  captured_at       DateTime @default(now())
+  updated_at        DateTime @default(now()) @updatedAt
+
+  organizations organizations @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id])
+  @@index([status])
+  @@index([inventor_id])
+}
+
+model enterprise_patents {
+  id                 String    @id @default(uuid())
+  organization_id    String
+  title              String
+  abstract           String    @db.Text
+  claims             Json      @default("[]")
+  inventors          Json      @default("[]")
+  filing_date        DateTime?
+  application_number String?
+  patent_number      String?
+  status             String    @default("draft") // draft, provisional, filed, pending, granted, rejected, expired
+  jurisdiction       String    @default("US")
+  priority_date      DateTime?
+  expiration_date    DateTime?
+  prior_art          Json      @default("[]")
+  maintenance_fees   Json      @default("[]")
+  estimated_value    Decimal?  @db.Decimal(15, 2)
+  created_at         DateTime  @default(now())
+  updated_at         DateTime  @default(now()) @updatedAt
+
+  organizations organizations @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model enterprise_research_projects {
+  id              String    @id @default(uuid())
+  organization_id String
+  title           String
+  description     String    @db.Text
+  lead_id         String
+  lead_name       String
+  team            Json      @default("[]")
+  status          String    @default("proposed") // proposed, active, on_hold, completed, cancelled
+  budget          Decimal   @db.Decimal(15, 2)
+  spent           Decimal   @default(0) @db.Decimal(15, 2)
+  start_date      DateTime?
+  target_end_date DateTime?
+  milestones      Json      @default("[]")
+  publications    Json      @default("[]")
+  created_at      DateTime  @default(now())
+  updated_at      DateTime  @default(now()) @updatedAt
+
+  organizations organizations @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model enterprise_culture_profiles {
+  id              String   @id @default(uuid())
+  organization_id String
+  company_name    String
+  dimensions      Json     @default("{}")
+  values          Json     @default("[]")
+  work_style      Json     @default("{}")
+  decision_making Json     @default("{}")
+  communication   Json     @default("{}")
+  assessed_at     DateTime @default(now())
+
+  organizations organizations @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id])
+}
+
+model enterprise_integration_roadmaps {
+  id                  String    @id @default(uuid())
+  organization_id     String
+  name                String
+  acquirer_id         String
+  target_id           String
+  status              String    @default("planning") // planning, in_progress, completed
+  compatibility_score Int?
+  phases              Json      @default("[]")
+  risks               Json      @default("[]")
+  synergies           Json      @default("[]")
+  progress            Decimal   @default(0) @db.Decimal(5, 2)
+  start_date          DateTime?
+  target_end_date     DateTime?
+  created_at          DateTime  @default(now())
+  updated_at          DateTime  @default(now()) @updatedAt
+
+  organizations organizations @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model enterprise_habitat_zones {
+  id                String   @id @default(uuid())
+  organization_id   String
+  name              String
+  floor             Int
+  building          String
+  type              String // office, meeting, focus, collaboration, wellness, cafeteria, lobby
+  square_footage    Int
+  max_occupancy     Int
+  current_occupancy Int      @default(0)
+  sensors           Json     @default("{}")
+  amenities         Json     @default("[]")
+  reservable        Boolean  @default(false)
+  cost_per_sqft     Decimal  @db.Decimal(10, 2)
+  last_updated      DateTime @default(now())
+  created_at        DateTime @default(now())
+
+  organizations organizations @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id])
+  @@index([type])
+  @@index([building])
+}
+
+model enterprise_regent_sessions {
+  id                String   @id @default(uuid())
+  organization_id   String
+  question          String   @db.Text
+  context           String?  @db.Text
+  advisor_responses Json     @default("[]")
+  synthesis         String?  @db.Text
+  mirror_truth      String?  @db.Text
+  created_at        DateTime @default(now())
+
+  organizations organizations @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id])
+  @@index([created_at])
+}
+
+model enterprise_scheduled_jobs {
+  id                   String    @id
+  organization_id      String
+  job_type             String // apotheosis_nightly, security_assessment, sbom_scan, etc.
+  name                 String
+  description          String?
+  cron_expression      String
+  timezone             String    @default("UTC")
+  config               Json      @default("{}")
+  status               String    @default("scheduled") // scheduled, running, completed, failed, cancelled
+  enabled              Boolean   @default(true)
+  last_run_at          DateTime?
+  last_run_status      String? // success, failure
+  last_run_duration_ms Int?
+  last_run_error       String?
+  next_run_at          DateTime?
+  total_runs           Int       @default(0)
+  successful_runs      Int       @default(0)
+  failed_runs          Int       @default(0)
+  created_at           DateTime  @default(now())
+  created_by           String
+  updated_at           DateTime  @updatedAt
+
+  executions   enterprise_job_executions[]
+  organization organizations               @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id])
+  @@index([job_type])
+  @@index([enabled])
+  @@index([next_run_at])
+}
+
+model enterprise_job_executions {
+  id              String    @id
+  job_id          String
+  organization_id String
+  job_type        String
+  started_at      DateTime  @default(now())
+  completed_at    DateTime?
+  duration_ms     Int?
+  status          String // running, success, failure
+  result          Json      @default("{}")
+  error           String?
+  triggered_by    String // schedule, manual, system
+  execution_hash  String // SHA-256 for audit
+
+  job enterprise_scheduled_jobs @relation(fields: [job_id], references: [id], onDelete: Cascade)
+
+  @@index([job_id])
+  @@index([organization_id])
+  @@index([started_at])
+  @@index([status])
+}
+
+// =============================================================================
+// CendiaInsure - AI Insurance Integration
+// =============================================================================
+
+model insurance_policies {
+  id                String   @id @default(uuid())
+  policy_number     String   @unique
+  organization_id   String
+  coverage_type     String   // errors_omissions, cyber_liability, product_liability, etc.
+  coverage_limit    Float
+  deductible        Float
+  premium           Float
+  risk_score        Float
+  risk_tier         String   // low, medium, high, critical
+  status            String   @default("active") // quoted, bound, active, expired, cancelled, claimed
+  effective_date    DateTime
+  expiration_date   DateTime
+  data              Json     // Full InsurancePolicy object
+  created_by        String
+  created_at        DateTime @default(now())
+  updated_at        DateTime @default(now()) @updatedAt
+
+  claims insurance_claims[]
+
+  @@index([organization_id])
+  @@index([status])
+  @@index([policy_number])
+}
+
+model insurance_quotes {
+  id              String   @id @default(uuid())
+  organization_id String
+  coverage_type   String
+  requested_limit Float
+  premium         Float
+  risk_score      Float
+  risk_tier       String
+  status          String   @default("pending") // pending, accepted, declined, expired
+  data            Json     // Full InsuranceQuote object
+  quoted_at       DateTime @default(now())
+  valid_until     DateTime
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model insurance_claims {
+  id              String    @id @default(uuid())
+  claim_number    String    @unique
+  policy_id       String
+  policy_number   String
+  claim_amount    Float
+  claim_type      String
+  status          String    @default("filed") // filed, under_review, approved, denied, paid, closed
+  decision_id     String?
+  data            Json      // Full Claim object
+  filed_at        DateTime  @default(now())
+  resolved_at     DateTime?
+
+  policy insurance_policies @relation(fields: [policy_id], references: [id])
+
+  @@index([policy_id])
+  @@index([status])
+  @@index([claim_number])
+}
+
+// =============================================================================
+// CendiaSSO — Enterprise Single Sign-On
+// =============================================================================
+
+model sso_identity_providers {
+  id              String    @id @default(uuid())
+  organization_id String
+  name            String
+  protocol        String    // saml2, oidc, scim2
+  issuer          String
+  metadata_url    String?
+  sso_url         String?
+  slo_url         String?
+  certificate     String?   @db.Text
+  client_id       String?
+  client_secret   String?
+  authorization_url String?
+  token_url       String?
+  user_info_url   String?
+  jwks_uri        String?
+  scopes          Json      @default("[]")
+  enabled         Boolean   @default(true)
+  mfa_required    Boolean   @default(false)
+  last_used_at    DateTime?
+  created_at      DateTime  @default(now())
+  updated_at      DateTime  @default(now()) @updatedAt
+
+  organizations organizations    @relation(fields: [organization_id], references: [id])
+  sessions      sso_sessions[]
+
+  @@index([organization_id])
+  @@index([protocol])
+}
+
+model sso_sessions {
+  id                   String   @id @default(uuid())
+  user_id              String
+  organization_id      String
+  identity_provider_id String
+  protocol             String   // saml2, oidc
+  email                String
+  name                 String
+  roles                Json     @default("[]")
+  groups               Json     @default("[]")
+  device_fingerprint   String
+  mfa_verified         Boolean  @default(false)
+  session_hash         String
+  expires_at           DateTime
+  created_at           DateTime @default(now())
+  revoked_at           DateTime?
+
+  identity_provider sso_identity_providers @relation(fields: [identity_provider_id], references: [id], onDelete: Cascade)
+
+  @@index([organization_id])
+  @@index([user_id])
+  @@index([expires_at])
+}
+
+model sso_scim_events {
+  id              String   @id @default(uuid())
+  organization_id String
+  event_type      String   // user.create, user.update, user.delete, group.create, group.update
+  payload         Json
+  processed       Boolean  @default(true)
+  created_at      DateTime @default(now())
+
+  @@index([organization_id])
+  @@index([event_type])
+}

@@ -1,0 +1,493 @@
+{
+  "version": "1.0",
+  "description": "Datacendia Legal Vertical Workflows - 25 Legal Practice Workflows using 50+ Legal Council Modes",
+  "legalModes": {
+    "major": ["legal-matter-council", "deal-room", "litigation-war-room", "regulatory-response"],
+    "corePractice": ["ip-strategy", "contract-negotiation", "discovery-review", "employment-matter"],
+    "roleBased": ["criminal-defense", "prosecution-strategy", "corporate-counsel", "legal-intern"],
+    "traditional": ["family-law", "real-estate-law", "bankruptcy-law", "immigration-law", "environmental-law", "labor-union", "domestic-violence", "personal-injury", "elder-law", "securities-law"],
+    "specialized": ["sports-law", "tech-law", "ai-law", "entertainment-law", "music-law", "healthcare-regulatory", "cannabis-law", "fintech-law", "crypto-law", "privacy-law", "international-trade", "maritime-law", "aviation-law", "construction-law", "education-law", "nonprofit-law", "gaming-law", "media-defamation", "antitrust-law", "civil-rights", "insurance-coverage", "product-liability", "white-collar", "appellate-law", "class-action", "arbitration-law", "franchise-law", "government-contracts", "tribal-law"]
+  },
+  "legalAgents": {
+    "default": ["matter-lead", "research-counsel", "contract-counsel", "risk-counsel", "litigation-strategist", "regulatory-specialist", "privilege-officer", "evidence-officer"],
+    "optional": ["ip-specialist", "employment-specialist", "opposing-counsel", "commercial-advisor", "tax-counsel", "antitrust-counsel"],
+    "silentGuards": ["client-instruction-officer", "data-boundary-officer", "qa-counsel"]
+  },
+  "workflows": [
+    {
+      "id": "LW-001",
+      "name": "M&A Due Diligence - Full Deal Room",
+      "category": "Legal",
+      "councilMode": "deal-room",
+      "services": ["CendiaLegal", "CendiaDocket", "CendiaProcure", "CendiaChronos"],
+      "steps": [
+        {"order": 1, "action": "Ingest target company documents via Data Diode", "service": "CendiaLegal", "output": "document_inventory"},
+        {"order": 2, "action": "Run contract analysis on all material agreements", "service": "CendiaLegal", "output": "contract_analysis"},
+        {"order": 3, "action": "Identify deal-breakers and risk-rated clauses", "service": "CendiaLegal", "output": "risk_matrix"},
+        {"order": 4, "action": "Analyze closing conditions and regulatory approvals", "service": "CendiaLegal", "output": "closing_conditions"},
+        {"order": 5, "action": "Deal Room Council deliberation on transaction", "service": "CendiaCouncil", "output": "deal_recommendation"}
+      ],
+      "councilQuestion": "We are acquiring TargetCo for $50M. Due diligence has identified 3 material contracts with change-of-control provisions, potential IP ownership issues in 2 patents, and an ongoing employment dispute. Should we proceed, renegotiate price, or walk away?",
+      "expectedOutcome": "Deal recommendation with risk-adjusted valuation",
+      "priority": "high",
+      "estimatedDuration": "2 weeks",
+      "tags": ["legal", "m&a", "due-diligence", "deal-room"]
+    },
+    {
+      "id": "LW-002",
+      "name": "Complex Litigation Strategy - War Room",
+      "category": "Legal",
+      "councilMode": "litigation-war-room",
+      "services": ["CendiaLegal", "CendiaDocket", "CendiaChronos", "CendiaRedTeam"],
+      "steps": [
+        {"order": 1, "action": "Analyze case facts and legal theories", "service": "CendiaLegal", "output": "case_analysis"},
+        {"order": 2, "action": "Research controlling precedent and distinguish adverse cases", "service": "CendiaLegal", "output": "legal_research"},
+        {"order": 3, "action": "Model opponent strategy with Opposing Counsel agent", "service": "CendiaLegal", "output": "opponent_analysis"},
+        {"order": 4, "action": "Calculate best/likely/worst case scenarios", "service": "CendiaLegal", "output": "scenario_analysis"},
+        {"order": 5, "action": "Litigation War Room Council deliberation", "service": "CendiaCouncil", "output": "litigation_strategy"}
+      ],
+      "councilQuestion": "Plaintiff has filed a $10M breach of contract claim. Our analysis shows 65% win probability at trial, but $500K defense costs through verdict. Plaintiff offered $2M settlement. Best case: defense verdict. Worst case: $10M + fees. Should we fight, settle, or make counter-offer?",
+      "expectedOutcome": "Approved litigation strategy with budget",
+      "priority": "high",
+      "estimatedDuration": "1 week",
+      "tags": ["legal", "litigation", "strategy", "war-room"]
+    },
+    {
+      "id": "LW-003",
+      "name": "SEC Investigation Response",
+      "category": "Legal",
+      "councilMode": "regulatory-response",
+      "services": ["CendiaLegal", "CendiaDocket", "CendiaDNA", "CendiaPrivilege"],
+      "steps": [
+        {"order": 1, "action": "Implement litigation hold on all relevant documents", "service": "CendiaLegal", "output": "litigation_hold"},
+        {"order": 2, "action": "Privilege review of all potentially responsive documents", "service": "CendiaLegal", "output": "privilege_log"},
+        {"order": 3, "action": "Analyze cooperation vs. rights protection balance", "service": "CendiaLegal", "output": "cooperation_analysis"},
+        {"order": 4, "action": "Prepare response strategy with regulatory specialist", "service": "CendiaLegal", "output": "response_strategy"},
+        {"order": 5, "action": "Regulatory Response Council deliberation", "service": "CendiaCouncil", "output": "sec_response"}
+      ],
+      "councilQuestion": "SEC has issued a subpoena for documents related to our Q3 revenue recognition. Internal review found one questionable transaction. Should we proactively disclose, respond narrowly to subpoena, or assert privilege on internal analysis?",
+      "expectedOutcome": "Approved SEC response strategy",
+      "priority": "critical",
+      "estimatedDuration": "3 days",
+      "tags": ["legal", "regulatory", "sec", "investigation"]
+    },
+    {
+      "id": "LW-004",
+      "name": "Patent Portfolio Strategy",
+      "category": "Legal",
+      "councilMode": "ip-strategy",
+      "services": ["CendiaLegal", "CendiaInventum", "CendiaChronos"],
+      "steps": [
+        {"order": 1, "action": "Audit current patent portfolio", "service": "CendiaLegal", "output": "portfolio_audit"},
+        {"order": 2, "action": "Analyze competitive patent landscape", "service": "CendiaLegal", "output": "landscape_analysis"},
+        {"order": 3, "action": "Conduct freedom-to-operate analysis for new product", "service": "CendiaLegal", "output": "fto_opinion"},
+        {"order": 4, "action": "Identify licensing opportunities and threats", "service": "CendiaLegal", "output": "licensing_strategy"},
+        {"order": 5, "action": "IP Strategy Council deliberation", "service": "CendiaCouncil", "output": "ip_strategy"}
+      ],
+      "councilQuestion": "Our new product may infringe 2 competitor patents. Options: design around ($500K, 6 months), license ($2M upfront + 3% royalty), or proceed and risk litigation ($5M exposure). FTO analysis shows 40% infringement risk. What's the optimal IP strategy?",
+      "expectedOutcome": "Approved IP strategy with risk mitigation",
+      "priority": "high",
+      "estimatedDuration": "2 weeks",
+      "tags": ["legal", "ip", "patents", "strategy"]
+    },
+    {
+      "id": "LW-005",
+      "name": "Contract Negotiation - Major Vendor",
+      "category": "Legal",
+      "councilMode": "contract-negotiation",
+      "services": ["CendiaLegal", "CendiaProcure", "CendiaRainmaker"],
+      "steps": [
+        {"order": 1, "action": "Analyze vendor's proposed terms against playbook", "service": "CendiaLegal", "output": "playbook_analysis"},
+        {"order": 2, "action": "Risk-rate each clause and identify deal-breakers", "service": "CendiaLegal", "output": "clause_risk_matrix"},
+        {"order": 3, "action": "Prepare redline with fallback positions", "service": "CendiaLegal", "output": "redline_document"},
+        {"order": 4, "action": "Model negotiation scenarios", "service": "CendiaLegal", "output": "negotiation_scenarios"},
+        {"order": 5, "action": "Contract Negotiation Council deliberation", "service": "CendiaCouncil", "output": "negotiation_strategy"}
+      ],
+      "councilQuestion": "Vendor insists on unlimited liability for us but caps their liability at contract value. They also want exclusive jurisdiction in their state. Our playbook says mutual caps and our jurisdiction. What's our fallback position and walk-away point?",
+      "expectedOutcome": "Approved negotiation strategy with fallbacks",
+      "priority": "medium",
+      "estimatedDuration": "3 days",
+      "tags": ["legal", "contracts", "negotiation", "vendor"]
+    },
+    {
+      "id": "LW-006",
+      "name": "eDiscovery Document Review",
+      "category": "Legal",
+      "councilMode": "discovery-review",
+      "services": ["CendiaLegal", "CendiaDiode", "CendiaDNA"],
+      "steps": [
+        {"order": 1, "action": "Ingest document collection via Data Diode", "service": "CendiaLegal", "output": "document_collection"},
+        {"order": 2, "action": "AI-assisted privilege review with Privilege Officer", "service": "CendiaLegal", "output": "privilege_determinations"},
+        {"order": 3, "action": "Responsiveness coding with Evidence Officer", "service": "CendiaLegal", "output": "responsiveness_codes"},
+        {"order": 4, "action": "Identify and flag hot documents", "service": "CendiaLegal", "output": "hot_documents"},
+        {"order": 5, "action": "Discovery Review Council deliberation", "service": "CendiaCouncil", "output": "production_recommendation"}
+      ],
+      "councilQuestion": "We have 50,000 documents to review for production. AI review identified 5,000 potentially privileged, 2,000 responsive, and 100 hot documents. Opposing counsel is pushing for quick production. Should we do full attorney review of all 5,000 privileged docs or use AI-assisted sampling?",
+      "expectedOutcome": "Approved discovery production strategy",
+      "priority": "high",
+      "estimatedDuration": "1 week",
+      "tags": ["legal", "discovery", "ediscovery", "privilege"]
+    },
+    {
+      "id": "LW-007",
+      "name": "Employment Termination Review",
+      "category": "Legal",
+      "councilMode": "employment-matter",
+      "services": ["CendiaLegal", "CendiaEquity", "CendiaDocket"],
+      "steps": [
+        {"order": 1, "action": "Review termination documentation and history", "service": "CendiaLegal", "output": "termination_review"},
+        {"order": 2, "action": "Analyze discrimination and retaliation risk", "service": "CendiaLegal", "output": "risk_analysis"},
+        {"order": 3, "action": "Check policy compliance and documentation", "service": "CendiaLegal", "output": "policy_compliance"},
+        {"order": 4, "action": "Calculate severance and release terms", "service": "CendiaLegal", "output": "severance_calculation"},
+        {"order": 5, "action": "Employment Matter Council deliberation", "service": "CendiaCouncil", "output": "termination_recommendation"}
+      ],
+      "councilQuestion": "Manager wants to terminate employee for performance issues. Employee is 58 years old, recently complained about workload, and is the only person over 50 in the department. Documentation is thin. Should we proceed with termination, implement PIP first, or reassign?",
+      "expectedOutcome": "Approved termination strategy with risk mitigation",
+      "priority": "high",
+      "estimatedDuration": "2 days",
+      "tags": ["legal", "employment", "termination", "hr"]
+    },
+    {
+      "id": "LW-008",
+      "name": "Criminal Defense Strategy",
+      "category": "Legal",
+      "councilMode": "criminal-defense",
+      "services": ["CendiaLegal", "CendiaDocket", "CendiaRedTeam"],
+      "steps": [
+        {"order": 1, "action": "Analyze charging documents and evidence", "service": "CendiaLegal", "output": "charge_analysis"},
+        {"order": 2, "action": "Research constitutional and evidentiary issues", "service": "CendiaLegal", "output": "legal_research"},
+        {"order": 3, "action": "Identify suppression motion opportunities", "service": "CendiaLegal", "output": "suppression_analysis"},
+        {"order": 4, "action": "Develop jury strategy and voir dire plan", "service": "CendiaLegal", "output": "jury_strategy"},
+        {"order": 5, "action": "Criminal Defense Council deliberation", "service": "CendiaCouncil", "output": "defense_strategy"}
+      ],
+      "councilQuestion": "Client is charged with wire fraud. Government has cooperating witness and some documentary evidence. We identified potential Fourth Amendment issue with email seizure. Plea offer is 18 months. Trial risk is 5-10 years. Should we file suppression motion, negotiate plea, or prepare for trial?",
+      "expectedOutcome": "Approved defense strategy",
+      "priority": "critical",
+      "estimatedDuration": "1 week",
+      "tags": ["legal", "criminal", "defense", "trial"]
+    },
+    {
+      "id": "LW-009",
+      "name": "AI Product Compliance Review",
+      "category": "Legal",
+      "councilMode": "ai-law",
+      "services": ["CendiaLegal", "CendiaDocket", "CendiaAegis"],
+      "steps": [
+        {"order": 1, "action": "Classify AI system under EU AI Act risk tiers", "service": "CendiaLegal", "output": "ai_classification"},
+        {"order": 2, "action": "Audit training data for IP and privacy issues", "service": "CendiaLegal", "output": "training_data_audit"},
+        {"order": 3, "action": "Analyze algorithmic accountability requirements", "service": "CendiaLegal", "output": "accountability_analysis"},
+        {"order": 4, "action": "Develop compliance roadmap and governance framework", "service": "CendiaLegal", "output": "compliance_roadmap"},
+        {"order": 5, "action": "AI Law Council deliberation", "service": "CendiaCouncil", "output": "ai_compliance_strategy"}
+      ],
+      "councilQuestion": "Our new AI hiring tool may be classified as high-risk under EU AI Act. We need to deploy in 3 months. Full compliance would take 6 months. Should we delay launch, deploy in non-EU markets first, or accept enforcement risk in EU?",
+      "expectedOutcome": "Approved AI compliance strategy",
+      "priority": "high",
+      "estimatedDuration": "2 weeks",
+      "tags": ["legal", "ai", "compliance", "eu-ai-act"]
+    },
+    {
+      "id": "LW-010",
+      "name": "Data Breach Response",
+      "category": "Legal",
+      "councilMode": "privacy-law",
+      "services": ["CendiaLegal", "CendiaAegis", "CendiaCanary", "CendiaDNA"],
+      "steps": [
+        {"order": 1, "action": "Assess scope of breach and affected data", "service": "CendiaLegal", "output": "breach_scope"},
+        {"order": 2, "action": "Determine notification requirements by jurisdiction", "service": "CendiaLegal", "output": "notification_requirements"},
+        {"order": 3, "action": "Prepare notification letters and regulatory filings", "service": "CendiaLegal", "output": "notification_drafts"},
+        {"order": 4, "action": "Analyze litigation exposure and insurance coverage", "service": "CendiaLegal", "output": "litigation_exposure"},
+        {"order": 5, "action": "Privacy Law Council deliberation", "service": "CendiaCouncil", "output": "breach_response"}
+      ],
+      "councilQuestion": "Breach affected 100,000 customers across 15 states and EU. We have 72 hours for GDPR notification. State laws vary from 30-90 days. Should we do single global notification now, or staggered by jurisdiction to manage messaging?",
+      "expectedOutcome": "Approved breach response strategy",
+      "priority": "critical",
+      "estimatedDuration": "24 hours",
+      "tags": ["legal", "privacy", "breach", "gdpr", "notification"]
+    },
+    {
+      "id": "LW-011",
+      "name": "Antitrust Merger Review",
+      "category": "Legal",
+      "councilMode": "antitrust-law",
+      "services": ["CendiaLegal", "CendiaDocket", "CendiaChronos"],
+      "steps": [
+        {"order": 1, "action": "Define relevant markets and calculate HHI", "service": "CendiaLegal", "output": "market_definition"},
+        {"order": 2, "action": "Analyze competitive effects and entry barriers", "service": "CendiaLegal", "output": "competitive_effects"},
+        {"order": 3, "action": "Assess HSR filing requirements and timing", "service": "CendiaLegal", "output": "hsr_analysis"},
+        {"order": 4, "action": "Model potential remedies and divestitures", "service": "CendiaLegal", "output": "remedy_options"},
+        {"order": 5, "action": "Antitrust Law Council deliberation", "service": "CendiaCouncil", "output": "antitrust_strategy"}
+      ],
+      "councilQuestion": "Proposed acquisition would give us 35% market share in key segment. HHI increase is 400 points. DOJ has been aggressive in this sector. Should we proceed with HSR filing, offer upfront divestitures, or restructure deal to avoid thresholds?",
+      "expectedOutcome": "Approved antitrust strategy",
+      "priority": "high",
+      "estimatedDuration": "2 weeks",
+      "tags": ["legal", "antitrust", "merger", "hsr"]
+    },
+    {
+      "id": "LW-012",
+      "name": "Class Action Defense",
+      "category": "Legal",
+      "councilMode": "class-action",
+      "services": ["CendiaLegal", "CendiaDocket", "CendiaChronos", "CendiaRedTeam"],
+      "steps": [
+        {"order": 1, "action": "Analyze class certification requirements", "service": "CendiaLegal", "output": "certification_analysis"},
+        {"order": 2, "action": "Identify commonality and typicality defenses", "service": "CendiaLegal", "output": "defense_analysis"},
+        {"order": 3, "action": "Calculate class-wide damages exposure", "service": "CendiaLegal", "output": "damages_calculation"},
+        {"order": 4, "action": "Model settlement vs. trial scenarios", "service": "CendiaLegal", "output": "scenario_analysis"},
+        {"order": 5, "action": "Class Action Council deliberation", "service": "CendiaCouncil", "output": "class_action_strategy"}
+      ],
+      "councilQuestion": "Plaintiffs seek to certify class of 500,000 customers claiming $50 each in overcharges. Total exposure: $25M + fees. We have strong commonality defense but weak on damages. Settlement demand is $5M. Should we fight certification, settle pre-certification, or prepare for class trial?",
+      "expectedOutcome": "Approved class action defense strategy",
+      "priority": "high",
+      "estimatedDuration": "1 week",
+      "tags": ["legal", "class-action", "litigation", "defense"]
+    },
+    {
+      "id": "LW-013",
+      "name": "Crypto Token Launch Review",
+      "category": "Legal",
+      "councilMode": "crypto-law",
+      "services": ["CendiaLegal", "CendiaDocket", "CendiaAegis"],
+      "steps": [
+        {"order": 1, "action": "Conduct Howey test analysis on token", "service": "CendiaLegal", "output": "howey_analysis"},
+        {"order": 2, "action": "Assess securities registration requirements", "service": "CendiaLegal", "output": "securities_analysis"},
+        {"order": 3, "action": "Analyze decentralization and utility arguments", "service": "CendiaLegal", "output": "decentralization_analysis"},
+        {"order": 4, "action": "Develop regulatory strategy and disclosures", "service": "CendiaLegal", "output": "regulatory_strategy"},
+        {"order": 5, "action": "Crypto Law Council deliberation", "service": "CendiaCouncil", "output": "token_launch_strategy"}
+      ],
+      "councilQuestion": "Our utility token has some investment characteristics. Howey analysis shows 60% chance SEC views as security. Options: register as security ($2M, 12 months), launch as utility with risk, or restructure token economics. What's the optimal path?",
+      "expectedOutcome": "Approved token launch strategy",
+      "priority": "high",
+      "estimatedDuration": "2 weeks",
+      "tags": ["legal", "crypto", "securities", "token"]
+    },
+    {
+      "id": "LW-014",
+      "name": "White Collar Investigation Response",
+      "category": "Legal",
+      "councilMode": "white-collar",
+      "services": ["CendiaLegal", "CendiaDocket", "CendiaDNA", "CendiaCanary"],
+      "steps": [
+        {"order": 1, "action": "Implement document preservation and litigation hold", "service": "CendiaLegal", "output": "preservation_order"},
+        {"order": 2, "action": "Conduct internal investigation with privilege protection", "service": "CendiaLegal", "output": "internal_investigation"},
+        {"order": 3, "action": "Analyze cooperation vs. individual rights balance", "service": "CendiaLegal", "output": "cooperation_analysis"},
+        {"order": 4, "action": "Prepare for employee interviews and Upjohn warnings", "service": "CendiaLegal", "output": "interview_protocol"},
+        {"order": 5, "action": "White Collar Council deliberation", "service": "CendiaCouncil", "output": "investigation_strategy"}
+      ],
+      "councilQuestion": "DOJ has issued grand jury subpoena for documents related to potential FCPA violations. Internal review found questionable payments by foreign subsidiary. Should we self-disclose, respond narrowly to subpoena, or conduct full internal investigation first?",
+      "expectedOutcome": "Approved investigation response strategy",
+      "priority": "critical",
+      "estimatedDuration": "1 week",
+      "tags": ["legal", "white-collar", "fcpa", "investigation"]
+    },
+    {
+      "id": "LW-015",
+      "name": "International Trade Compliance",
+      "category": "Legal",
+      "councilMode": "international-trade",
+      "services": ["CendiaLegal", "CendiaDocket", "CendiaAegis"],
+      "steps": [
+        {"order": 1, "action": "Screen transaction parties against OFAC lists", "service": "CendiaLegal", "output": "sanctions_screening"},
+        {"order": 2, "action": "Classify products under EAR/ITAR", "service": "CendiaLegal", "output": "export_classification"},
+        {"order": 3, "action": "Analyze license requirements and exceptions", "service": "CendiaLegal", "output": "license_analysis"},
+        {"order": 4, "action": "Develop compliance program and training", "service": "CendiaLegal", "output": "compliance_program"},
+        {"order": 5, "action": "International Trade Council deliberation", "service": "CendiaCouncil", "output": "trade_compliance_strategy"}
+      ],
+      "councilQuestion": "Customer in UAE wants to purchase our software which has encryption. End-user is a government entity. EAR classification is 5D002. Should we apply for license, use license exception, or decline the sale?",
+      "expectedOutcome": "Approved export compliance decision",
+      "priority": "high",
+      "estimatedDuration": "1 week",
+      "tags": ["legal", "trade", "export", "sanctions"]
+    },
+    {
+      "id": "LW-016",
+      "name": "Real Estate Transaction",
+      "category": "Legal",
+      "councilMode": "real-estate-law",
+      "services": ["CendiaLegal", "CendiaDocket", "CendiaProcure"],
+      "steps": [
+        {"order": 1, "action": "Review title report and identify exceptions", "service": "CendiaLegal", "output": "title_review"},
+        {"order": 2, "action": "Conduct environmental and zoning due diligence", "service": "CendiaLegal", "output": "environmental_review"},
+        {"order": 3, "action": "Negotiate purchase agreement and closing conditions", "service": "CendiaLegal", "output": "contract_negotiation"},
+        {"order": 4, "action": "Prepare closing documents and funding", "service": "CendiaLegal", "output": "closing_documents"},
+        {"order": 5, "action": "Real Estate Law Council deliberation", "service": "CendiaCouncil", "output": "transaction_recommendation"}
+      ],
+      "councilQuestion": "Title search revealed easement that may affect planned expansion. Environmental Phase I found potential contamination requiring Phase II. Seller wants to close in 30 days. Should we proceed with contingencies, renegotiate price, or walk away?",
+      "expectedOutcome": "Approved real estate transaction strategy",
+      "priority": "medium",
+      "estimatedDuration": "1 week",
+      "tags": ["legal", "real-estate", "transaction", "closing"]
+    },
+    {
+      "id": "LW-017",
+      "name": "Bankruptcy Filing Analysis",
+      "category": "Legal",
+      "councilMode": "bankruptcy-law",
+      "services": ["CendiaLegal", "CendiaDocket", "CendiaChronos"],
+      "steps": [
+        {"order": 1, "action": "Analyze Chapter 7 vs. 11 vs. 13 options", "service": "CendiaLegal", "output": "chapter_analysis"},
+        {"order": 2, "action": "Identify and prioritize creditor claims", "service": "CendiaLegal", "output": "creditor_matrix"},
+        {"order": 3, "action": "Model reorganization plan feasibility", "service": "CendiaLegal", "output": "reorganization_model"},
+        {"order": 4, "action": "Analyze preference and fraudulent transfer exposure", "service": "CendiaLegal", "output": "avoidance_analysis"},
+        {"order": 5, "action": "Bankruptcy Law Council deliberation", "service": "CendiaCouncil", "output": "bankruptcy_strategy"}
+      ],
+      "councilQuestion": "Company has $10M in debt, $3M in assets, and negative cash flow. Secured creditor is threatening foreclosure. Options: Chapter 7 liquidation, Chapter 11 reorganization, or out-of-court workout. Which path maximizes stakeholder value?",
+      "expectedOutcome": "Approved bankruptcy strategy",
+      "priority": "critical",
+      "estimatedDuration": "1 week",
+      "tags": ["legal", "bankruptcy", "restructuring", "creditors"]
+    },
+    {
+      "id": "LW-018",
+      "name": "Healthcare Regulatory Compliance",
+      "category": "Legal",
+      "councilMode": "healthcare-regulatory",
+      "services": ["CendiaLegal", "CendiaDocket", "CendiaGenomics"],
+      "steps": [
+        {"order": 1, "action": "Audit HIPAA compliance and BAA coverage", "service": "CendiaLegal", "output": "hipaa_audit"},
+        {"order": 2, "action": "Analyze Stark Law and Anti-Kickback implications", "service": "CendiaLegal", "output": "stark_analysis"},
+        {"order": 3, "action": "Review FDA regulatory pathway for new device", "service": "CendiaLegal", "output": "fda_pathway"},
+        {"order": 4, "action": "Develop compliance program and training", "service": "CendiaLegal", "output": "compliance_program"},
+        {"order": 5, "action": "Healthcare Regulatory Council deliberation", "service": "CendiaCouncil", "output": "healthcare_compliance_strategy"}
+      ],
+      "councilQuestion": "New physician referral arrangement may trigger Stark Law concerns. Fair market value analysis is borderline. Options: restructure arrangement, obtain advisory opinion, or proceed with enhanced documentation. What's the safest path?",
+      "expectedOutcome": "Approved healthcare compliance strategy",
+      "priority": "high",
+      "estimatedDuration": "2 weeks",
+      "tags": ["legal", "healthcare", "hipaa", "stark", "compliance"]
+    },
+    {
+      "id": "LW-019",
+      "name": "Product Liability Defense",
+      "category": "Legal",
+      "councilMode": "product-liability",
+      "services": ["CendiaLegal", "CendiaDocket", "CendiaFactory"],
+      "steps": [
+        {"order": 1, "action": "Analyze product defect allegations", "service": "CendiaLegal", "output": "defect_analysis"},
+        {"order": 2, "action": "Review warning adequacy and instructions", "service": "CendiaLegal", "output": "warning_review"},
+        {"order": 3, "action": "Assess recall decision and liability exposure", "service": "CendiaLegal", "output": "recall_analysis"},
+        {"order": 4, "action": "Model mass tort and MDL scenarios", "service": "CendiaLegal", "output": "mass_tort_analysis"},
+        {"order": 5, "action": "Product Liability Council deliberation", "service": "CendiaCouncil", "output": "product_liability_strategy"}
+      ],
+      "councilQuestion": "10 injury claims filed alleging product defect. Engineering says design is sound but warnings could be clearer. Recall would cost $5M. Litigation exposure is $20M. Should we issue voluntary recall, enhance warnings only, or defend all claims?",
+      "expectedOutcome": "Approved product liability strategy",
+      "priority": "critical",
+      "estimatedDuration": "1 week",
+      "tags": ["legal", "product-liability", "recall", "mass-tort"]
+    },
+    {
+      "id": "LW-020",
+      "name": "Appellate Strategy",
+      "category": "Legal",
+      "councilMode": "appellate-law",
+      "services": ["CendiaLegal", "CendiaDocket", "CendiaChronos"],
+      "steps": [
+        {"order": 1, "action": "Analyze trial record for preserved issues", "service": "CendiaLegal", "output": "issue_preservation"},
+        {"order": 2, "action": "Research standards of review for each issue", "service": "CendiaLegal", "output": "standard_of_review"},
+        {"order": 3, "action": "Identify strongest arguments and precedent", "service": "CendiaLegal", "output": "argument_analysis"},
+        {"order": 4, "action": "Develop brief strategy and oral argument prep", "service": "CendiaLegal", "output": "brief_strategy"},
+        {"order": 5, "action": "Appellate Law Council deliberation", "service": "CendiaCouncil", "output": "appellate_strategy"}
+      ],
+      "councilQuestion": "We lost at trial on summary judgment. Three potential issues for appeal: evidentiary ruling (abuse of discretion), jury instruction (de novo), and damages calculation (clearly erroneous). Which issues should we prioritize and what's our win probability?",
+      "expectedOutcome": "Approved appellate strategy",
+      "priority": "high",
+      "estimatedDuration": "1 week",
+      "tags": ["legal", "appellate", "appeal", "brief"]
+    },
+    {
+      "id": "LW-021",
+      "name": "Government Contract Bid Protest",
+      "category": "Legal",
+      "councilMode": "government-contracts",
+      "services": ["CendiaLegal", "CendiaDocket", "CendiaProcure"],
+      "steps": [
+        {"order": 1, "action": "Analyze procurement process for irregularities", "service": "CendiaLegal", "output": "procurement_analysis"},
+        {"order": 2, "action": "Research FAR/DFARS compliance issues", "service": "CendiaLegal", "output": "far_analysis"},
+        {"order": 3, "action": "Assess GAO vs. COFC protest venue", "service": "CendiaLegal", "output": "venue_analysis"},
+        {"order": 4, "action": "Prepare protest grounds and timeline", "service": "CendiaLegal", "output": "protest_preparation"},
+        {"order": 5, "action": "Government Contracts Council deliberation", "service": "CendiaCouncil", "output": "protest_strategy"}
+      ],
+      "councilQuestion": "We lost $50M contract award. Debrief revealed agency may have improperly evaluated our technical proposal. GAO protest deadline is 10 days. Protest costs $100K. Win rate is 20%. Should we protest at GAO, COFC, or accept the loss?",
+      "expectedOutcome": "Approved bid protest strategy",
+      "priority": "high",
+      "estimatedDuration": "5 days",
+      "tags": ["legal", "government", "contracts", "protest"]
+    },
+    {
+      "id": "LW-022",
+      "name": "Entertainment Deal Negotiation",
+      "category": "Legal",
+      "councilMode": "entertainment-law",
+      "services": ["CendiaLegal", "CendiaDocket", "CendiaRainmaker"],
+      "steps": [
+        {"order": 1, "action": "Analyze talent agreement terms and backend", "service": "CendiaLegal", "output": "deal_analysis"},
+        {"order": 2, "action": "Review IP rights and distribution terms", "service": "CendiaLegal", "output": "ip_rights_review"},
+        {"order": 3, "action": "Calculate backend participation and audit rights", "service": "CendiaLegal", "output": "backend_calculation"},
+        {"order": 4, "action": "Negotiate credit and approval rights", "service": "CendiaLegal", "output": "credit_negotiation"},
+        {"order": 5, "action": "Entertainment Law Council deliberation", "service": "CendiaCouncil", "output": "entertainment_deal_strategy"}
+      ],
+      "councilQuestion": "Studio offers $500K upfront + 5% of net profits for our IP. Industry standard is 10% of adjusted gross. Net profits definition is unfavorable. Should we counter on backend definition, push for gross participation, or take the guaranteed money?",
+      "expectedOutcome": "Approved entertainment deal strategy",
+      "priority": "medium",
+      "estimatedDuration": "1 week",
+      "tags": ["legal", "entertainment", "talent", "backend"]
+    },
+    {
+      "id": "LW-023",
+      "name": "Fintech Licensing Strategy",
+      "category": "Legal",
+      "councilMode": "fintech-law",
+      "services": ["CendiaLegal", "CendiaDocket", "CendiaFinancial"],
+      "steps": [
+        {"order": 1, "action": "Analyze money transmission licensing requirements", "service": "CendiaLegal", "output": "mtl_analysis"},
+        {"order": 2, "action": "Evaluate bank partnership vs. direct licensing", "service": "CendiaLegal", "output": "partnership_analysis"},
+        {"order": 3, "action": "Assess state-by-state licensing timeline", "service": "CendiaLegal", "output": "licensing_timeline"},
+        {"order": 4, "action": "Develop consumer protection compliance program", "service": "CendiaLegal", "output": "consumer_compliance"},
+        {"order": 5, "action": "Fintech Law Council deliberation", "service": "CendiaCouncil", "output": "fintech_licensing_strategy"}
+      ],
+      "councilQuestion": "Our payment product requires MTL in 48 states. Direct licensing takes 18 months and $2M. Bank partnership is 6 months and $500K but limits product flexibility. Should we pursue direct licensing, bank partnership, or hybrid approach?",
+      "expectedOutcome": "Approved fintech licensing strategy",
+      "priority": "high",
+      "estimatedDuration": "2 weeks",
+      "tags": ["legal", "fintech", "licensing", "payments"]
+    },
+    {
+      "id": "LW-024",
+      "name": "Labor Union Negotiation",
+      "category": "Legal",
+      "councilMode": "labor-union",
+      "services": ["CendiaLegal", "CendiaDocket", "CendiaEquity"],
+      "steps": [
+        {"order": 1, "action": "Analyze current CBA and union demands", "service": "CendiaLegal", "output": "cba_analysis"},
+        {"order": 2, "action": "Assess NLRA compliance and ULP risks", "service": "CendiaLegal", "output": "nlra_compliance"},
+        {"order": 3, "action": "Model economic impact of union proposals", "service": "CendiaLegal", "output": "economic_analysis"},
+        {"order": 4, "action": "Develop bargaining strategy and fallback positions", "service": "CendiaLegal", "output": "bargaining_strategy"},
+        {"order": 5, "action": "Labor Union Council deliberation", "service": "CendiaCouncil", "output": "union_negotiation_strategy"}
+      ],
+      "councilQuestion": "Union demands 15% wage increase over 3 years. Our offer is 8%. Strike authorization vote is next week. A strike would cost $1M/day. Should we increase offer, hold firm, or propose alternative benefits package?",
+      "expectedOutcome": "Approved union negotiation strategy",
+      "priority": "critical",
+      "estimatedDuration": "3 days",
+      "tags": ["legal", "labor", "union", "cba", "negotiation"]
+    },
+    {
+      "id": "LW-025",
+      "name": "Legal Intern Training Session",
+      "category": "Legal",
+      "councilMode": "legal-intern",
+      "services": ["CendiaLegal", "CendiaAcademy"],
+      "steps": [
+        {"order": 1, "action": "Present case study with learning objectives", "service": "CendiaLegal", "output": "case_study"},
+        {"order": 2, "action": "Guide through legal research methodology", "service": "CendiaLegal", "output": "research_guidance"},
+        {"order": 3, "action": "Review intern's analysis with feedback", "service": "CendiaLegal", "output": "analysis_feedback"},
+        {"order": 4, "action": "Explain practical application and next steps", "service": "CendiaLegal", "output": "practical_application"},
+        {"order": 5, "action": "Legal Intern Council deliberation (educational)", "service": "CendiaCouncil", "output": "learning_assessment"}
+      ],
+      "councilQuestion": "Intern has drafted memo on contract interpretation issue. Analysis is partially correct but misses key precedent and uses wrong standard. How should we provide feedback that teaches legal reasoning while building confidence?",
+      "expectedOutcome": "Completed training session with learning outcomes",
+      "priority": "low",
+      "estimatedDuration": "2 hours",
+      "tags": ["legal", "training", "intern", "education"]
+    }
+  ]
+}

@@ -1,0 +1,759 @@
+// Security Domain - Aegis, Crucible, Threats, Honeypots, Hardware Keys
+
+model crucible_simulations {
+  id                    String                   @id
+  organization_id       String
+  name                  String
+  description           String?
+  simulation_type       CrucibleSimulationType
+  status                CrucibleSimulationStatus @default(DRAFT)
+  config                Json // Simulation parameters
+  digital_twin_snapshot Json? // Enterprise state at start
+  scenario_definition   Json // What-if scenarios
+  monte_carlo_runs      Int                      @default(1000)
+  confidence_level      Float                    @default(0.95)
+  time_horizon_days     Int                      @default(365)
+  created_by            String
+  created_at            DateTime                 @default(now())
+  updated_at            DateTime
+  started_at            DateTime?
+  completed_at          DateTime?
+  results_summary       Json?
+
+  organizations         organizations                    @relation(fields: [organization_id], references: [id])
+  users                 users                            @relation(fields: [created_by], references: [id])
+  universes             crucible_universes[]
+  impacts               crucible_impacts[]
+  council_deliberations crucible_council_deliberations[]
+
+  @@index([organization_id, status])
+  @@index([simulation_type])
+}
+
+model crucible_universes {
+  id                String                   @id
+  simulation_id     String
+  universe_number   Int // Branch number in multiverse
+  parent_universe   String? // Parent branch (null = root)
+  branch_point      String? // Decision that caused branch
+  probability       Float // Statistical likelihood
+  state_snapshot    Json // Enterprise state in this universe
+  kpi_projections   Json // Projected KPIs
+  risk_scores       Json // Risk assessment
+  outcome_summary   String?
+  outcome_sentiment CrucibleOutcomeSentiment @default(NEUTRAL)
+  created_at        DateTime                 @default(now())
+
+  simulation       crucible_simulations        @relation(fields: [simulation_id], references: [id], onDelete: Cascade)
+  failure_cascades crucible_failure_cascades[]
+
+  @@unique([simulation_id, universe_number])
+  @@index([simulation_id])
+}
+
+model crucible_impacts {
+  id               String                 @id
+  simulation_id    String
+  impact_category  CrucibleImpactCategory
+  entity_type      String // department, system, person, kpi, etc.
+  entity_id        String?
+  entity_name      String
+  baseline_value   Float?
+  projected_value  Float?
+  change_percent   Float?
+  confidence       Float                  @default(0.95)
+  severity         CrucibleSeverity       @default(LOW)
+  description      String?
+  propagation_path Json? // How the impact spreads
+  created_at       DateTime               @default(now())
+
+  simulation crucible_simulations @relation(fields: [simulation_id], references: [id], onDelete: Cascade)
+
+  @@index([simulation_id, impact_category])
+}
+
+model crucible_failure_cascades {
+  id               String   @id
+  universe_id      String
+  trigger_event    String // What initiated the cascade
+  cascade_depth    Int      @default(0)
+  affected_nodes   Json // Graph nodes affected
+  propagation_time Int? // Hours to propagate
+  total_impact     Float? // Aggregate impact score
+  visualization    Json? // Graph collapse visualization data
+  created_at       DateTime @default(now())
+
+  universe crucible_universes @relation(fields: [universe_id], references: [id], onDelete: Cascade)
+
+  @@index([universe_id])
+}
+
+model crucible_council_deliberations {
+  id                   String   @id
+  simulation_id        String
+  universe_id          String?
+  scenario_context     String
+  agent_responses      Json // Each agent's analysis
+  consensus_reached    Boolean  @default(false)
+  final_recommendation String?
+  confidence_score     Float?
+  deliberation_log     Json? // Full conversation
+  created_at           DateTime @default(now())
+
+  simulation crucible_simulations @relation(fields: [simulation_id], references: [id], onDelete: Cascade)
+
+  @@index([simulation_id])
+}
+
+model crucible_redteam_reports {
+  id                     String    @id @default(uuid())
+  organization_id        String
+  run_type               String // SCHEDULED, MANUAL, CI_CD, INCIDENT_RESPONSE
+  started_at             DateTime
+  completed_at           DateTime
+  total_tests            Int
+  passed_tests           Int
+  failed_tests           Int
+  critical_findings      Int
+  high_findings          Int
+  medium_findings        Int
+  low_findings           Int
+  informational_findings Int
+  security_score         Int
+  results                Json // Array of TestResult
+  compliance_status      Json // Array of ComplianceStatus
+  evidence_hash          String
+  signature              String?
+  signed_at              DateTime?
+  signed_by              String?
+  created_at             DateTime  @default(now())
+
+  organization organizations @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id, completed_at])
+  @@index([security_score])
+}
+
+model crucible_schedules {
+  id                       String    @id @default(uuid())
+  organization_id          String
+  name                     String
+  cron_expression          String
+  test_categories          Json // Array of TestCategory
+  enabled                  Boolean   @default(true)
+  notify_on_failure        Boolean   @default(true)
+  notify_emails            Json // Array of email strings
+  auto_remediate           Boolean   @default(false)
+  block_deploy_on_critical Boolean   @default(true)
+  last_run_at              DateTime?
+  next_run_at              DateTime?
+  created_at               DateTime  @default(now())
+  updated_at               DateTime  @updatedAt
+
+  organization organizations @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id, enabled])
+}
+
+model crucible_sbom {
+  id              String    @id @default(uuid())
+  organization_id String
+  version         String
+  format          String // SPDX, CycloneDX
+  content         Json // Full SBOM content
+  packages        Int
+  vulnerabilities Int
+  critical_vulns  Int
+  high_vulns      Int
+  medium_vulns    Int
+  low_vulns       Int
+  signature       String?
+  signed_at       DateTime?
+  created_at      DateTime  @default(now())
+
+  organization organizations @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id, created_at])
+}
+
+model crucible_runtime_events {
+  id              String           @id @default(uuid())
+  organization_id String
+  event_type      String // INTRUSION, ANOMALY, POLICY_VIOLATION, etc.
+  severity        CrucibleSeverity
+  source          String // Component that detected the event
+  description     String           @db.Text
+  metadata        Json?
+  mitigated       Boolean          @default(false)
+  mitigated_at    DateTime?
+  mitigated_by    String?
+  created_at      DateTime         @default(now())
+
+  organization organizations @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id, event_type])
+  @@index([severity, mitigated])
+}
+
+model aegis_signals {
+  id                 String          @id @default(uuid())
+  organization_id    String
+  signal_type        AegisSignalType
+  source             String // Feed name, API, sensor
+  title              String
+  content            String          @db.Text
+  severity           AegisSeverity   @default(LOW)
+  confidence         Float           @default(0.5)
+  location           String? // Geographic if applicable
+  entities_mentioned Json            @default("[]") // Companies, people, etc.
+  tags               Json            @default("[]")
+  raw_data           Json?
+  processed_at       DateTime        @default(now())
+  created_at         DateTime        @default(now())
+
+  organization       organizations   @relation(fields: [organization_id], references: [id])
+  threat_assessments aegis_threats[]
+
+  @@index([organization_id, signal_type])
+  @@index([severity])
+  @@index([created_at])
+}
+
+model aegis_threats {
+  id              String            @id @default(uuid())
+  organization_id String
+  signal_id       String?
+  threat_type     AegisThreatType
+  threat_actor    String? // If known
+  title           String
+  description     String            @db.Text
+  severity        AegisSeverity
+  probability     Float             @default(0.5)
+  impact_score    Float             @default(50)
+  affected_assets Json              @default("[]")
+  attack_vectors  Json              @default("[]")
+  indicators      Json              @default("[]") // IOCs
+  status          AegisThreatStatus @default(ACTIVE)
+  first_seen_at   DateTime          @default(now())
+  last_seen_at    DateTime          @default(now())
+  mitigated_at    DateTime?
+  created_at      DateTime          @default(now())
+
+  organization    organizations           @relation(fields: [organization_id], references: [id])
+  signal          aegis_signals?          @relation(fields: [signal_id], references: [id])
+  scenarios       aegis_scenarios[]
+  countermeasures aegis_countermeasures[]
+  briefings       aegis_briefings[]
+
+  @@index([organization_id, status])
+  @@index([threat_type])
+  @@index([severity])
+}
+
+model aegis_scenarios {
+  id                  String   @id @default(uuid())
+  threat_id           String
+  scenario_name       String
+  description         String   @db.Text
+  trigger_conditions  Json // What causes this scenario
+  cascade_effects     Json // Chain of failures
+  affected_systems    Json     @default("[]")
+  financial_impact    Float? // Estimated $
+  operational_impact  Float? // 0-100 severity
+  reputational_impact Float? // 0-100 severity
+  recovery_time_hours Int?
+  probability         Float    @default(0.5)
+  simulation_results  Json? // From Crucible if run
+  created_at          DateTime @default(now())
+
+  threat aegis_threats @relation(fields: [threat_id], references: [id], onDelete: Cascade)
+
+  @@index([threat_id])
+}
+
+model aegis_countermeasures {
+  id                  String                    @id @default(uuid())
+  threat_id           String
+  countermeasure_type AegisCountermeasureType
+  title               String
+  description         String                    @db.Text
+  implementation      Json // Steps to implement
+  cost_estimate       Float?
+  effectiveness       Float                     @default(0.7) // 0-1
+  time_to_implement   Int? // Hours
+  dependencies        Json                      @default("[]")
+  status              AegisCountermeasureStatus @default(PROPOSED)
+  implemented_at      DateTime?
+  created_at          DateTime                  @default(now())
+
+  threat aegis_threats @relation(fields: [threat_id], references: [id], onDelete: Cascade)
+
+  @@index([threat_id])
+  @@index([status])
+}
+
+model aegis_briefings {
+  id                String              @id @default(uuid())
+  organization_id   String
+  threat_id         String?
+  briefing_type     AegisBriefingType
+  title             String
+  executive_summary String              @db.Text
+  detailed_analysis String              @db.Text
+  recommendations   Json                @default("[]")
+  attachments       Json                @default("[]")
+  classification    AegisClassification @default(INTERNAL)
+  recipients        Json                @default("[]")
+  sent_at           DateTime?
+  created_at        DateTime            @default(now())
+
+  organization organizations  @relation(fields: [organization_id], references: [id])
+  threat       aegis_threats? @relation(fields: [threat_id], references: [id])
+
+  @@index([organization_id])
+  @@index([briefing_type])
+}
+
+model security_threats {
+  id              String         @id @default(uuid())
+  organization_id String
+  threat_type     ThreatType
+  severity        ThreatSeverity
+  status          ThreatStatus   @default(ACTIVE)
+  title           String
+  description     String
+  source          String?
+  target          String?
+  indicators      Json           @default("[]")
+  mitigations     Json           @default("[]")
+  detected_at     DateTime       @default(now())
+  resolved_at     DateTime?
+
+  @@index([organization_id])
+  @@index([status])
+  @@index([severity])
+}
+
+model security_policies {
+  id              String            @id @default(uuid())
+  organization_id String
+  name            String
+  description     String?
+  policy_type     PolicyType
+  rules           Json              @default("[]")
+  enabled         Boolean           @default(true)
+  enforcement     PolicyEnforcement @default(WARN)
+  created_at      DateTime          @default(now())
+  updated_at      DateTime          @updatedAt
+
+  @@unique([organization_id, name])
+}
+
+model security_audit_logs {
+  id              String    @id @default(uuid())
+  organization_id String
+  action          String
+  actor           String
+  resource_type   String
+  resource_id     String?
+  details         Json      @default("{}")
+  ip_address      String?
+  user_agent      String?
+  risk_level      RiskLevel @default(LOW)
+  created_at      DateTime  @default(now())
+
+  @@index([organization_id])
+  @@index([action])
+  @@index([created_at])
+}
+
+model honeytokens {
+  id              String         @id @default(uuid())
+  organization_id String
+  token_type      HoneytokenType
+  name            String
+  value           String
+  placement       String
+  alert_level     AlertLevel     @default(HIGH)
+  triggered       Boolean        @default(false)
+  trigger_count   Int            @default(0)
+  last_triggered  DateTime?
+  expires_at      DateTime?
+  created_at      DateTime       @default(now())
+
+  @@index([organization_id])
+  @@index([triggered])
+}
+
+model canary_systems {
+  id               String       @id @default(uuid())
+  organization_id  String
+  name             String
+  system_type      CanaryType
+  status           CanaryStatus @default(ACTIVE)
+  configuration    Json         @default("{}")
+  interactions     Int          @default(0)
+  last_interaction DateTime?
+  created_at       DateTime     @default(now())
+
+  alerts canary_alerts[]
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model canary_alerts {
+  id          String          @id @default(uuid())
+  canary_id   String
+  event_type  CanaryEventType
+  source_ip   String
+  source_port Int?
+  details     Json            @default("{}")
+  severity    AlertLevel
+  analyzed    Boolean         @default(false)
+  created_at  DateTime        @default(now())
+
+  canary canary_systems @relation(fields: [canary_id], references: [id], onDelete: Cascade)
+
+  @@index([canary_id])
+  @@index([created_at])
+}
+
+model hardware_keys {
+  id              String          @id @default(uuid())
+  organization_id String
+  serial_number   String          @unique
+  key_type        HardwareKeyType
+  assigned_to     String?
+  assigned_name   String?
+  status          KeyStatus       @default(ACTIVE)
+  capabilities    Json            @default("[]")
+  public_key      String
+  usage_count     Int             @default(0)
+  last_used       DateTime?
+  created_at      DateTime        @default(now())
+
+  challenges auth_challenges[]
+  audit_logs key_audit_logs[]
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model auth_challenges {
+  id           String    @id @default(uuid())
+  key_id       String
+  challenge    String
+  operation    String
+  verified     Boolean   @default(false)
+  expires_at   DateTime
+  completed_at DateTime?
+  created_at   DateTime  @default(now())
+
+  key hardware_keys @relation(fields: [key_id], references: [id], onDelete: Cascade)
+
+  @@index([key_id])
+}
+
+model high_risk_operations {
+  id                 String        @id @default(uuid())
+  organization_id    String
+  operation_type     OperationType
+  description        String
+  threshold          Json          @default("{}")
+  requires_key       Boolean       @default(true)
+  requires_biometric Boolean       @default(false)
+  cooldown_seconds   Int           @default(60)
+  created_at         DateTime      @default(now())
+
+  @@index([organization_id])
+}
+
+model key_audit_logs {
+  id         String   @id @default(uuid())
+  key_id     String
+  event      KeyEvent
+  details    String?
+  actor      String
+  ip_address String?
+  created_at DateTime @default(now())
+
+  key hardware_keys @relation(fields: [key_id], references: [id], onDelete: Cascade)
+
+  @@index([key_id])
+  @@index([created_at])
+}
+
+enum CrucibleSimulationType {
+  FINANCIAL_STRESS
+  OPERATIONAL_SHOCK
+  CYBER_ATTACK
+  REGULATORY_CHANGE
+  CULTURAL_SHIFT
+  ESG_EVENT
+  MA_SCENARIO
+  MARKET_DISRUPTION
+  SUPPLY_CHAIN
+  TALENT_EXODUS
+  TECHNOLOGY_FAILURE
+  BLACK_SWAN
+  CUSTOM
+}
+
+enum CrucibleSimulationStatus {
+  DRAFT
+  CONFIGURING
+  RUNNING
+  COMPLETED
+  FAILED
+  CANCELLED
+}
+
+enum CrucibleOutcomeSentiment {
+  CATASTROPHIC
+  NEGATIVE
+  NEUTRAL
+  POSITIVE
+  OPTIMAL
+}
+
+enum CrucibleImpactCategory {
+  FINANCIAL
+  OPERATIONAL
+  SECURITY
+  COMPLIANCE
+  CULTURAL
+  REPUTATIONAL
+  STRATEGIC
+  TECHNOLOGICAL
+}
+
+enum CrucibleSeverity {
+  CRITICAL
+  HIGH
+  MEDIUM
+  LOW
+  MINIMAL
+}
+
+enum AegisSignalType {
+  CYBER
+  GEOPOLITICAL
+  INFRASTRUCTURE
+  SUPPLY_CHAIN
+  FINANCIAL
+  ENVIRONMENTAL
+  SOCIAL
+  REGULATORY
+}
+
+enum AegisSeverity {
+  CRITICAL
+  HIGH
+  MEDIUM
+  LOW
+  INFORMATIONAL
+}
+
+enum AegisThreatType {
+  CYBER_ATTACK
+  DATA_BREACH
+  INSIDER_THREAT
+  SUPPLY_CHAIN_ATTACK
+  PHYSICAL_SECURITY
+  GEOPOLITICAL_RISK
+  NATURAL_DISASTER
+  MARKET_DISRUPTION
+  REGULATORY_ACTION
+  REPUTATIONAL_CRISIS
+}
+
+enum AegisThreatStatus {
+  ACTIVE
+  MONITORING
+  CONTAINED
+  MITIGATED
+  RESOLVED
+}
+
+enum AegisCountermeasureType {
+  PREVENTIVE
+  DETECTIVE
+  CORRECTIVE
+  DETERRENT
+  RECOVERY
+}
+
+enum AegisCountermeasureStatus {
+  PROPOSED
+  APPROVED
+  IN_PROGRESS
+  IMPLEMENTED
+  VERIFIED
+  REJECTED
+}
+
+enum AegisBriefingType {
+  DAILY_INTEL
+  THREAT_ALERT
+  INCIDENT_REPORT
+  STRATEGIC_ASSESSMENT
+  EXECUTIVE_SUMMARY
+}
+
+enum AegisClassification {
+  PUBLIC
+  INTERNAL
+  CONFIDENTIAL
+  RESTRICTED
+  TOP_SECRET
+}
+
+enum ThreatType {
+  INTRUSION
+  MALWARE
+  PHISHING
+  DATA_EXFILTRATION
+  PRIVILEGE_ESCALATION
+  DENIAL_OF_SERVICE
+  INSIDER_THREAT
+  POLICY_VIOLATION
+}
+
+enum ThreatSeverity {
+  CRITICAL
+  HIGH
+  MEDIUM
+  LOW
+  INFO
+}
+
+enum ThreatStatus {
+  ACTIVE
+  INVESTIGATING
+  CONTAINED
+  MITIGATED
+  RESOLVED
+  FALSE_POSITIVE
+}
+
+enum PolicyType {
+  ACCESS_CONTROL
+  DATA_PROTECTION
+  NETWORK_SECURITY
+  COMPLIANCE
+  OPERATIONAL
+}
+
+enum PolicyEnforcement {
+  BLOCK
+  WARN
+  LOG
+  DISABLED
+}
+
+enum RiskLevel {
+  CRITICAL
+  HIGH
+  MEDIUM
+  LOW
+}
+
+enum HoneytokenType {
+  CREDENTIAL
+  API_KEY
+  DOCUMENT
+  DATABASE_RECORD
+  SSH_KEY
+  TOKEN
+}
+
+enum CanaryType {
+  SERVER
+  DATABASE
+  APPLICATION
+  API_ENDPOINT
+  FILE_SHARE
+}
+
+enum CanaryStatus {
+  ACTIVE
+  INACTIVE
+  TRIGGERED
+  COMPROMISED
+}
+
+enum CanaryEventType {
+  CONNECTION
+  AUTHENTICATION
+  DATA_ACCESS
+  EXFILTRATION
+  LATERAL_MOVEMENT
+}
+
+enum HardwareKeyType {
+  USB
+  NFC
+  SMARTCARD
+  BIOMETRIC
+}
+
+enum KeyStatus {
+  ACTIVE
+  INACTIVE
+  LOST
+  REVOKED
+}
+
+enum OperationType {
+  LARGE_TRANSACTION
+  CONFIG_CHANGE
+  DATA_EXPORT
+  USER_MANAGEMENT
+  SYSTEM_ACCESS
+}
+
+enum KeyEvent {
+  REGISTERED
+  ASSIGNED
+  USED
+  LOST
+  REVOKED
+  RECOVERED
+}
+
+// =============================================================================
+// CendiaHSM — Hardware Security Module Keys & Operations
+// =============================================================================
+
+model hsm_keys {
+  id          String   @id @default(uuid())
+  label       String
+  algorithm   String   // RSA-2048, RSA-4096, AES-256, EC-P256, EC-P384
+  provider    String   // softhsm2, aws-cloudhsm, thales-luna, software-fallback
+  extractable Boolean  @default(false)
+  public_key  String?  @db.Text
+  created_at  DateTime @default(now())
+
+  operations hsm_operations[]
+
+  @@index([algorithm])
+  @@index([provider])
+}
+
+model hsm_operations {
+  id            String   @id @default(uuid())
+  key_id        String
+  operation     String   // sign, verify, wrap, unwrap, random
+  algorithm     String
+  provider      String
+  success       Boolean  @default(true)
+  error_message String?
+  created_at    DateTime @default(now())
+
+  key hsm_keys @relation(fields: [key_id], references: [id], onDelete: Cascade)
+
+  @@index([key_id])
+  @@index([operation])
+  @@index([created_at])
+}

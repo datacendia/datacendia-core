@@ -1,0 +1,496 @@
+// Data Domain - Metrics, Alerts, Forecasts, Data Sources, Lineage, Health
+
+model alerts {
+  id                 String              @id
+  organization_id    String
+  metric_id          String?
+  severity           AlertSeverity
+  status             AlertStatus         @default(ACTIVE)
+  title              String
+  message            String
+  source             String
+  metadata           Json                @default("{}")
+  acknowledged_at    DateTime?
+  acknowledged_by    String?
+  resolved_at        DateTime?
+  resolved_by        String?
+  resolution         String?
+  created_at         DateTime            @default(now())
+  metric_definitions metric_definitions? @relation(fields: [metric_id], references: [id])
+  organizations      organizations       @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id, status])
+  @@index([severity])
+}
+
+model notifications {
+  id              String              @id @default(uuid())
+  user_id         String
+  organization_id String
+  type            NotificationType
+  channel         NotificationChannel @default(IN_APP)
+  title           String
+  message         String
+  link            String?
+  metadata        Json                @default("{}")
+  read            Boolean             @default(false)
+  read_at         DateTime?
+  sent_at         DateTime?
+  created_at      DateTime            @default(now())
+
+  @@index([user_id, read])
+  @@index([organization_id])
+}
+
+model data_sources {
+  id               String           @id
+  organization_id  String
+  name             String
+  type             DataSourceType
+  config           Json             @default("{}")
+  credentials      Json             @default("{}")
+  status           DataSourceStatus @default(PENDING)
+  last_sync_at     DateTime?
+  last_sync_status String?
+  sync_schedule    String?
+  metadata         Json             @default("{}")
+  created_at       DateTime         @default(now())
+  updated_at       DateTime
+  organizations    organizations    @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id, type])
+}
+
+model embeddings {
+  id              String   @id
+  organization_id String?
+  source_type     String
+  source_id       String
+  content         String
+  content_hash    String   @unique
+  embedding       Bytes
+  embedding_model String   @default("nomic-embed-text")
+  dimensions      Int      @default(768)
+  metadata        Json     @default("{}")
+  created_at      DateTime @default(now())
+
+  @@index([organization_id])
+  @@index([source_id])
+  @@index([source_type])
+}
+
+model forecasts {
+  id                 String         @id
+  organization_id    String
+  name               String
+  target_metric      String
+  horizon            Json
+  model              String
+  features           Json           @default("[]")
+  status             ForecastStatus @default(PENDING)
+  predictions        Json?
+  accuracy           Json?
+  feature_importance Json?
+  created_at         DateTime       @default(now())
+  completed_at       DateTime?
+  scenarios          scenarios[]
+
+  @@index([organization_id])
+}
+
+model health_scores {
+  id              String   @id
+  organization_id String
+  overall         Int
+  data_score      Int
+  ops_score       Int
+  security_score  Int
+  people_score    Int
+  calculated_at   DateTime
+  details         Json     @default("{}")
+
+  @@index([organization_id, calculated_at])
+}
+
+model llm_cache {
+  id               String   @id
+  query_hash       String   @unique
+  model            String
+  prompt           String
+  system_prompt    String?
+  response         String
+  tokens_in        Int
+  tokens_out       Int
+  latency_ms       Int
+  temperature      Float    @default(0.7)
+  hit_count        Int      @default(1)
+  last_accessed_at DateTime @default(now())
+  expires_at       DateTime
+  created_at       DateTime @default(now())
+
+  @@index([expires_at])
+  @@index([model])
+}
+
+model metric_definitions {
+  id               String          @id
+  organization_id  String
+  name             String
+  code             String
+  description      String?
+  formula          Json
+  unit             String?
+  category         String?
+  thresholds       Json            @default("{}")
+  owner_id         String?
+  refresh_schedule String?
+  created_at       DateTime        @default(now())
+  updated_at       DateTime
+  alerts           alerts[]
+  organizations    organizations   @relation(fields: [organization_id], references: [id])
+  users            users?          @relation(fields: [owner_id], references: [id])
+  metric_values    metric_values[]
+
+  @@unique([organization_id, code])
+}
+
+model metric_values {
+  id                 String             @id
+  metric_id          String
+  value              Float
+  dimensions         Json               @default("{}")
+  timestamp          DateTime
+  created_at         DateTime           @default(now())
+  metric_definitions metric_definitions @relation(fields: [metric_id], references: [id], onDelete: Cascade)
+
+  @@index([metric_id, timestamp])
+}
+
+model lineage_entities {
+  id              String            @id @default(uuid())
+  organization_id String
+  name            String
+  entity_type     LineageEntityType
+  description     String?
+  source          String
+  schema_def      Json              @default("{}")
+  quality_score   Float             @default(0)
+  quality_level   DataQualityLevel  @default(UNKNOWN)
+  record_count    Int?
+  metadata        Json              @default("{}")
+  created_at      DateTime          @default(now())
+  updated_at      DateTime          @updatedAt
+
+  relationships_from lineage_relationships[] @relation("source_entity")
+  relationships_to   lineage_relationships[] @relation("target_entity")
+  quality_reports    data_quality_reports[]
+
+  @@index([organization_id])
+  @@index([entity_type])
+}
+
+model lineage_relationships {
+  id                String              @id @default(uuid())
+  source_id         String
+  target_id         String
+  relationship_type LineageRelationType
+  transformations   Json                @default("[]")
+  confidence        Float               @default(1.0)
+  created_at        DateTime            @default(now())
+
+  source_entity lineage_entities @relation("source_entity", fields: [source_id], references: [id], onDelete: Cascade)
+  target_entity lineage_entities @relation("target_entity", fields: [target_id], references: [id], onDelete: Cascade)
+
+  @@unique([source_id, target_id, relationship_type])
+}
+
+model data_quality_reports {
+  id            String   @id @default(uuid())
+  entity_id     String
+  overall_score Float
+  completeness  Float
+  accuracy      Float
+  consistency   Float
+  timeliness    Float
+  validity      Float
+  issues        Json     @default("[]")
+  checked_at    DateTime @default(now())
+
+  entity lineage_entities @relation(fields: [entity_id], references: [id], onDelete: Cascade)
+
+  @@index([entity_id])
+}
+
+model forecast_models {
+  id              String              @id @default(uuid())
+  organization_id String
+  name            String
+  model_type      ForecastModelType
+  description     String?
+  target_metric   String
+  features        Json                @default("[]")
+  hyperparameters Json                @default("{}")
+  accuracy        Float?
+  mape            Float?
+  training_status ModelTrainingStatus @default(UNTRAINED)
+  last_trained_at DateTime?
+  created_at      DateTime            @default(now())
+  updated_at      DateTime            @updatedAt
+
+  predictions        predictions[]
+  feature_importance feature_importance[]
+
+  @@index([organization_id])
+  @@index([model_type])
+}
+
+model predictions {
+  id              String   @id @default(uuid())
+  model_id        String
+  input_data      Json
+  predicted_value Float
+  confidence      Float
+  prediction_date DateTime
+  actual_value    Float?
+  created_at      DateTime @default(now())
+
+  model forecast_models @relation(fields: [model_id], references: [id], onDelete: Cascade)
+
+  @@index([model_id])
+  @@index([prediction_date])
+}
+
+model feature_importance {
+  id           String   @id @default(uuid())
+  model_id     String
+  feature_name String
+  importance   Float
+  direction    String?
+  created_at   DateTime @default(now())
+
+  model forecast_models @relation(fields: [model_id], references: [id], onDelete: Cascade)
+
+  @@unique([model_id, feature_name])
+}
+
+model health_checks {
+  id              String       @id @default(uuid())
+  organization_id String
+  component       String
+  status          HealthStatus
+  latency_ms      Int?
+  error_message   String?
+  metadata        Json         @default("{}")
+  checked_at      DateTime     @default(now())
+
+  @@index([organization_id])
+  @@index([component])
+  @@index([checked_at])
+}
+
+model health_incidents {
+  id                  String           @id @default(uuid())
+  organization_id     String
+  title               String
+  description         String
+  severity            IncidentSeverity
+  status              IncidentStatus   @default(OPEN)
+  affected_components Json             @default("[]")
+  root_cause          String?
+  resolution          String?
+  started_at          DateTime
+  resolved_at         DateTime?
+  created_at          DateTime         @default(now())
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model chronos_events {
+  id              String   @id @default(uuid())
+  organization_id String
+  event_type      String   // deliberation, decision_outcome, veto, dissent, alert, weight_adjustment, compliance, security, health, snapshot, collection, agent_config, data_source, metric_change
+  category        String   // council, echo, governance, security, data, system, compliance
+  severity        String   @default("info") // info, low, medium, high, critical
+  title           String
+  description     String
+  actor           String?  // user_id or agent_id or 'system'
+  actor_type      String?  // user, agent, system, scheduler
+  resource_type   String?  // deliberation, decision, agent, metric, alert, etc.
+  resource_id     String?  // ID of the affected resource
+  metadata        Json     @default("{}")
+  impact          String?  // positive, negative, neutral, critical
+  magnitude       Int      @default(0) // 0-10 significance score
+  parent_event_id String?  // For event chaining (e.g., deliberation -> outcome)
+  hash            String?  // SHA-256 hash for tamper detection
+  created_at      DateTime @default(now())
+
+  @@index([organization_id, created_at])
+  @@index([event_type])
+  @@index([category])
+  @@index([severity])
+  @@index([resource_type, resource_id])
+  @@index([parent_event_id])
+}
+
+model chronos_snapshots {
+  id              String   @id @default(uuid())
+  organization_id String
+  snapshot_type   String
+  name            String
+  data            Json     @default("{}")
+  metrics         Json     @default("{}")
+  created_by      String
+  created_at      DateTime @default(now())
+
+  @@index([organization_id])
+}
+
+enum AlertSeverity {
+  CRITICAL
+  WARNING
+  INFO
+}
+
+enum AlertStatus {
+  ACTIVE
+  ACKNOWLEDGED
+  RESOLVED
+}
+
+enum DataSourceStatus {
+  PENDING
+  CONNECTED
+  SYNCING
+  ERROR
+  DISABLED
+}
+
+enum DataSourceType {
+  POSTGRESQL
+  MYSQL
+  SNOWFLAKE
+  BIGQUERY
+  SALESFORCE
+  SAP
+  ORACLE
+  MONGODB
+  REST_API
+  GRAPHQL
+  CSV_UPLOAD
+  AWS
+  AZURE
+  HUBSPOT
+  GOOGLE_SHEETS
+  AIRTABLE
+  STRIPE
+  SHOPIFY
+  ZENDESK
+  JIRA
+  SLACK
+  REDIS
+  NEO4J
+}
+
+enum ForecastStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+}
+
+enum LineageEntityType {
+  DATASET
+  TABLE
+  COLUMN
+  REPORT
+  METRIC
+  MODEL
+  PIPELINE
+  API
+}
+
+enum LineageRelationType {
+  DERIVES_FROM
+  TRANSFORMS_TO
+  DEPENDS_ON
+  FEEDS
+  USES
+}
+
+enum DataQualityLevel {
+  EXCELLENT
+  GOOD
+  FAIR
+  POOR
+  UNKNOWN
+}
+
+enum ForecastModelType {
+  TIME_SERIES
+  REGRESSION
+  CLASSIFICATION
+  ANOMALY_DETECTION
+  NEURAL_NETWORK
+}
+
+enum ModelTrainingStatus {
+  UNTRAINED
+  TRAINING
+  TRAINED
+  FAILED
+  STALE
+}
+
+enum HealthStatus {
+  HEALTHY
+  DEGRADED
+  UNHEALTHY
+  UNKNOWN
+}
+
+enum IncidentSeverity {
+  CRITICAL
+  HIGH
+  MEDIUM
+  LOW
+}
+
+enum IncidentStatus {
+  OPEN
+  INVESTIGATING
+  IDENTIFIED
+  MONITORING
+  RESOLVED
+}
+
+enum NotificationType {
+  DELIBERATION_STARTED
+  DELIBERATION_COMPLETE
+  DECISION_MADE
+  DISSENT_FILED
+  APPROVAL_REQUIRED
+  APPROVAL_GRANTED
+  APPROVAL_DENIED
+  ALERT_TRIGGERED
+  SYSTEM_ANNOUNCEMENT
+  SECURITY_ALERT
+  MFA_ENABLED
+  MFA_DISABLED
+}
+
+enum NotificationChannel {
+  IN_APP
+  EMAIL
+  SLACK
+  TEAMS
+  PUSH
+  WEBHOOK
+}
+
+enum AlertLevel {
+  CRITICAL
+  HIGH
+  MEDIUM
+  LOW
+}

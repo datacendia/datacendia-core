@@ -1,0 +1,1056 @@
+{
+  "version": "1.0",
+  "description": "Datacendia Workflow Scenarios - 250 Enterprise Decision Workflows",
+  "framework": {
+    "name": "Datacendia Workflow Ingestion Framework",
+    "version": "1.0",
+    "autoIngestEndpoint": "/api/v1/workflows/ingest",
+    "validationEndpoint": "/api/v1/workflows/validate",
+    "executionEndpoint": "/api/v1/workflows/execute",
+    "schema": {
+      "id": "string (uuid)",
+      "name": "string",
+      "category": "string",
+      "councilMode": "string (war-room|due-diligence|innovation-lab|compliance|crisis|execution|research|investment|stakeholder|rapid|advisory|governance)",
+      "services": "array of service names",
+      "steps": "array of step objects",
+      "councilQuestion": "string - the question to ask the council",
+      "expectedOutcome": "string",
+      "priority": "string (critical|high|medium|low)",
+      "estimatedDuration": "string (e.g., '2 hours', '1 day')",
+      "tags": "array of strings"
+    }
+  },
+  "serviceRegistry": {
+    "enterprise": [
+      "CendiaProcure", "CendiaGuardian", "CendiaNerve", "CendiaDocket", "CendiaEquity",
+      "CendiaNetMesh", "CendiaFactory", "CendiaTransit", "CendiaAcademy", "CendiaResonance",
+      "CendiaInventum", "CendiaHabitat", "CendiaRegent", "CendiaRainmaker", "CendiaScout"
+    ],
+    "intelligence": [
+      "CendiaChronos", "CendiaPanopticon", "CendiaAegis", "CendiaEternal", "CendiaSymbiont", "CendiaVox", "CendiaEcho", "CendiaRedTeam", "CendiaGnosis"
+    ],
+    "sovereign": [
+      "CendiaDiode", "CendiaRLHF", "CendiaDNA", "CendiaShadow", "CendiaReplay",
+      "CendiaBridge", "CendiaCanary", "CendiaAttest", "CendiaTimeLock", "CendiaFederated", "CendiaPortable"
+    ],
+    "core": [
+      "CendiaCascade", "CendiaApotheosis", "CendiaDissent", "CendiaTranslate"
+    ],
+    "strategic": {
+      "agenticAI": ["CendiaCouncil", "CendiaSynthesis", "CendiaRedTeam", "CendiaUnion"],
+      "systemsOfRecord": ["CendiaRainmaker", "CendiaDocket"],
+      "agentSpeedInfra": ["CendiaLogic", "CendiaDeploy"],
+      "structureExtraction": ["CendiaGraph", "CendiaIngest"],
+      "workforceAugmentation": ["CendiaAcademy", "CendiaWarGames"]
+    },
+    "strategicServiceDetails": {
+      "CendiaSynthesis": {
+        "file": "SynthesisEngineService.ts",
+        "description": "Multi-agent orchestration & decision synthesis",
+        "pitch": "Agents that debate and decide, not just chat",
+        "category": "agenticAI",
+        "endpoints": "/api/v1/strategic/synthesis/*"
+      },
+      "CendiaGraph": {
+        "file": "CendiaGraphService.ts",
+        "description": "Knowledge graph & entity relationships",
+        "pitch": "The Institutional Brain - extract the physics of the bank",
+        "category": "structureExtraction",
+        "endpoints": "/api/v1/strategic/graph/*"
+      },
+      "CendiaIngest": {
+        "file": "CendiaIngestService.ts",
+        "description": "Document vectorization pipeline",
+        "pitch": "How data gets into the graph",
+        "category": "structureExtraction",
+        "endpoints": "/api/v1/strategic/ingest/*"
+      },
+      "CendiaLogic": {
+        "file": "LogicGateService.ts",
+        "description": "Parallel processing & burst compute",
+        "pitch": "Red Team and Union run simultaneously in 47ms",
+        "category": "agentSpeedInfra",
+        "endpoints": "/api/v1/strategic/logicgate/*"
+      },
+      "CendiaDeploy": {
+        "file": "RDPService.ts",
+        "description": "Rapid deployment & containerization",
+        "pitch": "Deploy anywhere in minutes, air-gapped ready",
+        "category": "agentSpeedInfra",
+        "endpoints": "/api/v1/strategic/rdp/*"
+      },
+      "CendiaWarGames": {
+        "file": "WarGamesService.ts",
+        "description": "Crisis simulation & operator certification",
+        "pitch": "We create Super-Soldiers, not education",
+        "category": "workforceAugmentation",
+        "endpoints": "/api/v1/strategic/wargames/*"
+      },
+      "CendiaUnion": {
+        "file": "UnionService.ts",
+        "description": "Defense synthesis & security response",
+        "pitch": "The Shield - synthesizes defensive strategies",
+        "category": "agenticAI",
+        "endpoints": "/api/v1/strategic/union/*"
+      }
+    },
+    "investorPitch": {
+      "theHook": "Council - Multimodal agents that debate and decide",
+      "theProduct": "SynthesisEngine - The Orchestration Layer",
+      "thePitch": "Autonomous Action with Human-in-the-Loop compliance via CendiaDocket"
+    }
+  },
+  "scenarios": [
+    {
+      "id": "WF-001",
+      "name": "Quarterly Vendor Contract Renegotiation",
+      "category": "Procurement",
+      "councilMode": "investment",
+      "services": ["CendiaProcure", "CendiaChronos", "CendiaEquity"],
+      "steps": [
+        {"order": 1, "action": "Identify expiring contracts in next 90 days", "service": "CendiaProcure", "output": "contract_list"},
+        {"order": 2, "action": "Analyze historical spending patterns", "service": "CendiaChronos", "output": "spending_trends"},
+        {"order": 3, "action": "Calculate potential savings opportunities", "service": "CendiaProcure", "output": "savings_analysis"},
+        {"order": 4, "action": "Generate negotiation leverage points", "service": "CendiaProcure", "output": "leverage_points"},
+        {"order": 5, "action": "Present to council for approval", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "We have 12 vendor contracts expiring in Q2 with a combined annual value of $4.2M. Our analysis shows potential savings of $380K through renegotiation. Should we proceed with aggressive renegotiation tactics, or maintain relationships with moderate asks?",
+      "expectedOutcome": "Approved negotiation strategy with prioritized vendor list",
+      "priority": "high",
+      "estimatedDuration": "2 weeks",
+      "tags": ["procurement", "cost-savings", "vendor-management"]
+    },
+    {
+      "id": "WF-002",
+      "name": "Customer Churn Risk Intervention",
+      "category": "Customer Success",
+      "councilMode": "crisis",
+      "services": ["CendiaGuardian", "CendiaChronos", "CendiaResonance"],
+      "steps": [
+        {"order": 1, "action": "Identify at-risk customers with health score < 50", "service": "CendiaGuardian", "output": "at_risk_list"},
+        {"order": 2, "action": "Analyze engagement decline patterns", "service": "CendiaChronos", "output": "decline_analysis"},
+        {"order": 3, "action": "Generate personalized care packages", "service": "CendiaGuardian", "output": "care_packages"},
+        {"order": 4, "action": "Draft intervention communications", "service": "CendiaResonance", "output": "communications"},
+        {"order": 5, "action": "Council approval for executive escalation", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "We have identified 8 enterprise customers representing $2.1M ARR with rapidly declining health scores. Three have already initiated RFPs with competitors. What level of intervention and executive involvement should we authorize?",
+      "expectedOutcome": "Approved intervention plan with executive sponsor assignments",
+      "priority": "critical",
+      "estimatedDuration": "48 hours",
+      "tags": ["customer-success", "churn-prevention", "retention"]
+    },
+    {
+      "id": "WF-003",
+      "name": "Production Line Failure Prevention",
+      "category": "Manufacturing",
+      "councilMode": "execution",
+      "services": ["CendiaFactory", "CendiaNerve", "CendiaChronos"],
+      "steps": [
+        {"order": 1, "action": "Run predictive failure analysis on all lines", "service": "CendiaFactory", "output": "failure_predictions"},
+        {"order": 2, "action": "Cross-reference with IT infrastructure health", "service": "CendiaNerve", "output": "infra_health"},
+        {"order": 3, "action": "Analyze historical failure patterns", "service": "CendiaChronos", "output": "pattern_analysis"},
+        {"order": 4, "action": "Schedule preventive maintenance windows", "service": "CendiaFactory", "output": "maintenance_schedule"},
+        {"order": 5, "action": "Council approval for production impact", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Predictive analysis indicates 3 production lines have >70% probability of critical failure within 30 days. Preventive maintenance requires 48-hour shutdown per line. How should we sequence the maintenance to minimize production impact during peak season?",
+      "expectedOutcome": "Approved maintenance schedule with contingency plans",
+      "priority": "high",
+      "estimatedDuration": "1 week",
+      "tags": ["manufacturing", "predictive-maintenance", "operations"]
+    },
+    {
+      "id": "WF-004",
+      "name": "M&A Culture Integration Assessment",
+      "category": "Mergers & Acquisitions",
+      "councilMode": "due-diligence",
+      "services": ["CendiaNetMesh", "CendiaAcademy", "CendiaResonance"],
+      "steps": [
+        {"order": 1, "action": "Assess target company culture profile", "service": "CendiaNetMesh", "output": "culture_profile"},
+        {"order": 2, "action": "Compare with acquirer culture dimensions", "service": "CendiaNetMesh", "output": "culture_comparison"},
+        {"order": 3, "action": "Identify skill gaps in combined workforce", "service": "CendiaAcademy", "output": "skill_gaps"},
+        {"order": 4, "action": "Develop integration communication strategy", "service": "CendiaResonance", "output": "comm_strategy"},
+        {"order": 5, "action": "Council review of integration roadmap", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Our culture compatibility analysis shows a 62% alignment score with the acquisition target. Key friction points include decision-making speed (they're consensus-driven, we're top-down) and work-life balance expectations. Should we proceed with the acquisition given these cultural risks?",
+      "expectedOutcome": "Go/No-Go decision with integration risk mitigation plan",
+      "priority": "critical",
+      "estimatedDuration": "2 weeks",
+      "tags": ["m&a", "culture", "integration"]
+    },
+    {
+      "id": "WF-005",
+      "name": "Executive Travel Security Assessment",
+      "category": "Security",
+      "councilMode": "compliance",
+      "services": ["CendiaTransit", "CendiaAegis", "CendiaNerve"],
+      "steps": [
+        {"order": 1, "action": "Assess destination risk profile", "service": "CendiaTransit", "output": "risk_assessment"},
+        {"order": 2, "action": "Check for active threats in region", "service": "CendiaAegis", "output": "threat_intel"},
+        {"order": 3, "action": "Verify secure communication channels", "service": "CendiaNerve", "output": "comm_security"},
+        {"order": 4, "action": "Generate security plan with extraction options", "service": "CendiaTransit", "output": "security_plan"},
+        {"order": 5, "action": "Council approval for high-risk travel", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "The CEO has requested travel to a region with elevated security risk (Level 3) for a critical partnership meeting. Our security assessment recommends enhanced protection measures costing $45K. Should we approve the travel with full security protocol, suggest virtual meeting, or postpone?",
+      "expectedOutcome": "Travel decision with approved security measures",
+      "priority": "high",
+      "estimatedDuration": "24 hours",
+      "tags": ["security", "executive-protection", "travel"]
+    },
+    {
+      "id": "WF-006",
+      "name": "Patent Filing Priority Assessment",
+      "category": "Intellectual Property",
+      "councilMode": "investment",
+      "services": ["CendiaInventum", "CendiaChronos", "CendiaDocket"],
+      "steps": [
+        {"order": 1, "action": "Evaluate patentable ideas in pipeline", "service": "CendiaInventum", "output": "idea_evaluation"},
+        {"order": 2, "action": "Analyze competitive patent landscape", "service": "CendiaChronos", "output": "landscape_analysis"},
+        {"order": 3, "action": "Assess legal risks and prior art", "service": "CendiaDocket", "output": "legal_assessment"},
+        {"order": 4, "action": "Calculate ROI for each patent filing", "service": "CendiaInventum", "output": "roi_analysis"},
+        {"order": 5, "action": "Council prioritization of patent budget", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "We have 15 patentable innovations but budget for only 5 filings this quarter ($150K). Our analysis ranks them by novelty, business value, and defensive importance. Which 5 should we prioritize, and should we request additional budget for critical defensive patents?",
+      "expectedOutcome": "Prioritized patent filing list with budget allocation",
+      "priority": "medium",
+      "estimatedDuration": "1 week",
+      "tags": ["ip", "patents", "r&d"]
+    },
+    {
+      "id": "WF-007",
+      "name": "Earnings Call Preparation",
+      "category": "Investor Relations",
+      "councilMode": "war-room",
+      "services": ["CendiaEquity", "CendiaResonance", "CendiaChronos"],
+      "steps": [
+        {"order": 1, "action": "Simulate earnings phrase impact", "service": "CendiaEquity", "output": "phrase_simulation"},
+        {"order": 2, "action": "Prepare talking points and Q&A", "service": "CendiaEquity", "output": "talking_points"},
+        {"order": 3, "action": "Analyze historical market reactions", "service": "CendiaChronos", "output": "reaction_analysis"},
+        {"order": 4, "action": "Draft crisis holding statements", "service": "CendiaResonance", "output": "holding_statements"},
+        {"order": 5, "action": "Council war-game difficult questions", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Q3 earnings show 12% revenue growth but margin compression of 200bps. Analysts are expecting questions about our AI investment ROI and competitive positioning. How should we frame the narrative, and what language should we avoid that could trigger negative market reaction?",
+      "expectedOutcome": "Approved earnings script with risk-tested language",
+      "priority": "critical",
+      "estimatedDuration": "3 days",
+      "tags": ["investor-relations", "earnings", "communications"]
+    },
+    {
+      "id": "WF-008",
+      "name": "Workplace Optimization Initiative",
+      "category": "Facilities",
+      "councilMode": "research",
+      "services": ["CendiaHabitat", "CendiaAcademy", "CendiaChronos"],
+      "steps": [
+        {"order": 1, "action": "Analyze space utilization patterns", "service": "CendiaHabitat", "output": "utilization_data"},
+        {"order": 2, "action": "Correlate with productivity metrics", "service": "CendiaChronos", "output": "productivity_correlation"},
+        {"order": 3, "action": "Assess employee skill development needs", "service": "CendiaAcademy", "output": "skill_needs"},
+        {"order": 4, "action": "Generate BioSync recommendations", "service": "CendiaHabitat", "output": "biosync_recs"},
+        {"order": 5, "action": "Council review of optimization plan", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Our workplace analytics show 40% of office space is underutilized while collaboration zones are at 120% capacity. BioSync data indicates stress levels peak at 2-3pm. Should we reconfigure the floor plan, implement flexible scheduling, or invest in additional collaboration spaces?",
+      "expectedOutcome": "Approved workplace optimization strategy",
+      "priority": "medium",
+      "estimatedDuration": "2 weeks",
+      "tags": ["facilities", "workplace", "productivity"]
+    },
+    {
+      "id": "WF-009",
+      "name": "CEO Strategic Advisory Session",
+      "category": "Executive",
+      "councilMode": "advisory",
+      "services": ["CendiaRegent", "CendiaChronos", "CendiaEternal"],
+      "steps": [
+        {"order": 1, "action": "Convene Shadow Cabinet advisors", "service": "CendiaRegent", "output": "advisor_perspectives"},
+        {"order": 2, "action": "Analyze historical parallels", "service": "CendiaChronos", "output": "historical_analysis"},
+        {"order": 3, "action": "Review long-term succession implications", "service": "CendiaEternal", "output": "succession_impact"},
+        {"order": 4, "action": "Generate Mirror Analysis (uncomfortable truths)", "service": "CendiaRegent", "output": "mirror_analysis"},
+        {"order": 5, "action": "Council synthesis of advisory input", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "I'm considering a major strategic pivot that would require divesting our legacy business unit (35% of revenue) to focus on AI-native products. Historical advisors from my Shadow Cabinet have mixed views. What are the uncomfortable truths I need to hear before making this decision?",
+      "expectedOutcome": "Synthesized strategic advice with risk acknowledgment",
+      "priority": "critical",
+      "estimatedDuration": "1 day",
+      "tags": ["strategy", "executive", "advisory"]
+    },
+    {
+      "id": "WF-010",
+      "name": "IT Incident Response Activation",
+      "category": "IT Operations",
+      "councilMode": "crisis",
+      "services": ["CendiaNerve", "CendiaAegis", "CendiaResonance"],
+      "steps": [
+        {"order": 1, "action": "Detect and classify incident severity", "service": "CendiaNerve", "output": "incident_classification"},
+        {"order": 2, "action": "Assess security threat indicators", "service": "CendiaAegis", "output": "threat_assessment"},
+        {"order": 3, "action": "Activate Lazarus Protocol if needed", "service": "CendiaNerve", "output": "recovery_protocol"},
+        {"order": 4, "action": "Prepare stakeholder communications", "service": "CendiaResonance", "output": "communications"},
+        {"order": 5, "action": "Council authorization for escalation", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "We have detected a P1 incident affecting our payment processing system. Initial analysis suggests potential data exfiltration. Customer impact is growing. Should we activate full Lazarus Protocol (2-hour recovery, $50K cost) or attempt targeted remediation (4-6 hours, lower cost but higher risk)?",
+      "expectedOutcome": "Authorized incident response with communication plan",
+      "priority": "critical",
+      "estimatedDuration": "2 hours",
+      "tags": ["incident-response", "security", "operations"]
+    },
+    {
+      "id": "WF-011",
+      "name": "Legal Discovery Request Processing",
+      "category": "Legal",
+      "councilMode": "compliance",
+      "services": ["CendiaDocket", "CendiaDiode", "CendiaDNA"],
+      "steps": [
+        {"order": 1, "action": "Parse and classify discovery request", "service": "CendiaDocket", "output": "request_analysis"},
+        {"order": 2, "action": "Identify relevant data sources", "service": "CendiaDiode", "output": "data_sources"},
+        {"order": 3, "action": "Generate audit trail for compliance", "service": "CendiaDNA", "output": "audit_bundle"},
+        {"order": 4, "action": "Assess privilege and redaction needs", "service": "CendiaDocket", "output": "privilege_review"},
+        {"order": 5, "action": "Council approval for production scope", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "We received a broad discovery request in the ongoing litigation that could expose sensitive competitive information. Legal estimates 2,000 hours of document review. Should we negotiate scope limitations, use AI-assisted review to reduce costs, or comply fully to avoid sanctions risk?",
+      "expectedOutcome": "Approved discovery response strategy with budget",
+      "priority": "high",
+      "estimatedDuration": "1 week",
+      "tags": ["legal", "discovery", "compliance"]
+    },
+    {
+      "id": "WF-012",
+      "name": "Sales Pipeline Health Assessment",
+      "category": "Sales",
+      "councilMode": "research",
+      "services": ["CendiaRainmaker", "CendiaChronos", "CendiaPanopticon"],
+      "steps": [
+        {"order": 1, "action": "Analyze current pipeline by stage", "service": "CendiaRainmaker", "output": "pipeline_analysis"},
+        {"order": 2, "action": "Identify slipping deals with risk factors", "service": "CendiaRainmaker", "output": "at_risk_deals"},
+        {"order": 3, "action": "Compare to historical conversion patterns", "service": "CendiaChronos", "output": "historical_comparison"},
+        {"order": 4, "action": "Generate executive dashboard view", "service": "CendiaPanopticon", "output": "dashboard"},
+        {"order": 5, "action": "Council review of Q4 forecast", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Our Q4 pipeline shows $12M in opportunities but historical conversion suggests we'll close only 65%. Three enterprise deals worth $4M are showing slip signals. Should we adjust the forecast, increase sales resources, or accept the risk of missing target?",
+      "expectedOutcome": "Validated forecast with intervention plan",
+      "priority": "high",
+      "estimatedDuration": "2 days",
+      "tags": ["sales", "forecasting", "pipeline"]
+    },
+    {
+      "id": "WF-013",
+      "name": "Talent Acquisition Emergency Search",
+      "category": "Human Resources",
+      "councilMode": "rapid",
+      "services": ["CendiaScout", "CendiaAcademy", "CendiaChronos"],
+      "steps": [
+        {"order": 1, "action": "Activate emergency talent search", "service": "CendiaScout", "output": "candidate_pool"},
+        {"order": 2, "action": "Match candidates to skill requirements", "service": "CendiaAcademy", "output": "skill_match"},
+        {"order": 3, "action": "Analyze market compensation trends", "service": "CendiaChronos", "output": "comp_analysis"},
+        {"order": 4, "action": "Generate offer recommendations", "service": "CendiaScout", "output": "offer_recs"},
+        {"order": 5, "action": "Council rapid approval for offers", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Our lead architect just resigned with 2 weeks notice. We have 3 qualified candidates but need to move fast. Top candidate wants 20% above our band. Should we approve the premium offer, counter with equity, or promote internally and backfill?",
+      "expectedOutcome": "Approved hiring decision within 24 hours",
+      "priority": "critical",
+      "estimatedDuration": "24 hours",
+      "tags": ["hr", "talent", "emergency"]
+    },
+    {
+      "id": "WF-014",
+      "name": "Product Launch Readiness Review",
+      "category": "Product",
+      "councilMode": "execution",
+      "services": ["CendiaFactory", "CendiaResonance", "CendiaNerve"],
+      "steps": [
+        {"order": 1, "action": "Verify production line readiness", "service": "CendiaFactory", "output": "production_status"},
+        {"order": 2, "action": "Confirm marketing campaign preparation", "service": "CendiaResonance", "output": "campaign_status"},
+        {"order": 3, "action": "Validate infrastructure capacity", "service": "CendiaNerve", "output": "infra_capacity"},
+        {"order": 4, "action": "Generate launch checklist", "service": "CendiaCouncil", "output": "checklist"},
+        {"order": 5, "action": "Council go/no-go decision", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Product launch is scheduled for Monday. Production is at 95% readiness, marketing at 100%, but infrastructure shows 15% capacity buffer instead of required 30%. Do we proceed with launch, delay 1 week for capacity upgrade, or launch with limited geography?",
+      "expectedOutcome": "Go/No-Go decision with contingency plan",
+      "priority": "critical",
+      "estimatedDuration": "4 hours",
+      "tags": ["product", "launch", "operations"]
+    },
+    {
+      "id": "WF-015",
+      "name": "Regulatory Compliance Gap Assessment",
+      "category": "Compliance",
+      "councilMode": "compliance",
+      "services": ["CendiaDocket", "CendiaAegis", "CendiaDNA"],
+      "steps": [
+        {"order": 1, "action": "Map current compliance posture", "service": "CendiaDocket", "output": "compliance_map"},
+        {"order": 2, "action": "Identify security control gaps", "service": "CendiaAegis", "output": "security_gaps"},
+        {"order": 3, "action": "Generate evidence documentation", "service": "CendiaDNA", "output": "evidence_bundle"},
+        {"order": 4, "action": "Prioritize remediation actions", "service": "CendiaDocket", "output": "remediation_plan"},
+        {"order": 5, "action": "Council approval for compliance budget", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Our SOC 2 Type II audit identified 12 control gaps, 3 of which are critical. Remediation will cost $180K and take 6 weeks. The auditor can give us a qualified opinion now or clean opinion after remediation. Which path should we take given our enterprise sales pipeline?",
+      "expectedOutcome": "Approved remediation plan with timeline",
+      "priority": "high",
+      "estimatedDuration": "1 week",
+      "tags": ["compliance", "audit", "security"]
+    },
+    {
+      "id": "WF-016",
+      "name": "Crisis Communication Response",
+      "category": "Communications",
+      "councilMode": "crisis",
+      "services": ["CendiaResonance", "CendiaDocket", "CendiaVox"],
+      "steps": [
+        {"order": 1, "action": "Assess crisis severity and stakeholders", "service": "CendiaResonance", "output": "crisis_assessment"},
+        {"order": 2, "action": "Review legal implications of statements", "service": "CendiaDocket", "output": "legal_review"},
+        {"order": 3, "action": "Analyze social media sentiment", "service": "CendiaVox", "output": "sentiment_analysis"},
+        {"order": 4, "action": "Generate holding statement options", "service": "CendiaResonance", "output": "statements"},
+        {"order": 5, "action": "Council approval for public response", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "A former employee has posted allegations on social media that are gaining traction. Legal says the claims are unfounded but we can't prove a negative. Media inquiries are coming in. Should we issue a denial, no comment, or proactive transparency statement?",
+      "expectedOutcome": "Approved crisis response with messaging",
+      "priority": "critical",
+      "estimatedDuration": "2 hours",
+      "tags": ["crisis", "communications", "reputation"]
+    },
+    {
+      "id": "WF-017",
+      "name": "Research Project Funding Decision",
+      "category": "R&D",
+      "councilMode": "investment",
+      "services": ["CendiaInventum", "CendiaChronos", "CendiaEquity"],
+      "steps": [
+        {"order": 1, "action": "Evaluate project proposals and milestones", "service": "CendiaInventum", "output": "project_evaluation"},
+        {"order": 2, "action": "Analyze historical R&D ROI patterns", "service": "CendiaChronos", "output": "roi_history"},
+        {"order": 3, "action": "Assess investor expectations for innovation", "service": "CendiaEquity", "output": "investor_view"},
+        {"order": 4, "action": "Calculate NPV for each project", "service": "CendiaInventum", "output": "npv_analysis"},
+        {"order": 5, "action": "Council allocation of R&D budget", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "We have $5M R&D budget and 8 project proposals totaling $12M in requests. Three projects have near-term revenue potential, two are moonshots with 10x potential but high risk, and three are defensive patents. How should we allocate the budget?",
+      "expectedOutcome": "Approved R&D budget allocation",
+      "priority": "high",
+      "estimatedDuration": "3 days",
+      "tags": ["r&d", "investment", "innovation"]
+    },
+    {
+      "id": "WF-018",
+      "name": "Employee Skill Gap Analysis",
+      "category": "Learning & Development",
+      "councilMode": "research",
+      "services": ["CendiaAcademy", "CendiaHabitat", "CendiaChronos"],
+      "steps": [
+        {"order": 1, "action": "Assess current workforce skill profiles", "service": "CendiaAcademy", "output": "skill_inventory"},
+        {"order": 2, "action": "Identify productivity correlation with skills", "service": "CendiaHabitat", "output": "productivity_data"},
+        {"order": 3, "action": "Project future skill requirements", "service": "CendiaChronos", "output": "future_needs"},
+        {"order": 4, "action": "Generate learning path recommendations", "service": "CendiaAcademy", "output": "learning_paths"},
+        {"order": 5, "action": "Council approval for training investment", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Our skill gap analysis shows 40% of engineers lack AI/ML competency that will be critical in 18 months. Training options range from $500K bootcamp (3 months) to $150K self-paced (12 months). Some advocate hiring instead of training. What's the right mix?",
+      "expectedOutcome": "Approved upskilling strategy with budget",
+      "priority": "medium",
+      "estimatedDuration": "1 week",
+      "tags": ["learning", "skills", "workforce"]
+    },
+    {
+      "id": "WF-019",
+      "name": "Activist Investor Defense Preparation",
+      "category": "Investor Relations",
+      "councilMode": "war-room",
+      "services": ["CendiaEquity", "CendiaResonance", "CendiaDocket"],
+      "steps": [
+        {"order": 1, "action": "Analyze activist threat indicators", "service": "CendiaEquity", "output": "threat_analysis"},
+        {"order": 2, "action": "Prepare shareholder communication strategy", "service": "CendiaResonance", "output": "comm_strategy"},
+        {"order": 3, "action": "Review governance vulnerabilities", "service": "CendiaDocket", "output": "governance_review"},
+        {"order": 4, "action": "Model proxy fight scenarios", "service": "CendiaEquity", "output": "proxy_scenarios"},
+        {"order": 5, "action": "Council approval for defense measures", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Intelligence suggests an activist fund has accumulated a 4.9% stake and may file a 13D soon. Their typical playbook is board seats and strategic review. Our current defenses are limited. Should we proactively engage, prepare for a fight, or accelerate strategic alternatives?",
+      "expectedOutcome": "Approved activist defense strategy",
+      "priority": "critical",
+      "estimatedDuration": "48 hours",
+      "tags": ["investor-relations", "activist", "governance"]
+    },
+    {
+      "id": "WF-020",
+      "name": "Supply Chain Disruption Response",
+      "category": "Operations",
+      "councilMode": "crisis",
+      "services": ["CendiaFactory", "CendiaProcure", "CendiaChronos"],
+      "steps": [
+        {"order": 1, "action": "Assess production impact of disruption", "service": "CendiaFactory", "output": "impact_assessment"},
+        {"order": 2, "action": "Identify alternative suppliers", "service": "CendiaProcure", "output": "alt_suppliers"},
+        {"order": 3, "action": "Analyze historical disruption patterns", "service": "CendiaChronos", "output": "pattern_analysis"},
+        {"order": 4, "action": "Calculate cost of expedited alternatives", "service": "CendiaProcure", "output": "cost_analysis"},
+        {"order": 5, "action": "Council decision on supply chain pivot", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Our primary chip supplier just announced 8-week delays due to factory fire. We have 3 weeks of inventory. Alternative suppliers can deliver in 4 weeks at 40% premium. Should we pay the premium, reduce production, or negotiate customer delivery extensions?",
+      "expectedOutcome": "Approved supply chain contingency plan",
+      "priority": "critical",
+      "estimatedDuration": "24 hours",
+      "tags": ["supply-chain", "operations", "crisis"]
+    },
+    {
+      "id": "WF-021",
+      "name": "Board Meeting Preparation",
+      "category": "Governance",
+      "councilMode": "governance",
+      "services": ["CendiaRegent", "CendiaEquity", "CendiaDNA"],
+      "steps": [
+        {"order": 1, "action": "Compile strategic updates from all departments", "service": "CendiaRegent", "output": "strategic_updates"},
+        {"order": 2, "action": "Prepare investor-ready financial summary", "service": "CendiaEquity", "output": "financial_summary"},
+        {"order": 3, "action": "Generate decision audit trail for governance", "service": "CendiaDNA", "output": "governance_package"},
+        {"order": 4, "action": "Identify sensitive topics requiring pre-briefing", "service": "CendiaRegent", "output": "sensitive_topics"},
+        {"order": 5, "action": "Council review of board materials", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "The quarterly board meeting is in 5 days. We need to present the AI strategy pivot, address the activist investor situation, and request approval for the acquisition. What's the optimal sequencing and framing to maximize board support?",
+      "expectedOutcome": "Approved board presentation with talking points",
+      "priority": "high",
+      "estimatedDuration": "3 days",
+      "tags": ["governance", "board", "executive"]
+    },
+    {
+      "id": "WF-022",
+      "name": "Data Exfiltration Detection Response",
+      "category": "Security",
+      "councilMode": "crisis",
+      "services": ["CendiaCanary", "CendiaAegis", "CendiaDocket"],
+      "steps": [
+        {"order": 1, "action": "Analyze canary tripwire alerts", "service": "CendiaCanary", "output": "canary_alerts"},
+        {"order": 2, "action": "Assess scope of potential breach", "service": "CendiaAegis", "output": "breach_scope"},
+        {"order": 3, "action": "Determine legal notification requirements", "service": "CendiaDocket", "output": "legal_requirements"},
+        {"order": 4, "action": "Identify affected data subjects", "service": "CendiaCanary", "output": "affected_parties"},
+        {"order": 5, "action": "Council decision on breach response", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Our canary tripwire detected access to honeypot customer records from an internal IP. Investigation shows a departing employee may have exfiltrated data. Do we involve law enforcement immediately, conduct internal investigation first, or both in parallel?",
+      "expectedOutcome": "Approved breach response protocol",
+      "priority": "critical",
+      "estimatedDuration": "4 hours",
+      "tags": ["security", "breach", "legal"]
+    },
+    {
+      "id": "WF-023",
+      "name": "Air-Gapped System Data Transfer",
+      "category": "Security",
+      "councilMode": "compliance",
+      "services": ["CendiaBridge", "CendiaAttest", "CendiaDNA"],
+      "steps": [
+        {"order": 1, "action": "Prepare data package for air-gap transfer", "service": "CendiaBridge", "output": "data_package"},
+        {"order": 2, "action": "Generate hardware attestation for integrity", "service": "CendiaAttest", "output": "attestation"},
+        {"order": 3, "action": "Create audit trail for transfer", "service": "CendiaDNA", "output": "audit_trail"},
+        {"order": 4, "action": "Generate QR sequence for transfer", "service": "CendiaBridge", "output": "qr_sequence"},
+        {"order": 5, "action": "Council approval for classified transfer", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "We need to transfer critical decision data to our air-gapped backup facility. The QR bridge can transfer 50KB in 10 minutes. The data package is 200KB. Should we compress and transfer, split into multiple sessions, or use the physical courier alternative?",
+      "expectedOutcome": "Approved secure transfer method",
+      "priority": "high",
+      "estimatedDuration": "2 hours",
+      "tags": ["security", "air-gap", "compliance"]
+    },
+    {
+      "id": "WF-024",
+      "name": "Federated Learning Model Update",
+      "category": "AI/ML",
+      "councilMode": "research",
+      "services": ["CendiaFederated", "CendiaRLHF", "CendiaApotheosis"],
+      "steps": [
+        {"order": 1, "action": "Collect model updates from federated sites", "service": "CendiaFederated", "output": "model_updates"},
+        {"order": 2, "action": "Validate updates with local RLHF feedback", "service": "CendiaRLHF", "output": "validation_results"},
+        {"order": 3, "action": "Run red-team analysis on merged model", "service": "CendiaApotheosis", "output": "redteam_results"},
+        {"order": 4, "action": "Apply differential privacy to aggregation", "service": "CendiaFederated", "output": "private_model"},
+        {"order": 5, "action": "Council approval for model deployment", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Our federated mesh has collected model updates from 5 regional sites. The merged model shows 8% accuracy improvement but Apotheosis red-teaming found 2 edge cases with concerning outputs. Should we deploy with guardrails, retrain, or delay for more data?",
+      "expectedOutcome": "Approved model deployment decision",
+      "priority": "medium",
+      "estimatedDuration": "1 week",
+      "tags": ["ai", "federated-learning", "privacy"]
+    },
+    {
+      "id": "WF-025",
+      "name": "Time-Locked Decision Release",
+      "category": "Governance",
+      "councilMode": "governance",
+      "services": ["CendiaTimeLock", "CendiaDNA", "CendiaResonance"],
+      "steps": [
+        {"order": 1, "action": "Prepare embargoed decision package", "service": "CendiaTimeLock", "output": "locked_package"},
+        {"order": 2, "action": "Generate cryptographic time-lock", "service": "CendiaTimeLock", "output": "time_lock"},
+        {"order": 3, "action": "Create audit evidence bundle", "service": "CendiaDNA", "output": "evidence_bundle"},
+        {"order": 4, "action": "Prepare synchronized communication plan", "service": "CendiaResonance", "output": "comm_plan"},
+        {"order": 5, "action": "Council approval for embargo parameters", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "The acquisition announcement must be embargoed until market close on Friday. We need to pre-position communications but ensure no early leaks. Should we use 48-hour time-lock, 24-hour with manual override, or traditional embargo with legal penalties?",
+      "expectedOutcome": "Approved embargo mechanism",
+      "priority": "high",
+      "estimatedDuration": "1 day",
+      "tags": ["governance", "embargo", "security"]
+    },
+    {
+      "id": "WF-026",
+      "name": "Shadow Council Strategic Test",
+      "category": "Strategy",
+      "councilMode": "innovation-lab",
+      "services": ["CendiaShadow", "CendiaCascade", "CendiaRegent"],
+      "steps": [
+        {"order": 1, "action": "Initialize shadow deliberation sandbox", "service": "CendiaShadow", "output": "sandbox_session"},
+        {"order": 2, "action": "Model butterfly effect of radical proposal", "service": "CendiaCascade", "output": "consequence_analysis"},
+        {"order": 3, "action": "Gather historical advisor perspectives", "service": "CendiaRegent", "output": "advisor_input"},
+        {"order": 4, "action": "Compare shadow vs production council outputs", "service": "CendiaShadow", "output": "comparison"},
+        {"order": 5, "action": "Council decision on proposal advancement", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "We want to test a radical pricing strategy (50% price cut for market share) without it appearing in the official decision ledger. Shadow Council analysis shows mixed results. Should we advance to formal deliberation, refine the proposal, or abandon?",
+      "expectedOutcome": "Decision on proposal advancement",
+      "priority": "medium",
+      "estimatedDuration": "2 days",
+      "tags": ["strategy", "innovation", "testing"]
+    },
+    {
+      "id": "WF-027",
+      "name": "Deterministic Decision Replay Audit",
+      "category": "Audit",
+      "councilMode": "compliance",
+      "services": ["CendiaReplay", "CendiaDNA", "CendiaDocket"],
+      "steps": [
+        {"order": 1, "action": "Identify decision for replay audit", "service": "CendiaDNA", "output": "decision_record"},
+        {"order": 2, "action": "Restore exact state and random seeds", "service": "CendiaReplay", "output": "state_restoration"},
+        {"order": 3, "action": "Execute bit-perfect replay", "service": "CendiaReplay", "output": "replay_result"},
+        {"order": 4, "action": "Compare replay to original for variance", "service": "CendiaDocket", "output": "variance_analysis"},
+        {"order": 5, "action": "Council certification of audit results", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Regulators have requested proof that our AI decision from 6 months ago was reproducible. Deterministic replay shows 99.7% match with 0.3% variance from model version differences. Is this sufficient for regulatory certification or do we need to explain the variance?",
+      "expectedOutcome": "Certified audit report",
+      "priority": "high",
+      "estimatedDuration": "3 days",
+      "tags": ["audit", "compliance", "reproducibility"]
+    },
+    {
+      "id": "WF-028",
+      "name": "Portable Instance Deployment",
+      "category": "Infrastructure",
+      "councilMode": "execution",
+      "services": ["CendiaPortable", "CendiaNerve", "CendiaAegis"],
+      "steps": [
+        {"order": 1, "action": "Generate bootable USB configuration", "service": "CendiaPortable", "output": "usb_config"},
+        {"order": 2, "action": "Validate infrastructure requirements", "service": "CendiaNerve", "output": "infra_validation"},
+        {"order": 3, "action": "Apply security hardening to portable image", "service": "CendiaAegis", "output": "hardened_image"},
+        {"order": 4, "action": "Test deployment in isolated environment", "service": "CendiaPortable", "output": "test_results"},
+        {"order": 5, "action": "Council approval for field deployment", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "The field team needs a portable Datacendia instance for the remote site with no internet. The USB deployment is ready but lacks some enterprise features. Should we deploy as-is, delay for full feature parity, or use hybrid with satellite uplink?",
+      "expectedOutcome": "Approved deployment configuration",
+      "priority": "medium",
+      "estimatedDuration": "1 week",
+      "tags": ["infrastructure", "deployment", "portable"]
+    },
+    {
+      "id": "WF-029",
+      "name": "Employee Dissent Resolution",
+      "category": "Human Resources",
+      "councilMode": "stakeholder",
+      "services": ["CendiaDissent", "CendiaAcademy", "CendiaResonance"],
+      "steps": [
+        {"order": 1, "action": "Review formal dissent filing", "service": "CendiaDissent", "output": "dissent_details"},
+        {"order": 2, "action": "Assess dissenter skill profile and history", "service": "CendiaAcademy", "output": "employee_profile"},
+        {"order": 3, "action": "Prepare response communication", "service": "CendiaResonance", "output": "response_draft"},
+        {"order": 4, "action": "Document resolution for retaliation protection", "service": "CendiaDissent", "output": "protection_record"},
+        {"order": 5, "action": "Council decision on dissent merit", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "A senior engineer filed formal dissent against our AI ethics policy, claiming it's too restrictive for innovation. The dissent has merit but could set precedent for policy challenges. Should we modify the policy, reject with explanation, or convene ethics committee?",
+      "expectedOutcome": "Resolved dissent with documented rationale",
+      "priority": "medium",
+      "estimatedDuration": "1 week",
+      "tags": ["hr", "dissent", "ethics"]
+    },
+    {
+      "id": "WF-030",
+      "name": "AI Model Self-Improvement Cycle",
+      "category": "AI/ML",
+      "councilMode": "research",
+      "services": ["CendiaApotheosis", "CendiaRLHF", "CendiaRedTeam"],
+      "steps": [
+        {"order": 1, "action": "Run nightly red-teaming on production models", "service": "CendiaApotheosis", "output": "redteam_findings"},
+        {"order": 2, "action": "Generate improvement patches from findings", "service": "CendiaApotheosis", "output": "patches"},
+        {"order": 3, "action": "Validate patches with RLHF feedback", "service": "CendiaRLHF", "output": "validation"},
+        {"order": 4, "action": "Adversarial testing of patched model", "service": "CendiaRedTeam", "output": "adversarial_results"},
+        {"order": 5, "action": "Council approval for patch deployment", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Apotheosis nightly run found 3 prompt injection vulnerabilities and auto-generated patches. RLHF validation shows patches work but reduce helpfulness by 2%. RedTeam confirms vulnerabilities are exploitable. Deploy patches accepting helpfulness trade-off?",
+      "expectedOutcome": "Approved model update decision",
+      "priority": "high",
+      "estimatedDuration": "24 hours",
+      "tags": ["ai", "security", "improvement"]
+    },
+    {
+      "id": "WF-031",
+      "name": "Multi-Language Document Translation",
+      "category": "Communications",
+      "councilMode": "execution",
+      "services": ["CendiaTranslate", "CendiaResonance", "CendiaDocket"],
+      "steps": [
+        {"order": 1, "action": "Identify documents requiring translation", "service": "CendiaResonance", "output": "document_list"},
+        {"order": 2, "action": "Translate to target languages with glossary", "service": "CendiaTranslate", "output": "translations"},
+        {"order": 3, "action": "Legal review of translated contracts", "service": "CendiaDocket", "output": "legal_review"},
+        {"order": 4, "action": "Quality assurance on translations", "service": "CendiaTranslate", "output": "qa_results"},
+        {"order": 5, "action": "Council approval for publication", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "We need to translate our new terms of service into 12 languages for EMEA launch. AI translation is 95% accurate but legal wants human review for all. Human review adds 2 weeks and $40K. Should we use AI-only with disclaimer, hybrid approach, or full human review?",
+      "expectedOutcome": "Approved translation strategy",
+      "priority": "medium",
+      "estimatedDuration": "1 week",
+      "tags": ["translation", "legal", "international"]
+    },
+    {
+      "id": "WF-032",
+      "name": "Butterfly Effect Analysis for Layoffs",
+      "category": "Human Resources",
+      "councilMode": "stakeholder",
+      "services": ["CendiaCascade", "CendiaAcademy", "CendiaResonance"],
+      "steps": [
+        {"order": 1, "action": "Model second-order effects of workforce reduction", "service": "CendiaCascade", "output": "cascade_analysis"},
+        {"order": 2, "action": "Identify critical skill dependencies", "service": "CendiaAcademy", "output": "skill_dependencies"},
+        {"order": 3, "action": "Prepare stakeholder communication plan", "service": "CendiaResonance", "output": "comm_plan"},
+        {"order": 4, "action": "Identify mitigation strategies for consequences", "service": "CendiaCascade", "output": "mitigations"},
+        {"order": 5, "action": "Council decision on restructuring scope", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Proposed 15% workforce reduction shows immediate $8M savings but Cascade analysis predicts 23% productivity drop, 3 critical project delays, and 40% increase in remaining employee attrition. Should we proceed as planned, reduce scope, or find alternative cost cuts?",
+      "expectedOutcome": "Approved restructuring decision with mitigations",
+      "priority": "critical",
+      "estimatedDuration": "1 week",
+      "tags": ["hr", "restructuring", "cascade"]
+    },
+    {
+      "id": "WF-033",
+      "name": "Real Estate Portfolio Optimization",
+      "category": "Facilities",
+      "councilMode": "investment",
+      "services": ["CendiaHabitat", "CendiaChronos", "CendiaProcure"],
+      "steps": [
+        {"order": 1, "action": "Analyze space utilization across all locations", "service": "CendiaHabitat", "output": "utilization_analysis"},
+        {"order": 2, "action": "Project future space needs based on trends", "service": "CendiaChronos", "output": "space_projections"},
+        {"order": 3, "action": "Evaluate lease renegotiation opportunities", "service": "CendiaProcure", "output": "lease_opportunities"},
+        {"order": 4, "action": "Calculate ROI for consolidation scenarios", "service": "CendiaHabitat", "output": "roi_analysis"},
+        {"order": 5, "action": "Council approval for real estate strategy", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Post-pandemic analysis shows 35% of office space is underutilized. We can consolidate 3 locations into 1, saving $2.4M annually but requiring $800K upfront. Alternatively, we can sublease excess space. Which strategy optimizes our real estate portfolio?",
+      "expectedOutcome": "Approved real estate optimization plan",
+      "priority": "medium",
+      "estimatedDuration": "2 weeks",
+      "tags": ["facilities", "real-estate", "cost-savings"]
+    },
+    {
+      "id": "WF-034",
+      "name": "Pivotal Moment Detection and Response",
+      "category": "Strategy",
+      "councilMode": "war-room",
+      "services": ["CendiaChronos", "CendiaPanopticon", "CendiaRegent"],
+      "steps": [
+        {"order": 1, "action": "Detect pivotal moments in market data", "service": "CendiaChronos", "output": "pivotal_moments"},
+        {"order": 2, "action": "Visualize impact across departments", "service": "CendiaPanopticon", "output": "impact_dashboard"},
+        {"order": 3, "action": "Gather strategic advisor perspectives", "service": "CendiaRegent", "output": "advisor_views"},
+        {"order": 4, "action": "Identify response options and timelines", "service": "CendiaChronos", "output": "response_options"},
+        {"order": 5, "action": "Council decision on strategic response", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Chronos detected a pivotal moment: our largest competitor just announced acquisition of a key technology partner. This could shift market dynamics within 6 months. Should we accelerate our own M&A, pivot product strategy, or double down on organic development?",
+      "expectedOutcome": "Approved strategic response plan",
+      "priority": "critical",
+      "estimatedDuration": "48 hours",
+      "tags": ["strategy", "pivotal-moment", "competitive"]
+    },
+    {
+      "id": "WF-035",
+      "name": "Customer Voice Analysis Campaign",
+      "category": "Customer Success",
+      "councilMode": "research",
+      "services": ["CendiaVox", "CendiaGuardian", "CendiaChronos"],
+      "steps": [
+        {"order": 1, "action": "Aggregate customer feedback across channels", "service": "CendiaVox", "output": "feedback_aggregate"},
+        {"order": 2, "action": "Correlate feedback with customer health scores", "service": "CendiaGuardian", "output": "health_correlation"},
+        {"order": 3, "action": "Identify trending themes over time", "service": "CendiaChronos", "output": "trend_analysis"},
+        {"order": 4, "action": "Generate actionable insights from voice data", "service": "CendiaVox", "output": "insights"},
+        {"order": 5, "action": "Council prioritization of improvements", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Voice of customer analysis shows 3 recurring themes: onboarding complexity (40% mentions), missing integrations (30%), and pricing concerns (20%). Addressing onboarding requires 6 months dev work. Integrations are faster but less impactful. How should we prioritize?",
+      "expectedOutcome": "Prioritized customer improvement roadmap",
+      "priority": "high",
+      "estimatedDuration": "1 week",
+      "tags": ["customer", "voice", "product"]
+    },
+    {
+      "id": "WF-036",
+      "name": "Knowledge Preservation for Departing Expert",
+      "category": "Knowledge Management",
+      "councilMode": "execution",
+      "services": ["CendiaEternal", "CendiaAcademy", "CendiaGnosis"],
+      "steps": [
+        {"order": 1, "action": "Identify critical knowledge held by departing expert", "service": "CendiaEternal", "output": "knowledge_inventory"},
+        {"order": 2, "action": "Map knowledge to skill profiles of successors", "service": "CendiaAcademy", "output": "successor_mapping"},
+        {"order": 3, "action": "Extract and document tacit knowledge", "service": "CendiaGnosis", "output": "knowledge_extraction"},
+        {"order": 4, "action": "Create knowledge transfer plan", "service": "CendiaEternal", "output": "transfer_plan"},
+        {"order": 5, "action": "Council approval for knowledge preservation", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Our 20-year veteran architect is retiring in 60 days. They hold critical institutional knowledge about legacy systems. Full knowledge transfer requires 40 hours of their time. Should we prioritize documentation, shadowing, or AI-assisted knowledge capture?",
+      "expectedOutcome": "Approved knowledge transfer plan",
+      "priority": "high",
+      "estimatedDuration": "2 weeks",
+      "tags": ["knowledge", "succession", "documentation"]
+    },
+    {
+      "id": "WF-037",
+      "name": "Symbiont Integration Health Check",
+      "category": "Technology",
+      "councilMode": "research",
+      "services": ["CendiaSymbiont", "CendiaNerve", "CendiaPanopticon"],
+      "steps": [
+        {"order": 1, "action": "Assess all active integrations health", "service": "CendiaSymbiont", "output": "integration_health"},
+        {"order": 2, "action": "Identify infrastructure dependencies", "service": "CendiaNerve", "output": "dependencies"},
+        {"order": 3, "action": "Visualize integration ecosystem", "service": "CendiaPanopticon", "output": "ecosystem_view"},
+        {"order": 4, "action": "Recommend optimization opportunities", "service": "CendiaSymbiont", "output": "optimizations"},
+        {"order": 5, "action": "Council approval for integration roadmap", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Integration health check shows 3 critical integrations at risk due to deprecated APIs, 5 underutilized integrations costing $50K/year, and 2 missing integrations requested by 40% of customers. How should we prioritize the integration roadmap?",
+      "expectedOutcome": "Approved integration optimization plan",
+      "priority": "medium",
+      "estimatedDuration": "1 week",
+      "tags": ["integrations", "technology", "optimization"]
+    },
+    {
+      "id": "WF-038",
+      "name": "Echo Pattern Recognition Alert",
+      "category": "Risk Management",
+      "councilMode": "rapid",
+      "services": ["CendiaEcho", "CendiaChronos", "CendiaAegis"],
+      "steps": [
+        {"order": 1, "action": "Detect recurring patterns in system behavior", "service": "CendiaEcho", "output": "pattern_detection"},
+        {"order": 2, "action": "Compare to historical incident patterns", "service": "CendiaChronos", "output": "historical_match"},
+        {"order": 3, "action": "Assess security implications of pattern", "service": "CendiaAegis", "output": "security_assessment"},
+        {"order": 4, "action": "Generate rapid response options", "service": "CendiaEcho", "output": "response_options"},
+        {"order": 5, "action": "Council rapid decision on response", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Echo detected a pattern matching pre-incident behavior from 6 months ago: unusual API call sequences, elevated error rates, and memory pressure. Last time this led to a 4-hour outage. Should we preemptively scale, restart services, or monitor closely?",
+      "expectedOutcome": "Rapid response decision",
+      "priority": "high",
+      "estimatedDuration": "30 minutes",
+      "tags": ["patterns", "risk", "rapid-response"]
+    },
+    {
+      "id": "WF-039",
+      "name": "Data Diode Ingest Validation",
+      "category": "Data Management",
+      "councilMode": "compliance",
+      "services": ["CendiaDiode", "CendiaAegis", "CendiaDNA"],
+      "steps": [
+        {"order": 1, "action": "Receive and quarantine incoming data", "service": "CendiaDiode", "output": "quarantined_data"},
+        {"order": 2, "action": "Scan for malware and anomalies", "service": "CendiaAegis", "output": "scan_results"},
+        {"order": 3, "action": "Verify data signatures and provenance", "service": "CendiaDiode", "output": "verification"},
+        {"order": 4, "action": "Create audit trail for data ingestion", "service": "CendiaDNA", "output": "audit_trail"},
+        {"order": 5, "action": "Council approval for data release", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Data diode received 500GB of external partner data. Quarantine scan found 3 suspicious files (likely false positives) and 2 schema mismatches. Partner is pressuring for immediate integration. Should we release with exceptions, require partner remediation, or extend quarantine?",
+      "expectedOutcome": "Approved data release decision",
+      "priority": "medium",
+      "estimatedDuration": "4 hours",
+      "tags": ["data", "security", "compliance"]
+    },
+    {
+      "id": "WF-040",
+      "name": "Executive Letter Generation for Deal",
+      "category": "Sales",
+      "councilMode": "execution",
+      "services": ["CendiaRainmaker", "CendiaResonance", "CendiaEquity"],
+      "steps": [
+        {"order": 1, "action": "Analyze deal context and stakeholders", "service": "CendiaRainmaker", "output": "deal_context"},
+        {"order": 2, "action": "Generate personalized executive letter", "service": "CendiaRainmaker", "output": "letter_draft"},
+        {"order": 3, "action": "Review messaging alignment with brand", "service": "CendiaResonance", "output": "brand_review"},
+        {"order": 4, "action": "Check for investor-sensitive language", "service": "CendiaEquity", "output": "ir_review"},
+        {"order": 5, "action": "Council approval for executive signature", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "We need an executive letter to rescue a $2M deal that's stalling. The prospect's CEO is concerned about our financial stability. Should the letter come from our CEO (more weight but more exposure), CFO (addresses concern directly), or CRO (sales relationship)?",
+      "expectedOutcome": "Approved executive letter with signatory",
+      "priority": "high",
+      "estimatedDuration": "24 hours",
+      "tags": ["sales", "executive", "communications"]
+    },
+    {
+      "id": "WF-041",
+      "name": "Quality Event Root Cause Analysis",
+      "category": "Manufacturing",
+      "councilMode": "research",
+      "services": ["CendiaFactory", "CendiaChronos", "CendiaDocket"],
+      "steps": [
+        {"order": 1, "action": "Document quality event details", "service": "CendiaFactory", "output": "event_details"},
+        {"order": 2, "action": "Analyze historical quality patterns", "service": "CendiaChronos", "output": "pattern_analysis"},
+        {"order": 3, "action": "Assess regulatory reporting requirements", "service": "CendiaDocket", "output": "regulatory_requirements"},
+        {"order": 4, "action": "Identify root cause and corrective actions", "service": "CendiaFactory", "output": "root_cause"},
+        {"order": 5, "action": "Council approval for corrective action plan", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "A quality event affected 5,000 units with potential safety implications. Root cause analysis points to supplier material variance. We can recall all units ($500K), selective recall based on batch ($150K), or enhanced monitoring with customer notification. Which approach?",
+      "expectedOutcome": "Approved corrective action plan",
+      "priority": "critical",
+      "estimatedDuration": "48 hours",
+      "tags": ["quality", "manufacturing", "compliance"]
+    },
+    {
+      "id": "WF-042",
+      "name": "Micro-Learning Intervention Deployment",
+      "category": "Learning & Development",
+      "councilMode": "execution",
+      "services": ["CendiaAcademy", "CendiaHabitat", "CendiaVox"],
+      "steps": [
+        {"order": 1, "action": "Identify skill gap requiring intervention", "service": "CendiaAcademy", "output": "skill_gap"},
+        {"order": 2, "action": "Generate micro-course content", "service": "CendiaAcademy", "output": "micro_course"},
+        {"order": 3, "action": "Identify optimal delivery timing via BioSync", "service": "CendiaHabitat", "output": "delivery_timing"},
+        {"order": 4, "action": "Collect learner feedback", "service": "CendiaVox", "output": "feedback"},
+        {"order": 5, "action": "Council review of learning effectiveness", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "We've identified a critical security awareness gap after a phishing incident. Options: mandatory 2-hour training (high completion, low retention), micro-learning over 2 weeks (better retention, slower), or just-in-time interventions (best retention, hardest to measure). Which approach?",
+      "expectedOutcome": "Approved learning intervention strategy",
+      "priority": "high",
+      "estimatedDuration": "3 days",
+      "tags": ["learning", "security", "intervention"]
+    },
+    {
+      "id": "WF-043",
+      "name": "Contract Litigation Risk Assessment",
+      "category": "Legal",
+      "councilMode": "due-diligence",
+      "services": ["CendiaDocket", "CendiaProcure", "CendiaChronos"],
+      "steps": [
+        {"order": 1, "action": "Analyze contract terms for risk exposure", "service": "CendiaDocket", "output": "risk_analysis"},
+        {"order": 2, "action": "Review vendor performance history", "service": "CendiaProcure", "output": "vendor_history"},
+        {"order": 3, "action": "Compare to historical litigation outcomes", "service": "CendiaChronos", "output": "litigation_history"},
+        {"order": 4, "action": "Calculate expected value of litigation", "service": "CendiaDocket", "output": "ev_calculation"},
+        {"order": 5, "action": "Council decision on litigation strategy", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Vendor is threatening litigation over our contract termination for cause. Our legal analysis shows 60% win probability but $300K defense costs. Settlement offer is $150K. Expected value analysis suggests settling, but it may encourage future vendor disputes. Fight or settle?",
+      "expectedOutcome": "Approved litigation strategy",
+      "priority": "high",
+      "estimatedDuration": "1 week",
+      "tags": ["legal", "litigation", "vendor"]
+    },
+    {
+      "id": "WF-044",
+      "name": "Investor Roadshow Preparation",
+      "category": "Investor Relations",
+      "councilMode": "execution",
+      "services": ["CendiaEquity", "CendiaTransit", "CendiaResonance"],
+      "steps": [
+        {"order": 1, "action": "Identify target investors and priorities", "service": "CendiaEquity", "output": "investor_targets"},
+        {"order": 2, "action": "Plan travel logistics and security", "service": "CendiaTransit", "output": "travel_plan"},
+        {"order": 3, "action": "Prepare tailored presentations per investor", "service": "CendiaResonance", "output": "presentations"},
+        {"order": 4, "action": "Simulate Q&A for each investor type", "service": "CendiaEquity", "output": "qa_prep"},
+        {"order": 5, "action": "Council approval for roadshow plan", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Pre-IPO roadshow covers 15 investors across 5 cities in 7 days. We can do all in-person (best impression, exhausting), hybrid (key investors in-person), or mostly virtual (efficient but less impactful). Given market conditions, which approach maximizes valuation?",
+      "expectedOutcome": "Approved roadshow plan",
+      "priority": "critical",
+      "estimatedDuration": "2 weeks",
+      "tags": ["investor-relations", "roadshow", "ipo"]
+    },
+    {
+      "id": "WF-045",
+      "name": "Belief Metric Campaign Measurement",
+      "category": "Communications",
+      "councilMode": "research",
+      "services": ["CendiaResonance", "CendiaVox", "CendiaChronos"],
+      "steps": [
+        {"order": 1, "action": "Measure current belief metrics across audiences", "service": "CendiaResonance", "output": "belief_metrics"},
+        {"order": 2, "action": "Analyze sentiment trends from voice data", "service": "CendiaVox", "output": "sentiment_trends"},
+        {"order": 3, "action": "Compare to historical campaign effectiveness", "service": "CendiaChronos", "output": "historical_comparison"},
+        {"order": 4, "action": "Identify belief gaps requiring intervention", "service": "CendiaResonance", "output": "belief_gaps"},
+        {"order": 5, "action": "Council approval for belief campaign", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Belief metrics show employees are 40% less confident in company direction after the reorg announcement. External stakeholder confidence is stable. Should we launch internal belief campaign, wait for results to speak, or address through leadership town halls?",
+      "expectedOutcome": "Approved belief intervention strategy",
+      "priority": "medium",
+      "estimatedDuration": "1 week",
+      "tags": ["communications", "belief", "culture"]
+    },
+    {
+      "id": "WF-046",
+      "name": "OEE Optimization Initiative",
+      "category": "Manufacturing",
+      "councilMode": "execution",
+      "services": ["CendiaFactory", "CendiaAcademy", "CendiaChronos"],
+      "steps": [
+        {"order": 1, "action": "Calculate current OEE across all lines", "service": "CendiaFactory", "output": "oee_baseline"},
+        {"order": 2, "action": "Identify operator skill gaps affecting OEE", "service": "CendiaAcademy", "output": "skill_gaps"},
+        {"order": 3, "action": "Analyze historical OEE improvement patterns", "service": "CendiaChronos", "output": "improvement_patterns"},
+        {"order": 4, "action": "Generate OEE improvement roadmap", "service": "CendiaFactory", "output": "improvement_roadmap"},
+        {"order": 5, "action": "Council approval for OEE investment", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Current OEE is 72% against world-class benchmark of 85%. Analysis shows availability losses (8%), performance losses (12%), and quality losses (8%). Addressing availability requires $200K equipment investment. Performance requires training. Quality requires process changes. Where do we start?",
+      "expectedOutcome": "Approved OEE improvement plan",
+      "priority": "medium",
+      "estimatedDuration": "2 weeks",
+      "tags": ["manufacturing", "oee", "optimization"]
+    },
+    {
+      "id": "WF-047",
+      "name": "Leak Pattern Detection and Response",
+      "category": "Security",
+      "councilMode": "crisis",
+      "services": ["CendiaResonance", "CendiaCanary", "CendiaDocket"],
+      "steps": [
+        {"order": 1, "action": "Detect leak patterns in media coverage", "service": "CendiaResonance", "output": "leak_patterns"},
+        {"order": 2, "action": "Cross-reference with canary tripwire data", "service": "CendiaCanary", "output": "canary_correlation"},
+        {"order": 3, "action": "Assess legal options for leak investigation", "service": "CendiaDocket", "output": "legal_options"},
+        {"order": 4, "action": "Prepare counter-narrative if needed", "service": "CendiaResonance", "output": "counter_narrative"},
+        {"order": 5, "action": "Council decision on leak response", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Media is reporting details from our confidential board meeting. Leak pattern analysis suggests internal source. Canary data narrows to 3 possible sources. Should we launch formal investigation (may damage trust), quiet inquiry, or focus on damage control only?",
+      "expectedOutcome": "Approved leak response strategy",
+      "priority": "critical",
+      "estimatedDuration": "24 hours",
+      "tags": ["security", "leak", "crisis"]
+    },
+    {
+      "id": "WF-048",
+      "name": "Patent Maintenance Fee Decision",
+      "category": "Intellectual Property",
+      "councilMode": "investment",
+      "services": ["CendiaInventum", "CendiaChronos", "CendiaDocket"],
+      "steps": [
+        {"order": 1, "action": "Identify patents with upcoming maintenance fees", "service": "CendiaInventum", "output": "upcoming_fees"},
+        {"order": 2, "action": "Analyze patent value and usage history", "service": "CendiaChronos", "output": "value_analysis"},
+        {"order": 3, "action": "Assess defensive value of each patent", "service": "CendiaDocket", "output": "defensive_value"},
+        {"order": 4, "action": "Calculate ROI for maintenance vs abandonment", "service": "CendiaInventum", "output": "roi_analysis"},
+        {"order": 5, "action": "Council decision on patent portfolio", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "15 patents have maintenance fees due totaling $85K. Analysis shows 5 are actively used, 5 have defensive value, and 5 appear obsolete. Abandoning obsolete patents saves $25K but creates risk if technology becomes relevant again. Maintain all, selective maintenance, or abandon obsolete?",
+      "expectedOutcome": "Approved patent maintenance decisions",
+      "priority": "medium",
+      "estimatedDuration": "1 week",
+      "tags": ["ip", "patents", "investment"]
+    },
+    {
+      "id": "WF-049",
+      "name": "Customer Onboarding Optimization",
+      "category": "Customer Success",
+      "councilMode": "innovation-lab",
+      "services": ["CendiaGuardian", "CendiaAcademy", "CendiaVox"],
+      "steps": [
+        {"order": 1, "action": "Analyze current onboarding success metrics", "service": "CendiaGuardian", "output": "onboarding_metrics"},
+        {"order": 2, "action": "Identify learning path effectiveness", "service": "CendiaAcademy", "output": "learning_effectiveness"},
+        {"order": 3, "action": "Gather customer feedback on onboarding", "service": "CendiaVox", "output": "customer_feedback"},
+        {"order": 4, "action": "Generate innovative onboarding ideas", "service": "CendiaCouncil", "output": "innovation_ideas"},
+        {"order": 5, "action": "Council selection of pilot approach", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Customer onboarding takes 45 days average with 30% requiring extended support. Ideas include: AI-guided onboarding (reduce to 20 days), gamified learning (improve engagement), white-glove service for enterprise (increase cost but reduce churn). Which innovation should we pilot?",
+      "expectedOutcome": "Approved onboarding innovation pilot",
+      "priority": "medium",
+      "estimatedDuration": "1 week",
+      "tags": ["customer-success", "onboarding", "innovation"]
+    },
+    {
+      "id": "WF-050",
+      "name": "Security Incident Post-Mortem",
+      "category": "Security",
+      "councilMode": "governance",
+      "services": ["CendiaAegis", "CendiaNerve", "CendiaDNA"],
+      "steps": [
+        {"order": 1, "action": "Compile incident timeline and evidence", "service": "CendiaAegis", "output": "incident_timeline"},
+        {"order": 2, "action": "Analyze infrastructure vulnerabilities exploited", "service": "CendiaNerve", "output": "vulnerability_analysis"},
+        {"order": 3, "action": "Generate audit-ready post-mortem report", "service": "CendiaDNA", "output": "postmortem_report"},
+        {"order": 4, "action": "Identify policy changes required", "service": "CendiaAegis", "output": "policy_changes"},
+        {"order": 5, "action": "Council approval for remediation plan", "service": "CendiaCouncil", "output": "decision"}
+      ],
+      "councilQuestion": "Post-mortem of last week's security incident reveals 3 policy gaps, 2 technical vulnerabilities, and 1 human error. Full remediation costs $150K and takes 3 months. Quick fixes address 80% of risk for $30K in 2 weeks. Which approach balances risk and resources?",
+      "expectedOutcome": "Approved remediation plan with policy updates",
+      "priority": "high",
+      "estimatedDuration": "1 week",
+      "tags": ["security", "post-mortem", "governance"]
+    }
+  ]
+}

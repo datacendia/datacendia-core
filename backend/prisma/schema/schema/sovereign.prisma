@@ -1,0 +1,1095 @@
+// Sovereign Domain - Digital Twins, Witness, Oracle, Legacy, Eternal, Symbiont, Vox
+
+model eternal_artifacts {
+  id                  String                    @id @default(uuid())
+  organization_id     String
+  artifact_type       EternalArtifactType
+  title               String
+  description         String                    @db.Text
+  content             String                    @db.Text
+  content_hash        String // SHA-256 for integrity
+  metadata            Json                      @default("{}")
+  tags                Json                      @default("[]")
+  importance_score    Float                     @default(50) // 0-100
+  retention_years     Int                       @default(100) // How long to keep
+  access_level        EternalAccessLevel        @default(ORGANIZATION)
+  format_version      String                    @default("1.0")
+  original_format     String? // PDF, DOCX, etc.
+  migrated_formats    Json                      @default("[]") // Format migration history
+  verification_status EternalVerificationStatus @default(PENDING)
+  last_verified_at    DateTime?
+  created_by          String
+  created_at          DateTime                  @default(now())
+  updated_at          DateTime                  @updatedAt
+
+  organization organizations         @relation(fields: [organization_id], references: [id])
+  creator      users                 @relation(fields: [created_by], references: [id])
+  validations  eternal_validations[]
+
+  @@index([organization_id, artifact_type])
+  @@index([importance_score])
+  @@index([retention_years])
+}
+
+model eternal_validations {
+  id                 String                @id @default(uuid())
+  artifact_id        String
+  validation_type    EternalValidationType
+  validator          String // User or system that validated
+  previous_hash      String
+  current_hash       String
+  integrity_check    Boolean               @default(true)
+  drift_detected     Boolean               @default(false)
+  drift_details      Json? // What changed if drift detected
+  correction_applied Boolean               @default(false)
+  validated_at       DateTime              @default(now())
+
+  artifact eternal_artifacts @relation(fields: [artifact_id], references: [id], onDelete: Cascade)
+
+  @@index([artifact_id])
+  @@index([validated_at])
+}
+
+model eternal_migrations {
+  id                 String                 @id @default(uuid())
+  organization_id    String
+  migration_type     EternalMigrationType
+  source_format      String
+  target_format      String
+  artifacts_affected Int
+  status             EternalMigrationStatus @default(PENDING)
+  started_at         DateTime?
+  completed_at       DateTime?
+  error_log          Json?
+  created_at         DateTime               @default(now())
+
+  organization organizations @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model eternal_succession {
+  id                  String               @id @default(uuid())
+  organization_id     String
+  successor_type      EternalSuccessorType
+  successor_name      String
+  successor_contact   String
+  verification_method String // How to verify identity
+  access_conditions   Json // When they can access
+  artifacts_scope     Json                 @default("[]") // Which artifacts
+  activated           Boolean              @default(false)
+  activated_at        DateTime?
+  created_at          DateTime             @default(now())
+
+  organization organizations @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id])
+}
+
+model symbiont_entities {
+  id               String                @id @default(uuid())
+  organization_id  String
+  entity_type      SymbiontEntityType
+  name             String
+  description      String?               @db.Text
+  domain           String? // Industry/sector
+  website          String?
+  location         String?
+  size_category    SymbiontSizeCategory?
+  financial_health Float? // 0-100 score
+  reputation_score Float? // 0-100 score
+  data_sources     Json                  @default("[]") // Where we get info
+  tags             Json                  @default("[]")
+  last_analyzed_at DateTime?
+  created_at       DateTime              @default(now())
+  updated_at       DateTime              @updatedAt
+
+  organization      organizations            @relation(fields: [organization_id], references: [id])
+  opportunities     symbiont_opportunities[]
+  relationships     symbiont_relationships[] @relation("entity_relationships")
+  inverse_relations symbiont_relationships[] @relation("inverse_relationships")
+
+  @@index([organization_id, entity_type])
+  @@index([domain])
+}
+
+model symbiont_opportunities {
+  id                  String                    @id @default(uuid())
+  organization_id     String
+  entity_id           String?
+  opportunity_type    SymbiontOpportunityType
+  title               String
+  description         String                    @db.Text
+  strategic_fit       Float                     @default(50) // 0-100
+  financial_potential Float? // Estimated value
+  risk_score          Float                     @default(50) // 0-100
+  synergy_areas       Json                      @default("[]")
+  required_resources  Json                      @default("[]")
+  timeline_months     Int?
+  status              SymbiontOpportunityStatus @default(IDENTIFIED)
+  ai_analysis         Json? // LLM analysis
+  created_at          DateTime                  @default(now())
+  updated_at          DateTime                  @updatedAt
+
+  organization organizations          @relation(fields: [organization_id], references: [id])
+  entity       symbiont_entities?     @relation(fields: [entity_id], references: [id])
+  simulations  symbiont_simulations[]
+
+  @@index([organization_id, status])
+  @@index([opportunity_type])
+}
+
+model symbiont_relationships {
+  id                  String                   @id @default(uuid())
+  organization_id     String
+  entity_id           String
+  related_entity_id   String
+  relationship_type   SymbiontRelationshipType
+  strength            Float                    @default(50) // 0-100
+  sentiment           SymbiontSentiment        @default(NEUTRAL)
+  interaction_history Json                     @default("[]")
+  health_score        Float                    @default(50) // 0-100
+  last_interaction    DateTime?
+  notes               String?                  @db.Text
+  created_at          DateTime                 @default(now())
+  updated_at          DateTime                 @updatedAt
+
+  organization   organizations     @relation(fields: [organization_id], references: [id])
+  entity         symbiont_entities @relation("entity_relationships", fields: [entity_id], references: [id])
+  related_entity symbiont_entities @relation("inverse_relationships", fields: [related_entity_id], references: [id])
+
+  @@unique([entity_id, related_entity_id])
+  @@index([organization_id])
+  @@index([relationship_type])
+}
+
+model symbiont_simulations {
+  id                  String                 @id @default(uuid())
+  opportunity_id      String
+  simulation_type     SymbiontSimulationType
+  scenario_name       String
+  parameters          Json // Input parameters
+  projected_outcomes  Json // Predicted results
+  financial_model     Json? // Revenue, costs, ROI
+  risk_analysis       Json? // Identified risks
+  integration_plan    Json? // Technical/business alignment
+  success_probability Float                  @default(0.5)
+  recommendation      String?                @db.Text
+  created_at          DateTime               @default(now())
+
+  opportunity symbiont_opportunities @relation(fields: [opportunity_id], references: [id], onDelete: Cascade)
+
+  @@index([opportunity_id])
+}
+
+model vox_stakeholders {
+  id                    String             @id @default(uuid())
+  organization_id       String
+  stakeholder_type      VoxStakeholderType
+  name                  String
+  description           String             @db.Text
+  population_size       Int? // How many represented
+  representation_method String // Survey, AI proxy, direct
+  voice_weight          Float              @default(1.0) // Influence weight
+  veto_rights           Json               @default("[]") // What they can veto
+  data_sources          Json               @default("[]") // Sentiment feeds
+  ai_proxy_config       Json? // LLM prompt for representation
+  is_active             Boolean            @default(true)
+  created_at            DateTime           @default(now())
+  updated_at            DateTime           @updatedAt
+
+  organization organizations @relation(fields: [organization_id], references: [id])
+  signals      vox_signals[]
+  impacts      vox_impacts[]
+  votes        vox_votes[]
+
+  @@index([organization_id, stakeholder_type])
+}
+
+model vox_signals {
+  id              String        @id @default(uuid())
+  stakeholder_id  String
+  signal_type     VoxSignalType
+  source          String // Survey, social, ESG feed, etc.
+  content         String        @db.Text
+  sentiment       VoxSentiment
+  sentiment_score Float         @default(0) // -1 to 1
+  urgency         VoxUrgency    @default(NORMAL)
+  topics          Json          @default("[]")
+  raw_data        Json?
+  processed_at    DateTime      @default(now())
+  created_at      DateTime      @default(now())
+
+  stakeholder vox_stakeholders @relation(fields: [stakeholder_id], references: [id], onDelete: Cascade)
+
+  @@index([stakeholder_id])
+  @@index([signal_type])
+  @@index([created_at])
+}
+
+model vox_impacts {
+  id                   String        @id @default(uuid())
+  organization_id      String
+  decision_id          String? // Link to decision if applicable
+  stakeholder_id       String
+  impact_type          VoxImpactType
+  title                String
+  description          String        @db.Text
+  severity             VoxSeverity   @default(MODERATE)
+  affected_count       Int? // How many affected
+  financial_impact     Float? // $ value if quantifiable
+  duration             String? // How long impact lasts
+  mitigation_options   Json          @default("[]")
+  stakeholder_response Json? // Their reaction
+  created_at           DateTime      @default(now())
+
+  organization organizations    @relation(fields: [organization_id], references: [id])
+  stakeholder  vox_stakeholders @relation(fields: [stakeholder_id], references: [id])
+
+  @@index([organization_id])
+  @@index([stakeholder_id])
+  @@index([decision_id])
+}
+
+model vox_votes {
+  id              String       @id @default(uuid())
+  organization_id String
+  decision_id     String
+  stakeholder_id  String
+  vote_type       VoxVoteType
+  vote_value      VoxVoteValue
+  reasoning       String?      @db.Text
+  ai_generated    Boolean      @default(false) // If AI proxy voted
+  weight_applied  Float        @default(1.0)
+  veto_exercised  Boolean      @default(false)
+  veto_reason     String?
+  created_at      DateTime     @default(now())
+
+  organization organizations    @relation(fields: [organization_id], references: [id])
+  stakeholder  vox_stakeholders @relation(fields: [stakeholder_id], references: [id])
+
+  @@unique([decision_id, stakeholder_id])
+  @@index([organization_id])
+  @@index([decision_id])
+}
+
+model vox_assemblies {
+  id                String          @id @default(uuid())
+  organization_id   String
+  decision_id       String
+  assembly_type     VoxAssemblyType
+  title             String
+  agenda            String          @db.Text
+  participants      Json            @default("[]") // Stakeholder IDs
+  deliberation_log  Json            @default("[]") // Full discussion
+  consensus_reached Boolean         @default(false)
+  final_verdict     VoxVoteValue?
+  dissenting_voices Json            @default("[]")
+  conditions        Json            @default("[]") // Conditions for approval
+  scheduled_at      DateTime?
+  completed_at      DateTime?
+  created_at        DateTime        @default(now())
+
+  organization organizations @relation(fields: [organization_id], references: [id])
+
+  @@index([organization_id])
+  @@index([decision_id])
+}
+
+model digital_twins {
+  id              String         @id @default(uuid())
+  organization_id String
+  entity_type     TwinEntityType
+  entity_id       String
+  entity_name     String
+  current_state   Json           @default("{}")
+  health_score    Float          @default(100)
+  sync_frequency  Int            @default(60)
+  dependencies    Json           @default("[]")
+  metadata        Json           @default("{}")
+  last_sync       DateTime       @default(now())
+  created_at      DateTime       @default(now())
+
+  snapshots twin_snapshots[]
+
+  @@index([organization_id])
+  @@index([entity_type])
+}
+
+model twin_snapshots {
+  id            String          @id @default(uuid())
+  twin_id       String
+  state         Json
+  trigger       SnapshotTrigger
+  changes_count Int             @default(0)
+  created_at    DateTime        @default(now())
+
+  twin digital_twins @relation(fields: [twin_id], references: [id], onDelete: Cascade)
+
+  @@index([twin_id])
+  @@index([created_at])
+}
+
+model simulations {
+  id                String           @id @default(uuid())
+  organization_id   String
+  name              String
+  description       String?
+  baseline_snapshot String
+  modifications     Json             @default("[]")
+  results           Json?
+  status            SimulationStatus @default(DRAFT)
+  created_at        DateTime         @default(now())
+  completed_at      DateTime?
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model witness_records {
+  id               String           @id @default(uuid())
+  organization_id  String
+  event_type       WitnessEventType
+  event_id         String
+  participants     Json             @default("[]")
+  content          Json
+  content_hash     String
+  attestations     Json             @default("[]")
+  legal_relevance  LegalRelevance   @default(LOW)
+  retention_policy String?
+  expires_at       DateTime?
+  created_at       DateTime         @default(now())
+
+  custody_events custody_events[]
+
+  @@index([organization_id])
+  @@index([event_type])
+  @@index([legal_relevance])
+}
+
+model legal_holds {
+  id              String          @id @default(uuid())
+  organization_id String
+  name            String
+  description     String?
+  scope           Json            @default("[]")
+  custodians      Json            @default("[]")
+  status          LegalHoldStatus @default(ACTIVE)
+  created_by      String
+  start_date      DateTime        @default(now())
+  end_date        DateTime?
+  created_at      DateTime        @default(now())
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model custody_events {
+  id         String        @id @default(uuid())
+  record_id  String
+  action     CustodyAction
+  actor      String
+  details    String?
+  created_at DateTime      @default(now())
+
+  record witness_records @relation(fields: [record_id], references: [id], onDelete: Cascade)
+
+  @@index([record_id])
+}
+
+model truth_claims {
+  id              String        @id @default(uuid())
+  organization_id String
+  category        ClaimCategory
+  subject         String
+  claim           String
+  claimant        String
+  status          ClaimStatus   @default(PENDING)
+  verification    Json?
+  metadata        Json          @default("{}")
+  created_at      DateTime      @default(now())
+  resolved_at     DateTime?
+
+  evidence claim_evidence[]
+  votes    claim_votes[]
+  disputes claim_disputes[]
+
+  @@index([organization_id])
+  @@index([status])
+  @@index([category])
+}
+
+model claim_evidence {
+  id            String       @id @default(uuid())
+  claim_id      String
+  evidence_type EvidenceType
+  source        String
+  content       Json
+  reliability   Float        @default(50)
+  submitted_by  String
+  created_at    DateTime     @default(now())
+
+  claim truth_claims @relation(fields: [claim_id], references: [id], onDelete: Cascade)
+
+  @@index([claim_id])
+}
+
+model claim_votes {
+  id         String    @id @default(uuid())
+  claim_id   String
+  voter_id   String
+  voter_role String
+  vote       VoteValue
+  rationale  String?
+  created_at DateTime  @default(now())
+
+  claim truth_claims @relation(fields: [claim_id], references: [id], onDelete: Cascade)
+
+  @@unique([claim_id, voter_id])
+}
+
+model knowledge_articles {
+  id              String          @id @default(uuid())
+  organization_id String
+  title           String
+  content         String          @db.Text
+  category        ArticleCategory
+  tags            Json            @default("[]")
+  author          String
+  contributors    Json            @default("[]")
+  version         Int             @default(1)
+  status          ArticleStatus   @default(DRAFT)
+  views           Int             @default(0)
+  usefulness      Float           @default(0)
+  published_at    DateTime?
+  archived_at     DateTime?
+  created_at      DateTime        @default(now())
+  updated_at      DateTime        @updatedAt
+
+  versions article_versions[]
+
+  @@index([organization_id])
+  @@index([category])
+  @@index([status])
+}
+
+model article_versions {
+  id         String   @id @default(uuid())
+  article_id String
+  version    Int
+  content    String   @db.Text
+  changes    String?
+  changed_by String
+  created_at DateTime @default(now())
+
+  article knowledge_articles @relation(fields: [article_id], references: [id], onDelete: Cascade)
+
+  @@unique([article_id, version])
+}
+
+model institutional_memories {
+  id               String               @id @default(uuid())
+  organization_id  String
+  memory_type      MemoryType
+  title            String
+  description      String               @db.Text
+  date_occurred    DateTime
+  participants     Json                 @default("[]")
+  lessons          Json                 @default("[]")
+  recommendations  Json                 @default("[]")
+  related_articles Json                 @default("[]")
+  confidentiality  ConfidentialityLevel @default(INTERNAL)
+  created_at       DateTime             @default(now())
+
+  @@index([organization_id])
+  @@index([memory_type])
+}
+
+model expertise_profiles {
+  id               String   @id @default(uuid())
+  organization_id  String
+  user_id          String
+  name             String
+  role             String
+  expertise_areas  Json     @default("[]")
+  contributions    Int      @default(0)
+  mentor_available Boolean  @default(false)
+  last_active      DateTime @default(now())
+  created_at       DateTime @default(now())
+
+  @@unique([organization_id, user_id])
+}
+
+model claim_disputes {
+  id              String        @id @default(uuid())
+  claim_id        String
+  organization_id String
+  disputant       String
+  reason          String        @db.Text
+  counter_claim   String?       @db.Text
+  status          DisputeStatus @default(OPEN)
+  resolution      String?       @db.Text
+  created_at      DateTime      @default(now())
+  resolved_at     DateTime?
+
+  claim truth_claims @relation(fields: [claim_id], references: [id], onDelete: Cascade)
+
+  @@index([claim_id])
+  @@index([organization_id])
+  @@index([status])
+}
+
+model source_reliability {
+  id                String   @id @default(uuid())
+  organization_id   String
+  source_name       String
+  reliability_score Float    @default(50)
+  total_claims      Int      @default(0)
+  accurate_claims   Int      @default(0)
+  last_evaluated    DateTime @default(now())
+  created_at        DateTime @default(now())
+
+  @@unique([organization_id, source_name])
+  @@index([organization_id])
+}
+
+model discovery_requests {
+  id               String          @id @default(uuid())
+  organization_id  String
+  title            String
+  description      String?         @db.Text
+  requesting_party String
+  scope            Json            @default("[]")
+  record_ids       Json            @default("[]")
+  status           DiscoveryStatus @default(PENDING)
+  due_date         DateTime?
+  completed_at     DateTime?
+  created_at       DateTime        @default(now())
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model recovery_procedures {
+  id              String         @id @default(uuid())
+  organization_id String
+  blackbox_id     String
+  trigger         String
+  status          RecoveryStatus @default(INITIATED)
+  steps           Json           @default("[]")
+  records_found   Int            @default(0)
+  error           String?
+  initiated_at    DateTime       @default(now())
+  completed_at    DateTime?
+
+  blackbox blackbox_units @relation(fields: [blackbox_id], references: [id], onDelete: Cascade)
+
+  @@index([organization_id])
+  @@index([blackbox_id])
+}
+
+model integrity_reports {
+  id              String   @id @default(uuid())
+  blackbox_id     String
+  organization_id String
+  records_checked Int      @default(0)
+  records_valid   Int      @default(0)
+  records_invalid Int      @default(0)
+  issues          Json     @default("[]")
+  created_at      DateTime @default(now())
+
+  blackbox blackbox_units @relation(fields: [blackbox_id], references: [id], onDelete: Cascade)
+
+  @@index([blackbox_id])
+  @@index([organization_id])
+}
+
+model operation_attempts {
+  id                 String        @id @default(uuid())
+  organization_id    String
+  operation_id       String
+  user_id            String
+  key_id             String?
+  status             AttemptStatus @default(PENDING)
+  challenge_id       String?
+  biometric_verified Boolean       @default(false)
+  metadata           Json          @default("{}")
+  attempted_at       DateTime      @default(now())
+  completed_at       DateTime?
+
+  @@index([organization_id])
+  @@index([operation_id])
+}
+
+model knowledge_transfers {
+  id              String         @id @default(uuid())
+  organization_id String
+  from_expert_id  String
+  to_user_id      String
+  article_ids     Json           @default("[]")
+  memory_ids      Json           @default("[]")
+  status          TransferStatus @default(INITIATED)
+  notes           String?        @db.Text
+  created_at      DateTime       @default(now())
+  completed_at    DateTime?
+
+  @@index([organization_id])
+}
+
+model stored_records {
+  id               String    @id @default(uuid())
+  blackbox_id      String
+  organization_id  String
+  source_type      String
+  source_id        String
+  data_hash        String
+  encryption_key   String
+  size_bytes       BigInt
+  retention_policy String?
+  expires_at       DateTime?
+  verified_at      DateTime  @default(now())
+  created_at       DateTime  @default(now())
+
+  blackbox blackbox_units @relation(fields: [blackbox_id], references: [id], onDelete: Cascade)
+
+  @@index([blackbox_id])
+  @@index([organization_id])
+}
+
+enum EternalArtifactType {
+  STRATEGIC_DECISION
+  POLICY_DOCUMENT
+  FINANCIAL_RECORD
+  LEGAL_AGREEMENT
+  INTELLECTUAL_PROPERTY
+  HISTORICAL_RECORD
+  CULTURAL_ARTIFACT
+  LEADERSHIP_WISDOM
+  CRISIS_RESPONSE
+  LESSONS_LEARNED
+}
+
+enum EternalAccessLevel {
+  PUBLIC
+  ORGANIZATION
+  LEADERSHIP
+  BOARD
+  FOUNDER
+  SUCCESSION
+}
+
+enum EternalVerificationStatus {
+  PENDING
+  VERIFIED
+  DRIFT_DETECTED
+  CORRECTED
+  QUARANTINED
+}
+
+enum EternalValidationType {
+  SCHEDULED
+  MANUAL
+  TRIGGERED
+  MIGRATION
+}
+
+enum EternalMigrationType {
+  FORMAT_UPGRADE
+  PLATFORM_MIGRATION
+  ENCRYPTION_UPDATE
+  SCHEMA_EVOLUTION
+}
+
+enum EternalMigrationStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  FAILED
+  ROLLED_BACK
+}
+
+enum EternalSuccessorType {
+  INDIVIDUAL
+  ORGANIZATION
+  FOUNDATION
+  GOVERNMENT
+  TRUST
+}
+
+enum SymbiontEntityType {
+  PARTNER
+  VENDOR
+  COMPETITOR
+  CUSTOMER
+  INVESTOR
+  REGULATOR
+  INDUSTRY_BODY
+  RESEARCH_INSTITUTION
+  STARTUP
+}
+
+enum SymbiontSizeCategory {
+  STARTUP
+  SMB
+  MID_MARKET
+  ENTERPRISE
+  CONGLOMERATE
+}
+
+enum SymbiontOpportunityType {
+  STRATEGIC_PARTNERSHIP
+  JOINT_VENTURE
+  ACQUISITION
+  MERGER
+  LICENSING
+  DISTRIBUTION
+  CO_DEVELOPMENT
+  INVESTMENT
+  DIVESTITURE
+}
+
+enum SymbiontOpportunityStatus {
+  IDENTIFIED
+  ANALYZING
+  QUALIFIED
+  PURSUING
+  NEGOTIATING
+  CLOSED_WON
+  CLOSED_LOST
+  ON_HOLD
+}
+
+enum SymbiontRelationshipType {
+  PARTNERSHIP
+  VENDOR
+  CUSTOMER
+  COMPETITOR
+  INVESTOR
+  SUBSIDIARY
+  AFFILIATE
+}
+
+enum SymbiontSentiment {
+  VERY_POSITIVE
+  POSITIVE
+  NEUTRAL
+  NEGATIVE
+  VERY_NEGATIVE
+}
+
+enum SymbiontSimulationType {
+  PARTNERSHIP_MODEL
+  JV_STRUCTURE
+  ACQUISITION_INTEGRATION
+  MARKET_ENTRY
+  TECHNOLOGY_TRANSFER
+}
+
+enum VoxStakeholderType {
+  EMPLOYEES
+  CUSTOMERS
+  SHAREHOLDERS
+  COMMUNITY
+  ENVIRONMENT
+  FUTURE_GENERATIONS
+  SUPPLIERS
+  REGULATORS
+  CIVIL_SOCIETY
+}
+
+enum VoxSignalType {
+  SURVEY
+  SOCIAL_MEDIA
+  ESG_FEED
+  COMPLAINT
+  FEEDBACK
+  NEWS
+  REGULATORY
+  INTERNAL
+}
+
+enum VoxSentiment {
+  VERY_POSITIVE
+  POSITIVE
+  NEUTRAL
+  NEGATIVE
+  VERY_NEGATIVE
+}
+
+enum VoxUrgency {
+  CRITICAL
+  HIGH
+  NORMAL
+  LOW
+}
+
+enum VoxImpactType {
+  FINANCIAL
+  HEALTH_SAFETY
+  ENVIRONMENTAL
+  SOCIAL
+  PSYCHOLOGICAL
+  EMPLOYMENT
+  RIGHTS
+  OPPORTUNITY
+}
+
+enum VoxSeverity {
+  CATASTROPHIC
+  SEVERE
+  MODERATE
+  MINOR
+  NEGLIGIBLE
+}
+
+enum VoxVoteType {
+  APPROVAL
+  ADVISORY
+  VETO
+  ABSTAIN
+}
+
+enum VoxVoteValue {
+  APPROVE
+  APPROVE_WITH_CONDITIONS
+  OPPOSE
+  ABSTAIN
+  VETO
+}
+
+enum VoxAssemblyType {
+  EMERGENCY
+  SCHEDULED
+  AD_HOC
+  ANNUAL
+}
+
+enum TwinEntityType {
+  SYSTEM
+  TEAM
+  WORKFLOW
+  PROCESS
+  ASSET
+}
+
+enum SnapshotTrigger {
+  SCHEDULED
+  MANUAL
+  EVENT
+}
+
+enum SimulationStatus {
+  DRAFT
+  RUNNING
+  COMPLETED
+  FAILED
+}
+
+enum WitnessEventType {
+  DECISION
+  TRANSACTION
+  COMMUNICATION
+  AGREEMENT
+  AUDIT
+  DISCLOSURE
+}
+
+enum LegalRelevance {
+  HIGH
+  MEDIUM
+  LOW
+}
+
+enum LegalHoldStatus {
+  ACTIVE
+  RELEASED
+}
+
+enum CustodyAction {
+  CREATED
+  ACCESSED
+  MODIFIED
+  EXPORTED
+  VERIFIED
+}
+
+enum ClaimCategory {
+  DATA
+  METRIC
+  EVENT
+  STATEMENT
+  FORECAST
+}
+
+enum ClaimStatus {
+  PENDING
+  VERIFIED
+  DISPUTED
+  FALSE
+  INCONCLUSIVE
+}
+
+enum EvidenceType {
+  DATA_SOURCE
+  DOCUMENT
+  WITNESS
+  AUDIT_LOG
+  CALCULATION
+}
+
+enum VoteValue {
+  SUPPORT
+  OPPOSE
+  ABSTAIN
+}
+
+enum ArticleCategory {
+  POLICY
+  PROCEDURE
+  BEST_PRACTICE
+  LESSON_LEARNED
+  HISTORICAL
+  TECHNICAL
+}
+
+enum ArticleStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+  DEPRECATED
+}
+
+enum MemoryType {
+  SUCCESS
+  FAILURE
+  PIVOT
+  CRISIS
+  INNOVATION
+  MILESTONE
+  LESSON_LEARNED
+}
+
+enum ConfidentialityLevel {
+  PUBLIC
+  INTERNAL
+  RESTRICTED
+  CONFIDENTIAL
+}
+
+enum DisputeStatus {
+  OPEN
+  UNDER_REVIEW
+  RESOLVED
+  DISMISSED
+}
+
+enum DiscoveryStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  REJECTED
+}
+
+enum RecoveryStatus {
+  INITIATED
+  SCANNING
+  RECOVERING
+  COMPLETED
+  FAILED
+}
+
+enum AttemptStatus {
+  PENDING
+  VERIFIED
+  REJECTED
+  EXPIRED
+}
+
+enum TransferStatus {
+  INITIATED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+// =============================================================================
+// CendiaBlackBox - Disaster Storage Service
+// =============================================================================
+
+model sovereign_blackbox_units {
+  id              String   @id
+  organization_id String
+  serial_number   String
+  name            String
+  status          String   @default("operational") // operational, degraded, offline, recovery_mode
+  data            Json     // Full BlackBoxUnit object (location, specs, health metrics)
+  last_sync       DateTime @default(now())
+  registered_at   DateTime @default(now())
+  created_at      DateTime @default(now())
+  updated_at      DateTime @default(now()) @updatedAt
+
+  @@index([organization_id])
+  @@index([status])
+}
+
+model sovereign_blackbox_jobs {
+  id              String    @id
+  organization_id String
+  blackbox_id     String
+  source_type     String    // ledger, chronos, witness, custom
+  status          String    @default("scheduled") // scheduled, running, completed, failed
+  priority        String    @default("normal")
+  bytes_transferred BigInt  @default(0)
+  error           String?
+  data            Json      // Full BackupJob object
+  scheduled_at    DateTime  @default(now())
+  started_at      DateTime?
+  completed_at    DateTime?
+  created_at      DateTime  @default(now())
+
+  @@index([organization_id])
+  @@index([blackbox_id])
+  @@index([status])
+}
+
+model sovereign_blackbox_records {
+  id              String    @id
+  blackbox_id     String
+  organization_id String
+  source_type     String
+  source_id       String
+  data_hash       String
+  size_bytes      BigInt    @default(0)
+  retention_policy String
+  data            Json      // Full StoredRecord object
+  expires_at      DateTime?
+  created_at      DateTime  @default(now())
+  verified_at     DateTime  @default(now())
+
+  @@index([organization_id])
+  @@index([blackbox_id])
+  @@index([data_hash])
+}
+
+// =============================================================================
+// ClamAV — Malware Scan Results
+// =============================================================================
+
+model clamav_scan_results {
+  id                String   @id @default(uuid())
+  filename          String
+  file_size         BigInt
+  file_hash         String
+  threat_level      String   // clean, suspicious, malware, error
+  threat_name       String?
+  engine            String   // clamav, heuristic
+  signature_version String?
+  scan_duration_ms  Int
+  details           String?  @db.Text
+  created_at        DateTime @default(now())
+
+  @@index([file_hash])
+  @@index([threat_level])
+  @@index([created_at])
+}
