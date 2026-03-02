@@ -4,9 +4,9 @@
 
 <img src="docs/Inception Badges/for-screen/nvidia-inception-program-badge-rgb-for-screen.svg" alt="NVIDIA Inception Program Member" height="60">
 
-**The Defensible AI Platform � open-source core, sovereign-first.**
+**The Defensible AI Platform -- open-source core, sovereign-first.**
 
-Multi-agent deliberation · Immutable audit trails · 29 industry verticals · Sovereign-first
+Multi-agent deliberation &middot; Immutable audit trails &middot; 29 industry verticals &middot; Sovereign-first
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
@@ -17,7 +17,7 @@ Multi-agent deliberation · Immutable audit trails · 29 industry verticals · S
 [![Docker](https://img.shields.io/badge/Docker-Required-2496ED.svg?logo=docker&logoColor=white)](https://www.docker.com/)
 [![NVIDIA Inception](https://img.shields.io/badge/NVIDIA-Inception%20Program-76b900.svg?logo=nvidia&logoColor=white)](https://www.nvidia.com/en-us/startups/)
 
-[Getting Started](#-getting-started) · [Architecture](#-architecture) · [Verticals](#-industry-verticals) · [Infrastructure](#-infrastructure) · [Contributing](#contributing) · [Enterprise Edition](#-enterprise-edition)
+[Getting Started](#-getting-started) &middot; [Architecture](#-architecture) &middot; [Verticals](#-industry-verticals) &middot; [Infrastructure](#-infrastructure-integrations) &middot; [Contributing](#contributing) &middot; [Enterprise Edition](#-enterprise-edition)
 
 </div>
 
@@ -27,11 +27,11 @@ Multi-agent deliberation · Immutable audit trails · 29 industry verticals · S
 
 | Requirement | Version | Required |
 |-------------|---------|:--------:|
-| **Node.js** | 20.x or later | ✅ |
-| **Docker** & Docker Compose | Latest | ✅ |
-| **PostgreSQL** | 16+ | ✅ (via Docker) |
-| **Redis** | 7+ | ✅ (via Docker) |
-| **Ollama** | Latest | ✅ (or Triton/NIM) |
+| **Node.js** | 20.x or later | Yes |
+| **Docker** & Docker Compose | Latest | Yes |
+| **PostgreSQL** | 16+ | Yes (via Docker) |
+| **Redis** | 7+ | Yes (via Docker) |
+| **Ollama** | Latest | Yes (or Triton/NIM) |
 | **Neo4j** | 5+ | Optional (knowledge graph) |
 | **NVIDIA GPU** | CUDA 12+ | Optional (RAPIDS, Triton, CC) |
 
@@ -41,55 +41,55 @@ Multi-agent deliberation · Immutable audit trails · 29 industry verticals · S
 
 ## What is Datacendia?
 
-Datacendia is the only AI platform where every decision is auditable, explainable, and court-admissible. Multiple AI agents with distinct perspectives deliberate on your behalf — then every decision is recorded in an immutable, auditable ledger.
+Datacendia is the only AI platform where every decision is auditable, explainable, and court-admissible. Multiple AI agents with distinct perspectives deliberate on your behalf -- then every decision is recorded in an immutable, auditable ledger.
 
 **This is not another chatbot.** It's an operating system for enterprise decisions.
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                    YOUR DECISION                         │
-│                         │                                │
-│    ┌──────────┐  ┌──────────┐  ┌──────────┐             │
-│    │ Financial │  │ Legal    │  │ Risk     │  ...agents  │
-│    │ Analyst  │  │ Counsel  │  │ Assessor │             │
-│    └────┬─────┘  └────┬─────┘  └────┬─────┘             │
-│         │             │             │                    │
-│         └─────────┬───┘─────────────┘                    │
-│                   │                                      │
-│         ┌─────────▼─────────┐                            │
-│         │  THE COUNCIL      │  ← Multi-agent consensus   │
-│         │  Deliberation     │                            │
-│         └─────────┬─────────┘                            │
-│                   │                                      │
-│         ┌─────────▼─────────┐                            │
-│         │  DECISION PACKET  │  ← Signed, Merkle-rooted  │
-│         │  + Audit Trail    │     Court-admissible       │
-│         └───────────────────┘                            │
-└─────────────────────────────────────────────────────────┘
++-----------------------------------------------------------+
+|                    YOUR DECISION                          |
+|                                                           |
+|    +----------+  +----------+  +----------+              |
+|    | Financial|  | Legal    |  | Risk     |  ...agents   |
+|    | Analyst  |  | Counsel  |  | Assessor |              |
+|    +----+-----+  +----+-----+  +----+-----+              |
+|         |             |             |                     |
+|         +--------+----+-------------+                     |
+|                  |                                        |
+|         +--------v---------+                              |
+|         |  THE COUNCIL     |  <- Multi-agent consensus    |
+|         |  Deliberation    |                              |
+|         +--------+---------+                              |
+|                  |                                        |
+|         +--------v---------+                              |
+|         | DECISION PACKET  |  <- Signed, Merkle-rooted   |
+|         | + Audit Trail    |     Court-admissible        |
+|         +------------------+                              |
++-----------------------------------------------------------+
 ```
 
 ### See It in Action
 
 <div align="center">
 
-<img src="docs/screenshots/council-deliberation.png" alt="Datacendia Council Deliberation — five demo decisions loaded" width="900">
+<img src="docs/screenshots/council-deliberation.png" alt="Datacendia Council Deliberation -- five demo decisions loaded" width="900">
 
-*The Council deliberation dashboard with five pre-seeded decisions — `docker compose -f docker-compose.demo.yml up -d`*
+*The Council deliberation dashboard with five pre-seeded decisions -- `docker compose -f docker-compose.demo.yml up -d`*
 
 </div>
 
 ### Key Capabilities
 
-- **The Council** — Multi-agent deliberation with configurable agent panels (financial, legal, ethical, adversarial, domain-specific)
-- **Immutable Audit Ledger** — Every decision cryptographically signed with Merkle tree integrity
-- **29 Industry Verticals** — Financial, Healthcare, Legal, Defense, Insurance, Energy, Government, Manufacturing, Pharmaceutical, Sports, and 19 more
-- **Sovereign-First** — Runs fully air-gapped. No cloud dependency. Your data stays yours.
-- **LLM-Agnostic** — Works with Ollama, NVIDIA Triton, NVIDIA NIM, or any OpenAI-compatible API
-- **Enterprise Infrastructure** — Kafka event streaming, Temporal workflows, OPA policies, OpenBao secrets, NeMo Guardrails, RAPIDS GPU analytics, Flink CEP
+- **The Council** -- Multi-agent deliberation with configurable agent panels (financial, legal, ethical, adversarial, domain-specific)
+- **Immutable Audit Ledger** -- Every decision cryptographically signed with Merkle tree integrity
+- **29 Industry Verticals** -- Financial, Healthcare, Legal, Defense, Insurance, Energy, Government, Manufacturing, Pharmaceutical, Sports, and 19 more
+- **Sovereign-First** -- Runs fully air-gapped. No cloud dependency. Your data stays yours.
+- **LLM-Agnostic** -- Works with Ollama, NVIDIA Triton, NVIDIA NIM, or any OpenAI-compatible API
+- **Enterprise Infrastructure** -- Kafka event streaming, Temporal workflows, OPA policies, OpenBao secrets, NeMo Guardrails, RAPIDS GPU analytics, Flink CEP
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -118,8 +118,8 @@ cd backend && npm install && cd ..
 cd backend && npx prisma migrate deploy && cd ..
 
 # Start the platform
-npm run dev              # Frontend → http://localhost:5173
-cd backend && npm run dev # Backend  → http://localhost:3001
+npm run dev              # Frontend: http://localhost:5173
+cd backend && npm run dev # Backend:  http://localhost:3001
 ```
 
 ### Demo Mode (Docker, zero setup)
@@ -131,32 +131,32 @@ docker compose -f docker-compose.demo.yml up -d
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 datacendia-core/
-├── src/                          # React frontend (Vite + TypeScript + Tailwind)
-│   ├── components/               # 85 reusable UI components
-│   ├── pages/                    # 197 page components
-│   └── services/                 # Frontend API clients
-├── backend/                      # Node.js backend (Express + Prisma)
-│   ├── src/
-│   │   ├── services/
-│   │   │   ├── council/          # 🧠 Council deliberation engine
-│   │   │   ├── inference/        # 🔌 LLM provider abstraction (Ollama/Triton/NIM)
-│   │   │   ├── guardrails/       # 🛡️ NeMo Guardrails engine
-│   │   │   ├── kafka/            # 📨 Apache Kafka event streaming
-│   │   │   ├── temporal/         # ⏱️ Temporal.io workflow orchestration
-│   │   │   ├── opa/              # 📋 Open Policy Agent
-│   │   │   ├── vault/            # 🔐 OpenBao/Vault secrets management
-│   │   │   ├── gpu/              # ⚡ RAPIDS analytics + Confidential Computing
-│   │   │   ├── streaming/        # 🌊 Flink CEP real-time processing
-│   │   │   └── verticals/        # 🏭 29 industry verticals
-│   │   ├── routes/               # 155 API route files
-│   │   ├── security/             # Casbin RBAC, Keycloak SSO
-│   │   └── middleware/           # Auth, rate limiting, security
-│   └── prisma/                   # 260 database models
-└── docker-compose.dev.yml        # Development infrastructure
+|-- src/                          # React frontend (Vite + TypeScript + Tailwind)
+|   |-- components/               # 85 reusable UI components
+|   |-- pages/                    # 197 page components
+|   +-- services/                 # Frontend API clients
+|-- backend/                      # Node.js backend (Express + Prisma)
+|   |-- src/
+|   |   |-- services/
+|   |   |   |-- council/          # Council deliberation engine
+|   |   |   |-- inference/        # LLM provider abstraction (Ollama/Triton/NIM)
+|   |   |   |-- guardrails/       # NeMo Guardrails engine
+|   |   |   |-- kafka/            # Apache Kafka event streaming
+|   |   |   |-- temporal/         # Temporal.io workflow orchestration
+|   |   |   |-- opa/              # Open Policy Agent
+|   |   |   |-- vault/            # OpenBao/Vault secrets management
+|   |   |   |-- gpu/              # RAPIDS analytics + Confidential Computing
+|   |   |   |-- streaming/        # Flink CEP real-time processing
+|   |   |   +-- verticals/        # 29 industry verticals
+|   |   |-- routes/               # 155 API route files
+|   |   |-- security/             # Casbin RBAC, Keycloak SSO
+|   |   +-- middleware/           # Auth, rate limiting, security
+|   +-- prisma/                   # 260 database models
++-- docker-compose.dev.yml        # Development infrastructure
 ```
 
 ### Tech Stack
@@ -179,7 +179,7 @@ datacendia-core/
 
 ---
 
-## 🏭 Industry Verticals
+## Industry Verticals
 
 Datacendia ships with **29 industry vertical definitions**. Each vertical provides domain-specific agents, compliance frameworks, decision schemas, and knowledge bases.
 
@@ -199,9 +199,9 @@ Datacendia ships with **29 industry vertical definitions**. Each vertical provid
 
 ---
 
-## ⚙️ Infrastructure Integrations
+## Infrastructure Integrations
 
-All infrastructure components are **opt-in** — disabled by default, zero impact when off. Every component has an **embedded fallback** for air-gapped deployment.
+All infrastructure components are **opt-in** -- disabled by default, zero impact when off. Every component has an **embedded fallback** for air-gapped deployment.
 
 | Component | Purpose | Activation |
 |-----------|---------|-----------|
@@ -216,18 +216,18 @@ All infrastructure components are **opt-in** — disabled by default, zero impac
 
 ---
 
-## 🔐 Security
+## Security
 
-- **Sovereign-first** — Runs fully on-premise, air-gapped capable
-- **Casbin RBAC/ABAC** — Role and attribute-based access control
-- **OPA Policies** — GDPR, HIPAA, SOX, EU AI Act enforcement
-- **Immutable Audit Ledger** — Merkle tree integrity, cryptographic signatures
-- **Post-Quantum KMS** — Dilithium, SPHINCS+ support
-- **Confidential Computing** — NVIDIA H100/H200 GPU attestation
+- **Sovereign-first** -- Runs fully on-premise, air-gapped capable
+- **Casbin RBAC/ABAC** -- Role and attribute-based access control
+- **OPA Policies** -- GDPR, HIPAA, SOX, EU AI Act enforcement
+- **Immutable Audit Ledger** -- Merkle tree integrity, cryptographic signatures
+- **Post-Quantum KMS** -- Dilithium, SPHINCS+ support
+- **Confidential Computing** -- NVIDIA H100/H200 GPU attestation
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Backend tests
@@ -256,32 +256,32 @@ See [COMMUNITY.md](COMMUNITY.md) for the full open-source boundary definition.
 
 ---
 
-## 🏢 Enterprise Edition
+## Enterprise Edition
 
 **Datacendia Enterprise** adds premium capabilities for regulated industries:
 
 | Feature | Community | Enterprise |
 |---------|:---------:|:----------:|
-| Council Engine | ✅ | ✅ |
-| Immutable Audit Ledger | ✅ | ✅ |
-| 29 Vertical Frameworks | ✅ | ✅ |
-| Infrastructure (Kafka, Temporal, etc.) | ✅ | ✅ |
-| Full Vertical Packs (12+ agents/industry) | — | ✅ |
-| 22 Sovereign Architecture Patterns | — | ✅ |
-| DCII (9 Decision Primitives) | — | ✅ |
-| Collapse Orchestrator (19 adversarial agents) | — | ✅ |
-| CendiaApotheosis™ Self-Improvement | — | ✅ |
-| OmniTranslate (100+ languages) | — | ✅ |
-| Defense/Pharma/Government Full Packs | — | ✅ |
-| Enterprise SLA & Support | — | ✅ |
+| Council Engine | Yes | Yes |
+| Immutable Audit Ledger | Yes | Yes |
+| 29 Vertical Frameworks | Yes | Yes |
+| Infrastructure (Kafka, Temporal, etc.) | Yes | Yes |
+| Full Vertical Packs (12+ agents/industry) | -- | Yes |
+| 22 Sovereign Architecture Patterns | -- | Yes |
+| DCII (9 Decision Primitives) | -- | Yes |
+| Collapse Orchestrator (19 adversarial agents) | -- | Yes |
+| CendiaApotheosis Self-Improvement | -- | Yes |
+| OmniTranslate (100+ languages) | -- | Yes |
+| Defense/Pharma/Government Full Packs | -- | Yes |
+| Enterprise SLA & Support | -- | Yes |
 
-**Contact:** [enterprise@datacendia.com](mailto:enterprise@datacendia.com) · [datacendia.com](https://datacendia.com)
+**Contact:** [enterprise@datacendia.com](mailto:enterprise@datacendia.com) &middot; [datacendia.com](https://datacendia.com)
 
 ---
 
-## 📄 License
+## License
 
-Apache License 2.0 — See [LICENSE](LICENSE) for details.
+Apache License 2.0 -- See [LICENSE](LICENSE) for details.
 
 Copyright 2024-2026 Datacendia, LLC
 
@@ -289,6 +289,6 @@ Copyright 2024-2026 Datacendia, LLC
 
 <div align="center">
 
-Built by [Datacendia](https://datacendia.com) · NVIDIA Inception Program Member
+Built by [Datacendia](https://datacendia.com) &middot; NVIDIA Inception Program Member
 
 </div>
