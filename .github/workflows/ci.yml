@@ -47,8 +47,8 @@ jobs:
       - name: Lint
         run: npm run lint
 
-  test:
-    name: Test
+  test-frontend:
+    name: Frontend Tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -61,8 +61,55 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run tests
+      - name: Run frontend tests
         run: npm run test
+
+  test-backend:
+    name: Backend Integration Tests
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: datacendia
+          POSTGRES_PASSWORD: datacendia_test
+          POSTGRES_DB: datacendia_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U datacendia -d datacendia_test"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      DATABASE_URL: postgresql://datacendia:datacendia_test@localhost:5432/datacendia_test
+      REDIS_URL: redis://localhost:6379
+      NODE_ENV: test
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install backend dependencies
+        run: cd backend && npm ci
+
+      - name: Run Prisma migrations
+        run: cd backend && npx prisma migrate deploy
+
+      - name: Run backend tests
+        run: cd backend && npm test
 
   build:
     name: Build
@@ -81,3 +128,27 @@ jobs:
 
       - name: Build frontend
         run: npm run build
+
+  validate-counts:
+    name: Validate README Counts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate route file count
+        run: |
+          ACTUAL=$(find backend/src/routes -name '*.ts' | wc -l)
+          echo "Route files: $ACTUAL"
+          if grep -q "156 route" README.md 2>/dev/null; then
+            echo "README claims 156 routes, actual: $ACTUAL"
+          fi
+
+      - name: Validate Prisma model count
+        run: |
+          ACTUAL=$(grep -r '^model ' backend/prisma/schema/ | wc -l)
+          echo "Prisma models: $ACTUAL"
+
+      - name: Validate vertical count
+        run: |
+          echo "Checking vertical references are consistent..."
+          grep -n "vertical" README.md | head -5

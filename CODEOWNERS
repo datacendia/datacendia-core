@@ -1,0 +1,21 @@
+# Datacendia Core — Code Ownership
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners for everything
+* @datacendia/core-team
+
+# Backend
+/backend/ @datacendia/backend-team
+
+# Frontend
+/src/ @datacendia/frontend-team
+
+# Infrastructure
+/docker-compose*.yml @datacendia/infrastructure-team
+/Dockerfile* @datacendia/infrastructure-team
+
+# Documentation
+*.md @datacendia/docs-team
+
+# CI/CD
+/.github/ @datacendia/core-team

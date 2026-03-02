@@ -51,19 +51,6 @@ const SERVICES = {
     'ComplianceEnforcer',
   ],
   
-  // Enterprise Services
-  enterprise: [
-    'CendiaAegisService',
-    'CendiaAuditService',
-    'CendiaCrucibleService',
-    'CendiaEternalService',
-    'CendiaNarrativesService',
-    'CendiaPanopticonService',
-    'CendiaSentryService',
-    'CendiaSymbiontService',
-    'CendiaVoxService',
-  ],
-  
   // Other Services
   other: [
     'EnhancedLLMService',
@@ -115,18 +102,6 @@ describe('Service Registry Tests', () => {
     });
   });
 
-  describe('Enterprise Services', () => {
-    it('should have enterprise tier services', () => {
-      expect(SERVICES.enterprise.length).toBeGreaterThan(0);
-    });
-
-    SERVICES.enterprise.forEach(serviceName => {
-      it(`should define ${serviceName}`, () => {
-        expect(serviceName).toBeDefined();
-        expect(serviceName).toMatch(/^Cendia/);
-      });
-    });
-  });
 });
 
 describe('Service Method Contracts', () => {

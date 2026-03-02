@@ -1,7 +1,6 @@
 ﻿{
     "name":  "datacendia-core",
     "description": "The Defensible AI Platform - open-source core, sovereign-first",
-    "private":  true,
     "version":  "0.1.0",
     "type":  "module",
     "workspaces":  [
