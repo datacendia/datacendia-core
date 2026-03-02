@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Configuration — Vertical Dashboards Extended
  *
  * Frontend configuration constants and environment bindings.
@@ -35,7 +35,7 @@ export const energyDashboard: VerticalDashboardConfig = {
   ],
   quickActions: [
     { id: 'dispatch', label: 'Generation Dispatch', icon: '⚡', path: '/cortex/council' },
-    { id: 'outage', label: 'Outage Response', icon: '🔧', path: '/cortex/enterprise/crisis-management' },
+    { id: 'outage', label: 'Outage Response', icon: '🔧', path: '/cortex/upgrade' },
   ],
   insights: [
     { type: 'warning', message: 'Peak demand expected at 6PM - activate reserves' },
@@ -62,7 +62,7 @@ export const governmentDashboard: VerticalDashboardConfig = {
   ],
   quickActions: [
     { id: 'policy', label: 'Policy Decision', icon: '📜', path: '/cortex/council' },
-    { id: 'audit', label: 'Audit Trail', icon: '🔍', path: '/cortex/enterprise/ledger' },
+    { id: 'audit', label: 'Audit Trail', icon: '🔍', path: '/cortex/upgrade' },
   ],
   insights: [
     { type: 'info', message: 'New FOIA request volume up 15%' },
@@ -89,7 +89,7 @@ export const legalDashboard: VerticalDashboardConfig = {
   ],
   quickActions: [
     { id: 'strategy', label: 'Litigation Strategy', icon: '♟️', path: '/cortex/council' },
-    { id: 'precedent', label: 'Precedent Search', icon: '📚', path: '/cortex/enterprise/gnosis' },
+    { id: 'precedent', label: 'Precedent Search', icon: '📚', path: '/cortex/upgrade' },
   ],
   insights: [
     { type: 'critical', message: 'Summary judgment deadline in 3 days' },
@@ -305,7 +305,7 @@ export const logisticsDashboard: VerticalDashboardConfig = {
   ],
   quickActions: [
     { id: 'routing', label: 'Route Optimization', icon: '🗺️', path: '/cortex/council' },
-    { id: 'disruption', label: 'Disruption Response', icon: '🚨', path: '/cortex/enterprise/crisis-management' },
+    { id: 'disruption', label: 'Disruption Response', icon: '🚨', path: '/cortex/upgrade' },
   ],
   insights: [
     { type: 'critical', message: 'Port congestion - reroute shipments' },
@@ -359,7 +359,7 @@ export const nonProfitDashboard: VerticalDashboardConfig = {
   ],
   quickActions: [
     { id: 'program', label: 'Program Decision', icon: '🎯', path: '/cortex/council' },
-    { id: 'impact', label: 'Impact Report', icon: '📊', path: '/cortex/enterprise/evidence-vault' },
+    { id: 'impact', label: 'Impact Report', icon: '📊', path: '/cortex/upgrade' },
   ],
   insights: [
     { type: 'success', message: 'Annual gala exceeded target by 24%' },
@@ -386,7 +386,7 @@ export const constructionDashboard: VerticalDashboardConfig = {
   ],
   quickActions: [
     { id: 'bid', label: 'Bid Decision', icon: '📝', path: '/cortex/council' },
-    { id: 'safety', label: 'Safety Review', icon: '⛑️', path: '/cortex/enterprise/govern' },
+    { id: 'safety', label: 'Safety Review', icon: '⛑️', path: '/cortex/upgrade' },
   ],
   insights: [
     { type: 'critical', message: 'Weather delay at Downtown Tower' },
@@ -413,7 +413,7 @@ export const miningDashboard: VerticalDashboardConfig = {
   ],
   quickActions: [
     { id: 'extraction', label: 'Extraction Plan', icon: '⛏️', path: '/cortex/council' },
-    { id: 'esg', label: 'ESG Report', icon: '🌍', path: '/cortex/enterprise/evidence-vault' },
+    { id: 'esg', label: 'ESG Report', icon: '🌍', path: '/cortex/upgrade' },
   ],
   insights: [
     { type: 'success', message: 'Q4 production target achieved' },
@@ -440,7 +440,7 @@ export const aerospaceDashboard: VerticalDashboardConfig = {
   ],
   quickActions: [
     { id: 'mission', label: 'Mission Planning', icon: '🎯', path: '/cortex/council' },
-    { id: 'security', label: 'Security Audit', icon: '🛡️', path: '/cortex/enterprise/defense-stack' },
+    { id: 'security', label: 'Security Audit', icon: '🛡️', path: '/cortex/upgrade' },
   ],
   insights: [
     { type: 'success', message: 'F-35 delivery milestone achieved' },
@@ -467,7 +467,7 @@ export const pharmaceuticalsDashboard: VerticalDashboardConfig = {
   ],
   quickActions: [
     { id: 'trial', label: 'Trial Decision', icon: '🧪', path: '/cortex/council' },
-    { id: 'fda', label: 'FDA Strategy', icon: '📋', path: '/cortex/enterprise/govern' },
+    { id: 'fda', label: 'FDA Strategy', icon: '📋', path: '/cortex/upgrade' },
   ],
   insights: [
     { type: 'success', message: 'Phase 3 trial met primary endpoint' },

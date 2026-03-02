@@ -8,6 +8,7 @@
 
 Multi-agent deliberation &middot; Immutable audit trails &middot; 30 industry verticals &middot; Sovereign-first
 
+[![CI](https://github.com/datacendia/datacendia-core/actions/workflows/ci.yml/badge.svg)](https://github.com/datacendia/datacendia-core/actions/workflows/ci.yml)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-20.x+-339933.svg?logo=node.js&logoColor=white)](https://nodejs.org/)

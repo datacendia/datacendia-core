@@ -94,7 +94,27 @@ refactor(api): consolidate route handlers
 
 ### Community vs Enterprise
 
-See [COMMUNITY.md](COMMUNITY.md) for the boundary between open-source and enterprise features. Community contributions should target community-edition directories only.
+This is the **Community Edition** (Apache 2.0). Enterprise features live in a separate private repository.
+
+**Community-safe directories** (contribute freely):
+- `src/pages/cortex/council/` -- Council deliberation UI
+- `src/pages/admin/` -- Admin dashboard
+- `src/pages/verticals/` -- Industry vertical pages
+- `src/components/` -- All reusable UI components
+- `backend/src/routes/` -- API endpoints (except `domains/enterprise.domain.ts`)
+- `backend/src/services/` -- Business logic services
+- `backend/src/middleware/` -- Request middleware
+- `backend/src/security/` -- Security hardening
+- `tests/` -- All test suites
+
+**Enterprise-only** (do not add to this repo):
+- Features referencing Apotheosis, Crucible, Ghost Board, Panopticon, Collapse Orchestrator
+- Post-quantum KMS, DCII scoring engine, OmniTranslate
+- Any code that imports from enterprise-only modules
+
+**How to check**: Enterprise nav items in the UI redirect to `/cortex/upgrade`. If your feature would need to live behind that gate, it belongs in the enterprise repo.
+
+See [COMMUNITY.md](COMMUNITY.md) and [ARCHITECTURE.md](ARCHITECTURE.md) for more details.
 
 ## Code of Conduct
 

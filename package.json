@@ -36,7 +36,7 @@
                     "test:contract":  "vitest run tests/contract/",
                     "test:visual":  "playwright test tests/visual/",
                     "test:visual:update":  "playwright test tests/visual/ --update-snapshots",
-                    "test:mutation":  "stryker run",
+
                     "test:chaos":  "echo \u0027Run chaos tests in isolated environment\u0027",
                     "db:migrate":  "npm run db:migrate --workspace=backend",
                     "db:seed":  "npm run db:seed --workspace=backend",
