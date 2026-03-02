@@ -17,7 +17,7 @@ Multi-agent deliberation &middot; Immutable audit trails &middot; 30 industry ve
 [![Docker](https://img.shields.io/badge/Docker-Required-2496ED.svg?logo=docker&logoColor=white)](https://www.docker.com/)
 [![NVIDIA Inception](https://img.shields.io/badge/NVIDIA-Inception%20Program-76b900.svg?logo=nvidia&logoColor=white)](https://www.nvidia.com/en-us/startups/)
 
-[Getting Started](#getting-started) &middot; [Architecture](#architecture) &middot; [Verticals](#industry-verticals) &middot; [Infrastructure](#infrastructure-integrations) &middot; [Contributing](#contributing) &middot; [Enterprise Edition](#enterprise-edition)
+[Getting Started](#getting-started) &middot; [Architecture](#architecture) &middot; [Verticals](#industry-verticals) &middot; [Infrastructure](#infrastructure-integrations) &middot; [Standards](#standards--governance) &middot; [Contributing](#contributing) &middot; [Enterprise Edition](#enterprise-edition)
 
 </div>
 
@@ -279,6 +279,21 @@ See [COMMUNITY.md](COMMUNITY.md) for the full open-source boundary definition.
 
 ---
 
+## Standards & Governance
+
+Datacendia implements the **Datacendia Decision Governance Infrastructure (DDGI)** -- a vendor-neutral framework for treating institutional decisions as auditable lifecycle artifacts.
+
+| Resource | Description |
+|----------|-------------|
+| [DDGI Framework](https://github.com/datacendia/decision-governance-infrastructure) | Vendor-neutral governance specification (CC BY 4.0) |
+| [DCII White Paper](https://github.com/datacendia/decision-governance-infrastructure/blob/main/docs/DCII_Framework_v2.1.md) | Reference implementation specification |
+| [API Specification](https://github.com/datacendia/decision-governance-infrastructure/blob/main/api/api-spec.yaml) | OpenAPI 3.0 (59 endpoints) |
+| [Compliance Mapping](https://github.com/datacendia/decision-governance-infrastructure/blob/main/docs/compliance-mapping.md) | Regulation-to-primitive matrix |
+
+DDGI is being prepared for submission to **ISO/IEC JTC 1/SC 42** (Artificial Intelligence) as a New Work Item Proposal. See [standards body engagement](https://github.com/datacendia/decision-governance-infrastructure/blob/main/docs/standards-body-engagement.md) for details.
+
+---
+
 ## License
 
 Apache License 2.0 -- See [LICENSE](LICENSE) for details.
@@ -289,6 +304,6 @@ Copyright 2024-2026 Datacendia, LLC
 
 <div align="center">
 
-Built by [Datacendia](https://datacendia.com) &middot; NVIDIA Inception Program Member
+Built by [Datacendia](https://datacendia.com) &middot; [DDGI Framework](https://github.com/datacendia/decision-governance-infrastructure) &middot; NVIDIA Inception Program Member
 
 </div>
