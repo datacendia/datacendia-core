@@ -1,8 +1,8 @@
-# Datacendia Core
+﻿# Datacendia Core
 
 <div align="center">
 
-<img src="docs/Inception Badges/for-screen/nvidia-inception-program-badge-rgb-for-screen.svg" alt="NVIDIA Inception Program Member" height="60">
+<img src="docs/Inception%20Badges/for-screen/nvidia-inception-program-badge-rgb-for-screen.svg" alt="NVIDIA Inception Program Member" height="60">
 
 **The Defensible AI Platform -- open-source core, sovereign-first.**
 
