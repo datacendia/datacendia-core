@@ -17,7 +17,7 @@ Multi-agent deliberation &middot; Immutable audit trails &middot; 29 industry ve
 [![Docker](https://img.shields.io/badge/Docker-Required-2496ED.svg?logo=docker&logoColor=white)](https://www.docker.com/)
 [![NVIDIA Inception](https://img.shields.io/badge/NVIDIA-Inception%20Program-76b900.svg?logo=nvidia&logoColor=white)](https://www.nvidia.com/en-us/startups/)
 
-[Getting Started](#-getting-started) &middot; [Architecture](#-architecture) &middot; [Verticals](#-industry-verticals) &middot; [Infrastructure](#-infrastructure-integrations) &middot; [Contributing](#contributing) &middot; [Enterprise Edition](#-enterprise-edition)
+[Getting Started](#getting-started) &middot; [Architecture](#architecture) &middot; [Verticals](#industry-verticals) &middot; [Infrastructure](#infrastructure-integrations) &middot; [Contributing](#contributing) &middot; [Enterprise Edition](#enterprise-edition)
 
 </div>
 
