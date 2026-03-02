@@ -80,7 +80,7 @@ datacendia-core/
 |   |   |-- websocket/      # Socket.IO handlers
 |   |   +-- index.ts        # Express entrypoint
 |   |-- prisma/
-|   |   |-- schema/         # 24 Prisma schema files (260 models)
+|   |   |-- schema/         # 37 Prisma schema files (260 models)
 |   |   +-- migrations/     # Database migrations
 |   +-- package.json        # Backend dependencies
 |

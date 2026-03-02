@@ -4,6 +4,17 @@ All notable changes to Datacendia Core will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.2] - 2026-03-02
+
+### Added
+- **Security workflow** -- `.github/workflows/security.yml` with dependency audit (`--audit-level=critical`), CodeQL SAST (JavaScript/TypeScript), and TruffleHog secret scanning
+- **Dependabot** -- `.github/dependabot.yml` covering npm (root + backend), GitHub Actions, and Docker ecosystems with grouped updates
+- **`postinstall` hook** -- `backend/package.json` now runs `prisma generate` automatically after `npm install`
+
+### Changed
+- **CI workflow rewrite** -- Added concurrency groups, `prisma generate` step, `--skipLibCheck`, community edition build job, infrastructure service tests, and a `ci-status` gate job
+- **Build script** -- Backend `build` now runs `prisma generate && tsc` to ensure Prisma client is always fresh before compilation
+
 ## [0.1.1] - 2026-03-02
 
 ### Added
@@ -68,5 +79,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Nginx reverse proxy configs
 - GitHub Actions CI/CD
 
+[0.1.2]: https://github.com/datacendia/datacendia-core/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/datacendia/datacendia-core/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/datacendia/datacendia-core/releases/tag/v0.1.0

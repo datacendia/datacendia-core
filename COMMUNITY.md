@@ -16,7 +16,7 @@ Everything in this repository is Community Edition:
 | `backend/src/routes/auth.ts` | Authentication (login, register, JWT) |
 | `backend/src/routes/council.ts` | Council deliberation API |
 | `backend/src/routes/decisions.ts` | Decision management API |
-| `backend/prisma/schema.prisma` | Database schema |
+| `backend/prisma/schema/` | Database schema (37 schema files, 260 models) |
 | `src/pages/` | All frontend pages |
 | `src/components/` | All UI components |
 | `src/lib/` | API client, utilities |
@@ -27,7 +27,7 @@ Everything in this repository is Community Edition:
 - The Council -- multi-agent deliberation engine (5 agents)
 - Immutable audit ledger with Merkle tree integrity
 - Knowledge Graph explorer (Neo4j)
-- 29 industry vertical frameworks
+- 30 industry vertical frameworks
 - Local LLM inference via Ollama
 - PostgreSQL + Redis + Neo4j stack
 - React 18 frontend

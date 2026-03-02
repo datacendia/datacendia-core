@@ -9,7 +9,7 @@ Thank you for your interest in contributing to Datacendia -- The Defensible AI P
 git clone https://github.com/YOUR_USERNAME/datacendia-core.git
 cd datacendia-core
 
-# Install dependencies
+# Install dependencies (Prisma client auto-generates via postinstall)
 npm install
 cd backend && npm install && cd ..
 
@@ -17,7 +17,7 @@ cd backend && npm install && cd ..
 docker compose up -d postgres redis neo4j ollama
 
 # Run migrations
-cd backend && npx prisma db push && cd ..
+cd backend && npx prisma migrate deploy && cd ..
 
 # Start development
 npm run dev          # Frontend on :5173
