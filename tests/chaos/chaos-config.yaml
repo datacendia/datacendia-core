@@ -1,0 +1,338 @@
+# =============================================================================
+# CHAOS ENGINEERING CONFIGURATION
+# Resilience testing for Datacendia platform
+# Uses Litmus Chaos / Chaos Toolkit patterns
+# =============================================================================
+
+version: "1.0"
+name: datacendia-chaos-tests
+description: Chaos engineering experiments for resilience validation
+
+# =============================================================================
+# STEADY STATE HYPOTHESIS
+# Define what "healthy" looks like
+# =============================================================================
+
+steady-state-hypothesis:
+  title: System is healthy and responsive
+  probes:
+    - name: api-responds
+      type: probe
+      tolerance: 200
+      provider:
+        type: http
+        url: http://localhost:3001/health
+        timeout: 5
+        
+    - name: database-connected
+      type: probe
+      tolerance: true
+      provider:
+        type: process
+        path: pg_isready
+        arguments:
+          - "-h"
+          - "localhost"
+          - "-p"
+          - "5432"
+          
+    - name: redis-responds
+      type: probe
+      tolerance: "PONG"
+      provider:
+        type: process
+        path: redis-cli
+        arguments:
+          - "ping"
+
+# =============================================================================
+# CHAOS EXPERIMENTS
+# =============================================================================
+
+experiments:
+  # ---------------------------------------------------------------------------
+  # Network Chaos
+  # ---------------------------------------------------------------------------
+  - name: network-delay
+    title: Add network latency to database
+    description: Simulate slow network between API and database
+    steady-state-hypothesis:
+      - api-responds
+    method:
+      - type: action
+        name: inject-latency
+        provider:
+          type: process
+          path: tc
+          arguments:
+            - "qdisc"
+            - "add"
+            - "dev"
+            - "eth0"
+            - "root"
+            - "netem"
+            - "delay"
+            - "100ms"
+            - "50ms"
+        pauses:
+          after: 30
+    rollbacks:
+      - type: action
+        name: remove-latency
+        provider:
+          type: process
+          path: tc
+          arguments:
+            - "qdisc"
+            - "del"
+            - "dev"
+            - "eth0"
+            - "root"
+
+  - name: network-partition
+    title: Simulate network partition
+    description: Isolate API from database temporarily
+    method:
+      - type: action
+        name: block-postgres
+        provider:
+          type: process
+          path: iptables
+          arguments:
+            - "-A"
+            - "OUTPUT"
+            - "-p"
+            - "tcp"
+            - "--dport"
+            - "5432"
+            - "-j"
+            - "DROP"
+        pauses:
+          after: 10
+    rollbacks:
+      - type: action
+        name: unblock-postgres
+        provider:
+          type: process
+          path: iptables
+          arguments:
+            - "-D"
+            - "OUTPUT"
+            - "-p"
+            - "tcp"
+            - "--dport"
+            - "5432"
+            - "-j"
+            - "DROP"
+
+  # ---------------------------------------------------------------------------
+  # Resource Exhaustion
+  # ---------------------------------------------------------------------------
+  - name: memory-pressure
+    title: Apply memory pressure
+    description: Consume memory to test graceful degradation
+    method:
+      - type: action
+        name: consume-memory
+        provider:
+          type: python
+          module: chaoslib.litmus
+          func: stress_memory
+          arguments:
+            memory_percentage: 80
+            duration: 30
+
+  - name: cpu-stress
+    title: Apply CPU stress
+    description: Consume CPU to test performance under load
+    method:
+      - type: action
+        name: stress-cpu
+        provider:
+          type: process
+          path: stress
+          arguments:
+            - "--cpu"
+            - "4"
+            - "--timeout"
+            - "30s"
+
+  # ---------------------------------------------------------------------------
+  # Service Failures
+  # ---------------------------------------------------------------------------
+  - name: redis-failure
+    title: Simulate Redis failure
+    description: Stop Redis to test cache fallback
+    method:
+      - type: action
+        name: stop-redis
+        provider:
+          type: process
+          path: docker
+          arguments:
+            - "stop"
+            - "datacendia-redis"
+        pauses:
+          after: 30
+    rollbacks:
+      - type: action
+        name: start-redis
+        provider:
+          type: process
+          path: docker
+          arguments:
+            - "start"
+            - "datacendia-redis"
+
+  - name: ollama-timeout
+    title: Simulate LLM timeout
+    description: Block Ollama to test AI fallback behavior
+    method:
+      - type: action
+        name: block-ollama
+        provider:
+          type: process
+          path: iptables
+          arguments:
+            - "-A"
+            - "OUTPUT"
+            - "-p"
+            - "tcp"
+            - "--dport"
+            - "11434"
+            - "-j"
+            - "DROP"
+        pauses:
+          after: 20
+    rollbacks:
+      - type: action
+        name: unblock-ollama
+        provider:
+          type: process
+          path: iptables
+          arguments:
+            - "-D"
+            - "OUTPUT"
+            - "-p"
+            - "tcp"
+            - "--dport"
+            - "11434"
+            - "-j"
+            - "DROP"
+
+  # ---------------------------------------------------------------------------
+  # Application-Level Chaos
+  # ---------------------------------------------------------------------------
+  - name: error-injection
+    title: Inject random errors
+    description: Force API to return errors randomly
+    method:
+      - type: action
+        name: enable-error-injection
+        provider:
+          type: http
+          url: http://localhost:3001/api/v1/admin/chaos/enable
+          method: POST
+          headers:
+            Authorization: "Bearer ${ADMIN_TOKEN}"
+          arguments:
+            body:
+              error_rate: 0.1
+              error_types:
+                - "500"
+                - "503"
+              duration_seconds: 60
+    rollbacks:
+      - type: action
+        name: disable-error-injection
+        provider:
+          type: http
+          url: http://localhost:3001/api/v1/admin/chaos/disable
+          method: POST
+          headers:
+            Authorization: "Bearer ${ADMIN_TOKEN}"
+
+  - name: latency-injection
+    title: Inject response latency
+    description: Add artificial latency to API responses
+    method:
+      - type: action
+        name: enable-latency
+        provider:
+          type: http
+          url: http://localhost:3001/api/v1/admin/chaos/latency
+          method: POST
+          headers:
+            Authorization: "Bearer ${ADMIN_TOKEN}"
+          arguments:
+            body:
+              min_ms: 500
+              max_ms: 2000
+              endpoints:
+                - "/api/v1/council/*"
+                - "/api/v1/decisions/*"
+              duration_seconds: 60
+
+# =============================================================================
+# VALIDATION CRITERIA
+# =============================================================================
+
+validation:
+  - name: no-data-loss
+    description: Ensure no data is lost during chaos
+    assertion: |
+      SELECT COUNT(*) FROM decisions WHERE created_at > NOW() - INTERVAL '1 hour'
+      
+  - name: audit-logs-complete
+    description: All operations are logged even during chaos
+    assertion: |
+      SELECT COUNT(*) FROM audit_logs WHERE timestamp > NOW() - INTERVAL '1 hour'
+      
+  - name: graceful-degradation
+    description: API returns appropriate error codes
+    assertion: |
+      All 5xx errors should be temporary and resolve after rollback
+
+# =============================================================================
+# SCHEDULE
+# =============================================================================
+
+schedule:
+  experiments:
+    - name: network-delay
+      cron: "0 2 * * 1"  # Monday 2 AM
+    - name: memory-pressure
+      cron: "0 2 * * 3"  # Wednesday 2 AM
+    - name: redis-failure
+      cron: "0 2 * * 5"  # Friday 2 AM
+      
+  game-days:
+    - name: full-chaos-day
+      description: Run all experiments in sequence
+      schedule: "0 10 1 * *"  # 1st of month, 10 AM
+      experiments:
+        - network-delay
+        - cpu-stress
+        - memory-pressure
+        - redis-failure
+        - error-injection
+
+# =============================================================================
+# NOTIFICATIONS
+# =============================================================================
+
+notifications:
+  slack:
+    webhook_url: "${SLACK_CHAOS_WEBHOOK}"
+    channel: "#chaos-engineering"
+    notify_on:
+      - experiment_start
+      - experiment_end
+      - hypothesis_failed
+      - rollback_failed
+      
+  pagerduty:
+    service_key: "${PAGERDUTY_SERVICE_KEY}"
+    notify_on:
+      - hypothesis_failed
+      - rollback_failed

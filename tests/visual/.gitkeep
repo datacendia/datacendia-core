@@ -1,0 +1,3 @@
+# Visual regression tests directory
+# Add Playwright visual comparison tests here
+# Run with: npm run test:visual
