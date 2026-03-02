@@ -275,8 +275,17 @@ See [COMMUNITY.md](COMMUNITY.md) for the full open-source boundary definition.
 | Collapse Orchestrator (19 adversarial agents) | -- | Yes |
 | CendiaApotheosis Self-Improvement | -- | Yes |
 | OmniTranslate (100+ languages) | -- | Yes |
+| **CendiaGateway™** (AI Governance Proxy) | -- | Yes |
 | Defense/Pharma/Government Full Packs | -- | Yes |
 | Enterprise SLA & Support | -- | Yes |
+
+### CendiaGateway™ — AI Governance Reverse Proxy
+
+Route all AI API traffic through a governance-aware proxy that enforces policy, detects PII, and produces cryptographic evidence of every interaction. CendiaGateway sits between your applications and any AI provider (OpenAI, Anthropic, Google, Ollama) and automatically enforces organizational policies — blocking, redacting, or warning on sensitive content before it reaches an external model.
+
+**Key capabilities:** multi-provider transparent proxying, PII detection and redaction (12 types including SSN, credit cards, medical records), configurable policy enforcement (block/redact/warn/allow per department, user, or keyword), cryptographic signing of every interaction (SHA-256 hash chain), ring buffer audit ledger with async persistence, aggregate governance stats, and **The Governance Receipt™** — a one-click exportable document (HTML/PDF, CSV, JSON) proving PII governance, policy enforcement, and cryptographic integrity for regulators.
+
+*Available in Enterprise Edition. See [datacendia.com](https://datacendia.com) for details.*
 
 **Contact:** [enterprise@datacendia.com](mailto:enterprise@datacendia.com) &middot; [datacendia.com](https://datacendia.com)
 
