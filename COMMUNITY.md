@@ -8,7 +8,7 @@ Everything in this repository is Community Edition:
 
 | Component | Description |
 |-----------|-------------|
-| `backend/src/services/council/` | **Council Engine** — multi-agent deliberation, the heart of the platform |
+| `backend/src/services/council/` | **Council Engine** -- multi-agent deliberation, the heart of the platform |
 | `backend/src/services/core/` | Core platform services (event bus, decision lifecycle) |
 | `backend/src/services/DecisionService.ts` | Decision CRUD and lifecycle management |
 | `backend/src/services/DeliberationService.ts` | Deliberation orchestration |
@@ -24,7 +24,7 @@ Everything in this repository is Community Edition:
 
 ### What's Included Free
 
-- The Council — multi-agent deliberation engine (5 agents)
+- The Council -- multi-agent deliberation engine (5 agents)
 - Immutable audit ledger with Merkle tree integrity
 - Knowledge Graph explorer (Neo4j)
 - 29 industry vertical frameworks
@@ -66,4 +66,4 @@ Enterprise features are available in the [datacendia-components](https://github.
 ## License
 
 - **Community Edition**: Apache 2.0 (see [LICENSE](LICENSE))
-- **Enterprise Edition**: Commercial license — contact sales@datacendia.com
+- **Enterprise Edition**: Commercial license -- contact sales@datacendia.com

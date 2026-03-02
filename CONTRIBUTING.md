@@ -1,6 +1,6 @@
 # Contributing to Datacendia
 
-Thank you for your interest in contributing to Datacendia — The Defensible AI Platform.
+Thank you for your interest in contributing to Datacendia -- The Defensible AI Platform.
 
 ## Quick Start
 
@@ -35,11 +35,11 @@ cd backend && npm run dev  # Backend on :3001
 
 ## Branch Naming
 
-- `feat/description` — New features
-- `fix/description` — Bug fixes
-- `docs/description` — Documentation
-- `refactor/description` — Code refactoring
-- `test/description` — Test additions
+- `feat/description` -- New features
+- `fix/description` -- Bug fixes
+- `docs/description` -- Documentation
+- `refactor/description` -- Code refactoring
+- `test/description` -- Test additions
 
 ## Commit Messages
 
