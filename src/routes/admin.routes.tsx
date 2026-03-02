@@ -1,3 +1,12 @@
+/**
+ * Route Config — Admin Routes
+ *
+ * React Router route definitions and lazy-loaded imports.
+ *
+ * @exports adminRoutes
+ * @module routes/admin.routes
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

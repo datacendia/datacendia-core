@@ -1,3 +1,12 @@
+/**
+ * Component — Hospital Floor Map
+ *
+ * Reusable React UI component.
+ *
+ * @exports HospitalFloorMap
+ * @module components/dashboard/widgets/HospitalFloorMap
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

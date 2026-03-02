@@ -1,3 +1,12 @@
+/**
+ * Page — Post Quantum K M S Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports PostQuantumKMSPage
+ * @module pages/cortex/enterprise/PostQuantumKMSPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

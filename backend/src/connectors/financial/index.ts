@@ -1,3 +1,12 @@
+/**
+ * Connector — Index
+ *
+ * External system connector for third-party integrations.
+ *
+ * @exports FinancialConnectorFactory, FINANCIAL_CONNECTORS
+ * @module connectors/financial/index
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Service — Defense Council Modes
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports getDefenseMode, getDefenseModesByCategory, getDefenseModesByClassification, getLegalReviewModes, getDefenseModesByFramework, getDefenseModesByLeadAgent, MAJOR_DEFENSE_MODES, OPERATIONS_MODES
+ * @module services/verticals/defense/DefenseCouncilModes
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

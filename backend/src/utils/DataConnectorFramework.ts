@@ -1,3 +1,12 @@
+/**
+ * Utility — Data Connector Framework
+ *
+ * Shared utility functions and helpers.
+ *
+ * @exports DataConnector, ConnectorRegistry, connectorRegistry, ConnectorConfig, ConnectorRequest, ConnectorResponse, ConnectionStatus, ConnectorAuth
+ * @module utils/DataConnectorFramework
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

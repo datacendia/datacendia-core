@@ -1,3 +1,12 @@
+/**
+ * Service — Construction Vertical
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports ConstructionDataConnector, ConstructionKnowledgeBase, ConstructionComplianceMapper, CreditDecisionSchema, TradeApprovalSchema, AMLEscalationSchema, PortfolioRebalanceSchema, CreditAnalysisAgentPreset
+ * @module services/verticals/construction/ConstructionVertical
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

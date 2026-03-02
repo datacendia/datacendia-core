@@ -1,3 +1,12 @@
+/**
+ * Service — Energy Decision Schemas Expanded
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports GenerationDispatchSchema, OutagePlanningSchema, RenewableIntegrationSchema, DemandResponseSchema
+ * @module services/verticals/energy/EnergyDecisionSchemasExpanded
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

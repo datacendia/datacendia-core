@@ -1,3 +1,12 @@
+/**
+ * Connector — Index
+ *
+ * External system connector for third-party integrations.
+ *
+ * @exports TransportationConnectorFactory, TRANSPORTATION_CONNECTORS
+ * @module connectors/transportation/index
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

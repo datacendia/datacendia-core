@@ -1,3 +1,10 @@
+/**
+ * API Routes — Vertical Sentinels
+ *
+ * Express route handler defining REST endpoints.
+ * @module routes/vertical-sentinels
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

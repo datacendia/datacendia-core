@@ -1,3 +1,12 @@
+/**
+ * Library — Premium
+ *
+ * Client-side utility library.
+ *
+ * @exports PRO_AGENTS, ENTERPRISE_AGENTS, PREMIUM_AGENTS
+ * @module lib/ollama/agents/premium
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

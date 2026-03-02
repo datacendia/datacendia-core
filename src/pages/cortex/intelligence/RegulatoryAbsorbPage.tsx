@@ -1,3 +1,12 @@
+/**
+ * Page — Regulatory Absorb Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports RegulatoryAbsorbPage
+ * @module pages/cortex/intelligence/RegulatoryAbsorbPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

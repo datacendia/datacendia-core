@@ -1,3 +1,12 @@
+/**
+ * Core — Postgre S Q L Connector
+ *
+ * Core platform infrastructure and shared utilities.
+ *
+ * @exports PostgreSQLConnector, PostgreSQLConfig, QueryOptions, TableInfo, ColumnInfo
+ * @module core/connectors/implementations/PostgreSQLConnector
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

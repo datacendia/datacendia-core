@@ -1,3 +1,12 @@
+/**
+ * Library — Openstates
+ *
+ * Client-side utility library.
+ *
+ * @exports US_JURISDICTIONS, openStatesService, OpenStatesBill, OpenStatesSponsor, OpenStatesAction, OpenStatesVote, OpenStatesBillVersion, OpenStatesBillDocument
+ * @module lib/laws/openstates
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

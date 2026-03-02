@@ -1,3 +1,12 @@
+/**
+ * Connector — Oracle Connector
+ *
+ * External system connector for third-party integrations.
+ *
+ * @exports OracleConnector, OracleConfig, OracleEntity, OracleResponse
+ * @module connectors/enterprise/OracleConnector
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

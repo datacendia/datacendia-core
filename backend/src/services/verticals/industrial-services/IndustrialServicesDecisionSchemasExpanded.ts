@@ -1,3 +1,12 @@
+/**
+ * Service — Industrial Services Decision Schemas Expanded
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports WorkforceDeploymentSchema, MaintenanceScheduleSchema, IncidentInvestigationSchema, TrainingCertificationSchema, ChangeOrderSchema, InsuranceClaimSchema, EnvironmentalAssessmentSchema, QualityNCRSchema
+ * @module services/verticals/industrial-services/IndustrialServicesDecisionSchemasExpanded
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

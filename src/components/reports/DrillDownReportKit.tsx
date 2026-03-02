@@ -1,3 +1,12 @@
+/**
+ * Component — Drill Down Report Kit
+ *
+ * Reusable React UI component.
+ *
+ * @exports DrillDownPanel, BreadcrumbNav, DataTable, MiniBarChart, DonutChart, TrendIndicator, POICard, POIList
+ * @module components/reports/DrillDownReportKit
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

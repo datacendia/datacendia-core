@@ -1,3 +1,12 @@
+/**
+ * Page — Union Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports UnionPage
+ * @module pages/cortex/enterprise/UnionPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

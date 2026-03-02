@@ -1,3 +1,12 @@
+/**
+ * Page — Statement Of Facts Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports StatementOfFactsPage
+ * @module pages/cortex/dcii/StatementOfFactsPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

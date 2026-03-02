@@ -1,3 +1,12 @@
+/**
+ * Service — Insurance Decision Schemas Expanded
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports RateReviewSchema, PolicyIssuanceSchema, ReserveEstimationSchema, CatastropheModelingSchema, SubrogationSchema, PolicyCancellationSchema, PremiumAuditSchema, CoverageDisputeSchema
+ * @module services/verticals/insurance/InsuranceDecisionSchemasExpanded
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

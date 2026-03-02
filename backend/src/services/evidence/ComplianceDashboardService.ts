@@ -1,3 +1,12 @@
+/**
+ * Service — Compliance Dashboard Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports ComplianceDashboardService, ComplianceFramework, ComplianceDomain, ComplianceControl, ControlAttestation, ComplianceScore, GapAnalysis, ComplianceGap
+ * @module services/evidence/ComplianceDashboardService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

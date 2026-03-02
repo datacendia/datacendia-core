@@ -1,3 +1,12 @@
+/**
+ * Service — Continuous Compliance Monitor Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports ContinuousComplianceMonitorService, continuousComplianceMonitorService, ComplianceControl, ComplianceAlert, ComplianceDrift, ComplianceSnapshot, RegulatoryUpdate, ComplianceFramework
+ * @module services/compliance/ContinuousComplianceMonitorService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,10 @@
+/**
+ * Database — Seed
+ *
+ * Database access layer and query utilities.
+ * @module database/seed
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

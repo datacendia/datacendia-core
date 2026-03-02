@@ -1,3 +1,12 @@
+/**
+ * Service — Ollama Provider
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports OllamaProvider
+ * @module services/inference/OllamaProvider
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

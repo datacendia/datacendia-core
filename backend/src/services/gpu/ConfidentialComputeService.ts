@@ -1,3 +1,12 @@
+/**
+ * Service — Confidential Compute Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports confidentialCompute, GPUAttestationResult, ConfidentialSession, CCEvidencePacket, CCPolicy, CCHealth, GPUConfidentialMode
+ * @module services/gpu/ConfidentialComputeService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

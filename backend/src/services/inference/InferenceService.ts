@@ -1,3 +1,12 @@
+/**
+ * Service — Inference Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports inference, InferenceServiceConfig
+ * @module services/inference/InferenceService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

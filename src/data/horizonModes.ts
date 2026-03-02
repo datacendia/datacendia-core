@@ -1,3 +1,12 @@
+/**
+ * Data — Horizon Modes
+ *
+ * Static data, constants, and configuration objects.
+ *
+ * @exports INDUSTRY_BENCHMARKS, HORIZON_MODE_CATEGORIES, CORE_HORIZON_MODES, HORIZON_MODES, isCoreMode, getModesByCategory, getCoreModes, getModeForScenarioType
+ * @module data/horizonModes
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

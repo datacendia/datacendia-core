@@ -1,3 +1,10 @@
+/**
+ * Component — Premium Features Modal
+ *
+ * Reusable React UI component.
+ * @module components/premium/PremiumFeaturesModal
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Service — Query Router
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports QueryRouter, queryRouter, ClassificationResult, RoutingConfig, QueryCategory
+ * @module services/llm/QueryRouter
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

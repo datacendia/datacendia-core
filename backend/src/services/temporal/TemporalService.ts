@@ -1,3 +1,12 @@
+/**
+ * Service — Temporal Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports temporal, TemporalWorkflowDef, ActivityDef, RetryPolicy, WorkflowExecution, ActivityExecution, WorkflowQuery, SignalInput
+ * @module services/temporal/TemporalService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

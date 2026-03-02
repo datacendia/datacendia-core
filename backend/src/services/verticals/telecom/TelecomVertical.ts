@@ -1,3 +1,12 @@
+/**
+ * Service — Telecom Vertical
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports TelecomDataConnector, TelecomKnowledgeBase, TelecomComplianceMapper, CreditDecisionSchema, TradeApprovalSchema, AMLEscalationSchema, PortfolioRebalanceSchema, CreditAnalysisAgentPreset
+ * @module services/verticals/telecom/TelecomVertical
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

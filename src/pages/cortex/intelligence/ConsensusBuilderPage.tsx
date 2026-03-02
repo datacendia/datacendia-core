@@ -1,3 +1,12 @@
+/**
+ * Page — Consensus Builder Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports ConsensusBuilderPage
+ * @module pages/cortex/intelligence/ConsensusBuilderPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

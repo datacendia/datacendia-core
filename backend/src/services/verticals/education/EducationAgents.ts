@@ -1,3 +1,12 @@
+/**
+ * Service — Education Agents
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports getEducationAgent, getDefaultEducationAgents, buildEducationAgentTeam, DEFAULT_EDUCATION_AGENTS, OPTIONAL_EDUCATION_AGENTS, SILENT_GUARD_EDUCATION_AGENTS, ALL_EDUCATION_AGENTS, EducationAgent
+ * @module services/verticals/education/EducationAgents
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

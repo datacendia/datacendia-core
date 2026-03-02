@@ -1,3 +1,12 @@
+/**
+ * Service — Technology Agents
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports getTechnologyAgent, getDefaultTechnologyAgents, buildTechnologyAgentTeam, DEFAULT_TECHNOLOGY_AGENTS, OPTIONAL_TECHNOLOGY_AGENTS, SILENT_GUARD_TECHNOLOGY_AGENTS, ALL_TECHNOLOGY_AGENTS, TechnologyAgent
+ * @module services/verticals/technology/TechnologyAgents
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

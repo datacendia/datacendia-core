@@ -1,3 +1,12 @@
+/**
+ * Service — Council Decision Packet Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports ToolCallTracerImpl, CouncilDecisionPacketService, councilDecisionPacketService, ToolCall, EvidenceCitation, AgentContribution, Dissent, Approval
+ * @module services/council/CouncilDecisionPacketService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

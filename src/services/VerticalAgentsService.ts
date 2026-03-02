@@ -1,3 +1,12 @@
+/**
+ * Frontend Service — Vertical Agents Service
+ *
+ * Client-side service for API communication and business logic.
+ *
+ * @exports verticalAgentsApi, useVerticals, useVerticalConfig, useVerticalAgents, useVerticalMetrics, useAllAgents, useAgentSearch, useAgent
+ * @module services/VerticalAgentsService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

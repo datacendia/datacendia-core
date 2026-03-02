@@ -1,3 +1,12 @@
+/**
+ * Core — Error Codes
+ *
+ * Core platform infrastructure and shared utilities.
+ *
+ * @exports getStatusForCode, getMessageForCode, isClientError, isServerError, isRetryable, ErrorCodes, ErrorCodeToStatus, ErrorMessages
+ * @module core/errorCodes
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

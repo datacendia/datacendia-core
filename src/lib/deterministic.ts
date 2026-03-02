@@ -1,3 +1,12 @@
+/**
+ * Library — Deterministic
+ *
+ * Client-side utility library.
+ *
+ * @exports deterministicFloat, deterministicInt, deterministicPercentage, deterministicPick, deterministicBool, deterministicScore, deterministicLatency
+ * @module lib/deterministic
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

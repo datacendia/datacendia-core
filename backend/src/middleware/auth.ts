@@ -1,3 +1,12 @@
+/**
+ * Middleware — Auth
+ *
+ * Express middleware for request processing pipeline.
+ *
+ * @exports authenticate, requireRole, devAuth, optionalAuth, generateAccessToken, generateRefreshToken, verifyRefreshToken
+ * @module middleware/auth
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

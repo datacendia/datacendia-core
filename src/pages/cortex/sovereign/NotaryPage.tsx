@@ -1,3 +1,10 @@
+/**
+ * Page — Notary Page
+ *
+ * React page component rendered by the router.
+ * @module pages/cortex/sovereign/NotaryPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

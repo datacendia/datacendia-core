@@ -1,3 +1,12 @@
+/**
+ * Configuration — Vertical Layout Maps
+ *
+ * Frontend configuration constants and environment bindings.
+ *
+ * @exports getVerticalLayouts, getLayoutById, legalLayouts, healthcareLayouts, manufacturingLayouts, financialLayouts, governmentLayouts, technologyLayouts
+ * @module config/verticalLayoutMaps
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,10 @@
+/**
+ * Component — Label
+ *
+ * Reusable React UI component.
+ * @module components/ui/label
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

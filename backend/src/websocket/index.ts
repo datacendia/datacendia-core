@@ -1,3 +1,12 @@
+/**
+ * WebSocket — Index
+ *
+ * Real-time WebSocket communication for live updates.
+ *
+ * @exports setupWebSocketHandlers
+ * @module websocket/index
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

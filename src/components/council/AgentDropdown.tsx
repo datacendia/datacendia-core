@@ -1,3 +1,12 @@
+/**
+ * Component — Agent Dropdown
+ *
+ * Reusable React UI component.
+ *
+ * @exports AgentDropdown, AgentDropdownCompact
+ * @module components/council/AgentDropdown
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Page — Orbit Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports OrbitPage
+ * @module pages/cortex/intelligence/OrbitPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

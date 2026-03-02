@@ -1,3 +1,12 @@
+/**
+ * Security — Policy Engine
+ *
+ * Security hardening module for attack prevention and threat detection.
+ *
+ * @exports policyEngine, DecisionPolicy, SegregationRule
+ * @module security/PolicyEngine
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

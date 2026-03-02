@@ -1,3 +1,12 @@
+/**
+ * Service — Manufacturing Vertical
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports ManufacturingDataConnector, ManufacturingKnowledgeBase, ManufacturingComplianceMapper, productionDecisionSchema, qualityApprovalSchema, safetyEscalationSchema, PortfolioRebalanceSchema, productionAnalysisAgentPreset
+ * @module services/verticals/manufacturing/ManufacturingVertical
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

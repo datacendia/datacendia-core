@@ -1,3 +1,12 @@
+/**
+ * Data Adapter — File Watcher Adapter
+ *
+ * Data transformation adapter between internal and external formats.
+ *
+ * @exports FileWatcherAdapter, FileWatcherConfig, FileParser, ParsedData, FileEvent
+ * @module adapters/sovereign/FileWatcherAdapter
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

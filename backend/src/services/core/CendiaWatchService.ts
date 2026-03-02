@@ -1,3 +1,12 @@
+/**
+ * Service — Cendia Watch Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports cendiaWatchService, Competitor, MarketSignal, ThreatAlert, IntelligenceReport, WatchConfig
+ * @module services/core/CendiaWatchService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

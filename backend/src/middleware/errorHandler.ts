@@ -1,3 +1,12 @@
+/**
+ * Middleware — Error Handler
+ *
+ * Express middleware for request processing pipeline.
+ *
+ * @exports AppError, errors, errorHandler
+ * @module middleware/errorHandler
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

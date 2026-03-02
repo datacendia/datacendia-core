@@ -1,3 +1,12 @@
+/**
+ * Service — Health Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports HealthService, healthService, SystemHealth, HealthDimension, ComponentHealth, HealthAlert, HealthTrend, HealthStatus
+ * @module services/pillars/HealthService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

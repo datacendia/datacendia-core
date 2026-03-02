@@ -1,3 +1,12 @@
+/**
+ * Service — Retail Vertical
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports RetailDataConnector, RetailKnowledgeBase, RetailComplianceMapper, CreditDecisionSchema, TradeApprovalSchema, AMLEscalationSchema, PortfolioRebalanceSchema, CreditAnalysisAgentPreset
+ * @module services/verticals/retail/RetailVertical
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

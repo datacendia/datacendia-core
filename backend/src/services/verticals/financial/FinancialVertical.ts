@@ -1,3 +1,12 @@
+/**
+ * Service — Financial Vertical
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports FinancialDataConnector, FinancialKnowledgeBase, FinancialComplianceMapper, CreditDecisionSchema, TradeApprovalSchema, AMLEscalationSchema, PortfolioRebalanceSchema, CreditAnalysisAgentPreset
+ * @module services/verticals/financial/FinancialVertical
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

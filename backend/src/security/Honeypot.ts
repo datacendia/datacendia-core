@@ -1,3 +1,12 @@
+/**
+ * Security — Honeypot
+ *
+ * Security hardening module for attack prevention and threat detection.
+ *
+ * @exports generateFakeUser, generateFakeApiKey, generateFakeToken, Honeypot
+ * @module security/Honeypot
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

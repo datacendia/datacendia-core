@@ -1,3 +1,12 @@
+/**
+ * Connector — Service Now Connector
+ *
+ * External system connector for third-party integrations.
+ *
+ * @exports ServiceNowConnector, ServiceNowConfig, ServiceNowIncident, ServiceNowChange, ServiceNowCMDBItem
+ * @module connectors/enterprise/ServiceNowConnector
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

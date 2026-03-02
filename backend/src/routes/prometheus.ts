@@ -1,3 +1,12 @@
+/**
+ * API Routes — Prometheus
+ *
+ * Express route handler defining REST endpoints.
+ *
+ * @exports trackRequest
+ * @module routes/prometheus
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

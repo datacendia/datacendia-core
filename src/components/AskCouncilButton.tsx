@@ -1,3 +1,12 @@
+/**
+ * Component — Ask Council Button
+ *
+ * Reusable React UI component.
+ *
+ * @exports AskCouncilButton
+ * @module components/AskCouncilButton
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

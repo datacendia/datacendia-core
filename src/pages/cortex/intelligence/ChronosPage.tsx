@@ -1,3 +1,12 @@
+/**
+ * Page — Chronos Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports ChronosPage, generateExport, handleGenerateRedactedExport, snapshotEvents
+ * @module pages/cortex/intelligence/ChronosPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

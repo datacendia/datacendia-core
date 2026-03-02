@@ -1,3 +1,12 @@
+/**
+ * Frontend Service — A I Insurance Service
+ *
+ * Client-side service for API communication and business logic.
+ *
+ * @exports AIInsuranceService, CoverageTypeInfo, InsuranceQuote, InsurancePolicy, RiskFactor, DecisionCoverage, Claim, CoverageCertificate
+ * @module services/AIInsuranceService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

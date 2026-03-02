@@ -1,3 +1,12 @@
+/**
+ * Service — Open Bao Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports openBao, VaultSecret, VaultLease, TransitKey, PKICertificate, DynamicCredential, VaultPolicy, VaultHealth
+ * @module services/vault/OpenBaoService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

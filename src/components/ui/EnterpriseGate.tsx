@@ -1,3 +1,12 @@
+/**
+ * Component — Enterprise Gate
+ *
+ * Reusable React UI component.
+ *
+ * @exports EnterpriseGate
+ * @module components/ui/EnterpriseGate
+ */
+
 import { Lock, Sparkles, ArrowRight } from 'lucide-react';
 
 interface EnterpriseGateProps {

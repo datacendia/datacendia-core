@@ -1,3 +1,12 @@
+/**
+ * Service — Healthcare Decision Schemas Expanded
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports SurgeryAuthorizationSchema, ImagingOrderSchema, LabOrderSchema, SpecialistReferralSchema, ReadmissionRiskSchema, ClinicalTrialEnrollmentSchema, EndOfLifeCareSchema, BehavioralHealthAssessmentSchema
+ * @module services/verticals/healthcare/HealthcareDecisionSchemasExpanded
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

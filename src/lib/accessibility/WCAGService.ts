@@ -1,3 +1,12 @@
+/**
+ * Library — W C A G Service
+ *
+ * Client-side utility library.
+ *
+ * @exports FocusTrap, getContrastRatio, meetsContrastRequirements, suggestAccessibleColor, createScreenReaderText, announceToScreenReader, createArrowKeyHandler, checkElementAccessibility
+ * @module lib/accessibility/WCAGService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

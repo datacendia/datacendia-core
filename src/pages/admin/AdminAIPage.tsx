@@ -1,3 +1,12 @@
+/**
+ * Page — Admin A I Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports AdminAIPage
+ * @module pages/admin/AdminAIPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

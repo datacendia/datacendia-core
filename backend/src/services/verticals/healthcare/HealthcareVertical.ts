@@ -1,3 +1,12 @@
+/**
+ * Service — Healthcare Vertical
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports ConsentOverrideLedger, SaMDBoundaryEnforcer, HealthcareDataConnector, HealthcareKnowledgeBase, HealthcareComplianceMapper, DiagnosisSupportSchema, TriageRecommendationSchema, DischargeAssessmentSchema
+ * @module services/verticals/healthcare/HealthcareVertical
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

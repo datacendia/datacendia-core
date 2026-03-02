@@ -1,3 +1,12 @@
+/**
+ * Frontend Service — Veto Service
+ *
+ * Client-side service for API communication and business logic.
+ *
+ * @exports VETO_AGENTS, vetoService, VetoAgent, VetoDecision, VetoReview, VetoConcern, VetoPolicy, VetoTrigger
+ * @module services/VetoService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

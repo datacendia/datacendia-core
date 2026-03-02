@@ -1,3 +1,12 @@
+/**
+ * Configuration — Model Zoo
+ *
+ * Application configuration and service initialization.
+ *
+ * @exports getModelConfig, getAgentMapping, getOptimalModelForAgent, getModelsForTask, getInferenceOptions, shouldUseChainOfThought, shouldUseEnsemble, buildSovereignSystemPrompt
+ * @module config/modelZoo
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

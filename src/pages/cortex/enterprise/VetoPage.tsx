@@ -1,3 +1,12 @@
+/**
+ * Page — Veto Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports VetoPage
+ * @module pages/cortex/enterprise/VetoPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Library — Theme
+ *
+ * Client-side utility library.
+ *
+ * @exports cx, getStatusColor, getSeverityClasses, colors, semantic, tw, presets
+ * @module lib/theme
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

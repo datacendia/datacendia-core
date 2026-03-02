@@ -1,3 +1,12 @@
+/**
+ * Frontend Service — Ledger Service
+ *
+ * Client-side service for API communication and business logic.
+ *
+ * @exports ledgerService, LedgerEntry, DecisionRecord, AuditRecord, AuditFinding, LedgerMetrics, ChainVerificationResult, LedgerEventType
+ * @module services/LedgerService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

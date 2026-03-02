@@ -1,3 +1,12 @@
+/**
+ * Component — System Health Matrix
+ *
+ * Reusable React UI component.
+ *
+ * @exports SystemHealthMatrix
+ * @module components/dashboard/widgets/SystemHealthMatrix
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

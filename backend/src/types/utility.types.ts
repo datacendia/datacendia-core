@@ -1,3 +1,12 @@
+/**
+ * Type Definitions — Utility Types
+ *
+ * TypeScript type definitions and interfaces.
+ *
+ * @exports isObject, isNonEmptyString, isValidNumber, isValidDate, isArray, safeJsonParse, safeGet, ApiSuccessResponse
+ * @module types/utility.types
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

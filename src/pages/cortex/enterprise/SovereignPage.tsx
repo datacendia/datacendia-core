@@ -1,3 +1,12 @@
+/**
+ * Page — Sovereign Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports SovereignPage
+ * @module pages/cortex/enterprise/SovereignPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

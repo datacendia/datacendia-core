@@ -1,3 +1,12 @@
+/**
+ * Page — Decision Packets Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports DecisionPacketsPage, mockExport
+ * @module pages/cortex/governance/DecisionPacketsPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

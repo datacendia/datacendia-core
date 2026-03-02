@@ -1,3 +1,12 @@
+/**
+ * Library — Transportation
+ *
+ * Client-side utility library.
+ *
+ * @exports TRANSPORTATION_AGENTS
+ * @module lib/ollama/agents/transportation
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

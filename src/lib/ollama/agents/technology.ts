@@ -1,3 +1,12 @@
+/**
+ * Library — Technology
+ *
+ * Client-side utility library.
+ *
+ * @exports TECHNOLOGY_AGENTS
+ * @module lib/ollama/agents/technology
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Middleware — Request Logger
+ *
+ * Express middleware for request processing pipeline.
+ *
+ * @exports requestLogger
+ * @module middleware/requestLogger
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Library — Use Focus Trap
+ *
+ * Client-side utility library.
+ *
+ * @exports useFocusTrap, UseFocusTrapOptions
+ * @module lib/accessibility/useFocusTrap
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

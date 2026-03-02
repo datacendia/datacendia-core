@@ -1,3 +1,12 @@
+/**
+ * Page — Onboarding Wizard
+ *
+ * React page component rendered by the router.
+ *
+ * @exports OnboardingWizard
+ * @module pages/onboarding/OnboardingWizard
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

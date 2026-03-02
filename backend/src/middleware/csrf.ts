@@ -1,3 +1,12 @@
+/**
+ * Middleware — Csrf
+ *
+ * Express middleware for request processing pipeline.
+ *
+ * @exports generateCsrfToken, csrfTokenHandler, csrfProtection, ensureCsrfToken
+ * @module middleware/csrf
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

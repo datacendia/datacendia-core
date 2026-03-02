@@ -1,3 +1,12 @@
+/**
+ * Connector — Microsoft Teams Connector
+ *
+ * External system connector for third-party integrations.
+ *
+ * @exports MicrosoftTeamsConnector, TeamsConfig, TeamsTeam, TeamsChannel, TeamsMessage, TeamsUser
+ * @module connectors/enterprise/MicrosoftTeamsConnector
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

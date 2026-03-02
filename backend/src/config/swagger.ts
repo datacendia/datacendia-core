@@ -1,3 +1,12 @@
+/**
+ * Configuration — Swagger
+ *
+ * Application configuration and service initialization.
+ *
+ * @exports swaggerSpec
+ * @module config/swagger
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,10 @@
+/**
+ * Store — Auth Store Test
+ *
+ * Zustand state store for client-side state management.
+ * @module stores/__tests__/authStore.test
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

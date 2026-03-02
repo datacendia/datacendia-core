@@ -1,3 +1,12 @@
+/**
+ * Page — Decision Replay Theater Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports DecisionReplayTheaterPage
+ * @module pages/cortex/council/DecisionReplayTheaterPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

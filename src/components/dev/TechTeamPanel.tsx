@@ -1,3 +1,12 @@
+/**
+ * Component — Tech Team Panel
+ *
+ * Reusable React UI component.
+ *
+ * @exports TechTeamPanel
+ * @module components/dev/TechTeamPanel
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

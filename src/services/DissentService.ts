@@ -1,3 +1,12 @@
+/**
+ * Frontend Service — Dissent Service
+ *
+ * Client-side service for API communication and business logic.
+ *
+ * @exports dissentService, Dissent, DissentResponse, DissenterProfile, OrganizationDissentMetrics, DepartmentDissentMetrics, RetaliationFlag, DissentConfig
+ * @module services/DissentService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

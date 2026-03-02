@@ -1,3 +1,12 @@
+/**
+ * Service — Legal Compliance Frameworks
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports LEGAL_COMPLIANCE_FRAMEWORKS, LEGAL_COMPLIANCE_MAPPINGS, LEGAL_JURISDICTION_MAP
+ * @module services/verticals/legal/LegalComplianceFrameworks
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Connector — Connector Factory
+ *
+ * External system connector for third-party integrations.
+ *
+ * @exports ConnectorFactory, connectorFactory, ConnectorInstance, ConnectorMetrics, ErrorRecord, ConnectorRegistration, IngestionJob, HealthCheck
+ * @module connectors/core/ConnectorFactory
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

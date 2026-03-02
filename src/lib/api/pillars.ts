@@ -1,3 +1,12 @@
+/**
+ * Library — Pillars
+ *
+ * Client-side utility library.
+ *
+ * @exports helmApi, lineageApi, predictApi, flowApi, healthPillarApi, guardApi, ethicsApi, agentsApi
+ * @module lib/api/pillars
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

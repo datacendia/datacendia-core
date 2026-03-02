@@ -1,3 +1,12 @@
+/**
+ * Component — Fleet Tracking Map
+ *
+ * Reusable React UI component.
+ *
+ * @exports FleetTrackingMap
+ * @module components/dashboard/widgets/FleetTrackingMap
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

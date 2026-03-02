@@ -1,3 +1,12 @@
+/**
+ * Connector — Web Socket Connector
+ *
+ * External system connector for third-party integrations.
+ *
+ * @exports WebSocketConnectorConfig, StreamMessage
+ * @module connectors/core/WebSocketConnector
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

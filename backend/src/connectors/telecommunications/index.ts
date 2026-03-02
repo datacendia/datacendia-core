@@ -1,3 +1,12 @@
+/**
+ * Connector — Index
+ *
+ * External system connector for third-party integrations.
+ *
+ * @exports TelecomConnectorFactory, TELECOM_CONNECTORS
+ * @module connectors/telecommunications/index
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

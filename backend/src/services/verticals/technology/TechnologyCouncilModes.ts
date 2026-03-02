@@ -1,3 +1,12 @@
+/**
+ * Service — Technology Council Modes
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports getTechnologyMode, getTechnologyModesByCategory, MAJOR_TECHNOLOGY_MODES, ARCHITECTURE_MODES, DELIVERY_MODES, SECURITY_TECHNOLOGY_MODES, OPERATIONS_TECHNOLOGY_MODES, SPECIALIZED_TECHNOLOGY_MODES
+ * @module services/verticals/technology/TechnologyCouncilModes
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

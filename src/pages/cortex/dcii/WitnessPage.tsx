@@ -1,3 +1,12 @@
+/**
+ * Page — Witness Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports WitnessPage
+ * @module pages/cortex/dcii/WitnessPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Page — Professional Services Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports ProfessionalServicesPage
+ * @module pages/verticals/ProfessionalServicesPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

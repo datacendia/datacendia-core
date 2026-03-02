@@ -1,3 +1,12 @@
+/**
+ * Page — Subpages
+ *
+ * React page component rendered by the router.
+ *
+ * @exports WorkflowsListPage, WorkflowBuilderPage, ApprovalsPage, BridgeIntegrationsPage
+ * @module pages/cortex/bridge/subpages
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

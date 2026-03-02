@@ -1,3 +1,12 @@
+/**
+ * Context — Health Context
+ *
+ * React context provider for cross-component state sharing.
+ *
+ * @exports HealthProvider, useHealthContext, HealthStatus, HealthStatusState
+ * @module contexts/HealthContext
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Data Adapter — Data Adapter
+ *
+ * Data transformation adapter between internal and external formats.
+ *
+ * @exports exampleSchemaMapping, DataAdapter, ApotheosisDataAdapter, DissentDataAdapter, OrganizationDataConfig, SchemaMapping, DataStorageMode
+ * @module adapters/DataAdapter
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

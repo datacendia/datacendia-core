@@ -1,3 +1,12 @@
+/**
+ * Page — D C I I Dashboard Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports EnterprisePage
+ * @module pages/cortex/enterprise/DCIIDashboardPage
+ */
+
 ﻿import { EnterpriseGate } from '@/components/ui/EnterpriseGate';
 
 export default function EnterprisePage() {

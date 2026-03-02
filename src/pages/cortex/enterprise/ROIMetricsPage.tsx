@@ -1,3 +1,12 @@
+/**
+ * Page — R O I Metrics Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports ROIMetricsPage
+ * @module pages/cortex/enterprise/ROIMetricsPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

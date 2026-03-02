@@ -1,3 +1,12 @@
+/**
+ * Library — Offline
+ *
+ * Client-side utility library.
+ *
+ * @exports offlineCaselawService, OfflineCaseData, OfflineSearchResult, ReporterMetadata
+ * @module lib/caselaw/offline
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

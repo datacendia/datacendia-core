@@ -1,3 +1,12 @@
+/**
+ * Service — Energy Agents
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports getEnergyAgent, getDefaultEnergyAgents, getOptionalEnergyAgents, getSilentGuardEnergyAgents, getEnergyAgentsByExpertise, buildEnergyAgentTeam, DEFAULT_ENERGY_AGENTS, OPTIONAL_ENERGY_AGENTS
+ * @module services/verticals/energy/EnergyAgents
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

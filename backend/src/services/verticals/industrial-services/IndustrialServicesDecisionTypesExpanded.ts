@@ -1,3 +1,12 @@
+/**
+ * Service — Industrial Services Decision Types Expanded
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports WorkforceDeploymentDecision, MaintenanceScheduleDecision, IncidentInvestigationDecision, TrainingCertificationDecision, ChangeOrderDecision, InsuranceClaimDecision, EnvironmentalAssessmentDecision, QualityNCRDecision
+ * @module services/verticals/industrial-services/IndustrialServicesDecisionTypesExpanded
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

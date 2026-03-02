@@ -1,3 +1,12 @@
+/**
+ * Page — What If Scenarios Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports WhatIfScenariosPage
+ * @module pages/cortex/intelligence/WhatIfScenariosPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

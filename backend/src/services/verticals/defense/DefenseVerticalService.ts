@@ -1,3 +1,12 @@
+/**
+ * Service — Defense Vertical Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports DefenseVerticalService, DEFENSE_DECISION_SCHEMAS, DEFENSE_COMPLIANCE_FRAMEWORKS, DEFENSE_DATA_CONNECTORS, defenseVerticalService, DefenseDecisionSchema, DefenseSchemaField, DefenseComplianceFramework
+ * @module services/verticals/defense/DefenseVerticalService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

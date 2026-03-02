@@ -1,3 +1,12 @@
+/**
+ * Page — Cross Jurisdiction Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports CrossJurisdictionPage
+ * @module pages/cortex/compliance/CrossJurisdictionPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Service — Smart City Agents
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports CORE_SMART_CITY_AGENTS, GUARDIAN_SMART_CITY_AGENTS, SMART_CITY_AGENTS, getSmartCityAgent, getActiveSmartCityAgents, getNonOverridableSmartCityAgents, getSmartCityAgentsByCategory, SmartCityAgent
+ * @module services/verticals/smartcity/SmartCityAgents
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

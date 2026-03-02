@@ -1,3 +1,12 @@
+/**
+ * Service — Aerospace Vertical Expanded
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports AerospaceDataConnector, AerospaceKnowledgeBase, AerospaceComplianceMapper, AirworthinessSchema, DesignCertificationSchema, AviationSafetyGovernancePreset, AerospaceDefensibleOutput, AerospaceVerticalImplementation
+ * @module services/verticals/aerospace/AerospaceVerticalExpanded
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * WebSocket — Socket Server
+ *
+ * Real-time WebSocket communication for live updates.
+ *
+ * @exports SocketServer, DeliberationUpdate, DecisionUpdate, AlertNotification
+ * @module websocket/SocketServer
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

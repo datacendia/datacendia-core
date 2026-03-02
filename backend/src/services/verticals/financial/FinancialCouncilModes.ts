@@ -1,3 +1,12 @@
+/**
+ * Service — Financial Council Modes
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports getFinancialMode, getFinancialModesByCategory, getModelRiskModes, getFinancialModesByFramework, getFinancialModesByLeadAgent, MAJOR_FINANCIAL_MODES, CREDIT_MODES, TRADING_MODES
+ * @module services/verticals/financial/FinancialCouncilModes
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Type Definitions — Kafkajs D
+ *
+ * TypeScript type definitions and interfaces.
+ *
+ * @exports Kafka, KafkaConfig, ProducerConfig, ConsumerConfig, ProducerRecord, ProducerBatch, EachMessagePayload, Producer
+ * @module types/kafkajs.d
+ */
+
 // Type stub for kafkajs — optional dependency, dynamically imported at runtime.
 // Install with: npm install kafkajs
 declare module 'kafkajs' {

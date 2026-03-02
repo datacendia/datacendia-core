@@ -1,3 +1,12 @@
+/**
+ * Library — Sources
+ *
+ * Client-side utility library.
+ *
+ * @exports generateSearchUrl, generateAllSearchUrls, getApiSources, getSourcesForUseCase, formatSourcesForAgent, LEGAL_SOURCES, LegalSource
+ * @module lib/caselaw/sources
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

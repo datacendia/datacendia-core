@@ -1,3 +1,12 @@
+/**
+ * Library — Index
+ *
+ * Client-side utility library.
+ *
+ * @exports detectBrowserLocale, getStoredLocale, storeLocale, useI18n, useTranslation, useLocale, useFormatters, localeConfigs
+ * @module lib/i18n/index
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

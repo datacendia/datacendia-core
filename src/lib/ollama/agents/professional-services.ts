@@ -1,3 +1,12 @@
+/**
+ * Library — Professional Services
+ *
+ * Client-side utility library.
+ *
+ * @exports PROFESSIONAL_SERVICES_AGENTS
+ * @module lib/ollama/agents/professional-services
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

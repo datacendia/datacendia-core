@@ -1,3 +1,12 @@
+/**
+ * Service — Automotive Vertical
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports AutomotiveDataConnector, AutomotiveKnowledgeBase, AutomotiveComplianceMapper, CreditDecisionSchema, TradeApprovalSchema, AMLEscalationSchema, PortfolioRebalanceSchema, CreditAnalysisAgentPreset
+ * @module services/verticals/automotive/AutomotiveVertical
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

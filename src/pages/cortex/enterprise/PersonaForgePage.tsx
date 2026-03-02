@@ -1,3 +1,12 @@
+/**
+ * Page — Persona Forge Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports PersonaForgePage
+ * @module pages/cortex/enterprise/PersonaForgePage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

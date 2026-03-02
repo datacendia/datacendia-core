@@ -1,3 +1,12 @@
+/**
+ * Configuration — Tenant Database
+ *
+ * Application configuration and service initialization.
+ *
+ * @exports getDbForOrg, tenantDb, TenantDatabaseConfig
+ * @module config/tenantDatabase
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

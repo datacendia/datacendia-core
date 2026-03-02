@@ -1,3 +1,12 @@
+/**
+ * Service — Evidence Export Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports EvidenceExportService, ledgerPath, ExportBundle, BundleManifest, ManifestSection, ManifestFile, CustodyRecord, ExportRequest
+ * @module services/evidence/EvidenceExportService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

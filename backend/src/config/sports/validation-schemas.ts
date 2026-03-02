@@ -1,3 +1,12 @@
+/**
+ * Configuration — Validation Schemas
+ *
+ * Application configuration and service initialization.
+ *
+ * @exports PlayerSchema, ClubSchema, AgentSchema, CreateTransferDecisionSchema, UpdateTransferDecisionSchema, ScoutingAssessmentSchema, ValuationSchema, AlternativeSchema
+ * @module config/sports/validation-schemas
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

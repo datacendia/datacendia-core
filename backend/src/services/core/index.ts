@@ -1,3 +1,12 @@
+/**
+ * Service — Index
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports WORKFLOW_STATS, CoreDashboard
+ * @module services/core/index
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Page — Ledger Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports LedgerPage
+ * @module pages/cortex/enterprise/LedgerPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

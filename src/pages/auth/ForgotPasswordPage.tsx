@@ -1,3 +1,12 @@
+/**
+ * Page — Forgot Password Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports ForgotPasswordPage
+ * @module pages/auth/ForgotPasswordPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

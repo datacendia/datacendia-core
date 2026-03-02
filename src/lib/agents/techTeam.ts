@@ -1,3 +1,12 @@
+/**
+ * Library — Tech Team
+ *
+ * Client-side utility library.
+ *
+ * @exports getTechTeamAgents, getTechAgent, getAgentsByCapability, assignAgentForError, generateFixPrompt, TECH_TEAM_AGENTS, DEFAULT_TECH_TEAM_CONFIG, TECH_TEAM_COUNT
+ * @module lib/agents/techTeam
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

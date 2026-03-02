@@ -1,3 +1,12 @@
+/**
+ * Page — R D Lab Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports RDLabPage
+ * @module pages/admin/RDLabPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

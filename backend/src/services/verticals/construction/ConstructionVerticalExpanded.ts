@@ -1,3 +1,12 @@
+/**
+ * Service — Construction Vertical Expanded
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports ConstructionDataConnector, ConstructionKnowledgeBase, ConstructionComplianceMapper, SafetyIncidentSchema, ChangeOrderSchema, ConstructionSafetyPreset, ConstructionDefensibleOutput, ConstructionVerticalImplementation
+ * @module services/verticals/construction/ConstructionVerticalExpanded
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

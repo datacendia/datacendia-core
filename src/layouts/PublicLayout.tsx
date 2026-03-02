@@ -1,3 +1,12 @@
+/**
+ * Layout — Public Layout
+ *
+ * Page layout component defining the structural shell for routes.
+ *
+ * @exports PublicLayout
+ * @module layouts/PublicLayout
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

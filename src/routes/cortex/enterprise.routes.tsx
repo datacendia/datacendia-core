@@ -1,3 +1,12 @@
+/**
+ * Route Config — Enterprise Routes
+ *
+ * React Router route definitions and lazy-loaded imports.
+ *
+ * @exports cortexEnterpriseRoutes
+ * @module routes/cortex/enterprise.routes
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

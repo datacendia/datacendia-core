@@ -1,3 +1,10 @@
+/**
+ * Type Definitions — Snarkjs D
+ *
+ * TypeScript type definitions and interfaces.
+ * @module types/snarkjs.d
+ */
+
 declare module 'snarkjs' {
   export namespace groth16 {
     function fullProve(input: any, wasmFile: string, zkeyFile: string): Promise<{ proof: any; publicSignals: string[] }>;

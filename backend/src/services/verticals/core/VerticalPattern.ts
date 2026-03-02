@@ -1,3 +1,12 @@
+/**
+ * Service — Vertical Pattern
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports VerticalRegistry, DataSource, ProvenanceRecord, IngestResult, KnowledgeDocument, RetrievalResult, ComplianceFramework, ComplianceControl
+ * @module services/verticals/core/VerticalPattern
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

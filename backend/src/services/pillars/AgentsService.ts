@@ -1,3 +1,12 @@
+/**
+ * Service — Agents Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports AgentsService, agentsService, AIAgent, AgentInteraction, AgentConfig, AgentStats, AgentStatus, AgentRole
+ * @module services/pillars/AgentsService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

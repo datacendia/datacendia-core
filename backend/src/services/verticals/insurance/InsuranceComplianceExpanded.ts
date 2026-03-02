@@ -1,3 +1,12 @@
+/**
+ * Service — Insurance Compliance Expanded
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports EXPANDED_INSURANCE_COMPLIANCE_FRAMEWORKS, EXPANDED_INSURANCE_COMPLIANCE_MAPPINGS, EXPANDED_INSURANCE_JURISDICTION_MAP
+ * @module services/verticals/insurance/InsuranceComplianceExpanded
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

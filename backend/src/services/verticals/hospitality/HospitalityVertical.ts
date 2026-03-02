@@ -1,3 +1,12 @@
+/**
+ * Service — Hospitality Vertical
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports HospitalityDataConnector, HospitalityKnowledgeBase, HospitalityComplianceMapper, CreditDecisionSchema, TradeApprovalSchema, AMLEscalationSchema, PortfolioRebalanceSchema, CreditAnalysisAgentPreset
+ * @module services/verticals/hospitality/HospitalityVertical
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

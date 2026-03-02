@@ -1,3 +1,12 @@
+/**
+ * Service — Frameworks
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports ETHICAL_AI_FRAMEWORKS, CYBERSECURITY_FRAMEWORKS, PRIVACY_FRAMEWORKS, GOVERNANCE_FRAMEWORKS, INDUSTRY_FRAMEWORKS, ALL_FRAMEWORKS, PILLAR_FRAMEWORK_MAPPING, ComplianceFramework
+ * @module services/compliance/frameworks
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

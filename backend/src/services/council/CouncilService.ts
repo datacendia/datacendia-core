@@ -1,3 +1,12 @@
+/**
+ * Service — Council Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports CouncilService, Agent, DeliberationConfig, Deliberation, AgentResponse, CrossExaminationThread, AgentMemory, StreamEvent
+ * @module services/council/CouncilService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

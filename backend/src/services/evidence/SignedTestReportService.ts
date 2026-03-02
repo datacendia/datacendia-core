@@ -1,3 +1,12 @@
+/**
+ * Service — Signed Test Report Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports SignedTestReportService, ReportConfig, SignedReport, ReportSignature, ReportTimestamp, ReportOutput, CustodyEntry, ComplianceMapping
+ * @module services/evidence/SignedTestReportService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

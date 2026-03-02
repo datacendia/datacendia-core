@@ -1,3 +1,12 @@
+/**
+ * Service — Insurance Council Modes
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports getInsuranceMode, getInsuranceModesByCategory, getFairnessModes, getAccordModes, getInsuranceModesByFramework, getInsuranceModesByLeadAgent, MAJOR_INSURANCE_MODES, UNDERWRITING_MODES
+ * @module services/verticals/insurance/InsuranceCouncilModes
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

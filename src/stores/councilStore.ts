@@ -1,3 +1,12 @@
+/**
+ * Store — Council Store
+ *
+ * Zustand state store for client-side state management.
+ *
+ * @exports useCouncilStore, selectAgents, selectActiveDeliberation, selectIsDeliberating, selectDeliberationMessages, Agent, DeliberationMessage, Deliberation
+ * @module stores/councilStore
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Configuration — Ai Models
+ *
+ * Application configuration and service initialization.
+ *
+ * @exports AI_MODELS, LICENSE_TIERS, aiModelSelector, TierCapabilities, ModelType, TaskType, ServiceDomain, LicenseTier
+ * @module config/aiModels
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

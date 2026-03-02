@@ -1,3 +1,12 @@
+/**
+ * Service — Industrial Services Agents
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports ALL_INDUSTRIAL_SERVICES_AGENTS, getIndustrialServicesAgent, getDefaultIndustrialServicesAgents, getOptionalIndustrialServicesAgents, getSilentGuardIndustrialServicesAgents, getIndustrialServicesAgentsByExpertise, IndustrialServicesAgent
+ * @module services/verticals/industrial-services/IndustrialServicesAgents
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

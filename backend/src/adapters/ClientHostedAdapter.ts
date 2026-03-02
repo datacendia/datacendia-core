@@ -1,3 +1,12 @@
+/**
+ * Data Adapter — Client Hosted Adapter
+ *
+ * Data transformation adapter between internal and external formats.
+ *
+ * @exports ClientHostedAdapter
+ * @module adapters/ClientHostedAdapter
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

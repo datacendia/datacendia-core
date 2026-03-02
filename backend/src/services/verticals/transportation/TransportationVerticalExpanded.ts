@@ -1,3 +1,12 @@
+/**
+ * Service — Transportation Vertical Expanded
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports TransportationDataConnector, TransportationKnowledgeBase, TransportationComplianceMapper, DriverSafetySchema, HazmatSchema, FleetSafetyGovernancePreset, TransportationDefensibleOutput, TransportationVerticalImplementation
+ * @module services/verticals/transportation/TransportationVerticalExpanded
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

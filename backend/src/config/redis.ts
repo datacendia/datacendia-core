@@ -1,3 +1,12 @@
+/**
+ * Configuration — Redis
+ *
+ * Application configuration and service initialization.
+ *
+ * @exports redis, cache, pubsub
+ * @module config/redis
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

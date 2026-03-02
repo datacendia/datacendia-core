@@ -1,3 +1,12 @@
+/**
+ * Service — Manufacturing Decision Schemas Expanded
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports ProductLaunchSchema, SupplierQualificationSchema, ProcessChangeSchema, EquipmentQualificationSchema, NCRDispositionSchema, EnvironmentalPermitSchema, WorkforceTrainingSchema, CapitalInvestmentSchema
+ * @module services/verticals/manufacturing/ManufacturingDecisionSchemasExpanded
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

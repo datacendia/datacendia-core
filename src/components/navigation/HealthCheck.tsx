@@ -1,3 +1,12 @@
+/**
+ * Component — Health Check
+ *
+ * Reusable React UI component.
+ *
+ * @exports useHealthCheck, HealthIndicator, HealthPanel, ConnectionBanner
+ * @module components/navigation/HealthCheck
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

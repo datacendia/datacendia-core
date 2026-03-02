@@ -1,3 +1,12 @@
+/**
+ * Data Adapter — Adapter Manager
+ *
+ * Data transformation adapter between internal and external formats.
+ *
+ * @exports getAdapter, isDataLocal, adapterManager
+ * @module adapters/AdapterManager
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

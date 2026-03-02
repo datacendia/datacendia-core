@@ -1,3 +1,12 @@
+/**
+ * Library — Index
+ *
+ * Client-side utility library.
+ *
+ * @exports ollamaService, OllamaModel, OllamaGenerateRequest, OllamaGenerateResponse, OllamaChatMessage, OllamaChatRequest, OllamaChatResponse, PersonalityTraitId
+ * @module lib/ollama/index
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Component — Power Grid Visualization
+ *
+ * Reusable React UI component.
+ *
+ * @exports PowerGridVisualization
+ * @module components/dashboard/widgets/PowerGridVisualization
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

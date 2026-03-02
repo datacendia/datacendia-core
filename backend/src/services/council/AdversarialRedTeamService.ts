@@ -1,3 +1,12 @@
+/**
+ * Service — Adversarial Red Team Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports AdversarialRedTeamService, adversarialRedTeamService, RedTeamAttack, RedTeamSession, RedTeamAttacker, RedTeamConfig, RedTeamSummary, AttackCategory
+ * @module services/council/AdversarialRedTeamService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

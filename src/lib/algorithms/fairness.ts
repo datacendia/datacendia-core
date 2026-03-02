@@ -1,3 +1,12 @@
+/**
+ * Library — Fairness
+ *
+ * Client-side utility library.
+ *
+ * @exports disparateImpactRatio, passes80PercentRule, statisticalParityDifference, truePositiveRate, falsePositiveRate, positivePredictiveValue, equalizedOddsDifference, predictiveParityDifference
+ * @module lib/algorithms/fairness
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

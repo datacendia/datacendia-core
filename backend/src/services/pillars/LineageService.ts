@@ -1,3 +1,12 @@
+/**
+ * Service — Lineage Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports LineageService, lineageService, LineageEntity, LineageRelationship, LineageGraph, DataQualityReport, DataQualityIssue, EntityType
+ * @module services/pillars/LineageService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

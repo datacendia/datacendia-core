@@ -1,3 +1,12 @@
+/**
+ * Page — Reset Password Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports ResetPasswordPage
+ * @module pages/auth/ResetPasswordPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

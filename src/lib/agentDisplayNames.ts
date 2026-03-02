@@ -1,3 +1,12 @@
+/**
+ * Library — Agent Display Names
+ *
+ * Client-side utility library.
+ *
+ * @exports getAgentDisplayName, getAgentInternalName, hasAgentDisplayName, getAllAgentDisplayNames, getRegulatorySafeTerm, REGULATORY_SAFE_TERMS, CANONICAL_DISCLAIMER
+ * @module lib/agentDisplayNames
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

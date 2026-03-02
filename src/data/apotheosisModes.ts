@@ -1,3 +1,12 @@
+/**
+ * Data — Apotheosis Modes
+ *
+ * Static data, constants, and configuration objects.
+ *
+ * @exports INDUSTRY_THREAT_PROFILES, APOTHEOSIS_MODE_CATEGORIES, CORE_APOTHEOSIS_MODES, APOTHEOSIS_MODES, isCoreMode, getModesByCategory, getCoreModes, getModeForThreatLevel
+ * @module data/apotheosisModes
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

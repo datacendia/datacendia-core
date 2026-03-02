@@ -1,3 +1,12 @@
+/**
+ * Library — Courtlistener
+ *
+ * Client-side utility library.
+ *
+ * @exports courtListenerService, CourtListenerOpinion, CourtListenerCluster, CourtListenerDocket, CourtListenerCourt, CourtListenerSearchResult, CourtListenerSearchResponse
+ * @module lib/caselaw/courtlistener
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

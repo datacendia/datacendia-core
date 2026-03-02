@@ -1,3 +1,12 @@
+/**
+ * Library — Types
+ *
+ * Client-side utility library.
+ *
+ * @exports DomainAgent, PersonalityTraitId
+ * @module lib/ollama/agents/types
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

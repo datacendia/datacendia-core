@@ -1,3 +1,12 @@
+/**
+ * Service — O P A Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports opa, OPAInput, OPAResult, PolicyViolation, PolicyObligation, PolicyBundle, PolicyDefinition, PolicyEvalResult
+ * @module services/opa/OPAService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

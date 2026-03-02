@@ -1,3 +1,12 @@
+/**
+ * Component — Regulators Receipt Demo
+ *
+ * Reusable React UI component.
+ *
+ * @exports RegulatorsReceiptDemo, blob
+ * @module components/demos/RegulatorsReceiptDemo
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

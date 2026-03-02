@@ -1,3 +1,12 @@
+/**
+ * Service — Test Evidence Ledger Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports TestEvidenceLedgerService, TestExecution, ExecutionEnvironment, BuildIdentity, ExecutionIdentity, NetworkInterface, Assertion, LedgerEntry
+ * @module services/evidence/TestEvidenceLedgerService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

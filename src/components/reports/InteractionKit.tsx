@@ -1,3 +1,12 @@
+/**
+ * Component — Interaction Kit
+ *
+ * Reusable React UI component.
+ *
+ * @exports MetricTooltip, SavedViewManager, InlineAnnotation, ThresholdIndicator, DeepLink, DeepLinkProvider, useDeepLink, TooltipContent
+ * @module components/reports/InteractionKit
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

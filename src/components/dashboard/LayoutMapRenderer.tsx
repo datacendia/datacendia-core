@@ -1,3 +1,12 @@
+/**
+ * Component — Layout Map Renderer
+ *
+ * Reusable React UI component.
+ *
+ * @exports LayoutMapRenderer
+ * @module components/dashboard/LayoutMapRenderer
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

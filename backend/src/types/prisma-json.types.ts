@@ -1,3 +1,12 @@
+/**
+ * Type Definitions — Prisma Json Types
+ *
+ * TypeScript type definitions and interfaces.
+ *
+ * @exports isAgentCapabilities, isAlertMetadata, isDeliberationConfig, castJson, parseJsonField, AgentCapability, AgentConstraint, AgentModelConfig
+ * @module types/prisma-json.types
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

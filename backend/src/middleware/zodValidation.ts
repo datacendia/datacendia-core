@@ -1,3 +1,12 @@
+/**
+ * Middleware — Zod Validation
+ *
+ * Express middleware for request processing pipeline.
+ *
+ * @exports validate, validateResponse, CommonSchemas, DecisionSchemas, CouncilSchemas, UserSchemas, AlertSchemas, IntegrationSchemas
+ * @module middleware/zodValidation
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

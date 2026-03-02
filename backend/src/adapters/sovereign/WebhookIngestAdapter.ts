@@ -1,3 +1,12 @@
+/**
+ * Data Adapter — Webhook Ingest Adapter
+ *
+ * Data transformation adapter between internal and external formats.
+ *
+ * @exports WebhookIngestAdapter, WebhookConfig, WebhookEvent, ProcessedWebhook
+ * @module adapters/sovereign/WebhookIngestAdapter
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Page — F I F A Governance Scenarios Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports FIFAGovernanceScenariosPage
+ * @module pages/cortex/verticals/FIFAGovernanceScenariosPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

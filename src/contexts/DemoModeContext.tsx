@@ -1,3 +1,12 @@
+/**
+ * Context — Demo Mode Context
+ *
+ * React context provider for cross-component state sharing.
+ *
+ * @exports useDemoMode, DemoModeProvider, DemoStep, Demo, DemoModeState, DemoModeContextValue, DemoId
+ * @module contexts/DemoModeContext
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

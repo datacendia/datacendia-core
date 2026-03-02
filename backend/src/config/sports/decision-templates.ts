@@ -1,3 +1,12 @@
+/**
+ * Configuration — Decision Templates
+ *
+ * Application configuration and service initialization.
+ *
+ * @exports getTemplateById, getTemplatesByCategory, TRANSFER_INBOUND_TEMPLATE, TRANSFER_OUTBOUND_TEMPLATE, TRANSFER_LOAN_TEMPLATE, CONTRACT_NEW_TEMPLATE, CONTRACT_RENEWAL_TEMPLATE, COMMERCIAL_SPONSORSHIP_TEMPLATE
+ * @module config/sports/decision-templates
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

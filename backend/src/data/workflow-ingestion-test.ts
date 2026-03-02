@@ -1,3 +1,10 @@
+/**
+ * Data — Workflow Ingestion Test
+ *
+ * Static data, seed scripts, and reference datasets.
+ * @module data/workflow-ingestion-test
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

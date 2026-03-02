@@ -1,3 +1,12 @@
+/**
+ * Connector — F I X Connector
+ *
+ * External system connector for third-party integrations.
+ *
+ * @exports FIX_MSG_TYPES, FIX_TAGS, FIXConnectorConfig, FIXMessage, FIXOrder, FIXExecution
+ * @module connectors/core/FIXConnector
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Service — Government Agents
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports getGovernmentAgent, getDefaultGovernmentAgents, getOptionalGovernmentAgents, getGovernmentAgentsByExpertise, buildGovernmentAgentTeam, DEFAULT_GOVERNMENT_AGENTS, OPTIONAL_GOVERNMENT_AGENTS, SILENT_GUARD_GOVERNMENT_AGENTS
+ * @module services/verticals/government/GovernmentAgents
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

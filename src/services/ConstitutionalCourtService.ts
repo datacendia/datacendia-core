@@ -1,3 +1,12 @@
+/**
+ * Frontend Service — Constitutional Court Service
+ *
+ * Client-side service for API communication and business logic.
+ *
+ * @exports ConstitutionalCourtService, ConstitutionalPrinciple, DisputeParty, CourtOpinion, Dispute, PrecedentSearchResult, CourtStatistics, DisputeStatus
+ * @module services/ConstitutionalCourtService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

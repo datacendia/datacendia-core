@@ -1,3 +1,12 @@
+/**
+ * Connector — Slack Connector
+ *
+ * External system connector for third-party integrations.
+ *
+ * @exports SlackConnector, SlackConfig, SlackMessage, SlackChannel, SlackUser
+ * @module connectors/enterprise/SlackConnector
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

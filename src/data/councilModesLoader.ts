@@ -1,3 +1,12 @@
+/**
+ * Data — Council Modes Loader
+ *
+ * Static data, constants, and configuration objects.
+ *
+ * @exports getCachedModes, areModesLoaded, preloadCouncilModes
+ * @module data/councilModesLoader
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

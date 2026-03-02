@@ -1,3 +1,12 @@
+/**
+ * Security — Headers
+ *
+ * Security hardening module for attack prevention and threat detection.
+ *
+ * @exports securityHeaders, customSecurityHeaders, strictCorsConfig
+ * @module security/headers
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

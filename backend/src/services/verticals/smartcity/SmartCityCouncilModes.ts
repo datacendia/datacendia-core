@@ -1,3 +1,12 @@
+/**
+ * Service — Smart City Council Modes
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports SMART_CITY_COUNCIL_MODES, getSmartCityCouncilMode, getSmartCityCouncilModesByCategory, getSmartCityCouncilModeCategories, SmartCityCouncilMode
+ * @module services/verticals/smartcity/SmartCityCouncilModes
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

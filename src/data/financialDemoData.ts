@@ -1,3 +1,12 @@
+/**
+ * Data — Financial Demo Data
+ *
+ * Static data, constants, and configuration objects.
+ *
+ * @exports FINANCIAL_COMPANY, FINANCIAL_EXECUTIVES, FINANCIAL_DELIBERATIONS, FINANCIAL_RISK_METRICS, FINANCIAL_COMPLIANCE, FINANCIAL_FRAUD_ALERTS, FINANCIAL_TRADING, FINANCIAL_DECISION_DEBT
+ * @module data/financialDemoData
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

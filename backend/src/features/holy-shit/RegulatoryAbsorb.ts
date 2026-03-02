@@ -1,3 +1,12 @@
+/**
+ * Feature — Regulatory Absorb
+ *
+ * Feature module implementing a specific platform capability.
+ *
+ * @exports RegulatoryAbsorbService, regulatoryAbsorbService, RegulatoryAbsorbRequest, DocumentUpload, ProcessMapping, AbsorptionResult, RegulatoryRequirement, ComplianceTrigger
+ * @module features/holy-shit/RegulatoryAbsorb
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Service — Healthcare Council Modes
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports getHealthcareMode, getHealthcareModesByCategory, getPatientSafetyModes, getClinicalValidationModes, getHealthcareModesByFramework, getHealthcareModesByLeadAgent, MAJOR_HEALTHCARE_MODES, CLINICAL_MODES
+ * @module services/verticals/healthcare/HealthcareCouncilModes
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

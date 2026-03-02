@@ -1,3 +1,12 @@
+/**
+ * Security — Security Hardening
+ *
+ * Security hardening module for attack prevention and threat detection.
+ *
+ * @exports encryptData, decryptData, generateSecureToken, generateHMAC, verifyHMAC, signData, verifySignature, detectThreats
+ * @module security/SecurityHardening
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

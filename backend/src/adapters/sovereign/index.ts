@@ -1,3 +1,12 @@
+/**
+ * Data Adapter — Index
+ *
+ * Data transformation adapter between internal and external formats.
+ *
+ * @exports adapterManager
+ * @module adapters/sovereign/index
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

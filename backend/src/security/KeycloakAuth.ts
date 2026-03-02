@@ -1,3 +1,12 @@
+/**
+ * Security — Keycloak Auth
+ *
+ * Security hardening module for attack prevention and threat detection.
+ *
+ * @exports initKeycloak, getSessionMiddleware, protect, optionalAuth, hasRole, canVeto, canAccessCouncil, getOrgId
+ * @module security/KeycloakAuth
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

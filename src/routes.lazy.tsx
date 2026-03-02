@@ -1,3 +1,12 @@
+/**
+ * Module — Routes Lazy
+ *
+ * Platform module.
+ *
+ * @exports router, routes
+ * @module routes.lazy
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

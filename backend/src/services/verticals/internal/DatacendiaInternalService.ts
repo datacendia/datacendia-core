@@ -1,3 +1,12 @@
+/**
+ * Service — Datacendia Internal Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports MarketingClaimRiskDetector, RoadmapDecisionSchema, MarketingClaimAuditSchema, DatacendiaInternalService, datacendiaInternalService, RoadmapDecision, InvestorOutreachDecision, GTMStrategyDecision
+ * @module services/verticals/internal/DatacendiaInternalService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

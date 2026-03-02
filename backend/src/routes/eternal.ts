@@ -1,3 +1,10 @@
+/**
+ * API Routes — Eternal
+ *
+ * Express route handler defining REST endpoints.
+ * @module routes/eternal
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Feature — Ghost Board
+ *
+ * Feature module implementing a specific platform capability.
+ *
+ * @exports GhostBoardService, ghostBoardService, GhostBoardRequest, BoardMember, BoardQuestion, GhostBoardResult, TranscriptEntry, BoardType
+ * @module features/holy-shit/GhostBoard
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

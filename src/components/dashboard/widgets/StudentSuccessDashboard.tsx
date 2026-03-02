@@ -1,3 +1,12 @@
+/**
+ * Component — Student Success Dashboard
+ *
+ * Reusable React UI component.
+ *
+ * @exports StudentSuccessDashboard
+ * @module components/dashboard/widgets/StudentSuccessDashboard
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

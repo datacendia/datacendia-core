@@ -1,3 +1,12 @@
+/**
+ * Feature — Live Demo Mode
+ *
+ * Feature module implementing a specific platform capability.
+ *
+ * @exports LiveDemoModeService, liveDemoModeService, LiveDemoRequest, DemoSession, DataIngestionStatus, OAuthConfig, ConnectorData, DataSchema
+ * @module features/holy-shit/LiveDemoMode
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Page — Verticals Hub Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports VerticalsHubPage
+ * @module pages/verticals/VerticalsHubPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

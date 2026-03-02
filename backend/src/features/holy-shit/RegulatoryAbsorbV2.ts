@@ -1,3 +1,12 @@
+/**
+ * Feature — Regulatory Absorb V2
+ *
+ * Feature module implementing a specific platform capability.
+ *
+ * @exports RegulatoryAbsorbV2Service, regulatoryAbsorbV2Service, AbsorbRequestV2, DocumentUploadV2, DocumentMetadata, AbsorptionResultV2, RequirementV2, TriggerV2
+ * @module features/holy-shit/RegulatoryAbsorbV2
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

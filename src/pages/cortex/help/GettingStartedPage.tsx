@@ -1,3 +1,12 @@
+/**
+ * Page — Getting Started Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports GettingStartedPage
+ * @module pages/cortex/help/GettingStartedPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

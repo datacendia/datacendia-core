@@ -1,3 +1,12 @@
+/**
+ * Library — Index
+ *
+ * Client-side utility library.
+ *
+ * @exports authApi, graphApi, lineageApi, councilApi, metricsApi, healthApi, alertsApi, workflowsApi
+ * @module lib/api/index
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

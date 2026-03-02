@@ -1,3 +1,12 @@
+/**
+ * Component — Trend Sparkline Kit
+ *
+ * Reusable React UI component.
+ *
+ * @exports Sparkline, SparklineCell, TrendBadge, AnomalyCard, AnomalyBanner, MetricWithSparkline, SparklinePoint, AnomalyItem
+ * @module components/reports/TrendSparklineKit
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

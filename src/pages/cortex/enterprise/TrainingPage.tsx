@@ -1,3 +1,12 @@
+/**
+ * Page — Training Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports TrainingPage
+ * @module pages/cortex/enterprise/TrainingPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

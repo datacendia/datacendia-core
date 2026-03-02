@@ -1,3 +1,12 @@
+/**
+ * Library — Media
+ *
+ * Client-side utility library.
+ *
+ * @exports MEDIA_AGENTS
+ * @module lib/ollama/agents/media
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

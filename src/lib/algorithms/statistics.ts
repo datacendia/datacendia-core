@@ -1,3 +1,12 @@
+/**
+ * Library — Statistics
+ *
+ * Client-side utility library.
+ *
+ * @exports mean, weightedMean, median, variancePopulation, varianceSample, stdDevPopulation, stdDevSample, percentile
+ * @module lib/algorithms/statistics
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

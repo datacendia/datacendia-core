@@ -1,3 +1,12 @@
+/**
+ * Page — User Profile Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports UserProfilePage
+ * @module pages/cortex/profile/UserProfilePage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

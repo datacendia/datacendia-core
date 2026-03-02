@@ -1,3 +1,12 @@
+/**
+ * Library — Iiss Scoring
+ *
+ * Client-side utility library.
+ *
+ * @exports calculateIISS, getIISSPrimitiveSummary, getIISSTotal, INDUSTRY_BENCHMARKS, ControlAssessment, PrimitiveScore, IISSResult, IISSRecommendation
+ * @module lib/algorithms/iiss-scoring
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

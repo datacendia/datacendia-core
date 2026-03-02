@@ -1,3 +1,12 @@
+/**
+ * Service — Media Vertical Expanded
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports MediaDataConnector, MediaKnowledgeBase, MediaComplianceMapper, ContentModerationSchema, RightsLicensingSchema, ContentGovernancePreset, MediaDefensibleOutput, MediaVerticalImplementation
+ * @module services/verticals/media/MediaVerticalExpanded
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Service — Sports Vertical Expanded
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports SportsDataConnector, SportsKnowledgeBaseLayer, SportsComplianceMapper, PlayerTransferSchema, FinancialFairPlaySchema, SportsGovernancePreset, SportsDefensibleOutput, SportsVerticalImplementation
+ * @module services/verticals/sports/SportsVerticalExpanded
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

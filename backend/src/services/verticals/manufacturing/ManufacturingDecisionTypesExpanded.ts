@@ -1,3 +1,12 @@
+/**
+ * Service — Manufacturing Decision Types Expanded
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports ProductLaunchDecision, SupplierQualificationDecision, ProcessChangeDecision, EquipmentQualificationDecision, NCRDispositionDecision, EnvironmentalPermitDecision, WorkforceTrainingDecision, CapitalInvestmentDecision
+ * @module services/verticals/manufacturing/ManufacturingDecisionTypesExpanded
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Service — Helm Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports HelmService, helmService, Metric, MetricDataPoint, KPIDashboard, CategorySummary, MetricAlert, MetricCategory
+ * @module services/pillars/HelmService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

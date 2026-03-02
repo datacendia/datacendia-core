@@ -1,3 +1,12 @@
+/**
+ * Service — Hospitality Vertical Expanded
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports HospitalityDataConnector, HospitalityKnowledgeBase, HospitalityComplianceMapper, FoodSafetySchema, GuestSafetySchema, GuestExperienceGovernancePreset, HospitalityDefensibleOutput, HospitalityVerticalImplementation
+ * @module services/verticals/hospitality/HospitalityVerticalExpanded
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

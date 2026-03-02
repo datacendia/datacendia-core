@@ -1,3 +1,12 @@
+/**
+ * Service — Energy Decision Types Expanded
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports GridState, GridAsset, SafetyReviewResult, GenerationDispatchDecision, OutagePlanningDecision, RenewableIntegrationDecision, DemandResponseDecision, TransmissionUpgradeDecision
+ * @module services/verticals/energy/EnergyDecisionTypesExpanded
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

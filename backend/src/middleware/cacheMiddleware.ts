@@ -1,3 +1,12 @@
+/**
+ * Middleware — Cache Middleware
+ *
+ * Express middleware for request processing pipeline.
+ *
+ * @exports apiCache, CACHE_TTLS, cacheMiddlewares
+ * @module middleware/cacheMiddleware
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

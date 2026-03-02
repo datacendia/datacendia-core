@@ -1,3 +1,12 @@
+/**
+ * Service — Transportation Vertical
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports TransportationDataConnector, TransportationKnowledgeBase, TransportationComplianceMapper, CreditDecisionSchema, TradeApprovalSchema, AMLEscalationSchema, PortfolioRebalanceSchema, CreditAnalysisAgentPreset
+ * @module services/verticals/transportation/TransportationVertical
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

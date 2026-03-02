@@ -1,3 +1,12 @@
+/**
+ * Service — Healthcare Agents
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports getHealthcareAgent, getDefaultHealthcareAgents, getOptionalHealthcareAgents, getSilentGuardHealthcareAgents, getHealthcareAgentsByExpertise, buildHealthcareAgentTeam, DEFAULT_HEALTHCARE_AGENTS, OPTIONAL_HEALTHCARE_AGENTS
+ * @module services/verticals/healthcare/HealthcareAgents
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

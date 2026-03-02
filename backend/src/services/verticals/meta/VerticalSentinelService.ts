@@ -1,3 +1,12 @@
+/**
+ * Service — Vertical Sentinel Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports VerticalSentinelAgent, VerticalSentinelService, verticalSentinelService, RegulatoryEvent, VerticalRiskDelta, SentinelConfig, VerticalId, EventType
+ * @module services/verticals/meta/VerticalSentinelService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Security — Defense In Depth
+ *
+ * Security hardening module for attack prevention and threat detection.
+ *
+ * @exports validateFileUpload, generateCsrfToken, preventDataExfiltration, DefenseInDepth
+ * @module security/DefenseInDepth
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Component — Property Portfolio
+ *
+ * Reusable React UI component.
+ *
+ * @exports PropertyPortfolio
+ * @module components/dashboard/widgets/PropertyPortfolio
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

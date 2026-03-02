@@ -1,3 +1,12 @@
+/**
+ * Service — Financial Agents
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports getFinancialAgent, getDefaultFinancialAgents, getOptionalFinancialAgents, getSilentGuardAgents, getFinancialAgentsByExpertise, buildFinancialAgentTeam, DEFAULT_FINANCIAL_AGENTS, OPTIONAL_FINANCIAL_AGENTS
+ * @module services/verticals/financial/FinancialAgents
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

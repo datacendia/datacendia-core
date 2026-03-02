@@ -1,3 +1,12 @@
+/**
+ * Page — Honesty Matrices Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports HonestyMatricesPage
+ * @module pages/public/HonestyMatricesPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

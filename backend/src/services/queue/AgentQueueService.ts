@@ -1,3 +1,12 @@
+/**
+ * Service — Agent Queue Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports QUEUE_NAMES, JOB_PRIORITY, agentQueueService, AgentDeliberationJob, CouncilSessionJob, DocumentProcessingJob, EmbeddingGenerationJob, AuditLoggingJob
+ * @module services/queue/AgentQueueService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

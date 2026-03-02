@@ -1,3 +1,12 @@
+/**
+ * Data — Premium Features
+ *
+ * Static data, constants, and configuration objects.
+ *
+ * @exports PREMIUM_TIERS, PREMIUM_FEATURES, PREMIUM_BUNDLES, getFeatureById, getFeaturesByTier, getFeaturesByPillar, getBundleById, getBundleByTier
+ * @module data/premiumFeatures
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

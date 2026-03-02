@@ -1,3 +1,10 @@
+/**
+ * Core — Index
+ *
+ * Core platform infrastructure and shared utilities.
+ * @module core/services/index
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

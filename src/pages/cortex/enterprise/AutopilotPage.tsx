@@ -1,3 +1,12 @@
+/**
+ * Page — Autopilot Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports AutopilotPage
+ * @module pages/cortex/enterprise/AutopilotPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

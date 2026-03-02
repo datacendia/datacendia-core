@@ -1,3 +1,12 @@
+/**
+ * Service — Education Council Modes
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports getEducationMode, getEducationModesByCategory, MAJOR_EDUCATION_MODES, ACADEMIC_MODES, STUDENT_MODES, COMPLIANCE_EDUCATION_MODES, ENROLLMENT_MODES, SPECIALIZED_EDUCATION_MODES
+ * @module services/verticals/education/EducationCouncilModes
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

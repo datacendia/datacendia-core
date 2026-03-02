@@ -1,3 +1,12 @@
+/**
+ * Component — Showcase Dashboard
+ *
+ * Reusable React UI component.
+ *
+ * @exports ShowcaseDashboard
+ * @module components/showcase/ShowcaseDashboard
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

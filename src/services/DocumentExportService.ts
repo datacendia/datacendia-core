@@ -1,3 +1,12 @@
+/**
+ * Frontend Service — Document Export Service
+ *
+ * Client-side service for API communication and business logic.
+ *
+ * @exports documentExportService, AuditPackageData, DeliberationRecord, TranscriptEntry, DecisionRecord, TimelineRecord, MetricRecord
+ * @module services/DocumentExportService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

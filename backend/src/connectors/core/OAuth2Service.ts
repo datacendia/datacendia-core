@@ -1,3 +1,12 @@
+/**
+ * Connector — O Auth2 Service
+ *
+ * External system connector for third-party integrations.
+ *
+ * @exports OAuth2Service, OAuth2Config, OAuth2Token, OAuth2TokenStorage
+ * @module connectors/core/OAuth2Service
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

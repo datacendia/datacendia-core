@@ -1,3 +1,12 @@
+/**
+ * Page — Panopticon Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports EnterprisePage
+ * @module pages/sovereign/PanopticonPage
+ */
+
 ﻿import { EnterpriseGate } from '@/components/ui/EnterpriseGate';
 
 export default function EnterprisePage() {

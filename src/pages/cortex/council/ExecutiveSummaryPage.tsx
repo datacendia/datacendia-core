@@ -1,3 +1,12 @@
+/**
+ * Page — Executive Summary Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports ExecutiveSummaryPage
+ * @module pages/cortex/council/ExecutiveSummaryPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Library — Insurance
+ *
+ * Client-side utility library.
+ *
+ * @exports INSURANCE_AGENTS
+ * @module lib/ollama/agents/insurance
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

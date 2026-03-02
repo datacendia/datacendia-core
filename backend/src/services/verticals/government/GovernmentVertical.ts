@@ -1,3 +1,12 @@
+/**
+ * Service — Government Vertical
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports GovernmentDataConnector, GovernmentKnowledgeBase, GovernmentComplianceMapper, ProcurementDecisionSchema, PolicyDecisionSchema, GrantDecisionSchema, BudgetDecisionSchema, GovernmentDefensibleOutput
+ * @module services/verticals/government/GovernmentVertical
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

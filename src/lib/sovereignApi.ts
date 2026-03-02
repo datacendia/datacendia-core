@@ -1,3 +1,12 @@
+/**
+ * Library — Sovereign Api
+ *
+ * Client-side utility library.
+ *
+ * @exports druidApi, storageApi, vectorApi, queueApi, metricsApi, workflowApi, featureFlagsApi, enterpriseApi
+ * @module lib/sovereignApi
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

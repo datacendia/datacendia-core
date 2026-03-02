@@ -1,3 +1,12 @@
+/**
+ * Library — Use Accessibility
+ *
+ * Client-side utility library.
+ *
+ * @exports useAccessibility, AccessibilityPreferences, UseAccessibilityReturn
+ * @module lib/accessibility/useAccessibility
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

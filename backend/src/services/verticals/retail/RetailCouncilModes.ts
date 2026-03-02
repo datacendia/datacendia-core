@@ -1,3 +1,12 @@
+/**
+ * Service — Retail Council Modes
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports getRetailMode, getRetailModesByCategory, MAJOR_RETAIL_MODES, PRICING_MODES, MERCHANDISING_MODES, OPERATIONS_RETAIL_MODES, CUSTOMER_MODES, SPECIALIZED_RETAIL_MODES
+ * @module services/verticals/retail/RetailCouncilModes
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

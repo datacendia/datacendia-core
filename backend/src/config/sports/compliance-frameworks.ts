@@ -1,3 +1,12 @@
+/**
+ * Configuration — Compliance Frameworks
+ *
+ * Application configuration and service initialization.
+ *
+ * @exports getFrameworkById, getFrameworksByRegion, getRequiredDocumentationForTransaction, UEFA_FFP, UEFA_CLUB_LICENSING, FIFA_AGENT_REGS, PREMIER_LEAGUE_PSR, EFL_PS
+ * @module config/sports/compliance-frameworks
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

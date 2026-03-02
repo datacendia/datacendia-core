@@ -1,3 +1,12 @@
+/**
+ * Frontend Service — Command Service
+ *
+ * Client-side service for API communication and business logic.
+ *
+ * @exports commandService, VerticalSummary, QuickAction, VerticalConfig, CommandIntent, CommandExecution, CommandSuggestion, CommandContext
+ * @module services/CommandService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

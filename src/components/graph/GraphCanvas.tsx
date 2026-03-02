@@ -1,3 +1,12 @@
+/**
+ * Component — Graph Canvas
+ *
+ * Reusable React UI component.
+ *
+ * @exports GraphCanvas, GraphNode, GraphEdge, GraphData
+ * @module components/graph/GraphCanvas
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

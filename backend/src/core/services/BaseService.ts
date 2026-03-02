@@ -1,3 +1,12 @@
+/**
+ * Core — Base Service
+ *
+ * Core platform infrastructure and shared utilities.
+ *
+ * @exports ServiceLogger, MetricsCollector, ServiceConfig, ServiceHealth, ServiceMetrics, ServiceState
+ * @module core/services/BaseService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

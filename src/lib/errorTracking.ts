@@ -1,3 +1,12 @@
+/**
+ * Library — Error Tracking
+ *
+ * Client-side utility library.
+ *
+ * @exports initErrorTracking, logError, logComponentError, cleanupErrorTracking
+ * @module lib/errorTracking
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

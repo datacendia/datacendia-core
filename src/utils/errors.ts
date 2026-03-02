@@ -1,3 +1,12 @@
+/**
+ * Utility — Errors
+ *
+ * Frontend utility functions and helpers.
+ *
+ * @exports getErrorMessage, getErrorStack, isError, ensureError
+ * @module utils/errors
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

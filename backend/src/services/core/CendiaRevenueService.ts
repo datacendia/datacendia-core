@@ -1,3 +1,12 @@
+/**
+ * Service — Cendia Revenue Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports cendiaRevenueService, RevenueMetrics, Subscription, RunwayCalculation, PricingRecommendation, PaymentAlert, FinancialForecast
+ * @module services/core/CendiaRevenueService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

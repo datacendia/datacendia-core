@@ -1,3 +1,12 @@
+/**
+ * Component — Theme Toggle
+ *
+ * Reusable React UI component.
+ *
+ * @exports ThemeToggle
+ * @module components/ui/ThemeToggle
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

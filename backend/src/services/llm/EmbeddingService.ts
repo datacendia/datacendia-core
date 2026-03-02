@@ -1,3 +1,12 @@
+/**
+ * Service — Embedding Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports EMBEDDING_DIM_OLLAMA, EMBEDDING_DIM_FALLBACK, embeddingService
+ * @module services/llm/EmbeddingService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

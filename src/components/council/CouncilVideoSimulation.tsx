@@ -1,3 +1,12 @@
+/**
+ * Component — Council Video Simulation
+ *
+ * Reusable React UI component.
+ *
+ * @exports CouncilVideoSimulation
+ * @module components/council/CouncilVideoSimulation
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Data — Cascade Modes
+ *
+ * Static data, constants, and configuration objects.
+ *
+ * @exports CASCADE_MODE_CATEGORIES, CORE_CASCADE_MODES, CASCADE_MODES, isCoreMode, getModesByCategory, getCoreModes, getModeForChangeType, CascadeMode
+ * @module data/cascadeModes
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Service — Healthcare Decision Types Expanded
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports PatientContext, SurgeryAuthorizationDecision, ImagingOrderDecision, LabOrderDecision, SpecialistReferralDecision, ReadmissionRiskDecision, ClinicalTrialEnrollmentDecision, EndOfLifeCareDecision
+ * @module services/verticals/healthcare/HealthcareDecisionTypesExpanded
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

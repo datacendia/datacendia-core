@@ -1,3 +1,12 @@
+/**
+ * Service — Government Decision Types Expanded
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports PersonnelActionDecision, RegulatoryActionDecision, ITInvestmentDecision, ContractModificationDecision, FOIARequestDecision, IGAuditResponseDecision, EmergencyDeclarationDecision, InteragencyAgreementDecision
+ * @module services/verticals/government/GovernmentDecisionTypesExpanded
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

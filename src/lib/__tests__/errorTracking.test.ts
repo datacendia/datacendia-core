@@ -1,3 +1,10 @@
+/**
+ * Library — Error Tracking Test
+ *
+ * Client-side utility library.
+ * @module lib/__tests__/errorTracking.test
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

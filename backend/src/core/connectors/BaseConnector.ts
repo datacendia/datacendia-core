@@ -1,3 +1,12 @@
+/**
+ * Core — Base Connector
+ *
+ * Core platform infrastructure and shared utilities.
+ *
+ * @exports ConnectorConfig, ConnectorCredentials, ConnectionStatus, SyncOptions, SyncResult, WebhookConfig
+ * @module core/connectors/BaseConnector
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

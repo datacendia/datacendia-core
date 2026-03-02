@@ -1,3 +1,12 @@
+/**
+ * Security — Audit Service
+ *
+ * Security hardening module for attack prevention and threat detection.
+ *
+ * @exports auditService, AuditEvent, Session, AccessControlEntry, ComplianceReport, ComplianceSection, ComplianceControl, AuditEventType
+ * @module security/audit.service
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

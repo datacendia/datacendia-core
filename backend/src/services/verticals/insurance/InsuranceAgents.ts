@@ -1,3 +1,12 @@
+/**
+ * Service — Insurance Agents
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports getInsuranceAgent, getDefaultInsuranceAgents, getOptionalInsuranceAgents, getSilentGuardInsuranceAgents, getInsuranceAgentsByExpertise, buildInsuranceAgentTeam, DEFAULT_INSURANCE_AGENTS, OPTIONAL_INSURANCE_AGENTS
+ * @module services/verticals/insurance/InsuranceAgents
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

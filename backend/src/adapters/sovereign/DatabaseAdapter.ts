@@ -1,3 +1,12 @@
+/**
+ * Data Adapter — Database Adapter
+ *
+ * Data transformation adapter between internal and external formats.
+ *
+ * @exports DatabaseAdapter, DatabaseConfig, QueryDefinition, QueryResult, DatabaseHealth, DatabaseType
+ * @module adapters/sovereign/DatabaseAdapter
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

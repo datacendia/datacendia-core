@@ -1,3 +1,12 @@
+/**
+ * Component — Related Decisions
+ *
+ * Reusable React UI component.
+ *
+ * @exports RelatedDecisions
+ * @module components/cortex/RelatedDecisions
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

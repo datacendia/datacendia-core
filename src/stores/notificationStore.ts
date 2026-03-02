@@ -1,3 +1,12 @@
+/**
+ * Store — Notification Store
+ *
+ * Zustand state store for client-side state management.
+ *
+ * @exports useNotificationStore, selectNotifications, selectUnreadCount, selectUnreadNotifications, selectCriticalNotifications, Notification, NotificationPreferences, NotificationState
+ * @module stores/notificationStore
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

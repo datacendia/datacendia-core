@@ -1,3 +1,12 @@
+/**
+ * Layout — Marketing Layout
+ *
+ * Page layout component defining the structural shell for routes.
+ *
+ * @exports MarketingLayout
+ * @module layouts/MarketingLayout
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

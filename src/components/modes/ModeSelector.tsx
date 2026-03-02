@@ -1,3 +1,12 @@
+/**
+ * Component — Mode Selector
+ *
+ * Reusable React UI component.
+ *
+ * @exports FieldTooltip, ModeInfoBanner, ModeSelector, IndustrySelector, IndustryInsight, ModeOption, IndustryOption
+ * @module components/modes/ModeSelector
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

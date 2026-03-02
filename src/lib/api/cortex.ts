@@ -1,3 +1,12 @@
+/**
+ * Library — Cortex
+ *
+ * Client-side utility library.
+ *
+ * @exports cortexApi, QueryContext, QuerySource, StructuredQuery, QueryParams, QueryResponse, AnalyzeParams, Finding
+ * @module lib/api/cortex
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

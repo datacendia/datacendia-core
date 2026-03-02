@@ -1,3 +1,12 @@
+/**
+ * Component — Workflow Builder
+ *
+ * Reusable React UI component.
+ *
+ * @exports WorkflowBuilder
+ * @module components/workflow/WorkflowBuilder
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

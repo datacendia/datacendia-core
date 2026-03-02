@@ -1,3 +1,12 @@
+/**
+ * Service — Ne Mo Guardrails Engine
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports NeMoGuardrailsEngine, nemoGuardrails, RailDefinition, RailEvaluation, GuardrailsResult, ColangConfig, NeMoServerHealth, RailType
+ * @module services/guardrails/NeMoGuardrailsEngine
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

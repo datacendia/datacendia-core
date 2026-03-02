@@ -1,3 +1,12 @@
+/**
+ * Store — Data Source Store
+ *
+ * Zustand state store for client-side state management.
+ *
+ * @exports useDataSourceStore, selectDataSources, selectActiveDataSource, selectIsLoading, selectConnectedSources, DataSource, DataSourceState, CreateDataSourceConfig
+ * @module stores/dataSourceStore
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

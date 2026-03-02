@@ -1,3 +1,12 @@
+/**
+ * Page — Media Entertainment Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports MediaEntertainmentPage
+ * @module pages/verticals/MediaEntertainmentPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

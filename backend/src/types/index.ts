@@ -1,3 +1,10 @@
+/**
+ * Type Definitions — Index
+ *
+ * TypeScript type definitions and interfaces.
+ * @module types/index
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

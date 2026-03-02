@@ -1,3 +1,12 @@
+/**
+ * Service — R O I Metrics Service
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports roiMetricsService, DeliberationMetrics, AuditMetrics, DecisionQualityMetrics, ROISummary
+ * @module services/metrics/ROIMetricsService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Service — Telecom Vertical Expanded
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports TelecomDataConnector, TelecomKnowledgeBase, TelecomComplianceMapper, ServiceOutageSchema, SubscriberPrivacySchema, TelecomNetworkGovernancePreset, TelecomDefensibleOutput, TelecomVerticalImplementation
+ * @module services/verticals/telecom/TelecomVerticalExpanded
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

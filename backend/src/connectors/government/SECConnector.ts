@@ -1,3 +1,12 @@
+/**
+ * Connector — S E C Connector
+ *
+ * External system connector for third-party integrations.
+ *
+ * @exports SECEdgarConnector, createSECEdgarConnector, SECCompany, SECAddress, SECFilingRecent, SECFiling, SECCompanyFacts, SECFactConcept
+ * @module connectors/government/SECConnector
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Data — Showcase Data
+ *
+ * Static data, constants, and configuration objects.
+ *
+ * @exports COMPANY_PROFILES, EXECUTIVES, DECISIONS, REGULATORY_FRAMEWORKS, AI_AGENTS, METRICS, TIME_SCENARIOS, BOARD_AVATARS
+ * @module data/showcaseData
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

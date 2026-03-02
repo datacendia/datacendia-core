@@ -1,3 +1,12 @@
+/**
+ * Frontend Service — Decision Intelligence Service
+ *
+ * Client-side service for API communication and business logic.
+ *
+ * @exports decisionIntelligenceService, Decision, DecisionEvent, DecisionOutcome, FailureMode, PreMortemResult, BoardMember, BoardQuestion
+ * @module services/DecisionIntelligenceService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Component — Retail Store Dashboard
+ *
+ * Reusable React UI component.
+ *
+ * @exports RetailStoreDashboard
+ * @module components/dashboard/widgets/RetailStoreDashboard
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

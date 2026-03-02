@@ -1,3 +1,12 @@
+/**
+ * Connector — Git Hub Connector
+ *
+ * External system connector for third-party integrations.
+ *
+ * @exports GitHubConnector, GitHubConfig, GitHubRepository, GitHubIssue, GitHubPullRequest
+ * @module connectors/enterprise/GitHubConnector
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

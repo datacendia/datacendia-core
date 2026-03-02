@@ -1,3 +1,12 @@
+/**
+ * Service — Nonprofit Vertical
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports NonprofitDataConnector, NonprofitKnowledgeBase, NonprofitComplianceMapper, CreditDecisionSchema, TradeApprovalSchema, AMLEscalationSchema, PortfolioRebalanceSchema, CreditAnalysisAgentPreset
+ * @module services/verticals/nonprofit/NonprofitVertical
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

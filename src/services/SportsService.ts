@@ -1,3 +1,12 @@
+/**
+ * Frontend Service — Sports Service
+ *
+ * Client-side service for API communication and business logic.
+ *
+ * @exports SportsService, Player, Club, ScoutingAssessment, Valuation, Alternative, Approval, ComplianceCheck
+ * @module services/SportsService
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

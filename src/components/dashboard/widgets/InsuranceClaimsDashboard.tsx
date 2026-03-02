@@ -1,3 +1,12 @@
+/**
+ * Component — Insurance Claims Dashboard
+ *
+ * Reusable React UI component.
+ *
+ * @exports InsuranceClaimsDashboard
+ * @module components/dashboard/widgets/InsuranceClaimsDashboard
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

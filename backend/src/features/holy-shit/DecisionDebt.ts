@@ -1,3 +1,12 @@
+/**
+ * Feature — Decision Debt
+ *
+ * Feature module implementing a specific platform capability.
+ *
+ * @exports DecisionDebtService, decisionDebtService, DecisionDebtRequest, DecisionFilters, PendingDecision, Blocker, ActivityEntry, BlockerAnalysis
+ * @module features/holy-shit/DecisionDebt
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

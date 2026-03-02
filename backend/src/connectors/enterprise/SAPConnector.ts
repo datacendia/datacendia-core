@@ -1,3 +1,12 @@
+/**
+ * Connector — S A P Connector
+ *
+ * External system connector for third-party integrations.
+ *
+ * @exports SAPConnector, SAPConfig, SAPEntity, SAPODataResponse
+ * @module connectors/enterprise/SAPConnector
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

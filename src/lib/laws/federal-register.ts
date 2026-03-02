@@ -1,3 +1,12 @@
+/**
+ * Library — Federal Register
+ *
+ * Client-side utility library.
+ *
+ * @exports KEY_AGENCIES, federalRegisterService, FederalRegisterDocument, FederalRegisterSearchParams, FederalRegisterSearchResponse, PublicInspectionDocument, DocumentType
+ * @module lib/laws/federal-register
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

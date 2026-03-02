@@ -1,3 +1,12 @@
+/**
+ * Library — Index
+ *
+ * Client-side utility library.
+ *
+ * @exports caselawService, CaselawCase, CaselawCitation, CaselawCitesTo, CaselawOpinion, CaselawSearchParams, CaselawSearchResponse
+ * @module lib/caselaw/index
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

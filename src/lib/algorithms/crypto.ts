@@ -1,3 +1,12 @@
+/**
+ * Library — Crypto
+ *
+ * Client-side utility library.
+ *
+ * @exports hashSync, hashSyncObject, merkleRootSync, keyedHash
+ * @module lib/algorithms/crypto
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

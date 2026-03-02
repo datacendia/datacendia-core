@@ -1,3 +1,12 @@
+/**
+ * Page — Support Page
+ *
+ * React page component rendered by the router.
+ *
+ * @exports SupportPage
+ * @module pages/public/SupportPage
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

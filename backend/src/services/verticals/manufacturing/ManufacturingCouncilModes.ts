@@ -1,3 +1,12 @@
+/**
+ * Service — Manufacturing Council Modes
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports getManufacturingMode, getManufacturingModesByCategory, MAJOR_MANUFACTURING_MODES, QUALITY_MODES, PRODUCTION_MODES, SAFETY_MODES, SUPPLY_CHAIN_MODES, SPECIALIZED_MANUFACTURING_MODES
+ * @module services/verticals/manufacturing/ManufacturingCouncilModes
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

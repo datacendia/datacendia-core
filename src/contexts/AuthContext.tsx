@@ -1,3 +1,12 @@
+/**
+ * Context — Auth Context
+ *
+ * React context provider for cross-component state sharing.
+ *
+ * @exports AuthProvider, useAuth, useUser, useIsAuthenticated, usePermissions, AuthState, AuthContextValue, RegisterData
+ * @module contexts/AuthContext
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

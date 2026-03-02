@@ -1,3 +1,12 @@
+/**
+ * Context — Data Source Context
+ *
+ * React context provider for cross-component state sharing.
+ *
+ * @exports useDataSource, useGraphContext, useCouncilContext, usePulseContext, useLensContext, useBridgeContext, DataSourceProvider, WORKFLOW_PRESETS
+ * @module contexts/DataSourceContext
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

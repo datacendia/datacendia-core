@@ -1,3 +1,12 @@
+/**
+ * Service — Pharmaceutical Vertical
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports PharmaceuticalDataConnector, PharmaceuticalKnowledgeBase, PharmaceuticalComplianceMapper, CreditDecisionSchema, TradeApprovalSchema, AMLEscalationSchema, PortfolioRebalanceSchema, CreditAnalysisAgentPreset
+ * @module services/verticals/pharmaceutical/PharmaceuticalVertical
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

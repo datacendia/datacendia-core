@@ -1,3 +1,12 @@
+/**
+ * Service — Insurance Vertical
+ *
+ * Business logic service implementing platform capabilities.
+ *
+ * @exports BiasFairnessEngine, InsuranceDataConnector, InsuranceKnowledgeBase, InsuranceComplianceMapper, UnderwritingDecisionSchema, ClaimDecisionSchema, UnderwritingAgentPreset, InsuranceDefensibleOutput
+ * @module services/verticals/insurance/InsuranceVertical
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

@@ -1,3 +1,12 @@
+/**
+ * Data — Demo Scenarios
+ *
+ * Static data, constants, and configuration objects.
+ *
+ * @exports COUNCIL_DEMO_SCENARIO, CHRONOS_DEMO_SCENARIO, CASCADE_DEMO_SCENARIO, OVERSIGHT_DEMO_SCENARIO, CRUCIBLE_DEMO_SCENARIO, GUARD_DEMO_SCENARIO, GNOSIS_DEMO_SCENARIO, OMNITRANSLATE_DEMO_SCENARIO
+ * @module data/demoScenarios
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 

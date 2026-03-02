@@ -1,3 +1,12 @@
+/**
+ * Connector — Hub Spot Connector
+ *
+ * External system connector for third-party integrations.
+ *
+ * @exports HubSpotConnector, HubSpotConfig, HubSpotContact, HubSpotCompany, HubSpotDeal
+ * @module connectors/enterprise/HubSpotConnector
+ */
+
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 
