@@ -1,5 +1,4 @@
-// Copyright (c) 2024-2026 Datacendia, LLC All Rights Reserved.
-// Proprietary and confidential. Unauthorized copying is strictly prohibited.
+ï»¿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 
 // =============================================================================
@@ -18,7 +17,7 @@ import { getErrorMessage } from '../utils/errors.js';
 const router = Router();
 
 // =============================================================================
-// CENDIA MIRAGE™ - Deception Technology
+// CENDIA MIRAGEï¿½ - Deception Technology
 // =============================================================================
 
 router.get('/mirage/dashboard', async (req: Request, res: Response) => {
@@ -94,7 +93,7 @@ router.get('/mirage/intelligence', async (req: Request, res: Response) => {
 });
 
 // =============================================================================
-// CENDIA KEY™ - Hardware Authentication
+// CENDIA KEYï¿½ - Hardware Authentication
 // =============================================================================
 
 router.get('/key/dashboard', async (req: Request, res: Response) => {
@@ -182,7 +181,7 @@ router.post('/key/verify', async (req: Request, res: Response) => {
 });
 
 // =============================================================================
-// CENDIA MESH™ - Encrypted Networking
+// CENDIA MESHï¿½ - Encrypted Networking
 // =============================================================================
 
 router.get('/mesh/dashboard', async (req: Request, res: Response) => {
@@ -271,7 +270,7 @@ router.get('/mesh/policies', async (req: Request, res: Response) => {
 });
 
 // =============================================================================
-// CENDIA BLACK BOX™ - Disaster Storage
+// CENDIA BLACK BOXï¿½ - Disaster Storage
 // =============================================================================
 
 router.get('/blackbox/dashboard', async (req: Request, res: Response) => {
@@ -360,7 +359,7 @@ router.post('/blackbox/units/:id/verify', async (req: Request, res: Response) =>
 });
 
 // =============================================================================
-// CENDIA GLASS™ - AR Integration
+// CENDIA GLASSï¿½ - AR Integration
 // =============================================================================
 
 router.get('/glass/dashboard', async (req: Request, res: Response) => {

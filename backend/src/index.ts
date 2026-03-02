@@ -1,15 +1,17 @@
-// Copyright (c) 2024-2026 Datacendia, LLC All Rights Reserved.
-// Proprietary and confidential. Unauthorized copying is strictly prohibited.
+﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 
 /**
- * DATACENDIA PLATFORM - BACKEND API SERVER
- * 
- * Copyright (c) 2024-2026 Datacendia, Inc. All Rights Reserved.
- * 
- * PROPRIETARY AND CONFIDENTIAL
- * Unauthorized copying, modification, or distribution is strictly prohibited.
- * See LICENSE file for details.
+ * Datacendia Platform — Backend API Server (Express)
+ *
+ * Application entrypoint. Initializes Express with security middleware (Helmet,
+ * CORS, rate limiting, CSRF), mounts all API route handlers, connects to
+ * PostgreSQL via Prisma, Redis for caching, and starts a Socket.IO WebSocket
+ * server for real-time Council deliberation updates.
+ *
+ * @module index
+ * @see {@link config/index} for environment configuration
+ * @see {@link routes/} for all API route definitions
  */
 
 import express from 'express';

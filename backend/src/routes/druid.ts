@@ -1,9 +1,8 @@
-// Copyright (c) 2024-2026 Datacendia, LLC All Rights Reserved.
-// Proprietary and confidential. Unauthorized copying is strictly prohibited.
+ï»¿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 
 // =============================================================================
-// DRUID API ROUTES - Analytics Data for CendiaChronos™, CendiaWitness™, CendiaPulse™
+// DRUID API ROUTES - Analytics Data for CendiaChronosï¿½, CendiaWitnessï¿½, CendiaPulseï¿½
 // =============================================================================
 
 import { Router, Request, Response } from 'express';

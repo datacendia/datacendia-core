@@ -1,5 +1,4 @@
-// Copyright (c) 2024-2026 Datacendia, LLC All Rights Reserved.
-// Proprietary and confidential. Unauthorized copying is strictly prohibited.
+ï»¿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 
 // =============================================================================
@@ -17,7 +16,7 @@ import { getErrorMessage } from '../utils/errors.js';
 const router = Router();
 
 // =============================================================================
-// CENDIA MIRROR™ - Digital Twin
+// CENDIA MIRRORï¿½ - Digital Twin
 // =============================================================================
 
 router.get('/mirror/dashboard', async (req: Request, res: Response) => {
@@ -95,7 +94,7 @@ router.post('/mirror/scenarios/:id/run', async (req: Request, res: Response) => 
 });
 
 // =============================================================================
-// CENDIA WITNESS™ - Legal Observer
+// CENDIA WITNESSï¿½ - Legal Observer
 // =============================================================================
 
 router.get('/witness/dashboard', async (req: Request, res: Response) => {
@@ -175,7 +174,7 @@ router.get('/witness/discovery', async (req: Request, res: Response) => {
 });
 
 // =============================================================================
-// CENDIA ORACLE™ - Truth Arbiter
+// CENDIA ORACLEï¿½ - Truth Arbiter
 // =============================================================================
 
 router.get('/oracle/dashboard', async (req: Request, res: Response) => {
@@ -264,7 +263,7 @@ router.get('/oracle/disputes', async (req: Request, res: Response) => {
 });
 
 // =============================================================================
-// CENDIA LEGACY™ - Knowledge Archive
+// CENDIA LEGACYï¿½ - Knowledge Archive
 // =============================================================================
 
 router.get('/legacy/dashboard', async (req: Request, res: Response) => {
