@@ -1,5 +1,5 @@
-ï»¿/**
- * Layout â€” Cortex Layout
+/**
+ * Layout — Cortex Layout
  *
  * Page layout component defining the structural shell for routes.
  *
@@ -7,7 +7,7 @@
  * @module layouts/CortexLayout
  */
 
-ï»¿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
+?// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 
 // =============================================================================
@@ -205,7 +205,7 @@ const Icons = {
 // =============================================================================
 
 // =============================================================================
-// TIER-BASED NAVIGATION â€” matches Page Architecture Blueprint
+// TIER-BASED NAVIGATION — matches Page Architecture Blueprint
 // =============================================================================
 
 interface NavItem {
@@ -231,7 +231,7 @@ const homeItem: NavItem = {
   labelKey: 'sidebar.dashboard',
   icon: Icons.Home,
   path: '/cortex/dashboard',
-  tooltip: 'Mission Control â€” your institutional command center',
+  tooltip: 'Mission Control — your institutional command center',
 };
 
 // FOUNDATION TIER (Blue)
@@ -253,14 +253,14 @@ const foundationGroup: NavGroup = {
       label: 'DECIDE',
       icon: SearchCode,
       path: '/cortex/intelligence/chronos',
-      tooltip: 'Decision Intelligence â€” Chronos, PreMortem, Ghost Board',
+      tooltip: 'Decision Intelligence — Chronos, PreMortem, Ghost Board',
     },
     {
       id: 'dcii',
       label: 'DCII',
       icon: Shield,
       path: '/cortex/upgrade',
-      tooltip: 'Decision Crisis Immunization Infrastructure â€” IISS Score',
+      tooltip: 'Decision Crisis Immunization Infrastructure — IISS Score',
     },
   ],
 };
@@ -391,7 +391,7 @@ const getCurrentPage = (
 const coreSuiteFeatures = [
   {
     id: 'chronos',
-    label: 'CendiaChronosâ„¢',
+    label: 'CendiaChronos™',
     Icon: Clock,
     path: '/cortex/intelligence/chronos',
     description: 'Enterprise Time Machine - Replay past decisions, simulate future crisis scenarios',
@@ -400,84 +400,84 @@ const coreSuiteFeatures = [
   },
   {
     id: 'ghost-board',
-    label: 'Ghost Boardâ„¢',
+    label: 'Ghost Board™',
     Icon: Ghost,
     path: '/cortex/intelligence/ghost-board',
     description: 'Rehearse high-stakes board meetings against AI avatars',
   },
   {
     id: 'pre-mortem',
-    label: 'CendiaPreMortemâ„¢',
+    label: 'CendiaPreMortem™',
     Icon: Skull,
     path: '/cortex/intelligence/pre-mortem',
     description: 'AI analyzes why your decision will fail before you execute it',
   },
   {
     id: 'decision-debt',
-    label: 'Decision Debtâ„¢',
+    label: 'Decision Debt™',
     Icon: BarChart3,
     path: '/cortex/intelligence/decision-debt',
     description: 'Real-time dashboard of stuck decisions and the financial cost of delay',
   },
   {
     id: 'live-visualization',
-    label: 'CendiaLiveâ„¢',
+    label: 'CendiaLive™',
     Icon: Eye,
     path: '/cortex/council/visualization',
     description: 'Watch AI agents deliberate in real-time with animated avatars',
   },
   {
     id: 'replay-theater',
-    label: 'CendiaReplayâ„¢',
+    label: 'CendiaReplay™',
     Icon: Film,
     path: '/cortex/council/replay-theater',
     description: 'Watch past deliberations unfold like a movie',
   },
   {
     id: 'echo',
-    label: 'CendiaEchoâ„¢',
+    label: 'CendiaEcho™',
     Icon: Radar,
     path: '/cortex/crown/echo',
     description: 'Decision Outcome Engine - Track what actually happened after each decision',
   },
   {
     id: 'cendia-lens',
-    label: 'CendiaLensâ„¢',
+    label: 'CendiaLens™',
     Icon: SearchCode,
     path: '/cortex/intelligence/lens',
     description: 'AI Interpretability - Token confidence, reasoning chains, bias detection, EU AI Act compliance',
   },
   {
     id: 'collapse',
-    label: 'CendiaCollapseâ„¢',
+    label: 'CendiaCollapse™',
     Icon: AlertTriangle,
     path: '/cortex/sovereign/collapse',
     description: 'Adversarial Policy Stress-Testing - Find how decisions fail before they do',
   },
   {
     id: 'live-monitor',
-    label: 'CendiaPulseâ„¢',
+    label: 'CendiaPulse™',
     Icon: Monitor,
     path: '/cortex/monitor/live',
     description: 'Mission control - Real-time visualization of agent actions, decisions, and compliance checks',
   },
   {
     id: 'crisis',
-    label: 'CendiaCrisisâ„¢',
+    label: 'CendiaCrisis™',
     Icon: Siren,
     path: '/cortex/upgrade',
     description: 'Incident Response Center - From detection to resolution with complete audit trail',
   },
   {
     id: 'roi-metrics',
-    label: 'CendiaROIâ„¢',
+    label: 'CendiaROI™',
     Icon: TrendingUp,
     path: '/cortex/upgrade',
     description: 'Prove the ROI of governance - Real deliberation throughput, quality, and cost metrics',
   },
   {
     id: 'dcii',
-    label: 'CendiaDCIIâ„¢',
+    label: 'CendiaDCII™',
     Icon: Shield,
     path: '/cortex/upgrade',
     description: 'Decision Crisis Immunization Infrastructure - IISS scoring, 9 primitives, media auth, timestamps',
@@ -490,7 +490,7 @@ const coreSuiteFeatures = [
 const trustLayerFeatures = [
   {
     id: 'oversight',
-    label: 'CendiaOversightâ„¢',
+    label: 'CendiaOversight™',
     Icon: ScanEye,
     path: '/cortex/sovereign/panopticon',
     description: 'Real-time Regulatory Radar - FDA, GDPR, DORA frameworks with policy gates',
@@ -498,7 +498,7 @@ const trustLayerFeatures = [
   },
   {
     id: 'notary',
-    label: 'CendiaNotaryâ„¢',
+    label: 'CendiaNotary™',
     Icon: PenTool,
     path: '/cortex/sovereign/notary',
     description: 'Cryptographic Signing Authority - Signs and authenticates all decisions with customer-owned keys',
@@ -506,7 +506,7 @@ const trustLayerFeatures = [
   },
   {
     id: 'vault',
-    label: 'CendiaVaultâ„¢',
+    label: 'CendiaVault™',
     Icon: Landmark,
     path: '/cortex/sovereign/vault',
     description: 'Unified Evidence Storage - Decision packets, audit ledger, evidence bundles, signed reports',
@@ -514,7 +514,7 @@ const trustLayerFeatures = [
   },
   {
     id: 'audit-provenance',
-    label: 'CendiaProvenanceâ„¢',
+    label: 'CendiaProvenance™',
     Icon: Dna,
     path: '/cortex/intelligence/audit-provenance',
     description: 'Full decision lineage & evidence export - cryptographically signed, court-admissible',
@@ -530,7 +530,7 @@ const trustLayerFeatures = [
   },
   {
     id: 'crucible',
-    label: 'CendiaCrucibleâ„¢',
+    label: 'CendiaCrucible™',
     Icon: Flame,
     path: '/cortex/sovereign/crucible',
     description: 'Adversarial Stress Testing - Attack decisions with simulated threats',
@@ -538,14 +538,14 @@ const trustLayerFeatures = [
   },
   {
     id: 'adversarial-redteam',
-    label: 'CendiaRedTeamâ„¢',
+    label: 'CendiaRedTeam™',
     Icon: Target,
     path: '/cortex/upgrade',
     description: 'Adversarial Red Team - Every agent becomes a devil\'s advocate',
   },
   {
     id: 'sgas',
-    label: 'SGASâ„¢',
+    label: 'SGAS™',
     Icon: Building2,
     path: '/cortex/sovereign/sgas',
     description: 'Synthetic Governance Agent System - 5 agent classes for institutional decision verification at societal scale',
@@ -553,7 +553,7 @@ const trustLayerFeatures = [
   },
   {
     id: 'constitutional-court',
-    label: 'CendiaCourtâ„¢',
+    label: 'CendiaCourt™',
     Icon: Scale,
     path: '/cortex/governance/constitutional-court',
     description: 'Formal AI dispute resolution with precedent tracking and binding opinions',
@@ -561,7 +561,7 @@ const trustLayerFeatures = [
   },
   {
     id: 'regulatory-sandbox',
-    label: 'CendiaSandboxâ„¢',
+    label: 'CendiaSandbox™',
     Icon: FlaskConical,
     path: '/cortex/compliance/regulatory-sandbox',
     description: 'Test against proposed regulations before they become law',
@@ -569,7 +569,7 @@ const trustLayerFeatures = [
   },
   {
     id: 'zkp',
-    label: 'CendiaZKPâ„¢',
+    label: 'CendiaZKP™',
     Icon: Lock,
     path: '/cortex/security/zkp',
     description: 'Prove compliance without revealing proprietary logic or data',
@@ -577,7 +577,7 @@ const trustLayerFeatures = [
   },
   {
     id: 'ai-insurance',
-    label: 'CendiaInsureâ„¢',
+    label: 'CendiaInsure™',
     Icon: Shield,
     path: '/cortex/upgrade',
     description: 'Direct liability coverage per AI decision with real-time risk scoring',
@@ -585,7 +585,7 @@ const trustLayerFeatures = [
   },
   {
     id: 'post-quantum-kms',
-    label: 'CendiaQuantumKMSâ„¢',
+    label: 'CendiaQuantumKMS™',
     Icon: KeyRound,
     path: '/cortex/upgrade',
     description: 'Quantum-resistant cryptographic signatures (Dilithium, SPHINCS+, Falcon)',
@@ -593,7 +593,7 @@ const trustLayerFeatures = [
   },
   {
     id: 'carbon-aware',
-    label: 'CendiaCarbonâ„¢',
+    label: 'CendiaCarbon™',
     Icon: Leaf,
     path: '/cortex/upgrade',
     description: 'Reduce AI carbon footprint with intelligent workload scheduling',
@@ -601,7 +601,7 @@ const trustLayerFeatures = [
   },
   {
     id: 'cross-jurisdiction',
-    label: 'CendiaJurisdictionâ„¢',
+    label: 'CendiaJurisdiction™',
     Icon: Globe,
     path: '/cortex/compliance/cross-jurisdiction',
     description: '17-jurisdiction compliance engine for cross-border data transfers',
@@ -609,7 +609,7 @@ const trustLayerFeatures = [
   },
   {
     id: 'continuous-compliance',
-    label: 'CendiaComplianceâ„¢',
+    label: 'CendiaCompliance™',
     Icon: Activity,
     path: '/cortex/compliance/continuous-monitor',
     description: 'Real-time monitoring for 10 compliance frameworks',
@@ -786,21 +786,21 @@ const verticalPacks = [
 const additionalServices = [
   {
     id: 'omni-translate',
-    label: 'CendiaOmniTranslateâ„¢',
+    label: 'CendiaOmniTranslate™',
     Icon: Languages,
     path: '/cortex/upgrade',
     description: '100-Language Enterprise Translator',
   },
   {
     id: 'dissent',
-    label: 'CendiaDissentâ„¢',
+    label: 'CendiaDissent™',
     Icon: Megaphone,
     path: '/cortex/upgrade',
     description: 'Protected Dissent & Whistleblower Channel (Council extension)',
   },
   {
     id: 'responsibility',
-    label: 'CendiaResponsibilityâ„¢',
+    label: 'CendiaResponsibility™',
     Icon: UserCheck,
     path: '/cortex/upgrade',
     description: 'Human Accountability Layer - TPM-signed liability transfer',
@@ -823,7 +823,7 @@ const enterpriseFeatures = [
   // Vertical Packs (Specialist - show based on audience)
   {
     id: 'genomics',
-    label: 'CendiaGenomicsâ„¢',
+    label: 'CendiaGenomics™',
     Icon: Dna,
     path: '/cortex/upgrade',
     description: 'Healthcare & Life Sciences Pack',
@@ -832,7 +832,7 @@ const enterpriseFeatures = [
   },
   {
     id: 'defense-stack',
-    label: 'CendiaDefenseâ„¢',
+    label: 'CendiaDefense™',
     Icon: Shield,
     path: '/cortex/upgrade',
     description: 'Government/Defense Edition',
@@ -851,7 +851,7 @@ const enterpriseFeatures = [
   // Core Services (kept)
   {
     id: 'omni-translate',
-    label: 'CendiaOmniTranslateâ„¢',
+    label: 'CendiaOmniTranslate™',
     Icon: Languages,
     path: '/cortex/upgrade',
     description: '100-Language Enterprise Translator',
@@ -860,7 +860,7 @@ const enterpriseFeatures = [
   },
   {
     id: 'dissent',
-    label: 'CendiaDissentâ„¢',
+    label: 'CendiaDissent™',
     Icon: Megaphone,
     path: '/cortex/upgrade',
     description: 'Protected Dissent & Whistleblower Channel (Council extension)',
@@ -869,7 +869,7 @@ const enterpriseFeatures = [
   },
   {
     id: 'responsibility',
-    label: 'CendiaResponsibilityâ„¢',
+    label: 'CendiaResponsibility™',
     Icon: UserCheck,
     path: '/cortex/upgrade',
     description: 'Human Accountability Layer - TPM-signed liability transfer',
@@ -905,15 +905,15 @@ const enterpriseFeatures = [
 // =============================================================================
 // Most sovereign features are now merged into Trust Layer:
 // - Crucible (merged with RedTeam, Echo, Apotheosis)
-// - Panopticon â†’ renamed to Oversight (merged with Govern, Audit, Veto)
-// - Horizon â†’ merged into Chronos
-// - Vox â†’ merged into Council
+// - Panopticon ? renamed to Oversight (merged with Govern, Audit, Veto)
+// - Horizon ? merged into Chronos
+// - Vox ? merged into Council
 // 
 // Remaining sovereign features (kept for specialized use):
 const sovereignFeatures = [
   {
     id: 'eternal',
-    label: 'CendiaEternalâ„¢',
+    label: 'CendiaEternal™',
     Icon: Infinity,
     path: '/cortex/sovereign/eternal',
     description: 'Ultra-Long Horizon Archive (100+ years)',
@@ -922,7 +922,7 @@ const sovereignFeatures = [
   },
   {
     id: 'symbiont',
-    label: 'CendiaSymbiontâ„¢',
+    label: 'CendiaSymbiont™',
     Icon: Network,
     path: '/cortex/sovereign/symbiont',
     description: 'Partnership & Ecosystem Engine',
@@ -931,7 +931,7 @@ const sovereignFeatures = [
   },
   {
     id: 'shadow-ops',
-    label: 'CendiaShadowOpsâ„¢',
+    label: 'CendiaShadowOps™',
     Icon: SearchCode,
     path: '/cortex/sovereign/shadow-ops',
     description: 'Competitive Intelligence & Counter-Intelligence - Monitor competitor moves, detect when you\'re being analyzed',
@@ -940,7 +940,7 @@ const sovereignFeatures = [
   },
   {
     id: 'succession',
-    label: 'CendiaSuccessionâ„¢',
+    label: 'CendiaSuccession™',
     Icon: Briefcase,
     path: '/cortex/sovereign/succession',
     description: 'Leadership Continuity - AI-powered succession planning & tacit knowledge capture from departing executives',
@@ -949,7 +949,7 @@ const sovereignFeatures = [
   },
   {
     id: 'sanctuary',
-    label: 'CendiaSanctuaryâ„¢',
+    label: 'CendiaSanctuary™',
     Icon: Castle,
     path: '/cortex/sovereign/sanctuary',
     description: 'Crisis Bunker - Air-gapped decision-making during cyber attacks with offline deliberation',
@@ -961,7 +961,7 @@ const sovereignFeatures = [
 // MOVED TO VISION ROADMAP: Aegis (Strategic Defense Intelligence)
 // MERGED INTO CHRONOS: Horizon
 // MERGED INTO COUNCIL: Vox
-// RENAMED: Panopticon â†’ Oversight (in Trust Layer)
+// RENAMED: Panopticon ? Oversight (in Trust Layer)
 
 // Inner layout component that can use translations
 const CortexLayoutInner: React.FC = () => {
@@ -1062,7 +1062,7 @@ const CortexLayoutInner: React.FC = () => {
             </button>
           </div>
 
-          {/* Main Navigation â€” Tier-Based */}
+          {/* Main Navigation — Tier-Based */}
           <nav className="flex-1 py-3 px-2 space-y-1 overflow-y-auto">
             {/* Home / Mission Control */}
             {(() => {
@@ -1434,7 +1434,7 @@ const CortexLayoutInner: React.FC = () => {
                       <div className="p-3 bg-gradient-to-r from-purple-900/30 to-violet-900/30 border-b border-sovereign-border-subtle rounded-t-xl flex-shrink-0">
                         <h3 className="font-semibold text-white flex items-center gap-2"><Factory className="w-4 h-4 text-purple-400" /> Industry Verticals</h3>
                         <p className="text-xs text-purple-400">
-                          17 verticals â€¢ 400+ council modes â€¢ 200+ AI agents
+                          17 verticals • 400+ council modes • 200+ AI agents
                         </p>
                       </div>
                       <div className="py-2 overflow-y-auto flex-1">
@@ -1649,7 +1649,7 @@ const CortexLayoutInner: React.FC = () => {
                           }}
                           className="w-full flex items-center gap-2 px-4 py-2 text-sm text-crimson-400 hover:bg-crimson-900/20"
                         >
-                          âŽ‹ <span>Log out</span>
+                          ? <span>Log out</span>
                         </button>
                       </div>
                     </div>
@@ -1693,7 +1693,7 @@ const CortexLayoutInner: React.FC = () => {
                   aria-label="Close navigation menu"
                   className="p-1.5 rounded-md text-gray-400 hover:text-white hover:bg-sovereign-hover"
                 >
-                  Ã—
+                  ×
                 </button>
               </div>
 
