@@ -1,0 +1,170 @@
+{
+  "date": "2026-03-06",
+  "backend": 434,
+  "frontend": 171,
+  "total": 605,
+  "topBackendFiles": [
+    {
+      "file": "routes\\demo-seed.ts",
+      "count": 44
+    },
+    {
+      "file": "routes\\council-packets.ts",
+      "count": 24
+    },
+    {
+      "file": "routes\\aegis.ts",
+      "count": 15
+    },
+    {
+      "file": "routes\\panopticon.ts",
+      "count": 15
+    },
+    {
+      "file": "routes\\eternal.ts",
+      "count": 13
+    },
+    {
+      "file": "routes\\sovereign.ts",
+      "count": 13
+    },
+    {
+      "file": "services\\pillars\\EthicsService.ts",
+      "count": 11
+    },
+    {
+      "file": "routes\\admin.ts",
+      "count": 10
+    },
+    {
+      "file": "routes\\council.ts",
+      "count": 10
+    },
+    {
+      "file": "routes\\legal-services.ts",
+      "count": 10
+    },
+    {
+      "file": "routes\\symbiont.ts",
+      "count": 10
+    },
+    {
+      "file": "routes\\vault.ts",
+      "count": 10
+    },
+    {
+      "file": "routes\\vox.ts",
+      "count": 10
+    },
+    {
+      "file": "routes\\express.ts",
+      "count": 9
+    },
+    {
+      "file": "services\\governance\\AIConstitutionalCourtService.ts",
+      "count": 8
+    },
+    {
+      "file": "routes\\dcii.ts",
+      "count": 7
+    },
+    {
+      "file": "routes\\sentry.ts",
+      "count": 7
+    },
+    {
+      "file": "services\\pillars\\GuardService.ts",
+      "count": 7
+    },
+    {
+      "file": "services\\pillars\\LineageService.ts",
+      "count": 7
+    },
+    {
+      "file": "routes\\fhir.ts",
+      "count": 6
+    }
+  ],
+  "topFrontendFiles": [
+    {
+      "file": "pages\\cortex\\intelligence\\ChronosPage.tsx",
+      "count": 19
+    },
+    {
+      "file": "pages\\admin\\ControlCenterPage.tsx",
+      "count": 13
+    },
+    {
+      "file": "pages\\cortex\\council\\CouncilPage.tsx",
+      "count": 11
+    },
+    {
+      "file": "pages\\cortex\\compliance\\ContinuousComplianceMonitorPage.tsx",
+      "count": 10
+    },
+    {
+      "file": "lib\\api\\index.ts",
+      "count": 8
+    },
+    {
+      "file": "pages\\admin\\FeatureFlagsPage.tsx",
+      "count": 6
+    },
+    {
+      "file": "pages\\admin\\LicensesPage.tsx",
+      "count": 6
+    },
+    {
+      "file": "pages\\admin\\MarketingStudioPage.tsx",
+      "count": 6
+    },
+    {
+      "file": "pages\\admin\\UsageAnalyticsPage.tsx",
+      "count": 6
+    },
+    {
+      "file": "pages\\cortex\\compliance\\RegulatorySandboxPage.tsx",
+      "count": 6
+    },
+    {
+      "file": "pages\\cortex\\security\\ZKPPage.tsx",
+      "count": 6
+    },
+    {
+      "file": "pages\\admin\\CorePage.tsx",
+      "count": 5
+    },
+    {
+      "file": "pages\\cortex\\intelligence\\DecisionDNAPage.tsx",
+      "count": 5
+    },
+    {
+      "file": "components\\reports\\TrendSparklineKit.tsx",
+      "count": 4
+    },
+    {
+      "file": "pages\\cortex\\compliance\\CrossJurisdictionPage.tsx",
+      "count": 3
+    },
+    {
+      "file": "pages\\cortex\\intelligence\\LiveDemoPage.tsx",
+      "count": 3
+    },
+    {
+      "file": "pages\\cortex\\profile\\UserProfilePage.tsx",
+      "count": 3
+    },
+    {
+      "file": "lib\\api\\client.test.ts",
+      "count": 3
+    },
+    {
+      "file": "pages\\admin\\AdminAIPage.tsx",
+      "count": 2
+    },
+    {
+      "file": "pages\\admin\\SystemHealthPage.tsx",
+      "count": 2
+    }
+  ]
+}
