@@ -138,8 +138,8 @@ docker compose -f docker-compose.demo.yml up -d
 ```
 datacendia-core/
 |-- src/                          # React frontend (Vite + TypeScript + Tailwind)
-|   |-- components/               # 99 reusable UI components
-|   |-- pages/                    # 210 page components
+|   |-- components/               # Reusable UI components
+|   |-- pages/                    # Page components
 |   +-- services/                 # Frontend API clients
 |-- backend/                      # Node.js backend (Express + Prisma)
 |   |-- src/
@@ -153,11 +153,11 @@ datacendia-core/
 |   |   |   |-- vault/            # OpenBao/Vault secrets management
 |   |   |   |-- gpu/              # RAPIDS analytics + Confidential Computing
 |   |   |   |-- streaming/        # Flink CEP real-time processing
-|   |   |   +-- verticals/        # 30 industry verticals
-|   |   |-- routes/               # 156 API route files
+|   |   |   +-- verticals/        # Industry vertical modules
+|   |   |-- routes/               # API route files (domain-grouped)
 |   |   |-- security/             # Casbin RBAC, Keycloak SSO
 |   |   +-- middleware/           # Auth, rate limiting, security
-|   +-- prisma/                   # 260 database models
+|   +-- prisma/                   # Database schema and models
 +-- docker-compose.dev.yml        # Development infrastructure
 ```
 
@@ -167,7 +167,7 @@ datacendia-core/
 |-------|-----------|
 | **Frontend** | React 18, TypeScript, Vite, Tailwind CSS, shadcn/ui |
 | **Backend** | Node.js, Express, TypeScript |
-| **Database** | PostgreSQL 16 + Prisma ORM (260 models) |
+| **Database** | PostgreSQL 16 + Prisma ORM |
 | **Cache** | Redis 7 |
 | **Graph** | Neo4j 5 |
 | **Vector** | Qdrant |
