@@ -122,7 +122,9 @@ class AdminService {
     const response = await fetch(`${this.baseUrl}${endpoint}`, {
       headers: {
         'Content-Type': 'application/json',
-        // Add auth token here in production
+        ...(typeof window !== 'undefined' && window.localStorage?.getItem('auth-storage')
+          ? { 'Authorization': `Bearer ${JSON.parse(window.localStorage.getItem('auth-storage') || '{}')?.state?.token || ''}` }
+          : {}),
       },
       ...options,
     });

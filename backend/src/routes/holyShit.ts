@@ -21,9 +21,9 @@ import {
   liveDemoModeService,
   regulatoryAbsorbService,
   HOLY_SHIT_FEATURES,
-} from '../features/holy-shit/index.js';
-import { regulatoryAbsorbV2Service } from '../features/holy-shit/RegulatoryAbsorbV2.js';
-import { PREMORTEM_AGENTS } from '../features/holy-shit/PreMortem.js';
+} from '../features/advanced-analysis/index.js';
+import { regulatoryAbsorbV2Service } from '../features/advanced-analysis/RegulatoryAbsorbV2.js';
+import { PREMORTEM_AGENTS } from '../features/advanced-analysis/PreMortem.js';
 import { 
   featureGating, 
   SUBSCRIPTION_TIERS,

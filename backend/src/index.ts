@@ -368,6 +368,15 @@ const startServer = async () => {
       ? '127.0.0.1'
       : undefined;
 
+    // ── Auth Mode Guard ─────────────────────────────────────────────────
+    if (config.nodeEnv === 'production' && !config.requireAuth) {
+      logger.error('⛔ SECURITY: REQUIRE_AUTH is not enabled in production. Set REQUIRE_AUTH=true.');
+      logger.error('⛔ Dev auth bypass could be active. Refusing to start.');
+      process.exit(1);
+    }
+    const authMode = config.requireAuth ? 'enforced' : (config.nodeEnv === 'development' ? 'dev-bypass' : 'enforced');
+    logger.info(`🔐 Auth mode: ${authMode} (REQUIRE_AUTH=${config.requireAuth}, NODE_ENV=${config.nodeEnv})`);
+
     httpServer.listen(config.port, listenHost, () => {
       logger.info(`🚀 Datacendia API running on port ${config.port}`);
       logger.info(`📊 Environment: ${config.nodeEnv}`);

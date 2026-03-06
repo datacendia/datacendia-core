@@ -56,8 +56,8 @@ Authorization: Bearer <token>
         url: 'https://datacendia.com',
       },
       license: {
-        name: 'Proprietary',
-        url: 'https://datacendia.com/license',
+        name: 'Apache-2.0',
+        url: 'https://github.com/datacendia/datacendia-core/blob/main/LICENSE',
       },
     },
     servers: [

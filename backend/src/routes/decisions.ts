@@ -17,7 +17,7 @@
 import { Router, Request, Response } from 'express';
 import { z } from 'zod';
 import { decisionService } from '../services/DecisionService.js';
-import { preMortemService, ghostBoardService } from '../features/holy-shit/index.js';
+import { preMortemService, ghostBoardService } from '../features/advanced-analysis/index.js';
 import { getErrorMessage } from '../utils/errors.js';
 
 const router = Router();
