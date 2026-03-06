@@ -14,6 +14,7 @@
  */
 
 import { Router, Request, Response } from 'express';
+import { logger } from '../utils/logger.js';
 import {
   scgeOrchestrator,
   syntheticPopulationService,
@@ -418,7 +419,7 @@ router.post('/simulation', async (req: Request, res: Response) => {
       },
     });
   } catch (error) {
-    console.error('Simulation error:', error);
+    logger.error('Simulation error:', error);
     res.status(500).json({
       error: 'Simulation failed',
       message: error instanceof Error ? error.message : 'Unknown error',

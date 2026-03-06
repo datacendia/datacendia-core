@@ -38,6 +38,7 @@
  */
 
 import { Router, Request, Response } from 'express';
+import { logger } from '../utils/logger.js';
 import {
   cendiaHorizonService as cascadeService,
   ChangeSpec,
@@ -151,7 +152,7 @@ router.post('/analyze', async (req: Request, res: Response) => {
     });
 
   } catch (error) {
-    console.error('Cascade analysis error:', error);
+    logger.error('Cascade analysis error:', error);
     res.status(500).json({
       error: 'Analysis failed',
       message: (error as Error).message,

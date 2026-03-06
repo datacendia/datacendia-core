@@ -14,6 +14,7 @@
 // =============================================================================
 
 import { Router, Request, Response } from 'express';
+import { logger } from '../utils/logger.js';
 import { devAuth } from '../middleware/auth.js';
 import {
   ALL_INDUSTRIAL_SERVICES_AGENTS,
@@ -188,7 +189,7 @@ router.post('/connectors/:sourceId/connect', async (req: Request<{ sourceId: str
     });
     res.json({ success, sourceId: req.params.sourceId });
   } catch (error) {
-    console.error('Error connecting data source:', error);
+    logger.error('Error connecting data source:', error);
     res.status(500).json({ success: false, error: 'Failed to connect data source' });
   }
 });
@@ -198,7 +199,7 @@ router.post('/connectors/:sourceId/ingest', async (req: Request<{ sourceId: stri
     const result = await industrialServicesVertical.dataConnector.ingest(req.params.sourceId, req.body.query);
     res.json(result);
   } catch (error) {
-    console.error('Error ingesting data:', error);
+    logger.error('Error ingesting data:', error);
     res.status(500).json({ success: false, error: 'Failed to ingest data' });
   }
 });
@@ -238,7 +239,7 @@ router.get('/workflow', async (_req: Request, res: Response): Promise<void> => {
       capabilities: preset.capabilities,
     });
   } catch (error) {
-    console.error('Error getting workflow:', error);
+    logger.error('Error getting workflow:', error);
     res.status(500).json({ success: false, error: 'Failed to get workflow' });
   }
 });
@@ -262,7 +263,7 @@ router.get('/workflow/:decisionType', async (req: Request<{ decisionType: string
       totalSteps: steps.length,
     });
   } catch (error) {
-    console.error('Error getting workflow for decision type:', error);
+    logger.error('Error getting workflow for decision type:', error);
     res.status(500).json({ success: false, error: 'Failed to get workflow' });
   }
 });

@@ -14,6 +14,7 @@
 // =============================================================================
 
 import { Router, Request, Response } from 'express';
+import { logger } from '../utils/logger.js';
 import { PrismaClient } from '@prisma/client';
 
 const router = Router();
@@ -35,7 +36,7 @@ router.get('/policies', async (req: Request, res: Response) => {
     });
     res.json({ success: true, data: policies });
   } catch (error) {
-    console.error('[Govern] Policies error:', error);
+    logger.error('[Govern] Policies error:', error);
     res.status(500).json({ success: false, error: 'Failed to fetch policies' });
   }
 });
@@ -55,7 +56,7 @@ router.post('/policies', async (req: Request, res: Response) => {
     });
     res.json({ success: true, data: policy });
   } catch (error) {
-    console.error('[Govern] Policy create error:', error);
+    logger.error('[Govern] Policy create error:', error);
     res.status(500).json({ success: false, error: 'Failed to create policy' });
   }
 });
@@ -75,7 +76,7 @@ router.get('/audits', async (req: Request, res: Response) => {
     });
     res.json({ success: true, data: audits });
   } catch (error) {
-    console.error('[Govern] Audits error:', error);
+    logger.error('[Govern] Audits error:', error);
     res.status(500).json({ success: false, error: 'Failed to fetch audits' });
   }
 });
@@ -94,7 +95,7 @@ router.post('/audits', async (req: Request, res: Response) => {
     });
     res.json({ success: true, data: audit });
   } catch (error) {
-    console.error('[Govern] Audit create error:', error);
+    logger.error('[Govern] Audit create error:', error);
     res.status(500).json({ success: false, error: 'Failed to create audit' });
   }
 });

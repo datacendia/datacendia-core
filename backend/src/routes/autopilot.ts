@@ -14,6 +14,7 @@
 // =============================================================================
 
 import { Router, Request, Response } from 'express';
+import { logger } from '../utils/logger.js';
 import { prisma } from '../config/database.js';
 import { devAuth, requireRole } from '../middleware/auth.js';
 import { assertCapability } from '../utils/permissions.js';
@@ -40,7 +41,7 @@ router.get('/rules', async (req: Request, res: Response) => {
     });
     res.json({ success: true, data: rules });
   } catch (error) {
-    console.error('[Autopilot] Rules error:', error);
+    logger.error('[Autopilot] Rules error:', error);
     res.status(500).json({ success: false, error: 'Failed to fetch rules' });
   }
 });
@@ -61,7 +62,7 @@ router.post('/rules', async (req: Request, res: Response) => {
     });
     res.json({ success: true, data: rule });
   } catch (error) {
-    console.error('[Autopilot] Rule create error:', error);
+    logger.error('[Autopilot] Rule create error:', error);
     res.status(500).json({ success: false, error: 'Failed to create rule' });
   }
 });
@@ -85,7 +86,7 @@ router.post('/rules/:id/execute', async (req: Request, res: Response) => {
     
     res.json({ success: true, data: execution });
   } catch (error) {
-    console.error('[Autopilot] Execute error:', error);
+    logger.error('[Autopilot] Execute error:', error);
     res.status(500).json({ success: false, error: 'Failed to execute rule' });
   }
 });
@@ -109,7 +110,7 @@ router.get('/executions', async (req: Request, res: Response) => {
     });
     res.json({ success: true, data: executions });
   } catch (error) {
-    console.error('[Autopilot] Executions error:', error);
+    logger.error('[Autopilot] Executions error:', error);
     res.status(500).json({ success: false, error: 'Failed to fetch executions' });
   }
 });

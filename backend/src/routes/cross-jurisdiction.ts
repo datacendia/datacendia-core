@@ -15,6 +15,7 @@
  */
 
 import { Router, Request, Response } from 'express';
+import { logger } from '../utils/logger.js';
 import { crossJurisdictionEngineService, Jurisdiction } from '../services/compliance/CrossJurisdictionEngineService.js';
 
 const router = Router();
@@ -40,7 +41,7 @@ router.get('/jurisdictions', (_req: Request, res: Response) => {
     const jurisdictions = crossJurisdictionEngineService.getJurisdictionProfiles();
     res.json({ success: true, data: jurisdictions });
   } catch (error) {
-    console.error('Error getting jurisdictions:', error);
+    logger.error('Error getting jurisdictions:', error);
     res.status(500).json({ success: false, error: 'Failed to get jurisdictions' });
   }
 });
@@ -59,7 +60,7 @@ router.get('/jurisdictions/:id', (req: Request, res: Response): void => {
     }
     res.json({ success: true, data: profile });
   } catch (error) {
-    console.error('Error getting jurisdiction:', error);
+    logger.error('Error getting jurisdiction:', error);
     res.status(500).json({ success: false, error: 'Failed to get jurisdiction' });
   }
 });
@@ -87,7 +88,7 @@ router.post('/assess-transfer', async (req: Request, res: Response): Promise<voi
 
     res.json({ success: true, data: assessment });
   } catch (error) {
-    console.error('Error assessing transfer:', error);
+    logger.error('Error assessing transfer:', error);
     res.status(500).json({ success: false, error: 'Failed to assess transfer' });
   }
 });
@@ -114,7 +115,7 @@ router.post('/compliance-matrix', async (req: Request, res: Response): Promise<v
 
     res.json({ success: true, data: matrix });
   } catch (error) {
-    console.error('Error generating matrix:', error);
+    logger.error('Error generating matrix:', error);
     res.status(500).json({ success: false, error: 'Failed to generate compliance matrix' });
   }
 });
@@ -137,7 +138,7 @@ router.post('/detect-conflicts', (req: Request, res: Response): void => {
 
     res.json({ success: true, data: conflicts });
   } catch (error) {
-    console.error('Error detecting conflicts:', error);
+    logger.error('Error detecting conflicts:', error);
     res.status(500).json({ success: false, error: 'Failed to detect conflicts' });
   }
 });
@@ -160,7 +161,7 @@ router.post('/data-residency', (req: Request, res: Response): void => {
 
     res.json({ success: true, data: rules });
   } catch (error) {
-    console.error('Error getting data residency rules:', error);
+    logger.error('Error getting data residency rules:', error);
     res.status(500).json({ success: false, error: 'Failed to get data residency rules' });
   }
 });
@@ -173,7 +174,7 @@ router.get('/assessments', (_req: Request, res: Response) => {
     const assessments = crossJurisdictionEngineService.listAssessments();
     res.json({ success: true, data: assessments });
   } catch (error) {
-    console.error('Error listing assessments:', error);
+    logger.error('Error listing assessments:', error);
     res.status(500).json({ success: false, error: 'Failed to list assessments' });
   }
 });
@@ -190,7 +191,7 @@ router.get('/assessments/:id', (req: Request, res: Response): void => {
     }
     res.json({ success: true, data: assessment });
   } catch (error) {
-    console.error('Error getting assessment:', error);
+    logger.error('Error getting assessment:', error);
     res.status(500).json({ success: false, error: 'Failed to get assessment' });
   }
 });
@@ -207,7 +208,7 @@ router.get('/matrices/:id', (req: Request, res: Response): void => {
     }
     res.json({ success: true, data: matrix });
   } catch (error) {
-    console.error('Error getting matrix:', error);
+    logger.error('Error getting matrix:', error);
     res.status(500).json({ success: false, error: 'Failed to get matrix' });
   }
 });

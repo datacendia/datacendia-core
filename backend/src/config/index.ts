@@ -74,7 +74,7 @@ const configSchema = z.object({
   
   // JWT
   jwtSecret: z.string().min(32),
-  jwtRefreshSecret: z.string().min(32).default('default-refresh-secret-for-dev-minimum-32-chars'),
+  jwtRefreshSecret: z.string().min(32),
   jwtExpiresIn: z.string().default('1h'),
   jwtRefreshExpiresIn: z.string().default('30d'),
   

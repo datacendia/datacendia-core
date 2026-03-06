@@ -15,6 +15,7 @@
  */
 
 import { Router, Request, Response } from 'express';
+import { logger } from '../utils/logger.js';
 import { postQuantumKMSService, PQAlgorithm } from '../services/security/PostQuantumKMSService.js';
 
 const router = Router();
@@ -40,7 +41,7 @@ router.get('/algorithms', (_req: Request, res: Response) => {
     const algorithms = postQuantumKMSService.getSupportedAlgorithms();
     res.json({ success: true, data: algorithms });
   } catch (error) {
-    console.error('Error getting algorithms:', error);
+    logger.error('Error getting algorithms:', error);
     res.status(500).json({ success: false, error: 'Failed to get algorithms' });
   }
 });
@@ -54,7 +55,7 @@ router.get('/recommend/:useCase', (req: Request, res: Response): void => {
     const recommendation = postQuantumKMSService.getRecommendation(useCase);
     res.json({ success: true, data: { useCase, recommendation } });
   } catch (error) {
-    console.error('Error getting recommendation:', error);
+    logger.error('Error getting recommendation:', error);
     res.status(500).json({ success: false, error: 'Failed to get recommendation' });
   }
 });
@@ -76,7 +77,7 @@ router.post('/keys', async (req: Request, res: Response): Promise<void> => {
     const { privateKey, ...metadata } = keyPair;
     res.status(201).json({ success: true, data: metadata });
   } catch (error) {
-    console.error('Error generating key pair:', error);
+    logger.error('Error generating key pair:', error);
     res.status(500).json({ success: false, error: 'Failed to generate key pair' });
   }
 });
@@ -89,7 +90,7 @@ router.get('/keys', (_req: Request, res: Response) => {
     const keys = postQuantumKMSService.listKeys();
     res.json({ success: true, data: keys });
   } catch (error) {
-    console.error('Error listing keys:', error);
+    logger.error('Error listing keys:', error);
     res.status(500).json({ success: false, error: 'Failed to list keys' });
   }
 });
@@ -106,7 +107,7 @@ router.get('/keys/:id', (req: Request, res: Response): void => {
     }
     res.json({ success: true, data: metadata });
   } catch (error) {
-    console.error('Error getting key:', error);
+    logger.error('Error getting key:', error);
     res.status(500).json({ success: false, error: 'Failed to get key' });
   }
 });
@@ -120,7 +121,7 @@ router.post('/keys/:id/rotate', async (req: Request, res: Response): Promise<voi
     const { privateKey, ...metadata } = newKey;
     res.json({ success: true, data: metadata, message: 'Key rotated successfully' });
   } catch (error) {
-    console.error('Error rotating key:', error);
+    logger.error('Error rotating key:', error);
     res.status(500).json({ success: false, error: 'Failed to rotate key' });
   }
 });
@@ -137,7 +138,7 @@ router.delete('/keys/:id', (req: Request, res: Response): void => {
     }
     res.json({ success: true, message: 'Key deleted' });
   } catch (error) {
-    console.error('Error deleting key:', error);
+    logger.error('Error deleting key:', error);
     res.status(500).json({ success: false, error: 'Failed to delete key' });
   }
 });
@@ -157,7 +158,7 @@ router.post('/sign', async (req: Request, res: Response): Promise<void> => {
     const signature = await postQuantumKMSService.sign(data, keyId);
     res.json({ success: true, data: signature });
   } catch (error) {
-    console.error('Error signing:', error);
+    logger.error('Error signing:', error);
     res.status(500).json({ success: false, error: 'Failed to sign data' });
   }
 });
@@ -177,7 +178,7 @@ router.post('/verify', async (req: Request, res: Response): Promise<void> => {
     const result = await postQuantumKMSService.verify(data, signature);
     res.json({ success: true, data: result });
   } catch (error) {
-    console.error('Error verifying:', error);
+    logger.error('Error verifying:', error);
     res.status(500).json({ success: false, error: 'Failed to verify signature' });
   }
 });

@@ -15,6 +15,7 @@
  */
 
 import { Router, Request, Response } from 'express';
+import { logger } from '../utils/logger.js';
 import { regulatorySandboxService } from '../services/compliance/RegulatorySandboxService.js';
 
 const router = Router();
@@ -43,7 +44,7 @@ router.get('/regulations', (req: Request, res: Response) => {
     });
     res.json({ success: true, data: regulations });
   } catch (error) {
-    console.error('Error getting regulations:', error);
+    logger.error('Error getting regulations:', error);
     res.status(500).json({ success: false, error: 'Failed to get regulations' });
   }
 });
@@ -60,7 +61,7 @@ router.get('/regulations/:id', (req: Request, res: Response): void => {
     }
     res.json({ success: true, data: regulation });
   } catch (error) {
-    console.error('Error getting regulation:', error);
+    logger.error('Error getting regulation:', error);
     res.status(500).json({ success: false, error: 'Failed to get regulation' });
   }
 });
@@ -73,7 +74,7 @@ router.get('/timeline', (_req: Request, res: Response) => {
     const timeline = regulatorySandboxService.getRegulatoryTimeline();
     res.json({ success: true, data: timeline });
   } catch (error) {
-    console.error('Error getting timeline:', error);
+    logger.error('Error getting timeline:', error);
     res.status(500).json({ success: false, error: 'Failed to get timeline' });
   }
 });
@@ -105,7 +106,7 @@ router.post('/tests', async (req: Request, res: Response): Promise<void> => {
 
     res.status(201).json({ success: true, data: test });
   } catch (error) {
-    console.error('Error creating test:', error);
+    logger.error('Error creating test:', error);
     res.status(500).json({ success: false, error: 'Failed to create test' });
   }
 });
@@ -118,7 +119,7 @@ router.post('/tests/:id/run', async (req: Request, res: Response): Promise<void>
     const result = await regulatorySandboxService.runTest(req.params.id);
     res.json({ success: true, data: result });
   } catch (error) {
-    console.error('Error running test:', error);
+    logger.error('Error running test:', error);
     res.status(500).json({ success: false, error: 'Failed to run test' });
   }
 });
@@ -135,7 +136,7 @@ router.get('/tests/:id', (req: Request, res: Response): void => {
     }
     res.json({ success: true, data: test });
   } catch (error) {
-    console.error('Error getting test:', error);
+    logger.error('Error getting test:', error);
     res.status(500).json({ success: false, error: 'Failed to get test' });
   }
 });
@@ -148,7 +149,7 @@ router.get('/tests', (_req: Request, res: Response) => {
     const tests = regulatorySandboxService.getAllTests();
     res.json({ success: true, data: tests });
   } catch (error) {
-    console.error('Error getting tests:', error);
+    logger.error('Error getting tests:', error);
     res.status(500).json({ success: false, error: 'Failed to get tests' });
   }
 });

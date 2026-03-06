@@ -9,6 +9,7 @@
 // See LICENSE file for details.
 
 import { Router, Request, Response } from 'express';
+import { logger } from '../utils/logger.js';
 import { 
   CendiaResponsibilityService,
   FailureCategory,
@@ -67,7 +68,7 @@ router.post('/record', async (req: Request, res: Response) => {
       data: record
     });
   } catch (error) {
-    console.error('Error creating accountability record:', error);
+    logger.error('Error creating accountability record:', error);
     res.status(500).json({
       success: false,
       error: error instanceof Error ? error.message : 'Failed to create accountability record'
@@ -114,7 +115,7 @@ router.post('/override', async (req: Request, res: Response) => {
       data: record
     });
   } catch (error) {
-    console.error('Error recording override:', error);
+    logger.error('Error recording override:', error);
     res.status(500).json({
       success: false,
       error: error instanceof Error ? error.message : 'Failed to record override'
@@ -161,7 +162,7 @@ router.post('/approve', async (req: Request, res: Response) => {
       data: record
     });
   } catch (error) {
-    console.error('Error recording approval:', error);
+    logger.error('Error recording approval:', error);
     res.status(500).json({
       success: false,
       error: error instanceof Error ? error.message : 'Failed to record approval'
@@ -206,7 +207,7 @@ router.post('/reject', async (req: Request, res: Response) => {
       data: record
     });
   } catch (error) {
-    console.error('Error recording rejection:', error);
+    logger.error('Error recording rejection:', error);
     res.status(500).json({
       success: false,
       error: error instanceof Error ? error.message : 'Failed to record rejection'
@@ -249,7 +250,7 @@ router.post('/delegation', async (req: Request, res: Response) => {
       data: delegation
     });
   } catch (error) {
-    console.error('Error creating delegation:', error);
+    logger.error('Error creating delegation:', error);
     res.status(500).json({
       success: false,
       error: error instanceof Error ? error.message : 'Failed to create delegation'
@@ -272,7 +273,7 @@ router.get('/chain/:decisionId', async (req: Request, res: Response) => {
       data: chain
     });
   } catch (error) {
-    console.error('Error getting accountability chain:', error);
+    logger.error('Error getting accountability chain:', error);
     res.status(500).json({
       success: false,
       error: error instanceof Error ? error.message : 'Failed to get accountability chain'
@@ -295,7 +296,7 @@ router.get('/liability-report/:decisionId', async (req: Request, res: Response) 
       data: report
     });
   } catch (error) {
-    console.error('Error generating liability report:', error);
+    logger.error('Error generating liability report:', error);
     res.status(500).json({
       success: false,
       error: error instanceof Error ? error.message : 'Failed to generate liability report'
@@ -329,7 +330,7 @@ router.post('/verify', async (req: Request, res: Response) => {
       }
     });
   } catch (error) {
-    console.error('Error verifying record:', error);
+    logger.error('Error verifying record:', error);
     res.status(500).json({
       success: false,
       error: error instanceof Error ? error.message : 'Failed to verify record'

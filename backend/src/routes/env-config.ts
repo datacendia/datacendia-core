@@ -16,6 +16,7 @@
  */
 
 import { Router, Request, Response } from 'express';
+import { logger } from '../utils/logger.js';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -134,7 +135,7 @@ router.get('/', async (_req: Request, res: Response) => {
       },
     });
   } catch (error) {
-    console.error('Error reading .env:', error);
+    logger.error('Error reading .env:', error);
     res.status(500).json({
       success: false,
       error: 'Failed to read configuration',
@@ -172,7 +173,7 @@ router.post('/', async (req: Request, res: Response) => {
       message: 'Configuration saved successfully. Restart server to apply changes.',
     });
   } catch (error) {
-    console.error('Error writing .env:', error);
+    logger.error('Error writing .env:', error);
     res.status(500).json({
       success: false,
       error: 'Failed to save configuration',
@@ -222,7 +223,7 @@ router.post('/validate', async (req: Request, res: Response) => {
       errors: Object.keys(errors).length > 0 ? errors : undefined,
     });
   } catch (error) {
-    console.error('Error validating config:', error);
+    logger.error('Error validating config:', error);
     res.status(500).json({
       success: false,
       error: 'Validation failed',
@@ -247,7 +248,7 @@ router.get('/download', async (_req: Request, res: Response) => {
     res.setHeader('Content-Disposition', 'attachment; filename=".env"');
     res.sendFile(ENV_PATH);
   } catch (error) {
-    console.error('Error downloading .env:', error);
+    logger.error('Error downloading .env:', error);
     res.status(500).json({
       success: false,
       error: 'Failed to download configuration',

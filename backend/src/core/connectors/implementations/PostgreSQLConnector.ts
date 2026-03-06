@@ -168,7 +168,11 @@ export class PostgreSQLConnector extends BaseConnector {
       
       try {
         if (options?.timeout) {
-          await client.query(`SET statement_timeout = ${options.timeout}`);
+          const timeoutMs = parseInt(String(options.timeout), 10);
+          if (isNaN(timeoutMs) || timeoutMs < 0 || timeoutMs > 300000) {
+            throw new Error(`Invalid query timeout: ${options.timeout} (must be 0-300000ms)`);
+          }
+          await client.query('SET statement_timeout = $1', [timeoutMs]);
         }
 
         const result = await client.query(sql, params) as QueryResult<T>;

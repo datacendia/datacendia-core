@@ -17,6 +17,7 @@
  */
 
 import { Router, Request, Response, NextFunction } from 'express';
+import { logger } from '../utils/logger.js';
 import { sportsDecisionService, Player, Club } from '../services/sports/SportsDecisionService.js';
 import { sportsKnowledgeBase } from '../services/sports/SportsKnowledgeBase.js';
 import { sportsAgentService, SPORTS_AGENT_PRESETS } from '../services/sports/SportsAgents.js';
@@ -614,7 +615,7 @@ router.get('/workflows', (_req: Request, res: Response) => {
 // =============================================================================
 
 router.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
-  console.error('Sports API Error:', err);
+  logger.error('Sports API Error:', err);
   res.status(500).json({
     error: 'Internal server error',
     message: err.message,

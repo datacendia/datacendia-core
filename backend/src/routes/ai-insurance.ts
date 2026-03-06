@@ -15,6 +15,7 @@
  */
 
 import { Router, Request, Response } from 'express';
+import { logger } from '../utils/logger.js';
 import { aiInsuranceService, CoverageType } from '../services/insurance/AIInsuranceService.js';
 
 const router = Router();
@@ -39,7 +40,7 @@ router.get('/coverage-types', (_req: Request, res: Response) => {
     const types = aiInsuranceService.getCoverageTypes();
     res.json({ success: true, data: types });
   } catch (error) {
-    console.error('Error getting coverage types:', error);
+    logger.error('Error getting coverage types:', error);
     res.status(500).json({ success: false, error: 'Failed to get coverage types' });
   }
 });
@@ -70,7 +71,7 @@ router.post('/quotes', async (req: Request, res: Response): Promise<void> => {
 
     res.status(201).json({ success: true, data: quote });
   } catch (error) {
-    console.error('Error requesting quote:', error);
+    logger.error('Error requesting quote:', error);
     res.status(500).json({ success: false, error: 'Failed to request quote' });
   }
 });
@@ -98,7 +99,7 @@ router.post('/policies', async (req: Request, res: Response): Promise<void> => {
 
     res.status(201).json({ success: true, data: policy });
   } catch (error) {
-    console.error('Error binding policy:', error);
+    logger.error('Error binding policy:', error);
     res.status(500).json({ success: false, error: 'Failed to bind policy' });
   }
 });
@@ -115,7 +116,7 @@ router.get('/policies/:id', (req: Request, res: Response): void => {
     }
     res.json({ success: true, data: policy });
   } catch (error) {
-    console.error('Error getting policy:', error);
+    logger.error('Error getting policy:', error);
     res.status(500).json({ success: false, error: 'Failed to get policy' });
   }
 });
@@ -128,7 +129,7 @@ router.get('/policies/organization/:orgId', (req: Request, res: Response): void 
     const policies = aiInsuranceService.getPoliciesByOrganization(req.params['orgId']!);
     res.json({ success: true, data: policies });
   } catch (error) {
-    console.error('Error getting policies:', error);
+    logger.error('Error getting policies:', error);
     res.status(500).json({ success: false, error: 'Failed to get policies' });
   }
 });
@@ -159,7 +160,7 @@ router.post('/cover-decision', async (req: Request, res: Response): Promise<void
 
     res.status(201).json({ success: true, data: coverage });
   } catch (error) {
-    console.error('Error covering decision:', error);
+    logger.error('Error covering decision:', error);
     res.status(500).json({ success: false, error: 'Failed to cover decision' });
   }
 });
@@ -176,7 +177,7 @@ router.get('/coverage/decision/:decisionId', (req: Request, res: Response): void
     }
     res.json({ success: true, data: coverage });
   } catch (error) {
-    console.error('Error getting coverage:', error);
+    logger.error('Error getting coverage:', error);
     res.status(500).json({ success: false, error: 'Failed to get coverage' });
   }
 });
@@ -208,7 +209,7 @@ router.post('/claims', async (req: Request, res: Response): Promise<void> => {
 
     res.status(201).json({ success: true, data: claim });
   } catch (error) {
-    console.error('Error filing claim:', error);
+    logger.error('Error filing claim:', error);
     res.status(500).json({ success: false, error: 'Failed to file claim' });
   }
 });
@@ -221,7 +222,7 @@ router.get('/certificates/:id/verify', (req: Request, res: Response): void => {
     const result = aiInsuranceService.verifyCertificate(req.params['id']!);
     res.json({ success: true, data: result });
   } catch (error) {
-    console.error('Error verifying certificate:', error);
+    logger.error('Error verifying certificate:', error);
     res.status(500).json({ success: false, error: 'Failed to verify certificate' });
   }
 });

@@ -15,6 +15,7 @@
 // =============================================================================
 
 import { Router, Request, Response } from 'express';
+import { logger } from '../utils/logger.js';
 import { chronosAIService } from '../services/ChronosAIService.js';
 import { chronosEventBus } from '../services/ChronosEventBus.js';
 import { prisma } from '../config/database.js';
@@ -90,7 +91,7 @@ router.get('/status', async (req: Request, res: Response) => {
       }
     });
   } catch (error) {
-    console.error('[DecisionIntel] Status error:', error);
+    logger.error('[DecisionIntel] Status error:', error);
     res.status(500).json({ success: false, error: 'Failed to fetch status' });
   }
 });
@@ -114,7 +115,7 @@ router.get('/chronos/snapshots', async (req: Request, res: Response) => {
     });
     res.json({ success: true, data: snapshots });
   } catch (error) {
-    console.error('[Chronos] Snapshots error:', error);
+    logger.error('[Chronos] Snapshots error:', error);
     res.status(500).json({ success: false, error: 'Failed to fetch snapshots' });
   }
 });
@@ -136,7 +137,7 @@ router.post('/chronos/snapshots', async (req: Request, res: Response) => {
     });
     res.json({ success: true, data: snapshot });
   } catch (error) {
-    console.error('[Chronos] Snapshot create error:', error);
+    logger.error('[Chronos] Snapshot create error:', error);
     res.status(500).json({ success: false, error: 'Failed to create snapshot' });
   }
 });
@@ -173,7 +174,7 @@ router.post('/chronos/ai/pivotal-moments', async (req: Request, res: Response) =
 
     res.json({ success: true, data: pivotalMoments });
   } catch (error) {
-    console.error('[ChronosAI] Pivotal moments error:', error);
+    logger.error('[ChronosAI] Pivotal moments error:', error);
     res.status(500).json({ success: false, error: 'AI analysis failed' });
   }
 });
@@ -200,7 +201,7 @@ router.post('/chronos/ai/causal-chain', async (req: Request, res: Response) => {
 
     res.json({ success: true, data: causalLinks });
   } catch (error) {
-    console.error('[ChronosAI] Causal chain error:', error);
+    logger.error('[ChronosAI] Causal chain error:', error);
     res.status(500).json({ success: false, error: 'AI analysis failed' });
   }
 });
@@ -224,7 +225,7 @@ router.post('/chronos/ai/future-scenarios', async (req: Request, res: Response) 
 
     res.json({ success: true, data: scenarios });
   } catch (error) {
-    console.error('[ChronosAI] Scenario generation error:', error);
+    logger.error('[ChronosAI] Scenario generation error:', error);
     res.status(500).json({ success: false, error: 'AI analysis failed' });
   }
 });
@@ -253,7 +254,7 @@ router.post('/chronos/ai/timeline-insight', async (req: Request, res: Response) 
 
     res.json({ success: true, data: insight });
   } catch (error) {
-    console.error('[ChronosAI] Timeline insight error:', error);
+    logger.error('[ChronosAI] Timeline insight error:', error);
     res.status(500).json({ success: false, error: 'AI analysis failed' });
   }
 });
@@ -277,7 +278,7 @@ router.post('/chronos/ai/what-if', async (req: Request, res: Response) => {
 
     res.json({ success: true, data: analysis });
   } catch (error) {
-    console.error('[ChronosAI] What-if analysis error:', error);
+    logger.error('[ChronosAI] What-if analysis error:', error);
     res.status(500).json({ success: false, error: 'AI analysis failed' });
   }
 });
@@ -300,7 +301,7 @@ router.get('/ghost-board/sessions', async (req: Request, res: Response) => {
     });
     res.json({ success: true, data: sessions });
   } catch (error) {
-    console.error('[GhostBoard] Sessions error:', error);
+    logger.error('[GhostBoard] Sessions error:', error);
     res.status(500).json({ success: false, error: 'Failed to fetch sessions' });
   }
 });
@@ -321,7 +322,7 @@ router.post('/ghost-board/sessions', async (req: Request, res: Response) => {
     });
     res.json({ success: true, data: session });
   } catch (error) {
-    console.error('[GhostBoard] Session create error:', error);
+    logger.error('[GhostBoard] Session create error:', error);
     res.status(500).json({ success: false, error: 'Failed to create session' });
   }
 });
@@ -345,7 +346,7 @@ router.get('/pre-mortem/analyses', async (req: Request, res: Response) => {
     });
     res.json({ success: true, data: analyses });
   } catch (error) {
-    console.error('[PreMortem] Analyses error:', error);
+    logger.error('[PreMortem] Analyses error:', error);
     res.status(500).json({ success: false, error: 'Failed to fetch analyses' });
   }
 });
@@ -369,7 +370,7 @@ router.post('/pre-mortem/analyses', async (req: Request, res: Response) => {
     });
     res.json({ success: true, data: analysis });
   } catch (error) {
-    console.error('[PreMortem] Analysis create error:', error);
+    logger.error('[PreMortem] Analysis create error:', error);
     res.status(500).json({ success: false, error: 'Failed to create analysis' });
   }
 });
@@ -393,7 +394,7 @@ router.get('/regulatory/items', async (req: Request, res: Response) => {
     });
     res.json({ success: true, data: items });
   } catch (error) {
-    console.error('[Regulatory] Items error:', error);
+    logger.error('[Regulatory] Items error:', error);
     res.status(500).json({ success: false, error: 'Failed to fetch items' });
   }
 });
@@ -416,7 +417,7 @@ router.post('/regulatory/items', async (req: Request, res: Response) => {
     });
     res.json({ success: true, data: item });
   } catch (error) {
-    console.error('[Regulatory] Item create error:', error);
+    logger.error('[Regulatory] Item create error:', error);
     res.status(500).json({ success: false, error: 'Failed to create item' });
   }
 });
@@ -470,7 +471,7 @@ router.get('/chronos/timeline', async (req: Request, res: Response) => {
 
     res.json({ success: true, data: result });
   } catch (error) {
-    console.error('[Chronos] Timeline query error:', error);
+    logger.error('[Chronos] Timeline query error:', error);
     res.status(500).json({ success: false, error: 'Failed to query timeline' });
   }
 });
@@ -491,7 +492,7 @@ router.get('/chronos/stats', async (req: Request, res: Response) => {
 
     res.json({ success: true, data: stats });
   } catch (error) {
-    console.error('[Chronos] Stats error:', error);
+    logger.error('[Chronos] Stats error:', error);
     res.status(500).json({ success: false, error: 'Failed to get stats' });
   }
 });
@@ -512,7 +513,7 @@ router.post('/chronos/backfill', async (req: Request, res: Response) => {
 
     res.json({ success: true, data: result });
   } catch (error) {
-    console.error('[Chronos] Backfill error:', error);
+    logger.error('[Chronos] Backfill error:', error);
     res.status(500).json({ success: false, error: 'Failed to backfill events' });
   }
 });
@@ -554,7 +555,7 @@ router.post('/chronos/events', async (req: Request, res: Response) => {
 
     res.json({ success: true, data: { id: eventId } });
   } catch (error) {
-    console.error('[Chronos] Event record error:', error);
+    logger.error('[Chronos] Event record error:', error);
     res.status(500).json({ success: false, error: 'Failed to record event' });
   }
 });

@@ -14,6 +14,7 @@
  */
 
 import { Router, Request, Response } from 'express';
+import { logger } from '../utils/logger.js';
 import {
   sgasOrchestrator,
   decisionAgentsService,
@@ -97,7 +98,7 @@ router.post('/deliberation', async (req: Request, res: Response) => {
       },
     });
   } catch (error) {
-    console.error('Deliberation error:', error);
+    logger.error('Deliberation error:', error);
     res.status(500).json({ 
       error: 'Deliberation failed', 
       message: error instanceof Error ? error.message : 'Unknown error' 

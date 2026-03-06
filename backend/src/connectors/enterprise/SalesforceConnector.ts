@@ -247,7 +247,11 @@ export class SalesforceConnector extends BaseConnector {
         const result = await this.query(params.query);
         records = result.records;
       } else if (params?.objectType) {
-        const limit = params.limit || 100;
+        const limit = Math.max(1, Math.min(params.limit || 100, 2000));
+        // Validate objectType against alphanumeric + underscore pattern to prevent SOQL injection
+        if (!/^[A-Za-z_][A-Za-z0-9_]*$/.test(params.objectType)) {
+          throw new Error(`Invalid Salesforce object type: ${params.objectType}`);
+        }
         const result = await this.query(`SELECT FIELDS(ALL) FROM ${params.objectType} LIMIT ${limit}`);
         records = result.records;
       } else {

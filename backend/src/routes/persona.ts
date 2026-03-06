@@ -14,6 +14,7 @@
 // =============================================================================
 
 import { Router, Request, Response } from 'express';
+import { logger } from '../utils/logger.js';
 import { prisma } from '../config/database.js';
 import { devAuth } from '../middleware/auth.js';
 import { assertCapability } from '../utils/permissions.js';
@@ -36,7 +37,7 @@ router.get('/twins', async (req: Request, res: Response) => {
     });
     res.json({ success: true, data: twins });
   } catch (error) {
-    console.error('[Persona] Twins error:', error);
+    logger.error('[Persona] Twins error:', error);
     res.status(500).json({ success: false, error: 'Failed to fetch twins' });
   }
 });
@@ -51,7 +52,7 @@ router.get('/twins/:id', async (req: Request, res: Response) => {
     if (!twin) return res.status(404).json({ success: false, error: 'Twin not found' });
     res.json({ success: true, data: twin });
   } catch (error) {
-    console.error('[Persona] Twin error:', error);
+    logger.error('[Persona] Twin error:', error);
     res.status(500).json({ success: false, error: 'Failed to fetch twin' });
   }
 });
@@ -72,7 +73,7 @@ router.post('/twins', async (req: Request, res: Response) => {
     });
     res.json({ success: true, data: twin });
   } catch (error) {
-    console.error('[Persona] Create error:', error);
+    logger.error('[Persona] Create error:', error);
     res.status(500).json({ success: false, error: 'Failed to create twin' });
   }
 });
@@ -98,7 +99,7 @@ router.post('/twins/:id/conversation', async (req: Request, res: Response) => {
     
     res.json({ success: true, data: conversation });
   } catch (error) {
-    console.error('[Persona] Conversation error:', error);
+    logger.error('[Persona] Conversation error:', error);
     res.status(500).json({ success: false, error: 'Failed to create conversation' });
   }
 });

@@ -22,6 +22,7 @@
  */
 
 import { Router, Request, Response } from 'express';
+import { logger } from '../utils/logger.js';
 import { PrismaClient } from '@prisma/client';
 import { deterministicFloat, deterministicInt, deterministicPercentage, deterministicPick } from '../utils/deterministic.js';
 
@@ -545,7 +546,7 @@ router.post('/seed/tr', async (_req: Request, res: Response) => {
       });
       results.organization = true;
     } catch (e) {
-      console.log('Skipping organization: may already exist or table issue');
+      logger.info('Skipping organization: may already exist or table issue');
     }
 
     // 1b. Seed TR agents (needed for deliberation_messages FK)
@@ -563,7 +564,7 @@ router.post('/seed/tr', async (_req: Request, res: Response) => {
           create: { ...agent, updated_at: new Date() }
         });
       } catch (e) {
-        console.log(`Skipping agent ${agent.id}:`, e);
+        logger.info(`Skipping agent ${agent.id}:`, e);
       }
     }
 
@@ -603,7 +604,7 @@ router.post('/seed/tr', async (_req: Request, res: Response) => {
       });
       results.deliberation = true;
     } catch (e) {
-      console.log('Skipping deliberation:', e);
+      logger.info('Skipping deliberation:', e);
     }
 
     // 3. Seed deliberation messages
@@ -631,7 +632,7 @@ router.post('/seed/tr', async (_req: Request, res: Response) => {
         });
         results.messages++;
       } catch (e) {
-        console.log(`Skipping message ${msg.id}:`, e);
+        logger.info(`Skipping message ${msg.id}:`, e);
       }
     }
 
@@ -672,7 +673,7 @@ router.post('/seed/tr', async (_req: Request, res: Response) => {
       });
       results.dissent = true;
     } catch (e) {
-      console.log('Skipping dissent:', e);
+      logger.info('Skipping dissent:', e);
     }
 
     // 5. Seed decision packet
@@ -720,7 +721,7 @@ router.post('/seed/tr', async (_req: Request, res: Response) => {
       });
       results.decisionPacket = true;
     } catch (e) {
-      console.log('Skipping decision packet:', e);
+      logger.info('Skipping decision packet:', e);
     }
 
     res.json({
@@ -736,7 +737,7 @@ router.post('/seed/tr', async (_req: Request, res: Response) => {
       results
     });
   } catch (error) {
-    console.error('Error seeding TR demo data:', error);
+    logger.error('Error seeding TR demo data:', error);
     res.status(500).json({
       success: false,
       error: 'Failed to seed TR demo data',
@@ -801,7 +802,7 @@ router.delete('/clear/tr', async (_req: Request, res: Response) => {
       results
     });
   } catch (error) {
-    console.error('Error clearing TR demo data:', error);
+    logger.error('Error clearing TR demo data:', error);
     res.status(500).json({
       success: false,
       error: 'Failed to clear TR demo data'
@@ -832,7 +833,7 @@ router.post('/seed', async (_req: Request, res: Response) => {
         });
         results.deliberations++;
       } catch (e) {
-        console.log(`Skipping deliberation ${dlb.id}: table may not exist`);
+        logger.info(`Skipping deliberation ${dlb.id}: table may not exist`);
       }
     }
 
@@ -847,7 +848,7 @@ router.post('/seed', async (_req: Request, res: Response) => {
         });
         results.contributions++;
       } catch (e) {
-        console.log(`Skipping contribution: table may not exist`);
+        logger.info(`Skipping contribution: table may not exist`);
       }
     }
 
@@ -861,7 +862,7 @@ router.post('/seed', async (_req: Request, res: Response) => {
         });
         results.dissents++;
       } catch (e) {
-        console.log(`Skipping dissent: table may not exist`);
+        logger.info(`Skipping dissent: table may not exist`);
       }
     }
 
@@ -875,7 +876,7 @@ router.post('/seed', async (_req: Request, res: Response) => {
         });
         results.events++;
       } catch (e) {
-        console.log(`Skipping event: table may not exist`);
+        logger.info(`Skipping event: table may not exist`);
       }
     }
 
@@ -885,7 +886,7 @@ router.post('/seed', async (_req: Request, res: Response) => {
       results
     });
   } catch (error) {
-    console.error('Error seeding demo data:', error);
+    logger.error('Error seeding demo data:', error);
     res.status(500).json({
       success: false,
       error: 'Failed to seed demo data',
@@ -937,7 +938,7 @@ router.post('/seed/:scenario', async (req: Request, res: Response) => {
         }
         seeded++;
       } catch (e) {
-        console.log(`Skipping item: table may not exist`);
+        logger.info(`Skipping item: table may not exist`);
       }
     }
 
@@ -947,7 +948,7 @@ router.post('/seed/:scenario', async (req: Request, res: Response) => {
       itemsSeeded: seeded
     });
   } catch (error) {
-    console.error(`Error seeding scenario ${scenario}:`, error);
+    logger.error(`Error seeding scenario ${scenario}:`, error);
     res.status(500).json({
       success: false,
       error: `Failed to seed scenario: ${scenario}`
@@ -975,7 +976,7 @@ router.delete('/clear', async (req: Request, res: Response) => {
       });
       results.deliberations = dlbResult.count;
     } catch (e) {
-      console.log('Deliberation table may not exist');
+      logger.info('Deliberation table may not exist');
     }
 
     // Clear demo contributions
@@ -985,7 +986,7 @@ router.delete('/clear', async (req: Request, res: Response) => {
       });
       results.contributions = contribResult.count;
     } catch (e) {
-      console.log('AgentContribution table may not exist');
+      logger.info('AgentContribution table may not exist');
     }
 
     // Clear demo dissents
@@ -995,7 +996,7 @@ router.delete('/clear', async (req: Request, res: Response) => {
       });
       results.dissents = dissentResult.count;
     } catch (e) {
-      console.log('Dissent table may not exist');
+      logger.info('Dissent table may not exist');
     }
 
     // Clear demo events
@@ -1005,7 +1006,7 @@ router.delete('/clear', async (req: Request, res: Response) => {
       });
       results.events = eventResult.count;
     } catch (e) {
-      console.log('DecisionEvent table may not exist');
+      logger.info('DecisionEvent table may not exist');
     }
 
     res.json({
@@ -1014,7 +1015,7 @@ router.delete('/clear', async (req: Request, res: Response) => {
       results
     });
   } catch (error) {
-    console.error('Error clearing demo data:', error);
+    logger.error('Error clearing demo data:', error);
     res.status(500).json({
       success: false,
       error: 'Failed to clear demo data'
@@ -1067,7 +1068,7 @@ router.get('/status', async (req: Request, res: Response) => {
       status
     });
   } catch (error) {
-    console.error('Error checking demo status:', error);
+    logger.error('Error checking demo status:', error);
     res.status(500).json({
       success: false,
       error: 'Failed to check demo status'

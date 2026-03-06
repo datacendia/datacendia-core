@@ -15,6 +15,7 @@
  */
 
 import { Router, Request, Response } from 'express';
+import { logger } from '../utils/logger.js';
 import { 
   aiConstitutionalCourtService, 
   DisputeCategory 
@@ -44,7 +45,7 @@ router.get('/principles', (_req: Request, res: Response) => {
     const principles = aiConstitutionalCourtService.getPrinciples();
     res.json({ success: true, data: principles });
   } catch (error) {
-    console.error('Error getting principles:', error);
+    logger.error('Error getting principles:', error);
     res.status(500).json({ success: false, error: 'Failed to get principles' });
   }
 });
@@ -58,7 +59,7 @@ router.get('/statistics', (_req: Request, res: Response) => {
     const stats = aiConstitutionalCourtService.getStatistics();
     res.json({ success: true, data: stats });
   } catch (error) {
-    console.error('Error getting statistics:', error);
+    logger.error('Error getting statistics:', error);
     res.status(500).json({ success: false, error: 'Failed to get statistics' });
   }
 });
@@ -91,7 +92,7 @@ router.post('/disputes', async (req: Request, res: Response): Promise<void> => {
 
     res.status(201).json({ success: true, data: dispute });
   } catch (error) {
-    console.error('Error filing dispute:', error);
+    logger.error('Error filing dispute:', error);
     res.status(500).json({ success: false, error: 'Failed to file dispute' });
   }
 });
@@ -112,7 +113,7 @@ router.get('/disputes/:id', async (req: Request, res: Response): Promise<void> =
 
     res.json({ success: true, data: dispute });
   } catch (error) {
-    console.error('Error getting dispute:', error);
+    logger.error('Error getting dispute:', error);
     res.status(500).json({ success: false, error: 'Failed to get dispute' });
   }
 });
@@ -133,7 +134,7 @@ router.get('/disputes/case/:caseNumber', async (req: Request, res: Response): Pr
 
     res.json({ success: true, data: dispute });
   } catch (error) {
-    console.error('Error getting dispute:', error);
+    logger.error('Error getting dispute:', error);
     res.status(500).json({ success: false, error: 'Failed to get dispute' });
   }
 });
@@ -148,7 +149,7 @@ router.get('/disputes/organization/:orgId', async (req: Request, res: Response):
     const disputes = aiConstitutionalCourtService.getDisputesByOrganization(orgId);
     res.json({ success: true, data: disputes });
   } catch (error) {
-    console.error('Error getting disputes:', error);
+    logger.error('Error getting disputes:', error);
     res.status(500).json({ success: false, error: 'Failed to get disputes' });
   }
 });
@@ -170,7 +171,7 @@ router.post('/disputes/:id/schedule-hearing', async (req: Request, res: Response
     const dispute = await aiConstitutionalCourtService.scheduleHearing(id, new Date(hearingDate));
     res.json({ success: true, data: dispute });
   } catch (error) {
-    console.error('Error scheduling hearing:', error);
+    logger.error('Error scheduling hearing:', error);
     res.status(500).json({ success: false, error: 'Failed to schedule hearing' });
   }
 });
@@ -185,7 +186,7 @@ router.post('/disputes/:id/begin-deliberation', async (req: Request, res: Respon
     const dispute = await aiConstitutionalCourtService.beginDeliberation(id);
     res.json({ success: true, data: dispute });
   } catch (error) {
-    console.error('Error beginning deliberation:', error);
+    logger.error('Error beginning deliberation:', error);
     res.status(500).json({ success: false, error: 'Failed to begin deliberation' });
   }
 });
@@ -221,7 +222,7 @@ router.post('/disputes/:id/draft-opinion', async (req: Request, res: Response): 
 
     res.json({ success: true, data: opinion });
   } catch (error) {
-    console.error('Error drafting opinion:', error);
+    logger.error('Error drafting opinion:', error);
     res.status(500).json({ success: false, error: 'Failed to draft opinion' });
   }
 });
@@ -236,7 +237,7 @@ router.post('/disputes/:id/resolve', async (req: Request, res: Response): Promis
     const dispute = await aiConstitutionalCourtService.resolveDispute(id);
     res.json({ success: true, data: dispute });
   } catch (error) {
-    console.error('Error resolving dispute:', error);
+    logger.error('Error resolving dispute:', error);
     res.status(500).json({ success: false, error: 'Failed to resolve dispute' });
   }
 });
@@ -258,7 +259,7 @@ router.post('/disputes/:id/appeal', async (req: Request, res: Response): Promise
     const dispute = await aiConstitutionalCourtService.fileAppeal(id, reason);
     res.json({ success: true, data: dispute });
   } catch (error) {
-    console.error('Error filing appeal:', error);
+    logger.error('Error filing appeal:', error);
     res.status(500).json({ success: false, error: 'Failed to file appeal' });
   }
 });
@@ -279,7 +280,7 @@ router.post('/precedents/search', async (req: Request, res: Response): Promise<v
 
     res.json({ success: true, data: results });
   } catch (error) {
-    console.error('Error searching precedents:', error);
+    logger.error('Error searching precedents:', error);
     res.status(500).json({ success: false, error: 'Failed to search precedents' });
   }
 });

@@ -15,6 +15,7 @@
  */
 
 import { Router, Request, Response } from 'express';
+import { logger } from '../utils/logger.js';
 import { continuousComplianceMonitorService, ComplianceFramework, AlertStatus } from '../services/compliance/ContinuousComplianceMonitorService.js';
 
 const router = Router();
@@ -40,7 +41,7 @@ router.get('/frameworks', (_req: Request, res: Response) => {
     const frameworks = continuousComplianceMonitorService.getSupportedFrameworks();
     res.json({ success: true, data: frameworks });
   } catch (error) {
-    console.error('Error getting frameworks:', error);
+    logger.error('Error getting frameworks:', error);
     res.status(500).json({ success: false, error: 'Failed to get frameworks' });
   }
 });
@@ -63,7 +64,7 @@ router.post('/initialize', async (req: Request, res: Response): Promise<void> =>
     );
     res.status(201).json({ success: true, data: controls });
   } catch (error) {
-    console.error('Error initializing framework:', error);
+    logger.error('Error initializing framework:', error);
     res.status(500).json({ success: false, error: 'Failed to initialize framework' });
   }
 });
@@ -86,7 +87,7 @@ router.post('/scan', async (req: Request, res: Response): Promise<void> => {
     );
     res.json({ success: true, data: snapshot });
   } catch (error) {
-    console.error('Error running scan:', error);
+    logger.error('Error running scan:', error);
     res.status(500).json({ success: false, error: 'Failed to run scan' });
   }
 });
@@ -102,7 +103,7 @@ router.get('/controls/:orgId/:framework', (req: Request, res: Response): void =>
     );
     res.json({ success: true, data: controls });
   } catch (error) {
-    console.error('Error getting controls:', error);
+    logger.error('Error getting controls:', error);
     res.status(500).json({ success: false, error: 'Failed to get controls' });
   }
 });
@@ -115,7 +116,7 @@ router.post('/controls/:id/check', async (req: Request, res: Response): Promise<
     const control = await continuousComplianceMonitorService.checkControl(req.params['id']!);
     res.json({ success: true, data: control });
   } catch (error) {
-    console.error('Error checking control:', error);
+    logger.error('Error checking control:', error);
     res.status(500).json({ success: false, error: 'Failed to check control' });
   }
 });
@@ -131,7 +132,7 @@ router.get('/history/:orgId/:framework', (req: Request, res: Response): void => 
     );
     res.json({ success: true, data: history });
   } catch (error) {
-    console.error('Error getting history:', error);
+    logger.error('Error getting history:', error);
     res.status(500).json({ success: false, error: 'Failed to get history' });
   }
 });
@@ -145,7 +146,7 @@ router.get('/drifts', (req: Request, res: Response): void => {
     const drifts = continuousComplianceMonitorService.getRecentDrifts(hours);
     res.json({ success: true, data: drifts });
   } catch (error) {
-    console.error('Error getting drifts:', error);
+    logger.error('Error getting drifts:', error);
     res.status(500).json({ success: false, error: 'Failed to get drifts' });
   }
 });
@@ -159,7 +160,7 @@ router.get('/alerts/:orgId', (req: Request, res: Response): void => {
     const alerts = continuousComplianceMonitorService.getAlerts(req.params['orgId']!, status);
     res.json({ success: true, data: alerts });
   } catch (error) {
-    console.error('Error getting alerts:', error);
+    logger.error('Error getting alerts:', error);
     res.status(500).json({ success: false, error: 'Failed to get alerts' });
   }
 });
@@ -173,7 +174,7 @@ router.post('/alerts/:id/acknowledge', (req: Request, res: Response): void => {
     const alert = continuousComplianceMonitorService.acknowledgeAlert(req.params['id']!, assignedTo);
     res.json({ success: true, data: alert });
   } catch (error) {
-    console.error('Error acknowledging alert:', error);
+    logger.error('Error acknowledging alert:', error);
     res.status(500).json({ success: false, error: 'Failed to acknowledge alert' });
   }
 });
@@ -190,7 +191,7 @@ router.post('/alerts/:id/resolve', (req: Request, res: Response): void => {
     );
     res.json({ success: true, data: alert });
   } catch (error) {
-    console.error('Error resolving alert:', error);
+    logger.error('Error resolving alert:', error);
     res.status(500).json({ success: false, error: 'Failed to resolve alert' });
   }
 });
