@@ -78,7 +78,7 @@ export async function initializeSovereignServices(): Promise<void> {
 
     logger.info('[Sovereign] All storage services initialized successfully');
   } catch (error) {
-    console.error('[Sovereign] Failed to initialize some services:', error);
+    logger.error('[Sovereign] Failed to initialize some services:', error);
     // Don't throw - allow app to start with partial functionality
   }
 }
@@ -93,6 +93,6 @@ export async function shutdownSovereignServices(): Promise<void> {
     await agentQueueService.shutdown();
     logger.info('[Sovereign] All storage services shut down');
   } catch (error) {
-    console.error('[Sovereign] Error during shutdown:', error);
+    logger.error('[Sovereign] Error during shutdown:', error);
   }
 }

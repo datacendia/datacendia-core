@@ -16,6 +16,7 @@
  */
 
 import crypto from 'crypto';
+import { logger } from '../../utils/logger.js';
 import { prisma } from '../../lib/prisma.js';
 
 // ============================================================================
@@ -122,7 +123,7 @@ export class LLMCacheService {
         },
       });
     } catch (error) {
-      console.error('Cache set error:', error);
+      logger.error('Cache set error:', error);
     }
   }
 

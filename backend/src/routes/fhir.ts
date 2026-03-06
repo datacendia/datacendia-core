@@ -14,6 +14,7 @@
 
 import { Router, Request, Response } from 'express';
 import { devAuth } from '../middleware/auth.js';
+import { requireOrgScope } from '../middleware/tenantIsolation.js';
 import { FHIRConnector } from '../services/verticals/healthcare/FHIRConnector.js';
 
 const router = Router();
@@ -38,6 +39,7 @@ router.get('/status', (_req: Request, res: Response) => {
 });
 
 router.use(devAuth);
+router.use(requireOrgScope);
 
 // =============================================================================
 // AUTHENTICATION

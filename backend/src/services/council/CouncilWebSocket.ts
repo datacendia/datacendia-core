@@ -135,7 +135,7 @@ export class CouncilWebSocketServer {
 
       // Handle errors
       ws.on('error', (error: Error) => {
-        console.error(`[CouncilWebSocket] Client error: ${clientId}`, error);
+        logger.error(`[CouncilWebSocket] Client error: ${clientId}`, error);
         this.clients.delete(clientId);
       });
     });

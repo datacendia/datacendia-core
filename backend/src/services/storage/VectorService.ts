@@ -87,7 +87,7 @@ class VectorService {
       await this.prisma.$executeRaw`SELECT 'vector'::regtype`;
       logger.info('[Vector] pgvector extension verified');
     } catch (error) {
-      console.error('[Vector] pgvector extension not found. Run: CREATE EXTENSION vector;');
+      logger.error('[Vector] pgvector extension not found. Run: CREATE EXTENSION vector;');
       throw error;
     }
 
@@ -112,7 +112,7 @@ class VectorService {
       const data = await response.json() as { embedding: number[] };
       return data.embedding;
     } catch (error: unknown) {
-      console.error('[Vector] Embedding generation error:', getErrorMessage(error));
+      logger.error('[Vector] Embedding generation error:', getErrorMessage(error));
       throw error;
     }
   }

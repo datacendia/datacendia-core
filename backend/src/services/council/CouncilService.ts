@@ -518,7 +518,7 @@ export class CouncilService extends EventEmitter {
     // Start async deliberation process
     this.runDeliberation(deliberationId, question, agentIds, config, options.context, tracer)
       .catch(err => {
-        console.error(`[Deliberation ${deliberationId}] Error:`, err);
+        logger.error(`[Deliberation ${deliberationId}] Error:`, err);
         this.updateDeliberationStatus(deliberationId, 'error');
       });
 
@@ -627,7 +627,7 @@ export class CouncilService extends EventEmitter {
       ragCitations = await ragService.search(question, { limit: 5, threshold: 0.3 });
       logger.info(`[Council] Retrieved ${ragCitations.length} RAG citations for question`);
     } catch (ragError) {
-      console.warn('[Council] RAG search failed, proceeding without citations:', ragError);
+      logger.warn('[Council] RAG search failed, proceeding without citations:', ragError);
     }
 
     // Build RAG context string for agents
@@ -716,7 +716,7 @@ export class CouncilService extends EventEmitter {
         // Note: The metadata is captured in the tracer, we reconstruct basic metrics here
         responseMetadata.totalTokens = fullResponse.split(/\s+/).length;
       } catch (error) {
-        console.error(`[Agent ${agentId}] Error:`, error);
+        logger.error(`[Agent ${agentId}] Error:`, error);
         fullResponse = `Error: Unable to generate response. ${error instanceof Error ? error.message : 'Unknown error'}`;
       }
 
@@ -745,7 +745,7 @@ export class CouncilService extends EventEmitter {
 
       // Extract and store insights as memories (non-blocking)
       this.extractAndStoreMemories(agentId, deliberationId, fullResponse).catch(err => 
-        console.error(`[Agent ${agentId}] Memory extraction error:`, err)
+        logger.error(`[Agent ${agentId}] Memory extraction error:`, err)
       );
 
       return response;
@@ -791,7 +791,7 @@ export class CouncilService extends EventEmitter {
               timestamp: new Date(),
             });
           } else if (result.error) {
-            console.warn(`[Council] Legal tool ${call.name} failed:`, result.error);
+            logger.warn(`[Council] Legal tool ${call.name} failed:`, result.error);
           }
         }
       }
@@ -836,7 +836,7 @@ export class CouncilService extends EventEmitter {
         ]);
       } catch (err) {
         // Table might not exist yet, log and continue
-        console.warn(`[Council] Failed to store citation: ${err instanceof Error ? err.message : 'Unknown'}`);
+        logger.warn(`[Council] Failed to store citation: ${err instanceof Error ? err.message : 'Unknown'}`);
       }
     }
   }

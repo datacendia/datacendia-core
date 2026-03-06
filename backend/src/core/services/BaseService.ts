@@ -87,12 +87,12 @@ export class ServiceLogger {
 
   warn(message: string, meta?: Record<string, any>): void {
     if (['debug', 'info', 'warn'].includes(this.logLevel)) {
-      console.warn(this.formatMessage('warn', message, meta));
+      logger.warn(this.formatMessage('warn', message, meta));
     }
   }
 
   error(message: string, meta?: Record<string, any>): void {
-    console.error(this.formatMessage('error', message, meta));
+    logger.error(this.formatMessage('error', message, meta));
   }
 }
 

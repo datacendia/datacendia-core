@@ -17,10 +17,12 @@ import { Router, Request, Response } from 'express';
 import { logger } from '../utils/logger.js';
 import { prisma } from '../config/database.js';
 import { devAuth, requireRole } from '../middleware/auth.js';
+import { requireOrgScope } from '../middleware/tenantIsolation.js';
 
 const router = Router();
 
 router.use(devAuth);
+router.use(requireOrgScope);
 
 // =============================================================================
 // NETWORK STATS

@@ -104,7 +104,7 @@ class MinioService {
           }
         }
       } catch (error: unknown) {
-        console.error(`[MinIO] Failed to create bucket ${bucketName}:`, getErrorMessage(error));
+        logger.error(`[MinIO] Failed to create bucket ${bucketName}:`, getErrorMessage(error));
       }
     }
 
@@ -176,7 +176,7 @@ class MinioService {
         size: buffer.length,
       };
     } catch (error: unknown) {
-      console.error('[MinIO] Upload error:', getErrorMessage(error));
+      logger.error('[MinIO] Upload error:', getErrorMessage(error));
       return {
         success: false,
         bucket,
@@ -224,7 +224,7 @@ class MinioService {
         size,
       };
     } catch (error: unknown) {
-      console.error('[MinIO] Upload stream error:', getErrorMessage(error));
+      logger.error('[MinIO] Upload stream error:', getErrorMessage(error));
       return {
         success: false,
         bucket,
@@ -249,7 +249,7 @@ class MinioService {
         size: stat.size,
       };
     } catch (error: unknown) {
-      console.error('[MinIO] Download error:', getErrorMessage(error));
+      logger.error('[MinIO] Download error:', getErrorMessage(error));
       return {
         success: false,
         error: getErrorMessage(error),
@@ -271,7 +271,7 @@ class MinioService {
         stream.on('error', reject);
       });
     } catch (error: unknown) {
-      console.error('[MinIO] Download buffer error:', getErrorMessage(error));
+      logger.error('[MinIO] Download buffer error:', getErrorMessage(error));
       return null;
     }
   }
@@ -287,7 +287,7 @@ class MinioService {
     try {
       return await this.client.presignedGetObject(bucket, objectName, expirySeconds);
     } catch (error: unknown) {
-      console.error('[MinIO] Presigned URL error:', getErrorMessage(error));
+      logger.error('[MinIO] Presigned URL error:', getErrorMessage(error));
       return null;
     }
   }
@@ -303,7 +303,7 @@ class MinioService {
     try {
       return await this.client.presignedPutObject(bucket, objectName, expirySeconds);
     } catch (error: unknown) {
-      console.error('[MinIO] Presigned upload URL error:', getErrorMessage(error));
+      logger.error('[MinIO] Presigned upload URL error:', getErrorMessage(error));
       return null;
     }
   }
@@ -316,7 +316,7 @@ class MinioService {
       await this.client.removeObject(bucket, objectName);
       return true;
     } catch (error: unknown) {
-      console.error('[MinIO] Delete error:', getErrorMessage(error));
+      logger.error('[MinIO] Delete error:', getErrorMessage(error));
       return false;
     }
   }
@@ -339,7 +339,7 @@ class MinioService {
         stream.on('error', reject);
       });
     } catch (error: unknown) {
-      console.error('[MinIO] List error:', getErrorMessage(error));
+      logger.error('[MinIO] List error:', getErrorMessage(error));
       return [];
     }
   }
@@ -393,7 +393,7 @@ class MinioService {
       );
       return true;
     } catch (error: unknown) {
-      console.error('[MinIO] Copy error:', getErrorMessage(error));
+      logger.error('[MinIO] Copy error:', getErrorMessage(error));
       return false;
     }
   }

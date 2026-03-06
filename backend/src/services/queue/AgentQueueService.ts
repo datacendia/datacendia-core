@@ -27,11 +27,11 @@ import { logger } from '../../utils/logger.js';
 
 function attachRedisEventHandlers(client: Redis, label: string) {
   client.on('error', (err) => {
-    console.error(`[AgentQueue] ${label} Redis error:`, err);
+    logger.error(`[AgentQueue] ${label} Redis error:`, err);
   });
 
   client.on('close', () => {
-    console.warn(`[AgentQueue] ${label} Redis connection closed`);
+    logger.warn(`[AgentQueue] ${label} Redis connection closed`);
   });
 }
 
@@ -200,7 +200,7 @@ class AgentQueueService extends EventEmitter {
       await timeout(1500, connection.connect(), 'Redis connect');
       await timeout(1500, connection.ping(), 'Redis ping');
     } catch (err) {
-      console.warn('[AgentQueue] Redis unavailable; BullMQ queues disabled:', err);
+      logger.warn('[AgentQueue] Redis unavailable; BullMQ queues disabled:', err);
       try {
         connection.disconnect();
       } catch {}
@@ -228,7 +228,7 @@ class AgentQueueService extends EventEmitter {
 
       events.on('failed', ({ jobId, failedReason }) => {
         this.emit('job:failed', { queue: queueName, jobId, error: failedReason });
-        console.error(`[AgentQueue] Job ${jobId} failed in ${queueName}:`, failedReason);
+        logger.error(`[AgentQueue] Job ${jobId} failed in ${queueName}:`, failedReason);
       });
 
       events.on('progress', ({ jobId, data }) => {
@@ -392,11 +392,11 @@ class AgentQueueService extends EventEmitter {
     });
 
     worker.on('failed', (job, err) => {
-      console.error(`[AgentQueue] Job ${job?.id} failed in ${queueName}:`, err.message);
+      logger.error(`[AgentQueue] Job ${job?.id} failed in ${queueName}:`, err.message);
     });
 
     worker.on('error', (err) => {
-      console.error(`[AgentQueue] Worker error in ${queueName}:`, err);
+      logger.error(`[AgentQueue] Worker error in ${queueName}:`, err);
     });
 
     this.workers.set(queueName, worker);

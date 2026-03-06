@@ -75,7 +75,7 @@ export interface AuthenticatedRequest extends Request {
 // connect-redis or another persistent store.
 const memoryStore = new session.MemoryStore();
 if (process.env.NODE_ENV === 'production') {
-  console.warn('[Keycloak] WARNING: Using in-memory session store in production. ' +
+  logger.warn('[Keycloak] WARNING: Using in-memory session store in production. ' +
     'This is acceptable for bearerOnly API mode but NOT for browser SSO flows. ' +
     'Set up connect-redis if enabling browser-based Keycloak login.');
 }
@@ -220,7 +220,7 @@ export function protect(role?: CendiaRole | CendiaRole[]) {
         next();
       });
     } catch (error: unknown) {
-      console.error('[Keycloak] Auth error:', getErrorMessage(error));
+      logger.error('[Keycloak] Auth error:', getErrorMessage(error));
       return res.status(401).json({
         success: false,
         error: { code: 'AUTH_ERROR', message: getErrorMessage(error) },

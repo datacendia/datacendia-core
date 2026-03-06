@@ -129,7 +129,7 @@ export class MultiSourceManager extends EventEmitter {
           lastRowCount = currentCount;
         }
       } catch (error) {
-        console.error(`[MultiSource] Poll error on ${sourceId}:`, error);
+        logger.error(`[MultiSource] Poll error on ${sourceId}:`, error);
       }
     };
 
@@ -156,7 +156,7 @@ export class MultiSourceManager extends EventEmitter {
           const rows = await source.query<T>(sql, params);
           results.set(id, rows);
         } catch (error) {
-          console.error(`[MultiSource] Query error on ${id}:`, error);
+          logger.error(`[MultiSource] Query error on ${id}:`, error);
           results.set(id, []);
         }
       }

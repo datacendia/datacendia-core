@@ -21,6 +21,7 @@
  */
 
 import crypto from 'crypto';
+import { logger } from '../utils/logger.js';
 import { druidEventStream } from '../services/DruidEventStream.js';
 
 export type AuditEventType =
@@ -553,7 +554,7 @@ class AuditService {
    * Trigger security alert for critical events
    */
   private async triggerSecurityAlert(event: AuditEvent): Promise<void> {
-    console.error('[SECURITY ALERT]', event.eventType, event.details);
+    logger.error('[SECURITY ALERT]', event.eventType, event.details);
     // Would integrate with alerting system (PagerDuty, Slack, email)
   }
 

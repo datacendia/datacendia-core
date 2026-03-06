@@ -14,14 +14,14 @@
 
 import { Router } from 'express';
 import demoRoutes from '../demo.js';
-import holyShitRoutes from '../holyShit.js';
+import advancedAnalysisRoutes from '../advancedAnalysis.js';
 import demoSeedRoutes from '../demo-seed.js';
 import consolidatedRoutes from '../consolidated.js';
 
 const router = Router();
 
 router.use('/leads', demoRoutes);
-router.use('/premium', holyShitRoutes);
+router.use('/premium', advancedAnalysisRoutes);
 router.use('/demo', demoSeedRoutes);
 router.use('/consolidated', consolidatedRoutes);
 

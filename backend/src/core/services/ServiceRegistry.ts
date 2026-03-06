@@ -236,7 +236,7 @@ class ServiceRegistry {
           await registration.service.start();
           logger.info(`[ServiceRegistry] Started: ${name}`);
         } catch (error: unknown) {
-          console.error(`[ServiceRegistry] Failed to start ${name}:`, getErrorMessage(error));
+          logger.error(`[ServiceRegistry] Failed to start ${name}:`, getErrorMessage(error));
           throw error;
         }
       }
@@ -271,7 +271,7 @@ class ServiceRegistry {
         logger.info(`[ServiceRegistry] Stopping: ${name}`);
         await registration.service.stop();
       } catch (error: unknown) {
-        console.error(`[ServiceRegistry] Error stopping ${name}:`, getErrorMessage(error));
+        logger.error(`[ServiceRegistry] Error stopping ${name}:`, getErrorMessage(error));
         errors.push({ name, error: ensureError(error) });
       }
     }
@@ -281,7 +281,7 @@ class ServiceRegistry {
     logger.info('[ServiceRegistry] All services stopped');
 
     if (errors.length > 0) {
-      console.error('[ServiceRegistry] Errors during shutdown:', errors);
+      logger.error('[ServiceRegistry] Errors during shutdown:', errors);
     }
   }
 
@@ -394,7 +394,7 @@ class ServiceRegistry {
           await this.shutdownAll();
           process.exit(0);
         } catch (error) {
-          console.error('[ServiceRegistry] Error during shutdown:', error);
+          logger.error('[ServiceRegistry] Error during shutdown:', error);
           process.exit(1);
         }
       });

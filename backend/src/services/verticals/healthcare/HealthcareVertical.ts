@@ -586,7 +586,7 @@ export class HealthcareDataConnector extends DataConnector<FHIRResource> {
     // Read-only enforcement - healthcare data should never be written by AI
     const readOnly = config['readOnly'] !== false;
     if (!readOnly) {
-      console.warn('Healthcare connector must be read-only');
+      logger.warn('Healthcare connector must be read-only');
       return false;
     }
 

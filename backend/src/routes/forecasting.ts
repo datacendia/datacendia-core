@@ -18,6 +18,7 @@ import { z } from 'zod';
 import { logger } from '../utils/logger.js';
 import { errors } from '../middleware/errorHandler.js';
 import { devAuth } from '../middleware/auth.js';
+import { requireOrgScope } from '../middleware/tenantIsolation.js';
 import { fredDataService, FRED_SERIES, FREDSeriesId } from '../services/forecasting/FREDDataService.js';
 import { timeSeriesForecaster } from '../services/forecasting/TimeSeriesForecaster.js';
 
@@ -25,6 +26,7 @@ const router = Router();
 
 // All routes require authentication
 router.use(devAuth);
+router.use(requireOrgScope);
 
 // =============================================================================
 // SCHEMAS

@@ -70,7 +70,7 @@ class ClickHouseService {
       });
       await this.checkAvailability();
     } catch (error: unknown) {
-      console.warn('[ClickHouse] Failed to initialize:', getErrorMessage(error));
+      logger.warn('[ClickHouse] Failed to initialize:', getErrorMessage(error));
       this.isAvailable = false;
     }
   }
@@ -90,7 +90,7 @@ class ClickHouseService {
       return this.isAvailable;
     } catch (error) {
       this.isAvailable = false;
-      console.warn('[ClickHouse] Service not available');
+      logger.warn('[ClickHouse] Service not available');
       return false;
     }
   }
@@ -122,7 +122,7 @@ class ClickHouseService {
         queryTime,
       };
     } catch (error: unknown) {
-      console.error('[ClickHouse] Query error:', getErrorMessage(error));
+      logger.error('[ClickHouse] Query error:', getErrorMessage(error));
       return {
         success: false,
         data: [],
@@ -151,7 +151,7 @@ class ClickHouseService {
 
       return { success: data.length, failed: 0 };
     } catch (error: unknown) {
-      console.error('[ClickHouse] Insert error:', getErrorMessage(error));
+      logger.error('[ClickHouse] Insert error:', getErrorMessage(error));
       return { success: 0, failed: data.length };
     }
   }
@@ -233,7 +233,7 @@ class ClickHouseService {
       try {
         await this.client.command({ query });
       } catch (error: unknown) {
-        console.error('[ClickHouse] Table creation error:', getErrorMessage(error));
+        logger.error('[ClickHouse] Table creation error:', getErrorMessage(error));
       }
     }
 

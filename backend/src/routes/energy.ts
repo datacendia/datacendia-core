@@ -10,6 +10,7 @@
 
 import { Router, Request, Response } from 'express';
 import { devAuth } from '../middleware/auth.js';
+import { requireOrgScope } from '../middleware/tenantIsolation.js';
 import {
   ALL_ENERGY_MODES,
   getEnergyMode,
@@ -28,6 +29,7 @@ import {
 
 const router = Router();
 router.use(devAuth);
+router.use(requireOrgScope);
 
 // =============================================================================
 // HEALTH CHECK

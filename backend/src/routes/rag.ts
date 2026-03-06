@@ -19,6 +19,7 @@ import { prisma } from '../config/database.js';
 import { logger } from '../utils/logger.js';
 import { errors } from '../middleware/errorHandler.js';
 import { devAuth } from '../middleware/auth.js';
+import { requireOrgScope } from '../middleware/tenantIsolation.js';
 import { enhancedLLM } from '../services/EnhancedLLMService.js';
 
 const router = Router();
@@ -30,6 +31,7 @@ router.get('/health', (_req: Request, res: Response) => {
 
 // All routes require authentication
 router.use(devAuth);
+router.use(requireOrgScope);
 
 // =============================================================================
 // SCHEMAS
