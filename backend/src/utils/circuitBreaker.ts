@@ -65,7 +65,7 @@ class CircuitBreaker {
       if (this.nextAttempt && new Date() < this.nextAttempt) {
         // Still in cooldown
         if (fallback) {
-          console.warn(`[CircuitBreaker:${this.config.name}] OPEN - using fallback`);
+          logger.warn(`[CircuitBreaker:${this.config.name}] OPEN - using fallback`);
           return fallback();
         }
         throw new Error(`[CircuitBreaker:${this.config.name}] Service unavailable`);
@@ -83,7 +83,7 @@ class CircuitBreaker {
     } catch (error) {
       this.onFailure();
       if (fallback) {
-        console.warn(`[CircuitBreaker:${this.config.name}] Failed - using fallback`);
+        logger.warn(`[CircuitBreaker:${this.config.name}] Failed - using fallback`);
         return fallback();
       }
       throw error;
@@ -112,11 +112,11 @@ class CircuitBreaker {
       // Failed during test, back to open
       this.state = 'OPEN';
       this.nextAttempt = new Date(Date.now() + this.config.resetTimeout);
-      console.warn(`[CircuitBreaker:${this.config.name}] Failed in HALF_OPEN - back to OPEN`);
+      logger.warn(`[CircuitBreaker:${this.config.name}] Failed in HALF_OPEN - back to OPEN`);
     } else if (this.failures >= this.config.failureThreshold) {
       this.state = 'OPEN';
       this.nextAttempt = new Date(Date.now() + this.config.resetTimeout);
-      console.warn(`[CircuitBreaker:${this.config.name}] Threshold reached - OPEN until ${this.nextAttempt.toISOString()}`);
+      logger.warn(`[CircuitBreaker:${this.config.name}] Threshold reached - OPEN until ${this.nextAttempt.toISOString()}`);
     }
   }
 
@@ -198,7 +198,7 @@ async function queryNeo4j(cypher: string) {
     },
     // Fallback (optional)
     () => {
-      console.warn('Neo4j unavailable, returning empty result');
+      logger.warn('Neo4j unavailable, returning empty result');
       return { records: [] };
     }
   );
