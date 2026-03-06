@@ -70,7 +70,15 @@ export interface AuthenticatedRequest extends Request {
 }
 
 // Session store for Keycloak
+// NOTE: bearerOnly=true means Keycloak validates tokens inline — sessions are
+// minimally used. For production with browser-redirect flows, replace with
+// connect-redis or another persistent store.
 const memoryStore = new session.MemoryStore();
+if (process.env.NODE_ENV === 'production') {
+  console.warn('[Keycloak] WARNING: Using in-memory session store in production. ' +
+    'This is acceptable for bearerOnly API mode but NOT for browser SSO flows. ' +
+    'Set up connect-redis if enabling browser-based Keycloak login.');
+}
 
 // Initialize Keycloak
 let keycloak: Keycloak.Keycloak | null = null;
@@ -106,7 +114,7 @@ export function getSessionMiddleware() {
   return session({
     secret: (() => { const s = process.env.SESSION_SECRET; if (!s && process.env.NODE_ENV === 'production') { throw new Error('SESSION_SECRET must be set in production'); } return s || 'dev-only-session-secret'; })(),
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     store: memoryStore,
     cookie: {
       secure: process.env.NODE_ENV === 'production',
