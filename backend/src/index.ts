@@ -384,11 +384,12 @@ let socketServer: SocketServer | null = null;
 // Start server
 const startServer = async () => {
   try {
-    // Bind to 0.0.0.0 in production/Railway so the port is reachable from outside the container.
-    // On Windows dev, bind only to localhost to avoid firewall prompts.
-    const listenHost = config.nodeEnv === 'development' && process.platform === 'win32'
-      ? '127.0.0.1'
-      : '0.0.0.0';
+    // Bind to 0.0.0.0 in production so the server is reachable from outside the
+    // container (Railway load balancer, Docker host, etc.).
+    // In development, let Node.js use its default (loopback on Windows, system default elsewhere).
+    const listenHost = config.nodeEnv === 'production'
+      ? '0.0.0.0'
+      : (process.platform === 'win32' ? '127.0.0.1' : undefined);
 
     // ── Auth Mode Guard ─────────────────────────────────────────────────
     // Demo mode (DEMO_MODE=true) is allowed in production for Railway / hosted demos
@@ -399,7 +400,19 @@ const startServer = async () => {
       logger.error('⛔ Dev auth bypass could be active. Refusing to start.');
       process.exit(1);
     }
-    const authMode = config.requireAuth ? 'enforced' : (config.nodeEnv === 'development' || config.demoMode ? 'dev-bypass' : 'enforced');
+    // Warn loudly when demo mode is running in production so operators know the deployment is not fully secured.
+    if (config.nodeEnv === 'production' && config.demoMode) {
+      logger.warn('⚠️  DEMO MODE ACTIVE: Authentication bypass is enabled. This deployment uses seeded demo accounts.');
+      logger.warn('⚠️  To secure this deployment, set DEMO_MODE=false and REQUIRE_AUTH=true in your environment.');
+    }
+    let authMode: string;
+    if (config.requireAuth) {
+      authMode = 'enforced';
+    } else if (config.nodeEnv === 'development' || config.demoMode) {
+      authMode = 'dev-bypass';
+    } else {
+      authMode = 'enforced';
+    }
     logger.info(`🔐 Auth mode: ${authMode} (REQUIRE_AUTH=${config.requireAuth}, DEMO_MODE=${config.demoMode}, NODE_ENV=${config.nodeEnv})`);
 
     httpServer.listen(config.port, listenHost, () => {

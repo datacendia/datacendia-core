@@ -21,6 +21,11 @@ export PORT="${PORT:-3001}"
 # in the Railway dashboard to switch to a fully-authenticated deployment.
 export DEMO_MODE="${DEMO_MODE:-true}"
 
+if [ "$DEMO_MODE" = "true" ]; then
+  echo "⚠️  DEMO MODE: Authentication bypass is active (seeded demo accounts only)."
+  echo "⚠️  Set DEMO_MODE=false and REQUIRE_AUTH=true in the Railway dashboard to secure this deployment."
+fi
+
 # Wait for database to be reachable (Railway may take a moment)
 echo "Checking database connection..."
 MAX_RETRIES=15
