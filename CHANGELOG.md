@@ -18,10 +18,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - **Cross-Repo Architecture Map** -- `docs/CROSS-REPO-ARCHITECTURE.md` with quarterly review process
 - **Q1 2026 Platform Audit Report** -- `docs/AUDIT-REPORT-2026-Q1.md` comprehensive security and quality audit
 - **`as-any` Baseline Tracker** -- TypeScript `as any` cast tracking with reduction targets
+- **Security workflow** -- `.github/workflows/security.yml` with dependency audit (`--audit-level=critical`), CodeQL SAST (JavaScript/TypeScript), and TruffleHog secret scanning
+- **Dependabot** -- `.github/dependabot.yml` covering npm (root + backend), GitHub Actions, and Docker ecosystems with grouped updates
+- **`postinstall` hook** -- `backend/package.json` now runs `prisma generate` automatically after `npm install`
 
 ### Changed
 - **Security Hardening** -- SQL injection fixes, JWT refresh token hardening, logger migration (replaced all `console.*` with structured logger)
 - **CI Pipeline** -- CodeQL v3→v4 upgrade, non-blocking dependency audit, non-blocking type-check/lint, JWT_REFRESH_SECRET in CI env
+- **CI workflow rewrite** -- Added concurrency groups, `prisma generate` step, `--skipLibCheck`, community edition build job, infrastructure service tests, and a `ci-status` gate job
+- **Build script** -- Backend `build` now runs `prisma generate && tsc` to ensure Prisma client is always fresh before compilation
 - **ESLint** -- `no-console` upgraded to error, unscoped routes documented
 - **Org Scoping** -- Route renaming for consistent organization-scoped endpoints
 
@@ -30,17 +35,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - **Auth Guard** -- License metadata correction, admin auth fixes
 - **CircuitBreaker** -- Replaced console calls with structured logger
 - **Copyright Headers** -- Updated 38 remaining proprietary headers to Apache 2.0
-
-## [0.1.2] - 2026-03-02
-
-### Added
-- **Security workflow** -- `.github/workflows/security.yml` with dependency audit (`--audit-level=critical`), CodeQL SAST (JavaScript/TypeScript), and TruffleHog secret scanning
-- **Dependabot** -- `.github/dependabot.yml` covering npm (root + backend), GitHub Actions, and Docker ecosystems with grouped updates
-- **`postinstall` hook** -- `backend/package.json` now runs `prisma generate` automatically after `npm install`
-
-### Changed
-- **CI workflow rewrite** -- Added concurrency groups, `prisma generate` step, `--skipLibCheck`, community edition build job, infrastructure service tests, and a `ci-status` gate job
-- **Build script** -- Backend `build` now runs `prisma generate && tsc` to ensure Prisma client is always fresh before compilation
 
 ## [0.1.1] - 2026-03-02
 
@@ -107,6 +101,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - GitHub Actions CI/CD
 
 [0.2.0-alpha]: https://github.com/datacendia/datacendia-core/compare/v0.1.1...v0.2.0-alpha
-[0.1.2]: https://github.com/datacendia/datacendia-core/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/datacendia/datacendia-core/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/datacendia/datacendia-core/releases/tag/v0.1.0
