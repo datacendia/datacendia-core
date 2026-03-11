@@ -193,7 +193,7 @@ curl -X POST http://localhost:3001/api/v1/gateway/federation/{id}/reports \
 - **Docker** & Docker Compose
 - **Ollama** (or any supported LLM provider)
 
-### Quick Start (5 minutes)
+### Quick Start (20 minutes)
 
 ```bash
 # Clone
