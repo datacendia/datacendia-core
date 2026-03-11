@@ -155,6 +155,34 @@ Detects and blocks 10 PII types before they reach AI providers:
 
 See [`browser-extension/README.md`](browser-extension/README.md) for detailed deployment instructions.
 
+### Federation Infrastructure
+
+"One agreement, all member organizations covered." Create a federation, add member orgs, push shared AI governance policies, and generate consolidated compliance reports — all with cryptographic signing.
+
+```bash
+# Create a federation
+curl -X POST http://localhost:3001/api/v1/gateway/federation \
+  -H "Content-Type: application/json" \
+  -d '{"name": "FEPCMAC", "adminOrgId": "fepcmac-hq", "regulatoryFramework": "DS 115-2025-PCM"}'
+
+# Add member organizations
+curl -X POST http://localhost:3001/api/v1/gateway/federation/{id}/members \
+  -d '{"organizationId": "cmac-aqp", "orgName": "Caja Municipal de Arequipa", "orgCode": "CMAC-AQP"}'
+
+# Push shared policies (block SSN across all members)
+curl -X POST http://localhost:3001/api/v1/gateway/federation/{id}/policies \
+  -d '{"name": "Block SSN", "action": "block", "piiTypes": ["ssn"]}'
+
+# Consolidated compliance dashboard
+curl http://localhost:3001/api/v1/gateway/federation/{id}/dashboard
+
+# Generate signed compliance report
+curl -X POST http://localhost:3001/api/v1/gateway/federation/{id}/reports \
+  -d '{"reportType": "compliance", "periodStart": "2026-01-01", "periodEnd": "2026-03-31"}'
+```
+
+**Federation API:** 12 endpoints for federation CRUD, member management, shared policies, per-member stats, risk scoring, and SHA-256 + HMAC signed compliance reports.
+
 ---
 
 ## Getting Started
