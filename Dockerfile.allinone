@@ -29,8 +29,10 @@ RUN npm install --no-audit --no-fund
 # Copy frontend source files
 COPY index.html ./
 COPY vite.config.ts tsconfig.json tsconfig.node.json ./
-COPY postcss.config.js tailwind.config.js ./
+COPY tailwind.config.js ./
 COPY src ./src
+COPY components ./components
+COPY lib ./lib
 
 RUN npm run build
 

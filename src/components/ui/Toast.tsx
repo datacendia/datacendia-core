@@ -7,7 +7,7 @@
  * @module components/ui/Toast
  */
 
-﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
+// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 
 import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';

@@ -120,6 +120,9 @@ model organizations {
   // Enterprise Scheduler
   enterprise_scheduled_jobs enterprise_scheduled_jobs[]
 
+  // CendiaGateway — AI Governance Gateway
+  gateway_interactions gateway_interactions[]
+
   // Sports Vertical - Football/Soccer DDGI
   sports_transfer_decisions sports_transfer_decisions[]
   sports_contract_decisions sports_contract_decisions[]
