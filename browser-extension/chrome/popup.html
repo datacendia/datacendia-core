@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CendiaGateway™</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 320px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; }
+    .header { padding: 16px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-bottom: 1px solid #334155; display: flex; align-items: center; gap: 10px; }
+    .header img { width: 28px; height: 28px; }
+    .header h1 { font-size: 16px; font-weight: 700; color: #f8fafc; }
+    .header .badge { background: #16a34a; color: white; font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+    .header .badge.off { background: #dc2626; }
+    .stats { padding: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .stat { background: #1e293b; border-radius: 8px; padding: 12px; text-align: center; }
+    .stat .value { font-size: 24px; font-weight: 700; color: #f8fafc; }
+    .stat .label { font-size: 11px; color: #94a3b8; margin-top: 4px; }
+    .stat.blocked .value { color: #ef4444; }
+    .stat.warned .value { color: #f59e0b; }
+    .stat.allowed .value { color: #22c55e; }
+    .config { padding: 0 16px 16px; }
+    .config label { display: block; font-size: 12px; color: #94a3b8; margin-bottom: 4px; }
+    .config input { width: 100%; padding: 8px 12px; border: 1px solid #334155; border-radius: 6px; background: #1e293b; color: #f8fafc; font-size: 13px; outline: none; }
+    .config input:focus { border-color: #3b82f6; }
+    .toggle { padding: 0 16px 16px; display: flex; align-items: center; justify-content: space-between; }
+    .toggle label { font-size: 13px; color: #cbd5e1; }
+    .switch { position: relative; width: 44px; height: 24px; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background: #475569; border-radius: 24px; transition: 0.3s; }
+    .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background: white; border-radius: 50%; transition: 0.3s; }
+    input:checked + .slider { background: #16a34a; }
+    input:checked + .slider:before { transform: translateX(20px); }
+    .footer { padding: 12px 16px; border-top: 1px solid #334155; text-align: center; }
+    .footer a { color: #3b82f6; text-decoration: none; font-size: 12px; }
+    .footer p { color: #64748b; font-size: 10px; margin-top: 4px; }
+    .save-btn { width: 100%; padding: 10px; background: #3b82f6; color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; }
+    .save-btn:hover { background: #2563eb; }
+    .status-msg { font-size: 11px; color: #22c55e; text-align: center; margin-top: 8px; display: none; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span style="font-size:24px">🛡️</span>
+    <h1>CendiaGateway™</h1>
+    <span class="badge" id="statusBadge">ACTIVE</span>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="value" id="scanned">0</div><div class="label">Scanned</div></div>
+    <div class="stat blocked"><div class="value" id="blocked">0</div><div class="label">Blocked</div></div>
+    <div class="stat warned"><div class="value" id="warned">0</div><div class="label">Warned</div></div>
+    <div class="stat allowed"><div class="value" id="allowed">0</div><div class="label">Allowed</div></div>
+  </div>
+
+  <div class="toggle">
+    <label>AI Governance</label>
+    <label class="switch">
+      <input type="checkbox" id="enableToggle" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="config">
+    <label>Gateway Server URL</label>
+    <input type="text" id="gatewayUrl" placeholder="http://localhost:3001/api/v1/gateway">
+    <label style="margin-top:12px">Organization ID</label>
+    <input type="text" id="orgId" placeholder="your-org-id">
+    <label style="margin-top:12px">User ID</label>
+    <input type="text" id="userId" placeholder="your-email@company.com">
+    <button class="save-btn" id="saveBtn">Save Configuration</button>
+    <div class="status-msg" id="saveMsg">Configuration saved</div>
+  </div>
+
+  <div class="footer">
+    <a href="https://datacendia.com" target="_blank">datacendia.com</a>
+    <p>Decision Crisis Immunization Infrastructure</p>
+  </div>
+
+  <script>
+    // Load saved config
+    chrome.storage.sync.get(['gatewayUrl', 'enabled', 'userId', 'organizationId'], (config) => {
+      document.getElementById('gatewayUrl').value = config.gatewayUrl || '';
+      document.getElementById('orgId').value = config.organizationId || '';
+      document.getElementById('userId').value = config.userId || '';
+      document.getElementById('enableToggle').checked = config.enabled !== false;
+      updateBadge(config.enabled !== false);
+    });
+
+    // Load stats
+    chrome.storage.local.get(['stats'], (result) => {
+      const s = result.stats || { scanned: 0, blocked: 0, warned: 0, allowed: 0 };
+      document.getElementById('scanned').textContent = s.scanned;
+      document.getElementById('blocked').textContent = s.blocked;
+      document.getElementById('warned').textContent = s.warned;
+      document.getElementById('allowed').textContent = s.allowed;
+    });
+
+    // Toggle
+    document.getElementById('enableToggle').addEventListener('change', (e) => {
+      const enabled = e.target.checked;
+      chrome.storage.sync.set({ enabled });
+      updateBadge(enabled);
+    });
+
+    // Save
+    document.getElementById('saveBtn').addEventListener('click', () => {
+      chrome.storage.sync.set({
+        gatewayUrl: document.getElementById('gatewayUrl').value,
+        organizationId: document.getElementById('orgId').value,
+        userId: document.getElementById('userId').value,
+      });
+      const msg = document.getElementById('saveMsg');
+      msg.style.display = 'block';
+      setTimeout(() => msg.style.display = 'none', 2000);
+    });
+
+    function updateBadge(enabled) {
+      const badge = document.getElementById('statusBadge');
+      badge.textContent = enabled ? 'ACTIVE' : 'OFF';
+      badge.className = enabled ? 'badge' : 'badge off';
+    }
+  </script>
+</body>
+</html>

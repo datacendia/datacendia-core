@@ -1,0 +1,55 @@
+{
+  "manifest_version": 2,
+  "name": "CendiaGateway™ — AI Governance",
+  "version": "1.0.0",
+  "description": "Governs AI usage across all websites. PII detection, policy enforcement, and cryptographic audit trail for every AI interaction.",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*",
+        "https://claude.ai/*",
+        "https://gemini.google.com/*",
+        "https://aistudio.google.com/*",
+        "https://copilot.microsoft.com/*",
+        "https://www.bing.com/*",
+        "https://perplexity.ai/*",
+        "https://www.perplexity.ai/*",
+        "https://poe.com/*",
+        "https://you.com/*",
+        "https://pi.ai/*",
+        "https://chat.deepseek.com/*",
+        "https://deepseek.com/*",
+        "https://huggingface.co/*"
+      ],
+      "js": ["../shared/gateway-interceptor.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_action": {
+    "default_popup": "../chrome/popup.html",
+    "default_icon": {
+      "16": "../chrome/icons/icon-16.png",
+      "48": "../chrome/icons/icon-48.png",
+      "128": "../chrome/icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "../chrome/icons/icon-16.png",
+    "48": "../chrome/icons/icon-48.png",
+    "128": "../chrome/icons/icon-128.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "gateway@datacendia.com",
+      "strict_min_version": "109.0"
+    }
+  }
+}

@@ -82,12 +82,78 @@ Datacendia is the only AI platform where every decision is auditable, explainabl
 
 ### Key Capabilities
 
+- **CendiaGateway™** -- AI governance proxy that sits between employees and AI providers. PII detection, policy enforcement, cryptographic audit trail. Browser extensions for Chrome, Firefox, Safari.
 - **The Council** -- Multi-agent deliberation with configurable agent panels (financial, legal, ethical, adversarial, domain-specific)
 - **Immutable Audit Ledger** -- Every decision cryptographically signed with Merkle tree integrity
 - **30 Industry Verticals** -- Financial, Healthcare, Legal, Defense, Insurance, Energy, Government, Manufacturing, Pharmaceutical, Sports, and 19 more
 - **Sovereign-First** -- Runs fully air-gapped. No cloud dependency. Your data stays yours.
 - **LLM-Agnostic** -- Works with Ollama, NVIDIA Triton, NVIDIA NIM, or any OpenAI-compatible API
 - **Enterprise Infrastructure** -- Kafka event streaming, Temporal workflows, OPA policies, OpenBao secrets, NeMo Guardrails, RAPIDS GPU analytics, Flink CEP
+
+---
+
+## CendiaGateway™ -- AI Governance Proxy
+
+CendiaGateway governs every AI interaction in your organization -- API calls, browser-based AI usage, and internal systems. Three coverage layers provide 100% governance:
+
+### Layer 1: API Gateway (Reverse Proxy)
+
+Sits between your systems and AI providers. Every request is PII-scanned, policy-enforced, and cryptographically signed.
+
+```
+Employee/System → CendiaGateway → AI Provider (OpenAI, Anthropic, Google, Ollama, etc.)
+                       ↓
+           PII Scan → Policy Engine → DCII Signing → Audit Ledger
+```
+
+**Supported providers:** OpenAI, Anthropic, Google AI, Azure OpenAI, Mistral, Cohere, Groq, Ollama
+
+**Endpoints:**
+- `POST /api/v1/gateway/v1/chat/completions` -- OpenAI-compatible
+- `POST /api/v1/gateway/v1/messages` -- Anthropic-compatible
+- `POST /api/v1/gateway/proxy/:provider/*` -- Any provider
+
+### Layer 2: Browser Extensions
+
+Content-script extensions that monitor 15+ AI websites (ChatGPT, Claude, Gemini, Copilot, Perplexity, DeepSeek, Poe, etc.). Intercepts prompts before submission, blocks critical PII instantly.
+
+| Browser | Status |
+|---------|--------|
+| Chrome / Edge / Brave / Arc | ✅ Manifest V3 |
+| Firefox | ✅ Manifest V2 |
+| Safari | ✅ Web Extension |
+
+Enterprise deployment via Group Policy, Intune, MDM, or Google Workspace Admin.
+
+### Layer 3: HTTP Forward Proxy (Network-Level)
+
+Browser-agnostic, network-level AI traffic interception. Configured via PAC file or system proxy settings. Works with any browser, any app.
+
+```bash
+# Start the proxy
+curl -X POST http://localhost:3001/api/v1/gateway/proxy/start
+
+# Configure browsers via PAC file:
+# http://gateway-host:3001/api/v1/gateway/proxy/pac
+```
+
+### PII Detection
+
+Detects and blocks 10 PII types before they reach AI providers:
+
+| Type | Action |
+|------|--------|
+| SSN, Credit Card, Medical Record, Bank Account, Passport | **Blocked** |
+| Email, Phone, IP Address, Date of Birth | **Redacted** or warned |
+
+### Recommended Deployment
+
+1. IT blocks direct AI websites at the firewall (5 minutes)
+2. Employees use the internal AI portal routed through CendiaGateway
+3. Browser extension on managed devices catches stragglers
+4. All interactions: PII scanned, policy enforced, cryptographically signed
+
+See [`browser-extension/README.md`](browser-extension/README.md) for detailed deployment instructions.
 
 ---
 
@@ -153,11 +219,16 @@ datacendia-core/
 |   |   |   |-- vault/            # OpenBao/Vault secrets management
 |   |   |   |-- gpu/              # RAPIDS analytics + Confidential Computing
 |   |   |   |-- streaming/        # Flink CEP real-time processing
+|   |   |   |-- gateway/          # CendiaGateway™ AI governance proxy
 |   |   |   +-- verticals/        # Industry vertical modules
 |   |   |-- routes/               # API route files (domain-grouped)
 |   |   |-- security/             # Casbin RBAC, Keycloak SSO
 |   |   +-- middleware/           # Auth, rate limiting, security
 |   +-- prisma/                   # Database schema and models
+|-- browser-extension/            # AI governance browser extensions
+|   |-- chrome/                   # Chrome/Edge/Brave/Arc (Manifest V3)
+|   |-- firefox/                  # Firefox (Manifest V2)
+|   +-- safari/                   # Safari (Web Extension)
 +-- docker-compose.dev.yml        # Development infrastructure
 ```
 

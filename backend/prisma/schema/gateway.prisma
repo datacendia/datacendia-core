@@ -1,0 +1,72 @@
+// =============================================================================
+// CendiaGateway- - AI Governance Gateway
+// =============================================================================
+
+model gateway_interactions {
+  id                String   @id @default(uuid())
+  organization_id   String
+  user_id           String
+  user_email        String
+  user_department    String   @default("unknown")
+  
+  // Request metadata
+  provider          String   // openai, anthropic, google, ollama, azure-openai, custom
+  model             String   // gpt-4, claude-3-opus, etc.
+  endpoint          String   // /v1/chat/completions, /v1/messages, etc.
+  method            String   @default("POST")
+  
+  // Content (encrypted at rest in production)
+  prompt_text       String   @db.Text
+  response_text     String?  @db.Text
+  prompt_tokens     Int      @default(0)
+  response_tokens   Int      @default(0)
+  total_tokens      Int      @default(0)
+  
+  // PII Detection
+  pii_detected      Boolean  @default(false)
+  pii_types         String[] // ssn, email, phone, credit_card, address, name, dob, medical, financial
+  pii_action        String   @default("allow") // allow, warn, redact, block
+  pii_redacted_prompt String? @db.Text // Prompt after PII redaction (if redacted)
+  
+  // Policy
+  policy_id         String?
+  policy_action     String   @default("allow") // allow, warn, block
+  policy_reason     String?
+  
+  // DCII Evidence
+  integrity_hash    String   // SHA-256 hash of the full interaction
+  merkle_leaf       String?  // Merkle tree leaf hash
+  ledger_entry_index Int?    // Index in the ImmutableAuditLedger
+  signature         String?  // HMAC signature
+  
+  // Performance
+  latency_ms        Int      @default(0)
+  provider_latency_ms Int    @default(0)
+  status_code       Int      @default(200)
+  error_message     String?
+  
+  // Cost tracking
+  estimated_cost_usd Float   @default(0)
+  
+  // Timestamps
+  requested_at      DateTime @default(now())
+  responded_at      DateTime?
+  deleted_at        DateTime?
+  created_at        DateTime @default(now())
+  
+  organizations organizations @relation(fields: [organization_id], references: [id])
+  
+  @@index([organization_id])
+  @@index([user_id])
+  @@index([user_department])
+  @@index([provider])
+  @@index([model])
+  @@index([pii_detected])
+  @@index([policy_action])
+  @@index([requested_at])
+  @@index([created_at])
+}
+
+// REMOVED: model gateway_policies (orphaned - not referenced in application code)
+
+// REMOVED: model gateway_manifests (orphaned - not referenced in application code)

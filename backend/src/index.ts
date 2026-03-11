@@ -93,6 +93,7 @@ import temporalRoutes from './routes/temporal.js';
 import openbaoRoutes from './routes/openbao.js';
 import rapidsRoutes from './routes/rapids.js';
 import flinkRoutes from './routes/flink.js';
+import gatewayRoutes from './routes/gateway.js';
 import { registerPlatformServices } from './core/services/PlatformServices.js';
 import { applyPerformanceIndexes } from './startup/applyIndexes.js';
 import { apiCache, CACHE_TTLS } from './middleware/cacheMiddleware.js';
@@ -298,6 +299,7 @@ app.use('/api/v1/temporal', temporalRoutes);         // Temporal.io workflow orc
 app.use('/api/v1/openbao', openbaoRoutes);           // OpenBao/Vault secrets & KMS
 app.use('/api/v1/rapids', rapidsRoutes);             // NVIDIA RAPIDS GPU analytics + Confidential Computing
 app.use('/api/v1/flink', flinkRoutes);               // Apache Flink CEP stream processing
+app.use('/api/v1/gateway', gatewayRoutes);           // CendiaGateway™ — AI Governance Gateway
 
 // 404 handler
 app.use((_req, res) => {
