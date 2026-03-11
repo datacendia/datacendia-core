@@ -7,6 +7,9 @@
 # Run:     docker run -p 3001:3001 -e DATABASE_URL=... datacendia:railway
 # =============================================================================
 
+# Cache-bust: bump this value to force Railway to rebuild all layers
+ARG CACHEBUST=2
+
 # ---------------------------------------------------------------------------
 # Stage 1: Build frontend (Vite)
 # Strip workspaces field so npm ci only installs frontend deps (avoids OOM)
