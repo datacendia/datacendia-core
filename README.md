@@ -19,7 +19,7 @@ Multi-agent deliberation &middot; Immutable audit trails &middot; 30 industry ve
 [![Docker](https://img.shields.io/badge/Docker-Required-2496ED.svg?logo=docker&logoColor=white)](https://www.docker.com/)
 [![NVIDIA Inception](https://img.shields.io/badge/NVIDIA-Inception%20Program-76b900.svg?logo=nvidia&logoColor=white)](https://www.nvidia.com/en-us/startups/)
 
-[Getting Started](#getting-started) &middot; [Architecture](#architecture) &middot; [Verticals](#industry-verticals) &middot; [Infrastructure](#infrastructure-integrations) &middot; [Standards](#standards--governance) &middot; [Contributing](#contributing) &middot; [Enterprise Edition](#enterprise-edition)
+[Getting Started](#getting-started) &middot; [Architecture](#architecture) &middot; [Verticals](#industry-verticals) &middot; [Infrastructure](#infrastructure-integrations) &middot; [Security Audit](docs/AUDIT-REPORT-2026-Q1.md) &middot; [Standards](#standards--governance) &middot; [Contributing](#contributing) &middot; [Enterprise Edition](#enterprise-edition)
 
 </div>
 
@@ -318,6 +318,8 @@ All infrastructure components are **opt-in** -- disabled by default, zero impact
 ---
 
 ## Security
+
+> **📄 [Q1 2026 Platform Audit Report](docs/AUDIT-REPORT-2026-Q1.md)** -- Comprehensive security audit across all repositories. 2 Critical, 6 High findings identified and **all resolved** with commit-level traceability. [View the audit →](docs/AUDIT-REPORT-2026-Q1.md)
 
 - **Sovereign-first** -- Runs fully on-premise, air-gapped capable
 - **Casbin RBAC/ABAC** -- Role and attribute-based access control
