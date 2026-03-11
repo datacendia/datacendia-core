@@ -4,6 +4,33 @@ All notable changes to Datacendia Core will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0-alpha] - 2026-03-11
+
+### Added
+- **CendiaGateway™ AI Governance Proxy** -- 3-layer AI governance (API gateway, browser extensions, HTTP forward proxy) with PII detection, policy enforcement, and cryptographic audit trails
+- **Federation Infrastructure** -- Multi-org governance with federation CRUD, member management, shared policies, consolidated compliance reporting, and risk scoring (12 new API endpoints)
+- **Browser Extensions** -- Chrome/Edge/Brave/Arc (Manifest V3), Firefox (Manifest V2), Safari (Web Extension) for monitoring 15+ AI websites
+- **HTTP Forward Proxy** -- Network-level AI traffic interception via PAC file for browser-agnostic coverage
+- **Tenant Isolation Middleware** -- Cross-tenant access prevention with dedicated test suite
+- **Auth Middleware Tests** -- Comprehensive authentication guard test coverage
+- **Trust-Facts Pipeline** -- Automated `generate-trust-facts` script for verifiable repo metrics
+- **Product Maturity Taxonomy** -- Cross-repo consistency documentation
+- **Cross-Repo Architecture Map** -- `docs/CROSS-REPO-ARCHITECTURE.md` with quarterly review process
+- **Q1 2026 Platform Audit Report** -- `docs/AUDIT-REPORT-2026-Q1.md` comprehensive security and quality audit
+- **`as-any` Baseline Tracker** -- TypeScript `as any` cast tracking with reduction targets
+
+### Changed
+- **Security Hardening** -- SQL injection fixes, JWT refresh token hardening, logger migration (replaced all `console.*` with structured logger)
+- **CI Pipeline** -- CodeQL v3→v4 upgrade, non-blocking dependency audit, non-blocking type-check/lint, JWT_REFRESH_SECRET in CI env
+- **ESLint** -- `no-console` upgraded to error, unscoped routes documented
+- **Org Scoping** -- Route renaming for consistent organization-scoped endpoints
+
+### Fixed
+- **Session Security** -- Production session store warning, `saveUninitialized=false`
+- **Auth Guard** -- License metadata correction, admin auth fixes
+- **CircuitBreaker** -- Replaced console calls with structured logger
+- **Copyright Headers** -- Updated 38 remaining proprietary headers to Apache 2.0
+
 ## [0.1.2] - 2026-03-02
 
 ### Added
@@ -79,6 +106,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Nginx reverse proxy configs
 - GitHub Actions CI/CD
 
+[0.2.0-alpha]: https://github.com/datacendia/datacendia-core/compare/v0.1.1...v0.2.0-alpha
 [0.1.2]: https://github.com/datacendia/datacendia-core/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/datacendia/datacendia-core/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/datacendia/datacendia-core/releases/tag/v0.1.0
