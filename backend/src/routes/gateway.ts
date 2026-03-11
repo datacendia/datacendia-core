@@ -45,6 +45,7 @@ import WebhookNotifier from '../services/gateway/WebhookNotifier.js';
 import GatewayRateLimiter from '../services/gateway/RateLimiter.js';
 import SIEMIntegration from '../services/gateway/SIEMIntegration.js';
 import ManifestExporter from '../services/gateway/ManifestExporter.js';
+import { gatewayFederationService } from '../services/gateway/GatewayFederationService.js';
 
 
 const schema_1 = z.object({
@@ -1118,6 +1119,156 @@ router.get('/proxy/interactions', async (req: Request, res: Response) => {
       ? gatewayProxyServer.getBlockedInteractions(limit)
       : gatewayProxyServer.getRecentInteractions(limit);
     return res.json({ interactions, count: interactions.length });
+  } catch (err: unknown) {
+    return res.status(500).json({ error: (err as Error).message });
+  }
+});
+
+// =============================================================================
+// FEDERATION ENDPOINTS — "One agreement, all member orgs covered"
+// =============================================================================
+
+router.post('/federation', async (req: Request, res: Response) => {
+  try {
+    const { name, adminOrgId, adminContact, regulatoryFramework, reportingAuthority, complianceDeadline, description, dataIsolation } = req.body;
+    if (!name || !adminOrgId) return res.status(400).json({ error: 'name and adminOrgId are required' });
+
+    const federation = gatewayFederationService.createFederation({
+      name, adminOrgId, adminContact, regulatoryFramework, reportingAuthority,
+      complianceDeadline: complianceDeadline ? new Date(complianceDeadline) : undefined,
+      description, dataIsolation,
+    });
+    return res.status(201).json(federation);
+  } catch (err: unknown) {
+    return res.status(500).json({ error: (err as Error).message });
+  }
+});
+
+router.get('/federation', async (_req: Request, res: Response) => {
+  try {
+    return res.json({ federations: gatewayFederationService.listFederations() });
+  } catch (err: unknown) {
+    return res.status(500).json({ error: (err as Error).message });
+  }
+});
+
+router.get('/federation/:id', async (req: Request, res: Response) => {
+  try {
+    const federation = gatewayFederationService.getFederation(req.params.id);
+    if (!federation) return res.status(404).json({ error: 'Federation not found' });
+    return res.json(federation);
+  } catch (err: unknown) {
+    return res.status(500).json({ error: (err as Error).message });
+  }
+});
+
+router.get('/federation/:id/dashboard', async (req: Request, res: Response) => {
+  try {
+    const dashboard = gatewayFederationService.getFederationDashboard(req.params.id);
+    if (!dashboard) return res.status(404).json({ error: 'Federation not found' });
+    return res.json(dashboard);
+  } catch (err: unknown) {
+    return res.status(500).json({ error: (err as Error).message });
+  }
+});
+
+router.post('/federation/:id/members', async (req: Request, res: Response) => {
+  try {
+    const { organizationId, orgName, orgCode, customDomains } = req.body;
+    if (!organizationId || !orgName) return res.status(400).json({ error: 'organizationId and orgName are required' });
+
+    const member = gatewayFederationService.addMember(req.params.id, { organizationId, orgName, orgCode, customDomains });
+    if (!member) return res.status(404).json({ error: 'Federation not found' });
+    return res.status(201).json(member);
+  } catch (err: unknown) {
+    return res.status(500).json({ error: (err as Error).message });
+  }
+});
+
+router.get('/federation/:id/members', async (req: Request, res: Response) => {
+  try {
+    return res.json({ members: gatewayFederationService.getMembers(req.params.id) });
+  } catch (err: unknown) {
+    return res.status(500).json({ error: (err as Error).message });
+  }
+});
+
+router.delete('/federation/:id/members/:orgId', async (req: Request, res: Response) => {
+  try {
+    const removed = gatewayFederationService.removeMember(req.params.id, req.params.orgId);
+    if (!removed) return res.status(404).json({ error: 'Federation or member not found' });
+    return res.json({ success: true });
+  } catch (err: unknown) {
+    return res.status(500).json({ error: (err as Error).message });
+  }
+});
+
+router.post('/federation/:id/policies', async (req: Request, res: Response) => {
+  try {
+    const policy = gatewayFederationService.addPolicy(req.params.id, req.body);
+    if (!policy) return res.status(404).json({ error: 'Federation not found' });
+    return res.status(201).json(policy);
+  } catch (err: unknown) {
+    return res.status(500).json({ error: (err as Error).message });
+  }
+});
+
+router.get('/federation/:id/policies', async (req: Request, res: Response) => {
+  try {
+    const orgId = req.query.orgId as string;
+    const policies = orgId
+      ? gatewayFederationService.getPoliciesForOrg(req.params.id, orgId)
+      : gatewayFederationService.getFederation(req.params.id)?.policies || [];
+    return res.json({ policies });
+  } catch (err: unknown) {
+    return res.status(500).json({ error: (err as Error).message });
+  }
+});
+
+router.get('/federation/:id/members/:orgId/stats', async (req: Request, res: Response) => {
+  try {
+    const periodStart = req.query.start ? new Date(req.query.start as string) : undefined;
+    const periodEnd = req.query.end ? new Date(req.query.end as string) : undefined;
+    const stats = gatewayFederationService.getMemberStats(req.params.id, req.params.orgId, periodStart, periodEnd);
+    if (!stats) return res.status(404).json({ error: 'Federation or member not found' });
+    return res.json(stats);
+  } catch (err: unknown) {
+    return res.status(500).json({ error: (err as Error).message });
+  }
+});
+
+router.post('/federation/:id/reports', async (req: Request, res: Response) => {
+  try {
+    const { reportType, periodStart, periodEnd, title } = req.body;
+    if (!reportType || !periodStart || !periodEnd) {
+      return res.status(400).json({ error: 'reportType, periodStart, and periodEnd are required' });
+    }
+
+    const report = gatewayFederationService.generateReport(req.params.id, {
+      reportType,
+      periodStart: new Date(periodStart),
+      periodEnd: new Date(periodEnd),
+      title,
+    });
+    if (!report) return res.status(404).json({ error: 'Federation not found' });
+    return res.status(201).json(report);
+  } catch (err: unknown) {
+    return res.status(500).json({ error: (err as Error).message });
+  }
+});
+
+router.post('/federation/:id/interaction', async (req: Request, res: Response) => {
+  try {
+    const { orgId, blocked, piiDetected, piiTypes, provider } = req.body;
+    if (!orgId) return res.status(400).json({ error: 'orgId is required' });
+
+    gatewayFederationService.recordInteraction(req.params.id, orgId, {
+      blocked: !!blocked,
+      piiDetected: !!piiDetected,
+      piiTypes: piiTypes || [],
+      provider: provider || 'unknown',
+    });
+    return res.json({ success: true });
   } catch (err: unknown) {
     return res.status(500).json({ error: (err as Error).message });
   }

@@ -1,0 +1,146 @@
+// =============================================================================
+// CendiaGateway™ — Federation Infrastructure
+// Enables "one agreement, all member orgs covered" deployment model
+// =============================================================================
+
+model gateway_federations {
+  id                String   @id @default(uuid())
+  name              String   // e.g. "FEPCMAC — Cajas Municipales System"
+  slug              String   @unique
+  description       String?  @db.Text
+  
+  // Federation admin
+  admin_org_id      String   // The organization that manages the federation
+  admin_contact     String?  // Primary contact email
+  
+  // Configuration
+  shared_policies   Boolean  @default(true)  // Push policies to all members
+  consolidated_reporting Boolean @default(true) // Cross-org compliance reporting
+  data_isolation    String   @default("strict") // strict | shared | hybrid
+  
+  // Compliance
+  regulatory_framework String?  // e.g. "DS 115-2025-PCM", "ISO/IEC 42001"
+  reporting_authority  String?  // e.g. "SBS" (Superintendencia de Banca y Seguros)
+  compliance_deadline  DateTime?
+  
+  // Status
+  status            String   @default("active") // active | suspended | archived
+  
+  created_at        DateTime @default(now())
+  updated_at        DateTime @updatedAt
+  deleted_at        DateTime?
+  
+  // Relations
+  members           gateway_federation_members[]
+  policies          gateway_federation_policies[]
+  reports           gateway_federation_reports[]
+  
+  @@index([admin_org_id])
+  @@index([status])
+}
+
+model gateway_federation_members {
+  id                String   @id @default(uuid())
+  federation_id     String
+  organization_id   String
+  
+  // Member metadata
+  org_name          String   // e.g. "Caja Municipal de Arequipa"
+  org_code          String?  // e.g. "CMAC-AQP"
+  joined_at         DateTime @default(now())
+  
+  // Per-member config
+  policy_override   Boolean  @default(false) // Can override federation policies
+  custom_domains    String[] // Additional AI domains to govern for this member
+  
+  // Status
+  status            String   @default("active") // active | suspended | removed
+  
+  created_at        DateTime @default(now())
+  updated_at        DateTime @updatedAt
+  
+  federation        gateway_federations @relation(fields: [federation_id], references: [id])
+  
+  @@unique([federation_id, organization_id])
+  @@index([federation_id])
+  @@index([organization_id])
+}
+
+model gateway_federation_policies {
+  id                String   @id @default(uuid())
+  federation_id     String
+  
+  // Policy definition
+  name              String   // e.g. "Block all SSN in AI prompts"
+  description       String?  @db.Text
+  priority          Int      @default(100)
+  
+  // Policy rules
+  action            String   @default("block") // allow | warn | block | redact
+  pii_types         String[] // PII types this policy applies to
+  blocked_keywords  String[] // Keywords to block
+  max_prompt_length Int?     // Max prompt length (chars)
+  allowed_providers String[] // Restrict to specific AI providers
+  blocked_providers String[] // Block specific AI providers
+  
+  // Scope
+  applies_to_all    Boolean  @default(true)  // All members
+  member_org_ids    String[] // Specific members (if not all)
+  departments       String[] // Specific departments
+  
+  // Status
+  enabled           Boolean  @default(true)
+  
+  created_at        DateTime @default(now())
+  updated_at        DateTime @updatedAt
+  
+  federation        gateway_federations @relation(fields: [federation_id], references: [id])
+  
+  @@index([federation_id])
+  @@index([enabled])
+}
+
+model gateway_federation_reports {
+  id                String   @id @default(uuid())
+  federation_id     String
+  
+  // Report metadata
+  report_type       String   // compliance | usage | risk | audit | sbs_submission
+  title             String
+  period_start      DateTime
+  period_end        DateTime
+  
+  // Aggregated data
+  total_interactions Int      @default(0)
+  total_blocked     Int      @default(0)
+  total_pii_detected Int     @default(0)
+  total_policy_violations Int @default(0)
+  member_breakdown  Json     @default("{}") // Per-org stats
+  provider_breakdown Json    @default("{}") // Per-AI-provider stats
+  pii_breakdown     Json     @default("{}") // Per-PII-type stats
+  
+  // Compliance
+  compliance_score  Float?   // 0-100
+  findings          Json     @default("[]") // Array of compliance findings
+  recommendations   Json     @default("[]")
+  
+  // Cryptographic integrity
+  integrity_hash    String   // SHA-256 of report data
+  signature         String?  // HMAC signature
+  merkle_root       String?  // Merkle root of all interactions in period
+  
+  // Status
+  status            String   @default("draft") // draft | final | submitted
+  submitted_to      String?  // e.g. "SBS"
+  submitted_at      DateTime?
+  
+  generated_at      DateTime @default(now())
+  created_at        DateTime @default(now())
+  
+  federation        gateway_federations @relation(fields: [federation_id], references: [id])
+  
+  @@index([federation_id])
+  @@index([report_type])
+  @@index([period_start, period_end])
+  @@index([status])
+}
