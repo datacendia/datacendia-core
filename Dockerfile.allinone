@@ -23,7 +23,8 @@ COPY package*.json ./
 # Remove workspaces to avoid pulling heavy backend deps into this stage
 # Then use npm install (not npm ci) since the lockfile was generated with workspaces
 RUN node -e "\
-  const p = JSON.parse(require('fs').readFileSync('package.json','utf8')); \
+  const raw = require('fs').readFileSync('package.json','utf8').replace(/^\uFEFF/,''); \
+  const p = JSON.parse(raw); \
   delete p.workspaces; \
   require('fs').writeFileSync('package.json', JSON.stringify(p, null, 2));"
 
