@@ -17,20 +17,20 @@ WORKDIR /app
 
 COPY package*.json ./
 
-# Remove workspaces to avoid pulling backend deps into this stage
+# Remove workspaces to avoid pulling heavy backend deps into this stage
+# Then use npm install (not npm ci) since the lockfile was generated with workspaces
 RUN node -e "\
   const p = JSON.parse(require('fs').readFileSync('package.json','utf8')); \
   delete p.workspaces; \
   require('fs').writeFileSync('package.json', JSON.stringify(p, null, 2));"
 
-RUN npm ci
+RUN npm install --no-audit --no-fund
 
 # Copy frontend source files
 COPY index.html ./
 COPY vite.config.ts tsconfig.json tsconfig.node.json ./
 COPY postcss.config.js tailwind.config.js ./
 COPY src ./src
-COPY public ./public
 
 RUN npm run build
 
