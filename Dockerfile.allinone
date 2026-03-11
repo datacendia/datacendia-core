@@ -43,7 +43,7 @@ RUN npm run build
 # Stage 2: Install backend dependencies
 # Uses Debian Bookworm (glibc + OpenSSL 3.x) for Prisma engine compatibility
 # ---------------------------------------------------------------------------
-FROM node:20-bookworm-slim AS backend-builder
+FROM node:20-bookworm-slim AS backend-deps
 
 # Native build tools for better-sqlite3 and other native modules
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -65,7 +65,7 @@ COPY backend/tsconfig*.json ./
 # Stage 3: Production runtime
 # Uses Debian Bookworm (glibc + OpenSSL 3.x) for Prisma engine compatibility
 # ---------------------------------------------------------------------------
-FROM node:20-bookworm-slim AS production
+FROM node:20-bookworm-slim AS runtime
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     dumb-init wget openssl ca-certificates && \
@@ -78,10 +78,10 @@ RUN groupadd -g 1001 datacendia && \
 WORKDIR /app
 
 # Copy backend with node_modules
-COPY --from=backend-builder /app/node_modules ./backend/node_modules
-COPY --from=backend-builder /app/src ./backend/src
-COPY --from=backend-builder /app/prisma ./backend/prisma
-COPY --from=backend-builder /app/package.json ./backend/
+COPY --from=backend-deps /app/node_modules ./backend/node_modules
+COPY --from=backend-deps /app/src ./backend/src
+COPY --from=backend-deps /app/prisma ./backend/prisma
+COPY --from=backend-deps /app/package.json ./backend/
 
 # Copy built frontend → served as static files by Express
 COPY --from=frontend-builder /app/dist ./dist
