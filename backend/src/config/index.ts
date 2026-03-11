@@ -74,7 +74,7 @@ const configSchema = z.object({
   
   // JWT
   jwtSecret: z.string().min(32),
-  jwtRefreshSecret: z.string().min(32),
+  jwtRefreshSecret: z.string().min(32).optional(),
   jwtExpiresIn: z.string().default('1h'),
   jwtRefreshExpiresIn: z.string().default('30d'),
   
@@ -135,6 +135,11 @@ if (!parsed.success) {
   process.exit(1);
 }
 
-export const config = parsed.data;
+// Derive jwtRefreshSecret from jwtSecret if not explicitly provided
+if (!parsed.data.jwtRefreshSecret) {
+  (parsed.data as any).jwtRefreshSecret = parsed.data.jwtSecret + '-refresh';
+}
+
+export const config = parsed.data as z.infer<typeof configSchema> & { jwtRefreshSecret: string };
 
 export type Config = z.infer<typeof configSchema>;

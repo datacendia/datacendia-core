@@ -42,7 +42,7 @@ RUN npm run build
 FROM node:20-alpine AS backend-builder
 
 # Native build tools for better-sqlite3 and other native modules
-RUN apk add --no-cache python3 make g++
+RUN apk add --no-cache python3 make g++ openssl
 
 WORKDIR /app
 
@@ -60,7 +60,7 @@ COPY backend/tsconfig*.json ./
 # ---------------------------------------------------------------------------
 FROM node:20-alpine AS production
 
-RUN apk add --no-cache dumb-init wget
+RUN apk add --no-cache dumb-init wget openssl
 
 # Create non-root user
 RUN addgroup -g 1001 -S datacendia && \
