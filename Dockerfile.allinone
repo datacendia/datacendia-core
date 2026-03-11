@@ -8,33 +8,53 @@
 # =============================================================================
 
 # ---------------------------------------------------------------------------
-# Stage 1: Install dependencies and build frontend
+# Stage 1: Build frontend (Vite)
+# Strip workspaces field so npm ci only installs frontend deps (avoids OOM)
 # ---------------------------------------------------------------------------
-FROM node:20-alpine AS builder
+FROM node:20-alpine AS frontend-builder
 
-# Native build tools needed by better-sqlite3 and other native modules
+WORKDIR /app
+
+COPY package*.json ./
+
+# Remove workspaces to avoid pulling backend deps into this stage
+RUN node -e "\
+  const p = JSON.parse(require('fs').readFileSync('package.json','utf8')); \
+  delete p.workspaces; \
+  require('fs').writeFileSync('package.json', JSON.stringify(p, null, 2));"
+
+RUN npm ci
+
+# Copy frontend source files
+COPY index.html ./
+COPY vite.config.ts tsconfig.json tsconfig.node.json ./
+COPY postcss.config.js tailwind.config.js ./
+COPY src ./src
+COPY public ./public
+
+RUN npm run build
+
+# ---------------------------------------------------------------------------
+# Stage 2: Install backend dependencies
+# ---------------------------------------------------------------------------
+FROM node:20-alpine AS backend-builder
+
+# Native build tools for better-sqlite3 and other native modules
 RUN apk add --no-cache python3 make g++
 
 WORKDIR /app
 
-# Copy workspace root + backend package manifests so npm can resolve workspaces
-COPY package*.json ./
-COPY backend/package*.json ./backend/
+COPY backend/package*.json ./
+COPY backend/prisma ./prisma/
 
-# Copy Prisma schema (needed by postinstall → prisma generate)
-COPY backend/prisma ./backend/prisma/
-
-# Install ALL dependencies (frontend + backend via workspaces)
 RUN npm ci
+RUN npx prisma generate
 
-# Copy full source
-COPY . .
-
-# Build frontend (vite build → dist/)
-RUN npm run build
+COPY backend/src ./src
+COPY backend/tsconfig*.json ./
 
 # ---------------------------------------------------------------------------
-# Stage 2: Production runtime
+# Stage 3: Production runtime
 # ---------------------------------------------------------------------------
 FROM node:20-alpine AS production
 
@@ -46,18 +66,14 @@ RUN addgroup -g 1001 -S datacendia && \
 
 WORKDIR /app
 
-# Copy root workspace structure (needed for hoisted node_modules resolution)
-COPY --from=builder /app/package.json ./
-COPY --from=builder /app/node_modules ./node_modules
-
-# Copy backend source + deps + Prisma client
-COPY --from=builder /app/backend/node_modules ./backend/node_modules
-COPY --from=builder /app/backend/src ./backend/src
-COPY --from=builder /app/backend/prisma ./backend/prisma
-COPY --from=builder /app/backend/package.json ./backend/
+# Copy backend with node_modules
+COPY --from=backend-builder /app/node_modules ./backend/node_modules
+COPY --from=backend-builder /app/src ./backend/src
+COPY --from=backend-builder /app/prisma ./backend/prisma
+COPY --from=backend-builder /app/package.json ./backend/
 
 # Copy built frontend → served as static files by Express
-COPY --from=builder /app/dist ./dist
+COPY --from=frontend-builder /app/dist ./dist
 
 # Copy entrypoint scripts
 COPY backend/docker-entrypoint.sh ./backend/
