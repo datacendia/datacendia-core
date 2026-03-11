@@ -38,11 +38,14 @@ RUN npm run build
 
 # ---------------------------------------------------------------------------
 # Stage 2: Install backend dependencies
+# Uses Debian Bookworm (glibc + OpenSSL 3.x) for Prisma engine compatibility
 # ---------------------------------------------------------------------------
-FROM node:20-alpine AS backend-builder
+FROM node:20-bookworm-slim AS backend-builder
 
 # Native build tools for better-sqlite3 and other native modules
-RUN apk add --no-cache python3 make g++ openssl
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3 make g++ openssl ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
@@ -57,14 +60,17 @@ COPY backend/tsconfig*.json ./
 
 # ---------------------------------------------------------------------------
 # Stage 3: Production runtime
+# Uses Debian Bookworm (glibc + OpenSSL 3.x) for Prisma engine compatibility
 # ---------------------------------------------------------------------------
-FROM node:20-alpine AS production
+FROM node:20-bookworm-slim AS production
 
-RUN apk add --no-cache dumb-init wget openssl
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    dumb-init wget openssl ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
 
 # Create non-root user
-RUN addgroup -g 1001 -S datacendia && \
-    adduser -S datacendia -u 1001
+RUN groupadd -g 1001 datacendia && \
+    useradd -u 1001 -g datacendia -m datacendia
 
 WORKDIR /app
 
