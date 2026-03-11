@@ -384,18 +384,23 @@ let socketServer: SocketServer | null = null;
 // Start server
 const startServer = async () => {
   try {
+    // Bind to 0.0.0.0 in production/Railway so the port is reachable from outside the container.
+    // On Windows dev, bind only to localhost to avoid firewall prompts.
     const listenHost = config.nodeEnv === 'development' && process.platform === 'win32'
       ? '127.0.0.1'
-      : undefined;
+      : '0.0.0.0';
 
     // ── Auth Mode Guard ─────────────────────────────────────────────────
-    if (config.nodeEnv === 'production' && !config.requireAuth) {
+    // Demo mode (DEMO_MODE=true) is allowed in production for Railway / hosted demos
+    // without requiring REQUIRE_AUTH=true, since the seeded accounts and dev-bypass
+    // middleware are intentional in that context.
+    if (config.nodeEnv === 'production' && !config.requireAuth && !config.demoMode) {
       logger.error('⛔ SECURITY: REQUIRE_AUTH is not enabled in production. Set REQUIRE_AUTH=true.');
       logger.error('⛔ Dev auth bypass could be active. Refusing to start.');
       process.exit(1);
     }
-    const authMode = config.requireAuth ? 'enforced' : (config.nodeEnv === 'development' ? 'dev-bypass' : 'enforced');
-    logger.info(`🔐 Auth mode: ${authMode} (REQUIRE_AUTH=${config.requireAuth}, NODE_ENV=${config.nodeEnv})`);
+    const authMode = config.requireAuth ? 'enforced' : (config.nodeEnv === 'development' || config.demoMode ? 'dev-bypass' : 'enforced');
+    logger.info(`🔐 Auth mode: ${authMode} (REQUIRE_AUTH=${config.requireAuth}, DEMO_MODE=${config.demoMode}, NODE_ENV=${config.nodeEnv})`);
 
     httpServer.listen(config.port, listenHost, () => {
       logger.info(`🚀 Datacendia API running on port ${config.port}`);

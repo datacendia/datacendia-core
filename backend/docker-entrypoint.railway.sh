@@ -12,6 +12,15 @@ if [ -z "$DATABASE_URL" ]; then
   exit 1
 fi
 
+# Railway injects PORT; ensure the app binds to it.
+# Default to 3001 to match the Dockerfile EXPOSE if PORT is not set.
+export PORT="${PORT:-3001}"
+
+# Enable demo mode by default on Railway so the server can start without
+# requiring REQUIRE_AUTH=true.  Set DEMO_MODE=false and REQUIRE_AUTH=true
+# in the Railway dashboard to switch to a fully-authenticated deployment.
+export DEMO_MODE="${DEMO_MODE:-true}"
+
 # Wait for database to be reachable (Railway may take a moment)
 echo "Checking database connection..."
 MAX_RETRIES=15
