@@ -22,6 +22,8 @@ import { createServer } from 'http';
 import { Server as SocketIOServer } from 'socket.io';
 import { SocketServer } from './websocket/SocketServer.js';
 import { rateLimit } from 'express-rate-limit';
+import path from 'path';
+import fs from 'fs';
 
 import { config } from './config/index.js';
 import { logger } from './utils/logger.js';
@@ -301,7 +303,23 @@ app.use('/api/v1/rapids', rapidsRoutes);             // NVIDIA RAPIDS GPU analyt
 app.use('/api/v1/flink', flinkRoutes);               // Apache Flink CEP stream processing
 app.use('/api/v1/gateway', gatewayRoutes);           // CendiaGateway™ — AI Governance Gateway
 
-// 404 handler
+// ---------------------------------------------------------------------------
+// Static frontend serving (all-in-one / Railway deployment)
+// Serves built Vite SPA from ../dist (relative to backend/) when available
+// ---------------------------------------------------------------------------
+const frontendDist = path.resolve(process.cwd(), '../dist');
+
+if (fs.existsSync(frontendDist)) {
+  app.use(express.static(frontendDist));
+  // SPA catch-all: serve index.html for non-API routes
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api/')) return next();
+    res.sendFile(path.join(frontendDist, 'index.html'));
+  });
+  logger.info(`[Static] Serving frontend from ${frontendDist}`);
+}
+
+// 404 handler (API routes only when frontend is served)
 app.use((_req, res) => {
   res.status(404).json({
     success: false,

@@ -1,0 +1,13 @@
+node_modules
+backend/node_modules
+dist
+backend/dist
+.git
+.github
+.vscode
+*.md
+docs
+LICENSE
+.env*
+.DS_Store
+Thumbs.db
