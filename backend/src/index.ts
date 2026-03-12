@@ -173,8 +173,8 @@ app.use(helmet({
   },
 }));
 
-// CORS configuration - allow any localhost/127.0.0.1 origin in development
-app.use(cors({
+// CORS configuration - scoped to /api/ routes only (static files don't need CORS)
+const corsMiddleware = cors({
   origin: (origin, callback) => {
     // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true);
@@ -184,6 +184,11 @@ app.use(cors({
       if (origin.includes('localhost') || origin.includes('127.0.0.1')) {
         return callback(null, true);
       }
+    }
+    
+    // Allow same-origin requests (Railway domain)
+    if (origin.includes('railway.app') || origin.includes('datacendia')) {
+      return callback(null, true);
     }
     
     // Check against configured origins
@@ -196,7 +201,8 @@ app.use(cors({
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Request-ID', 'X-Data-Source-Id', 'x-data-source-id'],
-}));
+});
+app.use('/api/', corsMiddleware);
 
 // Rate limiting (higher limit for dev/test)
 const limiter = rateLimit({
