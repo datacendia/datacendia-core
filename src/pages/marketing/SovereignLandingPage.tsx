@@ -51,7 +51,7 @@ const SovereignLandingPage: React.FC = () => {
           expiresIn: 86400,
         });
         setTimeout(() => {
-          window.location.href = '/dashboard';
+          window.location.href = '/cortex';
         }, 100);
       } else {
         setError(data.error?.message || 'Something went wrong. Please try again.');
