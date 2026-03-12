@@ -41,6 +41,8 @@ const TRUST_BADGES = [
 
 const DIFF_ROWS = ['memory', 'dissent', 'proof', 'accountability', 'sovereignty'] as const;
 
+const FAQ_KEYS = ['dataSafe', 'internet', 'llms', 'openSource', 'different', 'compliance', 'setup', 'verify'] as const;
+
 const SovereignLandingPage: React.FC = () => {
   const { t } = useTranslation();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -144,7 +146,7 @@ const SovereignLandingPage: React.FC = () => {
       {/* ═══════════════════════════ THE PROBLEM ═══════════════════════════ */}
       <section ref={problemRef} className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
         <div className="max-w-3xl mx-auto">
-          <p className="text-[11px] tracking-[0.25em] text-gray-600 uppercase mb-6">{t('landing.problem.label')}</p>
+          <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-6">{t('landing.problem.label')}</p>
           <p className="text-lg sm:text-xl text-gray-300 font-light leading-relaxed">
             {t('landing.problem.text')}{' '}
             <span className="text-gray-500">{t('landing.problem.fade')}</span>
@@ -155,7 +157,7 @@ const SovereignLandingPage: React.FC = () => {
       {/* ═══════════════════════════ WHAT IS DATACENDIA? ═══════════════════════════ */}
       <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
         <div className="max-w-5xl mx-auto">
-          <p className="text-[11px] tracking-[0.25em] text-gray-600 uppercase mb-16 text-center">{t('landing.whatIs.label')}</p>
+          <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-16 text-center">{t('landing.whatIs.label')}</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Plain terms */}
@@ -196,7 +198,7 @@ const SovereignLandingPage: React.FC = () => {
       {/* ═══════════════════════════ WORKFLOW DIAGRAM ═══════════════════════════ */}
       <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
         <div className="max-w-5xl mx-auto">
-          <p className="text-[11px] tracking-[0.25em] text-gray-600 uppercase mb-3 text-center">{t('landing.workflow.label')}</p>
+          <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-3 text-center">{t('landing.workflow.label')}</p>
           <p className="text-sm text-gray-500 text-center mb-16">{t('landing.workflow.subtitle')}</p>
 
           {/* Desktop: horizontal flow */}
@@ -263,7 +265,7 @@ const SovereignLandingPage: React.FC = () => {
       {/* ═══════════════════════════ THE SOLUTION — 3 BEATS ═══════════════════════════ */}
       <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
         <div className="max-w-5xl mx-auto">
-          <p className="text-[11px] tracking-[0.25em] text-gray-600 uppercase mb-16 text-center">{t('landing.solution.label')}</p>
+          <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-16 text-center">{t('landing.solution.label')}</p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
             {/* Beat 1 */}
@@ -348,7 +350,7 @@ const SovereignLandingPage: React.FC = () => {
       {/* ═══════════════════════════ SOCIAL PROOF STRIP ═══════════════════════════ */}
       <section className="relative z-10 px-6 py-16 border-t border-white/[0.04]">
         <div className="max-w-5xl mx-auto">
-          <p className="text-[11px] tracking-[0.25em] text-gray-600 uppercase mb-10 text-center">{t('landing.socialProof.label')}</p>
+          <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-10 text-center">{t('landing.socialProof.label')}</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {TRUST_BADGES.map((badge) => {
               const Icon = badge.icon;
@@ -368,7 +370,7 @@ const SovereignLandingPage: React.FC = () => {
       {/* ═══════════════════════════ PLATFORM PREVIEW ═══════════════════════════ */}
       <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
         <div className="max-w-5xl mx-auto">
-          <p className="text-[11px] tracking-[0.25em] text-gray-600 uppercase mb-3 text-center">{t('landing.preview.label')}</p>
+          <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-3 text-center">{t('landing.preview.label')}</p>
           <p className="text-sm text-gray-500 text-center mb-12 max-w-2xl mx-auto">{t('landing.preview.subtitle')}</p>
 
           {/* Preview mockup */}
@@ -451,7 +453,7 @@ const SovereignLandingPage: React.FC = () => {
       {/* ═══════════════════════════ WHY NOT CHATGPT? ═══════════════════════════ */}
       <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
         <div className="max-w-4xl mx-auto">
-          <p className="text-[11px] tracking-[0.25em] text-gray-600 uppercase mb-3 text-center">{t('landing.differentiator.label')}</p>
+          <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-3 text-center">{t('landing.differentiator.label')}</p>
           <p className="text-base sm:text-lg text-gray-400 text-center mb-12 font-light">{t('landing.differentiator.subtitle')}</p>
 
           {/* Comparison table */}
@@ -492,25 +494,25 @@ const SovereignLandingPage: React.FC = () => {
       {/* ═══════════════════════════ FAQ ═══════════════════════════ */}
       <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
         <div className="max-w-3xl mx-auto">
-          <p className="text-[11px] tracking-[0.25em] text-gray-600 uppercase mb-12 text-center">{t('landing.faq.label')}</p>
+          <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-12 text-center">{t('landing.faq.label')}</p>
 
           <div className="space-y-2">
-            {(t('landing.faq.items') as unknown as Array<{ q: string; a: string }>)?.map?.((item: { q: string; a: string }, i: number) => (
-              <div key={i} className="rounded-xl border border-white/[0.06] bg-white/[0.01] overflow-hidden">
+            {FAQ_KEYS.map((key, i) => (
+              <div key={key} className="rounded-xl border border-white/[0.06] bg-white/[0.01] overflow-hidden">
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/[0.02] transition-colors"
                 >
-                  <span className="text-sm text-gray-300 font-medium pr-4">{item.q}</span>
-                  <ChevronDown className={`w-4 h-4 text-gray-600 shrink-0 transition-transform duration-200 ${openFaq === i ? 'rotate-180' : ''}`} />
+                  <span className="text-sm text-gray-300 font-medium pr-4">{t(`landing.faq.${key}.q`)}</span>
+                  <ChevronDown className={`w-4 h-4 text-gray-500 shrink-0 transition-transform duration-200 ${openFaq === i ? 'rotate-180' : ''}`} />
                 </button>
                 {openFaq === i && (
                   <div className="px-5 pb-4 pt-0">
-                    <p className="text-sm text-gray-500 leading-relaxed">{item.a}</p>
+                    <p className="text-sm text-gray-400 leading-relaxed">{t(`landing.faq.${key}.a`)}</p>
                   </div>
                 )}
               </div>
-            )) || null}
+            ))}
           </div>
         </div>
       </section>
