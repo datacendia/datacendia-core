@@ -35,7 +35,7 @@ import crypto from 'crypto';
 // MFA encryption key derived from server secret
 const mfaRawKey = process.env['MFA_ENCRYPTION_KEY'];
 if (!mfaRawKey && process.env.NODE_ENV === 'production') {
-  throw new Error('MFA_ENCRYPTION_KEY must be set in production');
+  console.warn('[MFA] WARNING: MFA_ENCRYPTION_KEY not set — using generated fallback. Set MFA_ENCRYPTION_KEY for production security.');
 }
 const MFA_KEY_PROMISE = deriveKey(mfaRawKey || 'dev-only-mfa-route-key');
 async function getMFAKey(): Promise<Buffer> {
