@@ -150,7 +150,7 @@ class ConfidentialComputeService {
     this.enabled = process.env['CC_ENABLED'] === 'true';
     this.attestationUrl = process.env['CC_ATTESTATION_URL'] || 'http://localhost:8443';
     this.requireGPU = process.env['CC_REQUIRE_GPU'] === 'true';
-    this.evidenceDir = process.env['CC_EVIDENCE_DIR'] || '/var/datacendia/cc-evidence';
+    this.evidenceDir = process.env['CC_EVIDENCE_DIR'] || './data/cc-evidence';
     this.policy = { ...DEFAULT_CC_POLICY };
 
     if (this.enabled) {
