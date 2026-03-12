@@ -1967,16 +1967,14 @@ export const CouncilPage: React.FC = () => {
 
       {/* Error Alert */}
       {error && (
-        <div className="mb-6 p-4 bg-error-light border border-error-main rounded-lg">
+        <div className="mb-6 p-4 bg-amber-900/30 border border-amber-600/40 rounded-lg">
           <div className="flex items-start gap-3">
             <span className="text-xl">⚠️</span>
             <div>
-              <p className="font-medium text-error-dark">{error}</p>
-              <p className="text-sm text-error-dark/80 mt-1">
-                To enable AI agents, run:{' '}
-                <code className="px-1 py-0.5 bg-white/50 rounded">ollama serve</code> and ensure you
-                have a model:{' '}
-                <code className="px-1 py-0.5 bg-white/50 rounded">ollama pull llama3.2</code>
+              <p className="font-medium text-amber-200">{error}</p>
+              <p className="text-sm text-amber-300/70 mt-1">
+                AI agents require a configured provider (OpenAI, Groq, or local Ollama).
+                Contact your administrator if this persists.
               </p>
             </div>
           </div>
