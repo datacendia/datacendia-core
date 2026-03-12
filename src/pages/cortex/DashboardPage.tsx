@@ -977,7 +977,7 @@ export const DashboardPage: React.FC = () => {
       {!activeJourney && !showJourneySelector && (
         <button
           onClick={() => setShowJourneySelector(true)}
-          className="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-primary-600 to-primary-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
+          className="fixed bottom-24 right-6 z-40 flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-primary-600 to-primary-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
         >
           <Compass className="w-5 h-5" />
           <span className="font-medium">Start Your Journey</span>
