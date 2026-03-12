@@ -17,7 +17,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Shield } from 'lucide-react';
+import { ArrowRight, Shield, Menu, X } from 'lucide-react';
+import { Logo } from '../../components/brand/Logo';
 import { useForm, ValidationError } from '@formspree/react';
 import { deterministicFloat, deterministicInt } from '../../lib/deterministic';
 import { api } from '@/lib/api/client';
@@ -311,6 +312,7 @@ const RequestAccessModal: React.FC<{ isOpen: boolean; onClose: () => void }> = (
 
 const SovereignLandingPage: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [activeTab, setActiveTab] = useState<'honesty' | 'manifesto'>('honesty');
 
@@ -342,11 +344,11 @@ const SovereignLandingPage: React.FC = () => {
       />
 
       {/* Fixed Nav with Sign In */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center">
-        <Link to="/" className="text-xs tracking-[0.3em] text-gray-500 hover:text-white transition-colors">
-          DATACENDIA
+      <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center bg-black/60 backdrop-blur-sm">
+        <Link to="/" className="flex items-center">
+          <Logo size="sm" />
         </Link>
-        <div className="flex items-center gap-4">
+        <div className="hidden sm:flex items-center gap-4">
           <Link 
             to="/login" 
             className="px-4 py-2 text-xs tracking-[0.2em] border border-white/30 hover:border-white hover:bg-white/10 text-white transition-all"
@@ -360,13 +362,42 @@ const SovereignLandingPage: React.FC = () => {
             REQUEST ACCESS
           </Link>
         </div>
+        <button
+          className="sm:hidden text-gray-400 hover:text-white p-2"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
       </nav>
+
+      {/* Mobile menu overlay */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-md sm:hidden flex flex-col items-center justify-center gap-6 pt-16">
+          <Link
+            to="/login"
+            onClick={() => setMobileMenuOpen(false)}
+            className="px-8 py-3 text-sm tracking-[0.2em] border border-white/30 text-white"
+          >
+            SIGN IN
+          </Link>
+          <Link
+            to="/demo"
+            onClick={() => setMobileMenuOpen(false)}
+            className="px-8 py-3 text-sm tracking-[0.2em] bg-red-900/80 text-white"
+          >
+            REQUEST ACCESS
+          </Link>
+          <a href="#philosophy" onClick={() => setMobileMenuOpen(false)} className="text-sm tracking-[0.2em] text-gray-400 hover:text-white">PHILOSOPHY</a>
+          <a href="#pricing" onClick={() => setMobileMenuOpen(false)} className="text-sm tracking-[0.2em] text-gray-400 hover:text-white">PRICING</a>
+          <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="text-sm tracking-[0.2em] text-gray-400 hover:text-white">CONTACT</Link>
+        </div>
+      )}
 
       {/* Hero Section - Full Screen */}
       <section className="min-h-screen flex flex-col items-center justify-center px-6 relative">
         {/* Logo / Brand */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-extralight tracking-[0.3em] text-white mb-4">
+          <h1 className="text-2xl sm:text-4xl md:text-6xl font-extralight tracking-[0.2em] sm:tracking-[0.3em] text-white mb-4">
             <GlitchText>DATACENDIA</GlitchText>
           </h1>
           <p className="text-sm tracking-[0.4em] text-gray-500 uppercase">
