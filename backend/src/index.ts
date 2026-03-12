@@ -116,7 +116,11 @@ const io = new SocketIOServer(httpServer, {
   pingInterval: 25000,
 });
 
-// Security middleware
+// Trust proxy — Railway runs behind a reverse proxy
+if (config.nodeEnv === 'production') {
+  app.set('trust proxy', 1);
+}
+
 // =============================================================================
 // LIVENESS PROBE - Must be before ALL middleware for Kubernetes/Docker health checks
 // =============================================================================
