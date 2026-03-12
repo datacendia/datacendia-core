@@ -16,7 +16,7 @@
  */
 
 import React, { useState, useRef } from 'react';
-import { ArrowRight, ArrowDown, Terminal, Scale, ShieldCheck, MessageCircle, Users, FileWarning, Fingerprint, Archive, FileCheck2, Shield, Lock, Award, ChevronDown, X, Check, Eye } from 'lucide-react';
+import { ArrowRight, ArrowDown, Terminal, Scale, ShieldCheck, MessageCircle, Users, FileWarning, Fingerprint, Archive, FileCheck2, Shield, Lock, Award, ChevronDown, X, Check } from 'lucide-react';
 import { Logo } from '../../components/brand/Logo';
 import { tokenManager } from '../../lib/api/client';
 import { useTranslation } from '../../lib/i18n';
@@ -43,18 +43,13 @@ const DIFF_ROWS = ['memory', 'dissent', 'proof', 'accountability', 'sovereignty'
 
 const SovereignLandingPage: React.FC = () => {
   const { t } = useTranslation();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const formRef = useRef<HTMLFormElement>(null);
+  const ctaRef = useRef<HTMLElement>(null);
   const problemRef = useRef<HTMLElement>(null);
 
-  const handleDemoAccess = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!name.trim() || !email.trim()) return;
-
+  const handleDemoAccess = async () => {
     setIsSubmitting(true);
     setError('');
 
@@ -62,7 +57,7 @@ const SovereignLandingPage: React.FC = () => {
       const res = await fetch('/api/v1/auth/demo-access', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name.trim(), email: email.trim() }),
+        body: JSON.stringify({ name: 'Demo User', email: `demo-${Date.now()}@datacendia.com` }),
       });
 
       const data = await res.json();
@@ -77,18 +72,17 @@ const SovereignLandingPage: React.FC = () => {
           window.location.href = '/cortex';
         }, 100);
       } else {
-        setError(data.error?.message || 'Something went wrong. Please try again.');
+        setError(data.error?.message || t('landing.demo.genericError'));
         setIsSubmitting(false);
       }
     } catch {
-      setError('Connection error. Please try again.');
+      setError(t('landing.demo.connectionError'));
       setIsSubmitting(false);
     }
   };
 
-  const scrollToForm = () => {
-    formRef.current?.scrollIntoView({ behavior: 'smooth' });
-    setTimeout(() => formRef.current?.querySelector('input')?.focus(), 400);
+  const scrollToCta = () => {
+    ctaRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -101,7 +95,7 @@ const SovereignLandingPage: React.FC = () => {
       <nav className="relative z-50 px-6 py-5 flex justify-between items-center max-w-6xl mx-auto">
         <Logo size="sm" />
         <button
-          onClick={scrollToForm}
+          onClick={scrollToCta}
           className="text-xs tracking-widest text-gray-500 hover:text-white transition-colors"
         >
           {t('landing.nav.tryDemo')}
@@ -131,7 +125,7 @@ const SovereignLandingPage: React.FC = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 items-start">
           <button
-            onClick={scrollToForm}
+            onClick={scrollToCta}
             className="group px-7 py-3.5 bg-white text-black rounded-lg font-medium text-sm tracking-wide inline-flex items-center gap-2.5 hover:bg-gray-100 transition-all"
           >
             {t('landing.hero.cta')}
@@ -430,7 +424,7 @@ const SovereignLandingPage: React.FC = () => {
               <div className="flex items-center justify-between rounded-lg bg-white/[0.02] border border-white/[0.06] px-4 py-2.5">
                 <div className="flex items-center gap-3">
                   <Fingerprint className="w-3.5 h-3.5 text-purple-400/60" />
-                  <span className="text-[10px] text-gray-600 font-mono">Ed25519 signed · Merkle root: 0x7a3f...e2c1 · RFC 3161 TS</span>
+                  <span className="text-[10px] text-gray-600 font-mono">Ed25519 signed · Merkle tree hashed · RFC 3161 timestamped</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
@@ -444,7 +438,7 @@ const SovereignLandingPage: React.FC = () => {
 
           <div className="flex justify-center mt-6">
             <button
-              onClick={scrollToForm}
+              onClick={scrollToCta}
               className="group text-sm text-indigo-400 hover:text-indigo-300 inline-flex items-center gap-2 transition-colors"
             >
               {t('landing.preview.cta')}
@@ -521,55 +515,32 @@ const SovereignLandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════════ BOTTOM CTA + FORM ═══════════════════════════ */}
-      <section className="relative z-10 px-6 py-28 border-t border-white/[0.04]">
+      {/* ═══════════════════════════ BOTTOM CTA ═══════════════════════════ */}
+      <section ref={ctaRef} className="relative z-10 px-6 py-28 border-t border-white/[0.04]">
         <div className="max-w-lg mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-light text-white mb-3">{t('landing.demo.title')}</h2>
           <p className="text-sm text-gray-500 mb-8">{t('landing.demo.subtitle')}</p>
 
-          <form
-            ref={formRef}
-            onSubmit={handleDemoAccess}
-            id="start"
-            className="text-left space-y-3"
+          <button
+            onClick={handleDemoAccess}
+            disabled={isSubmitting}
+            className="group px-10 py-4 bg-white text-black rounded-lg font-medium text-sm tracking-wide inline-flex items-center gap-3 hover:bg-gray-100 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <input
-              type="text"
-              placeholder={t('landing.demo.namePlaceholder')}
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="w-full px-4 py-3.5 bg-white/[0.04] border border-white/10 rounded-lg text-white placeholder:text-gray-600 outline-none focus:border-indigo-500/50 focus:bg-white/[0.06] transition-all text-sm"
-            />
-            <input
-              type="email"
-              placeholder={t('landing.demo.emailPlaceholder')}
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3.5 bg-white/[0.04] border border-white/10 rounded-lg text-white placeholder:text-gray-600 outline-none focus:border-indigo-500/50 focus:bg-white/[0.06] transition-all text-sm"
-            />
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full px-8 py-3.5 bg-white text-black rounded-lg font-medium text-sm tracking-wide flex items-center justify-center gap-2 hover:bg-gray-100 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isSubmitting ? (
-                <span className="flex items-center gap-2">
-                  <span className="w-4 h-4 border-2 border-gray-400 border-t-black rounded-full animate-spin" />
-                  {t('landing.demo.submitting')}
-                </span>
-              ) : (
-                <>
-                  {t('landing.demo.submitButton')}
-                  <ArrowRight className="w-4 h-4" />
-                </>
-              )}
-            </button>
-            {error && (
-              <p className="text-red-400 text-xs text-center">{error}</p>
+            {isSubmitting ? (
+              <span className="flex items-center gap-2">
+                <span className="w-4 h-4 border-2 border-gray-400 border-t-black rounded-full animate-spin" />
+                {t('landing.demo.submitting')}
+              </span>
+            ) : (
+              <>
+                {t('landing.demo.enterButton')}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </>
             )}
-          </form>
+          </button>
+          {error && (
+            <p className="text-red-400 text-xs text-center mt-4">{error}</p>
+          )}
         </div>
       </section>
 

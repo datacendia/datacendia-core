@@ -2377,7 +2377,7 @@
       "technical": {
         "title": "Under the Hood",
         "description": "A multi-agent deliberation engine backed by cryptographic infrastructure. Domain-expert LLM agents (CFO, CISO, Legal, Ethics, Red Team) engage in structured argumentation over your query. Each response is hashed into a Merkle tree, Ed25519-signed, and RFC 3161-timestamped. Decision packets include full chain-of-custody, dissent records, and confidence scoring — exportable as court-admissible evidence bundles.",
-        "stack": "Cloud-hosted (Core) · Apache 2.0 · OpenAI / Groq / Together AI · Sovereign Edition available for on-prem & air-gap"
+        "stack": "Cloud-hosted (Core) · Apache 2.0 · OpenAI / Groq / Together AI · On-prem Sovereign Edition also available"
       }
     },
     "workflow": {
@@ -2426,9 +2426,9 @@
     "audience": {
       "developers": {
         "label": "For Developers",
-        "text": "Apache 2.0. Cloud-hosted Core or self-hosted Sovereign Edition. API-first architecture.",
-        "code": "curl api.datacendia.com",
-        "suffix": "and you're deliberating in minutes."
+        "text": "Apache 2.0. TypeScript + React + Node.js. API-first architecture.",
+        "code": "docker compose up",
+        "suffix": "and the full stack is running locally."
       },
       "compliance": {
         "label": "For Compliance Teams",
@@ -2443,10 +2443,8 @@
     },
     "demo": {
       "title": "Try the Demo",
-      "subtitle": "No login required. Enter your name and email to access the full platform.",
-      "namePlaceholder": "Your name",
-      "emailPlaceholder": "Work email",
-      "submitButton": "Try the Demo — No login required",
+      "subtitle": "No login. No credit card. Click and you're inside.",
+      "enterButton": "Enter the Platform",
       "submitting": "Entering platform...",
       "connectionError": "Connection error. Please try again.",
       "genericError": "Something went wrong. Please try again."
@@ -2455,10 +2453,10 @@
       "label": "Trusted Infrastructure",
       "nvidia": "NVIDIA Inception Program",
       "openSource": "Apache 2.0 Open Source",
-      "sovereign": "Sovereign Edition Available",
-      "compliance": "SOC 2 · ISO 27001 · GDPR Mapped",
+      "sovereign": "Zero Trust Architecture",
+      "compliance": "EU AI Act · GDPR · HIPAA Mapped",
       "crypto": "Ed25519 · Merkle Trees · RFC 3161",
-      "zeroTrust": "Zero Trust Architecture"
+      "zeroTrust": "Sovereign Edition Available"
     },
     "preview": {
       "label": "See It In Action",
