@@ -1014,41 +1014,55 @@ export const CouncilPage: React.FC = () => {
     }
   }, [selectedMode]);
 
-  // Load agents from Ollama service
+  // Load agents — check backend inference status first (supports cloud providers)
   useEffect(() => {
     const loadAgents = async () => {
       try {
         setIsLoading(true);
         setError(null);
 
-        // Check Ollama availability and get agents
+        // Check backend inference provider status (works with OpenAI, Groq, Ollama, etc.)
+        let backendAIAvailable = false;
+        try {
+          const statusRes = await fetch('/api/v1/inference/status');
+          if (statusRes.ok) {
+            const inferenceStatus = await statusRes.json();
+            backendAIAvailable = inferenceStatus.available === true;
+            if (backendAIAvailable) {
+              console.log(`[Council] Backend AI provider: ${inferenceStatus.provider} (available)`);
+            }
+          }
+        } catch { /* backend check failed, fall through to Ollama */ }
+
+        // Also check local Ollama availability (for local dev)
         await ollamaService.checkAvailability();
         const ollamaAgents = ollamaService.getAgents();
 
-        setAgents(
-          ollamaAgents.map((a: DomainAgent) => ({
-            id: a.id,
-            code: a.code,
-            name: a.name,
-            role: a.role,
-            description: a.description,
-            avatar: a.avatar,
-            color: a.color,
-            status: a.status,
-            capabilities: a.capabilities,
-            ...(a.premium !== undefined && { premium: a.premium }),
-            ...(a.premiumPackage !== undefined && { premiumPackage: a.premiumPackage }),
-            ...(a.premiumPrice !== undefined && { premiumPrice: a.premiumPrice }),
-          }))
-        );
+        // If backend AI is available, mark all agents as online
+        const agentList = ollamaAgents.map((a: DomainAgent) => ({
+          id: a.id,
+          code: a.code,
+          name: a.name,
+          role: a.role,
+          description: a.description,
+          avatar: a.avatar,
+          color: a.color,
+          status: backendAIAvailable ? ('online' as const) : a.status,
+          capabilities: a.capabilities,
+          ...(a.premium !== undefined && { premium: a.premium }),
+          ...(a.premiumPackage !== undefined && { premiumPackage: a.premiumPackage }),
+          ...(a.premiumPrice !== undefined && { premiumPrice: a.premiumPrice }),
+        }));
 
-        const status = ollamaService.getStatus();
-        if (!status.available) {
+        setAgents(agentList);
+
+        const ollamaStatus = ollamaService.getStatus();
+        if (!backendAIAvailable && !ollamaStatus.available) {
           setError(
-            'Ollama is not running. Please start Ollama to enable AI agents. Run: ollama serve'
+            'AI agents are not configured. Please contact your administrator to set up an AI provider.'
           );
-        } else {
-          // Pre-warm all models in background for instant deliberations
+        } else if (ollamaStatus.available) {
+          // Pre-warm Ollama models in background for instant deliberations
           console.log('[Council] Pre-warming models in background...');
           ollamaService.preWarmModels((model, index, total) => {
             console.log(`[Council] Warming model ${index}/${total}: ${model}`);
@@ -1057,8 +1071,8 @@ export const CouncilPage: React.FC = () => {
           });
         }
       } catch (err) {
-        setError('Failed to connect to Ollama. Please ensure Ollama is running on localhost:11434');
-        console.error('Ollama connection error:', err);
+        setError('AI agents are temporarily unavailable. Please try again later.');
+        console.error('Council agent loading error:', err);
       } finally {
         setIsLoading(false);
       }
@@ -1066,8 +1080,17 @@ export const CouncilPage: React.FC = () => {
 
     loadAgents();
 
-    // Refresh agent status every 10 seconds
+    // Refresh agent status every 30 seconds (reduced from 10s)
     const interval = setInterval(async () => {
+      let backendAIAvailable = false;
+      try {
+        const statusRes = await fetch('/api/v1/inference/status');
+        if (statusRes.ok) {
+          const inferenceStatus = await statusRes.json();
+          backendAIAvailable = inferenceStatus.available === true;
+        }
+      } catch { /* ignore */ }
+
       await ollamaService.checkAvailability();
       const ollamaAgents = ollamaService.getAgents();
       setAgents(
@@ -1079,14 +1102,19 @@ export const CouncilPage: React.FC = () => {
           description: a.description,
           avatar: a.avatar,
           color: a.color,
-          status: a.status,
+          status: backendAIAvailable ? ('online' as const) : a.status,
           capabilities: a.capabilities,
           ...(a.premium !== undefined && { premium: a.premium }),
           ...(a.premiumPackage !== undefined && { premiumPackage: a.premiumPackage }),
           ...(a.premiumPrice !== undefined && { premiumPrice: a.premiumPrice }),
         }))
       );
-    }, 10000);
+
+      // Clear error if AI became available
+      if (backendAIAvailable || ollamaService.getStatus().available) {
+        setError(null);
+      }
+    }, 30000);
 
     return () => clearInterval(interval);
   }, []);
@@ -1365,7 +1393,7 @@ export const CouncilPage: React.FC = () => {
     const onlineAgents = agents.filter((a) => a.status === 'online');
     if (onlineAgents.length === 0) {
       setError(
-        'No agents are online. Please start Ollama and ensure you have a model installed (e.g., ollama pull llama3.2)'
+        'No AI agents are online. Please ensure an AI provider is configured (cloud API key or local Ollama).'
       );
       return;
     }

@@ -2,10 +2,11 @@
 // See LICENSE file for details.
 
 // =============================================================================
-// OLLAMA FACADE — Lightweight wrapper over OllamaProvider for direct usage
+// INFERENCE FACADE — Routes through InferenceService (OpenAI, Ollama, etc.)
+// Kept as `ollama` export for backward-compatibility with 45+ consuming files.
 // =============================================================================
 
-import { OllamaProvider } from './inference/OllamaProvider.js';
+import { inference } from './inference/InferenceService.js';
 
 interface ChatMessage {
   role: 'system' | 'user' | 'assistant';
@@ -25,24 +26,22 @@ interface GenerateOptions {
   format?: 'json';
 }
 
-const provider = new OllamaProvider();
-
 export const ollama = {
   async isAvailable(): Promise<boolean> {
-    return provider.isAvailable();
+    return inference.isAvailable();
   },
 
   async chat(messages: ChatMessage[], options: GenerateOptions = {}): Promise<string> {
-    const result = await provider.chat(messages, options);
+    const result = await inference.chat(messages, options);
     return result.content;
   },
 
   async generate(prompt: string, options: GenerateOptions = {}): Promise<string> {
-    return provider.generate(prompt, options);
+    return inference.generate(prompt, options);
   },
 
   async embed(text: string, model?: string): Promise<number[]> {
-    return provider.embed(text, model);
+    return inference.embed(text, model);
   },
 };
 

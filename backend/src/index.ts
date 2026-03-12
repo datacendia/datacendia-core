@@ -137,6 +137,26 @@ app.get('/readiness', async (_req, res) => {
   res.status(200).send('OK');
 });
 
+// Inference provider status — public endpoint so frontend can check AI availability
+app.get('/api/v1/inference/status', async (_req, res) => {
+  try {
+    const { inference } = await import('./services/inference/InferenceService.js');
+    const status = inference.getStatus();
+    const health = await inference.healthCheck();
+    res.json({
+      available: health.available,
+      provider: status.activeProvider,
+      primaryProvider: status.primaryProvider,
+      failoverActive: status.failoverActive,
+      latencyMs: health.latencyMs,
+      modelsLoaded: health.modelsLoaded,
+      error: health.error,
+    });
+  } catch (err: any) {
+    res.json({ available: false, provider: 'unknown', error: err.message });
+  }
+});
+
 // Prometheus metrics - before middleware so scraping works without auth
 app.use('/metrics', prometheusRoutes);
 
