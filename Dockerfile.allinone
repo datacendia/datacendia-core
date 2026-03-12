@@ -8,7 +8,7 @@
 # =============================================================================
 
 # Cache-bust: bump this value to force Railway to rebuild all layers
-ARG CACHEBUST=2
+ARG CACHEBUST=3
 
 # ---------------------------------------------------------------------------
 # Stage 1: Build frontend (Vite)
@@ -38,7 +38,6 @@ COPY tailwind.config.js ./
 COPY src ./src
 COPY components ./components
 COPY lib ./lib
-COPY public ./public
 
 RUN npm run build
 
