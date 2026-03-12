@@ -16,7 +16,7 @@
  */
 
 import React, { useState, useRef } from 'react';
-import { ArrowRight, ArrowDown, Terminal, Scale, ShieldCheck, MessageCircle, Users, FileWarning, Fingerprint, Archive, FileCheck2 } from 'lucide-react';
+import { ArrowRight, ArrowDown, Terminal, Scale, ShieldCheck, MessageCircle, Users, FileWarning, Fingerprint, Archive, FileCheck2, Shield, Lock, Award, ChevronDown, X, Check, Eye } from 'lucide-react';
 import { Logo } from '../../components/brand/Logo';
 import { tokenManager } from '../../lib/api/client';
 import { useTranslation } from '../../lib/i18n';
@@ -30,12 +30,24 @@ const WORKFLOW_STEPS = [
   { key: 'export', icon: FileCheck2, color: 'text-rose-400', bg: 'bg-rose-500/10', border: 'border-rose-500/20' },
 ] as const;
 
+const TRUST_BADGES = [
+  { key: 'nvidia', icon: Award, color: 'text-green-400' },
+  { key: 'openSource', icon: Terminal, color: 'text-sky-400' },
+  { key: 'sovereign', icon: Shield, color: 'text-indigo-400' },
+  { key: 'compliance', icon: Scale, color: 'text-amber-400' },
+  { key: 'crypto', icon: Fingerprint, color: 'text-purple-400' },
+  { key: 'zeroTrust', icon: Lock, color: 'text-rose-400' },
+] as const;
+
+const DIFF_ROWS = ['memory', 'dissent', 'proof', 'accountability', 'sovereignty'] as const;
+
 const SovereignLandingPage: React.FC = () => {
   const { t } = useTranslation();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const problemRef = useRef<HTMLElement>(null);
 
@@ -335,6 +347,176 @@ const SovereignLandingPage: React.FC = () => {
             <p className="text-sm text-gray-400 leading-relaxed">
               {t('landing.audience.leadership.text')} <span className="text-white">{t('landing.audience.leadership.emphasis')}</span>{t('landing.audience.leadership.suffix')}
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════ SOCIAL PROOF STRIP ═══════════════════════════ */}
+      <section className="relative z-10 px-6 py-16 border-t border-white/[0.04]">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-[11px] tracking-[0.25em] text-gray-600 uppercase mb-10 text-center">{t('landing.socialProof.label')}</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {TRUST_BADGES.map((badge) => {
+              const Icon = badge.icon;
+              return (
+                <div key={badge.key} className="flex flex-col items-center gap-2.5 p-4 rounded-xl border border-white/[0.04] bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
+                  <Icon className={`w-5 h-5 ${badge.color} opacity-70`} />
+                  <p className="text-[10px] text-gray-500 text-center leading-tight tracking-wide">
+                    {t(`landing.socialProof.${badge.key}`)}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════ PLATFORM PREVIEW ═══════════════════════════ */}
+      <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-[11px] tracking-[0.25em] text-gray-600 uppercase mb-3 text-center">{t('landing.preview.label')}</p>
+          <p className="text-sm text-gray-500 text-center mb-12 max-w-2xl mx-auto">{t('landing.preview.subtitle')}</p>
+
+          {/* Preview mockup */}
+          <div className="relative rounded-2xl border border-white/[0.08] bg-gradient-to-b from-white/[0.03] to-white/[0.01] overflow-hidden">
+            {/* Window chrome */}
+            <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.06]">
+              <div className="flex gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-500/40" />
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/40" />
+                <div className="w-2.5 h-2.5 rounded-full bg-green-500/40" />
+              </div>
+              <div className="flex-1 mx-4">
+                <div className="mx-auto max-w-xs h-5 rounded bg-white/[0.04] flex items-center justify-center">
+                  <span className="text-[10px] text-gray-600 font-mono">app.datacendia.com/cortex/council</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Mockup content — Council deliberation */}
+            <div className="p-6 sm:p-8 space-y-4">
+              {/* Query bar */}
+              <div className="rounded-lg bg-white/[0.03] border border-white/[0.06] p-4">
+                <p className="text-xs text-gray-600 mb-1.5 font-mono">QUERY</p>
+                <p className="text-sm text-gray-300 italic">"Should we acquire TechVenture Inc. at the proposed $42M valuation given current market conditions?"</p>
+              </div>
+
+              {/* Agent responses grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="rounded-lg bg-white/[0.02] border border-emerald-500/10 p-3.5">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-[10px] font-medium text-emerald-400 tracking-wide">CFO Agent</span>
+                    <span className="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono">CONDITIONAL</span>
+                  </div>
+                  <p className="text-[11px] text-gray-500 leading-relaxed">Valuation is 15% above sector median. Recommend counter at $36M with earnout structure...</p>
+                </div>
+                <div className="rounded-lg bg-white/[0.02] border border-amber-500/10 p-3.5">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-[10px] font-medium text-amber-400 tracking-wide">Legal Counsel</span>
+                    <span className="text-[9px] px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400 font-mono">CAUTION</span>
+                  </div>
+                  <p className="text-[11px] text-gray-500 leading-relaxed">IP assignment clauses in target's employment contracts have gaps. Due diligence required...</p>
+                </div>
+                <div className="rounded-lg bg-white/[0.02] border border-rose-500/10 p-3.5">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-[10px] font-medium text-rose-400 tracking-wide">Red Team</span>
+                    <span className="text-[9px] px-1.5 py-0.5 rounded bg-rose-500/10 text-rose-400 font-mono">DISSENT</span>
+                  </div>
+                  <p className="text-[11px] text-gray-500 leading-relaxed">Market correction risk in Q3 makes timing unfavorable. 3 of 5 comparable acquisitions in this...</p>
+                </div>
+              </div>
+
+              {/* Signature bar */}
+              <div className="flex items-center justify-between rounded-lg bg-white/[0.02] border border-white/[0.06] px-4 py-2.5">
+                <div className="flex items-center gap-3">
+                  <Fingerprint className="w-3.5 h-3.5 text-purple-400/60" />
+                  <span className="text-[10px] text-gray-600 font-mono">Ed25519 signed · Merkle root: 0x7a3f...e2c1 · RFC 3161 TS</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                  <span className="text-[10px] text-green-500/70">SEALED</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-[11px] text-gray-600 text-center mt-4 italic">{t('landing.preview.caption')}</p>
+
+          <div className="flex justify-center mt-6">
+            <button
+              onClick={scrollToForm}
+              className="group text-sm text-indigo-400 hover:text-indigo-300 inline-flex items-center gap-2 transition-colors"
+            >
+              {t('landing.preview.cta')}
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════ WHY NOT CHATGPT? ═══════════════════════════ */}
+      <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-[11px] tracking-[0.25em] text-gray-600 uppercase mb-3 text-center">{t('landing.differentiator.label')}</p>
+          <p className="text-base sm:text-lg text-gray-400 text-center mb-12 font-light">{t('landing.differentiator.subtitle')}</p>
+
+          {/* Comparison table */}
+          <div className="rounded-2xl border border-white/[0.06] overflow-hidden">
+            {/* Header */}
+            <div className="grid grid-cols-[1fr_1fr_1fr] border-b border-white/[0.06] bg-white/[0.02]">
+              <div className="px-4 sm:px-6 py-3">
+                <span className="text-[10px] text-gray-600 tracking-wider uppercase">{t('landing.differentiator.colHeaders.dimension')}</span>
+              </div>
+              <div className="px-4 sm:px-6 py-3 border-l border-white/[0.06]">
+                <span className="text-[10px] text-gray-600 tracking-wider uppercase">{t('landing.differentiator.colHeaders.chatgpt')}</span>
+              </div>
+              <div className="px-4 sm:px-6 py-3 border-l border-white/[0.06]">
+                <span className="text-[10px] text-indigo-400/80 tracking-wider uppercase">{t('landing.differentiator.colHeaders.datacendia')}</span>
+              </div>
+            </div>
+
+            {/* Rows */}
+            {DIFF_ROWS.map((row, i) => (
+              <div key={row} className={`grid grid-cols-[1fr_1fr_1fr] ${i < DIFF_ROWS.length - 1 ? 'border-b border-white/[0.04]' : ''}`}>
+                <div className="px-4 sm:px-6 py-4 flex items-start">
+                  <span className="text-xs text-gray-400 font-medium capitalize">{row}</span>
+                </div>
+                <div className="px-4 sm:px-6 py-4 border-l border-white/[0.04] flex items-start gap-2">
+                  <X className="w-3.5 h-3.5 text-red-400/60 shrink-0 mt-0.5" />
+                  <span className="text-xs text-gray-500">{t(`landing.differentiator.items.${row}.chatgpt`)}</span>
+                </div>
+                <div className="px-4 sm:px-6 py-4 border-l border-white/[0.04] bg-indigo-500/[0.02] flex items-start gap-2">
+                  <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                  <span className="text-xs text-gray-300">{t(`landing.differentiator.items.${row}.datacendia`)}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════ FAQ ═══════════════════════════ */}
+      <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[11px] tracking-[0.25em] text-gray-600 uppercase mb-12 text-center">{t('landing.faq.label')}</p>
+
+          <div className="space-y-2">
+            {(t('landing.faq.items') as unknown as Array<{ q: string; a: string }>)?.map?.((item: { q: string; a: string }, i: number) => (
+              <div key={i} className="rounded-xl border border-white/[0.06] bg-white/[0.01] overflow-hidden">
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/[0.02] transition-colors"
+                >
+                  <span className="text-sm text-gray-300 font-medium pr-4">{item.q}</span>
+                  <ChevronDown className={`w-4 h-4 text-gray-600 shrink-0 transition-transform duration-200 ${openFaq === i ? 'rotate-180' : ''}`} />
+                </button>
+                {openFaq === i && (
+                  <div className="px-5 pb-4 pt-0">
+                    <p className="text-sm text-gray-500 leading-relaxed">{item.a}</p>
+                  </div>
+                )}
+              </div>
+            )) || null}
           </div>
         </div>
       </section>
