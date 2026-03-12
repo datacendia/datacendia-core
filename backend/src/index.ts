@@ -137,6 +137,23 @@ app.get('/readiness', async (_req, res) => {
 // Prometheus metrics - before middleware so scraping works without auth
 app.use('/metrics', prometheusRoutes);
 
+// Debug endpoint: check frontend dist contents (remove after debugging)
+app.get('/debug/dist', (_req, res) => {
+  const distPath = path.resolve(process.cwd(), '../dist');
+  const info: Record<string, unknown> = { cwd: process.cwd(), distPath, exists: fs.existsSync(distPath) };
+  if (info.exists) {
+    info.files = fs.readdirSync(distPath as string);
+    const assetsPath = path.join(distPath, 'assets');
+    info.assetsExists = fs.existsSync(assetsPath);
+    if (info.assetsExists) {
+      info.assetFiles = fs.readdirSync(assetsPath);
+    }
+  } else {
+    try { info.parentFiles = fs.readdirSync(path.resolve(process.cwd(), '..')); } catch (e) { info.parentError = String(e); }
+  }
+  res.json(info);
+});
+
 // ---------------------------------------------------------------------------
 // Static frontend serving (all-in-one / Railway deployment)
 // MUST be before Helmet/security middleware so assets aren't blocked
@@ -228,23 +245,23 @@ app.use(compression());
 // Request logging
 app.use(requestLogger);
 
-// CendiaCrucible™ Security Middleware - Adversarial Defense
-app.use(pathTraversalMiddleware);
-app.use(sqlInjectionMiddleware);
+// CendiaCrucible™ Security Middleware - Adversarial Defense (scoped to /api/ only)
+app.use('/api/', pathTraversalMiddleware);
+app.use('/api/', sqlInjectionMiddleware);
 app.use('/api/v1/council', inputSanitizationMiddleware); // Prompt injection defense
 
-// Custom security headers
-app.use(customSecurityHeaders);
+// Custom security headers (API only)
+app.use('/api/', customSecurityHeaders);
 
 // Honeypot/deception - catches attackers probing for vulnerabilities
-app.use(honeypotMiddleware);
+app.use('/api/', honeypotMiddleware);
 
-// Master security middleware (all attack protections)
+// Master security middleware (all attack protections, API only)
 if (config.nodeEnv === 'production') {
-  app.use(masterSecurityMiddleware);
-  app.use(preventReplayAttack);
-  app.use(preventDataExfiltration);
-  app.use(threatDetectionMiddleware);
+  app.use('/api/', masterSecurityMiddleware);
+  app.use('/api/', preventReplayAttack);
+  app.use('/api/', preventDataExfiltration);
+  app.use('/api/', threatDetectionMiddleware);
 }
 // NOTE: Threat detection disabled in dev - SQL patterns too aggressive for AI content
 
