@@ -259,8 +259,15 @@ const foundationGroup: NavGroup = {
       id: 'dcii',
       label: 'DCII',
       icon: Shield,
-      path: '/cortex/upgrade',
-      tooltip: 'Decision Crisis Immunization Infrastructure � IISS Score',
+      path: '/cortex/dcii',
+      tooltip: 'Decision Crisis Immunization Infrastructure — IISS Score',
+    },
+    {
+      id: 'gateway',
+      label: 'Gateway',
+      icon: Network,
+      path: '/cortex/gateway',
+      tooltip: 'CendiaGateway™ — AI Governance Gateway',
     },
   ],
 };

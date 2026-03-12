@@ -523,12 +523,29 @@ export const DemoRequestPage: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitted(true);
+    setSubmitError('');
+    try {
+      const res = await fetch('/api/v1/leads/demo-request', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setIsSubmitted(true);
+      } else {
+        setSubmitError(data.error?.message || 'Something went wrong. Please try again.');
+      }
+    } catch {
+      setSubmitError('Network error. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -744,6 +761,12 @@ export const DemoRequestPage: React.FC = () => {
                   I'd like to receive occasional updates about Datacendia products and events.
                 </span>
               </label>
+
+              {submitError && (
+                <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg p-3">
+                  {submitError}
+                </p>
+              )}
 
               <button
                 type="submit"

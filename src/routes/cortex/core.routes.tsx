@@ -87,6 +87,18 @@ const CouncilAnalyticsPage = lazy(() =>
   import('../../pages/cortex/council/CouncilAnalyticsPage').then((m) => ({ default: m.CouncilAnalyticsPage }))
 );
 
+// CendiaGateway
+const CendiaGatewayPage = lazy(() => import('../../pages/cortex/gateway/CendiaGatewayPage'));
+
+// DCII Pages
+const DCIITruthPage = lazy(() => import('../../pages/cortex/dcii/TruthPage'));
+const DCIINotaryPage = lazy(() => import('../../pages/cortex/dcii/NotaryPage'));
+const DCIIWitnessPage = lazy(() => import('../../pages/cortex/dcii/WitnessPage'));
+const DCIITimestampPage = lazy(() => import('../../pages/cortex/dcii/TimestampPage'));
+const DCIISimilarityPage = lazy(() => import('../../pages/cortex/dcii/SimilarityPage'));
+const DCIIMemoryPage = lazy(() => import('../../pages/cortex/dcii/MemoryPage'));
+const DCIIStatementOfFactsPage = lazy(() => import('../../pages/cortex/dcii/StatementOfFactsPage'));
+
 // WOW Features - Visualization & Replay
 const DeliberationVisualizationPage = lazy(() =>
   import('../../pages/cortex/council/DeliberationVisualizationPage').then((m) => ({ default: m.default }))
@@ -141,4 +153,17 @@ export const cortexCoreRoutes: RouteObject[] = [
 
   // CendiaPulse™
   { path: 'monitor/live', element: w(LiveAgentMonitorPage) },
+
+  // CendiaGateway — AI Governance Gateway
+  { path: 'gateway', element: w(CendiaGatewayPage) },
+
+  // DCII — Decision Crisis Immunization Infrastructure
+  { path: 'dcii', element: w(DCIITruthPage) },
+  { path: 'dcii/truth', element: w(DCIITruthPage) },
+  { path: 'dcii/notary', element: w(DCIINotaryPage) },
+  { path: 'dcii/witness', element: w(DCIIWitnessPage) },
+  { path: 'dcii/timestamp', element: w(DCIITimestampPage) },
+  { path: 'dcii/similarity', element: w(DCIISimilarityPage) },
+  { path: 'dcii/memory', element: w(DCIIMemoryPage) },
+  { path: 'dcii/statement-of-facts', element: w(DCIIStatementOfFactsPage) },
 ];
