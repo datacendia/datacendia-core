@@ -16,6 +16,7 @@
  */
 
 import React from 'react';
+import logoSrc from '../../assets/logo.png';
 
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
@@ -36,7 +37,7 @@ export const Logo: React.FC<LogoProps> = ({ size = 'md', className = '' }) => {
 
   return (
     <img
-      src="/logo.png"
+      src={logoSrc}
       alt="Datacendia"
       className={className}
       style={{ height: `${height}px`, width: 'auto', display: 'inline-block' }}
@@ -50,7 +51,7 @@ export const LogoSimple: React.FC<{ size?: number; className?: string; dark?: bo
 }) => {
   return (
     <img
-      src="/logo.png"
+      src={logoSrc}
       alt="Datacendia"
       className={className}
       style={{ height: `${size}px`, width: 'auto', display: 'inline-block' }}
