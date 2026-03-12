@@ -125,14 +125,14 @@ export const PageGuide: React.FC<PageGuideProps> = ({
       <button
         onClick={handleReset}
         className={cn(
-          'fixed bottom-4 right-4 z-50 flex items-center gap-2 px-3 py-2',
-          'bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg shadow-lg',
+          'fixed bottom-4 left-4 z-50 flex items-center gap-2 px-3 py-2',
+          'bg-neutral-800 hover:bg-neutral-700 text-neutral-300 rounded-lg shadow-lg border border-neutral-700',
           'text-sm font-medium transition-all',
           className
         )}
       >
-        <span>❓</span>
-        <span>Show Guide</span>
+        <span>📖</span>
+        <span>Guide</span>
       </button>
     );
   }
@@ -142,7 +142,7 @@ export const PageGuide: React.FC<PageGuideProps> = ({
     return (
       <div
         className={cn(
-          'fixed bottom-4 right-4 z-50 bg-slate-800 border border-slate-600 rounded-xl shadow-2xl',
+          'fixed bottom-4 left-4 z-50 bg-slate-800 border border-slate-600 rounded-xl shadow-2xl',
           'p-3 flex items-center gap-3',
           className
         )}

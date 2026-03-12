@@ -60,7 +60,7 @@ export const HealthIndicator: React.FC<{ className?: string }> = ({ className = 
     >
       <span className={`w-2 h-2 rounded-full ${statusColors[health.status]} ${isChecking ? 'animate-pulse' : ''}`} />
       <span className="text-slate-400">
-        {health.status === 'healthy' ? `${health.latency}ms` : health.status}
+        {health.status === 'healthy' ? `${health.latency}ms` : health.status === 'unknown' ? 'API' : health.status}
       </span>
     </button>
   );

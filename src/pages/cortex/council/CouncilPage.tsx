@@ -1754,40 +1754,32 @@ export const CouncilPage: React.FC = () => {
               </div>
             )}
             
-            {/* Pantheon Button */}
+            {/* Agent Roster Button */}
             <button
               onClick={() => setShowPantheon(true)}
-              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg hover:opacity-90 transition-all shadow-md hover:shadow-lg"
+              className="flex items-center gap-2 px-3 py-2 bg-neutral-800 border border-neutral-700 text-neutral-200 rounded-lg hover:bg-neutral-700 transition-all text-sm"
             >
               <span>🏛️</span>
-              <span className="font-medium">Pantheon</span>
+              <span className="font-medium">Agent Roster</span>
             </button>
             
-            {/* Premium Features Button */}
-            <button
-              onClick={() => setShowPremiumModal(true)}
-              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-lg hover:opacity-90 transition-all shadow-md hover:shadow-lg"
-            >
-              <span>✨</span>
-              <span className="font-medium">Premium</span>
-              <span className="text-xs bg-white/20 px-1.5 py-0.5 rounded">30 AI Agents</span>
-            </button>
+            {/* Council Modes Button */}
             <button
               onClick={() => setShowModesLibrary(!showModesLibrary)}
-              className="flex items-center gap-2 px-4 py-2 bg-primary-50 text-primary-700 rounded-lg hover:bg-primary-100 transition-colors"
+              className="flex items-center gap-2 px-3 py-2 bg-neutral-800 border border-neutral-700 text-neutral-200 rounded-lg hover:bg-neutral-700 transition-all text-sm"
             >
               <span>📚</span>
               <span className="font-medium">{t('council.modes_library')}</span>
             </button>
             {agents.some((a) => a.status === 'online') ? (
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-success-light text-success-dark rounded-full text-sm">
-                <span className="w-2 h-2 rounded-full bg-success-main animate-pulse" />
-                {t('council.ollama_connected')}
+              <div className="flex items-center gap-2 px-3 py-1.5 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full text-sm">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                AI Connected
               </div>
             ) : (
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-error-light text-error-dark rounded-full text-sm">
-                <span className="w-2 h-2 rounded-full bg-error-main" />
-                {t('council.ollama_disconnected')}
+              <div className="flex items-center gap-2 px-3 py-1.5 bg-red-500/10 text-red-400 border border-red-500/20 rounded-full text-sm">
+                <span className="w-2 h-2 rounded-full bg-red-400" />
+                AI Disconnected
               </div>
             )}
           </div>
@@ -4490,7 +4482,7 @@ export const CouncilPage: React.FC = () => {
                     🏛️
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-white">The Pantheon</h2>
+                    <h2 className="text-2xl font-bold text-white">Agent Roster</h2>
                     <p className="text-indigo-300 text-sm">Your Council of AI Executives</p>
                   </div>
                 </div>
