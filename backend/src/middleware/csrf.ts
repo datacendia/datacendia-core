@@ -35,6 +35,7 @@ const EXEMPT_PATHS = [
   '/api/v1/integrations/webhook',
   '/api/v1/contact', // Public contact form uses different protection
   '/api/v1/leads', // Public demo request form
+  '/api/v1/auth/demo-access', // Frictionless demo entry form
   '/api/v1/legal-research', // Legal research API for dev testing
   '/health',
   '/api/docs',
