@@ -225,6 +225,23 @@ router.post('/demo-access', async (req: Request, res: Response, next: NextFuncti
 
     logger.info(`[Demo] Demo access granted: ${normalizedEmail}`);
 
+    // Notify sales@ (fire-and-forget — don't block demo access)
+    emailService.send({
+      to: process.env.SALES_EMAIL || 'sales@datacendia.com',
+      subject: `🚀 New Demo Access: ${name.trim()} (${normalizedEmail})`,
+      text: [
+        `New demo platform access`,
+        ``,
+        `Name:  ${name.trim()}`,
+        `Email: ${normalizedEmail}`,
+        `Time:  ${new Date().toISOString()}`,
+        `New user: ${!user ? 'Yes' : 'Returning'}`,
+        ``,
+        `— Datacendia Platform`,
+      ].join('\n'),
+      replyTo: normalizedEmail,
+    }).catch((err) => logger.error('[Demo] Failed to send sales notification:', err));
+
     res.json({
       success: true,
       data: {
