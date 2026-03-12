@@ -21,6 +21,7 @@ import { cn } from '../../../lib/utils';
 import { authApi } from '../../lib/api';
 import { useI18n } from '../../lib/i18n';
 import { LanguageSwitcher } from '../../components/i18n/LanguageSwitcher';
+import { Logo } from '../../components/brand/Logo';
 
 // Inline SVG icons for SSO methods (no emoji)
 const SSOIcons = {
@@ -104,17 +105,7 @@ export const LoginPage: React.FC = () => {
         <div className="relative z-10 flex flex-col justify-between p-14 w-full">
           {/* Logo */}
           <div>
-            <span
-              style={{
-                fontFamily: "'Georgia', 'Times New Roman', serif",
-                letterSpacing: '0.3em',
-                fontWeight: 400,
-                fontSize: '22px',
-                color: '#e8e4e0',
-              }}
-            >
-              DATACEND<span style={{ color: '#c9a84c' }}>!</span>A
-            </span>
+            <Logo size="lg" />
           </div>
 
           {/* Hero Statement */}
