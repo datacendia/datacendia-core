@@ -176,6 +176,7 @@ router.post('/demo-access', async (req: Request, res: Response, next: NextFuncti
           name: 'Demo Organization',
           slug: 'demo',
           settings: {} as Prisma.InputJsonValue,
+          updated_at: new Date(),
         },
       });
     }
@@ -199,6 +200,7 @@ router.post('/demo-access', async (req: Request, res: Response, next: NextFuncti
           role: 'ADMIN',
           status: 'ACTIVE',
           organization_id: demoOrg.id,
+          updated_at: new Date(),
         },
       });
 
@@ -207,37 +209,19 @@ router.post('/demo-access', async (req: Request, res: Response, next: NextFuncti
 
     // Generate tokens
     const accessToken = await generateAccessToken({
-      sub: user.id,
+      id: user.id,
       email: user.email,
       organizationId: user.organization_id,
       role: user.role,
     });
 
-    const refreshToken = await generateRefreshToken({
-      sub: user.id,
-      email: user.email,
-      organizationId: user.organization_id,
-      role: user.role,
-    });
+    const refreshToken = await generateRefreshToken(user.id);
 
     // Update last login
     await prisma.users.update({
       where: { id: user.id },
       data: { last_login_at: new Date() },
     });
-
-    // Also save as a lead for sales tracking
-    try {
-      await prisma.leads.create({
-        data: {
-          id: crypto.randomUUID(),
-          name: name.trim(),
-          email: normalizedEmail,
-          source: 'demo_access',
-          status: 'NEW',
-        },
-      });
-    } catch { /* ignore duplicate */ }
 
     logger.info(`[Demo] Demo access granted: ${normalizedEmail}`);
 
