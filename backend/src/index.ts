@@ -137,15 +137,38 @@ app.get('/readiness', async (_req, res) => {
 // Prometheus metrics - before middleware so scraping works without auth
 app.use('/metrics', prometheusRoutes);
 
+// ---------------------------------------------------------------------------
+// Static frontend serving (all-in-one / Railway deployment)
+// MUST be before Helmet/security middleware so assets aren't blocked
+// ---------------------------------------------------------------------------
+const frontendDist = path.resolve(process.cwd(), '../dist');
+
+if (fs.existsSync(frontendDist)) {
+  const indexExists = fs.existsSync(path.join(frontendDist, 'index.html'));
+  logger.info(`[Static] Serving frontend from ${frontendDist} (index.html exists: ${indexExists})`);
+  if (indexExists) {
+    const files = fs.readdirSync(frontendDist);
+    logger.info(`[Static] dist/ contents: ${files.join(', ')}`);
+  }
+  app.use(express.static(frontendDist));
+} else {
+  logger.warn(`[Static] Frontend dist NOT found at ${frontendDist} — cwd: ${process.cwd()}`);
+  try {
+    const parentFiles = fs.readdirSync(path.resolve(process.cwd(), '..'));
+    logger.warn(`[Static] Parent dir contents: ${parentFiles.join(', ')}`);
+  } catch (e) { /* ignore */ }
+}
+
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
-      styleSrc: ["'self'", "'unsafe-inline'"],
+      styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
+      styleSrcElem: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
       scriptSrc: ["'self'", "'unsafe-inline'"],
       imgSrc: ["'self'", 'data:', 'https:'],
       connectSrc: ["'self'", 'wss:', 'ws:'],
-      fontSrc: ["'self'", 'data:'],
+      fontSrc: ["'self'", 'data:', 'https://fonts.gstatic.com'],
     },
   },
 }));
@@ -305,32 +328,12 @@ app.use('/api/v1/rapids', rapidsRoutes);             // NVIDIA RAPIDS GPU analyt
 app.use('/api/v1/flink', flinkRoutes);               // Apache Flink CEP stream processing
 app.use('/api/v1/gateway', gatewayRoutes);           // CendiaGateway™ — AI Governance Gateway
 
-// ---------------------------------------------------------------------------
-// Static frontend serving (all-in-one / Railway deployment)
-// Serves built Vite SPA from ../dist (relative to backend/) when available
-// ---------------------------------------------------------------------------
-const frontendDist = path.resolve(process.cwd(), '../dist');
-
-if (fs.existsSync(frontendDist)) {
-  const indexExists = fs.existsSync(path.join(frontendDist, 'index.html'));
-  logger.info(`[Static] Serving frontend from ${frontendDist} (index.html exists: ${indexExists})`);
-  if (indexExists) {
-    const files = fs.readdirSync(frontendDist);
-    logger.info(`[Static] dist/ contents: ${files.join(', ')}`);
-  }
-  app.use(express.static(frontendDist));
-  // SPA catch-all: serve index.html for non-API routes
+// SPA catch-all: serve index.html for non-API routes (after all API routes)
+if (fs.existsSync(frontendDist) && fs.existsSync(path.join(frontendDist, 'index.html'))) {
   app.get('*', (req, res, next) => {
     if (req.path.startsWith('/api/')) return next();
     res.sendFile(path.join(frontendDist, 'index.html'));
   });
-} else {
-  logger.warn(`[Static] Frontend dist NOT found at ${frontendDist} — cwd: ${process.cwd()}`);
-  // List parent directory to help debug
-  try {
-    const parentFiles = fs.readdirSync(path.resolve(process.cwd(), '..'));
-    logger.warn(`[Static] Parent dir contents: ${parentFiles.join(', ')}`);
-  } catch (e) { /* ignore */ }
 }
 
 // 404 handler (API routes only when frontend is served)
