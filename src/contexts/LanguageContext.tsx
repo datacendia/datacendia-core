@@ -24,6 +24,7 @@
 
 import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
 import apiClient from '@/lib/api/client';
+import { ALL_TRANSLATIONS } from '@/i18n';
 
 // =============================================================================
 // TYPES
@@ -435,7 +436,9 @@ const DEFAULT_TRANSLATIONS: Record<string, string> = {
 };
 
 // Pre-built translations for instant switching (no LLM needed)
+// All 19 non-English languages have 100% static coverage via src/i18n/
 const STATIC_TRANSLATIONS: Record<string, Record<string, string>> = {
+  ...ALL_TRANSLATIONS,
   es: {
     // App
     'app.tagline': 'Plataforma de Inteligencia Empresarial',
