@@ -98,8 +98,8 @@ export const csrfProtection = (
     return next();
   }
 
-  // Skip CSRF check for exempt paths
-  if (isExemptPath(req.path)) {
+  // Skip CSRF check for exempt paths (use originalUrl — req.path is stripped when mounted at /api/)
+  if (isExemptPath(req.originalUrl)) {
     return next();
   }
 
