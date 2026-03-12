@@ -140,21 +140,32 @@ app.get('/readiness', async (_req, res) => {
 // Prometheus metrics - before middleware so scraping works without auth
 app.use('/metrics', prometheusRoutes);
 
-// Debug endpoint: check frontend dist contents (remove after debugging)
-app.get('/debug/dist', (_req, res) => {
-  const distPath = path.resolve(process.cwd(), '../dist');
-  const info: Record<string, unknown> = { cwd: process.cwd(), distPath, exists: fs.existsSync(distPath) };
-  if (info.exists) {
-    info.files = fs.readdirSync(distPath as string);
-    const assetsPath = path.join(distPath, 'assets');
-    info.assetsExists = fs.existsSync(assetsPath);
-    if (info.assetsExists) {
-      info.assetFiles = fs.readdirSync(assetsPath);
-    }
-  } else {
-    try { info.parentFiles = fs.readdirSync(path.resolve(process.cwd(), '..')); } catch (e) { info.parentError = String(e); }
+// Debug endpoint: test SMTP connection (remove after debugging)
+app.get('/debug/smtp', async (_req, res) => {
+  const nodemailer = await import('nodemailer');
+  const smtpConfig = {
+    host: process.env.SMTP_HOST || '(not set)',
+    port: parseInt(process.env.SMTP_PORT || '587', 10),
+    user: process.env.SMTP_USER || '(not set)',
+    passSet: !!process.env.SMTP_PASS,
+    from: process.env.SMTP_FROM || '(not set)',
+    salesEmail: process.env.SALES_EMAIL || '(not set)',
+  };
+  if (!process.env.SMTP_HOST) {
+    return res.json({ smtpConfig, error: 'SMTP_HOST not configured' });
   }
-  res.json(info);
+  try {
+    const transport = nodemailer.default.createTransport({
+      host: process.env.SMTP_HOST,
+      port: smtpConfig.port,
+      secure: smtpConfig.port === 465,
+      auth: process.env.SMTP_USER ? { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS || '' } : undefined,
+    });
+    await transport.verify();
+    res.json({ smtpConfig, status: 'SMTP connection OK — auth successful' });
+  } catch (err: any) {
+    res.json({ smtpConfig, error: err.message, code: err.code });
+  }
 });
 
 // ---------------------------------------------------------------------------
