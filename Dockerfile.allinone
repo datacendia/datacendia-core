@@ -56,7 +56,7 @@ WORKDIR /app
 COPY backend/package*.json ./
 COPY backend/prisma ./prisma/
 
-RUN npm ci
+RUN npm install --no-audit --no-fund
 RUN npx prisma generate
 
 COPY backend/src ./src
