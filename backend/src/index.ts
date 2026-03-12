@@ -142,8 +142,10 @@ app.use(helmet({
     directives: {
       defaultSrc: ["'self'"],
       styleSrc: ["'self'", "'unsafe-inline'"],
-      scriptSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'"],
       imgSrc: ["'self'", 'data:', 'https:'],
+      connectSrc: ["'self'", 'wss:', 'ws:'],
+      fontSrc: ["'self'", 'data:'],
     },
   },
 }));
@@ -310,13 +312,25 @@ app.use('/api/v1/gateway', gatewayRoutes);           // CendiaGateway™ — AI 
 const frontendDist = path.resolve(process.cwd(), '../dist');
 
 if (fs.existsSync(frontendDist)) {
+  const indexExists = fs.existsSync(path.join(frontendDist, 'index.html'));
+  logger.info(`[Static] Serving frontend from ${frontendDist} (index.html exists: ${indexExists})`);
+  if (indexExists) {
+    const files = fs.readdirSync(frontendDist);
+    logger.info(`[Static] dist/ contents: ${files.join(', ')}`);
+  }
   app.use(express.static(frontendDist));
   // SPA catch-all: serve index.html for non-API routes
   app.get('*', (req, res, next) => {
     if (req.path.startsWith('/api/')) return next();
     res.sendFile(path.join(frontendDist, 'index.html'));
   });
-  logger.info(`[Static] Serving frontend from ${frontendDist}`);
+} else {
+  logger.warn(`[Static] Frontend dist NOT found at ${frontendDist} — cwd: ${process.cwd()}`);
+  // List parent directory to help debug
+  try {
+    const parentFiles = fs.readdirSync(path.resolve(process.cwd(), '..'));
+    logger.warn(`[Static] Parent dir contents: ${parentFiles.join(', ')}`);
+  } catch (e) { /* ignore */ }
 }
 
 // 404 handler (API routes only when frontend is served)
