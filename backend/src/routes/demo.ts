@@ -13,6 +13,7 @@ import { z } from 'zod';
 import crypto from 'crypto';
 import { prisma } from '../config/database.js';
 import { logger } from '../utils/logger.js';
+import { emailService } from '../services/email.js';
 
 const router = Router();
 
@@ -21,17 +22,10 @@ const demoRequestSchema = z.object({
   lastName: z.string().min(1, 'Last name is required'),
   email: z.string().email('Invalid email format'),
   company: z.string().min(1, 'Company name is required'),
-  jobTitle: z.string().min(1, 'Job title is required'),
-  companySize: z.enum(['1-50', '51-200', '201-1000', '1001-5000', '5000+']),
-  industry: z.string().min(1, 'Industry is required'),
-  primaryInterest: z.enum([
-    'data-lineage',
-    'ai-agents',
-    'forecasting',
-    'compliance',
-    'automation',
-    'other',
-  ]),
+  jobTitle: z.string().optional().default(''),
+  companySize: z.string().optional().default(''),
+  industry: z.string().optional().default(''),
+  primaryInterest: z.string().optional().default(''),
   additionalNotes: z.string().optional(),
   marketingConsent: z.boolean().default(false),
 });
@@ -97,35 +91,41 @@ router.post('/demo-request', async (req: Request, res: Response, next: NextFunct
       interest: data.primaryInterest,
     });
 
-    // Send confirmation email via audit log (email service picks up from here)
-    await prisma.audit_logs.create({
-      data: {
-        id: crypto.randomUUID(),
-        organization_id: 'system',
-        user_id: 'system',
-        action: 'demo.confirmation_email',
-        resource_type: 'demo_request',
-        resource_id: demoRequest.id,
-        details: { recipient: data.email, company: data.company, template: 'demo_confirmation' },
-        ip_address: req.ip || 'unknown',
-        user_agent: req.headers['user-agent'] || 'unknown',
-      },
-    });
+    // Notify sales team via email
+    emailService.notifyDemoRequest({
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      company: data.company,
+      jobTitle: data.jobTitle,
+      companySize: data.companySize,
+      industry: data.industry,
+      primaryInterest: data.primaryInterest,
+      additionalNotes: data.additionalNotes,
+    }).catch(err => logger.error('[Demo] Email notification failed:', err));
 
-    // Notify sales team via audit log (notification service picks up critical events)
-    await prisma.audit_logs.create({
-      data: {
-        id: crypto.randomUUID(),
-        organization_id: 'system',
-        user_id: 'system',
-        action: 'demo.sales_notification',
-        resource_type: 'demo_request',
-        resource_id: demoRequest.id,
-        details: { channel: 'sales', email: data.email, company: data.company, interest: data.primaryInterest },
-        ip_address: req.ip || 'unknown',
-        user_agent: req.headers['user-agent'] || 'unknown',
-      },
-    });
+    // Audit log for tracking (best-effort, don't block response)
+    try {
+      const defaultOrg = await prisma.organizations.findFirst({ select: { id: true } });
+      const defaultUser = await prisma.users.findFirst({ select: { id: true } });
+      if (defaultOrg && defaultUser) {
+        await prisma.audit_logs.create({
+          data: {
+            id: crypto.randomUUID(),
+            organization_id: defaultOrg.id,
+            user_id: defaultUser.id,
+            action: 'demo.sales_notification',
+            resource_type: 'demo_request',
+            resource_id: demoRequest.id,
+            details: { channel: 'email', recipient: 'sales@datacendia.com', email: data.email, company: data.company, interest: data.primaryInterest },
+            ip_address: req.ip || 'unknown',
+            user_agent: req.headers['user-agent'] || 'unknown',
+          },
+        });
+      }
+    } catch (auditErr) {
+      logger.warn('[Demo] Audit log failed (non-critical):', auditErr);
+    }
 
     res.status(201).json({
       success: true,

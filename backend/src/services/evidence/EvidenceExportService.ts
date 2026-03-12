@@ -170,7 +170,7 @@ export class EvidenceExportService extends EventEmitter {
 
   private constructor() {
     super();
-    this.storagePath = process.env.EVIDENCE_EXPORT_PATH || '/var/datacendia/evidence/exports';
+    this.storagePath = process.env.EVIDENCE_EXPORT_PATH || './data/evidence/exports';
     
     this.ledgerService = TestEvidenceLedgerService.getInstance();
     this.reportService = SignedTestReportService.getInstance();

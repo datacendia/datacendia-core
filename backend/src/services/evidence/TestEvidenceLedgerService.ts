@@ -225,7 +225,7 @@ export class TestEvidenceLedgerService extends EventEmitter {
 
   private constructor() {
     super();
-    this.storagePath = process.env.EVIDENCE_LEDGER_PATH || '/var/datacendia/evidence/ledger';
+    this.storagePath = process.env.EVIDENCE_LEDGER_PATH || './data/evidence/ledger';
     this.ensureDirectories();
     
     // Generate or load signing keys

@@ -159,7 +159,7 @@ export class SignedTestReportService extends EventEmitter {
 
   private constructor() {
     super();
-    this.storagePath = process.env['EVIDENCE_REPORTS_PATH'] || '/var/datacendia/evidence/reports';
+    this.storagePath = process.env['EVIDENCE_REPORTS_PATH'] || './data/evidence/reports';
     this.ledgerService = TestEvidenceLedgerService.getInstance();
     this.ensureDirectories();
     this.initializeKeys();

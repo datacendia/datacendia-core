@@ -17,9 +17,11 @@ echo "Checking database connection..."
 MAX_RETRIES=15
 RETRY=0
 until node -e "
-  const { PrismaClient } = require('@prisma/client');
-  const p = new PrismaClient();
-  p.\$connect().then(() => { p.\$disconnect(); process.exit(0); }).catch(() => process.exit(1));
+  const url = new URL(process.env.DATABASE_URL);
+  const net = require('net');
+  const s = net.createConnection({ host: url.hostname, port: url.port || 5432 }, () => { s.end(); process.exit(0); });
+  s.on('error', () => process.exit(1));
+  setTimeout(() => process.exit(1), 3000);
 " 2>/dev/null; do
   RETRY=$((RETRY + 1))
   if [ "$RETRY" -ge "$MAX_RETRIES" ]; then
@@ -27,7 +29,7 @@ until node -e "
     break
   fi
   echo "  ...waiting for database (attempt $RETRY/$MAX_RETRIES)"
-  sleep 3
+  sleep 2
 done
 echo "Database connection ready."
 
@@ -48,10 +50,13 @@ if [ "${SKIP_SEED:-false}" != "true" ]; then
     echo "Warning: Base seed had issues. Demo may have partial data."
   }
 
-  echo "Seeding Council showcase deliberations..."
-  npx tsx prisma/seed-council-showcase.ts 2>&1 || {
-    echo "Warning: Showcase seed had issues."
-  }
+  # seed-council-showcase is generated per-deployment; skip if not present
+  if [ -f prisma/seed-council-showcase.ts ]; then
+    echo "Seeding Council showcase deliberations..."
+    npx tsx prisma/seed-council-showcase.ts 2>&1 || {
+      echo "Warning: Showcase seed had issues."
+    }
+  fi
 fi
 
 echo ""

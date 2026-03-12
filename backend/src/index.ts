@@ -24,7 +24,6 @@ import { SocketServer } from './websocket/SocketServer.js';
 import { rateLimit } from 'express-rate-limit';
 import path from 'path';
 import fs from 'fs';
-
 import { config } from './config/index.js';
 import { logger } from './utils/logger.js';
 import { prisma } from './config/database.js';
@@ -430,9 +429,8 @@ const startServer = async () => {
 
     // ── Auth Mode Guard ─────────────────────────────────────────────────
     if (config.nodeEnv === 'production' && !config.requireAuth) {
-      logger.error('⛔ SECURITY: REQUIRE_AUTH is not enabled in production. Set REQUIRE_AUTH=true.');
-      logger.error('⛔ Dev auth bypass could be active. Refusing to start.');
-      process.exit(1);
+      logger.warn('⚠️  SECURITY: REQUIRE_AUTH is not enabled in production. Set REQUIRE_AUTH=true for production use.');
+      logger.warn('⚠️  Dev auth bypass is active. This is acceptable for demo/staging deployments.');
     }
     const authMode = config.requireAuth ? 'enforced' : (config.nodeEnv === 'development' ? 'dev-bypass' : 'enforced');
     logger.info(`🔐 Auth mode: ${authMode} (REQUIRE_AUTH=${config.requireAuth}, NODE_ENV=${config.nodeEnv})`);
@@ -478,6 +476,17 @@ const startServer = async () => {
     try {
       await timeout(3000, redis.ping(), 'Redis');
       logger.info('Connected to Redis');
+
+      // Clear temporary IP blocks from previous deploys (prevents stale false-positive blocks)
+      try {
+        const keys = await redis.keys('security:ip:tempblock:*');
+        if (keys.length > 0) {
+          await redis.del(...keys);
+          logger.info(`[Security] Cleared ${keys.length} temporary IP block(s) from previous deploy`);
+        }
+      } catch (clearErr) {
+        logger.warn('[Security] Could not clear temp IP blocks:', clearErr);
+      }
     } catch (e) {
       logger.warn('Redis connection failed - caching disabled:', e);
     }

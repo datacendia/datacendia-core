@@ -74,7 +74,7 @@ const configSchema = z.object({
   
   // JWT
   jwtSecret: z.string().min(32),
-  jwtRefreshSecret: z.string().min(32),
+  jwtRefreshSecret: z.string().min(32).optional(),
   jwtExpiresIn: z.string().default('1h'),
   jwtRefreshExpiresIn: z.string().default('30d'),
   
@@ -118,7 +118,7 @@ const envVars = {
   nimBaseUrl: process.env.NIM_BASE_URL,
   nimModelName: process.env.NIM_MODEL_NAME,
   jwtSecret: process.env.JWT_SECRET,
-  jwtRefreshSecret: process.env.JWT_REFRESH_SECRET,
+  jwtRefreshSecret: process.env.JWT_REFRESH_SECRET || (process.env.JWT_SECRET ? process.env.JWT_SECRET + '-refresh' : undefined),
   jwtExpiresIn: process.env.JWT_EXPIRES_IN,
   jwtRefreshExpiresIn: process.env.JWT_REFRESH_EXPIRES_IN,
   corsOrigins: process.env.CORS_ORIGINS || 'http://localhost:5173,http://localhost:3000',
@@ -135,6 +135,11 @@ if (!parsed.success) {
   process.exit(1);
 }
 
-export const config = parsed.data;
+// Derive jwtRefreshSecret from jwtSecret if not explicitly provided
+if (!parsed.data.jwtRefreshSecret) {
+  (parsed.data as any).jwtRefreshSecret = parsed.data.jwtSecret + '-refresh';
+}
+
+export const config = parsed.data as z.infer<typeof configSchema> & { jwtRefreshSecret: string };
 
 export type Config = z.infer<typeof configSchema>;

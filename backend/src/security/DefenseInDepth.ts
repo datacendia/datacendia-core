@@ -466,8 +466,9 @@ function detectAttackPatterns(req: Request): AttackDetectionResult {
     if (result) return result;
   }
 
-  // Check headers
-  const dangerousHeaders = ['x-forwarded-for', 'referer', 'user-agent'];
+  // Check headers (skip user-agent — it legitimately contains semicolons, 
+  // common words like "Chrome", "Safari", etc. that trigger false positives)
+  const dangerousHeaders = ['x-forwarded-for', 'referer'];
   for (const header of dangerousHeaders) {
     const value = req.headers[header];
     if (typeof value === 'string') {
