@@ -38,6 +38,7 @@ COPY tailwind.config.js ./
 COPY src ./src
 COPY components ./components
 COPY lib ./lib
+COPY public ./public
 
 RUN npm run build
 
