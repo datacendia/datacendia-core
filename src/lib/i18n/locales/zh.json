@@ -1054,5 +1054,57 @@
     "required": "必填字段",
     "optional": "可选"
   },
+  "sports": {
+    "title": "体育 DDGI",
+    "subtitle": "转会决策、合同治理、FFP合规",
+    "decisions": { "title": "转会决策", "newDecision": "新决策", "player": "球员", "type": "类型", "club": "俱乐部", "fee": "费用", "status": "状态", "recommendation": "建议", "actions": "操作" },
+    "types": { "inbound": "引进", "outbound": "转出", "loan_out": "租借出", "loan_in": "租借入" },
+    "status": { "draft": "草稿", "pending_approval": "待审批", "approved": "已批准", "rejected": "已拒绝", "completed": "已完成", "withdrawn": "已撤回" },
+    "recommendations": { "strong_buy": "强烈建议买入", "buy": "建议买入", "conditional": "有条件", "pass": "不建议" },
+    "compliance": { "title": "合规", "frameworks": "合规框架", "ffpStatus": "FFP盈亏平衡状态", "squadCostRatio": "阵容成本比率" },
+    "analytics": { "title": "分析", "velocity": "决策速度", "approvalRate": "审批率", "evidenceCompleteness": "证据完整性", "auditReadiness": "审计就绪度" },
+    "stats": { "totalDecisions": "总决策数", "inboundValue": "引进价值", "outboundValue": "转出价值", "pendingApproval": "待审批" }
+  },
+  "dcii": {
+    "title": "CendiaDCII™ — 决策危机免疫基础设施",
+    "subtitle": "9个原语 · IISS评分 · 品类定义治理基础设施",
+    "tabs": { "overview": "概览", "iiss": "CendiaIISS™", "media": "CendiaMediaAuth™", "jurisdiction": "CendiaJurisdiction™", "timestamps": "CendiaTimestamp™", "similarity": "CendiaSimilarity™" },
+    "iiss": {
+      "title": "CendiaIISS™ — 机构免疫系统评分",
+      "calculate": "计算IISS", "score": "分数", "band": "等级", "certification": "认证级别", "percentile": "百分位", "trend": "趋势",
+      "dimensions": "维度分解", "recommendations": "最高建议", "insuranceImpact": "保险影响", "benchmarks": "行业基准", "regulatoryReadiness": "监管就绪度",
+      "bands": { "critical": "危急", "vulnerable": "脆弱", "developing": "发展中", "resilient": "韧性", "exceptional": "卓越" },
+      "certifications": { "none": "无", "bronze": "铜牌", "silver": "银牌", "gold": "金牌", "platinum": "白金" }
+    },
+    "primitives": {
+      "title": "9个DCII原语", "foundational": "基础", "advanced": "高级",
+      "discoveryTimeProof": "发现时间证明", "deliberationCapture": "审议捕获", "overrideAccountability": "覆盖问责",
+      "continuityMemory": "连续性记忆", "driftDetection": "漂移检测", "cognitiveBiasMitigation": "认知偏差缓解",
+      "quantumResistantIntegrity": "抗量子完整性", "syntheticMediaAuth": "合成媒体认证", "crossJurisdictionCompliance": "跨司法管辖区合规"
+    },
+    "media": {
+      "title": "CendiaMediaAuth™ — 合成媒体认证",
+      "signMedia": "签名媒体", "analyzeAuthenticity": "分析真实性", "chainOfCustody": "保管链", "verificationReport": "验证报告", "c2paSigned": "C2PA已签名",
+      "verdicts": { "authentic": "真实", "likely_authentic": "可能真实", "inconclusive": "无法确定", "likely_synthetic": "可能合成", "synthetic": "合成", "tampered": "被篡改" }
+    },
+    "jurisdiction": {
+      "title": "CendiaJurisdiction™ — 跨司法管辖区监管冲突",
+      "assess": "评估组织", "conflicts": "检测到的冲突", "goodFaith": "善意文档", "evidencePacket": "证据包", "profiles": "司法管辖区档案",
+      "severities": { "irreconcilable": "不可调和", "significant": "重大", "moderate": "中等", "minor": "轻微", "theoretical": "理论性" },
+      "strategies": { "highest_standard": "最高标准", "data_localization": "数据本地化", "contractual_safeguard": "合同保障", "good_faith_maximum": "最大善意" }
+    },
+    "timestamps": {
+      "title": "CendiaTimestamp™ — RFC 3161时间戳权威",
+      "issueTimestamp": "发放时间戳", "verifyTimestamp": "验证时间戳", "batchTimestamp": "批量时间戳",
+      "providers": "TSA提供商", "blockchainAnchored": "区块链锚定", "totalTokens": "总令牌数", "avgVerification": "平均验证时间"
+    },
+    "similarity": {
+      "title": "CendiaSimilarity™ — 决策相似性引擎",
+      "search": "查找相似决策", "searchPlaceholder": "描述一个拟议决策以查找相似先例...",
+      "matchStrength": "匹配强度", "riskAssessment": "风险评估", "patterns": "决策模式", "insights": "汇总洞察", "outcomeTracking": "结果跟踪",
+      "strengths": { "exact": "精确", "strong": "强", "moderate": "中等", "weak": "弱", "tangential": "边缘相关" },
+      "outcomes": { "successful": "成功", "partially_successful": "部分成功", "failed": "失败", "too_early": "过早评估", "unknown": "未知" }
+    }
+  },
   "_meta": { "direction": "ltr", "language": "简体中文", "completeness": "100%" }
 }

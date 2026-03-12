@@ -1026,5 +1026,57 @@
     "required": "ช่องที่จำเป็น",
     "optional": "ไม่บังคับ"
   },
+  "sports": {
+    "title": "กีฬา DDGI",
+    "subtitle": "การตัดสินใจย้ายทีม, การกำกับดูแลสัญญา, การปฏิบัติตาม FFP",
+    "decisions": { "title": "การตัดสินใจย้ายทีม", "newDecision": "การตัดสินใจใหม่", "player": "นักกีฬา", "type": "ประเภท", "club": "สโมสร", "fee": "ค่าตัว", "status": "สถานะ", "recommendation": "คำแนะนำ", "actions": "การดำเนินการ" },
+    "types": { "inbound": "ขาเข้า", "outbound": "ขาออก", "loan_out": "ปล่อยยืม", "loan_in": "ยืมตัว" },
+    "status": { "draft": "ร่าง", "pending_approval": "รอการอนุมัติ", "approved": "อนุมัติแล้ว", "rejected": "ปฏิเสธ", "completed": "เสร็จสมบูรณ์", "withdrawn": "ถอนออก" },
+    "recommendations": { "strong_buy": "ซื้อทันที", "buy": "ซื้อ", "conditional": "มีเงื่อนไข", "pass": "ข้าม" },
+    "compliance": { "title": "การปฏิบัติตาม", "frameworks": "กรอบการปฏิบัติตาม", "ffpStatus": "สถานะจุดคุ้มทุน FFP", "squadCostRatio": "อัตราส่วนค่าใช้จ่ายทีม" },
+    "analytics": { "title": "การวิเคราะห์", "velocity": "ความเร็วในการตัดสินใจ", "approvalRate": "อัตราการอนุมัติ", "evidenceCompleteness": "ความสมบูรณ์ของหลักฐาน", "auditReadiness": "ความพร้อมในการตรวจสอบ" },
+    "stats": { "totalDecisions": "การตัดสินใจทั้งหมด", "inboundValue": "มูลค่าขาเข้า", "outboundValue": "มูลค่าขาออก", "pendingApproval": "รอการอนุมัติ" }
+  },
+  "dcii": {
+    "title": "CendiaDCII™ — โครงสร้างพื้นฐานการสร้างภูมิคุ้มกันวิกฤตการตัดสินใจ",
+    "subtitle": "9 พื้นฐาน · การให้คะแนน IISS · โครงสร้างพื้นฐานการกำกับดูแลระดับหมวดหมู่",
+    "tabs": { "overview": "ภาพรวม", "iiss": "CendiaIISS™", "media": "CendiaMediaAuth™", "jurisdiction": "CendiaJurisdiction™", "timestamps": "CendiaTimestamp™", "similarity": "CendiaSimilarity™" },
+    "iiss": {
+      "title": "CendiaIISS™ — คะแนนระบบภูมิคุ้มกันสถาบัน",
+      "calculate": "คำนวณ IISS", "score": "คะแนน", "band": "ระดับ", "certification": "ระดับการรับรอง", "percentile": "เปอร์เซ็นไทล์", "trend": "แนวโน้ม",
+      "dimensions": "การแยกตามมิติ", "recommendations": "คำแนะนำสูงสุด", "insuranceImpact": "ผลกระทบด้านประกันภัย", "benchmarks": "เกณฑ์อ้างอิงอุตสาหกรรม", "regulatoryReadiness": "ความพร้อมด้านกฎระเบียบ",
+      "bands": { "critical": "วิกฤต", "vulnerable": "เปราะบาง", "developing": "กำลังพัฒนา", "resilient": "ยืดหยุ่น", "exceptional": "ยอดเยี่ยม" },
+      "certifications": { "none": "ไม่มี", "bronze": "บรอนซ์", "silver": "ซิลเวอร์", "gold": "โกลด์", "platinum": "แพลทินัม" }
+    },
+    "primitives": {
+      "title": "9 พื้นฐาน DCII", "foundational": "พื้นฐาน", "advanced": "ขั้นสูง",
+      "discoveryTimeProof": "หลักฐานเวลาค้นพบ", "deliberationCapture": "การจับภาพการพิจารณา", "overrideAccountability": "ความรับผิดชอบการแทนที่",
+      "continuityMemory": "หน่วยความจำความต่อเนื่อง", "driftDetection": "การตรวจจับการเบี่ยงเบน", "cognitiveBiasMitigation": "การลดอคติทางปัญญา",
+      "quantumResistantIntegrity": "ความสมบูรณ์ทนควอนตัม", "syntheticMediaAuth": "การยืนยันสื่อสังเคราะห์", "crossJurisdictionCompliance": "การปฏิบัติตามข้ามเขตอำนาจศาล"
+    },
+    "media": {
+      "title": "CendiaMediaAuth™ — การยืนยันสื่อสังเคราะห์",
+      "signMedia": "ลงนามสื่อ", "analyzeAuthenticity": "วิเคราะห์ความถูกต้อง", "chainOfCustody": "ห่วงโซ่การครอบครอง", "verificationReport": "รายงานการตรวจสอบ", "c2paSigned": "ลงนาม C2PA",
+      "verdicts": { "authentic": "ของแท้", "likely_authentic": "น่าจะของแท้", "inconclusive": "ไม่สามารถสรุปได้", "likely_synthetic": "น่าจะสังเคราะห์", "synthetic": "สังเคราะห์", "tampered": "ถูกดัดแปลง" }
+    },
+    "jurisdiction": {
+      "title": "CendiaJurisdiction™ — ความขัดแย้งด้านกฎระเบียบข้ามเขตอำนาจศาล",
+      "assess": "ประเมินองค์กร", "conflicts": "ความขัดแย้งที่ตรวจพบ", "goodFaith": "เอกสารสุจริต", "evidencePacket": "ชุดหลักฐาน", "profiles": "โปรไฟล์เขตอำนาจศาล",
+      "severities": { "irreconcilable": "ไม่สามารถประนีประนอมได้", "significant": "สำคัญ", "moderate": "ปานกลาง", "minor": "เล็กน้อย", "theoretical": "ทฤษฎี" },
+      "strategies": { "highest_standard": "มาตรฐานสูงสุด", "data_localization": "การจัดเก็บข้อมูลในประเทศ", "contractual_safeguard": "การคุ้มครองตามสัญญา", "good_faith_maximum": "สุจริตสูงสุด" }
+    },
+    "timestamps": {
+      "title": "CendiaTimestamp™ — หน่วยงานประทับเวลา RFC 3161",
+      "issueTimestamp": "ออกประทับเวลา", "verifyTimestamp": "ตรวจสอบประทับเวลา", "batchTimestamp": "ประทับเวลาแบบชุด",
+      "providers": "ผู้ให้บริการ TSA", "blockchainAnchored": "ยึดกับบล็อกเชน", "totalTokens": "โทเค็นทั้งหมด", "avgVerification": "เวลาตรวจสอบเฉลี่ย"
+    },
+    "similarity": {
+      "title": "CendiaSimilarity™ — เครื่องยนต์ความคล้ายคลึงของการตัดสินใจ",
+      "search": "ค้นหาการตัดสินใจที่คล้ายกัน", "searchPlaceholder": "อธิบายการตัดสินใจที่เสนอเพื่อค้นหาแบบอย่างที่คล้ายกัน...",
+      "matchStrength": "ความแรงของการจับคู่", "riskAssessment": "การประเมินความเสี่ยง", "patterns": "รูปแบบการตัดสินใจ", "insights": "ข้อมูลเชิงลึกรวม", "outcomeTracking": "การติดตามผลลัพธ์",
+      "strengths": { "exact": "ตรงเป๊ะ", "strong": "แข็งแกร่ง", "moderate": "ปานกลาง", "weak": "อ่อน", "tangential": "เกี่ยวข้องเล็กน้อย" },
+      "outcomes": { "successful": "สำเร็จ", "partially_successful": "สำเร็จบางส่วน", "failed": "ล้มเหลว", "too_early": "เร็วเกินไปที่จะประเมิน", "unknown": "ไม่ทราบ" }
+    }
+  },
   "_meta": { "direction": "ltr", "language": "ไทย", "completeness": "100%" }
 }
