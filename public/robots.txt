@@ -1,0 +1,39 @@
+# Datacendia - robots.txt
+# https://app.datacendia.com
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /cortex/
+Disallow: /dashboard/
+Disallow: /settings/
+Disallow: /admin/
+
+# Sitemaps
+Sitemap: https://app.datacendia.com/sitemap.xml
+
+# AI Crawlers (GEO/SGO - allow AI engines to index)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Crawl-delay for polite crawling
+User-agent: *
+Crawl-delay: 1
