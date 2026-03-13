@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datacendia Documentation</title>
+  <meta name="description" content="Official documentation for Datacendia — The Defensible AI Platform. Multi-agent deliberation, immutable audit trails, and sovereign-first architecture.">
+  <link rel="canonical" href="https://docs.datacendia.com/">
+  <link rel="icon" type="image/svg+xml" href="https://datacendia.com/assets/favicon.svg">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --bg-elevated: #111118;
+      --bg-card: #16161e;
+      --text: #e4e4e7;
+      --text-muted: #71717a;
+      --gold: #c9a84c;
+      --gold-dim: rgba(201,168,76,.15);
+      --border: rgba(255,255,255,.06);
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-elevated);
+      padding: 16px 0;
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+    .header-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { font-size: 1.1rem; font-weight: 600; letter-spacing: .12em; color: var(--text); }
+    .logo span { color: var(--gold); }
+    .header-links { display: flex; gap: 20px; font-size: .85rem; }
+    .header-links a { color: var(--text-muted); }
+    .header-links a:hover { color: var(--gold); text-decoration: none; }
+
+    .hero {
+      max-width: 1100px; margin: 0 auto; padding: 80px 24px 60px;
+      text-align: center;
+    }
+    .hero h1 { font-size: 2.4rem; font-weight: 300; letter-spacing: .06em; margin-bottom: 16px; }
+    .hero h1 em { font-style: normal; color: var(--gold); }
+    .hero p { color: var(--text-muted); max-width: 640px; margin: 0 auto 32px; font-size: 1.05rem; }
+    .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 24px; border-radius: 8px; font-size: .9rem; font-weight: 500;
+      transition: all .2s;
+    }
+    .btn-gold { background: var(--gold); color: #0a0a0f; }
+    .btn-gold:hover { background: #d4b55a; text-decoration: none; }
+    .btn-outline { border: 1px solid var(--border); color: var(--text-muted); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); text-decoration: none; }
+
+    .grid {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px 80px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px;
+    }
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 28px; transition: border-color .2s;
+    }
+    .card:hover { border-color: rgba(201,168,76,.25); }
+    .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
+    .card p { color: var(--text-muted); font-size: .88rem; line-height: 1.6; margin-bottom: 12px; }
+    .card-link { font-size: .82rem; color: var(--gold); display: inline-flex; align-items: center; gap: 4px; }
+
+    .section-title {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px 24px;
+      font-size: .75rem; font-weight: 600; letter-spacing: .15em;
+      color: var(--text-muted); text-transform: uppercase;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px; text-align: center;
+      color: var(--text-muted); font-size: .8rem;
+    }
+    .footer a { color: var(--text-muted); }
+    .footer a:hover { color: var(--gold); }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.6rem; }
+      .hero { padding: 48px 16px 40px; }
+      .grid { grid-template-columns: 1fr; padding: 0 16px 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-inner">
+      <div class="logo">DATACEND<span>I</span>A <span style="font-weight:300;font-size:.75rem;color:var(--text-muted);margin-left:6px">DOCS</span></div>
+      <div class="header-links">
+        <a href="https://datacendia.com">Marketing Site</a>
+        <a href="https://app.datacendia.com">Launch App</a>
+        <a href="https://github.com/datacendia/datacendia-core">GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Datacendia <em>Documentation</em></h1>
+    <p>The Defensible AI Platform &mdash; multi-agent deliberation, immutable audit trails, and sovereign-first architecture. Everything you need to deploy, configure, and extend Datacendia.</p>
+    <div class="hero-actions">
+      <a href="https://github.com/datacendia/datacendia-core#getting-started" class="btn btn-gold">Quick Start &rarr;</a>
+      <a href="https://github.com/datacendia/datacendia-core" class="btn btn-outline">View on GitHub</a>
+      <a href="https://app.datacendia.com" class="btn btn-outline">Launch App</a>
+    </div>
+  </div>
+
+  <div class="section-title">Platform Documentation</div>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Getting Started</h3>
+      <p>Install prerequisites, clone the repo, and spin up Datacendia with Docker Compose in under 5 minutes.</p>
+      <a href="https://github.com/datacendia/datacendia-core#getting-started" class="card-link">Read guide &rarr;</a>
+    </div>
+
+    <div class="card">
+      <h3>Architecture</h3>
+      <p>System design overview: frontend, backend, database layer, inference providers, evidence subsystem, and more.</p>
+      <a href="https://github.com/datacendia/datacendia-core/blob/master/ARCHITECTURE.md" class="card-link">View architecture &rarr;</a>
+    </div>
+
+    <div class="card">
+      <h3>Cross-Repo Architecture</h3>
+      <p>How datacendia-core, datacendia-components, decision-governance-infrastructure, and the marketing site integrate.</p>
+      <a href="https://github.com/datacendia/datacendia-core/blob/master/docs/CROSS-REPO-ARCHITECTURE.md" class="card-link">Read doc &rarr;</a>
+    </div>
+
+    <div class="card">
+      <h3>Security Audit Report</h3>
+      <p>Q1 2026 comprehensive security audit covering authentication, data protection, cryptographic subsystems, and compliance.</p>
+      <a href="https://github.com/datacendia/datacendia-core/blob/master/docs/AUDIT-REPORT-2026-Q1.md" class="card-link">View audit &rarr;</a>
+    </div>
+
+    <div class="card">
+      <h3>Security Policy</h3>
+      <p>Responsible disclosure process, supported versions, security contacts, and vulnerability reporting.</p>
+      <a href="https://github.com/datacendia/datacendia-core/blob/master/SECURITY.md" class="card-link">View policy &rarr;</a>
+    </div>
+
+    <div class="card">
+      <h3>Contributing</h3>
+      <p>Contribution guidelines, development setup, pull request process, and code style requirements.</p>
+      <a href="https://github.com/datacendia/datacendia-core/blob/master/CONTRIBUTING.md" class="card-link">Contribute &rarr;</a>
+    </div>
+
+    <div class="card">
+      <h3>Maturity Taxonomy</h3>
+      <p>Component maturity levels from Alpha to Production, with quality gates for each stage.</p>
+      <a href="https://github.com/datacendia/datacendia-core/blob/master/docs/MATURITY-TAXONOMY.md" class="card-link">View taxonomy &rarr;</a>
+    </div>
+
+    <div class="card">
+      <h3>Changelog</h3>
+      <p>Version history, release notes, and feature timeline for the Datacendia platform.</p>
+      <a href="https://github.com/datacendia/datacendia-core/blob/master/CHANGELOG.md" class="card-link">View changelog &rarr;</a>
+    </div>
+
+    <div class="card">
+      <h3>Docker Deployment</h3>
+      <p>Production, development, and demo Docker Compose configurations for all deployment scenarios.</p>
+      <a href="https://github.com/datacendia/datacendia-core#infrastructure-integrations" class="card-link">Deploy guide &rarr;</a>
+    </div>
+
+  </div>
+
+  <div class="section-title">Governance &amp; Standards</div>
+  <div class="grid">
+
+    <div class="card">
+      <h3>DDGI Framework</h3>
+      <p>Datacendia Decision Governance Infrastructure &mdash; the open standard for institutional decision accountability.</p>
+      <a href="https://github.com/datacendia/decision-governance-infrastructure" class="card-link">View framework &rarr;</a>
+    </div>
+
+    <div class="card">
+      <h3>DCII Framework</h3>
+      <p>Decision Crisis Immunization Infrastructure &mdash; 9 cryptographic primitives for decision defensibility.</p>
+      <a href="https://datacendia.com/dcii.html" class="card-link">Learn more &rarr;</a>
+    </div>
+
+    <div class="card">
+      <h3>Code of Conduct</h3>
+      <p>Community standards and expectations for participation in the Datacendia ecosystem.</p>
+      <a href="https://github.com/datacendia/datacendia-core/blob/master/CODE_OF_CONDUCT.md" class="card-link">Read &rarr;</a>
+    </div>
+
+  </div>
+
+  <div class="section-title">API &amp; Integration</div>
+  <div class="grid">
+
+    <div class="card">
+      <h3>API Documentation</h3>
+      <p>REST API reference for the Datacendia backend &mdash; authentication, evidence, council, and more.</p>
+      <a href="https://datacendia.com/api-docs.html" class="card-link">View API docs &rarr;</a>
+    </div>
+
+    <div class="card">
+      <h3>AI Plugin Manifest</h3>
+      <p>OpenAI-compatible plugin manifest for integrating Datacendia with LLM platforms.</p>
+      <a href="https://github.com/datacendia/datacendia-core/blob/master/public/.well-known/ai-plugin.json" class="card-link">View manifest &rarr;</a>
+    </div>
+
+    <div class="card">
+      <h3>Industry Verticals</h3>
+      <p>30 pre-configured industry verticals with domain-specific agents, compliance packs, and workflows.</p>
+      <a href="https://github.com/datacendia/datacendia-core#industry-verticals" class="card-link">Browse verticals &rarr;</a>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2024&ndash;2026 Datacendia, LLC. All rights reserved.</p>
+    <p style="margin-top:8px">
+      <a href="https://datacendia.com">datacendia.com</a> &middot;
+      <a href="https://app.datacendia.com">app.datacendia.com</a> &middot;
+      <a href="https://github.com/datacendia">GitHub</a> &middot;
+      <a href="https://datacendia.com/privacy.html">Privacy</a> &middot;
+      <a href="https://datacendia.com/terms.html">Terms</a>
+    </p>
+  </footer>
+
+</body>
+</html>
