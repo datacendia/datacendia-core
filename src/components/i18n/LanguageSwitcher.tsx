@@ -19,11 +19,13 @@ import { useLocale, SupportedLocale } from '../../lib/i18n';
 
 interface LanguageSwitcherProps {
   variant?: 'dropdown' | 'flags' | 'compact';
+  theme?: 'light' | 'dark';
   className?: string;
 }
 
 export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   variant = 'dropdown',
+  theme = 'light',
   className = '',
 }) => {
   const { locale, setLocale, availableLocales, localeConfig } = useLocale();
@@ -49,11 +51,14 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
 
   // Compact variant - just flag and code
   if (variant === 'compact') {
+    const isDark = theme === 'dark';
     return (
       <div ref={dropdownRef} className={`relative ${className}`}>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-1 px-2 py-1 text-sm rounded-md hover:bg-neutral-100 transition-colors"
+          className={`flex items-center gap-1 px-2 py-1 text-sm rounded-md transition-colors ${
+            isDark ? 'hover:bg-white/10 text-gray-400' : 'hover:bg-neutral-100'
+          }`}
           aria-label="Select language"
         >
           <span className="text-lg">{localeConfig.flag}</span>
@@ -64,13 +69,17 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
         </button>
 
         {isOpen && (
-          <div className="absolute right-0 mt-1 w-40 bg-white rounded-lg shadow-lg border border-neutral-200 py-1 z-50">
+          <div className={`absolute right-0 mt-1 w-40 rounded-lg shadow-lg py-1 z-50 max-h-64 overflow-y-auto ${
+            isDark ? 'bg-[#16161e] border border-white/10' : 'bg-white border border-neutral-200'
+          }`}>
             {availableLocales.map((loc) => (
               <button
                 key={loc.code}
                 onClick={() => handleSelect(loc.code)}
-                className={`w-full px-3 py-2 text-left flex items-center gap-2 hover:bg-neutral-50 transition-colors ${
-                  loc.code === locale ? 'bg-primary-50 text-primary-600' : 'text-neutral-700'
+                className={`w-full px-3 py-2 text-left flex items-center gap-2 transition-colors ${
+                  isDark
+                    ? loc.code === locale ? 'bg-white/10 text-white' : 'text-gray-400 hover:bg-white/5 hover:text-gray-200'
+                    : loc.code === locale ? 'bg-primary-50 text-primary-600' : 'text-neutral-700 hover:bg-neutral-50'
                 }`}
               >
                 <span className="text-lg">{loc.flag}</span>

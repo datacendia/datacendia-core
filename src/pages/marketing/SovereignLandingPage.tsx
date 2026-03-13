@@ -18,6 +18,7 @@
 import React, { useState, useRef } from 'react';
 import { ArrowRight, ArrowDown, Terminal, Scale, ShieldCheck, MessageCircle, Users, FileWarning, Fingerprint, Archive, FileCheck2, Shield, Lock, Award, ChevronDown, X, Check, ExternalLink, Github } from 'lucide-react';
 import { Logo } from '../../components/brand/Logo';
+import { LanguageSwitcher } from '../../components/i18n/LanguageSwitcher';
 import { tokenManager } from '../../lib/api/client';
 import { useTranslation } from '../../lib/i18n';
 
@@ -97,6 +98,7 @@ const SovereignLandingPage: React.FC = () => {
       <nav className="relative z-50 px-6 py-5 flex justify-between items-center max-w-6xl mx-auto">
         <Logo size="sm" />
         <div className="flex items-center gap-4">
+          <LanguageSwitcher variant="compact" theme="dark" />
           <a
             href="https://github.com/datacendia/datacendia-core"
             target="_blank"
