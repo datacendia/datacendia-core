@@ -14,11 +14,12 @@
 
 import { ed25519 } from '@noble/curves/ed25519';
 import { ml_dsa65 } from '@noble/post-quantum/ml-dsa';
-import { sha256 } from '@noble/hashes/sha256';
-import { sha512 } from '@noble/hashes/sha512';
-import { bytesToHex, hexToBytes } from '@noble/hashes/utils';
+
+
+
 import crypto from 'crypto';
 import { logger } from '../../utils/logger.js';
+import { sha256, sha512, bytesToHex, hexToBytes, utf8ToBytes, concatBytes } from './nativeCrypto.js';
 
 // =============================================================================
 // TYPES
