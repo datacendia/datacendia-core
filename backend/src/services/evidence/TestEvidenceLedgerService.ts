@@ -272,8 +272,7 @@ export class TestEvidenceLedgerService extends EventEmitter {
       this.publicKey = fs.readFileSync(pubKeyPath, 'utf8');
     } else {
       // Generate new key pair
-      const { privateKey, publicKey } = crypto.generateKeyPairSync('rsa', {
-        modulusLength: 2048,
+      const { privateKey, publicKey } = crypto.generateKeyPairSync('ed25519', {
         publicKeyEncoding: { type: 'spki', format: 'pem' },
         privateKeyEncoding: { type: 'pkcs8', format: 'pem' },
       });
@@ -292,7 +291,7 @@ export class TestEvidenceLedgerService extends EventEmitter {
       createdAt: new Date().toISOString(),
       version: '1.0.0',
       algorithm: 'SHA-256',
-      signatureAlgorithm: 'RSA-SHA256',
+      signatureAlgorithm: 'Ed25519',
     };
     
     return crypto.createHash('sha256').update(JSON.stringify(genesis)).digest('hex');
@@ -335,7 +334,7 @@ export class TestEvidenceLedgerService extends EventEmitter {
     // Sign the entry
     entry.signature = this.signData(entryHash);
     entry.signedBy = 'TestEvidenceLedger';
-    entry.signatureAlgorithm = 'RSA-SHA256';
+    entry.signatureAlgorithm = 'Ed25519';
     
     // Store
     this.entries.set(id, entry);
@@ -675,16 +674,13 @@ export class TestEvidenceLedgerService extends EventEmitter {
   }
 
   private signData(data: string): string {
-    const sign = crypto.createSign('RSA-SHA256');
-    sign.update(data);
-    return sign.sign(this.privateKey, 'base64');
+    const signature = crypto.sign(null, Buffer.from(data), this.privateKey);
+    return signature.toString('base64');
   }
 
   private verifySignature(data: string, signature: string): boolean {
     try {
-      const verify = crypto.createVerify('RSA-SHA256');
-      verify.update(data);
-      return verify.verify(this.publicKey, signature, 'base64');
+      return crypto.verify(null, Buffer.from(data), this.publicKey, Buffer.from(signature, 'base64'));
     } catch {
       return false;
     }
@@ -882,13 +878,13 @@ export class TestEvidenceLedgerService extends EventEmitter {
     const fullFingerprint = crypto.createHash('sha256').update(pubKeyDer).digest('hex');
     
     return {
-      algorithm: 'RSA',
-      keySize: 2048,
+      algorithm: 'Ed25519',
+      keySize: 256,
       publicKeyFingerprint: {
         short: fullFingerprint.substring(0, 16).toUpperCase(),
         full: fullFingerprint.toUpperCase(),
       },
-      signatureAlgorithm: 'RSA-SHA256',
+      signatureAlgorithm: 'Ed25519',
       hashAlgorithm: 'SHA-256',
     };
   }

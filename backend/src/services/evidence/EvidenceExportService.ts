@@ -215,8 +215,7 @@ export class EvidenceExportService extends EventEmitter {
       this.privateKey = fs.readFileSync(keyPath, 'utf8');
       this.publicKey = fs.readFileSync(pubKeyPath, 'utf8');
     } else {
-      const { privateKey, publicKey } = crypto.generateKeyPairSync('rsa', {
-        modulusLength: 2048,
+      const { privateKey, publicKey } = crypto.generateKeyPairSync('ed25519', {
         publicKeyEncoding: { type: 'spki', format: 'pem' },
         privateKeyEncoding: { type: 'pkcs8', format: 'pem' },
       });
@@ -891,7 +890,7 @@ entry includes the hash of the previous entry. This ensures that:
 - The order of entries cannot be changed
 - No entries can be inserted or removed
 
-All entries are digitally signed using RSA-SHA256.
+All entries are digitally signed using Ed25519.
 
 ${'â•'.repeat(80)}
 Generated: ${new Date().toISOString()}
@@ -994,7 +993,7 @@ ${'â”€'.repeat(80)}
 The bundle itself is signed. To verify:
 
   1. Load 06-keys/export-public-key.pem
-  2. Use RSA-SHA256 to verify signature
+  2. Use Ed25519 to verify signature
   3. Signature is in bundle metadata
 
 3. VERIFY EVIDENCE CHAIN
@@ -1003,7 +1002,7 @@ Each ledger entry contains:
   - previousHash: Hash of previous entry
   - dataHash: Hash of execution data
   - entryHash: Hash of index + timestamp + dataHash + previousHash
-  - signature: RSA-SHA256 signature of entryHash
+  - signature: Ed25519 signature of entryHash
 
 To verify the chain:
   1. Start with genesis hash
@@ -1019,9 +1018,7 @@ For any specific entry:
   import crypto from 'crypto';
   
   function verifyEntry(entry, publicKey) {
-    const verify = crypto.createVerify('RSA-SHA256');
-    verify.update(entry.entryHash);
-    return verify.verify(publicKey, entry.signature, 'base64');
+    return crypto.verify(null, Buffer.from(entry.entryHash), publicKey, Buffer.from(entry.signature, 'base64'));
   }
 
 5. VERIFY REPORT SIGNATURES
@@ -1136,9 +1133,7 @@ For technical assistance, contact: evidence@datacendia.com
     // Verify signature
     let signatureValid = true;
     try {
-      const verify = crypto.createVerify('RSA-SHA256');
-      verify.update(bundle.bundleHash);
-      signatureValid = verify.verify(this.publicKey, bundle.signature, 'base64');
+      signatureValid = crypto.verify(null, Buffer.from(bundle.bundleHash), this.publicKey, Buffer.from(bundle.signature, 'base64'));
       
       if (!signatureValid) {
         errors.push('Invalid bundle signature');
@@ -1205,9 +1200,8 @@ For technical assistance, contact: evidence@datacendia.com
   }
 
   private signData(data: string): string {
-    const sign = crypto.createSign('RSA-SHA256');
-    sign.update(data);
-    return sign.sign(this.privateKey, 'base64');
+    const signature = crypto.sign(null, Buffer.from(data), this.privateKey);
+    return signature.toString('base64');
   }
 
   private async persistBundle(bundle: ExportBundle): Promise<void> {

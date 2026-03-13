@@ -19,18 +19,24 @@
 // `ollama` singleton — all 45+ consuming services work without modification.
 //
 // Configuration via environment:
-//   INFERENCE_PROVIDER  — 'ollama' (default) | 'triton' | 'nim'
+//   INFERENCE_PROVIDER  — 'ollama' (default) | 'triton' | 'nim' | 'together' | 'anthropic' | 'gemini'
 //   INFERENCE_FAILOVER  — 'true' to auto-fallback to Ollama if GPU provider is down
 //
-// For Triton:  TRITON_BASE_URL, TRITON_MODEL_NAME
-// For NIM:     NIM_BASE_URL, NIM_MODEL_NAME, NIM_API_KEY
-// For Ollama:  OLLAMA_BASE_URL, OLLAMA_MODEL (existing config)
+// For Triton:    TRITON_BASE_URL, TRITON_MODEL_NAME
+// For NIM:       NIM_BASE_URL, NIM_MODEL_NAME, NIM_API_KEY
+// For Ollama:    OLLAMA_BASE_URL, OLLAMA_MODEL (existing config)
+// For Together:  TOGETHER_API_KEY, TOGETHER_MODEL (user-provided key)
+// For Anthropic: ANTHROPIC_API_KEY, ANTHROPIC_MODEL (user-provided key)
+// For Gemini:    GEMINI_API_KEY, GEMINI_MODEL (user-provided key)
 // =============================================================================
 
 import { logger } from '../../utils/logger.js';
 import { OllamaProvider } from './OllamaProvider.js';
 import { TritonProvider } from './TritonProvider.js';
 import { NIMProvider } from './NIMProvider.js';
+import { TogetherAIProvider } from './TogetherAIProvider.js';
+import { AnthropicProvider } from './AnthropicProvider.js';
+import { GeminiProvider } from './GeminiProvider.js';
 import type {
   IInferenceProvider, InferenceProviderType, InferenceChatMessage,
   InferenceOptions, InferenceModel, ProviderHealth,
@@ -68,6 +74,21 @@ class InferenceService implements IInferenceProvider {
         this.primary = new NIMProvider();
         this.fallback = this.failoverEnabled ? ollamaProvider : null;
         logger.info('[Inference] Primary provider: NVIDIA NIM (self-hosted)');
+        break;
+      case 'together':
+        this.primary = new TogetherAIProvider();
+        this.fallback = this.failoverEnabled ? ollamaProvider : null;
+        logger.info('[Inference] Primary provider: Together AI (cloud)');
+        break;
+      case 'anthropic':
+        this.primary = new AnthropicProvider();
+        this.fallback = this.failoverEnabled ? ollamaProvider : null;
+        logger.info('[Inference] Primary provider: Anthropic Claude (cloud)');
+        break;
+      case 'gemini':
+        this.primary = new GeminiProvider();
+        this.fallback = this.failoverEnabled ? ollamaProvider : null;
+        logger.info('[Inference] Primary provider: Google Gemini (cloud)');
         break;
       case 'ollama':
       default:

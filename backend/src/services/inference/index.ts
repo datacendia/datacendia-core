@@ -26,10 +26,15 @@ export type {
   EmbedResult,
 } from './InferenceProvider.js';
 
-// Provider implementations
+// Provider implementations — Sovereign (self-hosted)
 export { OllamaProvider } from './OllamaProvider.js';
 export { TritonProvider } from './TritonProvider.js';
 export { NIMProvider } from './NIMProvider.js';
+
+// Provider implementations — Cloud (user-provided API keys)
+export { TogetherAIProvider } from './TogetherAIProvider.js';
+export { AnthropicProvider } from './AnthropicProvider.js';
+export { GeminiProvider } from './GeminiProvider.js';
 
 // Unified service (singleton)
 export { inference, default } from './InferenceService.js';

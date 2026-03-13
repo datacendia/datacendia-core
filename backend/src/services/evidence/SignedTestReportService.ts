@@ -200,8 +200,7 @@ export class SignedTestReportService extends EventEmitter {
       this.privateKey = fs.readFileSync(keyPath, 'utf8');
       this.publicKey = fs.readFileSync(pubKeyPath, 'utf8');
     } else {
-      const { privateKey, publicKey } = crypto.generateKeyPairSync('rsa', {
-        modulusLength: 2048,
+      const { privateKey, publicKey } = crypto.generateKeyPairSync('ed25519', {
         publicKeyEncoding: { type: 'spki', format: 'pem' },
         privateKeyEncoding: { type: 'pkcs8', format: 'pem' },
       });
@@ -651,7 +650,7 @@ export class SignedTestReportService extends EventEmitter {
     lines.push('');
     lines.push('                        DIGITAL SIGNATURE');
     lines.push('');
-    lines.push('This report is digitally signed using RSA-SHA256.');
+    lines.push('This report is digitally signed using Ed25519.');
     lines.push('Verify at: [verification URL]');
     lines.push('');
     lines.push('ÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â'.repeat(80));
@@ -669,16 +668,14 @@ export class SignedTestReportService extends EventEmitter {
   // ===========================================================================
 
   private createSignature(contentHash: string, signedBy: string): ReportSignature {
-    const sign = crypto.createSign('RSA-SHA256');
-    sign.update(contentHash);
-    const signature = sign.sign(this.privateKey, 'base64');
+    const signature = crypto.sign(null, Buffer.from(contentHash), this.privateKey).toString('base64');
     
     return {
       id: `sig-${crypto.randomUUID().slice(0, 8)}`,
       signedAt: new Date(),
       signedBy,
       role: 'Report Generator',
-      algorithm: 'RSA-SHA256',
+      algorithm: 'Ed25519',
       signature,
       publicKey: this.publicKey,
       tpmUsed: false, // TPM hardware module integration when available
