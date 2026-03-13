@@ -33,6 +33,9 @@ import {
 import { ragService, ChunkResult } from '../llm/RAGService.js';
 import { persistServiceRecord, loadServiceRecords } from '../../utils/servicePersistence.js';
 import { logger } from '../../utils/logger.js';
+import { adversarialRedTeamService } from '../crypto/AdversarialRedTeamService.js';
+import { anomalySentinelService } from '../crypto/AnomalySentinelService.js';
+import { anonymousDissentService } from '../crypto/AnonymousDissentService.js';
 
 // =============================================================================
 // TYPES
@@ -535,7 +538,26 @@ export class CouncilService extends EventEmitter {
   ): Promise<void> {
     const startTime = Date.now();
 
+    // CendiaWhistle™ — Register participant ring for anonymous dissent
+    // Each agent gets a key pair; the ring of public keys enables anonymous dissent during deliberation
     try {
+      const participantKeys = agentIds.map(id => {
+        const keys = anonymousDissentService.generateParticipantKeys(id);
+        return keys.publicKey;
+      });
+      anonymousDissentService.registerRing(deliberationId, participantKeys);
+    } catch {
+      // Whistle registration failure must never block deliberation
+    }
+
+    try {
+      // Check if sentinel has paused this pipeline
+      if (anomalySentinelService.isPaused(deliberationId)) {
+        logger.warn(`[Council] Deliberation ${deliberationId} is PAUSED by CendiaSentinel — aborting`);
+        await this.updateDeliberationStatus(deliberationId, 'blocked');
+        return;
+      }
+
       // Phase 1: Initial Analysis
       await this.updateDeliberationStatus(deliberationId, 'initial_analysis');
       this.emitEvent({ 
@@ -582,6 +604,49 @@ export class CouncilService extends EventEmitter {
       // Phase 4: Ethics Check
       await this.updateDeliberationStatus(deliberationId, 'ethics_check');
       const ethicsResult = await this.runEthicsCheck(deliberationId, synthesis);
+
+      // Phase 5: CendiaRedTeam™ — Adversarial Pre-Decision Gate
+      // Attacks the proposed decision before it's finalised. Can BLOCK if critical vulnerabilities found.
+      try {
+        const allResponses = await this.getDeliberationResponses(deliberationId);
+        const redTeamReport = await adversarialRedTeamService.challenge({
+          deliberationId,
+          question,
+          agentResponses: allResponses.map(r => ({
+            agentName: r.agentId,
+            agentRole: r.phase,
+            content: r.response,
+            confidence: r.confidence || 0,
+            dissented: false,
+            sources: [],
+          })),
+          proposedDecision: synthesis.synthesis,
+          consensusScore: synthesis.confidence,
+          dissentCount: 0,
+          totalAgents: agentIds.length,
+          complianceFrameworks: [],
+          mode: 'standard',
+        });
+
+        if (redTeamReport.gateDecision === 'BLOCK') {
+          logger.warn(`[Council] CendiaRedTeam BLOCKED deliberation ${deliberationId}: ${redTeamReport.summary}`);
+          this.emitEvent({
+            type: 'error',
+            deliberationId,
+            content: `Decision blocked by adversarial review: ${redTeamReport.summary}`,
+            metadata: { redTeamReport },
+            timestamp: new Date(),
+          });
+          await this.updateDeliberationStatus(deliberationId, 'blocked');
+          return; // Do NOT complete — requires human review
+        }
+
+        if (redTeamReport.gateDecision === 'REVIEW') {
+          logger.info(`[Council] CendiaRedTeam flagged deliberation ${deliberationId} for review: ${redTeamReport.summary}`);
+        }
+      } catch (redTeamErr) {
+        logger.warn(`[Council] CendiaRedTeam analysis failed (non-blocking): ${(redTeamErr as Error).message}`);
+      }
 
       // Complete deliberation
       const duration = Date.now() - startTime;
@@ -1391,6 +1456,28 @@ export class CouncilService extends EventEmitter {
 
   private emitEvent(event: StreamEvent): void {
     this.emit('stream', event);
+
+    // CendiaSentinel™ — Real-time anomaly detection on every event
+    // Feeds every deliberation event to the sentinel for monitoring.
+    // If the sentinel detects critical anomalies, it auto-pauses the pipeline.
+    try {
+      anomalySentinelService.ingest({
+        deliberationId: event.deliberationId,
+        organizationId: '',
+        eventType: event.type === 'agent_start' ? 'agent_response'
+          : event.type === 'agent_complete' ? 'agent_response'
+          : event.type === 'phase_change' ? 'phase_start'
+          : event.type === 'synthesis' ? 'decision'
+          : event.type as any,
+        agentName: event.agentId,
+        phase: event.phase,
+        confidence: event.metadata?.confidence,
+        content: event.content,
+        timestamp: Date.now(),
+      });
+    } catch {
+      // Sentinel failure must never break the deliberation pipeline
+    }
   }
 
   // ===========================================================================
