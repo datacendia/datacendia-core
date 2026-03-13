@@ -16,11 +16,11 @@
  */
 
 import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, ArrowDown, Terminal, Scale, ShieldCheck, MessageCircle, Users, FileWarning, Fingerprint, Archive, FileCheck2, Shield, Lock, Award, ChevronDown, X, Check, ExternalLink, Github } from 'lucide-react';
 import { Logo } from '../../components/brand/Logo';
 import { LanguageSwitcher } from '../../components/i18n/LanguageSwitcher';
-import { tokenManager } from '../../lib/api/client';
-import { useAuthStore } from '../../stores/authStore';
+import { useAuth } from '../../contexts/AuthContext';
 import { useTranslation } from '../../lib/i18n';
 
 const WORKFLOW_STEPS = [
@@ -47,6 +47,8 @@ const FAQ_KEYS = ['dataSafe', 'internet', 'llms', 'openSource', 'different', 'co
 
 const SovereignLandingPage: React.FC = () => {
   const { t } = useTranslation();
+  const { loginWithToken } = useAuth();
+  const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -67,29 +69,16 @@ const SovereignLandingPage: React.FC = () => {
       const data = await res.json();
 
       if (data.success && data.data) {
-        tokenManager.setTokens({
-          accessToken: data.data.accessToken,
-          refreshToken: data.data.refreshToken,
-          expiresIn: 86400,
-        });
-
-        // Set auth store so ProtectedRoute recognizes the user as authenticated
-        const authStore = useAuthStore.getState();
-        authStore.setUser(data.data.user || {
+        // Set auth state directly via AuthContext — no page reload, no /auth/me round-trip
+        loginWithToken(data.data.accessToken, data.data.refreshToken, data.data.user || {
           id: 'usr-demo-001',
-          email: `demo-${Date.now()}@datacendia.com`,
-          firstName: 'Demo',
-          lastName: 'User',
-          role: 'admin',
-          organizationId: data.data.organizationId || 'org-datacendia',
-          organizationName: 'Datacendia',
-          permissions: ['*'],
+          email: 'demo@datacendia.com',
+          name: 'Demo User',
+          role: 'ADMIN',
         });
-        authStore.setTokens(data.data.accessToken, data.data.refreshToken);
 
-        setTimeout(() => {
-          window.location.href = '/cortex';
-        }, 100);
+        // Navigate with React Router (no page reload)
+        navigate('/cortex');
       } else {
         setError(data.error?.message || t('landing.demo.genericError'));
         setIsSubmitting(false);

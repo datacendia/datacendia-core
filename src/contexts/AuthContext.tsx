@@ -30,6 +30,7 @@ export interface AuthState {
 
 export interface AuthContextValue extends AuthState {
   login: (email: string, password: string) => Promise<boolean>;
+  loginWithToken: (accessToken: string, refreshToken: string, user: Partial<User>) => void;
   register: (data: RegisterData) => Promise<boolean>;
   logout: () => Promise<void>;
   refreshUser: () => Promise<void>;
@@ -164,6 +165,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }));
       return false;
     }
+  }, []);
+
+  // Login with token — for demo access and SSO flows (no /auth/me round-trip)
+  const loginWithToken = useCallback((accessToken: string, refreshToken: string, user: Partial<User>) => {
+    tokenManager.setTokens({ accessToken, refreshToken, expiresIn: 86400 });
+    setState({
+      user: {
+        id: user.id || 'demo',
+        email: user.email || 'demo@datacendia.com',
+        name: user.name || 'Demo User',
+        role: user.role || 'ADMIN',
+        organizationId: (user as any).organizationId || '',
+        ...user,
+      } as User,
+      isAuthenticated: true,
+      isLoading: false,
+      isInitialized: true,
+      error: null,
+    });
   }, []);
 
   // Register
@@ -302,6 +322,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const value: AuthContextValue = {
     ...state,
     login,
+    loginWithToken,
     register,
     logout,
     refreshUser,
