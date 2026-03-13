@@ -20,6 +20,7 @@ import { ArrowRight, ArrowDown, Terminal, Scale, ShieldCheck, MessageCircle, Use
 import { Logo } from '../../components/brand/Logo';
 import { LanguageSwitcher } from '../../components/i18n/LanguageSwitcher';
 import { tokenManager } from '../../lib/api/client';
+import { useAuthStore } from '../../stores/authStore';
 import { useTranslation } from '../../lib/i18n';
 
 const WORKFLOW_STEPS = [
@@ -71,6 +72,21 @@ const SovereignLandingPage: React.FC = () => {
           refreshToken: data.data.refreshToken,
           expiresIn: 86400,
         });
+
+        // Set auth store so ProtectedRoute recognizes the user as authenticated
+        const authStore = useAuthStore.getState();
+        authStore.setUser(data.data.user || {
+          id: 'usr-demo-001',
+          email: `demo-${Date.now()}@datacendia.com`,
+          firstName: 'Demo',
+          lastName: 'User',
+          role: 'admin',
+          organizationId: data.data.organizationId || 'org-datacendia',
+          organizationName: 'Datacendia',
+          permissions: ['*'],
+        });
+        authStore.setTokens(data.data.accessToken, data.data.refreshToken);
+
         setTimeout(() => {
           window.location.href = '/cortex';
         }, 100);
