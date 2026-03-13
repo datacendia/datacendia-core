@@ -2455,7 +2455,7 @@
     },
     "trustBar": {
       "nvidia": "NVIDIA Inception Member",
-      "compliance": "EU AI Act Aligned · NIST AI RMF · ISO 42001 Mapped",
+      "compliance": "EU AI Act Aligned · NIST AI RMF · ISO 42001 Aligned",
       "ddgi": "Built on the DDGI Open Standard",
       "openSource": "Apache 2.0 Open Source"
     },
@@ -2684,7 +2684,7 @@
       },
       "compliance": {
         "q": "What compliance frameworks does it map to?",
-        "a": "EU AI Act (Article 14 human oversight, aligned), NIST AI RMF (aligned), ISO 42001 (mapped, certification pending), GDPR Article 22 (automated decision-making), HIPAA, SR 11-7 (model risk management), and ABA Formal Opinion 512 (lawyers using AI). SOC 2 Type II and ISO 27001 certifications are on our roadmap."
+        "a": "EU AI Act (Article 14 human oversight, aligned), NIST AI RMF (aligned), ISO 42001 (aligned, awaiting certification), SOC 2 Type II (aligned, awaiting certification), ISO 27001 (aligned, awaiting certification), GDPR Article 22 (automated decision-making), HIPAA, SR 11-7 (model risk management), and ABA Formal Opinion 512 (lawyers using AI)."
       },
       "setup": {
         "q": "How long does setup take?",
