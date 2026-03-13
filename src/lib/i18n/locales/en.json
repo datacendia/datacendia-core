@@ -1820,18 +1820,104 @@
   },
   "landing": {
     "nav": {
-      "tryDemo": "TRY THE DEMO"
+      "github": "GitHub",
+      "contactSales": "CONTACT SALES"
     },
     "hero": {
-      "line1": "They have data. They don't have understanding.",
-      "line2": "They have AI. They don't have",
-      "agency": "agency.",
-      "p1": "Every consequential decision your organisation makes with AI is invisible. No record of what was considered. No proof of who decided. No evidence it can survive a regulator, an auditor, or a court.",
-      "p2": "The EU AI Act changed that.",
-      "p2Emphasis": "August 2025. Enforcement is live.",
-      "p3": "Datacendia gives AI decisions a memory, a voice, and a signature.",
-      "cta": "Enter the Platform",
-      "secondaryCta": "Read how it works"
+      "label": "DECISION GOVERNANCE INFRASTRUCTURE",
+      "headline": "Cryptographic Proof for Every AI Decision Your Enterprise Makes.",
+      "subheadline": "Open-source infrastructure that forces multi-agent deliberation and seals every outcome into a court-admissible audit ledger. Ed25519-signed. Merkle-tree hashed. RFC 3161-timestamped.",
+      "ctaPrimary": "Request Architecture Review",
+      "ctaSecondary": "View GitHub Repo",
+      "finePrint": "Apache 2.0 · Self-host in 5 minutes · No vendor lock-in"
+    },
+    "receipt": {
+      "header": "DATACENDIA REGULATOR'S RECEIPT — CONFIDENTIAL — COURT ADMISSIBLE",
+      "title": "REGULATOR'S RECEIPT",
+      "subtitle": "Decision Evidence Package · Court Admissible · DCII Framework",
+      "receiptId": "RECEIPT ID:",
+      "decisionDate": "DECISION DATE:",
+      "compliance": "COMPLIANCE:",
+      "confidence": "CONFIDENCE:",
+      "dissenting": "DISSENTING:",
+      "cryptoLabel": "CRYPTOGRAPHIC INTEGRITY",
+      "hashLabel": "Decision Hash (SHA-256):",
+      "sigLabel": "Digital Signature:",
+      "sigValue": "[Verified] Ed25519 · datacendia-kms"
+    },
+    "trustBar": {
+      "nvidia": "NVIDIA Inception Member",
+      "compliance": "EU AI Act · NIST AI RMF · ISO 42001",
+      "ddgi": "Built on the DDGI Open Standard",
+      "openSource": "Apache 2.0 Open Source"
+    },
+    "killRoom": {
+      "label": "DECISION ARCHITECTURE",
+      "subtitle": "How every AI decision becomes court-admissible evidence",
+      "pipelineLabel": "DATACENDIA DECISION GOVERNANCE PIPELINE — PRODUCTION",
+      "pipelineFlow": "REQUEST → DELIBERATE → OVERRIDE → SEAL",
+      "pipelineAudit": "IMMUTABLE AUDIT TRAIL",
+      "stage1": {
+        "label": "STAGE 01",
+        "title": "Human Request",
+        "desc": "Decision query enters the pipeline. Compliance profile auto-assigned. Audit trail begins.",
+        "meta": "INPUT: natural language query"
+      },
+      "stage2": {
+        "label": "STAGE 02",
+        "title": "Multi-Agent Deliberation",
+        "desc": "CFO, CISO, Legal, Ethics, Red Team agents argue adversarially. Dissent is a first-class artifact.",
+        "meta1": "AGENTS: 5-12 domain specialists",
+        "meta2": "DISSENT: recorded + preserved"
+      },
+      "stage3": {
+        "label": "STAGE 03",
+        "title": "Human Override & Sign-Off",
+        "desc": "Human decision-maker reviews, overrides, or ratifies. EU AI Act Article 14 human oversight satisfied.",
+        "meta": "COMPLIANCE: Art. 14 / SR 11-7"
+      },
+      "stage4": {
+        "label": "STAGE 04",
+        "title": "Cryptographic Hash & Seal",
+        "desc": "Ed25519 signature. Merkle tree hash. RFC 3161 timestamp. Regulator's Receipt generated.",
+        "meta1": "OUTPUT: court-admissible bundle",
+        "meta2": "VERIFY: openssl + standard tools"
+      }
+    },
+    "pricing": {
+      "label": "LICENSING",
+      "subtitle": "Commercial Open-Source. No bait-and-switch.",
+      "community": {
+        "title": "Community Edition",
+        "price": "Open Source",
+        "license": "APACHE 2.0 LICENSE",
+        "f1": "Full platform — frontend, backend, deliberation engine",
+        "f2": "Self-hosted, single node",
+        "f3": "Ed25519 cryptographic signing",
+        "f4": "All inference providers (Ollama, OpenAI, Together, Gemini, Claude)",
+        "f5": "Community support via GitHub",
+        "cta": "View on GitHub"
+      },
+      "enterprise": {
+        "badge": "SOVEREIGN",
+        "title": "Enterprise Edition",
+        "price": "Custom",
+        "license": "ANNUAL LICENSE + SUPPORT",
+        "f1": "Everything in Community, plus:",
+        "f2": "Air-gapped / sovereign deployment",
+        "f3": "Post-quantum KMS integration",
+        "f4": "CendiaInsure liability coverage",
+        "f5": "Custom integrations + dedicated success team",
+        "f6": "SSO / SAML, RBAC, multi-tenant",
+        "cta": "Contact Sales"
+      }
+    },
+    "bottomCta": {
+      "title": "Ready to make AI decisions defensible?",
+      "subtitle": "Talk to our team about your compliance requirements, or deploy the open-source edition today.",
+      "ctaPrimary": "Request Architecture Review",
+      "ctaSecondary": "Try Live Demo",
+      "submitting": "Entering..."
     },
     "problem": {
       "label": "The Problem",

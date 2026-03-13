@@ -4,6 +4,21 @@ All notable changes to Datacendia Core will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.1-alpha] - 2026-03-12
+
+### Added
+- **CRO Landing Page Overhaul** -- Weaponized hero headline ("Cryptographic Proof for Every AI Decision"), Regulator's Receipt artifact in hero, dual-funnel CTAs (Request Architecture Review + View GitHub Repo), trust bar (NVIDIA Inception, EU AI Act, NIST AI RMF, ISO 42001, DDGI), Kill Room 4-stage banking-style decision architecture diagram, COSS pricing anchor (Community vs Enterprise Edition)
+- **Together AI Provider** -- BYO-Key cloud inference via OpenAI-compatible API (`TOGETHER_API_KEY`)
+- **Anthropic Claude Provider** -- BYO-Key cloud inference via Messages API (`ANTHROPIC_API_KEY`)
+- **Google Gemini Provider** -- BYO-Key cloud inference via Generative Language API (`GEMINI_API_KEY`)
+- **Ed25519 Cryptographic Signing** -- Replaced RSA-SHA256 with Ed25519 in TestEvidenceLedgerService, SignedTestReportService, and EvidenceExportService
+
+### Changed
+- **SEO/GEO Updates** -- Updated title, meta description, OG tags, Twitter cards, JSON-LD schemas (Organization, SoftwareApplication, FAQPage, WebSite) to match CRO messaging and COSS dual-edition model
+- **SGO Updates** -- Updated llms.txt, ai-plugin.json with DDGI standard and COSS positioning; expanded sitemap.xml with pricing, contact, docs, legal pages
+- **Inference Service** -- Extended provider switch to support `together`, `anthropic`, `gemini`, `openai` with failover to Ollama
+- **i18n** -- Propagated CRO landing page translations to all 26 locale files
+
 ## [0.2.0-alpha] - 2026-03-11
 
 ### Added

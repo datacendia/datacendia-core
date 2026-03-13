@@ -1,10 +1,10 @@
-# Datacendia — AI Decision Intelligence with Cryptographic Proof
+# Datacendia — Cryptographic Proof for Every AI Decision Your Enterprise Makes
 # https://app.datacendia.com
 # Contact: sales@datacendia.com
 
 ## What is Datacendia?
 
-Datacendia is an AI decision intelligence platform. You pose a question — about a hire, a deal, a policy change, a risk — and a panel of domain-expert AI agents (CFO, CISO, Legal Counsel, Ethics Officer, Red Team) debates it from every angle using structured argumentation. Every argument, every dissent, every vote is permanently recorded and cryptographically signed. The output is a court-admissible decision record, not a chat log.
+Datacendia is open-source decision governance infrastructure (DDGI). You pose a question — about a hire, a deal, a policy change, a risk — and a panel of domain-expert AI agents (CFO, CISO, Legal Counsel, Ethics Officer, Red Team) forces adversarial deliberation from every angle. Every argument, every dissent, every vote is permanently recorded and cryptographically signed. The output is a court-admissible decision record, not a chat log. Built on the DDGI Open Standard.
 
 ## How is Datacendia different from ChatGPT?
 
@@ -15,10 +15,10 @@ ChatGPT is a conversation — one model, one perspective, no record. Datacendia 
 - The output is a court-admissible evidence bundle with full chain of custody
 - A human must sign responsibility for every AI-assisted decision
 
-## Two Editions
+## Two Editions (Commercial Open-Source / COSS)
 
-- **Datacendia Core**: Cloud-hosted platform. Uses OpenAI-compatible APIs (GPT-4o, Groq, Together AI). Sign up and start deliberating in seconds.
-- **Datacendia Sovereign Edition**: Self-hosted, air-gapped, on-premises deployment. Supports local LLMs via Ollama and NVIDIA Triton/NIM. Your infrastructure, your keys, your control.
+- **Community Edition**: Open Source (Apache 2.0). Full platform — frontend, backend, deliberation engine, cryptographic infrastructure. Self-hosted, single node. All inference providers (Ollama, OpenAI, Together AI, Anthropic Claude, Google Gemini). Community support via GitHub.
+- **Enterprise Edition (Sovereign)**: Air-gapped/sovereign deployment. Post-quantum KMS integration. CendiaInsure liability coverage. Custom integrations + dedicated success team. SSO/SAML, RBAC, multi-tenant. Annual license + support. Contact sales.
 
 ## Key Capabilities
 
@@ -52,7 +52,7 @@ Datacendia maps to:
 
 - Frontend: React + TypeScript + TailwindCSS
 - Backend: Node.js + Express + Prisma
-- Inference: OpenAI-compatible APIs (Core) / Ollama + NVIDIA Triton (Sovereign)
+- Inference: Ollama, OpenAI, Together AI, Anthropic Claude, Google Gemini (BYO-Key) / NVIDIA Triton + NIM (Sovereign)
 - Cryptography: Ed25519 signatures, Merkle trees, RFC 3161 timestamps
 - License: Apache 2.0 open source
 - Languages: 26 supported (English, Spanish, French, German, Japanese, Chinese, Arabic, Hindi, and 18 more)
