@@ -2350,274 +2350,274 @@
   "landing": {
     "nav": {
       "github": "GitHub",
-      "contactSales": "CONTACT SALES"
+      "contactSales": "联系销售人员"
     },
     "hero": {
-      "label": "DECISION GOVERNANCE INFRASTRUCTURE",
-      "headline": "Cryptographic Proof for Every AI Decision Your Enterprise Makes.",
-      "subheadline": "Open-source infrastructure that forces multi-agent deliberation and seals every outcome into a court-admissible audit ledger. Ed25519-signed. Merkle-tree hashed. RFC 3161-timestamped.",
-      "ctaPrimary": "Request Architecture Review",
-      "ctaSecondary": "View GitHub Repo",
-      "finePrint": "Apache 2.0 · Self-host in 5 minutes · No vendor lock-in"
+      "label": "决策治理基础设施",
+      "headline": "为您的企业做出的每个人工智能决策提供加密证明。",
+      "subheadline": "开源基础设施，强制多主体审议并将每个结果密封到法庭认可的审计分类账中。 Ed25519-签名。默克尔树散列。 RFC 3161 带时间戳。",
+      "ctaPrimary": "请求架构审查",
+      "ctaSecondary": "查看 GitHub 存储库",
+      "finePrint": "Apache 2.0 · 5 分钟内自托管 · 无供应商锁定"
     },
     "receipt": {
-      "header": "DATACENDIA REGULATOR'S RECEIPT — CONFIDENTIAL — COURT ADMISSIBLE",
-      "title": "REGULATOR'S RECEIPT",
-      "subtitle": "Decision Evidence Package · Court Admissible · DCII Framework",
-      "receiptId": "RECEIPT ID:",
-      "decisionDate": "DECISION DATE:",
-      "compliance": "COMPLIANCE:",
-      "confidence": "CONFIDENCE:",
-      "dissenting": "DISSENTING:",
-      "cryptoLabel": "CRYPTOGRAPHIC INTEGRITY",
-      "hashLabel": "Decision Hash (SHA-256):",
-      "sigLabel": "Digital Signature:",
-      "sigValue": "[Verified] Ed25519 · datacendia-kms"
+      "header": "DATACENDIA 监管机构的收据 — 保密 — 法院可受理",
+      "title": "监管机构的收据",
+      "subtitle": "判决证据包·法院可采信·DCII 框架",
+      "receiptId": "收据编号：",
+      "decisionDate": "决定日期：",
+      "compliance": "遵守：",
+      "confidence": "信心：",
+      "dissenting": "异议：",
+      "cryptoLabel": "密码完整性",
+      "hashLabel": "决策哈希 (SHA-256)：",
+      "sigLabel": "数字签名：",
+      "sigValue": "[已验证] Ed25519·datacendia-kms"
     },
     "trustBar": {
-      "nvidia": "NVIDIA Inception Member",
-      "compliance": "EU AI Act Aligned · NIST AI RMF · ISO 42001 Aligned",
-      "ddgi": "Built on the DDGI Open Standard",
-      "openSource": "Apache 2.0 Open Source"
+      "nvidia": "NVIDIA 创始会员",
+      "compliance": "欧盟 AI 法案一致 · NIST AI RMF · ISO 42001 一致",
+      "ddgi": "基于 DDGI 开放标准构建",
+      "openSource": "Apache 2.0 开源"
     },
     "killRoom": {
-      "label": "DECISION ARCHITECTURE",
-      "subtitle": "How every AI decision becomes court-admissible evidence",
-      "pipelineLabel": "DATACENDIA DECISION GOVERNANCE PIPELINE — PRODUCTION",
-      "pipelineFlow": "REQUEST → DELIBERATE → OVERRIDE → SEAL",
-      "pipelineAudit": "IMMUTABLE AUDIT TRAIL",
+      "label": "决策架构",
+      "subtitle": "每个人工智能决策如何成为法庭采纳的证据",
+      "pipelineLabel": "DATACENDIA 决策治理管道 — 生产",
+      "pipelineFlow": "请求→深思熟虑→推翻→密封",
+      "pipelineAudit": "不可变的审计跟踪",
       "stage1": {
-        "label": "STAGE 01",
-        "title": "Human Request",
-        "desc": "Decision query enters the pipeline. Compliance profile auto-assigned. Audit trail begins.",
-        "meta": "INPUT: natural language query"
+        "label": "阶段01",
+        "title": "人为要求",
+        "desc": "决策查询进入管道。自动分配合规性配置文件。审计追踪开始。",
+        "meta": "输入：自然语言查询"
       },
       "stage2": {
-        "label": "STAGE 02",
-        "title": "Multi-Agent Deliberation",
-        "desc": "CFO, CISO, Legal, Ethics, Red Team agents argue adversarially. Dissent is a first-class artifact.",
-        "meta1": "AGENTS: 5-12 domain specialists",
-        "meta2": "DISSENT: recorded + preserved"
+        "label": "阶段02",
+        "title": "多智能体审议",
+        "desc": "首席财务官、首席信息安全官、法务部、道德部、红队代理人意见相左。异议是一流的神器。",
+        "meta1": "代理人：5-12 名领域专家",
+        "meta2": "异议：记录+保存"
       },
       "stage3": {
-        "label": "STAGE 03",
-        "title": "Human Override & Sign-Off",
-        "desc": "Human decision-maker reviews, overrides, or ratifies. EU AI Act Article 14 human oversight satisfied.",
-        "meta": "COMPLIANCE: Art. 14 / SR 11-7"
+        "label": "第三阶段",
+        "title": "人工覆盖和签核",
+        "desc": "人类决策者审查、推翻或批准。欧盟人工智能法第 14 条人类监督得到满足。",
+        "meta": "合规性：艺术。 14 / SR 11-7"
       },
       "stage4": {
-        "label": "STAGE 04",
-        "title": "Cryptographic Hash & Seal",
-        "desc": "Ed25519 signature. Merkle tree hash. RFC 3161 timestamp. Regulator's Receipt generated.",
-        "meta1": "OUTPUT: court-admissible bundle",
-        "meta2": "VERIFY: openssl + standard tools"
+        "label": "第04阶段",
+        "title": "加密哈希和密封",
+        "desc": "Ed25519 签名。默克尔树哈希。 RFC 3161 时间戳。监管机构收据已生成。",
+        "meta1": "输出：法庭认可的捆绑包",
+        "meta2": "验证：openssl + 标准工具"
       }
     },
     "pricing": {
-      "label": "LICENSING",
-      "subtitle": "Commercial Open-Source. No bait-and-switch.",
+      "label": "许可",
+      "subtitle": "商业开源。没有诱饵和开关。",
       "community": {
-        "title": "Community Edition",
-        "price": "Open Source",
-        "license": "APACHE 2.0 LICENSE",
-        "f1": "Full platform — frontend, backend, deliberation engine",
-        "f2": "Self-hosted, single node",
-        "f3": "Ed25519 cryptographic signing",
-        "f4": "All inference providers (Ollama, OpenAI, Together, Gemini, Claude)",
-        "f5": "Community support via GitHub",
-        "cta": "View on GitHub"
+        "title": "社区版",
+        "price": "开源",
+        "license": "APACHE 2.0 许可证",
+        "f1": "完整平台——前端、后端、审议引擎",
+        "f2": "自托管、单节点",
+        "f3": "Ed25519 加密签名",
+        "f4": "所有推理提供商（Ollama、OpenAI、Together、Gemini、Claude）",
+        "f5": "通过 GitHub 提供社区支持",
+        "cta": "在 GitHub 上查看"
       },
       "enterprise": {
-        "badge": "SOVEREIGN",
-        "title": "Enterprise Edition",
-        "price": "Custom",
-        "license": "ANNUAL LICENSE + SUPPORT",
-        "f1": "Everything in Community, plus:",
-        "f2": "Air-gapped / sovereign deployment",
-        "f3": "Post-quantum KMS integration",
-        "f4": "CendiaInsure liability coverage",
-        "f5": "Custom integrations + dedicated success team",
-        "f6": "SSO / SAML, RBAC, multi-tenant",
-        "cta": "Contact Sales"
+        "badge": "主权",
+        "title": "企业版",
+        "price": "风俗",
+        "license": "年度许可 + 支持",
+        "f1": "社区中的一切，加上：",
+        "f2": "气隙/主权部署",
+        "f3": "后量子 KMS 集成",
+        "f4": "CendiaInsure 责任范围",
+        "f5": "定制集成+专门的成功团队",
+        "f6": "SSO/SAML、RBAC、多租户",
+        "cta": "联系销售人员"
       }
     },
     "bottomCta": {
-      "title": "Ready to make AI decisions defensible?",
-      "subtitle": "Talk to our team about your compliance requirements, or deploy the open-source edition today.",
-      "ctaPrimary": "Request Architecture Review",
-      "ctaSecondary": "Try Live Demo",
-      "submitting": "Entering..."
+      "title": "准备好让人工智能决策变得站得住脚了吗？",
+      "subtitle": "与我们的团队讨论您的合规性要求，或立即部署开源版本。",
+      "ctaPrimary": "请求架构审查",
+      "ctaSecondary": "尝试现场演示",
+      "submitting": "进入..."
     },
     "problem": {
-      "label": "The Problem",
-      "text": "When a law firm uses AI to assess litigation risk, a bank uses it to approve credit, or a board uses it to evaluate an acquisition — that decision vanishes the moment the window closes. If it's challenged, there's nothing to show. No deliberation. No dissent. No proof of process.",
-      "fade": "Just a chat log that doesn't exist anymore."
+      "label": "问题",
+      "text": "当律师事务所使用人工智能来评估诉讼风险时，银行用它来批准信贷，或者董事会用它来评估收购时——这个决定在窗口关闭的那一刻就消失了。如果受到挑战，那就没有什么可展示的了。没有刻意。没有异议。没有过程证明。",
+      "fade": "只是一段聊天记录，已经不复存在了。"
     },
     "whatIs": {
-      "label": "What is Datacendia?",
+      "label": "什么是Datacendia？",
       "simple": {
-        "title": "In Plain Terms",
-        "description": "Datacendia is a decision intelligence platform. You ask it a question — about a hire, a deal, a policy change, a risk — and a panel of AI specialists debates it from every angle: financial, legal, operational, ethical. Every argument, every dissent, every vote is permanently recorded and cryptographically signed. When someone asks \"how did you reach that decision?\" — you hand them the receipt.",
-        "analogy": "Think of it as a boardroom that records everything, signs everything, and can prove everything happened exactly the way it did."
+        "title": "简单来说",
+        "description": "Datacendia 是一个决策智能平台。你问它一个问题——关于招聘、交易、政策变化、风险——人工智能专家小组会从各个角度进行辩论：财务、法律、运营、道德。每一次争论、每一次异议、每一次投票都被永久记录并以加密方式签名。当有人问“你是如何做出这个决定的？” - 你把收据交给他们。",
+        "analogy": "把它想象成一个会议室，记录一切，签署一切，并可以证明一切都按照原来的方式发生。"
       },
       "technical": {
-        "title": "Under the Hood",
-        "description": "A multi-agent deliberation engine backed by cryptographic infrastructure. Domain-expert LLM agents (CFO, CISO, Legal, Ethics, Red Team) engage in structured argumentation over your query. Each response is hashed into a Merkle tree, Ed25519-signed, and RFC 3161-timestamped. Decision packets include full chain-of-custody, dissent records, and confidence scoring — exportable as court-admissible evidence bundles.",
-        "stack": "Cloud-hosted (Core) · Apache 2.0 · OpenAI / Groq / Together AI · On-prem Sovereign Edition also available"
+        "title": "引擎盖下",
+        "description": "由加密基础设施支持的多代理审议引擎。领域专家 LLM 代理（CFO、CISO、法律、道德、红队）针对您的查询进行结构化论证。每个响应都被散列到 Merkle 树中，并带有 Ed25519 签名和 RFC 3161 时间戳。决策包包括完整的监管链、异议记录和置信度评分——可作为法院认可的证据包导出。",
+        "stack": "云托管（核心） · Apache 2.0 · OpenAI / Groq / Together AI · 还提供本地 Sovereign 版本"
       }
     },
     "workflow": {
-      "label": "How a Decision Flows",
-      "subtitle": "From question to court-admissible evidence in one session",
+      "label": "决策如何进行",
+      "subtitle": "在一次会议中从问题到法庭采纳的证据",
       "steps": {
         "ask": {
-          "title": "Ask",
-          "description": "Pose a question to the Council. \"Should we acquire Company X?\" \"Is this vendor contract compliant?\""
+          "title": "问",
+          "description": "向理事会提出问题。 “我们应该收购 X 公司吗？” “这个供应商合同合规吗？”"
         },
         "deliberate": {
-          "title": "Deliberate",
-          "description": "Domain-expert AI agents debate from every angle. CFO analyses cost. CISO flags risk. Legal checks compliance. Red Team challenges assumptions."
+          "title": "商榷",
+          "description": "领域专家人工智能代理从各个角度进行辩论。 CFO 分析成本。 CISO 标记风险。法律检查合规性。红队挑战假设。"
         },
         "dissent": {
-          "title": "Record Dissent",
-          "description": "Disagreements aren't hidden — they're first-class artifacts. Every minority opinion is captured, timestamped, and preserved."
+          "title": "记录异议",
+          "description": "分歧并不是隐藏的——它们是一流的产物。每个少数意见都会被捕获、加盖时间戳并保存。"
         },
         "sign": {
-          "title": "Sign & Seal",
-          "description": "Each response is hashed into a Merkle tree, Ed25519-signed, and RFC 3161-timestamped. The chain of custody is established during deliberation."
+          "title": "签字盖章",
+          "description": "每个响应都被散列到 Merkle 树中，并带有 Ed25519 签名和 RFC 3161 时间戳。监管链是在审议过程中建立的。"
         },
         "store": {
-          "title": "Store in Vault",
-          "description": "The complete decision packet — arguments, votes, dissent, metadata — is sealed in CendiaVault with cryptographic integrity."
+          "title": "存储在保险库中",
+          "description": "完整的决策数据包（论点、投票、异议、元数据）均以加密完整性方式密封在 CendiaVault 中。"
         },
         "export": {
-          "title": "Export Receipt",
-          "description": "One click generates the Regulator's Receipt™ — a court-admissible evidence bundle. Verify with openssl. No vendor dependency."
+          "title": "出口收据",
+          "description": "只需单击一下即可生成监管机构收据™ — 一份法庭可接受的证据包。使用 openssl 进行验证。没有供应商依赖性。"
         }
       }
     },
     "solution": {
-      "label": "The Solution",
-      "beat1Title": "The Council deliberates.",
-      "beat1Text": "Ask a question. Domain-expert AI agents — CFO, CISO, CTO, Legal Counsel, Red Team — argue your decision from every angle.",
-      "beat1Emphasis": "Dissent is recorded. Consensus is earned, not assumed.",
-      "beat2Title": "Every word is signed.",
-      "beat2Text": "Each response, vote, and objection is hashed into a Merkle tree. Ed25519 signed. RFC 3161 timestamped.",
-      "beat2Emphasis": "The chain of custody is established during deliberation — not reconstructed afterward.",
-      "beat3Title": "One click. Court-admissible proof.",
-      "beat3Text": "The Regulator's Receipt™ exports everything a compliance audit needs.",
-      "beat3Emphasis": "Verify it yourself with",
-      "beat3EmpSuffix": ". No vendor dependency. No trust required."
+      "label": "解决方案",
+      "beat1Title": "理事会审议。",
+      "beat1Text": "问一个问题。领域专家人工智能代理——首席财务官、首席信息安全官、首席技术官、法律顾问、红队——从各个角度论证您的决定。",
+      "beat1Emphasis": "异议被记录。共识是赢得的，而不是假设的。",
+      "beat2Title": "每个字都有签名。",
+      "beat2Text": "每个响应、投票和反对都会被散列到默克尔树中。 Ed25519 签名。 RFC 3161 带时间戳。",
+      "beat2Emphasis": "监管链是在审议过程中建立的，而不是事后重建的。",
+      "beat3Title": "一键点击。法庭认可的证据。",
+      "beat3Text": "Regulator's Receipt™ 导出合规审计所需的所有内容。",
+      "beat3Emphasis": "自己验证一下",
+      "beat3EmpSuffix": "。没有供应商依赖性。不需要信任。"
     },
     "audience": {
       "developers": {
-        "label": "For Developers",
-        "text": "Apache 2.0. TypeScript + React + Node.js. API-first architecture.",
-        "code": "docker compose up",
-        "suffix": "and the full stack is running locally."
+        "label": "对于开发人员",
+        "text": "阿帕奇2.0。 TypeScript + React + Node.js。 API 优先的架构。",
+        "code": "码头工人组成",
+        "suffix": "并且完整的堆栈在本地运行。"
       },
       "compliance": {
-        "label": "For Compliance Teams",
-        "text": "EU AI Act Article 14. SR 11-7. ABA Opinion 512. HIPAA. The platform maps to the frameworks you're already accountable to."
+        "label": "对于合规团队",
+        "text": "欧盟人工智能法第 14 条。SR 11-7。 ABA 意见 512。HIPAA。该平台映射到您已经负责的框架。"
       },
       "leadership": {
-        "label": "For Leadership",
-        "text": "The first AI governance platform that produces",
-        "emphasis": "evidence",
-        "suffix": ", not just reports. Built for the moment regulators start asking questions — before they do."
+        "label": "对于领导力",
+        "text": "首个人工智能治理平台",
+        "emphasis": "证据",
+        "suffix": "，而不仅仅是报告。专为监管机构开始提出问题而设计——在他们这样做之前。"
       }
     },
     "demo": {
-      "title": "Try the Demo",
-      "subtitle": "No login. No credit card. Click and you're inside.",
-      "enterButton": "Enter the Platform",
-      "submitting": "Entering platform...",
-      "connectionError": "Connection error. Please try again.",
-      "genericError": "Something went wrong. Please try again."
+      "title": "尝试演示",
+      "subtitle": "没有登录。没有信用卡。点击一下，你就进去了。",
+      "enterButton": "进入平台",
+      "submitting": "进入平台...",
+      "connectionError": "连接错误。请再试一次。",
+      "genericError": "出了点问题。请再试一次。"
     },
     "socialProof": {
-      "label": "Trusted Infrastructure",
-      "nvidia": "NVIDIA Inception Program",
-      "openSource": "Apache 2.0 Open Source",
-      "sovereign": "Zero Trust Architecture",
-      "compliance": "EU AI Act · GDPR · HIPAA Mapped",
-      "crypto": "Ed25519 · Merkle Trees · RFC 3161",
-      "zeroTrust": "Sovereign Edition Available"
+      "label": "可信基础设施",
+      "nvidia": "NVIDIA 启动计划",
+      "openSource": "Apache 2.0 开源",
+      "sovereign": "零信任架构",
+      "compliance": "欧盟人工智能法案·GDPR·HIPAA 映射",
+      "crypto": "Ed25519·默克尔树·RFC 3161",
+      "zeroTrust": "主权版可用"
     },
     "preview": {
-      "label": "See It In Action",
-      "subtitle": "The Council deliberating a real decision — multiple AI specialists, structured argumentation, cryptographic proof.",
-      "caption": "The Council — AI agents deliberating from CFO, CISO, Legal, Ethics, and Red Team perspectives.",
-      "cta": "Try it yourself"
+      "label": "查看实际效果",
+      "subtitle": "委员会审议一个真正的决定——多名人工智能专家、结构化论证、密码证明。",
+      "caption": "委员会——人工智能代理从首席财务官、首席信息安全官、法律、道德和红队的角度进行审议。",
+      "cta": "自己尝试一下"
     },
     "differentiator": {
-      "label": "Why Not Just Use ChatGPT?",
-      "subtitle": "ChatGPT is a conversation. Datacendia is a governed decision.",
+      "label": "为什么不直接使用 ChatGPT？",
+      "subtitle": "ChatGPT 是一种对话。 Datacendia 是一个受监管的决定。",
       "items": {
         "memory": {
-          "chatgpt": "Conversations disappear when you close the tab",
-          "datacendia": "Every word is permanently recorded and cryptographically signed"
+          "chatgpt": "关闭选项卡后对话就会消失",
+          "datacendia": "每个单词都被永久记录并加密签名"
         },
         "dissent": {
-          "chatgpt": "One voice, one perspective, no pushback",
-          "datacendia": "Multiple domain experts argue, disagree, and record dissent"
+          "chatgpt": "一种声音，一种观点，没有阻力",
+          "datacendia": "多位领域专家争论、不同意并记录异议"
         },
         "proof": {
-          "chatgpt": "No evidence trail — \"the AI said so\" isn't admissible",
-          "datacendia": "Court-admissible evidence bundles with Merkle proofs and timestamps"
+          "chatgpt": "没有证据线索——“人工智能是这么说的”是不可接受的",
+          "datacendia": "法院认可的证据捆绑有 Merkle 证明和时间戳"
         },
         "accountability": {
-          "chatgpt": "No one signs, no one is accountable",
-          "datacendia": "Human responsibility layer — someone signs for every decision"
+          "chatgpt": "没有人签字，没有人负责",
+          "datacendia": "人类责任层——每个决定都有人签名"
         },
         "sovereignty": {
-          "chatgpt": "Your data goes to OpenAI's servers",
-          "datacendia": "Cloud-hosted with encryption — or upgrade to the Sovereign Edition for air-gapped, on-prem deployment"
+          "chatgpt": "您的数据将发送至 OpenAI 的服务器",
+          "datacendia": "通过加密进行云托管 — 或升级到 Sovereign 版本以进行气隙式本地部署"
         }
       },
       "colHeaders": {
-        "dimension": "Dimension",
-        "chatgpt": "ChatGPT / Copilot",
+        "dimension": "方面",
+        "chatgpt": "ChatGPT / 副驾驶",
         "datacendia": "Datacendia"
       }
     },
     "faq": {
-      "label": "Frequently Asked Questions",
+      "label": "常见问题解答",
       "dataSafe": {
-        "q": "Is my data safe? Where does it go?",
-        "a": "Datacendia Core is a cloud-hosted platform. All data is encrypted at rest and in transit. For organisations requiring full data sovereignty, the Datacendia Sovereign Edition can be deployed on-premises or in air-gapped environments — your infrastructure, your keys, your control."
+        "q": "我的数据安全吗？它去哪里？",
+        "a": "Datacendia Core 是一个云托管平台。所有数据在静态和传输过程中均经过加密。对于需要完整数据主权的组织，Datacendia Sovereign Edition 可以部署在本地或隔离环境中——您的基础设施、您的密钥、您的控制权。"
       },
       "internet": {
-        "q": "Does it require an internet connection?",
-        "a": "Datacendia Core requires an internet connection as it runs in the cloud. The Sovereign Edition can run entirely on-premises with local LLMs via Ollama or NVIDIA Triton — no external API calls required, suitable for air-gapped and classified environments."
+        "q": "它需要互联网连接吗？",
+        "a": "Datacendia Core 在云中运行时需要互联网连接。 Sovereign Edition 可以通过 Ollama 或 NVIDIA Triton 在本地 LLM 的帮助下完全在本地运行，无需外部 API 调用，适合气隙和机密环境。"
       },
       "llms": {
-        "q": "What LLMs does it support?",
-        "a": "Datacendia Core uses cloud LLMs via OpenAI-compatible APIs (GPT-4o, Groq, Together AI). The Sovereign Edition additionally supports local models via Ollama (Llama 3, Mistral, Phi-3, Gemma) and NVIDIA Triton/NIM for enterprise GPU inference. You can mix and match models per agent."
+        "q": "它支持哪些法学硕士？",
+        "a": "Datacendia Core 通过 OpenAI 兼容的 API（GPT-4o、Groq、Together AI）使用云 LLM。 Sovereign 版本还支持通过 Ollama（Llama 3、Mistral、Phi-3、Gemma）和 NVIDIA Triton/NIM 进行企业 GPU 推理的本地模型。您可以混合和匹配每个代理的模型。"
       },
       "openSource": {
-        "q": "Is it really open source?",
-        "a": "Yes. Apache 2.0 licensed. The full platform — frontend, backend, deliberation engine, cryptographic infrastructure — is open source. No open-core bait-and-switch. Enterprise features are about support and SLAs, not locked functionality."
+        "q": "它真的是开源的吗？",
+        "a": "是的。 Apache 2.0 已获得许可。完整的平台——前端、后端、审议引擎、加密基础设施——都是开源的。没有开放核心的诱饵和开关。企业功能涉及支持和 SLA，而不是锁定的功能。"
       },
       "different": {
-        "q": "How is this different from a chatbot or copilot?",
-        "a": "Chatbots give you one answer from one model. Datacendia convenes a panel of domain-expert AI agents who argue from different perspectives — CFO, CISO, Legal, Ethics, Red Team. Disagreements are recorded. Every response is cryptographically signed. The output isn't a chat log — it's a court-admissible decision record."
+        "q": "这与聊天机器人或副驾驶有何不同？",
+        "a": "聊天机器人通过一种模型为您提供一个答案。 Datacendia 召集了一个由领域专家人工智能代理组成的小组，他们从不同的角度进行争论——首席财务官、首席信息安全官、法律、道德、红队。不同意见都会被记录下来。每个响应都经过加密签名。输出不是聊天记录，而是法庭认可的判决记录。"
       },
       "compliance": {
-        "q": "What compliance frameworks does it map to?",
-        "a": "EU AI Act (Article 14 human oversight, aligned), NIST AI RMF (aligned), ISO 42001 (aligned, awaiting certification), SOC 2 Type II (aligned, awaiting certification), ISO 27001 (aligned, awaiting certification), GDPR Article 22 (automated decision-making), HIPAA, SR 11-7 (model risk management), and ABA Formal Opinion 512 (lawyers using AI)."
+        "q": "它映射到哪些合规框架？",
+        "a": "EU AI Act（第 14 条人工监督，一致）、NIST AI RMF（一致）、ISO 42001（一致、等待认证）、SOC 2 Type II（一致、等待认证）、ISO 27001（一致、等待认证）、GDPR 第 22 条（自动决策）、HIPAA、SR 11-7（模型风险管理）和 ABA 正式意见 512 （使用人工智能的律师）。"
       },
       "setup": {
-        "q": "How long does setup take?",
-        "a": "Datacendia Core is cloud-hosted — sign up and you're running in seconds. No installation required. For the Sovereign Edition, setup takes five minutes with Docker, or 1-2 days for enterprise deployments with custom SSO, air-gap configuration, and NVIDIA Triton integration."
+        "q": "设置需要多长时间？",
+        "a": "Datacendia Core 是云托管的 — 注册后几秒钟内即可运行。无需安装。对于 Sovereign 版本，使用 Docker 进行设置需要 5 分钟，而使用自定义 SSO、气隙配置和 NVIDIA Triton 集成进行企业部署则需要 1-2 天。"
       },
       "verify": {
-        "q": "Can I verify the cryptographic signatures myself?",
-        "a": "Yes. Every decision packet includes Ed25519 signatures and RFC 3161 timestamps that you can verify with standard openssl commands. No proprietary tools needed. No vendor dependency. The Regulator's Receipt includes verification instructions."
+        "q": "我可以自己验证加密签名吗？",
+        "a": "是的。每个决策数据包都包含 Ed25519 签名和 RFC 3161 时间戳，您可以使用标准 openssl 命令对其进行验证。无需专有工具。没有供应商依赖性。监管机构的收据包括验证说明。"
       }
     },
     "footer": {
-      "tagline": "NVIDIA Inception Program Member · Apache 2.0 · Sovereign-first · datacendia.com"
+      "tagline": "NVIDIA Inception 计划成员 · Apache 2.0 · 主权优先 · datacendia.com"
     }
   }
 }

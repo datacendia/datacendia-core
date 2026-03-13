@@ -2350,274 +2350,274 @@
   "landing": {
     "nav": {
       "github": "GitHub",
-      "contactSales": "CONTACT SALES"
+      "contactSales": "CONTACTO VENTAS"
     },
     "hero": {
-      "label": "DECISION GOVERNANCE INFRASTRUCTURE",
-      "headline": "Cryptographic Proof for Every AI Decision Your Enterprise Makes.",
-      "subheadline": "Open-source infrastructure that forces multi-agent deliberation and seals every outcome into a court-admissible audit ledger. Ed25519-signed. Merkle-tree hashed. RFC 3161-timestamped.",
-      "ctaPrimary": "Request Architecture Review",
-      "ctaSecondary": "View GitHub Repo",
-      "finePrint": "Apache 2.0 · Self-host in 5 minutes · No vendor lock-in"
+      "label": "INFRAESTRUCTURA DE GOBERNANZA DE DECISIONES",
+      "headline": "Prueba criptográfica para cada decisión de IA que tome su empresa.",
+      "subheadline": "Infraestructura de código abierto que obliga a la deliberación de múltiples agentes y sella cada resultado en un libro de auditoría admisible por el tribunal. Ed25519-firmado. Merkle-árbol hash. RFC 3161 con marca de tiempo.",
+      "ctaPrimary": "Solicitar revisión de arquitectura",
+      "ctaSecondary": "Ver repositorio de GitHub",
+      "finePrint": "Apache 2.0 · Autohospedaje en 5 minutos · Sin dependencia de proveedor"
     },
     "receipt": {
-      "header": "DATACENDIA REGULATOR'S RECEIPT — CONFIDENTIAL — COURT ADMISSIBLE",
-      "title": "REGULATOR'S RECEIPT",
-      "subtitle": "Decision Evidence Package · Court Admissible · DCII Framework",
-      "receiptId": "RECEIPT ID:",
-      "decisionDate": "DECISION DATE:",
-      "compliance": "COMPLIANCE:",
-      "confidence": "CONFIDENCE:",
-      "dissenting": "DISSENTING:",
-      "cryptoLabel": "CRYPTOGRAPHIC INTEGRITY",
-      "hashLabel": "Decision Hash (SHA-256):",
-      "sigLabel": "Digital Signature:",
-      "sigValue": "[Verified] Ed25519 · datacendia-kms"
+      "header": "RECIBO DEL REGULADOR DE DATACENDIA — CONFIDENCIAL — ADMISIBLE AL TRIBUNAL",
+      "title": "RECIBO DEL REGULADOR",
+      "subtitle": "Paquete de evidencia de decisión · Admisible ante el tribunal · Marco DCII",
+      "receiptId": "ID DE RECIBO:",
+      "decisionDate": "FECHA DE DECISIÓN:",
+      "compliance": "CUMPLIMIENTO:",
+      "confidence": "CONFIANZA:",
+      "dissenting": "DISIDENTE:",
+      "cryptoLabel": "INTEGRIDAD CRIPTOGRAFICA",
+      "hashLabel": "Hash de decisión (SHA-256):",
+      "sigLabel": "Firma Digital:",
+      "sigValue": "[Verificado] Ed25519 · datacendia-kms"
     },
     "trustBar": {
-      "nvidia": "NVIDIA Inception Member",
-      "compliance": "EU AI Act Aligned · NIST AI RMF · ISO 42001 Aligned",
-      "ddgi": "Built on the DDGI Open Standard",
-      "openSource": "Apache 2.0 Open Source"
+      "nvidia": "Miembro inicial de NVIDIA",
+      "compliance": "Alineado con la Ley de IA de la UE · NIST AI RMF · Alineado con ISO 42001",
+      "ddgi": "Construido sobre el estándar abierto DDGI",
+      "openSource": "Apache 2.0 de código abierto"
     },
     "killRoom": {
-      "label": "DECISION ARCHITECTURE",
-      "subtitle": "How every AI decision becomes court-admissible evidence",
-      "pipelineLabel": "DATACENDIA DECISION GOVERNANCE PIPELINE — PRODUCTION",
-      "pipelineFlow": "REQUEST → DELIBERATE → OVERRIDE → SEAL",
-      "pipelineAudit": "IMMUTABLE AUDIT TRAIL",
+      "label": "ARQUITECTURA DE DECISIÓN",
+      "subtitle": "Cómo cada decisión de IA se convierte en prueba admisible ante los tribunales",
+      "pipelineLabel": "CANAL DE GOBERNANZA DE DECISIONES DE DATACENDIA — PRODUCCIÓN",
+      "pipelineFlow": "SOLICITUD → DELIBERAR → ANULAR → SELLAR",
+      "pipelineAudit": "PISTA DE AUDITORÍA INMUTABLE",
       "stage1": {
-        "label": "STAGE 01",
-        "title": "Human Request",
-        "desc": "Decision query enters the pipeline. Compliance profile auto-assigned. Audit trail begins.",
-        "meta": "INPUT: natural language query"
+        "label": "ETAPA 01",
+        "title": "Solicitud humana",
+        "desc": "La consulta de decisión ingresa al proceso. Perfil de cumplimiento asignado automáticamente. Comienza el seguimiento de auditoría.",
+        "meta": "ENTRADA: consulta en lenguaje natural"
       },
       "stage2": {
-        "label": "STAGE 02",
-        "title": "Multi-Agent Deliberation",
-        "desc": "CFO, CISO, Legal, Ethics, Red Team agents argue adversarially. Dissent is a first-class artifact.",
-        "meta1": "AGENTS: 5-12 domain specialists",
-        "meta2": "DISSENT: recorded + preserved"
+        "label": "ETAPA 02",
+        "title": "Deliberación entre múltiples agentes",
+        "desc": "Los agentes del CFO, CISO, Legal, Ética y del Equipo Rojo discuten de manera adversa. La disidencia es un artefacto de primera clase.",
+        "meta1": "AGENTES: 5-12 especialistas en el dominio",
+        "meta2": "DISENCIÓN: grabada + preservada"
       },
       "stage3": {
-        "label": "STAGE 03",
-        "title": "Human Override & Sign-Off",
-        "desc": "Human decision-maker reviews, overrides, or ratifies. EU AI Act Article 14 human oversight satisfied.",
-        "meta": "COMPLIANCE: Art. 14 / SR 11-7"
+        "label": "ETAPA 03",
+        "title": "Anulación y aprobación humana",
+        "desc": "El tomador de decisiones humano revisa, anula o ratifica. Se cumple el artículo 14 de la Ley de IA de la UE: supervisión humana.",
+        "meta": "CUMPLIMIENTO: Art. 14 / SR 11-7"
       },
       "stage4": {
-        "label": "STAGE 04",
-        "title": "Cryptographic Hash & Seal",
-        "desc": "Ed25519 signature. Merkle tree hash. RFC 3161 timestamp. Regulator's Receipt generated.",
-        "meta1": "OUTPUT: court-admissible bundle",
-        "meta2": "VERIFY: openssl + standard tools"
+        "label": "ETAPA 04",
+        "title": "Hash y sello criptográfico",
+        "desc": "Firma Ed25519. Hachís de árbol Merkle. Marca de tiempo RFC 3161. Recibo del Regulador generado.",
+        "meta1": "SALIDA: paquete admisible ante los tribunales",
+        "meta2": "VERIFICAR: openssl + herramientas estándar"
       }
     },
     "pricing": {
-      "label": "LICENSING",
-      "subtitle": "Commercial Open-Source. No bait-and-switch.",
+      "label": "LICENCIA",
+      "subtitle": "Código abierto comercial. Sin cebo y cambio.",
       "community": {
-        "title": "Community Edition",
-        "price": "Open Source",
-        "license": "APACHE 2.0 LICENSE",
-        "f1": "Full platform — frontend, backend, deliberation engine",
-        "f2": "Self-hosted, single node",
-        "f3": "Ed25519 cryptographic signing",
-        "f4": "All inference providers (Ollama, OpenAI, Together, Gemini, Claude)",
-        "f5": "Community support via GitHub",
-        "cta": "View on GitHub"
+        "title": "Edición comunitaria",
+        "price": "Código abierto",
+        "license": "LICENCIA APACHE 2.0",
+        "f1": "Plataforma completa: frontend, backend, motor de deliberación",
+        "f2": "Nodo único autohospedado",
+        "f3": "Ed25519 firma criptográfica",
+        "f4": "Todos los proveedores de inferencia (Ollama, OpenAI, Together, Gemini, Claude)",
+        "f5": "Soporte comunitario a través de GitHub",
+        "cta": "Ver en GitHub"
       },
       "enterprise": {
-        "badge": "SOVEREIGN",
-        "title": "Enterprise Edition",
-        "price": "Custom",
-        "license": "ANNUAL LICENSE + SUPPORT",
-        "f1": "Everything in Community, plus:",
-        "f2": "Air-gapped / sovereign deployment",
-        "f3": "Post-quantum KMS integration",
-        "f4": "CendiaInsure liability coverage",
-        "f5": "Custom integrations + dedicated success team",
-        "f6": "SSO / SAML, RBAC, multi-tenant",
-        "cta": "Contact Sales"
+        "badge": "SOBERANO",
+        "title": "Edición empresarial",
+        "price": "Costumbre",
+        "license": "LICENCIA ANUAL + SOPORTE",
+        "f1": "Todo en Comunidad, más:",
+        "f2": "Despliegue soberano/con espacio aéreo",
+        "f3": "Integración KMS poscuántica",
+        "f4": "CendiaInsure cobertura de responsabilidad",
+        "f5": "Integraciones personalizadas + equipo de éxito dedicado",
+        "f6": "SSO/SAML, RBAC, multiinquilino",
+        "cta": "Contacto Ventas"
       }
     },
     "bottomCta": {
-      "title": "Ready to make AI decisions defensible?",
-      "subtitle": "Talk to our team about your compliance requirements, or deploy the open-source edition today.",
-      "ctaPrimary": "Request Architecture Review",
-      "ctaSecondary": "Try Live Demo",
-      "submitting": "Entering..."
+      "title": "¿Listo para hacer defendibles las decisiones de IA?",
+      "subtitle": "Hable con nuestro equipo sobre sus requisitos de cumplimiento o implemente la edición de código abierto hoy.",
+      "ctaPrimary": "Solicitar revisión de arquitectura",
+      "ctaSecondary": "Pruebe la demostración en vivo",
+      "submitting": "Entrando..."
     },
     "problem": {
-      "label": "The Problem",
-      "text": "When a law firm uses AI to assess litigation risk, a bank uses it to approve credit, or a board uses it to evaluate an acquisition — that decision vanishes the moment the window closes. If it's challenged, there's nothing to show. No deliberation. No dissent. No proof of process.",
-      "fade": "Just a chat log that doesn't exist anymore."
+      "label": "El problema",
+      "text": "Cuando una firma de abogados utiliza la IA para evaluar el riesgo de litigios, un banco la utiliza para aprobar un crédito o una junta la utiliza para evaluar una adquisición, esa decisión desaparece en el momento en que se cierra la ventana. Si se cuestiona, no hay nada que mostrar. Sin deliberación. Ningún desacuerdo. No hay prueba de proceso.",
+      "fade": "Sólo un registro de chat que ya no existe."
     },
     "whatIs": {
-      "label": "What is Datacendia?",
+      "label": "¿Qué es Datacendia?",
       "simple": {
-        "title": "In Plain Terms",
-        "description": "Datacendia is a decision intelligence platform. You ask it a question — about a hire, a deal, a policy change, a risk — and a panel of AI specialists debates it from every angle: financial, legal, operational, ethical. Every argument, every dissent, every vote is permanently recorded and cryptographically signed. When someone asks \"how did you reach that decision?\" — you hand them the receipt.",
-        "analogy": "Think of it as a boardroom that records everything, signs everything, and can prove everything happened exactly the way it did."
+        "title": "En términos sencillos",
+        "description": "Datacendia es una plataforma de inteligencia de decisiones. Le haces una pregunta (sobre una contratación, un acuerdo, un cambio de política, un riesgo) y un panel de especialistas en IA la debate desde todos los ángulos: financiero, legal, operativo y ético. Cada argumento, cada disenso, cada voto se registra permanentemente y se firma criptográficamente. Cuando alguien pregunta \"¿cómo llegaste a esa decisión?\" - les entregas el recibo.",
+        "analogy": "Piense en ello como una sala de juntas que registra todo, firma todo y puede demostrar que todo sucedió exactamente como sucedió."
       },
       "technical": {
-        "title": "Under the Hood",
-        "description": "A multi-agent deliberation engine backed by cryptographic infrastructure. Domain-expert LLM agents (CFO, CISO, Legal, Ethics, Red Team) engage in structured argumentation over your query. Each response is hashed into a Merkle tree, Ed25519-signed, and RFC 3161-timestamped. Decision packets include full chain-of-custody, dissent records, and confidence scoring — exportable as court-admissible evidence bundles.",
-        "stack": "Cloud-hosted (Core) · Apache 2.0 · OpenAI / Groq / Together AI · On-prem Sovereign Edition also available"
+        "title": "Bajo el capó",
+        "description": "Un motor de deliberación de múltiples agentes respaldado por una infraestructura criptográfica. Los agentes de LLM expertos en el dominio (CFO, CISO, Legal, Ética, Red Team) participan en una argumentación estructurada sobre su consulta. Cada respuesta está codificada en un árbol Merkle, firmada con Ed25519 y con marca de tiempo RFC 3161. Los paquetes de decisiones incluyen cadena de custodia completa, registros de disidencia y puntuación de confianza, exportables como paquetes de pruebas admisibles ante el tribunal.",
+        "stack": "Alojado en la nube (Core) · Apache 2.0 · OpenAI / Groq / Together AI · Edición Sovereign local también disponible"
       }
     },
     "workflow": {
-      "label": "How a Decision Flows",
-      "subtitle": "From question to court-admissible evidence in one session",
+      "label": "Cómo fluye una decisión",
+      "subtitle": "De la pregunta a la prueba admisible ante el tribunal en una sola sesión",
       "steps": {
         "ask": {
-          "title": "Ask",
-          "description": "Pose a question to the Council. \"Should we acquire Company X?\" \"Is this vendor contract compliant?\""
+          "title": "Preguntar",
+          "description": "Haga una pregunta al Consejo. \"¿Deberíamos adquirir la empresa X?\" \"¿Cumple este contrato con el proveedor?\""
         },
         "deliberate": {
-          "title": "Deliberate",
-          "description": "Domain-expert AI agents debate from every angle. CFO analyses cost. CISO flags risk. Legal checks compliance. Red Team challenges assumptions."
+          "title": "Adrede",
+          "description": "Los agentes de IA expertos en el dominio debaten desde todos los ángulos. El director financiero analiza el costo. CISO señala riesgo. Cumplimiento de controles legales. El Equipo Rojo desafía las suposiciones."
         },
         "dissent": {
-          "title": "Record Dissent",
-          "description": "Disagreements aren't hidden — they're first-class artifacts. Every minority opinion is captured, timestamped, and preserved."
+          "title": "Registrar disidencia",
+          "description": "Los desacuerdos no están ocultos: son artefactos de primera clase. Cada opinión minoritaria se captura, se marca con el tiempo y se preserva."
         },
         "sign": {
-          "title": "Sign & Seal",
-          "description": "Each response is hashed into a Merkle tree, Ed25519-signed, and RFC 3161-timestamped. The chain of custody is established during deliberation."
+          "title": "Firmar y sellar",
+          "description": "Cada respuesta está codificada en un árbol Merkle, firmada con Ed25519 y con marca de tiempo RFC 3161. La cadena de custodia se establece durante la deliberación."
         },
         "store": {
-          "title": "Store in Vault",
-          "description": "The complete decision packet — arguments, votes, dissent, metadata — is sealed in CendiaVault with cryptographic integrity."
+          "title": "Almacenar en bóveda",
+          "description": "El paquete de decisiones completo (argumentos, votos, disenso, metadatos) está sellado en CendiaVault con integridad criptográfica."
         },
         "export": {
-          "title": "Export Receipt",
-          "description": "One click generates the Regulator's Receipt™ — a court-admissible evidence bundle. Verify with openssl. No vendor dependency."
+          "title": "Recibo de exportación",
+          "description": "Un clic genera el Regulator's Receipt™, un paquete de pruebas admisible por el tribunal. Verifique con openssl. Sin dependencia de proveedores."
         }
       }
     },
     "solution": {
-      "label": "The Solution",
-      "beat1Title": "The Council deliberates.",
-      "beat1Text": "Ask a question. Domain-expert AI agents — CFO, CISO, CTO, Legal Counsel, Red Team — argue your decision from every angle.",
-      "beat1Emphasis": "Dissent is recorded. Consensus is earned, not assumed.",
-      "beat2Title": "Every word is signed.",
-      "beat2Text": "Each response, vote, and objection is hashed into a Merkle tree. Ed25519 signed. RFC 3161 timestamped.",
-      "beat2Emphasis": "The chain of custody is established during deliberation — not reconstructed afterward.",
-      "beat3Title": "One click. Court-admissible proof.",
-      "beat3Text": "The Regulator's Receipt™ exports everything a compliance audit needs.",
-      "beat3Emphasis": "Verify it yourself with",
-      "beat3EmpSuffix": ". No vendor dependency. No trust required."
+      "label": "La solución",
+      "beat1Title": "El Consejo delibera.",
+      "beat1Text": "Haz una pregunta. Los agentes de IA expertos en el dominio (CFO, CISO, CTO, asesor legal, equipo rojo) argumentan su decisión desde todos los ángulos.",
+      "beat1Emphasis": "Se registra el desacuerdo. El consenso se gana, no se asume.",
+      "beat2Title": "Cada palabra está firmada.",
+      "beat2Text": "Cada respuesta, voto y objeción se codifica en un árbol Merkle. Ed25519 firmado. Marca de tiempo RFC 3161.",
+      "beat2Emphasis": "La cadena de custodia se establece durante la deliberación y no se reconstruye después.",
+      "beat3Title": "Un clic. Prueba admisible ante el tribunal.",
+      "beat3Text": "The Regulator's Receipt™ exporta todo lo que necesita una auditoría de cumplimiento.",
+      "beat3Emphasis": "Compruébalo tú mismo con",
+      "beat3EmpSuffix": ". Sin dependencia de proveedores. No se requiere confianza."
     },
     "audience": {
       "developers": {
-        "label": "For Developers",
-        "text": "Apache 2.0. TypeScript + React + Node.js. API-first architecture.",
-        "code": "docker compose up",
-        "suffix": "and the full stack is running locally."
+        "label": "Para desarrolladores",
+        "text": "Apache 2.0. TypeScript + Reaccionar + Node.js. Arquitectura basada en API.",
+        "code": "ventana acoplable componer",
+        "suffix": "y la pila completa se ejecuta localmente."
       },
       "compliance": {
-        "label": "For Compliance Teams",
-        "text": "EU AI Act Article 14. SR 11-7. ABA Opinion 512. HIPAA. The platform maps to the frameworks you're already accountable to."
+        "label": "Para equipos de cumplimiento",
+        "text": "Artículo 14 de la Ley de IA de la UE. SR 11-7. Opinión ABA 512. HIPAA. La plataforma se asigna a los marcos ante los que ya es responsable."
       },
       "leadership": {
-        "label": "For Leadership",
-        "text": "The first AI governance platform that produces",
-        "emphasis": "evidence",
-        "suffix": ", not just reports. Built for the moment regulators start asking questions — before they do."
+        "label": "Para el liderazgo",
+        "text": "La primera plataforma de gobernanza de IA que produce",
+        "emphasis": "evidencia",
+        "suffix": ", no solo informes. Creado para el momento, los reguladores comienzan a hacer preguntas, antes de que lo hagan."
       }
     },
     "demo": {
-      "title": "Try the Demo",
-      "subtitle": "No login. No credit card. Click and you're inside.",
-      "enterButton": "Enter the Platform",
-      "submitting": "Entering platform...",
-      "connectionError": "Connection error. Please try again.",
-      "genericError": "Something went wrong. Please try again."
+      "title": "Pruebe la demostración",
+      "subtitle": "Sin iniciar sesión. Sin tarjeta de crédito. Haz clic y estarás dentro.",
+      "enterButton": "Ingresa a la Plataforma",
+      "submitting": "Entrando a plataforma...",
+      "connectionError": "Error de conexión. Por favor inténtalo de nuevo.",
+      "genericError": "Algo salió mal. Por favor inténtalo de nuevo."
     },
     "socialProof": {
-      "label": "Trusted Infrastructure",
-      "nvidia": "NVIDIA Inception Program",
-      "openSource": "Apache 2.0 Open Source",
-      "sovereign": "Zero Trust Architecture",
-      "compliance": "EU AI Act · GDPR · HIPAA Mapped",
-      "crypto": "Ed25519 · Merkle Trees · RFC 3161",
-      "zeroTrust": "Sovereign Edition Available"
+      "label": "Infraestructura confiable",
+      "nvidia": "Programa de inicio de NVIDIA",
+      "openSource": "Apache 2.0 de código abierto",
+      "sovereign": "Arquitectura de confianza cero",
+      "compliance": "Ley de IA de la UE · GDPR · HIPAA mapeada",
+      "crypto": "Ed25519 · Árboles Merkle · RFC 3161",
+      "zeroTrust": "Edición soberana disponible"
     },
     "preview": {
-      "label": "See It In Action",
-      "subtitle": "The Council deliberating a real decision — multiple AI specialists, structured argumentation, cryptographic proof.",
-      "caption": "The Council — AI agents deliberating from CFO, CISO, Legal, Ethics, and Red Team perspectives.",
-      "cta": "Try it yourself"
+      "label": "Véalo en acción",
+      "subtitle": "El Consejo está deliberando sobre una decisión real: múltiples especialistas en IA, argumentación estructurada, pruebas criptográficas.",
+      "caption": "El Consejo: agentes de IA que deliberan desde las perspectivas del CFO, CISO, Legal, Ética y Red Team.",
+      "cta": "Pruébalo tú mismo"
     },
     "differentiator": {
-      "label": "Why Not Just Use ChatGPT?",
-      "subtitle": "ChatGPT is a conversation. Datacendia is a governed decision.",
+      "label": "¿Por qué no utilizar ChatGPT?",
+      "subtitle": "ChatGPT es una conversación. Datacendia es una decisión gobernada.",
       "items": {
         "memory": {
-          "chatgpt": "Conversations disappear when you close the tab",
-          "datacendia": "Every word is permanently recorded and cryptographically signed"
+          "chatgpt": "Las conversaciones desaparecen al cerrar la pestaña",
+          "datacendia": "Cada palabra se registra permanentemente y se firma criptográficamente."
         },
         "dissent": {
-          "chatgpt": "One voice, one perspective, no pushback",
-          "datacendia": "Multiple domain experts argue, disagree, and record dissent"
+          "chatgpt": "Una voz, una perspectiva, sin rechazo",
+          "datacendia": "Múltiples expertos en el campo discuten, no están de acuerdo y registran su desacuerdo"
         },
         "proof": {
-          "chatgpt": "No evidence trail — \"the AI said so\" isn't admissible",
-          "datacendia": "Court-admissible evidence bundles with Merkle proofs and timestamps"
+          "chatgpt": "No hay pruebas: \"la IA lo dijo\" no es admisible",
+          "datacendia": "Paquetes de pruebas admisibles ante el tribunal con pruebas y marcas de tiempo de Merkle"
         },
         "accountability": {
-          "chatgpt": "No one signs, no one is accountable",
-          "datacendia": "Human responsibility layer — someone signs for every decision"
+          "chatgpt": "Nadie firma, nadie rinde cuentas",
+          "datacendia": "Capa de responsabilidad humana: alguien firma por cada decisión"
         },
         "sovereignty": {
-          "chatgpt": "Your data goes to OpenAI's servers",
-          "datacendia": "Cloud-hosted with encryption — or upgrade to the Sovereign Edition for air-gapped, on-prem deployment"
+          "chatgpt": "Tus datos van a los servidores de OpenAI",
+          "datacendia": "Alojado en la nube con cifrado, o actualice a Sovereign Edition para una implementación local y aislada"
         }
       },
       "colHeaders": {
-        "dimension": "Dimension",
-        "chatgpt": "ChatGPT / Copilot",
+        "dimension": "Dimensión",
+        "chatgpt": "ChatGPT / Copiloto",
         "datacendia": "Datacendia"
       }
     },
     "faq": {
-      "label": "Frequently Asked Questions",
+      "label": "Preguntas frecuentes",
       "dataSafe": {
-        "q": "Is my data safe? Where does it go?",
-        "a": "Datacendia Core is a cloud-hosted platform. All data is encrypted at rest and in transit. For organisations requiring full data sovereignty, the Datacendia Sovereign Edition can be deployed on-premises or in air-gapped environments — your infrastructure, your keys, your control."
+        "q": "¿Están mis datos seguros? ¿A dónde va?",
+        "a": "Datacendia Core es una plataforma alojada en la nube. Todos los datos se cifran en reposo y en tránsito. Para las organizaciones que requieren soberanía total de los datos, Datacendia Sovereign Edition se puede implementar en las instalaciones o en entornos aislados: su infraestructura, sus claves, su control."
       },
       "internet": {
-        "q": "Does it require an internet connection?",
-        "a": "Datacendia Core requires an internet connection as it runs in the cloud. The Sovereign Edition can run entirely on-premises with local LLMs via Ollama or NVIDIA Triton — no external API calls required, suitable for air-gapped and classified environments."
+        "q": "¿Requiere una conexión a Internet?",
+        "a": "Datacendia Core requiere una conexión a Internet ya que se ejecuta en la nube. Sovereign Edition puede ejecutarse completamente en las instalaciones con LLM locales a través de Ollama o NVIDIA Triton; no se requieren llamadas API externas y es adecuado para entornos clasificados y aislados."
       },
       "llms": {
-        "q": "What LLMs does it support?",
-        "a": "Datacendia Core uses cloud LLMs via OpenAI-compatible APIs (GPT-4o, Groq, Together AI). The Sovereign Edition additionally supports local models via Ollama (Llama 3, Mistral, Phi-3, Gemma) and NVIDIA Triton/NIM for enterprise GPU inference. You can mix and match models per agent."
+        "q": "¿Qué LLM admite?",
+        "a": "Datacendia Core utiliza LLM en la nube a través de API compatibles con OpenAI (GPT-4o, Groq, Together AI). Sovereign Edition también admite modelos locales a través de Ollama (Llama 3, Mistral, Phi-3, Gemma) y NVIDIA Triton/NIM para inferencia de GPU empresarial. Puede mezclar y combinar modelos por agente."
       },
       "openSource": {
-        "q": "Is it really open source?",
-        "a": "Yes. Apache 2.0 licensed. The full platform — frontend, backend, deliberation engine, cryptographic infrastructure — is open source. No open-core bait-and-switch. Enterprise features are about support and SLAs, not locked functionality."
+        "q": "¿Es realmente de código abierto?",
+        "a": "Sí. Licencia Apache 2.0. La plataforma completa (frontend, backend, motor de deliberación, infraestructura criptográfica) es de código abierto. Sin cebo y cambio de núcleo abierto. Las funciones empresariales tienen que ver con soporte y SLA, no con funcionalidad bloqueada."
       },
       "different": {
-        "q": "How is this different from a chatbot or copilot?",
-        "a": "Chatbots give you one answer from one model. Datacendia convenes a panel of domain-expert AI agents who argue from different perspectives — CFO, CISO, Legal, Ethics, Red Team. Disagreements are recorded. Every response is cryptographically signed. The output isn't a chat log — it's a court-admissible decision record."
+        "q": "¿En qué se diferencia esto de un chatbot o copiloto?",
+        "a": "Los chatbots te dan una respuesta de un modelo. Datacendia convoca a un panel de agentes de IA expertos en el dominio que discuten desde diferentes perspectivas: CFO, CISO, Legal, Ética, Red Team. Se registran los desacuerdos. Cada respuesta está firmada criptográficamente. El resultado no es un registro de chat, es un registro de decisión admisible por el tribunal."
       },
       "compliance": {
-        "q": "What compliance frameworks does it map to?",
-        "a": "EU AI Act (Article 14 human oversight, aligned), NIST AI RMF (aligned), ISO 42001 (aligned, awaiting certification), SOC 2 Type II (aligned, awaiting certification), ISO 27001 (aligned, awaiting certification), GDPR Article 22 (automated decision-making), HIPAA, SR 11-7 (model risk management), and ABA Formal Opinion 512 (lawyers using AI)."
+        "q": "¿A qué marcos de cumplimiento se asigna?",
+        "a": "Ley de IA de la UE (artículo 14, supervisión humana, alineada), NIST AI RMF (alineada), ISO 42001 (alineada, en espera de certificación), SOC 2 Tipo II (alineada, en espera de certificación), ISO 27001 (alineada, en espera de certificación), GDPR Artículo 22 (toma de decisiones automatizada), HIPAA, SR 11-7 (modelo de gestión de riesgos) y ABA Formal Opinion 512 (abogados que utilizan IA)."
       },
       "setup": {
-        "q": "How long does setup take?",
-        "a": "Datacendia Core is cloud-hosted — sign up and you're running in seconds. No installation required. For the Sovereign Edition, setup takes five minutes with Docker, or 1-2 days for enterprise deployments with custom SSO, air-gap configuration, and NVIDIA Triton integration."
+        "q": "¿Cuánto tiempo lleva la configuración?",
+        "a": "Datacendia Core está alojado en la nube: regístrese y estará funcionando en segundos. No requiere instalación. Para Sovereign Edition, la configuración lleva cinco minutos con Docker, o entre 1 y 2 días para implementaciones empresariales con SSO personalizado, configuración de espacio de aire e integración de NVIDIA Triton."
       },
       "verify": {
-        "q": "Can I verify the cryptographic signatures myself?",
-        "a": "Yes. Every decision packet includes Ed25519 signatures and RFC 3161 timestamps that you can verify with standard openssl commands. No proprietary tools needed. No vendor dependency. The Regulator's Receipt includes verification instructions."
+        "q": "¿Puedo verificar las firmas criptográficas yo mismo?",
+        "a": "Sí. Cada paquete de decisión incluye firmas Ed25519 y marcas de tiempo RFC 3161 que puede verificar con comandos estándar de openssl. No se necesitan herramientas patentadas. Sin dependencia de proveedores. El Recibo del Regulador incluye instrucciones de verificación."
       }
     },
     "footer": {
-      "tagline": "NVIDIA Inception Program Member · Apache 2.0 · Sovereign-first · datacendia.com"
+      "tagline": "Miembro del programa de inicio de NVIDIA · Apache 2.0 · Sovereign-first · datacendia.com"
     }
   }
 }

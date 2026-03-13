@@ -2350,274 +2350,274 @@
   "landing": {
     "nav": {
       "github": "GitHub",
-      "contactSales": "CONTACT SALES"
+      "contactSales": "LIÊN HỆ BÁN HÀNG"
     },
     "hero": {
-      "label": "DECISION GOVERNANCE INFRASTRUCTURE",
-      "headline": "Cryptographic Proof for Every AI Decision Your Enterprise Makes.",
-      "subheadline": "Open-source infrastructure that forces multi-agent deliberation and seals every outcome into a court-admissible audit ledger. Ed25519-signed. Merkle-tree hashed. RFC 3161-timestamped.",
-      "ctaPrimary": "Request Architecture Review",
-      "ctaSecondary": "View GitHub Repo",
-      "finePrint": "Apache 2.0 · Self-host in 5 minutes · No vendor lock-in"
+      "label": "QUYẾT ĐỊNH CƠ SỞ HẠ TẦNG QUẢN TRỊ",
+      "headline": "Bằng chứng mật mã cho mọi quyết định về AI mà doanh nghiệp của bạn đưa ra.",
+      "subheadline": "Cơ sở hạ tầng nguồn mở buộc nhiều bên phải cân nhắc và niêm phong mọi kết quả vào sổ cái kiểm toán được tòa án chấp nhận. Ed25519-ký. Cây Merkle được băm. RFC 3161 được đánh dấu thời gian.",
+      "ctaPrimary": "Yêu cầu đánh giá kiến ​​trúc",
+      "ctaSecondary": "Xem kho lưu trữ GitHub",
+      "finePrint": "Apache 2.0 · Tự lưu trữ trong 5 phút · Không cần nhà cung cấp khóa"
     },
     "receipt": {
-      "header": "DATACENDIA REGULATOR'S RECEIPT — CONFIDENTIAL — COURT ADMISSIBLE",
-      "title": "REGULATOR'S RECEIPT",
-      "subtitle": "Decision Evidence Package · Court Admissible · DCII Framework",
-      "receiptId": "RECEIPT ID:",
-      "decisionDate": "DECISION DATE:",
-      "compliance": "COMPLIANCE:",
-      "confidence": "CONFIDENCE:",
-      "dissenting": "DISSENTING:",
-      "cryptoLabel": "CRYPTOGRAPHIC INTEGRITY",
-      "hashLabel": "Decision Hash (SHA-256):",
-      "sigLabel": "Digital Signature:",
-      "sigValue": "[Verified] Ed25519 · datacendia-kms"
+      "header": "BIÊN NHẬN CỦA NHÀ QUY ĐỊNH DATACENDIA — BÍ MẬT — TÒA ÁN ĐƯỢC CHẤP NHẬN",
+      "title": "BIÊN NHẬN CỦA CƠ QUAN CƠ QUAN",
+      "subtitle": "Gói Bằng chứng Quyết định · Tòa án có thể chấp nhận · Khung DCII",
+      "receiptId": "ID NHẬN:",
+      "decisionDate": "NGÀY QUYẾT ĐỊNH:",
+      "compliance": "SỰ TUÂN THỦ:",
+      "confidence": "SỰ TỰ TIN:",
+      "dissenting": "BẤT CỨ:",
+      "cryptoLabel": "Tính toàn vẹn của mật mã",
+      "hashLabel": "Băm quyết định (SHA-256):",
+      "sigLabel": "Chữ ký số:",
+      "sigValue": "[Đã xác minh] Ed25519 · datacendia-km"
     },
     "trustBar": {
-      "nvidia": "NVIDIA Inception Member",
-      "compliance": "EU AI Act Aligned · NIST AI RMF · ISO 42001 Aligned",
-      "ddgi": "Built on the DDGI Open Standard",
-      "openSource": "Apache 2.0 Open Source"
+      "nvidia": "Thành viên khởi đầu của NVIDIA",
+      "compliance": "Phù hợp với Đạo luật AI của EU · NIST AI RMF · Phù hợp với ISO 42001",
+      "ddgi": "Được xây dựng trên Tiêu chuẩn mở DDGI",
+      "openSource": "Mã nguồn mở Apache 2.0"
     },
     "killRoom": {
-      "label": "DECISION ARCHITECTURE",
-      "subtitle": "How every AI decision becomes court-admissible evidence",
-      "pipelineLabel": "DATACENDIA DECISION GOVERNANCE PIPELINE — PRODUCTION",
-      "pipelineFlow": "REQUEST → DELIBERATE → OVERRIDE → SEAL",
-      "pipelineAudit": "IMMUTABLE AUDIT TRAIL",
+      "label": "KIẾN TRÚC QUYẾT ĐỊNH",
+      "subtitle": "Làm thế nào mọi quyết định của AI đều trở thành bằng chứng được tòa án chấp nhận",
+      "pipelineLabel": "DATACENDIA QUYẾT ĐỊNH QUYẾT ĐỊNH QUẢN TRỊ — SẢN XUẤT",
+      "pipelineFlow": "YÊU CẦU → CỐ ĐỊNH → GHI ĐÈ → CON DẤU",
+      "pipelineAudit": "DÒNG KIỂM TOÁN BẤT NGỜ",
       "stage1": {
-        "label": "STAGE 01",
-        "title": "Human Request",
-        "desc": "Decision query enters the pipeline. Compliance profile auto-assigned. Audit trail begins.",
-        "meta": "INPUT: natural language query"
+        "label": "GIAI ĐOẠN 01",
+        "title": "Yêu cầu của con người",
+        "desc": "Truy vấn quyết định đi vào đường dẫn. Hồ sơ tuân thủ được tự động chỉ định. Đường mòn kiểm toán bắt đầu.",
+        "meta": "INPUT: truy vấn ngôn ngữ tự nhiên"
       },
       "stage2": {
-        "label": "STAGE 02",
-        "title": "Multi-Agent Deliberation",
-        "desc": "CFO, CISO, Legal, Ethics, Red Team agents argue adversarially. Dissent is a first-class artifact.",
-        "meta1": "AGENTS: 5-12 domain specialists",
-        "meta2": "DISSENT: recorded + preserved"
+        "label": "GIAI ĐOẠN 02",
+        "title": "Cân nhắc nhiều tác nhân",
+        "desc": "Các đại lý CFO, CISO, Legal, Ethics, Red Team tranh luận trái ngược nhau. Bất đồng chính kiến ​​là một tạo tác hạng nhất.",
+        "meta1": "ĐẠI LÝ: 5-12 chuyên viên miền",
+        "meta2": "BẤT CỨ: được ghi lại + bảo tồn"
       },
       "stage3": {
-        "label": "STAGE 03",
-        "title": "Human Override & Sign-Off",
-        "desc": "Human decision-maker reviews, overrides, or ratifies. EU AI Act Article 14 human oversight satisfied.",
-        "meta": "COMPLIANCE: Art. 14 / SR 11-7"
+        "label": "GIAI ĐOẠN 03",
+        "title": "Ghi đè và đăng xuất của con người",
+        "desc": "Người ra quyết định xem xét, ghi đè hoặc phê chuẩn. Đạo luật AI của EU Điều 14 hài lòng về sự giám sát của con người.",
+        "meta": "TUÂN THỦ: Nghệ thuật. 14/SR 11-7"
       },
       "stage4": {
-        "label": "STAGE 04",
-        "title": "Cryptographic Hash & Seal",
-        "desc": "Ed25519 signature. Merkle tree hash. RFC 3161 timestamp. Regulator's Receipt generated.",
-        "meta1": "OUTPUT: court-admissible bundle",
-        "meta2": "VERIFY: openssl + standard tools"
+        "label": "GIAI ĐOẠN 04",
+        "title": "Băm và đóng dấu mật mã",
+        "desc": "Chữ ký Ed25519. Băm cây Merkle. Dấu thời gian RFC 3161. Biên nhận của cơ quan quản lý được tạo.",
+        "meta1": "ĐẦU RA: gói được tòa án chấp nhận",
+        "meta2": "XÁC MINH: openssl + công cụ tiêu chuẩn"
       }
     },
     "pricing": {
-      "label": "LICENSING",
-      "subtitle": "Commercial Open-Source. No bait-and-switch.",
+      "label": "GIẤY PHÉP",
+      "subtitle": "Nguồn mở thương mại. Không có mồi và chuyển đổi.",
       "community": {
-        "title": "Community Edition",
-        "price": "Open Source",
-        "license": "APACHE 2.0 LICENSE",
-        "f1": "Full platform — frontend, backend, deliberation engine",
-        "f2": "Self-hosted, single node",
-        "f3": "Ed25519 cryptographic signing",
-        "f4": "All inference providers (Ollama, OpenAI, Together, Gemini, Claude)",
-        "f5": "Community support via GitHub",
-        "cta": "View on GitHub"
+        "title": "Phiên bản cộng đồng",
+        "price": "Nguồn mở",
+        "license": "GIẤY PHÉP APACHE 2.0",
+        "f1": "Nền tảng đầy đủ - frontend, backend, công cụ cân nhắc",
+        "f2": "Nút đơn, tự lưu trữ",
+        "f3": "Ký mật mã Ed25519",
+        "f4": "Tất cả các nhà cung cấp suy luận (Ollama, OpenAI, Together, Gemini, Claude)",
+        "f5": "Hỗ trợ cộng đồng thông qua GitHub",
+        "cta": "Xem trên GitHub"
       },
       "enterprise": {
-        "badge": "SOVEREIGN",
-        "title": "Enterprise Edition",
-        "price": "Custom",
-        "license": "ANNUAL LICENSE + SUPPORT",
-        "f1": "Everything in Community, plus:",
-        "f2": "Air-gapped / sovereign deployment",
-        "f3": "Post-quantum KMS integration",
-        "f4": "CendiaInsure liability coverage",
-        "f5": "Custom integrations + dedicated success team",
-        "f6": "SSO / SAML, RBAC, multi-tenant",
-        "cta": "Contact Sales"
+        "badge": "CHỦ QUYỀN",
+        "title": "Phiên bản doanh nghiệp",
+        "price": "Phong tục",
+        "license": "GIẤY PHÉP HÀNG NĂM + HỖ TRỢ",
+        "f1": "Mọi thứ trong Cộng đồng, cộng thêm:",
+        "f2": "Triển khai không giới hạn / có chủ quyền",
+        "f3": "Tích hợp KMS sau lượng tử",
+        "f4": "Bảo hiểm trách nhiệm của CendiaInsure",
+        "f5": "Tích hợp tùy chỉnh + nhóm thành công tận tâm",
+        "f6": "SSO / SAML, RBAC, nhiều người thuê",
+        "cta": "Liên hệ bán hàng"
       }
     },
     "bottomCta": {
-      "title": "Ready to make AI decisions defensible?",
-      "subtitle": "Talk to our team about your compliance requirements, or deploy the open-source edition today.",
-      "ctaPrimary": "Request Architecture Review",
-      "ctaSecondary": "Try Live Demo",
-      "submitting": "Entering..."
+      "title": "Sẵn sàng để đưa ra quyết định AI có thể bảo vệ được?",
+      "subtitle": "Hãy trao đổi với nhóm của chúng tôi về các yêu cầu tuân thủ của bạn hoặc triển khai phiên bản nguồn mở ngay hôm nay.",
+      "ctaPrimary": "Yêu cầu đánh giá kiến ​​trúc",
+      "ctaSecondary": "Dùng thử bản demo trực tiếp",
+      "submitting": "Đang vào..."
     },
     "problem": {
-      "label": "The Problem",
-      "text": "When a law firm uses AI to assess litigation risk, a bank uses it to approve credit, or a board uses it to evaluate an acquisition — that decision vanishes the moment the window closes. If it's challenged, there's nothing to show. No deliberation. No dissent. No proof of process.",
-      "fade": "Just a chat log that doesn't exist anymore."
+      "label": "vấn đề",
+      "text": "Khi một công ty luật sử dụng AI để đánh giá rủi ro kiện tụng, ngân hàng sử dụng nó để phê duyệt tín dụng hoặc hội đồng quản trị sử dụng nó để đánh giá một thương vụ mua lại – quyết định đó sẽ biến mất ngay khi cửa sổ đóng lại. Nếu nó bị thách thức, không có gì để thể hiện. Không có sự cân nhắc. Không có bất đồng chính kiến. Không có bằng chứng về quá trình.",
+      "fade": "Chỉ là nhật ký trò chuyện không còn tồn tại nữa."
     },
     "whatIs": {
-      "label": "What is Datacendia?",
+      "label": "Datacendia là gì?",
       "simple": {
-        "title": "In Plain Terms",
-        "description": "Datacendia is a decision intelligence platform. You ask it a question — about a hire, a deal, a policy change, a risk — and a panel of AI specialists debates it from every angle: financial, legal, operational, ethical. Every argument, every dissent, every vote is permanently recorded and cryptographically signed. When someone asks \"how did you reach that decision?\" — you hand them the receipt.",
-        "analogy": "Think of it as a boardroom that records everything, signs everything, and can prove everything happened exactly the way it did."
+        "title": "Trong điều khoản đơn giản",
+        "description": "Datacendia là một nền tảng thông tin quyết định. Bạn đặt câu hỏi cho nó - về việc tuyển dụng, một thỏa thuận, thay đổi chính sách, rủi ro - và một nhóm chuyên gia AI sẽ tranh luận về vấn đề đó từ mọi góc độ: tài chính, pháp lý, hoạt động, đạo đức. Mọi lập luận, mọi bất đồng chính kiến, mọi cuộc bỏ phiếu đều được ghi lại vĩnh viễn và được ký bằng mật mã. Khi ai đó hỏi \"làm thế nào bạn đạt được quyết định đó?\" - bạn đưa cho họ biên nhận.",
+        "analogy": "Hãy coi nó như một phòng họp ghi lại mọi thứ, ký tên mọi thứ và có thể chứng minh mọi thứ đã diễn ra đúng như cách nó đã xảy ra."
       },
       "technical": {
-        "title": "Under the Hood",
-        "description": "A multi-agent deliberation engine backed by cryptographic infrastructure. Domain-expert LLM agents (CFO, CISO, Legal, Ethics, Red Team) engage in structured argumentation over your query. Each response is hashed into a Merkle tree, Ed25519-signed, and RFC 3161-timestamped. Decision packets include full chain-of-custody, dissent records, and confidence scoring — exportable as court-admissible evidence bundles.",
-        "stack": "Cloud-hosted (Core) · Apache 2.0 · OpenAI / Groq / Together AI · On-prem Sovereign Edition also available"
+        "title": "dưới mui xe",
+        "description": "Một công cụ cân nhắc đa tác nhân được hỗ trợ bởi cơ sở hạ tầng mật mã. Các đại lý LLM chuyên gia về miền (CFO, CISO, Legal, Ethics, Red Team) tham gia vào cuộc tranh luận có cấu trúc về truy vấn của bạn. Mỗi phản hồi được băm vào cây Merkle, có chữ ký Ed25519 và được đánh dấu thời gian RFC 3161. Các gói quyết định bao gồm toàn bộ chuỗi hành trình, hồ sơ bất đồng quan điểm và chấm điểm độ tin cậy - có thể xuất dưới dạng gói bằng chứng được tòa án chấp nhận.",
+        "stack": "Được lưu trữ trên nền tảng đám mây (Lõi) · Apache 2.0 · OpenAI / Groq / Together AI · Phiên bản Sovereign tại chỗ cũng có sẵn"
       }
     },
     "workflow": {
-      "label": "How a Decision Flows",
-      "subtitle": "From question to court-admissible evidence in one session",
+      "label": "Một quyết định được đưa ra như thế nào",
+      "subtitle": "Từ câu hỏi đến bằng chứng được tòa án chấp nhận trong một phiên họp",
       "steps": {
         "ask": {
-          "title": "Ask",
-          "description": "Pose a question to the Council. \"Should we acquire Company X?\" \"Is this vendor contract compliant?\""
+          "title": "Hỏi",
+          "description": "Đặt câu hỏi cho Hội đồng. “Chúng ta có nên mua lại Công ty X không?” \"Hợp đồng nhà cung cấp này có tuân thủ không?\""
         },
         "deliberate": {
-          "title": "Deliberate",
-          "description": "Domain-expert AI agents debate from every angle. CFO analyses cost. CISO flags risk. Legal checks compliance. Red Team challenges assumptions."
+          "title": "cố ý",
+          "description": "Các chuyên gia AI về miền tranh luận từ mọi góc độ. CFO phân tích chi phí. Rủi ro cờ CISO. Kiểm tra việc tuân thủ pháp luật. Đội Đỏ thách thức các giả định."
         },
         "dissent": {
-          "title": "Record Dissent",
-          "description": "Disagreements aren't hidden — they're first-class artifacts. Every minority opinion is captured, timestamped, and preserved."
+          "title": "Ghi lại bất đồng chính kiến",
+          "description": "Những bất đồng không hề bị che giấu - chúng là những tạo tác hạng nhất. Mọi ý kiến ​​thiểu số đều được nắm bắt, đánh dấu thời gian và bảo tồn."
         },
         "sign": {
-          "title": "Sign & Seal",
-          "description": "Each response is hashed into a Merkle tree, Ed25519-signed, and RFC 3161-timestamped. The chain of custody is established during deliberation."
+          "title": "Ký & Đóng dấu",
+          "description": "Mỗi phản hồi được băm vào cây Merkle, có chữ ký Ed25519 và được đánh dấu thời gian RFC 3161. Chuỗi hành trình sản phẩm được thiết lập trong quá trình cân nhắc."
         },
         "store": {
-          "title": "Store in Vault",
-          "description": "The complete decision packet — arguments, votes, dissent, metadata — is sealed in CendiaVault with cryptographic integrity."
+          "title": "Lưu trữ trong Vault",
+          "description": "Gói quyết định hoàn chỉnh — tranh luận, phiếu bầu, bất đồng chính kiến, siêu dữ liệu — được niêm phong trong CendiaVault với tính toàn vẹn bằng mật mã."
         },
         "export": {
-          "title": "Export Receipt",
-          "description": "One click generates the Regulator's Receipt™ — a court-admissible evidence bundle. Verify with openssl. No vendor dependency."
+          "title": "Biên lai xuất khẩu",
+          "description": "Một cú nhấp chuột sẽ tạo ra Biên nhận của Cơ quan quản lý™ — một gói bằng chứng được tòa án chấp nhận. Xác minh bằng openssl. Không phụ thuộc vào nhà cung cấp."
         }
       }
     },
     "solution": {
-      "label": "The Solution",
-      "beat1Title": "The Council deliberates.",
-      "beat1Text": "Ask a question. Domain-expert AI agents — CFO, CISO, CTO, Legal Counsel, Red Team — argue your decision from every angle.",
-      "beat1Emphasis": "Dissent is recorded. Consensus is earned, not assumed.",
-      "beat2Title": "Every word is signed.",
-      "beat2Text": "Each response, vote, and objection is hashed into a Merkle tree. Ed25519 signed. RFC 3161 timestamped.",
-      "beat2Emphasis": "The chain of custody is established during deliberation — not reconstructed afterward.",
-      "beat3Title": "One click. Court-admissible proof.",
-      "beat3Text": "The Regulator's Receipt™ exports everything a compliance audit needs.",
-      "beat3Emphasis": "Verify it yourself with",
-      "beat3EmpSuffix": ". No vendor dependency. No trust required."
+      "label": "Giải pháp",
+      "beat1Title": "Hội đồng đang cân nhắc.",
+      "beat1Text": "Đặt một câu hỏi. Các chuyên gia AI về miền — CFO, CISO, CTO, Cố vấn pháp lý, Đội Đỏ — tranh luận về quyết định của bạn từ mọi góc độ.",
+      "beat1Emphasis": "Bất đồng quan điểm được ghi lại. Sự đồng thuận là đạt được chứ không phải giả định.",
+      "beat2Title": "Mỗi từ đều được ký tên.",
+      "beat2Text": "Mỗi phản hồi, phiếu bầu và phản đối đều được băm vào cây Merkle. Ed25519 đã ký. Dấu thời gian RFC 3161.",
+      "beat2Emphasis": "Chuỗi hành trình sản phẩm được thiết lập trong quá trình cân nhắc - không được xây dựng lại sau đó.",
+      "beat3Title": "Một cú nhấp chuột. Bằng chứng được tòa án chấp nhận.",
+      "beat3Text": "Biên nhận của Cơ quan quản lý™ xuất ra mọi thứ mà một cuộc kiểm tra tuân thủ cần.",
+      "beat3Emphasis": "Hãy tự xác minh nó với",
+      "beat3EmpSuffix": ". Không phụ thuộc vào nhà cung cấp. Không cần sự tin tưởng."
     },
     "audience": {
       "developers": {
-        "label": "For Developers",
-        "text": "Apache 2.0. TypeScript + React + Node.js. API-first architecture.",
-        "code": "docker compose up",
-        "suffix": "and the full stack is running locally."
+        "label": "Dành cho nhà phát triển",
+        "text": "Apache 2.0. TypeScript + Phản ứng + Node.js. Kiến trúc ưu tiên API.",
+        "code": "docker soạn thảo",
+        "suffix": "và toàn bộ ngăn xếp đang chạy cục bộ."
       },
       "compliance": {
-        "label": "For Compliance Teams",
-        "text": "EU AI Act Article 14. SR 11-7. ABA Opinion 512. HIPAA. The platform maps to the frameworks you're already accountable to."
+        "label": "Dành cho nhóm tuân thủ",
+        "text": "Đạo luật AI của EU Điều 14. SR 11-7. Ý kiến ​​của ABA 512. HIPAA. Nền tảng ánh xạ tới các khuôn khổ mà bạn đã chịu trách nhiệm."
       },
       "leadership": {
-        "label": "For Leadership",
-        "text": "The first AI governance platform that produces",
-        "emphasis": "evidence",
-        "suffix": ", not just reports. Built for the moment regulators start asking questions — before they do."
+        "label": "Dành cho lãnh đạo",
+        "text": "Nền tảng quản trị AI đầu tiên tạo ra",
+        "emphasis": "chứng cớ",
+        "suffix": ", không chỉ là báo cáo. Được thiết kế dành cho thời điểm các cơ quan quản lý bắt đầu đặt câu hỏi — trước khi họ đặt câu hỏi."
       }
     },
     "demo": {
-      "title": "Try the Demo",
-      "subtitle": "No login. No credit card. Click and you're inside.",
-      "enterButton": "Enter the Platform",
-      "submitting": "Entering platform...",
-      "connectionError": "Connection error. Please try again.",
-      "genericError": "Something went wrong. Please try again."
+      "title": "Hãy thử bản demo",
+      "subtitle": "Không đăng nhập. Không có thẻ tín dụng. Nhấp vào và bạn đang ở bên trong.",
+      "enterButton": "Nhập nền tảng",
+      "submitting": "Đang bước vào nền tảng...",
+      "connectionError": "Lỗi kết nối. Vui lòng thử lại.",
+      "genericError": "Đã xảy ra lỗi. Vui lòng thử lại."
     },
     "socialProof": {
-      "label": "Trusted Infrastructure",
-      "nvidia": "NVIDIA Inception Program",
-      "openSource": "Apache 2.0 Open Source",
-      "sovereign": "Zero Trust Architecture",
-      "compliance": "EU AI Act · GDPR · HIPAA Mapped",
-      "crypto": "Ed25519 · Merkle Trees · RFC 3161",
-      "zeroTrust": "Sovereign Edition Available"
+      "label": "Cơ sở hạ tầng đáng tin cậy",
+      "nvidia": "Chương trình khởi động NVIDIA",
+      "openSource": "Mã nguồn mở Apache 2.0",
+      "sovereign": "Kiến trúc Zero Trust",
+      "compliance": "Đạo luật AI của EU · GDPR · Bản đồ HIPAA",
+      "crypto": "Ed25519 · Cây Merkle · RFC 3161",
+      "zeroTrust": "Phiên bản có chủ quyền có sẵn"
     },
     "preview": {
-      "label": "See It In Action",
-      "subtitle": "The Council deliberating a real decision — multiple AI specialists, structured argumentation, cryptographic proof.",
-      "caption": "The Council — AI agents deliberating from CFO, CISO, Legal, Ethics, and Red Team perspectives.",
-      "cta": "Try it yourself"
+      "label": "Xem nó trong hành động",
+      "subtitle": "Hội đồng đang cân nhắc một quyết định thực sự - nhiều chuyên gia AI, lập luận có cấu trúc, bằng chứng mật mã.",
+      "caption": "Hội đồng - Các đại lý AI đang cân nhắc từ các quan điểm của CFO, CISO, Pháp lý, Đạo đức và Đội Đỏ.",
+      "cta": "Hãy tự mình thử"
     },
     "differentiator": {
-      "label": "Why Not Just Use ChatGPT?",
-      "subtitle": "ChatGPT is a conversation. Datacendia is a governed decision.",
+      "label": "Tại sao không chỉ sử dụng ChatGPT?",
+      "subtitle": "ChatGPT là một cuộc trò chuyện. Datacendia là một quyết định được quản lý.",
       "items": {
         "memory": {
-          "chatgpt": "Conversations disappear when you close the tab",
-          "datacendia": "Every word is permanently recorded and cryptographically signed"
+          "chatgpt": "Cuộc trò chuyện biến mất khi bạn đóng tab",
+          "datacendia": "Mỗi từ được ghi lại vĩnh viễn và được ký bằng mật mã"
         },
         "dissent": {
-          "chatgpt": "One voice, one perspective, no pushback",
-          "datacendia": "Multiple domain experts argue, disagree, and record dissent"
+          "chatgpt": "Một tiếng nói, một quan điểm, không phản kháng",
+          "datacendia": "Nhiều chuyên gia tên miền tranh luận, không đồng ý và ghi lại bất đồng quan điểm"
         },
         "proof": {
-          "chatgpt": "No evidence trail — \"the AI said so\" isn't admissible",
-          "datacendia": "Court-admissible evidence bundles with Merkle proofs and timestamps"
+          "chatgpt": "Không có dấu vết bằng chứng - \"AI đã nói như vậy\" không được chấp nhận",
+          "datacendia": "Gói bằng chứng được tòa án chấp nhận với bằng chứng Merkle và dấu thời gian"
         },
         "accountability": {
-          "chatgpt": "No one signs, no one is accountable",
-          "datacendia": "Human responsibility layer — someone signs for every decision"
+          "chatgpt": "Không ai ký, không ai chịu trách nhiệm",
+          "datacendia": "Lớp trách nhiệm của con người - ai đó ký cho mọi quyết định"
         },
         "sovereignty": {
-          "chatgpt": "Your data goes to OpenAI's servers",
-          "datacendia": "Cloud-hosted with encryption — or upgrade to the Sovereign Edition for air-gapped, on-prem deployment"
+          "chatgpt": "Dữ liệu của bạn được chuyển đến máy chủ của OpenAI",
+          "datacendia": "Được lưu trữ trên nền tảng đám mây với mã hóa — hoặc nâng cấp lên Phiên bản có chủ quyền để triển khai tại chỗ, không bị chặn"
         }
       },
       "colHeaders": {
-        "dimension": "Dimension",
-        "chatgpt": "ChatGPT / Copilot",
+        "dimension": "Kích thước",
+        "chatgpt": "ChatGPT / Phi công phụ",
         "datacendia": "Datacendia"
       }
     },
     "faq": {
-      "label": "Frequently Asked Questions",
+      "label": "Câu hỏi thường gặp",
       "dataSafe": {
-        "q": "Is my data safe? Where does it go?",
-        "a": "Datacendia Core is a cloud-hosted platform. All data is encrypted at rest and in transit. For organisations requiring full data sovereignty, the Datacendia Sovereign Edition can be deployed on-premises or in air-gapped environments — your infrastructure, your keys, your control."
+        "q": "Dữ liệu của tôi có an toàn không? Nó đi đâu?",
+        "a": "Datacendia Core là một nền tảng được lưu trữ trên đám mây. Tất cả dữ liệu được mã hóa khi lưu trữ và truyền tải. Đối với các tổ chức yêu cầu chủ quyền dữ liệu đầy đủ, Phiên bản Datacendia Sovereign có thể được triển khai tại chỗ hoặc trong môi trường không có khoảng cách — cơ sở hạ tầng, khóa, quyền kiểm soát của bạn."
       },
       "internet": {
-        "q": "Does it require an internet connection?",
-        "a": "Datacendia Core requires an internet connection as it runs in the cloud. The Sovereign Edition can run entirely on-premises with local LLMs via Ollama or NVIDIA Triton — no external API calls required, suitable for air-gapped and classified environments."
+        "q": "Nó có yêu cầu kết nối internet không?",
+        "a": "Datacendia Core yêu cầu kết nối internet khi nó chạy trên đám mây. Phiên bản Sovereign có thể chạy hoàn toàn tại chỗ với LLM cục bộ thông qua Ollama hoặc NVIDIA Triton — không yêu cầu lệnh gọi API bên ngoài, phù hợp với môi trường được phân loại và phân loại."
       },
       "llms": {
-        "q": "What LLMs does it support?",
-        "a": "Datacendia Core uses cloud LLMs via OpenAI-compatible APIs (GPT-4o, Groq, Together AI). The Sovereign Edition additionally supports local models via Ollama (Llama 3, Mistral, Phi-3, Gemma) and NVIDIA Triton/NIM for enterprise GPU inference. You can mix and match models per agent."
+        "q": "Nó hỗ trợ LLM gì?",
+        "a": "Datacendia Core sử dụng LLM đám mây thông qua các API tương thích với OpenAI (GPT-4o, Groq, Together AI). Phiên bản Sovereign còn hỗ trợ thêm các mô hình địa phương thông qua Ollama (Llama 3, Mistral, Phi-3, Gemma) và NVIDIA Triton/NIM để suy luận GPU doanh nghiệp. Bạn có thể trộn và kết hợp các mô hình cho mỗi đại lý."
       },
       "openSource": {
-        "q": "Is it really open source?",
-        "a": "Yes. Apache 2.0 licensed. The full platform — frontend, backend, deliberation engine, cryptographic infrastructure — is open source. No open-core bait-and-switch. Enterprise features are about support and SLAs, not locked functionality."
+        "q": "Nó có thực sự là nguồn mở không?",
+        "a": "Đúng. Apache 2.0 được cấp phép. Nền tảng đầy đủ — giao diện người dùng, phụ trợ, công cụ cân nhắc, cơ sở hạ tầng mật mã — là nguồn mở. Không có mồi và chuyển đổi lõi mở. Các tính năng dành cho doanh nghiệp là về hỗ trợ và SLA chứ không phải về chức năng bị khóa."
       },
       "different": {
-        "q": "How is this different from a chatbot or copilot?",
-        "a": "Chatbots give you one answer from one model. Datacendia convenes a panel of domain-expert AI agents who argue from different perspectives — CFO, CISO, Legal, Ethics, Red Team. Disagreements are recorded. Every response is cryptographically signed. The output isn't a chat log — it's a court-admissible decision record."
+        "q": "Điều này khác với chatbot hoặc phi công phụ như thế nào?",
+        "a": "Chatbots cung cấp cho bạn một câu trả lời từ một mô hình. Datacendia triệu tập một hội đồng gồm các chuyên gia AI về lĩnh vực tranh luận từ các quan điểm khác nhau - CFO, CISO, Legal, Ethics, Red Team. Những bất đồng được ghi lại. Mọi phản hồi đều được ký bằng mật mã. Đầu ra không phải là nhật ký trò chuyện - đó là bản ghi quyết định được tòa án chấp nhận."
       },
       "compliance": {
-        "q": "What compliance frameworks does it map to?",
-        "a": "EU AI Act (Article 14 human oversight, aligned), NIST AI RMF (aligned), ISO 42001 (aligned, awaiting certification), SOC 2 Type II (aligned, awaiting certification), ISO 27001 (aligned, awaiting certification), GDPR Article 22 (automated decision-making), HIPAA, SR 11-7 (model risk management), and ABA Formal Opinion 512 (lawyers using AI)."
+        "q": "Nó ánh xạ tới những khuôn khổ tuân thủ nào?",
+        "a": "Đạo luật AI của EU (Điều 14 giám sát con người, liên kết), NIST AI RMF (điều chỉnh), ISO 42001 (điều chỉnh, chờ chứng nhận), SOC 2 Loại II (điều chỉnh, chờ chứng nhận), ISO 27001 (điều chỉnh, chờ chứng nhận), Điều khoản GDPR 22 (ra quyết định tự động), HIPAA, SR 11-7 (quản lý rủi ro mô hình) và Ý kiến ​​chính thức ABA 512 (luật sư sử dụng AI)."
       },
       "setup": {
-        "q": "How long does setup take?",
-        "a": "Datacendia Core is cloud-hosted — sign up and you're running in seconds. No installation required. For the Sovereign Edition, setup takes five minutes with Docker, or 1-2 days for enterprise deployments with custom SSO, air-gap configuration, and NVIDIA Triton integration."
+        "q": "Quá trình thiết lập mất bao lâu?",
+        "a": "Datacendia Core được lưu trữ trên đám mây — hãy đăng ký và bạn sẽ chạy sau vài giây. Không cần cài đặt. Đối với Phiên bản Sovereign, quá trình thiết lập mất 5 phút với Docker hoặc 1-2 ngày đối với việc triển khai dành cho doanh nghiệp với SSO tùy chỉnh, cấu hình air-gap và tích hợp NVIDIA Triton."
       },
       "verify": {
-        "q": "Can I verify the cryptographic signatures myself?",
-        "a": "Yes. Every decision packet includes Ed25519 signatures and RFC 3161 timestamps that you can verify with standard openssl commands. No proprietary tools needed. No vendor dependency. The Regulator's Receipt includes verification instructions."
+        "q": "Tôi có thể tự mình xác minh chữ ký mật mã không?",
+        "a": "Đúng. Mọi gói quyết định đều bao gồm chữ ký Ed25519 và dấu thời gian RFC 3161 mà bạn có thể xác minh bằng các lệnh openssl tiêu chuẩn. Không cần công cụ độc quyền. Không phụ thuộc vào nhà cung cấp. Biên nhận của cơ quan quản lý bao gồm các hướng dẫn xác minh."
       }
     },
     "footer": {
-      "tagline": "NVIDIA Inception Program Member · Apache 2.0 · Sovereign-first · datacendia.com"
+      "tagline": "Thành viên Chương trình Khởi động NVIDIA · Apache 2.0 · Ưu tiên có chủ quyền · datacendia.com"
     }
   }
 }

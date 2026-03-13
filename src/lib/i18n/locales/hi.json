@@ -2266,274 +2266,274 @@
   "landing": {
     "nav": {
       "github": "GitHub",
-      "contactSales": "CONTACT SALES"
+      "contactSales": "बिक्री से संपर्क करें"
     },
     "hero": {
-      "label": "DECISION GOVERNANCE INFRASTRUCTURE",
-      "headline": "Cryptographic Proof for Every AI Decision Your Enterprise Makes.",
-      "subheadline": "Open-source infrastructure that forces multi-agent deliberation and seals every outcome into a court-admissible audit ledger. Ed25519-signed. Merkle-tree hashed. RFC 3161-timestamped.",
-      "ctaPrimary": "Request Architecture Review",
-      "ctaSecondary": "View GitHub Repo",
-      "finePrint": "Apache 2.0 · Self-host in 5 minutes · No vendor lock-in"
+      "label": "निर्णय शासन अवसंरचना",
+      "headline": "आपके उद्यम द्वारा लिए गए प्रत्येक एआई निर्णय के लिए क्रिप्टोग्राफ़िक प्रमाण।",
+      "subheadline": "ओपन-सोर्स इंफ्रास्ट्रक्चर जो मल्टी-एजेंट विचार-विमर्श को मजबूर करता है और प्रत्येक परिणाम को अदालत-स्वीकार्य ऑडिट लेजर में सील कर देता है। Ed25519-हस्ताक्षरित। मर्कल-ट्री हैशेड। आरएफसी 3161-टाइमस्टैम्प्ड।",
+      "ctaPrimary": "वास्तुकला समीक्षा का अनुरोध करें",
+      "ctaSecondary": "GitHub रेपो देखें",
+      "finePrint": "अपाचे 2.0 · 5 मिनट में सेल्फ-होस्ट · कोई वेंडर लॉक-इन नहीं"
     },
     "receipt": {
-      "header": "DATACENDIA REGULATOR'S RECEIPT — CONFIDENTIAL — COURT ADMISSIBLE",
-      "title": "REGULATOR'S RECEIPT",
-      "subtitle": "Decision Evidence Package · Court Admissible · DCII Framework",
-      "receiptId": "RECEIPT ID:",
-      "decisionDate": "DECISION DATE:",
-      "compliance": "COMPLIANCE:",
-      "confidence": "CONFIDENCE:",
-      "dissenting": "DISSENTING:",
-      "cryptoLabel": "CRYPTOGRAPHIC INTEGRITY",
-      "hashLabel": "Decision Hash (SHA-256):",
-      "sigLabel": "Digital Signature:",
-      "sigValue": "[Verified] Ed25519 · datacendia-kms"
+      "header": "डेटासेंडिया नियामक की रसीद - गोपनीय - न्यायालय स्वीकार्य",
+      "title": "नियामक की रसीद",
+      "subtitle": "निर्णय साक्ष्य पैकेज · न्यायालय स्वीकार्य · डीसीआईआई फ्रेमवर्क",
+      "receiptId": "रसीद आईडी:",
+      "decisionDate": "निर्णय तिथि:",
+      "compliance": "अनुपालन:",
+      "confidence": "आत्मविश्वास:",
+      "dissenting": "असहमति:",
+      "cryptoLabel": "क्रिप्टोग्राफ़िक अखंडता",
+      "hashLabel": "निर्णय हैश (SHA-256):",
+      "sigLabel": "अंगुली का हस्ताक्षर:",
+      "sigValue": "[सत्यापित] Ed25519 · डेटासेंडिया-किमी"
     },
     "trustBar": {
-      "nvidia": "NVIDIA Inception Member",
-      "compliance": "EU AI Act Aligned · NIST AI RMF · ISO 42001 Aligned",
-      "ddgi": "Built on the DDGI Open Standard",
-      "openSource": "Apache 2.0 Open Source"
+      "nvidia": "एनवीडिया इंसेप्शन सदस्य",
+      "compliance": "ईयू एआई अधिनियम संरेखित · एनआईएसटी एआई आरएमएफ · आईएसओ 42001 संरेखित",
+      "ddgi": "डीडीजीआई ओपन स्टैंडर्ड पर निर्मित",
+      "openSource": "अपाचे 2.0 ओपन सोर्स"
     },
     "killRoom": {
-      "label": "DECISION ARCHITECTURE",
-      "subtitle": "How every AI decision becomes court-admissible evidence",
-      "pipelineLabel": "DATACENDIA DECISION GOVERNANCE PIPELINE — PRODUCTION",
-      "pipelineFlow": "REQUEST → DELIBERATE → OVERRIDE → SEAL",
-      "pipelineAudit": "IMMUTABLE AUDIT TRAIL",
+      "label": "निर्णय वास्तुकला",
+      "subtitle": "कैसे प्रत्येक एआई निर्णय अदालत-स्वीकार्य साक्ष्य बन जाता है",
+      "pipelineLabel": "डाटासेंडिया डिसीजन गवर्नेंस पाइपलाइन - उत्पादन",
+      "pipelineFlow": "अनुरोध → विचार-विमर्श → ओवरराइड → सील",
+      "pipelineAudit": "अपरिवर्तनीय ऑडिट ट्रेल",
       "stage1": {
-        "label": "STAGE 01",
-        "title": "Human Request",
-        "desc": "Decision query enters the pipeline. Compliance profile auto-assigned. Audit trail begins.",
-        "meta": "INPUT: natural language query"
+        "label": "चरण 01",
+        "title": "मानव अनुरोध",
+        "desc": "निर्णय क्वेरी पाइपलाइन में प्रवेश करती है. अनुपालन प्रोफ़ाइल स्वतः-असाइन की गई। ऑडिट ट्रेल शुरू होता है.",
+        "meta": "इनपुट: प्राकृतिक भाषा क्वेरी"
       },
       "stage2": {
-        "label": "STAGE 02",
-        "title": "Multi-Agent Deliberation",
-        "desc": "CFO, CISO, Legal, Ethics, Red Team agents argue adversarially. Dissent is a first-class artifact.",
-        "meta1": "AGENTS: 5-12 domain specialists",
-        "meta2": "DISSENT: recorded + preserved"
+        "label": "स्टेज 02",
+        "title": "बहु-एजेंट विचार-विमर्श",
+        "desc": "सीएफओ, सीआईएसओ, कानूनी, नैतिकता, रेड टीम एजेंट प्रतिकूल तर्क देते हैं। असहमति एक प्रथम श्रेणी की कलाकृति है।",
+        "meta1": "एजेंट: 5-12 डोमेन विशेषज्ञ",
+        "meta2": "असहमति: रिकार्ड किया गया + संरक्षित किया गया"
       },
       "stage3": {
-        "label": "STAGE 03",
-        "title": "Human Override & Sign-Off",
-        "desc": "Human decision-maker reviews, overrides, or ratifies. EU AI Act Article 14 human oversight satisfied.",
-        "meta": "COMPLIANCE: Art. 14 / SR 11-7"
+        "label": "स्टेज 03",
+        "title": "मानव ओवरराइड और साइन-ऑफ़",
+        "desc": "मानव निर्णय-निर्माता समीक्षा करता है, ओवरराइड करता है, या पुष्टि करता है। ईयू एआई अधिनियम अनुच्छेद 14 मानव निरीक्षण संतुष्ट।",
+        "meta": "अनुपालन: कला. 14 / एसआर 11-7"
       },
       "stage4": {
-        "label": "STAGE 04",
-        "title": "Cryptographic Hash & Seal",
-        "desc": "Ed25519 signature. Merkle tree hash. RFC 3161 timestamp. Regulator's Receipt generated.",
-        "meta1": "OUTPUT: court-admissible bundle",
-        "meta2": "VERIFY: openssl + standard tools"
+        "label": "स्टेज 04",
+        "title": "क्रिप्टोग्राफ़िक हैश और सील",
+        "desc": "Ed25519 हस्ताक्षर. मर्कल ट्री हैश. आरएफसी 3161 टाइमस्टैम्प। नियामक की रसीद तैयार की गई।",
+        "meta1": "आउटपुट: न्यायालय-स्वीकार्य बंडल",
+        "meta2": "सत्यापित करें: ओपनएसएल + मानक उपकरण"
       }
     },
     "pricing": {
-      "label": "LICENSING",
-      "subtitle": "Commercial Open-Source. No bait-and-switch.",
+      "label": "लाइसेंस",
+      "subtitle": "वाणिज्यिक ओपन-सोर्स। कोई चारा-और-स्विच नहीं।",
       "community": {
-        "title": "Community Edition",
-        "price": "Open Source",
-        "license": "APACHE 2.0 LICENSE",
-        "f1": "Full platform — frontend, backend, deliberation engine",
-        "f2": "Self-hosted, single node",
-        "f3": "Ed25519 cryptographic signing",
-        "f4": "All inference providers (Ollama, OpenAI, Together, Gemini, Claude)",
-        "f5": "Community support via GitHub",
-        "cta": "View on GitHub"
+        "title": "सामुदायिक संस्करण",
+        "price": "खुला स्त्रोत",
+        "license": "अपाचे 2.0 लाइसेंस",
+        "f1": "पूर्ण मंच - फ्रंटएंड, बैकएंड, विचार-विमर्श इंजन",
+        "f2": "स्व-होस्टेड, एकल नोड",
+        "f3": "Ed25519 क्रिप्टोग्राफ़िक हस्ताक्षर",
+        "f4": "सभी अनुमान प्रदाता (ओलामा, ओपनएआई, टुगेदर, जेमिनी, क्लाउड)",
+        "f5": "GitHub के माध्यम से सामुदायिक सहायता",
+        "cta": "GitHub पर देखें"
       },
       "enterprise": {
-        "badge": "SOVEREIGN",
-        "title": "Enterprise Edition",
-        "price": "Custom",
-        "license": "ANNUAL LICENSE + SUPPORT",
-        "f1": "Everything in Community, plus:",
-        "f2": "Air-gapped / sovereign deployment",
-        "f3": "Post-quantum KMS integration",
-        "f4": "CendiaInsure liability coverage",
-        "f5": "Custom integrations + dedicated success team",
-        "f6": "SSO / SAML, RBAC, multi-tenant",
-        "cta": "Contact Sales"
+        "badge": "सार्वभौम",
+        "title": "एंटरप्राइज़ संस्करण",
+        "price": "रिवाज़",
+        "license": "वार्षिक लाइसेंस + समर्थन",
+        "f1": "समुदाय में सब कुछ, प्लस:",
+        "f2": "एयर-गैप्ड/संप्रभु तैनाती",
+        "f3": "पोस्ट-क्वांटम केएमएस एकीकरण",
+        "f4": "CendiaInsure देयता कवरेज",
+        "f5": "कस्टम एकीकरण + समर्पित सफलता टीम",
+        "f6": "एसएसओ/एसएएमएल, आरबीएसी, मल्टी-टेनेंट",
+        "cta": "बिक्री से संपर्क करें"
       }
     },
     "bottomCta": {
-      "title": "Ready to make AI decisions defensible?",
-      "subtitle": "Talk to our team about your compliance requirements, or deploy the open-source edition today.",
-      "ctaPrimary": "Request Architecture Review",
-      "ctaSecondary": "Try Live Demo",
-      "submitting": "Entering..."
+      "title": "क्या आप AI निर्णयों को रक्षात्मक बनाने के लिए तैयार हैं?",
+      "subtitle": "अपनी अनुपालन आवश्यकताओं के बारे में हमारी टीम से बात करें, या आज ही ओपन-सोर्स संस्करण तैनात करें।",
+      "ctaPrimary": "वास्तुकला समीक्षा का अनुरोध करें",
+      "ctaSecondary": "लाइव डेमो आज़माएं",
+      "submitting": "प्रवेश कर रहा हूँ..."
     },
     "problem": {
-      "label": "The Problem",
-      "text": "When a law firm uses AI to assess litigation risk, a bank uses it to approve credit, or a board uses it to evaluate an acquisition — that decision vanishes the moment the window closes. If it's challenged, there's nothing to show. No deliberation. No dissent. No proof of process.",
-      "fade": "Just a chat log that doesn't exist anymore."
+      "label": "समस्या",
+      "text": "जब एक कानूनी फर्म मुकदमेबाजी जोखिम का आकलन करने के लिए एआई का उपयोग करती है, तो एक बैंक इसका उपयोग क्रेडिट को मंजूरी देने के लिए करता है, या एक बोर्ड अधिग्रहण का मूल्यांकन करने के लिए इसका उपयोग करता है - वह निर्णय खिड़की बंद होते ही गायब हो जाता है। यदि इसे चुनौती दी जाती है, तो दिखाने के लिए कुछ भी नहीं है। कोई विचार-विमर्श नहीं. कोई असहमति नहीं. प्रक्रिया का कोई प्रमाण नहीं.",
+      "fade": "बस एक चैट लॉग जो अब मौजूद नहीं है।"
     },
     "whatIs": {
-      "label": "What is Datacendia?",
+      "label": "डेटासेंडिया क्या है?",
       "simple": {
-        "title": "In Plain Terms",
-        "description": "Datacendia is a decision intelligence platform. You ask it a question — about a hire, a deal, a policy change, a risk — and a panel of AI specialists debates it from every angle: financial, legal, operational, ethical. Every argument, every dissent, every vote is permanently recorded and cryptographically signed. When someone asks \"how did you reach that decision?\" — you hand them the receipt.",
-        "analogy": "Think of it as a boardroom that records everything, signs everything, and can prove everything happened exactly the way it did."
+        "title": "स्पष्ट शब्दों में",
+        "description": "डाटासेंडिया एक निर्णय खुफिया मंच है। आप इससे एक प्रश्न पूछते हैं - किराये, सौदे, नीति परिवर्तन, जोखिम के बारे में - और एआई विशेषज्ञों का एक पैनल हर कोण से इस पर बहस करता है: वित्तीय, कानूनी, परिचालन, नैतिक। प्रत्येक तर्क, प्रत्येक असहमति, प्रत्येक वोट को स्थायी रूप से रिकॉर्ड किया जाता है और क्रिप्टोग्राफ़िक रूप से हस्ताक्षरित किया जाता है। जब कोई पूछता है \"आप उस निर्णय तक कैसे पहुंचे?\" - आप उन्हें रसीद सौंप दें।",
+        "analogy": "इसे एक बोर्डरूम के रूप में सोचें जो हर चीज़ को रिकॉर्ड करता है, हर चीज़ पर हस्ताक्षर करता है, और यह साबित कर सकता है कि सब कुछ ठीक वैसे ही हुआ जैसे हुआ था।"
       },
       "technical": {
-        "title": "Under the Hood",
-        "description": "A multi-agent deliberation engine backed by cryptographic infrastructure. Domain-expert LLM agents (CFO, CISO, Legal, Ethics, Red Team) engage in structured argumentation over your query. Each response is hashed into a Merkle tree, Ed25519-signed, and RFC 3161-timestamped. Decision packets include full chain-of-custody, dissent records, and confidence scoring — exportable as court-admissible evidence bundles.",
-        "stack": "Cloud-hosted (Core) · Apache 2.0 · OpenAI / Groq / Together AI · On-prem Sovereign Edition also available"
+        "title": "हुड के नीचे",
+        "description": "क्रिप्टोग्राफ़िक बुनियादी ढांचे द्वारा समर्थित एक बहु-एजेंट विचार-विमर्श इंजन। डोमेन-विशेषज्ञ एलएलएम एजेंट (सीएफओ, सीआईएसओ, लीगल, एथिक्स, रेड टीम) आपकी क्वेरी पर संरचित तर्क-वितर्क में संलग्न होते हैं। प्रत्येक प्रतिक्रिया को मर्कल ट्री, Ed25519-हस्ताक्षरित और RFC 3161-टाइमस्टैम्प में हैश किया गया है। निर्णय पैकेट में हिरासत की पूरी श्रृंखला, असहमति रिकॉर्ड और आत्मविश्वास स्कोरिंग शामिल हैं - अदालत-स्वीकार्य साक्ष्य बंडलों के रूप में निर्यात योग्य।",
+        "stack": "क्लाउड-होस्टेड (कोर) · अपाचे 2.0 · ओपनएआई / ग्रोक / टुगेदर एआई · ऑन-प्रिमाइसेस सॉवरेन संस्करण भी उपलब्ध है"
       }
     },
     "workflow": {
-      "label": "How a Decision Flows",
-      "subtitle": "From question to court-admissible evidence in one session",
+      "label": "निर्णय कैसे प्रवाहित होता है",
+      "subtitle": "एक सत्र में प्रश्न से लेकर न्यायालय-स्वीकार्य साक्ष्य तक",
       "steps": {
         "ask": {
-          "title": "Ask",
-          "description": "Pose a question to the Council. \"Should we acquire Company X?\" \"Is this vendor contract compliant?\""
+          "title": "पूछना",
+          "description": "परिषद के समक्ष एक प्रश्न रखें. \"क्या हमें कंपनी एक्स का अधिग्रहण करना चाहिए?\" \"क्या यह विक्रेता अनुबंध अनुपालन करता है?\""
         },
         "deliberate": {
-          "title": "Deliberate",
-          "description": "Domain-expert AI agents debate from every angle. CFO analyses cost. CISO flags risk. Legal checks compliance. Red Team challenges assumptions."
+          "title": "जानबूझकर",
+          "description": "डोमेन-विशेषज्ञ एआई एजेंट हर कोण से बहस करते हैं। सीएफओ लागत का विश्लेषण करता है। सीआईएसओ ने जोखिम को चिह्नित किया। कानूनी अनुपालन की जाँच करता है। रेड टीम धारणाओं को चुनौती देती है।"
         },
         "dissent": {
-          "title": "Record Dissent",
-          "description": "Disagreements aren't hidden — they're first-class artifacts. Every minority opinion is captured, timestamped, and preserved."
+          "title": "असहमति रिकॉर्ड करें",
+          "description": "असहमतियाँ छिपी नहीं हैं - वे प्रथम श्रेणी की कलाकृतियाँ हैं। प्रत्येक अल्पसंख्यक की राय को कैप्चर किया जाता है, टाइमस्टैम्प किया जाता है और संरक्षित किया जाता है।"
         },
         "sign": {
-          "title": "Sign & Seal",
-          "description": "Each response is hashed into a Merkle tree, Ed25519-signed, and RFC 3161-timestamped. The chain of custody is established during deliberation."
+          "title": "हस्ताक्षर एवं सील",
+          "description": "प्रत्येक प्रतिक्रिया को मर्कल ट्री, Ed25519-हस्ताक्षरित और RFC 3161-टाइमस्टैम्प में हैश किया गया है। विवेचना के दौरान हिरासत की श्रृंखला स्थापित की जाती है।"
         },
         "store": {
-          "title": "Store in Vault",
-          "description": "The complete decision packet — arguments, votes, dissent, metadata — is sealed in CendiaVault with cryptographic integrity."
+          "title": "तिजोरी में रखें",
+          "description": "संपूर्ण निर्णय पैकेट - तर्क, वोट, असहमति, मेटाडेटा - को क्रिप्टोग्राफ़िक अखंडता के साथ सेंडियावॉल्ट में सील कर दिया गया है।"
         },
         "export": {
-          "title": "Export Receipt",
-          "description": "One click generates the Regulator's Receipt™ — a court-admissible evidence bundle. Verify with openssl. No vendor dependency."
+          "title": "निर्यात रसीद",
+          "description": "एक क्लिक से नियामक की रसीद™ उत्पन्न होती है - एक अदालत-स्वीकार्य साक्ष्य बंडल। Opensl से सत्यापित करें. कोई विक्रेता निर्भरता नहीं."
         }
       }
     },
     "solution": {
-      "label": "The Solution",
-      "beat1Title": "The Council deliberates.",
-      "beat1Text": "Ask a question. Domain-expert AI agents — CFO, CISO, CTO, Legal Counsel, Red Team — argue your decision from every angle.",
-      "beat1Emphasis": "Dissent is recorded. Consensus is earned, not assumed.",
-      "beat2Title": "Every word is signed.",
-      "beat2Text": "Each response, vote, and objection is hashed into a Merkle tree. Ed25519 signed. RFC 3161 timestamped.",
-      "beat2Emphasis": "The chain of custody is established during deliberation — not reconstructed afterward.",
-      "beat3Title": "One click. Court-admissible proof.",
-      "beat3Text": "The Regulator's Receipt™ exports everything a compliance audit needs.",
-      "beat3Emphasis": "Verify it yourself with",
-      "beat3EmpSuffix": ". No vendor dependency. No trust required."
+      "label": "समाधान",
+      "beat1Title": "परिषद विचार-विमर्श करती है।",
+      "beat1Text": "प्रश्न पूछें। डोमेन-विशेषज्ञ एआई एजेंट - सीएफओ, सीआईएसओ, सीटीओ, कानूनी परामर्शदाता, रेड टीम - हर कोण से आपके निर्णय पर बहस करते हैं।",
+      "beat1Emphasis": "असहमति दर्ज की गई है. सर्वसम्मति अर्जित की जाती है, मान ली नहीं जाती।",
+      "beat2Title": "हर शब्द पर हस्ताक्षर हैं.",
+      "beat2Text": "प्रत्येक प्रतिक्रिया, वोट और आपत्ति को एक मर्कल ट्री में मिलाया जाता है। Ed25519 पर हस्ताक्षर किये गये। आरएफसी 3161 टाइमस्टैम्प्ड।",
+      "beat2Emphasis": "हिरासत की श्रृंखला विचार-विमर्श के दौरान स्थापित की जाती है - बाद में इसका पुनर्निर्माण नहीं किया जाता है।",
+      "beat3Title": "एक क्लिक. न्यायालय-स्वीकार्य प्रमाण.",
+      "beat3Text": "रेगुलेटर की रसीद™ अनुपालन ऑडिट के लिए आवश्यक हर चीज का निर्यात करती है।",
+      "beat3Emphasis": "इसे स्वयं सत्यापित करें",
+      "beat3EmpSuffix": ". कोई विक्रेता निर्भरता नहीं. किसी भरोसे की आवश्यकता नहीं."
     },
     "audience": {
       "developers": {
-        "label": "For Developers",
-        "text": "Apache 2.0. TypeScript + React + Node.js. API-first architecture.",
-        "code": "docker compose up",
-        "suffix": "and the full stack is running locally."
+        "label": "डेवलपर्स के लिए",
+        "text": "अपाचे 2.0. टाइपस्क्रिप्ट + रिएक्ट + Node.js. एपीआई-प्रथम वास्तुकला।",
+        "code": "डोकर रचना",
+        "suffix": "और पूरा स्टैक स्थानीय स्तर पर चल रहा है।"
       },
       "compliance": {
-        "label": "For Compliance Teams",
-        "text": "EU AI Act Article 14. SR 11-7. ABA Opinion 512. HIPAA. The platform maps to the frameworks you're already accountable to."
+        "label": "अनुपालन टीमों के लिए",
+        "text": "ईयू एआई अधिनियम अनुच्छेद 14. एसआर 11-7। एबीए राय 512. हिपा। प्लेटफ़ॉर्म उन ढांचों को मैप करता है जिनके प्रति आप पहले से ही जवाबदेह हैं।"
       },
       "leadership": {
-        "label": "For Leadership",
-        "text": "The first AI governance platform that produces",
-        "emphasis": "evidence",
-        "suffix": ", not just reports. Built for the moment regulators start asking questions — before they do."
+        "label": "नेतृत्व के लिए",
+        "text": "पहला एआई गवर्नेंस प्लेटफ़ॉर्म जो उत्पादन करता है",
+        "emphasis": "प्रमाण",
+        "suffix": ", सिर्फ रिपोर्ट नहीं। यह उस क्षण के लिए बनाया गया है जब नियामक प्रश्न पूछना शुरू करते हैं - इससे पहले कि वे प्रश्न पूछें।"
       }
     },
     "demo": {
-      "title": "Try the Demo",
-      "subtitle": "No login. No credit card. Click and you're inside.",
-      "enterButton": "Enter the Platform",
-      "submitting": "Entering platform...",
-      "connectionError": "Connection error. Please try again.",
-      "genericError": "Something went wrong. Please try again."
+      "title": "डेमो आज़माएं",
+      "subtitle": "कोई लॉगिन नहीं. कोई क्रेडिट कार्ड नहीं. क्लिक करें और आप अंदर हैं।",
+      "enterButton": "प्लेटफ़ॉर्म दर्ज करें",
+      "submitting": "मंच में प्रवेश...",
+      "connectionError": "संपर्क त्रुटि। कृपया पुन: प्रयास करें।",
+      "genericError": "कुछ गलत हो गया। कृपया पुन: प्रयास करें।"
     },
     "socialProof": {
-      "label": "Trusted Infrastructure",
-      "nvidia": "NVIDIA Inception Program",
-      "openSource": "Apache 2.0 Open Source",
-      "sovereign": "Zero Trust Architecture",
-      "compliance": "EU AI Act · GDPR · HIPAA Mapped",
-      "crypto": "Ed25519 · Merkle Trees · RFC 3161",
-      "zeroTrust": "Sovereign Edition Available"
+      "label": "विश्वसनीय बुनियादी ढाँचा",
+      "nvidia": "एनवीडिया इंसेप्शन प्रोग्राम",
+      "openSource": "अपाचे 2.0 ओपन सोर्स",
+      "sovereign": "जीरो ट्रस्ट आर्किटेक्चर",
+      "compliance": "ईयू एआई अधिनियम · जीडीपीआर · हिपा मैप किया गया",
+      "crypto": "एड25519 · मर्कल ट्रीज़ · आरएफसी 3161",
+      "zeroTrust": "सॉवरेन संस्करण उपलब्ध है"
     },
     "preview": {
-      "label": "See It In Action",
-      "subtitle": "The Council deliberating a real decision — multiple AI specialists, structured argumentation, cryptographic proof.",
-      "caption": "The Council — AI agents deliberating from CFO, CISO, Legal, Ethics, and Red Team perspectives.",
-      "cta": "Try it yourself"
+      "label": "इसे क्रियान्वित रूप में देखें",
+      "subtitle": "परिषद एक वास्तविक निर्णय पर विचार-विमर्श कर रही है - कई एआई विशेषज्ञ, संरचित तर्क, क्रिप्टोग्राफ़िक प्रमाण।",
+      "caption": "परिषद - सीएफओ, सीआईएसओ, कानूनी, नैतिकता और रेड टीम के दृष्टिकोण से विचार-विमर्श करने वाले एआई एजेंट।",
+      "cta": "खुद कोशिश करना"
     },
     "differentiator": {
-      "label": "Why Not Just Use ChatGPT?",
-      "subtitle": "ChatGPT is a conversation. Datacendia is a governed decision.",
+      "label": "चैटजीपीटी का उपयोग क्यों न करें?",
+      "subtitle": "चैटजीपीटी एक वार्तालाप है। डाटासेंडिया एक शासित निर्णय है।",
       "items": {
         "memory": {
-          "chatgpt": "Conversations disappear when you close the tab",
-          "datacendia": "Every word is permanently recorded and cryptographically signed"
+          "chatgpt": "जब आप टैब बंद करते हैं तो बातचीत गायब हो जाती है",
+          "datacendia": "प्रत्येक शब्द स्थायी रूप से रिकॉर्ड किया गया है और क्रिप्टोग्राफ़िक रूप से हस्ताक्षरित है"
         },
         "dissent": {
-          "chatgpt": "One voice, one perspective, no pushback",
-          "datacendia": "Multiple domain experts argue, disagree, and record dissent"
+          "chatgpt": "एक आवाज, एक नजरिया, कोई धक्का-मुक्की नहीं",
+          "datacendia": "अनेक डोमेन विशेषज्ञ बहस करते हैं, असहमत होते हैं और असहमति दर्ज करते हैं"
         },
         "proof": {
-          "chatgpt": "No evidence trail — \"the AI said so\" isn't admissible",
-          "datacendia": "Court-admissible evidence bundles with Merkle proofs and timestamps"
+          "chatgpt": "कोई सबूत नहीं - \"एआई ने ऐसा कहा\" स्वीकार्य नहीं है",
+          "datacendia": "मर्कल सबूतों और टाइमस्टैम्प के साथ न्यायालय-स्वीकार्य साक्ष्य बंडल"
         },
         "accountability": {
-          "chatgpt": "No one signs, no one is accountable",
-          "datacendia": "Human responsibility layer — someone signs for every decision"
+          "chatgpt": "कोई हस्ताक्षर नहीं करता, कोई जवाबदेह नहीं है",
+          "datacendia": "मानवीय उत्तरदायित्व परत - प्रत्येक निर्णय के लिए कोई न कोई हस्ताक्षर करता है"
         },
         "sovereignty": {
-          "chatgpt": "Your data goes to OpenAI's servers",
-          "datacendia": "Cloud-hosted with encryption — or upgrade to the Sovereign Edition for air-gapped, on-prem deployment"
+          "chatgpt": "आपका डेटा OpenAI के सर्वर पर जाता है",
+          "datacendia": "एन्क्रिप्शन के साथ क्लाउड-होस्टेड - या एयर-गैप्ड, ऑन-प्रिमाइसेस तैनाती के लिए सॉवरेन संस्करण में अपग्रेड करें"
         }
       },
       "colHeaders": {
-        "dimension": "Dimension",
-        "chatgpt": "ChatGPT / Copilot",
+        "dimension": "आयाम",
+        "chatgpt": "चैटजीपीटी/कोपायलट",
         "datacendia": "Datacendia"
       }
     },
     "faq": {
-      "label": "Frequently Asked Questions",
+      "label": "अक्सर पूछे जाने वाले प्रश्नों",
       "dataSafe": {
-        "q": "Is my data safe? Where does it go?",
-        "a": "Datacendia Core is a cloud-hosted platform. All data is encrypted at rest and in transit. For organisations requiring full data sovereignty, the Datacendia Sovereign Edition can be deployed on-premises or in air-gapped environments — your infrastructure, your keys, your control."
+        "q": "क्या मेरा डेटा सुरक्षित है? वह कहाँ गया?",
+        "a": "डेटासेंडिया कोर एक क्लाउड-होस्टेड प्लेटफ़ॉर्म है। सारा डेटा आराम और ट्रांज़िट के दौरान एन्क्रिप्ट किया गया है। पूर्ण डेटा संप्रभुता की आवश्यकता वाले संगठनों के लिए, डेटासेंडिया सॉवरेन संस्करण को परिसर में या एयर-गैप्ड वातावरण में तैनात किया जा सकता है - आपका बुनियादी ढांचा, आपकी चाबियाँ, आपका नियंत्रण।"
       },
       "internet": {
-        "q": "Does it require an internet connection?",
-        "a": "Datacendia Core requires an internet connection as it runs in the cloud. The Sovereign Edition can run entirely on-premises with local LLMs via Ollama or NVIDIA Triton — no external API calls required, suitable for air-gapped and classified environments."
+        "q": "क्या इसके लिए इंटरनेट कनेक्शन की आवश्यकता है?",
+        "a": "डेटासेंडिया कोर को इंटरनेट कनेक्शन की आवश्यकता होती है क्योंकि यह क्लाउड में चलता है। सॉवरेन संस्करण ओलामा या एनवीआईडीआईए ट्राइटन के माध्यम से स्थानीय एलएलएम के साथ पूरी तरह से ऑन-प्रिमाइसेस पर चल सकता है - किसी बाहरी एपीआई कॉल की आवश्यकता नहीं है, जो एयर-गैप्ड और वर्गीकृत वातावरण के लिए उपयुक्त है।"
       },
       "llms": {
-        "q": "What LLMs does it support?",
-        "a": "Datacendia Core uses cloud LLMs via OpenAI-compatible APIs (GPT-4o, Groq, Together AI). The Sovereign Edition additionally supports local models via Ollama (Llama 3, Mistral, Phi-3, Gemma) and NVIDIA Triton/NIM for enterprise GPU inference. You can mix and match models per agent."
+        "q": "यह किन एलएलएम का समर्थन करता है?",
+        "a": "डाटासेंडिया कोर ओपनएआई-संगत एपीआई (जीपीटी-4ओ, ग्रोक, टुगेदर एआई) के माध्यम से क्लाउड एलएलएम का उपयोग करता है। सॉवरेन संस्करण एंटरप्राइज़ जीपीयू अनुमान के लिए ओलामा (लालामा 3, मिस्ट्रल, फी-3, जेम्मा) और एनवीआईडीआईए ट्राइटन/एनआईएम के माध्यम से स्थानीय मॉडल का अतिरिक्त समर्थन करता है। आप प्रति एजेंट मॉडलों का मिश्रण और मिलान कर सकते हैं।"
       },
       "openSource": {
-        "q": "Is it really open source?",
-        "a": "Yes. Apache 2.0 licensed. The full platform — frontend, backend, deliberation engine, cryptographic infrastructure — is open source. No open-core bait-and-switch. Enterprise features are about support and SLAs, not locked functionality."
+        "q": "क्या यह सचमुच खुला स्रोत है?",
+        "a": "हाँ। अपाचे 2.0 लाइसेंस प्राप्त। पूरा प्लेटफ़ॉर्म - फ्रंटएंड, बैकएंड, विचार-विमर्श इंजन, क्रिप्टोग्राफ़िक इंफ्रास्ट्रक्चर - खुला स्रोत है। कोई ओपन-कोर चारा-और-स्विच नहीं। एंटरप्राइज़ सुविधाएँ समर्थन और SLAs के बारे में हैं, लॉक की गई कार्यक्षमता के बारे में नहीं।"
       },
       "different": {
-        "q": "How is this different from a chatbot or copilot?",
-        "a": "Chatbots give you one answer from one model. Datacendia convenes a panel of domain-expert AI agents who argue from different perspectives — CFO, CISO, Legal, Ethics, Red Team. Disagreements are recorded. Every response is cryptographically signed. The output isn't a chat log — it's a court-admissible decision record."
+        "q": "यह चैटबॉट या सहपायलट से किस प्रकार भिन्न है?",
+        "a": "चैटबॉट आपको एक मॉडल से एक उत्तर देते हैं। डेटासेंडिया डोमेन-विशेषज्ञ एआई एजेंटों का एक पैनल बुलाता है जो विभिन्न दृष्टिकोणों से बहस करते हैं - सीएफओ, सीआईएसओ, कानूनी, नैतिकता, रेड टीम। असहमति दर्ज की जाती है. प्रत्येक प्रतिक्रिया क्रिप्टोग्राफ़िक रूप से हस्ताक्षरित है। आउटपुट चैट लॉग नहीं है - यह अदालत द्वारा स्वीकार्य निर्णय रिकॉर्ड है।"
       },
       "compliance": {
-        "q": "What compliance frameworks does it map to?",
-        "a": "EU AI Act (Article 14 human oversight, aligned), NIST AI RMF (aligned), ISO 42001 (aligned, awaiting certification), SOC 2 Type II (aligned, awaiting certification), ISO 27001 (aligned, awaiting certification), GDPR Article 22 (automated decision-making), HIPAA, SR 11-7 (model risk management), and ABA Formal Opinion 512 (lawyers using AI)."
+        "q": "यह किस अनुपालन ढाँचे का मानचित्रण करता है?",
+        "a": "ईयू एआई अधिनियम (अनुच्छेद 14 मानव निरीक्षण, संरेखित), एनआईएसटी एआई आरएमएफ (संरेखित), आईएसओ 42001 (संरेखित, प्रमाणन की प्रतीक्षा में), एसओसी 2 प्रकार II (संरेखित, प्रमाणन की प्रतीक्षा में), आईएसओ 27001 (संरेखित, प्रमाणन की प्रतीक्षा में), जीडीपीआर अनुच्छेद 22 (स्वचालित निर्णय लेना), एचआईपीएए, एसआर 11-7 (मॉडल जोखिम प्रबंधन), और एबीए औपचारिक राय 512 (वकील उपयोग कर रहे हैं) ऐ)."
       },
       "setup": {
-        "q": "How long does setup take?",
-        "a": "Datacendia Core is cloud-hosted — sign up and you're running in seconds. No installation required. For the Sovereign Edition, setup takes five minutes with Docker, or 1-2 days for enterprise deployments with custom SSO, air-gap configuration, and NVIDIA Triton integration."
+        "q": "सेटअप में कितना समय लगता है?",
+        "a": "डेटासेंडिया कोर क्लाउड-होस्टेड है - साइन अप करें और आप कुछ ही सेकंड में शुरू हो जाएंगे। किसी इंस्टालेशन की आवश्यकता नहीं. सॉवरेन संस्करण के लिए, डॉकर के साथ सेटअप में पांच मिनट लगते हैं, या कस्टम एसएसओ, एयर-गैप कॉन्फ़िगरेशन और एनवीआईडीआईए ट्राइटन एकीकरण के साथ एंटरप्राइज़ तैनाती के लिए 1-2 दिन लगते हैं।"
       },
       "verify": {
-        "q": "Can I verify the cryptographic signatures myself?",
-        "a": "Yes. Every decision packet includes Ed25519 signatures and RFC 3161 timestamps that you can verify with standard openssl commands. No proprietary tools needed. No vendor dependency. The Regulator's Receipt includes verification instructions."
+        "q": "क्या मैं क्रिप्टोग्राफ़िक हस्ताक्षरों को स्वयं सत्यापित कर सकता हूँ?",
+        "a": "हाँ। प्रत्येक निर्णय पैकेट में Ed25519 हस्ताक्षर और RFC 3161 टाइमस्टैम्प शामिल हैं जिन्हें आप मानक ओपनएसएल कमांड के साथ सत्यापित कर सकते हैं। किसी मालिकाना उपकरण की आवश्यकता नहीं है. कोई विक्रेता निर्भरता नहीं. नियामक की रसीद में सत्यापन निर्देश शामिल हैं।"
       }
     },
     "footer": {
-      "tagline": "NVIDIA Inception Program Member · Apache 2.0 · Sovereign-first · datacendia.com"
+      "tagline": "NVIDIA इंसेप्शन प्रोग्राम सदस्य · अपाचे 2.0 · सॉवरेन-फर्स्ट · datacendia.com"
     }
   }
 }

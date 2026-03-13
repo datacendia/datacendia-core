@@ -2147,274 +2147,274 @@
   "landing": {
     "nav": {
       "github": "GitHub",
-      "contactSales": "CONTACT SALES"
+      "contactSales": "HUBUNGI PENJUALAN"
     },
     "hero": {
-      "label": "DECISION GOVERNANCE INFRASTRUCTURE",
-      "headline": "Cryptographic Proof for Every AI Decision Your Enterprise Makes.",
-      "subheadline": "Open-source infrastructure that forces multi-agent deliberation and seals every outcome into a court-admissible audit ledger. Ed25519-signed. Merkle-tree hashed. RFC 3161-timestamped.",
-      "ctaPrimary": "Request Architecture Review",
-      "ctaSecondary": "View GitHub Repo",
-      "finePrint": "Apache 2.0 · Self-host in 5 minutes · No vendor lock-in"
+      "label": "KEPUTUSAN TATA KELOLA INFRASTRUKTUR",
+      "headline": "Bukti Kriptografis untuk Setiap Keputusan AI yang Dibuat Perusahaan Anda.",
+      "subheadline": "Infrastruktur sumber terbuka yang memaksa pertimbangan multi-agen dan memasukkan setiap hasil ke dalam buku besar audit yang dapat diterima pengadilan. Ed25519 ditandatangani. Pohon Merkle di-hash. RFC 3161-cap waktu.",
+      "ctaPrimary": "Minta Tinjauan Arsitektur",
+      "ctaSecondary": "Lihat Repo GitHub",
+      "finePrint": "Apache 2.0 · Self-host dalam 5 menit · Tidak ada vendor lock-in"
     },
     "receipt": {
-      "header": "DATACENDIA REGULATOR'S RECEIPT — CONFIDENTIAL — COURT ADMISSIBLE",
-      "title": "REGULATOR'S RECEIPT",
-      "subtitle": "Decision Evidence Package · Court Admissible · DCII Framework",
-      "receiptId": "RECEIPT ID:",
-      "decisionDate": "DECISION DATE:",
-      "compliance": "COMPLIANCE:",
-      "confidence": "CONFIDENCE:",
-      "dissenting": "DISSENTING:",
-      "cryptoLabel": "CRYPTOGRAPHIC INTEGRITY",
-      "hashLabel": "Decision Hash (SHA-256):",
-      "sigLabel": "Digital Signature:",
-      "sigValue": "[Verified] Ed25519 · datacendia-kms"
+      "header": "Kwitansi REGULATOR DATACENDIA — RAHASIA — DAPAT DITERIMA PENGADILAN",
+      "title": "TANDA REGULATOR",
+      "subtitle": "Paket Bukti Keputusan · Dapat Diizinkan Pengadilan · Kerangka DCII",
+      "receiptId": "ID PENERIMAAN:",
+      "decisionDate": "TANGGAL KEPUTUSAN:",
+      "compliance": "KEPATUHAN:",
+      "confidence": "KEPERCAYAAN DIRI:",
+      "dissenting": "perbedaan pendapat:",
+      "cryptoLabel": "INTEGRITAS KRIPTOGRAFI",
+      "hashLabel": "Hash Keputusan (SHA-256):",
+      "sigLabel": "Tanda Tangan Digital:",
+      "sigValue": "[Terverifikasi] Ed25519 · datacendia-kms"
     },
     "trustBar": {
-      "nvidia": "NVIDIA Inception Member",
-      "compliance": "EU AI Act Aligned · NIST AI RMF · ISO 42001 Aligned",
-      "ddgi": "Built on the DDGI Open Standard",
-      "openSource": "Apache 2.0 Open Source"
+      "nvidia": "Anggota Awal NVIDIA",
+      "compliance": "UU AI UE Selaras · NIST AI RMF · ISO 42001 Selaras",
+      "ddgi": "Dibangun pada Standar Terbuka DDGI",
+      "openSource": "Sumber Terbuka Apache 2.0"
     },
     "killRoom": {
-      "label": "DECISION ARCHITECTURE",
-      "subtitle": "How every AI decision becomes court-admissible evidence",
-      "pipelineLabel": "DATACENDIA DECISION GOVERNANCE PIPELINE — PRODUCTION",
-      "pipelineFlow": "REQUEST → DELIBERATE → OVERRIDE → SEAL",
-      "pipelineAudit": "IMMUTABLE AUDIT TRAIL",
+      "label": "ARSITEKTUR KEPUTUSAN",
+      "subtitle": "Bagaimana setiap keputusan AI menjadi bukti yang dapat diterima oleh pengadilan",
+      "pipelineLabel": "PIPA TATA KELOLA KEPUTUSAN DATACENDIA — PRODUKSI",
+      "pipelineFlow": "PERMINTAAN → SENGAJA → KECEPATAN → SEGEL",
+      "pipelineAudit": "JEJAK AUDIT YANG TIDAK DAPAT DIUBAH",
       "stage1": {
-        "label": "STAGE 01",
-        "title": "Human Request",
-        "desc": "Decision query enters the pipeline. Compliance profile auto-assigned. Audit trail begins.",
-        "meta": "INPUT: natural language query"
+        "label": "TAHAP 01",
+        "title": "Permintaan Manusia",
+        "desc": "Kueri keputusan memasuki alur. Profil kepatuhan ditetapkan secara otomatis. Jejak audit dimulai.",
+        "meta": "INPUT: kueri bahasa alami"
       },
       "stage2": {
-        "label": "STAGE 02",
-        "title": "Multi-Agent Deliberation",
-        "desc": "CFO, CISO, Legal, Ethics, Red Team agents argue adversarially. Dissent is a first-class artifact.",
-        "meta1": "AGENTS: 5-12 domain specialists",
-        "meta2": "DISSENT: recorded + preserved"
+        "label": "TAHAP 02",
+        "title": "Musyawarah Multi-Agen",
+        "desc": "CFO, CISO, Hukum, Etika, dan agen Tim Merah berdebat secara bermusuhan. Perbedaan pendapat adalah artefak kelas satu.",
+        "meta1": "AGEN: 5-12 spesialis domain",
+        "meta2": "DISSENT: direkam + dilestarikan"
       },
       "stage3": {
-        "label": "STAGE 03",
-        "title": "Human Override & Sign-Off",
-        "desc": "Human decision-maker reviews, overrides, or ratifies. EU AI Act Article 14 human oversight satisfied.",
-        "meta": "COMPLIANCE: Art. 14 / SR 11-7"
+        "label": "TAHAP 03",
+        "title": "Penggantian & Penandatanganan Manusia",
+        "desc": "Peninjauan, pengesampingan, atau ratifikasi oleh pengambil keputusan. UU AI UE Pasal 14 pengawasan manusia dipenuhi.",
+        "meta": "KEPATUHAN: Seni. 14 / SR 11-7"
       },
       "stage4": {
-        "label": "STAGE 04",
-        "title": "Cryptographic Hash & Seal",
-        "desc": "Ed25519 signature. Merkle tree hash. RFC 3161 timestamp. Regulator's Receipt generated.",
-        "meta1": "OUTPUT: court-admissible bundle",
-        "meta2": "VERIFY: openssl + standard tools"
+        "label": "TAHAP 04",
+        "title": "Hash & Segel Kriptografi",
+        "desc": "Tanda tangan Ed25519. Hash pohon Merkle. Stempel waktu RFC 3161. Tanda Terima Regulator dihasilkan.",
+        "meta1": "KELUARAN: bundel yang dapat diterima oleh pengadilan",
+        "meta2": "VERIFIKASI: openssl + alat standar"
       }
     },
     "pricing": {
-      "label": "LICENSING",
-      "subtitle": "Commercial Open-Source. No bait-and-switch.",
+      "label": "PERIZINAN",
+      "subtitle": "Sumber Terbuka Komersial. Tidak ada umpan-dan-peralihan.",
       "community": {
-        "title": "Community Edition",
-        "price": "Open Source",
-        "license": "APACHE 2.0 LICENSE",
-        "f1": "Full platform — frontend, backend, deliberation engine",
-        "f2": "Self-hosted, single node",
-        "f3": "Ed25519 cryptographic signing",
-        "f4": "All inference providers (Ollama, OpenAI, Together, Gemini, Claude)",
-        "f5": "Community support via GitHub",
-        "cta": "View on GitHub"
+        "title": "Edisi Komunitas",
+        "price": "Sumber Terbuka",
+        "license": "LISENSI APACHE 2.0",
+        "f1": "Platform lengkap — frontend, backend, mesin musyawarah",
+        "f2": "Dihosting sendiri, node tunggal",
+        "f3": "Penandatanganan kriptografi Ed25519",
+        "f4": "Semua penyedia inferensi (Ollama, OpenAI, Together, Gemini, Claude)",
+        "f5": "Dukungan komunitas melalui GitHub",
+        "cta": "Lihat di GitHub"
       },
       "enterprise": {
-        "badge": "SOVEREIGN",
-        "title": "Enterprise Edition",
-        "price": "Custom",
-        "license": "ANNUAL LICENSE + SUPPORT",
-        "f1": "Everything in Community, plus:",
-        "f2": "Air-gapped / sovereign deployment",
-        "f3": "Post-quantum KMS integration",
-        "f4": "CendiaInsure liability coverage",
-        "f5": "Custom integrations + dedicated success team",
-        "f6": "SSO / SAML, RBAC, multi-tenant",
-        "cta": "Contact Sales"
+        "badge": "BERDAULAT",
+        "title": "Edisi Perusahaan",
+        "price": "Kebiasaan",
+        "license": "LISENSI TAHUNAN + DUKUNGAN",
+        "f1": "Segala sesuatu di Komunitas, ditambah:",
+        "f2": "Penyebaran celah udara/kedaulatan",
+        "f3": "Integrasi KMS pasca-kuantum",
+        "f4": "Cakupan tanggung jawab CendiaInsur",
+        "f5": "Integrasi khusus + tim sukses yang berdedikasi",
+        "f6": "SSO / SAML, RBAC, multi-penyewa",
+        "cta": "Hubungi Penjualan"
       }
     },
     "bottomCta": {
-      "title": "Ready to make AI decisions defensible?",
-      "subtitle": "Talk to our team about your compliance requirements, or deploy the open-source edition today.",
-      "ctaPrimary": "Request Architecture Review",
-      "ctaSecondary": "Try Live Demo",
-      "submitting": "Entering..."
+      "title": "Siap membuat keputusan AI dapat dipertahankan?",
+      "subtitle": "Bicarakan dengan tim kami tentang persyaratan kepatuhan Anda, atau terapkan edisi sumber terbuka sekarang juga.",
+      "ctaPrimary": "Minta Tinjauan Arsitektur",
+      "ctaSecondary": "Coba Demo Langsung",
+      "submitting": "Memasuki..."
     },
     "problem": {
-      "label": "The Problem",
-      "text": "When a law firm uses AI to assess litigation risk, a bank uses it to approve credit, or a board uses it to evaluate an acquisition — that decision vanishes the moment the window closes. If it's challenged, there's nothing to show. No deliberation. No dissent. No proof of process.",
-      "fade": "Just a chat log that doesn't exist anymore."
+      "label": "Masalahnya",
+      "text": "Ketika sebuah firma hukum menggunakan AI untuk menilai risiko litigasi, bank menggunakannya untuk menyetujui kredit, atau dewan menggunakannya untuk mengevaluasi akuisisi – keputusan tersebut hilang begitu jendela ditutup. Jika ditantang, tidak ada yang bisa ditampilkan. Tidak ada pertimbangan. Tidak ada perbedaan pendapat. Tidak ada bukti proses.",
+      "fade": "Hanya log obrolan yang sudah tidak ada lagi."
     },
     "whatIs": {
-      "label": "What is Datacendia?",
+      "label": "Apa itu Datacendia?",
       "simple": {
-        "title": "In Plain Terms",
-        "description": "Datacendia is a decision intelligence platform. You ask it a question — about a hire, a deal, a policy change, a risk — and a panel of AI specialists debates it from every angle: financial, legal, operational, ethical. Every argument, every dissent, every vote is permanently recorded and cryptographically signed. When someone asks \"how did you reach that decision?\" — you hand them the receipt.",
-        "analogy": "Think of it as a boardroom that records everything, signs everything, and can prove everything happened exactly the way it did."
+        "title": "Secara Jelas",
+        "description": "Datacendia adalah platform intelijen keputusan. Anda mengajukan pertanyaan — tentang perekrutan, kesepakatan, perubahan kebijakan, risiko — dan panel spesialis AI memperdebatkannya dari berbagai sudut: keuangan, hukum, operasional, etika. Setiap argumen, setiap perbedaan pendapat, setiap suara dicatat secara permanen dan ditandatangani secara kriptografis. Ketika seseorang bertanya “bagaimana Anda mengambil keputusan itu?” — Anda menyerahkan tanda terimanya kepada mereka.",
+        "analogy": "Anggap saja sebagai ruang rapat yang mencatat segala sesuatu, menandatangani segala sesuatu, dan dapat membuktikan segala sesuatu terjadi persis seperti yang terjadi."
       },
       "technical": {
-        "title": "Under the Hood",
-        "description": "A multi-agent deliberation engine backed by cryptographic infrastructure. Domain-expert LLM agents (CFO, CISO, Legal, Ethics, Red Team) engage in structured argumentation over your query. Each response is hashed into a Merkle tree, Ed25519-signed, and RFC 3161-timestamped. Decision packets include full chain-of-custody, dissent records, and confidence scoring — exportable as court-admissible evidence bundles.",
-        "stack": "Cloud-hosted (Core) · Apache 2.0 · OpenAI / Groq / Together AI · On-prem Sovereign Edition also available"
+        "title": "Di Bawah Terpal",
+        "description": "Mesin musyawarah multi-agen yang didukung oleh infrastruktur kriptografi. Agen LLM ahli domain (CFO, CISO, Hukum, Etika, Tim Merah) terlibat dalam argumentasi terstruktur atas pertanyaan Anda. Setiap respons di-hash ke dalam pohon Merkle, ditandatangani Ed25519, dan diberi stempel waktu RFC 3161. Paket keputusan mencakup lacak balak, catatan perbedaan pendapat, dan penilaian kepercayaan – yang dapat diekspor sebagai kumpulan bukti yang dapat diterima oleh pengadilan.",
+        "stack": "Dihosting di Cloud (Inti) · Apache 2.0 · OpenAI / Groq / Together AI · Edisi Sovereign Lokal juga tersedia"
       }
     },
     "workflow": {
-      "label": "How a Decision Flows",
-      "subtitle": "From question to court-admissible evidence in one session",
+      "label": "Bagaimana Keputusan Mengalir",
+      "subtitle": "Dari pertanyaan hingga bukti yang dapat diterima pengadilan dalam satu sesi",
       "steps": {
         "ask": {
-          "title": "Ask",
-          "description": "Pose a question to the Council. \"Should we acquire Company X?\" \"Is this vendor contract compliant?\""
+          "title": "Bertanya",
+          "description": "Ajukan pertanyaan kepada Dewan. “Haruskah kita mengakuisisi Perusahaan X?” \"Apakah kontrak vendor ini sesuai?\""
         },
         "deliberate": {
-          "title": "Deliberate",
-          "description": "Domain-expert AI agents debate from every angle. CFO analyses cost. CISO flags risk. Legal checks compliance. Red Team challenges assumptions."
+          "title": "Disengaja",
+          "description": "Agen AI pakar domain berdebat dari berbagai sudut. CFO menganalisis biaya. CISO menandai risiko. Hukum memeriksa kepatuhan. Tim Merah menantang asumsi."
         },
         "dissent": {
-          "title": "Record Dissent",
-          "description": "Disagreements aren't hidden — they're first-class artifacts. Every minority opinion is captured, timestamped, and preserved."
+          "title": "Rekam Perbedaan Pendapat",
+          "description": "Perbedaan pendapat tidak disembunyikan – itu adalah artefak kelas satu. Setiap opini minoritas ditangkap, diberi stempel waktu, dan dilestarikan."
         },
         "sign": {
-          "title": "Sign & Seal",
-          "description": "Each response is hashed into a Merkle tree, Ed25519-signed, and RFC 3161-timestamped. The chain of custody is established during deliberation."
+          "title": "Tanda Tangan & Segel",
+          "description": "Setiap respons di-hash ke dalam pohon Merkle, ditandatangani Ed25519, dan diberi stempel waktu RFC 3161. Rantai pengawasan ditetapkan melalui musyawarah."
         },
         "store": {
-          "title": "Store in Vault",
-          "description": "The complete decision packet — arguments, votes, dissent, metadata — is sealed in CendiaVault with cryptographic integrity."
+          "title": "Simpan di Gudang",
+          "description": "Paket keputusan lengkap — argumen, suara, perbedaan pendapat, metadata — disegel di CendiaVault dengan integritas kriptografi."
         },
         "export": {
-          "title": "Export Receipt",
-          "description": "One click generates the Regulator's Receipt™ — a court-admissible evidence bundle. Verify with openssl. No vendor dependency."
+          "title": "Ekspor Tanda Terima",
+          "description": "Satu klik akan menghasilkan Regulator's Receipt™ — kumpulan bukti yang dapat diterima oleh pengadilan. Verifikasi dengan openssl. Tidak ada ketergantungan vendor."
         }
       }
     },
     "solution": {
-      "label": "The Solution",
-      "beat1Title": "The Council deliberates.",
-      "beat1Text": "Ask a question. Domain-expert AI agents — CFO, CISO, CTO, Legal Counsel, Red Team — argue your decision from every angle.",
-      "beat1Emphasis": "Dissent is recorded. Consensus is earned, not assumed.",
-      "beat2Title": "Every word is signed.",
-      "beat2Text": "Each response, vote, and objection is hashed into a Merkle tree. Ed25519 signed. RFC 3161 timestamped.",
-      "beat2Emphasis": "The chain of custody is established during deliberation — not reconstructed afterward.",
-      "beat3Title": "One click. Court-admissible proof.",
-      "beat3Text": "The Regulator's Receipt™ exports everything a compliance audit needs.",
-      "beat3Emphasis": "Verify it yourself with",
-      "beat3EmpSuffix": ". No vendor dependency. No trust required."
+      "label": "Solusinya",
+      "beat1Title": "Dewan mempertimbangkan.",
+      "beat1Text": "Ajukan pertanyaan. Agen AI ahli domain — CFO, CISO, CTO, Penasihat Hukum, Tim Merah — memperdebatkan keputusan Anda dari segala sudut.",
+      "beat1Emphasis": "Perbedaan pendapat dicatat. Konsensus diperoleh, bukan diasumsikan.",
+      "beat2Title": "Setiap kata ditandatangani.",
+      "beat2Text": "Setiap tanggapan, suara, dan keberatan dimasukkan ke dalam pohon Merkle. Ed25519 ditandatangani. Stempel waktu RFC 3161.",
+      "beat2Emphasis": "Rantai pengawasan ditetapkan melalui musyawarah, bukan direkonstruksi setelahnya.",
+      "beat3Title": "Satu klik. Bukti yang dapat diterima oleh pengadilan.",
+      "beat3Text": "Tanda Terima Regulator mengekspor semua yang diperlukan untuk audit kepatuhan.",
+      "beat3Emphasis": "Verifikasi sendiri dengan",
+      "beat3EmpSuffix": ". Tidak ada ketergantungan vendor. Tidak diperlukan kepercayaan."
     },
     "audience": {
       "developers": {
-        "label": "For Developers",
-        "text": "Apache 2.0. TypeScript + React + Node.js. API-first architecture.",
-        "code": "docker compose up",
-        "suffix": "and the full stack is running locally."
+        "label": "Untuk Pengembang",
+        "text": "Apache 2.0. TypeScript + Bereaksi + Node.js. Arsitektur yang mengutamakan API.",
+        "code": "buruh pelabuhan menulis",
+        "suffix": "dan tumpukan penuh berjalan secara lokal."
       },
       "compliance": {
-        "label": "For Compliance Teams",
-        "text": "EU AI Act Article 14. SR 11-7. ABA Opinion 512. HIPAA. The platform maps to the frameworks you're already accountable to."
+        "label": "Untuk Tim Kepatuhan",
+        "text": "UU AI UE Pasal 14. SR 11-7. Opini ABA 512. HIPAA. Platform ini memetakan kerangka kerja yang sudah menjadi tanggung jawab Anda."
       },
       "leadership": {
-        "label": "For Leadership",
-        "text": "The first AI governance platform that produces",
-        "emphasis": "evidence",
-        "suffix": ", not just reports. Built for the moment regulators start asking questions — before they do."
+        "label": "Untuk Kepemimpinan",
+        "text": "Platform tata kelola AI pertama yang menghasilkan",
+        "emphasis": "bukti",
+        "suffix": ", bukan hanya laporan. Dibangun pada saat regulator mulai mengajukan pertanyaan — sebelum mereka mengajukan pertanyaan."
       }
     },
     "demo": {
-      "title": "Try the Demo",
-      "subtitle": "No login. No credit card. Click and you're inside.",
-      "enterButton": "Enter the Platform",
-      "submitting": "Entering platform...",
-      "connectionError": "Connection error. Please try again.",
-      "genericError": "Something went wrong. Please try again."
+      "title": "Coba Demonya",
+      "subtitle": "Tidak ada login. Tidak ada kartu kredit. Klik dan Anda berada di dalam.",
+      "enterButton": "Masuk ke Platform",
+      "submitting": "Memasuki platform...",
+      "connectionError": "Kesalahan koneksi. Silakan coba lagi.",
+      "genericError": "Ada yang tidak beres. Silakan coba lagi."
     },
     "socialProof": {
-      "label": "Trusted Infrastructure",
-      "nvidia": "NVIDIA Inception Program",
-      "openSource": "Apache 2.0 Open Source",
-      "sovereign": "Zero Trust Architecture",
-      "compliance": "EU AI Act · GDPR · HIPAA Mapped",
-      "crypto": "Ed25519 · Merkle Trees · RFC 3161",
-      "zeroTrust": "Sovereign Edition Available"
+      "label": "Infrastruktur Terpercaya",
+      "nvidia": "Program Awal NVIDIA",
+      "openSource": "Sumber Terbuka Apache 2.0",
+      "sovereign": "Arsitektur Tanpa Kepercayaan",
+      "compliance": "UU AI UE · GDPR · HIPAA Dipetakan",
+      "crypto": "Ed25519 · Pohon Merkle · RFC 3161",
+      "zeroTrust": "Edisi Berdaulat Tersedia"
     },
     "preview": {
-      "label": "See It In Action",
-      "subtitle": "The Council deliberating a real decision — multiple AI specialists, structured argumentation, cryptographic proof.",
-      "caption": "The Council — AI agents deliberating from CFO, CISO, Legal, Ethics, and Red Team perspectives.",
-      "cta": "Try it yourself"
+      "label": "Lihat Aksinya",
+      "subtitle": "Dewan mempertimbangkan keputusan nyata — berbagai spesialis AI, argumentasi terstruktur, bukti kriptografi.",
+      "caption": "Dewan — Agen AI yang mempertimbangkan dari sudut pandang CFO, CISO, Hukum, Etika, dan Tim Merah.",
+      "cta": "Cobalah sendiri"
     },
     "differentiator": {
-      "label": "Why Not Just Use ChatGPT?",
-      "subtitle": "ChatGPT is a conversation. Datacendia is a governed decision.",
+      "label": "Mengapa Tidak Menggunakan ChatGPT Saja?",
+      "subtitle": "ChatGPT adalah percakapan. Datacendia adalah keputusan yang diatur.",
       "items": {
         "memory": {
-          "chatgpt": "Conversations disappear when you close the tab",
-          "datacendia": "Every word is permanently recorded and cryptographically signed"
+          "chatgpt": "Percakapan hilang saat Anda menutup tab",
+          "datacendia": "Setiap kata dicatat secara permanen dan ditandatangani secara kriptografis"
         },
         "dissent": {
-          "chatgpt": "One voice, one perspective, no pushback",
-          "datacendia": "Multiple domain experts argue, disagree, and record dissent"
+          "chatgpt": "Satu suara, satu perspektif, tidak ada penolakan",
+          "datacendia": "Berbagai pakar domain berdebat, tidak setuju, dan mencatat perbedaan pendapat"
         },
         "proof": {
-          "chatgpt": "No evidence trail — \"the AI said so\" isn't admissible",
-          "datacendia": "Court-admissible evidence bundles with Merkle proofs and timestamps"
+          "chatgpt": "Tidak ada jejak bukti — \"AI mengatakan demikian\" tidak dapat diterima",
+          "datacendia": "Bukti yang dapat diterima pengadilan digabungkan dengan bukti Merkle dan stempel waktu"
         },
         "accountability": {
-          "chatgpt": "No one signs, no one is accountable",
-          "datacendia": "Human responsibility layer — someone signs for every decision"
+          "chatgpt": "Tidak ada yang menandatangani, tidak ada yang bertanggung jawab",
+          "datacendia": "Lapisan tanggung jawab manusia — seseorang menandatangani setiap keputusan"
         },
         "sovereignty": {
-          "chatgpt": "Your data goes to OpenAI's servers",
-          "datacendia": "Cloud-hosted with encryption — or upgrade to the Sovereign Edition for air-gapped, on-prem deployment"
+          "chatgpt": "Data Anda masuk ke server OpenAI",
+          "datacendia": "Dihosting di cloud dengan enkripsi — atau tingkatkan ke Sovereign Edition untuk penerapan di lokasi dengan celah udara"
         }
       },
       "colHeaders": {
-        "dimension": "Dimension",
-        "chatgpt": "ChatGPT / Copilot",
+        "dimension": "Dimensi",
+        "chatgpt": "ObrolanGPT / Kopilot",
         "datacendia": "Datacendia"
       }
     },
     "faq": {
-      "label": "Frequently Asked Questions",
+      "label": "Pertanyaan yang Sering Diajukan",
       "dataSafe": {
-        "q": "Is my data safe? Where does it go?",
-        "a": "Datacendia Core is a cloud-hosted platform. All data is encrypted at rest and in transit. For organisations requiring full data sovereignty, the Datacendia Sovereign Edition can be deployed on-premises or in air-gapped environments — your infrastructure, your keys, your control."
+        "q": "Apakah data saya aman? Kemana perginya?",
+        "a": "Datacendia Core adalah platform yang dihosting di cloud. Semua data dienkripsi saat disimpan dan dalam perjalanan. Untuk organisasi yang membutuhkan kedaulatan data penuh, Datacendia Sovereign Edition dapat diterapkan di lingkungan lokal atau di lingkungan yang memiliki celah udara — infrastruktur Anda, kunci Anda, kendali Anda."
       },
       "internet": {
-        "q": "Does it require an internet connection?",
-        "a": "Datacendia Core requires an internet connection as it runs in the cloud. The Sovereign Edition can run entirely on-premises with local LLMs via Ollama or NVIDIA Triton — no external API calls required, suitable for air-gapped and classified environments."
+        "q": "Apakah itu memerlukan koneksi internet?",
+        "a": "Datacendia Core memerlukan koneksi internet karena berjalan di cloud. Sovereign Edition dapat berjalan sepenuhnya di lokasi dengan LLM lokal melalui Ollama atau NVIDIA Triton — tidak memerlukan panggilan API eksternal, cocok untuk lingkungan dengan celah udara dan rahasia."
       },
       "llms": {
-        "q": "What LLMs does it support?",
-        "a": "Datacendia Core uses cloud LLMs via OpenAI-compatible APIs (GPT-4o, Groq, Together AI). The Sovereign Edition additionally supports local models via Ollama (Llama 3, Mistral, Phi-3, Gemma) and NVIDIA Triton/NIM for enterprise GPU inference. You can mix and match models per agent."
+        "q": "LLM apa yang didukungnya?",
+        "a": "Datacendia Core menggunakan LLM cloud melalui API yang kompatibel dengan OpenAI (GPT-4o, Groq, Together AI). Sovereign Edition juga mendukung model lokal melalui Ollama (Llama 3, Mistral, Phi-3, Gemma) dan NVIDIA Triton/NIM untuk inferensi GPU perusahaan. Anda dapat memadupadankan model per agen."
       },
       "openSource": {
-        "q": "Is it really open source?",
-        "a": "Yes. Apache 2.0 licensed. The full platform — frontend, backend, deliberation engine, cryptographic infrastructure — is open source. No open-core bait-and-switch. Enterprise features are about support and SLAs, not locked functionality."
+        "q": "Apakah ini benar-benar sumber terbuka?",
+        "a": "Ya. Lisensi Apache 2.0. Platform lengkap — frontend, backend, mesin musyawarah, infrastruktur kriptografi — adalah open source. Tidak ada umpan-dan-peralihan inti terbuka. Fitur perusahaan adalah tentang dukungan dan SLA, bukan fungsionalitas yang dikunci."
       },
       "different": {
-        "q": "How is this different from a chatbot or copilot?",
-        "a": "Chatbots give you one answer from one model. Datacendia convenes a panel of domain-expert AI agents who argue from different perspectives — CFO, CISO, Legal, Ethics, Red Team. Disagreements are recorded. Every response is cryptographically signed. The output isn't a chat log — it's a court-admissible decision record."
+        "q": "Apa bedanya dengan chatbot atau kopilot?",
+        "a": "Chatbots memberi Anda satu jawaban dari satu model. Datacendia mengumpulkan panel agen AI ahli domain yang berdebat dari berbagai perspektif — CFO, CISO, Hukum, Etika, Tim Merah. Perbedaan pendapat dicatat. Setiap tanggapan ditandatangani secara kriptografis. Outputnya bukanlah log obrolan — melainkan catatan keputusan yang dapat diterima pengadilan."
       },
       "compliance": {
-        "q": "What compliance frameworks does it map to?",
-        "a": "EU AI Act (Article 14 human oversight, aligned), NIST AI RMF (aligned), ISO 42001 (aligned, awaiting certification), SOC 2 Type II (aligned, awaiting certification), ISO 27001 (aligned, awaiting certification), GDPR Article 22 (automated decision-making), HIPAA, SR 11-7 (model risk management), and ABA Formal Opinion 512 (lawyers using AI)."
+        "q": "Kerangka kepatuhan apa yang dipetakan?",
+        "a": "EU AI Act (Pasal 14 pengawasan manusia, selaras), NIST AI RMF (selaras), ISO 42001 (selaras, menunggu sertifikasi), SOC 2 Tipe II (selaras, menunggu sertifikasi), ISO 27001 (selaras, menunggu sertifikasi), GDPR Pasal 22 (pengambilan keputusan otomatis), HIPAA, SR 11-7 (model manajemen risiko), dan ABA Formal Opinion 512 (pengacara menggunakan AI)."
       },
       "setup": {
-        "q": "How long does setup take?",
-        "a": "Datacendia Core is cloud-hosted — sign up and you're running in seconds. No installation required. For the Sovereign Edition, setup takes five minutes with Docker, or 1-2 days for enterprise deployments with custom SSO, air-gap configuration, and NVIDIA Triton integration."
+        "q": "Berapa lama waktu yang dibutuhkan untuk pengaturan?",
+        "a": "Datacendia Core dihosting di cloud — daftar dan Anda dapat menjalankannya dalam hitungan detik. Tidak diperlukan instalasi. Untuk Edisi Sovereign, penyiapan memerlukan waktu lima menit dengan Docker, atau 1-2 hari untuk penerapan perusahaan dengan SSO khusus, konfigurasi celah udara, dan integrasi NVIDIA Triton."
       },
       "verify": {
-        "q": "Can I verify the cryptographic signatures myself?",
-        "a": "Yes. Every decision packet includes Ed25519 signatures and RFC 3161 timestamps that you can verify with standard openssl commands. No proprietary tools needed. No vendor dependency. The Regulator's Receipt includes verification instructions."
+        "q": "Bisakah saya memverifikasi sendiri tanda tangan kriptografinya?",
+        "a": "Ya. Setiap paket keputusan menyertakan tanda tangan Ed25519 dan stempel waktu RFC 3161 yang dapat Anda verifikasi dengan perintah openssl standar. Tidak diperlukan alat berpemilik. Tidak ada ketergantungan vendor. Tanda Terima Regulator memuat instruksi verifikasi."
       }
     },
     "footer": {
-      "tagline": "NVIDIA Inception Program Member · Apache 2.0 · Sovereign-first · datacendia.com"
+      "tagline": "Anggota Program Inception NVIDIA · Apache 2.0 · Sovereign-first · datacendia.com"
     }
   }
 }

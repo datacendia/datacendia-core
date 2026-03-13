@@ -2283,267 +2283,267 @@
       "contactSales": "CONTACT SALES"
     },
     "hero": {
-      "label": "DECISION GOVERNANCE INFRASTRUCTURE",
-      "headline": "Cryptographic Proof for Every AI Decision Your Enterprise Makes.",
-      "subheadline": "Open-source infrastructure that forces multi-agent deliberation and seals every outcome into a court-admissible audit ledger. Ed25519-signed. Merkle-tree hashed. RFC 3161-timestamped.",
-      "ctaPrimary": "Request Architecture Review",
-      "ctaSecondary": "View GitHub Repo",
-      "finePrint": "Apache 2.0 · Self-host in 5 minutes · No vendor lock-in"
+      "label": "IMPRASTRUKTURA NG PAMAHALAAN NG DESISYON",
+      "headline": "Cryptographic Proof para sa Bawat Desisyon ng AI na Ginagawa ng Iyong Enterprise.",
+      "subheadline": "Open-source na imprastraktura na pumipilit sa multi-agent na deliberasyon at tinatakan ang bawat resulta sa isang audit ledger na maaaring tanggapin ng hukuman. Ed25519-lagdaan. Merkle-tree hashed. RFC 3161-timestamped.",
+      "ctaPrimary": "Humiling ng Pagsusuri sa Arkitektura",
+      "ctaSecondary": "Tingnan ang GitHub Repo",
+      "finePrint": "Apache 2.0 · Self-host sa loob ng 5 minuto · Walang vendor lock-in"
     },
     "receipt": {
-      "header": "DATACENDIA REGULATOR'S RECEIPT — CONFIDENTIAL — COURT ADMISSIBLE",
-      "title": "REGULATOR'S RECEIPT",
-      "subtitle": "Decision Evidence Package · Court Admissible · DCII Framework",
+      "header": "RESIBO NG DATACENDIA REGULATOR — KUMPIDENSYAL — TANGGAPIN NG KORTE",
+      "title": "RESIBO NG REGULATOR",
+      "subtitle": "Pakete ng Katibayan ng Desisyon · Tinatanggap ng Hukuman · Balangkas ng DCII",
       "receiptId": "RECEIPT ID:",
-      "decisionDate": "DECISION DATE:",
-      "compliance": "COMPLIANCE:",
-      "confidence": "CONFIDENCE:",
+      "decisionDate": "PETSA NG DESISYON:",
+      "compliance": "PAGSUNOD:",
+      "confidence": "tiwala:",
       "dissenting": "DISSENTING:",
       "cryptoLabel": "CRYPTOGRAPHIC INTEGRITY",
-      "hashLabel": "Decision Hash (SHA-256):",
+      "hashLabel": "Hash ng Desisyon (SHA-256):",
       "sigLabel": "Digital Signature:",
-      "sigValue": "[Verified] Ed25519 · datacendia-kms"
+      "sigValue": "[Na-verify] Ed25519 · datacendia-kms"
     },
     "trustBar": {
-      "nvidia": "NVIDIA Inception Member",
+      "nvidia": "Miyembro ng Pagsisimula ng NVIDIA",
       "compliance": "EU AI Act Aligned · NIST AI RMF · ISO 42001 Aligned",
-      "ddgi": "Built on the DDGI Open Standard",
+      "ddgi": "Itinayo sa DDGI Open Standard",
       "openSource": "Apache 2.0 Open Source"
     },
     "killRoom": {
-      "label": "DECISION ARCHITECTURE",
-      "subtitle": "How every AI decision becomes court-admissible evidence",
-      "pipelineLabel": "DATACENDIA DECISION GOVERNANCE PIPELINE — PRODUCTION",
-      "pipelineFlow": "REQUEST → DELIBERATE → OVERRIDE → SEAL",
+      "label": "DESISYON ARKITEKTURA",
+      "subtitle": "Paano nagiging katibayan na tinatanggap ng hukuman ang bawat desisyon ng AI",
+      "pipelineLabel": "DATACENDIA DECISION GOVERNANCE PIPELINE — PRODUKSIYON",
+      "pipelineFlow": "HILING → DELIBERATE → OVERRIDE → SEAL",
       "pipelineAudit": "IMMUTABLE AUDIT TRAIL",
       "stage1": {
-        "label": "STAGE 01",
-        "title": "Human Request",
-        "desc": "Decision query enters the pipeline. Compliance profile auto-assigned. Audit trail begins.",
-        "meta": "INPUT: natural language query"
+        "label": "YUGTO 01",
+        "title": "Kahilingan ng Tao",
+        "desc": "Ang query ng desisyon ay pumapasok sa pipeline. Awtomatikong itinalaga ang profile ng pagsunod. Magsisimula na ang audit trail.",
+        "meta": "INPUT: natural na tanong sa wika"
       },
       "stage2": {
-        "label": "STAGE 02",
+        "label": "YUGTO 02",
         "title": "Multi-Agent Deliberation",
-        "desc": "CFO, CISO, Legal, Ethics, Red Team agents argue adversarially. Dissent is a first-class artifact.",
-        "meta1": "AGENTS: 5-12 domain specialists",
-        "meta2": "DISSENT: recorded + preserved"
+        "desc": "Ang mga ahente ng CFO, CISO, Legal, Etika, Red Team ay nakikipagtalo nang masama. Ang hindi pagsang-ayon ay isang first-class artifact.",
+        "meta1": "MGA AHENTE: 5-12 domain specialist",
+        "meta2": "DISSENT: naitala + napanatili"
       },
       "stage3": {
-        "label": "STAGE 03",
-        "title": "Human Override & Sign-Off",
-        "desc": "Human decision-maker reviews, overrides, or ratifies. EU AI Act Article 14 human oversight satisfied.",
-        "meta": "COMPLIANCE: Art. 14 / SR 11-7"
+        "label": "YUGTO 03",
+        "title": "Human Override at Sign-Off",
+        "desc": "Ang mga taong gumagawa ng desisyon ay nagsusuri, nag-override, o nagpapatibay. Ang EU AI Act Article 14 ay nasiyahan sa pangangasiwa ng tao.",
+        "meta": "PAGSUNOD: Art. 14 / SR 11-7"
       },
       "stage4": {
-        "label": "STAGE 04",
-        "title": "Cryptographic Hash & Seal",
-        "desc": "Ed25519 signature. Merkle tree hash. RFC 3161 timestamp. Regulator's Receipt generated.",
-        "meta1": "OUTPUT: court-admissible bundle",
-        "meta2": "VERIFY: openssl + standard tools"
+        "label": "YUGTO 04",
+        "title": "Cryptographic Hash at Seal",
+        "desc": "Ed25519 lagda. Merkle tree hash. RFC 3161 timestamp. Nabuo ang Resibo ng Regulator.",
+        "meta1": "OUTPUT: bundle na tinatanggap ng hukuman",
+        "meta2": "VERIFY: openssl + karaniwang mga tool"
       }
     },
     "pricing": {
-      "label": "LICENSING",
-      "subtitle": "Commercial Open-Source. No bait-and-switch.",
+      "label": "PAGLILISENSIYA",
+      "subtitle": "Komersyal na Open-Source. Walang pain-and-switch.",
       "community": {
-        "title": "Community Edition",
+        "title": "Edisyon ng Komunidad",
         "price": "Open Source",
         "license": "APACHE 2.0 LICENSE",
-        "f1": "Full platform — frontend, backend, deliberation engine",
-        "f2": "Self-hosted, single node",
+        "f1": "Buong platform — frontend, backend, deliberation engine",
+        "f2": "Self-host, solong node",
         "f3": "Ed25519 cryptographic signing",
-        "f4": "All inference providers (Ollama, OpenAI, Together, Gemini, Claude)",
-        "f5": "Community support via GitHub",
-        "cta": "View on GitHub"
+        "f4": "Lahat ng tagapagbigay ng inference (Ollama, OpenAI, Together, Gemini, Claude)",
+        "f5": "Suporta sa komunidad sa pamamagitan ng GitHub",
+        "cta": "Tingnan sa GitHub"
       },
       "enterprise": {
-        "badge": "SOVEREIGN",
+        "badge": "SOVEREGN",
         "title": "Enterprise Edition",
         "price": "Custom",
-        "license": "ANNUAL LICENSE + SUPPORT",
-        "f1": "Everything in Community, plus:",
+        "license": "TAUNANG LICENSE + SUPPORT",
+        "f1": "Lahat sa Komunidad, kasama ang:",
         "f2": "Air-gapped / sovereign deployment",
         "f3": "Post-quantum KMS integration",
-        "f4": "CendiaInsure liability coverage",
-        "f5": "Custom integrations + dedicated success team",
+        "f4": "Saklaw ng pananagutan ng CendiaInsure",
+        "f5": "Mga custom na pagsasama + nakatuong koponan ng tagumpay",
         "f6": "SSO / SAML, RBAC, multi-tenant",
-        "cta": "Contact Sales"
+        "cta": "Makipag-ugnayan sa Sales"
       }
     },
     "bottomCta": {
-      "title": "Ready to make AI decisions defensible?",
-      "subtitle": "Talk to our team about your compliance requirements, or deploy the open-source edition today.",
-      "ctaPrimary": "Request Architecture Review",
-      "ctaSecondary": "Try Live Demo",
-      "submitting": "Entering..."
+      "title": "Handa nang gawing mapagtatanggol ang mga desisyon ng AI?",
+      "subtitle": "Makipag-usap sa aming team tungkol sa iyong mga kinakailangan sa pagsunod, o i-deploy ang open-source na edisyon ngayon.",
+      "ctaPrimary": "Humiling ng Pagsusuri sa Arkitektura",
+      "ctaSecondary": "Subukan ang Live Demo",
+      "submitting": "Papasok..."
     },
     "problem": {
-      "label": "The Problem",
-      "text": "When a law firm uses AI to assess litigation risk, a bank uses it to approve credit, or a board uses it to evaluate an acquisition — that decision vanishes the moment the window closes. If it's challenged, there's nothing to show. No deliberation. No dissent. No proof of process.",
-      "fade": "Just a chat log that doesn't exist anymore."
+      "label": "Ang Problema",
+      "text": "Kapag ang isang law firm ay gumagamit ng AI upang masuri ang panganib sa paglilitis, ginagamit ito ng isang bangko upang aprubahan ang kredito, o ginagamit ito ng isang lupon upang suriin ang isang pagkuha — ang desisyong iyon ay maglalaho sa sandaling magsara ang window. Kung ito ay hinamon, walang maipakita. Walang deliberasyon. Walang hindi pagkakaunawaan. Walang patunay ng proseso.",
+      "fade": "Chat log lang na wala na."
     },
     "whatIs": {
-      "label": "What is Datacendia?",
+      "label": "Ano ang Datacendia?",
       "simple": {
-        "title": "In Plain Terms",
-        "description": "Datacendia is a decision intelligence platform. You ask it a question — about a hire, a deal, a policy change, a risk — and a panel of AI specialists debates it from every angle: financial, legal, operational, ethical. Every argument, every dissent, every vote is permanently recorded and cryptographically signed. When someone asks \"how did you reach that decision?\" — you hand them the receipt.",
-        "analogy": "Think of it as a boardroom that records everything, signs everything, and can prove everything happened exactly the way it did."
+        "title": "Sa Plain na Tuntunin",
+        "description": "Ang Datacendia ay isang decision intelligence platform. Itatanong mo ito — tungkol sa pag-hire, deal, pagbabago sa patakaran, panganib — at pinagdedebatehan ito ng isang panel ng mga espesyalista sa AI mula sa bawat anggulo: pinansyal, legal, pagpapatakbo, etikal. Ang bawat argumento, bawat hindi pagsang-ayon, bawat boto ay permanenteng naitala at pinirmahan ng cryptographic. Kapag may nagtanong \"paano mo naabot ang desisyong iyon?\" — ibigay mo sa kanila ang resibo.",
+        "analogy": "Isipin ito bilang isang boardroom na nagtatala ng lahat, pinipirmahan ang lahat, at maaaring patunayan ang lahat ng nangyari nang eksakto sa paraang nangyari."
       },
       "technical": {
-        "title": "Under the Hood",
-        "description": "A multi-agent deliberation engine backed by cryptographic infrastructure. Domain-expert LLM agents (CFO, CISO, Legal, Ethics, Red Team) engage in structured argumentation over your query. Each response is hashed into a Merkle tree, Ed25519-signed, and RFC 3161-timestamped. Decision packets include full chain-of-custody, dissent records, and confidence scoring — exportable as court-admissible evidence bundles.",
-        "stack": "Cloud-hosted (Core) · Apache 2.0 · OpenAI / Groq / Together AI · On-prem Sovereign Edition also available"
+        "title": "Sa ilalim ng Hood",
+        "description": "Isang multi-agent deliberation engine na sinusuportahan ng cryptographic na imprastraktura. Ang mga ahente ng domain-expert na LLM (CFO, CISO, Legal, Ethics, Red Team) ay nakikibahagi sa structured argumentation sa iyong query. Ang bawat tugon ay na-hash sa isang Merkle tree, Ed25519-signed, at RFC 3161-timestamped. Kasama sa mga packet ng desisyon ang buong chain-of-custody, mga rekord ng hindi pagsang-ayon, at pag-iskor ng kumpiyansa — na-export bilang mga bundle ng ebidensya na tinatanggap ng hukuman.",
+        "stack": "Cloud-host (Core) · Apache 2.0 · OpenAI / Groq / Together AI · Available din ang On-prem Sovereign Edition"
       }
     },
     "workflow": {
-      "label": "How a Decision Flows",
-      "subtitle": "From question to court-admissible evidence in one session",
+      "label": "Paano Daloy ang Isang Desisyon",
+      "subtitle": "Mula sa tanong hanggang sa katibayan na maaaring tanggapin ng korte sa isang sesyon",
       "steps": {
         "ask": {
-          "title": "Ask",
-          "description": "Pose a question to the Council. \"Should we acquire Company X?\" \"Is this vendor contract compliant?\""
+          "title": "Magtanong",
+          "description": "Magtanong sa Konseho. \"Dapat ba nating kunin ang Company X?\" \"Susunod ba ang kontrata ng vendor na ito?\""
         },
         "deliberate": {
-          "title": "Deliberate",
-          "description": "Domain-expert AI agents debate from every angle. CFO analyses cost. CISO flags risk. Legal checks compliance. Red Team challenges assumptions."
+          "title": "Sinadya",
+          "description": "Nagdedebate ang mga ahente ng AI sa domain-expert mula sa bawat anggulo. Sinusuri ng CFO ang gastos. Ibinabandera ng CISO ang panganib. Legal na sinusuri ang pagsunod. Hinahamon ng Red Team ang mga pagpapalagay."
         },
         "dissent": {
-          "title": "Record Dissent",
-          "description": "Disagreements aren't hidden — they're first-class artifacts. Every minority opinion is captured, timestamped, and preserved."
+          "title": "Magtala ng Hindi Pagsang-ayon",
+          "description": "Hindi nakatago ang mga hindi pagkakasundo — mga first-class artifact ang mga ito. Ang bawat opinyon ng minorya ay kinukunan, na-timestamp, at pinapanatili."
         },
         "sign": {
-          "title": "Sign & Seal",
-          "description": "Each response is hashed into a Merkle tree, Ed25519-signed, and RFC 3161-timestamped. The chain of custody is established during deliberation."
+          "title": "Lagda at Selyo",
+          "description": "Ang bawat tugon ay na-hash sa isang Merkle tree, Ed25519-signed, at RFC 3161-timestamped. Ang chain of custody ay itinatag sa panahon ng deliberasyon."
         },
         "store": {
-          "title": "Store in Vault",
-          "description": "The complete decision packet — arguments, votes, dissent, metadata — is sealed in CendiaVault with cryptographic integrity."
+          "title": "Store sa Vault",
+          "description": "Ang kumpletong packet ng desisyon — mga argumento, boto, hindi pagsang-ayon, metadata — ay selyado sa CendiaVault na may cryptographic na integridad."
         },
         "export": {
-          "title": "Export Receipt",
-          "description": "One click generates the Regulator's Receipt™ — a court-admissible evidence bundle. Verify with openssl. No vendor dependency."
+          "title": "I-export ang Resibo",
+          "description": "Ang isang pag-click ay bumubuo ng Regulator's Receipt™ — isang bundle ng ebidensya na tinatanggap ng hukuman. I-verify gamit ang openssl. Walang dependency sa vendor."
         }
       }
     },
     "solution": {
-      "label": "The Solution",
-      "beat1Title": "The Council deliberates.",
-      "beat1Text": "Ask a question. Domain-expert AI agents — CFO, CISO, CTO, Legal Counsel, Red Team — argue your decision from every angle.",
-      "beat1Emphasis": "Dissent is recorded. Consensus is earned, not assumed.",
-      "beat2Title": "Every word is signed.",
-      "beat2Text": "Each response, vote, and objection is hashed into a Merkle tree. Ed25519 signed. RFC 3161 timestamped.",
-      "beat2Emphasis": "The chain of custody is established during deliberation — not reconstructed afterward.",
-      "beat3Title": "One click. Court-admissible proof.",
-      "beat3Text": "The Regulator's Receipt™ exports everything a compliance audit needs.",
-      "beat3Emphasis": "Verify it yourself with",
-      "beat3EmpSuffix": ". No vendor dependency. No trust required."
+      "label": "Ang Solusyon",
+      "beat1Title": "Pinag-isipan ng Konseho.",
+      "beat1Text": "Magtanong. Ang mga ahente ng AI na dalubhasa sa domain — CFO, CISO, CTO, Legal Counsel, Red Team — ay pinagtatalunan ang iyong desisyon mula sa bawat anggulo.",
+      "beat1Emphasis": "Ang hindi pagsang-ayon ay naitala. Ang pinagkasunduan ay nakuha, hindi ipinapalagay.",
+      "beat2Title": "Ang bawat salita ay nilagdaan.",
+      "beat2Text": "Ang bawat tugon, boto, at pagtutol ay hina-hash sa isang Merkle tree. Pinirmahan ng Ed25519. RFC 3161 timestamped.",
+      "beat2Emphasis": "Ang chain of custody ay itinatag sa panahon ng deliberasyon - hindi muling itinayo pagkatapos.",
+      "beat3Title": "Isang click. Katibayan na maaaring tanggapin ng korte.",
+      "beat3Text": "Ini-export ng Regulator's Receipt™ ang lahat ng kailangan ng compliance audit.",
+      "beat3Emphasis": "I-verify ito sa iyong sarili",
+      "beat3EmpSuffix": ". Walang dependency sa vendor. Walang kinakailangang tiwala."
     },
     "audience": {
       "developers": {
-        "label": "For Developers",
-        "text": "Apache 2.0. TypeScript + React + Node.js. API-first architecture.",
-        "code": "docker compose up",
-        "suffix": "and the full stack is running locally."
+        "label": "Para sa mga Developer",
+        "text": "Apache 2.0. TypeScript + React + Node.js. Ang arkitektura na unang-una sa API.",
+        "code": "mag-compose ng docker",
+        "suffix": "at ang buong stack ay tumatakbo nang lokal."
       },
       "compliance": {
-        "label": "For Compliance Teams",
-        "text": "EU AI Act Article 14. SR 11-7. ABA Opinion 512. HIPAA. The platform maps to the frameworks you're already accountable to."
+        "label": "Para sa Mga Koponan ng Pagsunod",
+        "text": "EU AI Act Artikulo 14. SR 11-7. ABA Opinyon 512. HIPAA. Ang platform ay nagmamapa sa mga framework kung saan ka na nananagot."
       },
       "leadership": {
-        "label": "For Leadership",
-        "text": "The first AI governance platform that produces",
-        "emphasis": "evidence",
-        "suffix": ", not just reports. Built for the moment regulators start asking questions — before they do."
+        "label": "Para sa Pamumuno",
+        "text": "Ang unang AI governance platform na gumagawa",
+        "emphasis": "ebidensya",
+        "suffix": ", hindi lang mga ulat. Itinayo para sa sandaling ang mga regulator ay nagsimulang magtanong — bago sila magtanong."
       }
     },
     "demo": {
-      "title": "Try the Demo",
-      "subtitle": "No login. No credit card. Click and you're inside.",
-      "enterButton": "Enter the Platform",
-      "submitting": "Entering platform...",
-      "connectionError": "Connection error. Please try again.",
-      "genericError": "Something went wrong. Please try again."
+      "title": "Subukan ang Demo",
+      "subtitle": "Walang login. Walang credit card. Mag-click at ikaw ay nasa loob.",
+      "enterButton": "Ipasok ang Platform",
+      "submitting": "Papasok sa platform...",
+      "connectionError": "Error sa koneksyon. Pakisubukang muli.",
+      "genericError": "Nagkaproblema. Pakisubukang muli."
     },
     "socialProof": {
-      "label": "Trusted Infrastructure",
-      "nvidia": "NVIDIA Inception Program",
+      "label": "Pinagkakatiwalaang Imprastraktura",
+      "nvidia": "Programa ng Pagsisimula ng NVIDIA",
       "openSource": "Apache 2.0 Open Source",
       "sovereign": "Zero Trust Architecture",
       "compliance": "EU AI Act · GDPR · HIPAA Mapped",
       "crypto": "Ed25519 · Merkle Trees · RFC 3161",
-      "zeroTrust": "Sovereign Edition Available"
+      "zeroTrust": "Magagamit na Sovereign Edition"
     },
     "preview": {
-      "label": "See It In Action",
-      "subtitle": "The Council deliberating a real decision — multiple AI specialists, structured argumentation, cryptographic proof.",
-      "caption": "The Council — AI agents deliberating from CFO, CISO, Legal, Ethics, and Red Team perspectives.",
-      "cta": "Try it yourself"
+      "label": "Tingnan Ito Sa Aksyon",
+      "subtitle": "Ang Konseho ay nagsasaalang-alang ng isang tunay na desisyon — maraming mga espesyalista sa AI, nakaayos na argumentasyon, patunay ng cryptographic.",
+      "caption": "Ang Konseho — mga ahente ng AI na nagsasaalang-alang mula sa mga pananaw ng CFO, CISO, Legal, Etika, at Red Team.",
+      "cta": "Subukan ito sa iyong sarili"
     },
     "differentiator": {
-      "label": "Why Not Just Use ChatGPT?",
-      "subtitle": "ChatGPT is a conversation. Datacendia is a governed decision.",
+      "label": "Bakit Hindi Na Lang Gumamit ng ChatGPT?",
+      "subtitle": "Ang ChatGPT ay isang pag-uusap. Ang datacendia ay isang pinamamahalaang desisyon.",
       "items": {
         "memory": {
-          "chatgpt": "Conversations disappear when you close the tab",
-          "datacendia": "Every word is permanently recorded and cryptographically signed"
+          "chatgpt": "Nawawala ang mga pag-uusap kapag isinara mo ang tab",
+          "datacendia": "Ang bawat salita ay permanenteng naitala at cryptographically sign"
         },
         "dissent": {
-          "chatgpt": "One voice, one perspective, no pushback",
-          "datacendia": "Multiple domain experts argue, disagree, and record dissent"
+          "chatgpt": "Isang boses, isang pananaw, walang pushback",
+          "datacendia": "Maraming eksperto sa domain ang nagtatalo, hindi sumasang-ayon, at nagtatala ng hindi pagsang-ayon"
         },
         "proof": {
-          "chatgpt": "No evidence trail — \"the AI said so\" isn't admissible",
-          "datacendia": "Court-admissible evidence bundles with Merkle proofs and timestamps"
+          "chatgpt": "Walang ebidensyang trail — \"sabi ng AI\" ay hindi tinatanggap",
+          "datacendia": "Mga bundle ng ebidensyang tinatanggap ng korte na may mga patunay at timestamp ng Merkle"
         },
         "accountability": {
-          "chatgpt": "No one signs, no one is accountable",
-          "datacendia": "Human responsibility layer — someone signs for every decision"
+          "chatgpt": "Walang pumipirma, walang mananagot",
+          "datacendia": "Human responsibility layer — may pumipirma para sa bawat desisyon"
         },
         "sovereignty": {
-          "chatgpt": "Your data goes to OpenAI's servers",
-          "datacendia": "Cloud-hosted with encryption — or upgrade to the Sovereign Edition for air-gapped, on-prem deployment"
+          "chatgpt": "Napupunta ang iyong data sa mga server ng OpenAI",
+          "datacendia": "Cloud-host na may encryption — o mag-upgrade sa Sovereign Edition para sa air-gapped, on-prem deployment"
         }
       },
       "colHeaders": {
-        "dimension": "Dimension",
+        "dimension": "Dimensyon",
         "chatgpt": "ChatGPT / Copilot",
         "datacendia": "Datacendia"
       }
     },
     "faq": {
-      "label": "Frequently Asked Questions",
+      "label": "Mga Madalas Itanong",
       "dataSafe": {
-        "q": "Is my data safe? Where does it go?",
-        "a": "Datacendia Core is a cloud-hosted platform. All data is encrypted at rest and in transit. For organisations requiring full data sovereignty, the Datacendia Sovereign Edition can be deployed on-premises or in air-gapped environments — your infrastructure, your keys, your control."
+        "q": "Ligtas ba ang aking data? Saan ito pupunta?",
+        "a": "Ang Datacendia Core ay isang cloud-hosted platform. Ang lahat ng data ay naka-encrypt sa pahinga at sa transit. Para sa mga organisasyong nangangailangan ng buong soberanya ng data, ang Datacendia Sovereign Edition ay maaaring i-deploy on-premise o sa mga air-gapped na kapaligiran — ang iyong imprastraktura, ang iyong mga susi, ang iyong kontrol."
       },
       "internet": {
-        "q": "Does it require an internet connection?",
-        "a": "Datacendia Core requires an internet connection as it runs in the cloud. The Sovereign Edition can run entirely on-premises with local LLMs via Ollama or NVIDIA Triton — no external API calls required, suitable for air-gapped and classified environments."
+        "q": "Nangangailangan ba ito ng koneksyon sa internet?",
+        "a": "Ang Datacendia Core ay nangangailangan ng koneksyon sa internet habang tumatakbo ito sa cloud. Ang Sovereign Edition ay maaaring tumakbo nang buo sa mga nasasakupan kasama ang mga lokal na LLM sa pamamagitan ng Ollama o NVIDIA Triton — walang mga external na tawag sa API na kinakailangan, na angkop para sa air-gapped at classified na kapaligiran."
       },
       "llms": {
-        "q": "What LLMs does it support?",
-        "a": "Datacendia Core uses cloud LLMs via OpenAI-compatible APIs (GPT-4o, Groq, Together AI). The Sovereign Edition additionally supports local models via Ollama (Llama 3, Mistral, Phi-3, Gemma) and NVIDIA Triton/NIM for enterprise GPU inference. You can mix and match models per agent."
+        "q": "Anong mga LLM ang sinusuportahan nito?",
+        "a": "Gumagamit ang Datacendia Core ng mga cloud LLM sa pamamagitan ng mga OpenAI-compatible na API (GPT-4o, Groq, Together AI). Sinusuportahan din ng Sovereign Edition ang mga lokal na modelo sa pamamagitan ng Ollama (Llama 3, Mistral, Phi-3, Gemma) at NVIDIA Triton/NIM para sa enterprise GPU inference. Maaari mong ihalo at itugma ang mga modelo sa bawat ahente."
       },
       "openSource": {
-        "q": "Is it really open source?",
-        "a": "Yes. Apache 2.0 licensed. The full platform — frontend, backend, deliberation engine, cryptographic infrastructure — is open source. No open-core bait-and-switch. Enterprise features are about support and SLAs, not locked functionality."
+        "q": "Open source ba talaga ito?",
+        "a": "Oo. Lisensyado ng Apache 2.0. Ang buong platform — frontend, backend, deliberation engine, cryptographic infrastructure — ay open source. Walang open-core na pain-and-switch. Ang mga feature ng enterprise ay tungkol sa suporta at mga SLA, hindi naka-lock na functionality."
       },
       "different": {
-        "q": "How is this different from a chatbot or copilot?",
-        "a": "Chatbots give you one answer from one model. Datacendia convenes a panel of domain-expert AI agents who argue from different perspectives — CFO, CISO, Legal, Ethics, Red Team. Disagreements are recorded. Every response is cryptographically signed. The output isn't a chat log — it's a court-admissible decision record."
+        "q": "Paano ito naiiba sa isang chatbot o copilot?",
+        "a": "Binibigyan ka ng mga chatbot ng isang sagot mula sa isang modelo. Nagpupulong ang Datacendia ng panel ng mga ahente ng AI na dalubhasa sa domain na nagtatalo mula sa iba't ibang pananaw — CFO, CISO, Legal, Etika, Red Team. Ang mga hindi pagkakasundo ay naitala. Ang bawat tugon ay cryptographically signed. Ang output ay hindi isang chat log — ito ay isang rekord ng desisyon na tinatanggap ng hukuman."
       },
       "compliance": {
-        "q": "What compliance frameworks does it map to?",
-        "a": "EU AI Act (Article 14 human oversight, aligned), NIST AI RMF (aligned), ISO 42001 (aligned, awaiting certification), SOC 2 Type II (aligned, awaiting certification), ISO 27001 (aligned, awaiting certification), GDPR Article 22 (automated decision-making), HIPAA, SR 11-7 (model risk management), and ABA Formal Opinion 512 (lawyers using AI)."
+        "q": "Sa anong mga balangkas ng pagsunod ito imamapa?",
+        "a": "EU AI Act (Article 14 human oversight, aligned), NIST AI RMF (aligned), ISO 42001 (aligned, awaiting certification), SOC 2 Type II (aligned, awaiting certification), ISO 27001 (aligned, awaiting certification), GDPR Article 22 (automated decision-making, SR model), ABA1A Formal management Opinyon 512 (mga abogado na gumagamit ng AI)."
       },
       "setup": {
-        "q": "How long does setup take?",
-        "a": "Datacendia Core is cloud-hosted — sign up and you're running in seconds. No installation required. For the Sovereign Edition, setup takes five minutes with Docker, or 1-2 days for enterprise deployments with custom SSO, air-gap configuration, and NVIDIA Triton integration."
+        "q": "Gaano katagal ang setup?",
+        "a": "Ang Datacendia Core ay cloud-host — mag-sign up at tumatakbo ka na sa loob ng ilang segundo. Walang kinakailangang pag-install. Para sa Sovereign Edition, ang setup ay tumatagal ng limang minuto sa Docker, o 1-2 araw para sa mga deployment ng enterprise na may custom na SSO, air-gap configuration, at NVIDIA Triton integration."
       },
       "verify": {
-        "q": "Can I verify the cryptographic signatures myself?",
-        "a": "Yes. Every decision packet includes Ed25519 signatures and RFC 3161 timestamps that you can verify with standard openssl commands. No proprietary tools needed. No vendor dependency. The Regulator's Receipt includes verification instructions."
+        "q": "Maaari ko bang i-verify ang mga cryptographic signature sa aking sarili?",
+        "a": "Oo. Kasama sa bawat packet ng desisyon ang mga lagda ng Ed25519 at mga timestamp ng RFC 3161 na maaari mong i-verify gamit ang mga karaniwang openssl na command. Hindi kailangan ng pagmamay-ari na mga tool. Walang dependency sa vendor. Kasama sa Resibo ng Regulator ang mga tagubilin sa pag-verify."
       }
     },
     "footer": {
