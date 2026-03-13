@@ -19,9 +19,13 @@ import { tokenManager } from './client';
 // WebSocket needs full URL even in dev (no proxy for WS)
 const WS_URL =
   import.meta.env.VITE_WS_URL ||
-  (typeof window !== 'undefined'
-    ? `${window.location.protocol}//${window.location.hostname}:3001`
-    : 'http://localhost:3001');
+  (import.meta.env.DEV
+    ? (typeof window !== 'undefined'
+      ? `${window.location.protocol}//${window.location.hostname}:3001`
+      : 'http://localhost:3001')
+    : (typeof window !== 'undefined'
+      ? `${window.location.protocol}//${window.location.host}`
+      : ''));
 
 type MessageHandler = (data: unknown) => void;
 

@@ -19,7 +19,7 @@
 // In production, use the full URL from environment
 const API_BASE_URL =
   import.meta.env.VITE_API_URL ||
-  (import.meta.env.DEV ? '/api/v1' : 'http://localhost:3001/api/v1');
+  (import.meta.env.DEV ? '/api/v1' : '/api/v1');
 
 // Header used to propagate the currently selected data source
 const DATA_SOURCE_HEADER = 'X-Data-Source-Id';
