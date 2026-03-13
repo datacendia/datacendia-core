@@ -16,8 +16,7 @@
  * @exports decisionSimilarityService
  */
 
-import { sha256 } from '@noble/hashes/sha256';
-import { bytesToHex, utf8ToBytes } from '@noble/hashes/utils';
+import { sha256, bytesToHex, utf8ToBytes } from '../crypto/nativeCrypto.js';
 import { logger } from '../../utils/logger.js';
 import { prisma } from '../../config/database.js';
 
