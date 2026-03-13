@@ -8,7 +8,7 @@
 # =============================================================================
 
 # Cache-bust: bump this value to force Railway to rebuild all layers
-ARG CACHEBUST=3
+ARG CACHEBUST=4
 
 # ---------------------------------------------------------------------------
 # Stage 1: Build frontend (Vite)
