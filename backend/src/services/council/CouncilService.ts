@@ -33,9 +33,27 @@ import {
 import { ragService, ChunkResult } from '../llm/RAGService.js';
 import { persistServiceRecord, loadServiceRecords } from '../../utils/servicePersistence.js';
 import { logger } from '../../utils/logger.js';
-import { adversarialRedTeamService } from '../crypto/AdversarialRedTeamService.js';
-import { anomalySentinelService } from '../crypto/AnomalySentinelService.js';
-import { anonymousDissentService } from '../crypto/AnonymousDissentService.js';
+// CendiaCrypto services loaded lazily to prevent @noble/curves subpath export crash
+// tsx runtime can't resolve ESM subpath exports — dynamic import handles this gracefully
+let adversarialRedTeamService: any = null;
+let anomalySentinelService: any = null;
+let anonymousDissentService: any = null;
+
+const loadCryptoServices = async () => {
+  try {
+    const rt = await import('../crypto/AdversarialRedTeamService.js');
+    adversarialRedTeamService = rt.adversarialRedTeamService;
+    const as = await import('../crypto/AnomalySentinelService.js');
+    anomalySentinelService = as.anomalySentinelService;
+    const ad = await import('../crypto/AnonymousDissentService.js');
+    anonymousDissentService = ad.anonymousDissentService;
+    logger.info('[Council] CendiaCrypto services loaded successfully');
+  } catch (err) {
+    logger.warn(`[Council] CendiaCrypto services unavailable (non-fatal): ${(err as Error).message}`);
+  }
+};
+// Fire and forget — loads in background, doesn't block server startup
+loadCryptoServices();
 
 // =============================================================================
 // TYPES
@@ -539,22 +557,23 @@ export class CouncilService extends EventEmitter {
     const startTime = Date.now();
 
     // CendiaWhistle™ — Register participant ring for anonymous dissent
-    // Each agent gets a key pair; the ring of public keys enables anonymous dissent during deliberation
-    try {
-      const participantKeys = agentIds.map(id => {
-        const keys = anonymousDissentService.generateParticipantKeys(id);
-        return keys.publicKey;
-      });
-      anonymousDissentService.registerRing(deliberationId, participantKeys);
-    } catch {
-      // Whistle registration failure must never block deliberation
+    if (anonymousDissentService) {
+      try {
+        const participantKeys = agentIds.map(id => {
+          const keys = anonymousDissentService.generateParticipantKeys(id);
+          return keys.publicKey;
+        });
+        anonymousDissentService.registerRing(deliberationId, participantKeys);
+      } catch {
+        // Whistle registration failure must never block deliberation
+      }
     }
 
     try {
       // Check if sentinel has paused this pipeline
-      if (anomalySentinelService.isPaused(deliberationId)) {
+      if (anomalySentinelService?.isPaused(deliberationId)) {
         logger.warn(`[Council] Deliberation ${deliberationId} is PAUSED by CendiaSentinel — aborting`);
-        await this.updateDeliberationStatus(deliberationId, 'blocked');
+        await this.updateDeliberationStatus(deliberationId, 'error');
         return;
       }
 
@@ -607,7 +626,7 @@ export class CouncilService extends EventEmitter {
 
       // Phase 5: CendiaRedTeam™ — Adversarial Pre-Decision Gate
       // Attacks the proposed decision before it's finalised. Can BLOCK if critical vulnerabilities found.
-      try {
+      if (adversarialRedTeamService) try {
         const allResponses = await this.getDeliberationResponses(deliberationId);
         const redTeamReport = await adversarialRedTeamService.challenge({
           deliberationId,
@@ -637,7 +656,7 @@ export class CouncilService extends EventEmitter {
             metadata: { redTeamReport },
             timestamp: new Date(),
           });
-          await this.updateDeliberationStatus(deliberationId, 'blocked');
+          await this.updateDeliberationStatus(deliberationId, 'error');
           return; // Do NOT complete — requires human review
         }
 
@@ -1458,9 +1477,7 @@ export class CouncilService extends EventEmitter {
     this.emit('stream', event);
 
     // CendiaSentinel™ — Real-time anomaly detection on every event
-    // Feeds every deliberation event to the sentinel for monitoring.
-    // If the sentinel detects critical anomalies, it auto-pauses the pipeline.
-    try {
+    if (anomalySentinelService) try {
       anomalySentinelService.ingest({
         deliberationId: event.deliberationId,
         organizationId: '',

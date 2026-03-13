@@ -386,8 +386,13 @@ app.use('/api/v1/flink', flinkRoutes);               // Apache Flink CEP stream 
 app.use('/api/v1/gateway', gatewayRoutes);           // CendiaGateway™ — AI Governance Gateway
 
 // CendiaVerify™ — Public cryptographic verification (no auth required)
-import verifyRoutes from './routes/verify.js';
-app.use('/api/v1/verify', verifyRoutes);
+// Loaded dynamically to prevent @noble/curves subpath export crash from blocking server startup
+import('./routes/verify.js').then(mod => {
+  app.use('/api/v1/verify', mod.default as any);
+  logger.info('🔐 CendiaVerify routes loaded at /api/v1/verify');
+}).catch(err => {
+  logger.warn(`CendiaVerify routes unavailable: ${err.message}`);
+});
 
 // SPA catch-all: serve index.html for non-API routes (after all API routes)
 if (fs.existsSync(frontendDist) && fs.existsSync(path.join(frontendDist, 'index.html'))) {

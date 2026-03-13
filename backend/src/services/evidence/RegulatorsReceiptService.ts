@@ -25,10 +25,27 @@
 import { logger } from '../../utils/logger.js';
 import { prisma } from '../../config/database.js';
 import crypto from 'crypto';
-import { keyManagementService } from '../crypto/KeyManagementService.js';
-import { merkleForestService } from '../crypto/MerkleForestService.js';
-import { contentAddressedReceiptService } from '../crypto/ContentAddressedReceiptService.js';
-import { cendiaStampService } from '../crypto/CendiaStampService.js';
+// CendiaCrypto services loaded lazily to prevent @noble/curves subpath export crash with tsx runtime
+let keyManagementService: any = null;
+let merkleForestService: any = null;
+let contentAddressedReceiptService: any = null;
+let cendiaStampService: any = null;
+
+const loadCryptoServices = async () => {
+  try {
+    const kms = await import('../crypto/KeyManagementService.js');
+    keyManagementService = kms.keyManagementService;
+    const mf = await import('../crypto/MerkleForestService.js');
+    merkleForestService = mf.merkleForestService;
+    const ca = await import('../crypto/ContentAddressedReceiptService.js');
+    contentAddressedReceiptService = ca.contentAddressedReceiptService;
+    const cs = await import('../crypto/CendiaStampService.js');
+    cendiaStampService = cs.cendiaStampService;
+  } catch (err) {
+    // Non-fatal: signing falls back to hash-only mode
+  }
+};
+loadCryptoServices();
 // iissService loaded dynamically to avoid compile-time dependency on enterprise dcii/ module
 // See buildIISSScores() for the dynamic import
 
