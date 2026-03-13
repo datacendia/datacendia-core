@@ -1014,41 +1014,55 @@ export const CouncilPage: React.FC = () => {
     }
   }, [selectedMode]);
 
-  // Load agents from Ollama service
+  // Load agents — check backend inference status first (supports cloud providers)
   useEffect(() => {
     const loadAgents = async () => {
       try {
         setIsLoading(true);
         setError(null);
 
-        // Check Ollama availability and get agents
+        // Check backend inference provider status (works with OpenAI, Groq, Ollama, etc.)
+        let backendAIAvailable = false;
+        try {
+          const statusRes = await fetch('/api/v1/inference/status');
+          if (statusRes.ok) {
+            const inferenceStatus = await statusRes.json();
+            backendAIAvailable = inferenceStatus.available === true;
+            if (backendAIAvailable) {
+              console.log(`[Council] Backend AI provider: ${inferenceStatus.provider} (available)`);
+            }
+          }
+        } catch { /* backend check failed, fall through to Ollama */ }
+
+        // Also check local Ollama availability (for local dev)
         await ollamaService.checkAvailability();
         const ollamaAgents = ollamaService.getAgents();
 
-        setAgents(
-          ollamaAgents.map((a: DomainAgent) => ({
-            id: a.id,
-            code: a.code,
-            name: a.name,
-            role: a.role,
-            description: a.description,
-            avatar: a.avatar,
-            color: a.color,
-            status: a.status,
-            capabilities: a.capabilities,
-            ...(a.premium !== undefined && { premium: a.premium }),
-            ...(a.premiumPackage !== undefined && { premiumPackage: a.premiumPackage }),
-            ...(a.premiumPrice !== undefined && { premiumPrice: a.premiumPrice }),
-          }))
-        );
+        // If backend AI is available, mark all agents as online
+        const agentList = ollamaAgents.map((a: DomainAgent) => ({
+          id: a.id,
+          code: a.code,
+          name: a.name,
+          role: a.role,
+          description: a.description,
+          avatar: a.avatar,
+          color: a.color,
+          status: backendAIAvailable ? ('online' as const) : a.status,
+          capabilities: a.capabilities,
+          ...(a.premium !== undefined && { premium: a.premium }),
+          ...(a.premiumPackage !== undefined && { premiumPackage: a.premiumPackage }),
+          ...(a.premiumPrice !== undefined && { premiumPrice: a.premiumPrice }),
+        }));
 
-        const status = ollamaService.getStatus();
-        if (!status.available) {
+        setAgents(agentList);
+
+        const ollamaStatus = ollamaService.getStatus();
+        if (!backendAIAvailable && !ollamaStatus.available) {
           setError(
-            'Ollama is not running. Please start Ollama to enable AI agents. Run: ollama serve'
+            'AI agents are not configured. Please contact your administrator to set up an AI provider.'
           );
-        } else {
-          // Pre-warm all models in background for instant deliberations
+        } else if (ollamaStatus.available) {
+          // Pre-warm Ollama models in background for instant deliberations
           console.log('[Council] Pre-warming models in background...');
           ollamaService.preWarmModels((model, index, total) => {
             console.log(`[Council] Warming model ${index}/${total}: ${model}`);
@@ -1057,8 +1071,8 @@ export const CouncilPage: React.FC = () => {
           });
         }
       } catch (err) {
-        setError('Failed to connect to Ollama. Please ensure Ollama is running on localhost:11434');
-        console.error('Ollama connection error:', err);
+        setError('AI agents are temporarily unavailable. Please try again later.');
+        console.error('Council agent loading error:', err);
       } finally {
         setIsLoading(false);
       }
@@ -1066,8 +1080,17 @@ export const CouncilPage: React.FC = () => {
 
     loadAgents();
 
-    // Refresh agent status every 10 seconds
+    // Refresh agent status every 30 seconds (reduced from 10s)
     const interval = setInterval(async () => {
+      let backendAIAvailable = false;
+      try {
+        const statusRes = await fetch('/api/v1/inference/status');
+        if (statusRes.ok) {
+          const inferenceStatus = await statusRes.json();
+          backendAIAvailable = inferenceStatus.available === true;
+        }
+      } catch { /* ignore */ }
+
       await ollamaService.checkAvailability();
       const ollamaAgents = ollamaService.getAgents();
       setAgents(
@@ -1079,14 +1102,19 @@ export const CouncilPage: React.FC = () => {
           description: a.description,
           avatar: a.avatar,
           color: a.color,
-          status: a.status,
+          status: backendAIAvailable ? ('online' as const) : a.status,
           capabilities: a.capabilities,
           ...(a.premium !== undefined && { premium: a.premium }),
           ...(a.premiumPackage !== undefined && { premiumPackage: a.premiumPackage }),
           ...(a.premiumPrice !== undefined && { premiumPrice: a.premiumPrice }),
         }))
       );
-    }, 10000);
+
+      // Clear error if AI became available
+      if (backendAIAvailable || ollamaService.getStatus().available) {
+        setError(null);
+      }
+    }, 30000);
 
     return () => clearInterval(interval);
   }, []);
@@ -1365,7 +1393,7 @@ export const CouncilPage: React.FC = () => {
     const onlineAgents = agents.filter((a) => a.status === 'online');
     if (onlineAgents.length === 0) {
       setError(
-        'No agents are online. Please start Ollama and ensure you have a model installed (e.g., ollama pull llama3.2)'
+        'No AI agents are online. Please ensure an AI provider is configured (cloud API key or local Ollama).'
       );
       return;
     }
@@ -1726,40 +1754,32 @@ export const CouncilPage: React.FC = () => {
               </div>
             )}
             
-            {/* Pantheon Button */}
+            {/* Agent Roster Button */}
             <button
               onClick={() => setShowPantheon(true)}
-              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg hover:opacity-90 transition-all shadow-md hover:shadow-lg"
+              className="flex items-center gap-2 px-3 py-2 bg-neutral-800 border border-neutral-700 text-neutral-200 rounded-lg hover:bg-neutral-700 transition-all text-sm"
             >
               <span>🏛️</span>
-              <span className="font-medium">Pantheon</span>
+              <span className="font-medium">Agent Roster</span>
             </button>
             
-            {/* Premium Features Button */}
-            <button
-              onClick={() => setShowPremiumModal(true)}
-              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-lg hover:opacity-90 transition-all shadow-md hover:shadow-lg"
-            >
-              <span>✨</span>
-              <span className="font-medium">Premium</span>
-              <span className="text-xs bg-white/20 px-1.5 py-0.5 rounded">30 AI Agents</span>
-            </button>
+            {/* Council Modes Button */}
             <button
               onClick={() => setShowModesLibrary(!showModesLibrary)}
-              className="flex items-center gap-2 px-4 py-2 bg-primary-50 text-primary-700 rounded-lg hover:bg-primary-100 transition-colors"
+              className="flex items-center gap-2 px-3 py-2 bg-neutral-800 border border-neutral-700 text-neutral-200 rounded-lg hover:bg-neutral-700 transition-all text-sm"
             >
               <span>📚</span>
               <span className="font-medium">{t('council.modes_library')}</span>
             </button>
             {agents.some((a) => a.status === 'online') ? (
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-success-light text-success-dark rounded-full text-sm">
-                <span className="w-2 h-2 rounded-full bg-success-main animate-pulse" />
-                {t('council.ollama_connected')}
+              <div className="flex items-center gap-2 px-3 py-1.5 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full text-sm">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                AI Connected
               </div>
             ) : (
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-error-light text-error-dark rounded-full text-sm">
-                <span className="w-2 h-2 rounded-full bg-error-main" />
-                {t('council.ollama_disconnected')}
+              <div className="flex items-center gap-2 px-3 py-1.5 bg-red-500/10 text-red-400 border border-red-500/20 rounded-full text-sm">
+                <span className="w-2 h-2 rounded-full bg-red-400" />
+                AI Disconnected
               </div>
             )}
           </div>
@@ -1939,16 +1959,14 @@ export const CouncilPage: React.FC = () => {
 
       {/* Error Alert */}
       {error && (
-        <div className="mb-6 p-4 bg-error-light border border-error-main rounded-lg">
+        <div className="mb-6 p-4 bg-amber-900/30 border border-amber-600/40 rounded-lg">
           <div className="flex items-start gap-3">
             <span className="text-xl">⚠️</span>
             <div>
-              <p className="font-medium text-error-dark">{error}</p>
-              <p className="text-sm text-error-dark/80 mt-1">
-                To enable AI agents, run:{' '}
-                <code className="px-1 py-0.5 bg-white/50 rounded">ollama serve</code> and ensure you
-                have a model:{' '}
-                <code className="px-1 py-0.5 bg-white/50 rounded">ollama pull llama3.2</code>
+              <p className="font-medium text-amber-200">{error}</p>
+              <p className="text-sm text-amber-300/70 mt-1">
+                AI agents require a configured provider (OpenAI, Groq, or local Ollama).
+                Contact your administrator if this persists.
               </p>
             </div>
           </div>
@@ -4464,7 +4482,7 @@ export const CouncilPage: React.FC = () => {
                     🏛️
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-white">The Pantheon</h2>
+                    <h2 className="text-2xl font-bold text-white">Agent Roster</h2>
                     <p className="text-indigo-300 text-sm">Your Council of AI Executives</p>
                   </div>
                 </div>

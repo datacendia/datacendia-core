@@ -1,0 +1,47 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#09090b"/>
+      <stop offset="100%" style="stop-color:#0c0c10"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#818cf8"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Subtle grid -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r="0.5" fill="rgba(255,255,255,0.03)"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Brand name -->
+  <text x="80" y="120" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#ffffff" letter-spacing="0.05em">DATACENDIA</text>
+  
+  <!-- Tagline -->
+  <text x="80" y="220" font-family="Inter, system-ui, sans-serif" font-size="52" font-weight="300" fill="#e5e7eb">AI Decision Intelligence</text>
+  <text x="80" y="285" font-family="Inter, system-ui, sans-serif" font-size="52" font-weight="300" fill="#ffffff">with Cryptographic <tspan fill="url(#accent)">Proof.</tspan></text>
+
+  <!-- Description -->
+  <text x="80" y="360" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#9ca3af" font-weight="300">Multi-agent deliberation · Ed25519 signed · Merkle tree hashed · RFC 3161 timestamped</text>
+  
+  <!-- Badges row -->
+  <rect x="80" y="420" width="200" height="36" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="180" y="443" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9ca3af" text-anchor="middle" letter-spacing="0.05em">APACHE 2.0</text>
+  
+  <rect x="296" y="420" width="200" height="36" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="396" y="443" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9ca3af" text-anchor="middle" letter-spacing="0.05em">NVIDIA INCEPTION</text>
+  
+  <rect x="512" y="420" width="200" height="36" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="612" y="443" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9ca3af" text-anchor="middle" letter-spacing="0.05em">EU AI ACT READY</text>
+
+  <!-- URL -->
+  <text x="80" y="560" font-family="monospace" font-size="16" fill="#6b7280">app.datacendia.com</text>
+  
+  <!-- Border accent line -->
+  <rect x="0" y="624" width="1200" height="6" fill="url(#accent)" opacity="0.6"/>
+</svg>

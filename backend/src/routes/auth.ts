@@ -151,6 +151,116 @@ router.post('/login', async (req: Request, res: Response, next: NextFunction) =>
 });
 
 /**
+ * POST /api/v1/auth/demo-access
+ * Frictionless demo entry — name + email → JWT token
+ * Creates or finds a demo user, returns auth tokens for immediate platform access
+ */
+router.post('/demo-access', async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const { name, email } = z.object({
+      name: z.string().min(1, 'Name is required'),
+      email: z.string().email('Valid email required'),
+    }).parse(req.body);
+
+    const normalizedEmail = email.toLowerCase().trim();
+
+    // Find or create demo organization
+    let demoOrg = await prisma.organizations.findFirst({
+      where: { slug: 'demo' },
+    });
+
+    if (!demoOrg) {
+      demoOrg = await prisma.organizations.create({
+        data: {
+          id: crypto.randomUUID(),
+          name: 'Demo Organization',
+          slug: 'demo',
+          settings: {} as Prisma.InputJsonValue,
+          updated_at: new Date(),
+        },
+      });
+    }
+
+    // Find or create user
+    let user = await prisma.users.findUnique({
+      where: { email: normalizedEmail },
+    });
+
+    if (!user) {
+      // Create demo user with random password (they won't need it)
+      const randomPass = crypto.randomBytes(32).toString('hex');
+      const passwordHash = await bcrypt.hash(randomPass, 12);
+
+      user = await prisma.users.create({
+        data: {
+          id: crypto.randomUUID(),
+          email: normalizedEmail,
+          name: name.trim(),
+          password_hash: passwordHash,
+          role: 'ADMIN',
+          status: 'ACTIVE',
+          organization_id: demoOrg.id,
+          updated_at: new Date(),
+        },
+      });
+
+      logger.info(`[Demo] New demo user created: ${normalizedEmail}`);
+    }
+
+    // Generate tokens
+    const accessToken = await generateAccessToken({
+      id: user.id,
+      email: user.email,
+      organizationId: user.organization_id,
+      role: user.role,
+    });
+
+    const refreshToken = await generateRefreshToken(user.id);
+
+    // Update last login
+    await prisma.users.update({
+      where: { id: user.id },
+      data: { last_login_at: new Date() },
+    });
+
+    logger.info(`[Demo] Demo access granted: ${normalizedEmail}`);
+
+    // Notify sales@ (fire-and-forget — don't block demo access)
+    emailService.send({
+      to: process.env.SALES_EMAIL || 'sales@datacendia.com',
+      subject: `🚀 New Demo Access: ${name.trim()} (${normalizedEmail})`,
+      text: [
+        `New demo platform access`,
+        ``,
+        `Name:  ${name.trim()}`,
+        `Email: ${normalizedEmail}`,
+        `Time:  ${new Date().toISOString()}`,
+        `New user: ${!user ? 'Yes' : 'Returning'}`,
+        ``,
+        `— Datacendia Platform`,
+      ].join('\n'),
+      replyTo: normalizedEmail,
+    }).catch((err) => logger.error('[Demo] Failed to send sales notification:', err));
+
+    res.json({
+      success: true,
+      data: {
+        accessToken,
+        refreshToken,
+        user: {
+          id: user.id,
+          email: user.email,
+          name: user.name,
+          role: user.role,
+        },
+      },
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
+/**
  * POST /api/v1/auth/register
  * Register new user and organization
  */

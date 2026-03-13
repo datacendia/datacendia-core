@@ -136,26 +136,72 @@
       "title": "Ang Problema ng Enterprise Intelligence",
       "subtitle": "Ang mga organisasyon ay nahihirapan sa fragmented na data at isolated na tools"
     },
-    "solution": { "title": "Cortex: Ang Iyong Intelligence Command Center" },
-    "pillars": { "title": "Ang 8 Haligi ng Sovereign Intelligence" },
-    "cta": { "title": "Handa ka na bang kontrolin ang iyong intelligence?", "button": "Mag-schedule ng Demo" }
+    "solution": {
+      "title": "Cortex: Ang Iyong Intelligence Command Center"
+    },
+    "pillars": {
+      "title": "Ang 8 Haligi ng Sovereign Intelligence"
+    },
+    "cta": {
+      "title": "Handa ka na bang kontrolin ang iyong intelligence?",
+      "button": "Mag-schedule ng Demo"
+    }
   },
   "spaces": {
-    "graph": { "name": "Graph", "description": "Mag-navigate sa iyong knowledge universe" },
-    "council": { "name": "Konseho", "description": "AI advisors na nag-iisip nang magkasama" },
-    "pulse": { "name": "Pulso", "description": "Real-time organizational health" },
-    "lens": { "name": "Lente", "description": "Tingnan ang posibleng mga hinaharap" },
-    "bridge": { "name": "Tulay", "description": "Kumilos sa mga sistema" }
+    "graph": {
+      "name": "Graph",
+      "description": "Mag-navigate sa iyong knowledge universe"
+    },
+    "council": {
+      "name": "Konseho",
+      "description": "AI advisors na nag-iisip nang magkasama"
+    },
+    "pulse": {
+      "name": "Pulso",
+      "description": "Real-time organizational health"
+    },
+    "lens": {
+      "name": "Lente",
+      "description": "Tingnan ang posibleng mga hinaharap"
+    },
+    "bridge": {
+      "name": "Tulay",
+      "description": "Kumilos sa mga sistema"
+    }
   },
   "pillars": {
-    "helm": { "name": "Timon", "description": "Suporta sa strategic na desisyon" },
-    "lineage": { "name": "Lahi", "description": "I-trace ang bawat data point sa pinagmulan" },
-    "predict": { "name": "Hulaan", "description": "AI-powered na mga forecast" },
-    "flow": { "name": "Daloy", "description": "Automated na mga workflow" },
-    "health": { "name": "Kalusugan", "description": "Organizational vitality metrics" },
-    "guard": { "name": "Bantay", "description": "Data governance at compliance" },
-    "ethics": { "name": "Etika", "description": "Built-in na ethical oversight" },
-    "agents": { "name": "Mga Ahente", "description": "AI advisors para sa bawat domain" }
+    "helm": {
+      "name": "Timon",
+      "description": "Suporta sa strategic na desisyon"
+    },
+    "lineage": {
+      "name": "Lahi",
+      "description": "I-trace ang bawat data point sa pinagmulan"
+    },
+    "predict": {
+      "name": "Hulaan",
+      "description": "AI-powered na mga forecast"
+    },
+    "flow": {
+      "name": "Daloy",
+      "description": "Automated na mga workflow"
+    },
+    "health": {
+      "name": "Kalusugan",
+      "description": "Organizational vitality metrics"
+    },
+    "guard": {
+      "name": "Bantay",
+      "description": "Data governance at compliance"
+    },
+    "ethics": {
+      "name": "Etika",
+      "description": "Built-in na ethical oversight"
+    },
+    "agents": {
+      "name": "Mga Ahente",
+      "description": "AI advisors para sa bawat domain"
+    }
   },
   "pricing": {
     "title": "Simple at transparent na presyo",
@@ -168,29 +214,76 @@
     "contactSales": "Makipag-ugnayan sa Sales",
     "mostPopular": "Pinakasikat",
     "plans": {
-      "foundation": { "name": "Foundation", "description": "Mga essential intelligence capabilities para sa mga lumalaking team" },
-      "intelligence": { "name": "Intelligence", "description": "Advanced analytics at forecasting para sa mga scaling na organisasyon" },
-      "governance": { "name": "Governance", "description": "Kumpletong governance at compliance para sa regulated industries" },
-      "sovereign": { "name": "Sovereign", "description": "Buong platform na may kumpletong data sovereignty" }
+      "foundation": {
+        "name": "Foundation",
+        "description": "Mga essential intelligence capabilities para sa mga lumalaking team"
+      },
+      "intelligence": {
+        "name": "Intelligence",
+        "description": "Advanced analytics at forecasting para sa mga scaling na organisasyon"
+      },
+      "governance": {
+        "name": "Governance",
+        "description": "Kumpletong governance at compliance para sa regulated industries"
+      },
+      "sovereign": {
+        "name": "Sovereign",
+        "description": "Buong platform na may kumpletong data sovereignty"
+      }
     },
     "faq": {
       "title": "Mga Madalas Itanong",
       "questions": {
-        "trial": { "q": "Puwede ko bang subukan bago bilhin?", "a": "Oo! Lahat ng plans ay may 14-araw na libreng trial na may buong access sa mga features." },
-        "data": { "q": "Ano ang mangyayari sa data ko kung mag-cancel ako?", "a": "Ang data mo ay nananatiling sa iyo. I-export ang lahat bago mag-cancel, o kami ay magre-retain nito ng 30 araw." },
-        "nonprofit": { "q": "May discounts ba kayo para sa nonprofits?", "a": "Oo, nag-aalok kami ng 50% off para sa mga qualified nonprofits at educational institutions." },
-        "upgrade": { "q": "Puwede ba akong mag-upgrade o mag-downgrade anumang oras?", "a": "Oo naman. Ang mga changes ay magiging epektibo sa susunod na billing cycle, prorated kung mag-upgrade." }
+        "trial": {
+          "q": "Puwede ko bang subukan bago bilhin?",
+          "a": "Oo! Lahat ng plans ay may 14-araw na libreng trial na may buong access sa mga features."
+        },
+        "data": {
+          "q": "Ano ang mangyayari sa data ko kung mag-cancel ako?",
+          "a": "Ang data mo ay nananatiling sa iyo. I-export ang lahat bago mag-cancel, o kami ay magre-retain nito ng 30 araw."
+        },
+        "nonprofit": {
+          "q": "May discounts ba kayo para sa nonprofits?",
+          "a": "Oo, nag-aalok kami ng 50% off para sa mga qualified nonprofits at educational institutions."
+        },
+        "upgrade": {
+          "q": "Puwede ba akong mag-upgrade o mag-downgrade anumang oras?",
+          "a": "Oo naman. Ang mga changes ay magiging epektibo sa susunod na billing cycle, prorated kung mag-upgrade."
+        }
       }
     }
   },
   "downloads": {
     "title": "Mga Download",
     "subtitle": "Kunin ang Datacendia para sa iyong platform",
-    "desktop": { "title": "Desktop Application", "windows": "Windows", "mac": "macOS", "linux": "Linux", "download": "I-download" },
-    "mobile": { "title": "Mga Mobile App", "ios": "iOS", "android": "Android", "appStore": "App Store", "playStore": "Google Play" },
-    "cli": { "title": "Command Line Interface" },
-    "selfHosted": { "title": "Self-Hosted", "docker": "Docker Compose", "kubernetes": "Kubernetes (Helm)", "airgapped": "Air-Gapped Bundle" },
-    "systemRequirements": { "title": "Mga System Requirements", "minimum": "Minimum", "recommended": "Recommended" }
+    "desktop": {
+      "title": "Desktop Application",
+      "windows": "Windows",
+      "mac": "macOS",
+      "linux": "Linux",
+      "download": "I-download"
+    },
+    "mobile": {
+      "title": "Mga Mobile App",
+      "ios": "iOS",
+      "android": "Android",
+      "appStore": "App Store",
+      "playStore": "Google Play"
+    },
+    "cli": {
+      "title": "Command Line Interface"
+    },
+    "selfHosted": {
+      "title": "Self-Hosted",
+      "docker": "Docker Compose",
+      "kubernetes": "Kubernetes (Helm)",
+      "airgapped": "Air-Gapped Bundle"
+    },
+    "systemRequirements": {
+      "title": "Mga System Requirements",
+      "minimum": "Minimum",
+      "recommended": "Recommended"
+    }
   },
   "commandPalette": {
     "searchPlaceholder": "Maghanap ng commands, pages, agents...",
@@ -206,7 +299,13 @@
     "toggleFullscreen": "Pumasok/lumabas sa fullscreen mode",
     "switchTo": "Lumipat sa",
     "changeLanguage": "Palitan ang wika sa",
-    "categories": { "navigation": "Navigation", "actions": "Mga Aksyon", "agents": "Mga Agent", "modes": "Mga Council Mode", "recent": "Kamakailang" },
+    "categories": {
+      "navigation": "Navigation",
+      "actions": "Mga Aksyon",
+      "agents": "Mga Agent",
+      "modes": "Mga Council Mode",
+      "recent": "Kamakailang"
+    },
     "agents": {
       "chief": "Chief Strategic Agent",
       "chiefDesc": "Strategic synthesis",
@@ -221,7 +320,13 @@
     }
   },
   "cortex": {
-    "sidebar": { "spaces": "Mga Space", "pillars": "Mga Pillar", "system": "Sistema", "data": "Data", "security": "Security" }
+    "sidebar": {
+      "spaces": "Mga Space",
+      "pillars": "Mga Pillar",
+      "system": "Sistema",
+      "data": "Data",
+      "security": "Security"
+    }
   },
   "dashboard": {
     "title": "Dashboard",
@@ -254,7 +359,11 @@
     "recentActivity": "Kamakailang Aktibidad",
     "viewFullLog": "Tingnan ang Buong Log",
     "quickActions": "Mga Quick Action",
-    "greetings": { "morning": "Magandang umaga", "afternoon": "Magandang hapon", "evening": "Magandang gabi" },
+    "greetings": {
+      "morning": "Magandang umaga",
+      "afternoon": "Magandang hapon",
+      "evening": "Magandang gabi"
+    },
     "sampleAlerts": {
       "databaseCpu": "Database CPU > 90% sa loob ng 15 minuto",
       "paymentLatency": "Spike sa payment processing latency",
@@ -268,7 +377,14 @@
       "budgetIncrease": "Pagtaas ng Q4 Marketing Budget",
       "newHire": "New Hire Onboarding: Dev Team"
     },
-    "sampleMetrics": { "revenue": "Revenue", "pipeline": "Pipeline", "burnRate": "Burn Rate", "nps": "NPS", "activeUsers": "Mga Aktibong User", "churnRate": "Churn Rate" },
+    "sampleMetrics": {
+      "revenue": "Revenue",
+      "pipeline": "Pipeline",
+      "burnRate": "Burn Rate",
+      "nps": "NPS",
+      "activeUsers": "Mga Aktibong User",
+      "churnRate": "Churn Rate"
+    },
     "sampleActivity": {
       "workflowCompleted": "Natapos ang workflow na \"{{name}}\"",
       "userQueried": "Nagtanong si {{user}} tungkol sa {{topic}}",
@@ -317,7 +433,12 @@
     "selectedAgents": "Mga Napiling Agent",
     "clearAll": "I-clear Lahat",
     "selectAll": "Piliin Lahat",
-    "agents": { "domain": "Mga Domain Agent", "custom": "Mga Custom Agent", "premium": "Mga Premium Agent", "createCustom": "Gumawa ng Custom Agent" },
+    "agents": {
+      "domain": "Mga Domain Agent",
+      "custom": "Mga Custom Agent",
+      "premium": "Mga Premium Agent",
+      "createCustom": "Gumawa ng Custom Agent"
+    },
     "modes": {
       "title": "Library ng Council Modes",
       "subtitle": "Parehong agents sa iba't ibang modes ay nagbibigay ng iba't ibang output.",
@@ -329,7 +450,12 @@
       "agentBehavior": "Agent Behavior"
     },
     "deliberation": {
-      "phases": { "initial_analysis": "Initial Analysis", "cross_examination": "Cross-Examination", "synthesis": "Synthesis", "ethics_check": "Ethics Check" },
+      "phases": {
+        "initial_analysis": "Initial Analysis",
+        "cross_examination": "Cross-Examination",
+        "synthesis": "Synthesis",
+        "ethics_check": "Ethics Check"
+      },
       "inProgress": "Nagaganap ang Deliberation",
       "completed": "Tapos na ang Deliberation",
       "confidence": "Confidence"
@@ -353,7 +479,11 @@
       "save": "I-save ang Agent",
       "delete": "I-delete ang Agent"
     },
-    "status": { "online": "Online", "offline": "Offline", "busy": "Busy" }
+    "status": {
+      "online": "Online",
+      "offline": "Offline",
+      "busy": "Busy"
+    }
   },
   "agent": {
     "chief": {
@@ -381,7 +511,11 @@
       "role": "Marketing at Insights ng Customer",
       "description": "Nagsusuri ng mga trend sa merkado, pag-uugali ng customer at competitive intelligence."
     },
-    "cro": { "name": "Ahente ng Katalinuhan sa Kita", "role": "Kita at Paglago", "description": "Nakatutok sa pag-optimize ng kita, pagganap ng benta at mga estratehiya sa presyo." },
+    "cro": {
+      "name": "Ahente ng Katalinuhan sa Kita",
+      "role": "Kita at Paglago",
+      "description": "Nakatutok sa pag-optimize ng kita, pagganap ng benta at mga estratehiya sa presyo."
+    },
     "cdo": {
       "name": "Ahente ng Kalidad ng Data",
       "role": "Pamamahala at Kalidad ng Data",
@@ -427,7 +561,11 @@
       "role": "Independiyenteng Third-Party na Audit",
       "description": "Nagbibigay ng independiyente at obhetibong pagsusuri mula sa panlabas na perspektibo."
     },
-    "int-auditor": { "name": "Panloob na Auditor", "role": "Panloob na Kontrol at Audit ng Proseso", "description": "Sinusuri ang mga panloob na kontrol, kahusayan sa operasyon at pagsunod." },
+    "int-auditor": {
+      "name": "Panloob na Auditor",
+      "role": "Panloob na Kontrol at Audit ng Proseso",
+      "description": "Sinusuri ang mga panloob na kontrol, kahusayan sa operasyon at pagsunod."
+    },
     "cmio": {
       "name": "Pangunahing Opisyal ng Impormasyon sa Medisina",
       "role": "Healthcare IT at Clinical Systems",
@@ -463,8 +601,16 @@
       "role": "Pagsusuri ng Credit at Pagsusuri ng Panganib",
       "description": "Dalubhasa sa pagsusuri ng credit, underwriting ng loan at pagmomodelo ng panganib sa credit."
     },
-    "treasury": { "name": "Analyst ng Treasury", "role": "Pamamahala ng Cash at Likididad", "description": "Dalubhasa sa corporate treasury, pamamahala ng cash at FX hedging." },
-    "contracts": { "name": "Espesyalista sa Kontrata", "role": "Pagsusuri at Negosasyon ng Kontrata", "description": "Dalubhasa sa mga komersyal na kontrata, pagsulat ng kontrata at negosasyon." },
+    "treasury": {
+      "name": "Analyst ng Treasury",
+      "role": "Pamamahala ng Cash at Likididad",
+      "description": "Dalubhasa sa corporate treasury, pamamahala ng cash at FX hedging."
+    },
+    "contracts": {
+      "name": "Espesyalista sa Kontrata",
+      "role": "Pagsusuri at Negosasyon ng Kontrata",
+      "description": "Dalubhasa sa mga komersyal na kontrata, pagsulat ng kontrata at negosasyon."
+    },
     "ip": {
       "name": "Tagapayo sa Intellectual Property",
       "role": "Mga Patent, Trademark at Estratehiya ng IP",
@@ -481,13 +627,42 @@
       "description": "Dalubhasa sa pagsunod sa regulasyon, mga gawaing pangpamahalaan at batas administratibo."
     }
   },
-  "label": { "online": "Online", "offline": "Offline", "busy": "Busy", "premium": "Premium", "locked": "Naka-lock", "custom": "Pasadya", "unlock": "I-unlock", "required": "Kinakailangan" },
-  "settings": { "title": "Mga Setting", "organization": "Organisasyon", "users": "Mga User", "teams": "Mga Team", "billing": "Billing", "security": "Security" },
+  "label": {
+    "online": "Online",
+    "offline": "Offline",
+    "busy": "Busy",
+    "premium": "Premium",
+    "locked": "Naka-lock",
+    "custom": "Pasadya",
+    "unlock": "I-unlock",
+    "required": "Kinakailangan"
+  },
+  "settings": {
+    "title": "Mga Setting",
+    "organization": "Organisasyon",
+    "users": "Mga User",
+    "teams": "Mga Team",
+    "billing": "Billing",
+    "security": "Security"
+  },
   "errors": {
-    "notFound": { "title": "Hindi Nahanap ang Page", "message": "Wala ang page na hinahanap mo.", "backHome": "Bumalik sa Home" },
-    "serverError": { "title": "Server Error", "message": "May nangyaring mali sa aming panig." },
-    "networkError": { "title": "Connection Error", "message": "Hindi makakonekta sa server." },
-    "unauthorized": { "title": "Hindi Awtorisado", "message": "Wala kang pahintulot na i-access ang resource na ito." }
+    "notFound": {
+      "title": "Hindi Nahanap ang Page",
+      "message": "Wala ang page na hinahanap mo.",
+      "backHome": "Bumalik sa Home"
+    },
+    "serverError": {
+      "title": "Server Error",
+      "message": "May nangyaring mali sa aming panig."
+    },
+    "networkError": {
+      "title": "Connection Error",
+      "message": "Hindi makakonekta sa server."
+    },
+    "unauthorized": {
+      "title": "Hindi Awtorisado",
+      "message": "Wala kang pahintulot na i-access ang resource na ito."
+    }
   },
   "footer": {
     "company": "Kumpanya",
@@ -524,7 +699,11 @@
           "Alert thresholds na may automated notifications",
           "Executive summary generation"
         ],
-        "useCases": ["I-track ang quarterly goals sa lahat ng departments", "I-monitor ang revenue metrics at growth indicators", "I-set at i-track ang strategic milestones"],
+        "useCases": [
+          "I-track ang quarterly goals sa lahat ng departments",
+          "I-monitor ang revenue metrics at growth indicators",
+          "I-set at i-track ang strategic milestones"
+        ],
         "guidance": "Magsimula sa pag-define ng iyong key metrics. Pinakamaganda ang Helm kapag may malinaw at nasusukat na mga goals ka."
       },
       "lineage": {
@@ -537,7 +716,11 @@
           "Data quality scores sa bawat stage",
           "Automated documentation generation"
         ],
-        "useCases": ["Audit trails para sa regulatory compliance", "I-resolve ang data inconsistencies sa mga system", "Pagplano ng system migration na may buong impact visibility"],
+        "useCases": [
+          "Audit trails para sa regulatory compliance",
+          "I-resolve ang data inconsistencies sa mga system",
+          "Pagplano ng system migration na may buong impact visibility"
+        ],
         "guidance": "Una munang ikonekta ang iyong data sources. Awtomatikong ma-discover ng Lineage ang relationships at mabubuo ang mapa ng iyong data."
       },
       "predict": {
@@ -550,7 +733,11 @@
           "Feature importance analysis",
           "Model performance monitoring"
         ],
-        "useCases": ["Demand forecasting at inventory optimization", "Hulaan ang customer churn bago ito mangyari", "Financial scenario modeling para sa strategic planning"],
+        "useCases": [
+          "Demand forecasting at inventory optimization",
+          "Hulaan ang customer churn bago ito mangyari",
+          "Financial scenario modeling para sa strategic planning"
+        ],
         "guidance": "Magandang predictions nangangailangan ng magandang data. Magsimula sa malinis na historical data at hayaang matuto ang Predict sa iyong patterns."
       },
       "flow": {
@@ -563,34 +750,74 @@
           "Approval chains na may escalation rules",
           "Workflow analytics at optimization"
         ],
-        "useCases": ["I-automate ang data pipeline management", "Gumawa ng intelligent approval processes", "Mag-trigger ng actions batay sa AI insights"],
+        "useCases": [
+          "I-automate ang data pipeline management",
+          "Gumawa ng intelligent approval processes",
+          "Mag-trigger ng actions batay sa AI insights"
+        ],
         "guidance": "Una munang i-map ang iyong kasalukuyang manual processes. Tutulong ang Flow na ma-identify ang automation opportunities at i-implement ito nang paunti-unti."
       },
       "health": {
         "title": "The Health - Vital Signs Monitor",
         "summary": "Real-time pulse ng vital signs ng iyong enterprise. Malaman kapag may mali bago pa masira.",
-        "features": ["Component health dashboard", "Performance trend analysis", "Incident tracking at resolution", "Capacity planning tools", "Uptime at SLA monitoring"],
-        "useCases": ["I-monitor ang system health sa mga platform", "I-track ang response times at incident resolution", "Proactive na capacity planning ng infrastructure"],
+        "features": [
+          "Component health dashboard",
+          "Performance trend analysis",
+          "Incident tracking at resolution",
+          "Capacity planning tools",
+          "Uptime at SLA monitoring"
+        ],
+        "useCases": [
+          "I-monitor ang system health sa mga platform",
+          "I-track ang response times at incident resolution",
+          "Proactive na capacity planning ng infrastructure"
+        ],
         "guidance": "I-configure ang health checks para sa iyong critical systems. Ikokonsolida ng Health ang mga signal para magbigay ng unified view."
       },
       "guard": {
         "title": "The Guard - Security & Compliance Shield",
         "summary": "Automated protection para sa iyong data. I-enforce ang policies, i-audit ang access, at panatilihing compliant.",
-        "features": ["Policy enforcement engine", "Access audit logging", "Threat detection at alerting", "Compliance framework mapping", "Security posture scoring"],
-        "useCases": ["Awtomatikong i-enforce ang data access policies", "Gumawa ng compliance reports para sa auditors", "Mag-detect at mag-respond sa security threats"],
+        "features": [
+          "Policy enforcement engine",
+          "Access audit logging",
+          "Threat detection at alerting",
+          "Compliance framework mapping",
+          "Security posture scoring"
+        ],
+        "useCases": [
+          "Awtomatikong i-enforce ang data access policies",
+          "Gumawa ng compliance reports para sa auditors",
+          "Mag-detect at mag-respond sa security threats"
+        ],
         "guidance": "I-define ang iyong security policies at compliance requirements. Patuloy na nagmo-monitor ang Guard at mag-a-alert kapag may violations."
       },
       "ethics": {
         "title": "The Ethics - AI Governance Center",
         "summary": "Built-in responsible AI. Siguruhing may fairness, transparency, at accountability ang bawat desisyon.",
-        "features": ["Bias detection at monitoring", "Model explainability tools", "Ethical assessment workflows", "Fairness metrics tracking", "Decision audit trails"],
-        "useCases": ["I-assess ang bias sa AI models bago i-deploy", "I-document ang decision reasoning para sa compliance", "I-monitor ang fairness metrics sa production"],
+        "features": [
+          "Bias detection at monitoring",
+          "Model explainability tools",
+          "Ethical assessment workflows",
+          "Fairness metrics tracking",
+          "Decision audit trails"
+        ],
+        "useCases": [
+          "I-assess ang bias sa AI models bago i-deploy",
+          "I-document ang decision reasoning para sa compliance",
+          "I-monitor ang fairness metrics sa production"
+        ],
         "guidance": "Una munang i-establish ang iyong ethical principles. Tutulong ang Ethics na i-operationalize ito sa lahat ng AI systems."
       },
       "agents": {
         "title": "The Agents - AI Advisor Council",
         "summary": "Expert AI advisors para sa bawat domain. Kumuha ng expert guidance on-demand.",
-        "features": ["Domain-expert AI agents", "Multi-agent collaboration", "Context-aware recommendations", "Natural language interaction", "Continuous learning mula sa feedback"],
+        "features": [
+          "Domain-expert AI agents",
+          "Multi-agent collaboration",
+          "Context-aware recommendations",
+          "Natural language interaction",
+          "Continuous learning mula sa feedback"
+        ],
         "useCases": [
           "Kumuha ng strategic advice mula sa business analyst",
           "Kumonsulta sa technical expert para sa architecture decisions",
@@ -603,31 +830,61 @@
       "graph": {
         "title": "The Graph - Knowledge Navigator",
         "summary": "Mag-navigate sa knowledge universe ng iyong organisasyon. Makita ang connections na hindi nakikita ng iba.",
-        "features": ["Interactive knowledge visualization", "Semantic search sa lahat ng data", "Relationship discovery", "Context-aware exploration", "Knowledge gap identification"],
+        "features": [
+          "Interactive knowledge visualization",
+          "Semantic search sa lahat ng data",
+          "Relationship discovery",
+          "Context-aware exploration",
+          "Knowledge gap identification"
+        ],
         "guidance": "I-click ang anumang node para magsimulang mag-explore. Ibubunyag ng Graph ang connections at tutulong kang mag-drill down sa mga detalye."
       },
       "council": {
         "title": "The Council - AI Collaboration Room",
         "summary": "Kung saan nag-dedeliberate nang sama-sama ang AI advisors. Kailangan ng complex problems ng multiple perspectives.",
-        "features": ["Multi-agent reasoning sessions", "Structured debate frameworks", "Conflict resolution protocols", "Consensus building tools", "Decision documentation"],
+        "features": [
+          "Multi-agent reasoning sessions",
+          "Structured debate frameworks",
+          "Conflict resolution protocols",
+          "Consensus building tools",
+          "Decision documentation"
+        ],
         "guidance": "Ipresenta ang iyong tanong sa Council. Panoorin ang iba't ibang perspectives na lumitaw at ma-synthesize sa recommendations."
       },
       "pulse": {
         "title": "The Pulse - Real-time Operations Center",
         "summary": "Live view ng heartbeat ng iyong organisasyon. Bawat metric, bawat sandali.",
-        "features": ["Real-time metric streaming", "Customizable alert thresholds", "Trend visualization", "Anomaly highlighting", "Historical comparison"],
+        "features": [
+          "Real-time metric streaming",
+          "Customizable alert thresholds",
+          "Trend visualization",
+          "Anomaly highlighting",
+          "Historical comparison"
+        ],
         "guidance": "I-configure ang iyong key metrics na ipapakita sa Pulse. Mag-set ng alert thresholds para ma-notify kapag may nagbago."
       },
       "lens": {
         "title": "The Lens - Future Scenario Explorer",
         "summary": "Tingnan ang posibleng mga kinabukasan bago dumating. Mag-model ng scenarios at mag-plan accordingly.",
-        "features": ["Scenario modeling tools", "Monte Carlo simulations", "Sensitivity analysis", "Decision tree visualization", "Outcome probability mapping"],
+        "features": [
+          "Scenario modeling tools",
+          "Monte Carlo simulations",
+          "Sensitivity analysis",
+          "Decision tree visualization",
+          "Outcome probability mapping"
+        ],
         "guidance": "I-define ang iyong scenario parameters. Mag-generate ang Lens ng multiple futures at ipapakita ang most likely outcomes."
       },
       "bridge": {
         "title": "The Bridge - Action Command Center",
         "summary": "Gawing aksyon ang insights. Mag-execute sa lahat ng connected systems mo.",
-        "features": ["Cross-system execution", "Approval workflow integration", "Action impact preview", "Rollback capabilities", "Execution audit trails"],
+        "features": [
+          "Cross-system execution",
+          "Approval workflow integration",
+          "Action impact preview",
+          "Rollback capabilities",
+          "Execution audit trails"
+        ],
         "guidance": "Pumili ng iyong action at i-preview ang impact. Nagbibigay ang Bridge ng ligtas na execution na may buong tracking."
       }
     },
@@ -635,55 +892,109 @@
       "mirror": {
         "title": "Cendia Mirror - Digital Twin Engine",
         "summary": "Gumawa ng live digital replica ng iyong organisasyon. I-test ang changes bago mag-go live.",
-        "features": ["Real-time data sync", "Scenario simulation environments", "Change impact modeling", "A/B testing frameworks", "Performance prediction"],
+        "features": [
+          "Real-time data sync",
+          "Scenario simulation environments",
+          "Change impact modeling",
+          "A/B testing frameworks",
+          "Performance prediction"
+        ],
         "guidance": "Gumagawa ang Mirror ng safe sandbox ng iyong organisasyon. Mag-eksperimento nang malaya - hindi maaapektuhan ng changes dito ang production."
       },
       "witness": {
         "title": "Cendia Witness - Immutable Audit Ledger",
         "summary": "Blockchain-backed na ebidensya ng bawat aksyon. Patunayan kung ano ang nangyari at kailan.",
-        "features": ["Cryptographic timestamping", "Tamper-proof audit records", "Chain of custody tracking", "Legal evidence export", "Compliance certification"],
+        "features": [
+          "Cryptographic timestamping",
+          "Tamper-proof audit records",
+          "Chain of custody tracking",
+          "Legal evidence export",
+          "Compliance certification"
+        ],
         "guidance": "Awtomatikong nagre-record ang Witness ng critical actions. I-access ang immutable records anumang oras para sa audits o investigations."
       },
       "oracle": {
         "title": "Cendia Oracle - Predictive Intelligence Hub",
         "summary": "Advanced AI na nagsasabi ng katotohanan sa kapangyarihan. Kumuha ng mga sagot na mahalaga.",
-        "features": ["Natural language question interface", "Cross-domain reasoning", "Predictive question answering", "Confidence scoring", "Source attribution"],
+        "features": [
+          "Natural language question interface",
+          "Cross-domain reasoning",
+          "Predictive question answering",
+          "Confidence scoring",
+          "Source attribution"
+        ],
         "guidance": "Itanong sa Oracle ang anuman tungkol sa iyong organisasyon. Isi-synthesize nito ang data mula sa lahat ng sources para magbigay ng accurate na sagot."
       },
       "legacy": {
         "title": "Cendia Legacy - Knowledge Preservation",
         "summary": "I-capture ang institutional knowledge bago ito mawala. Pangalagaan ang wisdom para sa hinaharap.",
-        "features": ["Expert knowledge capture", "Decision rationale archiving", "Best practice documentation", "Knowledge transfer processes", "Successor onboarding tools"],
+        "features": [
+          "Expert knowledge capture",
+          "Decision rationale archiving",
+          "Best practice documentation",
+          "Knowledge transfer processes",
+          "Successor onboarding tools"
+        ],
         "guidance": "I-record ang critical knowledge kapag nililikha ito. Tinitiyak ng Legacy na mag-survive ang institutional wisdom mo kaysa sa sinumang indibidwal."
       },
       "mirage": {
         "title": "Cendia Mirage - Synthetic Data Generator",
         "summary": "Gumawa ng realistic data na walang security risks. Mag-train, mag-test, at mag-develop nang may kumpiyansa.",
-        "features": ["Statistical data synthesis", "Privacy-preserving generation", "Relationship maintenance", "Edge case amplification", "Quality validation"],
+        "features": [
+          "Statistical data synthesis",
+          "Privacy-preserving generation",
+          "Relationship maintenance",
+          "Edge case amplification",
+          "Quality validation"
+        ],
         "guidance": "I-define ang iyong data requirements. Mag-generate ang Mirage ng synthetic datasets na tumutugma sa properties ng iyong real data."
       },
       "key": {
         "title": "Cendia Key - Identity & Access Vault",
         "summary": "Isang susi para pamunuan lahat. Unified identity management sa buong ecosystem mo.",
-        "features": ["Single sign-on hub", "Role-based access control", "Privileged access management", "Identity lifecycle automation", "Zero trust enforcement"],
+        "features": [
+          "Single sign-on hub",
+          "Role-based access control",
+          "Privileged access management",
+          "Identity lifecycle automation",
+          "Zero trust enforcement"
+        ],
         "guidance": "Ikonekta ang iyong identity providers. Iko-consolidate ng Key ang access control sa mga systems at ie-enforce ang policies."
       },
       "mesh": {
         "title": "Cendia Mesh - Integration Layer",
         "summary": "Ikonekta ang lahat sa lahat. Intelligent integration layer para sa iyong enterprise.",
-        "features": ["Universal API gateway", "Event-driven architecture", "Data transformation engine", "Service mesh management", "Integration monitoring"],
+        "features": [
+          "Universal API gateway",
+          "Event-driven architecture",
+          "Data transformation engine",
+          "Service mesh management",
+          "Integration monitoring"
+        ],
         "guidance": "I-configure ang system connections sa Mesh. Awtomatiko nitong hahawakan ang protocols, transformations, at routing."
       },
       "blackbox": {
         "title": "Cendia BlackBox - Model Registry",
         "summary": "Mission control para sa lahat ng AI models mo. Version, deploy, at monitor nang may kumpiyansa.",
-        "features": ["Model versioning at lineage", "Deployment management", "A/B testing framework", "Performance monitoring", "Automated rollback"],
+        "features": [
+          "Model versioning at lineage",
+          "Deployment management",
+          "A/B testing framework",
+          "Performance monitoring",
+          "Automated rollback"
+        ],
         "guidance": "I-register ang iyong models sa BlackBox. Awtomatiko nitong iti-track ang versions, mamahala sa deployments, at imo-monitor ang performance."
       },
       "glass": {
         "title": "Cendia Glass - Transparency Dashboard",
         "summary": "Buong visibility sa AI decision-making. Makita kung paano at bakit ginagawa ang mga desisyon.",
-        "features": ["Decision explanation", "Factor contribution analysis", "Counterfactual exploration", "Stakeholder reporting", "Audit-ready documentation"],
+        "features": [
+          "Decision explanation",
+          "Factor contribution analysis",
+          "Counterfactual exploration",
+          "Stakeholder reporting",
+          "Audit-ready documentation"
+        ],
         "guidance": "Pumili ng anumang AI decision sa Glass. Ibre-break down nito ang factors, ipapakita ang alternatives, at ie-explain ang reasoning."
       }
     },
@@ -691,8 +1002,19 @@
       "apotheosis": {
         "title": "CendiaApotheosis™ - Organizational Superintelligence",
         "summary": "Ang self-improvement cycle na hindi humihinto. Gabing pag-atake, automatic patches, human upskilling, at pattern banning.",
-        "features": ["Gabing red-team simulations (1000+ scenarios)", "Automatic weakness patching", "Skill gap detection at training", "Decision pattern banning", "Apotheosis Score tracking"],
-        "useCases": ["Continuous organizational improvement", "Proactive risk mitigation", "Automated compliance hardening", "Executive decision support"],
+        "features": [
+          "Gabing red-team simulations (1000+ scenarios)",
+          "Automatic weakness patching",
+          "Skill gap detection at training",
+          "Decision pattern banning",
+          "Apotheosis Score tracking"
+        ],
+        "useCases": [
+          "Continuous organizational improvement",
+          "Proactive risk mitigation",
+          "Automated compliance hardening",
+          "Executive decision support"
+        ],
         "guidance": "Tumatakbo ang Apotheosis gabi-gabi, inaatake ang iyong organization mula sa 1000+ angles, pinapatakan ang mga nakikita, at ginagawa kang permanently immune sa sarili mong mga pagkakamali."
       },
       "dissent": {
@@ -705,7 +1027,12 @@
           "Retaliation detection at protection",
           "Dissent accuracy tracking"
         ],
-        "useCases": ["Siguruhin na naririnig ang mga minority voices", "Gumawa ng organizational memory", "Protektahan ang mga whistleblower", "Pagbutihin ang decision quality"],
+        "useCases": [
+          "Siguruhin na naririnig ang mga minority voices",
+          "Gumawa ng organizational memory",
+          "Protektahan ang mga whistleblower",
+          "Pagbutihin ang decision quality"
+        ],
         "guidance": "Mag-file ng dissent laban sa anumang desisyon na hindi ka sang-ayon. Ang iyong objection ay permanently nire-record, acknowledged, at tina-track para sa accuracy sa paglipas ng panahon."
       },
       "connectors": {
@@ -739,7 +1066,12 @@
           "Merkle tree integrity verification",
           "Legal evidence bundle generation"
         ],
-        "useCases": ["Audit-ready test evidence", "Security review documentation", "SOC 2 / ISO 27001 / GDPR evidence", "Tamper-proof execution records"],
+        "useCases": [
+          "Audit-ready test evidence",
+          "Security review documentation",
+          "SOC 2 / ISO 27001 / GDPR evidence",
+          "Tamper-proof execution records"
+        ],
         "guidance": "Lahat ng test executions ay automatically logged na may cryptographic signatures. Gumawa ng legal evidence bundles sa isang click."
       },
       "sovereignArch": {
@@ -753,7 +1085,12 @@
           "QR Air-Gap Bridge: Zero-media transfer",
           "TPM Attestation: Hardware-signed decisions"
         ],
-        "useCases": ["Air-gapped secure facility deployments", "Defense at intelligence applications", "Regulated industry compliance", "Zero-trust enterprise architecture"],
+        "useCases": [
+          "Air-gapped secure facility deployments",
+          "Defense at intelligence applications",
+          "Regulated industry compliance",
+          "Zero-trust enterprise architecture"
+        ],
         "guidance": "Ang Sovereign Architecture patterns ay nag-e-enable ng deployment sa pinaka-restrictive environments. Bawat pattern ay pwedeng gamitin independently o combined."
       },
       "cascade": {
@@ -767,7 +1104,12 @@
           "Timeline visualization (T+0, T+30, T+90, T+1Year)",
           "Audit trail na may SHA-256 hash"
         ],
-        "useCases": ["Analyze staffing changes bago mag-implement", "Hulaan ang vendor replacement consequences", "Model policy changes sa organizational graph", "Detect feedback loops"],
+        "useCases": [
+          "Analyze staffing changes bago mag-implement",
+          "Hulaan ang vendor replacement consequences",
+          "Model policy changes sa organizational graph",
+          "Detect feedback loops"
+        ],
         "guidance": "I-load ang iyong organizational graph, mag-propose ng change at hayaan ang CendiaCascade na trace ang consequences. Ang competitors mo ay naglalaro ng chess na isang move ahead — CendiaCascade ay nag-simulate ng 5 moves ahead."
       },
       "adapters": {
@@ -828,31 +1170,51 @@
           "title": "Magsimula sa The Pulse",
           "description": "Simulan ang araw na may live view ng organizational health.",
           "space": "pulse",
-          "keyActions": ["Tingnan ang health scores", "I-review ang alerts", "Tandaan ang trends"]
+          "keyActions": [
+            "Tingnan ang health scores",
+            "I-review ang alerts",
+            "Tandaan ang trends"
+          ]
         },
         {
           "title": "Mag-dive sa The Helm",
           "description": "I-review ang strategic KPIs. Naabot mo ba ang targets?",
           "pillar": "helm",
-          "keyActions": ["I-review ang KPI status", "Ihambing sa targets", "Tukuyin ang risks"]
+          "keyActions": [
+            "I-review ang KPI status",
+            "Ihambing sa targets",
+            "Tukuyin ang risks"
+          ]
         },
         {
           "title": "Kumonsulta sa The Council",
           "description": "Para sa complex decisions, tipunin ang AI advisors.",
           "space": "council",
-          "keyActions": ["Itanong ang tanong", "I-review ang perspectives", "Humingi ng synthesis"]
+          "keyActions": [
+            "Itanong ang tanong",
+            "I-review ang perspectives",
+            "Humingi ng synthesis"
+          ]
         },
         {
           "title": "Mag-explore gamit ang The Lens",
           "description": "Mag-model ng iba't ibang scenarios. Tingnan ang possible futures.",
           "space": "lens",
-          "keyActions": ["I-define ang parameters", "Patakbuhin ang simulations", "Ihambing ang outcomes"]
+          "keyActions": [
+            "I-define ang parameters",
+            "Patakbuhin ang simulations",
+            "Ihambing ang outcomes"
+          ]
         },
         {
           "title": "Kumilos gamit ang The Bridge",
           "description": "Gawing aksyon ang decisions sa mga systems.",
           "space": "bridge",
-          "keyActions": ["Pumili ng action", "I-preview ang impact", "Aprubahan ang execution"]
+          "keyActions": [
+            "Pumili ng action",
+            "I-preview ang impact",
+            "Aprubahan ang execution"
+          ]
         }
       ]
     },
@@ -866,25 +1228,41 @@
           "title": "I-map ang Data gamit ang The Lineage",
           "description": "Unawain kung paano umaagos ang data sa organisasyon.",
           "pillar": "lineage",
-          "keyActions": ["Ikonekta ang data sources", "I-review ang assets", "I-document"]
+          "keyActions": [
+            "Ikonekta ang data sources",
+            "I-review ang assets",
+            "I-document"
+          ]
         },
         {
           "title": "I-monitor ang Quality sa The Health",
           "description": "I-track ang data quality metrics sa mga pipelines.",
           "pillar": "health",
-          "keyActions": ["I-configure ang checks", "Mag-set ng thresholds", "I-review ang scores"]
+          "keyActions": [
+            "I-configure ang checks",
+            "Mag-set ng thresholds",
+            "I-review ang scores"
+          ]
         },
         {
           "title": "Ikonekta ang Systems gamit ang Cendia Mesh",
           "description": "Bumuo ng integrations sa pagitan ng systems.",
           "sovereign": "mesh",
-          "keyActions": ["I-define ang sources", "I-configure ang mappings", "Mag-test"]
+          "keyActions": [
+            "I-define ang sources",
+            "I-configure ang mappings",
+            "Mag-test"
+          ]
         },
         {
           "title": "I-automate gamit ang The Flow",
           "description": "Bumuo ng automated data pipelines.",
           "pillar": "flow",
-          "keyActions": ["Mag-design ng workflows", "I-configure ang triggers", "I-handle ang errors"]
+          "keyActions": [
+            "Mag-design ng workflows",
+            "I-configure ang triggers",
+            "I-handle ang errors"
+          ]
         }
       ]
     },
@@ -898,25 +1276,41 @@
           "title": "I-review ang Security Posture sa The Guard",
           "description": "I-verify ang policy compliance at threats.",
           "pillar": "guard",
-          "keyActions": ["I-review ang scores", "I-check ang violations", "I-review ang logs"]
+          "keyActions": [
+            "I-review ang scores",
+            "I-check ang violations",
+            "I-review ang logs"
+          ]
         },
         {
           "title": "I-audit ang AI Ethics sa The Ethics",
           "description": "Tiyaking natutugunan ng AI models ang standards.",
           "pillar": "ethics",
-          "keyActions": ["I-check ang bias", "I-review ang decisions", "I-document"]
+          "keyActions": [
+            "I-check ang bias",
+            "I-review ang decisions",
+            "I-document"
+          ]
         },
         {
           "title": "Kumuha ng Audit Trail mula sa Cendia Witness",
           "description": "I-access ang immutable records ng lahat ng actions.",
           "sovereign": "witness",
-          "keyActions": ["Pumili ng scope", "Gumawa ng report", "I-export"]
+          "keyActions": [
+            "Pumili ng scope",
+            "Gumawa ng report",
+            "I-export"
+          ]
         },
         {
           "title": "Ipaliwanag ang Decisions gamit ang Cendia Glass",
           "description": "Buong explanations para sa bawat AI decision.",
           "sovereign": "glass",
-          "keyActions": ["Pumili ng decision", "Gumawa ng explanation", "Gumawa ng documentation"]
+          "keyActions": [
+            "Pumili ng decision",
+            "Gumawa ng explanation",
+            "Gumawa ng documentation"
+          ]
         }
       ]
     },
@@ -930,31 +1324,51 @@
           "title": "Magtipon ng Intelligence mula sa The Graph",
           "description": "I-explore ang knowledge base at tuklasin ang connections.",
           "space": "graph",
-          "keyActions": ["Maghanap", "Mag-explore", "Mag-save"]
+          "keyActions": [
+            "Maghanap",
+            "Mag-explore",
+            "Mag-save"
+          ]
         },
         {
           "title": "Hulaan ang Trends gamit ang The Predict",
           "description": "Gumamit ng AI para mahulaan ang key metrics.",
           "pillar": "predict",
-          "keyActions": ["Pumili ng targets", "I-review ang forecasts", "Mag-analyze"]
+          "keyActions": [
+            "Pumili ng targets",
+            "I-review ang forecasts",
+            "Mag-analyze"
+          ]
         },
         {
           "title": "Magtanong sa The Oracle",
           "description": "Kumuha ng sagot sa strategic questions.",
           "sovereign": "oracle",
-          "keyActions": ["Magtanong", "I-review ang sagot", "I-verify ang sources"]
+          "keyActions": [
+            "Magtanong",
+            "I-review ang sagot",
+            "I-verify ang sources"
+          ]
         },
         {
           "title": "Mag-model ng Scenarios sa The Lens",
           "description": "Gumawa ng multiple strategic scenarios.",
           "space": "lens",
-          "keyActions": ["I-define ang variables", "Patakbuhin ang futures", "Tukuyin ang strategies"]
+          "keyActions": [
+            "I-define ang variables",
+            "Patakbuhin ang futures",
+            "Tukuyin ang strategies"
+          ]
         },
         {
           "title": "Mag-test sa Cendia Mirror",
           "description": "Mag-simulate ng initiatives bago mag-commit.",
           "sovereign": "mirror",
-          "keyActions": ["Gumawa ng simulation", "Patakbuhin ang tests", "Mag-analyze"]
+          "keyActions": [
+            "Gumawa ng simulation",
+            "Patakbuhin ang tests",
+            "Mag-analyze"
+          ]
         }
       ]
     },
@@ -963,10 +1377,26 @@
       "subtitle": "Mabilis na orientation para sa instant value",
       "duration": "5 minuto",
       "steps": [
-        { "title": "Tingnan ang Dashboard", "description": "Ipinapakita ng command center ang pinakamahalaga.", "action": "Buksan ang Dashboard" },
-        { "title": "I-check ang Organizational Health", "description": "Isang numero na nagsasabi ng status.", "action": "Tingnan ang Health Score" },
-        { "title": "Magtanong", "description": "Mag-type ng anumang tanong tungkol sa organisasyon.", "action": "Buksan ang AI Assistant" },
-        { "title": "Mag-explore ng Metrics", "description": "I-click ang anumang metric para mag-drill down.", "action": "Pumili ng Metric" }
+        {
+          "title": "Tingnan ang Dashboard",
+          "description": "Ipinapakita ng command center ang pinakamahalaga.",
+          "action": "Buksan ang Dashboard"
+        },
+        {
+          "title": "I-check ang Organizational Health",
+          "description": "Isang numero na nagsasabi ng status.",
+          "action": "Tingnan ang Health Score"
+        },
+        {
+          "title": "Magtanong",
+          "description": "Mag-type ng anumang tanong tungkol sa organisasyon.",
+          "action": "Buksan ang AI Assistant"
+        },
+        {
+          "title": "Mag-explore ng Metrics",
+          "description": "I-click ang anumang metric para mag-drill down.",
+          "action": "Pumili ng Metric"
+        }
       ]
     },
     "crisisResponse": {
@@ -979,33 +1409,62 @@
           "title": "I-assess ang Situation sa The Pulse",
           "description": "Kumuha ng instant visibility sa nangyayari.",
           "space": "pulse",
-          "keyActions": ["Tukuyin ang affected systems", "I-verify ang severity", "I-check ang alerts"]
+          "keyActions": [
+            "Tukuyin ang affected systems",
+            "I-verify ang severity",
+            "I-check ang alerts"
+          ]
         },
         {
           "title": "I-trace ang Root Cause gamit ang The Lineage",
           "description": "Sundan ang data trail pabalik.",
           "pillar": "lineage",
-          "keyActions": ["I-trace ang flow", "Tukuyin ang changes", "I-document"]
+          "keyActions": [
+            "I-trace ang flow",
+            "Tukuyin ang changes",
+            "I-document"
+          ]
         },
         {
           "title": "Magtipon ng Evidence gamit ang Cendia Witness",
           "description": "Mag-capture ng immutable records.",
           "sovereign": "witness",
-          "keyActions": ["I-export ang timeline", "Mag-capture ng state", "Pangalagaan ang logs"]
+          "keyActions": [
+            "I-export ang timeline",
+            "Mag-capture ng state",
+            "Pangalagaan ang logs"
+          ]
         },
         {
           "title": "Mag-coordinate ng Response sa The Council",
           "description": "Tipunin ang AI experts para mag-plano.",
           "space": "council",
-          "keyActions": ["Tipunin ang team", "Kumuha ng assessment", "Gumawa ng plano"]
+          "keyActions": [
+            "Tipunin ang team",
+            "Kumuha ng assessment",
+            "Gumawa ng plano"
+          ]
         },
         {
           "title": "Mag-execute ng Recovery gamit ang The Bridge",
           "description": "Magpadala ng fixes sa mga systems.",
           "space": "bridge",
-          "keyActions": ["Mag-deploy ng fixes", "Mag-execute ng rollbacks", "Mag-verify"]
+          "keyActions": [
+            "Mag-deploy ng fixes",
+            "Mag-execute ng rollbacks",
+            "Mag-verify"
+          ]
         },
-        { "title": "I-document sa Cendia Legacy", "description": "Mag-capture ng lessons learned.", "sovereign": "legacy", "keyActions": ["Gumawa ng report", "I-document", "I-update ang runbooks"] }
+        {
+          "title": "I-document sa Cendia Legacy",
+          "description": "Mag-capture ng lessons learned.",
+          "sovereign": "legacy",
+          "keyActions": [
+            "Gumawa ng report",
+            "I-document",
+            "I-update ang runbooks"
+          ]
+        }
       ]
     },
     "aiModelLaunch": {
@@ -1018,32 +1477,61 @@
           "title": "I-register ang Model sa Cendia BlackBox",
           "description": "I-upload ang trained model.",
           "sovereign": "blackbox",
-          "keyActions": ["I-upload ang artifact", "I-record ang metadata", "I-link ang data"]
+          "keyActions": [
+            "I-upload ang artifact",
+            "I-record ang metadata",
+            "I-link ang data"
+          ]
         },
         {
           "title": "I-verify ang Bias sa The Ethics",
           "description": "Patakbuhin ang bias detection sa demographics.",
           "pillar": "ethics",
-          "keyActions": ["Patakbuhin ang assessment", "I-verify ang fairness", "I-document"]
+          "keyActions": [
+            "Patakbuhin ang assessment",
+            "I-verify ang fairness",
+            "I-document"
+          ]
         },
         {
           "title": "Mag-test gamit ang Synthetic Data mula sa Cendia Mirage",
           "description": "Gumawa ng edge cases at adversarial examples.",
           "sovereign": "mirage",
-          "keyActions": ["Gumawa ng data", "Patakbuhin ang stress tests", "I-verify ang edge cases"]
+          "keyActions": [
+            "Gumawa ng data",
+            "Patakbuhin ang stress tests",
+            "I-verify ang edge cases"
+          ]
         },
-        { "title": "Mag-simulate sa Cendia Mirror", "description": "Mag-deploy sa digital twin muna.", "sovereign": "mirror", "keyActions": ["Mag-deploy", "Mag-simulate ng load", "Ihambing"] },
+        {
+          "title": "Mag-simulate sa Cendia Mirror",
+          "description": "Mag-deploy sa digital twin muna.",
+          "sovereign": "mirror",
+          "keyActions": [
+            "Mag-deploy",
+            "Mag-simulate ng load",
+            "Ihambing"
+          ]
+        },
         {
           "title": "I-configure ang Explainability sa Cendia Glass",
           "description": "Mag-set up ng factor attribution para sa transparency.",
           "sovereign": "glass",
-          "keyActions": ["I-enable", "I-configure ang factors", "Mag-test"]
+          "keyActions": [
+            "I-enable",
+            "I-configure ang factors",
+            "Mag-test"
+          ]
         },
         {
           "title": "Mag-deploy at Mag-monitor gamit ang The Predict",
           "description": "Mag-go live na may monitoring.",
           "pillar": "predict",
-          "keyActions": ["I-promote", "Mag-set up ng monitoring", "I-configure ang alerts"]
+          "keyActions": [
+            "I-promote",
+            "Mag-set up ng monitoring",
+            "I-configure ang alerts"
+          ]
         }
       ]
     },
@@ -1057,37 +1545,61 @@
           "title": "Hilahin ang Strategic KPIs mula sa The Helm",
           "description": "Tipunin ang lahat ng key metrics.",
           "pillar": "helm",
-          "keyActions": ["I-export ang dashboard", "Gumawa ng analysis", "I-highlight ang successes"]
+          "keyActions": [
+            "I-export ang dashboard",
+            "Gumawa ng analysis",
+            "I-highlight ang successes"
+          ]
         },
         {
           "title": "Gumawa ng Forecasts gamit ang The Predict",
           "description": "Ipakita kung saan papunta.",
           "pillar": "predict",
-          "keyActions": ["Gumawa ng forecasts", "Gumawa ng projections", "Gumawa ng scenarios"]
+          "keyActions": [
+            "Gumawa ng forecasts",
+            "Gumawa ng projections",
+            "Gumawa ng scenarios"
+          ]
         },
         {
           "title": "I-verify ang Data gamit ang The Lineage",
           "description": "Alamin kung saan galing ang bawat numero.",
           "pillar": "lineage",
-          "keyActions": ["I-trace ang figures", "I-document", "Maghanda ng lineage"]
+          "keyActions": [
+            "I-trace ang figures",
+            "I-document",
+            "Maghanda ng lineage"
+          ]
         },
         {
           "title": "Mag-model ng What-If sa The Lens",
           "description": "Maghanda para sa 'What if we...' questions.",
           "space": "lens",
-          "keyActions": ["Mag-model ng scenarios", "Mag-analyze ng risks", "Maghanda ng plans"]
+          "keyActions": [
+            "Mag-model ng scenarios",
+            "Mag-analyze ng risks",
+            "Maghanda ng plans"
+          ]
         },
         {
           "title": "Kumuha ng AI Synthesis mula sa Cendia Oracle",
           "description": "I-synthesize ang data sa key insights.",
           "sovereign": "oracle",
-          "keyActions": ["Gumawa ng insights", "Humingi ng talking points", "Tukuyin ang blind spots"]
+          "keyActions": [
+            "Gumawa ng insights",
+            "Humingi ng talking points",
+            "Tukuyin ang blind spots"
+          ]
         },
         {
           "title": "Tiyakin ang Compliance gamit ang The Guard",
           "description": "I-verify na tumutugma ang data sa requirements.",
           "pillar": "guard",
-          "keyActions": ["Patakbuhin ang checks", "I-verify ang classification", "Kumuha ng approval"]
+          "keyActions": [
+            "Patakbuhin ang checks",
+            "I-verify ang classification",
+            "Kumuha ng approval"
+          ]
         }
       ]
     },
@@ -1101,32 +1613,61 @@
           "title": "I-access ang Workspace gamit ang Cendia Key",
           "description": "Ang single sign-on ay nagbibigay ng access sa lahat.",
           "sovereign": "key",
-          "keyActions": ["Kumpletuhin ang SSO", "I-verify ang role", "I-access ang systems"]
+          "keyActions": [
+            "Kumpletuhin ang SSO",
+            "I-verify ang role",
+            "I-access ang systems"
+          ]
         },
         {
           "title": "Mag-explore ng Organizational Knowledge sa The Graph",
           "description": "Mag-navigate sa knowledge universe.",
           "space": "graph",
-          "keyActions": ["Maghanap ng resources", "Magtuklas ng knowledge", "Tukuyin ang key people"]
+          "keyActions": [
+            "Maghanap ng resources",
+            "Magtuklas ng knowledge",
+            "Tukuyin ang key people"
+          ]
         },
         {
           "title": "Matuto mula sa Cendia Legacy",
           "description": "I-access ang institutional knowledge.",
           "sovereign": "legacy",
-          "keyActions": ["I-review ang playbooks", "Pag-aralan ang decisions", "Matuto ng best practices"]
+          "keyActions": [
+            "I-review ang playbooks",
+            "Pag-aralan ang decisions",
+            "Matuto ng best practices"
+          ]
         },
         {
           "title": "Unawain ang Metrics sa The Helm",
           "description": "Matuto ng KPIs ng iyong role.",
           "pillar": "helm",
-          "keyActions": ["I-review ang metrics", "Unawain ang targets", "Mag-set up ng dashboard"]
+          "keyActions": [
+            "I-review ang metrics",
+            "Unawain ang targets",
+            "Mag-set up ng dashboard"
+          ]
         },
-        { "title": "Mag-set up ng Workflows sa The Flow", "description": "Sumali sa existing workflows.", "pillar": "flow", "keyActions": ["Sumali", "Mag-set up ng notifications", "I-automate"] },
+        {
+          "title": "Mag-set up ng Workflows sa The Flow",
+          "description": "Sumali sa existing workflows.",
+          "pillar": "flow",
+          "keyActions": [
+            "Sumali",
+            "Mag-set up ng notifications",
+            "I-automate"
+          ]
+        },
         {
           "title": "Makilala ang AI Assistants sa The Agents",
           "description": "Makilala ang AI agents na relevant sa role.",
           "pillar": "agents",
-          "keyActions": ["Makilala ang agents", "Magtanong", "Mag-save ng sagot"]
+          "keyActions": [
+            "Makilala ang agents",
+            "Magtanong",
+            "Mag-save ng sagot"
+          ]
         }
       ]
     },
@@ -1140,37 +1681,61 @@
           "title": "I-map ang Both Data Landscapes gamit ang The Lineage",
           "description": "Unawain ang magkabilang panig bago pagsamahin.",
           "pillar": "lineage",
-          "keyActions": ["I-scan ang acquirer data", "I-scan ang target data", "Tukuyin ang overlaps"]
+          "keyActions": [
+            "I-scan ang acquirer data",
+            "I-scan ang target data",
+            "Tukuyin ang overlaps"
+          ]
         },
         {
           "title": "Pag-isahin ang Metrics sa The Helm",
           "description": "I-align ang KPI definitions.",
           "pillar": "helm",
-          "keyActions": ["I-map ang definitions", "Resolbahin ang conflicts", "Gumawa ng unified dashboard"]
+          "keyActions": [
+            "I-map ang definitions",
+            "Resolbahin ang conflicts",
+            "Gumawa ng unified dashboard"
+          ]
         },
         {
           "title": "Ikonekta ang Systems gamit ang Cendia Mesh",
           "description": "Bumuo ng integration layer.",
           "sovereign": "mesh",
-          "keyActions": ["I-map ang systems", "Gumawa ng integrations", "Mag-test ng flows"]
+          "keyActions": [
+            "I-map ang systems",
+            "Gumawa ng integrations",
+            "Mag-test ng flows"
+          ]
         },
         {
           "title": "Pangalagaan ang Knowledge sa Cendia Legacy",
           "description": "Mag-capture ng knowledge bago ang transitions.",
           "sovereign": "legacy",
-          "keyActions": ["Mag-interview ng personnel", "I-document ang processes", "I-archive ang knowledge"]
+          "keyActions": [
+            "Mag-interview ng personnel",
+            "I-document ang processes",
+            "I-archive ang knowledge"
+          ]
         },
         {
           "title": "Pag-isahin ang Identity Systems gamit ang Cendia Key",
           "description": "Pagsamahin kung sino ang may access sa ano.",
           "sovereign": "key",
-          "keyActions": ["Pag-isahin ang sources", "I-align ang permissions", "I-enable ang unified access"]
+          "keyActions": [
+            "Pag-isahin ang sources",
+            "I-align ang permissions",
+            "I-enable ang unified access"
+          ]
         },
         {
           "title": "Mag-monitor ng Integration Health",
           "description": "I-track ang health sa real-time.",
           "pillar": "health",
-          "keyActions": ["I-monitor ang quality", "I-track ang sync", "Mag-alert sa anomalies"]
+          "keyActions": [
+            "I-monitor ang quality",
+            "I-track ang sync",
+            "Mag-alert sa anomalies"
+          ]
         }
       ]
     },
@@ -1184,37 +1749,61 @@
           "title": "Hilahin ang Audit Evidence mula sa Cendia Witness",
           "description": "Cryptographically-proven evidence.",
           "sovereign": "witness",
-          "keyActions": ["I-define ang scope", "I-export ang evidence packages", "Gumawa ng certifications"]
+          "keyActions": [
+            "I-define ang scope",
+            "I-export ang evidence packages",
+            "Gumawa ng certifications"
+          ]
         },
         {
           "title": "I-verify ang Policy Compliance sa The Guard",
           "description": "Ipakita ang actual enforcement.",
           "pillar": "guard",
-          "keyActions": ["Gumawa ng reports", "Ipakita ang enforcement", "I-document ang exceptions"]
+          "keyActions": [
+            "Gumawa ng reports",
+            "Ipakita ang enforcement",
+            "I-document ang exceptions"
+          ]
         },
         {
           "title": "Ipakita ang AI Governance sa The Ethics",
           "description": "Ipakita ang bias testing at ethical processes.",
           "pillar": "ethics",
-          "keyActions": ["I-export ang assessments", "Ipakita ang test results", "I-document ang governance"]
+          "keyActions": [
+            "I-export ang assessments",
+            "Ipakita ang test results",
+            "I-document ang governance"
+          ]
         },
         {
           "title": "Ipaliwanag ang AI Decisions gamit ang Cendia Glass",
           "description": "Buong explanations para sa auditors.",
           "sovereign": "glass",
-          "keyActions": ["Gumawa ng reports", "Ipakita ang attributions", "Magbigay ng counterfactuals"]
+          "keyActions": [
+            "Gumawa ng reports",
+            "Ipakita ang attributions",
+            "Magbigay ng counterfactuals"
+          ]
         },
         {
           "title": "I-trace ang Data Lineage",
           "description": "Patunayan ang accuracy ng numbers.",
           "pillar": "lineage",
-          "keyActions": ["I-export ang lineage maps", "I-document ang transformations", "Patunayan ang accuracy"]
+          "keyActions": [
+            "I-export ang lineage maps",
+            "I-document ang transformations",
+            "Patunayan ang accuracy"
+          ]
         },
         {
           "title": "I-review ang Access Controls gamit ang Cendia Key",
           "description": "Buong access audit trails.",
           "sovereign": "key",
-          "keyActions": ["I-export ang logs", "Ipakita ang history", "I-document ang controls"]
+          "keyActions": [
+            "I-export ang logs",
+            "Ipakita ang history",
+            "I-document ang controls"
+          ]
         }
       ]
     },
@@ -1228,37 +1817,61 @@
           "title": "Tukuyin ang At-Risk Customers gamit ang The Predict",
           "description": "ML provides churn risk scores.",
           "pillar": "predict",
-          "keyActions": ["I-review ang scores", "Tukuyin ang high risks", "Unawain ang factors"]
+          "keyActions": [
+            "I-review ang scores",
+            "Tukuyin ang high risks",
+            "Unawain ang factors"
+          ]
         },
         {
           "title": "Unawain ang Customer Health sa The Helm",
           "description": "I-track ang customer health metrics.",
           "pillar": "helm",
-          "keyActions": ["I-review ang scores", "I-check ang engagement", "Tukuyin ang trends"]
+          "keyActions": [
+            "I-review ang scores",
+            "I-check ang engagement",
+            "Tukuyin ang trends"
+          ]
         },
         {
           "title": "Mag-explore ng Customer Journey sa The Graph",
           "description": "Tingnan ang buong customer story.",
           "space": "graph",
-          "keyActions": ["Tingnan ang timeline", "Mag-explore ng interactions", "Magtuklas ng patterns"]
+          "keyActions": [
+            "Tingnan ang timeline",
+            "Mag-explore ng interactions",
+            "Magtuklas ng patterns"
+          ]
         },
         {
           "title": "Kumuha ng Retention Advice mula sa The Council",
           "description": "Mag-brainstorm ng retention strategies.",
           "space": "council",
-          "keyActions": ["Ipresenta ang profile", "Kumuha ng ideas", "Mag-prioritize"]
+          "keyActions": [
+            "Ipresenta ang profile",
+            "Kumuha ng ideas",
+            "Mag-prioritize"
+          ]
         },
         {
           "title": "Mag-trigger ng Retention Workflows sa The Flow",
           "description": "Gawing aksyon ang recommendations.",
           "pillar": "flow",
-          "keyActions": ["Mag-trigger ng outreach", "Mag-schedule ng follow-ups", "I-escalate"]
+          "keyActions": [
+            "Mag-trigger ng outreach",
+            "Mag-schedule ng follow-ups",
+            "I-escalate"
+          ]
         },
         {
           "title": "Mag-model ng Revenue Impact sa The Lens",
           "description": "I-quantify kung ano ang at risk.",
           "space": "lens",
-          "keyActions": ["Mag-model ng churn impact", "Mag-calculate ng ROI", "Mag-prioritize ng efforts"]
+          "keyActions": [
+            "Mag-model ng churn impact",
+            "Mag-calculate ng ROI",
+            "Mag-prioritize ng efforts"
+          ]
         }
       ]
     },
@@ -1272,37 +1885,61 @@
           "title": "Mag-set up ng Launch KPIs sa The Helm",
           "description": "I-define ang success bago mag-launch.",
           "pillar": "helm",
-          "keyActions": ["I-define ang metrics", "Mag-set ng targets", "I-configure ang dashboard"]
+          "keyActions": [
+            "I-define ang metrics",
+            "Mag-set ng targets",
+            "I-configure ang dashboard"
+          ]
         },
         {
           "title": "I-verify ang System Readiness sa The Health",
           "description": "I-verify na lahat ay green.",
           "pillar": "health",
-          "keyActions": ["I-check ang lahat ng systems", "I-verify ang capacity", "Kumpirmahin ang dependencies"]
+          "keyActions": [
+            "I-check ang lahat ng systems",
+            "I-verify ang capacity",
+            "Kumpirmahin ang dependencies"
+          ]
         },
         {
           "title": "Mag-simulate ng Launch Load sa Cendia Mirror",
           "description": "Mag-test sa digital twin.",
           "sovereign": "mirror",
-          "keyActions": ["Gumawa ng simulation", "Patakbuhin ang load tests", "Tukuyin ang bottlenecks"]
+          "keyActions": [
+            "Gumawa ng simulation",
+            "Patakbuhin ang load tests",
+            "Tukuyin ang bottlenecks"
+          ]
         },
         {
           "title": "Mag-monitor ng Real-time sa The Pulse",
           "description": "Launch day visibility.",
           "space": "pulse",
-          "keyActions": ["I-monitor ang metrics", "Mag-watch para sa anomalies", "I-track ang adoption"]
+          "keyActions": [
+            "I-monitor ang metrics",
+            "Mag-watch para sa anomalies",
+            "I-track ang adoption"
+          ]
         },
         {
           "title": "Mag-respond sa Issues gamit ang The Bridge",
           "description": "Magpadala ng changes nang mabilis.",
           "space": "bridge",
-          "keyActions": ["Mag-deploy ng hotfixes", "Mag-adjust ng configs", "Mag-scale ng resources"]
+          "keyActions": [
+            "Mag-deploy ng hotfixes",
+            "Mag-adjust ng configs",
+            "Mag-scale ng resources"
+          ]
         },
         {
           "title": "Mag-capture ng Lessons sa Cendia Legacy",
           "description": "I-document ang learnings.",
           "sovereign": "legacy",
-          "keyActions": ["I-document ang notes", "Mag-record ng issues", "Tandaan ang improvements"]
+          "keyActions": [
+            "I-document ang notes",
+            "Mag-record ng issues",
+            "Tandaan ang improvements"
+          ]
         }
       ]
     },
@@ -1316,37 +1953,61 @@
           "title": "I-assess ang Current Quality sa The Lineage",
           "description": "Sukatin ang quality sa bawat stage.",
           "pillar": "lineage",
-          "keyActions": ["Patakbuhin ang assessment", "Tukuyin ang issues", "Mag-prioritize"]
+          "keyActions": [
+            "Patakbuhin ang assessment",
+            "Tukuyin ang issues",
+            "Mag-prioritize"
+          ]
         },
         {
           "title": "I-track ang Quality Metrics sa The Helm",
           "description": "Gawing first-class KPI ang quality.",
           "pillar": "helm",
-          "keyActions": ["Gumawa ng dashboard", "Mag-set ng targets", "I-track ang progress"]
+          "keyActions": [
+            "Gumawa ng dashboard",
+            "Mag-set ng targets",
+            "I-track ang progress"
+          ]
         },
         {
           "title": "Mag-set ng Quality Rules sa The Guard",
           "description": "I-define at i-enforce ang standards.",
           "pillar": "guard",
-          "keyActions": ["I-define ang rules", "I-configure ang validation", "Mag-set ng alerts"]
+          "keyActions": [
+            "I-define ang rules",
+            "I-configure ang validation",
+            "Mag-set ng alerts"
+          ]
         },
         {
           "title": "I-automate ang Validation sa The Flow",
           "description": "I-integrate ang quality sa pipelines.",
           "pillar": "flow",
-          "keyActions": ["Gumawa ng workflows", "Magdagdag ng validation steps", "I-configure ang remediation"]
+          "keyActions": [
+            "Gumawa ng workflows",
+            "Magdagdag ng validation steps",
+            "I-configure ang remediation"
+          ]
         },
         {
           "title": "Mag-monitor ng Quality Health",
           "description": "I-track ang quality trends.",
           "pillar": "health",
-          "keyActions": ["I-monitor ang trends", "Mag-alert sa degradation", "Mag-report ng improvements"]
+          "keyActions": [
+            "I-monitor ang trends",
+            "Mag-alert sa degradation",
+            "Mag-report ng improvements"
+          ]
         },
         {
           "title": "I-document ang Standards sa Cendia Legacy",
           "description": "Gawing institutional ang quality.",
           "sovereign": "legacy",
-          "keyActions": ["I-document ang standards", "Gumawa ng playbooks", "Mag-train ng teams"]
+          "keyActions": [
+            "I-document ang standards",
+            "Gumawa ng playbooks",
+            "Mag-train ng teams"
+          ]
         }
       ]
     },
@@ -1360,37 +2021,61 @@
           "title": "Mag-detect ng Threats sa The Guard",
           "description": "Tukuyin ang suspicious activity.",
           "pillar": "guard",
-          "keyActions": ["I-review ang alerts", "I-assess ang severity", "Kumpirmahin ang threat"]
+          "keyActions": [
+            "I-review ang alerts",
+            "I-assess ang severity",
+            "Kumpirmahin ang threat"
+          ]
         },
         {
           "title": "I-assess ang Scope sa The Lineage",
           "description": "Tukuyin ang affected systems at data.",
           "pillar": "lineage",
-          "keyActions": ["I-map ang systems", "Tukuyin ang sensitive data", "I-assess ang exposure"]
+          "keyActions": [
+            "I-map ang systems",
+            "Tukuyin ang sensitive data",
+            "I-assess ang exposure"
+          ]
         },
         {
           "title": "I-review ang Access Logs sa Cendia Key",
           "description": "Sino ang nag-access ng ano at kailan.",
           "sovereign": "key",
-          "keyActions": ["Hilahin ang logs", "Tukuyin ang anomalies", "I-trace ang attack path"]
+          "keyActions": [
+            "Hilahin ang logs",
+            "Tukuyin ang anomalies",
+            "I-trace ang attack path"
+          ]
         },
         {
           "title": "Pangalagaan ang Evidence sa Cendia Witness",
           "description": "Mag-capture ng immutable records.",
           "sovereign": "witness",
-          "keyActions": ["Mag-capture ng state", "I-export ang logs", "Pangalagaan ang timeline"]
+          "keyActions": [
+            "Mag-capture ng state",
+            "I-export ang logs",
+            "Pangalagaan ang timeline"
+          ]
         },
         {
           "title": "Mag-execute ng Containment gamit ang The Bridge",
           "description": "I-isolate ang threat.",
           "space": "bridge",
-          "keyActions": ["I-revoke ang access", "I-isolate ang systems", "Mag-deploy ng patches"]
+          "keyActions": [
+            "I-revoke ang access",
+            "I-isolate ang systems",
+            "Mag-deploy ng patches"
+          ]
         },
         {
           "title": "Mag-coordinate gamit ang The Council",
           "description": "Mag-analyze ng attack at mag-plano.",
           "space": "council",
-          "keyActions": ["Mag-analyze ng patterns", "Kumuha ng remediation plan", "I-assess ang risks"]
+          "keyActions": [
+            "Mag-analyze ng patterns",
+            "Kumuha ng remediation plan",
+            "I-assess ang risks"
+          ]
         }
       ]
     }
@@ -1408,5 +2093,375 @@
     "required": "Kinakailangang field",
     "optional": "Opsyonal"
   },
-  "_meta": { "direction": "ltr", "language": "Filipino", "completeness": "100%" }
+  "_meta": {
+    "direction": "ltr",
+    "language": "Filipino",
+    "completeness": "100%"
+  },
+  "sports": {
+    "title": "Sports DDGI",
+    "subtitle": "Transfer decisions, contract governance, FFP compliance",
+    "decisions": {
+      "title": "Transfer Decisions",
+      "newDecision": "New Decision",
+      "player": "Player",
+      "type": "Type",
+      "club": "Club",
+      "fee": "Fee",
+      "status": "Status",
+      "recommendation": "Recommendation",
+      "actions": "Actions"
+    },
+    "types": {
+      "inbound": "Inbound",
+      "outbound": "Outbound",
+      "loan_out": "Loan Out",
+      "loan_in": "Loan In"
+    },
+    "status": {
+      "draft": "Draft",
+      "pending_approval": "Pending Approval",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "completed": "Completed",
+      "withdrawn": "Withdrawn"
+    },
+    "recommendations": {
+      "strong_buy": "Strong Buy",
+      "buy": "Buy",
+      "conditional": "Conditional",
+      "pass": "Pass"
+    },
+    "compliance": {
+      "title": "Compliance",
+      "frameworks": "Compliance Frameworks",
+      "ffpStatus": "FFP Break-Even Status",
+      "squadCostRatio": "Squad Cost Ratio"
+    },
+    "analytics": {
+      "title": "Analytics",
+      "velocity": "Decision Velocity",
+      "approvalRate": "Approval Rate",
+      "evidenceCompleteness": "Evidence Completeness",
+      "auditReadiness": "Audit Readiness"
+    },
+    "stats": {
+      "totalDecisions": "Total Decisions",
+      "inboundValue": "Inbound Value",
+      "outboundValue": "Outbound Value",
+      "pendingApproval": "pending approval"
+    }
+  },
+  "dcii": {
+    "title": "CendiaDCII™ — Decision Crisis Immunization Infrastructure",
+    "subtitle": "9 primitives · IISS scoring · category-defining governance infrastructure",
+    "tabs": {
+      "overview": "Overview",
+      "iiss": "CendiaIISS™",
+      "media": "CendiaMediaAuth™",
+      "jurisdiction": "CendiaJurisdiction™",
+      "timestamps": "CendiaTimestamp™",
+      "similarity": "CendiaSimilarity™"
+    },
+    "iiss": {
+      "title": "CendiaIISS™ — Institutional Immune System Score",
+      "calculate": "Calculate IISS",
+      "score": "Score",
+      "band": "Band",
+      "certification": "Certification Level",
+      "percentile": "Percentile",
+      "trend": "Trend",
+      "dimensions": "Dimension Breakdown",
+      "recommendations": "Top Recommendations",
+      "insuranceImpact": "Insurance Impact",
+      "benchmarks": "Industry Benchmarks",
+      "regulatoryReadiness": "Regulatory Readiness",
+      "bands": {
+        "critical": "Critical",
+        "vulnerable": "Vulnerable",
+        "developing": "Developing",
+        "resilient": "Resilient",
+        "exceptional": "Exceptional"
+      },
+      "certifications": {
+        "none": "None",
+        "bronze": "Bronze",
+        "silver": "Silver",
+        "gold": "Gold",
+        "platinum": "Platinum"
+      }
+    },
+    "primitives": {
+      "title": "9 DCII Primitives",
+      "foundational": "Foundational",
+      "advanced": "Advanced",
+      "discoveryTimeProof": "Discovery-Time Proof",
+      "deliberationCapture": "Deliberation Capture",
+      "overrideAccountability": "Override Accountability",
+      "continuityMemory": "Continuity Memory",
+      "driftDetection": "Drift Detection",
+      "cognitiveBiasMitigation": "Cognitive Bias Mitigation",
+      "quantumResistantIntegrity": "Quantum-Resistant Integrity",
+      "syntheticMediaAuth": "Synthetic Media Authentication",
+      "crossJurisdictionCompliance": "Cross-Jurisdiction Compliance"
+    },
+    "media": {
+      "title": "CendiaMediaAuth™ — Synthetic Media Authentication",
+      "signMedia": "Sign Media",
+      "analyzeAuthenticity": "Analyze Authenticity",
+      "chainOfCustody": "Chain of Custody",
+      "verificationReport": "Verification Report",
+      "c2paSigned": "C2PA Signed",
+      "verdicts": {
+        "authentic": "Authentic",
+        "likely_authentic": "Likely Authentic",
+        "inconclusive": "Inconclusive",
+        "likely_synthetic": "Likely Synthetic",
+        "synthetic": "Synthetic",
+        "tampered": "Tampered"
+      }
+    },
+    "jurisdiction": {
+      "title": "CendiaJurisdiction™ — Cross-Jurisdiction Regulatory Conflicts",
+      "assess": "Assess Organization",
+      "conflicts": "Conflicts Detected",
+      "goodFaith": "Good Faith Documentation",
+      "evidencePacket": "Evidence Packet",
+      "profiles": "Jurisdiction Profiles",
+      "severities": {
+        "irreconcilable": "Irreconcilable",
+        "significant": "Significant",
+        "moderate": "Moderate",
+        "minor": "Minor",
+        "theoretical": "Theoretical"
+      },
+      "strategies": {
+        "highest_standard": "Highest Standard",
+        "data_localization": "Data Localization",
+        "contractual_safeguard": "Contractual Safeguard",
+        "good_faith_maximum": "Good Faith Maximum"
+      }
+    },
+    "timestamps": {
+      "title": "CendiaTimestamp™ — RFC 3161 Timestamp Authority",
+      "issueTimestamp": "Issue Timestamp",
+      "verifyTimestamp": "Verify Timestamp",
+      "batchTimestamp": "Batch Timestamp",
+      "providers": "TSA Providers",
+      "blockchainAnchored": "Blockchain Anchored",
+      "totalTokens": "Total Tokens",
+      "avgVerification": "Avg Verification Time"
+    },
+    "similarity": {
+      "title": "CendiaSimilarity™ — Decision Similarity Engine",
+      "search": "Find Similar Decisions",
+      "searchPlaceholder": "Describe a proposed decision to find similar precedents...",
+      "matchStrength": "Match Strength",
+      "riskAssessment": "Risk Assessment",
+      "patterns": "Decision Patterns",
+      "insights": "Aggregate Insights",
+      "outcomeTracking": "Outcome Tracking",
+      "strengths": {
+        "exact": "Exact",
+        "strong": "Strong",
+        "moderate": "Moderate",
+        "weak": "Weak",
+        "tangential": "Tangential"
+      },
+      "outcomes": {
+        "successful": "Successful",
+        "partially_successful": "Partially Successful",
+        "failed": "Failed",
+        "too_early": "Too Early to Tell",
+        "unknown": "Unknown"
+      }
+    }
+  },
+  "landing": {
+    "nav": {
+      "tryDemo": "TRY THE DEMO"
+    },
+    "hero": {
+      "line1": "They have data. They don't have understanding.",
+      "line2": "They have AI. They don't have",
+      "agency": "agency.",
+      "p1": "Every consequential decision your organisation makes with AI is invisible. No record of what was considered. No proof of who decided. No evidence it can survive a regulator, an auditor, or a court.",
+      "p2": "The EU AI Act changed that.",
+      "p2Emphasis": "August 2025. Enforcement is live.",
+      "p3": "Datacendia gives AI decisions a memory, a voice, and a signature.",
+      "cta": "Enter the Platform",
+      "secondaryCta": "Read how it works"
+    },
+    "problem": {
+      "label": "The Problem",
+      "text": "When a law firm uses AI to assess litigation risk, a bank uses it to approve credit, or a board uses it to evaluate an acquisition — that decision vanishes the moment the window closes. If it's challenged, there's nothing to show. No deliberation. No dissent. No proof of process.",
+      "fade": "Just a chat log that doesn't exist anymore."
+    },
+    "whatIs": {
+      "label": "What is Datacendia?",
+      "simple": {
+        "title": "In Plain Terms",
+        "description": "Datacendia is a decision intelligence platform. You ask it a question — about a hire, a deal, a policy change, a risk — and a panel of AI specialists debates it from every angle: financial, legal, operational, ethical. Every argument, every dissent, every vote is permanently recorded and cryptographically signed. When someone asks \"how did you reach that decision?\" — you hand them the receipt.",
+        "analogy": "Think of it as a boardroom that records everything, signs everything, and can prove everything happened exactly the way it did."
+      },
+      "technical": {
+        "title": "Under the Hood",
+        "description": "A multi-agent deliberation engine backed by cryptographic infrastructure. Domain-expert LLM agents (CFO, CISO, Legal, Ethics, Red Team) engage in structured argumentation over your query. Each response is hashed into a Merkle tree, Ed25519-signed, and RFC 3161-timestamped. Decision packets include full chain-of-custody, dissent records, and confidence scoring — exportable as court-admissible evidence bundles.",
+        "stack": "Cloud-hosted (Core) · Apache 2.0 · OpenAI / Groq / Together AI · On-prem Sovereign Edition also available"
+      }
+    },
+    "workflow": {
+      "label": "How a Decision Flows",
+      "subtitle": "From question to court-admissible evidence in one session",
+      "steps": {
+        "ask": {
+          "title": "Ask",
+          "description": "Pose a question to the Council. \"Should we acquire Company X?\" \"Is this vendor contract compliant?\""
+        },
+        "deliberate": {
+          "title": "Deliberate",
+          "description": "Domain-expert AI agents debate from every angle. CFO analyses cost. CISO flags risk. Legal checks compliance. Red Team challenges assumptions."
+        },
+        "dissent": {
+          "title": "Record Dissent",
+          "description": "Disagreements aren't hidden — they're first-class artifacts. Every minority opinion is captured, timestamped, and preserved."
+        },
+        "sign": {
+          "title": "Sign & Seal",
+          "description": "Each response is hashed into a Merkle tree, Ed25519-signed, and RFC 3161-timestamped. The chain of custody is established during deliberation."
+        },
+        "store": {
+          "title": "Store in Vault",
+          "description": "The complete decision packet — arguments, votes, dissent, metadata — is sealed in CendiaVault with cryptographic integrity."
+        },
+        "export": {
+          "title": "Export Receipt",
+          "description": "One click generates the Regulator's Receipt™ — a court-admissible evidence bundle. Verify with openssl. No vendor dependency."
+        }
+      }
+    },
+    "solution": {
+      "label": "The Solution",
+      "beat1Title": "The Council deliberates.",
+      "beat1Text": "Ask a question. Domain-expert AI agents — CFO, CISO, CTO, Legal Counsel, Red Team — argue your decision from every angle.",
+      "beat1Emphasis": "Dissent is recorded. Consensus is earned, not assumed.",
+      "beat2Title": "Every word is signed.",
+      "beat2Text": "Each response, vote, and objection is hashed into a Merkle tree. Ed25519 signed. RFC 3161 timestamped.",
+      "beat2Emphasis": "The chain of custody is established during deliberation — not reconstructed afterward.",
+      "beat3Title": "One click. Court-admissible proof.",
+      "beat3Text": "The Regulator's Receipt™ exports everything a compliance audit needs.",
+      "beat3Emphasis": "Verify it yourself with",
+      "beat3EmpSuffix": ". No vendor dependency. No trust required."
+    },
+    "audience": {
+      "developers": {
+        "label": "For Developers",
+        "text": "Apache 2.0. TypeScript + React + Node.js. API-first architecture.",
+        "code": "docker compose up",
+        "suffix": "and the full stack is running locally."
+      },
+      "compliance": {
+        "label": "For Compliance Teams",
+        "text": "EU AI Act Article 14. SR 11-7. ABA Opinion 512. HIPAA. The platform maps to the frameworks you're already accountable to."
+      },
+      "leadership": {
+        "label": "For Leadership",
+        "text": "The first AI governance platform that produces",
+        "emphasis": "evidence",
+        "suffix": ", not just reports. Built for the moment regulators start asking questions — before they do."
+      }
+    },
+    "demo": {
+      "title": "Try the Demo",
+      "subtitle": "No login. No credit card. Click and you're inside.",
+      "enterButton": "Enter the Platform",
+      "submitting": "Entering platform...",
+      "connectionError": "Connection error. Please try again.",
+      "genericError": "Something went wrong. Please try again."
+    },
+    "socialProof": {
+      "label": "Trusted Infrastructure",
+      "nvidia": "NVIDIA Inception Program",
+      "openSource": "Apache 2.0 Open Source",
+      "sovereign": "Zero Trust Architecture",
+      "compliance": "EU AI Act · GDPR · HIPAA Mapped",
+      "crypto": "Ed25519 · Merkle Trees · RFC 3161",
+      "zeroTrust": "Sovereign Edition Available"
+    },
+    "preview": {
+      "label": "See It In Action",
+      "subtitle": "The Council deliberating a real decision — multiple AI specialists, structured argumentation, cryptographic proof.",
+      "caption": "The Council — AI agents deliberating from CFO, CISO, Legal, Ethics, and Red Team perspectives.",
+      "cta": "Try it yourself"
+    },
+    "differentiator": {
+      "label": "Why Not Just Use ChatGPT?",
+      "subtitle": "ChatGPT is a conversation. Datacendia is a governed decision.",
+      "items": {
+        "memory": {
+          "chatgpt": "Conversations disappear when you close the tab",
+          "datacendia": "Every word is permanently recorded and cryptographically signed"
+        },
+        "dissent": {
+          "chatgpt": "One voice, one perspective, no pushback",
+          "datacendia": "Multiple domain experts argue, disagree, and record dissent"
+        },
+        "proof": {
+          "chatgpt": "No evidence trail — \"the AI said so\" isn't admissible",
+          "datacendia": "Court-admissible evidence bundles with Merkle proofs and timestamps"
+        },
+        "accountability": {
+          "chatgpt": "No one signs, no one is accountable",
+          "datacendia": "Human responsibility layer — someone signs for every decision"
+        },
+        "sovereignty": {
+          "chatgpt": "Your data goes to OpenAI's servers",
+          "datacendia": "Cloud-hosted with encryption — or upgrade to the Sovereign Edition for air-gapped, on-prem deployment"
+        }
+      },
+      "colHeaders": {
+        "dimension": "Dimension",
+        "chatgpt": "ChatGPT / Copilot",
+        "datacendia": "Datacendia"
+      }
+    },
+    "faq": {
+      "label": "Frequently Asked Questions",
+      "dataSafe": {
+        "q": "Is my data safe? Where does it go?",
+        "a": "Datacendia Core is a cloud-hosted platform. All data is encrypted at rest and in transit. For organisations requiring full data sovereignty, the Datacendia Sovereign Edition can be deployed on-premises or in air-gapped environments — your infrastructure, your keys, your control."
+      },
+      "internet": {
+        "q": "Does it require an internet connection?",
+        "a": "Datacendia Core requires an internet connection as it runs in the cloud. The Sovereign Edition can run entirely on-premises with local LLMs via Ollama or NVIDIA Triton — no external API calls required, suitable for air-gapped and classified environments."
+      },
+      "llms": {
+        "q": "What LLMs does it support?",
+        "a": "Datacendia Core uses cloud LLMs via OpenAI-compatible APIs (GPT-4o, Groq, Together AI). The Sovereign Edition additionally supports local models via Ollama (Llama 3, Mistral, Phi-3, Gemma) and NVIDIA Triton/NIM for enterprise GPU inference. You can mix and match models per agent."
+      },
+      "openSource": {
+        "q": "Is it really open source?",
+        "a": "Yes. Apache 2.0 licensed. The full platform — frontend, backend, deliberation engine, cryptographic infrastructure — is open source. No open-core bait-and-switch. Enterprise features are about support and SLAs, not locked functionality."
+      },
+      "different": {
+        "q": "How is this different from a chatbot or copilot?",
+        "a": "Chatbots give you one answer from one model. Datacendia convenes a panel of domain-expert AI agents who argue from different perspectives — CFO, CISO, Legal, Ethics, Red Team. Disagreements are recorded. Every response is cryptographically signed. The output isn't a chat log — it's a court-admissible decision record."
+      },
+      "compliance": {
+        "q": "What compliance frameworks does it map to?",
+        "a": "EU AI Act (Article 14 human oversight), NIST AI RMF, ISO 42001, SOC 2 Type II, ISO 27001, GDPR Article 22 (automated decision-making), HIPAA, SR 11-7 (model risk management), and ABA Formal Opinion 512 (lawyers using AI)."
+      },
+      "setup": {
+        "q": "How long does setup take?",
+        "a": "Datacendia Core is cloud-hosted — sign up and you're running in seconds. No installation required. For the Sovereign Edition, setup takes five minutes with Docker, or 1-2 days for enterprise deployments with custom SSO, air-gap configuration, and NVIDIA Triton integration."
+      },
+      "verify": {
+        "q": "Can I verify the cryptographic signatures myself?",
+        "a": "Yes. Every decision packet includes Ed25519 signatures and RFC 3161 timestamps that you can verify with standard openssl commands. No proprietary tools needed. No vendor dependency. The Regulator's Receipt includes verification instructions."
+      }
+    },
+    "footer": {
+      "tagline": "NVIDIA Inception Program Member · Apache 2.0 · Sovereign-first · datacendia.com"
+    }
+  }
 }

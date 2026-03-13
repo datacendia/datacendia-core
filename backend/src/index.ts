@@ -116,7 +116,11 @@ const io = new SocketIOServer(httpServer, {
   pingInterval: 25000,
 });
 
-// Security middleware
+// Trust proxy — Railway runs behind a reverse proxy
+if (config.nodeEnv === 'production') {
+  app.set('trust proxy', 1);
+}
+
 // =============================================================================
 // LIVENESS PROBE - Must be before ALL middleware for Kubernetes/Docker health checks
 // =============================================================================
@@ -133,24 +137,55 @@ app.get('/readiness', async (_req, res) => {
   res.status(200).send('OK');
 });
 
+// Inference provider status — public endpoint so frontend can check AI availability
+app.get('/api/v1/inference/status', async (_req, res) => {
+  try {
+    const { inference } = await import('./services/inference/InferenceService.js');
+    const status = inference.getStatus();
+    const health = await inference.healthCheck();
+    res.json({
+      available: health.available,
+      provider: status.activeProvider,
+      primaryProvider: status.primaryProvider,
+      failoverActive: status.failoverActive,
+      latencyMs: health.latencyMs,
+      modelsLoaded: health.modelsLoaded,
+      error: health.error,
+    });
+  } catch (err: any) {
+    res.json({ available: false, provider: 'unknown', error: err.message });
+  }
+});
+
 // Prometheus metrics - before middleware so scraping works without auth
 app.use('/metrics', prometheusRoutes);
 
-// Debug endpoint: check frontend dist contents (remove after debugging)
-app.get('/debug/dist', (_req, res) => {
-  const distPath = path.resolve(process.cwd(), '../dist');
-  const info: Record<string, unknown> = { cwd: process.cwd(), distPath, exists: fs.existsSync(distPath) };
-  if (info.exists) {
-    info.files = fs.readdirSync(distPath as string);
-    const assetsPath = path.join(distPath, 'assets');
-    info.assetsExists = fs.existsSync(assetsPath);
-    if (info.assetsExists) {
-      info.assetFiles = fs.readdirSync(assetsPath);
-    }
-  } else {
-    try { info.parentFiles = fs.readdirSync(path.resolve(process.cwd(), '..')); } catch (e) { info.parentError = String(e); }
+// Debug endpoint: test SMTP connection (remove after debugging)
+app.get('/debug/smtp', async (_req, res) => {
+  const nodemailer = await import('nodemailer');
+  const smtpConfig = {
+    host: process.env.SMTP_HOST || '(not set)',
+    port: parseInt(process.env.SMTP_PORT || '587', 10),
+    user: process.env.SMTP_USER || '(not set)',
+    passSet: !!process.env.SMTP_PASS,
+    from: process.env.SMTP_FROM || '(not set)',
+    salesEmail: process.env.SALES_EMAIL || '(not set)',
+  };
+  if (!process.env.SMTP_HOST) {
+    return res.json({ smtpConfig, error: 'SMTP_HOST not configured' });
   }
-  res.json(info);
+  try {
+    const transport = nodemailer.default.createTransport({
+      host: process.env.SMTP_HOST,
+      port: smtpConfig.port,
+      secure: smtpConfig.port === 465,
+      auth: process.env.SMTP_USER ? { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS || '' } : undefined,
+    });
+    await transport.verify();
+    res.json({ smtpConfig, status: 'SMTP connection OK — auth successful' });
+  } catch (err: any) {
+    res.json({ smtpConfig, error: err.message, code: err.code });
+  }
 });
 
 // ---------------------------------------------------------------------------

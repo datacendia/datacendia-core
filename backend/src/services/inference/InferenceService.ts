@@ -34,6 +34,7 @@ import { logger } from '../../utils/logger.js';
 import { OllamaProvider } from './OllamaProvider.js';
 import { TritonProvider } from './TritonProvider.js';
 import { NIMProvider } from './NIMProvider.js';
+import { OpenAIProvider } from './OpenAIProvider.js';
 import { TogetherAIProvider } from './TogetherAIProvider.js';
 import { AnthropicProvider } from './AnthropicProvider.js';
 import { GeminiProvider } from './GeminiProvider.js';
@@ -57,7 +58,13 @@ class InferenceService implements IInferenceProvider {
   private healthCheckInterval: ReturnType<typeof setInterval> | null = null;
 
   constructor() {
-    const providerEnv = (process.env['INFERENCE_PROVIDER'] || 'ollama').toLowerCase() as InferenceProviderType;
+    // Auto-detect provider: if OPENAI_API_KEY is set and no explicit provider, use openai
+    let providerEnv = (process.env['INFERENCE_PROVIDER'] || '').toLowerCase() as InferenceProviderType;
+    if (!providerEnv && process.env['OPENAI_API_KEY']) {
+      providerEnv = 'openai';
+    } else if (!providerEnv) {
+      providerEnv = 'ollama';
+    }
     this.failoverEnabled = process.env['INFERENCE_FAILOVER'] === 'true';
     this.type = providerEnv;
 
@@ -65,6 +72,11 @@ class InferenceService implements IInferenceProvider {
     const ollamaProvider = new OllamaProvider();
 
     switch (providerEnv) {
+      case 'openai':
+        this.primary = new OpenAIProvider();
+        this.fallback = this.failoverEnabled ? ollamaProvider : null;
+        logger.info(`[Inference] Primary provider: OpenAI-compatible (${process.env['OPENAI_BASE_URL'] || 'api.openai.com'})`);
+        break;
       case 'triton':
         this.primary = new TritonProvider();
         this.fallback = this.failoverEnabled ? ollamaProvider : null;

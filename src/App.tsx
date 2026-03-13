@@ -42,8 +42,8 @@ export const App: React.FC = () => {
             <DemoModeProvider>
               <ToastProvider>
                 <RouterProvider router={router} />
-                {/* AI Tech Team - Auto-Heal Panel */}
-                <TechTeamPanel />
+                {/* AI Tech Team - Auto-Heal Panel (dev only) */}
+                {import.meta.env.DEV && <TechTeamPanel />}
                 {/* Demo Recording Overlay */}
                 <DemoOverlay />
               </ToastProvider>

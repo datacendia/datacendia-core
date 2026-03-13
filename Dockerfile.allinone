@@ -8,7 +8,7 @@
 # =============================================================================
 
 # Cache-bust: bump this value to force Railway to rebuild all layers
-ARG CACHEBUST=2
+ARG CACHEBUST=3
 
 # ---------------------------------------------------------------------------
 # Stage 1: Build frontend (Vite)
@@ -60,6 +60,8 @@ COPY backend/prisma ./prisma/
 RUN npm install --no-audit --no-fund
 RUN npx prisma generate
 
+# Cache bust: force rebuild of backend source
+ARG CACHEBUST=1
 COPY backend/src ./src
 COPY backend/tsconfig*.json ./
 

@@ -859,7 +859,7 @@ export const MissionControlDashboard: React.FC = () => {
       {!activeJourney && !showJourneySelector && (
         <button
           onClick={() => setShowJourneySelector(true)}
-          className="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-amber-600 to-amber-500 text-black rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 font-semibold"
+          className="fixed bottom-24 right-6 z-40 flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-amber-600 to-amber-500 text-black rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 font-semibold"
         >
           <Compass className="w-5 h-5" />
           <span>Start Your Journey</span>

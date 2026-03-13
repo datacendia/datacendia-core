@@ -537,34 +537,146 @@
     }
   },
   "agent": {
-    "chief": { "name": "Hoofd Strategie Agent", "role": "Strategisch toezicht en synthese", "description": "Synthetiseert inzichten van alle domeinagenten om holistische strategische aanbevelingen te geven." },
-    "cfo": { "name": "Financiële Intelligentie Agent", "role": "Financiële analyse en risico", "description": "Analyseert financiële data, budgetten, prognoses en biedt inzicht in fiscale gezondheid." },
-    "coo": { "name": "Operaties Intelligentie Agent", "role": "Operationele efficiëntie", "description": "Richt zich op operationele metrieken, procesefficiëntie en resourceallocatie." },
-    "ciso": { "name": "Beveiliging en Compliance Agent", "role": "Beveiliging en risicobeheer", "description": "Monitort beveiligingshouding, compliance-eisen en dreigingsbeoordeling." },
-    "cmo": { "name": "Marktintelligentie Agent", "role": "Marketing en klantinzichten", "description": "Analyseert markttrends, klantgedrag en concurrentie-intelligentie." },
-    "cro": { "name": "Omzetintelligentie Agent", "role": "Omzet en groei", "description": "Richt zich op omzetoptimalisatie, verkoopprestaties en prijsstrategieën." },
-    "cdo": { "name": "Datakwaliteit Agent", "role": "Datagovernance en kwaliteit", "description": "Monitort datakwaliteit, governancebeleid en zorgt voor data-integriteit." },
-    "risk": { "name": "Risicobeoordeling Agent", "role": "Bedrijfsrisicoanalyse", "description": "Evalueert bedrijfsrisico's, voert impactanalyse uit en biedt mitigatiestrategieën." },
-    "clo": { "name": "Juridische Intelligentie Agent", "role": "Juridische en compliance-analyse", "description": "Analyseert juridische risico's, contractimplicaties en regelgevende compliance." },
-    "cpo": { "name": "Productstrategie Agent", "role": "Productinnovatie en roadmap", "description": "Stuurt productstrategie, functieprioritering en gebruikerservaringsinzichten." },
-    "caio": { "name": "AI-Strategie Agent", "role": "AI/ML-governance en innovatie", "description": "Begeleidt AI-strategie, modelgovernance en ethische AI-implementatie." },
-    "cso": { "name": "Duurzaamheidsagent", "role": "ESG en milieu-impact", "description": "Monitort milieu-, sociale en governance-metrieken en duurzaamheidsinitiatieven." },
-    "cio": { "name": "Investerings Intelligentie Agent", "role": "Kapitaalallocatie en portefeuille", "description": "Analyseert investeringsmogelijkheden, portefeuilleallocatie en kapitaalinzet." },
-    "cco": { "name": "Communicatie Agent", "role": "Bedrijfscommunicatie en PR", "description": "Creëert bedrijfsberichten, beheert stakeholdercommunicatie en monitort merkperceptie." },
-    "ext-auditor": { "name": "Externe Auditor", "role": "Onafhankelijke externe audit", "description": "Biedt onafhankelijke, objectieve beoordeling vanuit extern perspectief." },
-    "int-auditor": { "name": "Interne Auditor", "role": "Interne controles en procesaudit", "description": "Evalueert interne controles, operationele efficiëntie en compliance." },
-    "cmio": { "name": "Hoofd Medische Informatie", "role": "Gezondheidszorg IT en klinische systemen", "description": "Expert in gezondheidszorgtechnologie, EHR-systemen en klinische informatica." },
-    "pso": { "name": "Patiëntveiligheidsfunctionaris", "role": "Klinische veiligheid en kwaliteit", "description": "Specialist in patiëntveiligheid, preventie van bijwerkingen en kwaliteitsverbetering." },
-    "hco": { "name": "Gezondheidszorg Compliance Functionaris", "role": "HIPAA en gezondheidszorgregels", "description": "Expert in regelgevende compliance gezondheidszorg, HIPAA en facturatiecompliance." },
-    "cod": { "name": "Klinisch Operatiedirecteur", "role": "Gezondheidszorgoperaties en efficiëntie", "description": "Expert in klinische operaties, patiëntenstroom en personeelsoptimalisatie." },
-    "quant": { "name": "Kwantitatief Analist", "role": "Financiële modellering en risicoanalyse", "description": "Expert in kwantitatieve financiën, derivaatprijzen en risicomodellering." },
-    "pm": { "name": "Portefeuillemanager", "role": "Investeringsstrategie en activaallocatie", "description": "Expert in portefeuillebouw, activaallocatie en investeringsstrategie." },
-    "cro-finance": { "name": "Kredietrisicofunctionaris", "role": "Kredietanalyse en risicobeoordeling", "description": "Expert in kredietanalyse, leningacceptatie en kredietrisicomodellering." },
-    "treasury": { "name": "Treasury Analist", "role": "Kasbeheer en liquiditeit", "description": "Expert in bedrijfstreasury, kasbeheer en valutahedging." },
-    "contracts": { "name": "Contractspecialist", "role": "Contractanalyse en onderhandeling", "description": "Expert in commerciële contracten, contractopstelling en onderhandeling." },
-    "ip": { "name": "Intellectueel Eigendom Raadsman", "role": "Patenten, merken en IE-strategie", "description": "Expert in intellectueel eigendomsrecht, patentstrategie en merkbescherming." },
-    "litigation": { "name": "Procesvoeringsexpert", "role": "Geschillenbeslechting en processtrategie", "description": "Expert in commerciële procesvoering, geschillenbeslechting en e-discovery." },
-    "regulatory": { "name": "Regelgevend Raadsman", "role": "Overheidsrelaties en compliance", "description": "Expert in regelgevende compliance, overheidsaangelegenheden en bestuursrecht." }
+    "chief": {
+      "name": "Hoofd Strategie Agent",
+      "role": "Strategisch toezicht en synthese",
+      "description": "Synthetiseert inzichten van alle domeinagenten om holistische strategische aanbevelingen te geven."
+    },
+    "cfo": {
+      "name": "Financiële Intelligentie Agent",
+      "role": "Financiële analyse en risico",
+      "description": "Analyseert financiële data, budgetten, prognoses en biedt inzicht in fiscale gezondheid."
+    },
+    "coo": {
+      "name": "Operaties Intelligentie Agent",
+      "role": "Operationele efficiëntie",
+      "description": "Richt zich op operationele metrieken, procesefficiëntie en resourceallocatie."
+    },
+    "ciso": {
+      "name": "Beveiliging en Compliance Agent",
+      "role": "Beveiliging en risicobeheer",
+      "description": "Monitort beveiligingshouding, compliance-eisen en dreigingsbeoordeling."
+    },
+    "cmo": {
+      "name": "Marktintelligentie Agent",
+      "role": "Marketing en klantinzichten",
+      "description": "Analyseert markttrends, klantgedrag en concurrentie-intelligentie."
+    },
+    "cro": {
+      "name": "Omzetintelligentie Agent",
+      "role": "Omzet en groei",
+      "description": "Richt zich op omzetoptimalisatie, verkoopprestaties en prijsstrategieën."
+    },
+    "cdo": {
+      "name": "Datakwaliteit Agent",
+      "role": "Datagovernance en kwaliteit",
+      "description": "Monitort datakwaliteit, governancebeleid en zorgt voor data-integriteit."
+    },
+    "risk": {
+      "name": "Risicobeoordeling Agent",
+      "role": "Bedrijfsrisicoanalyse",
+      "description": "Evalueert bedrijfsrisico's, voert impactanalyse uit en biedt mitigatiestrategieën."
+    },
+    "clo": {
+      "name": "Juridische Intelligentie Agent",
+      "role": "Juridische en compliance-analyse",
+      "description": "Analyseert juridische risico's, contractimplicaties en regelgevende compliance."
+    },
+    "cpo": {
+      "name": "Productstrategie Agent",
+      "role": "Productinnovatie en roadmap",
+      "description": "Stuurt productstrategie, functieprioritering en gebruikerservaringsinzichten."
+    },
+    "caio": {
+      "name": "AI-Strategie Agent",
+      "role": "AI/ML-governance en innovatie",
+      "description": "Begeleidt AI-strategie, modelgovernance en ethische AI-implementatie."
+    },
+    "cso": {
+      "name": "Duurzaamheidsagent",
+      "role": "ESG en milieu-impact",
+      "description": "Monitort milieu-, sociale en governance-metrieken en duurzaamheidsinitiatieven."
+    },
+    "cio": {
+      "name": "Investerings Intelligentie Agent",
+      "role": "Kapitaalallocatie en portefeuille",
+      "description": "Analyseert investeringsmogelijkheden, portefeuilleallocatie en kapitaalinzet."
+    },
+    "cco": {
+      "name": "Communicatie Agent",
+      "role": "Bedrijfscommunicatie en PR",
+      "description": "Creëert bedrijfsberichten, beheert stakeholdercommunicatie en monitort merkperceptie."
+    },
+    "ext-auditor": {
+      "name": "Externe Auditor",
+      "role": "Onafhankelijke externe audit",
+      "description": "Biedt onafhankelijke, objectieve beoordeling vanuit extern perspectief."
+    },
+    "int-auditor": {
+      "name": "Interne Auditor",
+      "role": "Interne controles en procesaudit",
+      "description": "Evalueert interne controles, operationele efficiëntie en compliance."
+    },
+    "cmio": {
+      "name": "Hoofd Medische Informatie",
+      "role": "Gezondheidszorg IT en klinische systemen",
+      "description": "Expert in gezondheidszorgtechnologie, EHR-systemen en klinische informatica."
+    },
+    "pso": {
+      "name": "Patiëntveiligheidsfunctionaris",
+      "role": "Klinische veiligheid en kwaliteit",
+      "description": "Specialist in patiëntveiligheid, preventie van bijwerkingen en kwaliteitsverbetering."
+    },
+    "hco": {
+      "name": "Gezondheidszorg Compliance Functionaris",
+      "role": "HIPAA en gezondheidszorgregels",
+      "description": "Expert in regelgevende compliance gezondheidszorg, HIPAA en facturatiecompliance."
+    },
+    "cod": {
+      "name": "Klinisch Operatiedirecteur",
+      "role": "Gezondheidszorgoperaties en efficiëntie",
+      "description": "Expert in klinische operaties, patiëntenstroom en personeelsoptimalisatie."
+    },
+    "quant": {
+      "name": "Kwantitatief Analist",
+      "role": "Financiële modellering en risicoanalyse",
+      "description": "Expert in kwantitatieve financiën, derivaatprijzen en risicomodellering."
+    },
+    "pm": {
+      "name": "Portefeuillemanager",
+      "role": "Investeringsstrategie en activaallocatie",
+      "description": "Expert in portefeuillebouw, activaallocatie en investeringsstrategie."
+    },
+    "cro-finance": {
+      "name": "Kredietrisicofunctionaris",
+      "role": "Kredietanalyse en risicobeoordeling",
+      "description": "Expert in kredietanalyse, leningacceptatie en kredietrisicomodellering."
+    },
+    "treasury": {
+      "name": "Treasury Analist",
+      "role": "Kasbeheer en liquiditeit",
+      "description": "Expert in bedrijfstreasury, kasbeheer en valutahedging."
+    },
+    "contracts": {
+      "name": "Contractspecialist",
+      "role": "Contractanalyse en onderhandeling",
+      "description": "Expert in commerciële contracten, contractopstelling en onderhandeling."
+    },
+    "ip": {
+      "name": "Intellectueel Eigendom Raadsman",
+      "role": "Patenten, merken en IE-strategie",
+      "description": "Expert in intellectueel eigendomsrecht, patentstrategie en merkbescherming."
+    },
+    "litigation": {
+      "name": "Procesvoeringsexpert",
+      "role": "Geschillenbeslechting en processtrategie",
+      "description": "Expert in commerciële procesvoering, geschillenbeslechting en e-discovery."
+    },
+    "regulatory": {
+      "name": "Regelgevend Raadsman",
+      "role": "Overheidsrelaties en compliance",
+      "description": "Expert in regelgevende compliance, overheidsaangelegenheden en bestuursrecht."
+    }
   },
   "label": {
     "online": "Online",
@@ -657,5 +769,1846 @@
     "externalLink": "Externe link",
     "required": "Verplicht veld",
     "optional": "Optioneel"
+  },
+  "tooltips": {
+    "pillars": {
+      "helm": {
+        "title": "Het Roer — Strategisch Commandocentrum",
+        "summary": "Het strategische beslissingsondersteunende systeem van uw organisatie. Monitor, analyseer en stuur met vertrouwen.",
+        "features": [
+          "Realtime KPI-dashboards met trendanalyse",
+          "Strategische doeltracking en afstemming",
+          "Prestatiebenchmarking tegen industriestandaarden",
+          "Waarschuwingsdrempels met automatische meldingen",
+          "Generatie van directiesamenvattingen"
+        ],
+        "useCases": [
+          "Kwartaaldoelen volgen over alle afdelingen",
+          "Omzetmetrics en groei-indicatoren monitoren",
+          "Strategische mijlpalen instellen en volgen"
+        ],
+        "guidance": "Begin met het definiëren van uw kernmetrics. Het Roer werkt het best met duidelijke, meetbare doelen afgestemd op de strategie van uw organisatie."
+      },
+      "lineage": {
+        "title": "De Herkomst — Data Provenance Tracker",
+        "summary": "Volledige zichtbaarheid in de reis van uw data. Weet waar elk getal vandaan komt en waar het naartoe gaat.",
+        "features": [
+          "Visuele datastroomkaarten",
+          "Bron-tot-rapport traceerbaarheid",
+          "Impactanalyse voor datawijzigingen",
+          "Datakwaliteitsscores per fase",
+          "Automatische documentatiegeneratie"
+        ],
+        "useCases": [
+          "Audittrail voor regelgevende naleving",
+          "Debuggen van datadiscrepanties tussen systemen",
+          "Systeemmigraties plannen met volledige impactzichtbaarheid"
+        ],
+        "guidance": "Verbind eerst uw databronnen. De Herkomst ontdekt automatisch relaties en bouwt uw datakaart."
+      },
+      "predict": {
+        "title": "De Voorspelling — AI-voorspellingsmotor",
+        "summary": "Machine learning modellen die om de hoek kijken. Voorspel trends voordat ze duidelijk worden.",
+        "features": [
+          "Tijdreeksvoorspelling met betrouwbaarheidsintervallen",
+          "Anomaliedetectie en vroegtijdig waarschuwingssysteem",
+          "What-if scenariomodellering",
+          "Analyse van kenmerkenbelangrijkheid",
+          "Monitoring van modelprestaties"
+        ],
+        "useCases": [
+          "Vraagvoorspelling en voorraadoptimalisatie",
+          "Klantverloop voorspellen voordat het gebeurt",
+          "Financiële scenario's modelleren voor strategische planning"
+        ],
+        "guidance": "Kwalitatieve voorspellingen vereisen kwalitatieve data. Begin met schone historische data en laat De Voorspelling uw patronen leren."
+      },
+      "flow": {
+        "title": "De Stroom — Intelligente Automatisering",
+        "summary": "Workflows die denken. Verbind systemen, automatiseer beslissingen en houd werk in beweging.",
+        "features": [
+          "Visuele workflowbouwer met drag-and-drop",
+          "AI-gestuurde beslissingsknooppunten",
+          "Cross-systeem integratieconnectoren",
+          "Goedkeuringsketens met escalatieregels",
+          "Workflowanalyse en -optimalisatie"
+        ],
+        "useCases": [
+          "Automatisering van data-pipelineorchestratie",
+          "Intelligente goedkeuringsworkflows creëren",
+          "Acties triggeren op basis van AI-inzichten"
+        ],
+        "guidance": "Breng eerst uw huidige handmatige processen in kaart. De Stroom helpt automatiseringsmogelijkheden te identificeren en stap voor stap te implementeren."
+      },
+      "health": {
+        "title": "De Gezondheid — Systeemvitaliteitsmonitor",
+        "summary": "Realtime pols van de vitale tekenen van uw organisatie. Weet wanneer iets mis is voordat het breekt.",
+        "features": [
+          "Componentgezondheidsdashboards",
+          "Prestatietrendanalyse",
+          "Incidenttracking en -oplossing",
+          "Capaciteitsplanningstools",
+          "Uptime en SLA-monitoring"
+        ],
+        "useCases": [
+          "Systeemgezondheid monitoren over alle platforms",
+          "Incidentrespons- en oplostijden volgen",
+          "Proactieve infrastructuurcapaciteitsplanning"
+        ],
+        "guidance": "Configureer gezondheidscontroles voor uw kritieke systemen. Gezondheid aggregeert signalen voor een uniform overzicht."
+      },
+      "guard": {
+        "title": "De Bewaker — Beveiligings- en Nalevingsschild",
+        "summary": "Geautomatiseerde bescherming voor uw data. Handhaaf beleid, volg toegang en blijf compliant.",
+        "features": [
+          "Beleidshandhavingsmotor",
+          "Toegangsauditlogging",
+          "Dreigingsdetectie en -waarschuwing",
+          "Nalevingsraamwerkmapping",
+          "Beveiligingspostuurscoring"
+        ],
+        "useCases": [
+          "Datatoegangsbeleid automatisch handhaven",
+          "Nalevingsrapporten genereren voor auditors",
+          "Beveiligingsdreigingen detecteren en erop reageren"
+        ],
+        "guidance": "Definieer uw beveiligingsbeleid en nalevingsvereisten. De Bewaker monitort continu en waarschuwt bij overtredingen."
+      },
+      "ethics": {
+        "title": "De Ethiek — AI-governancecentrum",
+        "summary": "Ingebouwde verantwoorde AI. Zorg voor eerlijkheid, transparantie en verantwoordelijkheid bij elke beslissing.",
+        "features": [
+          "Biasdetectie en -monitoring",
+          "Model-uitlegbaarheidstools",
+          "Ethische beoordelingsworkflows",
+          "Tracking van eerlijkheidsmetrics",
+          "Beslissingsaudittrails"
+        ],
+        "useCases": [
+          "AI-modellen beoordelen op bias vóór implementatie",
+          "Beslissingsonderbouwing documenteren voor naleving",
+          "Eerlijkheidsmetrics monitoren in productie"
+        ],
+        "guidance": "Stel eerst uw ethische principes vast. De Ethiek helpt ze te operationaliseren in alle AI-systemen."
+      },
+      "agents": {
+        "title": "De Agenten — AI-adviesraad",
+        "summary": "Gespecialiseerde AI-adviseurs voor elk domein. Ontvang expertbegeleiding op aanvraag.",
+        "features": [
+          "Domeingespecialiseerde AI-agenten",
+          "Multi-agentsamenwerking",
+          "Contextbewuste aanbevelingen",
+          "Interactie in natuurlijke taal",
+          "Continu leren van feedback"
+        ],
+        "useCases": [
+          "Strategisch advies van bedrijfsanalisten",
+          "Technische experts raadplegen voor architectuurbeslissingen",
+          "Nalevingsbegeleiding van regelgevingsspecialisten"
+        ],
+        "guidance": "Kies de juiste agent voor uw vraag. Elke agent heeft gespecialiseerde kennis — de Raad weet wanneer samenwerking nodig is."
+      }
+    },
+    "spaces": {
+      "graph": {
+        "title": "De Grafiek — Kennisnavigator",
+        "summary": "Navigeer door het kennisuniversum van uw organisatie. Zie verbanden die anderen missen.",
+        "features": [
+          "Interactieve kennisvisualisatie",
+          "Semantisch zoeken over alle data",
+          "Relatieontdekking",
+          "Contextbewuste verkenning",
+          "Kennislacune-identificatie"
+        ],
+        "guidance": "Verken door op een knooppunt te klikken. De Grafiek onthult verbanden en laat u inzoomen op details."
+      },
+      "council": {
+        "title": "De Raad — AI-samenwerkingskamer",
+        "summary": "Waar AI-adviseurs samen overleggen. Complexe problemen vereisen meerdere perspectieven.",
+        "features": [
+          "Multi-agent redeneersessies",
+          "Gestructureerde beraadslagingskaders",
+          "Conflictoplossingsprotocollen",
+          "Consensusbouwtools",
+          "Beslissingsdocumentatie"
+        ],
+        "guidance": "Presenteer uw vraag aan De Raad. Kijk hoe verschillende perspectieven ontstaan en synthetiseren tot aanbevelingen."
+      },
+      "pulse": {
+        "title": "De Pols — Realtime Operatiecentrum",
+        "summary": "Live weergave van de hartslag van uw organisatie. Elke metric, elk moment.",
+        "features": [
+          "Realtime metricstreaming",
+          "Aanpasbare waarschuwingsdrempels",
+          "Trendvisualisatie",
+          "Anomaliemarkering",
+          "Historische vergelijking"
+        ],
+        "guidance": "Configureer uw kernmetrics voor weergave op De Pols. Stel waarschuwingsdrempels in voor meldingen bij veranderingen."
+      },
+      "lens": {
+        "title": "De Lens — Toekomstscenario-verkenner",
+        "summary": "Zie mogelijke toekomsten voordat ze aankomen. Modelleer scenario's en plan dienovereenkomstig.",
+        "features": [
+          "Scenariomodelleringsmotor",
+          "Monte Carlo-simulaties",
+          "Gevoeligheidsanalyse",
+          "Beslisboomvisualisatie",
+          "Uitkomstkansmapping"
+        ],
+        "guidance": "Definieer uw scenarioparameters. De Lens genereert meerdere toekomsten en toont de meest waarschijnlijke uitkomsten."
+      },
+      "bridge": {
+        "title": "De Brug — Actiecommandocentrum",
+        "summary": "Zet inzichten om in actie. Voer uit over al uw verbonden systemen.",
+        "features": [
+          "Cross-systeem actie-uitvoering",
+          "Goedkeuringsworkflowintegratie",
+          "Actie-impactvoorvertoning",
+          "Terugdraaicapaciteiten",
+          "Uitvoeringsaudittrail"
+        ],
+        "guidance": "Selecteer uw actie en bekijk de impact vooraf. De Brug zorgt voor veilige uitvoering met volledige traceerbaarheid."
+      }
+    },
+    "sovereign": {
+      "mirror": {
+        "title": "Cendia Mirror — Digital Twin Engine",
+        "summary": "Maak levende digitale replica's van uw organisatie. Test wijzigingen voordat ze live gaan.",
+        "features": [
+          "Realtime datasynchronisatie",
+          "Scenariosimulatie-omgeving",
+          "Wijzigingsimpactmodellering",
+          "A/B-testframework",
+          "Prestatievoorspelling"
+        ],
+        "guidance": "Mirror creëert een veilige sandbox van uw organisatie. Experimenteer vrijuit — wijzigingen hier beïnvloeden de productie niet."
+      },
+      "witness": {
+        "title": "Cendia Witness — Onveranderlijk Auditspoor",
+        "summary": "Blockchain-ondersteund bewijs van elke actie. Bewijs wat er is gebeurd en wanneer.",
+        "features": [
+          "Cryptografische tijdstempeling",
+          "Manipulatiebestendige auditlogs",
+          "Chain of custody tracking",
+          "Bewijsexport voor juridisch",
+          "Nalevingsattestatie"
+        ],
+        "guidance": "Witness registreert automatisch kritieke acties. Krijg altijd toegang tot het onveranderlijke record voor audits."
+      },
+      "oracle": {
+        "title": "Cendia Oracle — Predictieve Intelligentiehub",
+        "summary": "Geavanceerde AI die de waarheid spreekt. Krijg antwoorden die ertoe doen.",
+        "features": [
+          "Zoekopdrachten in natuurlijke taal",
+          "Cross-domein redenering",
+          "Predictieve vraagbeantwoording",
+          "Betrouwbaarheidsscore",
+          "Bronvermelding"
+        ],
+        "guidance": "Vraag Oracle alles over uw organisatie. Het synthetiseert kennis uit alle bronnen voor nauwkeurige antwoorden."
+      },
+      "legacy": {
+        "title": "Cendia Legacy — Kennisbehoud",
+        "summary": "Vang institutionele kennis voordat het weggaat. Bewaar wijsheid voor de toekomst.",
+        "features": [
+          "Expertkennis vastleggen",
+          "Beslissingsonderbouwing archiveren",
+          "Best practices documenteren",
+          "Kennisoverdrachtworkflows",
+          "Opvolger-onboardingtools"
+        ],
+        "guidance": "Leg kritieke kennis vast terwijl het wordt gecreëerd. Legacy zorgt ervoor dat de wijsheid van uw organisatie elk individu overleeft."
+      },
+      "mirage": {
+        "title": "Cendia Mirage — Synthetische Datagenerator",
+        "summary": "Maak realistische data zonder privacyrisico's. Train, test en ontwikkel veilig.",
+        "features": [
+          "Statistische datasynthese",
+          "Privacybehoudende generatie",
+          "Correlatiebehoud",
+          "Randgevalversterking",
+          "Kwaliteitsvalidatie"
+        ],
+        "guidance": "Definieer uw datavereisten. Mirage genereert synthetische datasets die overeenkomen met de kenmerken van uw echte data."
+      },
+      "key": {
+        "title": "Cendia Key — Identiteits- en Toegangskluis",
+        "summary": "Eén sleutel voor alles. Uniform identiteitsbeheer over uw hele ecosysteem.",
+        "features": [
+          "Single sign-on hub",
+          "Rolgebaseerde toegangscontrole",
+          "Geprivilegieerd toegangsbeheer",
+          "Identiteitslevenscyclusautomatisering",
+          "Zero-trust handhaving"
+        ],
+        "guidance": "Verbind uw identiteitsproviders. Key unificeert toegangscontrole en handhaaft beleid over alle systemen."
+      },
+      "notary": {
+        "title": "CendiaNotary™ — Cryptografische Ondertekeningsautoriteit",
+        "summary": "Ondertekent en authenticeert alle beslissingen met klantsleutels. Onweerlegbaarheid voor elke actie.",
+        "features": [
+          "AWS KMS, Azure Key Vault, HashiCorp Vault integratie",
+          "Air-gapped lokale sleutelopslag",
+          "Automatische sleutelrotatie met auditspoor",
+          "Hardware Security Module (HSM) ondersteuning",
+          "Zero-trust: Datacendia ziet nooit uw sleutels"
+        ],
+        "guidance": "Configureer uw voorkeurs-KMS-provider. Notary ondertekent alle beslissingspakketten met cryptografisch bewijs.",
+        "tabs": {
+          "overview": "Overzicht",
+          "keys": "Sleutels",
+          "providers": "Providers",
+          "audit": "Auditlog",
+          "settings": "Instellingen"
+        },
+        "status": {
+          "active": "Actief",
+          "pendingRotation": "Wacht op rotatie",
+          "disabled": "Uitgeschakeld",
+          "scheduledDeletion": "Verwijdering gepland"
+        },
+        "actions": {
+          "generateKey": "Sleutel genereren",
+          "importKey": "Sleutel importeren",
+          "rotateKey": "Sleutel roteren",
+          "exportPublicKey": "Publieke sleutel exporteren",
+          "exportBackup": "Versleutelde backup exporteren"
+        }
+      },
+      "vault": {
+        "title": "CendiaVault™ — Unified Evidence Storage",
+        "summary": "Veilige opslag voor beslissingspakketten, auditlogboek, bewijsbundels en ondertekende rapporten.",
+        "features": [
+          "Beslissingspakketarchief",
+          "Onveranderlijk auditlogboek",
+          "Bewijsbundelopslag",
+          "Ondertekende rapportrepository",
+          "Juridische bewaarplichtbeheer",
+          "Bewaarbeleidhandhaving"
+        ],
+        "guidance": "Alle artefacten van Raadbeslissingen en nalevingsexports worden hier automatisch opgeslagen met cryptografische integriteit.",
+        "tabs": {
+          "browse": "Bladeren",
+          "search": "Zoeken",
+          "legalHold": "Juridische bewaarplicht",
+          "stats": "Analyse"
+        },
+        "types": {
+          "decisionPacket": "Beslissingspakket",
+          "auditEntry": "Auditvermelding",
+          "evidenceBundle": "Bewijsbundel",
+          "signedReport": "Ondertekend rapport"
+        },
+        "actions": {
+          "download": "Downloaden",
+          "verify": "Integriteit verifiëren",
+          "export": "Exporteren",
+          "setLegalHold": "Juridische bewaarplicht instellen",
+          "releaseLegalHold": "Juridische bewaarplicht opheffen"
+        }
+      },
+      "mesh": {
+        "title": "Cendia Mesh — Integratiefabriek",
+        "summary": "Verbind alles met alles. De intelligente integratielaag voor uw onderneming.",
+        "features": [
+          "Universele API-gateway",
+          "Eventgestuurde architectuur",
+          "Datatransformatiemotor",
+          "Service mesh beheer",
+          "Integratiemonitoring"
+        ],
+        "guidance": "Configureer uw systeemverbindingen via Mesh. Het verwerkt protocollen, transformaties en routering automatisch."
+      },
+      "blackbox": {
+        "title": "Cendia BlackBox — Modelregistratie",
+        "summary": "Commandocentrum voor al uw AI-modellen. Versiebeheer, implementatie en monitoring met vertrouwen.",
+        "features": [
+          "Modelversiebeheer en herkomst",
+          "Implementatieorchestratie",
+          "A/B-testframework",
+          "Prestatiemonitoring",
+          "Rollback-automatisering"
+        ],
+        "guidance": "Registreer uw modellen in BlackBox. Het volgt versies, beheert implementaties en monitort prestaties automatisch."
+      },
+      "glass": {
+        "title": "Cendia Glass — Transparantiedashboard",
+        "summary": "Volledige zichtbaarheid in AI-beslissingen. Zie precies waarom en hoe beslissingen zijn genomen.",
+        "features": [
+          "Beslissingsuitlegbaarheid",
+          "Factorbijdrageanalyse",
+          "Contrafactische verkenning",
+          "Stakeholderrapportage",
+          "Auditklare documentatie"
+        ],
+        "guidance": "Selecteer een AI-beslissing in Glass. Het ontleedt de factoren, toont alternatieven en legt de redenering uit."
+      }
+    },
+    "enterprise": {
+      "apotheosis": {
+        "title": "CendiaApotheosis™ — Organisatorische Superintelligentie",
+        "summary": "De zelverbeteringscyclus die nooit stopt. Nachtelijke aanvallen, automatische patches, menselijke bijscholing en patroonverboden.",
+        "features": [
+          "Nachtelijke red-team simulaties (1000+ scenario's)",
+          "Automatische zwaktepuntreparatie",
+          "Detectie en training van vaardigheidslacunes",
+          "Beslissingspatroonverboden",
+          "Apotheosis Score tracking"
+        ],
+        "useCases": [
+          "Continue organisatieverbetering",
+          "Proactieve risicobeperking",
+          "Automatische nalevingsversterking",
+          "Directiebeslissingsondersteuning"
+        ],
+        "guidance": "Apotheosis draait elke nacht, valt uw organisatie aan vanuit 1000+ hoeken en repareert wat het vindt."
+      },
+      "dissent": {
+        "title": "CendiaDissent™ — Beschermd Meningsverschil",
+        "summary": "Het recht om formeel, veilig en onveranderlijk met elke beslissing oneens te zijn — vastgelegd, voor altijd.",
+        "features": [
+          "Anonieme of benoemde meningsverschilregistratie",
+          "Verplichte bevestiging binnen 72 uur",
+          "Onveranderlijke logboekregistratie",
+          "Vergeldings detectie en bescherming",
+          "Nauwkeurigheid tracking van meningsverschillen"
+        ],
+        "useCases": [
+          "Minderheidssstemmen hoorbaar maken",
+          "Organisatiegeheugen creëren",
+          "Klokkenluiders beschermen",
+          "Beslissingskwaliteit verbeteren"
+        ],
+        "guidance": "Dien een meningsverschil in tegen elke beslissing. Uw bezwaar wordt permanent vastgelegd en gevolgd op nauwkeurigheid."
+      },
+      "responsibility": {
+        "title": "CendiaResponsibility™ — Menselijke Verantwoordelijkheidslaag",
+        "summary": "Expliciete menselijke verantwoordelijkheid voor elke AI-ondersteunde beslissing — getekend, verzegeld en onherroepelijk.",
+        "features": [
+          "TPM 2.0 hardware-ondertekende verantwoordelijkheidsrecords",
+          "Expliciete risicoacceptatie met faalcategorieën",
+          "Delegatieketens met cryptografisch bewijs",
+          "Directiekamer-niveau aansprakelijkheidsrapporten",
+          "Onafhankelijke verificatie zonder Datacendia te vertrouwen"
+        ],
+        "useCases": [
+          "Bestuursgovernance voor AI-beslissingen",
+          "Regelgevende nalevingsdocumentatie",
+          "Juridische ontdekking-gereedheid",
+          "Directierisicoacceptatie"
+        ],
+        "guidance": "Wanneer AI een aanbeveling doet, moet een mens verantwoordelijkheid tekenen."
+      },
+      "connectors": {
+        "title": "Enterprise Dataconnectoren",
+        "summary": "156+ kant-en-klare connectoren over 11 industrieverticals.",
+        "features": [
+          "Overheid: NOAA, FAA, FEMA, SEC, Census, USGS, EIA",
+          "Financieel: Bloomberg, SWIFT, FIX Protocol, Refinitiv",
+          "Gezondheidszorg: HL7 FHIR, Epic, Cerner, CDC, FDA, WHO",
+          "Supply Chain: CBP, Maersk, Port APIs, UN Comtrade",
+          "Energie: CAISO, PJM, ERCOT, ENTSO-E, Nord Pool",
+          "Luchtvaart: ARINC 429/664, ADS-B, ACARS, MIL-STD-1553"
+        ],
+        "useCases": [
+          "Realtime weer- en klimaatdata-integratie",
+          "Financiële marktdata en regelgevende feeds",
+          "Gezondheidszorg interoperabiliteit en klinische data",
+          "Supply chain zichtbaarheid en douanenaleving",
+          "Energienet en elektriciteitsmarktanalyse",
+          "Luchtvaartveiligheid en vluchtoperaties"
+        ],
+        "guidance": "Blader door connectoren per verticaal of zoek naar specifieke databronnen."
+      },
+      "evidence": {
+        "title": "Bewijsinfrastructuur",
+        "summary": "Onveranderlijk testbewijslogboek met blockchain-achtige hashketening, TPM-ondertekende digitale handtekeningen en Merkle tree bewijzen.",
+        "features": [
+          "Cryptografisch ondertekende logboekvermeldingen",
+          "Build- en uitvoeringsidentiteitvastlegging",
+          "TPM hardware-attestatieondersteuning",
+          "Merkle tree integriteitsverificatie",
+          "Juridische bewijsbundelgeneratie"
+        ],
+        "useCases": [
+          "Auditklare testbewijzen voor naleving",
+          "Inkoop- en beveiligingsbeoordelingsdocumentatie",
+          "SOC 2 Type II / ISO 27001 / GDPR bewijzen",
+          "Manipulatiebestendige uitvoeringsrecords"
+        ],
+        "guidance": "Alle testuitvoeringen worden automatisch geregistreerd met cryptografische handtekeningen."
+      },
+      "sovereignArch": {
+        "title": "Soevereine Architectuurpatronen",
+        "summary": "11 enterprisepatronen voor air-gapped, zero-trust en volledig soevereine implementaties.",
+        "features": [
+          "Data Diode: unidirectionele data-ingest met quarantaine",
+          "Lokale RLHF: zero-cloud reinforcement learning",
+          "Beslissings-DNA: one-click audit artefact export",
+          "Schaduwraad: sandbox beraadslagingsmodus",
+          "QR Air-Gap Bridge: zero-media datatransfer",
+          "TPM Attestatie: hardware-ondertekende beslissingen"
+        ],
+        "useCases": [
+          "Air-gapped beveiligde faciliteit implementaties",
+          "Defensie- en inlichtingentoepassingen",
+          "Gereguleerde industrie naleving",
+          "Zero-trust enterprise architectuur"
+        ],
+        "guidance": "Soevereine architectuurpatronen maken implementatie mogelijk in de meest beperkte omgevingen."
+      },
+      "cascade": {
+        "title": "CendiaCascade™ — Het Vlindereffect",
+        "summary": "Tweede- en derdeorde-consequentieanalyse. Voorspel onbedoelde gevolgen van beslissingen.",
+        "features": [
+          "Multi-lens analyse (CFO, COO, CISO, Mensen, Ethiek)",
+          "Vlindereffectdetectie (verrassende 3e+ orde-impacts)",
+          "Automatische mitigatiegeneratie",
+          "Beveiligingsvoorstellen (kanarie, struikeldraad, stroomonderbreker, rollback)",
+          "Tijdlijnvisualisatie (T+0, T+30, T+90, T+1J)",
+          "Auditspoor met SHA-256 hashing"
+        ],
+        "useCases": [
+          "Personeelswijzigingen analyseren vóór implementatie",
+          "Gevolgen van leverancierswissels voorspellen",
+          "Beleidswijzigingen modelleren door organisatiegrafiek",
+          "Feedbacklussen detecteren die kleine veranderingen versterken"
+        ],
+        "guidance": "Laad uw organisatiegrafiek, stel een wijziging voor en laat CendiaCascade de gevolgen traceren."
+      },
+      "adapters": {
+        "title": "Soevereine Adapters — Universele Connectoren",
+        "summary": "5 universele adapters in plaats van 156 leverancierspecifieke connectoren.",
+        "features": [
+          "File Watcher: luchtvaart, defensie, legacy bestandsingest",
+          "Webhook Ingest: SaaS, financiële gateway push-events",
+          "Database Adapter: ERP, supply chain SQL/ODBC polling",
+          "FHIR Protocol: gezondheidszorgstandaard",
+          "FIX Protocol: financiële standaard",
+          "MQTT Protocol: IoT en energienetdata"
+        ],
+        "useCases": [
+          "Verbinden met elk systeem via open standaarden",
+          "Licentieaansprakelijkheid van propriëtaire API's vermijden",
+          "Air-gapped en gereguleerde omgevingen ondersteunen",
+          "BYO-sleutels voor alle gereguleerde adapters"
+        ],
+        "guidance": "Kies het adaptertype dat past bij uw integratiepatroon."
+      }
+    }
+  },
+  "narratives": {
+    "welcome": {
+      "title": "Welkom bij Datacendia",
+      "subtitle": "Uw reis naar soevereine intelligentie begint hier",
+      "steps": [
+        {
+          "title": "Maak kennis met uw commandocentrum",
+          "description": "De Cortex is uw uniforme weergave van organisatie-intelligentie. Vijf onderling verbonden ruimtes geven u volledige zichtbaarheid en controle.",
+          "action": "Cortex verkennen"
+        },
+        {
+          "title": "Begrijp de 8 pijlers",
+          "description": "Elke pijler biedt essentiële mogelijkheden — van strategische metrics (Roer) tot AI-governance (Ethiek).",
+          "action": "Pijleroverzicht"
+        },
+        {
+          "title": "Verbind uw eerste databron",
+          "description": "Intelligentie vereist data. Verbind een database, API of bestandsbron om uw kennisbasis op te bouwen.",
+          "action": "Databron toevoegen"
+        },
+        {
+          "title": "Definieer uw kernmetrics",
+          "description": "Wat is het belangrijkst voor uw organisatie? Definieer de KPI's voor uw directiedashboard.",
+          "action": "Eerste metric maken"
+        }
+      ]
+    },
+    "executive": {
+      "title": "Reis van de directie",
+      "subtitle": "Strategische besluitvorming met volledige intelligentie",
+      "persona": "C-Suite directie",
+      "duration": "15 minuten",
+      "steps": [
+        {
+          "title": "Begin bij De Pols",
+          "description": "Begin elke dag met een realtime overzicht van organisatiegezondheid.",
+          "space": "pulse",
+          "keyActions": [
+            "Gezondheidsscore bekijken",
+            "Actieve waarschuwingen controleren",
+            "Trendmetrics noteren"
+          ]
+        },
+        {
+          "title": "Verdiep in Het Roer",
+          "description": "Bekijk uw strategische KPI's. Ligt u op koers voor kwartaaldoelen?",
+          "pillar": "helm",
+          "keyActions": [
+            "KPI-status bekijken",
+            "Vergelijken met doelen",
+            "Risicovolle doelen identificeren"
+          ]
+        },
+        {
+          "title": "Raadpleeg De Raad",
+          "description": "Verzamel AI-adviseurs voor complexe beslissingen.",
+          "space": "council",
+          "keyActions": [
+            "Vraag formuleren",
+            "Agentperspectieven bekijken",
+            "Synthese aanvragen"
+          ]
+        },
+        {
+          "title": "Verken via De Lens",
+          "description": "Modelleer verschillende scenario's.",
+          "space": "lens",
+          "keyActions": [
+            "Scenarioparameters definiëren",
+            "Simulaties uitvoeren",
+            "Uitkomsten vergelijken"
+          ]
+        },
+        {
+          "title": "Handel via De Brug",
+          "description": "Zet beslissingen om in acties met volledige audittrails.",
+          "space": "bridge",
+          "keyActions": [
+            "Acties selecteren",
+            "Impact voorvertonen",
+            "Uitvoering goedkeuren"
+          ]
+        }
+      ]
+    },
+    "dataEngineer": {
+      "title": "Workflow van de data-engineer",
+      "subtitle": "Het datafundament bouwen en onderhouden",
+      "persona": "Data-engineer / Architect",
+      "duration": "30 minuten",
+      "steps": [
+        {
+          "title": "Breng uw data in kaart",
+          "description": "Begrijp hoe data door uw organisatie stroomt.",
+          "pillar": "lineage",
+          "keyActions": [
+            "Databronnen verbinden",
+            "Ontdekte entiteiten bekijken",
+            "Transformaties documenteren"
+          ]
+        },
+        {
+          "title": "Monitor kwaliteit",
+          "description": "Volg datakwaliteitsmetrics over alle pipelines.",
+          "pillar": "health",
+          "keyActions": [
+            "Kwaliteitscontroles configureren",
+            "Waarschuwingsdrempels instellen",
+            "Kwaliteitsscores bekijken"
+          ]
+        },
+        {
+          "title": "Verbind systemen via Mesh",
+          "description": "Bouw integraties tussen systemen.",
+          "sovereign": "mesh",
+          "keyActions": [
+            "Bron/doel definiëren",
+            "Mapping configureren",
+            "Integratie testen"
+          ]
+        },
+        {
+          "title": "Automatiseer via De Stroom",
+          "description": "Maak geautomatiseerde datapipelines.",
+          "pillar": "flow",
+          "keyActions": [
+            "Workflow ontwerpen",
+            "Triggers configureren",
+            "Foutafhandeling instellen"
+          ]
+        }
+      ]
+    },
+    "complianceOfficer": {
+      "title": "Checklist nalevingsfunctionaris",
+      "subtitle": "Regelgevende naleving met automatische monitoring",
+      "persona": "Nalevings- / Risicofunctionaris",
+      "duration": "20 minuten",
+      "steps": [
+        {
+          "title": "Beveiligingspostuur in De Bewaker",
+          "description": "Controleer de beveiligingspositie van de organisatie.",
+          "pillar": "guard",
+          "keyActions": [
+            "Nalevingsscore bekijken",
+            "Beleidsschendingen controleren",
+            "Toegangslogboeken auditen"
+          ]
+        },
+        {
+          "title": "AI-ethiekcontrole",
+          "description": "Zorg dat alle AI-modellen voldoen aan ethische standaarden.",
+          "pillar": "ethics",
+          "keyActions": [
+            "Biascontroles bekijken",
+            "Modelbeslissingen auditen",
+            "Bevindingen documenteren"
+          ]
+        },
+        {
+          "title": "Auditsporen uit Witness",
+          "description": "Toegang tot onveranderlijke records van alle systeemacties.",
+          "sovereign": "witness",
+          "keyActions": [
+            "Auditscope selecteren",
+            "Bewijsrapport genereren",
+            "Exporteren voor auditors"
+          ]
+        },
+        {
+          "title": "Beslissingen uitleggen via Glass",
+          "description": "Als regelgevers vragen waarom, geeft Glass het antwoord.",
+          "sovereign": "glass",
+          "keyActions": [
+            "Beslissing selecteren",
+            "Uitleg genereren",
+            "Nalevingsdocumentatie maken"
+          ]
+        }
+      ]
+    },
+    "strategist": {
+      "title": "Gids strategisch planner",
+      "subtitle": "Van inzicht naar strategie met AI-analyse",
+      "persona": "Strategie / Planning",
+      "duration": "45 minuten",
+      "steps": [
+        {
+          "title": "Verzamel inlichtingen uit De Grafiek",
+          "description": "Verken uw kennisbasis. Ontdek verbanden.",
+          "space": "graph",
+          "keyActions": [
+            "Zoeken op onderwerp",
+            "Verbanden verkennen",
+            "Kerninzichten opslaan"
+          ]
+        },
+        {
+          "title": "Trends voorspellen",
+          "description": "Gebruik AI-modellen om kernmetrics te projecteren.",
+          "pillar": "predict",
+          "keyActions": [
+            "Voorspeldoel selecteren",
+            "Projecties bekijken",
+            "Betrouwbaarheidsintervallen analyseren"
+          ]
+        },
+        {
+          "title": "Vraag Oracle",
+          "description": "Krijg AI-gestuurde antwoorden op strategische vragen.",
+          "sovereign": "oracle",
+          "keyActions": [
+            "Strategische vraag formuleren",
+            "Antwoord bekijken",
+            "Bronnen controleren"
+          ]
+        },
+        {
+          "title": "Scenario's modelleren in De Lens",
+          "description": "Bouw strategische scenario's.",
+          "space": "lens",
+          "keyActions": [
+            "Scenariovariabelen definiëren",
+            "Meerdere toekomsten doorrekenen",
+            "Optimale strategie bepalen"
+          ]
+        },
+        {
+          "title": "Testen in Mirror",
+          "description": "Simuleer strategische initiatieven vóór commitment.",
+          "sovereign": "mirror",
+          "keyActions": [
+            "Simulatie maken",
+            "Initiatief testen",
+            "Resultaten analyseren"
+          ]
+        }
+      ]
+    },
+    "quickStart": {
+      "title": "5-minuten snelstart",
+      "subtitle": "Oriënteer uzelf en zie direct waarde",
+      "duration": "5 minuten",
+      "steps": [
+        {
+          "title": "Bekijk uw dashboard",
+          "description": "Uw gepersonaliseerde commandocentrum toont wat het belangrijkst is.",
+          "action": "Dashboard openen"
+        },
+        {
+          "title": "Controleer organisatiegezondheid",
+          "description": "Eén getal vertelt u hoe uw organisatie het doet. Groen is goed.",
+          "action": "Gezondheidsscore bekijken"
+        },
+        {
+          "title": "Stel een vraag",
+          "description": "Typ een vraag over uw organisatie.",
+          "action": "AI-assistent openen"
+        },
+        {
+          "title": "Verken een metric",
+          "description": "Klik op een metric om in te zoomen.",
+          "action": "Selecteer een metric"
+        }
+      ]
+    },
+    "crisisResponse": {
+      "title": "Crisisresponsprotocol",
+      "subtitle": "Als het misgaat, handel snel met volledige informatie",
+      "persona": "Incidentcommandant",
+      "duration": "Realtime",
+      "steps": [
+        {
+          "title": "Beoordeel de situatie",
+          "description": "Directe zichtbaarheid van wat er gebeurt.",
+          "space": "pulse",
+          "keyActions": [
+            "Getroffen systemen identificeren",
+            "Ernstgraden controleren",
+            "Cascadewaarschuwingen bekijken"
+          ]
+        },
+        {
+          "title": "Traceer de oorzaak",
+          "description": "Volg het dataspoor terug.",
+          "pillar": "lineage",
+          "keyActions": [
+            "Datastroom traceren",
+            "Brekende wijziging identificeren",
+            "Oorzaak documenteren"
+          ]
+        },
+        {
+          "title": "Verzamel bewijs",
+          "description": "Leg het onveranderlijke record vast.",
+          "sovereign": "witness",
+          "keyActions": [
+            "Incidenttijdlijn exporteren",
+            "Systeemtoestanden vastleggen",
+            "Auditlogs bewaren"
+          ]
+        },
+        {
+          "title": "Coördineer respons",
+          "description": "Verzamel AI-experts uit verschillende domeinen.",
+          "space": "council",
+          "keyActions": [
+            "Responsteam samenstellen",
+            "Impactbeoordeling krijgen",
+            "Actieplan genereren"
+          ]
+        },
+        {
+          "title": "Voer herstel uit",
+          "description": "Verspreid fixes over getroffen systemen.",
+          "space": "bridge",
+          "keyActions": [
+            "Fixes implementeren",
+            "Rollbacks uitvoeren",
+            "Herstel verifiëren"
+          ]
+        },
+        {
+          "title": "Documenteer en leer",
+          "description": "Leg vast wat er is gebeurd en wat u hebt geleerd.",
+          "sovereign": "legacy",
+          "keyActions": [
+            "Incidentrapport maken",
+            "Lessen documenteren",
+            "Runbooks bijwerken"
+          ]
+        }
+      ]
+    },
+    "aiModelLaunch": {
+      "title": "AI-modelimplementatietraject",
+      "subtitle": "Van prototype naar productie met vertrouwen",
+      "persona": "ML-engineer / Data Scientist",
+      "duration": "1-2 uur",
+      "steps": [
+        {
+          "title": "Registreer model in BlackBox",
+          "description": "Upload uw getrainde model naar het register.",
+          "sovereign": "blackbox",
+          "keyActions": [
+            "Modelartefacten uploaden",
+            "Metadata registreren",
+            "Trainingsdata koppelen"
+          ]
+        },
+        {
+          "title": "Controleer op bias",
+          "description": "Vóór lancering moet het model ethisch beoordeeld zijn.",
+          "pillar": "ethics",
+          "keyActions": [
+            "Biasbeoordeling uitvoeren",
+            "Eerlijkheidsmetrics bekijken",
+            "Naleving documenteren"
+          ]
+        },
+        {
+          "title": "Test met synthetische data",
+          "description": "Genereer randgevallen en adversariële voorbeelden.",
+          "sovereign": "mirage",
+          "keyActions": [
+            "Testdata genereren",
+            "Stresstests uitvoeren",
+            "Randgevallen valideren"
+          ]
+        },
+        {
+          "title": "Simuleer in Mirror",
+          "description": "Implementeer eerst in een digital twin.",
+          "sovereign": "mirror",
+          "keyActions": [
+            "Naar mirror implementeren",
+            "Productielast simuleren",
+            "Voorspellingen vergelijken"
+          ]
+        },
+        {
+          "title": "Configureer uitlegbaarheid",
+          "description": "Elke voorspelling moet uitlegbaar zijn.",
+          "sovereign": "glass",
+          "keyActions": [
+            "Uitlegbaarheid inschakelen",
+            "Factoren configureren",
+            "Uitleg testen"
+          ]
+        },
+        {
+          "title": "Implementeer en monitor",
+          "description": "Ga live met vertrouwen.",
+          "pillar": "predict",
+          "keyActions": [
+            "Naar productie promoveren",
+            "Monitoring instellen",
+            "Driftwaarschuwingen configureren"
+          ]
+        }
+      ]
+    },
+    "boardPresentation": {
+      "title": "Bestuursvergaderingsvoorbereiding",
+      "subtitle": "Maak indruk op het bestuur met datagedreven inzichten",
+      "persona": "CEO / CFO / Presentator",
+      "duration": "30 minuten",
+      "steps": [
+        {
+          "title": "Strategische KPI's uit Het Roer",
+          "description": "Verzamel alle kernmetrics op één plek.",
+          "pillar": "helm",
+          "keyActions": [
+            "KPI-dashboard exporteren",
+            "Trendanalyse genereren",
+            "Prestaties uitlichten"
+          ]
+        },
+        {
+          "title": "Bouw prognoses",
+          "description": "Toon niet alleen waar u staat, maar waar u naartoe gaat.",
+          "pillar": "predict",
+          "keyActions": [
+            "Prognoses genereren",
+            "Omzetprojecties bouwen",
+            "Scenario's maken"
+          ]
+        },
+        {
+          "title": "Verifieer data",
+          "description": "Weet waar elk getal vandaan komt.",
+          "pillar": "lineage",
+          "keyActions": [
+            "Kerncijfers traceren",
+            "Bronnen documenteren",
+            "Dataherkomst voorbereiden"
+          ]
+        },
+        {
+          "title": "What-if modellering",
+          "description": "Wees voorbereid op 'Wat als we...' vragen.",
+          "space": "lens",
+          "keyActions": [
+            "Groeiscenario's modelleren",
+            "Risicofactoren analyseren",
+            "Noodplannen voorbereiden"
+          ]
+        },
+        {
+          "title": "AI-synthese van Oracle",
+          "description": "Vraag Oracle om data te synthetiseren tot kerninzichten.",
+          "sovereign": "oracle",
+          "keyActions": [
+            "Inzichten genereren",
+            "Kernpunten aanvragen",
+            "Blinde vlekken identificeren"
+          ]
+        },
+        {
+          "title": "Naleving waarborgen",
+          "description": "Zorg dat de presentatie geen nalevingsrisico's creëert.",
+          "pillar": "guard",
+          "keyActions": [
+            "Nalevingscontrole uitvoeren",
+            "Dataclassificaties verifiëren",
+            "Goedkeuring voor presentatie"
+          ]
+        }
+      ]
+    },
+    "newEmployeeOnboarding": {
+      "title": "Onboarding nieuwe medewerker",
+      "subtitle": "Productief in dagen, niet maanden",
+      "persona": "Nieuwe medewerker / Manager",
+      "duration": "Eigen tempo",
+      "steps": [
+        {
+          "title": "Toegang via Cendia Key",
+          "description": "Eén login geeft toegang tot alles.",
+          "sovereign": "key",
+          "keyActions": [
+            "SSO-setup voltooien",
+            "Roltoewijzingen verifiëren",
+            "Toegang tot systemen"
+          ]
+        },
+        {
+          "title": "Verken kennis in De Grafiek",
+          "description": "Navigeer door het kennisuniversum.",
+          "space": "graph",
+          "keyActions": [
+            "Rolresources zoeken",
+            "Teamkennis vinden",
+            "Kerncontacten identificeren"
+          ]
+        },
+        {
+          "title": "Leer van Legacy",
+          "description": "Toegang tot institutionele kennis.",
+          "sovereign": "legacy",
+          "keyActions": [
+            "Teamplaybooks bekijken",
+            "Eerdere beslissingen bestuderen",
+            "Best practices leren"
+          ]
+        },
+        {
+          "title": "Begrijp metrics in Het Roer",
+          "description": "Elke rol heeft KPI's.",
+          "pillar": "helm",
+          "keyActions": [
+            "Toegewezen metrics bekijken",
+            "Doelen begrijpen",
+            "Persoonlijk dashboard instellen"
+          ]
+        },
+        {
+          "title": "Configureer workflows in De Stroom",
+          "description": "Sluit aan bij bestaande processen.",
+          "pillar": "flow",
+          "keyActions": [
+            "Bij teamworkflows aansluiten",
+            "Meldingen instellen",
+            "Rapporten automatiseren"
+          ]
+        },
+        {
+          "title": "Maak kennis met AI-assistenten",
+          "description": "U hebt AI-teamgenoten klaar om te helpen.",
+          "pillar": "agents",
+          "keyActions": [
+            "Domeinagenten ontmoeten",
+            "Eerste vragen stellen",
+            "Nuttige antwoorden opslaan"
+          ]
+        }
+      ]
+    },
+    "mergerIntegration": {
+      "title": "M&A Data-integratie",
+      "subtitle": "Organisaties samenvoegen zonder intelligentie te verliezen",
+      "persona": "Integratieleider / CIO",
+      "duration": "Doorlopend",
+      "steps": [
+        {
+          "title": "Beide datalandschappen in kaart",
+          "description": "Begrijp beide kanten voordat u samenvoegt.",
+          "pillar": "lineage",
+          "keyActions": [
+            "Overnemerdata scannen",
+            "Doeldata scannen",
+            "Overlappingen identificeren"
+          ]
+        },
+        {
+          "title": "Metrics unificeren",
+          "description": "Harmoniseer KPI-definities.",
+          "pillar": "helm",
+          "keyActions": [
+            "Metricdefinities mappen",
+            "Conflicten oplossen",
+            "Uniform dashboard maken"
+          ]
+        },
+        {
+          "title": "Systemen verbinden via Mesh",
+          "description": "Bouw de integratielaag.",
+          "sovereign": "mesh",
+          "keyActions": [
+            "Bronsystemen mappen",
+            "Integraties bouwen",
+            "Datastromen testen"
+          ]
+        },
+        {
+          "title": "Kennis bewaren in Legacy",
+          "description": "Leg kennis van sleutelpersonen vast vóór transities.",
+          "sovereign": "legacy",
+          "keyActions": [
+            "Sleutelpersoneel interviewen",
+            "Processen documenteren",
+            "Tribale kennis archiveren"
+          ]
+        },
+        {
+          "title": "Identiteitssystemen samenvoegen via Key",
+          "description": "Unificeer wie toegang heeft tot wat.",
+          "sovereign": "key",
+          "keyActions": [
+            "Identiteitsbronnen samenvoegen",
+            "Rechten afstemmen",
+            "Uniforme toegang inschakelen"
+          ]
+        },
+        {
+          "title": "Integratiegezondheid monitoren",
+          "description": "Volg de gezondheid van uw integratie realtime.",
+          "pillar": "health",
+          "keyActions": [
+            "Datakwaliteit monitoren",
+            "Synchronisatiestatus volgen",
+            "Waarschuwen bij anomalieën"
+          ]
+        }
+      ]
+    },
+    "regulatoryAudit": {
+      "title": "Voorbereiding regelgevende audit",
+      "subtitle": "Maak van het auditseizoen een non-event",
+      "persona": "Chief Compliance Officer",
+      "duration": "2-4 uur",
+      "steps": [
+        {
+          "title": "Bewijs uit Witness",
+          "description": "Elke actie is vastgelegd met cryptografisch bewijs.",
+          "sovereign": "witness",
+          "keyActions": [
+            "Auditscope definiëren",
+            "Bewijspakket exporteren",
+            "Attestaties genereren"
+          ]
+        },
+        {
+          "title": "Beleidsnaleving",
+          "description": "Toon auditors dat beleid daadwerkelijk wordt gehandhaafd.",
+          "pillar": "guard",
+          "keyActions": [
+            "Nalevingsrapport genereren",
+            "Beleidshandhaving tonen",
+            "Uitzonderingen documenteren"
+          ]
+        },
+        {
+          "title": "AI-governance",
+          "description": "Toon biastests en beslissingsdocumentatie.",
+          "pillar": "ethics",
+          "keyActions": [
+            "Ethische beoordelingen exporteren",
+            "Biastestresultaten tonen",
+            "AI-governance documenteren"
+          ]
+        },
+        {
+          "title": "AI-beslissingen uitleggen",
+          "description": "Glass geeft volledige uitleg van beslissingen.",
+          "sovereign": "glass",
+          "keyActions": [
+            "Beslissingsrapporten genereren",
+            "Factorattributie tonen",
+            "Contrafactuelen leveren"
+          ]
+        },
+        {
+          "title": "Dataherkomst traceren",
+          "description": "Bewijs de nauwkeurigheid van cijfers.",
+          "pillar": "lineage",
+          "keyActions": [
+            "Herkomstkaarten exporteren",
+            "Transformaties documenteren",
+            "Datanauwkeurigheid bewijzen"
+          ]
+        },
+        {
+          "title": "Toegangscontrole via Key",
+          "description": "Wie had toegang tot wat en wanneer?",
+          "sovereign": "key",
+          "keyActions": [
+            "Toegangslogboeken exporteren",
+            "Rechtengeschiedenis tonen",
+            "Controles documenteren"
+          ]
+        }
+      ]
+    },
+    "customerChurnPrevention": {
+      "title": "Klantverlooppreventie",
+      "subtitle": "Behoud klanten voordat ze vertrekken",
+      "persona": "Klantsucces / Revenue Operations",
+      "duration": "Dagelijks proces",
+      "steps": [
+        {
+          "title": "Risicoklanten identificeren",
+          "description": "ML-modellen analyseren honderden signalen.",
+          "pillar": "predict",
+          "keyActions": [
+            "Risicoscores bekijken",
+            "Toprisico's identificeren",
+            "Risicofactoren begrijpen"
+          ]
+        },
+        {
+          "title": "Klantgezondheid",
+          "description": "Volg klantgezondheidsmetrics.",
+          "pillar": "helm",
+          "keyActions": [
+            "Gezondheidsscores bekijken",
+            "Betrokkenheid controleren",
+            "Trends identificeren"
+          ]
+        },
+        {
+          "title": "Klantreis in De Grafiek",
+          "description": "Volledig klantverhaal.",
+          "space": "graph",
+          "keyActions": [
+            "Klanttijdlijn bekijken",
+            "Interacties verkennen",
+            "Patronen vinden"
+          ]
+        },
+        {
+          "title": "Aanbevelingen van De Raad",
+          "description": "AI-adviseurs voor retentiestrategieën.",
+          "space": "council",
+          "keyActions": [
+            "Klantprofiel presenteren",
+            "Retentie-ideeën krijgen",
+            "Acties prioriteren"
+          ]
+        },
+        {
+          "title": "Retentieworkflows",
+          "description": "Zet aanbevelingen om in acties.",
+          "pillar": "flow",
+          "keyActions": [
+            "Communicatie triggeren",
+            "Follow-ups plannen",
+            "Naar team escaleren"
+          ]
+        },
+        {
+          "title": "Omzetimpact",
+          "description": "Kwantificeer wat er op het spel staat.",
+          "space": "lens",
+          "keyActions": [
+            "Verloopimpact modelleren",
+            "Interventie-ROI berekenen",
+            "Inspanningen prioriteren"
+          ]
+        }
+      ]
+    },
+    "productLaunch": {
+      "title": "Productlanceringsorchestratie",
+      "subtitle": "Lanceer met vertrouwen en realtime zichtbaarheid",
+      "persona": "Productmanager / Lanceringsleider",
+      "duration": "Lanceerdag + monitoring",
+      "steps": [
+        {
+          "title": "Lancerings-KPI's in Het Roer",
+          "description": "Definieer succes vóór de lancering.",
+          "pillar": "helm",
+          "keyActions": [
+            "Succesmetrics definiëren",
+            "Doelen instellen",
+            "Dashboard configureren"
+          ]
+        },
+        {
+          "title": "Systeemgereedheid",
+          "description": "Is alles groen vóór de lancering?",
+          "pillar": "health",
+          "keyActions": [
+            "Alle systemen controleren",
+            "Capaciteit verifiëren",
+            "Afhankelijkheden bevestigen"
+          ]
+        },
+        {
+          "title": "Belastingssimulatie in Mirror",
+          "description": "Test uw lanceringsscenario.",
+          "sovereign": "mirror",
+          "keyActions": [
+            "Lanceringssimulatie maken",
+            "Belastingstest uitvoeren",
+            "Knelpunten identificeren"
+          ]
+        },
+        {
+          "title": "Realtime monitoring in De Pols",
+          "description": "Zichtbaarheid op lanceerdag.",
+          "space": "pulse",
+          "keyActions": [
+            "Lanceringsmetrics monitoren",
+            "Op anomalieën letten",
+            "Adoptie volgen"
+          ]
+        },
+        {
+          "title": "Reageren via De Brug",
+          "description": "Als aanpassing nodig is, handel snel.",
+          "space": "bridge",
+          "keyActions": [
+            "Hotfixes implementeren",
+            "Configuraties aanpassen",
+            "Resources schalen"
+          ]
+        },
+        {
+          "title": "Lessen vastleggen in Legacy",
+          "description": "Documenteer wat werkte en wat niet.",
+          "sovereign": "legacy",
+          "keyActions": [
+            "Lanceringslog documenteren",
+            "Problemen registreren",
+            "Verbeteringen noteren"
+          ]
+        }
+      ]
+    },
+    "dataQualityImprovement": {
+      "title": "Programma datakwaliteitsverbetering",
+      "subtitle": "Transformeer data van verplichting naar bedrijfsmiddel",
+      "persona": "Data Steward / Kwaliteitsleider",
+      "duration": "Doorlopend programma",
+      "steps": [
+        {
+          "title": "Huidige kwaliteit beoordelen",
+          "description": "U kunt niet verbeteren wat u niet meet.",
+          "pillar": "lineage",
+          "keyActions": [
+            "Kwaliteitsbeoordeling uitvoeren",
+            "Probleemgebieden identificeren",
+            "Problemen prioriteren"
+          ]
+        },
+        {
+          "title": "Kwaliteitsmetrics in Het Roer",
+          "description": "Maak datakwaliteit een eersteklas KPI.",
+          "pillar": "helm",
+          "keyActions": [
+            "Kwaliteitsdashboard maken",
+            "Verbeterdoelen instellen",
+            "Voortgang volgen"
+          ]
+        },
+        {
+          "title": "Kwaliteitsregels in De Bewaker",
+          "description": "Definieer en handhaaf kwaliteitsstandaarden.",
+          "pillar": "guard",
+          "keyActions": [
+            "Kwaliteitsregels definiëren",
+            "Validatie configureren",
+            "Waarschuwingen instellen"
+          ]
+        },
+        {
+          "title": "Controles automatiseren in De Stroom",
+          "description": "Bouw kwaliteit in uw pipelines.",
+          "pillar": "flow",
+          "keyActions": [
+            "Kwaliteitsworkflows bouwen",
+            "Validatiestappen toevoegen",
+            "Herstel configureren"
+          ]
+        },
+        {
+          "title": "Kwaliteitsgezondheid monitoren",
+          "description": "Volg kwaliteitstrends.",
+          "pillar": "health",
+          "keyActions": [
+            "Trends monitoren",
+            "Bij degradatie waarschuwen",
+            "Verbeteringen rapporteren"
+          ]
+        },
+        {
+          "title": "Standaarden documenteren",
+          "description": "Codificeer standaarden voor de organisatie.",
+          "sovereign": "legacy",
+          "keyActions": [
+            "Standaarden documenteren",
+            "Playbooks maken",
+            "Teams trainen"
+          ]
+        }
+      ]
+    },
+    "securityThreatResponse": {
+      "title": "Beveiligingsdreigingsrespons",
+      "subtitle": "Detecteer, beperk en elimineer dreigingen systematisch",
+      "persona": "Beveiligingsanalist / CISO",
+      "duration": "Directe respons",
+      "steps": [
+        {
+          "title": "Dreigingen detecteren",
+          "description": "De detectiemotor signaleert verdachte activiteit.",
+          "pillar": "guard",
+          "keyActions": [
+            "Dreigingswaarschuwingen bekijken",
+            "Ernst beoordelen",
+            "Dreiging bevestigen"
+          ]
+        },
+        {
+          "title": "Impactradius beoordelen",
+          "description": "Welke systemen en data zijn getroffen?",
+          "pillar": "lineage",
+          "keyActions": [
+            "Getroffen systemen mappen",
+            "Gevoelige data identificeren",
+            "Blootstelling beoordelen"
+          ]
+        },
+        {
+          "title": "Toegangslogboeken",
+          "description": "Wie had wanneer toegang tot wat?",
+          "sovereign": "key",
+          "keyActions": [
+            "Toegangslogboeken ophalen",
+            "Anomalieën identificeren",
+            "Aanvalspad traceren"
+          ]
+        },
+        {
+          "title": "Bewijs bewaren",
+          "description": "Leg het record vast vóór inperking.",
+          "sovereign": "witness",
+          "keyActions": [
+            "Systeemstaat vastleggen",
+            "Auditlogs exporteren",
+            "Tijdlijn bewaren"
+          ]
+        },
+        {
+          "title": "Inperking via De Brug",
+          "description": "Isoleer de dreiging.",
+          "space": "bridge",
+          "keyActions": [
+            "Gecompromitteerde toegang intrekken",
+            "Systemen isoleren",
+            "Patches implementeren"
+          ]
+        },
+        {
+          "title": "Coördinatie met De Raad",
+          "description": "Schakel AI-beveiligingsexperts in.",
+          "space": "council",
+          "keyActions": [
+            "Aanvalspatroon analyseren",
+            "Herstelplan krijgen",
+            "Risico's beoordelen"
+          ]
+        }
+      ]
+    }
+  },
+  "sports": {
+    "title": "Sport DDGI",
+    "subtitle": "Transferbeslissingen, contractgovernance, FFP-naleving",
+    "decisions": {
+      "title": "Transferbeslissingen",
+      "newDecision": "Nieuwe beslissing",
+      "player": "Speler",
+      "type": "Type",
+      "club": "Club",
+      "fee": "Bedrag",
+      "status": "Status",
+      "recommendation": "Aanbeveling",
+      "actions": "Acties"
+    },
+    "types": {
+      "inbound": "Inkomend",
+      "outbound": "Uitgaand",
+      "loan_out": "Uitlening",
+      "loan_in": "Inlening"
+    },
+    "status": {
+      "draft": "Concept",
+      "pending_approval": "Wacht op goedkeuring",
+      "approved": "Goedgekeurd",
+      "rejected": "Afgewezen",
+      "completed": "Voltooid",
+      "withdrawn": "Ingetrokken"
+    },
+    "recommendations": {
+      "strong_buy": "Sterk kopen",
+      "buy": "Kopen",
+      "conditional": "Voorwaardelijk",
+      "pass": "Overslaan"
+    },
+    "compliance": {
+      "title": "Naleving",
+      "frameworks": "Nalevingsraamwerken",
+      "ffpStatus": "FFP break-even status",
+      "squadCostRatio": "Selectiekostenratio"
+    },
+    "analytics": {
+      "title": "Analyse",
+      "velocity": "Beslissingssnelheid",
+      "approvalRate": "Goedkeuringspercentage",
+      "evidenceCompleteness": "Bewijsvolledigheid",
+      "auditReadiness": "Auditgereedheid"
+    },
+    "stats": {
+      "totalDecisions": "Totaal beslissingen",
+      "inboundValue": "Inkomende waarde",
+      "outboundValue": "Uitgaande waarde",
+      "pendingApproval": "wacht op goedkeuring"
+    }
+  },
+  "dcii": {
+    "title": "CendiaDCII™ — Decision Crisis Immunization Infrastructure",
+    "subtitle": "9 primitieven · IISS-scoring · categoriedefiniërende governance-infrastructuur",
+    "tabs": {
+      "overview": "Overzicht",
+      "iiss": "CendiaIISS™",
+      "media": "CendiaMediaAuth™",
+      "jurisdiction": "CendiaJurisdiction™",
+      "timestamps": "CendiaTimestamp™",
+      "similarity": "CendiaSimilarity™"
+    },
+    "iiss": {
+      "title": "CendiaIISS™ — Institutionele Immuunsysteemscore",
+      "calculate": "IISS berekenen",
+      "score": "Score",
+      "band": "Band",
+      "certification": "Certificeringsniveau",
+      "percentile": "Percentiel",
+      "trend": "Trend",
+      "dimensions": "Dimensie-uitsplitsing",
+      "recommendations": "Topaanbevelingen",
+      "insuranceImpact": "Verzekeringsimpact",
+      "benchmarks": "Industriebenchmarks",
+      "regulatoryReadiness": "Regelgevingsgereedheid",
+      "bands": {
+        "critical": "Kritiek",
+        "vulnerable": "Kwetsbaar",
+        "developing": "Ontwikkelend",
+        "resilient": "Veerkrachtig",
+        "exceptional": "Uitzonderlijk"
+      },
+      "certifications": {
+        "none": "Geen",
+        "bronze": "Brons",
+        "silver": "Zilver",
+        "gold": "Goud",
+        "platinum": "Platina"
+      }
+    },
+    "primitives": {
+      "title": "9 DCII-primitieven",
+      "foundational": "Fundamenteel",
+      "advanced": "Geavanceerd",
+      "discoveryTimeProof": "Ontdekkingstijdbewijs",
+      "deliberationCapture": "Beraadslagingsvastlegging",
+      "overrideAccountability": "Override-verantwoordelijkheid",
+      "continuityMemory": "Continuïteitsgeheugen",
+      "driftDetection": "Driftdetectie",
+      "cognitiveBiasMitigation": "Cognitieve biasmitigatie",
+      "quantumResistantIntegrity": "Kwantumbestendige integriteit",
+      "syntheticMediaAuth": "Synthetische media-authenticatie",
+      "crossJurisdictionCompliance": "Cross-jurisdictie naleving"
+    },
+    "media": {
+      "title": "CendiaMediaAuth™ — Synthetische Media-authenticatie",
+      "signMedia": "Media ondertekenen",
+      "analyzeAuthenticity": "Authenticiteit analyseren",
+      "chainOfCustody": "Chain of custody",
+      "verificationReport": "Verificatierapport",
+      "c2paSigned": "C2PA ondertekend",
+      "verdicts": {
+        "authentic": "Authentiek",
+        "likely_authentic": "Waarschijnlijk authentiek",
+        "inconclusive": "Onbeslisbaar",
+        "likely_synthetic": "Waarschijnlijk synthetisch",
+        "synthetic": "Synthetisch",
+        "tampered": "Gemanipuleerd"
+      }
+    },
+    "jurisdiction": {
+      "title": "CendiaJurisdiction™ — Cross-jurisdictie regelgevingsconflicten",
+      "assess": "Organisatie beoordelen",
+      "conflicts": "Conflicten gedetecteerd",
+      "goodFaith": "Te goeder trouw documentatie",
+      "evidencePacket": "Bewijspakket",
+      "profiles": "Jurisdictieprofielen",
+      "severities": {
+        "irreconcilable": "Onverzoenlijk",
+        "significant": "Significant",
+        "moderate": "Matig",
+        "minor": "Gering",
+        "theoretical": "Theoretisch"
+      },
+      "strategies": {
+        "highest_standard": "Hoogste standaard",
+        "data_localization": "Datalokalisatie",
+        "contractual_safeguard": "Contractuele waarborg",
+        "good_faith_maximum": "Maximum te goeder trouw"
+      }
+    },
+    "timestamps": {
+      "title": "CendiaTimestamp™ — RFC 3161 Tijdstempelautoriteit",
+      "issueTimestamp": "Tijdstempel uitgeven",
+      "verifyTimestamp": "Tijdstempel verifiëren",
+      "batchTimestamp": "Batchtijdstempel",
+      "providers": "TSA-providers",
+      "blockchainAnchored": "Blockchain-verankerd",
+      "totalTokens": "Totale tokens",
+      "avgVerification": "Gem. verificatietijd"
+    },
+    "similarity": {
+      "title": "CendiaSimilarity™ — Beslissingsgelijkenismotor",
+      "search": "Vergelijkbare beslissingen zoeken",
+      "searchPlaceholder": "Beschrijf een voorgestelde beslissing om vergelijkbare precedenten te vinden...",
+      "matchStrength": "Overeenkomststerkte",
+      "riskAssessment": "Risicobeoordeling",
+      "patterns": "Beslissingspatronen",
+      "insights": "Geaggregeerde inzichten",
+      "outcomeTracking": "Uitkomsttracking",
+      "strengths": {
+        "exact": "Exact",
+        "strong": "Sterk",
+        "moderate": "Matig",
+        "weak": "Zwak",
+        "tangential": "Zijdelings"
+      },
+      "outcomes": {
+        "successful": "Succesvol",
+        "partially_successful": "Gedeeltelijk succesvol",
+        "failed": "Mislukt",
+        "too_early": "Te vroeg om te beoordelen",
+        "unknown": "Onbekend"
+      }
+    }
+  },
+  "landing": {
+    "nav": {
+      "tryDemo": "TRY THE DEMO"
+    },
+    "hero": {
+      "line1": "They have data. They don't have understanding.",
+      "line2": "They have AI. They don't have",
+      "agency": "agency.",
+      "p1": "Every consequential decision your organisation makes with AI is invisible. No record of what was considered. No proof of who decided. No evidence it can survive a regulator, an auditor, or a court.",
+      "p2": "The EU AI Act changed that.",
+      "p2Emphasis": "August 2025. Enforcement is live.",
+      "p3": "Datacendia gives AI decisions a memory, a voice, and a signature.",
+      "cta": "Enter the Platform",
+      "secondaryCta": "Read how it works"
+    },
+    "problem": {
+      "label": "The Problem",
+      "text": "When a law firm uses AI to assess litigation risk, a bank uses it to approve credit, or a board uses it to evaluate an acquisition — that decision vanishes the moment the window closes. If it's challenged, there's nothing to show. No deliberation. No dissent. No proof of process.",
+      "fade": "Just a chat log that doesn't exist anymore."
+    },
+    "whatIs": {
+      "label": "What is Datacendia?",
+      "simple": {
+        "title": "In Plain Terms",
+        "description": "Datacendia is a decision intelligence platform. You ask it a question — about a hire, a deal, a policy change, a risk — and a panel of AI specialists debates it from every angle: financial, legal, operational, ethical. Every argument, every dissent, every vote is permanently recorded and cryptographically signed. When someone asks \"how did you reach that decision?\" — you hand them the receipt.",
+        "analogy": "Think of it as a boardroom that records everything, signs everything, and can prove everything happened exactly the way it did."
+      },
+      "technical": {
+        "title": "Under the Hood",
+        "description": "A multi-agent deliberation engine backed by cryptographic infrastructure. Domain-expert LLM agents (CFO, CISO, Legal, Ethics, Red Team) engage in structured argumentation over your query. Each response is hashed into a Merkle tree, Ed25519-signed, and RFC 3161-timestamped. Decision packets include full chain-of-custody, dissent records, and confidence scoring — exportable as court-admissible evidence bundles.",
+        "stack": "Cloud-hosted (Core) · Apache 2.0 · OpenAI / Groq / Together AI · On-prem Sovereign Edition also available"
+      }
+    },
+    "workflow": {
+      "label": "How a Decision Flows",
+      "subtitle": "From question to court-admissible evidence in one session",
+      "steps": {
+        "ask": {
+          "title": "Ask",
+          "description": "Pose a question to the Council. \"Should we acquire Company X?\" \"Is this vendor contract compliant?\""
+        },
+        "deliberate": {
+          "title": "Deliberate",
+          "description": "Domain-expert AI agents debate from every angle. CFO analyses cost. CISO flags risk. Legal checks compliance. Red Team challenges assumptions."
+        },
+        "dissent": {
+          "title": "Record Dissent",
+          "description": "Disagreements aren't hidden — they're first-class artifacts. Every minority opinion is captured, timestamped, and preserved."
+        },
+        "sign": {
+          "title": "Sign & Seal",
+          "description": "Each response is hashed into a Merkle tree, Ed25519-signed, and RFC 3161-timestamped. The chain of custody is established during deliberation."
+        },
+        "store": {
+          "title": "Store in Vault",
+          "description": "The complete decision packet — arguments, votes, dissent, metadata — is sealed in CendiaVault with cryptographic integrity."
+        },
+        "export": {
+          "title": "Export Receipt",
+          "description": "One click generates the Regulator's Receipt™ — a court-admissible evidence bundle. Verify with openssl. No vendor dependency."
+        }
+      }
+    },
+    "solution": {
+      "label": "The Solution",
+      "beat1Title": "The Council deliberates.",
+      "beat1Text": "Ask a question. Domain-expert AI agents — CFO, CISO, CTO, Legal Counsel, Red Team — argue your decision from every angle.",
+      "beat1Emphasis": "Dissent is recorded. Consensus is earned, not assumed.",
+      "beat2Title": "Every word is signed.",
+      "beat2Text": "Each response, vote, and objection is hashed into a Merkle tree. Ed25519 signed. RFC 3161 timestamped.",
+      "beat2Emphasis": "The chain of custody is established during deliberation — not reconstructed afterward.",
+      "beat3Title": "One click. Court-admissible proof.",
+      "beat3Text": "The Regulator's Receipt™ exports everything a compliance audit needs.",
+      "beat3Emphasis": "Verify it yourself with",
+      "beat3EmpSuffix": ". No vendor dependency. No trust required."
+    },
+    "audience": {
+      "developers": {
+        "label": "For Developers",
+        "text": "Apache 2.0. TypeScript + React + Node.js. API-first architecture.",
+        "code": "docker compose up",
+        "suffix": "and the full stack is running locally."
+      },
+      "compliance": {
+        "label": "For Compliance Teams",
+        "text": "EU AI Act Article 14. SR 11-7. ABA Opinion 512. HIPAA. The platform maps to the frameworks you're already accountable to."
+      },
+      "leadership": {
+        "label": "For Leadership",
+        "text": "The first AI governance platform that produces",
+        "emphasis": "evidence",
+        "suffix": ", not just reports. Built for the moment regulators start asking questions — before they do."
+      }
+    },
+    "demo": {
+      "title": "Try the Demo",
+      "subtitle": "No login. No credit card. Click and you're inside.",
+      "enterButton": "Enter the Platform",
+      "submitting": "Entering platform...",
+      "connectionError": "Connection error. Please try again.",
+      "genericError": "Something went wrong. Please try again."
+    },
+    "socialProof": {
+      "label": "Trusted Infrastructure",
+      "nvidia": "NVIDIA Inception Program",
+      "openSource": "Apache 2.0 Open Source",
+      "sovereign": "Zero Trust Architecture",
+      "compliance": "EU AI Act · GDPR · HIPAA Mapped",
+      "crypto": "Ed25519 · Merkle Trees · RFC 3161",
+      "zeroTrust": "Sovereign Edition Available"
+    },
+    "preview": {
+      "label": "See It In Action",
+      "subtitle": "The Council deliberating a real decision — multiple AI specialists, structured argumentation, cryptographic proof.",
+      "caption": "The Council — AI agents deliberating from CFO, CISO, Legal, Ethics, and Red Team perspectives.",
+      "cta": "Try it yourself"
+    },
+    "differentiator": {
+      "label": "Why Not Just Use ChatGPT?",
+      "subtitle": "ChatGPT is a conversation. Datacendia is a governed decision.",
+      "items": {
+        "memory": {
+          "chatgpt": "Conversations disappear when you close the tab",
+          "datacendia": "Every word is permanently recorded and cryptographically signed"
+        },
+        "dissent": {
+          "chatgpt": "One voice, one perspective, no pushback",
+          "datacendia": "Multiple domain experts argue, disagree, and record dissent"
+        },
+        "proof": {
+          "chatgpt": "No evidence trail — \"the AI said so\" isn't admissible",
+          "datacendia": "Court-admissible evidence bundles with Merkle proofs and timestamps"
+        },
+        "accountability": {
+          "chatgpt": "No one signs, no one is accountable",
+          "datacendia": "Human responsibility layer — someone signs for every decision"
+        },
+        "sovereignty": {
+          "chatgpt": "Your data goes to OpenAI's servers",
+          "datacendia": "Cloud-hosted with encryption — or upgrade to the Sovereign Edition for air-gapped, on-prem deployment"
+        }
+      },
+      "colHeaders": {
+        "dimension": "Dimension",
+        "chatgpt": "ChatGPT / Copilot",
+        "datacendia": "Datacendia"
+      }
+    },
+    "faq": {
+      "label": "Frequently Asked Questions",
+      "dataSafe": {
+        "q": "Is my data safe? Where does it go?",
+        "a": "Datacendia Core is a cloud-hosted platform. All data is encrypted at rest and in transit. For organisations requiring full data sovereignty, the Datacendia Sovereign Edition can be deployed on-premises or in air-gapped environments — your infrastructure, your keys, your control."
+      },
+      "internet": {
+        "q": "Does it require an internet connection?",
+        "a": "Datacendia Core requires an internet connection as it runs in the cloud. The Sovereign Edition can run entirely on-premises with local LLMs via Ollama or NVIDIA Triton — no external API calls required, suitable for air-gapped and classified environments."
+      },
+      "llms": {
+        "q": "What LLMs does it support?",
+        "a": "Datacendia Core uses cloud LLMs via OpenAI-compatible APIs (GPT-4o, Groq, Together AI). The Sovereign Edition additionally supports local models via Ollama (Llama 3, Mistral, Phi-3, Gemma) and NVIDIA Triton/NIM for enterprise GPU inference. You can mix and match models per agent."
+      },
+      "openSource": {
+        "q": "Is it really open source?",
+        "a": "Yes. Apache 2.0 licensed. The full platform — frontend, backend, deliberation engine, cryptographic infrastructure — is open source. No open-core bait-and-switch. Enterprise features are about support and SLAs, not locked functionality."
+      },
+      "different": {
+        "q": "How is this different from a chatbot or copilot?",
+        "a": "Chatbots give you one answer from one model. Datacendia convenes a panel of domain-expert AI agents who argue from different perspectives — CFO, CISO, Legal, Ethics, Red Team. Disagreements are recorded. Every response is cryptographically signed. The output isn't a chat log — it's a court-admissible decision record."
+      },
+      "compliance": {
+        "q": "What compliance frameworks does it map to?",
+        "a": "EU AI Act (Article 14 human oversight), NIST AI RMF, ISO 42001, SOC 2 Type II, ISO 27001, GDPR Article 22 (automated decision-making), HIPAA, SR 11-7 (model risk management), and ABA Formal Opinion 512 (lawyers using AI)."
+      },
+      "setup": {
+        "q": "How long does setup take?",
+        "a": "Datacendia Core is cloud-hosted — sign up and you're running in seconds. No installation required. For the Sovereign Edition, setup takes five minutes with Docker, or 1-2 days for enterprise deployments with custom SSO, air-gap configuration, and NVIDIA Triton integration."
+      },
+      "verify": {
+        "q": "Can I verify the cryptographic signatures myself?",
+        "a": "Yes. Every decision packet includes Ed25519 signatures and RFC 3161 timestamps that you can verify with standard openssl commands. No proprietary tools needed. No vendor dependency. The Regulator's Receipt includes verification instructions."
+      }
+    },
+    "footer": {
+      "tagline": "NVIDIA Inception Program Member · Apache 2.0 · Sovereign-first · datacendia.com"
+    }
   }
 }

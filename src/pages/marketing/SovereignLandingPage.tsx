@@ -11,637 +11,563 @@
 /**
  * Sovereign Landing Page
  *
- * "This Is Different" - Premium, classified-level positioning
- * No pricing. No feature list. No trial. Pure exclusivity.
+ * Narrative-driven entry point with frictionless demo access.
+ * Name + email → instant platform access via /api/v1/auth/demo-access
  */
 
-import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Shield } from 'lucide-react';
-import { useForm, ValidationError } from '@formspree/react';
-import { deterministicFloat, deterministicInt } from '../../lib/deterministic';
-import { api } from '@/lib/api/client';
+import React, { useState, useRef } from 'react';
+import { ArrowRight, ArrowDown, Terminal, Scale, ShieldCheck, MessageCircle, Users, FileWarning, Fingerprint, Archive, FileCheck2, Shield, Lock, Award, ChevronDown, X, Check } from 'lucide-react';
+import { Logo } from '../../components/brand/Logo';
+import { tokenManager } from '../../lib/api/client';
+import { useTranslation } from '../../lib/i18n';
 
-// Floating particles background
-const ParticleField: React.FC = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+const WORKFLOW_STEPS = [
+  { key: 'ask', icon: MessageCircle, color: 'text-sky-400', bg: 'bg-sky-500/10', border: 'border-sky-500/20' },
+  { key: 'deliberate', icon: Users, color: 'text-indigo-400', bg: 'bg-indigo-500/10', border: 'border-indigo-500/20' },
+  { key: 'dissent', icon: FileWarning, color: 'text-amber-400', bg: 'bg-amber-500/10', border: 'border-amber-500/20' },
+  { key: 'sign', icon: Fingerprint, color: 'text-purple-400', bg: 'bg-purple-500/10', border: 'border-purple-500/20' },
+  { key: 'store', icon: Archive, color: 'text-emerald-400', bg: 'bg-emerald-500/10', border: 'border-emerald-500/20' },
+  { key: 'export', icon: FileCheck2, color: 'text-rose-400', bg: 'bg-rose-500/10', border: 'border-rose-500/20' },
+] as const;
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) {return;}
+const TRUST_BADGES = [
+  { key: 'nvidia', icon: Award, color: 'text-green-400' },
+  { key: 'openSource', icon: Terminal, color: 'text-sky-400' },
+  { key: 'sovereign', icon: Shield, color: 'text-indigo-400' },
+  { key: 'compliance', icon: Scale, color: 'text-amber-400' },
+  { key: 'crypto', icon: Fingerprint, color: 'text-purple-400' },
+  { key: 'zeroTrust', icon: Lock, color: 'text-rose-400' },
+] as const;
 
-    const ctx = canvas.getContext('2d');
-    if (!ctx) {return;}
+const DIFF_ROWS = ['memory', 'dissent', 'proof', 'accountability', 'sovereignty'] as const;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const particles: {
-      x: number;
-      y: number;
-      vx: number;
-      vy: number;
-      size: number;
-      opacity: number;
-    }[] = [];
-    const particleCount = 50;
-
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: deterministicFloat('sovereignlanding-6') * canvas.width,
-        y: deterministicFloat('sovereignlanding-7') * canvas.height,
-        vx: (deterministicFloat('sovereignlanding-1') - 0.5) * 0.3,
-        vy: (deterministicFloat('sovereignlanding-2') - 0.5) * 0.3,
-        size: deterministicFloat('sovereignlanding-4') * 2 + 0.5,
-        opacity: deterministicFloat('sovereignlanding-5') * 0.5 + 0.1,
-      });
-    }
-
-    let animationId: number;
-
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      particles.forEach((p) => {
-        p.x += p.vx;
-        p.y += p.vy;
-
-        if (p.x < 0) {p.x = canvas.width;}
-        if (p.x > canvas.width) {p.x = 0;}
-        if (p.y < 0) {p.y = canvas.height;}
-        if (p.y > canvas.height) {p.y = 0;}
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(127, 29, 29, ${p.opacity})`;
-        ctx.fill();
-      });
-
-      // Draw connecting lines for nearby particles
-      particles.forEach((p1, i) => {
-        particles.slice(i + 1).forEach((p2) => {
-          const dx = p1.x - p2.x;
-          const dy = p1.y - p2.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < 150) {
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(127, 29, 29, ${0.1 * (1 - dist / 150)})`;
-            ctx.stroke();
-          }
-        });
-      });
-
-      animationId = requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      cancelAnimationFrame(animationId);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-0" />;
-};
-
-// Scan lines overlay for classified feel
-const ScanLines: React.FC = () => (
-  <div
-    className="fixed inset-0 pointer-events-none z-10 opacity-[0.03]"
-    style={{
-      backgroundImage:
-        'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px)',
-    }}
-  />
-);
-
-// Glitch text effect
-const GlitchText: React.FC<{ children: string; className?: string }> = ({
-  children,
-  className,
-}) => {
-  const [isGlitching, setIsGlitching] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(
-      () => {
-        setIsGlitching(true);
-        setTimeout(() => setIsGlitching(false), 200);
-      },
-      5000 + deterministicFloat('sovereignlanding-3') * 3000
-    );
-
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <span className={`relative inline-block ${className}`}>
-      <span className={isGlitching ? 'opacity-0' : ''}>{children}</span>
-      {isGlitching && (
-        <>
-          <span
-            className="absolute inset-0 text-red-900/80"
-            style={{ transform: 'translate(-2px, 0)', clipPath: 'inset(20% 0 30% 0)' }}
-          >
-            {children}
-          </span>
-          <span
-            className="absolute inset-0 text-cyan-900/80"
-            style={{ transform: 'translate(2px, 0)', clipPath: 'inset(50% 0 10% 0)' }}
-          >
-            {children}
-          </span>
-          <span className="absolute inset-0">{children}</span>
-        </>
-      )}
-    </span>
-  );
-};
-
-// Live counter animation hook
-const useAnimatedCounter = (target: number, duration: number = 2000) => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let startTime: number;
-    let animationFrame: number;
-
-    const animate = (timestamp: number) => {
-      if (!startTime) {startTime = timestamp;}
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      setCount(Math.floor(progress * target));
-
-      if (progress < 1) {
-        animationFrame = requestAnimationFrame(animate);
-      }
-    };
-
-    animationFrame = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationFrame);
-  }, [target, duration]);
-
-  return count;
-};
-
-// Request Access Modal
-const RequestAccessModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
-  isOpen,
-  onClose,
-}) => {
-  const [formspreeState, formspreeSubmit] = useForm('xvzbvpev');
-  const [formData, setFormData] = useState({
-    name: '',
-    title: '',
-    organization: '',
-    concern: '',
-  });
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    // Primary: Formspree (email notification via @formspree/react)
-    await formspreeSubmit(e);
-
-    // Secondary: Backend (database persistence)
-    api.post('/api/v1/marketing-leads', {
-      ...formData,
-      source: 'sovereign_landing',
-    }).catch((err) => console.error('[SovereignLanding] Backend failed:', err));
-  };
-
-  if (!isOpen) {return null;}
-
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/95 backdrop-blur-sm">
-      <div className="relative w-full max-w-lg">
-        <button
-          onClick={onClose}
-          className="absolute -top-12 right-0 text-gray-500 hover:text-white text-sm tracking-widest"
-        >
-          CLOSE
-        </button>
-
-        {formspreeState.succeeded ? (
-          <div className="text-center py-16">
-            <div className="w-16 h-16 border border-red-900/50 rounded-full flex items-center justify-center mx-auto mb-8">
-              <div className="w-3 h-3 bg-red-900 rounded-full" />
-            </div>
-            <h3 className="text-2xl font-light text-white mb-4 tracking-wide">Access Requested</h3>
-            <p className="text-gray-500 text-sm leading-relaxed max-w-sm mx-auto">
-              Your inquiry has been received. If approved, you will be contacted within 48 hours to
-              schedule a secure demonstration.
-            </p>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <input type="hidden" name="_subject" value={`Sovereign Access Request: ${formData.organization}`} />
-            <input type="hidden" name="source" value="sovereign_landing" />
-            <div>
-              <input
-                type="text"
-                name="name"
-                placeholder="Full Name"
-                required
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full bg-transparent border-b border-gray-800 focus:border-red-900/50 text-white py-4 px-0 text-lg outline-none transition-colors placeholder:text-gray-600"
-              />
-              <ValidationError prefix="Name" field="name" errors={formspreeState.errors} className="text-red-500 text-xs mt-1" />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="title"
-                placeholder="Title"
-                required
-                value={formData.title}
-                onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                className="w-full bg-transparent border-b border-gray-800 focus:border-red-900/50 text-white py-4 px-0 text-lg outline-none transition-colors placeholder:text-gray-600"
-              />
-              <ValidationError prefix="Title" field="title" errors={formspreeState.errors} className="text-red-500 text-xs mt-1" />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="organization"
-                placeholder="Organization"
-                required
-                value={formData.organization}
-                onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-                className="w-full bg-transparent border-b border-gray-800 focus:border-red-900/50 text-white py-4 px-0 text-lg outline-none transition-colors placeholder:text-gray-600"
-              />
-              <ValidationError prefix="Organization" field="organization" errors={formspreeState.errors} className="text-red-500 text-xs mt-1" />
-            </div>
-            <div>
-              <textarea
-                name="message"
-                placeholder="What keeps you up at night?"
-                required
-                rows={3}
-                value={formData.concern}
-                onChange={(e) => setFormData({ ...formData, concern: e.target.value })}
-                className="w-full bg-transparent border-b border-gray-800 focus:border-red-900/50 text-white py-4 px-0 text-lg outline-none transition-colors placeholder:text-gray-600 resize-none"
-              />
-              <ValidationError prefix="Message" field="message" errors={formspreeState.errors} className="text-red-500 text-xs mt-1" />
-            </div>
-            <div className="pt-8">
-              <button
-                type="submit"
-                disabled={formspreeState.submitting}
-                className="w-full py-4 border border-red-900/50 text-white hover:bg-red-900/10 transition-colors text-sm tracking-widest disabled:opacity-50"
-              >
-                {formspreeState.submitting ? 'SUBMITTING...' : 'SUBMIT REQUEST'}
-              </button>
-            </div>
-          </form>
-        )}
-      </div>
-    </div>
-  );
-};
+const FAQ_KEYS = ['dataSafe', 'internet', 'llms', 'openSource', 'different', 'compliance', 'setup', 'verify'] as const;
 
 const SovereignLandingPage: React.FC = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [hasScrolled, setHasScrolled] = useState(false);
-  const [activeTab, setActiveTab] = useState<'honesty' | 'manifesto'>('honesty');
+  const { t } = useTranslation();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const ctaRef = useRef<HTMLElement>(null);
+  const problemRef = useRef<HTMLElement>(null);
 
-  // Animated counters
-  const deployments = useAnimatedCounter(11, 2500);
-  const decisions = useAnimatedCounter(2847, 3000);
-  const frameworks = useAnimatedCounter(31, 2000);
+  const handleDemoAccess = async () => {
+    setIsSubmitting(true);
+    setError('');
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setHasScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    try {
+      const res = await fetch('/api/v1/auth/demo-access', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: 'Demo User', email: `demo-${Date.now()}@datacendia.com` }),
+      });
+
+      const data = await res.json();
+
+      if (data.success && data.data) {
+        tokenManager.setTokens({
+          accessToken: data.data.accessToken,
+          refreshToken: data.data.refreshToken,
+          expiresIn: 86400,
+        });
+        setTimeout(() => {
+          window.location.href = '/cortex';
+        }, 100);
+      } else {
+        setError(data.error?.message || t('landing.demo.genericError'));
+        setIsSubmitting(false);
+      }
+    } catch {
+      setError(t('landing.demo.connectionError'));
+      setIsSubmitting(false);
+    }
+  };
+
+  const scrollToCta = () => {
+    ctaRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
-    <div className="min-h-screen bg-black text-white font-light antialiased selection:bg-red-900/30 relative overflow-hidden">
-      {/* Background Effects */}
-      <ParticleField />
-      <ScanLines />
+    <div className="min-h-screen bg-[#09090b] text-white antialiased selection:bg-indigo-900/30">
+      {/* Background */}
+      <div className="fixed inset-0 bg-gradient-to-b from-[#09090b] via-[#0c0c10] to-[#09090b] pointer-events-none" />
+      <div className="fixed inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
 
-      {/* Vignette overlay */}
-      <div
-        className="fixed inset-0 pointer-events-none z-10"
-        style={{
-          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.4) 100%)',
-        }}
-      />
-
-      {/* Fixed Nav with Sign In */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center">
-        <Link to="/" className="text-xs tracking-[0.3em] text-gray-500 hover:text-white transition-colors">
-          DATACENDIA
-        </Link>
-        <div className="flex items-center gap-4">
-          <Link 
-            to="/login" 
-            className="px-4 py-2 text-xs tracking-[0.2em] border border-white/30 hover:border-white hover:bg-white/10 text-white transition-all"
-          >
-            SIGN IN
-          </Link>
-          <Link 
-            to="/demo" 
-            className="px-4 py-2 text-xs tracking-[0.2em] bg-red-900/80 hover:bg-red-800 text-white transition-all"
-          >
-            REQUEST ACCESS
-          </Link>
-        </div>
+      {/* Nav */}
+      <nav className="relative z-50 px-6 py-5 flex justify-between items-center max-w-6xl mx-auto">
+        <Logo size="sm" />
+        <button
+          onClick={scrollToCta}
+          className="text-xs tracking-widest text-gray-500 hover:text-white transition-colors"
+        >
+          {t('landing.nav.tryDemo')}
+        </button>
       </nav>
 
-      {/* Hero Section - Full Screen */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-6 relative">
-        {/* Logo / Brand */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-extralight tracking-[0.3em] text-white mb-4">
-            <GlitchText>DATACENDIA</GlitchText>
-          </h1>
-          <p className="text-sm tracking-[0.4em] text-gray-500 uppercase">
-            Sovereign Intelligence Platform
+      {/* ═══════════════════════════ HERO ═══════════════════════════ */}
+      <section className="relative z-10 px-6 pt-16 sm:pt-24 pb-20 max-w-4xl mx-auto">
+        <h1 className="text-2xl sm:text-4xl md:text-[2.75rem] font-light leading-snug mb-2 text-gray-200">
+          {t('landing.hero.line1')}
+        </h1>
+        <h1 className="text-2xl sm:text-4xl md:text-[2.75rem] font-light leading-snug mb-10 text-white">
+          {t('landing.hero.line2')} <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">{t('landing.hero.agency')}</span>
+        </h1>
+
+        <div className="max-w-3xl space-y-4 mb-10">
+          <p className="text-base sm:text-lg text-gray-400 font-light leading-relaxed">
+            {t('landing.hero.p1')}
+          </p>
+          <p className="text-base sm:text-lg text-gray-300 font-light leading-relaxed">
+            {t('landing.hero.p2')} <span className="text-white font-normal">{t('landing.hero.p2Emphasis')}</span>
+          </p>
+          <p className="text-base sm:text-lg text-white font-normal leading-relaxed">
+            {t('landing.hero.p3')}
           </p>
         </div>
 
-        {/* Tab Switcher */}
-        <div className="flex justify-center gap-1 mb-12">
+        <div className="flex flex-col sm:flex-row gap-4 items-start">
           <button
-            onClick={() => setActiveTab('honesty')}
-            className={`px-6 py-3 text-xs tracking-[0.2em] transition-all duration-300 border ${
-              activeTab === 'honesty'
-                ? 'border-red-900/50 text-white bg-red-900/10'
-                : 'border-gray-800 text-gray-500 hover:text-white hover:border-gray-700'
-            }`}
+            onClick={scrollToCta}
+            className="group px-7 py-3.5 bg-white text-black rounded-lg font-medium text-sm tracking-wide inline-flex items-center gap-2.5 hover:bg-gray-100 transition-all"
           >
-            HONESTY MATRICES
+            {t('landing.hero.cta')}
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </button>
           <button
-            onClick={() => setActiveTab('manifesto')}
-            className={`px-6 py-3 text-xs tracking-[0.2em] transition-all duration-300 border ${
-              activeTab === 'manifesto'
-                ? 'border-red-900/50 text-white bg-red-900/10'
-                : 'border-gray-800 text-gray-500 hover:text-white hover:border-gray-700'
-            }`}
+            onClick={() => problemRef.current?.scrollIntoView({ behavior: 'smooth' })}
+            className="px-7 py-3.5 border border-white/10 text-gray-400 rounded-lg text-sm inline-flex items-center gap-2.5 hover:border-white/20 hover:text-gray-200 transition-all"
           >
-            THE MANIFESTO
+            {t('landing.hero.secondaryCta')}
+            <ArrowDown className="w-4 h-4" />
           </button>
-        </div>
-
-        {/* Honesty Matrices Tab */}
-        {activeTab === 'honesty' && (
-          <div className="w-full max-w-5xl mb-16">
-            <div className="text-center mb-8">
-              <p className="text-xs tracking-[0.4em] text-gray-500 uppercase mb-3">
-                RADICAL TRANSPARENCY
-              </p>
-              <h2 className="text-xl md:text-2xl font-light text-white mb-2">
-                Most vendors hide this. We lead with it.
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <a
-                href="/honesty"
-                className="group p-6 border border-gray-800 hover:border-red-900/50 bg-black/50 transition-all duration-300 rounded"
-              >
-                <div className="text-2xl mb-3">🏛️</div>
-                <h3 className="text-sm font-medium text-white mb-1">Sovereignty Matrix</h3>
-                <p className="text-xs text-gray-500 mb-3">How much control do you actually have?</p>
-                <div className="flex gap-2">
-                  <span className="px-2 py-0.5 text-[10px] bg-green-900/30 text-green-400 rounded">
-                    Air-Gapped
-                  </span>
-                  <span className="px-2 py-0.5 text-[10px] bg-green-900/30 text-green-400 rounded">
-                    On-Prem
-                  </span>
-                </div>
-              </a>
-
-              <a
-                href="/honesty"
-                className="group p-6 border border-gray-800 hover:border-red-900/50 bg-black/50 transition-all duration-300 rounded"
-              >
-                <div className="text-2xl mb-3">🚫</div>
-                <h3 className="text-sm font-medium text-white mb-1">What We Can't Do</h3>
-                <p className="text-xs text-gray-500 mb-3">Our actual limitations, documented.</p>
-                <div className="flex gap-2">
-                  <span className="px-2 py-0.5 text-[10px] bg-red-900/30 text-red-400 rounded">
-                    Honest
-                  </span>
-                  <span className="px-2 py-0.5 text-[10px] bg-gray-800 text-gray-400 rounded">
-                    No BS
-                  </span>
-                </div>
-              </a>
-
-              <a
-                href="/honesty"
-                className="group p-6 border border-gray-800 hover:border-red-900/50 bg-black/50 transition-all duration-300 rounded"
-              >
-                <div className="text-2xl mb-3">🚨</div>
-                <h3 className="text-sm font-medium text-white mb-1">What Breaks at 3 AM</h3>
-                <p className="text-xs text-gray-500 mb-3">When things go wrong, what happens?</p>
-                <div className="flex gap-2">
-                  <span className="px-2 py-0.5 text-[10px] bg-yellow-900/30 text-yellow-400 rounded">
-                    Recovery
-                  </span>
-                  <span className="px-2 py-0.5 text-[10px] bg-yellow-900/30 text-yellow-400 rounded">
-                    Root Cause
-                  </span>
-                </div>
-              </a>
-            </div>
-
-            <div className="text-center mt-6">
-              <a
-                href="/honesty"
-                className="text-xs tracking-[0.2em] text-gray-500 hover:text-red-900 transition-colors"
-              >
-                VIEW ALL 6 HONESTY MATRICES →
-              </a>
-            </div>
-          </div>
-        )}
-
-        {/* Manifesto Tab */}
-        {activeTab === 'manifesto' && (
-          <div className="w-full max-w-3xl mb-16">
-            <div className="space-y-8 text-center">
-              <p className="text-lg md:text-xl font-light text-gray-300 leading-relaxed">
-                Modern enterprises have surrendered their minds.
-              </p>
-
-              <p className="text-base text-gray-400 leading-relaxed">
-                They've traded ownership for convenience, and now they're tenants in their own
-                house.
-              </p>
-
-              <div className="space-y-2 text-sm text-gray-500">
-                <p>They have data. They don't have understanding.</p>
-                <p>They have dashboards. They don't have direction.</p>
-                <p>They have AI. They don't have agency.</p>
-                <p>They have predictions. They don't have power.</p>
-                <p>They have tools. They don't have truth.</p>
-              </div>
-
-              <p className="text-xl md:text-2xl font-light text-white leading-relaxed pt-4">
-                Datacendia exists to return the mind to its rightful owner.
-              </p>
-
-              <div className="pt-8 border-t border-gray-900">
-                <p className="text-xs tracking-[0.3em] text-gray-600 uppercase mb-6">We Believe</p>
-                <ol className="space-y-3 text-sm text-gray-400 text-left max-w-xl mx-auto">
-                  <li className="flex gap-4">
-                    <span className="text-red-900 font-mono">1.</span>
-                    <span>
-                      Your intelligence should live on your infrastructure, under your control.
-                    </span>
-                  </li>
-                  <li className="flex gap-4">
-                    <span className="text-red-900 font-mono">2.</span>
-                    <span>Decisions made by machines should be explainable to humans.</span>
-                  </li>
-                  <li className="flex gap-4">
-                    <span className="text-red-900 font-mono">3.</span>
-                    <span>
-                      Disagreement is not disloyalty — it is the immune system of good judgment.
-                    </span>
-                  </li>
-                  <li className="flex gap-4">
-                    <span className="text-red-900 font-mono">4.</span>
-                    <span>
-                      The past is not a black box — it is a teacher, if you can replay it.
-                    </span>
-                  </li>
-                  <li className="flex gap-4">
-                    <span className="text-red-900 font-mono">5.</span>
-                    <span>Transparency is not a feature. It is the foundation.</span>
-                  </li>
-                </ol>
-              </div>
-
-              <p className="text-base text-gray-400 pt-6 italic">
-                The future belongs to those who can see it —
-                <br />
-                <span className="text-white not-italic">
-                  and refuse to rent it from someone else.
-                </span>
-              </p>
-            </div>
-          </div>
-        )}
-
-        {/* Value Proposition - Single memorable line */}
-        <div className="text-center mb-16">
-          <p className="text-xl md:text-2xl lg:text-3xl font-light leading-relaxed">
-            <span className="text-gray-400">We do not host your data. We </span>
-            <span className="relative text-white">
-              return your mind
-              <span className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-red-900/0 via-red-900 to-red-900/0" />
-            </span>
-            <span className="text-gray-400">.</span>
-          </p>
-        </div>
-
-        {/* Request Access Button - CendiaVeto™ crimson */}
-        <button
-          onClick={() => setShowModal(true)}
-          className="group relative px-10 py-5 border-2 border-red-900 bg-black hover:bg-red-900/10 transition-all duration-300 flex items-center gap-3 overflow-hidden"
-        >
-          {/* Pulse glow effect */}
-          <span className="absolute inset-0 bg-red-900/20 animate-pulse" />
-          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-red-900/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-          <Shield className="w-4 h-4 text-red-800 relative z-10" />
-          <span className="text-sm tracking-[0.25em] text-white font-medium relative z-10">
-            Request Access
-          </span>
-          <ArrowRight className="w-4 h-4 text-red-800 group-hover:translate-x-1 transition-transform relative z-10" />
-        </button>
-
-        {/* Scroll indicator */}
-        <div
-          className={`absolute bottom-12 left-1/2 -translate-x-1/2 transition-opacity duration-500 ${hasScrolled ? 'opacity-0' : 'opacity-100'}`}
-        >
-          <div className="w-px h-16 bg-gradient-to-b from-transparent to-gray-800" />
         </div>
       </section>
 
-      {/* Below the Fold */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-6 py-24">
-        {/* Tagline */}
-        <p className="text-center text-gray-500 text-lg md:text-xl font-light mb-24 tracking-wide">
-          For organizations that cannot afford to be tenants.
-        </p>
+      {/* ═══════════════════════════ THE PROBLEM ═══════════════════════════ */}
+      <section ref={problemRef} className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-6">{t('landing.problem.label')}</p>
+          <p className="text-lg sm:text-xl text-gray-300 font-light leading-relaxed">
+            {t('landing.problem.text')}{' '}
+            <span className="text-gray-500">{t('landing.problem.fade')}</span>
+          </p>
+        </div>
+      </section>
 
-        {/* Live Counters */}
-        <div className="flex flex-wrap justify-center gap-12 md:gap-24 mb-24">
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-light text-white tabular-nums">
-              {deployments}
+      {/* ═══════════════════════════ WHAT IS DATACENDIA? ═══════════════════════════ */}
+      <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-16 text-center">{t('landing.whatIs.label')}</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Plain terms */}
+            <div className="p-8 rounded-2xl border border-white/[0.06] bg-white/[0.015] space-y-5">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center">
+                  <MessageCircle className="w-4 h-4 text-emerald-400" />
+                </div>
+                <h3 className="text-base font-medium text-emerald-400">{t('landing.whatIs.simple.title')}</h3>
+              </div>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                {t('landing.whatIs.simple.description')}
+              </p>
+              <p className="text-xs text-gray-500 leading-relaxed italic border-l-2 border-emerald-500/20 pl-4">
+                {t('landing.whatIs.simple.analogy')}
+              </p>
             </div>
-            <div className="text-[10px] text-gray-600 tracking-[0.3em] mt-2">
-              SOVEREIGN DEPLOYMENTS ACTIVE
-            </div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-light text-white tabular-nums">
-              {decisions.toLocaleString()}
-            </div>
-            <div className="text-[10px] text-gray-600 tracking-[0.3em] mt-2">
-              DECISIONS PROTECTED THIS QUARTER
-            </div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-light text-white tabular-nums">
-              {frameworks}
-            </div>
-            <div className="text-[10px] text-gray-600 tracking-[0.3em] mt-2">
-              REGULATORY FRAMEWORKS MAPPED
+
+            {/* Technical */}
+            <div className="p-8 rounded-2xl border border-white/[0.06] bg-white/[0.015] space-y-5">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-8 h-8 rounded-full bg-indigo-500/10 flex items-center justify-center">
+                  <Terminal className="w-4 h-4 text-indigo-400" />
+                </div>
+                <h3 className="text-base font-medium text-indigo-400">{t('landing.whatIs.technical.title')}</h3>
+              </div>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                {t('landing.whatIs.technical.description')}
+              </p>
+              <p className="text-[11px] text-gray-600 font-mono tracking-wide">
+                {t('landing.whatIs.technical.stack')}
+              </p>
             </div>
           </div>
         </div>
-
-        {/* Second CTA */}
-        <button
-          onClick={() => setShowModal(true)}
-          className="group px-8 py-4 border border-gray-800 hover:border-red-900/50 bg-black transition-all duration-300 flex items-center gap-3"
-        >
-          <span className="text-sm tracking-[0.2em] text-gray-400 group-hover:text-white transition-colors">
-            Request Access
-          </span>
-          <ArrowRight className="w-4 h-4 text-gray-600 group-hover:text-red-900 group-hover:translate-x-1 transition-all" />
-        </button>
       </section>
 
-      {/* Footer */}
-      <footer className="py-16 px-6 border-t border-gray-900 relative z-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xs text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8">
-            Datacendia runs entirely on your hardware, in your vault, under your control.
-            <br />
-            No cloud. No telemetry. No exceptions.
-          </p>
-          <div className="flex items-center justify-center gap-8 text-[10px] text-gray-700 tracking-widest">
-            <span>© {new Date().getFullYear()} DATACENDIA</span>
-            <span>•</span>
-            <span>SOVEREIGN INTELLIGENCE</span>
+      {/* ═══════════════════════════ WORKFLOW DIAGRAM ═══════════════════════════ */}
+      <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-3 text-center">{t('landing.workflow.label')}</p>
+          <p className="text-sm text-gray-500 text-center mb-16">{t('landing.workflow.subtitle')}</p>
+
+          {/* Desktop: horizontal flow */}
+          <div className="hidden lg:block">
+            <div className="grid grid-cols-6 gap-0 items-start">
+              {WORKFLOW_STEPS.map((step, i) => {
+                const Icon = step.icon;
+                return (
+                  <div key={step.key} className="relative flex flex-col items-center text-center">
+                    {/* Connector line */}
+                    {i > 0 && (
+                      <div className="absolute top-5 -left-[50%] w-full h-px bg-gradient-to-r from-white/[0.06] to-white/[0.12]" />
+                    )}
+                    {/* Step number + icon */}
+                    <div className={`relative z-10 w-10 h-10 rounded-full ${step.bg} border ${step.border} flex items-center justify-center mb-4`}>
+                      <Icon className={`w-4.5 h-4.5 ${step.color}`} />
+                    </div>
+                    {/* Step number badge */}
+                    <span className="text-[10px] text-gray-600 font-mono mb-1">{String(i + 1).padStart(2, '0')}</span>
+                    <h4 className={`text-sm font-medium ${step.color} mb-2`}>
+                      {t(`landing.workflow.steps.${step.key}.title`)}
+                    </h4>
+                    <p className="text-xs text-gray-500 leading-relaxed px-2">
+                      {t(`landing.workflow.steps.${step.key}.description`)}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
+
+          {/* Mobile/tablet: vertical flow */}
+          <div className="lg:hidden space-y-0">
+            {WORKFLOW_STEPS.map((step, i) => {
+              const Icon = step.icon;
+              return (
+                <div key={step.key} className="relative flex gap-5">
+                  {/* Vertical line + icon */}
+                  <div className="flex flex-col items-center">
+                    <div className={`w-10 h-10 rounded-full ${step.bg} border ${step.border} flex items-center justify-center shrink-0`}>
+                      <Icon className={`w-4.5 h-4.5 ${step.color}`} />
+                    </div>
+                    {i < WORKFLOW_STEPS.length - 1 && (
+                      <div className="w-px flex-1 bg-gradient-to-b from-white/10 to-transparent min-h-[2rem]" />
+                    )}
+                  </div>
+                  {/* Content */}
+                  <div className="pb-8 pt-1.5">
+                    <span className="text-[10px] text-gray-600 font-mono">{String(i + 1).padStart(2, '0')}</span>
+                    <h4 className={`text-sm font-medium ${step.color} mb-1`}>
+                      {t(`landing.workflow.steps.${step.key}.title`)}
+                    </h4>
+                    <p className="text-xs text-gray-500 leading-relaxed max-w-sm">
+                      {t(`landing.workflow.steps.${step.key}.description`)}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════ THE SOLUTION — 3 BEATS ═══════════════════════════ */}
+      <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-16 text-center">{t('landing.solution.label')}</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+            {/* Beat 1 */}
+            <div className="space-y-4">
+              <div className="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center mb-2">
+                <span className="text-indigo-400 text-lg font-light">1</span>
+              </div>
+              <h3 className="text-lg text-white font-medium">{t('landing.solution.beat1Title')}</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                {t('landing.solution.beat1Text')}{' '}
+                <span className="text-gray-300">{t('landing.solution.beat1Emphasis')}</span>
+              </p>
+            </div>
+
+            {/* Beat 2 */}
+            <div className="space-y-4">
+              <div className="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center mb-2">
+                <span className="text-indigo-400 text-lg font-light">2</span>
+              </div>
+              <h3 className="text-lg text-white font-medium">{t('landing.solution.beat2Title')}</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                {t('landing.solution.beat2Text')}{' '}
+                <span className="text-gray-300">{t('landing.solution.beat2Emphasis')}</span>
+              </p>
+            </div>
+
+            {/* Beat 3 */}
+            <div className="space-y-4">
+              <div className="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center mb-2">
+                <span className="text-indigo-400 text-lg font-light">3</span>
+              </div>
+              <h3 className="text-lg text-white font-medium">{t('landing.solution.beat3Title')}</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                {t('landing.solution.beat3Text')}{' '}
+                <span className="text-gray-300">{t('landing.solution.beat3Emphasis')} <code className="text-xs px-1.5 py-0.5 rounded bg-white/5 text-gray-300 font-mono">openssl</code>{t('landing.solution.beat3EmpSuffix')}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════ AUDIENCE SECTIONS ═══════════════════════════ */}
+      <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+          {/* Developers */}
+          <div className="p-6 rounded-xl border border-white/[0.06] bg-white/[0.015]">
+            <div className="flex items-center gap-3 mb-5">
+              <Terminal className="w-5 h-5 text-emerald-400" />
+              <p className="text-[11px] tracking-[0.2em] text-emerald-400/80 uppercase">{t('landing.audience.developers.label')}</p>
+            </div>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              {t('landing.audience.developers.text')}{' '}
+              <code className="text-xs px-1.5 py-0.5 rounded bg-white/5 text-gray-300 font-mono">{t('landing.audience.developers.code')}</code>{' '}
+              {t('landing.audience.developers.suffix')}
+            </p>
+          </div>
+
+          {/* Compliance */}
+          <div className="p-6 rounded-xl border border-white/[0.06] bg-white/[0.015]">
+            <div className="flex items-center gap-3 mb-5">
+              <Scale className="w-5 h-5 text-amber-400" />
+              <p className="text-[11px] tracking-[0.2em] text-amber-400/80 uppercase">{t('landing.audience.compliance.label')}</p>
+            </div>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              {t('landing.audience.compliance.text')}
+            </p>
+          </div>
+
+          {/* Leadership */}
+          <div className="p-6 rounded-xl border border-white/[0.06] bg-white/[0.015]">
+            <div className="flex items-center gap-3 mb-5">
+              <ShieldCheck className="w-5 h-5 text-indigo-400" />
+              <p className="text-[11px] tracking-[0.2em] text-indigo-400/80 uppercase">{t('landing.audience.leadership.label')}</p>
+            </div>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              {t('landing.audience.leadership.text')} <span className="text-white">{t('landing.audience.leadership.emphasis')}</span>{t('landing.audience.leadership.suffix')}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════ SOCIAL PROOF STRIP ═══════════════════════════ */}
+      <section className="relative z-10 px-6 py-16 border-t border-white/[0.04]">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-10 text-center">{t('landing.socialProof.label')}</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {TRUST_BADGES.map((badge) => {
+              const Icon = badge.icon;
+              return (
+                <div key={badge.key} className="flex flex-col items-center gap-2.5 p-4 rounded-xl border border-white/[0.04] bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
+                  <Icon className={`w-5 h-5 ${badge.color} opacity-70`} />
+                  <p className="text-[10px] text-gray-500 text-center leading-tight tracking-wide">
+                    {t(`landing.socialProof.${badge.key}`)}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════ PLATFORM PREVIEW ═══════════════════════════ */}
+      <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-3 text-center">{t('landing.preview.label')}</p>
+          <p className="text-sm text-gray-500 text-center mb-12 max-w-2xl mx-auto">{t('landing.preview.subtitle')}</p>
+
+          {/* Preview mockup */}
+          <div className="relative rounded-2xl border border-white/[0.08] bg-gradient-to-b from-white/[0.03] to-white/[0.01] overflow-hidden">
+            {/* Window chrome */}
+            <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.06]">
+              <div className="flex gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-500/40" />
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/40" />
+                <div className="w-2.5 h-2.5 rounded-full bg-green-500/40" />
+              </div>
+              <div className="flex-1 mx-4">
+                <div className="mx-auto max-w-xs h-5 rounded bg-white/[0.04] flex items-center justify-center">
+                  <span className="text-[10px] text-gray-600 font-mono">app.datacendia.com/cortex/council</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Mockup content — Council deliberation */}
+            <div className="p-6 sm:p-8 space-y-4">
+              {/* Query bar */}
+              <div className="rounded-lg bg-white/[0.03] border border-white/[0.06] p-4">
+                <p className="text-xs text-gray-600 mb-1.5 font-mono">QUERY</p>
+                <p className="text-sm text-gray-300 italic">"Should we acquire TechVenture Inc. at the proposed $42M valuation given current market conditions?"</p>
+              </div>
+
+              {/* Agent responses grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="rounded-lg bg-white/[0.02] border border-emerald-500/10 p-3.5">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-[10px] font-medium text-emerald-400 tracking-wide">CFO Agent</span>
+                    <span className="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono">CONDITIONAL</span>
+                  </div>
+                  <p className="text-[11px] text-gray-500 leading-relaxed">Valuation is 15% above sector median. Recommend counter at $36M with earnout structure...</p>
+                </div>
+                <div className="rounded-lg bg-white/[0.02] border border-amber-500/10 p-3.5">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-[10px] font-medium text-amber-400 tracking-wide">Legal Counsel</span>
+                    <span className="text-[9px] px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400 font-mono">CAUTION</span>
+                  </div>
+                  <p className="text-[11px] text-gray-500 leading-relaxed">IP assignment clauses in target's employment contracts have gaps. Due diligence required...</p>
+                </div>
+                <div className="rounded-lg bg-white/[0.02] border border-rose-500/10 p-3.5">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-[10px] font-medium text-rose-400 tracking-wide">Red Team</span>
+                    <span className="text-[9px] px-1.5 py-0.5 rounded bg-rose-500/10 text-rose-400 font-mono">DISSENT</span>
+                  </div>
+                  <p className="text-[11px] text-gray-500 leading-relaxed">Market correction risk in Q3 makes timing unfavorable. 3 of 5 comparable acquisitions in this...</p>
+                </div>
+              </div>
+
+              {/* Signature bar */}
+              <div className="flex items-center justify-between rounded-lg bg-white/[0.02] border border-white/[0.06] px-4 py-2.5">
+                <div className="flex items-center gap-3">
+                  <Fingerprint className="w-3.5 h-3.5 text-purple-400/60" />
+                  <span className="text-[10px] text-gray-600 font-mono">Ed25519 signed · Merkle tree hashed · RFC 3161 timestamped</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                  <span className="text-[10px] text-green-500/70">SEALED</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-[11px] text-gray-600 text-center mt-4 italic">{t('landing.preview.caption')}</p>
+
+          <div className="flex justify-center mt-6">
+            <button
+              onClick={scrollToCta}
+              className="group text-sm text-indigo-400 hover:text-indigo-300 inline-flex items-center gap-2 transition-colors"
+            >
+              {t('landing.preview.cta')}
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════ WHY NOT CHATGPT? ═══════════════════════════ */}
+      <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-3 text-center">{t('landing.differentiator.label')}</p>
+          <p className="text-base sm:text-lg text-gray-400 text-center mb-12 font-light">{t('landing.differentiator.subtitle')}</p>
+
+          {/* Comparison table */}
+          <div className="rounded-2xl border border-white/[0.06] overflow-hidden">
+            {/* Header */}
+            <div className="grid grid-cols-[1fr_1fr_1fr] border-b border-white/[0.06] bg-white/[0.02]">
+              <div className="px-4 sm:px-6 py-3">
+                <span className="text-[10px] text-gray-600 tracking-wider uppercase">{t('landing.differentiator.colHeaders.dimension')}</span>
+              </div>
+              <div className="px-4 sm:px-6 py-3 border-l border-white/[0.06]">
+                <span className="text-[10px] text-gray-600 tracking-wider uppercase">{t('landing.differentiator.colHeaders.chatgpt')}</span>
+              </div>
+              <div className="px-4 sm:px-6 py-3 border-l border-white/[0.06]">
+                <span className="text-[10px] text-indigo-400/80 tracking-wider uppercase">{t('landing.differentiator.colHeaders.datacendia')}</span>
+              </div>
+            </div>
+
+            {/* Rows */}
+            {DIFF_ROWS.map((row, i) => (
+              <div key={row} className={`grid grid-cols-[1fr_1fr_1fr] ${i < DIFF_ROWS.length - 1 ? 'border-b border-white/[0.04]' : ''}`}>
+                <div className="px-4 sm:px-6 py-4 flex items-start">
+                  <span className="text-xs text-gray-400 font-medium capitalize">{row}</span>
+                </div>
+                <div className="px-4 sm:px-6 py-4 border-l border-white/[0.04] flex items-start gap-2">
+                  <X className="w-3.5 h-3.5 text-red-400/60 shrink-0 mt-0.5" />
+                  <span className="text-xs text-gray-500">{t(`landing.differentiator.items.${row}.chatgpt`)}</span>
+                </div>
+                <div className="px-4 sm:px-6 py-4 border-l border-white/[0.04] bg-indigo-500/[0.02] flex items-start gap-2">
+                  <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                  <span className="text-xs text-gray-300">{t(`landing.differentiator.items.${row}.datacendia`)}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════ FAQ ═══════════════════════════ */}
+      <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-12 text-center">{t('landing.faq.label')}</p>
+
+          <div className="space-y-2">
+            {FAQ_KEYS.map((key, i) => (
+              <div key={key} className="rounded-xl border border-white/[0.06] bg-white/[0.01] overflow-hidden">
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/[0.02] transition-colors"
+                >
+                  <span className="text-sm text-gray-300 font-medium pr-4">{t(`landing.faq.${key}.q`)}</span>
+                  <ChevronDown className={`w-4 h-4 text-gray-500 shrink-0 transition-transform duration-200 ${openFaq === i ? 'rotate-180' : ''}`} />
+                </button>
+                {openFaq === i && (
+                  <div className="px-5 pb-4 pt-0">
+                    <p className="text-sm text-gray-400 leading-relaxed">{t(`landing.faq.${key}.a`)}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════ BOTTOM CTA ═══════════════════════════ */}
+      <section ref={ctaRef} className="relative z-10 px-6 py-28 border-t border-white/[0.04]">
+        <div className="max-w-lg mx-auto text-center">
+          <h2 className="text-2xl sm:text-3xl font-light text-white mb-3">{t('landing.demo.title')}</h2>
+          <p className="text-sm text-gray-500 mb-8">{t('landing.demo.subtitle')}</p>
+
+          <button
+            onClick={handleDemoAccess}
+            disabled={isSubmitting}
+            className="group px-10 py-4 bg-white text-black rounded-lg font-medium text-sm tracking-wide inline-flex items-center gap-3 hover:bg-gray-100 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isSubmitting ? (
+              <span className="flex items-center gap-2">
+                <span className="w-4 h-4 border-2 border-gray-400 border-t-black rounded-full animate-spin" />
+                {t('landing.demo.submitting')}
+              </span>
+            ) : (
+              <>
+                {t('landing.demo.enterButton')}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </>
+            )}
+          </button>
+          {error && (
+            <p className="text-red-400 text-xs text-center mt-4">{error}</p>
+          )}
+        </div>
+      </section>
+
+      {/* ═══════════════════════════ FOOTER ═══════════════════════════ */}
+      <footer className="relative z-10 py-10 px-6 border-t border-white/[0.04]">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <Logo size="sm" />
+          <div className="flex items-center gap-4">
+            <a href="https://www.linkedin.com/company/datacendia" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-white transition-colors" aria-label="Datacendia on LinkedIn">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://github.com/datacendia" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-white transition-colors" aria-label="Datacendia on GitHub">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <p className="text-[11px] text-gray-600 text-center sm:text-right leading-relaxed">
+              {t('landing.footer.tagline')}
+            </p>
+          </div>
+        </div>
+        <div className="max-w-5xl mx-auto mt-4 text-center sm:text-right">
+          <p className="text-[10px] text-gray-700">
+            &copy; {new Date().getFullYear()} Datacendia, LLC. All rights reserved.
+          </p>
         </div>
       </footer>
-
-      {/* Request Access Modal */}
-      <RequestAccessModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </div>
   );
 };

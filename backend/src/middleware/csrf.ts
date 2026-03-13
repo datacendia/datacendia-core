@@ -34,6 +34,8 @@ const EXEMPT_PATHS = [
   '/api/v1/webhooks',
   '/api/v1/integrations/webhook',
   '/api/v1/contact', // Public contact form uses different protection
+  '/api/v1/leads', // Public demo request form
+  '/api/v1/auth/demo-access', // Frictionless demo entry form
   '/api/v1/legal-research', // Legal research API for dev testing
   '/health',
   '/api/docs',
@@ -97,8 +99,8 @@ export const csrfProtection = (
     return next();
   }
 
-  // Skip CSRF check for exempt paths
-  if (isExemptPath(req.path)) {
+  // Skip CSRF check for exempt paths (use originalUrl — req.path is stripped when mounted at /api/)
+  if (isExemptPath(req.originalUrl)) {
     return next();
   }
 
