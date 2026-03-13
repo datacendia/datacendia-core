@@ -16,7 +16,7 @@
  */
 
 import React, { useState, useRef } from 'react';
-import { ArrowRight, ArrowDown, Terminal, Scale, ShieldCheck, MessageCircle, Users, FileWarning, Fingerprint, Archive, FileCheck2, Shield, Lock, Award, ChevronDown, X, Check } from 'lucide-react';
+import { ArrowRight, ArrowDown, Terminal, Scale, ShieldCheck, MessageCircle, Users, FileWarning, Fingerprint, Archive, FileCheck2, Shield, Lock, Award, ChevronDown, X, Check, ExternalLink, Github } from 'lucide-react';
 import { Logo } from '../../components/brand/Logo';
 import { tokenManager } from '../../lib/api/client';
 import { useTranslation } from '../../lib/i18n';
@@ -96,50 +96,115 @@ const SovereignLandingPage: React.FC = () => {
       {/* Nav */}
       <nav className="relative z-50 px-6 py-5 flex justify-between items-center max-w-6xl mx-auto">
         <Logo size="sm" />
-        <button
-          onClick={scrollToCta}
-          className="text-xs tracking-widest text-gray-500 hover:text-white transition-colors"
-        >
-          {t('landing.nav.tryDemo')}
-        </button>
+        <div className="flex items-center gap-4">
+          <a
+            href="https://github.com/datacendia/datacendia-core"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs tracking-widest text-gray-500 hover:text-white transition-colors hidden sm:inline-flex items-center gap-1.5"
+          >
+            <Github className="w-3.5 h-3.5" /> GitHub
+          </a>
+          <a
+            href="/contact"
+            className="text-xs tracking-widest text-gray-400 hover:text-white transition-colors border border-white/10 px-3 py-1.5 rounded hover:border-white/20"
+          >
+            CONTACT SALES
+          </a>
+        </div>
       </nav>
 
       {/* ═══════════════════════════ HERO ═══════════════════════════ */}
-      <section className="relative z-10 px-6 pt-16 sm:pt-24 pb-20 max-w-4xl mx-auto">
-        <h1 className="text-2xl sm:text-4xl md:text-[2.75rem] font-light leading-snug mb-2 text-gray-200">
-          {t('landing.hero.line1')}
-        </h1>
-        <h1 className="text-2xl sm:text-4xl md:text-[2.75rem] font-light leading-snug mb-10 text-white">
-          {t('landing.hero.line2')} <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">{t('landing.hero.agency')}</span>
-        </h1>
+      <section className="relative z-10 px-6 pt-16 sm:pt-24 pb-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* Left: Headline + CTAs */}
+          <div>
+            <p className="text-[11px] tracking-[0.25em] text-indigo-400/80 uppercase mb-6 font-mono">DECISION GOVERNANCE INFRASTRUCTURE</p>
+            <h1 className="text-3xl sm:text-4xl md:text-[2.75rem] font-medium leading-[1.15] mb-6 text-white">
+              Cryptographic Proof for Every AI Decision Your Enterprise Makes.
+            </h1>
+            <p className="text-base sm:text-lg text-gray-400 font-light leading-relaxed mb-8 max-w-xl">
+              Open-source infrastructure that forces multi-agent deliberation and seals every outcome into a court-admissible audit ledger. Ed25519-signed. Merkle-tree hashed. RFC 3161-timestamped.
+            </p>
 
-        <div className="max-w-3xl space-y-4 mb-10">
-          <p className="text-base sm:text-lg text-gray-400 font-light leading-relaxed">
-            {t('landing.hero.p1')}
-          </p>
-          <p className="text-base sm:text-lg text-gray-300 font-light leading-relaxed">
-            {t('landing.hero.p2')} <span className="text-white font-normal">{t('landing.hero.p2Emphasis')}</span>
-          </p>
-          <p className="text-base sm:text-lg text-white font-normal leading-relaxed">
-            {t('landing.hero.p3')}
-          </p>
+            {/* Dual-Funnel CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 items-start mb-6">
+              <a
+                href="/contact"
+                className="group px-7 py-3.5 bg-white text-black rounded-lg font-medium text-sm tracking-wide inline-flex items-center gap-2.5 hover:bg-gray-100 transition-all"
+              >
+                Request Architecture Review
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+              <a
+                href="https://github.com/datacendia/datacendia-core"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group px-7 py-3.5 border border-white/10 text-gray-400 rounded-lg text-sm inline-flex items-center gap-2.5 hover:border-white/20 hover:text-gray-200 transition-all"
+              >
+                <Github className="w-4 h-4" />
+                View GitHub Repo
+                <ExternalLink className="w-3 h-3 opacity-50" />
+              </a>
+            </div>
+            <p className="text-[11px] text-gray-600">Apache 2.0 · Self-host in 5 minutes · No vendor lock-in</p>
+          </div>
+
+          {/* Right: Regulator's Receipt Artifact */}
+          <div className="rounded-xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-white/[0.01] overflow-hidden font-mono text-[11px] shadow-2xl shadow-indigo-500/5">
+            <div className="bg-white/[0.03] border-b border-white/[0.06] px-4 py-2.5 flex items-center justify-between">
+              <span className="text-[10px] text-gray-500 tracking-widest">DATACENDIA REGULATOR'S RECEIPT — CONFIDENTIAL — COURT ADMISSIBLE</span>
+            </div>
+            <div className="p-5 space-y-4">
+              <div className="text-center border-b border-white/[0.06] pb-4">
+                <p className="text-indigo-400 text-xs tracking-[0.2em] mb-1">DATACENDIA</p>
+                <p className="text-white text-sm font-bold tracking-wider">REGULATOR'S RECEIPT</p>
+                <p className="text-gray-500 text-[10px] mt-1">Decision Evidence Package · Court Admissible · DCII Framework</p>
+              </div>
+              <div className="space-y-1.5 text-gray-400">
+                <div className="flex justify-between"><span className="text-gray-600">RECEIPT ID:</span><span>RR-1771557046091-A4163C09</span></div>
+                <div className="flex justify-between"><span className="text-gray-600">DECISION DATE:</span><span>2026-02-19 04:21:42 UTC</span></div>
+                <div className="flex justify-between"><span className="text-gray-600">COMPLIANCE:</span><span className="text-amber-400">SAR ALERT</span></div>
+                <div className="flex justify-between"><span className="text-gray-600">CONFIDENCE:</span><span>82%</span></div>
+                <div className="flex justify-between"><span className="text-gray-600">DISSENTING:</span><span className="text-rose-400">2 (CRO, Red Team)</span></div>
+              </div>
+              <div className="border-t border-white/[0.06] pt-3 space-y-1.5">
+                <p className="text-gray-500 text-[10px] tracking-wider mb-2">CRYPTOGRAPHIC INTEGRITY</p>
+                <div><span className="text-gray-600">Decision Hash (SHA-256):</span></div>
+                <p className="text-indigo-300 break-all leading-relaxed">3151f4581206cdb67e0db6c0773810363152f98fb40c0bb28ac3b29292080dbf</p>
+                <div className="mt-2"><span className="text-gray-600">Digital Signature:</span></div>
+                <p className="text-emerald-400">[Verified] Ed25519 · datacendia-kms</p>
+                <p className="text-gray-500">Signed: 2026-02-20 03:10:46 UTC</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div className="flex flex-col sm:flex-row gap-4 items-start">
-          <button
-            onClick={scrollToCta}
-            className="group px-7 py-3.5 bg-white text-black rounded-lg font-medium text-sm tracking-wide inline-flex items-center gap-2.5 hover:bg-gray-100 transition-all"
-          >
-            {t('landing.hero.cta')}
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-          </button>
-          <button
-            onClick={() => problemRef.current?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-7 py-3.5 border border-white/10 text-gray-400 rounded-lg text-sm inline-flex items-center gap-2.5 hover:border-white/20 hover:text-gray-200 transition-all"
-          >
-            {t('landing.hero.secondaryCta')}
-            <ArrowDown className="w-4 h-4" />
-          </button>
+      {/* ═══════════════════════════ TRUST BAR ═══════════════════════════ */}
+      <section className="relative z-10 px-6 py-10 border-t border-white/[0.04]">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
+            <div className="flex items-center gap-2 text-[11px] text-gray-500 tracking-wide">
+              <Award className="w-4 h-4 text-green-400/70" />
+              <span>NVIDIA Inception Member</span>
+            </div>
+            <span className="hidden sm:inline text-gray-700">|</span>
+            <div className="flex items-center gap-2 text-[11px] text-gray-500 tracking-wide">
+              <Scale className="w-4 h-4 text-amber-400/70" />
+              <span>EU AI Act · NIST AI RMF · ISO 42001</span>
+            </div>
+            <span className="hidden sm:inline text-gray-700">|</span>
+            <div className="flex items-center gap-2 text-[11px] text-gray-500 tracking-wide">
+              <Shield className="w-4 h-4 text-indigo-400/70" />
+              <span>Built on the DDGI Open Standard</span>
+            </div>
+            <span className="hidden sm:inline text-gray-700">|</span>
+            <div className="flex items-center gap-2 text-[11px] text-gray-500 tracking-wide">
+              <Terminal className="w-4 h-4 text-sky-400/70" />
+              <span>Apache 2.0 Open Source</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -195,65 +260,115 @@ const SovereignLandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════════ WORKFLOW DIAGRAM ═══════════════════════════ */}
+      {/* ═══════════════════════════ KILL ROOM — DECISION ARCHITECTURE ═══════════════════════════ */}
       <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
         <div className="max-w-5xl mx-auto">
-          <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-3 text-center">{t('landing.workflow.label')}</p>
-          <p className="text-sm text-gray-500 text-center mb-16">{t('landing.workflow.subtitle')}</p>
+          <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-3 text-center">DECISION ARCHITECTURE</p>
+          <p className="text-sm text-gray-500 text-center mb-16">How every AI decision becomes court-admissible evidence</p>
 
-          {/* Desktop: horizontal flow */}
-          <div className="hidden lg:block">
-            <div className="grid grid-cols-6 gap-0 items-start">
-              {WORKFLOW_STEPS.map((step, i) => {
-                const Icon = step.icon;
-                return (
-                  <div key={step.key} className="relative flex flex-col items-center text-center">
-                    {/* Connector line */}
-                    {i > 0 && (
-                      <div className="absolute top-5 -left-[50%] w-full h-px bg-gradient-to-r from-white/[0.06] to-white/[0.12]" />
-                    )}
-                    {/* Step number + icon */}
-                    <div className={`relative z-10 w-10 h-10 rounded-full ${step.bg} border ${step.border} flex items-center justify-center mb-4`}>
-                      <Icon className={`w-4.5 h-4.5 ${step.color}`} />
+          {/* Banking-style infrastructure diagram — Desktop */}
+          <div className="hidden md:block">
+            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] overflow-hidden">
+              {/* Header bar */}
+              <div className="bg-white/[0.03] border-b border-white/[0.06] px-6 py-3 flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-emerald-500/60" />
+                <span className="text-[10px] text-gray-500 font-mono tracking-widest">DATACENDIA DECISION GOVERNANCE PIPELINE — PRODUCTION</span>
+              </div>
+
+              {/* 4-stage flow */}
+              <div className="grid grid-cols-4 divide-x divide-white/[0.06]">
+                {/* Stage 1: Human Request */}
+                <div className="p-6 space-y-3">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="w-6 h-6 rounded bg-sky-500/15 flex items-center justify-center">
+                      <MessageCircle className="w-3.5 h-3.5 text-sky-400" />
                     </div>
-                    {/* Step number badge */}
-                    <span className="text-[10px] text-gray-600 font-mono mb-1">{String(i + 1).padStart(2, '0')}</span>
-                    <h4 className={`text-sm font-medium ${step.color} mb-2`}>
-                      {t(`landing.workflow.steps.${step.key}.title`)}
-                    </h4>
-                    <p className="text-xs text-gray-500 leading-relaxed px-2">
-                      {t(`landing.workflow.steps.${step.key}.description`)}
-                    </p>
+                    <span className="text-[10px] text-gray-600 font-mono tracking-wider">STAGE 01</span>
                   </div>
-                );
-              })}
+                  <h4 className="text-sm font-medium text-sky-400">Human Request</h4>
+                  <p className="text-[11px] text-gray-500 leading-relaxed">Decision query enters the pipeline. Compliance profile auto-assigned. Audit trail begins.</p>
+                  <div className="pt-2 border-t border-white/[0.04]">
+                    <span className="text-[9px] text-gray-600 font-mono">INPUT: natural language query</span>
+                  </div>
+                </div>
+
+                {/* Stage 2: Adversarial Deliberation */}
+                <div className="p-6 space-y-3 bg-white/[0.01]">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="w-6 h-6 rounded bg-indigo-500/15 flex items-center justify-center">
+                      <Users className="w-3.5 h-3.5 text-indigo-400" />
+                    </div>
+                    <span className="text-[10px] text-gray-600 font-mono tracking-wider">STAGE 02</span>
+                  </div>
+                  <h4 className="text-sm font-medium text-indigo-400">Multi-Agent Deliberation</h4>
+                  <p className="text-[11px] text-gray-500 leading-relaxed">CFO, CISO, Legal, Ethics, Red Team agents argue adversarially. Dissent is a first-class artifact.</p>
+                  <div className="pt-2 border-t border-white/[0.04] space-y-1">
+                    <span className="text-[9px] text-gray-600 font-mono block">AGENTS: 5-12 domain specialists</span>
+                    <span className="text-[9px] text-amber-400/70 font-mono block">DISSENT: recorded + preserved</span>
+                  </div>
+                </div>
+
+                {/* Stage 3: Human Override */}
+                <div className="p-6 space-y-3">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="w-6 h-6 rounded bg-amber-500/15 flex items-center justify-center">
+                      <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
+                    </div>
+                    <span className="text-[10px] text-gray-600 font-mono tracking-wider">STAGE 03</span>
+                  </div>
+                  <h4 className="text-sm font-medium text-amber-400">Human Override & Sign-Off</h4>
+                  <p className="text-[11px] text-gray-500 leading-relaxed">Human decision-maker reviews, overrides, or ratifies. EU AI Act Article 14 human oversight satisfied.</p>
+                  <div className="pt-2 border-t border-white/[0.04]">
+                    <span className="text-[9px] text-gray-600 font-mono">COMPLIANCE: Art. 14 / SR 11-7</span>
+                  </div>
+                </div>
+
+                {/* Stage 4: Cryptographic Seal */}
+                <div className="p-6 space-y-3 bg-white/[0.01]">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="w-6 h-6 rounded bg-emerald-500/15 flex items-center justify-center">
+                      <Fingerprint className="w-3.5 h-3.5 text-emerald-400" />
+                    </div>
+                    <span className="text-[10px] text-gray-600 font-mono tracking-wider">STAGE 04</span>
+                  </div>
+                  <h4 className="text-sm font-medium text-emerald-400">Cryptographic Hash & Seal</h4>
+                  <p className="text-[11px] text-gray-500 leading-relaxed">Ed25519 signature. Merkle tree hash. RFC 3161 timestamp. Regulator's Receipt generated.</p>
+                  <div className="pt-2 border-t border-white/[0.04] space-y-1">
+                    <span className="text-[9px] text-gray-600 font-mono block">OUTPUT: court-admissible bundle</span>
+                    <span className="text-[9px] text-emerald-400/70 font-mono block">VERIFY: openssl + standard tools</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom pipeline connector */}
+              <div className="bg-white/[0.02] border-t border-white/[0.06] px-6 py-2.5 flex items-center justify-between">
+                <span className="text-[9px] text-gray-600 font-mono">REQUEST → DELIBERATE → OVERRIDE → SEAL</span>
+                <span className="text-[9px] text-emerald-400/60 font-mono">IMMUTABLE AUDIT TRAIL</span>
+              </div>
             </div>
           </div>
 
-          {/* Mobile/tablet: vertical flow */}
-          <div className="lg:hidden space-y-0">
-            {WORKFLOW_STEPS.map((step, i) => {
+          {/* Mobile: vertical pipeline */}
+          <div className="md:hidden space-y-0">
+            {[
+              { stage: '01', title: 'Human Request', icon: MessageCircle, color: 'text-sky-400', bg: 'bg-sky-500/15', desc: 'Decision query enters pipeline. Compliance profile auto-assigned.' },
+              { stage: '02', title: 'Multi-Agent Deliberation', icon: Users, color: 'text-indigo-400', bg: 'bg-indigo-500/15', desc: 'CFO, CISO, Legal, Ethics, Red Team argue adversarially. Dissent recorded.' },
+              { stage: '03', title: 'Human Override & Sign-Off', icon: ShieldCheck, color: 'text-amber-400', bg: 'bg-amber-500/15', desc: 'Human reviews, overrides, or ratifies. EU AI Act Art. 14 satisfied.' },
+              { stage: '04', title: 'Cryptographic Hash & Seal', icon: Fingerprint, color: 'text-emerald-400', bg: 'bg-emerald-500/15', desc: 'Ed25519 signed. Merkle hashed. RFC 3161 timestamped. Receipt generated.' },
+            ].map((step, i) => {
               const Icon = step.icon;
               return (
-                <div key={step.key} className="relative flex gap-5">
-                  {/* Vertical line + icon */}
+                <div key={step.stage} className="relative flex gap-5">
                   <div className="flex flex-col items-center">
-                    <div className={`w-10 h-10 rounded-full ${step.bg} border ${step.border} flex items-center justify-center shrink-0`}>
+                    <div className={`w-10 h-10 rounded ${step.bg} flex items-center justify-center shrink-0`}>
                       <Icon className={`w-4.5 h-4.5 ${step.color}`} />
                     </div>
-                    {i < WORKFLOW_STEPS.length - 1 && (
-                      <div className="w-px flex-1 bg-gradient-to-b from-white/10 to-transparent min-h-[2rem]" />
-                    )}
+                    {i < 3 && <div className="w-px flex-1 bg-gradient-to-b from-white/10 to-transparent min-h-[2rem]" />}
                   </div>
-                  {/* Content */}
                   <div className="pb-8 pt-1.5">
-                    <span className="text-[10px] text-gray-600 font-mono">{String(i + 1).padStart(2, '0')}</span>
-                    <h4 className={`text-sm font-medium ${step.color} mb-1`}>
-                      {t(`landing.workflow.steps.${step.key}.title`)}
-                    </h4>
-                    <p className="text-xs text-gray-500 leading-relaxed max-w-sm">
-                      {t(`landing.workflow.steps.${step.key}.description`)}
-                    </p>
+                    <span className="text-[10px] text-gray-600 font-mono">STAGE {step.stage}</span>
+                    <h4 className={`text-sm font-medium ${step.color} mb-1`}>{step.title}</h4>
+                    <p className="text-xs text-gray-500 leading-relaxed max-w-sm">{step.desc}</p>
                   </div>
                 </div>
               );
@@ -347,22 +462,65 @@ const SovereignLandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════════ SOCIAL PROOF STRIP ═══════════════════════════ */}
-      <section className="relative z-10 px-6 py-16 border-t border-white/[0.04]">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-10 text-center">{t('landing.socialProof.label')}</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {TRUST_BADGES.map((badge) => {
-              const Icon = badge.icon;
-              return (
-                <div key={badge.key} className="flex flex-col items-center gap-2.5 p-4 rounded-xl border border-white/[0.04] bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
-                  <Icon className={`w-5 h-5 ${badge.color} opacity-70`} />
-                  <p className="text-[10px] text-gray-500 text-center leading-tight tracking-wide">
-                    {t(`landing.socialProof.${badge.key}`)}
-                  </p>
-                </div>
-              );
-            })}
+      {/* ═══════════════════════════ COSS PRICING ANCHOR ═══════════════════════════ */}
+      <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-3 text-center">LICENSING</p>
+          <p className="text-sm text-gray-500 text-center mb-16">Commercial Open-Source. No bait-and-switch.</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Community Edition */}
+            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 space-y-5">
+              <div className="flex items-center gap-3">
+                <Terminal className="w-5 h-5 text-sky-400" />
+                <h3 className="text-lg font-medium text-white">Community Edition</h3>
+              </div>
+              <p className="text-2xl font-light text-white">Open Source</p>
+              <p className="text-[11px] text-gray-500 tracking-wide">APACHE 2.0 LICENSE</p>
+              <ul className="space-y-2.5 text-sm text-gray-400">
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /> Full platform — frontend, backend, deliberation engine</li>
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /> Self-hosted, single node</li>
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /> Ed25519 cryptographic signing</li>
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /> All inference providers (Ollama, OpenAI, Together, Gemini, Claude)</li>
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /> Community support via GitHub</li>
+              </ul>
+              <a
+                href="https://github.com/datacendia/datacendia-core"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group w-full px-6 py-3 border border-white/10 text-gray-300 rounded-lg text-sm inline-flex items-center justify-center gap-2.5 hover:border-white/20 hover:text-white transition-all"
+              >
+                <Github className="w-4 h-4" />
+                View on GitHub
+                <ExternalLink className="w-3 h-3 opacity-50" />
+              </a>
+            </div>
+
+            {/* Enterprise Edition */}
+            <div className="rounded-2xl border border-indigo-500/20 bg-indigo-500/[0.03] p-8 space-y-5 relative overflow-hidden">
+              <div className="absolute top-0 right-0 px-3 py-1 bg-indigo-500/20 text-indigo-300 text-[10px] tracking-wider font-mono rounded-bl-lg">SOVEREIGN</div>
+              <div className="flex items-center gap-3">
+                <Shield className="w-5 h-5 text-indigo-400" />
+                <h3 className="text-lg font-medium text-white">Enterprise Edition</h3>
+              </div>
+              <p className="text-2xl font-light text-white">Custom</p>
+              <p className="text-[11px] text-gray-500 tracking-wide">ANNUAL LICENSE + SUPPORT</p>
+              <ul className="space-y-2.5 text-sm text-gray-400">
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" /> Everything in Community, plus:</li>
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" /> Air-gapped / sovereign deployment</li>
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" /> Post-quantum KMS integration</li>
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" /> CendiaInsure liability coverage</li>
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" /> Custom integrations + dedicated success team</li>
+                <li className="flex items-start gap-2.5"><Check className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" /> SSO / SAML, RBAC, multi-tenant</li>
+              </ul>
+              <a
+                href="/contact"
+                className="group w-full px-6 py-3 bg-indigo-600 text-white rounded-lg text-sm font-medium inline-flex items-center justify-center gap-2.5 hover:bg-indigo-500 transition-all"
+              >
+                Contact Sales
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -519,27 +677,36 @@ const SovereignLandingPage: React.FC = () => {
 
       {/* ═══════════════════════════ BOTTOM CTA ═══════════════════════════ */}
       <section ref={ctaRef} className="relative z-10 px-6 py-28 border-t border-white/[0.04]">
-        <div className="max-w-lg mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl font-light text-white mb-3">{t('landing.demo.title')}</h2>
-          <p className="text-sm text-gray-500 mb-8">{t('landing.demo.subtitle')}</p>
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-2xl sm:text-3xl font-medium text-white mb-3">Ready to make AI decisions defensible?</h2>
+          <p className="text-sm text-gray-500 mb-10">Talk to our team about your compliance requirements, or deploy the open-source edition today.</p>
 
-          <button
-            onClick={handleDemoAccess}
-            disabled={isSubmitting}
-            className="group px-10 py-4 bg-white text-black rounded-lg font-medium text-sm tracking-wide inline-flex items-center gap-3 hover:bg-gray-100 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {isSubmitting ? (
-              <span className="flex items-center gap-2">
-                <span className="w-4 h-4 border-2 border-gray-400 border-t-black rounded-full animate-spin" />
-                {t('landing.demo.submitting')}
-              </span>
-            ) : (
-              <>
-                {t('landing.demo.enterButton')}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </>
-            )}
-          </button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="/contact"
+              className="group px-10 py-4 bg-white text-black rounded-lg font-medium text-sm tracking-wide inline-flex items-center gap-3 hover:bg-gray-100 transition-all"
+            >
+              Request Architecture Review
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </a>
+            <button
+              onClick={handleDemoAccess}
+              disabled={isSubmitting}
+              className="group px-8 py-4 border border-white/10 text-gray-300 rounded-lg text-sm inline-flex items-center gap-3 hover:border-white/20 hover:text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? (
+                <span className="flex items-center gap-2">
+                  <span className="w-4 h-4 border-2 border-gray-400 border-t-white rounded-full animate-spin" />
+                  Entering...
+                </span>
+              ) : (
+                <>
+                  Try Live Demo
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </>
+              )}
+            </button>
+          </div>
           {error && (
             <p className="text-red-400 text-xs text-center mt-4">{error}</p>
           )}
