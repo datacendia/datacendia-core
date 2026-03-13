@@ -43,7 +43,7 @@ Multi-agent deliberation &middot; Immutable audit trails &middot; 30 industry ve
 
 ## What is Datacendia?
 
-Datacendia is the only AI platform where every decision is auditable, explainable, and court-admissible. Multiple AI agents with distinct perspectives deliberate on your behalf -- then every decision is recorded in an immutable, auditable ledger.
+Datacendia is the only AI platform where every decision is auditable, explainable, and forensic-grade, independently verifiable. Multiple AI agents with distinct perspectives deliberate on your behalf -- then every decision is recorded in an immutable, auditable ledger.
 
 **This is not another chatbot.** It's an operating system for enterprise decisions.
 
@@ -65,7 +65,7 @@ Datacendia is the only AI platform where every decision is auditable, explainabl
 |                  |                                        |
 |         +--------v---------+                              |
 |         | DECISION PACKET  |  <- Signed, Merkle-rooted   |
-|         | + Audit Trail    |     Court-admissible        |
+|         | + Audit Trail    |     forensic-grade, independently verifiable        |
 |         +------------------+                              |
 +-----------------------------------------------------------+
 ```

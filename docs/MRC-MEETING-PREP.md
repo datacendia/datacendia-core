@@ -47,12 +47,12 @@ Open the audit logs. Show:
 
 ### 4. Regulator's Receipt (3 min)
 Export a Regulator's Receipt from the deliberation. Show:
-- The three PDFs: Court-Admissible Record, Evidence Package, Executive Summary
+- The three PDFs: forensic-grade, independently verifiable Record, Evidence Package, Executive Summary
 - SHA-256 hash + Merkle root
 - Ed25519 signature — verifiable with standard openssl
 - Compliance gates: SOC 2, GDPR, EU AI Act
 
-**Key line:** "This is court-admissible evidence that this decision was governed. Generated automatically. No manual documentation."
+**Key line:** "This is forensic-grade, independently verifiable evidence that this decision was governed. Generated automatically. No manual documentation."
 
 ### 5. CendiaGateway Dashboard (2 min)
 Show the Gateway interaction logs:
@@ -124,4 +124,4 @@ After the 15-minute walkthrough, hand them the keyboard:
 
 ## The 2-Sentence Forward
 
-> "Stuart built an AI governance platform that creates cryptographic proof of how AI decisions are made — so when regulators ask, you have an irrefutable answer. It deploys in 30 minutes and generates court-admissible evidence from day one."
+> "Stuart built an AI governance platform that creates cryptographic proof of how AI decisions are made — so when regulators ask, you have an irrefutable answer. It deploys in 30 minutes and generates forensic-grade, independently verifiable evidence from day one."

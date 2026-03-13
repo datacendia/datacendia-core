@@ -2382,7 +2382,7 @@
     },
     "killRoom": {
       "label": "意思決定のアーキテクチャ",
-      "subtitle": "How every AI decision becomes court-admissible evidence",
+      "subtitle": "How every AI decision becomes forensic-grade, independently verifiable evidence",
       "pipelineLabel": "DATACENDIA 意思決定ガバナンス パイプライン — 本番環境",
       "pipelineFlow": "要請 → 熟議 → 無効 → 封印",
       "pipelineAudit": "不変の監査証跡",

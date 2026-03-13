@@ -2434,15 +2434,15 @@
     "hero": {
       "label": "DECISION GOVERNANCE INFRASTRUCTURE",
       "headline": "Cryptographic Proof for Every AI Decision Your Enterprise Makes.",
-      "subheadline": "Open-source infrastructure that forces multi-agent deliberation and seals every outcome into a court-admissible audit ledger. Ed25519-signed. Merkle-tree hashed. RFC 3161-timestamped.",
+      "subheadline": "Open-source infrastructure that forces multi-agent deliberation and seals every outcome into a forensic-grade, independently verifiable audit ledger. Ed25519-signed. Merkle-tree hashed. RFC 3161-timestamped.",
       "ctaPrimary": "Request Architecture Review",
       "ctaSecondary": "View GitHub Repo",
       "finePrint": "Apache 2.0 · Self-host in 5 minutes · No vendor lock-in"
     },
     "receipt": {
-      "header": "DATACENDIA REGULATOR'S RECEIPT — CONFIDENTIAL — COURT ADMISSIBLE",
+      "header": "DATACENDIA REGULATOR'S RECEIPT — CONFIDENTIAL — forensic-grade, independently verifiable",
       "title": "REGULATOR'S RECEIPT",
-      "subtitle": "Decision Evidence Package · Court Admissible · DCII Framework",
+      "subtitle": "Decision Evidence Package · forensic-grade, independently verifiable · DCII Framework",
       "receiptId": "RECEIPT ID:",
       "decisionDate": "DECISION DATE:",
       "compliance": "COMPLIANCE:",
@@ -2461,7 +2461,7 @@
     },
     "killRoom": {
       "label": "DECISION ARCHITECTURE",
-      "subtitle": "How every AI decision becomes court-admissible evidence",
+      "subtitle": "How every AI decision becomes forensic-grade, independently verifiable evidence",
       "pipelineLabel": "DATACENDIA DECISION GOVERNANCE PIPELINE — PRODUCTION",
       "pipelineFlow": "REQUEST → DELIBERATE → OVERRIDE → SEAL",
       "pipelineAudit": "IMMUTABLE AUDIT TRAIL",
@@ -2488,7 +2488,7 @@
         "label": "STAGE 04",
         "title": "Cryptographic Hash & Seal",
         "desc": "Ed25519 signature. Merkle tree hash. RFC 3161 timestamp. Regulator's Receipt generated.",
-        "meta1": "OUTPUT: court-admissible bundle",
+        "meta1": "OUTPUT: forensic-grade, independently verifiable bundle",
         "meta2": "VERIFY: openssl + standard tools"
       }
     },
@@ -2541,13 +2541,13 @@
       },
       "technical": {
         "title": "Under the Hood",
-        "description": "A multi-agent deliberation engine backed by cryptographic infrastructure. Domain-expert LLM agents (CFO, CISO, Legal, Ethics, Red Team) engage in structured argumentation over your query. Each response is hashed into a Merkle tree, Ed25519-signed, and RFC 3161-timestamped. Decision packets include full chain-of-custody, dissent records, and confidence scoring — exportable as court-admissible evidence bundles.",
+        "description": "A multi-agent deliberation engine backed by cryptographic infrastructure. Domain-expert LLM agents (CFO, CISO, Legal, Ethics, Red Team) engage in structured argumentation over your query. Each response is hashed into a Merkle tree, Ed25519-signed, and RFC 3161-timestamped. Decision packets include full chain-of-custody, dissent records, and confidence scoring — exportable as forensic-grade, independently verifiable evidence bundles.",
         "stack": "Cloud-hosted (Core) · Apache 2.0 · OpenAI / Groq / Together AI · On-prem Sovereign Edition also available"
       }
     },
     "workflow": {
       "label": "How a Decision Flows",
-      "subtitle": "From question to court-admissible evidence in one session",
+      "subtitle": "From question to forensic-grade, independently verifiable evidence in one session",
       "steps": {
         "ask": {
           "title": "Ask",
@@ -2571,7 +2571,7 @@
         },
         "export": {
           "title": "Export Receipt",
-          "description": "One click generates the Regulator's Receipt™ — a court-admissible evidence bundle. Verify with openssl. No vendor dependency."
+          "description": "One click generates the Regulator's Receipt™ — a forensic-grade, independently verifiable evidence bundle. Verify with openssl. No vendor dependency."
         }
       }
     },
@@ -2583,7 +2583,7 @@
       "beat2Title": "Every word is signed.",
       "beat2Text": "Each response, vote, and objection is hashed into a Merkle tree. Ed25519 signed. RFC 3161 timestamped.",
       "beat2Emphasis": "The chain of custody is established during deliberation — not reconstructed afterward.",
-      "beat3Title": "One click. Court-admissible proof.",
+      "beat3Title": "One click. forensic-grade, independently verifiable proof.",
       "beat3Text": "The Regulator's Receipt™ exports everything a compliance audit needs.",
       "beat3Emphasis": "Verify it yourself with",
       "beat3EmpSuffix": ". No vendor dependency. No trust required."
@@ -2643,7 +2643,7 @@
         },
         "proof": {
           "chatgpt": "No evidence trail — \"the AI said so\" isn't admissible",
-          "datacendia": "Court-admissible evidence bundles with Merkle proofs and timestamps"
+          "datacendia": "forensic-grade, independently verifiable evidence bundles with Merkle proofs and timestamps"
         },
         "accountability": {
           "chatgpt": "No one signs, no one is accountable",
@@ -2680,7 +2680,7 @@
       },
       "different": {
         "q": "How is this different from a chatbot or copilot?",
-        "a": "Chatbots give you one answer from one model. Datacendia convenes a panel of domain-expert AI agents who argue from different perspectives — CFO, CISO, Legal, Ethics, Red Team. Disagreements are recorded. Every response is cryptographically signed. The output isn't a chat log — it's a court-admissible decision record."
+        "a": "Chatbots give you one answer from one model. Datacendia convenes a panel of domain-expert AI agents who argue from different perspectives — CFO, CISO, Legal, Ethics, Red Team. Disagreements are recorded. Every response is cryptographically signed. The output isn't a chat log — it's a forensic-grade, independently verifiable decision record."
       },
       "compliance": {
         "q": "What compliance frameworks does it map to?",
