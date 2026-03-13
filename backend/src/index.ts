@@ -136,19 +136,61 @@ app.get('/readiness', async (_req, res) => {
 // Prometheus metrics - before middleware so scraping works without auth
 app.use('/metrics', prometheusRoutes);
 
+// Debug endpoint: check frontend dist contents (remove after debugging)
+app.get('/debug/dist', (_req, res) => {
+  const distPath = path.resolve(process.cwd(), '../dist');
+  const info: Record<string, unknown> = { cwd: process.cwd(), distPath, exists: fs.existsSync(distPath) };
+  if (info.exists) {
+    info.files = fs.readdirSync(distPath as string);
+    const assetsPath = path.join(distPath, 'assets');
+    info.assetsExists = fs.existsSync(assetsPath);
+    if (info.assetsExists) {
+      info.assetFiles = fs.readdirSync(assetsPath);
+    }
+  } else {
+    try { info.parentFiles = fs.readdirSync(path.resolve(process.cwd(), '..')); } catch (e) { info.parentError = String(e); }
+  }
+  res.json(info);
+});
+
+// ---------------------------------------------------------------------------
+// Static frontend serving (all-in-one / Railway deployment)
+// MUST be before Helmet/security middleware so assets aren't blocked
+// ---------------------------------------------------------------------------
+const frontendDist = path.resolve(process.cwd(), '../dist');
+
+if (fs.existsSync(frontendDist)) {
+  const indexExists = fs.existsSync(path.join(frontendDist, 'index.html'));
+  logger.info(`[Static] Serving frontend from ${frontendDist} (index.html exists: ${indexExists})`);
+  if (indexExists) {
+    const files = fs.readdirSync(frontendDist);
+    logger.info(`[Static] dist/ contents: ${files.join(', ')}`);
+  }
+  app.use(express.static(frontendDist));
+} else {
+  logger.warn(`[Static] Frontend dist NOT found at ${frontendDist} — cwd: ${process.cwd()}`);
+  try {
+    const parentFiles = fs.readdirSync(path.resolve(process.cwd(), '..'));
+    logger.warn(`[Static] Parent dir contents: ${parentFiles.join(', ')}`);
+  } catch (e) { /* ignore */ }
+}
+
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
-      styleSrc: ["'self'", "'unsafe-inline'"],
-      scriptSrc: ["'self'"],
+      styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
+      styleSrcElem: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
+      scriptSrc: ["'self'", "'unsafe-inline'"],
       imgSrc: ["'self'", 'data:', 'https:'],
+      connectSrc: ["'self'", 'wss:', 'ws:'],
+      fontSrc: ["'self'", 'data:', 'https://fonts.gstatic.com'],
     },
   },
 }));
 
-// CORS configuration - allow any localhost/127.0.0.1 origin in development
-app.use(cors({
+// CORS configuration - scoped to /api/ routes only (static files don't need CORS)
+const corsMiddleware = cors({
   origin: (origin, callback) => {
     // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true);
@@ -158,6 +200,11 @@ app.use(cors({
       if (origin.includes('localhost') || origin.includes('127.0.0.1')) {
         return callback(null, true);
       }
+    }
+    
+    // Allow same-origin requests (Railway domain)
+    if (origin.includes('railway.app') || origin.includes('datacendia')) {
+      return callback(null, true);
     }
     
     // Check against configured origins
@@ -170,7 +217,8 @@ app.use(cors({
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Request-ID', 'X-Data-Source-Id', 'x-data-source-id'],
-}));
+});
+app.use('/api/', corsMiddleware);
 
 // Rate limiting (higher limit for dev/test)
 const limiter = rateLimit({
@@ -196,23 +244,23 @@ app.use(compression());
 // Request logging
 app.use(requestLogger);
 
-// CendiaCrucible™ Security Middleware - Adversarial Defense
-app.use(pathTraversalMiddleware);
-app.use(sqlInjectionMiddleware);
+// CendiaCrucible™ Security Middleware - Adversarial Defense (scoped to /api/ only)
+app.use('/api/', pathTraversalMiddleware);
+app.use('/api/', sqlInjectionMiddleware);
 app.use('/api/v1/council', inputSanitizationMiddleware); // Prompt injection defense
 
-// Custom security headers
-app.use(customSecurityHeaders);
+// Custom security headers (API only)
+app.use('/api/', customSecurityHeaders);
 
 // Honeypot/deception - catches attackers probing for vulnerabilities
-app.use(honeypotMiddleware);
+app.use('/api/', honeypotMiddleware);
 
-// Master security middleware (all attack protections)
+// Master security middleware (all attack protections, API only)
 if (config.nodeEnv === 'production') {
-  app.use(masterSecurityMiddleware);
-  app.use(preventReplayAttack);
-  app.use(preventDataExfiltration);
-  app.use(threatDetectionMiddleware);
+  app.use('/api/', masterSecurityMiddleware);
+  app.use('/api/', preventReplayAttack);
+  app.use('/api/', preventDataExfiltration);
+  app.use('/api/', threatDetectionMiddleware);
 }
 // NOTE: Threat detection disabled in dev - SQL patterns too aggressive for AI content
 
@@ -302,20 +350,12 @@ app.use('/api/v1/rapids', rapidsRoutes);             // NVIDIA RAPIDS GPU analyt
 app.use('/api/v1/flink', flinkRoutes);               // Apache Flink CEP stream processing
 app.use('/api/v1/gateway', gatewayRoutes);           // CendiaGateway™ — AI Governance Gateway
 
-// ---------------------------------------------------------------------------
-// Static frontend serving (all-in-one / Railway deployment)
-// Serves built Vite SPA from ../dist (relative to backend/) when available
-// ---------------------------------------------------------------------------
-const frontendDist = path.resolve(process.cwd(), '../dist');
-
-if (fs.existsSync(frontendDist)) {
-  app.use(express.static(frontendDist));
-  // SPA catch-all: serve index.html for non-API routes
+// SPA catch-all: serve index.html for non-API routes (after all API routes)
+if (fs.existsSync(frontendDist) && fs.existsSync(path.join(frontendDist, 'index.html'))) {
   app.get('*', (req, res, next) => {
     if (req.path.startsWith('/api/')) return next();
     res.sendFile(path.join(frontendDist, 'index.html'));
   });
-  logger.info(`[Static] Serving frontend from ${frontendDist}`);
 }
 
 // 404 handler (API routes only when frontend is served)
