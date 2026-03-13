@@ -385,6 +385,10 @@ app.use('/api/v1/rapids', rapidsRoutes);             // NVIDIA RAPIDS GPU analyt
 app.use('/api/v1/flink', flinkRoutes);               // Apache Flink CEP stream processing
 app.use('/api/v1/gateway', gatewayRoutes);           // CendiaGateway™ — AI Governance Gateway
 
+// CendiaVerify™ — Public cryptographic verification (no auth required)
+import verifyRoutes from './routes/verify.js';
+app.use('/api/v1/verify', verifyRoutes);
+
 // SPA catch-all: serve index.html for non-API routes (after all API routes)
 if (fs.existsSync(frontendDist) && fs.existsSync(path.join(frontendDist, 'index.html'))) {
   app.get('*', (req, res, next) => {
