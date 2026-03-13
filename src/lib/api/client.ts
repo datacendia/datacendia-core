@@ -221,8 +221,13 @@ class ApiClient {
           headers['Authorization'] = `Bearer ${tokenManager.getAccessToken()}`;
           response = await fetch(url, { ...options, headers });
         } else {
-          // Redirect to login
-          window.location.href = '/login';
+          // Token refresh failed — clear auth state and notify listeners.
+          // Dispatch a custom event so the app can handle the expired session
+          // (e.g., show a re-login prompt) without a hard page reload that would
+          // kick users out of the cortex UI while in demo mode.
+          tokenManager.clearTokens();
+          notifyAuthChange(false);
+          window.dispatchEvent(new CustomEvent('auth:session-expired'));
           return { success: false, error: { code: 'AUTH_EXPIRED', message: 'Session expired' } };
         }
       }

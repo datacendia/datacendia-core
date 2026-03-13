@@ -217,6 +217,19 @@ router.post('/demo-access', async (req: Request, res: Response, next: NextFuncti
 
     const refreshToken = await generateRefreshToken(user.id);
 
+    // Store refresh token hash in session (required for token refresh to work)
+    const refreshTokenHash = await bcrypt.hash(refreshToken, 10);
+    await prisma.sessions.create({
+      data: {
+        id: crypto.randomUUID(),
+        user_id: user.id,
+        refresh_token_hash: refreshTokenHash,
+        user_agent: req.get('user-agent') || null,
+        ip_address: req.ip,
+        expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 30 days
+      },
+    });
+
     // Update last login
     await prisma.users.update({
       where: { id: user.id },
