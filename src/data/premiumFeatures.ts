@@ -147,7 +147,7 @@ export const PREMIUM_FEATURES: PremiumFeature[] = [
       'CendiaVault™ — immutable evidence storage',
       'CendiaNotary™ — customer-owned key signing',
       'CendiaIISS™ — 0-1000 institutional resilience score',
-      "Regulator's Receipt™ — one-click court-admissible PDF",
+      "Regulator's Receipt™ — one-click forensic-grade, independently verifiable PDF",
       'CendiaBiasMitigation™ — 12 cognitive bias types tested',
       'CendiaJurisdiction™ — 17 jurisdictions',
       'Decision Packets — cryptographically signed outputs',

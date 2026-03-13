@@ -15,7 +15,7 @@
  * 
  * One-click PDF generation of any decision:
  * - Cryptographic proof of what was known when
- * - Court-admissible format
+ * - forensic-grade, independently verifiable format
  * - Automatic compliance mapping
  * - Chain of custody documentation
  * 
@@ -1349,7 +1349,7 @@ export class RegulatorsReceiptService {
         '---',
         'This Regulator\'s Receipt is a cryptographically signed record of the decision-making process.',
         'The Merkle root and hashes provide tamper-evident proof of the deliberation contents.',
-        'This document is designed to be court-admissible and regulator-ready.',
+        'This document is designed to be forensic-grade, independently verifiable and regulator-ready.',
         '',
         `Â© ${new Date().getFullYear()} Datacendia. All rights reserved.`,
       ].join('\n'),
@@ -1455,7 +1455,7 @@ export class RegulatorsReceiptService {
   <div class="footer">
     <p>This Regulator's Receipt is a cryptographically signed record of the decision-making process.</p>
     <p>The Merkle root and hashes provide tamper-evident proof of the deliberation contents.</p>
-    <p>This document is designed to be court-admissible and regulator-ready.</p>
+    <p>This document is designed to be forensic-grade, independently verifiable and regulator-ready.</p>
     <p>Â© ${new Date().getFullYear()} Datacendia. All rights reserved.</p>
   </div>
 </body>

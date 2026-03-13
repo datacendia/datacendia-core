@@ -489,7 +489,7 @@ export const FEATURE_DEFINITIONS: Record<string, FeatureDefinition> = {
     id: 'regulatorsReceipt',
     name: "Regulator's Receipt",
     displayName: "📜 Regulator's Receipt™",
-    description: 'One-click court-admissible PDF — the demo moment.',
+    description: 'One-click forensic-grade, independently verifiable PDF — the demo moment.',
     category: 'foundation',
     icon: '📜',
     minimumTier: 'foundation',

@@ -15,7 +15,7 @@
  * Full decision lineage & evidence export
  * 
  * Merges Decision DNA (decision lifecycle timeline) with 
- * Regulator's Receipt (court-admissible evidence export)
+ * Regulator's Receipt (forensic-grade, independently verifiable evidence export)
  * into one unified product matching the marketing website.
  * 
  * "When the auditor asks 'prove it,' hand them this."
@@ -65,7 +65,7 @@ export const AuditProvenancePage: React.FC = () => {
             </div>
             <div className="hidden md:flex items-center gap-6 text-sm text-indigo-200">
               <span className="flex items-center gap-1.5"><Lock className="w-4 h-4" /> Cryptographically Signed</span>
-              <span className="flex items-center gap-1.5"><Shield className="w-4 h-4" /> Court-Admissible</span>
+              <span className="flex items-center gap-1.5"><Shield className="w-4 h-4" /> forensic-grade, independently verifiable</span>
               <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4" /> SOC 2 / ISO 27001 Ready</span>
             </div>
           </div>

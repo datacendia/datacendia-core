@@ -352,7 +352,7 @@ interface DocumentRevisionEvent {
 }
 
 // =============================================================================
-// FINANCIAL VALIDATION EVENT - SOX/SEC Court-Admissible Audit Trail
+// FINANCIAL VALIDATION EVENT - SOX/SEC forensic-grade, independently verifiable Audit Trail
 // =============================================================================
 interface FinancialValidationEvent {
   id: string;
@@ -547,7 +547,7 @@ interface RedactionRule {
 }
 
 // =============================================================================
-// REDACTED EXPORT - Court-Admissible Privacy-Preserving Export
+// REDACTED EXPORT - forensic-grade, independently verifiable Privacy-Preserving Export
 // =============================================================================
 interface RedactedExport {
   id: string;
@@ -1829,7 +1829,7 @@ const generateLiveSyncStatus = (): LiveSyncStatus => ({
   websocketStatus: 'connected',
 });
 
-// Generate Court-Admissible Export
+// Generate forensic-grade, independently verifiable Export
 const generateCourtExport = (timeRange: { start: Date; end: Date }): CourtAdmissibleExport => ({
   id: `export-${Date.now()}`,
   exportedAt: new Date(),
@@ -2296,7 +2296,7 @@ const generateFinancialValidationEvents = (count: number = 10): FinancialValidat
 };
 
 // =============================================================================
-// REDACTED EXPORT GENERATOR - Court-Admissible Privacy-Preserving Export
+// REDACTED EXPORT GENERATOR - forensic-grade, independently verifiable Privacy-Preserving Export
 // =============================================================================
 
 const generateRedactedExport = (
@@ -2559,7 +2559,7 @@ export const ChronosPage: React.FC = () => {
   const [showFinancialValidationsPanel, setShowFinancialValidationsPanel] = useState(false);
   const [selectedFinancialValidation, setSelectedFinancialValidation] = useState<FinancialValidationEvent | null>(null);
 
-  // (7) Redacted Export - Court-Admissible Privacy-Preserving Export
+  // (7) Redacted Export - forensic-grade, independently verifiable Privacy-Preserving Export
   const [showRedactedExportModal, setShowRedactedExportModal] = useState(false);
   const [redactedExport, setRedactedExport] = useState<RedactedExport | null>(null);
   const [isGeneratingRedactedExport, setIsGeneratingRedactedExport] = useState(false);
@@ -3306,7 +3306,7 @@ export const ChronosPage: React.FC = () => {
     setShowWitnessModal(false);
   };
 
-  // Generate court-admissible export
+  // Generate forensic-grade, independently verifiable export
   const generateExport = async (
     format: CourtAdmissibleExport['format'],
     _withRedaction: boolean
@@ -3315,7 +3315,7 @@ export const ChronosPage: React.FC = () => {
     // Simulate export generation
     await new Promise((resolve) => setTimeout(resolve, 2000));
     const exportData = generateCourtExport({ start: timeRange.min, end: currentDate });
-    console.log('Court-admissible export generated:', exportData);
+    console.log('forensic-grade, independently verifiable export generated:', exportData);
     setExportInProgress(false);
     setShowCourtExportModal(false);
     // In production, this would trigger a download
@@ -3328,7 +3328,7 @@ export const ChronosPage: React.FC = () => {
   // FINANCIAL VALIDATION & REDACTED EXPORT HANDLERS
   // ==========================================================================
 
-  // Generate court-admissible redacted export
+  // Generate forensic-grade, independently verifiable redacted export
   const handleGenerateRedactedExport = async (caseReference?: string, discoveryRequestId?: string) => {
     setIsGeneratingRedactedExport(true);
     // Simulate processing time for redaction engine
@@ -3633,7 +3633,7 @@ export const ChronosPage: React.FC = () => {
               <button
                 onClick={() => setShowCourtExportModal(true)}
                 className="px-2.5 py-1 text-[10px] bg-amber-700/50 hover:bg-amber-600/50 rounded transition-colors flex items-center gap-1"
-                title="Generate court-admissible evidence package"
+                title="Generate forensic-grade, independently verifiable evidence package"
               >
                 ⚖️ Export
               </button>
@@ -3692,7 +3692,7 @@ export const ChronosPage: React.FC = () => {
               <button
                 onClick={() => setShowRedactedExportModal(true)}
                 className="px-2.5 py-1 text-[10px] bg-orange-700/50 hover:bg-orange-600/50 rounded transition-colors flex items-center gap-1"
-                title="Generate court-admissible redacted export"
+                title="Generate forensic-grade, independently verifiable redacted export"
               >
                 🔏 Redacted Export
               </button>
@@ -4194,7 +4194,7 @@ export const ChronosPage: React.FC = () => {
         />
       )}
 
-      {/* Court-Admissible Export Modal */}
+      {/* forensic-grade, independently verifiable Export Modal */}
       {showCourtExportModal && (
         <CourtExportModal
           timeRange={timeRange}
@@ -4490,7 +4490,7 @@ export const ChronosPage: React.FC = () => {
                     </div>
                     {reverseTimeCheck.forensicReport.legalAdmissible && (
                       <div className="mt-3 text-green-400 text-sm">
-                        ⚖️ This report is court-admissible
+                        ⚖️ This report is forensic-grade, independently verifiable
                       </div>
                     )}
                   </div>
@@ -4703,7 +4703,7 @@ export const ChronosPage: React.FC = () => {
         />
       )}
 
-      {/* Redacted Export Modal - Court-Admissible Privacy-Preserving Export */}
+      {/* Redacted Export Modal - forensic-grade, independently verifiable Privacy-Preserving Export */}
       {showRedactedExportModal && (
         <RedactedExportModal
           redactedExport={redactedExport}
@@ -9117,7 +9117,7 @@ const CompliancePanel: React.FC<{
   </div>
 );
 
-// Court-Admissible Export Modal
+// forensic-grade, independently verifiable Export Modal
 const CourtExportModal: React.FC<{
   timeRange: { min: Date; max: Date };
   currentDate: Date;
@@ -9136,7 +9136,7 @@ const CourtExportModal: React.FC<{
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-xl font-bold flex items-center gap-2">
-                ⚖️ Court-Admissible Export
+                ⚖️ forensic-grade, independently verifiable Export
               </h2>
               <p className="text-amber-200 text-sm mt-1">
                 Generate legally defensible evidence package
@@ -9237,7 +9237,7 @@ const CourtExportModal: React.FC<{
                 : 'bg-gradient-to-r from-amber-600 to-orange-600 hover:opacity-90'
             }`}
           >
-            {isExporting ? '⏳ Generating Export...' : '⚖️ Generate Court-Admissible Export'}
+            {isExporting ? '⏳ Generating Export...' : '⚖️ Generate forensic-grade, independently verifiable Export'}
           </button>
         </div>
       </div>
@@ -9678,7 +9678,7 @@ const ERPPanel: React.FC<{
 };
 
 // =============================================================================
-// FINANCIAL VALIDATIONS PANEL - SOX/SEC Court-Admissible Audit Trail
+// FINANCIAL VALIDATIONS PANEL - SOX/SEC forensic-grade, independently verifiable Audit Trail
 // =============================================================================
 
 const FinancialValidationsPanel: React.FC<{
@@ -9716,7 +9716,7 @@ const FinancialValidationsPanel: React.FC<{
               <h2 className="text-2xl font-bold flex items-center gap-3">
                 🔒 SOX/SEC Financial Validation Audit Trail
                 <span className="text-emerald-400 text-sm font-normal px-2 py-1 bg-emerald-900/50 rounded">
-                  Court-Admissible
+                  forensic-grade, independently verifiable
                 </span>
               </h2>
               <p className="text-neutral-400 text-sm mt-1">
@@ -9985,7 +9985,7 @@ const FinancialValidationsPanel: React.FC<{
 };
 
 // =============================================================================
-// REDACTED EXPORT MODAL - Court-Admissible Privacy-Preserving Export
+// REDACTED EXPORT MODAL - forensic-grade, independently verifiable Privacy-Preserving Export
 // =============================================================================
 
 const RedactedExportModal: React.FC<{
@@ -10005,7 +10005,7 @@ const RedactedExportModal: React.FC<{
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-2xl font-bold flex items-center gap-3">
-                🔏 Court-Admissible Redacted Export
+                🔏 forensic-grade, independently verifiable Redacted Export
                 <span className="text-orange-400 text-sm font-normal px-2 py-1 bg-orange-900/50 rounded">
                   Privacy-Preserving
                 </span>
@@ -10105,7 +10105,7 @@ const RedactedExportModal: React.FC<{
                   </>
                 ) : (
                   <>
-                    🔏 Generate Court-Admissible Export
+                    🔏 Generate forensic-grade, independently verifiable Export
                   </>
                 )}
               </button>
@@ -10116,7 +10116,7 @@ const RedactedExportModal: React.FC<{
               <div className="bg-emerald-900/30 rounded-xl p-6 border border-emerald-700 text-center">
                 <span className="text-6xl mb-4 block">✅</span>
                 <h3 className="text-2xl font-bold text-emerald-400 mb-2">Export Generated Successfully</h3>
-                <p className="text-neutral-400">Your court-admissible redacted export is ready</p>
+                <p className="text-neutral-400">Your forensic-grade, independently verifiable redacted export is ready</p>
               </div>
 
               {/* Export Details */}

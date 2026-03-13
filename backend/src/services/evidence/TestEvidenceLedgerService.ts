@@ -22,7 +22,7 @@
  * - Timestamps from multiple sources
  * - Digital signatures via TPM
  * - Merkle tree for efficient verification
- * - Export to court-admissible formats
+ * - Export to forensic-grade, independently verifiable formats
  */
 
 import crypto from 'crypto';

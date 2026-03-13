@@ -11,7 +11,7 @@
 /**
  * DATACENDIA REGULATOR'S RECEIPT ROUTES
  * 
- * API endpoints for one-click court-admissible decision documentation
+ * API endpoints for one-click forensic-grade, independently verifiable decision documentation
  */
 
 import { Router, Request, Response } from 'express';

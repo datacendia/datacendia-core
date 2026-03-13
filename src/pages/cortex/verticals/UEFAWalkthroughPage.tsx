@@ -525,7 +525,7 @@ export default function UEFAWalkthroughPage() {
                 Regulator's Receipt™
               </CardTitle>
               <CardDescription>
-                A single, court-admissible artifact containing the complete Decision DNA for this case.
+                A single, forensic-grade, independently verifiable artifact containing the complete Decision DNA for this case.
                 This file is cryptographically sealed and cannot be altered.
               </CardDescription>
             </CardHeader>

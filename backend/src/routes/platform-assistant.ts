@@ -171,7 +171,7 @@ const PLATFORM_KNOWLEDGE = {
         {
           step: 4,
           title: 'Download receipt',
-          description: 'Save the court-admissible PDF',
+          description: 'Save the forensic-grade, independently verifiable PDF',
           service: "Regulator's Receipt",
           route: '/cortex/compliance/regulators-receipt',
           whatToClick: '"Download PDF" button',

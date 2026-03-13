@@ -157,7 +157,7 @@ const FFP_CRISIS: GovernanceScenario = {
     { id: 'out-1', label: 'Decision Packet', description: 'Full deliberation record with citations, confidence scores, and consensus recommendation', type: 'decision_packet' },
     { id: 'out-2', label: 'Financial Simulation (3 Seasons)', description: 'Break-even projection under current structure vs. corrective scenarios', type: 'financial_simulation' },
     { id: 'out-3', label: 'Cryptographic Evidence Trail', description: 'SHA-256 timestamped discovery chain for all evidence items', type: 'evidence_trail' },
-    { id: 'out-4', label: "Regulator's Receipt", description: 'Court-admissible artifact proving procedural integrity', type: 'receipt' },
+    { id: 'out-4', label: "Regulator's Receipt", description: 'forensic-grade, independently verifiable artifact proving procedural integrity', type: 'receipt' },
     { id: 'out-5', label: 'Dissent Record', description: 'Logged minority objection with structural framework critique', type: 'dissent_record' },
   ],
   risks: [

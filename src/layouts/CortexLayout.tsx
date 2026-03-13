@@ -524,7 +524,7 @@ const trustLayerFeatures = [
     label: 'CendiaProvenance�',
     Icon: Dna,
     path: '/cortex/intelligence/audit-provenance',
-    description: 'Full decision lineage & evidence export - cryptographically signed, court-admissible',
+    description: 'Full decision lineage & evidence export - cryptographically signed, forensic-grade, independently verifiable',
     merged: ['Decision DNA', "Regulator's Receipt", 'Ledger', 'Evidence Export'],
   },
   {

@@ -488,7 +488,7 @@ const ScenarioDetail = ({
                 Deliverable Outputs
               </CardTitle>
               <CardDescription>
-                Each output is cryptographically sealed and court-admissible.
+                Each output is cryptographically sealed and forensic-grade, independently verifiable.
                 These are the artifacts you present to stakeholders.
               </CardDescription>
             </CardHeader>
@@ -523,7 +523,7 @@ const ScenarioDetail = ({
                 Regulator's Receipt™
               </CardTitle>
               <CardDescription>
-                A single, court-admissible artifact proving the governance process was followed.
+                A single, forensic-grade, independently verifiable artifact proving the governance process was followed.
                 This is the document you hand to CAS when challenged.
               </CardDescription>
             </CardHeader>

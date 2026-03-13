@@ -12,7 +12,7 @@
 
 // =============================================================================
 // REGULATOR'S RECEIPT PAGE
-// One-click court-admissible decision documentation
+// One-click forensic-grade, independently verifiable decision documentation
 // =============================================================================
 
 import React, { useState, useEffect } from 'react';
@@ -384,8 +384,8 @@ const RegulatorsReceiptPageInner: React.FC<{ embedded?: boolean }> = ({ embedded
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      const suffixMap: Record<string, string> = { court: 'court-admissible', standard: 'executive-summary', evidence: 'evidence-package' };
-      const suffix = suffixMap[format] || 'court-admissible';
+      const suffixMap: Record<string, string> = { court: 'forensic-grade, independently verifiable', standard: 'executive-summary', evidence: 'evidence-package' };
+      const suffix = suffixMap[format] || 'forensic-grade, independently verifiable';
       a.download = `regulators-receipt-${selectedDeliberation.id.substring(0, 8)}-${suffix}.pdf`;
       document.body.appendChild(a);
       a.click();
@@ -414,7 +414,7 @@ const RegulatorsReceiptPageInner: React.FC<{ embedded?: boolean }> = ({ embedded
                 </div>
                 <div>
                   <h1 className="text-3xl font-bold">Regulator's Receipt Generator</h1>
-                  <p className="text-emerald-200">One-click court-admissible decision documentation</p>
+                  <p className="text-emerald-200">One-click forensic-grade, independently verifiable decision documentation</p>
                 </div>
               </div>
             </div>
@@ -426,7 +426,7 @@ const RegulatorsReceiptPageInner: React.FC<{ embedded?: boolean }> = ({ embedded
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
             {[
               { icon: Fingerprint, label: 'Cryptographic Proof', desc: 'Merkle tree verification' },
-              { icon: Scale, label: 'Court-Admissible', desc: 'Legal-grade documentation' },
+              { icon: Scale, label: 'forensic-grade, independently verifiable', desc: 'Legal-grade documentation' },
               { icon: Shield, label: 'Compliance Mapping', desc: 'Automatic framework mapping' },
               { icon: Lock, label: 'Tamper-Evident', desc: 'SHA-256 hash chain' },
             ].map((feature, i) => {

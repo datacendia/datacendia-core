@@ -67,7 +67,7 @@ function imagePromptTemplate(purpose: string, platform: string, style: string) {
 
 function pitchDeckTemplate(audience: string) {
   const slides = [
-    { slideNumber: 1, title: 'Datacendia — Sovereign Intelligence Platform', content: ['Decision Crisis Immunization Infrastructure', 'On-premise, quantum-resistant, court-admissible', 'Zero cloud dependency'], visualSuggestion: 'Dark hero slide with Datacendia logo', speakerNotes: 'Open with the core positioning: we prevent institutional decision failures.' },
+    { slideNumber: 1, title: 'Datacendia — Sovereign Intelligence Platform', content: ['Decision Crisis Immunization Infrastructure', 'On-premise, quantum-resistant, forensic-grade, independently verifiable', 'Zero cloud dependency'], visualSuggestion: 'Dark hero slide with Datacendia logo', speakerNotes: 'Open with the core positioning: we prevent institutional decision failures.' },
     { slideNumber: 2, title: 'The Problem', content: ['$4.2T annual cost of poor enterprise decisions', 'Regulatory fines increasing 300% since 2020', 'AI adoption without governance = liability'], visualSuggestion: 'Infographic with cost statistics', speakerNotes: 'Ground the problem in real financial impact.' },
     { slideNumber: 3, title: 'Our Solution', content: ['Multi-agent deliberation engine (The Council)', 'Cryptographic decision packets with Merkle integrity', 'Cross-jurisdiction compliance across 17 regions'], visualSuggestion: 'Product screenshot of Council interface', speakerNotes: 'Show, dont tell. This is where the demo begins.' },
     { slideNumber: 4, title: 'How It Works', content: ['AI agents deliberate from multiple perspectives', 'Every token, tool call, and reasoning step captured', 'Immutable audit trail with post-quantum signatures'], visualSuggestion: 'Architecture diagram', speakerNotes: 'Walk through a single decision flow end-to-end.' },
@@ -87,7 +87,7 @@ function copyTemplate(type: string, topic: string) {
   return {
     type,
     headline: `${topic}: Why Sovereign AI Governance Is No Longer Optional`,
-    body: `Enterprise AI adoption is accelerating, but governance has not kept pace. Every unauditable AI decision is a regulatory liability waiting to happen. Datacendia's platform captures every deliberation, cryptographically signs every decision, and proves compliance across 17 jurisdictions — on infrastructure you own. No cloud dependency. No vendor lock-in. Court-admissible proof of every decision your organization makes.`,
+    body: `Enterprise AI adoption is accelerating, but governance has not kept pace. Every unauditable AI decision is a regulatory liability waiting to happen. Datacendia's platform captures every deliberation, cryptographically signs every decision, and proves compliance across 17 jurisdictions — on infrastructure you own. No cloud dependency. No vendor lock-in. forensic-grade, independently verifiable proof of every decision your organization makes.`,
     cta: 'Request a demo at datacendia.com',
     variations: [
       `The Hidden Cost of Ungoverned AI: How ${topic} Exposes Enterprise Risk`,

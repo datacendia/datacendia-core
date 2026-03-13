@@ -574,7 +574,7 @@ const LandingPage = () => {
                 <div className="bg-slate-800/50 rounded p-3 border border-emerald-900/30">
                   <div className="flex items-center gap-2 mb-3">
                     <FileText size={14} className="text-emerald-400" />
-                    <span className="text-[10px] font-mono text-emerald-400">COURT-ADMISSIBLE PDF</span>
+                    <span className="text-[10px] font-mono text-emerald-400">forensic-grade, independently verifiable PDF</span>
                   </div>
                   <div className="space-y-2 text-[10px]">
                     {[
@@ -599,7 +599,7 @@ const LandingPage = () => {
               <div className="px-5 pb-5">
                 <h3 className="text-base font-bold text-white mb-1">Regulator's Receipt</h3>
                 <p className="text-xs text-slate-400 leading-relaxed">
-                  1-click court-admissible PDFs with Merkle trees, IISS scores, digital signatures, compliance mappings, and full evidence chains.
+                  1-click forensic-grade, independently verifiable PDFs with Merkle trees, IISS scores, digital signatures, compliance mappings, and full evidence chains.
                 </p>
                 <Link to="/cortex/dcii" className="text-xs text-emerald-400 hover:text-emerald-300 mt-2 inline-block font-mono">
                   SEE THE RECEIPT →
