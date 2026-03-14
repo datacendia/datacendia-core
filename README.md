@@ -85,6 +85,15 @@ Datacendia is the only AI platform where every decision is auditable, explainabl
 - **CendiaGateway™** -- AI governance proxy that sits between employees and AI providers. PII detection, policy enforcement, cryptographic audit trail. Browser extensions for Chrome, Firefox, Safari.
 - **The Council** -- Multi-agent deliberation with configurable agent panels (financial, legal, ethical, adversarial, domain-specific)
 - **Immutable Audit Ledger** -- Every decision cryptographically signed with Merkle tree integrity
+- **Cryptographic Services** -- 8 frontend UIs for forensic-grade, independently verifiable decision infrastructure:
+  - **CendiaVerify™** -- Public verification portal (`/verify`) for third-party receipt validation
+  - **CendiaEvidence™** -- Evidence package download (ZIP, standalone HTML verifier, JSON)
+  - **CendiaGapScan™** -- Compliance gap scanner across 8 regulatory frameworks
+  - **CendiaStamp™** -- Cryptographic seal SVG renderer with Ed25519 + ML-DSA-65 dual-signature badge
+  - **CendiaPrecedent™** -- TF-IDF similar decisions panel with precedent matching
+  - **CendiaRedTeam™** -- 6-vector adversarial analysis report with gate decision
+  - **CendiaEscrow™** -- Shamir Secret Sharing (3-of-5) with VDF time-locks
+  - **CendiaReplay™** -- Decision Replay Theater with full deliberation playback
 - **30 Industry Verticals** -- Financial, Healthcare, Legal, Defense, Insurance, Energy, Government, Manufacturing, Pharmaceutical, Sports, and 19 more
 - **Sovereign-First** -- Runs fully air-gapped. No cloud dependency. Your data stays yours.
 - **LLM-Agnostic** -- Works with Ollama, NVIDIA Triton, NVIDIA NIM, or any OpenAI-compatible API
@@ -233,7 +242,11 @@ docker compose -f docker-compose.demo.yml up -d
 datacendia-core/
 |-- src/                          # React frontend (Vite + TypeScript + Tailwind)
 |   |-- components/               # Reusable UI components
+|   |   |-- crypto/               # CendiaEvidence, CendiaStamp
+|   |   +-- council/              # CendiaPrecedent, CendiaRedTeam
 |   |-- pages/                    # Page components
+|   |   |-- public/               # CendiaVerify (/verify)
+|   |   +-- cortex/crypto/        # CendiaEscrow
 |   +-- services/                 # Frontend API clients
 |-- backend/                      # Node.js backend (Express + Prisma)
 |   |-- src/
@@ -370,6 +383,9 @@ See [COMMUNITY.md](COMMUNITY.md) for the full open-source boundary definition.
 | Immutable Audit Ledger | Yes | Yes |
 | 29 Vertical Frameworks | Yes | Yes |
 | Infrastructure (Kafka, Temporal, etc.) | Yes | Yes |
+| Crypto Service UIs (Verify, Evidence, Stamp, etc.) | Yes | Yes |
+| CendiaGapScan (8-framework compliance scanner) | Yes | Yes |
+| CendiaEscrow (Shamir SSS + VDF time-locks) | Yes | Yes |
 | Full Vertical Packs (12+ agents/industry) | -- | Yes |
 | 22 Sovereign Architecture Patterns | -- | Yes |
 | DCII (9 Decision Primitives) | -- | Yes |
@@ -410,6 +426,6 @@ Copyright 2024-2026 Datacendia, LLC
 
 Built by [Datacendia](https://datacendia.com) &middot; [DDGI Framework](https://github.com/datacendia/decision-governance-infrastructure) &middot; NVIDIA Inception Program Member
 
-*Last updated: March 11, 2026*
+*Last updated: March 13, 2026*
 
 </div>

@@ -157,7 +157,8 @@
 │                        ENTERPRISE                              │
 │  StressTest · Comply · Govern · Sovereign · Operate            │
 │  Crucible · Red Team · War Games · Compliance Monitor          │
-│  Autopilot · PQ-KMS · 19 Co-Pilots · OmniTranslate           │
+│  GapScan · Escrow · Verify · Evidence · Stamp · Precedent     │
+│  Replay · Autopilot · PQ-KMS · 19 Co-Pilots · OmniTranslate  │
 │  ─────────────────────────────────────────────────────────────│
 │                        FOUNDATION                              │
 │  The Council™ · DECIDE™ · DCII™                               │

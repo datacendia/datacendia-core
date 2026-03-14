@@ -4,6 +4,23 @@ All notable changes to Datacendia Core will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.2-alpha] - 2026-03-13
+
+### Added
+- **CendiaVerify™ Public Verification Portal** -- `/verify` route (no auth required) for third-party cryptographic receipt verification with step-by-step validation UI and CLI instructions
+- **CendiaEvidence™ Evidence Package Download** -- Reusable component for downloading evidence packages in ZIP, standalone HTML verifier, or raw JSON formats with client-side fallback generation
+- **CendiaGapScan™ Compliance Gap Scanner** -- `/cortex/compliance/gap-scanner` dashboard analyzing compliance gaps across EU AI Act, NIST AI RMF, ISO 42001, GDPR, HIPAA, SOX, SR 11-7, and Basel III/IV frameworks
+- **CendiaStamp™ Cryptographic Seal** -- SVG seal renderer fetching from backend API with client-side fallback showing receipt hash, verification date, and dual-signature badge
+- **CendiaPrecedent™ Similar Decisions Panel** -- TF-IDF precedent matching panel showing similarity scores, outcomes, key differences, and cross-deliberation insights
+- **CendiaRedTeam™ Red Team Report Panel** -- 6-vector adversarial analysis report (prompt injection, data poisoning, model extraction, membership inference, evasion attacks, supply chain) with gate decision and risk scoring
+- **CendiaEscrow™ Shamir Share Management** -- `/cortex/crypto/escrow` page for Shamir Secret Sharing (3-of-5 threshold), VDF time-locks, shareholder management, and share submission workflow
+- **Sidebar Navigation** -- Added Gap Scan and Escrow to Enterprise tier navigation in CortexLayout
+
+### Changed
+- **RegulatorsReceiptPage** -- Integrated EvidencePackageDownload and CendiaStampSeal components into the receipt view
+- **PostDeliberationPanel** -- Integrated RedTeamReportPanel and SimilarDecisionsPanel after formal dissents section
+- **CendiaReplay™** -- Confirmed existing 611-line Decision Replay Theater implementation is complete (no changes needed)
+
 ## [0.2.1-alpha] - 2026-03-12
 
 ### Added
@@ -115,6 +132,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Nginx reverse proxy configs
 - GitHub Actions CI/CD
 
+[0.2.2-alpha]: https://github.com/datacendia/datacendia-core/compare/v0.2.1-alpha...v0.2.2-alpha
+[0.2.1-alpha]: https://github.com/datacendia/datacendia-core/compare/v0.2.0-alpha...v0.2.1-alpha
 [0.2.0-alpha]: https://github.com/datacendia/datacendia-core/compare/v0.1.1...v0.2.0-alpha
 [0.1.1]: https://github.com/datacendia/datacendia-core/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/datacendia/datacendia-core/releases/tag/v0.1.0

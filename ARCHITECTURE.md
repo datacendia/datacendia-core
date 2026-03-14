@@ -10,7 +10,7 @@ This document describes the high-level architecture of Datacendia Core for contr
 |  React 18 + TypeScript + Vite                     |
 |                                                    |
 |  src/pages/         210 page components           |
-|  src/components/    99 reusable UI components     |
+|  src/components/    103 reusable UI components    |
 |  src/services/      API client services           |
 |  src/stores/        Zustand state management      |
 |  src/layouts/       Page layout shells            |
@@ -54,6 +54,8 @@ datacendia-core/
 |-- src/                    # Frontend (React)
 |   |-- pages/              # Route-level page components
 |   |-- components/         # Reusable UI components
+|   |   |-- crypto/         # CendiaEvidence, CendiaStamp
+|   |   +-- council/        # CendiaPrecedent, CendiaRedTeam
 |   |-- services/           # API client services
 |   |-- stores/             # Zustand state stores
 |   |-- hooks/              # Custom React hooks
@@ -117,6 +119,20 @@ The multi-agent deliberation engine. Multiple AI agents with distinct mandates (
 
 ### Decision Packets
 Every Council deliberation produces a Decision Packet -- a signed, Merkle-rooted evidence artifact containing the full deliberation transcript, agent votes, dissent records, and cryptographic proof of integrity.
+
+### Cryptographic Service UIs (v0.2.2+)
+Eight frontend components provide user-facing interfaces for the platform's cryptographic primitives:
+
+| Service | Route / Location | Purpose | Maturity |
+|---------|-----------------|---------|----------|
+| **CendiaVerify™** | `/verify` (public) | Third-party receipt verification portal | Preview |
+| **CendiaEvidence™** | Component (RegulatorsReceiptPage) | Evidence package download (ZIP/HTML/JSON) | Preview |
+| **CendiaGapScan™** | `/cortex/compliance/gap-scanner` | Compliance gap analysis across 8 frameworks | Preview |
+| **CendiaStamp™** | Component (RegulatorsReceiptPage) | Cryptographic seal SVG renderer | Preview |
+| **CendiaPrecedent™** | Component (PostDeliberationPanel) | TF-IDF similar decisions matching | Preview |
+| **CendiaRedTeam™** | Component (PostDeliberationPanel) | 6-vector adversarial analysis report | Preview |
+| **CendiaEscrow™** | `/cortex/crypto/escrow` | Shamir SSS + VDF time-lock management | Preview |
+| **CendiaReplay™** | `/cortex/council/replay-theater` | Decision deliberation playback theater | Preview |
 
 ### Immutable Audit Ledger
 All decisions are recorded in a Merkle tree structure. Each entry is cryptographically linked to the previous one, creating a tamper-evident chain. Customer-owned signing keys ensure sovereignty.

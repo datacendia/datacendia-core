@@ -47,6 +47,14 @@ Add maturity to any feature table or service description:
 | Council deliberation | GA | Core engine, fully tested |
 | Ghost Board | beta | Functional, limited vertical coverage |
 | Quantum KMS | preview | Dilithium signing implemented, SPHINCS+ planned |
+| CendiaVerify | preview | Public verification portal, mock fallback |
+| CendiaEvidence | preview | Evidence download, client-side fallback |
+| CendiaGapScan | preview | 8-framework gap scanner, mock data |
+| CendiaStamp | preview | SVG seal renderer, client fallback |
+| CendiaPrecedent | preview | TF-IDF similar decisions, mock data |
+| CendiaRedTeam | preview | 6-vector adversarial report, mock data |
+| CendiaEscrow | preview | Shamir SSS + VDF, mock data |
+| CendiaReplay | preview | Decision replay theater, functional |
 ```
 
 ### In Marketing / Trust Center
