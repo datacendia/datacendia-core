@@ -150,23 +150,25 @@
 ## Tier Architecture
 
 ```
-┌───────────────────────────────────────────────────────────────┐
-│                        STRATEGIC                               │
-│  Collapse · SGAS · Deep Verticals · Frontier · Nation-Scale   │
-│  ─────────────────────────────────────────────────────────────│
-│                        ENTERPRISE                              │
-│  StressTest · Comply · Govern · Sovereign · Operate            │
-│  Crucible · Red Team · War Games · Compliance Monitor          │
-│  GapScan · Escrow · Verify · Evidence · Stamp · Precedent     │
-│  Replay · Autopilot · PQ-KMS · 19 Co-Pilots · OmniTranslate  │
-│  ─────────────────────────────────────────────────────────────│
-│                        FOUNDATION                              │
-│  The Council™ · DECIDE™ · DCII™                               │
-│  PreMortem · Ghost Board · Decision Debt · Chronos             │
-│  Evidence Vault · Regulator's Receipt · IISS Scoring           │
-│  ─────────────────────────────────────────────────────────────│
-│                     COMMUNITY (Apache 2.0)                     │
-│  Core Council Engine · Decision Ledger · Basic Trust Layer     │
-│  Local Ollama Inference · Docker Compose                       │
-└───────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────┐
+│                        STRATEGIC (Components)                       │
+│  Collapse Orchestrator · SGAS · CendiaNation · Full Vertical Packs │
+│  Defense/Pharma/Govt Packs · Nation-Scale Deployment                │
+│  ──────────────────────────────────────────────────────────────────│
+│                        ENTERPRISE (Components)                      │
+│  22 Sovereign Patterns · 19 Co-Pilots · Autopilot · PQ-KMS         │
+│  CendiaApotheosis · OmniTranslate · CendiaCrucible                │
+│  SSO/CAC/PIV · Full Agent Rosters (15 C-Suite)                     │
+│  35+ Deliberation Modes · Enterprise SLA & Support                  │
+│  ──────────────────────────────────────────────────────────────────│
+│                        FOUNDATION (Core — Apache 2.0)               │
+│  The Council™ · DECIDE™ · DCII™ · CendiaGateway™                  │
+│  CendiaReplay™ · CendiaChronos™ · CendiaLens™                     │
+│  DCII: Memory · Notary · Truth · Witness · Similarity · Timestamp  │
+│  Crown: Echo · Gnosis · RedTeam · Pulse · Compliance · Court       │
+│  Crypto: Verify · Evidence · GapScan · Stamp · Precedent · Escrow  │
+│  ServiceInfoDropdown (guided onboarding on all 19 service pages)   │
+│  30 Vertical Frameworks · Ollama/Triton/NIM · Docker Compose       │
+│  Browser Extensions (Chrome, Firefox, Safari)                       │
+└────────────────────────────────────────────────────────────────────┘
 ```

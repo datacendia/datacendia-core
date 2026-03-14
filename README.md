@@ -6,7 +6,7 @@
 
 **The Defensible AI Platform -- open-source core, sovereign-first.**
 
-Multi-agent deliberation &middot; Immutable audit trails &middot; 30 industry verticals &middot; Sovereign-first
+Multi-agent deliberation &middot; Immutable audit trails &middot; 19 service dashboards &middot; 30 industry verticals &middot; Sovereign-first
 
 [![CI](https://github.com/datacendia/datacendia-core/actions/workflows/ci.yml/badge.svg)](https://github.com/datacendia/datacendia-core/actions/workflows/ci.yml)
 [![Security](https://github.com/datacendia/datacendia-core/actions/workflows/security.yml/badge.svg)](https://github.com/datacendia/datacendia-core/actions/workflows/security.yml)
@@ -94,6 +94,23 @@ Datacendia is the only AI platform where every decision is auditable, explainabl
   - **CendiaRedTeam™** -- 6-vector adversarial analysis report with gate decision
   - **CendiaEscrow™** -- Shamir Secret Sharing (3-of-5) with VDF time-locks
   - **CendiaReplay™** -- Decision Replay Theater with full deliberation playback
+- **Crown Jewels** -- Advanced AI governance services:
+  - **CendiaEcho™** -- Decision outcome tracking with closed feedback loops (30/60/90/365-day horizons)
+  - **CendiaGnosis™** -- Sovereign education engine and knowledge graph explorer
+  - **CendiaRedTeam™** -- Automated adversarial testing (prompt injection, bias, policy circumvention)
+  - **CendiaPulse™** -- Real-time AI agent activity monitor with WebSocket streaming
+  - **CendiaLens™** -- AI interpretability & explainability dashboard (EU AI Act ready)
+  - **CendiaChronos™** -- Enterprise decision time machine with what-if branching
+  - **CendiaCompliance™** -- Continuous compliance monitoring across multiple frameworks
+  - **CendiaCourt™** -- Constitutional dispute resolution with precedent tracking
+- **DCII Services** -- Decision Crisis Immunization Infrastructure with 6 specialized UIs:
+  - **CendiaMemory™** -- Institutional memory preservation (Pantheon)
+  - **CendiaNotary™** -- Ed25519 + ML-DSA-65 digital notarization with RFC 3161 timestamps
+  - **CendiaTruth™** -- Claim verification against evidence and trusted sources
+  - **CendiaWitness™** -- Independent verification with blockchain-anchored proofs
+  - **CendiaSimilarity™** -- TF-IDF semantic precedent search across decision history
+  - **CendiaTimestamp™** -- RFC 3161 multi-authority timestamp verification
+- **ServiceInfoDropdown** -- Every service page includes a collapsible guide explaining what the service is, what it does, and step-by-step how to use it
 - **30 Industry Verticals** -- Financial, Healthcare, Legal, Defense, Insurance, Energy, Government, Manufacturing, Pharmaceutical, Sports, and 19 more
 - **Sovereign-First** -- Runs fully air-gapped. No cloud dependency. Your data stays yours.
 - **LLM-Agnostic** -- Works with Ollama, NVIDIA Triton, NVIDIA NIM, or any OpenAI-compatible API
@@ -241,12 +258,17 @@ docker compose -f docker-compose.demo.yml up -d
 ```
 datacendia-core/
 |-- src/                          # React frontend (Vite + TypeScript + Tailwind)
-|   |-- components/               # Reusable UI components
+|   |-- components/               # 91 reusable UI components
 |   |   |-- crypto/               # CendiaEvidence, CendiaStamp
-|   |   +-- council/              # CendiaPrecedent, CendiaRedTeam
-|   |-- pages/                    # Page components
+|   |   |-- council/              # CendiaPrecedent, CendiaRedTeam
+|   |   +-- ui/                   # ServiceInfoDropdown, shared UI
+|   |-- pages/                    # 175 page components
 |   |   |-- public/               # CendiaVerify (/verify)
-|   |   +-- cortex/crypto/        # CendiaEscrow
+|   |   |-- cortex/crypto/        # CendiaEscrow
+|   |   |-- cortex/crown/         # Echo, Gnosis, RedTeam
+|   |   |-- cortex/dcii/          # Memory, Notary, Truth, Witness, Similarity, Timestamp
+|   |   +-- cortex/monitor/       # CendiaPulse live agent monitor
+|   |-- config/                   # Service info definitions (22 services)
 |   +-- services/                 # Frontend API clients
 |-- backend/                      # Node.js backend (Express + Prisma)
 |   |-- src/
@@ -277,7 +299,7 @@ datacendia-core/
 
 | Layer | Technology |
 |-------|-----------|
-| **Frontend** | React 18, TypeScript, Vite, Tailwind CSS, shadcn/ui |
+| **Frontend** | React 18, TypeScript, Vite, Tailwind CSS, shadcn/ui (175 pages, 91 components) |
 | **Backend** | Node.js, Express, TypeScript |
 | **Database** | PostgreSQL 16 + Prisma ORM |
 | **Cache** | Redis 7 |
@@ -384,6 +406,9 @@ See [COMMUNITY.md](COMMUNITY.md) for the full open-source boundary definition.
 | 29 Vertical Frameworks | Yes | Yes |
 | Infrastructure (Kafka, Temporal, etc.) | Yes | Yes |
 | Crypto Service UIs (Verify, Evidence, Stamp, etc.) | Yes | Yes |
+| Crown Jewels (Echo, Gnosis, RedTeam, Pulse, Lens) | Yes | Yes |
+| DCII Service UIs (Memory, Notary, Truth, Witness, etc.) | Yes | Yes |
+| ServiceInfoDropdown (guided onboarding on all 19 pages) | Yes | Yes |
 | CendiaGapScan (8-framework compliance scanner) | Yes | Yes |
 | CendiaEscrow (Shamir SSS + VDF time-locks) | Yes | Yes |
 | Full Vertical Packs (12+ agents/industry) | -- | Yes |
@@ -426,6 +451,6 @@ Copyright 2024-2026 Datacendia, LLC
 
 Built by [Datacendia](https://datacendia.com) &middot; [DDGI Framework](https://github.com/datacendia/decision-governance-infrastructure) &middot; NVIDIA Inception Program Member
 
-*Last updated: March 13, 2026*
+*Last updated: March 14, 2026*
 
 </div>

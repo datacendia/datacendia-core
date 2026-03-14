@@ -30,10 +30,15 @@ Everything in this repository is Community Edition:
 - 30 industry vertical frameworks
 - Local LLM inference via Ollama
 - PostgreSQL + Redis + Neo4j stack
-- React 18 frontend
-- REST API
+- React 18 frontend (175 pages, 91 components)
+- REST API (158 route files, 356 services)
 - Docker Compose deployment
 - Quick Brief and basic deliberation modes
+- **CendiaGateway™** -- AI governance proxy with browser extensions
+- **19 Service Dashboards** with guided onboarding (ServiceInfoDropdown):
+  - Cryptographic: Verify, Evidence, GapScan, Stamp, Precedent, RedTeam, Escrow, Replay
+  - Crown Jewels: Echo, Gnosis, RedTeam, Pulse, Lens, Chronos, Compliance, Court
+  - DCII: Memory, Notary, Truth, Witness, Similarity, Timestamp
 
 ## Enterprise Edition (Paid License)
 
@@ -41,20 +46,27 @@ Enterprise features are available in the [datacendia-components](https://github.
 
 ### Enterprise-Only Features
 
+Enterprise features live in the private `datacendia-components` repository and extend the community edition:
+
 | Feature | Tier |
 |---------|------|
 | 15 C-Suite AI agents (full roster) | Foundation |
 | 35+ deliberation modes | Foundation |
-| DCII evidence infrastructure | Foundation |
+| DCII scoring engine (IISS computation) | Foundation |
 | CendiaCrucible adversarial testing | Enterprise |
-| 10 compliance frameworks | Enterprise |
-| CendiaCourt dispute resolution | Enterprise |
-| Sovereign/air-gap deployment patterns | Enterprise |
+| 22 Sovereign architecture patterns | Enterprise |
 | 19 department AI co-pilots | Enterprise |
 | SSO, CAC/PIV authentication | Enterprise |
-| COLLAPSE simulation | Strategic |
+| CendiaApotheosis self-improvement | Enterprise |
+| OmniTranslate (100+ languages) | Enterprise |
+| COLLAPSE orchestrator (19 adversarial agents) | Strategic |
 | SGAS population modeling | Strategic |
 | CendiaNation multi-agency coordination | Strategic |
+| Full vertical packs (12+ agents/industry) | Strategic |
+| Defense/Pharma/Government full packs | Strategic |
+| Enterprise SLA & support | Strategic |
+
+> **Note:** Many features that were previously enterprise-only (DCII service UIs, Crown Jewels dashboards, CendiaCourt, continuous compliance monitoring) are now included in the community edition as of v0.2.3. The enterprise edition focuses on sovereign deployment patterns, full agent rosters, advanced orchestration, and premium support.
 
 ## Contributing Guidelines
 

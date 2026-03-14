@@ -9,8 +9,8 @@ This document describes the high-level architecture of Datacendia Core for contr
 |                   FRONTEND                        |
 |  React 18 + TypeScript + Vite                     |
 |                                                    |
-|  src/pages/         210 page components           |
-|  src/components/    103 reusable UI components    |
+|  src/pages/         175 page components           |
+|  src/components/    91 reusable UI components     |
 |  src/services/      API client services           |
 |  src/stores/        Zustand state management      |
 |  src/layouts/       Page layout shells            |
@@ -23,8 +23,8 @@ This document describes the high-level architecture of Datacendia Core for contr
 |                   BACKEND                         |
 |  Express + TypeScript + Prisma                    |
 |                                                    |
-|  src/routes/        156 API route files           |
-|  src/services/      189 business logic services   |
+|  src/routes/        158 API route files           |
+|  src/services/      356 business logic services   |
 |  src/middleware/     Auth, rate limit, security    |
 |  src/security/      8 security hardening modules  |
 |  src/connectors/    35 external integrations      |
@@ -134,6 +134,40 @@ Eight frontend components provide user-facing interfaces for the platform's cryp
 | **CendiaEscrow™** | `/cortex/crypto/escrow` | Shamir SSS + VDF time-lock management | Preview |
 | **CendiaReplay™** | `/cortex/council/replay-theater` | Decision deliberation playback theater | Preview |
 
+### Crown Jewels (v0.2.3+)
+Advanced AI governance services with full dashboards:
+
+| Service | Route | Purpose | Maturity |
+|---------|-------|---------|----------|
+| **CendiaEcho™** | `/cortex/crown/echo` | Decision outcome tracking & feedback loops | Preview |
+| **CendiaGnosis™** | `/cortex/crown/gnosis` | Sovereign education engine & knowledge graph | Preview |
+| **CendiaRedTeam™** | `/cortex/crown/red-team` | Automated adversarial testing dashboard | Preview |
+| **CendiaPulse™** | `/cortex/monitor/live` | Real-time AI agent activity monitor | Preview |
+| **CendiaLens™** | `/cortex/intelligence/lens` | AI interpretability & explainability | Preview |
+| **CendiaChronos™** | `/cortex/intelligence/chronos` | Enterprise decision time machine | Preview |
+| **CendiaCompliance™** | `/cortex/compliance/continuous-monitor` | Continuous compliance monitoring | Preview |
+| **CendiaCourt™** | `/cortex/governance/constitutional-court` | Dispute resolution & precedent tracking | Preview |
+
+### DCII Service UIs (v0.2.3+)
+Decision Crisis Immunization Infrastructure with 6 specialized pages:
+
+| Service | Route | Purpose | Maturity |
+|---------|-------|---------|----------|
+| **CendiaMemory™** | `/cortex/dcii/memory` | Institutional memory & Pantheon | Preview |
+| **CendiaNotary™** | `/cortex/dcii/notary` | Digital notarization & key management | Preview |
+| **CendiaTruth™** | `/cortex/dcii/truth` | Claim verification & fact validation | Preview |
+| **CendiaWitness™** | `/cortex/dcii/witness` | Independent verification & blockchain proofs | Preview |
+| **CendiaSimilarity™** | `/cortex/dcii/similarity` | Semantic precedent search | Preview |
+| **CendiaTimestamp™** | `/cortex/dcii/timestamp` | RFC 3161 timestamp management | Preview |
+
+### ServiceInfoDropdown (v0.2.3+)
+Every service page listed above includes a collapsible `ServiceInfoDropdown` component that provides:
+- **What it is** -- A concise description of the service
+- **What it does** -- Key capabilities as a bullet list
+- **How to use** -- Step-by-step instructions for each service
+
+All service info is centralized in `src/config/serviceInfo.ts` (22 definitions).
+
 ### Immutable Audit Ledger
 All decisions are recorded in a Merkle tree structure. Each entry is cryptographically linked to the previous one, creating a tamper-evident chain. Customer-owned signing keys ensure sovereignty.
 
@@ -142,7 +176,9 @@ The 156 route files are organized into 14 logical domain routers (auth, council,
 
 ## Community vs Enterprise
 
-This is the **Community Edition** (Apache 2.0). Enterprise features (DCII, Apotheosis, Crucible, Ghost Board, etc.) are available in the private `datacendia-components` repository. Enterprise navigation items in the UI redirect to an upgrade page.
+This is the **Community Edition** (Apache 2.0). Enterprise features (Apotheosis, Crucible, Collapse Orchestrator, 22 sovereign patterns, etc.) are available in the private `datacendia-components` repository. Enterprise navigation items in the UI redirect to an upgrade page.
+
+Note: As of v0.2.3, the community edition includes all 19 service dashboards (Council, Replay, Gateway, DCII x6, Crown Jewels x3, Compliance, Escrow, GapScan, Pulse, Lens, Governance x2). The enterprise edition adds sovereign deployment patterns, full vertical packs, and advanced orchestration services.
 
 The backend uses dynamic `import()` inside try/catch for enterprise modules, so the community edition runs without them.
 

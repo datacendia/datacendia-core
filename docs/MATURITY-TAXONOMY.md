@@ -47,14 +47,29 @@ Add maturity to any feature table or service description:
 | Council deliberation | GA | Core engine, fully tested |
 | Ghost Board | beta | Functional, limited vertical coverage |
 | Quantum KMS | preview | Dilithium signing implemented, SPHINCS+ planned |
+| CendiaGateway | preview | 3-layer AI governance proxy, browser extensions |
 | CendiaVerify | preview | Public verification portal, mock fallback |
 | CendiaEvidence | preview | Evidence download, client-side fallback |
 | CendiaGapScan | preview | 8-framework gap scanner, mock data |
 | CendiaStamp | preview | SVG seal renderer, client fallback |
 | CendiaPrecedent | preview | TF-IDF similar decisions, mock data |
-| CendiaRedTeam | preview | 6-vector adversarial report, mock data |
+| CendiaRedTeam | preview | 6-vector adversarial report + dashboard |
 | CendiaEscrow | preview | Shamir SSS + VDF, mock data |
 | CendiaReplay | preview | Decision replay theater, functional |
+| CendiaEcho | preview | Decision outcome tracking, mock data |
+| CendiaGnosis | preview | Sovereign education engine, functional |
+| CendiaPulse | preview | Real-time agent monitor, WebSocket |
+| CendiaLens | preview | AI interpretability dashboard |
+| CendiaChronos | preview | Decision time machine, functional |
+| CendiaCompliance | preview | Continuous compliance monitor |
+| CendiaCourt | preview | Constitutional dispute resolution |
+| CendiaMemory | preview | Institutional memory / Pantheon |
+| CendiaNotary | preview | Digital notarization, key management |
+| CendiaTruth | preview | Claim verification, fact validation |
+| CendiaWitness | preview | Independent verification, blockchain proofs |
+| CendiaSimilarity | preview | Semantic precedent search |
+| CendiaTimestamp | preview | RFC 3161 timestamp management |
+| ServiceInfoDropdown | preview | Guided onboarding on 19 service pages |
 ```
 
 ### In Marketing / Trust Center

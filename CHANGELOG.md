@@ -4,6 +4,20 @@ All notable changes to Datacendia Core will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.3-alpha] - 2026-03-14
+
+### Added
+- **ServiceInfoDropdown Component** -- Reusable collapsible dropdown showing "What it is", "What it does", and "How to use" (step-by-step) for every service page. Centralized config in `src/config/serviceInfo.ts` with 22 service definitions
+- **Service Info on 19 Pages** -- Added ServiceInfoDropdown to: Council, Replay, Gateway, DCII (Memory, Notary, Truth, Witness, Similarity, Timestamp), GapScanner, Escrow, Compliance Monitor, CendiaLens, DecisionPackets, ConstitutionalCourt, Echo, Gnosis, RedTeam, CendiaPulse
+- **Decision Replay Theater Sidebar Entry** -- Added CendiaReplay™ to Foundation tier navigation in CortexLayout
+
+### Changed
+- **CendiaReplay™ Branding** -- Replaced purple/pink gradient theme with dark emerald/zinc theme to match platform design language across all UI elements (header, agent avatars, progress bars, playback controls, timeline)
+- **Demo Session Handling** -- Added `isDemoSession()`/`setDemoSession()` to TokenManager, skip hard `/login` redirect for demo sessions in API client, skip `/auth/me` backend validation for demo sessions in AuthContext, persist demo user to localStorage
+
+### Fixed
+- **Demo Redirect Loop** -- Demo users were being redirected to `/login` after page refresh because client-generated tokens failed backend validation. Fixed by flagging demo sessions in localStorage and bypassing backend token verification
+
 ## [0.2.2-alpha] - 2026-03-13
 
 ### Added
@@ -132,6 +146,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Nginx reverse proxy configs
 - GitHub Actions CI/CD
 
+[0.2.3-alpha]: https://github.com/datacendia/datacendia-core/compare/v0.2.2-alpha...v0.2.3-alpha
 [0.2.2-alpha]: https://github.com/datacendia/datacendia-core/compare/v0.2.1-alpha...v0.2.2-alpha
 [0.2.1-alpha]: https://github.com/datacendia/datacendia-core/compare/v0.2.0-alpha...v0.2.1-alpha
 [0.2.0-alpha]: https://github.com/datacendia/datacendia-core/compare/v0.1.1...v0.2.0-alpha
