@@ -18,6 +18,8 @@
 import React, { useState } from 'react';
 import { cn } from '../../../../lib/utils';
 import apiClient from '../../../lib/api/client';
+import { ServiceInfoDropdown } from '../../../components/ui/ServiceInfoDropdown';
+import { dciiTruthInfo } from '../../../config/serviceInfo';
 import {
   Shield, CheckCircle, XCircle, AlertTriangle, Search, Clock,
   FileText, ExternalLink, Brain, Loader2, ThumbsUp, ThumbsDown,
@@ -73,6 +75,7 @@ export const TruthPage: React.FC = () => {
           <Shield className="w-5 h-5 text-sky-400" /> CendiaTruth™
         </h1>
         <p className="text-sm text-neutral-500 mt-0.5">Claim verification — validate statements against evidence and trusted sources</p>
+        <ServiceInfoDropdown config={dciiTruthInfo} className="mt-2" />
       </div>
 
       {/* Verify Input */}

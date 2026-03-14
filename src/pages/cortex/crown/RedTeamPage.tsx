@@ -14,6 +14,8 @@
 // =============================================================================
 
 import { useState, useEffect, useCallback } from 'react';
+import { ServiceInfoDropdown } from '../../../components/ui/ServiceInfoDropdown';
+import { redTeamInfo } from '../../../config/serviceInfo';
 import {
   Shield,
   AlertTriangle,
@@ -213,6 +215,7 @@ const RedTeamPage = () => {
                   ? 'Adversarial clone with inverted objectives'
                   : 'Adversarial Security Engine'}
               </p>
+              {view !== 'evil-twin' && <ServiceInfoDropdown config={redTeamInfo} className="mt-2" />}
             </div>
           </div>
 

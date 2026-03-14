@@ -18,6 +18,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from '../../../../lib/utils';
+import { ServiceInfoDropdown } from '../../../components/ui/ServiceInfoDropdown';
+import { dciiNotaryInfo } from '../../../config/serviceInfo';
 import apiClient from '../../../lib/api/client';
 import {
   Key, Shield, RefreshCw, CheckCircle, AlertTriangle, Clock,
@@ -132,6 +134,7 @@ export const NotaryPage: React.FC = () => {
             <Key className="w-5 h-5 text-amber-400" /> CendiaNotary™
           </h1>
           <p className="text-sm text-neutral-500 mt-0.5">Key management, signature verification, customer-owned key configuration</p>
+          <ServiceInfoDropdown config={dciiNotaryInfo} className="mt-2" />
         </div>
         <button className="px-4 py-2 bg-amber-500/15 text-amber-400 border border-amber-500/30 rounded-lg text-sm font-medium hover:bg-amber-500/25 flex items-center gap-2">
           <Plus className="w-4 h-4" /> Create Key

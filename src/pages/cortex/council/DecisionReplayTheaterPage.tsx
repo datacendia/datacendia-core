@@ -19,6 +19,8 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useWebSocket } from '@/hooks/useWebSocket';
 import { api } from '../../../lib/api';
+import { ServiceInfoDropdown } from '../../../components/ui/ServiceInfoDropdown';
+import { replayInfo } from '../../../config/serviceInfo';
 import {
   Play,
   Pause,
@@ -301,7 +303,7 @@ export const DecisionReplayTheaterPage: React.FC = () => {
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
         {/* Header */}
-        <div className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white">
+        <div className="bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 text-white border-b border-emerald-500/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="flex items-center gap-4">
               <div className="p-3 bg-white/10 rounded-xl">
@@ -309,7 +311,8 @@ export const DecisionReplayTheaterPage: React.FC = () => {
               </div>
               <div>
                 <h1 className="text-3xl font-bold">CendiaReplay™</h1>
-                <p className="text-purple-200">Watch past deliberations unfold like a movie</p>
+                <p className="text-emerald-400/70">Watch past deliberations unfold like a movie</p>
+                <ServiceInfoDropdown config={replayInfo} className="mt-2" />
               </div>
             </div>
           </div>
@@ -327,8 +330,8 @@ export const DecisionReplayTheaterPage: React.FC = () => {
                 className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 text-left hover:shadow-lg transition-shadow"
               >
                 <div className="flex items-start justify-between mb-4">
-                  <div className="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
-                    <Film className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                  <div className="p-2 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg">
+                    <Film className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
                   </div>
                   {session.consensusReached ? (
                     <span className="flex items-center gap-1 text-sm text-green-600 dark:text-green-400">
@@ -421,10 +424,10 @@ export const DecisionReplayTheaterPage: React.FC = () => {
                   {currentFrame.type === 'round_change' && (
                     <div className="flex-1 flex items-center justify-center">
                       <div className="text-center">
-                        <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-purple-500/20 flex items-center justify-center">
-                          <Play className="w-10 h-10 text-purple-400" />
+                        <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                          <Play className="w-10 h-10 text-emerald-400" />
                         </div>
-                        <h2 className="text-2xl font-bold text-purple-400">{currentFrame.content}</h2>
+                        <h2 className="text-2xl font-bold text-emerald-400">{currentFrame.content}</h2>
                       </div>
                     </div>
                   )}
@@ -432,7 +435,7 @@ export const DecisionReplayTheaterPage: React.FC = () => {
                   {currentFrame.type === 'statement' && (
                     <div className="flex-1">
                       <div className="flex items-center gap-4 mb-6">
-                        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-2xl font-bold">
+                        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-600 to-emerald-400 flex items-center justify-center text-2xl font-bold">
                           {currentFrame.agentName?.charAt(6)}
                         </div>
                         <div>
@@ -504,7 +507,7 @@ export const DecisionReplayTheaterPage: React.FC = () => {
                 </div>
                 <div className="h-2 bg-gray-700 rounded-full overflow-hidden cursor-pointer">
                   <div
-                    className="h-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300"
+                    className="h-full bg-gradient-to-r from-emerald-500 to-emerald-400 transition-all duration-300"
                     style={{ width: `${progress}%` }}
                   />
                 </div>
@@ -526,7 +529,7 @@ export const DecisionReplayTheaterPage: React.FC = () => {
                 </button>
                 <button
                   onClick={() => setIsPlaying(!isPlaying)}
-                  className="p-4 bg-purple-600 hover:bg-purple-700 rounded-full transition-colors"
+                  className="p-4 bg-emerald-600 hover:bg-emerald-700 rounded-full transition-colors"
                 >
                   {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
                 </button>
@@ -552,7 +555,7 @@ export const DecisionReplayTheaterPage: React.FC = () => {
                       onClick={() => setPlaybackSpeed(speed)}
                       className={`px-2 py-1 rounded text-sm ${
                         playbackSpeed === speed
-                          ? 'bg-purple-600 text-white'
+                          ? 'bg-emerald-600 text-white'
                           : 'bg-gray-700 text-gray-400 hover:bg-gray-600'
                       }`}
                     >
@@ -577,7 +580,7 @@ export const DecisionReplayTheaterPage: React.FC = () => {
                   onClick={() => handleSeek(index)}
                   className={`w-full text-left p-3 rounded-lg transition-colors ${
                     index === currentFrameIndex
-                      ? 'bg-purple-600/30 border border-purple-500'
+                      ? 'bg-emerald-600/30 border border-emerald-500'
                       : 'hover:bg-gray-700'
                   }`}
                 >
@@ -587,7 +590,7 @@ export const DecisionReplayTheaterPage: React.FC = () => {
                       frame.type === 'dissent' ? 'bg-red-500' :
                       frame.type === 'consensus' ? 'bg-green-500' :
                       frame.type === 'citation' ? 'bg-yellow-500' :
-                      frame.type === 'round_change' ? 'bg-purple-500' :
+                      frame.type === 'round_change' ? 'bg-emerald-500' :
                       'bg-blue-500'
                     }`} />
                     <div className="flex-1 min-w-0">

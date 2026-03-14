@@ -22,6 +22,7 @@ import { Logo } from '../../components/brand/Logo';
 import { LanguageSwitcher } from '../../components/i18n/LanguageSwitcher';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTranslation } from '../../lib/i18n';
+import { tokenManager } from '../../lib/api/client';
 
 const WORKFLOW_STEPS = [
   { key: 'ask', icon: MessageCircle, color: 'text-sky-400', bg: 'bg-sky-500/10', border: 'border-sky-500/20' },
@@ -83,6 +84,7 @@ const SovereignLandingPage: React.FC = () => {
       const data = await res.json();
 
       if (data.success && data.data) {
+        tokenManager.setDemoSession(true);
         loginWithToken(data.data.accessToken, data.data.refreshToken, data.data.user || userPayload);
         navigate('/cortex');
         return;
@@ -92,6 +94,7 @@ const SovereignLandingPage: React.FC = () => {
     }
 
     // Fallback: create a client-side demo session so user always reaches /cortex
+    tokenManager.setDemoSession(true);
     loginWithToken('demo-token-' + Date.now(), 'demo-refresh-' + Date.now(), userPayload);
     navigate('/cortex');
   };

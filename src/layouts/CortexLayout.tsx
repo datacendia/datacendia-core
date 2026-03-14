@@ -249,6 +249,13 @@ const foundationGroup: NavGroup = {
       tooltip: 'Multi-Agent Deliberation Engine',
     },
     {
+      id: 'replay-theater',
+      label: 'Replay',
+      icon: Clock,
+      path: '/cortex/council/replay-theater',
+      tooltip: 'Decision Replay Theater — forensic decision playback',
+    },
+    {
       id: 'decide',
       label: 'DECIDE',
       icon: SearchCode,

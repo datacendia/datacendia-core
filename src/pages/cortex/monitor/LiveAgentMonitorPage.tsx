@@ -18,6 +18,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import apiClient from '../../../lib/api/client';
+import { ServiceInfoDropdown } from '../../../components/ui/ServiceInfoDropdown';
+import { pulseInfo } from '../../../config/serviceInfo';
 import { deterministicFloat, deterministicInt } from '../../../lib/deterministic';
 import { ReportSection, POIList, StatusBadge } from '../../../components/reports/DrillDownReportKit';
 import { MetricWithSparkline, AnomalyBanner } from '../../../components/reports/TrendSparklineKit';
@@ -421,6 +423,7 @@ export const LiveAgentMonitorPage: React.FC = () => {
                   CendiaPulse™
                 </h1>
                 <p className="text-sm text-gray-400">Real-time AI agent activity • Compliance enforcement • Risk scoring</p>
+                <ServiceInfoDropdown config={pulseInfo} className="mt-2" />
               </div>
             </div>
 

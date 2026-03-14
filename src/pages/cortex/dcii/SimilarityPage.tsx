@@ -18,6 +18,8 @@
 import React, { useState } from 'react';
 import { cn } from '../../../../lib/utils';
 import apiClient from '../../../lib/api/client';
+import { ServiceInfoDropdown } from '../../../components/ui/ServiceInfoDropdown';
+import { dciiSimilarityInfo } from '../../../config/serviceInfo';
 import {
   Search, Brain, CheckCircle, Clock, ChevronRight, BarChart3,
   Layers, Target, ThumbsUp, ThumbsDown, AlertTriangle, FileText,
@@ -80,6 +82,7 @@ export const SimilarityPage: React.FC = () => {
           <Layers className="w-5 h-5 text-violet-400" /> CendiaSimilarity™
         </h1>
         <p className="text-sm text-neutral-500 mt-0.5">Find similar past decisions, learn from outcomes, get recommendations</p>
+        <ServiceInfoDropdown config={dciiSimilarityInfo} className="mt-2" />
       </div>
 
       {/* Search */}

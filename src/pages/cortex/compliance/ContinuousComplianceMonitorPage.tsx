@@ -18,6 +18,8 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { api } from '../../../lib/api';
+import { ServiceInfoDropdown } from '../../../components/ui/ServiceInfoDropdown';
+import { complianceMonitorInfo } from '../../../config/serviceInfo';
 import {
   Shield,
   Activity,
@@ -241,6 +243,7 @@ export default function ContinuousComplianceMonitorPage() {
             <Shield className="w-8 h-8 text-indigo-500" />
             CendiaCompliance™
           </h1>
+          <ServiceInfoDropdown config={complianceMonitorInfo} className="mt-2" />
           <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
             Real-Time Compliance Monitoring
           </p>

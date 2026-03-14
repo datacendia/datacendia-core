@@ -17,6 +17,8 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ServiceInfoDropdown } from '../../../components/ui/ServiceInfoDropdown';
+import { governInfo } from '../../../config/serviceInfo';
 import {
   FileSignature,
   Shield,
@@ -265,6 +267,7 @@ export const DecisionPacketsPage: React.FC = () => {
               <p className="text-sm text-gray-400">
                 Browse, verify, and export cryptographically signed decisions
               </p>
+              <ServiceInfoDropdown config={governInfo} className="mt-2" />
             </div>
           </div>
           <button

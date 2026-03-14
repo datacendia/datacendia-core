@@ -15,6 +15,8 @@
 // =============================================================================
 
 import { useState, useEffect, useCallback } from 'react';
+import { ServiceInfoDropdown } from '../../../components/ui/ServiceInfoDropdown';
+import { gnosisInfo } from '../../../config/serviceInfo';
 import {
   GraduationCap,
   BookOpen,
@@ -661,6 +663,7 @@ const GnosisPage = () => {
             <div>
               <h1 className="text-3xl font-bold">CendiaGnosis™</h1>
               <p className="text-neutral-400">Sovereign Education Engine</p>
+              <ServiceInfoDropdown config={gnosisInfo} className="mt-2" />
             </div>
           </div>
 

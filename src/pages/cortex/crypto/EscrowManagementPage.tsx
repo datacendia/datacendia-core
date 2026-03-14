@@ -14,6 +14,8 @@
 
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { ServiceInfoDropdown } from '../../../components/ui/ServiceInfoDropdown';
+import { escrowInfo } from '../../../config/serviceInfo';
 import {
   Lock,
   Unlock,
@@ -203,6 +205,7 @@ export const EscrowManagementPage: React.FC = () => {
             CendiaEscrow™
           </h1>
           <p className="text-sm text-zinc-500 mt-1">Cryptographic decision escrow with Shamir Secret Sharing and VDF time-locks</p>
+          <ServiceInfoDropdown config={escrowInfo} className="mt-2" />
         </div>
         <button
           onClick={() => setShowCreateForm(!showCreateForm)}

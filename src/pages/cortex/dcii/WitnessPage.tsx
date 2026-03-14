@@ -18,6 +18,8 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '../../../../lib/utils';
 import apiClient from '../../../lib/api/client';
+import { ServiceInfoDropdown } from '../../../components/ui/ServiceInfoDropdown';
+import { dciiWitnessInfo } from '../../../config/serviceInfo';
 import {
   Eye, Shield, CheckCircle, Clock, Hash, Link2, FileCheck,
   RefreshCw, Download, ExternalLink, AlertTriangle, Lock,
@@ -81,6 +83,7 @@ export const WitnessPage: React.FC = () => {
             <Eye className="w-5 h-5 text-emerald-400" /> CendiaWitness™
           </h1>
           <p className="text-sm text-neutral-500 mt-0.5">Independent verification and blockchain-anchored cryptographic proofs</p>
+          <ServiceInfoDropdown config={dciiWitnessInfo} className="mt-2" />
         </div>
       </div>
 

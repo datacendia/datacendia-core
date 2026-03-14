@@ -17,6 +17,8 @@
 
 import React, { useState } from 'react';
 import { cn } from '../../../../lib/utils';
+import { ServiceInfoDropdown } from '../../../components/ui/ServiceInfoDropdown';
+import { dciiMemoryInfo } from '../../../config/serviceInfo';
 import {
   Brain, BookOpen, Users, Clock, Search, ChevronRight, Shield,
   FileText, Star, Archive, AlertTriangle, TrendingUp, Layers,
@@ -82,6 +84,7 @@ export const MemoryPage: React.FC = () => {
             <Archive className="w-5 h-5 text-rose-400" /> CendiaMemory™ / Pantheon
           </h1>
           <p className="text-sm text-neutral-500 mt-0.5">Institutional memory — knowledge that survives leadership transitions</p>
+          <ServiceInfoDropdown config={dciiMemoryInfo} className="mt-2" />
         </div>
       </div>
 

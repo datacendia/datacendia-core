@@ -14,6 +14,8 @@
 // =============================================================================
 
 import { useState, useEffect, useCallback } from 'react';
+import { ServiceInfoDropdown } from '../../../components/ui/ServiceInfoDropdown';
+import { echoInfo } from '../../../config/serviceInfo';
 import {
   Activity,
   TrendingUp,
@@ -225,6 +227,7 @@ const EchoPage = () => {
               CENDIAECHO<span style={{ fontWeight: 200, fontSize: '0.7em', opacity: 0.5, marginLeft: '2px' }}>™</span>
             </h1>
             <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Decision Outcome Engine</p>
+            <ServiceInfoDropdown config={echoInfo} className="mt-2" />
           </div>
         </div>
         <p className="text-neutral-500 mt-2 max-w-2xl">

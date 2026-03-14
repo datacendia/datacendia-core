@@ -14,6 +14,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { ServiceInfoDropdown } from '../../../components/ui/ServiceInfoDropdown';
+import { gapScannerInfo } from '../../../config/serviceInfo';
 import {
   Shield,
   AlertTriangle,
@@ -154,6 +156,7 @@ const GapScannerPage: React.FC = () => {
             CendiaGapScan™
           </h1>
           <p className="text-sm text-zinc-500 mt-1">Compliance gap analysis across {FRAMEWORKS.length} regulatory frameworks</p>
+          <ServiceInfoDropdown config={gapScannerInfo} className="mt-2" />
         </div>
         <div className="flex items-center gap-3">
           <button

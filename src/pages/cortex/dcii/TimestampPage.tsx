@@ -18,6 +18,8 @@
 import React, { useState } from 'react';
 import { cn } from '../../../../lib/utils';
 import apiClient from '../../../lib/api/client';
+import { ServiceInfoDropdown } from '../../../components/ui/ServiceInfoDropdown';
+import { dciiTimestampInfo } from '../../../config/serviceInfo';
 import {
   Clock, Shield, CheckCircle, AlertTriangle, Hash, Link2,
   RefreshCw, Download, Plus, Server, FileCheck, ExternalLink,
@@ -65,6 +67,7 @@ export const TimestampPage: React.FC = () => {
             <Clock className="w-5 h-5 text-cyan-400" /> CendiaTimestamp™
           </h1>
           <p className="text-sm text-neutral-500 mt-0.5">RFC 3161 compliant timestamps — multi-authority verification with blockchain anchoring</p>
+          <ServiceInfoDropdown config={dciiTimestampInfo} className="mt-2" />
         </div>
       </div>
 

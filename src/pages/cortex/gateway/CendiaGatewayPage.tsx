@@ -12,6 +12,8 @@
 // See LICENSE file for details.
 
 import React, { useState, useEffect, useCallback } from 'react';
+import { ServiceInfoDropdown } from '../../../components/ui/ServiceInfoDropdown';
+import { gatewayInfo } from '../../../config/serviceInfo';
 import {
   Shield, Activity, AlertTriangle, Lock, Eye, EyeOff, Search,
   Server, Zap, FileSignature, RefreshCw, ChevronRight,
@@ -307,6 +309,7 @@ export const CendiaGatewayPage: React.FC = () => {
               <p className="text-sm text-gray-400">
                 AI Governance Gateway — Every AI interaction logged, scanned, signed, and auditable
               </p>
+              <ServiceInfoDropdown config={gatewayInfo} className="mt-2" />
             </div>
           </div>
           <div className="flex items-center gap-3">

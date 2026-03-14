@@ -97,11 +97,29 @@ class TokenManager {
     if (typeof window !== 'undefined') {
       localStorage.removeItem('dc_access_token');
       localStorage.removeItem('dc_refresh_token');
+      localStorage.removeItem('dc_demo_session');
     }
   }
 
   isAuthenticated(): boolean {
     return !!this.accessToken;
+  }
+
+  isDemoSession(): boolean {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('dc_demo_session') === 'true';
+    }
+    return false;
+  }
+
+  setDemoSession(isDemo: boolean): void {
+    if (typeof window !== 'undefined') {
+      if (isDemo) {
+        localStorage.setItem('dc_demo_session', 'true');
+      } else {
+        localStorage.removeItem('dc_demo_session');
+      }
+    }
   }
 
   async refreshAccessToken(): Promise<boolean> {
@@ -221,6 +239,10 @@ class ApiClient {
           headers['Authorization'] = `Bearer ${tokenManager.getAccessToken()}`;
           response = await fetch(url, { ...options, headers });
         } else {
+          // Demo sessions: don't hard-redirect, let pages fall back to mock data
+          if (tokenManager.isDemoSession()) {
+            return { success: false, error: { code: 'DEMO_MODE', message: 'Demo session — using sample data' } };
+          }
           // Redirect to login
           window.location.href = '/login';
           return { success: false, error: { code: 'AUTH_EXPIRED', message: 'Session expired' } };

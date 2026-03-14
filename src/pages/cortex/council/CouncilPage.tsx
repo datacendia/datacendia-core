@@ -18,6 +18,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { ServiceInfoDropdown } from '../../../components/ui/ServiceInfoDropdown';
+import { councilInfo } from '../../../config/serviceInfo';
 import { cn, formatRelativeTime } from '../../../../lib/utils';
 import { councilApi } from '../../../lib/api';
 import { ollamaService, type DomainAgent } from '../../../lib/ollama';
@@ -1725,6 +1727,7 @@ export const CouncilPage: React.FC = () => {
             <p className="text-neutral-300 mt-1">
               {t('council.subtitle')} — 24 {t('council.pre_built_modes')}
             </p>
+            <ServiceInfoDropdown config={councilInfo} className="mt-2" />
           </div>
           <div className="flex items-center gap-3">
             {/* Active Deliberations Badge */}

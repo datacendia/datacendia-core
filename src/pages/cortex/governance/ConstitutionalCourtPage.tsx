@@ -17,6 +17,8 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import { ServiceInfoDropdown } from '../../../components/ui/ServiceInfoDropdown';
+import { governInfo } from '../../../config/serviceInfo';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -89,6 +91,7 @@ export default function ConstitutionalCourtPage() {
           <div>
             <h1 className="text-2xl font-bold">CendiaCourt™</h1>
             <p className="text-muted-foreground">Formal dispute resolution with precedent tracking</p>
+            <ServiceInfoDropdown config={governInfo} className="mt-2" />
           </div>
         </div>
         <Button>

@@ -17,6 +17,8 @@
 // =============================================================================
 
 import React, { useState, useMemo } from 'react';
+import { ServiceInfoDropdown } from '../../../components/ui/ServiceInfoDropdown';
+import { lensInfo } from '../../../config/serviceInfo';
 import {
   SearchCode,
   Eye,
@@ -246,6 +248,7 @@ export const CendiaLensPage: React.FC = () => {
               <div>
                 <h1 className="text-3xl font-bold tracking-tight">CendiaLens&trade;</h1>
                 <p className="text-indigo-300">AI Interpretability &amp; Explainability Dashboard</p>
+                <ServiceInfoDropdown config={lensInfo} className="mt-2" />
               </div>
             </div>
             <div className="hidden md:flex items-center gap-6 text-sm text-indigo-300">

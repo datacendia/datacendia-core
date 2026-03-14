@@ -71,6 +71,41 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const initAuth = async () => {
       if (tokenManager.isAuthenticated()) {
+        // Demo sessions: skip /auth/me validation — trust the locally stored user
+        if (tokenManager.isDemoSession()) {
+          const storedUser = localStorage.getItem('dc_demo_user');
+          if (storedUser) {
+            try {
+              const demoUser = JSON.parse(storedUser);
+              setState({
+                user: demoUser as User,
+                isAuthenticated: true,
+                isLoading: false,
+                isInitialized: true,
+                error: null,
+              });
+              return;
+            } catch {
+              // Malformed stored user, fall through
+            }
+          }
+          // Demo session but no stored user — still mark authenticated with defaults
+          setState({
+            user: {
+              id: 'usr-demo',
+              email: 'demo@datacendia.com',
+              name: 'Demo User',
+              role: 'ADMIN',
+              organizationId: '',
+            } as User,
+            isAuthenticated: true,
+            isLoading: false,
+            isInitialized: true,
+            error: null,
+          });
+          return;
+        }
+
         try {
           const response = await authApi.getCurrentUser();
           if (response.success && response.data) {
@@ -170,15 +205,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // Login with token — for demo access and SSO flows (no /auth/me round-trip)
   const loginWithToken = useCallback((accessToken: string, refreshToken: string, user: Partial<User>) => {
     tokenManager.setTokens({ accessToken, refreshToken, expiresIn: 86400 });
+    const fullUser = {
+      id: user.id || 'demo',
+      email: user.email || 'demo@datacendia.com',
+      name: user.name || 'Demo User',
+      role: user.role || 'ADMIN',
+      organizationId: (user as any).organizationId || '',
+      ...user,
+    } as User;
+    // Persist demo user for session recovery (initAuth skips /auth/me for demo sessions)
+    if (tokenManager.isDemoSession()) {
+      localStorage.setItem('dc_demo_user', JSON.stringify(fullUser));
+    }
     setState({
-      user: {
-        id: user.id || 'demo',
-        email: user.email || 'demo@datacendia.com',
-        name: user.name || 'Demo User',
-        role: user.role || 'ADMIN',
-        organizationId: (user as any).organizationId || '',
-        ...user,
-      } as User,
+      user: fullUser,
       isAuthenticated: true,
       isLoading: false,
       isInitialized: true,
@@ -238,6 +278,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     } catch {
       // Ignore logout errors, clear local state anyway
     }
+
+    localStorage.removeItem('dc_demo_user');
 
     setState({
       user: null,
