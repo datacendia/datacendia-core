@@ -217,9 +217,10 @@ router.post('/demo-access', async (req: Request, res: Response, next: NextFuncti
 
     const refreshToken = await generateRefreshToken(user.id);
 
-    // Store refresh token hash in session (required for token refresh to work)
+    // Store refresh token hash in session (required for token refresh to work).
+    // Run in the background so a transient DB error doesn't block demo access.
     const refreshTokenHash = await bcrypt.hash(refreshToken, 10);
-    await prisma.sessions.create({
+    prisma.sessions.create({
       data: {
         id: crypto.randomUUID(),
         user_id: user.id,
@@ -228,7 +229,7 @@ router.post('/demo-access', async (req: Request, res: Response, next: NextFuncti
         ip_address: req.ip,
         expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 30 days
       },
-    });
+    }).catch((err) => logger.warn('[Demo] Session creation failed (non-fatal):', err));
 
     // Update last login
     await prisma.users.update({

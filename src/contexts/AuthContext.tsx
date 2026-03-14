@@ -70,9 +70,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // Initialize auth state on mount
   useEffect(() => {
     const initAuth = async () => {
-      if (tokenManager.isAuthenticated()) {
+      // Snapshot the token at the start of the async check. If loginWithToken()
+      // is called while getCurrentUser() is in-flight (e.g. the user clicks "Try
+      // Live Demo" while a stale session check is pending), the token will have
+      // changed. In that case we bail out rather than overwriting the freshly
+      // established auth state.
+      const tokenAtStart = tokenManager.getAccessToken();
+      if (tokenAtStart) {
         try {
           const response = await authApi.getCurrentUser();
+          // If a new token was stored while we were waiting, someone else
+          // (loginWithToken / a successful refresh) already set up auth — don't
+          // override it.
+          if (tokenManager.getAccessToken() !== tokenAtStart) {
+            return;
+          }
           if (response.success && response.data) {
             setState({
               user: response.data as User,
@@ -93,6 +105,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             });
           }
         } catch {
+          if (tokenManager.getAccessToken() !== tokenAtStart) {
+            return;
+          }
           tokenManager.clearTokens();
           setState({
             user: null,

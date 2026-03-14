@@ -16,7 +16,7 @@
 
 // File: src/layouts/CortexLayout.tsx
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { cn } from '../../lib/utils';
 import { DataSourceProvider } from '../contexts/DataSourceContext';
@@ -978,11 +978,20 @@ const CortexLayoutInner: React.FC = () => {
   const [isEnterpriseDropdownOpen, setIsEnterpriseDropdownOpen] = useState(false);
   const [isSovereignDropdownOpen, setIsSovereignDropdownOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const [showSessionExpiredBanner, setShowSessionExpiredBanner] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const { t } = useLanguage();
   const { user, logout } = useAuth();
   const { isServiceEnabled, isInitialized } = useVerticalConfig();
+
+  // Listen for the session-expired event dispatched by the API client and show a
+  // soft re-authentication banner instead of hard-redirecting to the login page.
+  useEffect(() => {
+    const handleSessionExpired = () => setShowSessionExpiredBanner(true);
+    window.addEventListener('auth:session-expired', handleSessionExpired);
+    return () => window.removeEventListener('auth:session-expired', handleSessionExpired);
+  }, []);
 
   // Check if user is owner/admin (bypass all service filtering)
   const isOwnerOrAdmin = useMemo(() => {
@@ -1668,6 +1677,27 @@ const CortexLayoutInner: React.FC = () => {
 
           {/* Page Content */}
           <main className="flex-1 overflow-y-auto overflow-x-hidden bg-sovereign-base">
+            {/* Session-expired banner — shown when the API client detects a failed token
+                refresh. Keeps the user on the cortex page instead of redirecting to /login. */}
+            {showSessionExpiredBanner && (
+              <div className="flex items-center justify-between gap-4 px-4 py-2.5 bg-amber-900/40 border-b border-amber-700/40 text-sm text-amber-200">
+                <span>Your session has expired. Sign in again to keep working.</span>
+                <div className="flex items-center gap-3 flex-shrink-0">
+                  <button
+                    onClick={() => setShowSessionExpiredBanner(false)}
+                    className="text-amber-400 hover:text-amber-200 transition-colors"
+                  >
+                    Dismiss
+                  </button>
+                  <button
+                    onClick={() => navigate('/login')}
+                    className="px-3 py-1 bg-amber-600 hover:bg-amber-500 text-white rounded text-xs font-medium transition-colors"
+                  >
+                    Sign In
+                  </button>
+                </div>
+              </div>
+            )}
             {/* Breadcrumbs for deep navigation */}
             <div className="px-4 lg:px-6 py-2 border-b border-sovereign-border-subtle bg-sovereign-elevated/50">
               <Breadcrumbs className="text-slate-400" />
