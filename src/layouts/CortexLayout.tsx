@@ -46,6 +46,7 @@ import {
   Factory, Gavel, HeartPulse, Banknote, Building, ShieldCheck, Pill,
   Zap, Monitor, ShoppingCart, HardHat, Truck, Clapperboard,
   GraduationCap, Trophy, Columns, FileSignature, TrendingUp, Siren,
+  Compass, FileCheck,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -297,6 +298,20 @@ const foundationGroup: NavGroup = {
       icon: Infinity,
       path: '/cortex/graph',
       tooltip: 'Knowledge graph explorer — entity lineage & relationships',
+    },
+    {
+      id: 'pillars',
+      label: 'Pillars',
+      icon: Compass,
+      path: '/cortex/pillars/helm',
+      tooltip: '8 governance pillars — Helm, Lineage, Predict, Flow, Health, Guard, Ethics, Agents',
+    },
+    {
+      id: 'compliance',
+      label: 'Compliance',
+      icon: FileCheck,
+      path: '/cortex/compliance',
+      tooltip: 'Compliance readiness — framework status, checklists & audit prep',
     },
   ],
 };
