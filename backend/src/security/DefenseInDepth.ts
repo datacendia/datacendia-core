@@ -215,6 +215,23 @@ const ATTACK_PATTERNS = {
   ],
 };
 
+// Password fields that must never be scanned for attack patterns.
+// Passwords are bcrypt-hashed before any storage or query, so injection via
+// these fields is structurally impossible — and strong passwords routinely
+// contain characters (`;`, `#`, `$`, `--`, `()`, `*`) that match injection
+// patterns, causing false-positive blocks for legitimate registrations/logins.
+// Note: tokens and API keys are intentionally excluded from this set because
+// they may be stored or queried directly and should continue to be scanned.
+// Stored in lowercase to support case-insensitive matching.
+const PASSWORD_FIELD_NAMES = new Set([
+  'password',
+  'confirmpassword',
+  'newpassword',
+  'currentpassword',
+  'oldpassword',
+  'passwd',
+]);
+
 // Suspicious file extensions
 const DANGEROUS_EXTENSIONS = [
   '.exe', '.dll', '.bat', '.cmd', '.sh', '.ps1', '.vbs', '.js', '.jar',
@@ -423,6 +440,11 @@ function detectAttackPatterns(req: Request): AttackDetectionResult {
     if (!obj || typeof obj !== 'object') return null;
     
     for (const [key, value] of Object.entries(obj)) {
+      // Skip password fields — they are bcrypt-hashed before storage and Prisma
+      // parameterises all queries, making injection via them structurally impossible.
+      // Matching is case-insensitive to prevent bypass via 'Password' or 'PASSWORD'.
+      if (PASSWORD_FIELD_NAMES.has(key.toLowerCase())) continue;
+
       // Check key names (prototype pollution)
       if (ATTACK_PATTERNS.PROTOTYPE_POLLUTION.some(p => p.test(key))) {
         return {
