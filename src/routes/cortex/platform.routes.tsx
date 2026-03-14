@@ -63,6 +63,10 @@ const DataImportExportPage = lazy(() =>
 const ComplianceDashboard = lazy(() =>
   import('../../pages/cortex/compliance/ComplianceDashboard').then((m) => ({ default: m.default }))
 );
+const GapScannerPage = lazy(() => import('../../pages/cortex/compliance/GapScannerPage'));
+
+// Crypto
+const EscrowManagementPage = lazy(() => import('../../pages/cortex/crypto/EscrowManagementPage'));
 
 // Walkthroughs
 const WalkthroughsPage = lazy(() => import('../../pages/cortex/walkthroughs/WalkthroughsPage'));
@@ -170,6 +174,11 @@ export const cortexPlatformRoutes: RouteObject[] = [
 
   // Compliance
   { path: 'compliance', element: w(ComplianceDashboard) },
+  { path: 'compliance/gap-scanner', element: w(GapScannerPage) },
+  { path: 'compliance/gaps', element: w(GapScannerPage) },
+
+  // Crypto
+  { path: 'crypto/escrow', element: w(EscrowManagementPage) },
 
   // Walkthroughs
   { path: 'walkthroughs', element: w(WalkthroughsPage) },

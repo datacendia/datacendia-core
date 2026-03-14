@@ -20,6 +20,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { cn } from '../../../../lib/utils';
 import apiClient from '../../../lib/api/client';
+import { SimilarDecisionsPanel } from '../../../components/council/SimilarDecisionsPanel';
+import { RedTeamReportPanel } from '../../../components/council/RedTeamReportPanel';
 import {
   Brain, FileText, Download, ChevronRight, CheckCircle, AlertTriangle,
   XCircle, Users, Clock, Shield, BarChart3, Copy, Check, MessageSquare,
@@ -304,6 +306,12 @@ export const PostDeliberationPanel: React.FC = () => {
               ))}
             </div>
           )}
+
+          {/* CendiaRedTeam™ — Adversarial Analysis Report */}
+          <RedTeamReportPanel deliberationId={output.id} />
+
+          {/* CendiaPrecedent™ — Similar Past Decisions */}
+          <SimilarDecisionsPanel currentQuestion={output.title} deliberationId={output.id} />
         </div>
       )}
 

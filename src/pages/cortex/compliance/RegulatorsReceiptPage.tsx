@@ -19,6 +19,8 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { api } from '../../../lib/api';
 import { RedactionProvider, RedactionToggle, RedactedText, RedactedCode, useRedaction } from '../../../components/ui/RedactedText';
+import { EvidencePackageDownload } from '../../../components/crypto/EvidencePackageDownload';
+import { CendiaStampSeal } from '../../../components/crypto/CendiaStampSeal';
 import {
   FileText,
   Shield,
@@ -1003,6 +1005,25 @@ const RegulatorsReceiptPageInner: React.FC<{ embedded?: boolean }> = ({ embedded
                     <p className="text-emerald-700 dark:text-emerald-300">CendiaMediaAuth™ — C2PA provenance, deepfake detection, chain of custody tracking</p>
                   </div>
                 </div>
+              </div>
+            </div>
+          )}
+
+          {/* CendiaEvidence™ — Evidence Package Download */}
+          {receipt && (
+            <div className="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div className="lg:col-span-2">
+                <EvidencePackageDownload
+                  receiptId={receipt.receiptId}
+                  receiptData={receipt}
+                />
+              </div>
+              <div className="flex items-center justify-center">
+                <CendiaStampSeal
+                  receiptHash={receipt.evidenceChain?.merkleRoot || receipt.cryptographicProof?.receiptHash || ''}
+                  receiptId={receipt.receiptId}
+                  size="lg"
+                />
               </div>
             </div>
           )}

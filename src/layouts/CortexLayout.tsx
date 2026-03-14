@@ -293,6 +293,20 @@ const enterpriseGroup: NavGroup = {
       tooltip: 'Continuous compliance monitoring',
     },
     {
+      id: 'gap-scanner',
+      label: 'Gap Scan',
+      icon: Shield,
+      path: '/cortex/compliance/gap-scanner',
+      tooltip: 'CendiaGapScan™ — Compliance gap analysis across 8 frameworks',
+    },
+    {
+      id: 'escrow',
+      label: 'Escrow',
+      icon: Lock,
+      path: '/cortex/crypto/escrow',
+      tooltip: 'CendiaEscrow™ — Shamir secret sharing & VDF time-locks',
+    },
+    {
       id: 'govern',
       label: 'Govern',
       icon: Scale,

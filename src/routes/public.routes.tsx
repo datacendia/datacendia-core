@@ -54,6 +54,7 @@ const DemoRequestPage = lazy(() =>
   import('../pages/public').then((m) => ({ default: m.DemoRequestPage }))
 );
 const ShowcasesPage = lazy(() => import('../pages/public/ShowcasesPage'));
+const VerifyPage = lazy(() => import('../pages/public/VerifyPage'));
 const ServicesPage = lazy(() =>
   import('../pages/public/services-packages').then((m) => ({ default: m.ServicesPage }))
 );
@@ -140,6 +141,10 @@ export const publicRoutes: RouteObject[] = [
   { path: '/support', element: w(SupportPage) },
   { path: '/help', element: w(SupportPage) },
   { path: '/integrations', element: w(IntegrationsPage) },
+
+  // CendiaVerify — Public Verification Portal (no auth)
+  { path: '/verify', element: w(VerifyPage) },
+  { path: '/verify-receipt', element: w(VerifyPage) },
 
   // Apex Package
   { path: '/apex/forecast', element: w(CendiaForecastPage) },
