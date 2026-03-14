@@ -59,7 +59,11 @@ const DataImportExportPage = lazy(() =>
   import('../../pages/cortex/data').then((m) => ({ default: m.DataImportExportPage }))
 );
 
-// Compliance (Enterprise tier — gated in Community Edition)
+// Compliance — Foundation tier basic readiness page
+const ComplianceReadinessPage = lazy(() =>
+  import('../../pages/cortex/compliance/ComplianceReadinessPage').then((m) => ({ default: m.ComplianceReadinessPage }))
+);
+// Enterprise tier — full compliance suite (gated in Community Edition)
 // const ComplianceDashboard = lazy(() => import('../../pages/cortex/compliance/ComplianceDashboard').then((m) => ({ default: m.default })));
 // const GapScannerPage = lazy(() => import('../../pages/cortex/compliance/GapScannerPage'));
 
@@ -172,8 +176,8 @@ export const cortexPlatformRoutes: RouteObject[] = [
   // Upgrade Page
   { path: 'upgrade', element: w(UpgradePage) },
 
-  // Compliance (Enterprise tier — redirects to upgrade)
-  { path: 'compliance', element: w(UpgradePage) },
+  // Compliance — Foundation basic readiness page
+  { path: 'compliance', element: w(ComplianceReadinessPage) },
   { path: 'compliance/continuous-monitor', element: w(UpgradePage) },
   { path: 'compliance/gap-scanner', element: w(UpgradePage) },
   { path: 'compliance/gaps', element: w(UpgradePage) },

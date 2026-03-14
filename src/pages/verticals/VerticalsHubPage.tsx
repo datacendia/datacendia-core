@@ -22,7 +22,7 @@ import { MetricWithSparkline, AnomalyBanner } from '../../components/reports/Tre
 import { HeatmapCalendar, AuditTimeline } from '../../components/reports/HeatmapTimelineKit';
 import { ExportToolbar, ComparisonPanel, PDFExportButton } from '../../components/reports/ExportCompareKit';
 import { SavedViewManager } from '../../components/reports/InteractionKit';
-import { BarChart3 } from 'lucide-react';
+import { BarChart3, Lock, Crown } from 'lucide-react';
 
 // =============================================================================
 // TYPES
@@ -420,6 +420,24 @@ export const VerticalsHubPage: React.FC = () => {
             </p>
           </div>
 
+          {/* Strategic Tier Banner */}
+          <div className="mb-8 rounded-xl border border-amber-500/20 bg-amber-500/[0.04] p-4 flex items-center gap-4">
+            <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center shrink-0">
+              <Crown className="w-5 h-5 text-amber-400" />
+            </div>
+            <div className="flex-1">
+              <p className="text-sm font-semibold text-amber-300">Individual verticals require Strategic Edition</p>
+              <p className="text-xs text-neutral-400 mt-0.5">Browse the full catalog below. Upgrade to unlock specialized agents, compliance frameworks, and industry overlays.</p>
+            </div>
+            <a
+              href="mailto:enterprise@datacendia.com?subject=Datacendia%20Strategic%20Verticals%20Inquiry"
+              className="shrink-0 inline-flex items-center gap-2 px-4 py-2 bg-amber-500 text-black rounded-lg text-xs font-semibold hover:bg-amber-400 transition-colors"
+            >
+              <Crown className="w-3.5 h-3.5" />
+              Request Access
+            </a>
+          </div>
+
           {/* Market Stats */}
           <div className="grid grid-cols-4 gap-6 mb-12">
             {[
@@ -497,8 +515,14 @@ export const VerticalsHubPage: React.FC = () => {
                 tierColors[vertical.tier]
               } ${vertical.status !== 'coming-soon' ? 'cursor-pointer hover:scale-[1.02] hover:shadow-xl' : 'opacity-75'}`}
             >
-              {/* Tier Badge */}
-              <div className="absolute top-4 right-4">
+              {/* Tier Badge + Lock */}
+              <div className="absolute top-4 right-4 flex items-center gap-2">
+                {vertical.status !== 'coming-soon' && (
+                  <span className="inline-flex items-center gap-1 px-2 py-1 rounded text-[10px] font-medium bg-amber-500/15 text-amber-400 border border-amber-500/20">
+                    <Lock className="w-2.5 h-2.5" />
+                    Strategic
+                  </span>
+                )}
                 <span
                   className={`px-2 py-1 rounded text-xs font-medium ${
                     vertical.tier === 'priority'
@@ -586,8 +610,9 @@ export const VerticalsHubPage: React.FC = () => {
               {/* Hover CTA */}
               {hoveredVertical === vertical.id && vertical.status !== 'coming-soon' && (
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-900 to-transparent p-6 pt-12 rounded-b-2xl">
-                  <button className="w-full py-3 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors">
-                    Explore {vertical.name} →
+                  <button className="w-full py-3 bg-amber-500 text-black rounded-lg font-semibold hover:bg-amber-400 transition-colors flex items-center justify-center gap-2">
+                    <Lock className="w-3.5 h-3.5" />
+                    View {vertical.name} (Strategic Tier)
                   </button>
                 </div>
               )}
