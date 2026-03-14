@@ -166,8 +166,9 @@
 │  The Council™ · CendiaReplay™ · CendiaGateway™                     │
 │  DECIDE: Chronos · PreMortem · Ghost Board · Decision Debt         │
 │  DCII: Truth · Notary · Witness · Timestamp · Similarity · Memory  │
-│  Immutable Audit Ledger · Knowledge Graph · Ollama/Triton/NIM      │
-│  30 Vertical Frameworks · Docker Compose · Browser Extensions      │
-│  ServiceInfoDropdown (guided onboarding on Foundation pages)        │
+│  Pulse (monitoring) · Bridge (workflows) · Graph (knowledge)       │
+│  Compliance Readiness · Immutable Audit Ledger · Ollama/NIM        │
+│  26 Vertical Frameworks (hub teaser) · Docker Compose              │
+│  Browser Extensions · ServiceInfoDropdown (guided onboarding)      │
 └────────────────────────────────────────────────────────────────────┘
 ```
