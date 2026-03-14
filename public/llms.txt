@@ -4,7 +4,7 @@
 
 ## What is Datacendia?
 
-Datacendia is open-source decision governance infrastructure (DDGI). You pose a question — about a hire, a deal, a policy change, a risk — and a panel of domain-expert AI agents (CFO, CISO, Legal Counsel, Ethics Officer, Red Team) forces adversarial deliberation from every angle. Every argument, every dissent, every vote is permanently recorded and cryptographically signed. The output is a court-admissible decision record, not a chat log. Built on the DDGI Open Standard.
+Datacendia is open-source decision governance infrastructure (DDGI). You pose a question — about a hire, a deal, a policy change, a risk — and a panel of domain-expert AI agents (CFO, CISO, Legal Counsel, Ethics Officer, Red Team) forces adversarial deliberation from every angle. Every argument, every dissent, every vote is permanently recorded and cryptographically signed. The output is a forensic-grade, independently verifiable decision record, not a chat log. Built on the DDGI Open Standard.
 
 ## How is Datacendia different from ChatGPT?
 
@@ -12,7 +12,7 @@ ChatGPT is a conversation — one model, one perspective, no record. Datacendia 
 - Multiple domain-expert AI agents argue from different perspectives
 - Disagreements are recorded as first-class artifacts (structured dissent)
 - Every response is cryptographically signed (Ed25519), hashed into a Merkle tree, and RFC 3161-timestamped
-- The output is a court-admissible evidence bundle with full chain of custody
+- The output is a forensic-grade, independently verifiable evidence bundle with full chain of custody
 - A human must sign responsibility for every AI-assisted decision
 
 ## Two Editions (Commercial Open-Source / COSS)
@@ -26,7 +26,7 @@ ChatGPT is a conversation — one model, one perspective, no record. Datacendia 
 - Ed25519 cryptographic signatures on every AI response
 - Merkle tree hashing for tamper-proof decision chains
 - RFC 3161 timestamping for legal admissibility
-- Regulator's Receipt™ — one-click court-admissible evidence export
+- Regulator's Receipt™ — one-click forensic-grade, independently verifiable evidence export
 - Structured dissent recording — minority opinions are first-class artifacts
 - CendiaDCII™ — Decision Crisis Immunization Infrastructure with 9 governance primitives
 - CendiaIISS™ — Institutional Immune System Score for organizational resilience
@@ -82,7 +82,7 @@ Q: Can I verify the cryptographic signatures?
 A: Yes. Every decision packet includes Ed25519 signatures and RFC 3161 timestamps verifiable with standard openssl commands. No proprietary tools or vendor dependency.
 
 Q: What is the Regulator's Receipt?
-A: The Regulator's Receipt™ packages the complete decision record — all agent arguments, votes, dissent, Merkle proofs, signatures, timestamps, and chain of custody — into a single court-admissible evidence bundle.
+A: The Regulator's Receipt™ packages the complete decision record — all agent arguments, votes, dissent, Merkle proofs, signatures, timestamps, and chain of custody — into a single forensic-grade, independently verifiable evidence bundle.
 
 Q: How long does setup take?
 A: Core is cloud-hosted — sign up and run in seconds. Sovereign takes five minutes with Docker, or 1-2 days for enterprise deployments with SSO and air-gap configuration.
