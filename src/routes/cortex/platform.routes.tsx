@@ -177,6 +177,8 @@ export const cortexPlatformRoutes: RouteObject[] = [
   { path: 'compliance/continuous-monitor', element: w(UpgradePage) },
   { path: 'compliance/gap-scanner', element: w(UpgradePage) },
   { path: 'compliance/gaps', element: w(UpgradePage) },
+  { path: 'compliance/cross-jurisdiction', element: w(UpgradePage) },
+  { path: 'compliance/regulatory-sandbox', element: w(UpgradePage) },
 
   // Crypto (Enterprise tier — redirects to upgrade)
   { path: 'crypto/escrow', element: w(UpgradePage) },
@@ -194,6 +196,7 @@ export const cortexPlatformRoutes: RouteObject[] = [
   { path: 'security/access', element: w(AccessControlPage) },
   { path: 'security/audit', element: w(AuditLogPage) },
   { path: 'security/policies', element: w(SecurityPoliciesPage) },
+  { path: 'security/zkp', element: w(UpgradePage) },
 
   // Settings
   {
@@ -239,6 +242,10 @@ export const cortexPlatformRoutes: RouteObject[] = [
   { path: 'crown/echo', element: w(UpgradePage) },
   { path: 'crown/redteam', element: w(UpgradePage) },
   { path: 'crown/gnosis', element: w(UpgradePage) },
+
+  // Cortex Verticals (Strategic tier — redirects to upgrade)
+  { path: 'verticals/fifa', element: w(UpgradePage) },
+  { path: 'verticals/uefa', element: w(UpgradePage) },
 
   // Profile & Help (MVP)
   { path: 'profile', element: w(UserProfilePage) },

@@ -30,35 +30,37 @@ const DecisionDebtPage = lazy(() =>
 const LiveDemoPage = lazy(() =>
   import('../../pages/cortex/intelligence').then((m) => ({ default: m.LiveDemoPage }))
 );
-const RegulatoryAbsorbPage = lazy(() =>
-  import('../../pages/cortex/intelligence').then((m) => ({ default: m.RegulatoryAbsorbPage }))
-);
-const DecisionDNAPage = lazy(() =>
-  import('../../pages/cortex/intelligence').then((m) => ({ default: m.DecisionDNAPage }))
-);
+// Enterprise tier — actual pages commented out, gated to UpgradePage
+// const RegulatoryAbsorbPage = lazy(() =>
+//   import('../../pages/cortex/intelligence').then((m) => ({ default: m.RegulatoryAbsorbPage }))
+// );
+// const DecisionDNAPage = lazy(() =>
+//   import('../../pages/cortex/intelligence').then((m) => ({ default: m.DecisionDNAPage }))
+// );
 const ChronosPage = lazy(() =>
   import('../../pages/cortex/intelligence').then((m) => ({ default: m.ChronosPage }))
 );
-const CendiaLensPage = lazy(() =>
-  import('../../pages/cortex/intelligence').then((m) => ({ default: m.CendiaLensPage }))
-);
+// const CendiaLensPage = lazy(() =>
+//   import('../../pages/cortex/intelligence').then((m) => ({ default: m.CendiaLensPage }))
+// );
 
-// New DECIDE Pages
-const OrbitPage = lazy(() =>
-  import('../../pages/cortex/intelligence/OrbitPage').then((m) => ({ default: m.OrbitPage }))
-);
-const ConsensusBuilderPage = lazy(() =>
-  import('../../pages/cortex/intelligence/ConsensusBuilderPage').then((m) => ({ default: m.ConsensusBuilderPage }))
-);
-const WhatIfScenariosPage = lazy(() =>
-  import('../../pages/cortex/intelligence/WhatIfScenariosPage').then((m) => ({ default: m.WhatIfScenariosPage }))
-);
-const SynthesisEnginePage = lazy(() =>
-  import('../../pages/cortex/intelligence/SynthesisEnginePage').then((m) => ({ default: m.SynthesisEnginePage }))
-);
-const RDPServicePage = lazy(() =>
-  import('../../pages/cortex/intelligence/RDPServicePage').then((m) => ({ default: m.RDPServicePage }))
-);
+// Enterprise tier — advanced DECIDE pages commented out, gated to UpgradePage
+// const OrbitPage = lazy(() =>
+//   import('../../pages/cortex/intelligence/OrbitPage').then((m) => ({ default: m.OrbitPage }))
+// );
+// const ConsensusBuilderPage = lazy(() =>
+//   import('../../pages/cortex/intelligence/ConsensusBuilderPage').then((m) => ({ default: m.ConsensusBuilderPage }))
+// );
+// const WhatIfScenariosPage = lazy(() =>
+//   import('../../pages/cortex/intelligence/WhatIfScenariosPage').then((m) => ({ default: m.WhatIfScenariosPage }))
+// );
+// const SynthesisEnginePage = lazy(() =>
+//   import('../../pages/cortex/intelligence/SynthesisEnginePage').then((m) => ({ default: m.SynthesisEnginePage }))
+// );
+// const RDPServicePage = lazy(() =>
+//   import('../../pages/cortex/intelligence/RDPServicePage').then((m) => ({ default: m.RDPServicePage }))
+// );
+const UpgradePage = lazy(() => import('../../pages/cortex/UpgradePage'));
 
 const w = (Component: React.ComponentType) => (
   <SuspenseWrapper><Component /></SuspenseWrapper>
@@ -71,15 +73,16 @@ export const cortexIntelligenceRoutes: RouteObject[] = [
   { path: 'intelligence/ghost-board', element: w(GhostBoardPage) },
   { path: 'intelligence/decision-debt', element: w(DecisionDebtPage) },
   { path: 'intelligence/live-demo', element: w(LiveDemoPage) },
-  { path: 'intelligence/regulatory', element: w(RegulatoryAbsorbPage) },
-  { path: 'intelligence/decision-dna', element: w(DecisionDNAPage) },
   { path: 'intelligence/chronos', element: w(ChronosPage) },
-  { path: 'intelligence/lens', element: w(CendiaLensPage) },
 
-  // New DECIDE routes
-  { path: 'intelligence/orbit', element: w(OrbitPage) },
-  { path: 'intelligence/consensus', element: w(ConsensusBuilderPage) },
-  { path: 'intelligence/what-if', element: w(WhatIfScenariosPage) },
-  { path: 'intelligence/synthesis', element: w(SynthesisEnginePage) },
-  { path: 'intelligence/rdp', element: w(RDPServicePage) },
+  // Enterprise tier — advanced intelligence (gated to upgrade page)
+  { path: 'intelligence/regulatory', element: w(UpgradePage) },
+  { path: 'intelligence/decision-dna', element: w(UpgradePage) },
+  { path: 'intelligence/lens', element: w(UpgradePage) },
+  { path: 'intelligence/orbit', element: w(UpgradePage) },
+  { path: 'intelligence/consensus', element: w(UpgradePage) },
+  { path: 'intelligence/what-if', element: w(UpgradePage) },
+  { path: 'intelligence/synthesis', element: w(UpgradePage) },
+  { path: 'intelligence/rdp', element: w(UpgradePage) },
+  { path: 'intelligence/audit-provenance', element: w(UpgradePage) },
 ];

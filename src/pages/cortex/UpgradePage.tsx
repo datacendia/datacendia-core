@@ -58,24 +58,59 @@ const FOUNDATION_INCLUDED = [
 
 // Map route segments to friendly feature names
 const ROUTE_LABELS: Record<string, { name: string; tier: 'enterprise' | 'strategic' }> = {
+  // Enterprise — Compliance
   'compliance': { name: 'Continuous Compliance', tier: 'enterprise' },
   'gap-scanner': { name: 'CendiaGapScan', tier: 'enterprise' },
+  'cross-jurisdiction': { name: 'Cross-Jurisdiction Compliance', tier: 'enterprise' },
+  'regulatory-sandbox': { name: 'Regulatory Sandbox', tier: 'enterprise' },
+  // Enterprise — Crypto
   'escrow': { name: 'CendiaEscrow', tier: 'enterprise' },
+  // Enterprise — Governance
   'governance': { name: 'Governance', tier: 'enterprise' },
   'decision-packets': { name: 'Decision Packets', tier: 'enterprise' },
   'constitutional-court': { name: 'CendiaCourt', tier: 'enterprise' },
+  // Enterprise — Operations
   'monitor': { name: 'CendiaPulse', tier: 'enterprise' },
+  // Enterprise — Crown Jewels
   'crown': { name: 'Crown Jewels', tier: 'enterprise' },
   'echo': { name: 'CendiaEcho', tier: 'enterprise' },
   'redteam': { name: 'CendiaRedTeam', tier: 'enterprise' },
   'gnosis': { name: 'CendiaGnosis', tier: 'enterprise' },
+  // Enterprise — Advanced Intelligence
   'lens': { name: 'CendiaLens', tier: 'enterprise' },
+  'regulatory': { name: 'Regulatory Intelligence', tier: 'enterprise' },
+  'decision-dna': { name: 'Decision DNA', tier: 'enterprise' },
+  'orbit': { name: 'Decision Orbit', tier: 'enterprise' },
+  'consensus': { name: 'Consensus Builder', tier: 'enterprise' },
+  'what-if': { name: 'What-If Scenarios', tier: 'enterprise' },
+  'synthesis': { name: 'Synthesis Engine', tier: 'enterprise' },
+  'rdp': { name: 'R&D Pipeline', tier: 'enterprise' },
+  'audit-provenance': { name: 'Audit Provenance', tier: 'enterprise' },
+  // Enterprise — Security
+  'zkp': { name: 'Zero-Knowledge Proofs', tier: 'enterprise' },
+  // Enterprise — Sovereign
   'sovereign': { name: 'Sovereign', tier: 'enterprise' },
+  // Strategic
   'collapse': { name: 'COLLAPSE', tier: 'strategic' },
   'sgas': { name: 'SGAS', tier: 'strategic' },
   'verticals': { name: 'Verticals', tier: 'strategic' },
   'frontier': { name: 'Frontier', tier: 'strategic' },
   'sanctuary': { name: 'Frontier', tier: 'strategic' },
+  'fifa': { name: 'FIFA Governance Scenarios', tier: 'strategic' },
+  'uefa': { name: 'UEFA Walkthrough', tier: 'strategic' },
+  // Strategic — individual verticals
+  'healthcare': { name: 'Healthcare Vertical', tier: 'strategic' },
+  'financial-services': { name: 'Financial Services Vertical', tier: 'strategic' },
+  'government-legal': { name: 'Government & Legal Vertical', tier: 'strategic' },
+  'legal': { name: 'Legal Vertical', tier: 'strategic' },
+  'insurance': { name: 'Insurance Vertical', tier: 'strategic' },
+  'pharmaceutical': { name: 'Pharmaceutical Vertical', tier: 'strategic' },
+  'manufacturing': { name: 'Manufacturing Vertical', tier: 'strategic' },
+  'energy-utilities': { name: 'Energy & Utilities Vertical', tier: 'strategic' },
+  'technology': { name: 'Technology Vertical', tier: 'strategic' },
+  'sports': { name: 'Sports Vertical', tier: 'strategic' },
+  'aerospace': { name: 'Aerospace Vertical', tier: 'strategic' },
+  'eu-banking': { name: 'EU Banking Vertical', tier: 'strategic' },
 };
 
 function detectFeature(pathname: string): { name: string; tier: 'enterprise' | 'strategic' } {

@@ -18,7 +18,7 @@ export { GhostBoardPage } from './GhostBoardPage';
 export { DecisionDebtPage } from './DecisionDebtPage';
 export { LiveDemoPage } from './LiveDemoPage';
 export { RegulatoryAbsorbPage } from './RegulatoryAbsorbPage';
-export { RegulatoryAbsorbPageV2 } from './RegulatoryAbsorbPageV2';
+
 export { DecisionDNAPage } from './DecisionDNAPage';
 export { ChronosPage } from './ChronosPage';
 export { CendiaLensPage } from './CendiaLensPage';
