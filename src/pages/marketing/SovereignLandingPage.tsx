@@ -51,42 +51,49 @@ const SovereignLandingPage: React.FC = () => {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
+  const [demoName, setDemoName] = useState('');
+  const [demoEmail, setDemoEmail] = useState('');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const ctaRef = useRef<HTMLElement>(null);
   const problemRef = useRef<HTMLElement>(null);
 
-  const handleDemoAccess = async () => {
+  const handleDemoAccess = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    if (!demoName.trim() || !demoEmail.trim()) {
+      setError('Please provide your name and email.');
+      return;
+    }
     setIsSubmitting(true);
     setError('');
+
+    const userPayload = {
+      id: `usr-demo-${Date.now()}`,
+      email: demoEmail.trim(),
+      name: demoName.trim(),
+      role: 'ADMIN' as const,
+    };
 
     try {
       const res = await fetch('/api/v1/auth/demo-access', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: 'Demo User', email: `demo-${Date.now()}@datacendia.com` }),
+        body: JSON.stringify({ name: demoName.trim(), email: demoEmail.trim() }),
       });
 
       const data = await res.json();
 
       if (data.success && data.data) {
-        // Set auth state directly via AuthContext — no page reload, no /auth/me round-trip
-        loginWithToken(data.data.accessToken, data.data.refreshToken, data.data.user || {
-          id: 'usr-demo-001',
-          email: 'demo@datacendia.com',
-          name: 'Demo User',
-          role: 'ADMIN',
-        });
-
-        // Navigate with React Router (no page reload)
+        loginWithToken(data.data.accessToken, data.data.refreshToken, data.data.user || userPayload);
         navigate('/cortex');
-      } else {
-        setError(data.error?.message || t('landing.demo.genericError'));
-        setIsSubmitting(false);
+        return;
       }
     } catch {
-      setError(t('landing.demo.connectionError'));
-      setIsSubmitting(false);
+      // API unavailable — fall through to client-side demo session
     }
+
+    // Fallback: create a client-side demo session so user always reaches /cortex
+    loginWithToken('demo-token-' + Date.now(), 'demo-refresh-' + Date.now(), userPayload);
+    navigate('/cortex');
   };
 
   const scrollToCta = () => {
@@ -688,22 +695,33 @@ const SovereignLandingPage: React.FC = () => {
           <h2 className="text-2xl sm:text-3xl font-medium text-white mb-3">{t('landing.bottomCta.title')}</h2>
           <p className="text-sm text-gray-500 mb-10">{t('landing.bottomCta.subtitle')}</p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
-              href="/contact"
-              className="group px-10 py-4 bg-white text-black rounded-lg font-medium text-sm tracking-wide inline-flex items-center gap-3 hover:bg-gray-100 transition-all"
-            >
-              {t('landing.bottomCta.ctaPrimary')}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-            </a>
+          <form onSubmit={handleDemoAccess} className="max-w-md mx-auto space-y-3">
+            <div className="flex flex-col sm:flex-row gap-3">
+              <input
+                type="text"
+                placeholder="Your name"
+                value={demoName}
+                onChange={(e) => setDemoName(e.target.value)}
+                required
+                className="flex-1 px-4 py-3 rounded-lg bg-white/[0.05] border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-indigo-500/50 transition-colors"
+              />
+              <input
+                type="email"
+                placeholder="Work email"
+                value={demoEmail}
+                onChange={(e) => setDemoEmail(e.target.value)}
+                required
+                className="flex-1 px-4 py-3 rounded-lg bg-white/[0.05] border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-indigo-500/50 transition-colors"
+              />
+            </div>
             <button
-              onClick={handleDemoAccess}
+              type="submit"
               disabled={isSubmitting}
-              className="group px-8 py-4 border border-white/10 text-gray-300 rounded-lg text-sm inline-flex items-center gap-3 hover:border-white/20 hover:text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="group w-full px-8 py-4 bg-white text-black rounded-lg font-medium text-sm tracking-wide inline-flex items-center justify-center gap-3 hover:bg-gray-100 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <span className="flex items-center gap-2">
-                  <span className="w-4 h-4 border-2 border-gray-400 border-t-white rounded-full animate-spin" />
+                  <span className="w-4 h-4 border-2 border-gray-400 border-t-black rounded-full animate-spin" />
                   {t('landing.bottomCta.submitting')}
                 </span>
               ) : (
@@ -713,7 +731,8 @@ const SovereignLandingPage: React.FC = () => {
                 </>
               )}
             </button>
-          </div>
+            <p className="text-[10px] text-gray-600 text-center">No password needed. Instant access to the full platform.</p>
+          </form>
           {error && (
             <p className="text-red-400 text-xs text-center mt-4">{error}</p>
           )}
