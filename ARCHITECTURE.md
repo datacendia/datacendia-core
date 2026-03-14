@@ -134,34 +134,26 @@ Eight frontend components provide user-facing interfaces for the platform's cryp
 | **CendiaEscrow™** | `/cortex/crypto/escrow` | Shamir SSS + VDF time-lock management | Preview |
 | **CendiaReplay™** | `/cortex/council/replay-theater` | Decision deliberation playback theater | Preview |
 
-### Crown Jewels (v0.2.3+)
-Advanced AI governance services with full dashboards:
+### Enterprise Tier Services (gated in Community Edition)
+The following services are available in the full platform (`datacendia-components`) and show an upgrade page in the Community Edition:
 
-| Service | Route | Purpose | Maturity |
-|---------|-------|---------|----------|
-| **CendiaEcho™** | `/cortex/crown/echo` | Decision outcome tracking & feedback loops | Preview |
-| **CendiaGnosis™** | `/cortex/crown/gnosis` | Sovereign education engine & knowledge graph | Preview |
-| **CendiaRedTeam™** | `/cortex/crown/red-team` | Automated adversarial testing dashboard | Preview |
-| **CendiaPulse™** | `/cortex/monitor/live` | Real-time AI agent activity monitor | Preview |
-| **CendiaLens™** | `/cortex/intelligence/lens` | AI interpretability & explainability | Preview |
-| **CendiaChronos™** | `/cortex/intelligence/chronos` | Enterprise decision time machine | Preview |
-| **CendiaCompliance™** | `/cortex/compliance/continuous-monitor` | Continuous compliance monitoring | Preview |
-| **CendiaCourt™** | `/cortex/governance/constitutional-court` | Dispute resolution & precedent tracking | Preview |
-
-### DCII Service UIs (v0.2.3+)
-Decision Crisis Immunization Infrastructure with 6 specialized pages:
-
-| Service | Route | Purpose | Maturity |
-|---------|-------|---------|----------|
-| **CendiaMemory™** | `/cortex/dcii/memory` | Institutional memory & Pantheon | Preview |
-| **CendiaNotary™** | `/cortex/dcii/notary` | Digital notarization & key management | Preview |
-| **CendiaTruth™** | `/cortex/dcii/truth` | Claim verification & fact validation | Preview |
-| **CendiaWitness™** | `/cortex/dcii/witness` | Independent verification & blockchain proofs | Preview |
-| **CendiaSimilarity™** | `/cortex/dcii/similarity` | Semantic precedent search | Preview |
-| **CendiaTimestamp™** | `/cortex/dcii/timestamp` | RFC 3161 timestamp management | Preview |
+| Service | Route | Tier | Purpose |
+|---------|-------|------|----------|
+| **CendiaCompliance™** | `/cortex/compliance/continuous-monitor` | Enterprise | Continuous compliance monitoring |
+| **CendiaGapScan™** | `/cortex/compliance/gap-scanner` | Enterprise | Gap analysis across 8 frameworks |
+| **CendiaEscrow™** | `/cortex/crypto/escrow` | Enterprise | Shamir SSS + VDF time-locks |
+| **CendiaCourt™** | `/cortex/governance/constitutional-court` | Enterprise | Dispute resolution |
+| **CendiaPulse™** | `/cortex/monitor/live` | Enterprise | Real-time agent monitor |
+| **CendiaEcho™** | `/cortex/crown/echo` | Enterprise | Decision outcome tracking |
+| **CendiaGnosis™** | `/cortex/crown/gnosis` | Enterprise | Sovereign education engine |
+| **CendiaRedTeam™** | `/cortex/crown/red-team` | Enterprise | Automated adversarial testing |
+| **COLLAPSE** | `/cortex/sovereign/collapse` | Strategic | Policy stress-testing |
+| **SGAS** | `/cortex/sovereign/sgas` | Strategic | Synthetic governance agents |
+| **Verticals** | `/verticals` | Strategic | 30 full vertical packs |
+| **Frontier** | `/cortex/sovereign/sanctuary` | Strategic | Crisis bunker capabilities |
 
 ### ServiceInfoDropdown (v0.2.3+)
-Every service page listed above includes a collapsible `ServiceInfoDropdown` component that provides:
+Foundation tier service pages include a collapsible `ServiceInfoDropdown` component that provides:
 - **What it is** -- A concise description of the service
 - **What it does** -- Key capabilities as a bullet list
 - **How to use** -- Step-by-step instructions for each service
@@ -176,9 +168,9 @@ The 156 route files are organized into 14 logical domain routers (auth, council,
 
 ## Community vs Enterprise
 
-This is the **Community Edition** (Apache 2.0). Enterprise features (Apotheosis, Crucible, Collapse Orchestrator, 22 sovereign patterns, etc.) are available in the private `datacendia-components` repository. Enterprise navigation items in the UI redirect to an upgrade page.
+This is the **Community Edition** (Apache 2.0), which provides the **Foundation tier**: Council, Replay, DECIDE, DCII, and Gateway. Enterprise and Strategic tier features (Comply, Escrow, Crown Jewels, COLLAPSE, Sovereign patterns, etc.) are available in the full platform via the private `datacendia-components` repository.
 
-Note: As of v0.2.3, the community edition includes all 19 service dashboards (Council, Replay, Gateway, DCII x6, Crown Jewels x3, Compliance, Escrow, GapScan, Pulse, Lens, Governance x2). The enterprise edition adds sovereign deployment patterns, full vertical packs, and advanced orchestration services.
+Enterprise and Strategic navigation items in the sidebar show a lock icon and redirect to an upgrade page explaining what's available and how to get access.
 
 The backend uses dynamic `import()` inside try/catch for enterprise modules, so the community edition runs without them.
 

@@ -151,24 +151,23 @@
 
 ```
 ┌────────────────────────────────────────────────────────────────────┐
-│                        STRATEGIC (Components)                       │
-│  Collapse Orchestrator · SGAS · CendiaNation · Full Vertical Packs │
-│  Defense/Pharma/Govt Packs · Nation-Scale Deployment                │
+│                 STRATEGIC (datacendia-components)                    │
+│  COLLAPSE · SGAS · Full Vertical Packs · Frontier                  │
+│  CendiaNation · Defense/Pharma/Govt Packs                          │
 │  ──────────────────────────────────────────────────────────────────│
-│                        ENTERPRISE (Components)                      │
-│  22 Sovereign Patterns · 19 Co-Pilots · Autopilot · PQ-KMS         │
+│                ENTERPRISE (datacendia-components)                    │
+│  Stress-Test · Comply · Gap Scan · Escrow · Govern                 │
+│  Sovereign (22 patterns) · Operate (CendiaPulse)                   │
+│  Crown Jewels: Echo · Gnosis · RedTeam                             │
+│  15 C-Suite Agents · 35+ Modes · SSO/CAC/PIV                      │
 │  CendiaApotheosis · OmniTranslate · CendiaCrucible                │
-│  SSO/CAC/PIV · Full Agent Rosters (15 C-Suite)                     │
-│  35+ Deliberation Modes · Enterprise SLA & Support                  │
 │  ──────────────────────────────────────────────────────────────────│
-│                        FOUNDATION (Core — Apache 2.0)               │
-│  The Council™ · DECIDE™ · DCII™ · CendiaGateway™                  │
-│  CendiaReplay™ · CendiaChronos™ · CendiaLens™                     │
-│  DCII: Memory · Notary · Truth · Witness · Similarity · Timestamp  │
-│  Crown: Echo · Gnosis · RedTeam · Pulse · Compliance · Court       │
-│  Crypto: Verify · Evidence · GapScan · Stamp · Precedent · Escrow  │
-│  ServiceInfoDropdown (guided onboarding on all 19 service pages)   │
-│  30 Vertical Frameworks · Ollama/Triton/NIM · Docker Compose       │
-│  Browser Extensions (Chrome, Firefox, Safari)                       │
+│                 FOUNDATION (datacendia-core — Apache 2.0)            │
+│  The Council™ · CendiaReplay™ · CendiaGateway™                     │
+│  DECIDE: Chronos · PreMortem · Ghost Board · Decision Debt         │
+│  DCII: Truth · Notary · Witness · Timestamp · Similarity · Memory  │
+│  Immutable Audit Ledger · Knowledge Graph · Ollama/Triton/NIM      │
+│  30 Vertical Frameworks · Docker Compose · Browser Extensions      │
+│  ServiceInfoDropdown (guided onboarding on Foundation pages)        │
 └────────────────────────────────────────────────────────────────────┘
 ```

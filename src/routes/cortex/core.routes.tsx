@@ -106,9 +106,12 @@ const DeliberationVisualizationPage = lazy(() =>
 const DecisionReplayTheaterPage = lazy(() =>
   import('../../pages/cortex/council/DecisionReplayTheaterPage').then((m) => ({ default: m.default }))
 );
-const LiveAgentMonitorPage = lazy(() =>
-  import('../../pages/cortex/monitor/LiveAgentMonitorPage').then((m) => ({ default: m.default }))
-);
+
+// CendiaPulse Live Monitor (Enterprise tier — gated in Community Edition)
+// const LiveAgentMonitorPage = lazy(() =>
+//   import('../../pages/cortex/monitor/LiveAgentMonitorPage').then((m) => ({ default: m.default }))
+// );
+const UpgradePage = lazy(() => import('../../pages/cortex/UpgradePage'));
 
 const w = (Component: React.ComponentType) => (
   <SuspenseWrapper><Component /></SuspenseWrapper>
@@ -151,8 +154,8 @@ export const cortexCoreRoutes: RouteObject[] = [
   { path: 'bridge/approvals', element: w(ApprovalsPage) },
   { path: 'bridge/integrations', element: w(BridgeIntegrationsPage) },
 
-  // CendiaPulse™
-  { path: 'monitor/live', element: w(LiveAgentMonitorPage) },
+  // CendiaPulse™ (Enterprise tier — redirects to upgrade)
+  { path: 'monitor/live', element: w(UpgradePage) },
 
   // CendiaGateway — AI Governance Gateway
   { path: 'gateway', element: w(CendiaGatewayPage) },

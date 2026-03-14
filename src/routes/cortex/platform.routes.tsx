@@ -59,14 +59,15 @@ const DataImportExportPage = lazy(() =>
   import('../../pages/cortex/data').then((m) => ({ default: m.DataImportExportPage }))
 );
 
-// Compliance
-const ComplianceDashboard = lazy(() =>
-  import('../../pages/cortex/compliance/ComplianceDashboard').then((m) => ({ default: m.default }))
-);
-const GapScannerPage = lazy(() => import('../../pages/cortex/compliance/GapScannerPage'));
+// Compliance (Enterprise tier — gated in Community Edition)
+// const ComplianceDashboard = lazy(() => import('../../pages/cortex/compliance/ComplianceDashboard').then((m) => ({ default: m.default })));
+// const GapScannerPage = lazy(() => import('../../pages/cortex/compliance/GapScannerPage'));
 
-// Crypto
-const EscrowManagementPage = lazy(() => import('../../pages/cortex/crypto/EscrowManagementPage'));
+// Crypto (Enterprise tier — gated in Community Edition)
+// const EscrowManagementPage = lazy(() => import('../../pages/cortex/crypto/EscrowManagementPage'));
+
+// Upgrade Page (shown for Enterprise/Strategic features in Community Edition)
+const UpgradePage = lazy(() => import('../../pages/cortex/UpgradePage'));
 
 // Walkthroughs
 const WalkthroughsPage = lazy(() => import('../../pages/cortex/walkthroughs/WalkthroughsPage'));
@@ -117,14 +118,10 @@ const SettingsSecurityPage = lazy(() =>
   import('../../pages/settings').then((m) => ({ default: m.SecuritySettingsPage }))
 );
 
-// Crown Jewels
-const EchoPage = lazy(() => import('../../pages/cortex/crown').then((m) => ({ default: m.EchoPage })));
-const RedTeamPage = lazy(() =>
-  import('../../pages/cortex/crown').then((m) => ({ default: m.RedTeamPage }))
-);
-const GnosisPage = lazy(() =>
-  import('../../pages/cortex/crown').then((m) => ({ default: m.GnosisPage }))
-);
+// Crown Jewels (Enterprise tier — gated in Community Edition)
+// const EchoPage = lazy(() => import('../../pages/cortex/crown').then((m) => ({ default: m.EchoPage })));
+// const RedTeamPage = lazy(() => import('../../pages/cortex/crown').then((m) => ({ default: m.RedTeamPage })));
+// const GnosisPage = lazy(() => import('../../pages/cortex/crown').then((m) => ({ default: m.GnosisPage })));
 
 // Demo & Showcase
 const ShowcaseDashboard = lazy(() => import('../../components/showcase/ShowcaseDashboard'));
@@ -172,13 +169,22 @@ export const cortexPlatformRoutes: RouteObject[] = [
   { path: 'data/quality', element: w(DataQualityPage) },
   { path: 'data/import-export', element: w(DataImportExportPage) },
 
-  // Compliance
-  { path: 'compliance', element: w(ComplianceDashboard) },
-  { path: 'compliance/gap-scanner', element: w(GapScannerPage) },
-  { path: 'compliance/gaps', element: w(GapScannerPage) },
+  // Upgrade Page
+  { path: 'upgrade', element: w(UpgradePage) },
 
-  // Crypto
-  { path: 'crypto/escrow', element: w(EscrowManagementPage) },
+  // Compliance (Enterprise tier — redirects to upgrade)
+  { path: 'compliance', element: w(UpgradePage) },
+  { path: 'compliance/continuous-monitor', element: w(UpgradePage) },
+  { path: 'compliance/gap-scanner', element: w(UpgradePage) },
+  { path: 'compliance/gaps', element: w(UpgradePage) },
+
+  // Crypto (Enterprise tier — redirects to upgrade)
+  { path: 'crypto/escrow', element: w(UpgradePage) },
+
+  // Governance (Enterprise tier — redirects to upgrade)
+  { path: 'governance', element: w(UpgradePage) },
+  { path: 'governance/decision-packets', element: w(UpgradePage) },
+  { path: 'governance/constitutional-court', element: w(UpgradePage) },
 
   // Walkthroughs
   { path: 'walkthroughs', element: w(WalkthroughsPage) },
@@ -228,11 +234,11 @@ export const cortexPlatformRoutes: RouteObject[] = [
   { path: 'demo', element: w(DemoLauncherPage) },
   { path: 'demo/legal', element: w(LegalDemoShowcasePage) },
 
-  // Crown Jewels
-  { path: 'crown', element: <Navigate to="/cortex/crown/echo" replace /> },
-  { path: 'crown/echo', element: w(EchoPage) },
-  { path: 'crown/redteam', element: w(RedTeamPage) },
-  { path: 'crown/gnosis', element: w(GnosisPage) },
+  // Crown Jewels (Enterprise tier — redirects to upgrade)
+  { path: 'crown', element: w(UpgradePage) },
+  { path: 'crown/echo', element: w(UpgradePage) },
+  { path: 'crown/redteam', element: w(UpgradePage) },
+  { path: 'crown/gnosis', element: w(UpgradePage) },
 
   // Profile & Help (MVP)
   { path: 'profile', element: w(UserProfilePage) },

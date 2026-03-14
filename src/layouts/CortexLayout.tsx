@@ -215,6 +215,7 @@ interface NavItem {
   icon: React.FC | LucideIcon;
   path: string;
   tooltip?: string;
+  locked?: boolean;
 }
 
 interface NavGroup {
@@ -279,7 +280,7 @@ const foundationGroup: NavGroup = {
   ],
 };
 
-// ENTERPRISE TIER (Purple)
+// ENTERPRISE TIER (Purple) — requires datacendia-components
 const enterpriseGroup: NavGroup = {
   id: 'enterprise',
   label: 'ENTERPRISE',
@@ -291,34 +292,39 @@ const enterpriseGroup: NavGroup = {
       icon: Flame,
       path: '/cortex/upgrade',
       tooltip: 'Adversarial stress testing & red team',
+      locked: true,
     },
     {
       id: 'comply',
       label: 'Comply',
       icon: Activity,
-      path: '/cortex/compliance/continuous-monitor',
+      path: '/cortex/upgrade',
       tooltip: 'Continuous compliance monitoring',
+      locked: true,
     },
     {
       id: 'gap-scanner',
       label: 'Gap Scan',
       icon: Shield,
-      path: '/cortex/compliance/gap-scanner',
+      path: '/cortex/upgrade',
       tooltip: 'CendiaGapScan™ — Compliance gap analysis across 8 frameworks',
+      locked: true,
     },
     {
       id: 'escrow',
       label: 'Escrow',
       icon: Lock,
-      path: '/cortex/crypto/escrow',
+      path: '/cortex/upgrade',
       tooltip: 'CendiaEscrow™ — Shamir secret sharing & VDF time-locks',
+      locked: true,
     },
     {
       id: 'govern',
       label: 'Govern',
       icon: Scale,
-      path: '/cortex/governance/decision-packets',
+      path: '/cortex/upgrade',
       tooltip: 'DDGI & constitutional court',
+      locked: true,
     },
     {
       id: 'sovereign',
@@ -326,18 +332,20 @@ const enterpriseGroup: NavGroup = {
       icon: Lock,
       path: '/cortex/upgrade',
       tooltip: 'Sovereign deployment & data residency',
+      locked: true,
     },
     {
       id: 'operate',
       label: 'Operate',
       icon: Monitor,
-      path: '/cortex/monitor/live',
+      path: '/cortex/upgrade',
       tooltip: 'CendiaPulse live operations monitor',
+      locked: true,
     },
   ],
 };
 
-// STRATEGIC TIER (Gold)
+// STRATEGIC TIER (Gold) — requires datacendia-components
 const strategicGroup: NavGroup = {
   id: 'strategic',
   label: 'STRATEGIC',
@@ -347,29 +355,33 @@ const strategicGroup: NavGroup = {
       id: 'collapse',
       label: 'COLLAPSE',
       icon: AlertTriangle,
-      path: '/cortex/sovereign/collapse',
+      path: '/cortex/upgrade',
       tooltip: 'Adversarial policy stress-testing',
+      locked: true,
     },
     {
       id: 'sgas',
       label: 'SGAS',
       icon: Building2,
-      path: '/cortex/sovereign/sgas',
+      path: '/cortex/upgrade',
       tooltip: 'Synthetic Governance Agent System',
+      locked: true,
     },
     {
       id: 'verticals',
       label: 'Verticals',
       icon: Factory,
-      path: '/verticals',
-      tooltip: '17 industry verticals',
+      path: '/cortex/upgrade',
+      tooltip: '30 industry verticals with full agent packs',
+      locked: true,
     },
     {
       id: 'frontier',
       label: 'Frontier',
       icon: Globe,
-      path: '/cortex/sovereign/sanctuary',
+      path: '/cortex/upgrade',
       tooltip: 'Crisis bunker & frontier capabilities',
+      locked: true,
     },
   ],
 };
@@ -1141,22 +1153,29 @@ const CortexLayoutInner: React.FC = () => {
                   )}
                   {group.items.map((item) => {
                     const Icon = item.icon;
-                    const active = isActive(item.path);
+                    const active = isActive(item.path) && !item.locked;
                     return (
-                      <SimpleTooltip key={item.id} content={item.tooltip || item.label} position="right">
+                      <SimpleTooltip key={item.id} content={item.locked ? `${item.tooltip} (Enterprise)` : (item.tooltip || item.label)} position="right">
                         <button
                           onClick={() => navigate(item.path)}
                           className={cn(
                             'w-full flex items-center gap-3 px-3 py-2 rounded-lg',
                             'transition-colors text-sm',
-                            active
-                              ? `bg-sovereign-active text-white border-l-2 ${tc.active}`
-                              : 'text-gray-400 hover:bg-sovereign-hover hover:text-white'
+                            item.locked
+                              ? 'text-gray-600 hover:bg-sovereign-hover hover:text-gray-400'
+                              : active
+                                ? `bg-sovereign-active text-white border-l-2 ${tc.active}`
+                                : 'text-gray-400 hover:bg-sovereign-hover hover:text-white'
                           )}
                           title={isCollapsed ? item.label : undefined}
                         >
-                          <Icon className="w-5 h-5" />
-                          {!isCollapsed && <span>{item.labelKey ? t(item.labelKey) : item.label}</span>}
+                          <Icon className={cn('w-5 h-5', item.locked && 'opacity-40')} />
+                          {!isCollapsed && (
+                            <span className="flex-1 flex items-center justify-between">
+                              <span className={item.locked ? 'opacity-60' : ''}>{item.labelKey ? t(item.labelKey) : item.label}</span>
+                              {item.locked && <Lock className="w-3 h-3 opacity-30" />}
+                            </span>
+                          )}
                         </button>
                       </SimpleTooltip>
                     );

@@ -12,8 +12,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - **Decision Replay Theater Sidebar Entry** -- Added CendiaReplay™ to Foundation tier navigation in CortexLayout
 
 ### Changed
+- **COSS Tier Gating** -- Datacendia Core now correctly represents the **Foundation tier** only. Enterprise and Strategic tier features (Comply, Gap Scan, Escrow, Govern, Sovereign, Operate, Crown Jewels, COLLAPSE, SGAS, Verticals, Frontier) are gated behind an upgrade page. The full platform is available in `datacendia-components`
+- **UpgradePage Redesign** -- Rebuilt the enterprise upgrade page with tier-aware messaging (detects which feature the user tried to access), dual-column Enterprise/Strategic feature lists, Foundation tier summary, and on-brand dark theme with Tailwind + Lucide icons
+- **Sidebar Lock Icons** -- Enterprise and Strategic tier sidebar items now show dimmed text with a lock icon, all pointing to `/cortex/upgrade`. Foundation items remain fully accessible
+- **Route Gating** -- All Enterprise+Strategic routes (`/cortex/compliance/*`, `/cortex/crypto/escrow`, `/cortex/governance/*`, `/cortex/crown/*`, `/cortex/monitor/live`, `/cortex/sovereign/*`) now render the UpgradePage instead of actual components
 - **CendiaReplay™ Branding** -- Replaced purple/pink gradient theme with dark emerald/zinc theme to match platform design language across all UI elements (header, agent avatars, progress bars, playback controls, timeline)
 - **Demo Session Handling** -- Added `isDemoSession()`/`setDemoSession()` to TokenManager, skip hard `/login` redirect for demo sessions in API client, skip `/auth/me` backend validation for demo sessions in AuthContext, persist demo user to localStorage
+- **Documentation Overhaul** -- Updated README, ARCHITECTURE, COMMUNITY, CROSS-REPO-ARCHITECTURE, MATURITY-TAXONOMY, and CONTRIBUTING to reflect Foundation-only core with correct tier boundaries
 
 ### Fixed
 - **Demo Redirect Loop** -- Demo users were being redirected to `/login` after page refresh because client-generated tokens failed backend validation. Fixed by flagging demo sessions in localStorage and bypassing backend token verification
