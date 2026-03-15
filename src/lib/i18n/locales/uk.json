@@ -336,7 +336,6 @@
     "welcome": "З поверненням",
     "subtitle": "Ось як справи у {{company}} сьогодні",
     "health_score": "Здоров'я організації",
-    "healthScore": "Показник здоров'я",
     "data": "Дані",
     "operations": "Операції",
     "security": "Безпека",
@@ -348,7 +347,6 @@
     "warning": "Попередження",
     "info": "Інформація",
     "pending_approvals": "Очікують схвалення",
-    "pendingApprovals": "Очікують схвалення",
     "workflows": "Робочі процеси",
     "access": "Доступ",
     "budget": "Бюджет",
@@ -404,7 +402,6 @@
   },
   "button": {
     "view_all": "Показати все",
-    "viewAll": "Показати все",
     "viewMore": "Показати ще",
     "approve": "Схвалити",
     "reject": "Відхилити",
@@ -686,7 +683,9 @@
     "locked": "Заблоковано",
     "custom": "Користувацький",
     "unlock": "Розблокувати",
-    "required": "Обов'язково"
+    "required": "Обов'язково",
+    "owner": "Owner",
+    "admin": "Administrator"
   },
   "settings": {
     "title": "Налаштування",

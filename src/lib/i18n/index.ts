@@ -24,17 +24,22 @@ import React, {
   ReactNode,
 } from 'react';
 
-// Import all locales - 20 languages
+// Import all locales - 26 languages
 // The Americas
 import en from './locales/en.json';
 import es from './locales/es.json';
 import pt from './locales/pt.json';
+import ptBR from './locales/pt-BR.json';
 // Europe
 import fr from './locales/fr.json';
 import de from './locales/de.json';
 import it from './locales/it.json';
+import nl from './locales/nl.json';
 import pl from './locales/pl.json';
+import ru from './locales/ru.json';
+import sv from './locales/sv.json';
 import tr from './locales/tr.json';
+import uk from './locales/uk.json';
 // Middle East & Africa
 import ar from './locales/ar.json';
 import he from './locales/he.json';
@@ -61,12 +66,17 @@ export type SupportedLocale =
   | 'en'
   | 'es'
   | 'pt'
+  | 'pt-BR'
   // Europe
   | 'fr'
   | 'de'
   | 'it'
+  | 'nl'
   | 'pl'
+  | 'ru'
+  | 'sv'
   | 'tr'
+  | 'uk'
   // Middle East & Africa
   | 'ar'
   | 'he'
@@ -305,6 +315,51 @@ export const localeConfigs: Record<SupportedLocale, LocaleConfig> = {
     dateFormat: 'DD/MM/YYYY',
     numberFormat: { decimal: ',', thousands: '.', currency: 'VND' },
   },
+  'pt-BR': {
+    code: 'pt-BR',
+    name: 'Portuguese (Brazil)',
+    nativeName: 'Português (Brasil)',
+    direction: 'ltr',
+    flag: '🇧🇷',
+    dateFormat: 'DD/MM/YYYY',
+    numberFormat: { decimal: ',', thousands: '.', currency: 'BRL' },
+  },
+  nl: {
+    code: 'nl',
+    name: 'Dutch',
+    nativeName: 'Nederlands',
+    direction: 'ltr',
+    flag: '🇳🇱',
+    dateFormat: 'DD-MM-YYYY',
+    numberFormat: { decimal: ',', thousands: '.', currency: 'EUR' },
+  },
+  ru: {
+    code: 'ru',
+    name: 'Russian',
+    nativeName: 'Русский',
+    direction: 'ltr',
+    flag: '🇷🇺',
+    dateFormat: 'DD.MM.YYYY',
+    numberFormat: { decimal: ',', thousands: ' ', currency: 'RUB' },
+  },
+  sv: {
+    code: 'sv',
+    name: 'Swedish',
+    nativeName: 'Svenska',
+    direction: 'ltr',
+    flag: '🇸🇪',
+    dateFormat: 'YYYY-MM-DD',
+    numberFormat: { decimal: ',', thousands: ' ', currency: 'SEK' },
+  },
+  uk: {
+    code: 'uk',
+    name: 'Ukrainian',
+    nativeName: 'Українська',
+    direction: 'ltr',
+    flag: '🇺🇦',
+    dateFormat: 'DD.MM.YYYY',
+    numberFormat: { decimal: ',', thousands: ' ', currency: 'UAH' },
+  },
 };
 
 // =============================================================================
@@ -316,12 +371,17 @@ const translations: Record<SupportedLocale, Record<string, unknown>> = {
   en,
   es,
   pt,
+  'pt-BR': ptBR,
   // Europe
   fr,
   de,
   it,
+  nl,
   pl,
+  ru,
+  sv,
   tr,
+  uk,
   // Middle East & Africa
   ar,
   he,

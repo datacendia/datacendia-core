@@ -336,7 +336,6 @@
     "welcome": "ברוך שובך",
     "subtitle": "הנה מה המצב של {{company}} היום",
     "health_score": "בריאות הארגון",
-    "healthScore": "ציון בריאות",
     "data": "נתונים",
     "operations": "תפעול",
     "security": "אבטחה",
@@ -348,7 +347,6 @@
     "warning": "אזהרה",
     "info": "מידע",
     "pending_approvals": "אישורים ממתינים",
-    "pendingApprovals": "אישורים ממתינים",
     "workflows": "תהליכי עבודה",
     "access": "גישה",
     "budget": "תקציב",
@@ -404,7 +402,6 @@
   },
   "button": {
     "view_all": "הצג הכל",
-    "viewAll": "הצג הכל",
     "viewMore": "הצג עוד",
     "approve": "אשר",
     "reject": "דחה",
@@ -686,7 +683,9 @@
     "locked": "נעול",
     "custom": "מותאם",
     "unlock": "פתח",
-    "required": "נדרש"
+    "required": "נדרש",
+    "owner": "Owner",
+    "admin": "Administrator"
   },
   "settings": {
     "title": "הגדרות",
@@ -769,7 +768,12 @@
           "ספי התראות עם התראות אוטומטיות",
           "יצירת סיכומים ניהוליים"
         ],
-        "guidance": "התחל בהגדרת המדדים העיקריים שלך. ההגה עובד הכי טוב כשיש לך יעדים ברורים ומדידים."
+        "guidance": "התחל בהגדרת המדדים העיקריים שלך. ההגה עובד הכי טוב כשיש לך יעדים ברורים ומדידים.",
+        "useCases": [
+          "Track quarterly objectives across all departments",
+          "Monitor revenue metrics and growth indicators",
+          "Set and track strategic milestones"
+        ]
       },
       "lineage": {
         "title": "הייחוס - מעקב מקור נתונים",
@@ -781,7 +785,12 @@
           "ציון איכות נתונים בכל שלב",
           "יצירת תיעוד אוטומטי"
         ],
-        "guidance": "חבר תחילה את מקורות הנתונים שלך. הייחוס מגלה קשרים אוטומטית ובונה את מפת הנתונים שלך."
+        "guidance": "חבר תחילה את מקורות הנתונים שלך. הייחוס מגלה קשרים אוטומטית ובונה את מפת הנתונים שלך.",
+        "useCases": [
+          "Audit trail for regulatory compliance",
+          "Debug data discrepancies across systems",
+          "Plan system migrations with full impact visibility"
+        ]
       },
       "predict": {
         "title": "החיזוי - מנוע תחזיות AI",
@@ -793,7 +802,12 @@
           "ניתוח חשיבות תכונות",
           "מעקב ביצועי מודל"
         ],
-        "guidance": "תחזיות טובות דורשות נתונים טובים. התחל עם נתונים היסטוריים נקיים ותן לחיזוי ללמוד את הדפוסים שלך."
+        "guidance": "תחזיות טובות דורשות נתונים טובים. התחל עם נתונים היסטוריים נקיים ותן לחיזוי ללמוד את הדפוסים שלך.",
+        "useCases": [
+          "Forecast demand and optimize inventory",
+          "Predict customer churn before it happens",
+          "Model financial scenarios for strategic planning"
+        ]
       },
       "flow": {
         "title": "הזרימה - אוטומציה חכמה",
@@ -805,7 +819,12 @@
           "שרשראות אישור עם כללי הסלמה",
           "אנליטיקת תהליכי עבודה ואופטימיזציה"
         ],
-        "guidance": "מפה תחילה את התהליכים הידניים הנוכחיים שלך. הזרימה עוזרת לך לזהות הזדמנויות אוטומציה."
+        "guidance": "מפה תחילה את התהליכים הידניים הנוכחיים שלך. הזרימה עוזרת לך לזהות הזדמנויות אוטומציה.",
+        "useCases": [
+          "Automate data pipeline orchestration",
+          "Create intelligent approval workflows",
+          "Trigger actions based on AI insights"
+        ]
       },
       "health": {
         "title": "הבריאות - מעקב חיוניות מערכת",
@@ -817,7 +836,12 @@
           "כלי תכנון קיבולת",
           "מעקב זמן פעילות ו-SLA"
         ],
-        "guidance": "הגדר בדיקות בריאות למערכות הקריטיות שלך. הבריאות מצברת אותות לתת לך תצוגה מאוחדת."
+        "guidance": "הגדר בדיקות בריאות למערכות הקריטיות שלך. הבריאות מצברת אותות לתת לך תצוגה מאוחדת.",
+        "useCases": [
+          "Monitor system health across all platforms",
+          "Track incident response and resolution times",
+          "Plan infrastructure capacity proactively"
+        ]
       },
       "guard": {
         "title": "השומר - מגן אבטחה ותאימות",
@@ -829,7 +853,12 @@
           "מיפוי מסגרת תאימות",
           "ציון עמדת אבטחה"
         ],
-        "guidance": "הגדר את מדיניות האבטחה ודרישות התאימות שלך. השומר מנטר באופן רציף ומתריע על הפרות."
+        "guidance": "הגדר את מדיניות האבטחה ודרישות התאימות שלך. השומר מנטר באופן רציף ומתריע על הפרות.",
+        "useCases": [
+          "Enforce data access policies automatically",
+          "Generate compliance reports for auditors",
+          "Detect and respond to security threats"
+        ]
       },
       "ethics": {
         "title": "האתיקה - מרכז ממשל AI",
@@ -841,7 +870,12 @@
           "מעקב מדדי הוגנות",
           "מסלולי ביקורת החלטות"
         ],
-        "guidance": "קבע תחילה את העקרונות האתיים שלך. האתיקה עוזרת לך לתפעל אותם בכל מערכות ה-AI."
+        "guidance": "קבע תחילה את העקרונות האתיים שלך. האתיקה עוזרת לך לתפעל אותם בכל מערכות ה-AI.",
+        "useCases": [
+          "Review AI models for bias before deployment",
+          "Document decision rationale for compliance",
+          "Monitor fairness metrics in production"
+        ]
       },
       "agents": {
         "title": "הסוכנים - מועצת יועצי AI",
@@ -853,7 +887,12 @@
           "אינטראקציה בשפה טבעית",
           "למידה מתמשכת ממשוב"
         ],
-        "guidance": "בחר את הסוכן הנכון לשאלה שלך. לכל סוכן ידע מתמחה - המועצה יודעת מתי לשתף פעולה."
+        "guidance": "בחר את הסוכן הנכון לשאלה שלך. לכל סוכן ידע מתמחה - המועצה יודעת מתי לשתף פעולה.",
+        "useCases": [
+          "Get strategic advice from business analysts",
+          "Consult technical experts for architecture decisions",
+          "Receive compliance guidance from regulatory specialists"
+        ]
       }
     },
     "spaces": {
@@ -1026,6 +1065,70 @@
           "תיעוד מוכן לביקורת"
         ],
         "guidance": "בחר כל החלטת AI בגלאס. הוא מפרק את הגורמים, מראה חלופות ומסביר את ההיגיון."
+      },
+      "notary": {
+        "title": "CendiaNotary™ - Cryptographic Signing Authority",
+        "summary": "Signs and authenticates all decisions with customer-owned keys. Non-repudiation for every action.",
+        "features": [
+          "AWS KMS, Azure Key Vault, HashiCorp Vault integration",
+          "Air-gapped local key storage",
+          "Automatic key rotation with audit trail",
+          "Hardware Security Module (HSM) support",
+          "Zero-trust: Datacendia never sees your keys"
+        ],
+        "guidance": "Configure your preferred KMS provider. Notary signs all decision packets, audit entries, and evidence bundles with cryptographic proof.",
+        "tabs": {
+          "overview": "Overview",
+          "keys": "Keys",
+          "providers": "Providers",
+          "audit": "Audit Log",
+          "settings": "Settings"
+        },
+        "status": {
+          "active": "Active",
+          "pendingRotation": "Pending Rotation",
+          "disabled": "Disabled",
+          "scheduledDeletion": "Scheduled Deletion"
+        },
+        "actions": {
+          "generateKey": "Generate Key",
+          "importKey": "Import Key",
+          "rotateKey": "Rotate Key",
+          "exportPublicKey": "Export Public Key",
+          "exportBackup": "Export Encrypted Backup"
+        }
+      },
+      "vault": {
+        "title": "CendiaVault™ - Unified Evidence Storage",
+        "summary": "Secure storage for decision packets, audit ledger, evidence bundles, and signed reports. Immutable, searchable, and retention-policy compliant.",
+        "features": [
+          "Decision packet archive",
+          "Immutable audit ledger",
+          "Evidence bundle storage",
+          "Signed report repository",
+          "Legal hold management",
+          "Retention policy enforcement"
+        ],
+        "guidance": "All artifacts from Council decisions, audit events, and compliance exports are automatically stored here with cryptographic integrity.",
+        "tabs": {
+          "browse": "Browse",
+          "search": "Search",
+          "legalHold": "Legal Hold",
+          "stats": "Analytics"
+        },
+        "types": {
+          "decisionPacket": "Decision Packet",
+          "auditEntry": "Audit Entry",
+          "evidenceBundle": "Evidence Bundle",
+          "signedReport": "Signed Report"
+        },
+        "actions": {
+          "download": "Download",
+          "verify": "Verify Integrity",
+          "export": "Export",
+          "setLegalHold": "Set Legal Hold",
+          "releaseLegalHold": "Release Legal Hold"
+        }
       }
     },
     "enterprise": {
@@ -1039,7 +1142,13 @@
           "איסור דפוסי החלטות",
           "מעקב ציון Apotheosis"
         ],
-        "guidance": "Apotheosis פועל כל לילה, תוקף את הארגון שלך מ-1000+ זוויות, מתקן את מה שהוא מוצא ועושה אותך חסין לצמיתות לטעויות שלך."
+        "guidance": "Apotheosis פועל כל לילה, תוקף את הארגון שלך מ-1000+ זוויות, מתקן את מה שהוא מוצא ועושה אותך חסין לצמיתות לטעויות שלך.",
+        "useCases": [
+          "Continuous organizational improvement",
+          "Proactive risk mitigation",
+          "Automated compliance hardening",
+          "Executive decision support"
+        ]
       },
       "dissent": {
         "title": "CendiaDissent™ - התנגדות מוגנת",
@@ -1051,7 +1160,13 @@
           "גילוי נקמה והגנה",
           "מעקב דיוק התנגדות"
         ],
-        "guidance": "הגש התנגדות נגד כל החלטה שאתה לא מסכים איתה. ההתנגדות שלך תירשם לצמיתות, תאושר ותעקוב אחר דיוקה לאורך זמן."
+        "guidance": "הגש התנגדות נגד כל החלטה שאתה לא מסכים איתה. ההתנגדות שלך תירשם לצמיתות, תאושר ותעקוב אחר דיוקה לאורך זמן.",
+        "useCases": [
+          "Ensuring minority voices are heard",
+          "Creating organizational memory",
+          "Protecting whistleblowers",
+          "Improving decision quality"
+        ]
       },
       "connectors": {
         "title": "מחברי נתונים ארגוניים",
@@ -1148,6 +1263,24 @@
           "BYO-keys למתאמים מוסדרים"
         ],
         "guidance": "בחר סוג מתאם שמתאים לדפוס האינטגרציה שלך. כל מתאם מחיל אוטומטית רמות סיכון, רישום ראיות ובקרות מכסה."
+      },
+      "responsibility": {
+        "title": "CendiaResponsibility™ - Human Accountability Layer",
+        "summary": "Explicit human accountability for every AI-assisted decision — signed, sealed, and irrevocable.",
+        "features": [
+          "TPM 2.0 hardware-signed accountability records",
+          "Explicit risk acceptance with failure categories",
+          "Delegation chains with cryptographic proof",
+          "Boardroom-grade liability reports",
+          "Independent verification without trusting Datacendia"
+        ],
+        "useCases": [
+          "Board governance for AI decisions",
+          "Regulatory compliance documentation",
+          "Legal discovery readiness",
+          "Executive risk acceptance"
+        ],
+        "guidance": "When AI makes a recommendation, a human must sign accountability. This creates an immutable record of who accepted which risks and why."
       }
     }
   },

@@ -336,7 +336,6 @@
     "welcome": "Welkom terug",
     "subtitle": "Hier is hoe {{company}} het vandaag doet",
     "health_score": "Organisatiegezondheid",
-    "healthScore": "Gezondheidsscore",
     "data": "Data",
     "operations": "Operaties",
     "security": "Beveiliging",
@@ -348,7 +347,6 @@
     "warning": "Waarschuwing",
     "info": "Info",
     "pending_approvals": "Openstaande goedkeuringen",
-    "pendingApprovals": "Openstaande goedkeuringen",
     "workflows": "Workflows",
     "access": "Toegang",
     "budget": "Budget",
@@ -404,7 +402,6 @@
   },
   "button": {
     "view_all": "Alles bekijken",
-    "viewAll": "Alles bekijken",
     "viewMore": "Meer bekijken",
     "approve": "Goedkeuren",
     "reject": "Afwijzen",
@@ -686,7 +683,9 @@
     "locked": "Vergrendeld",
     "custom": "Aangepast",
     "unlock": "Ontgrendelen",
-    "required": "Verplicht"
+    "required": "Verplicht",
+    "owner": "Owner",
+    "admin": "Administrator"
   },
   "settings": {
     "title": "Instellingen",

@@ -336,7 +336,6 @@
     "welcome": "Willkommen zurück",
     "subtitle": "So geht es {{company}} heute",
     "health_score": "Organisationsgesundheit",
-    "healthScore": "Gesundheitswert",
     "data": "Daten",
     "operations": "Betrieb",
     "security": "Sicherheit",
@@ -348,7 +347,6 @@
     "warning": "Warnung",
     "info": "Information",
     "pending_approvals": "Ausstehende Genehmigungen",
-    "pendingApprovals": "Ausstehende Genehmigungen",
     "workflows": "Workflows",
     "access": "Zugriff",
     "budget": "Budget",
@@ -404,7 +402,6 @@
   },
   "button": {
     "view_all": "Alle anzeigen",
-    "viewAll": "Alle anzeigen",
     "viewMore": "Mehr anzeigen",
     "approve": "Genehmigen",
     "reject": "Ablehnen",
@@ -686,7 +683,9 @@
     "locked": "Gesperrt",
     "custom": "Benutzerdefiniert",
     "unlock": "Entsperren",
-    "required": "Erforderlich"
+    "required": "Erforderlich",
+    "owner": "Owner",
+    "admin": "Administrator"
   },
   "settings": {
     "title": "Einstellungen",
@@ -1066,6 +1065,70 @@
           "Audit-bereite Dokumentation"
         ],
         "guidance": "Wählen Sie eine KI-Entscheidung in Glass. Es schlüsselt Faktoren auf, zeigt Alternativen und erklärt die Logik."
+      },
+      "notary": {
+        "title": "CendiaNotary™ - Cryptographic Signing Authority",
+        "summary": "Signs and authenticates all decisions with customer-owned keys. Non-repudiation for every action.",
+        "features": [
+          "AWS KMS, Azure Key Vault, HashiCorp Vault integration",
+          "Air-gapped local key storage",
+          "Automatic key rotation with audit trail",
+          "Hardware Security Module (HSM) support",
+          "Zero-trust: Datacendia never sees your keys"
+        ],
+        "guidance": "Configure your preferred KMS provider. Notary signs all decision packets, audit entries, and evidence bundles with cryptographic proof.",
+        "tabs": {
+          "overview": "Overview",
+          "keys": "Keys",
+          "providers": "Providers",
+          "audit": "Audit Log",
+          "settings": "Settings"
+        },
+        "status": {
+          "active": "Active",
+          "pendingRotation": "Pending Rotation",
+          "disabled": "Disabled",
+          "scheduledDeletion": "Scheduled Deletion"
+        },
+        "actions": {
+          "generateKey": "Generate Key",
+          "importKey": "Import Key",
+          "rotateKey": "Rotate Key",
+          "exportPublicKey": "Export Public Key",
+          "exportBackup": "Export Encrypted Backup"
+        }
+      },
+      "vault": {
+        "title": "CendiaVault™ - Unified Evidence Storage",
+        "summary": "Secure storage for decision packets, audit ledger, evidence bundles, and signed reports. Immutable, searchable, and retention-policy compliant.",
+        "features": [
+          "Decision packet archive",
+          "Immutable audit ledger",
+          "Evidence bundle storage",
+          "Signed report repository",
+          "Legal hold management",
+          "Retention policy enforcement"
+        ],
+        "guidance": "All artifacts from Council decisions, audit events, and compliance exports are automatically stored here with cryptographic integrity.",
+        "tabs": {
+          "browse": "Browse",
+          "search": "Search",
+          "legalHold": "Legal Hold",
+          "stats": "Analytics"
+        },
+        "types": {
+          "decisionPacket": "Decision Packet",
+          "auditEntry": "Audit Entry",
+          "evidenceBundle": "Evidence Bundle",
+          "signedReport": "Signed Report"
+        },
+        "actions": {
+          "download": "Download",
+          "verify": "Verify Integrity",
+          "export": "Export",
+          "setLegalHold": "Set Legal Hold",
+          "releaseLegalHold": "Release Legal Hold"
+        }
       }
     },
     "enterprise": {
@@ -1200,6 +1263,24 @@
           "BYO-Keys für regulierte Adapter"
         ],
         "guidance": "Wählen Sie den Adaptertyp, der zu Ihrem Integrationsmuster passt. Jeder Adapter erzwingt automatisch Risikostufen, Beweisprotokollierung und Quota-Kontrollen."
+      },
+      "responsibility": {
+        "title": "CendiaResponsibility™ - Human Accountability Layer",
+        "summary": "Explicit human accountability for every AI-assisted decision — signed, sealed, and irrevocable.",
+        "features": [
+          "TPM 2.0 hardware-signed accountability records",
+          "Explicit risk acceptance with failure categories",
+          "Delegation chains with cryptographic proof",
+          "Boardroom-grade liability reports",
+          "Independent verification without trusting Datacendia"
+        ],
+        "useCases": [
+          "Board governance for AI decisions",
+          "Regulatory compliance documentation",
+          "Legal discovery readiness",
+          "Executive risk acceptance"
+        ],
+        "guidance": "When AI makes a recommendation, a human must sign accountability. This creates an immutable record of who accepted which risks and why."
       }
     }
   },

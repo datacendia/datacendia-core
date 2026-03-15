@@ -107,6 +107,23 @@
         "passwordMismatch": "Şifreler eşleşmiyor",
         "acceptTerms": "Şartları kabul etmelisiniz",
         "registrationFailed": "Kayıt başarısız. Lütfen tekrar deneyin."
+      },
+      "step1Subtitle": "Enter your details to get started",
+      "step2Subtitle": "Set up your password",
+      "signUpWith": "Sign up with",
+      "features": {
+        "council": "AI Council - Get strategic advice from specialized AI agents",
+        "graph": "Graph Explorer - Visualize all your data relationships",
+        "lens": "The Lens - Forecast future outcomes with ML",
+        "bridge": "The Bridge - Automate workflows across systems"
+      },
+      "passwordRequirements": {
+        "title": "Password must contain:",
+        "minLength": "At least 12 characters",
+        "uppercase": "One uppercase letter",
+        "lowercase": "One lowercase letter",
+        "number": "One number",
+        "special": "One special character"
       }
     },
     "forgotPassword": {
@@ -115,13 +132,19 @@
       "email": "E-posta adresi",
       "sendResetLink": "Bağlantı Gönder",
       "backToLogin": "Girişe dön",
-      "checkEmail": "E-postanızı kontrol edin"
+      "checkEmail": "E-postanızı kontrol edin",
+      "submitButton": "Send Reset Link",
+      "emailSentTo": "If an account exists for",
+      "linkExpiry": "The link will expire in 1 hour. If you don't see the email, check your spam folder.",
+      "success": "If an account exists, you'll receive an email shortly."
     },
     "mfa": {
       "title": "İki faktörlü kimlik doğrulama",
       "subtitle": "Doğrulama uygulamanızdan kodu girin.",
       "code": "Doğrulama kodu",
-      "submitButton": "Doğrula"
+      "submitButton": "Doğrula",
+      "useBackupCode": "Use a backup code",
+      "resendCode": "Resend code"
     }
   },
   "home": {
@@ -134,17 +157,32 @@
     },
     "problem": {
       "title": "Kurumsal Zeka Sorunu",
-      "subtitle": "Kuruluşlar parçalanmış veriler ve izole araçlarla mücadele ediyor"
+      "subtitle": "Kuruluşlar parçalanmış veriler ve izole araçlarla mücadele ediyor",
+      "dataChaos": {
+        "title": "Data Chaos",
+        "description": "Your data lives in dozens of systems with no unified view. Nobody knows what's true."
+      },
+      "toolSprawl": {
+        "title": "Tool Sprawl",
+        "description": "BI tools, analytics platforms, dashboards — none of them talk to each other."
+      },
+      "noForesight": {
+        "title": "No Foresight",
+        "description": "You're always looking in the rear-view mirror. What about what's coming next?"
+      }
     },
     "solution": {
-      "title": "Cortex: Zeka Komuta Merkeziniz"
+      "title": "Cortex: Zeka Komuta Merkeziniz",
+      "subtitle": "Five integrated spaces that give you complete visibility and control"
     },
     "pillars": {
-      "title": "Egemen Zekanın 8 Sütunu"
+      "title": "Egemen Zekanın 8 Sütunu",
+      "subtitle": "Every capability you need, working together as one"
     },
     "cta": {
       "title": "Zekanızın kontrolünü almaya hazır mısınız?",
-      "button": "Demo Planla"
+      "button": "Demo Planla",
+      "subtitle": "See how Datacendia can transform your organization's decision-making"
     }
   },
   "spaces": {
@@ -172,35 +210,43 @@
   "pillars": {
     "helm": {
       "name": "Dümen",
-      "description": "Stratejik karar desteği"
+      "description": "Stratejik karar desteği",
+      "longDescription": "Your command center for strategic decisions. Track KPIs, monitor performance, and steer your organization with confidence."
     },
     "lineage": {
       "name": "Soy",
-      "description": "Her veri noktasını kaynağına kadar izleyin"
+      "description": "Her veri noktasını kaynağına kadar izleyin",
+      "longDescription": "Complete data provenance tracking. Know where your data comes from, how it transforms, and where it goes."
     },
     "predict": {
       "name": "Tahmin",
-      "description": "AI destekli öngörüler"
+      "description": "AI destekli öngörüler",
+      "longDescription": "Machine learning models that forecast trends, detect anomalies, and surface insights before they become obvious."
     },
     "flow": {
       "name": "Akış",
-      "description": "Otomatik iş akışları"
+      "description": "Otomatik iş akışları",
+      "longDescription": "Intelligent workflow automation that connects your systems and processes with AI-driven decision points."
     },
     "health": {
       "name": "Sağlık",
-      "description": "Organizasyonel canlılık metrikleri"
+      "description": "Organizasyonel canlılık metrikleri",
+      "longDescription": "Real-time monitoring of your organization's vital signs across data, systems, and processes."
     },
     "guard": {
       "name": "Koruyucu",
-      "description": "Veri yönetişimi ve uyumluluk"
+      "description": "Veri yönetişimi ve uyumluluk",
+      "longDescription": "Automated policy enforcement, access controls, and compliance monitoring to keep your data secure."
     },
     "ethics": {
       "name": "Etik",
-      "description": "Yerleşik etik gözetim"
+      "description": "Yerleşik etik gözetim",
+      "longDescription": "Ethical guardrails that ensure responsible AI use, fair algorithms, and transparent decision-making."
     },
     "agents": {
       "name": "Ajanlar",
-      "description": "Her alan için AI danışmanlar"
+      "description": "Her alan için AI danışmanlar",
+      "longDescription": "Specialized AI agents that provide domain-specific expertise and collaborate to solve complex problems."
     }
   },
   "pricing": {
@@ -333,7 +379,6 @@
     "welcome": "Tekrar hoş geldiniz",
     "subtitle": "Bugün {{company}} nasıl gidiyor",
     "health_score": "Kurum Sağlığı",
-    "healthScore": "Sağlık Puanı",
     "data": "Veri",
     "operations": "Operasyonlar",
     "security": "Güvenlik",
@@ -345,7 +390,6 @@
     "warning": "Uyarı",
     "info": "Bilgi",
     "pending_approvals": "Bekleyen Onaylar",
-    "pendingApprovals": "Bekleyen Onaylar",
     "workflows": "İş Akışları",
     "access": "Erişim",
     "budget": "Bütçe",
@@ -401,7 +445,6 @@
   },
   "button": {
     "view_all": "Tümünü Gör",
-    "viewAll": "Tümünü Gör",
     "viewMore": "Daha Fazla Gör",
     "approve": "Onayla",
     "reject": "Reddet",
@@ -419,7 +462,12 @@
     "the_lens": "Mercek",
     "the_bridge": "Köprü",
     "settings": "Ayarlar",
-    "help": "Yardım"
+    "help": "Yardım",
+    "cortex": "Cortex",
+    "spaces": "Spaces",
+    "pillars": "Pillars",
+    "sovereign": "Sovereign",
+    "admin": "Admin"
   },
   "council": {
     "title": "Konsey",
@@ -635,7 +683,9 @@
     "locked": "Kilitli",
     "custom": "Özel",
     "unlock": "Kilidi Aç",
-    "required": "Gerekli"
+    "required": "Gerekli",
+    "owner": "Owner",
+    "admin": "Administrator"
   },
   "settings": {
     "title": "Ayarlar",
@@ -643,7 +693,11 @@
     "users": "Kullanıcılar",
     "teams": "Takımlar",
     "billing": "Faturalandırma",
-    "security": "Güvenlik"
+    "security": "Güvenlik",
+    "roles": "Roles & Permissions",
+    "apiKeys": "API Keys",
+    "integrations": "Integrations",
+    "preferences": "Preferences"
   },
   "errors": {
     "notFound": {
@@ -662,6 +716,10 @@
     "unauthorized": {
       "title": "Yetkisiz",
       "message": "Bu kaynağa erişim izniniz yok."
+    },
+    "sessionExpired": {
+      "title": "Session Expired",
+      "message": "Your session has expired. Please sign in again."
     }
   },
   "footer": {
@@ -674,7 +732,18 @@
     "contact": "İletişim",
     "privacy": "Gizlilik Politikası",
     "terms": "Hizmet Şartları",
-    "copyright": "© {{year}} Datacendia. Tüm hakları saklıdır."
+    "copyright": "© {{year}} Datacendia. Tüm hakları saklıdır.",
+    "press": "Press",
+    "features": "Features",
+    "integrations": "Integrations",
+    "enterprise": "Enterprise",
+    "documentation": "Documentation",
+    "apiReference": "API Reference",
+    "status": "System Status",
+    "community": "Community",
+    "security": "Security",
+    "cookies": "Cookie Policy",
+    "tagline": "Sovereign Enterprise Intelligence"
   },
   "time": {
     "justNow": "Az önce",
@@ -996,6 +1065,70 @@
           "Denetime hazır dokümantasyon"
         ],
         "guidance": "Glass'ta herhangi bir AI kararı seçin. Faktörleri ayrıştırır, alternatifleri gösterir ve muhakemeyi açıklar."
+      },
+      "notary": {
+        "title": "CendiaNotary™ - Cryptographic Signing Authority",
+        "summary": "Signs and authenticates all decisions with customer-owned keys. Non-repudiation for every action.",
+        "features": [
+          "AWS KMS, Azure Key Vault, HashiCorp Vault integration",
+          "Air-gapped local key storage",
+          "Automatic key rotation with audit trail",
+          "Hardware Security Module (HSM) support",
+          "Zero-trust: Datacendia never sees your keys"
+        ],
+        "guidance": "Configure your preferred KMS provider. Notary signs all decision packets, audit entries, and evidence bundles with cryptographic proof.",
+        "tabs": {
+          "overview": "Overview",
+          "keys": "Keys",
+          "providers": "Providers",
+          "audit": "Audit Log",
+          "settings": "Settings"
+        },
+        "status": {
+          "active": "Active",
+          "pendingRotation": "Pending Rotation",
+          "disabled": "Disabled",
+          "scheduledDeletion": "Scheduled Deletion"
+        },
+        "actions": {
+          "generateKey": "Generate Key",
+          "importKey": "Import Key",
+          "rotateKey": "Rotate Key",
+          "exportPublicKey": "Export Public Key",
+          "exportBackup": "Export Encrypted Backup"
+        }
+      },
+      "vault": {
+        "title": "CendiaVault™ - Unified Evidence Storage",
+        "summary": "Secure storage for decision packets, audit ledger, evidence bundles, and signed reports. Immutable, searchable, and retention-policy compliant.",
+        "features": [
+          "Decision packet archive",
+          "Immutable audit ledger",
+          "Evidence bundle storage",
+          "Signed report repository",
+          "Legal hold management",
+          "Retention policy enforcement"
+        ],
+        "guidance": "All artifacts from Council decisions, audit events, and compliance exports are automatically stored here with cryptographic integrity.",
+        "tabs": {
+          "browse": "Browse",
+          "search": "Search",
+          "legalHold": "Legal Hold",
+          "stats": "Analytics"
+        },
+        "types": {
+          "decisionPacket": "Decision Packet",
+          "auditEntry": "Audit Entry",
+          "evidenceBundle": "Evidence Bundle",
+          "signedReport": "Signed Report"
+        },
+        "actions": {
+          "download": "Download",
+          "verify": "Verify Integrity",
+          "export": "Export",
+          "setLegalHold": "Set Legal Hold",
+          "releaseLegalHold": "Release Legal Hold"
+        }
       }
     },
     "enterprise": {
@@ -1130,6 +1263,24 @@
           "Düzenlenen adaptörler için BYO-keys"
         ],
         "guidance": "Entegrasyon modelinize uygun adaptör türünü seçin. Her adaptör otomatik olarak risk seviyeleri, kanıt günlüğü ve kota kontrolleri uygular."
+      },
+      "responsibility": {
+        "title": "CendiaResponsibility™ - Human Accountability Layer",
+        "summary": "Explicit human accountability for every AI-assisted decision — signed, sealed, and irrevocable.",
+        "features": [
+          "TPM 2.0 hardware-signed accountability records",
+          "Explicit risk acceptance with failure categories",
+          "Delegation chains with cryptographic proof",
+          "Boardroom-grade liability reports",
+          "Independent verification without trusting Datacendia"
+        ],
+        "useCases": [
+          "Board governance for AI decisions",
+          "Regulatory compliance documentation",
+          "Legal discovery readiness",
+          "Executive risk acceptance"
+        ],
+        "guidance": "When AI makes a recommendation, a human must sign accountability. This creates an immutable record of who accepted which risks and why."
       }
     }
   },

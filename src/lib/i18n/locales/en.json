@@ -336,7 +336,6 @@
     "welcome": "Welcome back",
     "subtitle": "Here's how {{company}} is doing today",
     "health_score": "Organization Health",
-    "healthScore": "Health Score",
     "data": "Data",
     "operations": "Operations",
     "security": "Security",
@@ -348,7 +347,6 @@
     "warning": "Warning",
     "info": "Info",
     "pending_approvals": "Pending Approvals",
-    "pendingApprovals": "Pending Approvals",
     "workflows": "Workflows",
     "access": "Access",
     "budget": "Budget",
@@ -404,7 +402,6 @@
   },
   "button": {
     "view_all": "View All",
-    "viewAll": "View All",
     "viewMore": "View More",
     "approve": "Approve",
     "reject": "Reject",
@@ -537,34 +534,146 @@
     }
   },
   "agent": {
-    "chief": { "name": "Chief Strategy Agent", "role": "Strategic Oversight & Synthesis", "description": "Synthesizes insights from all domain agents to provide holistic strategic recommendations." },
-    "cfo": { "name": "Financial Intelligence Agent", "role": "Financial Analysis & Risk", "description": "Analyzes financial data, budgets, forecasts, and provides insights on fiscal health." },
-    "coo": { "name": "Operations Intelligence Agent", "role": "Operational Efficiency", "description": "Focuses on operational metrics, process efficiency, and resource allocation." },
-    "ciso": { "name": "Security & Compliance Agent", "role": "Security & Risk Management", "description": "Monitors security posture, compliance requirements, and threat assessment." },
-    "cmo": { "name": "Market Intelligence Agent", "role": "Marketing & Customer Insights", "description": "Analyzes market trends, customer behavior, and competitive intelligence." },
-    "cro": { "name": "Revenue Intelligence Agent", "role": "Revenue & Growth", "description": "Focuses on revenue optimization, sales performance, and pricing strategies." },
-    "cdo": { "name": "Data Quality Agent", "role": "Data Governance & Quality", "description": "Monitors data quality, governance policies, and ensures data integrity." },
-    "risk": { "name": "Risk Assessment Agent", "role": "Enterprise Risk Analysis", "description": "Evaluates enterprise risks, performs impact analysis, and provides mitigation strategies." },
-    "clo": { "name": "Legal Intelligence Agent", "role": "Legal & Compliance Analysis", "description": "Analyzes legal risks, contract implications, and regulatory compliance." },
-    "cpo": { "name": "Product Strategy Agent", "role": "Product Innovation & Roadmap", "description": "Drives product strategy, feature prioritization, and user experience insights." },
-    "caio": { "name": "AI Strategy Agent", "role": "AI/ML Governance & Innovation", "description": "Guides AI strategy, model governance, and ethical AI implementation." },
-    "cso": { "name": "Sustainability Agent", "role": "ESG & Environmental Impact", "description": "Monitors environmental, social, and governance metrics and sustainability initiatives." },
-    "cio": { "name": "Investment Intelligence Agent", "role": "Capital Allocation & Portfolio", "description": "Analyzes investment opportunities, portfolio allocation, and capital deployment." },
-    "cco": { "name": "Communications Agent", "role": "Corporate Communications & PR", "description": "Crafts corporate messaging, manages stakeholder communications, and monitors brand perception." },
-    "ext-auditor": { "name": "External Auditor", "role": "Independent Third-Party Audit", "description": "Provides independent, objective assessment from an external perspective." },
-    "int-auditor": { "name": "Internal Auditor", "role": "Internal Controls & Process Audit", "description": "Evaluates internal controls, operational efficiency, and compliance." },
-    "cmio": { "name": "Chief Medical Information Officer", "role": "Healthcare IT & Clinical Systems", "description": "Expert in healthcare technology, EHR systems, and clinical informatics." },
-    "pso": { "name": "Patient Safety Officer", "role": "Clinical Safety & Quality", "description": "Specialist in patient safety, adverse event prevention, and quality improvement." },
-    "hco": { "name": "Healthcare Compliance Officer", "role": "HIPAA & Healthcare Regulations", "description": "Expert in healthcare regulatory compliance, HIPAA, and billing compliance." },
-    "cod": { "name": "Clinical Operations Director", "role": "Healthcare Operations & Efficiency", "description": "Expert in clinical operations, patient flow, and staffing optimization." },
-    "quant": { "name": "Quantitative Analyst", "role": "Financial Modeling & Risk Analytics", "description": "Expert in quantitative finance, derivatives pricing, and risk modeling." },
-    "pm": { "name": "Portfolio Manager", "role": "Investment Strategy & Asset Allocation", "description": "Expert in portfolio construction, asset allocation, and investment strategy." },
-    "cro-finance": { "name": "Credit Risk Officer", "role": "Credit Analysis & Risk Assessment", "description": "Expert in credit analysis, loan underwriting, and credit risk modeling." },
-    "treasury": { "name": "Treasury Analyst", "role": "Cash Management & Liquidity", "description": "Expert in corporate treasury, cash management, and FX hedging." },
-    "contracts": { "name": "Contract Specialist", "role": "Contract Analysis & Negotiation", "description": "Expert in commercial contracts, contract drafting, and negotiation." },
-    "ip": { "name": "Intellectual Property Counsel", "role": "Patents, Trademarks & IP Strategy", "description": "Expert in intellectual property law, patent strategy, and trademark protection." },
-    "litigation": { "name": "Litigation Expert", "role": "Dispute Resolution & Trial Strategy", "description": "Expert in commercial litigation, dispute resolution, and e-discovery." },
-    "regulatory": { "name": "Regulatory Affairs Counsel", "role": "Government Relations & Compliance", "description": "Expert in regulatory compliance, government affairs, and administrative law." }
+    "chief": {
+      "name": "Chief Strategy Agent",
+      "role": "Strategic Oversight & Synthesis",
+      "description": "Synthesizes insights from all domain agents to provide holistic strategic recommendations."
+    },
+    "cfo": {
+      "name": "Financial Intelligence Agent",
+      "role": "Financial Analysis & Risk",
+      "description": "Analyzes financial data, budgets, forecasts, and provides insights on fiscal health."
+    },
+    "coo": {
+      "name": "Operations Intelligence Agent",
+      "role": "Operational Efficiency",
+      "description": "Focuses on operational metrics, process efficiency, and resource allocation."
+    },
+    "ciso": {
+      "name": "Security & Compliance Agent",
+      "role": "Security & Risk Management",
+      "description": "Monitors security posture, compliance requirements, and threat assessment."
+    },
+    "cmo": {
+      "name": "Market Intelligence Agent",
+      "role": "Marketing & Customer Insights",
+      "description": "Analyzes market trends, customer behavior, and competitive intelligence."
+    },
+    "cro": {
+      "name": "Revenue Intelligence Agent",
+      "role": "Revenue & Growth",
+      "description": "Focuses on revenue optimization, sales performance, and pricing strategies."
+    },
+    "cdo": {
+      "name": "Data Quality Agent",
+      "role": "Data Governance & Quality",
+      "description": "Monitors data quality, governance policies, and ensures data integrity."
+    },
+    "risk": {
+      "name": "Risk Assessment Agent",
+      "role": "Enterprise Risk Analysis",
+      "description": "Evaluates enterprise risks, performs impact analysis, and provides mitigation strategies."
+    },
+    "clo": {
+      "name": "Legal Intelligence Agent",
+      "role": "Legal & Compliance Analysis",
+      "description": "Analyzes legal risks, contract implications, and regulatory compliance."
+    },
+    "cpo": {
+      "name": "Product Strategy Agent",
+      "role": "Product Innovation & Roadmap",
+      "description": "Drives product strategy, feature prioritization, and user experience insights."
+    },
+    "caio": {
+      "name": "AI Strategy Agent",
+      "role": "AI/ML Governance & Innovation",
+      "description": "Guides AI strategy, model governance, and ethical AI implementation."
+    },
+    "cso": {
+      "name": "Sustainability Agent",
+      "role": "ESG & Environmental Impact",
+      "description": "Monitors environmental, social, and governance metrics and sustainability initiatives."
+    },
+    "cio": {
+      "name": "Investment Intelligence Agent",
+      "role": "Capital Allocation & Portfolio",
+      "description": "Analyzes investment opportunities, portfolio allocation, and capital deployment."
+    },
+    "cco": {
+      "name": "Communications Agent",
+      "role": "Corporate Communications & PR",
+      "description": "Crafts corporate messaging, manages stakeholder communications, and monitors brand perception."
+    },
+    "ext-auditor": {
+      "name": "External Auditor",
+      "role": "Independent Third-Party Audit",
+      "description": "Provides independent, objective assessment from an external perspective."
+    },
+    "int-auditor": {
+      "name": "Internal Auditor",
+      "role": "Internal Controls & Process Audit",
+      "description": "Evaluates internal controls, operational efficiency, and compliance."
+    },
+    "cmio": {
+      "name": "Chief Medical Information Officer",
+      "role": "Healthcare IT & Clinical Systems",
+      "description": "Expert in healthcare technology, EHR systems, and clinical informatics."
+    },
+    "pso": {
+      "name": "Patient Safety Officer",
+      "role": "Clinical Safety & Quality",
+      "description": "Specialist in patient safety, adverse event prevention, and quality improvement."
+    },
+    "hco": {
+      "name": "Healthcare Compliance Officer",
+      "role": "HIPAA & Healthcare Regulations",
+      "description": "Expert in healthcare regulatory compliance, HIPAA, and billing compliance."
+    },
+    "cod": {
+      "name": "Clinical Operations Director",
+      "role": "Healthcare Operations & Efficiency",
+      "description": "Expert in clinical operations, patient flow, and staffing optimization."
+    },
+    "quant": {
+      "name": "Quantitative Analyst",
+      "role": "Financial Modeling & Risk Analytics",
+      "description": "Expert in quantitative finance, derivatives pricing, and risk modeling."
+    },
+    "pm": {
+      "name": "Portfolio Manager",
+      "role": "Investment Strategy & Asset Allocation",
+      "description": "Expert in portfolio construction, asset allocation, and investment strategy."
+    },
+    "cro-finance": {
+      "name": "Credit Risk Officer",
+      "role": "Credit Analysis & Risk Assessment",
+      "description": "Expert in credit analysis, loan underwriting, and credit risk modeling."
+    },
+    "treasury": {
+      "name": "Treasury Analyst",
+      "role": "Cash Management & Liquidity",
+      "description": "Expert in corporate treasury, cash management, and FX hedging."
+    },
+    "contracts": {
+      "name": "Contract Specialist",
+      "role": "Contract Analysis & Negotiation",
+      "description": "Expert in commercial contracts, contract drafting, and negotiation."
+    },
+    "ip": {
+      "name": "Intellectual Property Counsel",
+      "role": "Patents, Trademarks & IP Strategy",
+      "description": "Expert in intellectual property law, patent strategy, and trademark protection."
+    },
+    "litigation": {
+      "name": "Litigation Expert",
+      "role": "Dispute Resolution & Trial Strategy",
+      "description": "Expert in commercial litigation, dispute resolution, and e-discovery."
+    },
+    "regulatory": {
+      "name": "Regulatory Affairs Counsel",
+      "role": "Government Relations & Compliance",
+      "description": "Expert in regulatory compliance, government affairs, and administrative law."
+    }
   },
   "label": {
     "online": "Online",
@@ -659,14 +768,28 @@
           "Alert thresholds with automated notifications",
           "Executive summary generation"
         ],
-        "useCases": ["Track quarterly objectives across all departments", "Monitor revenue metrics and growth indicators", "Set and track strategic milestones"],
+        "useCases": [
+          "Track quarterly objectives across all departments",
+          "Monitor revenue metrics and growth indicators",
+          "Set and track strategic milestones"
+        ],
         "guidance": "Start by defining your key metrics. The Helm works best when you have clear, measurable objectives aligned with your organization's strategy."
       },
       "lineage": {
         "title": "The Lineage - Data Provenance Tracker",
         "summary": "Complete visibility into your data's journey. Know where every number comes from and where it goes.",
-        "features": ["Visual data flow mapping", "Source-to-report traceability", "Impact analysis for data changes", "Data quality scoring at each stage", "Automated documentation generation"],
-        "useCases": ["Audit trail for regulatory compliance", "Debug data discrepancies across systems", "Plan system migrations with full impact visibility"],
+        "features": [
+          "Visual data flow mapping",
+          "Source-to-report traceability",
+          "Impact analysis for data changes",
+          "Data quality scoring at each stage",
+          "Automated documentation generation"
+        ],
+        "useCases": [
+          "Audit trail for regulatory compliance",
+          "Debug data discrepancies across systems",
+          "Plan system migrations with full impact visibility"
+        ],
         "guidance": "Connect your data sources first. The Lineage automatically discovers relationships and builds your data map."
       },
       "predict": {
@@ -679,7 +802,11 @@
           "Feature importance analysis",
           "Model performance monitoring"
         ],
-        "useCases": ["Forecast demand and optimize inventory", "Predict customer churn before it happens", "Model financial scenarios for strategic planning"],
+        "useCases": [
+          "Forecast demand and optimize inventory",
+          "Predict customer churn before it happens",
+          "Model financial scenarios for strategic planning"
+        ],
         "guidance": "Quality predictions require quality data. Start with clean historical data and let The Predict learn your patterns."
       },
       "flow": {
@@ -692,35 +819,79 @@
           "Approval chains with escalation rules",
           "Workflow analytics and optimization"
         ],
-        "useCases": ["Automate data pipeline orchestration", "Create intelligent approval workflows", "Trigger actions based on AI insights"],
+        "useCases": [
+          "Automate data pipeline orchestration",
+          "Create intelligent approval workflows",
+          "Trigger actions based on AI insights"
+        ],
         "guidance": "Map your current manual processes first. The Flow helps you identify automation opportunities and implement them step by step."
       },
       "health": {
         "title": "The Health - System Vitality Monitor",
         "summary": "Real-time pulse on your organization's vital signs. Know when something's wrong before it breaks.",
-        "features": ["Component health dashboards", "Performance trend analysis", "Incident tracking and resolution", "Capacity planning tools", "Uptime and SLA monitoring"],
-        "useCases": ["Monitor system health across all platforms", "Track incident response and resolution times", "Plan infrastructure capacity proactively"],
+        "features": [
+          "Component health dashboards",
+          "Performance trend analysis",
+          "Incident tracking and resolution",
+          "Capacity planning tools",
+          "Uptime and SLA monitoring"
+        ],
+        "useCases": [
+          "Monitor system health across all platforms",
+          "Track incident response and resolution times",
+          "Plan infrastructure capacity proactively"
+        ],
         "guidance": "Configure health checks for your critical systems. The Health aggregates signals to give you a unified view."
       },
       "guard": {
         "title": "The Guard - Security & Compliance Shield",
         "summary": "Automated protection for your data. Enforce policies, track access, and stay compliant.",
-        "features": ["Policy enforcement engine", "Access audit logging", "Threat detection and alerting", "Compliance framework mapping", "Security posture scoring"],
-        "useCases": ["Enforce data access policies automatically", "Generate compliance reports for auditors", "Detect and respond to security threats"],
+        "features": [
+          "Policy enforcement engine",
+          "Access audit logging",
+          "Threat detection and alerting",
+          "Compliance framework mapping",
+          "Security posture scoring"
+        ],
+        "useCases": [
+          "Enforce data access policies automatically",
+          "Generate compliance reports for auditors",
+          "Detect and respond to security threats"
+        ],
         "guidance": "Define your security policies and compliance requirements. The Guard monitors continuously and alerts on violations."
       },
       "ethics": {
         "title": "The Ethics - AI Governance Center",
         "summary": "Responsible AI built-in. Ensure fairness, transparency, and accountability in every decision.",
-        "features": ["Bias detection and monitoring", "Model explainability tools", "Ethics review workflows", "Fairness metric tracking", "Decision audit trails"],
-        "useCases": ["Review AI models for bias before deployment", "Document decision rationale for compliance", "Monitor fairness metrics in production"],
+        "features": [
+          "Bias detection and monitoring",
+          "Model explainability tools",
+          "Ethics review workflows",
+          "Fairness metric tracking",
+          "Decision audit trails"
+        ],
+        "useCases": [
+          "Review AI models for bias before deployment",
+          "Document decision rationale for compliance",
+          "Monitor fairness metrics in production"
+        ],
         "guidance": "Establish your ethical principles first. The Ethics helps you operationalize them across all AI systems."
       },
       "agents": {
         "title": "The Agents - AI Advisory Council",
         "summary": "Specialized AI advisors for every domain. Get expert guidance on demand.",
-        "features": ["Domain-specialized AI agents", "Multi-agent collaboration", "Context-aware recommendations", "Natural language interaction", "Continuous learning from feedback"],
-        "useCases": ["Get strategic advice from business analysts", "Consult technical experts for architecture decisions", "Receive compliance guidance from regulatory specialists"],
+        "features": [
+          "Domain-specialized AI agents",
+          "Multi-agent collaboration",
+          "Context-aware recommendations",
+          "Natural language interaction",
+          "Continuous learning from feedback"
+        ],
+        "useCases": [
+          "Get strategic advice from business analysts",
+          "Consult technical experts for architecture decisions",
+          "Receive compliance guidance from regulatory specialists"
+        ],
         "guidance": "Choose the right agent for your question. Each agent has specialized knowledge - the Council knows when to collaborate."
       }
     },
@@ -728,31 +899,61 @@
       "graph": {
         "title": "The Graph - Knowledge Navigator",
         "summary": "Navigate your organization's knowledge universe. See connections others miss.",
-        "features": ["Interactive knowledge visualization", "Semantic search across all data", "Relationship discovery", "Context-aware exploration", "Knowledge gap identification"],
+        "features": [
+          "Interactive knowledge visualization",
+          "Semantic search across all data",
+          "Relationship discovery",
+          "Context-aware exploration",
+          "Knowledge gap identification"
+        ],
         "guidance": "Explore by clicking any node. The Graph reveals connections and lets you drill down into details."
       },
       "council": {
         "title": "The Council - AI Collaboration Chamber",
         "summary": "Where AI advisors deliberate together. Complex problems need multiple perspectives.",
-        "features": ["Multi-agent reasoning sessions", "Structured deliberation frameworks", "Conflict resolution protocols", "Consensus building tools", "Decision documentation"],
+        "features": [
+          "Multi-agent reasoning sessions",
+          "Structured deliberation frameworks",
+          "Conflict resolution protocols",
+          "Consensus building tools",
+          "Decision documentation"
+        ],
         "guidance": "Present your question to The Council. Watch as different perspectives emerge and synthesize into recommendations."
       },
       "pulse": {
         "title": "The Pulse - Real-Time Operations Center",
         "summary": "Live view of your organization's heartbeat. Every metric, every moment.",
-        "features": ["Real-time metric streaming", "Customizable alert thresholds", "Trend visualization", "Anomaly highlighting", "Historical comparison"],
+        "features": [
+          "Real-time metric streaming",
+          "Customizable alert thresholds",
+          "Trend visualization",
+          "Anomaly highlighting",
+          "Historical comparison"
+        ],
         "guidance": "Configure your key metrics to appear on The Pulse. Set alert thresholds to get notified of changes."
       },
       "lens": {
         "title": "The Lens - Future Scenario Explorer",
         "summary": "See possible futures before they arrive. Model scenarios and plan accordingly.",
-        "features": ["Scenario modeling engine", "Monte Carlo simulations", "Sensitivity analysis", "Decision tree visualization", "Outcome probability mapping"],
+        "features": [
+          "Scenario modeling engine",
+          "Monte Carlo simulations",
+          "Sensitivity analysis",
+          "Decision tree visualization",
+          "Outcome probability mapping"
+        ],
         "guidance": "Define your scenario parameters. The Lens generates multiple futures and shows you the most likely outcomes."
       },
       "bridge": {
         "title": "The Bridge - Action Command Center",
         "summary": "Turn insights into action. Execute across all your connected systems.",
-        "features": ["Cross-system action execution", "Approval workflow integration", "Action impact preview", "Rollback capabilities", "Execution audit trail"],
+        "features": [
+          "Cross-system action execution",
+          "Approval workflow integration",
+          "Action impact preview",
+          "Rollback capabilities",
+          "Execution audit trail"
+        ],
         "guidance": "Select your action and preview its impact. The Bridge ensures safe execution with full traceability."
       }
     },
@@ -760,43 +961,85 @@
       "mirror": {
         "title": "Cendia Mirror - Digital Twin Engine",
         "summary": "Create living digital replicas of your organization. Test changes before they go live.",
-        "features": ["Real-time data synchronization", "Scenario simulation environment", "Change impact modeling", "A/B testing framework", "Performance prediction"],
+        "features": [
+          "Real-time data synchronization",
+          "Scenario simulation environment",
+          "Change impact modeling",
+          "A/B testing framework",
+          "Performance prediction"
+        ],
         "guidance": "Mirror creates a safe sandbox of your organization. Experiment freely - changes here won't affect production."
       },
       "witness": {
         "title": "Cendia Witness - Immutable Audit Trail",
         "summary": "Blockchain-backed evidence of every action. Prove what happened and when.",
-        "features": ["Cryptographic timestamping", "Tamper-proof audit logs", "Chain of custody tracking", "Evidence export for legal", "Compliance attestation"],
+        "features": [
+          "Cryptographic timestamping",
+          "Tamper-proof audit logs",
+          "Chain of custody tracking",
+          "Evidence export for legal",
+          "Compliance attestation"
+        ],
         "guidance": "Witness automatically records critical actions. Access the immutable record anytime for audits or investigations."
       },
       "oracle": {
         "title": "Cendia Oracle - Predictive Intelligence Hub",
         "summary": "Advanced AI that speaks truth to power. Get answers that matter.",
-        "features": ["Natural language query interface", "Cross-domain reasoning", "Predictive question answering", "Confidence scoring", "Source citation"],
+        "features": [
+          "Natural language query interface",
+          "Cross-domain reasoning",
+          "Predictive question answering",
+          "Confidence scoring",
+          "Source citation"
+        ],
         "guidance": "Ask Oracle anything about your organization. It synthesizes knowledge from all sources to give you accurate answers."
       },
       "legacy": {
         "title": "Cendia Legacy - Knowledge Preservation",
         "summary": "Capture institutional knowledge before it walks out the door. Preserve wisdom for the future.",
-        "features": ["Expert knowledge capture", "Decision rationale archiving", "Best practice documentation", "Knowledge transfer workflows", "Successor onboarding tools"],
+        "features": [
+          "Expert knowledge capture",
+          "Decision rationale archiving",
+          "Best practice documentation",
+          "Knowledge transfer workflows",
+          "Successor onboarding tools"
+        ],
         "guidance": "Record critical knowledge as it's created. Legacy ensures your organization's wisdom outlives any individual."
       },
       "mirage": {
         "title": "Cendia Mirage - Synthetic Data Generator",
         "summary": "Create realistic data without privacy risks. Train, test, and develop safely.",
-        "features": ["Statistical data synthesis", "Privacy-preserving generation", "Correlation maintenance", "Edge case amplification", "Quality validation"],
+        "features": [
+          "Statistical data synthesis",
+          "Privacy-preserving generation",
+          "Correlation maintenance",
+          "Edge case amplification",
+          "Quality validation"
+        ],
         "guidance": "Define your data requirements. Mirage generates synthetic datasets that match your real data's characteristics."
       },
       "key": {
         "title": "Cendia Key - Identity & Access Vault",
         "summary": "One key to rule them all. Unified identity management across your entire ecosystem.",
-        "features": ["Single sign-on hub", "Role-based access control", "Privileged access management", "Identity lifecycle automation", "Zero-trust enforcement"],
+        "features": [
+          "Single sign-on hub",
+          "Role-based access control",
+          "Privileged access management",
+          "Identity lifecycle automation",
+          "Zero-trust enforcement"
+        ],
         "guidance": "Connect your identity providers. Key unifies access control and enforces policies across all systems."
       },
       "notary": {
         "title": "CendiaNotary™ - Cryptographic Signing Authority",
         "summary": "Signs and authenticates all decisions with customer-owned keys. Non-repudiation for every action.",
-        "features": ["AWS KMS, Azure Key Vault, HashiCorp Vault integration", "Air-gapped local key storage", "Automatic key rotation with audit trail", "Hardware Security Module (HSM) support", "Zero-trust: Datacendia never sees your keys"],
+        "features": [
+          "AWS KMS, Azure Key Vault, HashiCorp Vault integration",
+          "Air-gapped local key storage",
+          "Automatic key rotation with audit trail",
+          "Hardware Security Module (HSM) support",
+          "Zero-trust: Datacendia never sees your keys"
+        ],
         "guidance": "Configure your preferred KMS provider. Notary signs all decision packets, audit entries, and evidence bundles with cryptographic proof.",
         "tabs": {
           "overview": "Overview",
@@ -822,7 +1065,14 @@
       "vault": {
         "title": "CendiaVault™ - Unified Evidence Storage",
         "summary": "Secure storage for decision packets, audit ledger, evidence bundles, and signed reports. Immutable, searchable, and retention-policy compliant.",
-        "features": ["Decision packet archive", "Immutable audit ledger", "Evidence bundle storage", "Signed report repository", "Legal hold management", "Retention policy enforcement"],
+        "features": [
+          "Decision packet archive",
+          "Immutable audit ledger",
+          "Evidence bundle storage",
+          "Signed report repository",
+          "Legal hold management",
+          "Retention policy enforcement"
+        ],
         "guidance": "All artifacts from Council decisions, audit events, and compliance exports are automatically stored here with cryptographic integrity.",
         "tabs": {
           "browse": "Browse",
@@ -847,19 +1097,37 @@
       "mesh": {
         "title": "Cendia Mesh - Integration Fabric",
         "summary": "Connect everything to everything. The intelligent integration layer for your enterprise.",
-        "features": ["Universal API gateway", "Event-driven architecture", "Data transformation engine", "Service mesh management", "Integration monitoring"],
+        "features": [
+          "Universal API gateway",
+          "Event-driven architecture",
+          "Data transformation engine",
+          "Service mesh management",
+          "Integration monitoring"
+        ],
         "guidance": "Configure your system connections through Mesh. It handles protocols, transformations, and routing automatically."
       },
       "blackbox": {
         "title": "Cendia BlackBox - Model Registry",
         "summary": "Central command for all your AI models. Version, deploy, and monitor with confidence.",
-        "features": ["Model versioning and lineage", "Deployment orchestration", "A/B testing framework", "Performance monitoring", "Rollback automation"],
+        "features": [
+          "Model versioning and lineage",
+          "Deployment orchestration",
+          "A/B testing framework",
+          "Performance monitoring",
+          "Rollback automation"
+        ],
         "guidance": "Register your models in BlackBox. It tracks versions, manages deployments, and monitors performance automatically."
       },
       "glass": {
         "title": "Cendia Glass - Transparency Dashboard",
         "summary": "Complete visibility into AI decisions. See exactly why and how decisions were made.",
-        "features": ["Decision explainability", "Factor contribution analysis", "Counterfactual exploration", "Stakeholder reporting", "Audit-ready documentation"],
+        "features": [
+          "Decision explainability",
+          "Factor contribution analysis",
+          "Counterfactual exploration",
+          "Stakeholder reporting",
+          "Audit-ready documentation"
+        ],
         "guidance": "Select any AI decision in Glass. It breaks down the factors, shows alternatives, and explains the reasoning."
       }
     },
@@ -874,7 +1142,12 @@
           "Decision pattern banning",
           "Apotheosis Score tracking"
         ],
-        "useCases": ["Continuous organizational improvement", "Proactive risk mitigation", "Automated compliance hardening", "Executive decision support"],
+        "useCases": [
+          "Continuous organizational improvement",
+          "Proactive risk mitigation",
+          "Automated compliance hardening",
+          "Executive decision support"
+        ],
         "guidance": "Apotheosis runs every night, attacking your organization from 1000+ angles, patching what it finds, and making you permanently immune to your own mistakes."
       },
       "dissent": {
@@ -887,7 +1160,12 @@
           "Retaliation detection and protection",
           "Dissent accuracy tracking"
         ],
-        "useCases": ["Ensuring minority voices are heard", "Creating organizational memory", "Protecting whistleblowers", "Improving decision quality"],
+        "useCases": [
+          "Ensuring minority voices are heard",
+          "Creating organizational memory",
+          "Protecting whistleblowers",
+          "Improving decision quality"
+        ],
         "guidance": "File a dissent against any decision you disagree with. Your objection will be permanently recorded, acknowledged, and tracked for accuracy over time."
       },
       "responsibility": {
@@ -900,7 +1178,12 @@
           "Boardroom-grade liability reports",
           "Independent verification without trusting Datacendia"
         ],
-        "useCases": ["Board governance for AI decisions", "Regulatory compliance documentation", "Legal discovery readiness", "Executive risk acceptance"],
+        "useCases": [
+          "Board governance for AI decisions",
+          "Regulatory compliance documentation",
+          "Legal discovery readiness",
+          "Executive risk acceptance"
+        ],
         "guidance": "When AI makes a recommendation, a human must sign accountability. This creates an immutable record of who accepted which risks and why."
       },
       "connectors": {
@@ -934,7 +1217,12 @@
           "Merkle tree integrity verification",
           "Legal evidence bundle generation"
         ],
-        "useCases": ["Audit-ready test evidence for compliance", "Procurement and security review documentation", "SOC 2 Type II / ISO 27001 / GDPR evidence", "Tamper-proof execution records"],
+        "useCases": [
+          "Audit-ready test evidence for compliance",
+          "Procurement and security review documentation",
+          "SOC 2 Type II / ISO 27001 / GDPR evidence",
+          "Tamper-proof execution records"
+        ],
         "guidance": "All test executions are automatically recorded with cryptographic signatures. Generate legal evidence bundles for auditors with one click."
       },
       "sovereignArch": {
@@ -948,7 +1236,12 @@
           "QR Air-Gap Bridge: Zero-media data transfer",
           "TPM Attestation: Hardware-signed decisions"
         ],
-        "useCases": ["Air-gapped secure facility deployments", "Defense and intelligence applications", "Regulated industry compliance", "Zero-trust enterprise architecture"],
+        "useCases": [
+          "Air-gapped secure facility deployments",
+          "Defense and intelligence applications",
+          "Regulated industry compliance",
+          "Zero-trust enterprise architecture"
+        ],
         "guidance": "Sovereign Architecture patterns enable deployment in the most restricted environments. Each pattern can be used independently or combined."
       },
       "cascade": {
@@ -1028,31 +1321,51 @@
           "title": "Start at The Pulse",
           "description": "Begin each day with a real-time view of organizational health. Red indicators need immediate attention.",
           "space": "pulse",
-          "keyActions": ["Review health score", "Check active alerts", "Note trending metrics"]
+          "keyActions": [
+            "Review health score",
+            "Check active alerts",
+            "Note trending metrics"
+          ]
         },
         {
           "title": "Dive into The Helm",
           "description": "Examine your strategic KPIs. Are you on track for quarterly objectives? Where are the gaps?",
           "pillar": "helm",
-          "keyActions": ["Review KPI status", "Compare against targets", "Identify at-risk objectives"]
+          "keyActions": [
+            "Review KPI status",
+            "Compare against targets",
+            "Identify at-risk objectives"
+          ]
         },
         {
           "title": "Consult The Council",
           "description": "For complex decisions, convene your AI advisors. Present the situation and hear multiple perspectives.",
           "space": "council",
-          "keyActions": ["Frame your question", "Review agent perspectives", "Request synthesis"]
+          "keyActions": [
+            "Frame your question",
+            "Review agent perspectives",
+            "Request synthesis"
+          ]
         },
         {
           "title": "Explore with The Lens",
           "description": "Model different scenarios. What if you increase investment? Delay a launch? The Lens shows possible futures.",
           "space": "lens",
-          "keyActions": ["Define scenario parameters", "Run simulations", "Compare outcomes"]
+          "keyActions": [
+            "Define scenario parameters",
+            "Run simulations",
+            "Compare outcomes"
+          ]
         },
         {
           "title": "Take Action via The Bridge",
           "description": "Turn decisions into action. The Bridge executes across systems with full audit trails.",
           "space": "bridge",
-          "keyActions": ["Select actions", "Preview impact", "Approve execution"]
+          "keyActions": [
+            "Select actions",
+            "Preview impact",
+            "Approve execution"
+          ]
         }
       ]
     },
@@ -1066,25 +1379,41 @@
           "title": "Map Your Data with The Lineage",
           "description": "Understand how data flows through your organization. The Lineage auto-discovers sources, transformations, and destinations.",
           "pillar": "lineage",
-          "keyActions": ["Connect data sources", "Review discovered entities", "Document transformations"]
+          "keyActions": [
+            "Connect data sources",
+            "Review discovered entities",
+            "Document transformations"
+          ]
         },
         {
           "title": "Monitor Quality in The Health",
           "description": "Track data quality metrics across all pipelines. Set up alerts for freshness, completeness, and accuracy.",
           "pillar": "health",
-          "keyActions": ["Configure quality checks", "Set alert thresholds", "Review quality scores"]
+          "keyActions": [
+            "Configure quality checks",
+            "Set alert thresholds",
+            "Review quality scores"
+          ]
         },
         {
           "title": "Connect Systems via Cendia Mesh",
           "description": "Build integrations between systems. Mesh handles protocols, transformations, and reliability.",
           "sovereign": "mesh",
-          "keyActions": ["Define source/target", "Configure mapping", "Test integration"]
+          "keyActions": [
+            "Define source/target",
+            "Configure mapping",
+            "Test integration"
+          ]
         },
         {
           "title": "Automate with The Flow",
           "description": "Create automated data pipelines. Schedule jobs, handle errors, and orchestrate complex workflows.",
           "pillar": "flow",
-          "keyActions": ["Design workflow", "Configure triggers", "Set error handling"]
+          "keyActions": [
+            "Design workflow",
+            "Configure triggers",
+            "Set error handling"
+          ]
         }
       ]
     },
@@ -1098,25 +1427,41 @@
           "title": "Review Security Posture in The Guard",
           "description": "Check your organization's security stance. Review policy compliance, access patterns, and active threats.",
           "pillar": "guard",
-          "keyActions": ["Review compliance score", "Check policy violations", "Audit access logs"]
+          "keyActions": [
+            "Review compliance score",
+            "Check policy violations",
+            "Audit access logs"
+          ]
         },
         {
           "title": "Verify AI Ethics in The Ethics",
           "description": "Ensure all AI models meet ethical standards. Check for bias, review decisions, and document compliance.",
           "pillar": "ethics",
-          "keyActions": ["Review bias checks", "Audit model decisions", "Document findings"]
+          "keyActions": [
+            "Review bias checks",
+            "Audit model decisions",
+            "Document findings"
+          ]
         },
         {
           "title": "Pull Audit Trails from Cendia Witness",
           "description": "Access immutable records of all system actions. Generate reports for auditors with cryptographic proof.",
           "sovereign": "witness",
-          "keyActions": ["Select audit scope", "Generate evidence report", "Export for auditors"]
+          "keyActions": [
+            "Select audit scope",
+            "Generate evidence report",
+            "Export for auditors"
+          ]
         },
         {
           "title": "Explain Decisions with Cendia Glass",
           "description": "When regulators ask why, Glass provides the answer. Full explainability for every AI decision.",
           "sovereign": "glass",
-          "keyActions": ["Select decision", "Generate explanation", "Create compliance documentation"]
+          "keyActions": [
+            "Select decision",
+            "Generate explanation",
+            "Create compliance documentation"
+          ]
         }
       ]
     },
@@ -1130,31 +1475,51 @@
           "title": "Gather Intelligence from The Graph",
           "description": "Explore your knowledge base. Discover connections between market data, internal metrics, and competitive intelligence.",
           "space": "graph",
-          "keyActions": ["Search for topic", "Explore connections", "Save key insights"]
+          "keyActions": [
+            "Search for topic",
+            "Explore connections",
+            "Save key insights"
+          ]
         },
         {
           "title": "Forecast Trends with The Predict",
           "description": "Use AI models to project key metrics. Understand where current trends are heading.",
           "pillar": "predict",
-          "keyActions": ["Select forecast target", "Review projections", "Analyze confidence intervals"]
+          "keyActions": [
+            "Select forecast target",
+            "Review projections",
+            "Analyze confidence intervals"
+          ]
         },
         {
           "title": "Ask The Oracle",
           "description": "Get AI-powered answers to strategic questions. Oracle synthesizes all available knowledge.",
           "sovereign": "oracle",
-          "keyActions": ["Frame strategic question", "Review answer", "Check sources"]
+          "keyActions": [
+            "Frame strategic question",
+            "Review answer",
+            "Check sources"
+          ]
         },
         {
           "title": "Model Scenarios in The Lens",
           "description": "Build strategic scenarios. What if competitors move? Markets shift? New regulations emerge?",
           "space": "lens",
-          "keyActions": ["Define scenario variables", "Run multiple futures", "Identify optimal strategy"]
+          "keyActions": [
+            "Define scenario variables",
+            "Run multiple futures",
+            "Identify optimal strategy"
+          ]
         },
         {
           "title": "Test in Cendia Mirror",
           "description": "Simulate your strategic initiatives before committing. Mirror lets you test without risk.",
           "sovereign": "mirror",
-          "keyActions": ["Create simulation", "Run initiative test", "Analyze results"]
+          "keyActions": [
+            "Create simulation",
+            "Run initiative test",
+            "Analyze results"
+          ]
         }
       ]
     },
@@ -1195,37 +1560,61 @@
           "title": "Assess the Situation in The Pulse",
           "description": "Get instant visibility into what's happening. Red indicators pinpoint the problem. Cascading impacts are shown in real-time.",
           "space": "pulse",
-          "keyActions": ["Identify affected systems", "Check severity levels", "Review cascading alerts"]
+          "keyActions": [
+            "Identify affected systems",
+            "Check severity levels",
+            "Review cascading alerts"
+          ]
         },
         {
           "title": "Trace the Root Cause with The Lineage",
           "description": "Follow the data trail backwards. What changed? Where did it start? The Lineage shows you the exact point of failure.",
           "pillar": "lineage",
-          "keyActions": ["Trace data flow", "Identify breaking change", "Document root cause"]
+          "keyActions": [
+            "Trace data flow",
+            "Identify breaking change",
+            "Document root cause"
+          ]
         },
         {
           "title": "Gather Evidence with Cendia Witness",
           "description": "Capture the immutable record of what happened. You'll need this for the post-mortem and any compliance requirements.",
           "sovereign": "witness",
-          "keyActions": ["Export incident timeline", "Capture system states", "Preserve audit logs"]
+          "keyActions": [
+            "Export incident timeline",
+            "Capture system states",
+            "Preserve audit logs"
+          ]
         },
         {
           "title": "Coordinate Response in The Council",
           "description": "Bring together AI experts from different domains. Security, Operations, and Business Continuity agents collaborate on the response plan.",
           "space": "council",
-          "keyActions": ["Convene response team", "Get impact assessment", "Generate action plan"]
+          "keyActions": [
+            "Convene response team",
+            "Get impact assessment",
+            "Generate action plan"
+          ]
         },
         {
           "title": "Execute Recovery via The Bridge",
           "description": "Push fixes and rollbacks across affected systems. The Bridge coordinates the response while maintaining audit trails.",
           "space": "bridge",
-          "keyActions": ["Deploy fixes", "Execute rollbacks", "Verify recovery"]
+          "keyActions": [
+            "Deploy fixes",
+            "Execute rollbacks",
+            "Verify recovery"
+          ]
         },
         {
           "title": "Document and Learn in Cendia Legacy",
           "description": "Capture what happened and what you learned. Future teams will thank you when they face similar situations.",
           "sovereign": "legacy",
-          "keyActions": ["Create incident report", "Document lessons learned", "Update runbooks"]
+          "keyActions": [
+            "Create incident report",
+            "Document lessons learned",
+            "Update runbooks"
+          ]
         }
       ]
     },
@@ -1239,37 +1628,61 @@
           "title": "Register Your Model in Cendia BlackBox",
           "description": "Upload your trained model to the registry. BlackBox tracks versions, dependencies, and training provenance automatically.",
           "sovereign": "blackbox",
-          "keyActions": ["Upload model artifacts", "Register metadata", "Link training data"]
+          "keyActions": [
+            "Upload model artifacts",
+            "Register metadata",
+            "Link training data"
+          ]
         },
         {
           "title": "Check for Bias in The Ethics",
           "description": "Before any model goes live, it must pass ethical review. Run bias detection across demographic slices and document findings.",
           "pillar": "ethics",
-          "keyActions": ["Run bias assessment", "Review fairness metrics", "Document compliance"]
+          "keyActions": [
+            "Run bias assessment",
+            "Review fairness metrics",
+            "Document compliance"
+          ]
         },
         {
           "title": "Test with Synthetic Data from Cendia Mirage",
           "description": "Generate edge cases and adversarial examples. Make sure your model handles the unexpected without privacy risks.",
           "sovereign": "mirage",
-          "keyActions": ["Generate test data", "Run stress tests", "Validate edge cases"]
+          "keyActions": [
+            "Generate test data",
+            "Run stress tests",
+            "Validate edge cases"
+          ]
         },
         {
           "title": "Simulate in Cendia Mirror",
           "description": "Deploy to a digital twin first. See how your model performs with real-world traffic patterns before touching production.",
           "sovereign": "mirror",
-          "keyActions": ["Deploy to mirror", "Simulate production load", "Compare predictions"]
+          "keyActions": [
+            "Deploy to mirror",
+            "Simulate production load",
+            "Compare predictions"
+          ]
         },
         {
           "title": "Configure Explainability in Cendia Glass",
           "description": "Every prediction needs to be explainable. Set up factor attribution and counterfactual generation for transparency.",
           "sovereign": "glass",
-          "keyActions": ["Enable explainability", "Configure factors", "Test explanations"]
+          "keyActions": [
+            "Enable explainability",
+            "Configure factors",
+            "Test explanations"
+          ]
         },
         {
           "title": "Deploy and Monitor with The Predict",
           "description": "Go live with confidence. The Predict monitors performance, detects drift, and alerts you to any degradation.",
           "pillar": "predict",
-          "keyActions": ["Promote to production", "Set up monitoring", "Configure drift alerts"]
+          "keyActions": [
+            "Promote to production",
+            "Set up monitoring",
+            "Configure drift alerts"
+          ]
         }
       ]
     },
@@ -1283,37 +1696,61 @@
           "title": "Pull Strategic KPIs from The Helm",
           "description": "Gather all your key metrics in one place. The Helm shows progress against strategic objectives with trend analysis.",
           "pillar": "helm",
-          "keyActions": ["Export KPI dashboard", "Generate trend analysis", "Highlight achievements"]
+          "keyActions": [
+            "Export KPI dashboard",
+            "Generate trend analysis",
+            "Highlight achievements"
+          ]
         },
         {
           "title": "Build Forecasts with The Predict",
           "description": "Don't just show where you are - show where you're going. Generate projections with confidence intervals.",
           "pillar": "predict",
-          "keyActions": ["Generate forecasts", "Build revenue projections", "Create scenarios"]
+          "keyActions": [
+            "Generate forecasts",
+            "Build revenue projections",
+            "Create scenarios"
+          ]
         },
         {
           "title": "Validate Data with The Lineage",
           "description": "Board members will ask tough questions. Know exactly where every number comes from.",
           "pillar": "lineage",
-          "keyActions": ["Trace key figures", "Document sources", "Prepare data lineage"]
+          "keyActions": [
+            "Trace key figures",
+            "Document sources",
+            "Prepare data lineage"
+          ]
         },
         {
           "title": "Model What-If Scenarios in The Lens",
           "description": "Be ready for 'What if we...' questions. Pre-model strategic scenarios so you have answers ready.",
           "space": "lens",
-          "keyActions": ["Model growth scenarios", "Analyze risk factors", "Prepare contingencies"]
+          "keyActions": [
+            "Model growth scenarios",
+            "Analyze risk factors",
+            "Prepare contingencies"
+          ]
         },
         {
           "title": "Get AI Synthesis from Cendia Oracle",
           "description": "Ask Oracle to synthesize your data into key insights and talking points. It sees patterns humans miss.",
           "sovereign": "oracle",
-          "keyActions": ["Generate insights", "Request talking points", "Identify blind spots"]
+          "keyActions": [
+            "Generate insights",
+            "Request talking points",
+            "Identify blind spots"
+          ]
         },
         {
           "title": "Ensure Compliance with The Guard",
           "description": "Make sure nothing you present creates compliance exposure. The Guard verifies all data meets governance requirements.",
           "pillar": "guard",
-          "keyActions": ["Run compliance check", "Verify data classifications", "Clear for presentation"]
+          "keyActions": [
+            "Run compliance check",
+            "Verify data classifications",
+            "Clear for presentation"
+          ]
         }
       ]
     },
@@ -1327,37 +1764,61 @@
           "title": "Access Your Workspace via Cendia Key",
           "description": "One login gives you access to everything you need. Key manages your permissions based on your role.",
           "sovereign": "key",
-          "keyActions": ["Complete SSO setup", "Verify role assignments", "Access granted systems"]
+          "keyActions": [
+            "Complete SSO setup",
+            "Verify role assignments",
+            "Access granted systems"
+          ]
         },
         {
           "title": "Explore Organizational Knowledge in The Graph",
           "description": "Navigate the knowledge universe. Find documentation, experts, and context for your new role.",
           "space": "graph",
-          "keyActions": ["Search role resources", "Find team knowledge", "Identify key contacts"]
+          "keyActions": [
+            "Search role resources",
+            "Find team knowledge",
+            "Identify key contacts"
+          ]
         },
         {
           "title": "Learn from Cendia Legacy",
           "description": "Access institutional knowledge from those who came before. Best practices, decision rationale, and lessons learned.",
           "sovereign": "legacy",
-          "keyActions": ["Review team playbooks", "Study past decisions", "Learn best practices"]
+          "keyActions": [
+            "Review team playbooks",
+            "Study past decisions",
+            "Learn best practices"
+          ]
         },
         {
           "title": "Understand Your Metrics in The Helm",
           "description": "Every role has KPIs. Learn what you're measured on and how to track your progress.",
           "pillar": "helm",
-          "keyActions": ["Review assigned metrics", "Understand targets", "Set up personal dashboard"]
+          "keyActions": [
+            "Review assigned metrics",
+            "Understand targets",
+            "Set up personal dashboard"
+          ]
         },
         {
           "title": "Set Up Automated Workflows in The Flow",
           "description": "Don't reinvent processes. Connect to existing workflows and automate repetitive tasks from day one.",
           "pillar": "flow",
-          "keyActions": ["Join team workflows", "Set up notifications", "Automate reports"]
+          "keyActions": [
+            "Join team workflows",
+            "Set up notifications",
+            "Automate reports"
+          ]
         },
         {
           "title": "Meet Your AI Assistants in The Agents",
           "description": "You have AI teammates ready to help. Meet the agents relevant to your role and learn how to collaborate.",
           "pillar": "agents",
-          "keyActions": ["Meet domain agents", "Ask first questions", "Save helpful responses"]
+          "keyActions": [
+            "Meet domain agents",
+            "Ask first questions",
+            "Save helpful responses"
+          ]
         }
       ]
     },
@@ -1371,37 +1832,61 @@
           "title": "Map Both Data Landscapes with The Lineage",
           "description": "Before you can merge, you need to understand both sides. The Lineage creates a complete map of entities and relationships.",
           "pillar": "lineage",
-          "keyActions": ["Scan acquiring data", "Scan target data", "Identify overlaps"]
+          "keyActions": [
+            "Scan acquiring data",
+            "Scan target data",
+            "Identify overlaps"
+          ]
         },
         {
           "title": "Unify Metrics in The Helm",
           "description": "Different organizations measure things differently. Harmonize KPI definitions for a single source of truth.",
           "pillar": "helm",
-          "keyActions": ["Map metric definitions", "Resolve conflicts", "Create unified dashboard"]
+          "keyActions": [
+            "Map metric definitions",
+            "Resolve conflicts",
+            "Create unified dashboard"
+          ]
         },
         {
           "title": "Connect Systems via Cendia Mesh",
           "description": "Build the integration layer. Mesh handles the complexity of connecting disparate systems with different protocols.",
           "sovereign": "mesh",
-          "keyActions": ["Map source systems", "Build integrations", "Test data flows"]
+          "keyActions": [
+            "Map source systems",
+            "Build integrations",
+            "Test data flows"
+          ]
         },
         {
           "title": "Preserve Institutional Knowledge in Cendia Legacy",
           "description": "M&A often means losing key people. Capture their knowledge before transitions happen.",
           "sovereign": "legacy",
-          "keyActions": ["Interview key personnel", "Document processes", "Archive tribal knowledge"]
+          "keyActions": [
+            "Interview key personnel",
+            "Document processes",
+            "Archive tribal knowledge"
+          ]
         },
         {
           "title": "Merge Identity Systems via Cendia Key",
           "description": "Unify who has access to what. Key integrates identity providers and harmonizes permissions.",
           "sovereign": "key",
-          "keyActions": ["Merge identity sources", "Reconcile permissions", "Enable unified access"]
+          "keyActions": [
+            "Merge identity sources",
+            "Reconcile permissions",
+            "Enable unified access"
+          ]
         },
         {
           "title": "Monitor Integration Health",
           "description": "Track the health of your integration in real-time. Catch issues before they become problems.",
           "pillar": "health",
-          "keyActions": ["Monitor data quality", "Track sync status", "Alert on anomalies"]
+          "keyActions": [
+            "Monitor data quality",
+            "Track sync status",
+            "Alert on anomalies"
+          ]
         }
       ]
     },
@@ -1415,37 +1900,61 @@
           "title": "Pull Audit Evidence from Cendia Witness",
           "description": "Every action in your organization is recorded. Witness provides cryptographically-proven evidence for auditors.",
           "sovereign": "witness",
-          "keyActions": ["Define audit scope", "Export evidence package", "Generate attestations"]
+          "keyActions": [
+            "Define audit scope",
+            "Export evidence package",
+            "Generate attestations"
+          ]
         },
         {
           "title": "Verify Policy Compliance in The Guard",
           "description": "Show auditors your policies are actually enforced. The Guard provides real-time compliance posture and violation history.",
           "pillar": "guard",
-          "keyActions": ["Generate compliance report", "Show policy enforcement", "Document exceptions"]
+          "keyActions": [
+            "Generate compliance report",
+            "Show policy enforcement",
+            "Document exceptions"
+          ]
         },
         {
           "title": "Demonstrate AI Governance in The Ethics",
           "description": "AI regulations are here. Show your bias testing, decision documentation, and ethical review processes.",
           "pillar": "ethics",
-          "keyActions": ["Export ethics reviews", "Show bias test results", "Document AI governance"]
+          "keyActions": [
+            "Export ethics reviews",
+            "Show bias test results",
+            "Document AI governance"
+          ]
         },
         {
           "title": "Explain AI Decisions with Cendia Glass",
           "description": "When auditors ask 'why did the system decide this?', Glass provides complete explanations.",
           "sovereign": "glass",
-          "keyActions": ["Generate decision reports", "Show factor attribution", "Provide counterfactuals"]
+          "keyActions": [
+            "Generate decision reports",
+            "Show factor attribution",
+            "Provide counterfactuals"
+          ]
         },
         {
           "title": "Trace Data Lineage for Accuracy",
           "description": "Prove your numbers are accurate by showing where they come from. The Lineage provides source-to-report traceability.",
           "pillar": "lineage",
-          "keyActions": ["Export lineage maps", "Document transformations", "Prove data accuracy"]
+          "keyActions": [
+            "Export lineage maps",
+            "Document transformations",
+            "Prove data accuracy"
+          ]
         },
         {
           "title": "Review Access Controls via Cendia Key",
           "description": "Who had access to what and when? Key provides complete access audit trails for any time period.",
           "sovereign": "key",
-          "keyActions": ["Export access logs", "Show permission history", "Document controls"]
+          "keyActions": [
+            "Export access logs",
+            "Show permission history",
+            "Document controls"
+          ]
         }
       ]
     },
@@ -1459,37 +1968,61 @@
           "title": "Identify At-Risk Customers with The Predict",
           "description": "ML models analyze hundreds of signals to score churn risk. Know who's at risk before they know themselves.",
           "pillar": "predict",
-          "keyActions": ["Review risk scores", "Identify top risks", "Understand risk factors"]
+          "keyActions": [
+            "Review risk scores",
+            "Identify top risks",
+            "Understand risk factors"
+          ]
         },
         {
           "title": "Understand Customer Health in The Helm",
           "description": "Track customer health metrics. Usage trends, support tickets, engagement scores - all in one view.",
           "pillar": "helm",
-          "keyActions": ["Review health scores", "Check engagement metrics", "Identify trends"]
+          "keyActions": [
+            "Review health scores",
+            "Check engagement metrics",
+            "Identify trends"
+          ]
         },
         {
           "title": "Explore Customer Journey in The Graph",
           "description": "See the full customer story. Every interaction, every touchpoint, every signal - connected in context.",
           "space": "graph",
-          "keyActions": ["View customer timeline", "Explore interactions", "Find patterns"]
+          "keyActions": [
+            "View customer timeline",
+            "Explore interactions",
+            "Find patterns"
+          ]
         },
         {
           "title": "Get Retention Recommendations from The Council",
           "description": "Convene your AI advisors to brainstorm retention strategies. Each customer is unique - get personalized approaches.",
           "space": "council",
-          "keyActions": ["Present customer profile", "Get retention ideas", "Prioritize actions"]
+          "keyActions": [
+            "Present customer profile",
+            "Get retention ideas",
+            "Prioritize actions"
+          ]
         },
         {
           "title": "Trigger Retention Workflows in The Flow",
           "description": "Turn recommendations into action. Automated outreach, escalations, and follow-ups keep nothing falling through cracks.",
           "pillar": "flow",
-          "keyActions": ["Trigger outreach", "Schedule follow-ups", "Escalate to team"]
+          "keyActions": [
+            "Trigger outreach",
+            "Schedule follow-ups",
+            "Escalate to team"
+          ]
         },
         {
           "title": "Model Revenue Impact in The Lens",
           "description": "Quantify what's at stake. The Lens shows the revenue impact of churn scenarios and intervention success.",
           "space": "lens",
-          "keyActions": ["Model churn impact", "Calculate intervention ROI", "Prioritize efforts"]
+          "keyActions": [
+            "Model churn impact",
+            "Calculate intervention ROI",
+            "Prioritize efforts"
+          ]
         }
       ]
     },
@@ -1503,37 +2036,61 @@
           "title": "Set Launch KPIs in The Helm",
           "description": "Define success before you launch. Track adoption, performance, and business metrics in real-time.",
           "pillar": "helm",
-          "keyActions": ["Define success metrics", "Set targets", "Configure dashboard"]
+          "keyActions": [
+            "Define success metrics",
+            "Set targets",
+            "Configure dashboard"
+          ]
         },
         {
           "title": "Verify Systems Ready in The Health",
           "description": "Is everything green before launch? The Health gives you confidence that all systems are go.",
           "pillar": "health",
-          "keyActions": ["Check all systems", "Verify capacity", "Confirm dependencies"]
+          "keyActions": [
+            "Check all systems",
+            "Verify capacity",
+            "Confirm dependencies"
+          ]
         },
         {
           "title": "Simulate Launch Load in Cendia Mirror",
           "description": "Test your launch scenario in a digital twin. See how systems behave under expected load.",
           "sovereign": "mirror",
-          "keyActions": ["Create launch simulation", "Run load test", "Identify bottlenecks"]
+          "keyActions": [
+            "Create launch simulation",
+            "Run load test",
+            "Identify bottlenecks"
+          ]
         },
         {
           "title": "Monitor Real-Time in The Pulse",
           "description": "Launch day visibility. Watch metrics, errors, and user behavior stream in as you launch.",
           "space": "pulse",
-          "keyActions": ["Monitor launch metrics", "Watch for anomalies", "Track adoption"]
+          "keyActions": [
+            "Monitor launch metrics",
+            "Watch for anomalies",
+            "Track adoption"
+          ]
         },
         {
           "title": "Respond to Issues via The Bridge",
           "description": "When something needs adjustment, act fast. The Bridge lets you push changes across systems instantly.",
           "space": "bridge",
-          "keyActions": ["Deploy hotfixes", "Adjust configurations", "Scale resources"]
+          "keyActions": [
+            "Deploy hotfixes",
+            "Adjust configurations",
+            "Scale resources"
+          ]
         },
         {
           "title": "Capture Learnings in Cendia Legacy",
           "description": "Document what worked and what didn't. Future launches will be better for it.",
           "sovereign": "legacy",
-          "keyActions": ["Document launch log", "Record issues", "Note improvements"]
+          "keyActions": [
+            "Document launch log",
+            "Record issues",
+            "Note improvements"
+          ]
         }
       ]
     },
@@ -1547,37 +2104,61 @@
           "title": "Assess Current Quality in The Lineage",
           "description": "You can't improve what you don't measure. The Lineage scores quality at every stage of your data journey.",
           "pillar": "lineage",
-          "keyActions": ["Run quality assessment", "Identify problem areas", "Prioritize issues"]
+          "keyActions": [
+            "Run quality assessment",
+            "Identify problem areas",
+            "Prioritize issues"
+          ]
         },
         {
           "title": "Track Quality Metrics in The Helm",
           "description": "Make data quality a first-class KPI. Track completeness, accuracy, timeliness, and consistency over time.",
           "pillar": "helm",
-          "keyActions": ["Create quality dashboard", "Set improvement targets", "Track progress"]
+          "keyActions": [
+            "Create quality dashboard",
+            "Set improvement targets",
+            "Track progress"
+          ]
         },
         {
           "title": "Set Quality Rules in The Guard",
           "description": "Define and enforce quality standards. The Guard automatically validates data against your rules.",
           "pillar": "guard",
-          "keyActions": ["Define quality rules", "Configure validation", "Set up alerts"]
+          "keyActions": [
+            "Define quality rules",
+            "Configure validation",
+            "Set up alerts"
+          ]
         },
         {
           "title": "Automate Quality Checks in The Flow",
           "description": "Build quality into your pipelines. Automated checks run continuously, catching issues before they spread.",
           "pillar": "flow",
-          "keyActions": ["Build quality workflows", "Add validation steps", "Configure remediation"]
+          "keyActions": [
+            "Build quality workflows",
+            "Add validation steps",
+            "Configure remediation"
+          ]
         },
         {
           "title": "Monitor Quality Health",
           "description": "Watch quality trends across your data estate. Catch degradation early and celebrate improvements.",
           "pillar": "health",
-          "keyActions": ["Monitor quality trends", "Alert on degradation", "Report improvements"]
+          "keyActions": [
+            "Monitor quality trends",
+            "Alert on degradation",
+            "Report improvements"
+          ]
         },
         {
           "title": "Document Standards in Cendia Legacy",
           "description": "Encode your quality standards for the organization. Make quality institutional, not individual.",
           "sovereign": "legacy",
-          "keyActions": ["Document standards", "Create playbooks", "Train teams"]
+          "keyActions": [
+            "Document standards",
+            "Create playbooks",
+            "Train teams"
+          ]
         }
       ]
     },
@@ -1591,37 +2172,61 @@
           "title": "Detect Threats in The Guard",
           "description": "The Guard's threat detection engine surfaces suspicious activity. Prioritized by severity and confidence.",
           "pillar": "guard",
-          "keyActions": ["Review threat alerts", "Assess severity", "Confirm threat"]
+          "keyActions": [
+            "Review threat alerts",
+            "Assess severity",
+            "Confirm threat"
+          ]
         },
         {
           "title": "Assess Blast Radius in The Lineage",
           "description": "What systems and data could be affected? The Lineage maps the potential impact of the threat.",
           "pillar": "lineage",
-          "keyActions": ["Map affected systems", "Identify sensitive data", "Assess exposure"]
+          "keyActions": [
+            "Map affected systems",
+            "Identify sensitive data",
+            "Assess exposure"
+          ]
         },
         {
           "title": "Review Access Logs in Cendia Key",
           "description": "Who accessed what and when? Key provides the forensic trail to understand the attack vector.",
           "sovereign": "key",
-          "keyActions": ["Pull access logs", "Identify anomalies", "Trace attack path"]
+          "keyActions": [
+            "Pull access logs",
+            "Identify anomalies",
+            "Trace attack path"
+          ]
         },
         {
           "title": "Preserve Evidence in Cendia Witness",
           "description": "Before containment changes evidence, capture the immutable record. You'll need this for investigation.",
           "sovereign": "witness",
-          "keyActions": ["Capture system state", "Export audit logs", "Preserve timeline"]
+          "keyActions": [
+            "Capture system state",
+            "Export audit logs",
+            "Preserve timeline"
+          ]
         },
         {
           "title": "Execute Containment via The Bridge",
           "description": "Isolate the threat. The Bridge can revoke access, quarantine systems, and deploy countermeasures.",
           "space": "bridge",
-          "keyActions": ["Revoke compromised access", "Isolate systems", "Deploy patches"]
+          "keyActions": [
+            "Revoke compromised access",
+            "Isolate systems",
+            "Deploy patches"
+          ]
         },
         {
           "title": "Coordinate with The Council",
           "description": "Bring in your AI security experts. They help analyze the attack and recommend comprehensive response.",
           "space": "council",
-          "keyActions": ["Analyze attack pattern", "Get remediation plan", "Assess risk"]
+          "keyActions": [
+            "Analyze attack pattern",
+            "Get remediation plan",
+            "Assess risk"
+          ]
         }
       ]
     }

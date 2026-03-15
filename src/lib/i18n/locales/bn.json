@@ -107,6 +107,23 @@
         "passwordMismatch": "পাসওয়ার্ড মেলেনি",
         "acceptTerms": "আপনাকে শর্তাবলী মেনে নিতে হবে",
         "registrationFailed": "নিবন্ধন ব্যর্থ। আবার চেষ্টা করুন।"
+      },
+      "step1Subtitle": "Enter your details to get started",
+      "step2Subtitle": "Set up your password",
+      "signUpWith": "Sign up with",
+      "features": {
+        "council": "AI Council - Get strategic advice from specialized AI agents",
+        "graph": "Graph Explorer - Visualize all your data relationships",
+        "lens": "The Lens - Forecast future outcomes with ML",
+        "bridge": "The Bridge - Automate workflows across systems"
+      },
+      "passwordRequirements": {
+        "title": "Password must contain:",
+        "minLength": "At least 12 characters",
+        "uppercase": "One uppercase letter",
+        "lowercase": "One lowercase letter",
+        "number": "One number",
+        "special": "One special character"
       }
     },
     "forgotPassword": {
@@ -115,13 +132,19 @@
       "email": "ইমেইল ঠিকানা",
       "sendResetLink": "রিসেট লিংক পাঠান",
       "backToLogin": "লগইনে ফিরে যান",
-      "checkEmail": "আপনার ইমেইল দেখুন"
+      "checkEmail": "আপনার ইমেইল দেখুন",
+      "submitButton": "Send Reset Link",
+      "emailSentTo": "If an account exists for",
+      "linkExpiry": "The link will expire in 1 hour. If you don't see the email, check your spam folder.",
+      "success": "If an account exists, you'll receive an email shortly."
     },
     "mfa": {
       "title": "দুই-ধাপ যাচাইকরণ",
       "subtitle": "আপনার অথেনটিকেশন অ্যাপ থেকে কোড দিন।",
       "code": "অথেনটিকেশন কোড",
-      "submitButton": "যাচাই করুন"
+      "submitButton": "যাচাই করুন",
+      "useBackupCode": "Use a backup code",
+      "resendCode": "Resend code"
     }
   },
   "home": {
@@ -134,17 +157,32 @@
     },
     "problem": {
       "title": "এন্টারপ্রাইজ ইন্টেলিজেন্সের সমস্যা",
-      "subtitle": "প্রতিষ্ঠানগুলো খণ্ডিত ডেটা এবং বিচ্ছিন্ন টুল নিয়ে সংগ্রাম করছে"
+      "subtitle": "প্রতিষ্ঠানগুলো খণ্ডিত ডেটা এবং বিচ্ছিন্ন টুল নিয়ে সংগ্রাম করছে",
+      "dataChaos": {
+        "title": "Data Chaos",
+        "description": "Your data lives in dozens of systems with no unified view. Nobody knows what's true."
+      },
+      "toolSprawl": {
+        "title": "Tool Sprawl",
+        "description": "BI tools, analytics platforms, dashboards — none of them talk to each other."
+      },
+      "noForesight": {
+        "title": "No Foresight",
+        "description": "You're always looking in the rear-view mirror. What about what's coming next?"
+      }
     },
     "solution": {
-      "title": "Cortex: আপনার ইন্টেলিজেন্স কমান্ড সেন্টার"
+      "title": "Cortex: আপনার ইন্টেলিজেন্স কমান্ড সেন্টার",
+      "subtitle": "Five integrated spaces that give you complete visibility and control"
     },
     "pillars": {
-      "title": "সার্বভৌম ইন্টেলিজেন্সের ৮টি স্তম্ভ"
+      "title": "সার্বভৌম ইন্টেলিজেন্সের ৮টি স্তম্ভ",
+      "subtitle": "Every capability you need, working together as one"
     },
     "cta": {
       "title": "আপনার বুদ্ধিমত্তার নিয়ন্ত্রণ নিতে প্রস্তুত?",
-      "button": "ডেমো সময়সূচী করুন"
+      "button": "ডেমো সময়সূচী করুন",
+      "subtitle": "See how Datacendia can transform your organization's decision-making"
     }
   },
   "spaces": {
@@ -172,35 +210,43 @@
   "pillars": {
     "helm": {
       "name": "হেল্ম",
-      "description": "কৌশলগত সিদ্ধান্ত সমর্থন"
+      "description": "কৌশলগত সিদ্ধান্ত সমর্থন",
+      "longDescription": "Your command center for strategic decisions. Track KPIs, monitor performance, and steer your organization with confidence."
     },
     "lineage": {
       "name": "লিনিয়েজ",
-      "description": "প্রতিটি ডেটা পয়েন্ট উৎসে ট্রেস করুন"
+      "description": "প্রতিটি ডেটা পয়েন্ট উৎসে ট্রেস করুন",
+      "longDescription": "Complete data provenance tracking. Know where your data comes from, how it transforms, and where it goes."
     },
     "predict": {
       "name": "প্রেডিক্ট",
-      "description": "AI-চালিত পূর্বাভাস"
+      "description": "AI-চালিত পূর্বাভাস",
+      "longDescription": "Machine learning models that forecast trends, detect anomalies, and surface insights before they become obvious."
     },
     "flow": {
       "name": "ফ্লো",
-      "description": "স্বয়ংক্রিয় ওয়ার্কফ্লো"
+      "description": "স্বয়ংক্রিয় ওয়ার্কফ্লো",
+      "longDescription": "Intelligent workflow automation that connects your systems and processes with AI-driven decision points."
     },
     "health": {
       "name": "হেলথ",
-      "description": "সাংগঠনিক প্রাণশক্তি মেট্রিক্স"
+      "description": "সাংগঠনিক প্রাণশক্তি মেট্রিক্স",
+      "longDescription": "Real-time monitoring of your organization's vital signs across data, systems, and processes."
     },
     "guard": {
       "name": "গার্ড",
-      "description": "ডেটা গভর্ন্যান্স এবং সম্মতি"
+      "description": "ডেটা গভর্ন্যান্স এবং সম্মতি",
+      "longDescription": "Automated policy enforcement, access controls, and compliance monitoring to keep your data secure."
     },
     "ethics": {
       "name": "এথিক্স",
-      "description": "অন্তর্নির্মিত নৈতিক তত্ত্বাবধান"
+      "description": "অন্তর্নির্মিত নৈতিক তত্ত্বাবধান",
+      "longDescription": "Ethical guardrails that ensure responsible AI use, fair algorithms, and transparent decision-making."
     },
     "agents": {
       "name": "এজেন্টস",
-      "description": "প্রতিটি ডোমেইনের জন্য AI উপদেষ্টা"
+      "description": "প্রতিটি ডোমেইনের জন্য AI উপদেষ্টা",
+      "longDescription": "Specialized AI agents that provide domain-specific expertise and collaborate to solve complex problems."
     }
   },
   "pricing": {
@@ -212,14 +258,52 @@
     "perMonth": "/মাস",
     "startTrial": "বিনামূল্যে ট্রায়াল শুরু করুন",
     "contactSales": "বিক্রয়ে যোগাযোগ করুন",
-    "mostPopular": "সবচেয়ে জনপ্রিয়"
+    "mostPopular": "সবচেয়ে জনপ্রিয়",
+    "plans": {
+      "foundation": {
+        "name": "Foundation",
+        "description": "Essential intelligence capabilities for growing teams"
+      },
+      "intelligence": {
+        "name": "Intelligence",
+        "description": "Advanced analytics and forecasting for scaling organizations"
+      },
+      "governance": {
+        "name": "Governance",
+        "description": "Complete governance and compliance for regulated industries"
+      },
+      "sovereign": {
+        "name": "Sovereign",
+        "description": "Full platform with complete data sovereignty"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "questions": {
+        "trial": {
+          "q": "Can I try before I buy?",
+          "a": "Yes! All plans include a 14-day free trial with full access to features."
+        },
+        "data": {
+          "q": "What happens to my data if I cancel?",
+          "a": "Your data remains yours. Export everything before cancellation, or we'll retain it for 30 days."
+        },
+        "nonprofit": {
+          "q": "Do you offer discounts for nonprofits?",
+          "a": "Yes, we offer 50% off for qualified nonprofits and educational institutions."
+        },
+        "upgrade": {
+          "q": "Can I upgrade or downgrade anytime?",
+          "a": "Absolutely. Changes take effect at your next billing cycle, prorated if upgrading."
+        }
+      }
+    }
   },
   "dashboard": {
     "title": "ড্যাশবোর্ড",
     "welcome": "স্বাগতম",
     "subtitle": "আজ {{company}} কেমন আছে",
     "health_score": "সংস্থার স্বাস্থ্য",
-    "healthScore": "স্বাস্থ্য স্কোর",
     "data": "ডেটা",
     "operations": "অপারেশন",
     "security": "নিরাপত্তা",
@@ -231,7 +315,6 @@
     "warning": "সতর্কতা",
     "info": "তথ্য",
     "pending_approvals": "অপেক্ষমান অনুমোদন",
-    "pendingApprovals": "অপেক্ষমান অনুমোদন",
     "workflows": "ওয়ার্কফ্লো",
     "access": "অ্যাক্সেস",
     "budget": "বাজেট",
@@ -319,7 +402,6 @@
   },
   "button": {
     "view_all": "সব দেখুন",
-    "viewAll": "সব দেখুন",
     "viewMore": "আরও দেখুন",
     "approve": "অনুমোদন করুন",
     "reject": "প্রত্যাখ্যান করুন",
@@ -380,7 +462,12 @@
     "the_lens": "লেন্স",
     "the_bridge": "ব্রিজ",
     "settings": "সেটিংস",
-    "help": "সহায়তা"
+    "help": "সহায়তা",
+    "cortex": "Cortex",
+    "spaces": "Spaces",
+    "pillars": "Pillars",
+    "sovereign": "Sovereign",
+    "admin": "Admin"
   },
   "council": {
     "title": "কাউন্সিল",
@@ -596,7 +683,9 @@
     "locked": "লক করা",
     "custom": "কাস্টম",
     "unlock": "আনলক",
-    "required": "প্রয়োজনীয়"
+    "required": "প্রয়োজনীয়",
+    "owner": "Owner",
+    "admin": "Administrator"
   },
   "settings": {
     "title": "সেটিংস",
@@ -604,7 +693,11 @@
     "users": "ব্যবহারকারী",
     "teams": "টিম",
     "billing": "বিলিং",
-    "security": "নিরাপত্তা"
+    "security": "নিরাপত্তা",
+    "roles": "Roles & Permissions",
+    "apiKeys": "API Keys",
+    "integrations": "Integrations",
+    "preferences": "Preferences"
   },
   "errors": {
     "notFound": {
@@ -623,6 +716,10 @@
     "unauthorized": {
       "title": "অননুমোদিত",
       "message": "এই রিসোর্সে আপনার অ্যাক্সেস নেই।"
+    },
+    "sessionExpired": {
+      "title": "Session Expired",
+      "message": "Your session has expired. Please sign in again."
     }
   },
   "footer": {
@@ -635,14 +732,29 @@
     "contact": "যোগাযোগ",
     "privacy": "গোপনীয়তা নীতি",
     "terms": "সেবার শর্তাবলী",
-    "copyright": "© {{year}} Datacendia. সর্বস্বত্ব সংরক্ষিত।"
+    "copyright": "© {{year}} Datacendia. সর্বস্বত্ব সংরক্ষিত।",
+    "press": "Press",
+    "features": "Features",
+    "integrations": "Integrations",
+    "enterprise": "Enterprise",
+    "documentation": "Documentation",
+    "apiReference": "API Reference",
+    "status": "System Status",
+    "community": "Community",
+    "security": "Security",
+    "cookies": "Cookie Policy",
+    "tagline": "Sovereign Enterprise Intelligence"
   },
   "time": {
     "justNow": "এইমাত্র",
     "minutesAgo": "{{count}} মিনিট আগে",
     "hoursAgo": "{{count}} ঘন্টা আগে",
     "daysAgo": "{{count}} দিন আগে",
-    "weeksAgo": "{{count}} সপ্তাহ আগে"
+    "weeksAgo": "{{count}} সপ্তাহ আগে",
+    "minutesAgo_plural": "{{count}} minutes ago",
+    "hoursAgo_plural": "{{count}} hours ago",
+    "daysAgo_plural": "{{count}} days ago",
+    "weeksAgo_plural": "{{count}} weeks ago"
   },
   "tooltips": {
     "pillars": {
@@ -653,7 +765,12 @@
           "রিয়েল-টাইম KPI ড্যাশবোর্ড",
           "কৌশলগত লক্ষ্য ট্র্যাকিং"
         ],
-        "guidance": "আপনার মূল মেট্রিক্স সংজ্ঞায়িত করে শুরু করুন।"
+        "guidance": "আপনার মূল মেট্রিক্স সংজ্ঞায়িত করে শুরু করুন।",
+        "useCases": [
+          "Track quarterly objectives across all departments",
+          "Monitor revenue metrics and growth indicators",
+          "Set and track strategic milestones"
+        ]
       },
       "lineage": {
         "title": "Lineage - ডেটা বংশ ট্র্যাকিং",
@@ -662,7 +779,12 @@
           "ডেটা প্রবাহের ভিজ্যুয়াল ম্যাপিং",
           "উৎস থেকে রিপোর্ট পর্যন্ত ট্র্যাকিং"
         ],
-        "guidance": "প্রথমে আপনার ডেটা সোর্স কানেক্ট করুন।"
+        "guidance": "প্রথমে আপনার ডেটা সোর্স কানেক্ট করুন।",
+        "useCases": [
+          "Audit trail for regulatory compliance",
+          "Debug data discrepancies across systems",
+          "Plan system migrations with full impact visibility"
+        ]
       },
       "predict": {
         "title": "Predict - AI পূর্বাভাস ইঞ্জিন",
@@ -671,7 +793,12 @@
           "টাইম সিরিজ পূর্বাভাস",
           "অসঙ্গতি সনাক্তকরণ"
         ],
-        "guidance": "ভালো পূর্বাভাসের জন্য ভালো ডেটা প্রয়োজন।"
+        "guidance": "ভালো পূর্বাভাসের জন্য ভালো ডেটা প্রয়োজন।",
+        "useCases": [
+          "Forecast demand and optimize inventory",
+          "Predict customer churn before it happens",
+          "Model financial scenarios for strategic planning"
+        ]
       },
       "flow": {
         "title": "Flow - বুদ্ধিমান অটোমেশন",
@@ -680,7 +807,12 @@
           "ভিজ্যুয়াল ওয়ার্কফ্লো বিল্ডার",
           "AI সিদ্ধান্ত নোড"
         ],
-        "guidance": "প্রথমে আপনার ম্যানুয়াল প্রক্রিয়াগুলো ম্যাপ করুন।"
+        "guidance": "প্রথমে আপনার ম্যানুয়াল প্রক্রিয়াগুলো ম্যাপ করুন।",
+        "useCases": [
+          "Automate data pipeline orchestration",
+          "Create intelligent approval workflows",
+          "Trigger actions based on AI insights"
+        ]
       },
       "health": {
         "title": "Health - গুরুত্বপূর্ণ সংকেত মনিটর",
@@ -689,7 +821,12 @@
           "কম্পোনেন্ট স্বাস্থ্য ড্যাশবোর্ড",
           "পারফরম্যান্স ট্রেন্ড বিশ্লেষণ"
         ],
-        "guidance": "গুরুত্বপূর্ণ সিস্টেমের জন্য স্বাস্থ্য পরীক্ষা সেটআপ করুন।"
+        "guidance": "গুরুত্বপূর্ণ সিস্টেমের জন্য স্বাস্থ্য পরীক্ষা সেটআপ করুন।",
+        "useCases": [
+          "Monitor system health across all platforms",
+          "Track incident response and resolution times",
+          "Plan infrastructure capacity proactively"
+        ]
       },
       "guard": {
         "title": "Guard - নিরাপত্তা ও সম্মতি ঢাল",
@@ -698,7 +835,12 @@
           "পলিসি প্রয়োগ ইঞ্জিন",
           "হুমকি সনাক্তকরণ"
         ],
-        "guidance": "আপনার নিরাপত্তা নীতি সংজ্ঞায়িত করুন।"
+        "guidance": "আপনার নিরাপত্তা নীতি সংজ্ঞায়িত করুন।",
+        "useCases": [
+          "Enforce data access policies automatically",
+          "Generate compliance reports for auditors",
+          "Detect and respond to security threats"
+        ]
       },
       "ethics": {
         "title": "Ethics - AI গভর্ন্যান্স সেন্টার",
@@ -707,7 +849,12 @@
           "পক্ষপাত সনাক্তকরণ",
           "ব্যাখ্যাযোগ্যতা সরঞ্জাম"
         ],
-        "guidance": "প্রথমে আপনার নৈতিক নীতি স্থাপন করুন।"
+        "guidance": "প্রথমে আপনার নৈতিক নীতি স্থাপন করুন।",
+        "useCases": [
+          "Review AI models for bias before deployment",
+          "Document decision rationale for compliance",
+          "Monitor fairness metrics in production"
+        ]
       },
       "agents": {
         "title": "Agents - AI উপদেষ্টা কাউন্সিল",
@@ -716,34 +863,74 @@
           "ডোমেন-বিশেষজ্ঞ AI এজেন্ট",
           "মাল্টি-এজেন্ট সহযোগিতা"
         ],
-        "guidance": "আপনার প্রশ্নের জন্য সঠিক এজেন্ট বেছে নিন।"
+        "guidance": "আপনার প্রশ্নের জন্য সঠিক এজেন্ট বেছে নিন।",
+        "useCases": [
+          "Get strategic advice from business analysts",
+          "Consult technical experts for architecture decisions",
+          "Receive compliance guidance from regulatory specialists"
+        ]
       }
     },
     "spaces": {
       "graph": {
         "title": "Graph - জ্ঞান ন্যাভিগেটর",
         "summary": "আপনার এন্টারপ্রাইজের জ্ঞান মহাবিশ্ব নেভিগেট করুন।",
-        "guidance": "এক্সপ্লোর শুরু করতে যেকোনো নোডে ক্লিক করুন।"
+        "guidance": "এক্সপ্লোর শুরু করতে যেকোনো নোডে ক্লিক করুন।",
+        "features": [
+          "Interactive knowledge visualization",
+          "Semantic search across all data",
+          "Relationship discovery",
+          "Context-aware exploration",
+          "Knowledge gap identification"
+        ]
       },
       "council": {
         "title": "Council - AI সহযোগিতা কক্ষ",
         "summary": "যেখানে AI উপদেষ্টারা একসাথে আলোচনা করেন।",
-        "guidance": "কাউন্সিলের কাছে আপনার প্রশ্ন উপস্থাপন করুন।"
+        "guidance": "কাউন্সিলের কাছে আপনার প্রশ্ন উপস্থাপন করুন।",
+        "features": [
+          "Multi-agent reasoning sessions",
+          "Structured deliberation frameworks",
+          "Conflict resolution protocols",
+          "Consensus building tools",
+          "Decision documentation"
+        ]
       },
       "pulse": {
         "title": "Pulse - রিয়েল-টাইম অপারেশন সেন্টার",
         "summary": "এন্টারপ্রাইজ হার্টবিটের লাইভ ভিউ।",
-        "guidance": "দেখানোর জন্য মূল মেট্রিক্স কনফিগার করুন।"
+        "guidance": "দেখানোর জন্য মূল মেট্রিক্স কনফিগার করুন।",
+        "features": [
+          "Real-time metric streaming",
+          "Customizable alert thresholds",
+          "Trend visualization",
+          "Anomaly highlighting",
+          "Historical comparison"
+        ]
       },
       "lens": {
         "title": "Lens - ভবিষ্যত পরিস্থিতি অন্বেষক",
         "summary": "সম্ভাব্য ভবিষ্যত আসার আগে দেখুন।",
-        "guidance": "পরিস্থিতি প্যারামিটার সংজ্ঞায়িত করুন।"
+        "guidance": "পরিস্থিতি প্যারামিটার সংজ্ঞায়িত করুন।",
+        "features": [
+          "Scenario modeling engine",
+          "Monte Carlo simulations",
+          "Sensitivity analysis",
+          "Decision tree visualization",
+          "Outcome probability mapping"
+        ]
       },
       "bridge": {
         "title": "Bridge - অ্যাকশন কমান্ড সেন্টার",
         "summary": "অন্তর্দৃষ্টিকে কর্মে রূপান্তর করুন।",
-        "guidance": "একটি অ্যাকশন নির্বাচন করুন এবং এর প্রভাব প্রিভিউ করুন।"
+        "guidance": "একটি অ্যাকশন নির্বাচন করুন এবং এর প্রভাব প্রিভিউ করুন।",
+        "features": [
+          "Cross-system action execution",
+          "Approval workflow integration",
+          "Action impact preview",
+          "Rollback capabilities",
+          "Execution audit trail"
+        ]
       }
     },
     "sovereign": {
@@ -863,6 +1050,70 @@
           "মডেল আচরণ বুঝুন"
         ],
         "guidance": "Glass-এ একটি AI সিদ্ধান্ত নির্বাচন করুন।"
+      },
+      "notary": {
+        "title": "CendiaNotary™ - Cryptographic Signing Authority",
+        "summary": "Signs and authenticates all decisions with customer-owned keys. Non-repudiation for every action.",
+        "features": [
+          "AWS KMS, Azure Key Vault, HashiCorp Vault integration",
+          "Air-gapped local key storage",
+          "Automatic key rotation with audit trail",
+          "Hardware Security Module (HSM) support",
+          "Zero-trust: Datacendia never sees your keys"
+        ],
+        "guidance": "Configure your preferred KMS provider. Notary signs all decision packets, audit entries, and evidence bundles with cryptographic proof.",
+        "tabs": {
+          "overview": "Overview",
+          "keys": "Keys",
+          "providers": "Providers",
+          "audit": "Audit Log",
+          "settings": "Settings"
+        },
+        "status": {
+          "active": "Active",
+          "pendingRotation": "Pending Rotation",
+          "disabled": "Disabled",
+          "scheduledDeletion": "Scheduled Deletion"
+        },
+        "actions": {
+          "generateKey": "Generate Key",
+          "importKey": "Import Key",
+          "rotateKey": "Rotate Key",
+          "exportPublicKey": "Export Public Key",
+          "exportBackup": "Export Encrypted Backup"
+        }
+      },
+      "vault": {
+        "title": "CendiaVault™ - Unified Evidence Storage",
+        "summary": "Secure storage for decision packets, audit ledger, evidence bundles, and signed reports. Immutable, searchable, and retention-policy compliant.",
+        "features": [
+          "Decision packet archive",
+          "Immutable audit ledger",
+          "Evidence bundle storage",
+          "Signed report repository",
+          "Legal hold management",
+          "Retention policy enforcement"
+        ],
+        "guidance": "All artifacts from Council decisions, audit events, and compliance exports are automatically stored here with cryptographic integrity.",
+        "tabs": {
+          "browse": "Browse",
+          "search": "Search",
+          "legalHold": "Legal Hold",
+          "stats": "Analytics"
+        },
+        "types": {
+          "decisionPacket": "Decision Packet",
+          "auditEntry": "Audit Entry",
+          "evidenceBundle": "Evidence Bundle",
+          "signedReport": "Signed Report"
+        },
+        "actions": {
+          "download": "Download",
+          "verify": "Verify Integrity",
+          "export": "Export",
+          "setLegalHold": "Set Legal Hold",
+          "releaseLegalHold": "Release Legal Hold"
+        }
       }
     },
     "enterprise": {
@@ -997,6 +1248,24 @@
           "নিয়ন্ত্রিত অ্যাডাপ্টারের জন্য BYO-keys"
         ],
         "guidance": "আপনার ইন্টিগ্রেশন প্যাটার্নের সাথে মিলে এমন অ্যাডাপ্টার প্রকার চয়ন করুন। প্রতিটি অ্যাডাপ্টার স্বয়ংক্রিয়ভাবে ঝুঁকি স্তর, এভিডেন্স লগিং এবং কোটা নিয়ন্ত্রণ প্রয়োগ করে।"
+      },
+      "responsibility": {
+        "title": "CendiaResponsibility™ - Human Accountability Layer",
+        "summary": "Explicit human accountability for every AI-assisted decision — signed, sealed, and irrevocable.",
+        "features": [
+          "TPM 2.0 hardware-signed accountability records",
+          "Explicit risk acceptance with failure categories",
+          "Delegation chains with cryptographic proof",
+          "Boardroom-grade liability reports",
+          "Independent verification without trusting Datacendia"
+        ],
+        "useCases": [
+          "Board governance for AI decisions",
+          "Regulatory compliance documentation",
+          "Legal discovery readiness",
+          "Executive risk acceptance"
+        ],
+        "guidance": "When AI makes a recommendation, a human must sign accountability. This creates an immutable record of who accepted which risks and why."
       }
     }
   },

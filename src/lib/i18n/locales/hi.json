@@ -336,7 +336,6 @@
     "welcome": "वापस स्वागत है",
     "subtitle": "आज {{company}} कैसा है",
     "health_score": "संगठन स्वास्थ्य",
-    "healthScore": "स्वास्थ्य स्कोर",
     "data": "डेटा",
     "operations": "संचालन",
     "security": "सुरक्षा",
@@ -348,7 +347,6 @@
     "warning": "चेतावनी",
     "info": "जानकारी",
     "pending_approvals": "लंबित अनुमोदन",
-    "pendingApprovals": "लंबित अनुमोदन",
     "workflows": "वर्कफ़्लो",
     "access": "पहुंच",
     "budget": "बजट",
@@ -404,7 +402,6 @@
   },
   "button": {
     "view_all": "सभी देखें",
-    "viewAll": "सभी देखें",
     "viewMore": "और देखें",
     "approve": "अनुमोदित करें",
     "reject": "अस्वीकार करें",
@@ -441,7 +438,12 @@
       "cisoDesc": "सुरक्षा और अनुपालन",
       "cmo": "बाजार बुद्धिमत्ता",
       "cmoDesc": "बाजार विश्लेषण"
-    }
+    },
+    "reloadPage": "Reload current page data",
+    "fullscreen": "Toggle Fullscreen",
+    "toggleFullscreen": "Enter/exit fullscreen mode",
+    "switchTo": "Switch to",
+    "changeLanguage": "Change language to"
   },
   "cortex": {
     "sidebar": {
@@ -460,7 +462,12 @@
     "the_lens": "लेंस",
     "the_bridge": "ब्रिज",
     "settings": "सेटिंग्स",
-    "help": "सहायता और समर्थन"
+    "help": "सहायता और समर्थन",
+    "cortex": "Cortex",
+    "spaces": "Spaces",
+    "pillars": "Pillars",
+    "sovereign": "Sovereign",
+    "admin": "Admin"
   },
   "council": {
     "title": "काउंसिल",
@@ -676,7 +683,9 @@
     "locked": "लॉक्ड",
     "custom": "कस्टम",
     "unlock": "अनलॉक",
-    "required": "आवश्यक"
+    "required": "आवश्यक",
+    "owner": "Owner",
+    "admin": "Administrator"
   },
   "settings": {
     "title": "सेटिंग्स",
@@ -741,7 +750,11 @@
     "minutesAgo": "{{count}} मिनट पहले",
     "hoursAgo": "{{count}} घंटे पहले",
     "daysAgo": "{{count}} दिन पहले",
-    "weeksAgo": "{{count}} सप्ताह पहले"
+    "weeksAgo": "{{count}} सप्ताह पहले",
+    "minutesAgo_plural": "{{count}} minutes ago",
+    "hoursAgo_plural": "{{count}} hours ago",
+    "daysAgo_plural": "{{count}} days ago",
+    "weeksAgo_plural": "{{count}} weeks ago"
   },
   "tooltips": {
     "pillars": {
@@ -752,7 +765,12 @@
           "रियल-टाइम KPI डैशबोर्ड",
           "रणनीतिक लक्ष्य ट्रैकिंग"
         ],
-        "guidance": "अपनी प्रमुख मेट्रिक्स परिभाषित करके शुरू करें।"
+        "guidance": "अपनी प्रमुख मेट्रिक्स परिभाषित करके शुरू करें।",
+        "useCases": [
+          "Track quarterly objectives across all departments",
+          "Monitor revenue metrics and growth indicators",
+          "Set and track strategic milestones"
+        ]
       },
       "lineage": {
         "title": "Lineage - डेटा वंशावली ट्रैकिंग",
@@ -761,7 +779,12 @@
           "डेटा प्रवाह की दृश्य मैपिंग",
           "स्रोत से रिपोर्ट तक ट्रैकिंग"
         ],
-        "guidance": "पहले अपने डेटा स्रोतों को कनेक्ट करें।"
+        "guidance": "पहले अपने डेटा स्रोतों को कनेक्ट करें।",
+        "useCases": [
+          "Audit trail for regulatory compliance",
+          "Debug data discrepancies across systems",
+          "Plan system migrations with full impact visibility"
+        ]
       },
       "predict": {
         "title": "Predict - AI पूर्वानुमान इंजन",
@@ -770,7 +793,12 @@
           "समय श्रृंखला पूर्वानुमान",
           "विसंगति पहचान"
         ],
-        "guidance": "अच्छी भविष्यवाणियों के लिए अच्छा डेटा चाहिए।"
+        "guidance": "अच्छी भविष्यवाणियों के लिए अच्छा डेटा चाहिए।",
+        "useCases": [
+          "Forecast demand and optimize inventory",
+          "Predict customer churn before it happens",
+          "Model financial scenarios for strategic planning"
+        ]
       },
       "flow": {
         "title": "Flow - बुद्धिमान स्वचालन",
@@ -779,7 +807,12 @@
           "विज़ुअल वर्कफ़्लो बिल्डर",
           "AI निर्णय नोड्स"
         ],
-        "guidance": "पहले अपनी मैनुअल प्रक्रियाओं को मैप करें।"
+        "guidance": "पहले अपनी मैनुअल प्रक्रियाओं को मैप करें।",
+        "useCases": [
+          "Automate data pipeline orchestration",
+          "Create intelligent approval workflows",
+          "Trigger actions based on AI insights"
+        ]
       },
       "health": {
         "title": "Health - महत्वपूर्ण संकेत मॉनिटर",
@@ -788,7 +821,12 @@
           "कंपोनेंट स्वास्थ्य डैशबोर्ड",
           "प्रदर्शन ट्रेंड विश्लेषण"
         ],
-        "guidance": "महत्वपूर्ण सिस्टम के लिए स्वास्थ्य जांच सेटअप करें।"
+        "guidance": "महत्वपूर्ण सिस्टम के लिए स्वास्थ्य जांच सेटअप करें।",
+        "useCases": [
+          "Monitor system health across all platforms",
+          "Track incident response and resolution times",
+          "Plan infrastructure capacity proactively"
+        ]
       },
       "guard": {
         "title": "Guard - सुरक्षा और अनुपालन ढाल",
@@ -797,7 +835,12 @@
           "पॉलिसी प्रवर्तन इंजन",
           "खतरा पहचान"
         ],
-        "guidance": "अपनी सुरक्षा नीतियां परिभाषित करें।"
+        "guidance": "अपनी सुरक्षा नीतियां परिभाषित करें।",
+        "useCases": [
+          "Enforce data access policies automatically",
+          "Generate compliance reports for auditors",
+          "Detect and respond to security threats"
+        ]
       },
       "ethics": {
         "title": "Ethics - AI गवर्नेंस सेंटर",
@@ -806,7 +849,12 @@
           "पूर्वाग्रह पहचान",
           "व्याख्यात्मकता उपकरण"
         ],
-        "guidance": "पहले अपने नैतिक सिद्धांत स्थापित करें।"
+        "guidance": "पहले अपने नैतिक सिद्धांत स्थापित करें।",
+        "useCases": [
+          "Review AI models for bias before deployment",
+          "Document decision rationale for compliance",
+          "Monitor fairness metrics in production"
+        ]
       },
       "agents": {
         "title": "Agents - AI सलाहकार परिषद",
@@ -815,7 +863,12 @@
           "डोमेन-विशेषज्ञ AI एजेंट",
           "मल्टी-एजेंट सहयोग"
         ],
-        "guidance": "अपने प्रश्न के लिए सही एजेंट चुनें।"
+        "guidance": "अपने प्रश्न के लिए सही एजेंट चुनें।",
+        "useCases": [
+          "Get strategic advice from business analysts",
+          "Consult technical experts for architecture decisions",
+          "Receive compliance guidance from regulatory specialists"
+        ]
       }
     },
     "spaces": {
@@ -982,6 +1035,70 @@
           "मॉडल व्यवहार समझें"
         ],
         "guidance": "Glass में एक AI निर्णय चुनें।"
+      },
+      "notary": {
+        "title": "CendiaNotary™ - Cryptographic Signing Authority",
+        "summary": "Signs and authenticates all decisions with customer-owned keys. Non-repudiation for every action.",
+        "features": [
+          "AWS KMS, Azure Key Vault, HashiCorp Vault integration",
+          "Air-gapped local key storage",
+          "Automatic key rotation with audit trail",
+          "Hardware Security Module (HSM) support",
+          "Zero-trust: Datacendia never sees your keys"
+        ],
+        "guidance": "Configure your preferred KMS provider. Notary signs all decision packets, audit entries, and evidence bundles with cryptographic proof.",
+        "tabs": {
+          "overview": "Overview",
+          "keys": "Keys",
+          "providers": "Providers",
+          "audit": "Audit Log",
+          "settings": "Settings"
+        },
+        "status": {
+          "active": "Active",
+          "pendingRotation": "Pending Rotation",
+          "disabled": "Disabled",
+          "scheduledDeletion": "Scheduled Deletion"
+        },
+        "actions": {
+          "generateKey": "Generate Key",
+          "importKey": "Import Key",
+          "rotateKey": "Rotate Key",
+          "exportPublicKey": "Export Public Key",
+          "exportBackup": "Export Encrypted Backup"
+        }
+      },
+      "vault": {
+        "title": "CendiaVault™ - Unified Evidence Storage",
+        "summary": "Secure storage for decision packets, audit ledger, evidence bundles, and signed reports. Immutable, searchable, and retention-policy compliant.",
+        "features": [
+          "Decision packet archive",
+          "Immutable audit ledger",
+          "Evidence bundle storage",
+          "Signed report repository",
+          "Legal hold management",
+          "Retention policy enforcement"
+        ],
+        "guidance": "All artifacts from Council decisions, audit events, and compliance exports are automatically stored here with cryptographic integrity.",
+        "tabs": {
+          "browse": "Browse",
+          "search": "Search",
+          "legalHold": "Legal Hold",
+          "stats": "Analytics"
+        },
+        "types": {
+          "decisionPacket": "Decision Packet",
+          "auditEntry": "Audit Entry",
+          "evidenceBundle": "Evidence Bundle",
+          "signedReport": "Signed Report"
+        },
+        "actions": {
+          "download": "Download",
+          "verify": "Verify Integrity",
+          "export": "Export",
+          "setLegalHold": "Set Legal Hold",
+          "releaseLegalHold": "Release Legal Hold"
+        }
       }
     },
     "enterprise": {
@@ -1116,6 +1233,24 @@
           "विनियमित एडाप्टर के लिए BYO-keys"
         ],
         "guidance": "अपने एकीकरण पैटर्न से मेल खाने वाला एडाप्टर प्रकार चुनें। प्रत्येक एडाप्टर स्वचालित रूप से जोखिम स्तर, साक्ष्य लॉगिंग और कोटा नियंत्रण लागू करता है।"
+      },
+      "responsibility": {
+        "title": "CendiaResponsibility™ - Human Accountability Layer",
+        "summary": "Explicit human accountability for every AI-assisted decision — signed, sealed, and irrevocable.",
+        "features": [
+          "TPM 2.0 hardware-signed accountability records",
+          "Explicit risk acceptance with failure categories",
+          "Delegation chains with cryptographic proof",
+          "Boardroom-grade liability reports",
+          "Independent verification without trusting Datacendia"
+        ],
+        "useCases": [
+          "Board governance for AI decisions",
+          "Regulatory compliance documentation",
+          "Legal discovery readiness",
+          "Executive risk acceptance"
+        ],
+        "guidance": "When AI makes a recommendation, a human must sign accountability. This creates an immutable record of who accepted which risks and why."
       }
     }
   },

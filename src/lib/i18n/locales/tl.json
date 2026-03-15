@@ -107,6 +107,23 @@
         "passwordMismatch": "Hindi magkatugma ang mga password",
         "acceptTerms": "Dapat kang sumang-ayon sa mga tuntunin",
         "registrationFailed": "Nabigo ang pagpaparehistro. Pakisubukan muli."
+      },
+      "step1Subtitle": "Enter your details to get started",
+      "step2Subtitle": "Set up your password",
+      "signUpWith": "Sign up with",
+      "features": {
+        "council": "AI Council - Get strategic advice from specialized AI agents",
+        "graph": "Graph Explorer - Visualize all your data relationships",
+        "lens": "The Lens - Forecast future outcomes with ML",
+        "bridge": "The Bridge - Automate workflows across systems"
+      },
+      "passwordRequirements": {
+        "title": "Password must contain:",
+        "minLength": "At least 12 characters",
+        "uppercase": "One uppercase letter",
+        "lowercase": "One lowercase letter",
+        "number": "One number",
+        "special": "One special character"
       }
     },
     "forgotPassword": {
@@ -115,13 +132,19 @@
       "email": "Email address",
       "sendResetLink": "Ipadala ang Link",
       "backToLogin": "Bumalik sa login",
-      "checkEmail": "Tingnan ang iyong email"
+      "checkEmail": "Tingnan ang iyong email",
+      "submitButton": "Send Reset Link",
+      "emailSentTo": "If an account exists for",
+      "linkExpiry": "The link will expire in 1 hour. If you don't see the email, check your spam folder.",
+      "success": "If an account exists, you'll receive an email shortly."
     },
     "mfa": {
       "title": "Two-factor authentication",
       "subtitle": "Ilagay ang code mula sa iyong authenticator app.",
       "code": "Authentication code",
-      "submitButton": "I-verify"
+      "submitButton": "I-verify",
+      "useBackupCode": "Use a backup code",
+      "resendCode": "Resend code"
     }
   },
   "home": {
@@ -134,17 +157,32 @@
     },
     "problem": {
       "title": "Ang Problema ng Enterprise Intelligence",
-      "subtitle": "Ang mga organisasyon ay nahihirapan sa fragmented na data at isolated na tools"
+      "subtitle": "Ang mga organisasyon ay nahihirapan sa fragmented na data at isolated na tools",
+      "dataChaos": {
+        "title": "Data Chaos",
+        "description": "Your data lives in dozens of systems with no unified view. Nobody knows what's true."
+      },
+      "toolSprawl": {
+        "title": "Tool Sprawl",
+        "description": "BI tools, analytics platforms, dashboards — none of them talk to each other."
+      },
+      "noForesight": {
+        "title": "No Foresight",
+        "description": "You're always looking in the rear-view mirror. What about what's coming next?"
+      }
     },
     "solution": {
-      "title": "Cortex: Ang Iyong Intelligence Command Center"
+      "title": "Cortex: Ang Iyong Intelligence Command Center",
+      "subtitle": "Five integrated spaces that give you complete visibility and control"
     },
     "pillars": {
-      "title": "Ang 8 Haligi ng Sovereign Intelligence"
+      "title": "Ang 8 Haligi ng Sovereign Intelligence",
+      "subtitle": "Every capability you need, working together as one"
     },
     "cta": {
       "title": "Handa ka na bang kontrolin ang iyong intelligence?",
-      "button": "Mag-schedule ng Demo"
+      "button": "Mag-schedule ng Demo",
+      "subtitle": "See how Datacendia can transform your organization's decision-making"
     }
   },
   "spaces": {
@@ -172,35 +210,43 @@
   "pillars": {
     "helm": {
       "name": "Timon",
-      "description": "Suporta sa strategic na desisyon"
+      "description": "Suporta sa strategic na desisyon",
+      "longDescription": "Your command center for strategic decisions. Track KPIs, monitor performance, and steer your organization with confidence."
     },
     "lineage": {
       "name": "Lahi",
-      "description": "I-trace ang bawat data point sa pinagmulan"
+      "description": "I-trace ang bawat data point sa pinagmulan",
+      "longDescription": "Complete data provenance tracking. Know where your data comes from, how it transforms, and where it goes."
     },
     "predict": {
       "name": "Hulaan",
-      "description": "AI-powered na mga forecast"
+      "description": "AI-powered na mga forecast",
+      "longDescription": "Machine learning models that forecast trends, detect anomalies, and surface insights before they become obvious."
     },
     "flow": {
       "name": "Daloy",
-      "description": "Automated na mga workflow"
+      "description": "Automated na mga workflow",
+      "longDescription": "Intelligent workflow automation that connects your systems and processes with AI-driven decision points."
     },
     "health": {
       "name": "Kalusugan",
-      "description": "Organizational vitality metrics"
+      "description": "Organizational vitality metrics",
+      "longDescription": "Real-time monitoring of your organization's vital signs across data, systems, and processes."
     },
     "guard": {
       "name": "Bantay",
-      "description": "Data governance at compliance"
+      "description": "Data governance at compliance",
+      "longDescription": "Automated policy enforcement, access controls, and compliance monitoring to keep your data secure."
     },
     "ethics": {
       "name": "Etika",
-      "description": "Built-in na ethical oversight"
+      "description": "Built-in na ethical oversight",
+      "longDescription": "Ethical guardrails that ensure responsible AI use, fair algorithms, and transparent decision-making."
     },
     "agents": {
       "name": "Mga Ahente",
-      "description": "AI advisors para sa bawat domain"
+      "description": "AI advisors para sa bawat domain",
+      "longDescription": "Specialized AI agents that provide domain-specific expertise and collaborate to solve complex problems."
     }
   },
   "pricing": {
@@ -333,7 +379,6 @@
     "welcome": "Maligayang pagbabalik",
     "subtitle": "Kamusta ang {{company}} ngayon",
     "health_score": "Kalusugan ng Organisasyon",
-    "healthScore": "Health Score",
     "data": "Data",
     "operations": "Operations",
     "security": "Security",
@@ -345,7 +390,6 @@
     "warning": "Babala",
     "info": "Impormasyon",
     "pending_approvals": "Mga Pending na Approval",
-    "pendingApprovals": "Mga Pending na Approval",
     "workflows": "Mga Workflow",
     "access": "Access",
     "budget": "Budget",
@@ -401,7 +445,6 @@
   },
   "button": {
     "view_all": "Tingnan Lahat",
-    "viewAll": "Tingnan Lahat",
     "viewMore": "Tingnan Pa",
     "approve": "Aprubahan",
     "reject": "Tanggihan",
@@ -419,7 +462,12 @@
     "the_lens": "Lente",
     "the_bridge": "Tulay",
     "settings": "Mga Setting",
-    "help": "Tulong"
+    "help": "Tulong",
+    "cortex": "Cortex",
+    "spaces": "Spaces",
+    "pillars": "Pillars",
+    "sovereign": "Sovereign",
+    "admin": "Admin"
   },
   "council": {
     "title": "Konseho",
@@ -635,7 +683,9 @@
     "locked": "Naka-lock",
     "custom": "Pasadya",
     "unlock": "I-unlock",
-    "required": "Kinakailangan"
+    "required": "Kinakailangan",
+    "owner": "Owner",
+    "admin": "Administrator"
   },
   "settings": {
     "title": "Mga Setting",
@@ -643,7 +693,11 @@
     "users": "Mga User",
     "teams": "Mga Team",
     "billing": "Billing",
-    "security": "Security"
+    "security": "Security",
+    "roles": "Roles & Permissions",
+    "apiKeys": "API Keys",
+    "integrations": "Integrations",
+    "preferences": "Preferences"
   },
   "errors": {
     "notFound": {
@@ -662,6 +716,10 @@
     "unauthorized": {
       "title": "Hindi Awtorisado",
       "message": "Wala kang pahintulot na i-access ang resource na ito."
+    },
+    "sessionExpired": {
+      "title": "Session Expired",
+      "message": "Your session has expired. Please sign in again."
     }
   },
   "footer": {
@@ -674,7 +732,18 @@
     "contact": "Kontak",
     "privacy": "Privacy Policy",
     "terms": "Mga Tuntunin ng Serbisyo",
-    "copyright": "© {{year}} Datacendia. Lahat ng karapatan ay nakalaan."
+    "copyright": "© {{year}} Datacendia. Lahat ng karapatan ay nakalaan.",
+    "press": "Press",
+    "features": "Features",
+    "integrations": "Integrations",
+    "enterprise": "Enterprise",
+    "documentation": "Documentation",
+    "apiReference": "API Reference",
+    "status": "System Status",
+    "community": "Community",
+    "security": "Security",
+    "cookies": "Cookie Policy",
+    "tagline": "Sovereign Enterprise Intelligence"
   },
   "time": {
     "justNow": "Ngayon lang",
@@ -996,6 +1065,70 @@
           "Audit-ready documentation"
         ],
         "guidance": "Pumili ng anumang AI decision sa Glass. Ibre-break down nito ang factors, ipapakita ang alternatives, at ie-explain ang reasoning."
+      },
+      "notary": {
+        "title": "CendiaNotary™ - Cryptographic Signing Authority",
+        "summary": "Signs and authenticates all decisions with customer-owned keys. Non-repudiation for every action.",
+        "features": [
+          "AWS KMS, Azure Key Vault, HashiCorp Vault integration",
+          "Air-gapped local key storage",
+          "Automatic key rotation with audit trail",
+          "Hardware Security Module (HSM) support",
+          "Zero-trust: Datacendia never sees your keys"
+        ],
+        "guidance": "Configure your preferred KMS provider. Notary signs all decision packets, audit entries, and evidence bundles with cryptographic proof.",
+        "tabs": {
+          "overview": "Overview",
+          "keys": "Keys",
+          "providers": "Providers",
+          "audit": "Audit Log",
+          "settings": "Settings"
+        },
+        "status": {
+          "active": "Active",
+          "pendingRotation": "Pending Rotation",
+          "disabled": "Disabled",
+          "scheduledDeletion": "Scheduled Deletion"
+        },
+        "actions": {
+          "generateKey": "Generate Key",
+          "importKey": "Import Key",
+          "rotateKey": "Rotate Key",
+          "exportPublicKey": "Export Public Key",
+          "exportBackup": "Export Encrypted Backup"
+        }
+      },
+      "vault": {
+        "title": "CendiaVault™ - Unified Evidence Storage",
+        "summary": "Secure storage for decision packets, audit ledger, evidence bundles, and signed reports. Immutable, searchable, and retention-policy compliant.",
+        "features": [
+          "Decision packet archive",
+          "Immutable audit ledger",
+          "Evidence bundle storage",
+          "Signed report repository",
+          "Legal hold management",
+          "Retention policy enforcement"
+        ],
+        "guidance": "All artifacts from Council decisions, audit events, and compliance exports are automatically stored here with cryptographic integrity.",
+        "tabs": {
+          "browse": "Browse",
+          "search": "Search",
+          "legalHold": "Legal Hold",
+          "stats": "Analytics"
+        },
+        "types": {
+          "decisionPacket": "Decision Packet",
+          "auditEntry": "Audit Entry",
+          "evidenceBundle": "Evidence Bundle",
+          "signedReport": "Signed Report"
+        },
+        "actions": {
+          "download": "Download",
+          "verify": "Verify Integrity",
+          "export": "Export",
+          "setLegalHold": "Set Legal Hold",
+          "releaseLegalHold": "Release Legal Hold"
+        }
       }
     },
     "enterprise": {
@@ -1130,6 +1263,24 @@
           "BYO-keys para sa regulated adapters"
         ],
         "guidance": "Pumili ng adapter type na tumutugma sa iyong integration pattern. Bawat adapter ay automatic na nag-a-apply ng risk tiers, evidence logging, at quota controls."
+      },
+      "responsibility": {
+        "title": "CendiaResponsibility™ - Human Accountability Layer",
+        "summary": "Explicit human accountability for every AI-assisted decision — signed, sealed, and irrevocable.",
+        "features": [
+          "TPM 2.0 hardware-signed accountability records",
+          "Explicit risk acceptance with failure categories",
+          "Delegation chains with cryptographic proof",
+          "Boardroom-grade liability reports",
+          "Independent verification without trusting Datacendia"
+        ],
+        "useCases": [
+          "Board governance for AI decisions",
+          "Regulatory compliance documentation",
+          "Legal discovery readiness",
+          "Executive risk acceptance"
+        ],
+        "guidance": "When AI makes a recommendation, a human must sign accountability. This creates an immutable record of who accepted which risks and why."
       }
     }
   },

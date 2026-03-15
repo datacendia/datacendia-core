@@ -336,7 +336,6 @@
     "welcome": "Välkommen tillbaka",
     "subtitle": "Här är hur {{company}} mår idag",
     "health_score": "Organisationshälsa",
-    "healthScore": "Hälsopoäng",
     "data": "Data",
     "operations": "Drift",
     "security": "Säkerhet",
@@ -348,7 +347,6 @@
     "warning": "Varning",
     "info": "Info",
     "pending_approvals": "Väntande godkännanden",
-    "pendingApprovals": "Väntande godkännanden",
     "workflows": "Arbetsflöden",
     "access": "Åtkomst",
     "budget": "Budget",
@@ -404,7 +402,6 @@
   },
   "button": {
     "view_all": "Visa alla",
-    "viewAll": "Visa alla",
     "viewMore": "Visa mer",
     "approve": "Godkänn",
     "reject": "Avvisa",
@@ -686,7 +683,9 @@
     "locked": "Låst",
     "custom": "Anpassad",
     "unlock": "Lås upp",
-    "required": "Obligatoriskt"
+    "required": "Obligatoriskt",
+    "owner": "Owner",
+    "admin": "Administrator"
   },
   "settings": {
     "title": "Inställningar",

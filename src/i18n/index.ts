@@ -1,4 +1,5 @@
 // Central export for all static translations — 100% coverage for all 20 languages
+export { es } from './es';
 export { fr } from './fr';
 export { de } from './de';
 export { it } from './it';
@@ -19,6 +20,7 @@ export { tl } from './tl';
 export { sw } from './sw';
 export { ur } from './ur';
 
+import { es } from './es';
 import { fr } from './fr';
 import { de } from './de';
 import { it } from './it';
@@ -41,5 +43,5 @@ import { ur } from './ur';
 
 /** All static translations keyed by language code */
 export const ALL_TRANSLATIONS: Record<string, Record<string, string>> = {
-  fr, de, it, pt, zh, ja, ko, ar, hi, bn, ru, pl, tr, vi, th, id, tl, sw, ur,
+  es, fr, de, it, pt, zh, ja, ko, ar, hi, bn, ru, pl, tr, vi, th, id, tl, sw, ur,
 };

@@ -336,7 +336,6 @@
     "welcome": "Bem-vindo de volta",
     "subtitle": "Veja como {{company}} está indo hoje",
     "health_score": "Saúde da Organização",
-    "healthScore": "Pontuação de Saúde",
     "data": "Dados",
     "operations": "Operações",
     "security": "Segurança",
@@ -348,7 +347,6 @@
     "warning": "Aviso",
     "info": "Info",
     "pending_approvals": "Aprovações Pendentes",
-    "pendingApprovals": "Aprovações Pendentes",
     "workflows": "Fluxos de Trabalho",
     "access": "Acesso",
     "budget": "Orçamento",
@@ -404,7 +402,6 @@
   },
   "button": {
     "view_all": "Ver Todos",
-    "viewAll": "Ver Todos",
     "viewMore": "Ver Mais",
     "approve": "Aprovar",
     "reject": "Rejeitar",
@@ -686,7 +683,9 @@
     "locked": "Bloqueado",
     "custom": "Personalizado",
     "unlock": "Desbloquear",
-    "required": "Obrigatório"
+    "required": "Obrigatório",
+    "owner": "Owner",
+    "admin": "Administrator"
   },
   "settings": {
     "title": "Configurações",

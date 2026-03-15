@@ -107,6 +107,23 @@
         "passwordMismatch": "Nenosiri hazifanani",
         "acceptTerms": "Lazima ukubali masharti",
         "registrationFailed": "Usajili umeshindwa. Tafadhali jaribu tena."
+      },
+      "step1Subtitle": "Enter your details to get started",
+      "step2Subtitle": "Set up your password",
+      "signUpWith": "Sign up with",
+      "features": {
+        "council": "AI Council - Get strategic advice from specialized AI agents",
+        "graph": "Graph Explorer - Visualize all your data relationships",
+        "lens": "The Lens - Forecast future outcomes with ML",
+        "bridge": "The Bridge - Automate workflows across systems"
+      },
+      "passwordRequirements": {
+        "title": "Password must contain:",
+        "minLength": "At least 12 characters",
+        "uppercase": "One uppercase letter",
+        "lowercase": "One lowercase letter",
+        "number": "One number",
+        "special": "One special character"
       }
     },
     "forgotPassword": {
@@ -115,13 +132,19 @@
       "email": "Anwani ya barua pepe",
       "sendResetLink": "Tuma Kiungo",
       "backToLogin": "Rudi kuingia",
-      "checkEmail": "Angalia barua pepe yako"
+      "checkEmail": "Angalia barua pepe yako",
+      "submitButton": "Send Reset Link",
+      "emailSentTo": "If an account exists for",
+      "linkExpiry": "The link will expire in 1 hour. If you don't see the email, check your spam folder.",
+      "success": "If an account exists, you'll receive an email shortly."
     },
     "mfa": {
       "title": "Uthibitishaji wa hatua mbili",
       "subtitle": "Ingiza msimbo kutoka programu yako ya uthibitishaji.",
       "code": "Msimbo wa uthibitishaji",
-      "submitButton": "Thibitisha"
+      "submitButton": "Thibitisha",
+      "useBackupCode": "Use a backup code",
+      "resendCode": "Resend code"
     }
   },
   "home": {
@@ -134,17 +157,32 @@
     },
     "problem": {
       "title": "Tatizo la Akili ya Biashara",
-      "subtitle": "Mashirika yanakabiliana na data iliyotawanyika na zana zilizotengwa"
+      "subtitle": "Mashirika yanakabiliana na data iliyotawanyika na zana zilizotengwa",
+      "dataChaos": {
+        "title": "Data Chaos",
+        "description": "Your data lives in dozens of systems with no unified view. Nobody knows what's true."
+      },
+      "toolSprawl": {
+        "title": "Tool Sprawl",
+        "description": "BI tools, analytics platforms, dashboards — none of them talk to each other."
+      },
+      "noForesight": {
+        "title": "No Foresight",
+        "description": "You're always looking in the rear-view mirror. What about what's coming next?"
+      }
     },
     "solution": {
-      "title": "Cortex: Kituo chako cha Amri ya Akili"
+      "title": "Cortex: Kituo chako cha Amri ya Akili",
+      "subtitle": "Five integrated spaces that give you complete visibility and control"
     },
     "pillars": {
-      "title": "Nguzo 8 za Akili Huru"
+      "title": "Nguzo 8 za Akili Huru",
+      "subtitle": "Every capability you need, working together as one"
     },
     "cta": {
       "title": "Uko tayari kudhibiti akili yako?",
-      "button": "Panga Demo"
+      "button": "Panga Demo",
+      "subtitle": "See how Datacendia can transform your organization's decision-making"
     }
   },
   "spaces": {
@@ -172,35 +210,43 @@
   "pillars": {
     "helm": {
       "name": "Usukani",
-      "description": "Msaada wa maamuzi ya kimkakati"
+      "description": "Msaada wa maamuzi ya kimkakati",
+      "longDescription": "Your command center for strategic decisions. Track KPIs, monitor performance, and steer your organization with confidence."
     },
     "lineage": {
       "name": "Nasaba",
-      "description": "Fuatilia kila data hadi chanzo chake"
+      "description": "Fuatilia kila data hadi chanzo chake",
+      "longDescription": "Complete data provenance tracking. Know where your data comes from, how it transforms, and where it goes."
     },
     "predict": {
       "name": "Utabiri",
-      "description": "Utabiri unaoendeshwa na AI"
+      "description": "Utabiri unaoendeshwa na AI",
+      "longDescription": "Machine learning models that forecast trends, detect anomalies, and surface insights before they become obvious."
     },
     "flow": {
       "name": "Mtiririko",
-      "description": "Mtiririko wa kazi wa kiotomatiki"
+      "description": "Mtiririko wa kazi wa kiotomatiki",
+      "longDescription": "Intelligent workflow automation that connects your systems and processes with AI-driven decision points."
     },
     "health": {
       "name": "Afya",
-      "description": "Vipimo vya nguvu za shirika"
+      "description": "Vipimo vya nguvu za shirika",
+      "longDescription": "Real-time monitoring of your organization's vital signs across data, systems, and processes."
     },
     "guard": {
       "name": "Mlinzi",
-      "description": "Usimamizi wa data na uzingatiaji"
+      "description": "Usimamizi wa data na uzingatiaji",
+      "longDescription": "Automated policy enforcement, access controls, and compliance monitoring to keep your data secure."
     },
     "ethics": {
       "name": "Maadili",
-      "description": "Usimamizi wa kimaadili uliojengwa ndani"
+      "description": "Usimamizi wa kimaadili uliojengwa ndani",
+      "longDescription": "Ethical guardrails that ensure responsible AI use, fair algorithms, and transparent decision-making."
     },
     "agents": {
       "name": "Mawakala",
-      "description": "Washauri wa AI kwa kila uwanja"
+      "description": "Washauri wa AI kwa kila uwanja",
+      "longDescription": "Specialized AI agents that provide domain-specific expertise and collaborate to solve complex problems."
     }
   },
   "pricing": {
@@ -212,14 +258,52 @@
     "perMonth": "/mwezi",
     "startTrial": "Anza Jaribio la Bure",
     "contactSales": "Wasiliana na Mauzo",
-    "mostPopular": "Maarufu zaidi"
+    "mostPopular": "Maarufu zaidi",
+    "plans": {
+      "foundation": {
+        "name": "Foundation",
+        "description": "Essential intelligence capabilities for growing teams"
+      },
+      "intelligence": {
+        "name": "Intelligence",
+        "description": "Advanced analytics and forecasting for scaling organizations"
+      },
+      "governance": {
+        "name": "Governance",
+        "description": "Complete governance and compliance for regulated industries"
+      },
+      "sovereign": {
+        "name": "Sovereign",
+        "description": "Full platform with complete data sovereignty"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "questions": {
+        "trial": {
+          "q": "Can I try before I buy?",
+          "a": "Yes! All plans include a 14-day free trial with full access to features."
+        },
+        "data": {
+          "q": "What happens to my data if I cancel?",
+          "a": "Your data remains yours. Export everything before cancellation, or we'll retain it for 30 days."
+        },
+        "nonprofit": {
+          "q": "Do you offer discounts for nonprofits?",
+          "a": "Yes, we offer 50% off for qualified nonprofits and educational institutions."
+        },
+        "upgrade": {
+          "q": "Can I upgrade or downgrade anytime?",
+          "a": "Absolutely. Changes take effect at your next billing cycle, prorated if upgrading."
+        }
+      }
+    }
   },
   "dashboard": {
     "title": "Dashibodi",
     "welcome": "Karibu tena",
     "subtitle": "Hali ya {{company}} leo",
     "health_score": "Afya ya Shirika",
-    "healthScore": "Alama ya Afya",
     "data": "Data",
     "operations": "Operesheni",
     "security": "Usalama",
@@ -231,7 +315,6 @@
     "warning": "Onyo",
     "info": "Habari",
     "pending_approvals": "Idhini Zinazosubiri",
-    "pendingApprovals": "Idhini Zinazosubiri",
     "workflows": "Mtiririko wa Kazi",
     "access": "Upatikanaji",
     "budget": "Bajeti",
@@ -319,7 +402,6 @@
   },
   "button": {
     "view_all": "Tazama Zote",
-    "viewAll": "Tazama Zote",
     "viewMore": "Ona Zaidi",
     "approve": "Idhinisha",
     "reject": "Kataa",
@@ -380,7 +462,12 @@
     "the_lens": "Lenzi",
     "the_bridge": "Daraja",
     "settings": "Mipangilio",
-    "help": "Msaada"
+    "help": "Msaada",
+    "cortex": "Cortex",
+    "spaces": "Spaces",
+    "pillars": "Pillars",
+    "sovereign": "Sovereign",
+    "admin": "Admin"
   },
   "council": {
     "title": "Baraza",
@@ -596,7 +683,9 @@
     "locked": "Imefungwa",
     "custom": "Maalum",
     "unlock": "Fungua",
-    "required": "Inahitajika"
+    "required": "Inahitajika",
+    "owner": "Owner",
+    "admin": "Administrator"
   },
   "settings": {
     "title": "Mipangilio",
@@ -604,7 +693,11 @@
     "users": "Watumiaji",
     "teams": "Timu",
     "billing": "Malipo",
-    "security": "Usalama"
+    "security": "Usalama",
+    "roles": "Roles & Permissions",
+    "apiKeys": "API Keys",
+    "integrations": "Integrations",
+    "preferences": "Preferences"
   },
   "errors": {
     "notFound": {
@@ -623,6 +716,10 @@
     "unauthorized": {
       "title": "Haujaidhinishwa",
       "message": "Huna ruhusa ya kufikia rasilimali hii."
+    },
+    "sessionExpired": {
+      "title": "Session Expired",
+      "message": "Your session has expired. Please sign in again."
     }
   },
   "footer": {
@@ -635,14 +732,29 @@
     "contact": "Wasiliana",
     "privacy": "Sera ya Faragha",
     "terms": "Masharti ya Huduma",
-    "copyright": "© {{year}} Datacendia. Haki zote zimehifadhiwa."
+    "copyright": "© {{year}} Datacendia. Haki zote zimehifadhiwa.",
+    "press": "Press",
+    "features": "Features",
+    "integrations": "Integrations",
+    "enterprise": "Enterprise",
+    "documentation": "Documentation",
+    "apiReference": "API Reference",
+    "status": "System Status",
+    "community": "Community",
+    "security": "Security",
+    "cookies": "Cookie Policy",
+    "tagline": "Sovereign Enterprise Intelligence"
   },
   "time": {
     "justNow": "Sasa hivi",
     "minutesAgo": "dakika {{count}} zilizopita",
     "hoursAgo": "saa {{count}} zilizopita",
     "daysAgo": "siku {{count}} zilizopita",
-    "weeksAgo": "wiki {{count}} zilizopita"
+    "weeksAgo": "wiki {{count}} zilizopita",
+    "minutesAgo_plural": "{{count}} minutes ago",
+    "hoursAgo_plural": "{{count}} hours ago",
+    "daysAgo_plural": "{{count}} days ago",
+    "weeksAgo_plural": "{{count}} weeks ago"
   },
   "tooltips": {
     "pillars": {
@@ -653,7 +765,12 @@
           "Dashibodi ya KPI ya wakati halisi",
           "Ufuatiliaji wa malengo ya kimkakati"
         ],
-        "guidance": "Anza kwa kufafanua vipimo vyako muhimu."
+        "guidance": "Anza kwa kufafanua vipimo vyako muhimu.",
+        "useCases": [
+          "Track quarterly objectives across all departments",
+          "Monitor revenue metrics and growth indicators",
+          "Set and track strategic milestones"
+        ]
       },
       "lineage": {
         "title": "Lineage - Ufuatiliaji wa Nasaba ya Data",
@@ -662,7 +779,12 @@
           "Uchoraji wa mtiririko wa data",
           "Ufuatiliaji kutoka chanzo hadi ripoti"
         ],
-        "guidance": "Kwanza unganisha vyanzo vya data yako."
+        "guidance": "Kwanza unganisha vyanzo vya data yako.",
+        "useCases": [
+          "Audit trail for regulatory compliance",
+          "Debug data discrepancies across systems",
+          "Plan system migrations with full impact visibility"
+        ]
       },
       "predict": {
         "title": "Predict - Injini ya Utabiri ya AI",
@@ -671,7 +793,12 @@
           "Utabiri wa mfululizo wa wakati",
           "Ugunduzi wa anomalia"
         ],
-        "guidance": "Utabiri mzuri unahitaji data nzuri."
+        "guidance": "Utabiri mzuri unahitaji data nzuri.",
+        "useCases": [
+          "Forecast demand and optimize inventory",
+          "Predict customer churn before it happens",
+          "Model financial scenarios for strategic planning"
+        ]
       },
       "flow": {
         "title": "Flow - Automatisesheni ya Akili",
@@ -680,7 +807,12 @@
           "Kijenzi cha mtiririko wa kazi wa kuona",
           "Nodi za maamuzi za AI"
         ],
-        "guidance": "Kwanza chora michakato yako ya mikono."
+        "guidance": "Kwanza chora michakato yako ya mikono.",
+        "useCases": [
+          "Automate data pipeline orchestration",
+          "Create intelligent approval workflows",
+          "Trigger actions based on AI insights"
+        ]
       },
       "health": {
         "title": "Health - Mfuatiliaji wa Ishara Muhimu",
@@ -689,7 +821,12 @@
           "Dashibodi ya afya ya vipengele",
           "Uchambuzi wa mwenendo wa utendaji"
         ],
-        "guidance": "Sanidi ukaguzi wa afya kwa mifumo muhimu."
+        "guidance": "Sanidi ukaguzi wa afya kwa mifumo muhimu.",
+        "useCases": [
+          "Monitor system health across all platforms",
+          "Track incident response and resolution times",
+          "Plan infrastructure capacity proactively"
+        ]
       },
       "guard": {
         "title": "Guard - Ngao ya Usalama na Utiifu",
@@ -698,7 +835,12 @@
           "Injini ya utekelezaji wa sera",
           "Ugunduzi wa vitisho"
         ],
-        "guidance": "Fafanua sera zako za usalama."
+        "guidance": "Fafanua sera zako za usalama.",
+        "useCases": [
+          "Enforce data access policies automatically",
+          "Generate compliance reports for auditors",
+          "Detect and respond to security threats"
+        ]
       },
       "ethics": {
         "title": "Ethics - Kituo cha Utawala wa AI",
@@ -707,7 +849,12 @@
           "Ugunduzi wa upendeleo",
           "Zana za ufafanuzi"
         ],
-        "guidance": "Kwanza weka kanuni zako za kimaadili."
+        "guidance": "Kwanza weka kanuni zako za kimaadili.",
+        "useCases": [
+          "Review AI models for bias before deployment",
+          "Document decision rationale for compliance",
+          "Monitor fairness metrics in production"
+        ]
       },
       "agents": {
         "title": "Agents - Baraza la Washauri wa AI",
@@ -716,34 +863,74 @@
           "Mawakala wa AI wataalam wa eneo",
           "Ushirikiano wa mawakala wengi"
         ],
-        "guidance": "Chagua wakala sahihi kwa swali lako."
+        "guidance": "Chagua wakala sahihi kwa swali lako.",
+        "useCases": [
+          "Get strategic advice from business analysts",
+          "Consult technical experts for architecture decisions",
+          "Receive compliance guidance from regulatory specialists"
+        ]
       }
     },
     "spaces": {
       "graph": {
         "title": "Graph - Navigeta ya Maarifa",
         "summary": "Tembelea ulimwengu wa maarifa wa biashara yako.",
-        "guidance": "Bonyeza nodi yoyote kuanza kuchunguza."
+        "guidance": "Bonyeza nodi yoyote kuanza kuchunguza.",
+        "features": [
+          "Interactive knowledge visualization",
+          "Semantic search across all data",
+          "Relationship discovery",
+          "Context-aware exploration",
+          "Knowledge gap identification"
+        ]
       },
       "council": {
         "title": "Council - Chumba cha Ushirikiano wa AI",
         "summary": "Ambapo washauri wa AI wanajadiliana pamoja.",
-        "guidance": "Wasilisha swali lako kwa Baraza."
+        "guidance": "Wasilisha swali lako kwa Baraza.",
+        "features": [
+          "Multi-agent reasoning sessions",
+          "Structured deliberation frameworks",
+          "Conflict resolution protocols",
+          "Consensus building tools",
+          "Decision documentation"
+        ]
       },
       "pulse": {
         "title": "Pulse - Kituo cha Operesheni za Wakati Halisi",
         "summary": "Mtazamo wa moja kwa moja wa mapigo ya moyo ya biashara.",
-        "guidance": "Sanidi vipimo muhimu vya kuonyesha."
+        "guidance": "Sanidi vipimo muhimu vya kuonyesha.",
+        "features": [
+          "Real-time metric streaming",
+          "Customizable alert thresholds",
+          "Trend visualization",
+          "Anomaly highlighting",
+          "Historical comparison"
+        ]
       },
       "lens": {
         "title": "Lens - Mchunguzi wa Hali za Siku Zijazo",
         "summary": "Ona siku zijazo zinazowezekana kabla hazijafika.",
-        "guidance": "Fafanua vigezo vya hali."
+        "guidance": "Fafanua vigezo vya hali.",
+        "features": [
+          "Scenario modeling engine",
+          "Monte Carlo simulations",
+          "Sensitivity analysis",
+          "Decision tree visualization",
+          "Outcome probability mapping"
+        ]
       },
       "bridge": {
         "title": "Bridge - Kituo cha Amri ya Hatua",
         "summary": "Geuza maarifa kuwa hatua.",
-        "guidance": "Chagua hatua na hakiki athari yake."
+        "guidance": "Chagua hatua na hakiki athari yake.",
+        "features": [
+          "Cross-system action execution",
+          "Approval workflow integration",
+          "Action impact preview",
+          "Rollback capabilities",
+          "Execution audit trail"
+        ]
       }
     },
     "sovereign": {
@@ -863,6 +1050,70 @@
           "Elewa tabia ya miundo"
         ],
         "guidance": "Chagua uamuzi wa AI katika Glass."
+      },
+      "notary": {
+        "title": "CendiaNotary™ - Cryptographic Signing Authority",
+        "summary": "Signs and authenticates all decisions with customer-owned keys. Non-repudiation for every action.",
+        "features": [
+          "AWS KMS, Azure Key Vault, HashiCorp Vault integration",
+          "Air-gapped local key storage",
+          "Automatic key rotation with audit trail",
+          "Hardware Security Module (HSM) support",
+          "Zero-trust: Datacendia never sees your keys"
+        ],
+        "guidance": "Configure your preferred KMS provider. Notary signs all decision packets, audit entries, and evidence bundles with cryptographic proof.",
+        "tabs": {
+          "overview": "Overview",
+          "keys": "Keys",
+          "providers": "Providers",
+          "audit": "Audit Log",
+          "settings": "Settings"
+        },
+        "status": {
+          "active": "Active",
+          "pendingRotation": "Pending Rotation",
+          "disabled": "Disabled",
+          "scheduledDeletion": "Scheduled Deletion"
+        },
+        "actions": {
+          "generateKey": "Generate Key",
+          "importKey": "Import Key",
+          "rotateKey": "Rotate Key",
+          "exportPublicKey": "Export Public Key",
+          "exportBackup": "Export Encrypted Backup"
+        }
+      },
+      "vault": {
+        "title": "CendiaVault™ - Unified Evidence Storage",
+        "summary": "Secure storage for decision packets, audit ledger, evidence bundles, and signed reports. Immutable, searchable, and retention-policy compliant.",
+        "features": [
+          "Decision packet archive",
+          "Immutable audit ledger",
+          "Evidence bundle storage",
+          "Signed report repository",
+          "Legal hold management",
+          "Retention policy enforcement"
+        ],
+        "guidance": "All artifacts from Council decisions, audit events, and compliance exports are automatically stored here with cryptographic integrity.",
+        "tabs": {
+          "browse": "Browse",
+          "search": "Search",
+          "legalHold": "Legal Hold",
+          "stats": "Analytics"
+        },
+        "types": {
+          "decisionPacket": "Decision Packet",
+          "auditEntry": "Audit Entry",
+          "evidenceBundle": "Evidence Bundle",
+          "signedReport": "Signed Report"
+        },
+        "actions": {
+          "download": "Download",
+          "verify": "Verify Integrity",
+          "export": "Export",
+          "setLegalHold": "Set Legal Hold",
+          "releaseLegalHold": "Release Legal Hold"
+        }
       }
     },
     "enterprise": {
@@ -997,6 +1248,24 @@
           "BYO-keys kwa adapta zilizodhibitiwa"
         ],
         "guidance": "Chagua aina ya adapta inayolingana na muundo wako wa ujumuishaji. Kila adapta inatumia kiotomatiki viwango vya hatari, uwekaji wa ushahidi, na udhibiti wa ujazo."
+      },
+      "responsibility": {
+        "title": "CendiaResponsibility™ - Human Accountability Layer",
+        "summary": "Explicit human accountability for every AI-assisted decision — signed, sealed, and irrevocable.",
+        "features": [
+          "TPM 2.0 hardware-signed accountability records",
+          "Explicit risk acceptance with failure categories",
+          "Delegation chains with cryptographic proof",
+          "Boardroom-grade liability reports",
+          "Independent verification without trusting Datacendia"
+        ],
+        "useCases": [
+          "Board governance for AI decisions",
+          "Regulatory compliance documentation",
+          "Legal discovery readiness",
+          "Executive risk acceptance"
+        ],
+        "guidance": "When AI makes a recommendation, a human must sign accountability. This creates an immutable record of who accepted which risks and why."
       }
     }
   },
