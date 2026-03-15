@@ -27,6 +27,7 @@ import {
   XCircle, Users, Clock, Shield, BarChart3, Copy, Check, MessageSquare,
   ThumbsUp, ThumbsDown, Layers, ExternalLink,
 } from 'lucide-react';
+import { UpgradeNudge } from '../../../components/ui/UpgradeNudge';
 
 interface AgentContribution {
   agentId: string;
@@ -306,6 +307,9 @@ export const PostDeliberationPanel: React.FC = () => {
               ))}
             </div>
           )}
+
+          {/* Enterprise Nudge — stress-test this decision */}
+          <UpgradeNudge variant="crucible" dismissKey={`crucible-${output.id}`} />
 
           {/* CendiaRedTeam™ — Adversarial Analysis Report */}
           <RedTeamReportPanel deliberationId={output.id} />

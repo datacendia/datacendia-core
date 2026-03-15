@@ -24,6 +24,7 @@ import type {
 } from '../../lib/api/types';
 import AgentCard from './AgentCard';
 import { UserInterventionPanel, UserRole, UserIntervention } from './UserInterventionPanel';
+import { UpgradeNudge } from '../ui/UpgradeNudge';
 
 interface Agent {
   id: string;
@@ -476,6 +477,13 @@ export const DeliberationView: React.FC<DeliberationViewProps> = ({
               </span>
             )}
           </div>
+        </div>
+      )}
+
+      {/* Enterprise Nudge — deep analysis after completion */}
+      {deliberation.status === 'completed' && deliberation.result && (
+        <div className="px-4 pb-2">
+          <UpgradeNudge variant="crown" compact dismissKey={`crown-${deliberation.id}`} />
         </div>
       )}
 

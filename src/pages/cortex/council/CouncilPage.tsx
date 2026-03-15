@@ -33,6 +33,7 @@ import { PageGuide, GUIDES } from '../../../components/PageGuide';
 import { WorkflowPicker } from '../../../components/council/WorkflowPicker';
 import councilPacketApi from '../../../services/CouncilPacketService';
 import { useWebSocket } from '@/hooks/useWebSocket';
+import { UpgradeNudge } from '../../../components/ui/UpgradeNudge';
 
 // =============================================================================
 // TYPES
@@ -3709,6 +3710,13 @@ export const CouncilPage: React.FC = () => {
                           </div>
                         </div>
                       </div>
+                    </div>
+                  )}
+
+                  {/* Enterprise Nudge — red-team this decision */}
+                  {result.currentPhase === 'completed' && result.response && (
+                    <div className="mt-4">
+                      <UpgradeNudge variant="redteam" compact dismissKey={`redteam-${result.id}`} />
                     </div>
                   )}
 

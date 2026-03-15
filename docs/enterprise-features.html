@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datacendia — Enterprise &amp; Strategic Features</title>
+<meta name="description" content="Interactive showcase of Datacendia Enterprise and Strategic tier capabilities. Sovereign AI governance for Fortune 500 organizations.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#09090b;--card:#111113;--border:rgba(255,255,255,.06);
+  --text:#e4e4e7;--muted:#71717a;--dim:#3f3f46;
+  --indigo:#818cf8;--indigo-bg:rgba(129,140,248,.06);
+  --amber:#fbbf24;--amber-bg:rgba(251,191,36,.06);
+  --emerald:#34d399;--emerald-bg:rgba(52,211,153,.06);
+  --red:#f87171;--red-bg:rgba(248,113,113,.06);
+  --cyan:#22d3ee;--cyan-bg:rgba(34,211,238,.06);
+  --purple:#a78bfa;--purple-bg:rgba(167,139,250,.06);
+}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+
+/* Hero */
+.hero{position:relative;min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:3rem 1.5rem;overflow:hidden}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%}
+.hero-content{position:relative;z-index:2;max-width:720px}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:700;letter-spacing:-.03em;margin-bottom:.75rem;background:linear-gradient(135deg,#fff 30%,var(--indigo) 60%,var(--amber));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:var(--muted);font-size:clamp(.9rem,1.4vw,1.1rem);max-width:540px;margin:0 auto 2rem}
+.hero-badges{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.hero-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .85rem;border-radius:999px;border:1px solid var(--border);font-size:.7rem;color:var(--muted)}
+.hero-badge svg{width:12px;height:12px}
+.hero-cta{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 2rem;border-radius:.6rem;font-weight:600;font-size:.9rem;text-decoration:none;transition:all .2s}
+.cta-primary{background:var(--indigo);color:#000}
+.cta-primary:hover{filter:brightness(1.15)}
+.cta-secondary{border:1px solid rgba(255,255,255,.15);color:#fff;margin-left:.75rem}
+.cta-secondary:hover{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.03)}
+
+/* Tier nav */
+.tier-nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:.6rem 0;display:flex;justify-content:center;gap:1rem}
+.tier-nav a{color:var(--muted);text-decoration:none;font-size:.8rem;font-weight:500;padding:.4rem 1rem;border-radius:999px;transition:all .2s}
+.tier-nav a:hover{color:#fff;background:rgba(255,255,255,.04)}
+.tier-nav a.active{color:var(--indigo);background:var(--indigo-bg)}
+
+/* Sections */
+.section{padding:5rem 1.5rem;max-width:1100px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:3rem}
+.section-header .tier-tag{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;padding:.35rem 1rem;border-radius:999px;margin-bottom:1rem}
+.tier-enterprise .tier-tag{color:var(--indigo);background:var(--indigo-bg);border:1px solid rgba(129,140,248,.15)}
+.tier-strategic .tier-tag{color:var(--amber);background:var(--amber-bg);border:1px solid rgba(251,191,36,.15)}
+.section-header h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;letter-spacing:-.02em;margin-bottom:.5rem}
+.section-header p{color:var(--muted);max-width:560px;margin:0 auto;font-size:.9rem}
+
+/* Feature cards */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.25rem}
+.feature-card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:1rem;overflow:hidden;transition:border-color .3s,transform .2s}
+.feature-card:hover{transform:translateY(-2px)}
+.feature-card.ent:hover{border-color:rgba(129,140,248,.25)}
+.feature-card.strat:hover{border-color:rgba(251,191,36,.25)}
+.card-demo{height:180px;position:relative;overflow:hidden;background:rgba(0,0,0,.3)}
+.card-demo canvas{width:100%;height:100%}
+.card-body{padding:1.25rem}
+.card-body .pillar-tag{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;padding:.2rem .6rem;border-radius:4px;margin-bottom:.75rem;display:inline-block}
+.ent .pillar-tag{color:var(--indigo);background:var(--indigo-bg)}
+.strat .pillar-tag{color:var(--amber);background:var(--amber-bg)}
+.card-body h3{font-size:1.05rem;font-weight:600;margin-bottom:.4rem}
+.card-body p{font-size:.8rem;color:var(--muted);line-height:1.5;margin-bottom:.75rem}
+.card-stats{display:flex;gap:1rem;padding-top:.75rem;border-top:1px solid var(--border)}
+.card-stat{display:flex;flex-direction:column}
+.card-stat .val{font-size:1.1rem;font-weight:700;letter-spacing:-.02em}
+.ent .card-stat .val{color:var(--indigo)}
+.strat .card-stat .val{color:var(--amber)}
+.card-stat .lbl{font-size:.6rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em}
+
+/* Comparison table */
+.comparison{padding:4rem 1.5rem;max-width:900px;margin:0 auto}
+.comparison h2{font-size:1.6rem;font-weight:700;text-align:center;margin-bottom:2rem}
+.cmp-table{width:100%;border-collapse:collapse}
+.cmp-table th,.cmp-table td{padding:.7rem 1rem;text-align:left;font-size:.8rem;border-bottom:1px solid var(--border)}
+.cmp-table th{color:var(--muted);font-weight:500;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em}
+.cmp-table td:first-child{font-weight:500}
+.cmp-table .check{color:var(--emerald);font-weight:700}
+.cmp-table .dash{color:var(--dim)}
+.cmp-table tr:hover{background:rgba(255,255,255,.015)}
+
+/* Final CTA */
+.final-cta{text-align:center;padding:5rem 1.5rem;position:relative;overflow:hidden}
+.final-cta canvas{position:absolute;inset:0;width:100%;height:100%}
+.final-cta-content{position:relative;z-index:2}
+.final-cta h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:700;margin-bottom:.75rem}
+.final-cta p{color:var(--muted);max-width:460px;margin:0 auto 2rem;font-size:.9rem}
+
+/* Footer */
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--dim);font-size:.7rem}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:#fff}
+
+/* Responsive */
+@media(max-width:700px){
+  .features-grid{grid-template-columns:1fr}
+  .hero-cta{display:flex;justify-content:center;width:100%}
+  .cta-secondary{margin-left:0;margin-top:.5rem}
+  .hero .cta-row{flex-direction:column;gap:.5rem}
+  .tier-nav{gap:.25rem;padding:.5rem .5rem}
+  .tier-nav a{font-size:.7rem;padding:.3rem .6rem}
+  .cmp-table{font-size:.7rem}
+  .cmp-table th,.cmp-table td{padding:.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-badges">
+      <span class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> SOC 2 Type II</span>
+      <span class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Air-Gapped Ready</span>
+      <span class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Apache 2.0 Open Core</span>
+      <span class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> Sovereign-First</span>
+    </div>
+    <h1>Enterprise &amp; Strategic Features</h1>
+    <p>Beyond Foundation. Stress-test your decisions, govern at scale, deploy sovereign, and simulate adversarial collapse — all on infrastructure you own.</p>
+    <div class="cta-row" style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap">
+      <a href="mailto:enterprise@datacendia.com?subject=Enterprise%20Inquiry" class="hero-cta cta-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4h20v16H2z"/><path d="m2 4 10 8 10-8"/></svg>
+        Request Access
+      </a>
+      <a href="https://datacendia.com/demo" target="_blank" rel="noopener noreferrer" class="hero-cta cta-secondary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Schedule Demo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TIER NAV ===== -->
+<nav class="tier-nav">
+  <a href="#enterprise" class="active" onclick="setActive(this)">⚡ Enterprise</a>
+  <a href="#strategic" onclick="setActive(this)">👑 Strategic</a>
+  <a href="#comparison" onclick="setActive(this)">📊 Compare</a>
+  <a href="#pricing" onclick="setActive(this)">💰 Pricing</a>
+</nav>
+
+<!-- ===== ENTERPRISE TIER ===== -->
+<section class="section tier-enterprise" id="enterprise">
+  <div class="section-header">
+    <div class="tier-tag">⚡ Enterprise Tier</div>
+    <h2>Stress-Test, Govern, Secure, Observe</h2>
+    <p>9 pillars. 20+ capabilities. Full sovereign deployment. Everything a serious AI governance team needs.</p>
+  </div>
+  <div class="features-grid">
+
+    <!-- Card 1: Stress-Test / Crucible -->
+    <div class="feature-card ent">
+      <div class="card-demo"><canvas id="demo-crucible"></canvas></div>
+      <div class="card-body">
+        <span class="pillar-tag">Stress-Test</span>
+        <h3>CendiaCrucible™</h3>
+        <p>Red-team every decision with 140+ attack vectors across 7 failure domains. Find weaknesses before adversaries do.</p>
+        <div class="card-stats">
+          <div class="card-stat"><span class="val">140+</span><span class="lbl">Attack Vectors</span></div>
+          <div class="card-stat"><span class="val">7</span><span class="lbl">Failure Domains</span></div>
+          <div class="card-stat"><span class="val">&lt;2s</span><span class="lbl">Per Analysis</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Comply -->
+    <div class="feature-card ent">
+      <div class="card-demo"><canvas id="demo-comply"></canvas></div>
+      <div class="card-body">
+        <span class="pillar-tag">Compliance</span>
+        <h3>Continuous Compliance Monitor</h3>
+        <p>10 regulatory frameworks monitored in real-time. Gap scanning, cross-jurisdiction analysis, and regulatory sandbox simulation.</p>
+        <div class="card-stats">
+          <div class="card-stat"><span class="val">10</span><span class="lbl">Frameworks</span></div>
+          <div class="card-stat"><span class="val">24/7</span><span class="lbl">Monitoring</span></div>
+          <div class="card-stat"><span class="val">94%</span><span class="lbl">Auto-Resolve</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Govern -->
+    <div class="feature-card ent">
+      <div class="card-demo"><canvas id="demo-govern"></canvas></div>
+      <div class="card-body">
+        <span class="pillar-tag">Governance</span>
+        <h3>Constitutional Court</h3>
+        <p>Formal governance framework with decision packets, constitutional amendments, and multi-stakeholder approval workflows.</p>
+        <div class="card-stats">
+          <div class="card-stat"><span class="val">∞</span><span class="lbl">Policies</span></div>
+          <div class="card-stat"><span class="val">5</span><span class="lbl">Approval Tiers</span></div>
+          <div class="card-stat"><span class="val">100%</span><span class="lbl">Audit Trail</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Sovereign -->
+    <div class="feature-card ent">
+      <div class="card-demo"><canvas id="demo-sovereign"></canvas></div>
+      <div class="card-body">
+        <span class="pillar-tag">Sovereign</span>
+        <h3>CendiaSovereign™</h3>
+        <p>22 deployment patterns including data diode, shadow council, QR air-gap bridge, TPM attestation, and federated mesh.</p>
+        <div class="card-stats">
+          <div class="card-stat"><span class="val">22</span><span class="lbl">Patterns</span></div>
+          <div class="card-stat"><span class="val">0</span><span class="lbl">Cloud Deps</span></div>
+          <div class="card-stat"><span class="val">FIPS</span><span class="lbl">Compliant</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5: Panopticon -->
+    <div class="feature-card ent">
+      <div class="card-demo"><canvas id="demo-panopticon"></canvas></div>
+      <div class="card-body">
+        <span class="pillar-tag">Operate</span>
+        <h3>CendiaPanopticon™</h3>
+        <p>Total observability for AI decision pipelines. Real-time anomaly detection with &lt;100ms latency and cryptographic audit proofs.</p>
+        <div class="card-stats">
+          <div class="card-stat"><span class="val">&lt;100ms</span><span class="lbl">Latency</span></div>
+          <div class="card-stat"><span class="val">99.99%</span><span class="lbl">Uptime</span></div>
+          <div class="card-stat"><span class="val">ZK</span><span class="lbl">Proofs</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6: Crown Jewels -->
+    <div class="feature-card ent">
+      <div class="card-demo"><canvas id="demo-crown"></canvas></div>
+      <div class="card-body">
+        <span class="pillar-tag">Crown Jewels</span>
+        <h3>Echo · RedTeam · Gnosis</h3>
+        <p>Decision echo analysis, automated red-team testing, and knowledge synthesis engine. Surface hidden patterns across your entire decision corpus.</p>
+        <div class="card-stats">
+          <div class="card-stat"><span class="val">3</span><span class="lbl">Engines</span></div>
+          <div class="card-stat"><span class="val">47%</span><span class="lbl">Faster Insights</span></div>
+          <div class="card-stat"><span class="val">10x</span><span class="lbl">Pattern Discovery</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 7: Intelligence Suite -->
+    <div class="feature-card ent">
+      <div class="card-demo"><canvas id="demo-intel"></canvas></div>
+      <div class="card-body">
+        <span class="pillar-tag">Intelligence</span>
+        <h3>Lens · DNA · What-If · Orbit</h3>
+        <p>Advanced intelligence capabilities: regulatory absorption, decision DNA mapping, what-if simulation, and orbital analysis.</p>
+        <div class="card-stats">
+          <div class="card-stat"><span class="val">4</span><span class="lbl">Modules</span></div>
+          <div class="card-stat"><span class="val">1000+</span><span class="lbl">Simulations/Day</span></div>
+          <div class="card-stat"><span class="val">AI</span><span class="lbl">Powered</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 8: Escrow -->
+    <div class="feature-card ent">
+      <div class="card-demo"><canvas id="demo-escrow"></canvas></div>
+      <div class="card-body">
+        <span class="pillar-tag">Crypto</span>
+        <h3>CendiaEscrow™</h3>
+        <p>Shamir Secret Sharing + Verifiable Delay Functions for cryptographic decision escrow. Time-locked governance with zero trust.</p>
+        <div class="card-stats">
+          <div class="card-stat"><span class="val">SSS</span><span class="lbl">Shamir Splits</span></div>
+          <div class="card-stat"><span class="val">VDF</span><span class="lbl">Time Locks</span></div>
+          <div class="card-stat"><span class="val">ZKP</span><span class="lbl">Zero Knowledge</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== STRATEGIC TIER ===== -->
+<section class="section tier-strategic" id="strategic">
+  <div class="section-header">
+    <div class="tier-tag">👑 Strategic Tier</div>
+    <h2>Nation-Scale Governance &amp; Adversarial Collapse</h2>
+    <p>4 pillars. Societal-scale simulation. Adversarial collapse testing. 26 industry verticals. For when the stakes are civilization-level.</p>
+  </div>
+  <div class="features-grid">
+
+    <!-- Card 1: Collapse -->
+    <div class="feature-card strat">
+      <div class="card-demo"><canvas id="demo-collapse"></canvas></div>
+      <div class="card-body">
+        <span class="pillar-tag">Collapse</span>
+        <h3>CendiaCollapse™</h3>
+        <p>19 specialized adversarial agents stress-test policies across 7 failure domains. Simulate regulatory upheaval, agent rebellion, and cascade failure.</p>
+        <div class="card-stats">
+          <div class="card-stat"><span class="val">19</span><span class="lbl">Attack Agents</span></div>
+          <div class="card-stat"><span class="val">7</span><span class="lbl">Failure Domains</span></div>
+          <div class="card-stat"><span class="val">∞</span><span class="lbl">Scenarios</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: SGAS -->
+    <div class="feature-card strat">
+      <div class="card-demo"><canvas id="demo-sgas"></canvas></div>
+      <div class="card-body">
+        <span class="pillar-tag">SGAS</span>
+        <h3>Synthetic Governance Agent System</h3>
+        <p>Societal-scale governance simulation. Model regulatory impact at city, state, and national scale with 1M+ simulated stakeholders.</p>
+        <div class="card-stats">
+          <div class="card-stat"><span class="val">1M+</span><span class="lbl">Stakeholders</span></div>
+          <div class="card-stat"><span class="val">3</span><span class="lbl">Scale Levels</span></div>
+          <div class="card-stat"><span class="val">Real-Time</span><span class="lbl">Feedback</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Verticals -->
+    <div class="feature-card strat">
+      <div class="card-demo"><canvas id="demo-verticals"></canvas></div>
+      <div class="card-body">
+        <span class="pillar-tag">Verticals</span>
+        <h3>26 Industry Vertical Packs</h3>
+        <p>Pre-configured agent packs for Healthcare, Financial Services, Government, Legal, Pharma, Manufacturing, Energy, and 19 more.</p>
+        <div class="card-stats">
+          <div class="card-stat"><span class="val">26</span><span class="lbl">Industries</span></div>
+          <div class="card-stat"><span class="val">500+</span><span class="lbl">Agent Templates</span></div>
+          <div class="card-stat"><span class="val">Day 1</span><span class="lbl">Production Ready</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Frontier -->
+    <div class="feature-card strat">
+      <div class="card-demo"><canvas id="demo-frontier"></canvas></div>
+      <div class="card-body">
+        <span class="pillar-tag">Frontier</span>
+        <h3>CendiaSanctuary™ &amp; Horizon</h3>
+        <p>Crisis-mode governance bunker with zero external dependencies. Offline agent deliberation, emergency succession, and horizon scanning.</p>
+        <div class="card-stats">
+          <div class="card-stat"><span class="val">0</span><span class="lbl">External Deps</span></div>
+          <div class="card-stat"><span class="val">Offline</span><span class="lbl">Capable</span></div>
+          <div class="card-stat"><span class="val">Bunker</span><span class="lbl">Grade</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== COMPARISON TABLE ===== -->
+<section class="comparison" id="comparison">
+  <h2>Feature Comparison</h2>
+  <table class="cmp-table">
+    <thead>
+      <tr>
+        <th>Capability</th>
+        <th>Foundation</th>
+        <th>Enterprise</th>
+        <th>Strategic</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>The Council (13 deliberation agents)</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>DECIDE (Chronos, PreMortem, Ghost Board)</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>DCII (7 crisis immunization services)</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>CendiaGateway AI Governance Proxy</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>CendiaPulse Monitoring</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>CendiaBridge Workflow Automation</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>CendiaGraph Knowledge Network</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td style="border-top:2px solid var(--border)">CendiaCrucible Stress Testing</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>Continuous Compliance Monitor (10 frameworks)</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>Constitutional Court Governance</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>CendiaSovereign (22 deployment patterns)</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>CendiaPanopticon Observability</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>Crown Jewels (Echo, RedTeam, Gnosis)</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>Intelligence (Lens, DNA, What-If, Orbit)</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>CendiaEscrow Crypto (SSS + VDF + ZKP)</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td style="border-top:2px solid var(--border)">CendiaCollapse (19 adversarial agents)</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+      <tr><td>SGAS Societal Simulation (1M+ stakeholders)</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+      <tr><td>26 Industry Vertical Agent Packs</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+      <tr><td>CendiaSanctuary Crisis Bunker</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+      <tr><td>CendiaHorizon Scanning</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ===== PRICING SECTION ===== -->
+<section class="section" id="pricing">
+  <div class="section-header">
+    <h2>Pricing</h2>
+    <p>Annual licenses. Sovereign deployment. No per-seat fees. No cloud lock-in.</p>
+  </div>
+  <div class="features-grid" style="max-width:900px;margin:0 auto">
+    <div class="feature-card ent" style="border-color:rgba(129,140,248,.15)">
+      <div class="card-body" style="text-align:center;padding:2rem">
+        <span class="pillar-tag">Enterprise</span>
+        <h3 style="font-size:1.3rem;margin:.5rem 0">$500K – $1.5M / year</h3>
+        <p>9 pillars · 20+ capabilities · Sovereign deploy · Priority support · Dedicated success manager</p>
+        <a href="mailto:enterprise@datacendia.com?subject=Enterprise%20Pricing" class="hero-cta cta-primary" style="margin-top:1rem;font-size:.8rem;padding:.6rem 1.5rem">Request Enterprise Quote</a>
+      </div>
+    </div>
+    <div class="feature-card strat" style="border-color:rgba(251,191,36,.15)">
+      <div class="card-body" style="text-align:center;padding:2rem">
+        <span class="pillar-tag">Strategic</span>
+        <h3 style="font-size:1.3rem;margin:.5rem 0">Custom Pricing</h3>
+        <p>Everything in Enterprise + COLLAPSE + SGAS + 26 verticals + Frontier · Dedicated success team</p>
+        <a href="mailto:enterprise@datacendia.com?subject=Strategic%20Pricing" class="hero-cta" style="margin-top:1rem;font-size:.8rem;padding:.6rem 1.5rem;background:var(--amber);color:#000">Request Strategic Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta">
+  <canvas id="ctaCanvas"></canvas>
+  <div class="final-cta-content">
+    <h2>Ready to govern at enterprise scale?</h2>
+    <p>Join organizations using Datacendia to make better decisions, prove compliance, and deploy sovereign AI governance.</p>
+    <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap">
+      <a href="mailto:enterprise@datacendia.com?subject=Datacendia%20Inquiry" class="hero-cta cta-primary">Get Started</a>
+      <a href="https://datacendia.com/demo" target="_blank" rel="noopener noreferrer" class="hero-cta cta-secondary">Schedule Demo</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2024–2026 Datacendia, LLC · <a href="https://datacendia.com">datacendia.com</a> · <a href="mailto:enterprise@datacendia.com">enterprise@datacendia.com</a></p>
+  <p style="margin-top:.4rem">Apache 2.0 Open Core · Sovereign-First · Not SaaS</p>
+</footer>
+
+<script>
+// =========================================================================
+// NAV
+// =========================================================================
+function setActive(el) {
+  document.querySelectorAll('.tier-nav a').forEach(a => a.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// =========================================================================
+// HERO CANVAS — constellation network
+// =========================================================================
+(function() {
+  const cv = document.getElementById('heroCanvas');
+  const ctx = cv.getContext('2d');
+  function resize() { cv.width = cv.offsetWidth; cv.height = cv.offsetHeight; }
+  resize(); window.addEventListener('resize', resize);
+  const W = () => cv.width, H = () => cv.height;
+  const pts = Array.from({length:80}, () => ({
+    x: Math.random()*2000, y: Math.random()*1000,
+    vx: (Math.random()-.5)*.3, vy: (Math.random()-.5)*.3,
+    r: Math.random()*2+.5
+  }));
+  function draw() {
+    ctx.clearRect(0,0,W(),H());
+    pts.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if(p.x<0) p.x=W(); if(p.x>W()) p.x=0;
+      if(p.y<0) p.y=H(); if(p.y>H()) p.y=0;
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle='rgba(129,140,248,.35)'; ctx.fill();
+    });
+    for(let i=0;i<pts.length;i++) for(let j=i+1;j<pts.length;j++) {
+      const d=Math.hypot(pts[i].x-pts[j].x, pts[i].y-pts[j].y);
+      if(d<120) {
+        ctx.beginPath(); ctx.moveTo(pts[i].x,pts[i].y); ctx.lineTo(pts[j].x,pts[j].y);
+        ctx.strokeStyle=`rgba(129,140,248,${.06*(1-d/120)})`; ctx.stroke();
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// =========================================================================
+// CTA CANVAS — ambient glow
+// =========================================================================
+(function() {
+  const cv = document.getElementById('ctaCanvas');
+  const ctx = cv.getContext('2d');
+  function resize() { cv.width = cv.offsetWidth; cv.height = cv.offsetHeight; }
+  resize(); window.addEventListener('resize', resize);
+  let t=0;
+  function draw() {
+    t+=.005;
+    ctx.clearRect(0,0,cv.width,cv.height);
+    const grad = ctx.createRadialGradient(cv.width/2+Math.sin(t)*100,cv.height/2,0,cv.width/2,cv.height/2,cv.width/2);
+    grad.addColorStop(0,'rgba(129,140,248,.06)');
+    grad.addColorStop(.5,'rgba(251,191,36,.03)');
+    grad.addColorStop(1,'transparent');
+    ctx.fillStyle=grad; ctx.fillRect(0,0,cv.width,cv.height);
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// =========================================================================
+// FEATURE CARD CANVASES
+// =========================================================================
+const demos = {
+  // Crucible — red particles attacking a shield
+  'demo-crucible': function(cv) {
+    const ctx=cv.getContext('2d'); cv.width=cv.offsetWidth; cv.height=cv.offsetHeight;
+    const W=cv.width,H=cv.height,cx=W/2,cy=H/2;
+    const attacks=Array.from({length:30},()=>({
+      a:Math.random()*Math.PI*2, r:Math.max(W,H)*.6,
+      speed:.5+Math.random()*1.5, size:1+Math.random()*2
+    }));
+    let shield=40;
+    function draw(){
+      ctx.fillStyle='rgba(0,0,0,.15)'; ctx.fillRect(0,0,W,H);
+      // Shield
+      ctx.beginPath(); ctx.arc(cx,cy,shield,0,Math.PI*2);
+      ctx.strokeStyle='rgba(129,140,248,.3)'; ctx.lineWidth=2; ctx.stroke();
+      ctx.beginPath(); ctx.arc(cx,cy,shield-8,0,Math.PI*2);
+      ctx.strokeStyle='rgba(129,140,248,.15)'; ctx.lineWidth=1; ctx.stroke();
+      // Attacks
+      attacks.forEach(a=>{
+        a.r-=a.speed;
+        if(a.r<shield+5){a.r=Math.max(W,H)*.6;a.a=Math.random()*Math.PI*2;
+          // Impact flash
+          const ix=cx+Math.cos(a.a)*shield,iy=cy+Math.sin(a.a)*shield;
+          ctx.beginPath();ctx.arc(ix,iy,6,0,Math.PI*2);
+          ctx.fillStyle='rgba(248,113,113,.4)';ctx.fill();
+        }
+        const x=cx+Math.cos(a.a)*a.r, y=cy+Math.sin(a.a)*a.r;
+        ctx.beginPath();ctx.arc(x,y,a.size,0,Math.PI*2);
+        ctx.fillStyle='rgba(248,113,113,.7)';ctx.fill();
+        // Trail
+        const tx=cx+Math.cos(a.a)*(a.r+8),ty=cy+Math.sin(a.a)*(a.r+8);
+        ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(tx,ty);
+        ctx.strokeStyle='rgba(248,113,113,.2)';ctx.stroke();
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  },
+
+  // Comply — radar sweep
+  'demo-comply': function(cv) {
+    const ctx=cv.getContext('2d'); cv.width=cv.offsetWidth; cv.height=cv.offsetHeight;
+    const W=cv.width,H=cv.height,cx=W/2,cy=H/2,R=Math.min(W,H)*.4;
+    let angle=0;
+    const dots=Array.from({length:10},()=>({a:Math.random()*Math.PI*2,r:Math.random()*R*.9+R*.1,flash:0}));
+    function draw(){
+      ctx.fillStyle='rgba(0,0,0,.08)'; ctx.fillRect(0,0,W,H);
+      // Grid circles
+      [.25,.5,.75,1].forEach(s=>{
+        ctx.beginPath();ctx.arc(cx,cy,R*s,0,Math.PI*2);
+        ctx.strokeStyle='rgba(52,211,153,.1)';ctx.lineWidth=1;ctx.stroke();
+      });
+      // Cross lines
+      ctx.beginPath();ctx.moveTo(cx-R,cy);ctx.lineTo(cx+R,cy);ctx.moveTo(cx,cy-R);ctx.lineTo(cx,cy+R);
+      ctx.strokeStyle='rgba(52,211,153,.08)';ctx.stroke();
+      // Sweep
+      angle+=.015;
+      const grad=ctx.createConicalGradient?null:null;
+      ctx.beginPath();ctx.moveTo(cx,cy);
+      ctx.arc(cx,cy,R,angle-.4,angle);ctx.closePath();
+      const g=ctx.createRadialGradient(cx,cy,0,cx,cy,R);
+      g.addColorStop(0,'rgba(52,211,153,.2)');g.addColorStop(1,'rgba(52,211,153,.02)');
+      ctx.fillStyle=g;ctx.fill();
+      // Sweep line
+      ctx.beginPath();ctx.moveTo(cx,cy);
+      ctx.lineTo(cx+Math.cos(angle)*R,cy+Math.sin(angle)*R);
+      ctx.strokeStyle='rgba(52,211,153,.5)';ctx.lineWidth=1.5;ctx.stroke();
+      // Dots
+      dots.forEach(d=>{
+        const da=Math.abs(((d.a-angle)%(Math.PI*2)+Math.PI*2)%(Math.PI*2));
+        if(da<.1) d.flash=1;
+        d.flash*=.97;
+        const x=cx+Math.cos(d.a)*d.r, y=cy+Math.sin(d.a)*d.r;
+        ctx.beginPath();ctx.arc(x,y,3+d.flash*4,0,Math.PI*2);
+        ctx.fillStyle=`rgba(52,211,153,${.3+d.flash*.7})`;ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  },
+
+  // Govern — flowing tree / hierarchy
+  'demo-govern': function(cv) {
+    const ctx=cv.getContext('2d'); cv.width=cv.offsetWidth; cv.height=cv.offsetHeight;
+    const W=cv.width,H=cv.height;
+    const nodes=[
+      {x:W/2,y:30,level:0},
+      {x:W*.3,y:70,level:1},{x:W*.7,y:70,level:1},
+      {x:W*.15,y:115,level:2},{x:W*.38,y:115,level:2},{x:W*.62,y:115,level:2},{x:W*.85,y:115,level:2},
+      {x:W*.1,y:155,level:3},{x:W*.25,y:155,level:3},{x:W*.42,y:155,level:3},{x:W*.58,y:155,level:3},{x:W*.75,y:155,level:3},{x:W*.9,y:155,level:3},
+    ];
+    const edges=[[0,1],[0,2],[1,3],[1,4],[2,5],[2,6],[3,7],[3,8],[4,9],[4,10],[5,11],[5,12]];
+    let pulse=0;
+    function draw(){
+      ctx.clearRect(0,0,W,H);pulse+=.02;
+      edges.forEach(([a,b])=>{
+        ctx.beginPath();ctx.moveTo(nodes[a].x,nodes[a].y);ctx.lineTo(nodes[b].x,nodes[b].y);
+        ctx.strokeStyle='rgba(167,139,250,.2)';ctx.lineWidth=1;ctx.stroke();
+        // Pulse traveling down
+        const prog=(Math.sin(pulse+a*.5)*.5+.5);
+        const px=nodes[a].x+(nodes[b].x-nodes[a].x)*prog;
+        const py=nodes[a].y+(nodes[b].y-nodes[a].y)*prog;
+        ctx.beginPath();ctx.arc(px,py,2,0,Math.PI*2);
+        ctx.fillStyle='rgba(167,139,250,.6)';ctx.fill();
+      });
+      nodes.forEach((n,i)=>{
+        const s=n.level===0?8:n.level===1?6:n.level===2?4:3;
+        const glow=Math.sin(pulse+i*.3)*.5+.5;
+        ctx.beginPath();ctx.arc(n.x,n.y,s+glow*2,0,Math.PI*2);
+        ctx.fillStyle=`rgba(167,139,250,${.1+glow*.1})`;ctx.fill();
+        ctx.beginPath();ctx.arc(n.x,n.y,s,0,Math.PI*2);
+        ctx.fillStyle=n.level===0?'rgba(167,139,250,.8)':'rgba(167,139,250,.4)';ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  },
+
+  // Sovereign — hexagonal mesh
+  'demo-sovereign': function(cv) {
+    const ctx=cv.getContext('2d'); cv.width=cv.offsetWidth; cv.height=cv.offsetHeight;
+    const W=cv.width,H=cv.height;
+    const hexSize=24,rows=Math.ceil(H/(hexSize*1.5))+1,cols=Math.ceil(W/(hexSize*Math.sqrt(3)))+1;
+    let t=0;
+    function hex(cx,cy,s){
+      ctx.beginPath();
+      for(let i=0;i<6;i++){const a=Math.PI/3*i-Math.PI/6;ctx.lineTo(cx+s*Math.cos(a),cy+s*Math.sin(a));}
+      ctx.closePath();
+    }
+    function draw(){
+      ctx.clearRect(0,0,W,H);t+=.01;
+      for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){
+        const x=c*hexSize*Math.sqrt(3)+(r%2?hexSize*Math.sqrt(3)/2:0);
+        const y=r*hexSize*1.5;
+        const d=Math.hypot(x-W/2,y-H/2);
+        const wave=Math.sin(d*.02-t*2)*.5+.5;
+        hex(x,y,hexSize*.9);
+        ctx.strokeStyle=`rgba(129,140,248,${.05+wave*.12})`;ctx.lineWidth=.5;ctx.stroke();
+        if(wave>.7){hex(x,y,hexSize*.4);ctx.fillStyle=`rgba(129,140,248,${(wave-.7)*1})`;ctx.fill();}
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  },
+
+  // Panopticon — realtime monitoring pulses
+  'demo-panopticon': function(cv) {
+    const ctx=cv.getContext('2d'); cv.width=cv.offsetWidth; cv.height=cv.offsetHeight;
+    const W=cv.width,H=cv.height;
+    const lines=Array.from({length:5},(_,i)=>({y:H*.2+i*(H*.15),data:Array.from({length:100},()=>Math.random())}));
+    let offset=0;
+    function draw(){
+      ctx.clearRect(0,0,W,H);offset+=.5;
+      lines.forEach((line,li)=>{
+        line.data.push(Math.random());if(line.data.length>100)line.data.shift();
+        ctx.beginPath();
+        line.data.forEach((v,i)=>{
+          const x=i*(W/100);const y=line.y-v*20;
+          i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+        });
+        const colors=['rgba(34,211,238,.5)','rgba(52,211,153,.4)','rgba(129,140,248,.4)','rgba(167,139,250,.3)','rgba(251,191,36,.3)'];
+        ctx.strokeStyle=colors[li];ctx.lineWidth=1.5;ctx.stroke();
+        // Latest point glow
+        const lx=W,ly=line.y-line.data[line.data.length-1]*20;
+        ctx.beginPath();ctx.arc(lx-2,ly,3,0,Math.PI*2);
+        ctx.fillStyle=colors[li].replace(/[\d.]+\)$/,'.8)');ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  },
+
+  // Crown — triple rotating rings
+  'demo-crown': function(cv) {
+    const ctx=cv.getContext('2d'); cv.width=cv.offsetWidth; cv.height=cv.offsetHeight;
+    const W=cv.width,H=cv.height,cx=W/2,cy=H/2;
+    let t=0;
+    const rings=[
+      {r:50,speed:1,color:'rgba(129,140,248,.4)',nodes:8},
+      {r:35,speed:-1.5,color:'rgba(167,139,250,.4)',nodes:6},
+      {r:20,speed:2,color:'rgba(251,191,36,.5)',nodes:4},
+    ];
+    function draw(){
+      ctx.clearRect(0,0,W,H);t+=.015;
+      rings.forEach(ring=>{
+        ctx.beginPath();ctx.arc(cx,cy,ring.r,0,Math.PI*2);
+        ctx.strokeStyle=ring.color.replace(/[\d.]+\)$/,'.15)');ctx.lineWidth=1;ctx.stroke();
+        for(let i=0;i<ring.nodes;i++){
+          const a=t*ring.speed+i*(Math.PI*2/ring.nodes);
+          const x=cx+Math.cos(a)*ring.r,y=cy+Math.sin(a)*ring.r;
+          ctx.beginPath();ctx.arc(x,y,3,0,Math.PI*2);
+          ctx.fillStyle=ring.color;ctx.fill();
+          // Lines to center
+          ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(x,y);
+          ctx.strokeStyle=ring.color.replace(/[\d.]+\)$/,'.08)');ctx.stroke();
+        }
+      });
+      // Center jewel
+      const glow=Math.sin(t*3)*.5+.5;
+      ctx.beginPath();ctx.arc(cx,cy,5+glow*3,0,Math.PI*2);
+      ctx.fillStyle=`rgba(251,191,36,${.2+glow*.3})`;ctx.fill();
+      ctx.beginPath();ctx.arc(cx,cy,4,0,Math.PI*2);
+      ctx.fillStyle='rgba(251,191,36,.8)';ctx.fill();
+      requestAnimationFrame(draw);
+    }
+    draw();
+  },
+
+  // Intel — neural network
+  'demo-intel': function(cv) {
+    const ctx=cv.getContext('2d'); cv.width=cv.offsetWidth; cv.height=cv.offsetHeight;
+    const W=cv.width,H=cv.height;
+    const layers=[4,6,8,6,4];
+    const nodes=[];
+    layers.forEach((count,li)=>{
+      const x=W*.15+li*(W*.7/(layers.length-1));
+      for(let i=0;i<count;i++){
+        const y=H/2-(count-1)*15/2+i*15;
+        nodes.push({x,y,layer:li});
+      }
+    });
+    let t=0;
+    function draw(){
+      ctx.clearRect(0,0,W,H);t+=.02;
+      // Connections
+      let idx=0;
+      for(let l=0;l<layers.length-1;l++){
+        const from=nodes.filter(n=>n.layer===l);
+        const to=nodes.filter(n=>n.layer===l+1);
+        from.forEach(f=>to.forEach(t2=>{
+          const signal=Math.sin(t+f.x*.01+t2.y*.01)*.5+.5;
+          ctx.beginPath();ctx.moveTo(f.x,f.y);ctx.lineTo(t2.x,t2.y);
+          ctx.strokeStyle=`rgba(129,140,248,${.03+signal*.08})`;ctx.lineWidth=.5;ctx.stroke();
+        }));
+      }
+      // Nodes
+      nodes.forEach((n,i)=>{
+        const pulse=Math.sin(t*2+i*.3)*.5+.5;
+        ctx.beginPath();ctx.arc(n.x,n.y,2+pulse*2,0,Math.PI*2);
+        ctx.fillStyle=`rgba(129,140,248,${.2+pulse*.4})`;ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  },
+
+  // Escrow — key splitting animation
+  'demo-escrow': function(cv) {
+    const ctx=cv.getContext('2d'); cv.width=cv.offsetWidth; cv.height=cv.offsetHeight;
+    const W=cv.width,H=cv.height,cx=W/2,cy=H/2;
+    let t=0;
+    const shards=Array.from({length:5},(_,i)=>({angle:i*(Math.PI*2/5),dist:0,target:45+Math.random()*15}));
+    function draw(){
+      ctx.clearRect(0,0,W,H);t+=.02;
+      const splitting=Math.sin(t*.5)*.5+.5;
+      // Central lock
+      const lockSize=12-splitting*4;
+      ctx.beginPath();ctx.arc(cx,cy,lockSize,0,Math.PI*2);
+      ctx.fillStyle=`rgba(251,191,36,${.3+splitting*.2})`;ctx.fill();
+      ctx.strokeStyle='rgba(251,191,36,.5)';ctx.lineWidth=1.5;ctx.stroke();
+      // Shards
+      shards.forEach((s,i)=>{
+        s.dist=splitting*s.target;
+        const x=cx+Math.cos(s.angle+t*.3)*s.dist;
+        const y=cy+Math.sin(s.angle+t*.3)*s.dist;
+        // Line from center
+        ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(x,y);
+        ctx.strokeStyle=`rgba(251,191,36,${.1+splitting*.15})`;ctx.lineWidth=1;
+        ctx.setLineDash([3,3]);ctx.stroke();ctx.setLineDash([]);
+        // Shard
+        ctx.beginPath();
+        ctx.save();ctx.translate(x,y);ctx.rotate(s.angle+t);
+        ctx.moveTo(0,-6);ctx.lineTo(5,4);ctx.lineTo(-5,4);ctx.closePath();
+        ctx.restore();
+        ctx.fillStyle=`rgba(251,191,36,${.5+Math.sin(t+i)*.3})`;ctx.fill();
+        ctx.strokeStyle='rgba(251,191,36,.3)';ctx.stroke();
+      });
+      // Timer ring
+      const timerAngle=t*1.5%(Math.PI*2);
+      ctx.beginPath();ctx.arc(cx,cy,55,0,timerAngle);
+      ctx.strokeStyle='rgba(251,191,36,.15)';ctx.lineWidth=.5;ctx.stroke();
+      requestAnimationFrame(draw);
+    }
+    draw();
+  },
+
+  // Collapse — cascading failure
+  'demo-collapse': function(cv) {
+    const ctx=cv.getContext('2d'); cv.width=cv.offsetWidth; cv.height=cv.offsetHeight;
+    const W=cv.width,H=cv.height;
+    const grid=[];const cols=12,rows=8;
+    for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){
+      grid.push({x:W*.1+c*(W*.8/(cols-1)),y:H*.15+r*(H*.7/(rows-1)),health:1,recovering:false});
+    }
+    let t=0,attackX=0,attackY=0,attacking=false;
+    function triggerAttack(){
+      const target=grid[Math.floor(Math.random()*grid.length)];
+      attackX=target.x;attackY=target.y;attacking=true;
+      grid.forEach(n=>{
+        const d=Math.hypot(n.x-attackX,n.y-attackY);
+        if(d<80) n.health=Math.max(0,n.health-.3-Math.random()*.4);
+      });
+      setTimeout(()=>{attacking=false;grid.forEach(n=>{n.recovering=true;});},500);
+    }
+    setInterval(triggerAttack,2000);
+    function draw(){
+      ctx.clearRect(0,0,W,H);t+=.02;
+      // Connections
+      grid.forEach((n,i)=>{
+        grid.forEach((m,j)=>{
+          if(i>=j)return;
+          const d=Math.hypot(n.x-m.x,n.y-m.y);
+          if(d<80){
+            ctx.beginPath();ctx.moveTo(n.x,n.y);ctx.lineTo(m.x,m.y);
+            const h=Math.min(n.health,m.health);
+            ctx.strokeStyle=h>.5?`rgba(52,211,153,${h*.1})`:`rgba(248,113,113,${(1-h)*.15})`;
+            ctx.lineWidth=.5;ctx.stroke();
+          }
+        });
+      });
+      // Nodes
+      grid.forEach(n=>{
+        if(n.recovering) n.health=Math.min(1,n.health+.003);
+        const r=3;
+        ctx.beginPath();ctx.arc(n.x,n.y,r,0,Math.PI*2);
+        if(n.health>.7) ctx.fillStyle=`rgba(52,211,153,${n.health*.6})`;
+        else if(n.health>.3) ctx.fillStyle=`rgba(251,191,36,${.5})`;
+        else ctx.fillStyle=`rgba(248,113,113,${.6})`;
+        ctx.fill();
+      });
+      // Attack blast
+      if(attacking){
+        ctx.beginPath();ctx.arc(attackX,attackY,30+Math.sin(t*20)*10,0,Math.PI*2);
+        ctx.fillStyle='rgba(248,113,113,.08)';ctx.fill();
+        ctx.strokeStyle='rgba(248,113,113,.3)';ctx.lineWidth=1;ctx.stroke();
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  },
+
+  // SGAS — society simulation
+  'demo-sgas': function(cv) {
+    const ctx=cv.getContext('2d'); cv.width=cv.offsetWidth; cv.height=cv.offsetHeight;
+    const W=cv.width,H=cv.height;
+    const agents=Array.from({length:60},()=>({
+      x:Math.random()*W,y:Math.random()*H,
+      vx:(Math.random()-.5)*1,vy:(Math.random()-.5)*1,
+      type:Math.floor(Math.random()*3),size:1+Math.random()*2
+    }));
+    const colors=['rgba(251,191,36,.5)','rgba(129,140,248,.5)','rgba(52,211,153,.5)'];
+    function draw(){
+      ctx.fillStyle='rgba(0,0,0,.06)';ctx.fillRect(0,0,W,H);
+      agents.forEach(a=>{
+        // Flocking behavior
+        let ax=0,ay=0;
+        agents.forEach(b=>{
+          if(a===b)return;
+          const d=Math.hypot(a.x-b.x,a.y-b.y);
+          if(d<30) {ax+=(a.x-b.x)*.01;ay+=(a.y-b.y)*.01;}
+          else if(d<80&&a.type===b.type){ax+=(b.x-a.x)*.001;ay+=(b.y-a.y)*.001;}
+        });
+        a.vx+=ax;a.vy+=ay;
+        const speed=Math.hypot(a.vx,a.vy);
+        if(speed>1.5){a.vx*=1.5/speed;a.vy*=1.5/speed;}
+        a.x+=a.vx;a.y+=a.vy;
+        if(a.x<0)a.x=W;if(a.x>W)a.x=0;if(a.y<0)a.y=H;if(a.y>H)a.y=0;
+        ctx.beginPath();ctx.arc(a.x,a.y,a.size,0,Math.PI*2);
+        ctx.fillStyle=colors[a.type];ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  },
+
+  // Verticals — sector wheel
+  'demo-verticals': function(cv) {
+    const ctx=cv.getContext('2d'); cv.width=cv.offsetWidth; cv.height=cv.offsetHeight;
+    const W=cv.width,H=cv.height,cx=W/2,cy=H/2;
+    const sectors=26;let t=0;
+    const labels=['HC','FS','GOV','LEG','PHR','MFG','NRG','TECH','RTL','RE','TRNS','MED','PRO','EDU','SPT','TEL','AERO','AGR','AUTO','CON','HSP','NPO','IND','SC','EU','FIFA'];
+    function draw(){
+      ctx.clearRect(0,0,W,H);t+=.005;
+      const R=Math.min(W,H)*.4;
+      for(let i=0;i<sectors;i++){
+        const a1=i*(Math.PI*2/sectors)+t;
+        const a2=(i+1)*(Math.PI*2/sectors)+t;
+        const glow=Math.sin(t*3+i*.5)*.5+.5;
+        ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,R,a1,a2);ctx.closePath();
+        ctx.fillStyle=`hsla(${i*(360/sectors)},60%,50%,${.04+glow*.06})`;ctx.fill();
+        ctx.strokeStyle=`hsla(${i*(360/sectors)},60%,50%,${.1+glow*.15})`;ctx.lineWidth=.5;ctx.stroke();
+        // Label
+        const la=(a1+a2)/2;
+        const lx=cx+Math.cos(la)*(R*.7),ly=cy+Math.sin(la)*(R*.7);
+        ctx.fillStyle=`hsla(${i*(360/sectors)},60%,70%,${.3+glow*.4})`;
+        ctx.font='7px monospace';ctx.textAlign='center';ctx.textBaseline='middle';
+        ctx.fillText(labels[i]||'',lx,ly);
+      }
+      // Center
+      ctx.beginPath();ctx.arc(cx,cy,15,0,Math.PI*2);
+      ctx.fillStyle='rgba(251,191,36,.1)';ctx.fill();
+      ctx.strokeStyle='rgba(251,191,36,.3)';ctx.lineWidth=1;ctx.stroke();
+      requestAnimationFrame(draw);
+    }
+    draw();
+  },
+
+  // Frontier — bunker shield
+  'demo-frontier': function(cv) {
+    const ctx=cv.getContext('2d'); cv.width=cv.offsetWidth; cv.height=cv.offsetHeight;
+    const W=cv.width,H=cv.height,cx=W/2,cy=H/2;
+    let t=0;
+    function draw(){
+      ctx.clearRect(0,0,W,H);t+=.01;
+      // Concentric shields
+      [60,45,30,15].forEach((r,i)=>{
+        const pulse=Math.sin(t*2+i)*.5+.5;
+        ctx.beginPath();ctx.arc(cx,cy,r+pulse*3,0,Math.PI*2);
+        ctx.strokeStyle=`rgba(251,191,36,${.08+i*.05+pulse*.05})`;ctx.lineWidth=1+i*.3;ctx.stroke();
+        // Rotating segments
+        for(let s=0;s<4;s++){
+          const sa=t*(i%2?1:-1)+s*(Math.PI/2);
+          ctx.beginPath();ctx.arc(cx,cy,r,sa,sa+.4);
+          ctx.strokeStyle=`rgba(251,191,36,${.2+pulse*.2})`;ctx.lineWidth=2;ctx.stroke();
+        }
+      });
+      // Inner core
+      const coreGlow=Math.sin(t*3)*.5+.5;
+      ctx.beginPath();ctx.arc(cx,cy,8+coreGlow*4,0,Math.PI*2);
+      ctx.fillStyle=`rgba(251,191,36,${.1+coreGlow*.15})`;ctx.fill();
+      ctx.beginPath();ctx.arc(cx,cy,5,0,Math.PI*2);
+      ctx.fillStyle='rgba(251,191,36,.6)';ctx.fill();
+      // Outer scan lines
+      for(let i=0;i<3;i++){
+        const sa=t+i*(Math.PI*2/3);
+        ctx.beginPath();ctx.moveTo(cx+Math.cos(sa)*65,cy+Math.sin(sa)*65);
+        ctx.lineTo(cx+Math.cos(sa)*80,cy+Math.sin(sa)*80);
+        ctx.strokeStyle='rgba(251,191,36,.15)';ctx.lineWidth=.5;ctx.stroke();
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  },
+};
+
+// Initialize all demo canvases
+Object.entries(demos).forEach(([id, fn]) => {
+  const el = document.getElementById(id);
+  if (el) fn(el);
+});
+
+// Intersection observer for nav highlighting
+const sections = document.querySelectorAll('.section, .comparison, .final-cta');
+const navLinks = document.querySelectorAll('.tier-nav a');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { threshold: 0.3 });
+sections.forEach(s => { if (s.id) observer.observe(s); });
+</script>
+</body>
+</html>
