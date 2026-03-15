@@ -65,7 +65,7 @@
 │  │   ├── Nexus, SSO                                                 │    │
 │  │   └── Feature gating via SubscriptionTiers.ts                    │    │
 │  │                                                                  │    │
-│  │   SOVEREIGN SERVICES (22 patterns)                               │    │
+│  │   SOVEREIGN SERVICES (18 routes, 22 architectural patterns)      │    │
 │  │   ├── Data Diode, Shadow Council, QR Air-Gap Bridge              │    │
 │  │   ├── TPM Attestation, Federated Mesh, Time Lock                 │    │
 │  │   └── Air-gapped deployment support                              │    │
@@ -157,7 +157,7 @@
 │  ──────────────────────────────────────────────────────────────────│
 │                ENTERPRISE (datacendia-components)                    │
 │  Stress-Test · Comply · Gap Scan · Escrow · Govern                 │
-│  Sovereign (22 patterns) · Operate (CendiaPulse)                   │
+│  Sovereign (18 routes / 22 patterns) · Operate (CendiaPulse)       │
 │  Crown Jewels: Echo · Gnosis · RedTeam                             │
 │  15 C-Suite Agents · 35+ Modes · SSO/CAC/PIV                      │
 │  CendiaApotheosis · OmniTranslate · CendiaCrucible                │
@@ -172,3 +172,26 @@
 │  Browser Extensions · ServiceInfoDropdown (guided onboarding)      │
 └────────────────────────────────────────────────────────────────────┘
 ```
+
+## Cross-Repo Comparison: Core vs Components
+
+| Dimension | Core (Foundation) | Components (Enterprise+Strategic) |
+|-----------|-------------------|-----------------------------------|
+| **License** | Apache 2.0 (open source) | Proprietary |
+| **Price** | Free | From $499/mo (Enterprise) / Custom (Strategic) |
+| **Total Routes** | ~170 accessible (~249 total, 79 gated) | ~274 total (~104 additional) |
+| **Deliberation Engine** | ✅ Full (13 pages) | — (included via Core) |
+| **Decision Intelligence** | 4 core tools (Chronos, PreMortem, GhostBoard, DecisionDebt) | +8 advanced (Lens, AuditProvenance, Regulatory, Orbit, Consensus, What-If, Synthesis, RDP) |
+| **Crisis Immunization** | ✅ Full DCII (7 pages) | — (included via Core) |
+| **AI Gateway** | ✅ CendiaGateway + browser extensions | — (included via Core) |
+| **Knowledge Graph** | ✅ (3 pages: Explorer, Lineage, Entity) | — (included via Core) |
+| **Compliance** | ✅ Basic (readiness checklist, 1 page) | ✅ 4 services (Continuous Monitor, Sandbox, Cross-Jurisdiction, Receipt) |
+| **Governance/Court** | ❌ (gated → UpgradePage) | ✅ 2 services (Decision Packets, Constitutional Court) |
+| **Crown Jewels** | ❌ (gated → UpgradePage) | ✅ 3 dashboards (Echo, RedTeam, Gnosis) |
+| **Sovereign Deployment** | ❌ (gated → UpgradePage) | ✅ 18 routes (13 sovereign pages, 22 architectural patterns) |
+| **Industry Verticals** | Hub teaser only (list visible, pages gated) | ✅ 26 full vertical packs |
+| **Stress Testing** | ❌ (gated → UpgradePage) | ✅ CendiaCrucible + AdversarialRedTeam + COLLAPSE (Strategic) |
+| **Live Operations** | Basic (Pulse — 3 pages) | ✅ CendiaPulse WebSocket (LiveAgentMonitor) |
+| **ZKP / Crypto** | ❌ (gated → UpgradePage) | ✅ Escrow + ZKP |
+| **SSO/CAC/PIV** | ❌ | ✅ SSOService + CAC/PIV auth |
+| **HA / Monitoring** | Docker Compose (dev) | Production HA + Prometheus/Grafana/Jaeger |
