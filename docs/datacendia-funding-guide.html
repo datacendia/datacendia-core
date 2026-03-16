@@ -1,0 +1,2069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Datacendia Non-Dilutive Funding Playbook — Step-by-Step Guides</title>
+<style>
+:root{--bg:#0a0a0f;--bg2:#12121a;--bg3:#1a1a2e;--border:#2a2a3e;--text:#f0f0f5;--text2:#a0a0b8;--text3:#6b6b80;--gold:#d4a853;--gold-bg:rgba(212,168,83,.08);--green:#22c55e;--green-bg:rgba(34,197,94,.08);--blue:#4a9eff;--blue-bg:rgba(74,158,255,.08);--purple:#a855f7;--purple-bg:rgba(168,85,247,.08);--cyan:#06b6d4;--red:#ef4444;--orange:#f97316}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.hero{padding:60px 40px 40px;max-width:1200px;margin:0 auto}
+.hero .ey{font-size:13px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+.hero h1{font-size:38px;font-weight:800;line-height:1.15;margin-bottom:12px}
+.hero .sub{font-size:17px;color:var(--text2);max-width:700px;margin-bottom:30px}
+.container{max-width:1200px;margin:0 auto;padding:0 40px 60px}
+.stack-box{background:linear-gradient(135deg,rgba(212,168,83,.06),rgba(74,158,255,.06));border:1px solid var(--gold);border-radius:12px;padding:32px;margin-bottom:40px}
+.stack-box h2{color:var(--gold);font-size:22px;margin-bottom:16px}
+.stack-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.stack-item{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:16px}
+.stack-item .label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--text3);margin-bottom:4px}
+.stack-item .val{font-size:24px;font-weight:800;color:var(--green)}
+.stack-item .note{font-size:13px;color:var(--text2);margin-top:4px}
+.toc{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:32px;margin-bottom:48px}
+.toc h3{font-size:18px;margin-bottom:16px;color:var(--gold)}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.toc a{color:var(--blue);text-decoration:none;font-size:14px;padding:4px 0;display:block}
+.toc a:hover{color:var(--gold)}
+.toc .tier-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-top:12px;margin-bottom:4px;grid-column:1/-1}
+.toc .t1{color:var(--green)}.toc .t2{color:var(--blue)}.toc .t3{color:var(--purple)}.toc .t4{color:var(--orange)}
+.guide{background:var(--bg2);border:1px solid var(--border);border-radius:12px;margin-bottom:32px;overflow:hidden}
+.guide-header{padding:24px 28px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:16px;cursor:pointer}
+.guide-header:hover{background:var(--bg3)}
+.guide-header h3{font-size:18px;flex:1}
+.guide-header .amt{color:var(--green);font-weight:700;font-size:15px;white-space:nowrap}
+.guide-header .fit{font-size:11px;padding:3px 10px;border-radius:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+.fit-strong{background:var(--green-bg);color:var(--green)}
+.fit-good{background:var(--blue-bg);color:var(--blue)}
+.fit-possible{background:var(--purple-bg);color:var(--purple)}
+.fit-future{background:rgba(249,115,22,.08);color:var(--orange)}
+.guide-body{padding:28px}
+.guide-body h4{font-size:14px;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin:24px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.guide-body h4:first-child{margin-top:0}
+.guide-body p{color:var(--text2);margin-bottom:8px;font-size:14px}
+.guide-body ul,.guide-body ol{color:var(--text2);margin:8px 0 16px 20px;font-size:14px}
+.guide-body li{margin-bottom:6px}
+.guide-body li strong{color:var(--text)}
+.guide-body .step{background:var(--bg3);border-left:3px solid var(--gold);padding:12px 16px;margin:8px 0;border-radius:0 6px 6px 0}
+.guide-body .step .sn{color:var(--gold);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:1px}
+.guide-body .step p{margin:4px 0 0;color:var(--text)}
+.guide-body .tip{background:rgba(34,197,94,.05);border-left:3px solid var(--green);padding:12px 16px;margin:8px 0;border-radius:0 6px 6px 0}
+.guide-body .tip strong{color:var(--green)}
+.guide-body .warn{background:rgba(239,68,68,.05);border-left:3px solid var(--red);padding:12px 16px;margin:8px 0;border-radius:0 6px 6px 0}
+.guide-body .warn strong{color:var(--red)}
+.guide-body a{color:var(--blue)}
+.timeline{display:grid;grid-template-columns:80px 1fr;gap:0;margin:16px 0}
+.timeline .month{color:var(--gold);font-weight:700;font-size:13px;padding:8px 0;border-right:2px solid var(--border);padding-right:16px;text-align:right}
+.timeline .actions{padding:8px 0 8px 16px;font-size:13px;color:var(--text2);border-bottom:1px solid rgba(42,42,62,.3)}
+.section-label{font-size:13px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-weight:600;margin:48px 0 24px;padding-bottom:12px;border-bottom:2px solid var(--gold)}
+.footer{text-align:center;padding:40px;color:var(--text3);font-size:12px;border-top:1px solid var(--border)}
+@media(max-width:800px){.hero{padding:30px 20px}.container{padding:0 20px 40px}.stack-grid,.toc-grid{grid-template-columns:1fr}.hero h1{font-size:26px}}
+
+/* Pitch Deck Library */
+.deck-section{margin-bottom:40px}
+.deck-section h3{font-size:16px;color:var(--text2);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.deck-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px}
+.deck-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px 20px;display:flex;align-items:center;gap:14px;transition:border-color .2s,transform .15s}
+.deck-card:hover{border-color:var(--gold);transform:translateY(-1px)}
+.deck-card .dc-info{flex:1;min-width:0}
+.deck-card .dc-num{font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px}
+.deck-card .dc-name{font-size:14px;font-weight:600;color:var(--text);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.deck-card .dc-desc{font-size:12px;color:var(--text3);margin-top:2px}
+.deck-card .dc-btns{display:flex;gap:6px;flex-shrink:0}
+.btn-sm{padding:5px 10px;border-radius:6px;border:1px solid var(--border);background:var(--bg3);color:var(--text2);font-size:11px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:all .15s;white-space:nowrap}
+.btn-sm:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-bg)}
+.btn-sm.btn-view{color:var(--blue);border-color:rgba(74,158,255,.3)}
+.btn-sm.btn-view:hover{background:var(--blue-bg);color:var(--blue)}
+.btn-sm.btn-pdf{color:var(--green);border-color:rgba(34,197,94,.3)}
+.btn-sm.btn-pdf:hover{background:var(--green-bg);color:var(--green)}
+.btn-sm.btn-pptx{color:var(--purple);border-color:rgba(168,85,247,.3)}
+.btn-sm.btn-pptx:hover{background:var(--purple-bg);color:var(--purple)}
+.btn-sm.btn-all{padding:8px 20px;font-size:13px;border-radius:8px}
+.btn-sm .ico{font-size:13px}
+.dl-bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:24px;padding:16px 20px;background:var(--bg2);border:1px solid var(--border);border-radius:10px}
+.dl-bar .dl-label{font-size:13px;color:var(--text2);margin-right:auto}
+.dl-bar .dl-label strong{color:var(--text)}
+.deck-cat-label{display:inline-block;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+.cat-investor{background:rgba(212,168,83,.1);color:var(--gold)}
+.cat-partner{background:rgba(74,158,255,.1);color:var(--blue)}
+.cat-sales{background:rgba(34,197,94,.1);color:var(--green)}
+
+/* Toolkit */
+.toolkit-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px 28px;margin-bottom:16px}
+.toolkit-card h4{font-size:15px;color:var(--gold);margin-bottom:12px}
+.toolkit-card .copy-block{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:8px 0;position:relative;font-size:13px;color:var(--text2);line-height:1.7;white-space:pre-wrap;font-family:inherit}
+.toolkit-card .copy-btn{position:absolute;top:8px;right:8px;padding:4px 10px;border-radius:5px;border:1px solid var(--border);background:var(--bg3);color:var(--text3);font-size:11px;cursor:pointer;transition:all .15s}
+.toolkit-card .copy-btn:hover{border-color:var(--gold);color:var(--gold)}
+.toolkit-card .copy-btn.copied{background:rgba(34,197,94,.15);color:var(--green);border-color:var(--green)}
+.checklist{list-style:none;padding:0;margin:8px 0}
+.checklist li{padding:6px 0 6px 28px;position:relative;font-size:13px;color:var(--text2)}
+.checklist li::before{content:'☐';position:absolute;left:0;color:var(--gold);font-size:16px;line-height:1.4}
+.status-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.status-badge.generating{background:rgba(249,115,22,.15);color:var(--orange);animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.progress-toast{position:fixed;bottom:30px;right:30px;background:var(--bg2);border:1px solid var(--gold);border-radius:10px;padding:16px 24px;z-index:9999;display:none;min-width:280px;box-shadow:0 8px 32px rgba(0,0,0,.5)}
+.progress-toast .pt-title{font-size:13px;font-weight:700;color:var(--gold);margin-bottom:8px}
+.progress-toast .pt-bar{height:4px;background:var(--border);border-radius:2px;overflow:hidden;margin-bottom:6px}
+.progress-toast .pt-fill{height:100%;background:var(--gold);border-radius:2px;transition:width .3s}
+.progress-toast .pt-text{font-size:11px;color:var(--text3)}
+
+/* Logo */
+.hero-logo{height:56px;width:auto;margin-bottom:16px;display:block;margin-left:auto;margin-right:auto}
+.footer-logo{height:28px;width:auto;opacity:.6;margin-bottom:8px}
+
+/* Services */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin-top:16px}
+.svc-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px 24px;transition:border-color .2s}
+.svc-card:hover{border-color:var(--gold)}
+.svc-card .svc-icon{font-size:24px;margin-bottom:8px}
+.svc-card .svc-cat{font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.svc-card .svc-name{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px}
+.svc-card .svc-desc{font-size:12px;color:var(--text3);margin-bottom:10px}
+.svc-card .svc-meta{display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px solid var(--border)}
+.svc-card .svc-price{font-size:16px;font-weight:700;color:var(--gold)}
+.svc-card .svc-price .svc-unit{font-size:11px;font-weight:400;color:var(--text3)}
+.svc-card .svc-duration{font-size:12px;color:var(--text2);background:var(--bg3);padding:3px 10px;border-radius:12px}
+.svc-summary{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:24px}
+.svc-summary-item{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center}
+.svc-summary-item .svc-s-num{font-size:20px;font-weight:700;color:var(--gold)}
+.svc-summary-item .svc-s-label{font-size:11px;color:var(--text3);margin-top:2px}
+@media(max-width:800px){.svc-summary{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+<img src="logo.png" alt="Datacendia" class="hero-logo">
+<div class="ey">Datacendia Funding Playbook</div>
+<h1>Non-Dilutive Funding Guide<br>for Datacendia</h1>
+<p class="sub">Step-by-step application guides for every program that fits Datacendia's profile: AI decision intelligence, enterprise SaaS, sovereign deployment, deep tech.</p>
+</div>
+
+<div class="container">
+
+<!-- STACKING STRATEGY -->
+<div class="stack-box">
+<h2>Recommended Stacking Strategy</h2>
+<p style="color:var(--text2);font-size:14px;margin-bottom:16px">Stack these sources for maximum non-dilutive capital while retaining 100% equity:</p>
+<div class="stack-grid">
+<div class="stack-item"><div class="label">Cloud Credits (Stack 3 Providers)</div><div class="val">$450K+</div><div class="note">AWS + Google + Microsoft — apply to all three</div></div>
+<div class="stack-item"><div class="label">Government Grants (SBIR/STTR)</div><div class="val">$275K–$1.5M</div><div class="note">NSF + DARPA Phase I → Phase II pipeline</div></div>
+<div class="stack-item"><div class="label">Corporate Programs & Tools</div><div class="val">$150K+</div><div class="note">NVIDIA + Oracle + HubSpot + Brex credits</div></div>
+<div class="stack-item"><div class="label">Prizes & Competitions</div><div class="val">$100K–$1M</div><div class="note">TechCrunch + Startup World Cup + MIT Solve</div></div>
+</div>
+<div style="margin-top:20px;padding:16px;background:var(--bg);border-radius:8px;border:1px solid var(--green)">
+<p style="color:var(--green);font-weight:700;font-size:18px;margin-bottom:4px">Total Stackable: $975K – $3.1M+ at zero dilution</p>
+<p style="color:var(--text2);font-size:13px">Apply to all in parallel. Most are non-exclusive and can be combined.</p>
+</div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+<h3>All 28 Applicable Programs — Quick Navigation</h3>
+<div class="toc-grid">
+<div class="tier-label t1">● Tier 1 — Apply Immediately (10)</div>
+<a href="#aws">1. AWS Activate — up to $100K credits</a>
+<a href="#gcp">2. Google for Startups Cloud — up to $200K</a>
+<a href="#msft">3. Microsoft for Startups — up to $150K</a>
+<a href="#nvidia">4. NVIDIA Inception — GPU credits + support</a>
+<a href="#nsf-sbir">5. NSF SBIR Phase I — $275K</a>
+<a href="#nsf-icorps">6. NSF I-Corps — $50K</a>
+<a href="#darpa">7. DARPA SBIR — $50K–$2M</a>
+<a href="#opengrants">8. OpenGrants — Grant matching</a>
+<a href="#hubspot">9. HubSpot for Startups — 90% discount</a>
+<a href="#brex">10. Brex — $150K+ in credits</a>
+<div class="tier-label t2">● Tier 2 — Apply with Preparation (9)</div>
+<a href="#oracle">11. Oracle for Startups — up to $500K</a>
+<a href="#ibm">12. IBM Startup Program — up to $120K</a>
+<a href="#nih">13. NIH SBIR — $50K–$2M (healthcare)</a>
+<a href="#sttr">14. NSF STTR — $275K–$1.5M</a>
+<a href="#tc-disrupt">15. TechCrunch Disrupt Battlefield — $100K</a>
+<a href="#swc">16. Startup World Cup — $1M</a>
+<a href="#mit-solve">17. MIT Solve — $10K–$300K</a>
+<a href="#segment">18. Segment Startup Program — $25K</a>
+<a href="#mongodb">19. MongoDB for Startups — $5K</a>
+<div class="tier-label t3">● Tier 3 — Conditional Fit (5)</div>
+<a href="#eic">20. EIC Accelerator — up to €2.5M</a>
+<a href="#schmidt">21. Schmidt Futures — Variable</a>
+<a href="#shuttleworth">22. Shuttleworth Foundation — $200K+/yr</a>
+<a href="#tinyseed">23. TinySeed — $120K–$1M</a>
+<a href="#xprize">24. XPRIZE — $1M–$100M</a>
+<div class="tier-label t4">● Tier 4 — Future / Revenue Required (4)</div>
+<a href="#pipe">25. Pipe — $10K–$5M</a>
+<a href="#founderpath">26. Founderpath — $20K–$5M</a>
+<a href="#lighter">27. Lighter Capital — $50K–$4M</a>
+<a href="#svb">28. SVB Venture Debt — $1M–$50M</a>
+</div>
+</div>
+
+<!-- 12-MONTH TIMELINE -->
+<div style="margin-bottom:48px">
+<h3 style="font-size:18px;margin-bottom:16px;color:var(--gold)">12-Month Application Timeline</h3>
+<div class="timeline">
+<div class="month">Month 1</div><div class="actions"><strong>Cloud credits:</strong> AWS Activate, Google Cloud, Microsoft Founders Hub, NVIDIA Inception<br><strong>Tools:</strong> HubSpot, Brex, MongoDB, Segment<br><strong>Discovery:</strong> OpenGrants account setup</div>
+<div class="month">Month 2</div><div class="actions"><strong>Submit:</strong> NSF I-Corps application (gateway to SBIR)<br><strong>Apply:</strong> Oracle for Startups, IBM Startup Program<br><strong>Prep:</strong> Begin SBIR Phase I proposal drafts</div>
+<div class="month">Month 3</div><div class="actions"><strong>Submit:</strong> NSF SBIR Phase I proposal<br><strong>Submit:</strong> DARPA SBIR Phase I proposal<br><strong>Apply:</strong> TechCrunch Disrupt Battlefield</div>
+<div class="month">Month 4–5</div><div class="actions"><strong>Submit:</strong> MIT Solve application<br><strong>Submit:</strong> Startup World Cup regional<br><strong>Prep:</strong> EIC Accelerator application (if targeting EU)</div>
+<div class="month">Month 6</div><div class="actions"><strong>Submit:</strong> NIH SBIR (healthcare vertical angle)<br><strong>Apply:</strong> Schmidt Futures / Shuttleworth (if open source)<br><strong>Review:</strong> I-Corps results, refine SBIR narratives</div>
+<div class="month">Month 7–9</div><div class="actions"><strong>SBIR decisions arrive</strong> — if awarded, begin Phase I work<br><strong>Competition finals</strong> for TechCrunch, Startup World Cup<br><strong>Submit:</strong> EIC Accelerator full proposal</div>
+<div class="month">Month 10–12</div><div class="actions"><strong>Revenue milestone:</strong> Start RBF applications (Pipe, Founderpath, Lighter Capital)<br><strong>Submit:</strong> SBIR Phase II proposals (if Phase I completed)<br><strong>Stack:</strong> Venture debt conversations with SVB</div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- TIER 1: APPLY IMMEDIATELY -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-label">Tier 1 — Apply Immediately</div>
+
+<!-- 1. AWS Activate -->
+<div class="guide" id="aws">
+<div class="guide-header">
+<h3>1. AWS Activate</h3>
+<span class="amt">Up to $100K credits</span>
+<span class="fit fit-strong">Strong Fit</span>
+</div>
+<div class="guide-body">
+<h4>Why Datacendia Qualifies</h4>
+<p>AI/ML SaaS platform, early stage, needs compute for multi-agent deliberation workloads. AWS Bedrock, SageMaker, ECS/EKS for sovereign deployment patterns.</p>
+
+<h4>Step-by-Step Application</h4>
+<div class="step"><div class="sn">Step 1 — Create AWS Account</div><p>If not already done, create a new AWS account at <a href="https://aws.amazon.com">aws.amazon.com</a>. Use Datacendia's business email.</p></div>
+<div class="step"><div class="sn">Step 2 — Go to AWS Activate</div><p>Visit <a href="https://aws.amazon.com/activate/">aws.amazon.com/activate</a>. Choose between "Activate Founders" (self-funded, up to $1K) or "Activate Portfolio" (up to $100K, requires VC/accelerator affiliation).</p></div>
+<div class="step"><div class="sn">Step 3 — Apply for Founders Tier</div><p>Fill in: company name (Datacendia, LLC), founding date, description ("AI-powered decision intelligence platform with multi-agent deliberation for enterprise"), stage (pre-seed/seed), team size.</p></div>
+<div class="step"><div class="sn">Step 4 — Describe Your AWS Usage</div><p>Mention: EC2/EKS for sovereign deployment, SageMaker for ML pipelines, Bedrock for LLM inference, S3 for cryptographic audit storage, CloudFormation for air-gapped templates.</p></div>
+<div class="step"><div class="sn">Step 5 — Submit & Wait</div><p>Approval typically takes 3–7 business days for Founders tier. Portfolio tier requires an Organization ID from an affiliated accelerator/VC.</p></div>
+
+<div class="tip"><strong>Pro Tip:</strong> Apply to an AWS-affiliated accelerator (Y Combinator, Techstars, etc.) to unlock the Portfolio tier ($100K). Even free accelerator programs often provide the Organization ID needed.</div>
+
+<h4>What You Get</h4>
+<ul>
+<li><strong>Founders:</strong> $1,000 credits, valid 2 years, plus technical support</li>
+<li><strong>Portfolio:</strong> Up to $100,000 credits, valid 1 year, plus AWS business support</li>
+<li>Access to AWS Activate Console with curated training and architecture guidance</li>
+</ul>
+
+<h4>Datacendia-Specific Usage</h4>
+<ul>
+<li>EKS/ECS clusters for Council agent orchestration</li>
+<li>SageMaker endpoints for ML model serving</li>
+<li>Bedrock for LLM inference (Claude, Llama)</li>
+<li>RDS/Aurora for deliberation data storage</li>
+<li>CloudHSM for cryptographic audit trail operations</li>
+<li>GovCloud credits for FedRAMP-aligned workloads</li>
+</ul>
+</div>
+</div>
+
+<!-- 2. Google for Startups Cloud -->
+<div class="guide" id="gcp">
+<div class="guide-header">
+<h3>2. Google for Startups Cloud Program</h3>
+<span class="amt">Up to $200K credits</span>
+<span class="fit fit-strong">Strong Fit</span>
+</div>
+<div class="guide-body">
+<h4>Why Datacendia Qualifies</h4>
+<p>AI-first startup building on cloud infrastructure. Google Cloud's Vertex AI, GKE, and BigQuery are directly relevant to decision intelligence workloads.</p>
+
+<h4>Step-by-Step Application</h4>
+<div class="step"><div class="sn">Step 1 — Visit the Program Page</div><p>Go to <a href="https://cloud.google.com/startup">cloud.google.com/startup</a>. Click "Apply now."</p></div>
+<div class="step"><div class="sn">Step 2 — Complete the Application</div><p>Provide company details: Datacendia, LLC. Select stage (Seed or Series A). Describe product: "Enterprise AI decision intelligence platform with 14-agent multi-agent deliberation system."</p></div>
+<div class="step"><div class="sn">Step 3 — Describe Technical Architecture</div><p>Mention planned GCP usage: Vertex AI for model training/serving, GKE for container orchestration, BigQuery for analytics, Cloud KMS for cryptographic operations, Anthos for hybrid/on-prem deployment.</p></div>
+<div class="step"><div class="sn">Step 4 — Affiliate with a Partner (Optional)</div><p>If affiliated with a VC or accelerator in Google's network, mention this. It increases credit amount (up to $200K vs $2K for unaffiliated).</p></div>
+<div class="step"><div class="sn">Step 5 — Submit & Activate</div><p>Approval takes 5–10 business days. Once approved, credits appear in your billing console.</p></div>
+
+<div class="tip"><strong>Pro Tip:</strong> Google's Gemini API credits are included. Use these for multi-model inference diversity in Council deliberations alongside other LLM providers.</div>
+
+<h4>Credit Tiers</h4>
+<ul>
+<li><strong>Unaffiliated:</strong> $2,000 credits for 1 year</li>
+<li><strong>VC/Accelerator-backed:</strong> Up to $200,000 credits for 2 years</li>
+<li>Includes 1:1 technical architecture reviews and Google engineer office hours</li>
+</ul>
+</div>
+</div>
+
+<!-- 3. Microsoft for Startups -->
+<div class="guide" id="msft">
+<div class="guide-header">
+<h3>3. Microsoft for Startups (Founders Hub)</h3>
+<span class="amt">Up to $150K credits</span>
+<span class="fit fit-strong">Strong Fit</span>
+</div>
+<div class="guide-body">
+<h4>Why Datacendia Qualifies</h4>
+<p>B2B enterprise SaaS with AI. Microsoft provides Azure credits AND OpenAI API credits — critical for Council LLM inference. GitHub Enterprise and VS Code are already in the stack.</p>
+
+<h4>Step-by-Step Application</h4>
+<div class="step"><div class="sn">Step 1 — Visit Founders Hub</div><p>Go to <a href="https://www.microsoft.com/en-us/startups">microsoft.com/en-us/startups</a>. Click "Apply now" — no VC backing required.</p></div>
+<div class="step"><div class="sn">Step 2 — Create/Sign in with Microsoft Account</div><p>Use Datacendia's business email. Complete the company profile.</p></div>
+<div class="step"><div class="sn">Step 3 — Complete Innovation Assessment</div><p>Answer questions about your product, market, and technology. Highlight: multi-agent AI system, cryptographic audit trail, sovereign deployment, enterprise compliance.</p></div>
+<div class="step"><div class="sn">Step 4 — Describe Azure Usage Plan</div><p>Key services: Azure OpenAI Service (GPT-4, GPT-4o for Council agents), Azure Kubernetes Service (AKS), Azure Key Vault (cryptographic operations), Azure Government (FedRAMP workloads), Cosmos DB.</p></div>
+<div class="step"><div class="sn">Step 5 — Submit & Unlock Tiers</div><p>Founders Hub has progressive tiers. You start and can level up as milestones are hit. Approval is nearly instant for the base tier.</p></div>
+
+<h4>Credit Structure</h4>
+<ul>
+<li><strong>Tier 1 (no VC):</strong> $1,000 Azure + $2,500 OpenAI credits</li>
+<li><strong>Tier 2 (VC-backed or revenue):</strong> $5,000 Azure + $2,500 OpenAI</li>
+<li><strong>Tier 3 (Series A+):</strong> $25,000 Azure + $2,500 OpenAI</li>
+<li><strong>Tier 4 (via partner):</strong> Up to $150,000 Azure + $25,000 OpenAI</li>
+<li>Includes GitHub Enterprise, Visual Studio Enterprise, LinkedIn Premium, Power BI Pro</li>
+</ul>
+
+<div class="tip"><strong>Pro Tip:</strong> The OpenAI API credits alone are worth applying for. These directly power Council agent inference. Azure Government region access is also included — critical for Datacendia's FedRAMP compliance path.</div>
+</div>
+</div>
+
+<!-- 4. NVIDIA Inception -->
+<div class="guide" id="nvidia">
+<div class="guide-header">
+<h3>4. NVIDIA Inception</h3>
+<span class="amt">GPU credits + support</span>
+<span class="fit fit-strong">Strong Fit</span>
+</div>
+<div class="guide-body">
+<h4>Why Datacendia Qualifies</h4>
+<p>Multi-agent AI platform requiring GPU inference for 14 specialized agents. Local RLHF (sovereign pattern) requires on-prem GPU. NVIDIA DGX and cloud GPU access are directly relevant.</p>
+
+<h4>Step-by-Step Application</h4>
+<div class="step"><div class="sn">Step 1 — Visit NVIDIA Inception</div><p>Go to <a href="https://www.nvidia.com/en-us/startups/">nvidia.com/en-us/startups</a>. Click "Join Now."</p></div>
+<div class="step"><div class="sn">Step 2 — Complete Application</div><p>Describe Datacendia as: "AI decision intelligence platform using multi-agent LLM deliberation with 14 specialized agents requiring GPU inference for real-time enterprise decision support."</p></div>
+<div class="step"><div class="sn">Step 3 — Highlight GPU Needs</div><p>Mention: parallel LLM inference for 14 agents, local model fine-tuning (RLHF) for sovereign deployments, on-premises GPU clusters for air-gapped environments, model quantization for edge deployment.</p></div>
+<div class="step"><div class="sn">Step 4 — Submit</div><p>NVIDIA reviews applications weekly. Most AI startups are accepted within 2 weeks.</p></div>
+
+<h4>What You Get</h4>
+<ul>
+<li>NVIDIA DGX Cloud credits for training and inference</li>
+<li>Access to NVIDIA AI Enterprise software suite</li>
+<li>Technical workshops and architecture guidance</li>
+<li>Go-to-market support and co-marketing</li>
+<li>Hardware discounts for on-premises GPU deployment</li>
+<li>NVIDIA Deep Learning Institute training credits</li>
+</ul>
+
+<div class="tip"><strong>Pro Tip:</strong> Mention Datacendia's air-gapped deployment pattern specifically. NVIDIA is heavily investing in sovereign AI infrastructure and will give priority to startups building in this space.</div>
+</div>
+</div>
+
+<!-- 5. NSF SBIR Phase I -->
+<div class="guide" id="nsf-sbir">
+<div class="guide-header">
+<h3>5. NSF SBIR Phase I</h3>
+<span class="amt">$275K (6 months)</span>
+<span class="fit fit-strong">Strong Fit</span>
+</div>
+<div class="guide-body">
+<h4>Why Datacendia Qualifies</h4>
+<p>NSF funds breakthrough technology innovation. Datacendia's multi-agent deliberation with cryptographic audit trail, sovereign architecture patterns (data diode, TPM attestation, federated mesh), and AI governance is novel R&D.</p>
+
+<h4>Eligibility Requirements</h4>
+<ul>
+<li>US small business (≤500 employees) — ✅ Datacendia, LLC</li>
+<li>At least 51% US-owned — verify this is met</li>
+<li>PI (Principal Investigator) must be primarily employed by Datacendia</li>
+<li>Novel technology with commercial potential</li>
+</ul>
+
+<h4>Step-by-Step Application</h4>
+<div class="step"><div class="sn">Step 1 — Register on Research.gov</div><p>Go to <a href="https://www.research.gov">research.gov</a>. Create an account and register Datacendia as an organization. Also register on <a href="https://www.sam.gov">SAM.gov</a> (required for all federal grants — takes 2–4 weeks).</p></div>
+<div class="step"><div class="sn">Step 2 — Get a UEI Number</div><p>Obtain a Unique Entity Identifier from SAM.gov. This replaces the old DUNS number. Required before submission.</p></div>
+<div class="step"><div class="sn">Step 3 — Review NSF SBIR Topics</div><p>Go to <a href="https://seedfund.nsf.gov">seedfund.nsf.gov</a>. Review open topics. Best fits for Datacendia:<br>
+• <strong>AI/ML (AI)</strong> — Multi-agent systems, explainable AI<br>
+• <strong>Smart & Connected Communities (SC)</strong> — Decision intelligence infrastructure<br>
+• <strong>Cybersecurity (CY)</strong> — Cryptographic audit, zero-trust architecture</p></div>
+<div class="step"><div class="sn">Step 4 — Submit Project Pitch (2-page pre-screen)</div><p>NSF SBIR requires a Project Pitch first (2 pages). This is a quick pre-screen. Include:<br>
+• <strong>Technical Innovation:</strong> Multi-agent AI deliberation with structured dissent and cryptographic provenance<br>
+• <strong>Commercial Potential:</strong> $47B Decision Intelligence TAM, enterprise contracts $50K–$1.5M+<br>
+• <strong>Technical Objectives:</strong> Sovereign deployment patterns, zero-copy architecture, AI governance framework</p></div>
+<div class="step"><div class="sn">Step 5 — Receive Pitch Invitation (or Decline)</div><p>NSF responds to pitches within 3 weeks with "Invite" or "Decline." If invited, you submit a full proposal.</p></div>
+<div class="step"><div class="sn">Step 6 — Write Full Proposal (15 pages)</div><p>Key sections:<br>
+• <strong>Project Description (15 pages max):</strong> Technical plan, innovation, R&D approach<br>
+• <strong>Budget & Budget Justification:</strong> Personnel, equipment, cloud compute, travel<br>
+• <strong>Biographical Sketch:</strong> PI's qualifications<br>
+• <strong>Current & Pending Support:</strong> Other grants/funding<br>
+• <strong>Data Management Plan:</strong> How research data will be managed<br>
+• <strong>Commercialization Plan:</strong> Path to market, customers, revenue model</p></div>
+<div class="step"><div class="sn">Step 7 — Submit via Research.gov</div><p>Submit the full proposal through Research.gov's SBIR portal. Rolling deadlines (check current cycle).</p></div>
+<div class="step"><div class="sn">Step 8 — Panel Review & Decision (3–6 months)</div><p>NSF convenes a review panel. If awarded, receive $275K for 6-month Phase I. Phase II ($1M, 2 years) follows successful Phase I.</p></div>
+
+<h4>Datacendia Proposal Framing</h4>
+<ul>
+<li><strong>Title:</strong> "Sovereign Multi-Agent Decision Intelligence with Cryptographic Provenance"</li>
+<li><strong>Technical Innovation:</strong> 14-agent AI council with formal dissent mechanisms, deterministic replay, and Ed25519/RSA-PSS cryptographic audit trail</li>
+<li><strong>Broader Impacts:</strong> Transparent AI governance for critical infrastructure, healthcare, defense, and regulated industries</li>
+<li><strong>Commercial Plan:</strong> $50K–$1.5M enterprise contracts, 4 deployment modes including air-gapped sovereign</li>
+</ul>
+
+<div class="warn"><strong>Important:</strong> SAM.gov registration takes 2–4 weeks. Start this immediately even before writing the proposal. You cannot submit without it.</div>
+
+<div class="tip"><strong>Pro Tip:</strong> NSF SBIR has a ~20% acceptance rate for Phase I. The key differentiator is demonstrating true technical novelty (not just another AI chatbot) and clear commercial path. Datacendia's cryptographic audit trail and sovereign architecture patterns are highly novel.</div>
+</div>
+</div>
+
+<!-- 6. NSF I-Corps -->
+<div class="guide" id="nsf-icorps">
+<div class="guide-header">
+<h3>6. NSF I-Corps</h3>
+<span class="amt">$50K</span>
+<span class="fit fit-strong">Strong Fit</span>
+</div>
+<div class="guide-body">
+<h4>Why Datacendia Qualifies</h4>
+<p>I-Corps is a customer discovery program. It's also the gateway to SBIR. Completing I-Corps significantly improves SBIR acceptance rates and gives you $50K for customer discovery interviews.</p>
+
+<h4>Step-by-Step Application</h4>
+<div class="step"><div class="sn">Step 1 — Form Your Team</div><p>I-Corps requires a 3-person team:<br>
+• <strong>Entrepreneurial Lead (EL):</strong> Founder/CEO<br>
+• <strong>Technical Lead (TL):</strong> CTO or lead engineer<br>
+• <strong>I-Corps Mentor:</strong> External mentor with industry experience (I-Corps can help match you)</p></div>
+<div class="step"><div class="sn">Step 2 — Apply Through a Regional Hub</div><p>Visit <a href="https://icorps.nsf.gov">icorps.nsf.gov</a>. Find your regional I-Corps Hub. Apply to their cohort program.</p></div>
+<div class="step"><div class="sn">Step 3 — Complete the Application</div><p>Describe your technology hypothesis and target customer segment. For Datacendia: "Enterprise decision-makers in regulated industries need sovereign AI deliberation with cryptographic evidence."</p></div>
+<div class="step"><div class="sn">Step 4 — Attend 7-Week Program</div><p>If accepted, complete the 7-week intensive: 100+ customer interviews, weekly cohort sessions, business model iteration.</p></div>
+<div class="step"><div class="sn">Step 5 — Deliver Final Presentation</div><p>Present findings: validated customer segments, pricing validation, go-to-market insights.</p></div>
+
+<h4>What You Get</h4>
+<ul>
+<li>$50K grant for customer discovery (travel, interviews, research)</li>
+<li>Structured methodology for validating product-market fit</li>
+<li><strong>Priority consideration</strong> for NSF SBIR proposals — this is the biggest value</li>
+<li>Network of mentors and fellow founders</li>
+</ul>
+
+<div class="tip"><strong>Pro Tip:</strong> I-Corps graduates have significantly higher SBIR acceptance rates (some reports suggest 2–3x). Do I-Corps first, then SBIR. The $50K funds 100+ customer interviews that also validate your sales pitch.</div>
+</div>
+</div>
+
+<!-- 7. DARPA SBIR -->
+<div class="guide" id="darpa">
+<div class="guide-header">
+<h3>7. DARPA SBIR/STTR</h3>
+<span class="amt">$50K–$2M+</span>
+<span class="fit fit-strong">Strong Fit</span>
+</div>
+<div class="guide-body">
+<h4>Why Datacendia Qualifies</h4>
+<p>DARPA funds breakthrough defense technology. Datacendia's air-gapped deployment, TPM attestation, data diode patterns, and multi-agent decision support are directly relevant to DoD decision-making needs.</p>
+
+<h4>Step-by-Step Application</h4>
+<div class="step"><div class="sn">Step 1 — Monitor DARPA SBIR Topics</div><p>Visit <a href="https://www.darpa.mil/work-with-us/for-small-businesses">darpa.mil/work-with-us/for-small-businesses</a> and <a href="https://www.dodsbirsttr.mil">dodsbirsttr.mil</a>. DARPA releases topic solicitations periodically. Look for topics under:<br>
+• <strong>I2O (Information Innovation Office)</strong> — AI, ML, decision support<br>
+• <strong>DSO (Defense Sciences Office)</strong> — Complex systems, decision-making under uncertainty</p></div>
+<div class="step"><div class="sn">Step 2 — Register on DSIP</div><p>Create an account on the DoD SBIR/STTR Innovation Portal (DSIP) at <a href="https://www.dodsbirsttr.mil">dodsbirsttr.mil</a>. Complete company registration.</p></div>
+<div class="step"><div class="sn">Step 3 — Ensure SAM.gov Registration</div><p>Same SAM.gov and UEI registration as NSF SBIR. If already done for NSF, you're set.</p></div>
+<div class="step"><div class="sn">Step 4 — Write Phase I Proposal</div><p>DARPA Phase I proposals are typically 20–25 pages. Key sections:<br>
+• <strong>Technical Volume:</strong> Describe multi-agent deliberation, cryptographic provenance, sovereign deployment<br>
+• <strong>Cost Volume:</strong> Budget for 6-month Phase I<br>
+• <strong>Company Information:</strong> Team qualifications, facilities<br>
+Frame Datacendia as: "Sovereign AI Decision Support System for Contested Environments"</p></div>
+<div class="step"><div class="sn">Step 5 — Submit via DSIP</div><p>Submit through the DSIP portal before the topic deadline. Deadlines are firm.</p></div>
+<div class="step"><div class="sn">Step 6 — Evaluation (2–4 months)</div><p>DARPA evaluates on: technical merit, team qualifications, cost reasonableness, and relevance to defense needs.</p></div>
+
+<h4>Datacendia Defense Framing</h4>
+<ul>
+<li><strong>Air-gapped deployment</strong> → SIPR/JWICS classified network operation</li>
+<li><strong>TPM attestation</strong> → Hardware root of trust for military systems</li>
+<li><strong>Data diode patterns</strong> → One-way data flow for cross-domain solutions</li>
+<li><strong>Multi-agent deliberation</strong> → Tactical decision support with adversarial challenge</li>
+<li><strong>Cryptographic audit trail</strong> → Chain of custody for decision accountability</li>
+<li><strong>Deterministic replay</strong> → After-action review for decision forensics</li>
+</ul>
+
+<div class="tip"><strong>Pro Tip:</strong> DARPA Phase I is $50K–$250K. Phase II is $500K–$2M. DARPA also has "Direct to Phase II" for companies that can demonstrate Phase I-equivalent work has already been done. Datacendia's existing platform could qualify for Direct to Phase II.</div>
+</div>
+</div>
+
+<!-- 8. OpenGrants -->
+<div class="guide" id="opengrants">
+<div class="guide-header">
+<h3>8. OpenGrants</h3>
+<span class="amt">Grant Discovery Tool</span>
+<span class="fit fit-strong">Strong Fit</span>
+</div>
+<div class="guide-body">
+<h4>Why Datacendia Should Use This</h4>
+<p>OpenGrants is an AI-powered grant matching platform. It surfaces federal, state, and private grants you'd otherwise miss. Force multiplier for all other grant applications.</p>
+
+<h4>Step-by-Step</h4>
+<div class="step"><div class="sn">Step 1 — Create Account</div><p>Go to <a href="https://www.opengrants.io">opengrants.io</a>. Create a free account.</p></div>
+<div class="step"><div class="sn">Step 2 — Complete Company Profile</div><p>Enter: AI/ML, enterprise software, decision intelligence, cybersecurity, government/defense, healthcare. This drives matching.</p></div>
+<div class="step"><div class="sn">Step 3 — Review Matched Grants</div><p>OpenGrants will surface relevant SBIR topics, state grants, and private foundation opportunities you may not find on your own.</p></div>
+<div class="step"><div class="sn">Step 4 — Set Alerts</div><p>Enable email alerts for new grant opportunities matching Datacendia's profile.</p></div>
+</div>
+</div>
+
+<!-- 9. HubSpot for Startups -->
+<div class="guide" id="hubspot">
+<div class="guide-header">
+<h3>9. HubSpot for Startups</h3>
+<span class="amt">Up to 90% discount</span>
+<span class="fit fit-strong">Strong Fit</span>
+</div>
+<div class="guide-body">
+<h4>Why Datacendia Qualifies</h4>
+<p>B2B enterprise SaaS needs CRM, marketing automation, and sales pipeline management. HubSpot at 90% off is essentially free CRM infrastructure for year one.</p>
+
+<h4>Step-by-Step</h4>
+<div class="step"><div class="sn">Step 1 — Visit Program Page</div><p>Go to <a href="https://www.hubspot.com/startups">hubspot.com/startups</a>. Click "Apply."</p></div>
+<div class="step"><div class="sn">Step 2 — Apply</div><p>Enter company info: B2B SaaS, enterprise decision intelligence, early stage. Select your current CRM status (none/other).</p></div>
+<div class="step"><div class="sn">Step 3 — Select Tier</div><p>Discount tiers: 90% off Year 1, 50% off Year 2, 25% off Year 3. Affiliated startups (via partner VC/accelerator) get the best rates.</p></div>
+<div class="step"><div class="sn">Step 4 — Activate</div><p>Once approved, set up HubSpot CRM, marketing hub, and sales hub. Track all investor, design partner, and sales prospects.</p></div>
+
+<div class="tip"><strong>Pro Tip:</strong> Use HubSpot to track all non-dilutive funding applications too — create a pipeline for grants/credits with stages (Research → Applied → Under Review → Awarded).</div>
+</div>
+</div>
+
+<!-- 10. Brex -->
+<div class="guide" id="brex">
+<div class="guide-header">
+<h3>10. Brex</h3>
+<span class="amt">$150K+ in partner credits</span>
+<span class="fit fit-strong">Strong Fit</span>
+</div>
+<div class="guide-body">
+<h4>Why Datacendia Qualifies</h4>
+<p>Brex provides corporate cards and financial tools for startups, plus bundles $150K+ in partner credits from AWS, Google Cloud, Notion, Slack, Gusto, and more.</p>
+
+<h4>Step-by-Step</h4>
+<div class="step"><div class="sn">Step 1 — Apply at Brex</div><p>Go to <a href="https://www.brex.com">brex.com</a>. Apply for a Brex business account. No personal guarantee required.</p></div>
+<div class="step"><div class="sn">Step 2 — Complete Verification</div><p>Provide: EIN, business registration, founding details. Approval is typically same-day.</p></div>
+<div class="step"><div class="sn">Step 3 — Access Partner Perks</div><p>Once activated, navigate to the Brex Perks portal. Claim credits from: AWS, Google Cloud, Notion, Slack, QuickBooks, Gusto, and 20+ other partners.</p></div>
+<div class="step"><div class="sn">Step 4 — Stack with Direct Applications</div><p>Brex partner credits stack on top of direct applications to AWS Activate, Google for Startups, etc. Apply to both.</p></div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- TIER 2: APPLY WITH PREPARATION -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-label">Tier 2 — Apply with Preparation</div>
+
+<!-- 11. Oracle for Startups -->
+<div class="guide" id="oracle">
+<div class="guide-header">
+<h3>11. Oracle for Startups</h3>
+<span class="amt">Up to $500K credits</span>
+<span class="fit fit-good">Good Fit</span>
+</div>
+<div class="guide-body">
+<h4>Why Datacendia Qualifies</h4>
+<p>Oracle offers the largest cloud credit program. Their OCI (Oracle Cloud Infrastructure) is strong for enterprise workloads, and Oracle's government cloud is relevant for Datacendia's compliance path.</p>
+
+<h4>Step-by-Step</h4>
+<div class="step"><div class="sn">Step 1 — Apply</div><p>Go to <a href="https://www.oracle.com/startup/">oracle.com/startup</a>. Click "Apply." Fill in company profile emphasizing enterprise AI and government/regulated industry focus.</p></div>
+<div class="step"><div class="sn">Step 2 — Technical Interview</div><p>Oracle may schedule a technical call. Prepare to discuss OCI usage: Kubernetes (OKE), AI Services, Autonomous Database, Cloud Guard for security monitoring.</p></div>
+<div class="step"><div class="sn">Step 3 — Credit Allocation</div><p>Credits are allocated based on projected usage. Highlight multi-cloud strategy and enterprise customer expectations for Oracle compatibility.</p></div>
+
+<div class="tip"><strong>Pro Tip:</strong> Oracle's Government Cloud regions are FedRAMP-authorized. Using OCI for Datacendia's government vertical gives you a compliance shortcut.</div>
+</div>
+</div>
+
+<!-- 12. IBM Startup Program -->
+<div class="guide" id="ibm">
+<div class="guide-header">
+<h3>12. IBM Startup Program</h3>
+<span class="amt">Up to $120K credits</span>
+<span class="fit fit-good">Good Fit</span>
+</div>
+<div class="guide-body">
+<h4>Why Datacendia Qualifies</h4>
+<p>IBM Cloud credits include Watson AI, IBM watsonx (enterprise LLMs), and security services. IBM's enterprise customer base overlaps with Datacendia's target market.</p>
+
+<h4>Step-by-Step</h4>
+<div class="step"><div class="sn">Step 1 — Apply</div><p>Visit <a href="https://developer.ibm.com/startups/">developer.ibm.com/startups</a>. Apply with focus on enterprise AI and cybersecurity angles.</p></div>
+<div class="step"><div class="sn">Step 2 — Describe watsonx Usage</div><p>Mention plans for: watsonx.ai for model serving, watsonx.governance for AI governance (directly aligned with Datacendia's mission), IBM Cloud Kubernetes, Security services.</p></div>
+<div class="step"><div class="sn">Step 3 — Activate Credits</div><p>Credits typically approved within 1–2 weeks. Activate through IBM Cloud console.</p></div>
+</div>
+</div>
+
+<!-- 13. NIH SBIR -->
+<div class="guide" id="nih">
+<div class="guide-header">
+<h3>13. NIH SBIR Phase I</h3>
+<span class="amt">$275K (6–12 months)</span>
+<span class="fit fit-good">Good Fit</span>
+</div>
+<div class="guide-body">
+<h4>Why Datacendia Qualifies</h4>
+<p>Datacendia's healthcare vertical (HIPAA compliance, clinical decision support, diagnostic deliberation) is directly fundable by NIH. Frame as AI-assisted clinical decision intelligence with audit trail for medical accountability.</p>
+
+<h4>Step-by-Step</h4>
+<div class="step"><div class="sn">Step 1 — Register on eRA Commons</div><p>Go to <a href="https://era.nih.gov">era.nih.gov</a>. Register your organization and PI. This takes 2–4 weeks.</p></div>
+<div class="step"><div class="sn">Step 2 — Review NIH SBIR Topics</div><p>Visit <a href="https://seed.nih.gov">seed.nih.gov</a>. Review active funding opportunity announcements (FOAs). Look for topics in: Clinical Decision Support, AI in Healthcare, Health IT, Digital Health.</p></div>
+<div class="step"><div class="sn">Step 3 — Write Specific Aims Page</div><p>NIH proposals start with a 1-page "Specific Aims" — your strongest pitch. Frame: "Multi-agent AI deliberation for clinical treatment decisions with cryptographic evidence for medical-legal compliance."</p></div>
+<div class="step"><div class="sn">Step 4 — Write Full Proposal</div><p>Research Strategy (6 pages): Significance, Innovation, Approach. Include preliminary data if available (e.g., Council deliberation on healthcare scenarios).</p></div>
+<div class="step"><div class="sn">Step 5 — Submit via ASSIST</div><p>Submit through NIH's ASSIST system. Standard receipt dates: April 5, September 5, January 5 (check current cycle).</p></div>
+
+<h4>Healthcare Vertical Framing</h4>
+<ul>
+<li>Multi-agent deliberation for treatment protocol decisions</li>
+<li>Cryptographic audit trail for HIPAA compliance evidence</li>
+<li>Red Team agent for adversarial challenge of clinical assumptions</li>
+<li>Sovereign on-premises deployment for hospital systems</li>
+<li>Decision replay for malpractice defense and quality improvement</li>
+</ul>
+
+<div class="warn"><strong>Important:</strong> NIH requires strong scientific framing. Consider partnering with a clinical advisor or healthcare institution as a consultant on the proposal.</div>
+</div>
+</div>
+
+<!-- 14. NSF STTR -->
+<div class="guide" id="sttr">
+<div class="guide-header">
+<h3>14. NSF STTR Phase I</h3>
+<span class="amt">$275K (12 months)</span>
+<span class="fit fit-good">Good Fit</span>
+</div>
+<div class="guide-body">
+<h4>Why Datacendia Qualifies</h4>
+<p>STTR requires a university research partner. If Datacendia can partner with a university AI/ML lab, STTR opens additional funding. The university handles fundamental research while Datacendia handles commercialization.</p>
+
+<h4>Step-by-Step</h4>
+<div class="step"><div class="sn">Step 1 — Identify University Partner</div><p>Reach out to AI/ML research labs at target universities. Look for professors working on: multi-agent systems, AI governance, explainable AI, federated learning, or decision theory.</p></div>
+<div class="step"><div class="sn">Step 2 — Establish Cooperative Research Agreement</div><p>Draft a cooperative research agreement between Datacendia and the university. University must perform at least 30% of the research.</p></div>
+<div class="step"><div class="sn">Step 3 — Submit via Research.gov</div><p>Same portal as SBIR. STTR proposals follow the same format but include the university's role and budget.</p></div>
+
+<div class="tip"><strong>Pro Tip:</strong> The university partnership gives you access to graduate students, research facilities, and academic credibility — all valuable for future SBIR proposals and publications.</div>
+</div>
+</div>
+
+<!-- 15. TechCrunch Disrupt -->
+<div class="guide" id="tc-disrupt">
+<div class="guide-header">
+<h3>15. TechCrunch Disrupt Battlefield</h3>
+<span class="amt">$100K equity-free</span>
+<span class="fit fit-good">Good Fit</span>
+</div>
+<div class="guide-body">
+<h4>Why Datacendia Qualifies</h4>
+<p>Enterprise AI with novel multi-agent architecture. TechCrunch Battlefield has launched companies like Dropbox, Mint, and Cloudflare. $100K prize + massive media exposure.</p>
+
+<h4>Step-by-Step</h4>
+<div class="step"><div class="sn">Step 1 — Apply Early</div><p>Visit <a href="https://techcrunch.com/startup-battlefield">techcrunch.com/startup-battlefield</a>. Applications typically open 3–4 months before the event (October). Apply as early as possible.</p></div>
+<div class="step"><div class="sn">Step 2 — Prepare Application</div><p>Describe Datacendia in terms TechCrunch loves: "14 AI agents that argue before your enterprise makes a critical decision — with cryptographic proof of every step." Lead with the demo, not the tech spec.</p></div>
+<div class="step"><div class="sn">Step 3 — Prepare 6-Minute Demo</div><p>If selected, you get 6 minutes on stage plus Q&A from judges. Prepare: live Council deliberation on a compelling scenario (e.g., M&A decision, crisis response). Show the 14 agents debating in real-time.</p></div>
+<div class="step"><div class="sn">Step 4 — Nail the Demo</div><p>Focus on: visual impact of multi-agent debate, the "aha moment" when agents disagree, cryptographic evidence packet generation, air-gapped deployment as differentiator.</p></div>
+
+<div class="tip"><strong>Pro Tip:</strong> Even if you don't win the $100K, Battlefield companies get massive media coverage, investor introductions, and customer leads. The exposure alone is worth the application effort.</div>
+</div>
+</div>
+
+<!-- 16. Startup World Cup -->
+<div class="guide" id="swc">
+<div class="guide-header">
+<h3>16. Startup World Cup</h3>
+<span class="amt">$1M grand prize</span>
+<span class="fit fit-good">Good Fit</span>
+</div>
+<div class="guide-body">
+<h4>Step-by-Step</h4>
+<div class="step"><div class="sn">Step 1 — Find Regional Round</div><p>Visit <a href="https://www.startupworldcup.io">startupworldcup.io</a>. Find the nearest regional competition (multiple US cities).</p></div>
+<div class="step"><div class="sn">Step 2 — Apply to Regional</div><p>Submit application with 2-minute pitch video. Focus on: market size ($47B TAM), technical moat (14 agents, crypto audit), traction.</p></div>
+<div class="step"><div class="sn">Step 3 — Win Regional → Finals</div><p>Regional winners advance to the Grand Final in San Francisco. $1M equity-free grand prize.</p></div>
+</div>
+</div>
+
+<!-- 17. MIT Solve -->
+<div class="guide" id="mit-solve">
+<div class="guide-header">
+<h3>17. MIT Solve</h3>
+<span class="amt">$10K–$300K</span>
+<span class="fit fit-good">Good Fit</span>
+</div>
+<div class="guide-body">
+<h4>Why Datacendia Qualifies</h4>
+<p>MIT Solve has challenges around ethical AI, responsible technology, and inclusive innovation. Datacendia's AI governance, explainability, and audit trail directly address "responsible AI" themes.</p>
+
+<h4>Step-by-Step</h4>
+<div class="step"><div class="sn">Step 1 — Review Active Challenges</div><p>Visit <a href="https://solve.mit.edu">solve.mit.edu</a>. Check current challenge themes. Look for: AI & Data, Ethical Technology, Digital Inclusion.</p></div>
+<div class="step"><div class="sn">Step 2 — Submit Solution</div><p>Frame Datacendia as: "Democratizing enterprise decision intelligence with transparent, auditable AI that ensures accountability through cryptographic provenance."</p></div>
+<div class="step"><div class="sn">Step 3 — If Selected as Solver</div><p>Solvers get $10K–$300K+ in prize funding, MIT network access, 9-month support program, and co-branding with MIT.</p></div>
+</div>
+</div>
+
+<!-- 18. Segment -->
+<div class="guide" id="segment">
+<div class="guide-header">
+<h3>18. Segment Startup Program</h3>
+<span class="amt">$25K credits</span>
+<span class="fit fit-good">Good Fit</span>
+</div>
+<div class="guide-body">
+<h4>Step-by-Step</h4>
+<div class="step"><div class="sn">Step 1 — Apply</div><p>Visit <a href="https://segment.com/startup-program/">segment.com/startup-program</a>. Apply with company details.</p></div>
+<div class="step"><div class="sn">Step 2 — Describe Analytics Needs</div><p>Datacendia can use Segment for: user analytics, deliberation funnel tracking, feature adoption metrics, customer journey mapping.</p></div>
+<div class="step"><div class="sn">Step 3 — Activate Credits</div><p>$25K in Segment credits for customer data infrastructure. Use to track product analytics across all deployment modes.</p></div>
+</div>
+</div>
+
+<!-- 19. MongoDB -->
+<div class="guide" id="mongodb">
+<div class="guide-header">
+<h3>19. MongoDB for Startups</h3>
+<span class="amt">$5K Atlas credits</span>
+<span class="fit fit-good">Good Fit</span>
+</div>
+<div class="guide-body">
+<h4>Step-by-Step</h4>
+<div class="step"><div class="sn">Step 1 — Apply</div><p>Visit <a href="https://www.mongodb.com/startups">mongodb.com/startups</a>. Apply highlighting need for document database for deliberation records, agent configurations, and audit trail storage.</p></div>
+<div class="step"><div class="sn">Step 2 — Activate Atlas Credits</div><p>$5K MongoDB Atlas credits. Use for: deliberation document storage, agent state management, vector search for decision similarity.</p></div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- TIER 3: CONDITIONAL FIT -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-label">Tier 3 — Conditional Fit</div>
+
+<!-- 20. EIC Accelerator -->
+<div class="guide" id="eic">
+<div class="guide-header">
+<h3>20. EIC Accelerator</h3>
+<span class="amt">Up to €2.5M grant</span>
+<span class="fit fit-possible">Conditional</span>
+</div>
+<div class="guide-body">
+<h4>Condition</h4>
+<p>Requires an EU-based entity (subsidiary or partnership). If Datacendia establishes an EU subsidiary or partners with an EU entity, this is the largest non-dilutive grant available.</p>
+
+<h4>Step-by-Step</h4>
+<div class="step"><div class="sn">Step 1 — Establish EU Presence</div><p>Register a subsidiary in an EU member state (Ireland, Netherlands, and Estonia are popular for tech companies).</p></div>
+<div class="step"><div class="sn">Step 2 — Apply via EU Funding Portal</div><p>Visit <a href="https://eic.ec.europa.eu">eic.ec.europa.eu</a>. Create account on the EU Funding & Tenders Portal.</p></div>
+<div class="step"><div class="sn">Step 3 — Submit Short Application</div><p>5-page application with pitch video. Focus on: deep tech innovation, European market potential, scalability.</p></div>
+<div class="step"><div class="sn">Step 4 — If Invited → Full Application</div><p>Full business plan, technical description, financial projections. If successful: up to €2.5M grant (no repayment, no equity) plus optional €15M equity investment.</p></div>
+
+<div class="tip"><strong>Pro Tip:</strong> €2.5M with zero strings attached is the largest pure grant in this list. Worth the effort of establishing EU presence if Datacendia plans European expansion. GDPR alignment is already done.</div>
+</div>
+</div>
+
+<!-- 21. Schmidt Futures -->
+<div class="guide" id="schmidt">
+<div class="guide-header">
+<h3>21. Schmidt Futures</h3>
+<span class="amt">Variable</span>
+<span class="fit fit-possible">Conditional</span>
+</div>
+<div class="guide-body">
+<h4>Condition</h4>
+<p>Schmidt Futures backs "exceptional people" working on hard problems. If the founder has a compelling personal narrative + Datacendia's sovereign AI governance angle aligns with their focus on responsible technology.</p>
+
+<h4>Step-by-Step</h4>
+<div class="step"><div class="sn">Step 1 — Review Active Programs</div><p>Visit <a href="https://schmidtfutures.com">schmidtfutures.com</a>. Review their active initiatives, especially around AI and technology policy.</p></div>
+<div class="step"><div class="sn">Step 2 — Apply to Relevant Program</div><p>Frame Datacendia as: "Building the infrastructure for accountable AI decision-making in critical systems — government, healthcare, defense."</p></div>
+</div>
+</div>
+
+<!-- 22. Shuttleworth Foundation -->
+<div class="guide" id="shuttleworth">
+<div class="guide-header">
+<h3>22. Shuttleworth Foundation</h3>
+<span class="amt">$200K–$1.275M/yr</span>
+<span class="fit fit-possible">Conditional</span>
+</div>
+<div class="guide-body">
+<h4>Condition</h4>
+<p>Requires open-source commitment. If Datacendia's Apache 2.0 community edition is substantial and the founder commits to open knowledge principles, this is a powerful fellowship.</p>
+
+<h4>Step-by-Step</h4>
+<div class="step"><div class="sn">Step 1 — Review Fellowship Terms</div><p>Visit <a href="https://shuttleworthfoundation.org">shuttleworthfoundation.org</a>. Fellows receive $200K+/yr for up to 3 years. Must commit to openness.</p></div>
+<div class="step"><div class="sn">Step 2 — Apply with Open Source Angle</div><p>Frame: "Open-sourcing sovereign AI decision infrastructure so every organization can make accountable, transparent decisions."</p></div>
+
+<div class="tip"><strong>Pro Tip:</strong> $200K–$1.275M per year for 3 years = up to $3.8M total. This is one of the most generous non-dilutive fellowships if you qualify.</div>
+</div>
+</div>
+
+<!-- 23. TinySeed -->
+<div class="guide" id="tinyseed">
+<div class="guide-header">
+<h3>23. TinySeed</h3>
+<span class="amt">$120K–$1M</span>
+<span class="fit fit-possible">Conditional</span>
+</div>
+<div class="guide-body">
+<h4>Condition</h4>
+<p>TinySeed focuses on bootstrapped SaaS. If Datacendia is pursuing a bootstrap/capital-efficient path (not VC), TinySeed provides funding, mentorship, and community without aggressive dilution.</p>
+
+<h4>Step-by-Step</h4>
+<div class="step"><div class="sn">Step 1 — Apply</div><p>Visit <a href="https://tinyseed.com">tinyseed.com</a>. Apply during their batch application period (typically twice per year).</p></div>
+<div class="step"><div class="sn">Step 2 — Interview</div><p>If selected, complete interviews with Rob Walling and the TinySeed team. Emphasis on: capital efficiency, sustainable growth, product-market fit evidence.</p></div>
+
+<div class="warn"><strong>Note:</strong> TinySeed does take a small equity stake (typically ~10-12%). It's the least dilutive of accelerator-style programs but not truly zero-equity. Included here because it's often categorized as "alternative non-dilutive."</div>
+</div>
+</div>
+
+<!-- 24. XPRIZE -->
+<div class="guide" id="xprize">
+<div class="guide-header">
+<h3>24. XPRIZE</h3>
+<span class="amt">$1M–$100M</span>
+<span class="fit fit-possible">Conditional</span>
+</div>
+<div class="guide-body">
+<h4>Condition</h4>
+<p>XPRIZE runs specific grand challenges. Datacendia would only qualify if there's an active challenge related to AI governance, decision-making, or responsible technology. Check periodically.</p>
+
+<h4>Step-by-Step</h4>
+<div class="step"><div class="sn">Step 1 — Monitor Active Prizes</div><p>Visit <a href="https://www.xprize.org">xprize.org</a>. Check for active challenges in AI, governance, or critical infrastructure resilience.</p></div>
+<div class="step"><div class="sn">Step 2 — Register Team</div><p>If a relevant challenge is active, register Datacendia as a competing team and submit solution proposal.</p></div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- TIER 4: FUTURE / REVENUE REQUIRED -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-label">Tier 4 — Future (Revenue Required)</div>
+
+<p style="color:var(--text2);margin-bottom:24px;font-size:14px">These programs require existing recurring revenue (MRR/ARR). Apply once Datacendia has paying customers.</p>
+
+<!-- 25. Pipe -->
+<div class="guide" id="pipe">
+<div class="guide-header">
+<h3>25. Pipe</h3>
+<span class="amt">$10K–$5M</span>
+<span class="fit fit-future">Needs Revenue</span>
+</div>
+<div class="guide-body">
+<h4>Revenue Requirement</h4>
+<p>Minimum ~$10K MRR in recurring contracts. Pipe converts annual contracts to upfront cash.</p>
+
+<h4>Step-by-Step (When Ready)</h4>
+<div class="step"><div class="sn">Step 1 — Connect Revenue Data</div><p>Visit <a href="https://pipe.com">pipe.com</a>. Connect Stripe, billing system, or bank account to verify MRR.</p></div>
+<div class="step"><div class="sn">Step 2 — Get Trading Offer</div><p>Pipe generates an offer based on your recurring revenue. Trade annual contracts for immediate cash at a discount (typically 5–10%).</p></div>
+<div class="step"><div class="sn">Step 3 — Accept & Receive Funds</div><p>Funds deposited within 24–48 hours. Repayment happens automatically as customers pay their contracts.</p></div>
+
+<h4>Datacendia Application</h4>
+<p>With $50K+ annual Pilot contracts, Pipe could advance $40K–$45K per contract immediately. Stack 10 Pilot contracts = $400K–$450K in upfront non-dilutive capital.</p>
+</div>
+</div>
+
+<!-- 26. Founderpath -->
+<div class="guide" id="founderpath">
+<div class="guide-header">
+<h3>26. Founderpath</h3>
+<span class="amt">$20K–$5M+</span>
+<span class="fit fit-future">Needs Revenue</span>
+</div>
+<div class="guide-body">
+<h4>Revenue Requirement</h4>
+<p>$5K+ MRR. Built specifically for bootstrapped SaaS founders.</p>
+
+<h4>Step-by-Step (When Ready)</h4>
+<div class="step"><div class="sn">Step 1 — Connect Metrics</div><p>Visit <a href="https://founderpath.com">founderpath.com</a>. Connect Stripe, Baremetrics, or billing platform.</p></div>
+<div class="step"><div class="sn">Step 2 — Get Valuation Score</div><p>Founderpath generates a "SaaS Score" based on MRR, churn, growth rate, and LTV.</p></div>
+<div class="step"><div class="sn">Step 3 — Choose Funding Amount</div><p>Select how much capital you want (up to 50% of ARR). Repayment is revenue-based.</p></div>
+</div>
+</div>
+
+<!-- 27. Lighter Capital -->
+<div class="guide" id="lighter">
+<div class="guide-header">
+<h3>27. Lighter Capital</h3>
+<span class="amt">$50K–$4M</span>
+<span class="fit fit-future">Needs Revenue</span>
+</div>
+<div class="guide-body">
+<h4>Revenue Requirement</h4>
+<p>$15K+ MRR, 6+ months of revenue history. Lighter Capital is one of the most established RBF providers.</p>
+
+<h4>Step-by-Step (When Ready)</h4>
+<div class="step"><div class="sn">Step 1 — Apply Online</div><p>Visit <a href="https://lightercapital.com">lightercapital.com</a>. Complete application with financial details.</p></div>
+<div class="step"><div class="sn">Step 2 — Financial Review</div><p>Provide bank statements, revenue data, and customer metrics. Review takes 2–3 weeks.</p></div>
+<div class="step"><div class="sn">Step 3 — Term Sheet</div><p>Receive term sheet with repayment rate (typically 2–8% of monthly revenue until repaid at 1.3–1.5x).</p></div>
+</div>
+</div>
+
+<!-- 28. SVB Venture Debt -->
+<div class="guide" id="svb">
+<div class="guide-header">
+<h3>28. Silicon Valley Bank Venture Debt</h3>
+<span class="amt">$1M–$50M+</span>
+<span class="fit fit-future">Needs Revenue + VC</span>
+</div>
+<div class="guide-body">
+<h4>Requirements</h4>
+<p>Typically requires VC backing + revenue traction. Venture debt extends runway between equity rounds.</p>
+
+<h4>Step-by-Step (When Ready)</h4>
+<div class="step"><div class="sn">Step 1 — Open SVB Account</div><p>Visit <a href="https://www.svb.com">svb.com</a> (now First Citizens). Open a business banking account — this is the first step to a lending relationship.</p></div>
+<div class="step"><div class="sn">Step 2 — Build Banking Relationship</div><p>Use SVB for primary banking for 3–6 months. Deposit grant proceeds, customer payments, etc.</p></div>
+<div class="step"><div class="sn">Step 3 — Request Venture Debt Line</div><p>Once you have VC backing + revenue, request a venture debt facility. Typical terms: 25–30% of last equity round, 3-year term, interest-only period.</p></div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PROFESSIONAL SERVICES -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-label">Professional Services — Revenue Beyond Subscriptions</div>
+
+<p style="color:var(--text2);margin-bottom:20px;font-size:14px">Datacendia offers 5 categories of professional services alongside the platform subscription. Include these in grant budgets, partnership proposals, and enterprise quotes to increase deal size.</p>
+
+<div class="svc-summary">
+<div class="svc-summary-item"><div class="svc-s-num">5</div><div class="svc-s-label">Categories</div></div>
+<div class="svc-summary-item"><div class="svc-s-num">16</div><div class="svc-s-label">Services</div></div>
+<div class="svc-summary-item"><div class="svc-s-num">$2.5K</div><div class="svc-s-label">Starting From</div></div>
+<div class="svc-summary-item"><div class="svc-s-num">$100K</div><div class="svc-s-label">Largest Package</div></div>
+<div class="svc-summary-item"><div class="svc-s-num">1 day</div><div class="svc-s-label">Fastest Delivery</div></div>
+</div>
+
+<!-- Implementation Services -->
+<div style="margin-bottom:8px"><span class="deck-cat-label cat-investor">Implementation Services</span></div>
+<div class="svc-grid">
+<div class="svc-card">
+<div class="svc-cat">Implementation</div>
+<div class="svc-name">Quick Start</div>
+<div class="svc-desc">Basic setup and configuration — 3 integrations, SSO, initial data connectors</div>
+<div class="svc-meta"><div class="svc-price">$15,000</div><div class="svc-duration">2 weeks</div></div>
+</div>
+<div class="svc-card">
+<div class="svc-cat">Implementation</div>
+<div class="svc-name">Standard Implementation</div>
+<div class="svc-desc">Full platform deployment with 10 integrations, training, and custom agent configuration</div>
+<div class="svc-meta"><div class="svc-price">$35,000 – $45,000</div><div class="svc-duration">4–6 weeks</div></div>
+</div>
+<div class="svc-card">
+<div class="svc-cat">Implementation</div>
+<div class="svc-name">Enterprise Deployment</div>
+<div class="svc-desc">Complex multi-system deployment with custom requirements, sovereign infrastructure, and dedicated team</div>
+<div class="svc-meta"><div class="svc-price">$75,000 – $120,000</div><div class="svc-duration">8–12 weeks</div></div>
+</div>
+</div>
+
+<!-- Consulting Services -->
+<div style="margin:24px 0 8px"><span class="deck-cat-label cat-partner">Consulting Services</span></div>
+<div class="svc-grid">
+<div class="svc-card">
+<div class="svc-cat">Consulting</div>
+<div class="svc-name">Data Strategy Workshop</div>
+<div class="svc-desc">Define your data intelligence roadmap — gap analysis, prioritization, implementation plan</div>
+<div class="svc-meta"><div class="svc-price">$8,000</div><div class="svc-duration">2 days</div></div>
+</div>
+<div class="svc-card">
+<div class="svc-cat">Consulting</div>
+<div class="svc-name">Architecture Review</div>
+<div class="svc-desc">Technical architecture assessment and recommendations for optimal deployment</div>
+<div class="svc-meta"><div class="svc-price">$12,000</div><div class="svc-duration">1 week</div></div>
+</div>
+<div class="svc-card">
+<div class="svc-cat">Consulting</div>
+<div class="svc-name">Governance Design</div>
+<div class="svc-desc">Data governance framework design — policies, roles, compliance mapping</div>
+<div class="svc-meta"><div class="svc-price">$25,000</div><div class="svc-duration">3 weeks</div></div>
+</div>
+<div class="svc-card">
+<div class="svc-cat">Consulting</div>
+<div class="svc-name">Executive Advisory</div>
+<div class="svc-desc">Monthly strategic consultation — AI governance strategy, vendor evaluation, roadmap alignment</div>
+<div class="svc-meta"><div class="svc-price">$5,000 <span class="svc-unit">/month</span></div><div class="svc-duration">Ongoing</div></div>
+</div>
+</div>
+
+<!-- Training & Enablement -->
+<div style="margin:24px 0 8px"><span class="deck-cat-label cat-sales">Training & Enablement</span></div>
+<div class="svc-grid">
+<div class="svc-card">
+<div class="svc-cat">Training</div>
+<div class="svc-name">Administrator Training</div>
+<div class="svc-desc">System administration essentials — platform config, user management, security settings</div>
+<div class="svc-meta"><div class="svc-price">$2,500 – $3,000</div><div class="svc-duration">1 day</div></div>
+</div>
+<div class="svc-card">
+<div class="svc-cat">Training</div>
+<div class="svc-name">Power User / Analyst Bootcamp</div>
+<div class="svc-desc">Advanced platform capabilities — deliberation design, analytics, reporting, API usage</div>
+<div class="svc-meta"><div class="svc-price">$4,000 – $5,000</div><div class="svc-duration">2 days</div></div>
+</div>
+<div class="svc-card">
+<div class="svc-cat">Training</div>
+<div class="svc-name">Custom Training Program</div>
+<div class="svc-desc">Tailored curriculum for your organization — role-based, department-specific training</div>
+<div class="svc-meta"><div class="svc-price">$8,000</div><div class="svc-duration">Varies</div></div>
+</div>
+</div>
+
+<!-- Custom Development -->
+<div style="margin:24px 0 8px"><span class="deck-cat-label" style="background:rgba(168,85,247,.1);color:var(--purple)">Custom Development</span></div>
+<div class="svc-grid">
+<div class="svc-card">
+<div class="svc-cat">Custom Dev</div>
+<div class="svc-name">Custom Integration</div>
+<div class="svc-desc">Build a connector for your proprietary system — ERP, CRM, data warehouse, or legacy system</div>
+<div class="svc-meta"><div class="svc-price">$15,000 – $20,000</div><div class="svc-duration">2–4 weeks</div></div>
+</div>
+<div class="svc-card">
+<div class="svc-cat">Custom Dev</div>
+<div class="svc-name">Custom Agent Development</div>
+<div class="svc-desc">Domain-specific AI agent — industry knowledge, specialized reasoning, custom prompts</div>
+<div class="svc-meta"><div class="svc-price">$35,000 – $40,000</div><div class="svc-duration">4–6 weeks</div></div>
+</div>
+<div class="svc-card">
+<div class="svc-cat">Custom Dev</div>
+<div class="svc-name">White-Label Solution</div>
+<div class="svc-desc">Fully branded deployment — your logo, domain, custom UI, OEM-ready</div>
+<div class="svc-meta"><div class="svc-price">$100,000</div><div class="svc-duration">8–12 weeks</div></div>
+</div>
+</div>
+
+<!-- Support Services -->
+<div style="margin:24px 0 8px"><span class="deck-cat-label" style="background:rgba(239,68,68,.1);color:var(--red)">Support Services</span></div>
+<div class="svc-grid">
+<div class="svc-card">
+<div class="svc-cat">Support</div>
+<div class="svc-name">Standard Support</div>
+<div class="svc-desc">Email support with 48-hour response time — included with all subscriptions</div>
+<div class="svc-meta"><div class="svc-price">Included</div><div class="svc-duration">Ongoing</div></div>
+</div>
+<div class="svc-card">
+<div class="svc-cat">Support</div>
+<div class="svc-name">Priority Support</div>
+<div class="svc-desc">4-hour response time, phone support, priority queue</div>
+<div class="svc-meta"><div class="svc-price">$2,500 <span class="svc-unit">/month</span></div><div class="svc-duration">Ongoing</div></div>
+</div>
+<div class="svc-card">
+<div class="svc-cat">Support</div>
+<div class="svc-name">Premium Support + Dedicated CSM</div>
+<div class="svc-desc">1-hour response, 24/7 availability, named Customer Success Manager, quarterly health checks</div>
+<div class="svc-meta"><div class="svc-price">$5,000 – $6,000 <span class="svc-unit">/month</span></div><div class="svc-duration">Ongoing</div></div>
+</div>
+</div>
+
+<div class="toolkit-card" style="margin-top:24px">
+<h4>Services in Grant Budgets — How to Include</h4>
+<p style="color:var(--text3);font-size:12px;margin-bottom:12px">Many grant programs allow budgeting for software and services. Here's how to include Datacendia services in your proposals:</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px">
+<div style="padding:8px 12px;background:var(--bg);border-radius:6px"><strong style="color:var(--gold)">NSF SBIR:</strong> <span style="color:var(--text2)">List under "Contractual" or "Other Direct Costs" — include Architecture Review ($12K) + Standard Impl ($45K)</span></div>
+<div style="padding:8px 12px;background:var(--bg);border-radius:6px"><strong style="color:var(--gold)">DARPA SBIR:</strong> <span style="color:var(--text2)">Include under "Other Direct Costs" — Governance Design ($25K) is a strong fit for Phase I</span></div>
+<div style="padding:8px 12px;background:var(--bg);border-radius:6px"><strong style="color:var(--gold)">Enterprise Deals:</strong> <span style="color:var(--text2)">Bundle Quick Start ($15K) + Admin Training ($3K) as "Onboarding Package" for $18K</span></div>
+<div style="padding:8px 12px;background:var(--bg);border-radius:6px"><strong style="color:var(--gold)">Design Partners:</strong> <span style="color:var(--text2)">Offer Data Strategy Workshop ($8K) as free value-add during pilot to deepen engagement</span></div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PITCH DECK LIBRARY -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-label">Pitch Deck Library — 60 Decks</div>
+
+<p style="color:var(--text2);margin-bottom:20px;font-size:14px">All 60 presentation-ready pitch decks. View in browser, download as PDF (via print), or generate a PPTX file. Use the appropriate deck when applying to each funding program.</p>
+
+<div class="dl-bar">
+<div class="dl-label"><strong>60 decks</strong> — 10 Investor, 25 Design Partner, 25 Sales</div>
+<button class="btn-sm btn-pdf btn-all" onclick="downloadAllPDF('investor')">Investor PDFs (10)</button>
+<button class="btn-sm btn-pptx btn-all" onclick="downloadAllPPTX('investor')">Investor PPTX (10)</button>
+<button class="btn-sm btn-pdf btn-all" onclick="downloadAllPDF('design-partner')">Partner PDFs (25)</button>
+<button class="btn-sm btn-pptx btn-all" onclick="downloadAllPPTX('design-partner')">Partner PPTX (25)</button>
+<button class="btn-sm btn-pdf btn-all" onclick="downloadAllPDF('sales')">Sales PDFs (25)</button>
+<button class="btn-sm btn-pptx btn-all" onclick="downloadAllPPTX('sales')">Sales PPTX (25)</button>
+</div>
+
+<!-- Investor Decks -->
+<div class="deck-section">
+<span class="deck-cat-label cat-investor">Investor Decks</span>
+<h3>10 Investor Presentations — Use for VC meetings, SBIR commercialization plans, angel pitches</h3>
+<div class="deck-grid" id="investor-grid"></div>
+</div>
+
+<!-- Design Partner Decks -->
+<div class="deck-section">
+<span class="deck-cat-label cat-partner">Design Partner Decks</span>
+<h3>25 Design Partner Presentations — Use for pilot proposals, design partner recruitment, co-development</h3>
+<div class="deck-grid" id="partner-grid"></div>
+</div>
+
+<!-- Sales Decks -->
+<div class="deck-section">
+<span class="deck-cat-label cat-sales">Sales Decks</span>
+<h3>25 Sales Presentations — Use for enterprise demos, procurement, competitive positioning</h3>
+<div class="deck-grid" id="sales-grid"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PROPOSAL TOOLKIT -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-label">Proposal Toolkit — Copy-Ready Resources</div>
+
+<p style="color:var(--text2);margin-bottom:24px;font-size:14px">Pre-written text blocks, stats, and checklists you can paste directly into grant applications, pitch forms, and program applications. Click "Copy" on any block.</p>
+
+<!-- Quick Stats Card -->
+<div class="toolkit-card">
+<h4>Platform Stats — Copy into Any Application</h4>
+<p style="color:var(--text3);font-size:13px;margin-bottom:8px">Verified platform metrics for grant proposals and program applications:</p>
+<div class="copy-block" id="stats-block">
+<button class="copy-btn" onclick="copyBlock('stats-block')">Copy</button>
+Datacendia — AI Decision Intelligence Platform
+
+Platform Metrics:
+- 156 validated API endpoints
+- 16 enterprise data connectors (Salesforce, SAP, Snowflake, etc.)
+- 26 language support (full i18n)
+- 14 specialized AI agents (The Council)
+- 11 sovereign architecture patterns
+- 4 deployment modes: Cloud SaaS, Private Cloud, On-Premises, Air-Gapped
+
+Compliance & Certifications:
+- SOC 2 Type II, ISO 27001, GDPR, FedRAMP Moderate, HIPAA
+
+Pricing Tiers:
+- Pilot: $50K/year (10 users, 100 deliberations/mo)
+- Foundation: $150K–$500K/year (50 users, 1,000 deliberations/mo)
+- Enterprise: $500K–$1.5M/year (500 users, unlimited)
+- Strategic: $1.5M+/year (unlimited, custom SLA)
+
+Market:
+- TAM: $47B Decision Intelligence (2030)
+- SAM: $18B AI Governance (2028)
+- SOM: $4.2B Sovereign AI (2027)
+- CAGR: 38% Enterprise AI Governance</div>
+</div>
+
+<!-- Company Description (Short) -->
+<div class="toolkit-card">
+<h4>Company Description — Short (for application forms)</h4>
+<div class="copy-block" id="desc-short">
+<button class="copy-btn" onclick="copyBlock('desc-short')">Copy</button>
+Datacendia is an AI decision intelligence platform that uses multi-agent deliberation to help enterprises make better decisions with cryptographic proof of every step. Unlike chatbots that give single answers, Datacendia deploys 14 specialized AI agents — including CFO, CISO, Legal, and Risk personas — that debate, dissent, and reach consensus on complex business decisions. Every deliberation produces an immutable, auditable evidence trail. The platform supports four deployment modes from cloud SaaS to fully air-gapped sovereign installations, serving regulated industries including healthcare, financial services, defense, and government.</div>
+</div>
+
+<!-- Company Description (Technical) -->
+<div class="toolkit-card">
+<h4>Technical Innovation Description — For SBIR/STTR/DARPA proposals</h4>
+<div class="copy-block" id="desc-tech">
+<button class="copy-btn" onclick="copyBlock('desc-tech')">Copy</button>
+Datacendia introduces a novel multi-agent deliberation architecture for enterprise decision intelligence. The system orchestrates 14 specialized AI agents in structured deliberation protocols, incorporating formal dissent mechanisms, adversarial challenge (red-teaming), and consensus algorithms. Key technical innovations include:
+
+1. Cryptographic Provenance: Ed25519/RSA-PSS signed audit trails with SHA-256 content hashing provide tamper-evident decision records meeting NIST 800-53 requirements.
+
+2. Sovereign Architecture Patterns: 11 deployment patterns including data diode (one-way data flow), TPM attestation (hardware root of trust), federated mesh (distributed deliberation), and air-gapped operation with local RLHF model fine-tuning.
+
+3. Zero-Copy Data Architecture: Deliberation queries execute against customer databases in-situ without data extraction or movement, eliminating data exfiltration risk.
+
+4. Deterministic Replay: Complete decision replay capability enables forensic analysis, after-action review, and regulatory evidence production from any historical deliberation.
+
+5. Constitutional AI Governance: Configurable ethical constraints, regulatory guardrails, and organizational policy enforcement embedded in the deliberation protocol.</div>
+</div>
+
+<!-- Broader Impacts -->
+<div class="toolkit-card">
+<h4>Broader Impacts Statement — For NSF proposals</h4>
+<div class="copy-block" id="desc-impacts">
+<button class="copy-btn" onclick="copyBlock('desc-impacts')">Copy</button>
+This research advances transparent, accountable AI decision-making for critical infrastructure. Current enterprise AI systems operate as opaque black boxes, producing recommendations without explanation, audit trail, or accountability. This creates systemic risk in healthcare (misdiagnosis without evidence), financial services (unexplainable risk decisions), defense (untraceable tactical recommendations), and government (unauditable policy decisions).
+
+Datacendia's multi-agent deliberation architecture addresses these challenges by making AI decision processes inspectable, replayable, and cryptographically verifiable. The open-source community edition (Apache 2.0) democratizes access to sovereign AI infrastructure, enabling organizations of all sizes to deploy accountable AI systems.
+
+Broader impacts include:
+- Improved AI transparency in regulated industries
+- Reduced decision bias through structured adversarial challenge
+- Enhanced regulatory compliance through automated evidence production
+- Open-source contribution to AI governance standards
+- Support for 26 languages enabling global accessibility</div>
+</div>
+
+<!-- Defense Framing -->
+<div class="toolkit-card">
+<h4>Defense/DoD Framing — For DARPA and DoD proposals</h4>
+<div class="copy-block" id="desc-defense">
+<button class="copy-btn" onclick="copyBlock('desc-defense')">Copy</button>
+Datacendia provides sovereign AI decision support for contested and denied environments. The platform operates in fully air-gapped configurations with hardware-rooted trust (TPM attestation), enabling deployment on classified networks (SIPR/JWICS) without external connectivity dependencies.
+
+Defense-relevant capabilities:
+- Air-gapped operation: No internet dependency, local LLM inference with on-device RLHF
+- Data diode patterns: One-way data flow for cross-domain solutions
+- TPM attestation: Hardware root of trust, tamper detection, secure boot chain
+- Multi-agent tactical deliberation: 14 specialized agents for operational decision support
+- Cryptographic chain of custody: Ed25519 signed decision records for accountability
+- Deterministic replay: After-action review and decision forensics
+- Federated mesh: Distributed deliberation across disconnected nodes
+- FedRAMP Moderate compliance path: Pre-validated security controls</div>
+</div>
+
+<!-- Healthcare Framing -->
+<div class="toolkit-card">
+<h4>Healthcare Framing — For NIH and health-tech proposals</h4>
+<div class="copy-block" id="desc-health">
+<button class="copy-btn" onclick="copyBlock('desc-health')">Copy</button>
+Datacendia applies multi-agent AI deliberation to clinical decision support, enabling healthcare organizations to make evidence-based treatment decisions with full audit trails for HIPAA compliance and medical-legal protection.
+
+Healthcare-specific capabilities:
+- Multi-agent clinical deliberation: Specialized agents simulate clinical team discussion (attending physician, pharmacist, radiologist, ethics board perspectives)
+- HIPAA-compliant architecture: On-premises deployment ensures PHI never leaves hospital systems
+- Cryptographic evidence for malpractice defense: Every clinical recommendation is signed, timestamped, and replayable
+- Red-team agent: Adversarial challenge of clinical assumptions to reduce diagnostic bias
+- Zero-copy data access: Query EHR systems in-situ without data extraction
+- Decision replay for quality improvement: Review and analyze clinical decision patterns
+- 21 CFR Part 11 compatible audit trails for FDA-regulated workflows</div>
+</div>
+
+<!-- SAM.gov Checklist -->
+<div class="toolkit-card">
+<h4>SAM.gov Registration Checklist — Required for all federal grants (allow 2–4 weeks)</h4>
+<ul class="checklist">
+<li>Obtain EIN (Employer Identification Number) from IRS — <a href="https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online" style="color:var(--blue)">irs.gov/ein</a></li>
+<li>Register on SAM.gov — <a href="https://sam.gov" style="color:var(--blue)">sam.gov</a> (create Login.gov account first)</li>
+<li>Obtain UEI (Unique Entity Identifier) — assigned automatically during SAM registration</li>
+<li>Complete Core Data in SAM — legal business name, address, NAICS codes</li>
+<li>Set NAICS codes: 511210 (Software Publishers), 541511 (Custom Software Dev), 541512 (Computer Systems Design), 541715 (R&D in Physical/Engineering/Life Sciences)</li>
+<li>Complete Representations & Certifications section</li>
+<li>Designate an Entity Administrator for ongoing SAM management</li>
+<li>Register on Research.gov (for NSF) — <a href="https://research.gov" style="color:var(--blue)">research.gov</a></li>
+<li>Register on eRA Commons (for NIH) — <a href="https://era.nih.gov" style="color:var(--blue)">era.nih.gov</a></li>
+<li>Register on DSIP (for DoD/DARPA) — <a href="https://www.dodsbirsttr.mil" style="color:var(--blue)">dodsbirsttr.mil</a></li>
+<li>Renew SAM registration annually (set a calendar reminder)</li>
+</ul>
+</div>
+
+<!-- Which Deck for Which Program -->
+<div class="toolkit-card">
+<h4>Which Pitch Deck to Use for Each Funding Program</h4>
+<p style="color:var(--text3);font-size:13px;margin-bottom:12px">Match the right deck to each application for maximum impact:</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px">
+<div style="padding:8px 12px;background:var(--bg);border-radius:6px"><strong style="color:var(--gold)">NSF SBIR/STTR:</strong> <span style="color:var(--text2)">Investor #4 (Multi-Agent Tech) + #10 (Competitive Moat)</span></div>
+<div style="padding:8px 12px;background:var(--bg);border-radius:6px"><strong style="color:var(--gold)">DARPA SBIR:</strong> <span style="color:var(--text2)">Investor #8 (Gov & Defense) + Partner #5 (Defense)</span></div>
+<div style="padding:8px 12px;background:var(--bg);border-radius:6px"><strong style="color:var(--gold)">NIH SBIR:</strong> <span style="color:var(--text2)">Investor #6 (Healthcare) + Partner #1 (Healthcare)</span></div>
+<div style="padding:8px 12px;background:var(--bg);border-radius:6px"><strong style="color:var(--gold)">TechCrunch Battlefield:</strong> <span style="color:var(--text2)">Investor #1 (Series A Overview)</span></div>
+<div style="padding:8px 12px;background:var(--bg);border-radius:6px"><strong style="color:var(--gold)">MIT Solve:</strong> <span style="color:var(--text2)">Investor #5 (Compliance) + Sales #11 (AI Trust)</span></div>
+<div style="padding:8px 12px;background:var(--bg);border-radius:6px"><strong style="color:var(--gold)">Cloud Credits (AWS/GCP/Azure):</strong> <span style="color:var(--text2)">Investor #3 (Sovereign AI) + #9 (Business Model)</span></div>
+<div style="padding:8px 12px;background:var(--bg);border-radius:6px"><strong style="color:var(--gold)">Startup World Cup:</strong> <span style="color:var(--text2)">Investor #1 (Series A) + #2 (Market)</span></div>
+<div style="padding:8px 12px;background:var(--bg);border-radius:6px"><strong style="color:var(--gold)">EIC Accelerator:</strong> <span style="color:var(--text2)">Investor #3 (Sovereign AI) + #5 (Compliance)</span></div>
+<div style="padding:8px 12px;background:var(--bg);border-radius:6px"><strong style="color:var(--gold)">Shuttleworth Foundation:</strong> <span style="color:var(--text2)">Investor #4 (Multi-Agent Tech) + Sales #14 (Vendor Lock-In)</span></div>
+<div style="padding:8px 12px;background:var(--bg);border-radius:6px"><strong style="color:var(--gold)">Design Partner Recruitment:</strong> <span style="color:var(--text2)">Partner deck matching their industry + #14 (Council)</span></div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- OUTREACH DIRECTORY -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-label">Outreach Directory — Who Gets Each Deck</div>
+
+<p style="color:var(--text2);margin-bottom:24px;font-size:14px">Exactly who to contact for each funding program and pitch deck category. Organized by role, channel, and which deck to attach.</p>
+
+<!-- FUNDING PROGRAM CONTACTS -->
+<div class="toolkit-card">
+<h4>Funding Program Contacts — Who Reviews Your Application</h4>
+<p style="color:var(--text3);font-size:12px;margin-bottom:16px">For each program, who makes the decision and how to reach them:</p>
+
+<div style="display:grid;gap:10px">
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><strong style="color:var(--gold);font-size:14px">AWS Activate</strong><span class="fit fit-strong" style="font-size:10px">Tier 1</span></div>
+<div style="font-size:13px;color:var(--text2);display:grid;grid-template-columns:120px 1fr;gap:4px 12px">
+<span style="color:var(--text3)">Decision Maker:</span><span>AWS Startup Team (automated for Founders tier; partner review for Portfolio)</span>
+<span style="color:var(--text3)">Channel:</span><span>Online application at <a href="https://aws.amazon.com/activate/" style="color:var(--blue)">aws.amazon.com/activate</a></span>
+<span style="color:var(--text3)">Warm Intro Via:</span><span>Any AWS Partner Network (APN) member, YC/Techstars alumni, or AWS Solutions Architect</span>
+<span style="color:var(--text3)">Attach Deck:</span><span>Not required — application form only. Use Investor #3 (Sovereign AI) talking points in description field.</span>
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><strong style="color:var(--gold);font-size:14px">Google for Startups Cloud</strong><span class="fit fit-strong" style="font-size:10px">Tier 1</span></div>
+<div style="font-size:13px;color:var(--text2);display:grid;grid-template-columns:120px 1fr;gap:4px 12px">
+<span style="color:var(--text3)">Decision Maker:</span><span>Google Cloud Startup Partnerships team</span>
+<span style="color:var(--text3)">Channel:</span><span>Online application at <a href="https://cloud.google.com/startup" style="color:var(--blue)">cloud.google.com/startup</a></span>
+<span style="color:var(--text3)">Warm Intro Via:</span><span>Google Cloud Partner, GV portfolio company, or Google Developer Expert (GDE)</span>
+<span style="color:var(--text3)">Attach Deck:</span><span>Not required for application. If asked for more info, send Investor #4 (Multi-Agent Tech).</span>
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><strong style="color:var(--gold);font-size:14px">Microsoft for Startups (Founders Hub)</strong><span class="fit fit-strong" style="font-size:10px">Tier 1</span></div>
+<div style="font-size:13px;color:var(--text2);display:grid;grid-template-columns:120px 1fr;gap:4px 12px">
+<span style="color:var(--text3)">Decision Maker:</span><span>Automated AI assessment (Tier 1–2); Microsoft Startup Advocate for higher tiers</span>
+<span style="color:var(--text3)">Channel:</span><span>Online at <a href="https://www.microsoft.com/en-us/startups" style="color:var(--blue)">microsoft.com/startups</a></span>
+<span style="color:var(--text3)">Warm Intro Via:</span><span>Microsoft MVP, M12 Ventures contact, or Microsoft ISV Partner</span>
+<span style="color:var(--text3)">Attach Deck:</span><span>Not required. For Tier 3+, use Investor #9 (Business Model) for VC validation.</span>
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><strong style="color:var(--gold);font-size:14px">NVIDIA Inception</strong><span class="fit fit-strong" style="font-size:10px">Tier 1</span></div>
+<div style="font-size:13px;color:var(--text2);display:grid;grid-template-columns:120px 1fr;gap:4px 12px">
+<span style="color:var(--text3)">Decision Maker:</span><span>NVIDIA Inception Program Manager (review committee)</span>
+<span style="color:var(--text3)">Channel:</span><span>Online at <a href="https://www.nvidia.com/en-us/startups/" style="color:var(--blue)">nvidia.com/startups</a></span>
+<span style="color:var(--text3)">Warm Intro Via:</span><span>NVIDIA Developer Relations, NVIDIA AI Enterprise partner, or existing Inception member</span>
+<span style="color:var(--text3)">Attach Deck:</span><span>Investor #4 (Multi-Agent Tech) — emphasize GPU inference workload for 14 agents.</span>
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><strong style="color:var(--gold);font-size:14px">NSF SBIR Phase I ($275K)</strong><span class="fit fit-strong" style="font-size:10px">Tier 1</span></div>
+<div style="font-size:13px;color:var(--text2);display:grid;grid-template-columns:120px 1fr;gap:4px 12px">
+<span style="color:var(--text3)">Decision Maker:</span><span>NSF SBIR Program Director for your topic area (AI/ML, Cybersecurity, or Smart Communities)</span>
+<span style="color:var(--text3)">Who to Contact:</span><span>The Program Director listed on your specific topic at <a href="https://seedfund.nsf.gov" style="color:var(--blue)">seedfund.nsf.gov</a> — email them before submitting your Project Pitch to discuss fit</span>
+<span style="color:var(--text3)">Channel:</span><span>Project Pitch via Research.gov → if invited, full proposal via Research.gov</span>
+<span style="color:var(--text3)">Warm Intro Via:</span><span>NSF I-Corps Hub director, university tech transfer office, or previous NSF SBIR awardee</span>
+<span style="color:var(--text3)">Attach Deck:</span><span>Don't attach a deck — use the Technical Innovation copy-block (above) in your proposal. For commercialization section, reference Investor #9 (Business Model).</span>
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><strong style="color:var(--gold);font-size:14px">NSF I-Corps ($50K)</strong><span class="fit fit-strong" style="font-size:10px">Tier 1</span></div>
+<div style="font-size:13px;color:var(--text2);display:grid;grid-template-columns:120px 1fr;gap:4px 12px">
+<span style="color:var(--text3)">Decision Maker:</span><span>I-Corps Hub Director at your regional hub</span>
+<span style="color:var(--text3)">Who to Contact:</span><span>Find your regional hub at <a href="https://icorps.nsf.gov" style="color:var(--blue)">icorps.nsf.gov</a> and email the Hub Director directly with your team composition and technology summary</span>
+<span style="color:var(--text3)">Channel:</span><span>Application through regional I-Corps Hub website</span>
+<span style="color:var(--text3)">Attach Deck:</span><span>Investor #1 (Series A Overview) — 1-page summary format preferred for initial outreach.</span>
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><strong style="color:var(--gold);font-size:14px">DARPA SBIR ($50K–$2M+)</strong><span class="fit fit-strong" style="font-size:10px">Tier 1</span></div>
+<div style="font-size:13px;color:var(--text2);display:grid;grid-template-columns:120px 1fr;gap:4px 12px">
+<span style="color:var(--text3)">Decision Maker:</span><span>DARPA Program Manager (PM) for the specific topic area</span>
+<span style="color:var(--text3)">Who to Contact:</span><span>The PM listed on the SBIR topic solicitation. DARPA PMs are publicly listed at <a href="https://www.darpa.mil/about-us/people" style="color:var(--blue)">darpa.mil/about-us/people</a>. Contact I2O (Information Innovation Office) PMs for AI topics.</span>
+<span style="color:var(--text3)">Channel:</span><span>Proposal via DSIP (<a href="https://www.dodsbirsttr.mil" style="color:var(--blue)">dodsbirsttr.mil</a>). Can email PM before submitting to discuss alignment.</span>
+<span style="color:var(--text3)">Warm Intro Via:</span><span>Defense innovation organizations (DIU, AFWERX, NavalX), defense primes' innovation teams, or DARPA Proposers Day attendees</span>
+<span style="color:var(--text3)">Attach Deck:</span><span>Investor #8 (Gov & Defense) + Partner #5 (Defense) for PM intro emails. Use Defense copy-block in proposal.</span>
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><strong style="color:var(--gold);font-size:14px">TechCrunch Disrupt Battlefield ($100K)</strong><span class="fit fit-good" style="font-size:10px">Tier 2</span></div>
+<div style="font-size:13px;color:var(--text2);display:grid;grid-template-columns:120px 1fr;gap:4px 12px">
+<span style="color:var(--text3)">Decision Maker:</span><span>TechCrunch editorial team / Battlefield selection committee</span>
+<span style="color:var(--text3)">Channel:</span><span>Application at <a href="https://techcrunch.com/startup-battlefield" style="color:var(--blue)">techcrunch.com/startup-battlefield</a></span>
+<span style="color:var(--text3)">Warm Intro Via:</span><span>Previous Battlefield alumni, TechCrunch reporters covering enterprise AI, or VC who has been a Battlefield judge</span>
+<span style="color:var(--text3)">Attach Deck:</span><span>Investor #1 (Series A Overview). If asked for demo video, build around live Council deliberation.</span>
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><strong style="color:var(--gold);font-size:14px">NIH SBIR ($275K)</strong><span class="fit fit-good" style="font-size:10px">Tier 2</span></div>
+<div style="font-size:13px;color:var(--text2);display:grid;grid-template-columns:120px 1fr;gap:4px 12px">
+<span style="color:var(--text3)">Decision Maker:</span><span>NIH Center for Scientific Review (CSR) study section panel + NIH Institute Program Officer</span>
+<span style="color:var(--text3)">Who to Contact:</span><span>Program Officer at the relevant NIH Institute (e.g., NLM for health IT, NCI for oncology AI). Listed on each FOA at <a href="https://seed.nih.gov" style="color:var(--blue)">seed.nih.gov</a></span>
+<span style="color:var(--text3)">Channel:</span><span>Proposal via NIH ASSIST system. Email Program Officer before submitting to confirm topic fit.</span>
+<span style="color:var(--text3)">Warm Intro Via:</span><span>Hospital system CMIO, health system innovation officer, or academic medical center researcher</span>
+<span style="color:var(--text3)">Attach Deck:</span><span>Investor #6 (Healthcare) for intro. Use Healthcare copy-block in proposal. Partner #1 (Healthcare) for clinical advisor recruitment.</span>
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><strong style="color:var(--gold);font-size:14px">MIT Solve ($10K–$300K)</strong><span class="fit fit-good" style="font-size:10px">Tier 2</span></div>
+<div style="font-size:13px;color:var(--text2);display:grid;grid-template-columns:120px 1fr;gap:4px 12px">
+<span style="color:var(--text3)">Decision Maker:</span><span>MIT Solve Challenge Leads and external judges (varies by challenge theme)</span>
+<span style="color:var(--text3)">Channel:</span><span>Application at <a href="https://solve.mit.edu" style="color:var(--blue)">solve.mit.edu</a></span>
+<span style="color:var(--text3)">Warm Intro Via:</span><span>MIT Media Lab researchers, previous Solver teams, MIT alumni network</span>
+<span style="color:var(--text3)">Attach Deck:</span><span>Investor #5 (Compliance) reframed around responsible AI. Use Broader Impacts copy-block.</span>
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><strong style="color:var(--gold);font-size:14px">Startup World Cup ($1M)</strong><span class="fit fit-good" style="font-size:10px">Tier 2</span></div>
+<div style="font-size:13px;color:var(--text2);display:grid;grid-template-columns:120px 1fr;gap:4px 12px">
+<span style="color:var(--text3)">Decision Maker:</span><span>Regional competition judges (VCs, corporate innovation leaders); Pegasus Tech Ventures for grand finals</span>
+<span style="color:var(--text3)">Channel:</span><span>Apply at <a href="https://www.startupworldcup.io" style="color:var(--blue)">startupworldcup.io</a> for your nearest regional</span>
+<span style="color:var(--text3)">Attach Deck:</span><span>Investor #1 (Series A) + Investor #2 (AI Governance Market). Prepare 2-minute pitch video.</span>
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><strong style="color:var(--gold);font-size:14px">EIC Accelerator (€2.5M)</strong><span class="fit fit-possible" style="font-size:10px">Tier 3</span></div>
+<div style="font-size:13px;color:var(--text2);display:grid;grid-template-columns:120px 1fr;gap:4px 12px">
+<span style="color:var(--text3)">Decision Maker:</span><span>EIC Program Committee and external evaluators appointed by European Commission</span>
+<span style="color:var(--text3)">Channel:</span><span>EU Funding & Tenders Portal at <a href="https://eic.ec.europa.eu" style="color:var(--blue)">eic.ec.europa.eu</a></span>
+<span style="color:var(--text3)">Warm Intro Via:</span><span>National Contact Point (NCP) in your EU member state, EIC Ambassadors, or previous EIC awardees</span>
+<span style="color:var(--text3)">Attach Deck:</span><span>Investor #3 (Sovereign AI) + #5 (Compliance) — GDPR/sovereignty angle resonates strongly with EU evaluators.</span>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- DESIGN PARTNER OUTREACH TARGETS -->
+<div class="toolkit-card">
+<h4>Design Partner Outreach — Who to Target by Industry</h4>
+<p style="color:var(--text3);font-size:12px;margin-bottom:16px">For each Design Partner deck, who within the target organization to contact, their title, and how to reach them:</p>
+
+<div style="display:grid;gap:10px">
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+<div style="margin-bottom:8px"><strong style="color:var(--blue);font-size:14px">Healthcare (Partner Deck #1)</strong></div>
+<div style="font-size:13px;color:var(--text2);display:grid;grid-template-columns:120px 1fr;gap:4px 12px">
+<span style="color:var(--text3)">Primary Target:</span><span><strong>Chief Medical Information Officer (CMIO)</strong> or <strong>VP of Clinical Informatics</strong> — they own clinical decision support tooling</span>
+<span style="color:var(--text3)">Secondary:</span><span><strong>Chief Digital Health Officer</strong>, <strong>VP Innovation</strong>, or <strong>Director of AI/ML</strong> at hospital systems</span>
+<span style="color:var(--text3)">Where to Find:</span><span>CHIME (College of Healthcare Information Management), HIMSS conference attendees, LinkedIn "CMIO" search filtered by 500+ bed hospital systems</span>
+<span style="color:var(--text3)">Outreach:</span><span>Email subject: "AI clinical decision support with HIPAA-native audit trail — design partner invitation." Reference their hospital's digital transformation initiatives.</span>
+<span style="color:var(--text3)">Target Orgs:</span><span>Large hospital systems (Mayo Clinic, Cleveland Clinic, Kaiser Permanente, HCA Healthcare, CommonSpirit, Ascension), academic medical centers</span>
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+<div style="margin-bottom:8px"><strong style="color:var(--blue);font-size:14px">Financial Services (Partner Deck #2)</strong></div>
+<div style="font-size:13px;color:var(--text2);display:grid;grid-template-columns:120px 1fr;gap:4px 12px">
+<span style="color:var(--text3)">Primary Target:</span><span><strong>Chief Risk Officer (CRO)</strong> or <strong>Head of Model Risk Management</strong> — they need explainable AI with audit trails</span>
+<span style="color:var(--text3)">Secondary:</span><span><strong>Chief Data Officer (CDO)</strong>, <strong>Head of AI/ML</strong>, <strong>SVP Technology Innovation</strong></span>
+<span style="color:var(--text3)">Where to Find:</span><span>Risk.net events, GARP (Global Association of Risk Professionals) membership, ISDA conferences, LinkedIn filtered by Top 50 banks</span>
+<span style="color:var(--text3)">Outreach:</span><span>Email subject: "DORA-ready AI decision intelligence with cryptographic audit trail — exploring design partnership." Reference their regulatory compliance burden.</span>
+<span style="color:var(--text3)">Target Orgs:</span><span>Top 20 US banks, EU banks facing DORA deadlines, asset managers ($10B+ AUM), insurance carriers (Top 20 P&C)</span>
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+<div style="margin-bottom:8px"><strong style="color:var(--blue);font-size:14px">Legal (Partner Deck #3)</strong></div>
+<div style="font-size:13px;color:var(--text2);display:grid;grid-template-columns:120px 1fr;gap:4px 12px">
+<span style="color:var(--text3)">Primary Target:</span><span><strong>Chief Innovation Officer</strong> or <strong>Director of Knowledge Management</strong> at AmLaw 100 firms</span>
+<span style="color:var(--text3)">Secondary:</span><span><strong>Managing Partner</strong> (litigation practice), <strong>General Counsel</strong> at Fortune 500 (in-house)</span>
+<span style="color:var(--text3)">Where to Find:</span><span>ILTACON (legal tech conference), Legalweek, CLOC (Corporate Legal Operations Consortium), LinkedIn filtered by AmLaw 100</span>
+<span style="color:var(--text3)">Target Orgs:</span><span>AmLaw 100 firms, Big 4 legal advisory (Deloitte Legal, EY Law, PwC Legal), Fortune 500 legal departments</span>
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+<div style="margin-bottom:8px"><strong style="color:var(--blue);font-size:14px">Government (Partner Deck #4)</strong></div>
+<div style="font-size:13px;color:var(--text2);display:grid;grid-template-columns:120px 1fr;gap:4px 12px">
+<span style="color:var(--text3)">Primary Target:</span><span><strong>Agency CTO/CIO</strong> or <strong>Chief AI Officer</strong> (mandated by Executive Order 14110 for all federal agencies)</span>
+<span style="color:var(--text3)">Secondary:</span><span><strong>Director of Digital Services</strong>, <strong>IT Modernization Lead</strong>, contracting officers (for OTA/BAA pathways)</span>
+<span style="color:var(--text3)">Where to Find:</span><span>GovTech conferences (DoDIIS, AFCEA), FedScoop/StateScoop readership, AI.gov public directory of agency AI officers</span>
+<span style="color:var(--text3)">Outreach:</span><span>Email subject: "FedRAMP-ready sovereign AI decision platform — CRADA/pilot discussion." Reference their agency's AI strategy mandate.</span>
+<span style="color:var(--text3)">Target Orgs:</span><span>DHS, DOE, DOJ, VA, IC community, state-level CIOs (via NASCIO membership)</span>
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+<div style="margin-bottom:8px"><strong style="color:var(--blue);font-size:14px">Defense (Partner Deck #5)</strong></div>
+<div style="font-size:13px;color:var(--text2);display:grid;grid-template-columns:120px 1fr;gap:4px 12px">
+<span style="color:var(--text3)">Primary Target:</span><span><strong>Program Manager</strong> at DARPA I2O, <strong>Technology Scout</strong> at DIU (Defense Innovation Unit), or <strong>AFWERX Challenge Lead</strong></span>
+<span style="color:var(--text3)">Secondary:</span><span><strong>VP Innovation</strong> at defense primes (Lockheed, Raytheon, Northrop, General Dynamics, L3Harris), <strong>SOCOM J6</strong> innovation directorate</span>
+<span style="color:var(--text3)">Where to Find:</span><span>DoDIIS Worldwide Conference, AUSA annual meeting, SOFIC (Special Operations Forces Industry Conference), DIU office hours</span>
+<span style="color:var(--text3)">Outreach:</span><span>Email subject: "Air-gapped multi-agent decision support with TPM attestation — demo request." Reference specific program or capability gap.</span>
+<span style="color:var(--text3)">Target Orgs:</span><span>DIU, AFWERX, NavalX, Army Futures Command (AFC), CDAO (Chief Digital & AI Office), defense prime innovation labs</span>
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+<div style="margin-bottom:8px"><strong style="color:var(--blue);font-size:14px">Energy & Utilities (Partner Deck #6)</strong></div>
+<div style="font-size:13px;color:var(--text2);display:grid;grid-template-columns:120px 1fr;gap:4px 12px">
+<span style="color:var(--text3)">Primary Target:</span><span><strong>VP of Grid Operations</strong> or <strong>Director of OT Security</strong> — they manage NERC CIP compliance and critical infrastructure decisions</span>
+<span style="color:var(--text3)">Secondary:</span><span><strong>Chief Digital Officer</strong>, <strong>VP of Technology Innovation</strong></span>
+<span style="color:var(--text3)">Where to Find:</span><span>DistribuTECH conference, NERC GridEx participants, DOE national lab innovation partnerships</span>
+<span style="color:var(--text3)">Target Orgs:</span><span>Top 20 US utilities (Duke Energy, Southern Company, NextEra, Dominion, Exelon), ISOs/RTOs, national labs (NREL, Sandia, PNNL)</span>
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+<div style="margin-bottom:8px"><strong style="color:var(--blue);font-size:14px">Insurance (Partner Deck #7)</strong></div>
+<div style="font-size:13px;color:var(--text2);display:grid;grid-template-columns:120px 1fr;gap:4px 12px">
+<span style="color:var(--text3)">Primary Target:</span><span><strong>Chief Underwriting Officer</strong> or <strong>SVP Claims</strong> — they make risk decisions that need audit trails</span>
+<span style="color:var(--text3)">Secondary:</span><span><strong>Chief Actuary</strong>, <strong>Head of InsurTech Innovation</strong></span>
+<span style="color:var(--text3)">Where to Find:</span><span>InsureTech Connect (ITC), RIMS conference, Bermuda Captive Conference, LinkedIn filtered by Top 25 P&C carriers</span>
+<span style="color:var(--text3)">Target Orgs:</span><span>Top 20 P&C carriers (State Farm, GEICO/Berkshire, Progressive, Allstate, Liberty Mutual, Chubb, Zurich, AIG, Munich Re)</span>
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px">
+<div style="margin-bottom:8px"><strong style="color:var(--blue);font-size:14px">Pharma (Partner Deck #8)</strong></div>
+<div style="font-size:13px;color:var(--text2);display:grid;grid-template-columns:120px 1fr;gap:4px 12px">
+<span style="color:var(--text3)">Primary Target:</span><span><strong>VP of Digital Innovation</strong> or <strong>Head of R&D IT</strong> — they own data-driven drug development tooling</span>
+<span style="color:var(--text3)">Secondary:</span><span><strong>Chief Data Officer</strong>, <strong>VP Regulatory Affairs</strong>, <strong>Head of Real-World Evidence</strong></span>
+<span style="color:var(--text3)">Where to Find:</span><span>JP Morgan Healthcare Conference, BIO International, DIA Global Annual Meeting, PharmaTech conferences</span>
+<span style="color:var(--text3)">Target Orgs:</span><span>Top 20 pharma (Pfizer, J&J, Roche, Novartis, Merck, AbbVie, AstraZeneca, Lilly, Bristol-Myers Squibb, Sanofi, GSK)</span>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- SALES BUYER PERSONAS -->
+<div class="toolkit-card">
+<h4>Sales Deck Outreach — Enterprise Buyer Personas</h4>
+<p style="color:var(--text3);font-size:12px;margin-bottom:16px">Who to send each Sales deck to within target enterprises:</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px">
+<strong style="color:var(--green);font-size:13px">Fortune 500 (Sales #1)</strong>
+<div style="font-size:12px;color:var(--text2);margin-top:6px">
+<strong>Send to:</strong> Chief Digital Officer, SVP Enterprise Architecture<br>
+<strong>Find via:</strong> LinkedIn Sales Navigator, Board of Directors filings<br>
+<strong>Entry point:</strong> VP-level innovation/strategy team member
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px">
+<strong style="color:var(--green);font-size:13px">Mid-Market (Sales #2)</strong>
+<div style="font-size:12px;color:var(--text2);margin-top:6px">
+<strong>Send to:</strong> CTO or VP Engineering<br>
+<strong>Find via:</strong> Crunchbase for companies $50M–$500M revenue<br>
+<strong>Entry point:</strong> Direct outreach — C-suite more accessible at mid-market
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px">
+<strong style="color:var(--green);font-size:13px">Compliance/Risk (Sales #9)</strong>
+<div style="font-size:12px;color:var(--text2);margin-top:6px">
+<strong>Send to:</strong> Chief Compliance Officer, Head of GRC<br>
+<strong>Find via:</strong> SCCE (Society of Corporate Compliance & Ethics), compliance LinkedIn groups<br>
+<strong>Angle:</strong> "Eliminate audit failures with cryptographic evidence"
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px">
+<strong style="color:var(--green);font-size:13px">Decision Speed (Sales #10)</strong>
+<div style="font-size:12px;color:var(--text2);margin-top:6px">
+<strong>Send to:</strong> COO or VP Strategy<br>
+<strong>Find via:</strong> McKinsey/BCG alumni networks (they value decision frameworks)<br>
+<strong>Angle:</strong> "Board-level decisions from weeks to hours"
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px">
+<strong style="color:var(--green);font-size:13px">AI Trust (Sales #11)</strong>
+<div style="font-size:12px;color:var(--text2);margin-top:6px">
+<strong>Send to:</strong> Chief AI Officer, VP AI/ML, Head of Responsible AI<br>
+<strong>Find via:</strong> AI conferences (NeurIPS, AAAI industry day), Responsible AI Institute<br>
+<strong>Angle:</strong> "Make your AI explainable and auditable"
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px">
+<strong style="color:var(--green);font-size:13px">Data Silos (Sales #12)</strong>
+<div style="font-size:12px;color:var(--text2);margin-top:6px">
+<strong>Send to:</strong> Chief Data Officer, VP Data Engineering<br>
+<strong>Find via:</strong> CDO Club, Gartner Data & Analytics Summit attendees<br>
+<strong>Angle:</strong> "Query everywhere without moving data"
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px">
+<strong style="color:var(--green);font-size:13px">Vendor Lock-In (Sales #14)</strong>
+<div style="font-size:12px;color:var(--text2);margin-top:6px">
+<strong>Send to:</strong> CTO, VP Infrastructure, Chief Architect<br>
+<strong>Find via:</strong> Open Source Summit attendees, CNCF community<br>
+<strong>Angle:</strong> "Open source core + sovereign deployment = no lock-in"
+</div>
+</div>
+
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px">
+<strong style="color:var(--green);font-size:13px">AI Governance Gap (Sales #15)</strong>
+<div style="font-size:12px;color:var(--text2);margin-top:6px">
+<strong>Send to:</strong> CISO, Chief AI Officer, Board Risk Committee<br>
+<strong>Find via:</strong> RSA Conference attendees, Gartner Security Summit<br>
+<strong>Angle:</strong> "Turn shadow AI into governed AI"
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- OUTREACH EMAIL TEMPLATES -->
+<div class="toolkit-card">
+<h4>Outreach Email Templates — Copy & Customize</h4>
+
+<p style="color:var(--text3);font-size:12px;margin:8px 0 4px"><strong style="color:var(--text2)">Template 1: Design Partner Cold Email</strong></p>
+<div class="copy-block" id="email-dp">
+<button class="copy-btn" onclick="copyBlock('email-dp')">Copy</button>
+Subject: Design Partner Invitation — AI Decision Intelligence for [INDUSTRY]
+
+Hi [NAME],
+
+I'm reaching out because [COMPANY] is exactly the kind of organization we built Datacendia for.
+
+We're an AI decision intelligence platform — not a chatbot. We deploy 14 specialized AI agents (CFO, CISO, Legal, Risk, etc.) that deliberate on complex decisions, with a cryptographic audit trail for every step.
+
+We're selecting 5 design partners in [INDUSTRY] to shape the product and get early access at a significant discount. Design partners get:
+
+- Free pilot deployment (3 months)
+- Direct input on product roadmap
+- Dedicated engineering support
+- Preferred pricing at GA
+
+[1-2 sentences specific to their company's known challenge — e.g., "Given [COMPANY]'s regulatory exposure under [REGULATION], the automated evidence generation could save your compliance team significant hours."]
+
+Would you be open to a 20-minute call next week?
+
+Best,
+[YOUR NAME]
+Founder, Datacendia
+[EMAIL] | datacendia.com</div>
+
+<p style="color:var(--text3);font-size:12px;margin:16px 0 4px"><strong style="color:var(--text2)">Template 2: Funding Program Intro Email (to Program Manager/Director)</strong></p>
+<div class="copy-block" id="email-pm">
+<button class="copy-btn" onclick="copyBlock('email-pm')">Copy</button>
+Subject: Quick question on [PROGRAM] topic fit — AI decision intelligence with sovereign deployment
+
+Dear [NAME/TITLE],
+
+I'm the founder of Datacendia, an AI decision intelligence platform that uses multi-agent deliberation with cryptographic provenance. Before submitting a [Project Pitch / proposal], I wanted to confirm our technology aligns with [TOPIC AREA].
+
+In brief: we orchestrate 14 specialized AI agents in structured deliberation protocols with Ed25519-signed audit trails and 4 deployment modes including air-gapped sovereign. Our core innovation is making AI decision processes inspectable, replayable, and cryptographically verifiable.
+
+This seems to fit under [SPECIFIC TOPIC] given [REASON]. Could you confirm whether this is an appropriate topic fit, or suggest a better-aligned topic?
+
+Happy to share a brief technical summary if helpful.
+
+Thank you for your time,
+[YOUR NAME]
+Founder & CEO, Datacendia
+[EMAIL] | datacendia.com</div>
+
+<p style="color:var(--text3);font-size:12px;margin:16px 0 4px"><strong style="color:var(--text2)">Template 3: Enterprise Sales Cold Email</strong></p>
+<div class="copy-block" id="email-sales">
+<button class="copy-btn" onclick="copyBlock('email-sales')">Copy</button>
+Subject: [COMPANY]'s AI decisions — auditable in 90 seconds
+
+[NAME],
+
+Quick question: when your board asks "how did the AI reach this recommendation?" — what do you hand them?
+
+Most enterprises can't answer that. Datacendia can.
+
+We deploy 14 AI agents that debate your decisions like a boardroom — CFO challenges the ROI, CISO flags security risks, Legal checks compliance — then produce a cryptographic evidence packet you can hand to any auditor.
+
+3 things that might matter to you:
+1. Zero-copy: our AI queries your databases in-place. No data extraction.
+2. Sovereign: deploy on-prem or air-gapped. Your infrastructure, your control.
+3. 90-day guarantee: prove value or full refund.
+
+Worth 15 minutes to see it in action?
+
+[YOUR NAME]
+datacendia.com</div>
+</div>
+
+</div><!-- .container -->
+
+<!-- Progress Toast -->
+<div class="progress-toast" id="progressToast">
+<div class="pt-title" id="ptTitle">Generating PPTX...</div>
+<div class="pt-bar"><div class="pt-fill" id="ptFill" style="width:0%"></div></div>
+<div class="pt-text" id="ptText">Preparing slides...</div>
+</div>
+
+<!-- PptxGenJS CDN -->
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/PptxGenJS@3.12.0/dist/pptxgen.bundle.js"></script>
+
+<script>
+// ═══════════════════════════════════════════════
+// DECK DATA — All 60 pitch decks
+// ═══════════════════════════════════════════════
+const DECKS = {
+  investor: [
+    {id:'01',file:'01-series-a-overview.html',name:'Series A Overview',desc:'General platform pitch for investors'},
+    {id:'02',file:'02-ai-governance-market.html',name:'AI Governance Market',desc:'TAM/SAM/SOM for AI governance'},
+    {id:'03',file:'03-sovereign-ai.html',name:'Sovereign AI Infrastructure',desc:'Data sovereignty and air-gapped deployment'},
+    {id:'04',file:'04-multi-agent-tech.html',name:'Multi-Agent Technology',desc:'Technical differentiation — The Council'},
+    {id:'05',file:'05-compliance-platform.html',name:'Compliance Platform',desc:'Automated evidence for regulatory frameworks'},
+    {id:'06',file:'06-healthcare.html',name:'Healthcare AI Governance',desc:'HIPAA-compliant clinical decision support'},
+    {id:'07',file:'07-financial-services.html',name:'Financial Services',desc:'Banking, risk management, DORA compliance'},
+    {id:'08',file:'08-gov-defense.html',name:'Government & Defense',desc:'Sovereign AI for national security'},
+    {id:'09',file:'09-business-model.html',name:'Business Model & Revenue',desc:'Platform economics and unit economics'},
+    {id:'10',file:'10-competitive-moat.html',name:'Competitive Moat',desc:'Seven-layer defensibility analysis'}
+  ],
+  'design-partner': [
+    {id:'01',file:'01-healthcare.html',name:'Healthcare',desc:'Clinical decision support, HIPAA compliance'},
+    {id:'02',file:'02-financial-services.html',name:'Financial Services',desc:'Risk management, DORA, audit-ready AI'},
+    {id:'03',file:'03-legal.html',name:'Legal & Law Firms',desc:'Contract analysis, litigation support'},
+    {id:'04',file:'04-government.html',name:'Government',desc:'Public sector, sovereign deployment'},
+    {id:'05',file:'05-defense.html',name:'Defense',desc:'Air-gapped, ITAR-compliant AI'},
+    {id:'06',file:'06-energy-utilities.html',name:'Energy & Utilities',desc:'Critical infrastructure, NERC CIP'},
+    {id:'07',file:'07-insurance.html',name:'Insurance',desc:'Underwriting, claims, risk assessment'},
+    {id:'08',file:'08-pharma.html',name:'Pharmaceutical',desc:'Drug development, FDA compliance'},
+    {id:'09',file:'09-risk-management.html',name:'Risk Management',desc:'Enterprise risk assessment with evidence'},
+    {id:'10',file:'10-compliance-officers.html',name:'Compliance Officers',desc:'Automated evidence, continuous monitoring'},
+    {id:'11',file:'11-it-operations.html',name:'IT & Technology',desc:'Architecture decisions, security posture'},
+    {id:'12',file:'12-strategy-teams.html',name:'Strategy Teams',desc:'Strategic planning, scenario simulation'},
+    {id:'13',file:'13-operations-leaders.html',name:'Operations Leaders',desc:'Supply chain, workflow optimization'},
+    {id:'14',file:'14-council-deliberation.html',name:'The Council',desc:'Multi-agent deliberation engine'},
+    {id:'15',file:'15-dcii-proof.html',name:'DCII Proof Infrastructure',desc:'Truth, Notary, Witness, Timestamp'},
+    {id:'16',file:'16-chronos-simulation.html',name:'CendiaChronos',desc:'Scenario simulation, divergent futures'},
+    {id:'17',file:'17-gateway-governance.html',name:'CendiaGateway',desc:'AI governance proxy, browser extensions'},
+    {id:'18',file:'18-zero-copy-data.html',name:'Zero-Copy Architecture',desc:'Query in place, no data movement'},
+    {id:'19',file:'19-salesforce-integration.html',name:'Salesforce Integration',desc:'CRM intelligence, pipeline analysis'},
+    {id:'20',file:'20-sap-integration.html',name:'SAP Integration',desc:'ERP intelligence via RFC/BAPI'},
+    {id:'21',file:'21-snowflake-integration.html',name:'Snowflake Integration',desc:'Data warehouse intelligence'},
+    {id:'22',file:'22-decision-automation.html',name:'Decision Automation',desc:'Workflow automation with audit trails'},
+    {id:'23',file:'23-ai-red-teaming.html',name:'AI Red-Teaming',desc:'Adversarial testing, CendiaApotheosis'},
+    {id:'24',file:'24-data-lineage.html',name:'Data Lineage & Governance',desc:'Source-to-decision provenance'},
+    {id:'25',file:'25-scenario-wargaming.html',name:'Scenario & Wargaming',desc:'Strategic simulation, War Room mode'}
+  ],
+  sales: [
+    {id:'01',file:'01-fortune-500.html',name:'Fortune 500 Enterprise',desc:'Large-scale sovereign deployment'},
+    {id:'02',file:'02-mid-market.html',name:'Mid-Market',desc:'Enterprise-grade at mid-market scale'},
+    {id:'03',file:'03-regulated-industries.html',name:'Regulated Industries',desc:'Cross-industry compliance focus'},
+    {id:'04',file:'04-banking.html',name:'Banking & Capital Markets',desc:'DORA, risk, audit-ready AI'},
+    {id:'05',file:'05-insurance.html',name:'Insurance Carriers',desc:'Underwriting, claims, compliance'},
+    {id:'06',file:'06-pharma.html',name:'Pharma & Life Sciences',desc:'FDA, clinical trials, GMP'},
+    {id:'07',file:'07-manufacturing.html',name:'Manufacturing & Supply Chain',desc:'Supply chain resilience, CapEx'},
+    {id:'08',file:'08-retail.html',name:'Retail & Consumer',desc:'Pricing, inventory, GDPR/CCPA'},
+    {id:'09',file:'09-compliance-risk.html',name:'Compliance Risk',desc:'Eliminate fines and audit failures'},
+    {id:'10',file:'10-decision-speed.html',name:'Decision Speed',desc:'From weeks to hours'},
+    {id:'11',file:'11-ai-trust.html',name:'AI Trust & Accountability',desc:'Explainable, auditable AI'},
+    {id:'12',file:'12-data-silos.html',name:'Data Silos',desc:'Zero-copy, query everywhere'},
+    {id:'13',file:'13-audit-readiness.html',name:'Audit Readiness',desc:'One-click evidence packets'},
+    {id:'14',file:'14-vendor-lock-in.html',name:'Vendor Lock-In',desc:'Open source, sovereign options'},
+    {id:'15',file:'15-ai-governance-gap.html',name:'AI Governance Gap',desc:'Shadow AI to governed AI'},
+    {id:'16',file:'16-vs-traditional-bi.html',name:'vs Traditional BI',desc:'Tableau, Power BI, Looker'},
+    {id:'17',file:'17-vs-cloud-ai.html',name:'vs Cloud AI',desc:'ChatGPT Enterprise, Azure AI, Bedrock'},
+    {id:'18',file:'18-vs-data-platforms.html',name:'vs Data Platforms',desc:'Palantir, Databricks, Snowflake'},
+    {id:'19',file:'19-vs-grc.html',name:'vs GRC Platforms',desc:'ServiceNow, Archer, OneTrust'},
+    {id:'20',file:'20-vs-chatbots.html',name:'vs AI Chatbots',desc:'ChatGPT, Copilot, Claude'},
+    {id:'21',file:'21-cloud-deploy.html',name:'Cloud (SaaS)',desc:'Fastest time to value, fully managed'},
+    {id:'22',file:'22-private-cloud.html',name:'Private Cloud',desc:'Your VPC, metadata-only access'},
+    {id:'23',file:'23-on-prem.html',name:'On-Premises',desc:'Your data center, zero external access'},
+    {id:'24',file:'24-air-gapped.html',name:'Air-Gapped',desc:'Physically isolated, hardware-rooted trust'},
+    {id:'25',file:'25-hybrid.html',name:'Hybrid Deployment',desc:'Mix modes per department'}
+  ]
+};
+
+const CAT_MAP = {investor:'investor',  'design-partner':'design-partner', sales:'sales'};
+const BASE_PATH = 'pitch-decks/';
+
+// ═══════════════════════════════════════════════
+// RENDER DECK CARDS
+// ═══════════════════════════════════════════════
+function renderDecks() {
+  const grids = {investor:'investor-grid','design-partner':'partner-grid',sales:'sales-grid'};
+  for (const [cat, gridId] of Object.entries(grids)) {
+    const grid = document.getElementById(gridId);
+    if (!grid) continue;
+    const decks = DECKS[cat];
+    grid.innerHTML = decks.map(d => {
+      const href = BASE_PATH + cat + '/' + d.file;
+      return `<div class="deck-card">
+        <div class="dc-info">
+          <div class="dc-num">${d.id}</div>
+          <div class="dc-name">${d.name}</div>
+          <div class="dc-desc">${d.desc}</div>
+        </div>
+        <div class="dc-btns">
+          <a class="btn-sm btn-view" href="${href}" target="_blank" title="View in browser">View</a>
+          <button class="btn-sm btn-pdf" onclick="downloadPDF('${cat}','${d.file}','${d.name}')" title="Open for Print/PDF">PDF</button>
+          <button class="btn-sm btn-pptx" onclick="downloadSinglePPTX('${cat}','${d.file}','${d.name}')" title="Generate PPTX">PPTX</button>
+        </div>
+      </div>`;
+    }).join('');
+  }
+}
+
+// ═══════════════════════════════════════════════
+// PDF DOWNLOAD — Opens deck with print dialog
+// ═══════════════════════════════════════════════
+function downloadPDF(cat, file, name) {
+  const url = BASE_PATH + cat + '/' + file;
+  const w = window.open(url, '_blank');
+  if (w) {
+    w.addEventListener('load', () => {
+      setTimeout(() => w.print(), 600);
+    });
+  }
+}
+
+function downloadAllPDF(cat) {
+  const decks = DECKS[cat];
+  if (!decks) return;
+  let msg = `This will open ${decks.length} tabs for printing. Each will show a print dialog.\n\nUse "Save as PDF" in your print dialog for each.\n\nContinue?`;
+  if (!confirm(msg)) return;
+  let delay = 0;
+  decks.forEach(d => {
+    setTimeout(() => downloadPDF(cat, d.file, d.name), delay);
+    delay += 1500;
+  });
+}
+
+// ═══════════════════════════════════════════════
+// PPTX GENERATION — Uses PptxGenJS
+// ═══════════════════════════════════════════════
+const PPTX_COLORS = {
+  bg: '0A0A0F', bg2: '12121A', bg3: '1A1A2E',
+  text: 'F0F0F5', text2: 'A0A0B8', text3: '6B6B80',
+  gold: 'D4A853', blue: '4A9EFF', green: '22C55E',
+  red: 'EF4444', purple: 'A855F7'
+};
+
+function showToast(title, text, pct) {
+  const t = document.getElementById('progressToast');
+  t.style.display = 'block';
+  document.getElementById('ptTitle').textContent = title;
+  document.getElementById('ptText').textContent = text;
+  document.getElementById('ptFill').style.width = pct + '%';
+}
+function hideToast() {
+  document.getElementById('progressToast').style.display = 'none';
+}
+
+async function fetchDeckContent(cat, file) {
+  const url = BASE_PATH + cat + '/' + file;
+  const resp = await fetch(url);
+  const html = await resp.text();
+  const parser = new DOMParser();
+  return parser.parseFromString(html, 'text/html');
+}
+
+function extractSlides(doc) {
+  const slides = [];
+  doc.querySelectorAll('.slide').forEach(slideEl => {
+    const slide = { texts: [], type: 'content' };
+
+    if (slideEl.classList.contains('slide--title')) slide.type = 'title';
+    else if (slideEl.classList.contains('slide--cta')) slide.type = 'cta';
+    else if (slideEl.classList.contains('slide--accent')) slide.type = 'accent';
+
+    const deckType = slideEl.querySelector('.deck-type');
+    if (deckType) slide.deckType = deckType.textContent.trim();
+
+    const slideNum = slideEl.querySelector('.slide-num');
+    if (slideNum) slide.slideNum = slideNum.textContent.trim();
+
+    const eyebrow = slideEl.querySelector('.eyebrow');
+    if (eyebrow) slide.eyebrow = eyebrow.textContent.trim();
+
+    const h1 = slideEl.querySelector('h1');
+    if (h1) slide.title = h1.textContent.trim();
+
+    const h2 = slideEl.querySelector('h2');
+    if (h2) slide.heading = h2.textContent.trim();
+
+    const subtitle = slideEl.querySelector('.subtitle');
+    if (subtitle) slide.subtitle = subtitle.textContent.trim();
+
+    const quote = slideEl.querySelector('.quote');
+    if (quote) slide.quote = quote.textContent.trim();
+
+    // Extract metrics
+    slide.metrics = [];
+    slideEl.querySelectorAll('.metric').forEach(m => {
+      const val = m.querySelector('.value');
+      const label = m.querySelector('.label');
+      if (val && label) slide.metrics.push({ value: val.textContent.trim(), label: label.textContent.trim() });
+    });
+
+    // Extract cards
+    slide.cards = [];
+    slideEl.querySelectorAll('.card:not(.metric)').forEach(c => {
+      const h = c.querySelector('h4');
+      const p = c.querySelector('p');
+      if (h) slide.cards.push({ title: h.textContent.trim(), text: p ? p.textContent.trim() : '' });
+    });
+
+    // Extract list items
+    slide.listItems = [];
+    slideEl.querySelectorAll('li').forEach(li => {
+      slide.listItems.push(li.textContent.trim());
+    });
+
+    // Extract table
+    slide.tableRows = [];
+    slideEl.querySelectorAll('tr').forEach(tr => {
+      const cells = [];
+      tr.querySelectorAll('th, td').forEach(c => cells.push(c.textContent.trim()));
+      if (cells.length) slide.tableRows.push(cells);
+    });
+
+    // Extract tags
+    slide.tags = [];
+    slideEl.querySelectorAll('.tag').forEach(t => slide.tags.push(t.textContent.trim()));
+
+    // Fallback body text
+    const paras = slideEl.querySelectorAll('.slide-content > p, .slide-content > div > p');
+    slide.bodyText = [];
+    paras.forEach(p => {
+      if (!p.classList.contains('subtitle') && !p.classList.contains('muted'))
+        slide.bodyText.push(p.textContent.trim());
+    });
+
+    slides.push(slide);
+  });
+  return slides;
+}
+
+function buildPptx(slides, deckName) {
+  const pptx = new PptxGenJS();
+  pptx.defineLayout({ name: 'WIDE', width: 13.33, height: 7.5 });
+  pptx.layout = 'WIDE';
+  pptx.author = 'Datacendia, LLC';
+  pptx.company = 'Datacendia';
+  pptx.title = deckName + ' — Datacendia';
+
+  slides.forEach((s, i) => {
+    const sl = pptx.addSlide();
+    sl.background = { color: PPTX_COLORS.bg };
+
+    // Header bar
+    sl.addShape(pptx.ShapeType.rect, { x: 0, y: 0, w: 13.33, h: 0.55, fill: { color: PPTX_COLORS.bg2 } });
+    sl.addText('DATACENDIA', { x: 0.6, y: 0.12, w: 2, h: 0.3, fontSize: 10, bold: true, color: PPTX_COLORS.gold, fontFace: 'Arial' });
+    if (s.deckType) sl.addText(s.deckType, { x: 5.5, y: 0.12, w: 3, h: 0.3, fontSize: 8, color: PPTX_COLORS.text3, fontFace: 'Arial', align: 'center' });
+    if (s.slideNum) sl.addText(s.slideNum, { x: 10.5, y: 0.12, w: 2, h: 0.3, fontSize: 8, color: PPTX_COLORS.text3, fontFace: 'Arial', align: 'right' });
+
+    // Footer
+    sl.addText([
+      { text: '\u00A9 2024\u20132026 Datacendia, LLC', options: { fontSize: 7, color: PPTX_COLORS.text3 } }
+    ], { x: 0.6, y: 7.0, w: 5, h: 0.3, fontFace: 'Arial' });
+    sl.addText('datacendia.com', { x: 8, y: 7.0, w: 4.5, h: 0.3, fontSize: 7, color: PPTX_COLORS.text3, fontFace: 'Arial', align: 'right' });
+
+    let yPos = 1.2;
+
+    // Eyebrow
+    if (s.eyebrow) {
+      sl.addText(s.eyebrow, { x: 0.8, y: yPos, w: 11, h: 0.35, fontSize: 10, bold: true, color: PPTX_COLORS.gold, fontFace: 'Arial', letterSpacing: 2 });
+      yPos += 0.45;
+    }
+
+    // Title slide
+    if (s.type === 'title') {
+      if (s.title) {
+        sl.addText(s.title, { x: 1, y: 2.5, w: 11.33, h: 1.2, fontSize: 44, bold: true, color: PPTX_COLORS.text, fontFace: 'Arial', align: 'center' });
+      }
+      if (s.subtitle) {
+        sl.addText(s.subtitle, { x: 2, y: 3.8, w: 9.33, h: 0.6, fontSize: 16, color: PPTX_COLORS.text2, fontFace: 'Arial', align: 'center' });
+      }
+      return;
+    }
+
+    // Quote slide
+    if (s.quote) {
+      sl.addShape(pptx.ShapeType.rect, { x: 1.5, y: 2, w: 0.06, h: 2.5, fill: { color: PPTX_COLORS.gold } });
+      sl.addText(s.quote, { x: 1.8, y: 2, w: 9.5, h: 2.5, fontSize: 20, italic: true, color: PPTX_COLORS.text2, fontFace: 'Arial', valign: 'middle' });
+      return;
+    }
+
+    // Heading
+    if (s.heading) {
+      sl.addText(s.heading, { x: 0.8, y: yPos, w: 11.5, h: 0.7, fontSize: 28, bold: true, color: PPTX_COLORS.text, fontFace: 'Arial' });
+      yPos += 0.9;
+    }
+
+    // Metrics
+    if (s.metrics.length > 0) {
+      const mw = Math.min(2.8, 11 / s.metrics.length);
+      s.metrics.forEach((m, mi) => {
+        const mx = 0.8 + mi * (mw + 0.3);
+        sl.addShape(pptx.ShapeType.rect, { x: mx, y: yPos, w: mw, h: 1.6, fill: { color: PPTX_COLORS.bg3 }, rectRadius: 0.1 });
+        sl.addText(m.value, { x: mx, y: yPos + 0.2, w: mw, h: 0.7, fontSize: 32, bold: true, color: PPTX_COLORS.gold, fontFace: 'Arial', align: 'center' });
+        sl.addText(m.label, { x: mx + 0.15, y: yPos + 0.95, w: mw - 0.3, h: 0.45, fontSize: 9, color: PPTX_COLORS.text2, fontFace: 'Arial', align: 'center' });
+      });
+      yPos += 2.0;
+    }
+
+    // Cards
+    if (s.cards.length > 0) {
+      const cw = Math.min(3.5, 11 / Math.min(s.cards.length, 3));
+      s.cards.forEach((c, ci) => {
+        const row = Math.floor(ci / 3);
+        const col = ci % 3;
+        const cx = 0.8 + col * (cw + 0.25);
+        const cy = yPos + row * 1.8;
+        sl.addShape(pptx.ShapeType.rect, { x: cx, y: cy, w: cw, h: 1.5, fill: { color: PPTX_COLORS.bg3 }, rectRadius: 0.1 });
+        sl.addText(c.title, { x: cx + 0.2, y: cy + 0.15, w: cw - 0.4, h: 0.35, fontSize: 12, bold: true, color: PPTX_COLORS.gold, fontFace: 'Arial' });
+        if (c.text) sl.addText(c.text, { x: cx + 0.2, y: cy + 0.55, w: cw - 0.4, h: 0.8, fontSize: 9, color: PPTX_COLORS.text2, fontFace: 'Arial', valign: 'top' });
+      });
+      yPos += Math.ceil(s.cards.length / 3) * 1.8 + 0.2;
+    }
+
+    // List items
+    if (s.listItems.length > 0 && s.metrics.length === 0 && s.cards.length === 0) {
+      const listText = s.listItems.map(li => ({ text: '\u2022 ' + li + '\n', options: { fontSize: 12, color: PPTX_COLORS.text2, fontFace: 'Arial', lineSpacing: 22 } }));
+      sl.addText(listText, { x: 0.8, y: yPos, w: 11, h: Math.min(4.5, s.listItems.length * 0.45), valign: 'top' });
+      yPos += s.listItems.length * 0.4;
+    }
+
+    // Table
+    if (s.tableRows.length > 0) {
+      const rows = s.tableRows.map((row, ri) =>
+        row.map(cell => ({
+          text: cell,
+          options: {
+            fontSize: ri === 0 ? 9 : 10,
+            bold: ri === 0,
+            color: ri === 0 ? PPTX_COLORS.gold : PPTX_COLORS.text2,
+            fontFace: 'Arial',
+            fill: { color: ri === 0 ? PPTX_COLORS.bg3 : (ri % 2 === 0 ? PPTX_COLORS.bg2 : PPTX_COLORS.bg) }
+          }
+        }))
+      );
+      sl.addTable(rows, {
+        x: 0.8, y: yPos, w: 11.5,
+        border: { type: 'solid', pt: 0.5, color: PPTX_COLORS.bg3 },
+        colW: Array(s.tableRows[0].length).fill(11.5 / s.tableRows[0].length),
+        rowH: Array(s.tableRows.length).fill(0.4)
+      });
+    }
+
+    // CTA slide tags
+    if (s.type === 'cta' && s.tags.length > 0) {
+      const tagText = s.tags.join('   |   ');
+      sl.addText(tagText, { x: 2, y: yPos + 0.5, w: 9.33, h: 0.5, fontSize: 14, bold: true, color: PPTX_COLORS.gold, fontFace: 'Arial', align: 'center' });
+    }
+
+    // Body text fallback
+    if (s.bodyText.length > 0 && s.metrics.length === 0 && s.cards.length === 0 && s.listItems.length === 0 && s.tableRows.length === 0) {
+      sl.addText(s.bodyText.join('\n\n'), { x: 0.8, y: yPos, w: 11, h: 3, fontSize: 12, color: PPTX_COLORS.text2, fontFace: 'Arial', valign: 'top' });
+    }
+  });
+
+  return pptx;
+}
+
+async function downloadSinglePPTX(cat, file, name) {
+  showToast('Generating PPTX', `Parsing ${name}...`, 20);
+  try {
+    const doc = await fetchDeckContent(cat, file);
+    showToast('Generating PPTX', 'Extracting slides...', 50);
+    const slides = extractSlides(doc);
+    showToast('Generating PPTX', 'Building presentation...', 75);
+    const pptx = buildPptx(slides, name);
+    showToast('Generating PPTX', 'Saving file...', 90);
+    const safeName = name.replace(/[^a-zA-Z0-9 -]/g, '').replace(/\s+/g, '-');
+    await pptx.writeFile({ fileName: `Datacendia-${safeName}.pptx` });
+    showToast('Done', `${name}.pptx downloaded`, 100);
+    setTimeout(hideToast, 2000);
+  } catch (err) {
+    showToast('Error', err.message, 0);
+    console.error(err);
+    setTimeout(hideToast, 4000);
+  }
+}
+
+async function downloadAllPPTX(cat) {
+  const decks = DECKS[cat];
+  if (!decks) return;
+  const catLabel = cat === 'design-partner' ? 'Design Partner' : cat.charAt(0).toUpperCase() + cat.slice(1);
+  if (!confirm(`Generate ${decks.length} PPTX files for ${catLabel} decks?\n\nEach file will be downloaded individually. This may take a moment.`)) return;
+
+  for (let i = 0; i < decks.length; i++) {
+    const d = decks[i];
+    const pct = Math.round(((i + 1) / decks.length) * 100);
+    showToast(`Generating ${catLabel} PPTX`, `${i + 1}/${decks.length}: ${d.name}`, pct);
+    try {
+      const doc = await fetchDeckContent(cat, d.file);
+      const slides = extractSlides(doc);
+      const pptx = buildPptx(slides, d.name);
+      const safeName = d.name.replace(/[^a-zA-Z0-9 -]/g, '').replace(/\s+/g, '-');
+      await pptx.writeFile({ fileName: `Datacendia-${catLabel}-${safeName}.pptx` });
+      await new Promise(r => setTimeout(r, 300));
+    } catch (err) {
+      console.error(`Failed: ${d.name}`, err);
+    }
+  }
+  showToast('Complete', `All ${decks.length} ${catLabel} PPTX files downloaded`, 100);
+  setTimeout(hideToast, 3000);
+}
+
+// ═══════════════════════════════════════════════
+// COPY TO CLIPBOARD
+// ═══════════════════════════════════════════════
+function copyBlock(blockId) {
+  const block = document.getElementById(blockId);
+  if (!block) return;
+  const btn = block.querySelector('.copy-btn');
+  const text = block.textContent.replace(/^Copy\s*/, '').trim();
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+// ═══════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', renderDecks);
+</script>
+
+<div class="footer">
+<img src="logo.png" alt="Datacendia" class="footer-logo">
+<p>Datacendia Non-Dilutive Funding Playbook — Internal Reference Document</p>
+<p style="margin-top:4px">Always verify current program terms, eligibility, and deadlines directly with each program.</p>
+<p style="margin-top:8px;color:var(--gold)">Total Stackable Potential: $975K – $3.1M+ at 0% dilution</p>
+</div>
+
+</body>
+</html>

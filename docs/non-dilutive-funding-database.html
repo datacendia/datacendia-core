@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>80+ Non-Dilutive Funding Sources — Zero Equity Required</title>
+<style>
+:root {
+  --bg: #0a0a0f;
+  --bg2: #12121a;
+  --bg3: #1a1a2e;
+  --border: #2a2a3e;
+  --text: #f0f0f5;
+  --text2: #a0a0b8;
+  --text3: #6b6b80;
+  --gold: #d4a853;
+  --gold-bg: rgba(212,168,83,0.08);
+  --green: #22c55e;
+  --green-bg: rgba(34,197,94,0.08);
+  --blue: #4a9eff;
+  --blue-bg: rgba(74,158,255,0.08);
+  --purple: #a855f7;
+  --purple-bg: rgba(168,85,247,0.08);
+  --cyan: #06b6d4;
+  --cyan-bg: rgba(6,182,212,0.08);
+  --red: #ef4444;
+  --red-bg: rgba(239,68,68,0.08);
+  --orange: #f97316;
+  --orange-bg: rgba(249,115,22,0.08);
+  --pink: #ec4899;
+  --pink-bg: rgba(236,72,153,0.08);
+  --teal: #14b8a6;
+  --teal-bg: rgba(20,184,166,0.08);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:var(--bg); color:var(--text); line-height:1.5; }
+
+.hero {
+  padding:60px 40px 40px;
+  max-width:1400px;
+  margin:0 auto;
+}
+.hero .eyebrow { font-size:13px; color:var(--gold); letter-spacing:2px; text-transform:uppercase; font-weight:600; margin-bottom:12px; }
+.hero h1 { font-size:42px; font-weight:800; line-height:1.15; margin-bottom:12px; }
+.hero .sub { font-size:18px; color:var(--text2); max-width:700px; margin-bottom:30px; }
+
+/* Stats bar */
+.stats-bar {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:12px;
+  margin-bottom:40px;
+}
+.stat-card {
+  background:var(--bg3);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:16px 20px;
+  text-align:center;
+}
+.stat-card .val { font-size:28px; font-weight:800; color:var(--gold); }
+.stat-card .lbl { font-size:12px; color:var(--text3); text-transform:uppercase; letter-spacing:1px; margin-top:2px; }
+
+/* Controls */
+.controls {
+  display:flex;
+  gap:12px;
+  margin-bottom:24px;
+  flex-wrap:wrap;
+  align-items:center;
+  padding:0 40px;
+  max-width:1400px;
+  margin:0 auto 24px;
+}
+.search-box {
+  flex:1;
+  min-width:240px;
+  padding:10px 16px;
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:8px;
+  color:var(--text);
+  font-size:14px;
+  outline:none;
+}
+.search-box:focus { border-color:var(--gold); }
+.search-box::placeholder { color:var(--text3); }
+
+.filter-btn {
+  padding:8px 16px;
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:8px;
+  color:var(--text2);
+  font-size:13px;
+  cursor:pointer;
+  transition:all .2s;
+  white-space:nowrap;
+}
+.filter-btn:hover { border-color:var(--gold); color:var(--text); }
+.filter-btn.active { background:var(--gold-bg); border-color:var(--gold); color:var(--gold); }
+
+/* Category sections */
+.container { max-width:1400px; margin:0 auto; padding:0 40px 60px; }
+
+.category-section {
+  margin-bottom:48px;
+}
+.cat-header {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:16px;
+  padding-bottom:12px;
+  border-bottom:2px solid var(--border);
+}
+.cat-header .cat-color {
+  width:4px;
+  height:28px;
+  border-radius:2px;
+}
+.cat-header h2 { font-size:20px; font-weight:700; }
+.cat-header .cat-count {
+  font-size:13px;
+  padding:2px 10px;
+  border-radius:12px;
+  font-weight:600;
+}
+.cat-header .cat-range {
+  font-size:13px;
+  color:var(--text3);
+  margin-left:auto;
+}
+
+/* Table */
+.fund-table {
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
+}
+.fund-table thead th {
+  text-align:left;
+  padding:10px 12px;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--text3);
+  font-weight:600;
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  background:var(--bg);
+}
+.fund-table tbody tr {
+  border-bottom:1px solid rgba(42,42,62,0.5);
+  transition:background .15s;
+}
+.fund-table tbody tr:hover { background:var(--bg2); }
+.fund-table td { padding:12px; vertical-align:top; }
+.fund-table .fund-name {
+  font-weight:600;
+  color:var(--text);
+  white-space:nowrap;
+}
+.fund-table .fund-name a {
+  color:inherit;
+  text-decoration:none;
+  border-bottom:1px dashed var(--border);
+}
+.fund-table .fund-name a:hover { color:var(--gold); border-color:var(--gold); }
+.fund-table .amount { color:var(--green); font-weight:600; white-space:nowrap; }
+.fund-table .desc { color:var(--text2); font-size:13px; max-width:400px; }
+.fund-table .best-for { font-size:12px; }
+.fund-table .region {
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  background:var(--bg3);
+  color:var(--text3);
+  white-space:nowrap;
+  display:inline-block;
+}
+
+/* Stage guide */
+.stage-guide {
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:32px;
+  margin-bottom:48px;
+}
+.stage-guide h3 { font-size:18px; margin-bottom:16px; color:var(--gold); }
+.stage-table { width:100%; border-collapse:collapse; }
+.stage-table th {
+  text-align:left;
+  padding:10px 16px;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--gold);
+  border-bottom:2px solid var(--gold);
+  font-weight:600;
+}
+.stage-table td { padding:10px 16px; border-bottom:1px solid var(--border); color:var(--text2); }
+.stage-table td:first-child { font-weight:600; color:var(--text); }
+.stage-table td:last-child { color:var(--green); font-weight:600; }
+
+/* Hidden rows */
+.fund-table tr.hidden { display:none; }
+.category-section.hidden { display:none; }
+
+/* Footer */
+.page-footer {
+  text-align:center;
+  padding:40px;
+  color:var(--text3);
+  font-size:12px;
+  border-top:1px solid var(--border);
+}
+
+@media(max-width:900px) {
+  .hero { padding:30px 20px 20px; }
+  .hero h1 { font-size:28px; }
+  .controls { padding:0 20px; }
+  .container { padding:0 20px 40px; }
+  .fund-table { font-size:12px; }
+  .fund-table .desc { max-width:200px; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="eyebrow">Non-Dilutive Capital Database</div>
+  <h1>80+ Ways to Fund Your Startup<br>Without Giving Up a Single Share</h1>
+  <p class="sub">Grants, revenue-based financing, prizes, government programs, venture debt, cloud credits, and corporate programs. Zero equity required.</p>
+
+  <div class="stats-bar">
+    <div class="stat-card"><div class="val">80+</div><div class="lbl">Funding Sources</div></div>
+    <div class="stat-card"><div class="val">9</div><div class="lbl">Categories</div></div>
+    <div class="stat-card"><div class="val">$5K</div><div class="lbl">Minimum Entry</div></div>
+    <div class="stat-card"><div class="val">$100M</div><div class="lbl">Largest Single Award</div></div>
+    <div class="stat-card"><div class="val">$800K+</div><div class="lbl">Cloud Credits Alone</div></div>
+    <div class="stat-card"><div class="val">0%</div><div class="lbl">Equity Required</div></div>
+  </div>
+
+  <!-- Stage Guide -->
+  <div class="stage-guide">
+    <h3>Which funding fits your stage?</h3>
+    <table class="stage-table">
+      <thead><tr><th>Your Stage</th><th>What to Look For</th><th>Typical Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Pre-revenue, R&D phase</td><td>Government grants, prizes, fellowships</td><td>$50K–$1.5M</td></tr>
+        <tr><td>Early revenue ($5K–$50K MRR)</td><td>Revenue-based financing + cloud credits</td><td>$50K–$500K</td></tr>
+        <tr><td>Growth ($50K+ MRR)</td><td>RBF + venture debt</td><td>$250K–$5M</td></tr>
+        <tr><td>VC-backed, extending runway</td><td>Venture debt + RBF as bridge</td><td>$1M–$30M</td></tr>
+        <tr><td>Social enterprise / impact</td><td>Philanthropic grants and fellowships</td><td>$60K–$1M</td></tr>
+        <tr><td>Climate / deep tech</td><td>Climate funds + government grants (stack them)</td><td>$250K–$2.5M</td></tr>
+        <tr><td>Student / young founder</td><td>Fellowships, micro-grants, competitions</td><td>$1K–$100K</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="controls">
+  <input type="text" class="search-box" id="searchBox" placeholder="Search by name, type, region, or description...">
+  <button class="filter-btn active" data-cat="all">All (80+)</button>
+  <button class="filter-btn" data-cat="rbf">RBF (15)</button>
+  <button class="filter-btn" data-cat="gov">Gov Grants (11)</button>
+  <button class="filter-btn" data-cat="corp">Corporate (14)</button>
+  <button class="filter-btn" data-cat="prize">Prizes (10)</button>
+  <button class="filter-btn" data-cat="phil">Philanthropic (10)</button>
+  <button class="filter-btn" data-cat="climate">Climate (8)</button>
+  <button class="filter-btn" data-cat="debt">Venture Debt (6)</button>
+  <button class="filter-btn" data-cat="alt">Alternative (4)</button>
+  <button class="filter-btn" data-cat="adv">Advisory (2)</button>
+</div>
+
+<div class="container">
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 1. REVENUE-BASED FINANCING (15) -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="category-section" data-cat="rbf">
+  <div class="cat-header">
+    <div class="cat-color" style="background:var(--green)"></div>
+    <h2>Revenue-Based Financing</h2>
+    <span class="cat-count" style="background:var(--green-bg);color:var(--green)">15 programs</span>
+    <span class="cat-range">$5K – $5M</span>
+  </div>
+  <table class="fund-table">
+    <thead><tr><th>Fund / Program</th><th>Amount</th><th>Description</th><th>Best For</th><th>Region</th></tr></thead>
+    <tbody>
+      <tr><td class="fund-name"><a href="https://clear.co" target="_blank">Clearco</a></td><td class="amount">$10K–$500K</td><td class="desc">Non-dilutive growth capital for e-commerce and SaaS. $10B+ disbursed. Pioneer of the RBF category.</td><td class="best-for">E-commerce, SaaS</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://pipe.com" target="_blank">Pipe</a></td><td class="amount">$10K–$5M</td><td class="desc">Marketplace that converts recurring revenue contracts into upfront capital. Trade your MRR for cash.</td><td class="best-for">SaaS, Recurring Revenue</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://lightercapital.com" target="_blank">Lighter Capital</a></td><td class="amount">$50K–$4M</td><td class="desc">Flexible RBF for tech startups. One of the longest-running RBF providers. 1,000+ companies funded.</td><td class="best-for">SaaS, Tech</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://capchase.com" target="_blank">Capchase</a></td><td class="amount">$10K–$500K</td><td class="desc">Rapid revenue advances for SaaS startups within 48–72 hours. One of the fastest turnarounds in the space.</td><td class="best-for">SaaS</td><td><span class="region">US, EU</span></td></tr>
+      <tr><td class="fund-name"><a href="https://arc.tech" target="_blank">Arc Technologies</a></td><td class="amount">$10K–$500K</td><td class="desc">Non-dilutive capital for venture-backed SaaS startups. Treasury and payments platform.</td><td class="best-for">VC-backed SaaS</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://founderpath.com" target="_blank">Founderpath</a></td><td class="amount">$20K–$5M+</td><td class="desc">RBF for SaaS with $5K+ MRR. $200M+ deployed to 500+ founders. Built for bootstrapped SaaS.</td><td class="best-for">Bootstrap SaaS</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://uncapped.com" target="_blank">Uncapped</a></td><td class="amount">$10K–$5M</td><td class="desc">UK-based RBF for online businesses and marketing capital. Fast approval process.</td><td class="best-for">E-commerce, SaaS</td><td><span class="region">US, EU, UK</span></td></tr>
+      <tr><td class="fund-name"><a href="https://outfund.com" target="_blank">Outfund</a></td><td class="amount">$10K–$500K</td><td class="desc">UK-based RBF for e-commerce, SaaS, and subscription businesses.</td><td class="best-for">E-commerce, Subscriptions</td><td><span class="region">UK</span></td></tr>
+      <tr><td class="fund-name"><a href="https://revupcapital.com" target="_blank">RevUp Capital</a></td><td class="amount">$500K–$3M</td><td class="desc">Non-dilutive capital for companies with $500K–$10M in annual revenue.</td><td class="best-for">Growth Stage</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://flowcap.co" target="_blank">Flow Capital</a></td><td class="amount">$500K–$5M</td><td class="desc">RBF for high-growth SaaS and e-commerce companies. Flexible terms.</td><td class="best-for">SaaS, E-commerce</td><td><span class="region">US, Canada</span></td></tr>
+      <tr><td class="fund-name"><a href="https://levenue.com" target="_blank">Levenue</a></td><td class="amount">$50K–$500K</td><td class="desc">European RBF for SaaS and subscription companies. EU-focused.</td><td class="best-for">EU SaaS</td><td><span class="region">EU</span></td></tr>
+      <tr><td class="fund-name"><a href="https://recurclub.com" target="_blank">Recur Club</a></td><td class="amount">₹10L–₹50Cr</td><td class="desc">India's largest debt marketplace for startups. Up to $6M equivalent of ARR.</td><td class="best-for">India Startups</td><td><span class="region">India</span></td></tr>
+      <tr><td class="fund-name"><a href="https://gilion.com" target="_blank">Gilion</a></td><td class="amount">$100K–$5M</td><td class="desc">Data-driven growth loans for tech companies. Sweden-based, expanding EU presence.</td><td class="best-for">EU Tech, SaaS</td><td><span class="region">EU, Nordics</span></td></tr>
+      <tr><td class="fund-name"><a href="https://efficientcapitallabs.com" target="_blank">Efficient Capital Labs</a></td><td class="amount">$50K–$3M</td><td class="desc">RBF for SaaS companies with predictable recurring revenue streams.</td><td class="best-for">SaaS</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://re-cap.com" target="_blank">Re:cap</a></td><td class="amount">$100K–$2M</td><td class="desc">German RBF platform originally built for B2B SaaS companies.</td><td class="best-for">EU B2B SaaS</td><td><span class="region">Germany, EU</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 2. GOVERNMENT GRANTS (11) -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="category-section" data-cat="gov">
+  <div class="cat-header">
+    <div class="cat-color" style="background:var(--blue)"></div>
+    <h2>Government Grants</h2>
+    <span class="cat-count" style="background:var(--blue-bg);color:var(--blue)">11 programs</span>
+    <span class="cat-range">$50K – $20M • US, EU, UK, Canada, India</span>
+  </div>
+  <table class="fund-table">
+    <thead><tr><th>Fund / Program</th><th>Amount</th><th>Description</th><th>Best For</th><th>Region</th></tr></thead>
+    <tbody>
+      <tr><td class="fund-name"><a href="https://www.sbir.gov" target="_blank">SBIR Phase I</a></td><td class="amount">$50K–$275K</td><td class="desc">Small Business Innovation Research. Federal grants across 11 agencies (NSF, NIH, DoD, DOE, NASA, etc.). 15–20% approval rate. Zero repayment, zero equity.</td><td class="best-for">Tech, R&D Startups</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.sbir.gov" target="_blank">SBIR Phase II</a></td><td class="amount">$500K–$1.5M</td><td class="desc">Follow-on to Phase I for full R&D development. Requires successful Phase I completion. Larger grants, same zero-equity terms.</td><td class="best-for">Phase I Graduates</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.sbir.gov/about/about-sttr" target="_blank">STTR (Phase I & II)</a></td><td class="amount">$50K–$1.5M</td><td class="desc">Small Business Technology Transfer. Requires university/research institution partnership. Same agencies as SBIR.</td><td class="best-for">University-Partnered R&D</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://icorps.nsf.gov" target="_blank">NSF I-Corps</a></td><td class="amount">$50K</td><td class="desc">National Science Foundation customer discovery grant. 7-week immersive program. Gateway to NSF SBIR.</td><td class="best-for">STEM Startups</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en" target="_blank">EIC Accelerator</a></td><td class="amount">Up to €2.5M grant</td><td class="desc">European Innovation Council's flagship program. Grants up to €2.5M (no strings attached) plus optional €15M equity. The EU's biggest startup grant.</td><td class="best-for">Deep Tech, Innovation</td><td><span class="region">EU</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.ukri.org/councils/innovate-uk/" target="_blank">Innovate UK Smart Grants</a></td><td class="amount">Up to £500K</td><td class="desc">UK's innovation agency. Rolling grants for game-changing innovations. Multiple rounds per year.</td><td class="best-for">UK Startups</td><td><span class="region">UK</span></td></tr>
+      <tr><td class="fund-name"><a href="https://nrc.canada.ca/en/support-technology-innovation/about-nrc-industrial-research-assistance-program" target="_blank">NRC IRAP</a></td><td class="amount">Up to CAD $10M</td><td class="desc">Canada's flagship innovation program. Advisory services plus funding for tech SMEs. 70+ years running.</td><td class="best-for">Canadian Tech SMEs</td><td><span class="region">Canada</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.startupindia.gov.in/content/sih/en/government-schemes/seed-fund-scheme.html" target="_blank">Startup India Seed Fund</a></td><td class="amount">Up to ₹50 Lakhs</td><td class="desc">Indian government seed fund for startups. Proof of concept, prototype development, and market entry.</td><td class="best-for">Indian Startups</td><td><span class="region">India</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.darpa.mil/work-with-us/for-small-businesses" target="_blank">DARPA SBIR/STTR</a></td><td class="amount">$50K–$2M+</td><td class="desc">Defense Advanced Research Projects Agency. High-risk, high-reward R&D. Some of the largest SBIR awards available.</td><td class="best-for">Defense Tech, Deep Tech</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://seed.nih.gov/small-business-funding" target="_blank">NIH SBIR/STTR</a></td><td class="amount">$50K–$2M</td><td class="desc">National Institutes of Health. Biotech, health tech, and life science innovation grants.</td><td class="best-for">Health, Biotech</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en" target="_blank">Horizon Europe EIC Pathfinder</a></td><td class="amount">Up to €3M–€4M</td><td class="desc">EU's largest research and innovation program. Funding for visionary and breakthrough technologies at early TRL.</td><td class="best-for">Deep Tech Research</td><td><span class="region">EU</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 3. CORPORATE PROGRAMS & CLOUD CREDITS (14) -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="category-section" data-cat="corp">
+  <div class="cat-header">
+    <div class="cat-color" style="background:var(--purple)"></div>
+    <h2>Corporate Programs & Cloud Credits</h2>
+    <span class="cat-count" style="background:var(--purple-bg);color:var(--purple)">14 programs</span>
+    <span class="cat-range">Up to $350K per provider</span>
+  </div>
+  <table class="fund-table">
+    <thead><tr><th>Fund / Program</th><th>Amount</th><th>Description</th><th>Best For</th><th>Region</th></tr></thead>
+    <tbody>
+      <tr><td class="fund-name"><a href="https://aws.amazon.com/activate/" target="_blank">AWS Activate</a></td><td class="amount">Up to $100K credits</td><td class="desc">Amazon Web Services cloud credits for startups. Multiple tiers based on stage and accelerator affiliation. Up to $100K for portfolio companies.</td><td class="best-for">All Tech Startups</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://cloud.google.com/startup" target="_blank">Google for Startups Cloud</a></td><td class="amount">Up to $200K credits</td><td class="desc">Google Cloud credits plus access to technical support, training, and Google's startup network. Up to $200K over 2 years.</td><td class="best-for">All Tech Startups</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.microsoft.com/en-us/startups" target="_blank">Microsoft for Startups (Founders Hub)</a></td><td class="amount">Up to $150K credits</td><td class="desc">Azure cloud credits, GitHub Enterprise, Visual Studio, OpenAI API credits. Up to $150K across multiple stages.</td><td class="best-for">All Tech Startups</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.nvidia.com/en-us/startups/" target="_blank">NVIDIA Inception</a></td><td class="amount">GPU credits + support</td><td class="desc">GPU cloud credits, DGX access, technical workshops, co-marketing. Essential for AI/ML startups.</td><td class="best-for">AI/ML Startups</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://developer.ibm.com/startups/" target="_blank">IBM Startup Program</a></td><td class="amount">Up to $120K credits</td><td class="desc">IBM Cloud credits, Watson AI access, technical mentorship. Enterprise-focused startup support.</td><td class="best-for">Enterprise Tech</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.oracle.com/startup/" target="_blank">Oracle for Startups</a></td><td class="amount">Up to $500K credits</td><td class="desc">Oracle Cloud credits, technical support, GTM assistance. One of the largest cloud credit programs available.</td><td class="best-for">Enterprise, SaaS</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://stripe.com/atlas" target="_blank">Stripe Atlas</a></td><td class="amount">$5K+ in partner credits</td><td class="desc">Incorporation package plus bundled credits from AWS, MongoDB, and other partners. One-stop company formation.</td><td class="best-for">New Startups</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.hubspot.com/startups" target="_blank">HubSpot for Startups</a></td><td class="amount">Up to 90% discount</td><td class="desc">CRM, marketing, sales tools at up to 90% off for year one. Graduated discounts for years two and three.</td><td class="best-for">SaaS, B2B</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.notion.so/startups" target="_blank">Notion for Startups</a></td><td class="amount">$1K+ credits</td><td class="desc">Up to $1,000 in Notion Plus credits. AI workspace tools for team collaboration and documentation.</td><td class="best-for">All Startups</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://segment.com/startup-program/" target="_blank">Segment Startup Program</a></td><td class="amount">$25K credits</td><td class="desc">Customer data platform credits. Analytics infrastructure for growing startups.</td><td class="best-for">Growth Stage</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.brex.com" target="_blank">Brex</a></td><td class="amount">Up to $150K credits</td><td class="desc">Corporate card and financial tools plus $150K+ in partner credits from AWS, Google Cloud, and others.</td><td class="best-for">VC-backed Startups</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.mongodb.com/startups" target="_blank">MongoDB for Startups</a></td><td class="amount">$5K Atlas credits</td><td class="desc">MongoDB Atlas credits, technical advisory, co-marketing opportunities.</td><td class="best-for">Tech Startups</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.twilio.com/startups" target="_blank">Twilio Startups</a></td><td class="amount">$5K credits</td><td class="desc">Communications API credits for SMS, voice, video, email. Great for product-led growth.</td><td class="best-for">Tech Startups</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://airtable.com/startup-program" target="_blank">Airtable for Startups</a></td><td class="amount">$2K credits</td><td class="desc">Collaboration platform credits for team operations and project management.</td><td class="best-for">All Startups</td><td><span class="region">Global</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 4. PRIZES & COMPETITIONS (10) -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="category-section" data-cat="prize">
+  <div class="cat-header">
+    <div class="cat-color" style="background:var(--orange)"></div>
+    <h2>Prizes & Competitions</h2>
+    <span class="cat-count" style="background:var(--orange-bg);color:var(--orange)">10 programs</span>
+    <span class="cat-range">$1K – $100M</span>
+  </div>
+  <table class="fund-table">
+    <thead><tr><th>Fund / Program</th><th>Amount</th><th>Description</th><th>Best For</th><th>Region</th></tr></thead>
+    <tbody>
+      <tr><td class="fund-name"><a href="https://www.xprize.org" target="_blank">XPRIZE</a></td><td class="amount">$1M–$100M</td><td class="desc">Grand challenges to solve climate, health, space, education. The largest innovation prizes in the world.</td><td class="best-for">Tech, Impact</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.hultprize.org" target="_blank">Hult Prize</a></td><td class="amount">$1M</td><td class="desc">Student social entrepreneurship competition. $1M grand prize. One of the largest student competitions globally.</td><td class="best-for">Students</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://solve.mit.edu" target="_blank">MIT Solve</a></td><td class="amount">$10K–$300K+</td><td class="desc">$10K–$300K+ per Solver. Strong for impact-driven founders. Access to MIT network and resources.</td><td class="best-for">Impact, Tech</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.startupworldcup.io" target="_blank">Startup World Cup</a></td><td class="amount">$1M</td><td class="desc">Global competition with $1M grand prize. Finals in Silicon Valley. Regional rounds worldwide.</td><td class="best-for">All Startups</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://techcrunch.com/startup-battlefield" target="_blank">TechCrunch Disrupt Battlefield</a></td><td class="amount">$100K</td><td class="desc">Equity-free prize at TechCrunch annual conference. One of the highest-profile startup competitions in tech.</td><td class="best-for">Tech Startups</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.slush.org" target="_blank">Slush 100</a></td><td class="amount">Investor meetings</td><td class="desc">Europe's largest startup competition at Slush conference. 100+ investor meetings as prize. Massive visibility.</td><td class="best-for">EU Startups</td><td><span class="region">EU, Finland</span></td></tr>
+      <tr><td class="fund-name"><a href="https://globalstartupawards.com" target="_blank">Global Startup Awards</a></td><td class="amount">Recognition + prizes</td><td class="desc">World's largest independent startup competition running in 80+ countries. Major visibility and networking.</td><td class="best-for">All Startups</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.forbes.com/30-under-30" target="_blank">Forbes 30U30 Change the World</a></td><td class="amount">$100K+</td><td class="desc">Social entrepreneurs under 30. $100K grand prize for top performer. Massive media exposure.</td><td class="best-for">Social Ent. &lt;30</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://thielfellowship.org" target="_blank">Thiel Fellowship</a></td><td class="amount">$100K</td><td class="desc">$100K grant to drop out of college and build. Age &lt;22. Alumni include Ethereum founder (Vitalik Buterin), Figma, Loom, Scale AI.</td><td class="best-for">Young Founders &lt;22</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.1517fund.com" target="_blank">1517 Fund Medici Project</a></td><td class="amount">$15K–$100K</td><td class="desc">Micro-grants for young builders and dropouts working on hard problems. Named after year of Protestant Reformation.</td><td class="best-for">Young Founders</td><td><span class="region">US</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 5. PHILANTHROPIC & IMPACT (10) -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="category-section" data-cat="phil">
+  <div class="cat-header">
+    <div class="cat-color" style="background:var(--pink)"></div>
+    <h2>Philanthropic & Impact</h2>
+    <span class="cat-count" style="background:var(--pink-bg);color:var(--pink)">10 programs</span>
+    <span class="cat-range">$60K – $100M</span>
+  </div>
+  <table class="fund-table">
+    <thead><tr><th>Fund / Program</th><th>Amount</th><th>Description</th><th>Best For</th><th>Region</th></tr></thead>
+    <tbody>
+      <tr><td class="fund-name"><a href="https://schmidtfutures.com" target="_blank">Schmidt Futures</a></td><td class="amount">Variable</td><td class="desc">Eric Schmidt's initiative backing exceptional people with transformative ideas. Science and technology focus.</td><td class="best-for">Science, Tech</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://chanzuckerberg.com" target="_blank">Chan Zuckerberg Initiative</a></td><td class="amount">Variable</td><td class="desc">Science, education, and community grants for breakthrough research. Significant commitment to open source.</td><td class="best-for">Science, Education</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://shellfoundation.org" target="_blank">Shell Foundation</a></td><td class="amount">$100K–$1M</td><td class="desc">3-year funding for clean energy and social enterprise models. Long-term partnership model.</td><td class="best-for">Social Enterprise</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://echoinggreen.org" target="_blank">Echoing Green</a></td><td class="amount">$80K/yr × 2 years</td><td class="desc">2-year fellowship with annual funding for social entrepreneurs. Highly competitive, high prestige.</td><td class="best-for">Social Enterprise</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.ashoka.org" target="_blank">Ashoka Fellowship</a></td><td class="amount">$50K–$80K+</td><td class="desc">Support for independent social entrepreneurs worldwide. One of the oldest and most reputable fellowships. 3,500+ fellows.</td><td class="best-for">Social Enterprise</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://omidyar.com" target="_blank">Omidyar Network</a></td><td class="amount">Variable</td><td class="desc">Impact investing in tech companies and social enterprises. Founded by eBay founder Pierre Omidyar.</td><td class="best-for">Impact Tech</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.macfound.org/programs/100change" target="_blank">MacArthur 100&Change</a></td><td class="amount">$100M</td><td class="desc">Single $100M grant for one solution to a critical problem. The largest single philanthropic prize in existence.</td><td class="best-for">Systemic Change</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.1517fund.com" target="_blank">1517 Fund</a></td><td class="amount">$50K–$500K</td><td class="desc">Backs dropouts and college dissidents building the future. Named after the year of Martin Luther's theses.</td><td class="best-for">Dropouts, Deep Tech</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://shuttleworthfoundation.org" target="_blank">Shuttleworth Foundation</a></td><td class="amount">$200K–$1.275M/yr</td><td class="desc">Fellowship with $200K+ per year for open source innovation. Renewable for up to 3 years.</td><td class="best-for">Open Source</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.dfrkaplan.org" target="_blank">Draper Richards Kaplan Foundation</a></td><td class="amount">$200K over 3 yrs</td><td class="desc">$200K over 3-year plus board seat, Draper network access, coaching for social entrepreneurs.</td><td class="best-for">Social Enterprise</td><td><span class="region">Global</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 6. CLIMATE & SUSTAINABILITY FUNDS (8) -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="category-section" data-cat="climate">
+  <div class="cat-header">
+    <div class="cat-color" style="background:var(--teal)"></div>
+    <h2>Climate & Sustainability Funds</h2>
+    <span class="cat-count" style="background:var(--teal-bg);color:var(--teal)">8 programs</span>
+    <span class="cat-range">$250K – $10M</span>
+  </div>
+  <table class="fund-table">
+    <thead><tr><th>Fund / Program</th><th>Amount</th><th>Description</th><th>Best For</th><th>Region</th></tr></thead>
+    <tbody>
+      <tr><td class="fund-name"><a href="https://www.breakthroughenergy.org/our-work/fellows/" target="_blank">Breakthrough Energy Fellows</a></td><td class="amount">Up to $500K</td><td class="desc">Bill Gates-backed fellowship for climate tech researchers and founders. Multi-year support with mentoring.</td><td class="best-for">Climate Tech</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://elementalexcelerator.com" target="_blank">Elemental Excelerator</a></td><td class="amount">$250K–$1M</td><td class="desc">Climate tech deployment fund. Invests in companies deploying solutions in communities, especially APAC.</td><td class="best-for">Climate, Energy</td><td><span class="region">US, Asia-Pacific</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.climate-kic.org" target="_blank">EIT Climate-KIC</a></td><td class="amount">Up to €2M</td><td class="desc">EU's largest climate innovation initiative. Accelerator, grants, and ecosystem support for climate startups.</td><td class="best-for">Climate Tech</td><td><span class="region">EU</span></td></tr>
+      <tr><td class="fund-name"><a href="https://arpa-e.energy.gov" target="_blank">ARPA-E (DOE)</a></td><td class="amount">$500K–$10M</td><td class="desc">Advanced Research Projects Agency — Energy. High-risk, high-reward energy technology R&D. Some of the largest non-dilutive awards for climate tech.</td><td class="best-for">Energy, Deep Tech</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.newenergynexus.com" target="_blank">New Energy Nexus</a></td><td class="amount">Variable</td><td class="desc">Climate tech accelerator and fund network across 14 countries. Clean energy, mobility, and climate solutions.</td><td class="best-for">Clean Energy</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.shell.com/energy-and-innovation/new-energies/shell-gamechanger.html" target="_blank">Shell GameChanger</a></td><td class="amount">Up to $500K</td><td class="desc">Early-stage energy innovation. Proof-of-concept funding for unproven energy ideas. Non-dilutive.</td><td class="best-for">Energy Innovation</td><td><span class="region">Global</span></td></tr>
+      <tr><td class="fund-name"><a href="https://laincubator.org" target="_blank">LACI (LA Cleantech Incubator)</a></td><td class="amount">Variable</td><td class="desc">Los Angeles-based cleantech incubator. Programs, grants, and pilot opportunities for climate tech.</td><td class="best-for">Cleantech</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.greentown.org" target="_blank">Greentown Labs</a></td><td class="amount">Variable + lab space</td><td class="desc">Largest climatetech startup incubator in North America. Lab space, prototyping, pilot partnerships. Cohort programs with grant funding.</td><td class="best-for">Hardware Climatetech</td><td><span class="region">US</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 7. VENTURE DEBT & LOANS (6) -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="category-section" data-cat="debt">
+  <div class="cat-header">
+    <div class="cat-color" style="background:var(--cyan)"></div>
+    <h2>Venture Debt & Loans</h2>
+    <span class="cat-count" style="background:var(--cyan-bg);color:var(--cyan)">6 programs</span>
+    <span class="cat-range">$5K – $50M+</span>
+  </div>
+  <table class="fund-table">
+    <thead><tr><th>Fund / Program</th><th>Amount</th><th>Description</th><th>Best For</th><th>Region</th></tr></thead>
+    <tbody>
+      <tr><td class="fund-name"><a href="https://westerntech.com" target="_blank">Western Technology Investment</a></td><td class="amount">$2M–$15M</td><td class="desc">Venture lending for growth-stage tech companies. Revenue-based repayment structure. 40+ years of tech lending.</td><td class="best-for">VC-backed Tech</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.svb.com" target="_blank">Silicon Valley Bank (SVB)</a></td><td class="amount">$1M–$50M+</td><td class="desc">Venture debt lines of credit for VC-backed startups. The largest venture debt provider. Now part of First Citizens.</td><td class="best-for">VC-backed Startups</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://trinitycp.com" target="_blank">Trinity Capital</a></td><td class="amount">$2M–$30M</td><td class="desc">Growth capital and equipment financing for venture-backed tech companies. Public company (TRIN).</td><td class="best-for">Growth-Stage Tech</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.foundersfirstcdc.org" target="_blank">Founders First Capital Partners</a></td><td class="amount">$50K–$500K</td><td class="desc">Revenue-based loans focused on diverse and underrepresented founders. Community Development Financial Institution.</td><td class="best-for">Diverse Founders</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.sba.gov/funding-programs/loans/microloans" target="_blank">SBA Microloans</a></td><td class="amount">$5K–$50K</td><td class="desc">US Small Business Administration microloans through community lenders. 6-year max term, 8–13% rates.</td><td class="best-for">Early-Stage, Underserved</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.keli.co" target="_blank">Keli (Startup Loan)</a></td><td class="amount">$10K–$250K</td><td class="desc">Revenue-based startup loans for SaaS and subscription businesses. Automated underwriting based on metrics.</td><td class="best-for">SaaS, Subscriptions</td><td><span class="region">US, EU</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 8. ALTERNATIVE NON-DILUTIVE (4) -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="category-section" data-cat="alt">
+  <div class="cat-header">
+    <div class="cat-color" style="background:var(--gold)"></div>
+    <h2>Alternative Non-Dilutive</h2>
+    <span class="cat-count" style="background:var(--gold-bg);color:var(--gold)">4 programs</span>
+    <span class="cat-range">$100K – $2M</span>
+  </div>
+  <table class="fund-table">
+    <thead><tr><th>Fund / Program</th><th>Amount</th><th>Description</th><th>Best For</th><th>Region</th></tr></thead>
+    <tbody>
+      <tr><td class="fund-name"><a href="https://calmfund.com" target="_blank">Calm Company Fund</a></td><td class="amount">$100K–$400K</td><td class="desc">Invests in sustainable, profitable founders. Evergreen-based investment model. Built for indie and bootstrapped founders.</td><td class="best-for">Bootstrappers</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://tinyseed.com" target="_blank">TinySeed</a></td><td class="amount">$120K–$1M</td><td class="desc">Remote accelerator for SaaS founders. Mentorship + capital specifically for bootstrapped SaaS. Batch model.</td><td class="best-for">SaaS Founders</td><td><span class="region">US, Remote</span></td></tr>
+      <tr><td class="fund-name"><a href="https://saas-capital.com" target="_blank">SaaS Capital</a></td><td class="amount">$250K–$2M</td><td class="desc">Alternative financing for bootstrapped SaaS companies. Debt-like structure, no board seat, no dilution.</td><td class="best-for">SaaS Companies</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://indie.vc" target="_blank">Indie.vc</a></td><td class="amount">Variable</td><td class="desc">Convertible income arrangement. Payback from revenue. Converts to equity only if/when a priced round is raised.</td><td class="best-for">Indie Founders</td><td><span class="region">US</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 9. ADVISORY & MATCHING (2) -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="category-section" data-cat="adv">
+  <div class="cat-header">
+    <div class="cat-color" style="background:var(--red)"></div>
+    <h2>Advisory & Matching</h2>
+    <span class="cat-count" style="background:var(--red-bg);color:var(--red)">2 programs</span>
+    <span class="cat-range">Variable</span>
+  </div>
+  <table class="fund-table">
+    <thead><tr><th>Fund / Program</th><th>Amount</th><th>Description</th><th>Best For</th><th>Region</th></tr></thead>
+    <tbody>
+      <tr><td class="fund-name"><a href="https://www.opengrants.io" target="_blank">OpenGrants</a></td><td class="amount">Variable</td><td class="desc">Grant matching and advisory platform. AI-powered grant discovery and application support. Matches startups to relevant government grants.</td><td class="best-for">All Startups</td><td><span class="region">US</span></td></tr>
+      <tr><td class="fund-name"><a href="https://www.grantify.io" target="_blank">Grantify</a></td><td class="amount">Variable</td><td class="desc">AI-powered grant writing and discovery service. Helps companies find and apply for R&D tax credits and innovation grants.</td><td class="best-for">All Startups</td><td><span class="region">UK, EU</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div><!-- .container -->
+
+<div class="page-footer">
+  <p>Data compiled from publicly available sources including the "80+ Ways to Fund Your Startup" database by Ruben Dominguez (Mar 2025).</p>
+  <p style="margin-top:4px;">Always verify current terms, eligibility, and availability directly with each program before applying.</p>
+</div>
+
+<script>
+// Search
+const searchBox = document.getElementById('searchBox');
+const allRows = document.querySelectorAll('.fund-table tbody tr');
+const allSections = document.querySelectorAll('.category-section');
+const filterBtns = document.querySelectorAll('.filter-btn');
+let activeFilter = 'all';
+
+searchBox.addEventListener('input', applyFilters);
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.cat;
+    applyFilters();
+  });
+});
+
+function applyFilters() {
+  const q = searchBox.value.toLowerCase().trim();
+
+  allSections.forEach(section => {
+    const cat = section.dataset.cat;
+    if (activeFilter !== 'all' && cat !== activeFilter) {
+      section.classList.add('hidden');
+      return;
+    }
+    section.classList.remove('hidden');
+
+    const rows = section.querySelectorAll('tbody tr');
+    let visibleCount = 0;
+    rows.forEach(row => {
+      const text = row.textContent.toLowerCase();
+      if (q && !text.includes(q)) {
+        row.classList.add('hidden');
+      } else {
+        row.classList.remove('hidden');
+        visibleCount++;
+      }
+    });
+
+    if (visibleCount === 0 && q) {
+      section.classList.add('hidden');
+    }
+  });
+}
+</script>
+</body>
+</html>

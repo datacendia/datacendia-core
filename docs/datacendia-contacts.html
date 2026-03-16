@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Datacendia — Investor & Contact Database</title>
+<style>
+:root{--bg:#0a0a0f;--bg2:#12121a;--bg3:#1a1a2e;--border:#2a2a3e;--gold:#d4a853;--gold2:#b08930;--text:#f0f0f5;--text2:#a0a0b8;--text3:#6b6b80;--blue:#4a9eff;--green:#22c55e;--red:#ef4444;--purple:#a855f7;--cyan:#06b6d4;--orange:#f97316}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+.hero{text-align:center;padding:60px 40px 40px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,#12121a 0%,var(--bg) 100%)}
+.hero img{height:56px;margin-bottom:16px}
+.hero .ey{font-size:12px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.hero h1{font-size:36px;font-weight:800;margin-bottom:8px}
+.hero .sub{font-size:15px;color:var(--text2);max-width:700px;margin:0 auto}
+.container{max-width:1400px;margin:0 auto;padding:30px 40px}
+.toolbar{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);padding:16px 40px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.toolbar input{flex:1;min-width:200px;padding:10px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg2);color:var(--text);font-size:14px;outline:none}
+.toolbar input:focus{border-color:var(--gold)}
+.toolbar select{padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg2);color:var(--text);font-size:13px;outline:none;cursor:pointer}
+.toolbar .count{font-size:12px;color:var(--text3);white-space:nowrap}
+.stats{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:30px}
+.stat{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center}
+.stat .n{font-size:28px;font-weight:800;color:var(--gold)}
+.stat .l{font-size:11px;color:var(--text3);margin-top:2px;text-transform:uppercase;letter-spacing:.5px}
+.c-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:14px;margin-bottom:20px}
+.c-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;transition:border-color .2s,transform .15s}
+.c-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.c-card.hidden{display:none}
+.c-card .c-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
+.c-card .c-name{font-size:16px;font-weight:700}
+.c-card .c-tag{font-size:10px;padding:3px 8px;border-radius:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+.tag-vc{background:rgba(74,158,255,.12);color:var(--blue)}
+.tag-cvc{background:rgba(168,85,247,.12);color:var(--purple)}
+.tag-accel{background:rgba(34,197,94,.12);color:var(--green)}
+.tag-gov{background:rgba(239,68,68,.12);color:var(--red)}
+.tag-angel{background:rgba(249,115,22,.12);color:var(--orange)}
+.tag-target{background:rgba(6,182,212,.12);color:var(--cyan)}
+.tag-strat{background:rgba(212,168,83,.12);color:var(--gold)}
+.c-card .c-focus{font-size:12px;color:var(--text2);margin-bottom:8px}
+.c-card .c-meta{display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;font-size:12px;margin-bottom:10px}
+.c-card .c-k{color:var(--text3)}.c-card .c-v{color:var(--text)}
+.c-card .c-why{font-size:12px;color:var(--gold);background:rgba(212,168,83,.06);border:1px solid rgba(212,168,83,.15);border-radius:6px;padding:8px 10px;margin-top:8px}
+.c-card .c-partners{font-size:11px;color:var(--text3);margin-top:6px}
+.c-card .c-partners strong{color:var(--text2)}
+.c-card .c-deck{font-size:11px;color:var(--text3);margin-top:4px}.c-card .c-deck strong{color:var(--gold)}
+.sec-label{font-size:20px;font-weight:800;margin:30px 0 6px;padding-bottom:8px;border-bottom:2px solid var(--gold2)}
+.sec-desc{font-size:13px;color:var(--text3);margin-bottom:16px}
+.footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);margin-top:40px;font-size:12px;color:var(--text3)}
+@media(max-width:900px){.stats{grid-template-columns:repeat(3,1fr)}.c-grid{grid-template-columns:1fr}.toolbar{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="hero">
+<img src="logo.png" alt="Datacendia">
+<div class="ey">Outreach Intelligence</div>
+<h1>Investor & Contact Database</h1>
+<p class="sub">VC firms, corporate ventures, accelerators, government programs, angels, and enterprise targets for Datacendia outreach.</p>
+</div>
+<div class="toolbar">
+<input type="text" id="search" placeholder="Search firms, partners, focus areas..." oninput="filterCards()">
+<select id="filterType" onchange="filterCards()"><option value="">All Types</option><option value="vc">Venture Capital</option><option value="cvc">Corporate Venture</option><option value="accel">Accelerators</option><option value="gov">Gov/Defense</option><option value="angel">Angels</option><option value="target">Enterprise Targets</option></select>
+<select id="filterStage" onchange="filterCards()"><option value="">All Stages</option><option value="pre-seed">Pre-Seed</option><option value="seed">Seed</option><option value="a">Series A</option><option value="b">Series B+</option><option value="growth">Growth</option></select>
+<select id="filterRel" onchange="filterCards()"><option value="">All Relevance</option><option value="5">★★★★★</option><option value="4">★★★★+</option><option value="3">★★★+</option></select>
+<div class="count" id="resultCount"></div>
+</div>
+<div class="container">
+<div class="stats" id="statsBar"></div>
+<div id="cards"></div>
+</div>
+<div class="footer">
+<img src="logo.png" alt="Datacendia" style="height:24px;opacity:.5;margin-bottom:8px"><br>
+Datacendia Investor & Contact Database — Private & Confidential<br>
+All information from publicly available sources. Verify before outreach.
+</div>
+<script>
+// DATA INJECTED BELOW
+const C = [];
+/*DATA_START*/
+C.push(
+{name:'Andreessen Horowitz (a16z)',type:'vc',stage:'seed,a,b,growth',check:'$1M–$100M+',focus:'AI, Enterprise, Infrastructure, Defense',relevance:5,why:'Massive AI fund ($750M+). Martin Casado leads enterprise. American Dynamism practice covers defense/gov. Perfect for sovereign + enterprise AI.',partners:'Martin Casado (Enterprise), Anjney Midha (AI), Katherine Boyle (American Dynamism), David Ulevitch (Enterprise)',url:'https://a16z.com',deck:'Investor: Series A Overview + Gov & Defense'},
+{name:'Sequoia Capital',type:'vc',stage:'seed,a,b,growth',check:'$500K–$100M+',focus:'AI, Enterprise SaaS, Deep Tech',relevance:5,why:'Invests in category-defining enterprise companies. AI decision intelligence is a new category. Backed Palantir, Snowflake.',partners:'Konstantine Buhler (AI/Enterprise), Pat Grady (Enterprise SaaS), Shaun Maguire (Deep Tech/Defense)',url:'https://sequoiacap.com',deck:'Investor: Series A Overview'},
+{name:'Greylock Partners',type:'vc',stage:'seed,a,b',check:'$1M–$50M',focus:'Enterprise AI, Infrastructure, Security',relevance:5,why:'Deep enterprise AI thesis. Invested in Palo Alto Networks, Workday. Strong match for AI governance narrative.',partners:'Saam Motamedi (Enterprise AI), Seth Rosenberg (AI/Infra)',url:'https://greylock.com',deck:'Investor: Series A Overview + Competitive Moat'},
+{name:'Lightspeed Venture Partners',type:'vc',stage:'seed,a,b,growth',check:'$1M–$100M',focus:'Enterprise, AI, Cybersecurity',relevance:5,why:'Major enterprise + security investor. AI-native enterprise software thesis. Invested in Rubrik, Nutanix, Lacework.',partners:'Ravi Mhatre (Enterprise), Guru Chahal (Enterprise AI/Security), Will Kohler (AI)',url:'https://lsvp.com',deck:'Investor: Series A Overview + Business Model'},
+{name:'Bessemer Venture Partners',type:'vc',stage:'seed,a,b,growth',check:'$1M–$75M',focus:'Cloud, AI, Enterprise SaaS, Cybersecurity',relevance:5,why:'Publishes the Cloud 100 list. Deep cloud/enterprise SaaS thesis. Invested in Fivetran, Wiz, Twilio.',partners:'Ethan Kurzweil (AI/Cloud), Mary D\'Onofrio (Enterprise SaaS), Alex Ferrara (Cloud Infra)',url:'https://bvp.com',deck:'Investor: Business Model & Revenue'},
+{name:'Radical Ventures',type:'vc',stage:'seed,a,b',check:'$1M–$50M',focus:'AI-first companies, Deep AI',relevance:5,why:'AI-only fund. Founded by Jordan Jacobs (co-founder of Vector Institute). Perfect thesis match for multi-agent AI decision systems.',partners:'Jordan Jacobs, Tomi Poutanen, Rob Fiedler',url:'https://radical.vc',deck:'Investor: Technical Architecture'},
+{name:'DCVC (Data Collective)',type:'vc',stage:'seed,a,b',check:'$500K–$50M',focus:'Deep Tech, Data Science, AI, Enterprise',relevance:5,why:'Deep tech thesis — data + AI creating defensible moats. Multi-agent deliberation architecture is exactly this.',partners:'Matt Ocko, Zachary Bogue',url:'https://dcvc.com',deck:'Investor: Competitive Moat + Technical Architecture'},
+{name:'Felicis Ventures',type:'vc',stage:'seed,a,b',check:'$500K–$30M',focus:'Enterprise AI, Cybersecurity, Infrastructure',relevance:5,why:'Invested in Shopify, Adyen. Active AI thesis. Enterprise cybersecurity investments align with governance + compliance.',partners:'Aydin Senkut, Victoria Treyger (Enterprise)',url:'https://felicis.com',deck:'Investor: Series A Overview'},
+{name:'Lux Capital',type:'vc',stage:'seed,a,b',check:'$1M–$50M',focus:'Deep Tech, AI, Defense, Science',relevance:5,why:'Deep tech + defense thesis. Invested in Anduril, Saildrone. Sovereign AI for defense aligns perfectly.',partners:'Josh Wolfe, Peter Hébert, Deena Shakir',url:'https://luxcapital.com',deck:'Investor: Gov & Defense + Technical Architecture'},
+{name:'Founders Fund',type:'vc',stage:'seed,a,b,growth',check:'$1M–$100M+',focus:'Deep Tech, AI, Defense, Frontier',relevance:5,why:'Peter Thiel\'s fund. Backed Palantir, Anduril, SpaceX. Sovereign AI, defense, and contrarian deep tech is their brand.',partners:'Peter Thiel, Keith Rabois, Trae Stephens (Defense)',url:'https://foundersfund.com',deck:'Investor: Gov & Defense + Competitive Moat'},
+{name:'Accel',type:'vc',stage:'seed,a,b,growth',check:'$1M–$100M',focus:'Enterprise SaaS, AI, Security',relevance:4,why:'Top-tier enterprise SaaS investor. Backed Slack, CrowdStrike, Qualtrics. Strong fit for AI governance.',partners:'Arun Mathew (Enterprise AI), Ping Li (Enterprise)',url:'https://accel.com',deck:'Investor: Business Model & Revenue'},
+{name:'Battery Ventures',type:'vc',stage:'a,b,growth',check:'$5M–$100M',focus:'Enterprise Software, AI, Infrastructure',relevance:4,why:'Deep enterprise software expertise. Invested in Sprinklr, Groupon.',partners:'Neeraj Agrawal (Enterprise SaaS), Brandon Gleklen (Cloud)',url:'https://battery.com',deck:'Investor: Business Model & Revenue'},
+{name:'General Catalyst',type:'vc',stage:'seed,a,b,growth',check:'$1M–$100M+',focus:'Enterprise, AI, Health, Defense',relevance:4,why:'Multi-stage investor with AI + enterprise thesis. Invested in Stripe, HubSpot. "Responsible AI" focus aligns with governance.',partners:'Hemant Taneja (AI/Health), Kyle Doherty (Enterprise), Deep Nishar',url:'https://generalcatalyst.com',deck:'Investor: Series A Overview'},
+{name:'Insight Partners',type:'vc',stage:'a,b,growth',check:'$10M–$500M',focus:'Enterprise Software, AI, ScaleUp',relevance:4,why:'Growth-stage enterprise specialist. Ideal Series B+ partner.',partners:'Jeff Horing, Deven Parekh, Nikitas Koutoupes',url:'https://insightpartners.com',deck:'Investor: Business Model & Revenue'},
+{name:'NEA (New Enterprise Associates)',type:'vc',stage:'seed,a,b,growth',check:'$1M–$200M',focus:'Enterprise, Healthcare IT, AI',relevance:4,why:'Largest VC fund by AUM. Healthcare + enterprise intersection aligns with Datacendia verticals.',partners:'Scott Sandell, Forest Baskett (Tech), Mohamad Makhzoumi',url:'https://nea.com',deck:'Investor: Series A Overview'},
+{name:'Index Ventures',type:'vc',stage:'seed,a,b,growth',check:'$1M–$100M',focus:'Enterprise SaaS, AI, Fintech',relevance:4,why:'Leading European + US fund. Invested in Datadog, Confluent, HashiCorp.',partners:'Shardul Shah (Enterprise), Mark Goldberg (AI)',url:'https://indexventures.com',deck:'Investor: Series A Overview'},
+{name:'Coatue Management',type:'vc',stage:'a,b,growth',check:'$10M–$500M',focus:'AI, Enterprise, Technology',relevance:4,why:'Tech crossover fund. Active AI investor. Backed Databricks, ServiceTitan.',partners:'Thomas Laffont, Philippe Laffont',url:'https://coatue.com',deck:'Investor: Business Model & Revenue'},
+{name:'Menlo Ventures',type:'vc',stage:'seed,a,b',check:'$1M–$50M',focus:'Enterprise AI, Cybersecurity, Infrastructure',relevance:4,why:'Major enterprise AI thesis. Cybersecurity + AI governance target sector.',partners:'Matt Murphy (Enterprise AI), Venky Ganesan (AI)',url:'https://menlovc.com',deck:'Investor: Technical Architecture'},
+{name:'Sapphire Ventures',type:'vc',stage:'a,b,growth',check:'$5M–$100M',focus:'Enterprise SaaS, AI, Cloud',relevance:4,why:'Exclusively enterprise SaaS. Spun out of SAP. AI enterprise adoption research.',partners:'Jai Das (Enterprise AI), Nino Marakovic',url:'https://sapphireventures.com',deck:'Investor: Business Model & Revenue'},
+{name:'Scale Venture Partners',type:'vc',stage:'a,b',check:'$5M–$50M',focus:'Enterprise SaaS, AI/ML, Data Infrastructure',relevance:4,why:'Pure enterprise SaaS focus. Invested in Box, DocuSign, HubSpot.',partners:'Rory O\'Driscoll, Ariel Tseitlin (Data/AI)',url:'https://scalevp.com',deck:'Investor: Business Model & Revenue'},
+{name:'Wing Venture Capital',type:'vc',stage:'seed,a',check:'$1M–$20M',focus:'Enterprise Infrastructure, AI, Security',relevance:4,why:'Enterprise-only fund. Founded by former enterprise execs. Thesis on enterprise infra disruption.',partners:'Peter Wagner, Gaurav Garg, Jake Flomenberg',url:'https://wing.vc',deck:'Investor: Technical Architecture + Competitive Moat'},
+{name:'Amplify Partners',type:'vc',stage:'pre-seed,seed,a',check:'$500K–$15M',focus:'Enterprise Infrastructure, AI, Developer Tools',relevance:4,why:'Deep technical thesis on enterprise infrastructure. AI governance infra is perfect fit.',partners:'Sunil Dhaliwal, Mike Dauber',url:'https://amplifypartners.com',deck:'Investor: Technical Architecture'},
+{name:'Costanoa Ventures',type:'vc',stage:'seed,a',check:'$500K–$15M',focus:'Enterprise Data, AI/ML, Compliance',relevance:4,why:'Enterprise data + compliance thesis. Exact overlap with Datacendia.',partners:'Greg Sands, Jim Wilson',url:'https://costanoavc.com',deck:'Investor: Competitive Moat'},
+{name:'Norwest Venture Partners',type:'vc',stage:'a,b,growth',check:'$5M–$100M',focus:'Enterprise SaaS, Healthcare IT, Fintech',relevance:4,why:'Enterprise SaaS + healthcare IT. Invested in Finastra, Adaptive Insights.',partners:'Matthew Howard, Scott Beechuk (Enterprise)',url:'https://nvp.com',deck:'Investor: Series A Overview'},
+{name:'Madrona Ventures',type:'vc',stage:'seed,a,b',check:'$1M–$30M',focus:'AI/ML, Enterprise, Cloud',relevance:4,why:'Seattle-based. Strong AI thesis. Invested in Snowflake (early). Microsoft/Amazon ecosystem.',partners:'S. Somasegar (Enterprise/AI), Matt McIlwain',url:'https://madrona.com',deck:'Investor: Technical Architecture'},
+{name:'Khosla Ventures',type:'vc',stage:'seed,a,b',check:'$500K–$50M',focus:'AI, Enterprise, Deep Tech, Climate',relevance:4,why:'Strong AI-first thesis. Invested in OpenAI. Contrarian bets on transformative AI.',partners:'Vinod Khosla, Sven Strohband (Deep Tech/AI)',url:'https://khoslaventures.com',deck:'Investor: Technical Architecture'},
+{name:'Redpoint Ventures',type:'vc',stage:'seed,a,b',check:'$1M–$50M',focus:'Enterprise SaaS, AI, Infrastructure',relevance:3,why:'Invested in Snowflake, Stripe, Twilio. Enterprise infrastructure thesis.',partners:'Tomasz Tunguz (Enterprise SaaS/AI), Meera Clark',url:'https://redpoint.com',deck:'Investor: Business Model & Revenue'},
+{name:'Thomvest Ventures',type:'vc',stage:'seed,a,b',check:'$1M–$25M',focus:'AI, Enterprise, Fintech, Regtech',relevance:3,why:'Regtech + compliance focus. Invested in identity verification and compliance platforms.',partners:'Umesh Padval, Don Butler',url:'https://thomvest.com',deck:'Investor: Series A Overview'},
+{name:'Storm Ventures',type:'vc',stage:'seed,a',check:'$500K–$15M',focus:'Enterprise SaaS, B2B',relevance:3,why:'B2B SaaS specialist. Strong go-to-market guidance for enterprise sales.',partners:'Tae Hea Nahm, Ryan Floyd, Arun Penmetsa',url:'https://stormventures.com',deck:'Investor: Business Model & Revenue'},
+{name:'Innovation Endeavors',type:'vc',stage:'seed,a',check:'$500K–$20M',focus:'AI/ML, Deep Tech, Enterprise',relevance:3,why:'Founded by Eric Schmidt. Deep tech + AI thesis. Strong Google ecosystem connections.',partners:'Dror Berman, Eric Schmidt (LP)',url:'https://innovationendeavors.com',deck:'Investor: Technical Architecture'},
+{name:'Benchmark',type:'vc',stage:'seed,a',check:'$1M–$30M',focus:'Platform, Enterprise, Marketplace',relevance:3,why:'Elite partnership fund. Invested in Elastic, New Relic. Platform thesis fits.',partners:'Chetan Puttagunta (Enterprise/Infra), Victor Lazarte',url:'https://benchmark.com',deck:'Investor: Series A Overview'},
+{name:'Tiger Global Management',type:'vc',stage:'a,b,growth',check:'$10M–$500M',focus:'AI, Enterprise SaaS, Global',relevance:3,why:'Massive crossover fund. Fast decisions. Ideal at Series B+ if metrics are right.',partners:'John Curtius, Scott Shleifer, Griffin Schroeder',url:'https://tigerglobal.com',deck:'Investor: Business Model & Revenue'},
+{name:'Emergence Capital',type:'vc',stage:'a,b',check:'$5M–$50M',focus:'Enterprise SaaS, AI, Coaching/Collaboration',relevance:4,why:'Enterprise SaaS specialist. Invested in Salesforce, Veeva, Zoom. "Coaching Networks" thesis aligns with Council deliberation.',partners:'Jason Green, Gordon Ritter, Santi Subotovsky',url:'https://emcap.com',deck:'Investor: Series A Overview'},
+{name:'Unusual Ventures',type:'vc',stage:'seed,a',check:'$1M–$15M',focus:'Enterprise, AI, Go-to-Market',relevance:4,why:'Unique model: provides GTM support alongside capital. Enterprise sales expertise. Founded by ex-Salesforce/LinkedIn.',partners:'John Vrionis, Jyoti Bansal',url:'https://unusual.vc',deck:'Investor: Business Model & Revenue'},
+{name:'Craft Ventures',type:'vc',stage:'seed,a,b',check:'$1M–$30M',focus:'SaaS, AI, Enterprise, Defense',relevance:4,why:'David Sacks\' fund. Strong SaaS + defense thesis. Invested in Palantir (Sacks was COO). Direct alignment.',partners:'David Sacks, Jeff Fluhr, Bryan Rosenblatt',url:'https://craftventures.com',deck:'Investor: Gov & Defense + Business Model'},
+{name:'a]Capital',type:'vc',stage:'seed,a',check:'$500K–$10M',focus:'AI, Enterprise, Deep Tech',relevance:3,why:'AI-focused seed fund. Strong technical diligence. Invests in AI-native companies.',partners:'Gaurav Jain (AI/Enterprise)',url:'https://acapital.com',deck:'Investor: Technical Architecture'},
+{name:'Air Street Capital',type:'vc',stage:'seed,a',check:'$500K–$10M',focus:'AI-first companies, Deep Learning',relevance:4,why:'AI-only fund. Publishes "State of AI" annual report. Deep AI domain expertise.',partners:'Nathan Benaich',url:'https://airstreet.com',deck:'Investor: Technical Architecture'}
+);
+/*BATCH1_END*/
+C.push(
+// Corporate Venture Capital
+{name:'Microsoft M12',type:'cvc',stage:'seed,a,b',check:'$2M–$20M',focus:'Enterprise AI, Cloud, Security, Dev Tools',relevance:5,why:'Azure integration story. Microsoft Copilot ecosystem. Enterprise AI governance fits M12 thesis.',partners:'Todd Graham, Samir Kumar (AI)',url:'https://m12.vc',deck:'Investor: Series A Overview + Technical Architecture'},
+{name:'Google Ventures (GV)',type:'cvc',stage:'seed,a,b',check:'$1M–$50M',focus:'AI, Enterprise, Health, Deep Tech',relevance:5,why:'Google Cloud partnership. AI-first investment thesis. Strong enterprise AI portfolio.',partners:'Dave Munichiello, Tyson Clark (Enterprise), Anna Patterson (AI)',url:'https://gv.com',deck:'Investor: Series A Overview'},
+{name:'Salesforce Ventures',type:'cvc',stage:'seed,a,b,growth',check:'$1M–$100M',focus:'Enterprise SaaS, AI, CRM, Platform',relevance:4,why:'Largest corporate VC. Enterprise SaaS ecosystem. Salesforce integration is natural connector play.',partners:'John Somorjai, Matt Garratt',url:'https://salesforceventures.com',deck:'Investor: Business Model & Revenue'},
+{name:'Intel Capital',type:'cvc',stage:'seed,a,b',check:'$2M–$50M',focus:'AI, Cloud, Security, Enterprise',relevance:4,why:'AI compute thesis. Intel + Datacendia on-prem deployment story.',partners:'Mark Rostick, Anthony Lin (AI)',url:'https://intelcapital.com',deck:'Investor: Technical Architecture'},
+{name:'Dell Technologies Capital',type:'cvc',stage:'seed,a,b',check:'$1M–$20M',focus:'Enterprise Infrastructure, AI, Security, Cloud',relevance:4,why:'On-prem + hybrid deployment. Dell server infrastructure for sovereign deployments.',partners:'Scott Darling, Daniel Herscovici',url:'https://delltechnologiescapital.com',deck:'Investor: Gov & Defense + Technical Architecture'},
+{name:'SAP.io',type:'cvc',stage:'seed,a',check:'$500K–$10M',focus:'Enterprise SaaS, AI, ERP, Supply Chain',relevance:4,why:'SAP enterprise ecosystem. S/4HANA integration. Decision intelligence for ERP workflows.',partners:'Alexa Gorman, Ram Jambunathan',url:'https://sap.io',deck:'Investor: Business Model & Revenue'},
+{name:'Databricks Ventures',type:'cvc',stage:'seed,a',check:'$1M–$15M',focus:'Data Lakehouse, AI/ML, Data Engineering',relevance:5,why:'Databricks data lakehouse + Datacendia decision layer. Zero-copy on Delta Lake.',partners:'Ali Ghodsi (CEO), Matei Zaharia (CTO)',url:'https://databricks.com',deck:'Investor: Technical Architecture + Competitive Moat'},
+{name:'Snowflake Ventures',type:'cvc',stage:'seed,a',check:'$1M–$15M',focus:'Data Cloud, AI, Analytics, Data Sharing',relevance:5,why:'Snowflake Data Cloud + zero-copy architecture. Native app marketplace potential.',partners:'Chris Degnan (CRO), Benoit Dageville',url:'https://snowflake.com',deck:'Investor: Technical Architecture'},
+{name:'Cisco Investments',type:'cvc',stage:'seed,a,b',check:'$5M–$50M',focus:'Enterprise Networking, Security, AI',relevance:3,why:'Enterprise security + networking. Cisco SecureX integration potential.',partners:'Rob Salvagno',url:'https://cisco.com/c/en/us/about/corporate-strategy-office/investments.html',deck:'Investor: Series A Overview'},
+{name:'Workday Ventures',type:'cvc',stage:'seed,a,b',check:'$2M–$20M',focus:'Enterprise HR, Finance, AI, Planning',relevance:3,why:'Workday Adaptive Planning + decision intelligence integration.',partners:'Mark Peek, Leighanne Levensaler',url:'https://workday.com',deck:'Investor: Series A Overview'},
+{name:'ServiceNow Ventures',type:'cvc',stage:'seed,a',check:'$1M–$10M',focus:'Enterprise Workflows, AI, IT Service',relevance:3,why:'ServiceNow workflow automation + Datacendia decision layer.',partners:'Chris Bedi (CTO)',url:'https://servicenow.com',deck:'Investor: Technical Architecture'},
+{name:'Samsung NEXT',type:'cvc',stage:'seed,a',check:'$1M–$15M',focus:'AI, Enterprise, Infrastructure',relevance:3,why:'Enterprise + edge computing. Samsung enterprise division partnership.',partners:'David Lee (AI/Enterprise)',url:'https://samsungnext.com',deck:'Investor: Technical Architecture'},
+{name:'Nvidia GPU Ventures',type:'cvc',stage:'seed,a',check:'Strategic investment',focus:'AI, GPU Computing, Deep Learning',relevance:4,why:'GPU acceleration for Datacendia AI workloads. Direct partnership potential via Inception program.',partners:'Via NVIDIA Inception program',url:'https://nvidia.com',deck:'Investor: Technical Architecture'},
+{name:'IBM Ventures',type:'cvc',stage:'seed,a',check:'$1M–$10M',focus:'Enterprise AI, Hybrid Cloud, Security',relevance:3,why:'IBM Watson successor strategy. Enterprise AI governance aligns with IBM consulting.',partners:'Via IBM PartnerWorld',url:'https://ibm.com',deck:'Investor: Series A Overview'},
+{name:'Oracle Cloud Ventures',type:'cvc',stage:'seed,a',check:'$1M–$10M',focus:'Cloud, Database, Enterprise AI',relevance:3,why:'Oracle Cloud Infrastructure. Database integration for zero-copy architecture.',partners:'Via Oracle for Startups',url:'https://oracle.com/startup',deck:'Investor: Technical Architecture'}
+);
+/*BATCH2_END*/
+C.push(
+// Government & Defense
+{name:'In-Q-Tel',type:'gov',stage:'seed,a',check:'$500K–$5M',focus:'National Security, Intelligence, Defense AI',relevance:5,why:'CIA venture arm. Invests in tech for intelligence community. Sovereign AI, air-gapped deployment, audit provenance are exactly what they fund.',partners:'Submit via inqtel.com/contact',url:'https://inqtel.com',deck:'Investor: Gov & Defense'},
+{name:'Shield Capital',type:'gov',stage:'seed,a',check:'$1M–$15M',focus:'Defense Tech, National Security, Cybersecurity',relevance:5,why:'Defense-focused VC. Founded by former national security leaders. Sovereign AI for defense is core thesis.',partners:'Raj Shah (former DIU), Chris Lynch (former DoD)',url:'https://shieldcap.com',deck:'Investor: Gov & Defense'},
+{name:'Razor\'s Edge Ventures',type:'gov',stage:'seed,a,b',check:'$1M–$20M',focus:'Defense, National Security, Intelligence, Cyber',relevance:5,why:'Defense + intelligence community focused. Air-gapped sovereign AI is their thesis.',partners:'Former military/intelligence leaders',url:'https://razorsedgeventures.com',deck:'Investor: Gov & Defense'},
+{name:'BMNT / H4X Labs',type:'gov',stage:'pre-seed,seed',check:'$250K–$2M',focus:'Defense Innovation, Problem Curation, Dual-Use',relevance:4,why:'Defense problem curation pipeline. AI decision-making for defense is high priority.',partners:'Pete Newell (former Army), Steve Blank (advisor)',url:'https://bmnt.com',deck:'Investor: Gov & Defense'},
+{name:'Squadra Ventures',type:'gov',stage:'seed,a',check:'$500K–$5M',focus:'National Security, Defense Tech',relevance:4,why:'"Technology that keeps democracies safe." Sovereign AI for national security.',partners:'Former DoD/IC leaders',url:'https://squadraventures.com',deck:'Investor: Gov & Defense'},
+{name:'DIU (Defense Innovation Unit)',type:'gov',stage:'n/a',check:'Contracts $1M–$50M',focus:'Defense Technology Prototyping',relevance:5,why:'Awards prototype contracts via OTA. AI for military decision-making is top priority.',partners:'Submit via diu.mil open topics',url:'https://diu.mil',deck:'Design Partner: Defense'},
+{name:'AFWERX / SpaceWERX',type:'gov',stage:'n/a',check:'SBIR $50K–$1.5M',focus:'Air Force / Space Force Innovation',relevance:4,why:'Air Force SBIR/STTR. AI decision support for air operations, logistics.',partners:'Submit via afwerx.com/sbir',url:'https://afwerx.com',deck:'Design Partner: Defense'},
+{name:'Army Applications Lab (AAL)',type:'gov',stage:'n/a',check:'Contracts $500K–$10M',focus:'Army Modernization, AI, Decision Support',relevance:4,why:'Army innovation lab. AI-enabled decision support for battlefield intelligence.',partners:'Submit via armyapplicationslab.com',url:'https://armyapplicationslab.com',deck:'Design Partner: Defense'},
+{name:'CDAO (Chief Digital & AI Officer)',type:'gov',stage:'n/a',check:'Contracts $5M–$100M+',focus:'DoD AI Strategy, Responsible AI',relevance:5,why:'DoD central AI office. Responsible AI Strategy directly addressed by Datacendia governance.',partners:'Capability statements via cdao.mil',url:'https://cdao.mil',deck:'Design Partner: Defense'},
+{name:'NSA (National Security Agency)',type:'gov',stage:'n/a',check:'Contracts via vehicles',focus:'Signals Intelligence, Cybersecurity, AI',relevance:4,why:'AI for signals intelligence analysis. Sovereign air-gapped deployment mandatory.',partners:'Via government contract vehicles (ITES, Alliant 2)',url:'https://nsa.gov',deck:'Design Partner: Defense'},
+{name:'CIA (via In-Q-Tel)',type:'gov',stage:'n/a',check:'Via In-Q-Tel + contracts',focus:'Intelligence Analysis, AI Decision Support',relevance:4,why:'AI for intelligence analysis. Multi-agent deliberation for threat assessment.',partners:'Via In-Q-Tel introduction',url:'https://cia.gov',deck:'Design Partner: Defense'},
+{name:'NGA (National Geospatial-Intelligence)',type:'gov',stage:'n/a',check:'Contracts via GEOINT',focus:'Geospatial Intelligence, AI Analysis',relevance:3,why:'AI for geospatial analysis decisions. GEOINT challenge programs accept startup proposals.',partners:'Via NGA Innovation (Janus program)',url:'https://nga.mil',deck:'Design Partner: Defense'},
+{name:'DARPA',type:'gov',stage:'n/a',check:'SBIR $250K–$1.5M; BAA $1M–$10M+',focus:'Advanced Defense Research, AI, Autonomy',relevance:5,why:'SBIR Phase I/II for AI decision systems. Multiple active BAAs for explainable AI, human-AI teaming.',partners:'Program Managers — search sam.gov for active solicitations',url:'https://darpa.mil',deck:'Investor: Gov & Defense'},
+{name:'NSF (National Science Foundation)',type:'gov',stage:'n/a',check:'SBIR $275K Phase I; $1M Phase II',focus:'Scientific Research, AI/ML, Deep Tech',relevance:5,why:'SBIR/STTR for AI decision intelligence. "Responsible AI" is an active program topic.',partners:'Program Directors — apply via research.gov',url:'https://nsf.gov/sbir',deck:'Use SBIR application, not pitch deck'},
+{name:'IARPA',type:'gov',stage:'n/a',check:'Contracts $1M–$20M',focus:'Intelligence Advanced Research, AI Forecasting',relevance:4,why:'AI for intelligence forecasting, decision support. Multi-agent deliberation for analysis.',partners:'Via sam.gov solicitations',url:'https://iarpa.gov',deck:'Design Partner: Defense'},
+{name:'DOE (Dept of Energy)',type:'gov',stage:'n/a',check:'SBIR $200K–$1.1M',focus:'Energy AI, Grid Security, Climate',relevance:3,why:'AI for energy grid decisions, nuclear security. SBIR program for clean energy AI.',partners:'Apply via science.osti.gov/sbir',url:'https://energy.gov/smallbusiness',deck:'Design Partner: Energy & Utilities'},
+{name:'NIH (National Institutes of Health)',type:'gov',stage:'n/a',check:'SBIR $275K–$1.75M',focus:'Healthcare AI, Clinical Decision Support',relevance:4,why:'SBIR for clinical decision support AI. HIPAA-compliant deliberation for medical decisions.',partners:'Apply via seed.nih.gov',url:'https://seed.nih.gov/sbir-sttr',deck:'Design Partner: Healthcare'}
+);
+/*BATCH3_END*/
+C.push(
+// Accelerators & Programs
+{name:'Y Combinator',type:'accel',stage:'pre-seed,seed',check:'$500K (standard deal)',focus:'All Sectors — Strong AI, SaaS, Enterprise',relevance:4,why:'Most prestigious accelerator. Demo Day exposure to 1,000+ investors.',partners:'Jared Friedman (Enterprise), Gustaf Alströmer, Diana Hu (AI)',url:'https://ycombinator.com/apply',deck:'Investor: Series A Overview'},
+{name:'Techstars',type:'accel',stage:'pre-seed,seed',check:'$120K (standard)',focus:'Vertical programs — AI, Enterprise, Defense, Gov',relevance:4,why:'Vertical-specific programs. Techstars AI (Microsoft), Techstars Allied Space.',partners:'Various MD per vertical',url:'https://techstars.com/accelerators',deck:'Investor: Series A Overview'},
+{name:'500 Global',type:'accel',stage:'pre-seed,seed',check:'$150K',focus:'AI, SaaS, Enterprise, Global Markets',relevance:3,why:'Global accelerator. Strong SE Asia + Middle East network (sovereign AI demand).',partners:'Christine Tsai',url:'https://500.co',deck:'Investor: Series A Overview'},
+{name:'Plug and Play Tech Center',type:'accel',stage:'seed',check:'$25K–$500K',focus:'Enterprise, Fintech, Health, Supply Chain',relevance:4,why:'Largest by corporate partner count (500+). Enterprise pilot introductions to Fortune 500.',partners:'Saeed Amidi',url:'https://plugandplaytechcenter.com',deck:'Investor: Series A Overview'},
+{name:'MassChallenge',type:'accel',stage:'seed,a',check:'$100K+ prizes (no equity)',focus:'Enterprise, Health, Fintech',relevance:4,why:'Zero-equity accelerator. Cash prizes. Strong Boston/DC presence (gov connections).',partners:'Application-based',url:'https://masschallenge.org',deck:'Investor: Series A Overview'},
+{name:'Creative Destruction Lab (CDL)',type:'accel',stage:'seed',check:'No direct investment — VC connections',focus:'AI/ML, Deep Tech, Quantum',relevance:4,why:'AI-focused with academic rigor. Mentors include top AI researchers. Great for AI-native companies.',partners:'Academic + VC mentors rotate by cohort',url:'https://creativedestructionlab.com',deck:'Investor: Technical Architecture'},
+{name:'Antler',type:'accel',stage:'pre-seed',check:'$100K–$250K',focus:'AI, Enterprise, Deep Tech, Global',relevance:3,why:'Global pre-seed investor. 27 cities. Strong in EMEA/APAC markets.',partners:'Magnus Grimeland',url:'https://antler.co',deck:'Investor: Series A Overview'},
+{name:'Entrepreneur First (EF)',type:'accel',stage:'pre-seed',check:'$100K–$250K',focus:'Deep Tech, AI, Enterprise',relevance:3,why:'Talent-first accelerator. Strong deep tech thesis. London/Singapore/Toronto.',partners:'Matt Clifford, Alice Bentinck',url:'https://joinef.com',deck:'Investor: Technical Architecture'},
+{name:'NVIDIA Inception',type:'accel',stage:'seed,a',check:'Credits + ecosystem (no equity)',focus:'AI, GPU Computing, Deep Learning',relevance:5,why:'No equity. GPU credits, DGX access, technical support, co-marketing.',partners:'Apply via nvidia.com/inception',url:'https://nvidia.com/en-us/startups',deck:'N/A — apply directly'},
+{name:'AWS Activate',type:'accel',stage:'seed,a',check:'$10K–$100K credits',focus:'Cloud Infrastructure, AI/ML',relevance:5,why:'Up to $100K in AWS credits. SageMaker, Bedrock AI services.',partners:'Apply online or via VC partners',url:'https://aws.amazon.com/activate',deck:'N/A — apply directly'},
+{name:'Google for Startups Cloud',type:'accel',stage:'seed,a',check:'$100K–$200K credits',focus:'Cloud, AI/ML, Enterprise',relevance:5,why:'Up to $200K Google Cloud credits. Vertex AI, BigQuery.',partners:'Apply online or via VC partners',url:'https://cloud.google.com/startup',deck:'N/A — apply directly'},
+{name:'Microsoft for Startups',type:'accel',stage:'seed,a',check:'$150K credits',focus:'Azure, AI, Enterprise',relevance:5,why:'$150K Azure credits. OpenAI API access. GitHub Copilot.',partners:'Apply online',url:'https://startups.microsoft.com',deck:'N/A — apply directly'},
+{name:'Oracle for Startups',type:'accel',stage:'seed,a',check:'$30K–$100K credits',focus:'Cloud, Database, Enterprise',relevance:3,why:'OCI credits. Oracle Autonomous Database integration potential.',partners:'Apply online',url:'https://oracle.com/startup',deck:'N/A — apply directly'},
+{name:'MIT Solve',type:'accel',stage:'seed',check:'$10K–$100K prizes',focus:'AI for Good, Health, Climate, Governance',relevance:4,why:'Global challenges. AI governance aligns with their "Responsible AI" challenge.',partners:'Submit solutions at solve.mit.edu',url:'https://solve.mit.edu',deck:'Investor: Series A Overview'},
+{name:'Startup World Cup',type:'accel',stage:'seed,a',check:'$1M grand prize',focus:'All Sectors — Global Competition',relevance:3,why:'$1M prize. Regional events + global finals in San Francisco.',partners:'Apply via startupworldcup.io',url:'https://startupworldcup.io',deck:'Investor: Series A Overview'},
+{name:'TechCrunch Disrupt / Battlefield',type:'accel',stage:'seed,a',check:'$100K prize + exposure',focus:'All Tech',relevance:3,why:'Major media exposure. Battlefield competition for early-stage startups.',partners:'Apply via techcrunch.com/startup-battlefield',url:'https://techcrunch.com/startup-battlefield',deck:'Investor: Series A Overview'}
+);
+/*BATCH4_END*/
+C.push(
+// Angel Investors & Solo GPs
+{name:'Elad Gil',type:'angel',stage:'seed,a',check:'$100K–$5M',focus:'AI, Enterprise, Infrastructure',relevance:4,why:'Prolific angel. Former VP at Twitter. Wrote "High Growth Handbook." Invested in Airtable, Figma.',partners:'Via Twitter/X or mutual connections',url:'https://eladgil.com',deck:'Investor: Series A Overview'},
+{name:'Naval Ravikant',type:'angel',stage:'seed',check:'$100K–$1M',focus:'AI, Platforms, Deep Tech',relevance:3,why:'AngelList founder. First-principles thinker — multi-agent deliberation is a first-principles AI approach.',partners:'Via AngelList or Twitter/X',url:'https://nav.al',deck:'Investor: Series A Overview'},
+{name:'Balaji Srinivasan',type:'angel',stage:'seed',check:'$100K–$2M',focus:'AI, Crypto, Sovereign Tech, Network State',relevance:4,why:'Former CTO of Coinbase. Sovereign AI, data sovereignty, cryptographic audit trails align with his worldview.',partners:'Via Twitter/X (@balaboris)',url:'https://balajis.com',deck:'Investor: Gov & Defense + Technical Architecture'},
+{name:'Nat Friedman',type:'angel',stage:'seed,a',check:'$100K–$5M',focus:'AI, Developer Tools, Enterprise',relevance:4,why:'Former GitHub CEO. Active AI investor. Deep understanding of AI developer platforms.',partners:'Via Twitter/X (@natfriedman)',url:'https://nat.org',deck:'Investor: Technical Architecture'},
+{name:'Daniel Gross',type:'angel',stage:'seed,a',check:'$500K–$10M',focus:'AI-first companies',relevance:4,why:'Former head of AI at Apple. Co-invests with Nat Friedman. AI-only thesis.',partners:'Via Pioneer (pioneer.app) or Twitter/X',url:'https://dcgross.com',deck:'Investor: Technical Architecture'},
+{name:'Lachy Groom',type:'angel',stage:'seed,a',check:'$500K–$10M',focus:'Infrastructure, Enterprise, Fintech',relevance:3,why:'Former Stripe. Infrastructure + enterprise thesis. Fast mover.',partners:'Via Twitter/X or mutual connections',url:'https://lachygroom.com',deck:'Investor: Business Model & Revenue'},
+{name:'Dylan Field',type:'angel',stage:'seed',check:'$100K–$1M',focus:'AI, Design, Enterprise Tools',relevance:3,why:'Figma co-founder. Understands enterprise tool category creation. Active angel in AI.',partners:'Via mutual connections',url:'N/A',deck:'Investor: Series A Overview'},
+{name:'Satya Patel (Homebrew)',type:'angel',stage:'seed',check:'$500K–$5M',focus:'Enterprise SaaS, AI, Infrastructure',relevance:3,why:'Former VP Product at Twitter. Homebrew fund focuses on seed enterprise.',partners:'Via homebrew.co',url:'https://homebrew.co',deck:'Investor: Series A Overview'},
+{name:'Jason Lemkin (SaaStr)',type:'angel',stage:'seed,a',check:'$100K–$1M',focus:'Enterprise SaaS, B2B',relevance:3,why:'SaaStr founder. Largest B2B SaaS community. Angel investor in enterprise SaaS companies.',partners:'Via SaaStr events or Twitter/X',url:'https://saastr.com',deck:'Investor: Business Model & Revenue'},
+{name:'Gokul Rajaram',type:'angel',stage:'seed',check:'$100K–$500K',focus:'Enterprise, AI, Platform',relevance:3,why:'Former exec at Square, Google (AdSense). Prolific angel investor. Enterprise platform expertise.',partners:'Via Twitter/X or mutual connections',url:'N/A',deck:'Investor: Series A Overview'},
+{name:'Immad Akhund',type:'angel',stage:'seed',check:'$100K–$1M',focus:'AI, Fintech, SaaS',relevance:3,why:'CEO of Mercury (bank for startups). Active angel in AI companies.',partners:'Via Twitter/X',url:'N/A',deck:'Investor: Business Model & Revenue'}
+);
+/*BATCH5_END*/
+C.push(
+// Enterprise Targets — Healthcare
+{name:'Mayo Clinic',type:'target',stage:'n/a',check:'$150K–$1.5M contract',focus:'Clinical Decision Support, AI in Healthcare',relevance:5,why:'Top US hospital. Active AI adoption. HIPAA-compliant deliberation for medical decisions.',partners:'Chief Data/Digital Officer, VP of IT/Innovation',url:'https://mayoclinic.org',deck:'Design Partner: Healthcare'},
+{name:'Cleveland Clinic',type:'target',stage:'n/a',check:'$150K–$1.5M',focus:'Healthcare AI, Clinical Intelligence',relevance:4,why:'Innovation leader. AI for clinical decisions, risk assessment.',partners:'Chief Innovation Officer, VP IT',url:'https://clevelandclinic.org',deck:'Design Partner: Healthcare'},
+{name:'Kaiser Permanente',type:'target',stage:'n/a',check:'$500K–$1.5M+',focus:'Integrated Health, Population Health AI',relevance:4,why:'Largest integrated health system. AI governance for care pathways.',partners:'VP of Technology, Chief Data Officer',url:'https://kaiserpermanente.org',deck:'Design Partner: Healthcare'},
+{name:'UnitedHealth Group / Optum',type:'target',stage:'n/a',check:'$500K–$1.5M+',focus:'Health Insurance, AI/ML, Claims Intelligence',relevance:4,why:'Largest US health insurer. Claims adjudication + risk assessment need governance.',partners:'Optum VP of AI/Analytics, CTO',url:'https://unitedhealthgroup.com',deck:'Design Partner: Healthcare + Insurance'},
+{name:'Johns Hopkins Medicine',type:'target',stage:'n/a',check:'$150K–$500K',focus:'Clinical Research AI, Decision Support',relevance:4,why:'Top research hospital. AI for clinical trials, diagnostic decisions.',partners:'Chief Data Officer, VP of Digital Health',url:'https://hopkinsmedicine.org',deck:'Design Partner: Healthcare'},
+{name:'Mass General Brigham',type:'target',stage:'n/a',check:'$150K–$500K',focus:'Healthcare AI, Clinical Decision Support',relevance:4,why:'Harvard-affiliated. Active AI research. Clinical decision governance for patient safety.',partners:'Chief Data Science Officer, VP Innovation',url:'https://massgeneralbrigham.org',deck:'Design Partner: Healthcare'},
+// Enterprise Targets — Financial Services
+{name:'JPMorgan Chase',type:'target',stage:'n/a',check:'$500K–$1.5M+',focus:'Trading, Risk, Compliance AI',relevance:5,why:'Largest US bank. $15B+ in tech investment. Risk management decisions need auditable AI governance.',partners:'Chief Data & Analytics Officer, VP of AI/ML',url:'https://jpmorgan.com',deck:'Design Partner: Financial Services'},
+{name:'Goldman Sachs',type:'target',stage:'n/a',check:'$500K–$1.5M+',focus:'Trading AI, Risk Intelligence, Compliance',relevance:4,why:'AI-forward bank. Trading decisions, risk assessment, compliance need governance.',partners:'Head of Engineering, Chief Data Officer',url:'https://goldmansachs.com',deck:'Design Partner: Financial Services'},
+{name:'Morgan Stanley',type:'target',stage:'n/a',check:'$500K–$1.5M+',focus:'Wealth Management AI, Compliance',relevance:4,why:'Early OpenAI enterprise adopter. AI for wealth advisors needs audit trail.',partners:'Chief Analytics Officer, Head of AI',url:'https://morganstanley.com',deck:'Design Partner: Financial Services'},
+{name:'BlackRock',type:'target',stage:'n/a',check:'$500K–$1.5M+',focus:'Asset Management, Aladdin Platform, Risk AI',relevance:4,why:'Largest asset manager. Aladdin processes $21T+ in assets. AI governance for investment decisions.',partners:'CTO, Aladdin Product team',url:'https://blackrock.com',deck:'Design Partner: Financial Services'},
+{name:'Citigroup',type:'target',stage:'n/a',check:'$500K–$1.5M+',focus:'Banking AI, Compliance, Risk',relevance:3,why:'Global bank. AI for compliance, anti-money laundering decisions.',partners:'Chief Data Officer, VP Technology',url:'https://citigroup.com',deck:'Design Partner: Financial Services'},
+{name:'Bank of America',type:'target',stage:'n/a',check:'$500K–$1.5M+',focus:'Banking AI, Erica AI Assistant, Risk',relevance:3,why:'Second-largest US bank. Erica AI assistant. Banking decisions need governance layer.',partners:'CTO, Chief AI/ML Officer',url:'https://bankofamerica.com',deck:'Design Partner: Financial Services'},
+// Enterprise Targets — Legal
+{name:'Kirkland & Ellis',type:'target',stage:'n/a',check:'$150K–$500K',focus:'Legal AI, Litigation, Contract Analysis',relevance:4,why:'World\'s highest-grossing law firm ($7B+). AI for litigation strategy with audit trail.',partners:'Chief Innovation Officer, Director of Legal Tech',url:'https://kirkland.com',deck:'Design Partner: Legal'},
+{name:'Latham & Watkins',type:'target',stage:'n/a',check:'$150K–$500K',focus:'Legal AI, M&A, Regulatory',relevance:4,why:'Top 3 global law firm. AI for M&A due diligence, regulatory analysis.',partners:'Chief Innovation Officer',url:'https://lw.com',deck:'Design Partner: Legal'},
+{name:'DLA Piper',type:'target',stage:'n/a',check:'$150K–$500K',focus:'Legal AI, Global Compliance',relevance:3,why:'Largest law firm by headcount. Cross-jurisdiction compliance decisions.',partners:'Chief Innovation & Technology Officer',url:'https://dlapiper.com',deck:'Design Partner: Legal'},
+{name:'Baker McKenzie',type:'target',stage:'n/a',check:'$150K–$500K',focus:'Legal AI, International Trade',relevance:3,why:'Top international firm. Cross-border compliance decisions.',partners:'Global Chief Innovation Officer',url:'https://bakermckenzie.com',deck:'Design Partner: Legal'},
+{name:'Skadden, Arps',type:'target',stage:'n/a',check:'$150K–$500K',focus:'M&A, Securities Litigation, AI',relevance:3,why:'Top M&A law firm. AI for deal analysis, regulatory review.',partners:'Chief Innovation Officer',url:'https://skadden.com',deck:'Design Partner: Legal'}
+);
+/*BATCH6_END*/
+C.push(
+// Enterprise Targets — Defense
+{name:'Lockheed Martin',type:'target',stage:'n/a',check:'$500K–$10M+',focus:'Defense AI, C4ISR, Autonomous Systems',relevance:5,why:'Largest defense contractor. AI for C4ISR decision support. Sovereign air-gapped deployment.',partners:'VP of AI & Analytics, Innovation team',url:'https://lockheedmartin.com',deck:'Design Partner: Defense'},
+{name:'Raytheon Technologies (RTX)',type:'target',stage:'n/a',check:'$500K–$10M+',focus:'Defense Electronics, Cybersecurity, AI',relevance:4,why:'AI for intelligence analysis, threat assessment. Air-gapped deployment.',partners:'VP of Digital Technology, CTO office',url:'https://rtx.com',deck:'Design Partner: Defense'},
+{name:'Northrop Grumman',type:'target',stage:'n/a',check:'$500K–$10M+',focus:'Defense, Space, Autonomous AI',relevance:4,why:'AI for mission planning, space domain awareness.',partners:'VP of Enterprise Data & AI',url:'https://northropgrumman.com',deck:'Design Partner: Defense'},
+{name:'General Dynamics (GDIT)',type:'target',stage:'n/a',check:'$500K–$10M+',focus:'Defense IT, Cybersecurity, AI',relevance:4,why:'GDIT is massive IT services contractor. AI decision support for gov clients.',partners:'GDIT VP of AI, Chief Data Scientist',url:'https://gd.com',deck:'Design Partner: Defense'},
+{name:'Booz Allen Hamilton',type:'target',stage:'n/a',check:'$500K–$5M+',focus:'Government Consulting, AI, Analytics',relevance:5,why:'Largest gov consulting firm. Partnership: they integrate + resell AI tools for gov clients.',partners:'VP of AI/Analytics, Chief Data Scientist',url:'https://boozallen.com',deck:'Design Partner: Defense + Government'},
+{name:'Leidos',type:'target',stage:'n/a',check:'$500K–$5M+',focus:'Defense IT, Health IT, AI',relevance:4,why:'Defense + health IT integrator. Dual-use AI decision support.',partners:'VP of AI & Digital Solutions',url:'https://leidos.com',deck:'Design Partner: Defense'},
+{name:'SAIC',type:'target',stage:'n/a',check:'$500K–$5M+',focus:'Defense IT, AI, Space, Intelligence',relevance:4,why:'Government IT services. AI for intelligence analysis.',partners:'Chief Innovation Officer, VP of AI',url:'https://saic.com',deck:'Design Partner: Defense'},
+{name:'Anduril Industries',type:'target',stage:'n/a',check:'Partnership/integration',focus:'Defense AI, Autonomous Systems, Lattice',relevance:4,why:'Modern defense tech company. Lattice platform could integrate Datacendia decision layer.',partners:'Business development team',url:'https://anduril.com',deck:'Design Partner: Defense'},
+{name:'Palantir Technologies',type:'target',stage:'n/a',check:'Partnership/integration',focus:'Government AI, Defense, Enterprise Analytics',relevance:3,why:'Datacendia as decision layer complement to Palantir data integration.',partners:'Business development',url:'https://palantir.com',deck:'Design Partner: Defense + Government'},
+// Enterprise Targets — Energy
+{name:'Duke Energy',type:'target',stage:'n/a',check:'$150K–$500K',focus:'Grid Management AI, Predictive Maintenance',relevance:4,why:'Largest US utility. AI for grid decisions, NERC CIP compliance.',partners:'VP of Technology, Chief Data Officer',url:'https://duke-energy.com',deck:'Design Partner: Energy & Utilities'},
+{name:'Exelon / ComEd',type:'target',stage:'n/a',check:'$150K–$500K',focus:'Nuclear/Utility AI, Grid Intelligence',relevance:4,why:'Largest nuclear operator. AI for nuclear safety decisions.',partners:'VP of Innovation, Chief Digital Officer',url:'https://exeloncorp.com',deck:'Design Partner: Energy & Utilities'},
+{name:'NextEra Energy',type:'target',stage:'n/a',check:'$150K–$500K',focus:'Renewable Energy AI, Grid Optimization',relevance:3,why:'Largest renewable energy company. AI for renewable portfolio decisions.',partners:'VP of Technology, Innovation team',url:'https://nexteraenergy.com',deck:'Design Partner: Energy & Utilities'},
+{name:'Southern Company',type:'target',stage:'n/a',check:'$150K–$500K',focus:'Utility AI, Grid Management',relevance:3,why:'Major utility. AI for grid operations, generation planning decisions.',partners:'Chief Digital Officer, VP of IT',url:'https://southerncompany.com',deck:'Design Partner: Energy & Utilities'},
+// Enterprise Targets — Insurance
+{name:'State Farm',type:'target',stage:'n/a',check:'$150K–$500K',focus:'Insurance AI, Underwriting, Claims',relevance:4,why:'Largest US insurer. AI for underwriting and claims decisions.',partners:'VP of Data Science, Chief Data Officer',url:'https://statefarm.com',deck:'Design Partner: Insurance'},
+{name:'AIG',type:'target',stage:'n/a',check:'$500K–$1.5M',focus:'Commercial Insurance, Underwriting AI',relevance:4,why:'Global commercial insurer. Complex underwriting needs multi-agent analysis.',partners:'Chief Data Scientist, VP of AI',url:'https://aig.com',deck:'Design Partner: Insurance'},
+{name:'Swiss Re',type:'target',stage:'n/a',check:'$500K–$1.5M+',focus:'Reinsurance, Risk Intelligence, AI',relevance:4,why:'Global reinsurer. AI for catastrophe modeling, risk assessment.',partners:'Chief Data Officer, Head of Digital',url:'https://swissre.com',deck:'Design Partner: Insurance'},
+{name:'Lloyd\'s of London',type:'target',stage:'n/a',check:'$500K–$1.5M',focus:'Insurance Marketplace, Underwriting AI',relevance:3,why:'Leading insurance marketplace. AI for syndicate underwriting decisions.',partners:'Chief of Markets, Innovation team',url:'https://lloyds.com',deck:'Design Partner: Insurance'},
+{name:'Allstate',type:'target',stage:'n/a',check:'$150K–$500K',focus:'Insurance AI, Risk Assessment',relevance:3,why:'Major insurer. Risk pricing + claims decisions need explainable AI.',partners:'Chief Data & Analytics Officer',url:'https://allstate.com',deck:'Design Partner: Insurance'},
+// Enterprise Targets — Pharma
+{name:'Pfizer',type:'target',stage:'n/a',check:'$500K–$1.5M+',focus:'Drug Development AI, Clinical Trials, Regulatory',relevance:4,why:'Top pharma. AI for drug development, clinical trial design, FDA submissions.',partners:'Chief Digital & Technology Officer, VP Data Science',url:'https://pfizer.com',deck:'Design Partner: Pharmaceutical'},
+{name:'Johnson & Johnson',type:'target',stage:'n/a',check:'$500K–$1.5M+',focus:'Pharma + MedTech AI, R&D Intelligence',relevance:4,why:'Largest health company. AI for R&D portfolio decisions.',partners:'Chief Data Science Officer, VP Innovation',url:'https://jnj.com',deck:'Design Partner: Pharmaceutical'},
+{name:'Roche / Genentech',type:'target',stage:'n/a',check:'$500K–$1.5M+',focus:'Diagnostics AI, Personalized Medicine',relevance:4,why:'World\'s largest biotech. AI for clinical and diagnostic decisions.',partners:'Head of Data Science, Chief Digital Officer',url:'https://roche.com',deck:'Design Partner: Pharmaceutical'},
+{name:'Novartis',type:'target',stage:'n/a',check:'$500K–$1.5M+',focus:'AI Drug Discovery, Clinical Intelligence',relevance:3,why:'Active AI/data science division. Drug development decisions need governance.',partners:'Chief Data & Digital Officer',url:'https://novartis.com',deck:'Design Partner: Pharmaceutical'},
+{name:'AstraZeneca',type:'target',stage:'n/a',check:'$500K–$1.5M',focus:'Oncology AI, R&D Decision Support',relevance:3,why:'AI for oncology R&D decisions. UK data sovereignty considerations.',partners:'VP of Data Science & AI',url:'https://astrazeneca.com',deck:'Design Partner: Pharmaceutical'},
+{name:'Merck & Co',type:'target',stage:'n/a',check:'$500K–$1.5M',focus:'Pharma AI, Drug Discovery, Manufacturing',relevance:3,why:'Major pharma. AI for drug manufacturing decisions, supply chain governance.',partners:'Chief Data Officer, VP Digital',url:'https://merck.com',deck:'Design Partner: Pharmaceutical'}
+);
+/*BATCH7_END*/
+C.push(
+// Strategic Partners — Consulting & Tech
+{name:'Deloitte',type:'strat',stage:'n/a',check:'Partnership + reseller',focus:'Consulting, AI Advisory, Enterprise Implementation',relevance:5,why:'Big 4 consulting. AI practice is massive. Partnership: Deloitte implements Datacendia for clients.',partners:'AI & Data Practice Lead, Chief AI Officer',url:'https://deloitte.com',deck:'Sales: Enterprise Overview'},
+{name:'McKinsey & Company / QuantumBlack',type:'strat',stage:'n/a',check:'Partnership + advisory',focus:'Strategy Consulting, AI/Analytics',relevance:4,why:'QuantumBlack is their AI arm. McKinsey recommends + deploys Datacendia for clients.',partners:'QuantumBlack leadership, Partner-level contacts',url:'https://mckinsey.com',deck:'Sales: Enterprise Overview'},
+{name:'Accenture',type:'strat',stage:'n/a',check:'Partnership + reseller',focus:'Tech Consulting, AI, Enterprise Transformation',relevance:4,why:'Largest tech consulting firm. AI transformation practice. Integration partner model.',partners:'AI Practice Lead, Managing Director level',url:'https://accenture.com',deck:'Sales: Enterprise Overview'},
+{name:'PwC',type:'strat',stage:'n/a',check:'Partnership + advisory',focus:'Audit, Consulting, AI, Risk',relevance:4,why:'Audit + AI governance. PwC can recommend Datacendia to clients for AI compliance.',partners:'AI/Emerging Tech Practice Leader',url:'https://pwc.com',deck:'Sales: Enterprise Overview'},
+{name:'EY (Ernst & Young)',type:'strat',stage:'n/a',check:'Partnership + advisory',focus:'Audit, Consulting, AI, Tax',relevance:3,why:'Audit + compliance consulting. AI governance for regulated industries.',partners:'AI Practice Lead, Technology Consulting',url:'https://ey.com',deck:'Sales: Enterprise Overview'},
+{name:'KPMG',type:'strat',stage:'n/a',check:'Partnership + advisory',focus:'Audit, Consulting, AI, Risk',relevance:3,why:'Strong regulatory/risk consulting. AI governance for compliance.',partners:'AI Practice Lead, Risk Advisory',url:'https://kpmg.com',deck:'Sales: Enterprise Overview'},
+{name:'IBM Consulting',type:'strat',stage:'n/a',check:'Partnership + OEM',focus:'Enterprise AI, Hybrid Cloud, Consulting',relevance:3,why:'IBM watsonx successor strategy. Datacendia as governance layer on IBM infrastructure.',partners:'AI Practice, Technology Partner team',url:'https://ibm.com/consulting',deck:'Sales: Enterprise Overview'},
+{name:'Cognizant',type:'strat',stage:'n/a',check:'Partnership + reseller',focus:'IT Services, AI, Digital Transformation',relevance:3,why:'IT services for enterprise. Implementation partner for Datacendia deployments.',partners:'AI Practice Lead, VP Technology',url:'https://cognizant.com',deck:'Sales: Enterprise Overview'},
+{name:'Infosys',type:'strat',stage:'n/a',check:'Partnership + reseller',focus:'IT Services, AI, Enterprise',relevance:3,why:'Global IT services. Implementation partner, particularly for APAC deployments.',partners:'AI Practice Lead, VP Technology',url:'https://infosys.com',deck:'Sales: Enterprise Overview'},
+{name:'Tata Consultancy Services (TCS)',type:'strat',stage:'n/a',check:'Partnership + reseller',focus:'IT Services, AI, Enterprise',relevance:3,why:'Largest IT services by headcount. Implementation partner for global deployments.',partners:'AI Practice Lead, VP Technology',url:'https://tcs.com',deck:'Sales: Enterprise Overview'},
+// Additional Enterprise Targets
+{name:'Walmart',type:'target',stage:'n/a',check:'$500K–$1.5M+',focus:'Retail AI, Supply Chain Intelligence',relevance:3,why:'Largest retailer. AI for supply chain, pricing, merchandising decisions.',partners:'VP of Data Science, Chief Technology Officer',url:'https://walmart.com',deck:'Sales: Enterprise Overview'},
+{name:'Amazon (AWS Enterprise)',type:'target',stage:'n/a',check:'Partnership + enterprise',focus:'Cloud, AI, Enterprise Solutions',relevance:4,why:'AWS marketplace listing. Enterprise customers need AI governance layer on AWS.',partners:'AWS Partner team, Enterprise Solutions Architect',url:'https://aws.amazon.com',deck:'Sales: Enterprise Overview'},
+{name:'Meta (Enterprise AI)',type:'target',stage:'n/a',check:'$500K–$1.5M+',focus:'AI Infrastructure, Content Governance',relevance:3,why:'Content moderation decisions. AI governance for trust & safety decisions.',partners:'VP of AI, Trust & Safety Engineering',url:'https://meta.com',deck:'Sales: Enterprise Overview'},
+{name:'Toyota',type:'target',stage:'n/a',check:'$500K–$1.5M+',focus:'Manufacturing AI, Autonomous Vehicles',relevance:3,why:'AI for manufacturing quality decisions, autonomous vehicle safety governance.',partners:'Chief Data Officer, VP of Digital',url:'https://toyota.com',deck:'Sales: Enterprise Overview'},
+{name:'Boeing',type:'target',stage:'n/a',check:'$500K–$5M+',focus:'Aerospace AI, Defense, Safety',relevance:4,why:'Aerospace + defense. AI for safety decisions, manufacturing quality, defense systems.',partners:'VP of Digital, Chief Data Officer',url:'https://boeing.com',deck:'Design Partner: Defense'},
+{name:'Siemens',type:'target',stage:'n/a',check:'$500K–$1.5M+',focus:'Industrial AI, Digital Twin, Manufacturing',relevance:3,why:'Industrial AI leader. AI governance for manufacturing, energy decisions.',partners:'Chief Technology Officer, VP Digital Industries',url:'https://siemens.com',deck:'Sales: Enterprise Overview'},
+{name:'Shell',type:'target',stage:'n/a',check:'$500K–$1.5M+',focus:'Energy AI, Operations Intelligence',relevance:3,why:'Major energy company. AI for operational decisions, safety, emissions.',partners:'VP of Digitalization, Chief Data Officer',url:'https://shell.com',deck:'Design Partner: Energy & Utilities'},
+{name:'Procter & Gamble',type:'target',stage:'n/a',check:'$500K–$1.5M+',focus:'Consumer Goods AI, Supply Chain, R&D',relevance:3,why:'Largest consumer goods company. AI for supply chain, R&D portfolio decisions.',partners:'Chief Data & Analytics Officer',url:'https://pg.com',deck:'Sales: Enterprise Overview'}
+);
+/*DATA_END*/
+
+function renderAll(){
+  // Stats
+  const types={vc:0,cvc:0,accel:0,gov:0,angel:0,target:0};
+  C.forEach(c=>{if(types[c.type]!==undefined)types[c.type]++;});
+  document.getElementById('statsBar').innerHTML=
+    `<div class="stat"><div class="n">${C.length}</div><div class="l">Total</div></div>`+
+    `<div class="stat"><div class="n">${types.vc}</div><div class="l">VC Firms</div></div>`+
+    `<div class="stat"><div class="n">${types.cvc}</div><div class="l">Corporate VC</div></div>`+
+    `<div class="stat"><div class="n">${types.accel}</div><div class="l">Accelerators</div></div>`+
+    `<div class="stat"><div class="n">${types.gov}</div><div class="l">Gov/Defense</div></div>`+
+    `<div class="stat"><div class="n">${types.target}</div><div class="l">Targets</div></div>`;
+  // Cards
+  const tagClass={vc:'tag-vc',cvc:'tag-cvc',accel:'tag-accel',gov:'tag-gov',angel:'tag-angel',target:'tag-target',strat:'tag-strat'};
+  const tagLabel={vc:'VC',cvc:'Corp VC',accel:'Accelerator',gov:'Gov/Defense',angel:'Angel',target:'Enterprise',strat:'Strategic'};
+  const stars=r=>'★'.repeat(r)+'☆'.repeat(5-r);
+  let html='';
+  const sections=[
+    {type:'vc',label:'Venture Capital Firms',desc:'VC firms with AI, enterprise, deep tech, and cybersecurity thesis alignment.'},
+    {type:'cvc',label:'Corporate Venture Capital',desc:'Strategic corporate investors with platform and ecosystem partnership potential.'},
+    {type:'gov',label:'Government & Defense',desc:'Defense investors, intelligence community, and government innovation programs.'},
+    {type:'accel',label:'Accelerators & Programs',desc:'Accelerators, cloud credit programs, and startup ecosystems.'},
+    {type:'angel',label:'Angel Investors & Solo GPs',desc:'Individual investors with AI and enterprise focus.'},
+    {type:'target',label:'Enterprise Targets',desc:'Potential customers, design partners, and strategic accounts by industry.'},
+    {type:'strat',label:'Strategic Partners',desc:'Technology and consulting partners for integration and resale.'}
+  ];
+  sections.forEach(s=>{
+    const items=C.filter(c=>c.type===s.type);
+    if(!items.length)return;
+    html+=`<div class="sec-label">${s.label} (${items.length})</div><p class="sec-desc">${s.desc}</p><div class="c-grid">`;
+    items.sort((a,b)=>b.relevance-a.relevance);
+    items.forEach(c=>{
+      html+=`<div class="c-card" data-type="${c.type}" data-stage="${c.stage||''}" data-rel="${c.relevance}" data-search="${(c.name+' '+c.focus+' '+(c.partners||'')+' '+(c.why||'')).toLowerCase()}">
+        <div class="c-top"><div class="c-name">${c.name}</div><span class="c-tag ${tagClass[c.type]||'tag-strat'}">${tagLabel[c.type]||c.type}</span></div>
+        <div class="c-focus">${c.focus}</div>
+        <div class="c-meta">
+          ${c.check?`<span class="c-k">Check Size</span><span class="c-v">${c.check}</span>`:''}
+          ${c.stage?`<span class="c-k">Stage</span><span class="c-v">${c.stage}</span>`:''}
+          <span class="c-k">Fit</span><span class="c-v" style="color:var(--gold)">${stars(c.relevance)}</span>
+        </div>
+        ${c.why?`<div class="c-why">${c.why}</div>`:''}
+        ${c.partners?`<div class="c-partners"><strong>Key Contacts:</strong> ${c.partners}</div>`:''}
+        ${c.deck?`<div class="c-deck"><strong>Send:</strong> ${c.deck}</div>`:''}
+        ${c.url&&c.url!=='N/A'?`<a class="c-deck" href="${c.url}" target="_blank" style="color:var(--blue)">${c.url}</a>`:''}
+      </div>`;
+    });
+    html+='</div>';
+  });
+  document.getElementById('cards').innerHTML=html;
+  filterCards();
+}
+function filterCards(){
+  const q=document.getElementById('search').value.toLowerCase();
+  const t=document.getElementById('filterType').value;
+  const s=document.getElementById('filterStage').value;
+  const r=parseInt(document.getElementById('filterRel').value)||0;
+  let shown=0;
+  document.querySelectorAll('.c-card').forEach(card=>{
+    const matchQ=!q||card.dataset.search.includes(q);
+    const matchT=!t||card.dataset.type===t;
+    const matchS=!s||card.dataset.stage.includes(s);
+    const matchR=!r||parseInt(card.dataset.rel)>=r;
+    const visible=matchQ&&matchT&&matchS&&matchR;
+    card.classList.toggle('hidden',!visible);
+    if(visible)shown++;
+  });
+  document.getElementById('resultCount').textContent=`Showing ${shown} of ${C.length}`;
+}
+document.addEventListener('DOMContentLoaded',renderAll);
+</script>
+</body>
+</html>
