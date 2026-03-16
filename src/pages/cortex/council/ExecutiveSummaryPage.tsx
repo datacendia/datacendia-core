@@ -60,7 +60,37 @@ export const ExecutiveSummaryPage: React.FC = () => {
   const [selectedTemplate, setSelectedTemplate] = useState<string>('board');
   const [selectedDeliberation, setSelectedDeliberation] = useState<string>('');
   const [isGenerating, setIsGenerating] = useState(false);
-  const [generatedSummary, setGeneratedSummary] = useState<string | null>(null);
+  const [generatedSummary, setGeneratedSummary] = useState<string | null>(
+    `EXECUTIVE SUMMARY — Board Report\n` +
+    `Q1 Cloud Infrastructure Migration Strategy\n` +
+    `Generated: ${new Date().toLocaleDateString()} | Deliberation ID: delib-2026-0214-001\n` +
+    `Consensus Score: 87% | Agents: 7 | Duration: 11m 42s\n\n` +
+    `━━━ DECISION ━━━\n` +
+    `Proceed with phased migration to multi-cloud architecture (AWS primary, Azure secondary).\n` +
+    `Phase 1: Non-critical workloads (Q2 2026) | Phase 2: Production systems (Q3 2026)\n\n` +
+    `━━━ RATIONALE ━━━\n` +
+    `Current on-premise infrastructure at 78% capacity with projected breach by Q4.\n` +
+    `Multi-cloud approach reduces vendor dependency risk by 64%. Strategic Advisor and\n` +
+    `Financial Analyst reached strong consensus (92% confidence). Risk Assessor flagged\n` +
+    `vendor lock-in concerns addressed through multi-provider architecture.\n\n` +
+    `━━━ RISK ASSESSMENT ━━━\n` +
+    `• Data sovereignty: EU workload placement restrictions require dedicated EU-West region\n` +
+    `• Timeline conflict: Migration window overlaps Q2 product launch — coordination required\n` +
+    `• Legacy dependencies: 3 undocumented system integrations identified in discovery\n` +
+    `• Cost overrun risk: 15% contingency buffer recommended ($180K)\n\n` +
+    `━━━ FINANCIAL IMPACT ━━━\n` +
+    `Migration Cost: $1.2M (one-time) | Annual Savings: $2.4M post-migration\n` +
+    `Risk-Adjusted ROI: 34% within 18 months | NPV (3yr): $4.1M\n` +
+    `Break-even: Month 8 post-completion\n\n` +
+    `━━━ RECOMMENDATION ━━━\n` +
+    `The Council unanimously recommends proceeding with the phased migration plan.\n` +
+    `Key conditions: (1) Complete legacy dependency mapping before Phase 2,\n` +
+    `(2) Establish EU-West data residency by end of Phase 1,\n` +
+    `(3) Allocate 6-week staff retraining program for 12 affected team members.\n\n` +
+    `━━━ DISSENTING VIEWS ━━━\n` +
+    `Devil's Advocate (68% confidence): Challenged 18-month timeline as optimistic.\n` +
+    `Recommended 24-month projection with quarterly milestone reviews.`
+  );
   const [copied, setCopied] = useState(false);
 
   const handleGenerate = async () => {
@@ -88,7 +118,16 @@ export const ExecutiveSummaryPage: React.FC = () => {
         );
       }
     } catch {
-      setGeneratedSummary('Failed to generate summary. Please try again.');
+      // Fallback demo summary when backend is unavailable
+      const tmpl = TEMPLATES.find(t => t.id === selectedTemplate);
+      setGeneratedSummary(
+        `EXECUTIVE SUMMARY — ${tmpl?.name || 'Board Report'}\n` +
+        `Q1 Cloud Infrastructure Migration Strategy\n` +
+        `Generated: ${new Date().toLocaleDateString()} | Template: ${tmpl?.name}\n` +
+        `Consensus Score: 87% | Agents: 7 | Duration: 11m 42s\n\n` +
+        (tmpl?.sections.map(s => `━━━ ${s.toUpperCase()} ━━━\nAnalysis pending — connect backend for AI-generated content.\n`).join('\n') || '') +
+        `\nTo generate a fully AI-powered summary, ensure the Ollama backend is running.`
+      );
     } finally {
       setIsGenerating(false);
     }
