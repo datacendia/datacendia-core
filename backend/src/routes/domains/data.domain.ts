@@ -14,6 +14,7 @@
 
 import { Router } from 'express';
 import { mountEnterpriseRoutes } from './_enterprise.js';
+import { authenticate } from '../../middleware/auth.js';
 import metricsRoutes from '../metrics.js';
 import alertsRoutes from '../alerts.js';
 import forecastRoutes from '../forecasts.js';
@@ -28,6 +29,9 @@ import graphRoutes from '../graph.js';
 import sampleDataRoutes from '../sample-data.js';
 
 const router = Router();
+
+// Apply authentication to all data domain routes
+router.use(authenticate);
 
 // Community routes
 router.use('/metrics', metricsRoutes);

@@ -397,6 +397,19 @@ interface AttackDetectionResult {
   severity: number; // 1-10
 }
 
+// Password fields are bcrypt-hashed before any DB interaction and Prisma
+// parameterizes all queries — injection via a password field is structurally
+// impossible. Skip WAF scanning for these fields to avoid false-positives on
+// strong passwords that legitimately contain ; # $ -- ( ) * characters.
+const PASSWORD_FIELD_NAMES = new Set([
+  'password',
+  'confirmpassword',
+  'newpassword',
+  'currentpassword',
+  'oldpassword',
+  'passwd',
+]);
+
 function detectAttackPatterns(req: Request): AttackDetectionResult {
   const checkValue = (value: string, source: string): AttackDetectionResult | null => {
     if (typeof value !== 'string' || value.length === 0) return null;
@@ -431,6 +444,12 @@ function detectAttackPatterns(req: Request): AttackDetectionResult {
           details: `Prototype pollution attempt via key: ${key}`,
           severity: 10,
         };
+      }
+
+      // Skip password fields — they are bcrypt-hashed before any DB interaction
+      // and Prisma parameterizes all queries, making injection structurally impossible.
+      if (PASSWORD_FIELD_NAMES.has(key.toLowerCase())) {
+        continue;
       }
 
       if (typeof value === 'string') {

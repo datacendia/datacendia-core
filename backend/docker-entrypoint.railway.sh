@@ -1,10 +1,21 @@
 #!/bin/sh
 set -e
 
+# Ensure PORT and DEMO_MODE are exported for child processes
+export PORT="${PORT:-3001}"
+export DEMO_MODE="${DEMO_MODE:-true}"
+
 echo "╔════════════════════════════════════════════════════════════╗"
 echo "║         DATACENDIA — Railway Deployment                    ║"
 echo "║         Auto-migrate + Auto-seed                           ║"
 echo "╚════════════════════════════════════════════════════════════╝"
+
+if [ "$DEMO_MODE" = "true" ]; then
+  echo ""
+  echo "⚠️  DEMO MODE ACTIVE — authentication bypass enabled"
+  echo "   Set DEMO_MODE=false and REQUIRE_AUTH=true for production use"
+  echo ""
+fi
 
 # Railway provides DATABASE_URL automatically
 if [ -z "$DATABASE_URL" ]; then
