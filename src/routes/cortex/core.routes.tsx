@@ -113,6 +113,9 @@ const DecisionReplayTheaterPage = lazy(() =>
 // );
 const UpgradePage = lazy(() => import('../../pages/cortex/UpgradePage'));
 
+// Service Orchestration Workflow Builder
+const ServiceWorkflowBuilderPage = lazy(() => import('../../pages/cortex/workflows/WorkflowBuilderPage'));
+
 const w = (Component: React.ComponentType) => (
   <SuspenseWrapper><Component /></SuspenseWrapper>
 );
@@ -153,6 +156,9 @@ export const cortexCoreRoutes: RouteObject[] = [
   { path: 'bridge/workflows/new', element: w(WorkflowBuilderPage) },
   { path: 'bridge/approvals', element: w(ApprovalsPage) },
   { path: 'bridge/integrations', element: w(BridgeIntegrationsPage) },
+
+  // Service Orchestration Workflow Builder
+  { path: 'workflows/builder', element: w(ServiceWorkflowBuilderPage) },
 
   // CendiaPulse™ (Enterprise tier — redirects to upgrade)
   { path: 'monitor/live', element: w(UpgradePage) },
