@@ -20,8 +20,12 @@ import * as fs from 'fs';
 import { spreadsheetConnector } from '../core/connectors/implementations/SpreadsheetConnector.js';
 import { getErrorMessage } from '../utils/errors.js';
 import { deterministicFloat, deterministicInt, deterministicPercentage, deterministicPick } from '../utils/deterministic.js';
+import { authenticate } from '../middleware/auth.js';
 
 const router = Router();
+
+// Apply authentication to all upload routes
+router.use(authenticate);
 
 // Configure multer for file uploads
 const uploadDir = './uploads';
@@ -138,8 +142,14 @@ router.post('/import', upload.single('file'), async (req: Request, res: Response
     }
 
     const tableName = req.body.tableName || path.basename(filePath, path.extname(filePath));
-    const organizationId = req.body.organizationId || req.organizationId!;
-    const userId = req.body.userId || 'demo-user';
+    const organizationId = req.body.organizationId || req.organizationId;
+    if (!organizationId) {
+      return res.status(401).json({ success: false, error: 'Authentication required' });
+    }
+    const userId = req.body.userId || req.user?.id;
+    if (!userId) {
+      return res.status(401).json({ success: false, error: 'Authentication required' });
+    }
 
     // Parse the file
     const parseResult = await spreadsheetConnector.parseFile(filePath, {
@@ -196,7 +206,10 @@ router.post('/import', upload.single('file'), async (req: Request, res: Response
  */
 router.get('/tables', async (req: Request, res: Response) => {
   try {
-    const organizationId = (req.query.organizationId as string) || 'demo-org';
+    const organizationId = (req.query.organizationId as string) || req.organizationId;
+    if (!organizationId) {
+      return res.status(401).json({ success: false, error: 'Authentication required' });
+    }
     const tables = spreadsheetConnector.listImportedTables(organizationId);
 
     res.json({
@@ -217,7 +230,10 @@ router.get('/tables', async (req: Request, res: Response) => {
  */
 router.get('/tables/:tableName', async (req: Request, res: Response) => {
   try {
-    const organizationId = (req.query.organizationId as string) || 'demo-org';
+    const organizationId = (req.query.organizationId as string) || req.organizationId;
+    if (!organizationId) {
+      return res.status(401).json({ success: false, error: 'Authentication required' });
+    }
     const tableName = req.params.tableName;
     const limit = parseInt((req.query.limit as string) || '100', 10);
     const offset = parseInt((req.query.offset as string) || '0', 10);

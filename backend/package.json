@@ -28,7 +28,8 @@
     "build:community": "tsc -p tsconfig.community.json",
     "check:boundary": "node ../scripts/check-community-boundary.mjs",
     "seed:demo": "tsx prisma/seed-full-demo.ts && tsx prisma/seed-council-showcase.ts",
-    "seed:showcase": "tsx prisma/seed-council-showcase.ts"
+    "seed:showcase": "tsx prisma/seed-council-showcase.ts",
+    "load-test": "vitest run tests/load"
   },
   "dependencies": {
     "@aws-sdk/client-kms": "^3.995.0",
