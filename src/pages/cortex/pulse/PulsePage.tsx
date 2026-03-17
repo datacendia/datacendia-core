@@ -366,6 +366,9 @@ export const PulsePage: React.FC = () => {
         healthApi.getSystemStatus(),
       ]);
 
+      // Guard: if API returned but data is empty, use fallback
+      if (!scoreRes.success || !scoreRes.data) throw new Error('No health data available');
+
       if (scoreRes.success && scoreRes.data) {
         setHealthScore(scoreRes.data.overall);
         // Calculate weekly change from trend
@@ -514,6 +517,9 @@ export const PulsePage: React.FC = () => {
   const loadAlerts = useCallback(async () => {
     try {
       const alertsRes = await alertsApi.getAlerts({ status: 'ACTIVE' });
+
+      // Guard: if API returned but data is empty, use fallback
+      if (!alertsRes.success || !alertsRes.data) throw new Error('No alerts data available');
 
       if (alertsRes.success && alertsRes.data) {
         // Convert alerts to anomalies
