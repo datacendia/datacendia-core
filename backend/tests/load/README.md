@@ -31,14 +31,14 @@ API_URL=https://your-staging.up.railway.app npm run load-test
 
 Fires `LOAD_CONCURRENCY × LOAD_ITERATIONS` requests at `GET /health` and asserts:
 - **Error rate** ≤ 5%
-- **P99 latency** ≤ 2 000 ms
+- **P99 latency** ≤ 2000 ms
 
 ### `council.load.test.ts`
 
 Fires concurrent `POST /api/v1/council/decisions` requests (multi-agent deliberation)
 and asserts:
 - **Infrastructure error rate** ≤ 10% (401/403 auth responses are excluded)
-- **P95 latency** ≤ 30 000 ms (council deliberation involves LLM calls)
+- **P95 latency** ≤ 30000 ms (council deliberation involves LLM calls)
 
 ## Thresholds
 
