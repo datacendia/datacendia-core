@@ -194,8 +194,9 @@ function buildPPTX(deck, idx) {
     const ssPoints = ss.points.map(p => ({ text: p, options: { fontSize: 11, color: MUTED, bullet: { code: '2192', color: GOLD }, lineSpacingMultiple: 1.5 } }));
     ssc.addText(ssPoints, { x: 0.8, y: 3.0, w: 4.5, h: 3.5, valign: 'top' });
     
-    // Right column: screenshot image
-    ssc.addImage({ path: imgPath, x: 5.8, y: 1.2, w: 7.0, h: 5.3 });
+    // Right column: screenshot image (embedded as base64)
+    const imgData = fs.readFileSync(imgPath).toString('base64');
+    ssc.addImage({ data: 'image/png;base64,' + imgData, x: 5.8, y: 1.2, w: 7.0, h: 5.3 });
     
     addFooter(ssc);
   }
