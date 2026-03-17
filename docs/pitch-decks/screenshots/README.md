@@ -42,6 +42,13 @@ Screenshots of the Datacendia platform for use in investor and sales pitch decks
 | 24 | `24-persona-forge.png` | components (5174) | `/cortex/enterprise/persona-forge` | PersonaForge™ synthetic stakeholder simulation |
 | 25 | `25-dissent.png` | components (5174) | `/cortex/enterprise/dissent` | Structured dissent & devil's advocate engine |
 | 26 | `26-escrow.png` | components (5174) | `/cortex/crypto/escrow` | CendiaEscrow™ Shamir Secret Sharing & VDF time-locks |
+| 27 | `27-workflow-builder-core.png` | core (5173) | `/cortex/workflows/builder` | Service Orchestration Workflow Builder (Foundation — 17 services) |
+| 28 | `28-workflow-builder-full.png` | components (5174) | `/cortex/workflows/builder` | Service Orchestration Workflow Builder (Full Platform — 60+ services, all tiers) |
+| 29 | `29-gap-scanner.png` | components (5174) | `/cortex/compliance/gap-scanner` | CendiaGapScan™ compliance gap analysis across 8 frameworks |
+| 30 | `30-compliance-readiness.png` | components (5174) | `/cortex/compliance/readiness` | Compliance readiness dashboard with framework status |
+| 31 | `31-sovereign.png` | components (5174) | `/cortex/enterprise/sovereign` | Sovereign deployment & data residency controls |
+| 32 | `32-mesh.png` | components (5174) | `/cortex/enterprise/mesh` | CendiaMesh™ integration mesh & API orchestration |
+| 33 | `33-roi-metrics.png` | components (5174) | `/cortex/enterprise/roi-metrics` | CendiaROI™ governance ROI metrics & deliberation throughput |
 | — | `nvidia-inception.png` | Manual | — | NVIDIA Inception Program member badge |
 
 ## Deck Usage
@@ -53,5 +60,13 @@ Screenshots of the Datacendia platform for use in investor and sales pitch decks
 - **Slide 8 (Crown Jewels):** `16-redteam.png`, `17-gnosis.png`, `18-echo.png`
 - **Slide 9 (Crisis/Stress-Test):** `12-collapse.png`, `20-crisis.png`
 - **Slide 10 (ESG/Insurance):** `14-carbon-aware.png`, `23-ai-insurance.png`
+- **Slide 11 (Orchestration):** `28-workflow-builder-full.png`, `32-mesh.png`
+- **Slide 12 (Compliance):** `29-gap-scanner.png`, `30-compliance-readiness.png`
+- **Slide 13 (ROI):** `33-roi-metrics.png`, `26-escrow.png`
 - **Slide 1 & 8:** `nvidia-inception.png` (badge only)
 - **Vertical-specific slides:** Use matching screenshot (e.g., Gateway for compliance decks, Carbon Aware for ESG deck)
+
+## Screenshot Notes
+
+- **Workflow Builder (core vs components):** Core shows 17 Foundation-tier services. Components shows the full 60+ services across Foundation, Enterprise, and Strategic tiers. Use `28-workflow-builder-full.png` for investor decks (more impressive service count). Use `27-workflow-builder-core.png` for open-source community decks.
+- **All screenshots should be captured in dark mode** at 1920×1080 for consistency.
