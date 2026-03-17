@@ -306,7 +306,7 @@ function processFile(filePath) {
 
 // Process all decks
 const baseDir = path.join(__dirname);
-const folders = ['investor', 'sales', 'design-partner', 'investor-50/html', 'gamma'];
+const folders = ['investor', 'sales', 'design-partner', 'investor-50/html', 'gamma', 'investor-100/html'];
 
 for (const folder of folders) {
   const dir = path.join(baseDir, folder);
