@@ -458,14 +458,20 @@ let socketServer: SocketServer | null = null;
 // Start server
 const startServer = async () => {
   try {
-    const listenHost = config.nodeEnv === 'development' && process.platform === 'win32'
-      ? '127.0.0.1'
-      : undefined;
+    const listenHost = config.nodeEnv === 'production'
+      ? '0.0.0.0'
+      : (config.nodeEnv === 'development' && process.platform === 'win32'
+        ? '127.0.0.1'
+        : undefined);
 
     // ── Auth Mode Guard ─────────────────────────────────────────────────
     if (config.nodeEnv === 'production' && !config.requireAuth) {
-      logger.warn('⚠️  SECURITY: REQUIRE_AUTH is not enabled in production. Set REQUIRE_AUTH=true for production use.');
-      logger.warn('⚠️  Dev auth bypass is active. This is acceptable for demo/staging deployments.');
+      if (config.demoMode) {
+        logger.warn('⚠️  DEMO MODE ACTIVE — authentication bypass enabled. Not suitable for production data.');
+      } else {
+        logger.warn('⚠️  SECURITY: REQUIRE_AUTH is not enabled in production. Set REQUIRE_AUTH=true for production use.');
+        logger.warn('⚠️  Dev auth bypass is active. This is acceptable for demo/staging deployments.');
+      }
     }
     const authMode = config.requireAuth ? 'enforced' : (config.nodeEnv === 'development' ? 'dev-bypass' : 'enforced');
     logger.info(`🔐 Auth mode: ${authMode} (REQUIRE_AUTH=${config.requireAuth}, NODE_ENV=${config.nodeEnv})`);
