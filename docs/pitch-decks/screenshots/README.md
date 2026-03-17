@@ -41,6 +41,7 @@ Screenshots of the Datacendia platform for use in investor and sales pitch decks
 | 23 | `23-ai-insurance.png` | components (5174) | `/cortex/enterprise/ai-insurance` | CendiaInsure™ AI liability coverage & active policies |
 | 24 | `24-persona-forge.png` | components (5174) | `/cortex/enterprise/persona-forge` | PersonaForge™ synthetic stakeholder simulation |
 | 25 | `25-dissent.png` | components (5174) | `/cortex/enterprise/dissent` | Structured dissent & devil's advocate engine |
+| 26 | `26-escrow.png` | components (5174) | `/cortex/crypto/escrow` | CendiaEscrow™ Shamir Secret Sharing & VDF time-locks |
 | — | `nvidia-inception.png` | Manual | — | NVIDIA Inception Program member badge |
 
 ## Deck Usage
