@@ -23,6 +23,45 @@ const MUTED = '8B8FA3';
 const CARD_BG = '141825';
 const GREEN = '10B981';
 
+// Screenshot library for PPTX slides
+const SCREENSHOTS_DIR = path.join(__dirname, '..', 'screenshots');
+const SCREENSHOT_DEFS = {
+  'council-deliberation': { img: '02-council-deliberation.png', section: 'Multi-Agent Decision Engine', headline: 'Decisions Made by Specialized AI Agents', points: ['Role-specific agents: CFO, CISO, Legal, Strategy, Risk', 'Confidence scores and reasoning — dissent preserved', 'War Room, Governed, and Quick Brief modes'] },
+  'decisions-list': { img: '05-decisions.png', section: 'Decision Audit Trail', headline: 'Every Decision Tracked with Full Evidence Chain', points: ['Complete searchable decision history', 'Full deliberation records linked to each decision', 'Trace any decision back to evidence in seconds'] },
+  'compliance-dashboard': { img: '04-dcii-dashboard.png', section: 'Compliance Automation', headline: 'Continuous Compliance Across Frameworks', points: ['Real-time scoring against EU AI Act, GDPR, HIPAA', 'Automated gap detection and remediation', 'Audit-ready compliance bundles on demand'] },
+  'post-deliberation': { img: '03-post-deliberation.png', section: 'Deliberation Transparency', headline: 'See Who Voted, How Confident, and Why', points: ['Each agent\'s vote, confidence, and reasoning', 'Dissenting opinions surfaced, not buried', 'Board-ready executive summaries'] },
+  'executive-summary': { img: '08-executive-summary.png', section: 'Board-Ready Output', headline: 'One-Click Executive Summaries', points: ['Auto-generated board-ready language', 'Every claim links to source data and reasoning', 'Export to PDF or share via secure link'] },
+  'pulse': { img: '13-pulse.png', section: 'Real-Time Monitoring', headline: 'Organizational Health at a Glance', points: ['Health score across data, ops, security, people', 'Latency and system status monitoring', 'Anomaly detection with one-click escalation'] },
+  'graph-explorer': { img: '07-graph-explorer.png', section: 'Knowledge Graph', headline: 'See How Data, Decisions, and People Connect', points: ['Interactive entity and relationship mapping', 'Data lineage tracing upstream and downstream', 'Impact analysis before any change'] },
+  'dashboard': { img: '01-dashboard.png', section: 'Command Center', headline: 'Enterprise Decision Intelligence Hub', points: ['Active deliberations, health scores, system status', 'One-click access to all platform capabilities', 'Role-based views for every stakeholder'] },
+  'gateway': { img: '06-gateway-dashboard.png', section: 'AI Governance Gateway', headline: 'Every AI Interaction Logged and Auditable', points: ['Full audit trail for all AI requests/responses', 'PII detection and content policy enforcement', 'Real-time token usage and cost tracking'] },
+};
+
+const SCREENSHOT_MAP = {
+  '_universal': ['council-deliberation', 'decisions-list'],
+  'compliance|regulation|audit|gdpr|hipaa|dora|soc|eu-ai|governance': ['compliance-dashboard'],
+  'sovereign|air-gap|defense|government|classified|military': ['dashboard'],
+  'multi-agent|council|deliberat|agent': ['post-deliberation', 'executive-summary'],
+  'healthcare|pharma|clinical': ['pulse'],
+  'financial|banking|insurance|risk': ['pulse'],
+  'data|lineage|silo|zero-copy|snowflake|sap|salesforce|integration': ['graph-explorer'],
+  'gateway|api|deploy|cloud|private|on.prem|hybrid': ['dashboard', 'gateway'],
+  'speed|decision|roi|business.model|competitive|moat|fortune|enterprise|mid.market': ['dashboard'],
+};
+
+function getScreenshotsForDeck(deck) {
+  const keys = new Set();
+  for (const k of SCREENSHOT_MAP['_universal']) keys.add(k);
+  const text = `${deck.id} ${deck.title} ${deck.sub} ${deck.problem} ${deck.solution}`;
+  for (const [pattern, imgKeys] of Object.entries(SCREENSHOT_MAP)) {
+    if (pattern === '_universal') continue;
+    if (new RegExp(pattern, 'i').test(text)) {
+      for (const k of imgKeys) keys.add(k);
+    }
+  }
+  return [...keys].slice(0, 2).map(k => SCREENSHOT_DEFS[k]).filter(Boolean);
+}
+
 function buildPPTX(deck, idx) {
   const pptx = new PptxGenJS();
   pptx.defineLayout({ name: 'WIDE', width: 13.33, height: 7.5 });
@@ -137,6 +176,29 @@ function buildPPTX(deck, idx) {
   });
   s7.addText(shared.ASK.footer, { x: 1, y: 5.2, w: 11, h: 0.4, fontSize: 12, color: MUTED, align: 'center' });
   addFooter(s7);
+
+  // Screenshot slides (before CTA)
+  const screenshots = getScreenshotsForDeck(deck);
+  for (const ss of screenshots) {
+    const imgPath = path.join(SCREENSHOTS_DIR, ss.img);
+    if (!fs.existsSync(imgPath)) continue;
+    
+    let ssc = pptx.addSlide();
+    ssc.background = { color: BG };
+    addLogo(ssc);
+    ssc.addText('PLATFORM PROOF', { x: 9, y: 0.3, w: 4, h: 0.3, fontSize: 8, color: MUTED, align: 'right' });
+    
+    // Left column: text
+    ssc.addText(ss.section.toUpperCase(), { x: 0.8, y: 1.2, w: 4.5, h: 0.3, fontSize: 11, color: GOLD, letterSpacing: 3 });
+    ssc.addText(ss.headline, { x: 0.8, y: 1.7, w: 4.5, h: 1.0, fontSize: 20, color: WHITE, bold: true });
+    const ssPoints = ss.points.map(p => ({ text: p, options: { fontSize: 11, color: MUTED, bullet: { code: '2192', color: GOLD }, lineSpacingMultiple: 1.5 } }));
+    ssc.addText(ssPoints, { x: 0.8, y: 3.0, w: 4.5, h: 3.5, valign: 'top' });
+    
+    // Right column: screenshot image
+    ssc.addImage({ path: imgPath, x: 5.8, y: 1.2, w: 7.0, h: 5.3, rounding: true });
+    
+    addFooter(ssc);
+  }
 
   // Slide 8: CTA
   let s8 = pptx.addSlide();
