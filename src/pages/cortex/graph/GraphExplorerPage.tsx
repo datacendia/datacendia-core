@@ -313,13 +313,11 @@ export const GraphExplorerPage: React.FC = () => {
         } else {
           // Load full graph (nodes + relationships)
           const graphRes = await graphApi.getEntities({ pageSize: 100 });
-          if (graphRes.success && graphRes.data) {
+          if (!graphRes.success || !graphRes.data || (Array.isArray(graphRes.data) && graphRes.data.length === 0)) {
+            throw new Error('No graph data available');
+          }
+          {
             const entities = graphRes.data as GraphEntity[];
-            
-            // Guard: if API returned but data is empty, use fallback
-            if (!entities || entities.length === 0) {
-              throw new Error('Empty graph data');
-            }
             
             const graphNodes: GraphNode[] = entities.map((e) => ({
               id: e.id,
