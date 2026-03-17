@@ -47,27 +47,47 @@ interface GraphCanvasProps {
   layout?: 'cose' | 'breadthfirst' | 'circle' | 'concentric' | 'grid' | 'dagre';
 }
 
-// Color scheme for different node types
+// Color scheme for different node types (lowercase keys to match data)
 const nodeColors: Record<string, string> = {
-  Dataset: '#3B82F6', // Blue
-  Metric: '#10B981', // Green
-  Process: '#8B5CF6', // Purple
-  Report: '#F59E0B', // Amber
-  Dashboard: '#EC4899', // Pink
-  Entity: '#6366F1', // Indigo
-  User: '#14B8A6', // Teal
-  Team: '#F97316', // Orange
+  dataset: '#3B82F6', // Blue
+  metric: '#10B981', // Green
+  process: '#F59E0B', // Amber
+  report: '#EC4899', // Pink
+  dashboard: '#06B6D4', // Cyan
+  entity: '#8B5CF6', // Purple
+  workflow: '#F97316', // Orange
+  user: '#14B8A6', // Teal
+  team: '#F97316', // Orange
   default: '#6B7280', // Gray
+};
+
+// Border/glow colors per type
+const nodeBorderColors: Record<string, string> = {
+  dataset: '#60A5FA',
+  metric: '#34D399',
+  process: '#FBBF24',
+  report: '#F472B6',
+  dashboard: '#22D3EE',
+  entity: '#A78BFA',
+  workflow: '#FB923C',
+  user: '#2DD4BF',
+  team: '#FB923C',
+  default: '#9CA3AF',
 };
 
 // Edge colors by relationship type
 const edgeColors: Record<string, string> = {
+  feeds: '#3B82F6',
+  derives: '#10B981',
+  transforms: '#F59E0B',
+  related: '#9CA3AF',
+  owns: '#8B5CF6',
   DERIVES_FROM: '#3B82F6',
   CALCULATED_FROM: '#10B981',
   IMPACTS: '#F59E0B',
   OWNS: '#8B5CF6',
   USES: '#EC4899',
-  default: '#9CA3AF',
+  default: '#4B5563',
 };
 
 export const GraphCanvas: React.FC<GraphCanvasProps> = ({
@@ -129,14 +149,17 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
             'text-halign': 'center',
             'text-margin-y': 8,
             'font-size': 12,
-            'font-weight': 500,
-            color: '#374151',
-            'text-outline-color': '#ffffff',
+            'font-weight': 600,
+            color: '#E5E7EB',
+            'text-outline-color': '#111827',
             'text-outline-width': 2,
-            width: 40,
-            height: 40,
-            'border-width': 2,
-            'border-color': '#ffffff',
+            width: 44,
+            height: 44,
+            'border-width': 3,
+            'border-color': (ele: NodeSingular) =>
+              nodeBorderColors[ele.data('type')] || nodeBorderColors.default,
+            'border-opacity': 0.8,
+            'background-opacity': 0.85,
             'transition-property': 'background-color, border-color, width, height',
             'transition-duration': 150,
           } as cytoscape.Css.Node,
@@ -145,36 +168,38 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
         {
           selector: 'node:selected',
           style: {
-            'border-width': 3,
-            'border-color': '#1D4ED8',
-            width: 50,
-            height: 50,
+            'border-width': 4,
+            'border-color': '#FBBF24',
+            width: 54,
+            height: 54,
           } as cytoscape.Css.Node,
         },
         // Hovered node
         {
           selector: 'node:active',
           style: {
-            'overlay-opacity': 0.1,
+            'overlay-opacity': 0.15,
+            'overlay-color': '#FBBF24',
           } as cytoscape.Css.Node,
         },
         // Edge styles
         {
           selector: 'edge',
           style: {
-            width: 2,
+            width: 1.5,
             'line-color': (ele: EdgeSingular) => edgeColors[ele.data('type')] || edgeColors.default,
+            'line-opacity': 0.6,
             'target-arrow-color': (ele: EdgeSingular) =>
               edgeColors[ele.data('type')] || edgeColors.default,
             'target-arrow-shape': 'triangle',
             'curve-style': 'bezier',
             label: 'data(label)',
-            'font-size': 10,
-            color: '#6B7280',
+            'font-size': 9,
+            color: '#9CA3AF',
             'text-rotation': 'autorotate',
             'text-margin-y': -10,
-            'text-background-color': '#ffffff',
-            'text-background-opacity': 0.8,
+            'text-background-color': '#1F2937',
+            'text-background-opacity': 0.9,
             'text-background-padding': 2,
           } as unknown as cytoscape.Css.Edge,
         },
@@ -183,8 +208,9 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
           selector: 'edge:selected',
           style: {
             width: 3,
-            'line-color': '#1D4ED8',
-            'target-arrow-color': '#1D4ED8',
+            'line-color': '#FBBF24',
+            'target-arrow-color': '#FBBF24',
+            'line-opacity': 1,
           } as cytoscape.Css.Edge,
         },
         // Inferred (heuristic) edges
@@ -366,15 +392,15 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
   }, []);
 
   return (
-    <div className={cn('relative w-full h-full bg-gray-50 rounded-lg overflow-hidden', className)}>
+    <div className={cn('relative w-full h-full bg-gray-950 rounded-lg overflow-hidden', className)}>
       {/* Graph container */}
       <div ref={containerRef} className="w-full h-full" />
 
       {/* Controls */}
-      <div className="absolute bottom-4 left-4 flex gap-2 bg-white rounded-lg shadow-lg p-1">
+      <div className="absolute bottom-4 left-4 flex gap-2 bg-gray-800/90 border border-gray-700 rounded-lg shadow-lg p-1">
         <button
           onClick={zoomIn}
-          className="p-2 hover:bg-gray-100 rounded transition-colors"
+          className="p-2 hover:bg-gray-700 rounded transition-colors text-gray-300"
           title="Zoom In"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -388,17 +414,17 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
         </button>
         <button
           onClick={zoomOut}
-          className="p-2 hover:bg-gray-100 rounded transition-colors"
+          className="p-2 hover:bg-gray-700 rounded transition-colors text-gray-300"
           title="Zoom Out"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 12H6" />
           </svg>
         </button>
-        <div className="w-px bg-gray-200" />
+        <div className="w-px bg-gray-600" />
         <button
           onClick={fitToScreen}
-          className="p-2 hover:bg-gray-100 rounded transition-colors"
+          className="p-2 hover:bg-gray-700 rounded transition-colors text-gray-300"
           title="Fit to Screen"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -412,7 +438,7 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
         </button>
         <button
           onClick={resetView}
-          className="p-2 hover:bg-gray-100 rounded transition-colors"
+          className="p-2 hover:bg-gray-700 rounded transition-colors text-gray-300"
           title="Reset View"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -427,16 +453,15 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
       </div>
 
       {/* Legend */}
-      <div className="absolute top-4 right-4 bg-white rounded-lg shadow-lg p-3">
-        <h4 className="text-xs font-semibold text-gray-500 mb-2">LEGEND</h4>
-        <div className="space-y-1">
+      <div className="absolute top-4 right-4 bg-gray-800/90 border border-gray-700 rounded-lg shadow-lg p-3">
+        <h4 className="text-xs font-semibold text-gray-400 mb-2">LEGEND</h4>
+        <div className="space-y-1.5">
           {Object.entries(nodeColors)
             .filter(([k]) => k !== 'default')
-            .slice(0, 5)
             .map(([type, color]) => (
               <div key={type} className="flex items-center gap-2 text-xs">
-                <span className="w-3 h-3 rounded-full" style={{ backgroundColor: color }} />
-                <span className="text-gray-600">{type}</span>
+                <span className="w-3 h-3 rounded-full border" style={{ backgroundColor: color, borderColor: nodeBorderColors[type] || color }} />
+                <span className="text-gray-300 capitalize">{type}</span>
               </div>
             ))}
         </div>
