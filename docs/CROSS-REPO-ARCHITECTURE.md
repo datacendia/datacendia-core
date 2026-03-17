@@ -58,11 +58,12 @@
 │  │   Enterprise Edition — Private Extension Layer                   │    │
 │  │   ─────────────────────────────────────────────────────────      │    │
 │  │                                                                  │    │
-│  │   ENTERPRISE SERVICES (18 services)                              │    │
+│  │   ENTERPRISE SERVICES (23 services)                              │    │
 │  │   ├── Procure, Scout, Habitat, Rainmaker, Guardian               │    │
 │  │   ├── Nerve, Docket, Equity, Mesh, Factory                       │    │
 │  │   ├── Transit, Academy, Resonance, Inventum, Regent              │    │
 │  │   ├── Nexus, SSO                                                 │    │
+│  │   ├── ServiceRegistry (60+ services), WorkflowPersistence        │    │
 │  │   └── Feature gating via SubscriptionTiers.ts                    │    │
 │  │                                                                  │    │
 │  │   SOVEREIGN SERVICES (18 routes, 22 architectural patterns)      │    │
@@ -161,6 +162,7 @@
 │  Crown Jewels: Echo · Gnosis · RedTeam                             │
 │  15 C-Suite Agents · 35+ Modes · SSO/CAC/PIV                      │
 │  CendiaApotheosis · OmniTranslate · CendiaCrucible                │
+│  CendiaOrchestrate (60+ services, all tiers)                      │
 │  ──────────────────────────────────────────────────────────────────│
 │                 FOUNDATION (datacendia-core — Apache 2.0)            │
 │  The Council™ · CendiaReplay™ · CendiaGateway™                     │
@@ -168,6 +170,7 @@
 │  DCII: Truth · Notary · Witness · Timestamp · Similarity · Memory  │
 │  Pulse (monitoring) · Bridge (workflows) · Graph (knowledge)       │
 │  Compliance Readiness · Immutable Audit Ledger · Ollama/NIM        │
+│  Service Orchestration Workflow Builder (17 Foundation services)    │
 │  26 Vertical Frameworks (hub teaser) · Docker Compose              │
 │  Browser Extensions · ServiceInfoDropdown (guided onboarding)      │
 └────────────────────────────────────────────────────────────────────┘
@@ -192,6 +195,7 @@
 | **Industry Verticals** | Hub teaser only (list visible, pages gated) | ✅ 26 full vertical packs |
 | **Stress Testing** | ❌ (gated → UpgradePage) | ✅ CendiaCrucible + AdversarialRedTeam + COLLAPSE (Strategic) |
 | **Live Operations** | Basic (Pulse — 3 pages) | ✅ CendiaPulse WebSocket (LiveAgentMonitor) |
+| **Service Orchestration** | ✅ Workflow Builder (17 Foundation services) | ✅ Workflow Builder (60+ services, all tiers) |
 | **ZKP / Crypto** | ❌ (gated → UpgradePage) | ✅ Escrow + ZKP |
 | **SSO/CAC/PIV** | ❌ | ✅ SSOService + CAC/PIV auth |
 | **HA / Monitoring** | Docker Compose (dev) | Production HA + Prometheus/Grafana/Jaeger |

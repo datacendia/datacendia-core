@@ -94,6 +94,7 @@ Datacendia is the only AI platform where every decision is auditable, explainabl
   - **CendiaRedTeam™** -- 6-vector adversarial analysis report with gate decision
   - **CendiaEscrow™** -- Shamir Secret Sharing (3-of-5) with VDF time-locks
   - **CendiaReplay™** -- Decision Replay Theater with full deliberation playback
+- **Service Orchestration Workflow Builder** -- Visual drag-and-drop workflow builder. Drag any platform service into a canvas, configure steps, save/load workflows with persistent localStorage, and run simulations. Core includes 17 Foundation services; Enterprise includes 60+.
 - **30 Industry Vertical Frameworks** -- Financial, Healthcare, Legal, Defense, Insurance, Energy, Government, Manufacturing, Pharmaceutical, Sports, and 19 more
 - **Sovereign-First** -- Runs fully air-gapped. No cloud dependency. Your data stays yours.
 - **LLM-Agnostic** -- Works with Ollama, NVIDIA Triton, NVIDIA NIM, or any OpenAI-compatible API
@@ -241,18 +242,20 @@ docker compose -f docker-compose.demo.yml up -d
 ```
 datacendia-core/
 |-- src/                          # React frontend (Vite + TypeScript + Tailwind)
-|   |-- components/               # 91 reusable UI components
+|   |-- components/               # 93 reusable UI components
 |   |   |-- crypto/               # CendiaEvidence, CendiaStamp
-|   |   |-- council/              # CendiaPrecedent, CendiaRedTeam
+|   |   |-- council/              # CendiaPrecedent, CendiaRedTeam, SimilarDecisions
 |   |   +-- ui/                   # ServiceInfoDropdown, shared UI
-|   |-- pages/                    # 175 page components
+|   |-- pages/                    # 176 page components
 |   |   |-- public/               # CendiaVerify (/verify)
 |   |   |-- cortex/crypto/        # CendiaEscrow
 |   |   |-- cortex/crown/         # Echo, Gnosis, RedTeam
 |   |   |-- cortex/dcii/          # Memory, Notary, Truth, Witness, Similarity, Timestamp
+|   |   |-- cortex/workflows/     # Service Orchestration Workflow Builder
 |   |   +-- cortex/monitor/       # CendiaPulse live agent monitor
 |   |-- config/                   # Service info definitions (22 services)
-|   +-- services/                 # Frontend API clients
+|   |-- types/                    # Shared TypeScript types (Workflow, ServiceDefinition)
+|   +-- services/                 # ServiceRegistry (17), WorkflowPersistence, API clients
 |-- backend/                      # Node.js backend (Express + Prisma)
 |   |-- src/
 |   |   |-- services/
@@ -282,7 +285,7 @@ datacendia-core/
 
 | Layer | Technology |
 |-------|-----------|
-| **Frontend** | React 18, TypeScript, Vite, Tailwind CSS, shadcn/ui (175 pages, 91 components) |
+| **Frontend** | React 18, TypeScript, Vite, Tailwind CSS, shadcn/ui (176 pages, 93 components) |
 | **Backend** | Node.js, Express, TypeScript |
 | **Database** | PostgreSQL 16 + Prisma ORM |
 | **Cache** | Redis 7 |
@@ -392,6 +395,7 @@ See [COMMUNITY.md](COMMUNITY.md) for the full open-source boundary definition.
 | CendiaReplay (decision playback theater) | Yes | Yes |
 | DCII Service UIs (Truth, Notary, Witness, etc.) | Yes | Yes |
 | ServiceInfoDropdown (guided onboarding) | Yes | Yes |
+| Service Orchestration Workflow Builder (17 services) | Yes | Yes (60+ services) |
 | Stress-Test, Comply, Gap Scan, Escrow | -- | Yes |
 | Govern, Sovereign, Operate (CendiaPulse) | -- | Yes |
 | Crown Jewels (Echo, Gnosis, RedTeam) | -- | Yes |
@@ -433,6 +437,6 @@ Copyright 2024-2026 Datacendia, LLC
 
 Built by [Datacendia](https://datacendia.com) &middot; [DDGI Framework](https://github.com/datacendia/decision-governance-infrastructure) &middot; NVIDIA Inception Program Member
 
-*Last updated: March 14, 2026*
+*Last updated: March 16, 2026*
 
 </div>
