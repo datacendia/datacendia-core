@@ -315,6 +315,12 @@ export const GraphExplorerPage: React.FC = () => {
           const graphRes = await graphApi.getEntities({ pageSize: 100 });
           if (graphRes.success && graphRes.data) {
             const entities = graphRes.data as GraphEntity[];
+            
+            // Guard: if API returned but data is empty, use fallback
+            if (!entities || entities.length === 0) {
+              throw new Error('Empty graph data');
+            }
+            
             const graphNodes: GraphNode[] = entities.map((e) => ({
               id: e.id,
               type: e.type,
