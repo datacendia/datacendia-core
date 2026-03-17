@@ -176,79 +176,79 @@ export const devAuth = async (
   if (config.requireAuth) {
     throw errors.unauthorized('Authentication required');
   }
-  
+
+  // Explicitly block bypass in non-development/test environments
+  if (config.nodeEnv !== 'development' && config.nodeEnv !== 'test') {
+    throw errors.unauthorized('Authentication required');
+  }
+
   // In development without REQUIRE_AUTH, use real seeded organization
-  if (config.nodeEnv === 'development' || config.nodeEnv === 'test') {
-    logger.warn('âš ï¸  DEV AUTH BYPASS ACTIVE - Request authenticated without token', {
-      path: req.path,
-      method: req.method,
-      ip: req.ip,
-      userAgent: req.get('user-agent'),
-      warning: 'Debug mode active - restrict in production',
-    });
-    
-    try {
-      const primaryAdminUser = await timeout(
+  logger.warn('⚠️  DEV AUTH BYPASS ACTIVE - Request authenticated without token', {
+    path: req.path,
+    method: req.method,
+    ip: req.ip,
+    userAgent: req.get('user-agent'),
+    warning: 'Debug mode active - restrict in production',
+  });
+
+  try {
+    const primaryAdminUser = await timeout(
+      1500,
+      prisma.users.findUnique({
+        where: { email: 'admin@datacendia.com' },
+        include: { organizations: true },
+      })
+    );
+
+    const adminUser =
+      primaryAdminUser ??
+      (await timeout(
         1500,
-        prisma.users.findUnique({
-          where: { email: 'admin@datacendia.com' },
+        prisma.users.findFirst({
+          where: { role: 'SUPER_ADMIN' },
+          orderBy: { created_at: 'asc' },
           include: { organizations: true },
         })
-      );
+      ));
 
-      const adminUser =
-        primaryAdminUser ??
-        (await timeout(
-          1500,
-          prisma.users.findFirst({
-            where: { role: 'SUPER_ADMIN' },
-            orderBy: { created_at: 'asc' },
-            include: { organizations: true },
-          })
-        ));
-
-      if (adminUser) {
-        req.user = {
-          id: adminUser.id,
-          email: adminUser.email,
-          name: adminUser.name,
-          role: adminUser.role,
-          organizationId: adminUser.organization_id,
-          status: adminUser.status,
-          createdAt: adminUser.created_at,
-          updatedAt: adminUser.updated_at,
-          organization: adminUser.organizations,
-          preferences: adminUser.preferences,
-        } as any;
-        req.organizationId = adminUser.organization_id;
-        return next();
-      }
-    } catch (dbError) {
-      logger.warn('Dev auth: DB lookup failed, falling back to hardcoded dev user', { error: dbError instanceof Error ? dbError.message : String(dbError) });
+    if (adminUser) {
+      req.user = {
+        id: adminUser.id,
+        email: adminUser.email,
+        name: adminUser.name,
+        role: adminUser.role,
+        organizationId: adminUser.organization_id,
+        status: adminUser.status,
+        createdAt: adminUser.created_at,
+        updatedAt: adminUser.updated_at,
+        organization: adminUser.organizations,
+        preferences: adminUser.preferences,
+      } as any;
+      req.organizationId = adminUser.organization_id;
+      return next();
     }
-
-    req.user = {
-      id: 'dev-user-id',
-      email: 'dev@datacendia.com',
-      name: 'Dev User',
-      role: 'ADMIN',
-      organizationId: 'dev-org-id',
-      status: 'ACTIVE',
-      createdAt: null,
-      updatedAt: null,
-      organization: {
-        id: 'dev-org-id',
-        name: 'Dev Organization',
-        slug: 'dev',
-      },
-      preferences: {},
-    } as any;
-    req.organizationId = 'dev-org-id';
-    return next();
+  } catch (dbError) {
+    logger.warn('Dev auth: DB lookup failed, falling back to hardcoded dev user', { error: dbError instanceof Error ? dbError.message : String(dbError) });
   }
-  
-  // Production upgrade: require auth middleware
-  throw errors.unauthorized('No token provided');
+
+  req.user = {
+    id: 'dev-user-id',
+    email: 'dev@datacendia.com',
+    name: 'Dev User',
+    role: 'ADMIN',
+    organizationId: 'dev-org-id',
+    status: 'ACTIVE',
+    createdAt: null,
+    updatedAt: null,
+    organization: {
+      id: 'dev-org-id',
+      name: 'Dev Organization',
+      slug: 'dev',
+    },
+    preferences: {},
+  } as any;
+  req.organizationId = 'dev-org-id';
+  return next();
 };
 
 /**
