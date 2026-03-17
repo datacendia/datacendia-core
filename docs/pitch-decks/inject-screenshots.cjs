@@ -12,7 +12,7 @@ const path = require('path');
 // ============================================================================
 const SCREENSHOTS = {
   'council-deliberation': {
-    img: 'council-deliberation.png',
+    img: '02-council-deliberation.png',
     section: 'Multi-Agent Decision Engine',
     headline: 'Decisions Made by Specialized AI Agents — Not One Black Box',
     points: [
@@ -22,7 +22,7 @@ const SCREENSHOTS = {
     ],
   },
   'decisions-list': {
-    img: 'decisions-list.png',
+    img: '05-decisions.png',
     section: 'Decision Audit Trail',
     headline: 'Every Decision Tracked with Confidence, Agents, and Full Evidence Chain',
     points: [
@@ -32,7 +32,7 @@ const SCREENSHOTS = {
     ],
   },
   'compliance-dashboard': {
-    img: 'compliance-dashboard.png',
+    img: '04-dcii-dashboard.png',
     section: 'Compliance Automation',
     headline: 'Continuous Compliance Across EU AI Act, GDPR, SOC 2, HIPAA, and DORA',
     points: [
@@ -42,7 +42,7 @@ const SCREENSHOTS = {
     ],
   },
   'panopticon': {
-    img: 'panopticon.png',
+    img: '04-dcii-dashboard.png',
     section: 'Regulatory Intelligence',
     headline: 'Every Regulation Absorbed, Analyzed, and Mapped to Your Operations',
     points: [
@@ -52,7 +52,7 @@ const SCREENSHOTS = {
     ],
   },
   'scge': {
-    img: 'scge.png',
+    img: '10-evidence-vault.png',
     section: 'Sovereign Governance',
     headline: 'Stress-Test Governance Decisions Before They Affect Real People',
     points: [
@@ -62,7 +62,7 @@ const SCREENSHOTS = {
     ],
   },
   'post-quantum-kms': {
-    img: 'post-quantum-kms.png',
+    img: '11-ledger.png',
     section: 'Cryptographic Security',
     headline: 'Quantum-Resistant Key Management — NIST-Standardized Algorithms',
     points: [
@@ -72,7 +72,7 @@ const SCREENSHOTS = {
     ],
   },
   'post-deliberation': {
-    img: 'post-deliberation.png',
+    img: '03-post-deliberation.png',
     section: 'Deliberation Transparency',
     headline: 'After Every Decision: See Exactly Who Voted, How Confident, and Why',
     points: [
@@ -82,7 +82,7 @@ const SCREENSHOTS = {
     ],
   },
   'executive-summary': {
-    img: 'executive-summary.png',
+    img: '08-executive-summary.png',
     section: 'Board-Ready Output',
     headline: 'One-Click Executive Summaries with Full Evidence Chain',
     points: [
@@ -92,7 +92,7 @@ const SCREENSHOTS = {
     ],
   },
   'dcii-truth': {
-    img: 'dcii-truth.png',
+    img: '04-dcii-dashboard.png',
     section: 'Cryptographic Verification',
     headline: 'Verify Any Claim Against Evidence — Cryptographically Proven',
     points: [
@@ -102,7 +102,7 @@ const SCREENSHOTS = {
     ],
   },
   'dcii-notary': {
-    img: 'dcii-notary.png',
+    img: '11-ledger.png',
     section: 'Decision Integrity',
     headline: 'Tamper-Evident Signatures for Every Decision in Your Organization',
     points: [
@@ -112,7 +112,7 @@ const SCREENSHOTS = {
     ],
   },
   'pulse': {
-    img: 'pulse.png',
+    img: '13-pulse.png',
     section: 'Real-Time Monitoring',
     headline: 'Organizational Health at a Glance — With Anomaly Detection',
     points: [
@@ -122,7 +122,7 @@ const SCREENSHOTS = {
     ],
   },
   'graph-explorer': {
-    img: 'graph-explorer.png',
+    img: '07-graph-explorer.png',
     section: 'Knowledge Graph',
     headline: 'See How Your Data, Decisions, and People Are Connected',
     points: [
@@ -132,7 +132,7 @@ const SCREENSHOTS = {
     ],
   },
   'red-team': {
-    img: 'red-team.png',
+    img: '12-collapse.png',
     section: 'Adversarial Security',
     headline: 'Continuously Attack Your Own AI Governance — Before Someone Else Does',
     points: [
@@ -142,7 +142,7 @@ const SCREENSHOTS = {
     ],
   },
   'chronos': {
-    img: 'chronos.png',
+    img: '09-council-analytics.png',
     section: 'Enterprise Time Machine',
     headline: 'Travel to Any Moment — See What Your Organization Knew, Decided, and Did',
     points: [
@@ -152,7 +152,7 @@ const SCREENSHOTS = {
     ],
   },
   'dashboard': {
-    img: 'dashboard.png',
+    img: '01-dashboard.png',
     section: 'Command Center',
     headline: 'Enterprise Dashboard — Your Organization\'s Decision Intelligence Hub',
     points: [
@@ -162,7 +162,7 @@ const SCREENSHOTS = {
     ],
   },
   'regulators-receipt': {
-    img: 'regulators-receipt.png',
+    img: '08-executive-summary.png',
     section: 'Court-Admissible Evidence',
     headline: 'Every Decision Produces a Signed, Tamper-Evident Regulator\'s Receipt',
     points: [
@@ -172,7 +172,7 @@ const SCREENSHOTS = {
     ],
   },
   'gateway': {
-    img: 'gateway.png',
+    img: '06-gateway-dashboard.png',
     section: 'AI Governance Gateway',
     headline: 'CendiaGateway — Every AI Interaction Logged, Scanned, Signed, and Auditable',
     points: [
@@ -306,7 +306,7 @@ function processFile(filePath) {
 
 // Process all decks
 const baseDir = path.join(__dirname);
-const folders = ['investor', 'sales', 'design-partner', 'investor-50/html'];
+const folders = ['investor', 'sales', 'design-partner', 'investor-50/html', 'gamma'];
 
 for (const folder of folders) {
   const dir = path.join(baseDir, folder);
