@@ -275,34 +275,38 @@ function processFile(filePath) {
   const titleMatch = content.match(/<title>Datacendia — (.+?)<\/title>/);
   const deckType = titleMatch ? titleMatch[1] : 'Overview';
   
-  // Insert screenshot slide before the last slide (CTA)
-  // Find the last <!-- SLIDE pattern
-  const slidePattern = /<!-- SLIDE \d+[^>]*-->(?=[^]*$)/;
-  const lastSlideMatch = content.match(/<!-- SLIDE \d+[^:]*?(?:CTA|CONTACT|NEXT|GET STARTED)[^>]*-->/i);
-  
   // Compute relative path to screenshots/ based on file location
   const fileDir = path.dirname(filePath);
   const screenshotsAbsolute = path.join(__dirname, 'screenshots');
   const screenshotDir = path.relative(fileDir, screenshotsAbsolute).replace(/\\/g, '/');
 
+  const screenshotSlides = buildScreenshotSlides(screenshots, deckType, screenshotDir);
   let newContent;
+
+  // Try comment-based markers first (investor/, sales/ decks)
+  const lastSlideMatch = content.match(/<!-- SLIDE \d+[^:]*?(?:CTA|CONTACT|NEXT|GET STARTED)[^>]*-->/i);
   if (lastSlideMatch) {
     const insertPos = content.lastIndexOf(lastSlideMatch[0]);
-    const screenshotSlides = buildScreenshotSlides(screenshots, deckType, screenshotDir);
     newContent = content.slice(0, insertPos) + screenshotSlides + '\n' + content.slice(insertPos);
   } else {
-    // Insert before </body>
-    const screenshotSlides = buildScreenshotSlides(screenshots, deckType, screenshotDir);
-    newContent = content.replace('</body>', screenshotSlides + '\n</body>');
+    // For investor-50 style decks: insert before the CTA slide (slide--cta class)
+    const ctaIdx = content.lastIndexOf('<div class="slide slide--cta">');
+    if (ctaIdx > 0) {
+      newContent = content.slice(0, ctaIdx) + screenshotSlides + '\n' + content.slice(ctaIdx);
+    } else {
+      // Fallback: insert before </body>
+      newContent = content.replace('</body>', screenshotSlides + '\n</body>');
+    }
   }
   
   fs.writeFileSync(filePath, newContent, 'utf8');
   console.log(`  OK: ${filename} (${screenshots.length} screenshots)`);
+
 }
 
 // Process all decks
 const baseDir = path.join(__dirname);
-const folders = ['investor', 'sales', 'design-partner'];
+const folders = ['investor', 'sales', 'design-partner', 'investor-50/html'];
 
 for (const folder of folders) {
   const dir = path.join(baseDir, folder);
