@@ -313,6 +313,13 @@ const foundationGroup: NavGroup = {
       path: '/cortex/compliance',
       tooltip: 'Compliance readiness — framework status, checklists & audit prep',
     },
+    {
+      id: 'workflow-builder',
+      label: 'Workflows',
+      icon: Zap,
+      path: '/cortex/workflows/builder',
+      tooltip: 'Service Orchestration — drag-and-drop workflow builder',
+    },
   ],
 };
 
