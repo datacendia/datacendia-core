@@ -210,5 +210,56 @@
 
 ---
 
+## Tier 9: AI Ethics & Digital Sovereignty (101–120)
+
+| # | Firm | Key Partner(s) to Target | Website | How to Submit | Priority | Deck File |
+|---|------|-------------------------|---------|---------------|----------|-----------|
+| 101 | **Mozilla Ventures** | Mohamed Nanabhay (MD) | [mozilla.vc](https://mozilla.vc) | 🌐 [mozilla.vc/pitch](https://mozilla.vc) | ⭐⭐⭐ | 101-mozilla-ventures |
+| 102 | **Kapor Capital** | Mitch Kapor, Freada Kapor Klein, Brian Dixon | [kaporcapital.com](https://www.kaporcapital.com) | 🌐 [kaporcapital.com/pitch](https://www.kaporcapital.com/pitch/) | ⭐⭐ | 102-kapor-capital |
+| 103 | **Luminate Group** | Stephen King (CEO), Laura Silber | [luminategroup.com](https://luminategroup.com) | 🌐 [luminategroup.com/contact](https://luminategroup.com/contact/) | ⭐⭐ | 103-luminate |
+| 104 | **Ford Foundation** | Michael Brennan (Tech & Society) | [fordfoundation.org](https://www.fordfoundation.org) | 🌐 [fordfoundation.org/work/challenging-inequality/technology-and-society](https://www.fordfoundation.org/work/challenging-inequality/technology-and-society/) | ⭐⭐ | 104-ford-foundation |
+| 105 | **MacArthur Foundation** | (Technology program office) | [macfound.org](https://www.macfound.org) | 🌐 [macfound.org/submit-proposal](https://www.macfound.org/info/submit-a-proposal) | ⭐ | 105-macarthur |
+| 106 | **Open Society Foundations** | (Technology & democracy program) | [opensocietyfoundations.org](https://www.opensocietyfoundations.org) | 🌐 [opensocietyfoundations.org/grants](https://www.opensocietyfoundations.org/grants) | ⭐ | 106-open-society |
+| 107 | **Patrick J. McGovern Foundation** | Vilas Dhar (CEO), Amy Sample Ward | [mcgovern.org](https://www.mcgovern.org) | 🌐 [mcgovern.org/contact](https://www.mcgovern.org/contact/) | ⭐⭐⭐ | 107-mcgovern |
+| 108 | **Responsible Innovation Labs** | (Programme director) | [responsibleinnovation.org](https://responsibleinnovation.org) | 🌐 [responsibleinnovation.org/apply](https://responsibleinnovation.org) | ⭐⭐ | 108-responsible-innovation |
+| 109 | **Sovereign Tech Fund** | Fiona Krakenbürger, Tara Tarakiyee | [sovereigntechfund.de](https://www.sovereigntechfund.de) | 🌐 [sovereigntechfund.de/programs](https://www.sovereigntechfund.de/programs/) | ⭐⭐⭐ | 109-sovereign-tech |
+| 110 | **Next Generation Internet (NGI)** | (EU programme office) | [ngi.eu](https://www.ngi.eu) | 🌐 [ngi.eu/opencalls](https://www.ngi.eu/opencalls/) | ⭐⭐⭐ | 110-ngi |
+| 111 | **Bpifrance** | Paul-François Fournier (Innovation), Nicolas Dufourcq (CEO) | [bpifrance.fr](https://www.bpifrance.fr) | 🌐 [bpifrance.fr/contact](https://www.bpifrance.fr/contactez-nous) | ⭐⭐⭐ | 111-bpifrance |
+| 112 | **SPRIND** | Rafael Laguna de la Vera (Director) | [sprind.org](https://www.sprind.org) | 🌐 [sprind.org/en/challenges](https://www.sprind.org/en/challenges/) | ⭐⭐ | 112-sprind |
+| 113 | **European Innovation Council** | (EIC Fund) | [eic.ec.europa.eu](https://eic.ec.europa.eu) | 🌐 [eic.ec.europa.eu/apply](https://eic.ec.europa.eu/eic-funding-opportunities_en) | ⭐⭐⭐ | 113-eic |
+| 114 | **Tikehau Capital** | Marwan Lahoud (defense/cyber), Mathieu Chabran (co-founder) | [tikehaucapital.com](https://www.tikehaucapital.com) | 🌐 [tikehaucapital.com/contact](https://www.tikehaucapital.com/en/contact) | ⭐⭐⭐ | 114-tikehau |
+| 115 | **Eurazeo** | Christophe Bavière (CEO), Nicolas Huet (tech) | [eurazeo.com](https://www.eurazeo.com) | 🌐 [eurazeo.com/contact](https://www.eurazeo.com/en/contact) | ⭐⭐ | 115-eurazeo |
+| 116 | **Digital Catapult** | (AI programme lead) | [digicatapult.org.uk](https://www.digicatapult.org.uk) | 🌐 [digicatapult.org.uk/apply](https://www.digicatapult.org.uk/how-we-can-help/apply-to-our-programmes/) | ⭐⭐ | 116-digital-catapult |
+| 117 | **Baillie Gifford** | Tom Slater (partner, tech), James Anderson | [bailliegifford.com](https://www.bailliegifford.com) | 🤝 Warm intro preferred (institutional) | ⭐ | 117-baillie-gifford |
+| 118 | **Schroders Capital** | Tim Creed (private equity), Nils Rode | [schroderscapital.com](https://www.schroderscapital.com) | 🌐 [schroderscapital.com/contact](https://www.schroderscapital.com/en/contact-us/) | ⭐ | 118-schroder-adveq |
+| 119 | **Swisscom Ventures** | Dominique Mégret (head), Roger Wüthrich-Hasenböhler | [swisscom.ch/ventures](https://ventures.swisscom.com) | 🌐 [ventures.swisscom.com/contact](https://ventures.swisscom.com/contact/) | ⭐⭐ | 119-swisscom-ventures |
+| 120 | **Deep Tech Alliance** | (Network coordinators) | [deeptechalliance.eu](https://www.deeptechalliance.eu) | 🌐 [deeptechalliance.eu/contact](https://www.deeptechalliance.eu/contact/) | ⭐ | 120-deep-tech-alliance |
+
+### Ethics & Sovereignty Outreach Notes
+
+**Government funds (109–113, 116)** have formal application processes — these are grants/equity programmes with deadlines. Check open calls:
+- **Sovereign Tech Fund**: Rolling applications for open-source infrastructure
+- **NGI**: Cascade grants with periodic open calls (~€50K–€200K)
+- **EIC**: Accelerator program with equity + grant (€0.5M–€15M) — application rounds
+- **Bpifrance**: France 2030 sovereign AI calls — periodic
+- **SPRIND**: Challenge-based funding — watch for AI governance challenges
+- **Digital Catapult**: Programme-based — apply to relevant AI programmes
+
+**Foundations (104–107)** typically fund via grants or mission-related investments. Approach them through:
+- Their technology/society program officers
+- Existing grantee introductions (Partnership on AI, AI Now Institute)
+- Conference connections (Responsible AI conferences, EU AI Summit)
+
+**Best first contacts for this tier:**
+1. **Sovereign Tech Fund** (#109) — open-source + sovereignty = exact match
+2. **NGI** (#110) — EU programme, open calls
+3. **EIC** (#113) — largest EU equity + grant
+4. **Bpifrance** (#111) — €2.5B+ sovereign AI budget
+5. **Mozilla Ventures** (#101) — open-source trustworthy AI thesis
+6. **Tikehau** (#114) — European cyber sovereignty fund
+7. **McGovern Foundation** (#107) — directly funds responsible AI tools
+
+---
+
 *Generated: March 2026 · Datacendia, LLC*
 *Note: Contact details are based on publicly available information. Verify current partner assignments and submission processes before outreach.*

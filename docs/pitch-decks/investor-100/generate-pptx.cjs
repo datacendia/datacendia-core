@@ -11,8 +11,9 @@ const inv1 = require('./investors-001-025.cjs');
 const inv2 = require('./investors-026-050.cjs');
 const inv3 = require('./investors-051-075.cjs');
 const inv4 = require('./investors-076-100.cjs');
+const inv5 = require('./investors-101-120.cjs');
 
-const ALL = [...inv1, ...inv2, ...inv3, ...inv4];
+const ALL = [...inv1, ...inv2, ...inv3, ...inv4, ...inv5];
 const outDir = path.join(__dirname, 'pptx');
 if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 
