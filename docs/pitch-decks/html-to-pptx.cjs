@@ -206,7 +206,7 @@ function buildPptx(filename, html, deckType) {
     ssc.addText(ss.headline, { x: 0.8, y: 1.7, w: 4.5, h: 1.0, fontSize: 20, color: WHITE, bold: true });
     const pts = ss.points.map(p => ({ text: p, options: { fontSize: 11, color: MUTED, bullet: { code: '2192', color: GOLD }, lineSpacingMultiple: 1.5 } }));
     ssc.addText(pts, { x: 0.8, y: 3.0, w: 4.5, h: 3.5, valign: 'top' });
-    ssc.addImage({ path: imgPath, x: 5.8, y: 1.2, w: 7.0, h: 5.3, rounding: true });
+    ssc.addImage({ path: imgPath, x: 5.8, y: 1.2, w: 7.0, h: 5.3 });
     addFooter(ssc);
   }
   
