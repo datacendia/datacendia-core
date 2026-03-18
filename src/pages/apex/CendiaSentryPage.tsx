@@ -131,8 +131,8 @@ export const CendiaSentryPage: React.FC = () => {
             APEX PACKAGE
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Cendia<span className="text-red-400">Sentry</span>
+          <h1 className="text-4xl md:text-5xl mb-6" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+            CENDIASENTRY<span style={{ fontWeight: 200, fontSize: '0.7em', opacity: 0.5, marginLeft: '2px' }}>™</span>
           </h1>
 
           <p className="text-xl text-slate-400 max-w-2xl mb-8">

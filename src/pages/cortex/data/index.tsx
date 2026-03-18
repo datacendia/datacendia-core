@@ -94,8 +94,8 @@ export const DataSourcesPage: React.FC = () => {
     <div className="p-6 lg:p-8 max-w-7xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900">Data Sources</h1>
-          <p className="text-neutral-500">Manage your connected data sources</p>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>DATA SOURCES</h1>
+          <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Manage your connected data sources</p>
         </div>
         <button className="px-4 py-2 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors">
           + Connect Source
@@ -288,8 +288,8 @@ export const DataCatalogPage: React.FC = () => {
     <div className="p-6 lg:p-8 max-w-7xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900">Data Catalog</h1>
-          <p className="text-neutral-500">Discover and understand your data assets</p>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>DATA CATALOG</h1>
+          <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Discover and understand your data assets</p>
         </div>
         <div className="flex items-center gap-2">
           <button
@@ -453,7 +453,7 @@ export const DataQualityPage: React.FC = () => {
     <div className="p-6 lg:p-8 max-w-7xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900">Data Quality</h1>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>DATA QUALITY</h1>
           <p className="text-neutral-500">
             Monitor and improve data quality across your organization
           </p>
@@ -578,7 +578,7 @@ export const DataImportExportPage: React.FC = () => {
 
   return (
     <div className="p-6 lg:p-8 max-w-7xl mx-auto">
-      <h1 className="text-2xl font-bold text-neutral-900 mb-6">Import / Export</h1>
+      <h1 className="text-2xl mb-6" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>IMPORT / EXPORT</h1>
 
       <div className="grid md:grid-cols-2 gap-6 mb-8">
         {/* Import */}

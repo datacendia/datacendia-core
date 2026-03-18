@@ -109,7 +109,7 @@ export const MediaEntertainmentPage: React.FC = () => {
                   🔒 80% Sovereignty
                 </span>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Media / Entertainment</h1>
+              <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>MEDIA / ENTERTAINMENT</h1>
               <p className="text-xl text-neutral-300 max-w-3xl mb-6">
                 Content strategy, audience intelligence, and rights management. From greenlight
                 decisions to distribution optimization to ad yield.

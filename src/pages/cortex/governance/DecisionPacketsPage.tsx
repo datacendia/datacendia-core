@@ -263,9 +263,11 @@ export const DecisionPacketsPage: React.FC = () => {
               <FileSignature className="w-7 h-7 text-cyan-400" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold">Decision Packets</h1>
-              <p className="text-sm text-gray-400">
-                Browse, verify, and export cryptographically signed decisions
+              <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+                DECISION PACKETS<span style={{ fontWeight: 200, fontSize: '0.7em', opacity: 0.5, marginLeft: '2px' }}>™</span>
+              </h1>
+              <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">
+                Browse, verify, and export signed decisions
               </p>
               <ServiceInfoDropdown config={governInfo} className="mt-2" />
             </div>

@@ -59,8 +59,10 @@ export const AuditProvenancePage: React.FC = () => {
                 <Fingerprint className="w-8 h-8" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold">CendiaProvenance™</h1>
-                <p className="text-indigo-200">Full decision lineage & evidence export</p>
+                <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+                  CENDIAPROVENANCE<span style={{ fontWeight: 200, fontSize: '0.7em', opacity: 0.5, marginLeft: '2px' }}>™</span>
+                </h1>
+                <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Full decision lineage & evidence export</p>
               </div>
             </div>
             <div className="hidden md:flex items-center gap-6 text-sm text-indigo-200">

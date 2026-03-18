@@ -225,7 +225,7 @@ export const HealthcarePage: React.FC = () => {
                   43% Market Share
                 </span>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Healthcare / Health Systems</h1>
+              <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>HEALTHCARE / HEALTH SYSTEMS</h1>
               <p className="text-xl text-neutral-300 max-w-3xl mb-6">
                 HIPAA-compliant AI decision intelligence with full data sovereignty. Accelerate
                 clinical operations while maintaining complete audit trails for CMS AI transparency

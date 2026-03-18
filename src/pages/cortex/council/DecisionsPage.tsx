@@ -166,7 +166,7 @@ export const DecisionsPage: React.FC = () => {
               <ArrowLeft className="w-5 h-5" />
             </button>
             <div>
-              <h1 className="text-2xl font-bold text-white">All Decisions</h1>
+              <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>ALL DECISIONS</h1>
               <p className="text-gray-400 text-sm mt-1">
                 {filteredDecisions.length} decision{filteredDecisions.length !== 1 ? 's' : ''} found
               </p>

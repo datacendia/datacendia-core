@@ -108,7 +108,7 @@ export const SportsPage: React.FC = () => {
                   🔒 90% Sovereignty
                 </span>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Sports / Athletics</h1>
+              <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>SPORTS / ATHLETICS</h1>
               <p className="text-xl text-neutral-300 max-w-3xl mb-6">
                 Team performance optimization, player analytics, and sports business intelligence.
                 From draft decisions to injury prevention to revenue optimization.

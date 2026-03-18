@@ -604,13 +604,13 @@ export const RDLabPage: React.FC = () => {
                 ← Admin
               </button>
               <div>
-                <h1 className="text-2xl font-bold flex items-center gap-3">
+                <div className="flex items-center gap-3">
                   <span className="text-3xl">🔬</span>
-                  Cendia R&D Lab
+                  <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>CENDIA R&D LAB</h1>
                   <span className="text-xs bg-gradient-to-r from-purple-500 to-pink-500 px-2 py-0.5 rounded-full font-medium">
                     HORIZON 3+
                   </span>
-                </h1>
+                </div>
                 <p className="text-purple-300 text-sm">
                   Future Technologies • Speculative Projects • Long-Term Vision
                 </p>

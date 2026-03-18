@@ -123,9 +123,9 @@ export const HomePage: React.FC = () => {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-              Your Organization's Intelligence,{' '}
-              <span className="text-secondary-400">Sovereign and Whole</span>
+            <h1 className="text-4xl lg:text-6xl mb-6 leading-tight" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.15em', color: '#e8e4e0' }}>
+              YOUR ORGANIZATION'S INTELLIGENCE,{' '}
+              <span className="text-secondary-400">SOVEREIGN AND WHOLE</span>
             </h1>
             <p className="text-xl text-white/80 mb-8">
               Datacendia is the command center for enterprise intelligence. Connect your data,
@@ -358,7 +358,7 @@ export const PricingPage: React.FC = () => {
       {/* Header */}
       <section className="bg-white py-16 border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-neutral-900 mb-4">Simple, Transparent Pricing</h1>
+          <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>SIMPLE, TRANSPARENT PRICING</h1>
           <p className="text-xl text-neutral-600 max-w-2xl mx-auto mb-8">
             Choose the plan that fits your organization. All plans include a 14-day free trial.
           </p>
@@ -555,7 +555,7 @@ export const DemoRequestPage: React.FC = () => {
           <div className="w-16 h-16 bg-success-light rounded-full flex items-center justify-center mx-auto mb-6">
             <span className="text-3xl">✓</span>
           </div>
-          <h1 className="text-2xl font-bold text-neutral-900 mb-4">Demo Request Received!</h1>
+          <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>DEMO REQUEST RECEIVED!</h1>
           <p className="text-neutral-600 mb-8">
             Thanks, {formData.firstName}! Our team will reach out within 24 hours to schedule your
             personalized demo.
@@ -574,7 +574,7 @@ export const DemoRequestPage: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left - Value Props */}
           <div>
-            <h1 className="text-3xl font-bold text-neutral-900 mb-4">See Datacendia in Action</h1>
+            <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>SEE DATACENDIA IN ACTION</h1>
             <p className="text-lg text-neutral-600 mb-8">
               Get a personalized demo tailored to your organization's needs. Our team will show you
               how Datacendia can transform your data into actionable intelligence.
@@ -841,10 +841,10 @@ export const AboutPage: React.FC = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(139,92,246,0.3),transparent_60%)]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              About{' '}
+            <h1 className="text-4xl md:text-5xl mb-6" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+              ABOUT{' '}
               <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                Datacendia
+                DATACENDIA
               </span>
             </h1>
             <p className="text-xl text-slate-300 leading-relaxed">
@@ -1033,10 +1033,10 @@ export const ContactPage: React.FC = () => {
       <section className="bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.3),transparent_60%)]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Get in{' '}
+          <h1 className="text-4xl md:text-5xl mb-6" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+            GET IN{' '}
             <span className="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
-              Touch
+              TOUCH
             </span>
           </h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto">
@@ -1181,7 +1181,7 @@ export const ManifestoPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-neutral-900 text-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <h1 className="text-4xl font-bold mb-2">The Datacendia Manifesto</h1>
+        <h1 className="text-2xl mb-2" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>THE DATACENDIA MANIFESTO</h1>
         <p className="text-xl text-white/60 mb-12">A Declaration of Sovereign Intelligence</p>
 
         <div className="prose prose-invert prose-lg max-w-none">

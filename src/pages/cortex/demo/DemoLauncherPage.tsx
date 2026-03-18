@@ -142,8 +142,8 @@ export const DemoLauncherPage: React.FC = () => {
             <Video className="w-8 h-8 text-cyan-400" />
           </div>
           <div>
-            <h1 className="text-3xl font-bold">Demo Studio</h1>
-            <p className="text-gray-400">Professional demos for recording and presentations</p>
+            <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>DEMO STUDIO</h1>
+            <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Professional demos for recording and presentations</p>
           </div>
         </div>
 

@@ -242,10 +242,10 @@ const LandingPage = () => {
             Datacendia is a Sovereign Enterprise Intelligence Platform
           </p>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white tracking-tight mb-8 leading-[1.1]">
-            The mind your <br />
+          <h1 className="text-5xl md:text-7xl lg:text-8xl mb-8 leading-[1.1]" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.15em', color: '#e8e4e0' }}>
+            THE MIND YOUR <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-amber-200 to-purple-400">
-              enterprise deserves.
+              ENTERPRISE DESERVES.
             </span>
           </h1>
 

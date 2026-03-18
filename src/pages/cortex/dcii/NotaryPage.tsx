@@ -130,8 +130,8 @@ export const NotaryPage: React.FC = () => {
             <span className="text-slate-600 text-xs">/</span>
             <span className="text-xs text-slate-400">DCII</span>
           </div>
-          <h1 className="text-xl font-bold text-neutral-100 flex items-center gap-2">
-            <Key className="w-5 h-5 text-amber-400" /> CendiaNotary™
+          <h1 className="text-2xl flex items-center gap-2" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+            <Key className="w-5 h-5 text-amber-400" /> CENDIANOTARY<span style={{ fontWeight: 200, fontSize: '0.7em', opacity: 0.5, marginLeft: '2px' }}>™</span>
           </h1>
           <p className="text-sm text-neutral-500 mt-0.5">Key management, signature verification, customer-owned key configuration</p>
           <ServiceInfoDropdown config={dciiNotaryInfo} className="mt-2" />

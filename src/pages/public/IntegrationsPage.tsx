@@ -119,7 +119,7 @@ export const IntegrationsPage: React.FC = () => {
       <section className="bg-neutral-900 text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Plug className="w-12 h-12 mx-auto mb-4 text-cyan-400" />
-          <h1 className="text-3xl font-bold mb-4">Integrations</h1>
+          <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>INTEGRATIONS</h1>
           <p className="text-neutral-400">
             Connect Datacendia to your existing tools and infrastructure.
           </p>

@@ -244,8 +244,8 @@ export const PricingPage: React.FC = () => {
       {/* Header */}
       <section className="pt-32 pb-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
-            Simple, transparent pricing
+          <h1 className="text-4xl md:text-5xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+            SIMPLE, TRANSPARENT PRICING
           </h1>
           <p className="text-xl text-neutral-600 max-w-2xl mx-auto mb-8">
             Choose the plan that fits your organization. All plans include core Cortex access.

@@ -43,7 +43,7 @@ const RegulatorsReceiptPage: React.FC = () => {
                   <FileSignature className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h1 className="text-lg font-bold text-white">Regulator's Receipt</h1>
+                  <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>REGULATOR'S RECEIPT</h1>
                   <p className="text-xs text-neutral-400">Audit-Safe Proof for Regulators & Examiners</p>
                 </div>
               </div>

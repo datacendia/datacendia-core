@@ -156,7 +156,7 @@ export const OrganizationSettingsPage: React.FC = () => {
 
   return (
     <div className="max-w-3xl">
-      <h1 className="text-2xl font-bold text-neutral-900 mb-6">Organization</h1>
+      <h1 className="text-2xl mb-6" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>ORGANIZATION</h1>
 
       {/* Organization Profile */}
       <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">
@@ -502,7 +502,7 @@ export const UsersSettingsPage: React.FC = () => {
     <div className="max-w-4xl">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900">Users</h1>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>USERS</h1>
           <p className="text-neutral-500">Manage user access and permissions</p>
         </div>
         <button
@@ -711,7 +711,7 @@ export const TeamsSettingsPage: React.FC = () => {
   return (
     <div className="max-w-4xl">
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-neutral-900">Teams</h1>
+        <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>TEAMS</h1>
         <button
           onClick={() => setShowCreateModal(true)}
           className="px-4 py-2 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors"
@@ -870,7 +870,7 @@ export const RolesSettingsPage: React.FC = () => {
   return (
     <div className="max-w-4xl">
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-neutral-900">Roles & Permissions</h1>
+        <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>ROLES & PERMISSIONS</h1>
         <button
           onClick={() => setShowCreateModal(true)}
           className="px-4 py-2 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors"
@@ -1025,7 +1025,7 @@ export const BillingSettingsPage: React.FC = () => {
 
   return (
     <div className="max-w-4xl">
-      <h1 className="text-2xl font-bold text-neutral-900 mb-6">Billing</h1>
+      <h1 className="text-2xl mb-6" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>BILLING</h1>
 
       {/* Current Plan */}
       <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">
@@ -1238,7 +1238,7 @@ export const ApiKeysSettingsPage: React.FC = () => {
     <div className="max-w-4xl">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900">API Keys</h1>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>API KEYS</h1>
           <p className="text-neutral-500">Manage API access to Datacendia</p>
         </div>
         <button
@@ -1446,7 +1446,7 @@ export const IntegrationSettingsPage: React.FC = () => {
   return (
     <div className="max-w-4xl">
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-neutral-900">Integrations</h1>
+        <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>INTEGRATIONS</h1>
         <button
           onClick={() =>
             addToast({
@@ -1530,7 +1530,7 @@ export const PreferencesSettingsPage: React.FC = () => {
 
   return (
     <div className="max-w-3xl">
-      <h1 className="text-2xl font-bold text-neutral-900 mb-6">Preferences</h1>
+      <h1 className="text-2xl mb-6" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>PREFERENCES</h1>
 
       {/* Appearance */}
       <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">
@@ -1699,7 +1699,7 @@ export const SecuritySettingsPage: React.FC = () => {
 
   return (
     <div className="max-w-3xl">
-      <h1 className="text-2xl font-bold text-neutral-900 mb-6">Security</h1>
+      <h1 className="text-2xl mb-6" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>SECURITY</h1>
 
       {/* Password */}
       <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">

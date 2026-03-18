@@ -415,8 +415,10 @@ const RegulatorsReceiptPageInner: React.FC<{ embedded?: boolean }> = ({ embedded
                   <FileCheck className="w-8 h-8" />
                 </div>
                 <div>
-                  <h1 className="text-3xl font-bold">Regulator's Receipt Generator</h1>
-                  <p className="text-emerald-200">One-click forensic-grade, independently verifiable decision documentation</p>
+                  <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+                    REGULATOR'S RECEIPT<span style={{ fontWeight: 200, fontSize: '0.7em', opacity: 0.5, marginLeft: '2px' }}>™</span>
+                  </h1>
+                  <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Forensic-grade decision documentation</p>
                 </div>
               </div>
             </div>
@@ -510,7 +512,7 @@ const RegulatorsReceiptPageInner: React.FC<{ embedded?: boolean }> = ({ embedded
                 <ChevronRight className="w-5 h-5 rotate-180" />
               </button>
               <div>
-                <h1 className="text-2xl font-bold">{embedded ? 'Evidence Export' : "Regulator's Receipt"}</h1>
+                <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>{embedded ? 'EVIDENCE EXPORT' : "REGULATOR'S RECEIPT"}</h1>
                 {receipt && <p className={embedded ? 'text-indigo-200 font-mono text-sm' : 'text-emerald-200 font-mono text-sm'}><RedactedText classification="CONFIDENTIAL">{receipt.receiptId}</RedactedText></p>}
               </div>
             </div>

@@ -136,7 +136,7 @@ export const HospitalityPage: React.FC = () => {
                   🌍 Global Ready
                 </span>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Hospitality / Travel</h1>
+              <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>HOSPITALITY / TRAVEL</h1>
               <p className="text-xl text-neutral-300 max-w-3xl mb-6">
                 Decision intelligence for hotels, airlines, cruise lines, and travel companies. 
                 From revenue management to guest experience to crisis response.

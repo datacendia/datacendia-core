@@ -487,7 +487,7 @@ export const TransportationLogisticsPage: React.FC = () => {
                   🔒 88% Sovereignty
                 </span>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Transportation / Logistics</h1>
+              <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>TRANSPORTATION / LOGISTICS</h1>
               <p className="text-xl text-neutral-300 max-w-3xl mb-6">
                 Fleet optimization, route intelligence, and supply chain decision support. From
                 last-mile delivery to cross-border freight to warehouse operations.

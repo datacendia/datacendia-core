@@ -151,10 +151,12 @@ const GapScannerPage: React.FC = () => {
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-zinc-100 flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <Shield className="w-6 h-6 text-emerald-400" />
-            CendiaGapScan™
-          </h1>
+            <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+              CENDIAGAPSCAN<span style={{ fontWeight: 200, fontSize: '0.7em', opacity: 0.5, marginLeft: '2px' }}>™</span>
+            </h1>
+          </div>
           <p className="text-sm text-zinc-500 mt-1">Compliance gap analysis across {FRAMEWORKS.length} regulatory frameworks</p>
           <ServiceInfoDropdown config={gapScannerInfo} className="mt-2" />
         </div>

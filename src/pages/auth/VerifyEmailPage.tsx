@@ -72,7 +72,7 @@ export const VerifyEmailPage: React.FC = () => {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-tr from-indigo-600 to-purple-600 mb-4">
             <Mail className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-2xl font-bold text-white">Email Verification</h1>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>EMAIL VERIFICATION</h1>
         </div>
 
         {/* Status Card */}

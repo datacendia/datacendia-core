@@ -255,10 +255,10 @@ const NotaryPage: React.FC = () => {
             <Lock className="w-8 h-8 text-amber-400" />
           </div>
           <div>
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">
-              CendiaNotary™
+            <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+              CENDIANOTARY<span style={{ fontWeight: 200, fontSize: '0.7em', opacity: 0.5, marginLeft: '2px' }}>™</span>
             </h1>
-            <p className="text-gray-400 text-sm">Cryptographic Signing Authority</p>
+            <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Cryptographic Signing Authority</p>
           </div>
         </div>
         <p className="text-gray-500 text-sm mt-2">

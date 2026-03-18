@@ -204,7 +204,7 @@ export default function ROICalculator() {
             <div className="p-2 bg-emerald-500/20 rounded-lg">
               <Calculator className="w-6 h-6 text-emerald-400" />
             </div>
-            <h1 className="text-2xl font-bold text-white">ROI Calculator</h1>
+            <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>ROI CALCULATOR</h1>
           </div>
           <p className="text-gray-400">
             Calculate the return on investment for Datacendia implementation

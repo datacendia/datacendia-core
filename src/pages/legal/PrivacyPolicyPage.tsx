@@ -50,7 +50,7 @@ export const PrivacyPolicyPage: React.FC = () => {
       {/* Content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mb-12">
-          <h1 className="text-4xl font-bold text-neutral-900 mb-4">Privacy Policy</h1>
+          <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>PRIVACY POLICY</h1>
           <div className="text-sm text-neutral-500 space-x-4">
             <span>Last updated: {lastUpdated}</span>
             <span>•</span>

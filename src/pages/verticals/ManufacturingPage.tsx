@@ -110,7 +110,7 @@ export const ManufacturingPage: React.FC = () => {
                   🔒 88% Sovereignty
                 </span>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Manufacturing</h1>
+              <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>MANUFACTURING</h1>
               <p className="text-xl text-neutral-300 max-w-3xl mb-6">
                 Supply chain resilience and operational intelligence. Real-time production
                 optimization with OT security integration.

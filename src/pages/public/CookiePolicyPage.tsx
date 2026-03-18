@@ -69,7 +69,7 @@ export const CookiePolicyPage: React.FC = () => {
         <div className="flex items-center gap-3 mb-8">
           <Cookie className="w-10 h-10 text-neutral-700" />
           <div>
-            <h1 className="text-3xl font-bold text-neutral-900">Cookie Policy</h1>
+            <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>COOKIE POLICY</h1>
             <p className="text-neutral-500">Last updated: December 2024</p>
           </div>
         </div>

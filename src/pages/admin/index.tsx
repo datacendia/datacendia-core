@@ -216,7 +216,7 @@ export const AdminDashboardPage: React.FC = () => {
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-white">Admin Dashboard</h1>
+        <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>ADMIN DASHBOARD</h1>
         {error && <span className="text-warning-main text-sm">{error}</span>}
         {dashboard && (
           <span className="text-neutral-500 text-xs">

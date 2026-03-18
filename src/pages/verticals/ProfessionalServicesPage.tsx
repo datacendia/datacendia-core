@@ -109,7 +109,7 @@ export const ProfessionalServicesPage: React.FC = () => {
                   🔒 92% Sovereignty
                 </span>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Professional Services</h1>
+              <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>PROFESSIONAL SERVICES</h1>
               <p className="text-xl text-neutral-300 max-w-3xl mb-6">
                 Consulting, accounting, legal, and advisory firm intelligence. From staffing
                 optimization to client development to knowledge management.

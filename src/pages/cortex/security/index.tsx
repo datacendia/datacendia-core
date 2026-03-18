@@ -81,8 +81,8 @@ export const SecurityOverviewPage: React.FC = () => {
     <div className="p-6 lg:p-8 max-w-7xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900">Security Overview</h1>
-          <p className="text-neutral-500">Monitor and manage your security posture</p>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>SECURITY OVERVIEW</h1>
+          <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Monitor and manage your security posture</p>
         </div>
         <button
           onClick={() => {
@@ -305,8 +305,8 @@ export const AccessControlPage: React.FC = () => {
     <div className="p-6 lg:p-8 max-w-7xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900">Access Control</h1>
-          <p className="text-neutral-500">Manage access policies and permissions</p>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>ACCESS CONTROL</h1>
+          <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Manage access policies and permissions</p>
         </div>
         <button className="px-4 py-2 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors">
           + Create Policy
@@ -519,8 +519,8 @@ export const AuditLogPage: React.FC = () => {
     <div className="p-6 lg:p-8 max-w-7xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900">Audit Log</h1>
-          <p className="text-neutral-500">Complete record of all system activity</p>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>AUDIT LOG</h1>
+          <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Complete record of all system activity</p>
         </div>
         <button
           onClick={() => {
@@ -713,8 +713,8 @@ export const SecurityPoliciesPage: React.FC = () => {
     <div className="p-6 lg:p-8 max-w-7xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900">Security Policies</h1>
-          <p className="text-neutral-500">Configure organizational security policies</p>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>SECURITY POLICIES</h1>
+          <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Configure organizational security policies</p>
         </div>
         <button
           onClick={() => setShowCreatePolicy(true)}

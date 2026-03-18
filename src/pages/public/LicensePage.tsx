@@ -156,7 +156,7 @@ export const LicensePage: React.FC = () => {
       {/* Hero */}
       <section className="bg-white py-12 border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-neutral-900 mb-4">Licensing</h1>
+          <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>LICENSING</h1>
           <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
             Flexible licensing options to meet your organization's needs.
           </p>

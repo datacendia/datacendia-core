@@ -793,12 +793,13 @@ export const DecisionDNAPage: React.FC<{ embedded?: boolean }> = ({ embedded = f
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-2">
               <span className="text-4xl">🧬</span>
-              <h1 className="text-3xl font-bold text-white">Decision DNA</h1>
+              <div>
+                <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+                  DECISION DNA<span style={{ fontWeight: 200, fontSize: '0.7em', opacity: 0.5, marginLeft: '2px' }}>™</span>
+                </h1>
+                <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Full lifecycle tracking with step-by-step replay</p>
+              </div>
             </div>
-            <p className="text-slate-400 text-lg">
-              Full lifecycle tracking with step-by-step replay. Every decision, every analysis, every
-              outcome.
-            </p>
           </div>
         )}
 

@@ -661,8 +661,10 @@ const GnosisPage = () => {
               <GraduationCap className="w-6 h-6" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold">CendiaGnosis™</h1>
-              <p className="text-neutral-400">Sovereign Education Engine</p>
+              <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+                CENDIAGNOSIS<span style={{ fontWeight: 200, fontSize: '0.7em', opacity: 0.5, marginLeft: '2px' }}>™</span>
+              </h1>
+              <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Sovereign Education Engine</p>
               <ServiceInfoDropdown config={gnosisInfo} className="mt-2" />
             </div>
           </div>

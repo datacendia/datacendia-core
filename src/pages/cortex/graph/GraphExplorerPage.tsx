@@ -479,8 +479,8 @@ export const GraphExplorerPage: React.FC = () => {
       <div className="flex-shrink-0 p-4 border-b border-neutral-800">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h1 className="text-xl font-bold text-white">Graph Explorer</h1>
-            <p className="text-sm text-neutral-400">Explore entities and their relationships</p>
+            <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>GRAPH EXPLORER</h1>
+            <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Explore entities and their relationships</p>
           </div>
           <div className="flex items-center gap-4">
             <span className="text-sm text-neutral-500">

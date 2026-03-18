@@ -113,7 +113,7 @@ export const PharmaceuticalPage: React.FC = () => {
                   12% Market Share
                 </span>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Pharmaceutical / Biotech</h1>
+              <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>PHARMACEUTICAL / BIOTECH</h1>
               <p className="text-xl text-neutral-300 max-w-3xl mb-6">
                 Pipeline decisions and regulatory acceleration for life sciences. 21 CFR Part 11
                 compliant with full audit trail for FDA submissions.

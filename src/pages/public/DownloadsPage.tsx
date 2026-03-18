@@ -382,7 +382,7 @@ export const DownloadsPage: React.FC = () => {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold mb-4">Download Datacendia</h1>
+          <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>DOWNLOAD DATACENDIA</h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8">
             Get Datacendia for your platform. Available for Windows, macOS, Linux, iOS, and Android.
           </p>

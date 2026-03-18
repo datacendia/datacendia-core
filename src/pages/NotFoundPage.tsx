@@ -28,7 +28,7 @@ export const NotFoundPage: React.FC = () => {
       <div className="relative z-10 text-center max-w-2xl mx-auto">
         {/* 404 Display */}
         <div className="mb-8">
-          <h1 className="text-[150px] md:text-[200px] font-bold leading-none text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-amber-200 to-blue-400">
+          <h1 className="text-[150px] md:text-[200px] leading-none" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
             404
           </h1>
         </div>

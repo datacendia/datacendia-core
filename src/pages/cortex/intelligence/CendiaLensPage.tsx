@@ -246,8 +246,10 @@ export const CendiaLensPage: React.FC = () => {
                 <SearchCode className="w-8 h-8 text-indigo-300" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold tracking-tight">CendiaLens&trade;</h1>
-                <p className="text-indigo-300">AI Interpretability &amp; Explainability Dashboard</p>
+                <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+                  CENDIALENS<span style={{ fontWeight: 200, fontSize: '0.7em', opacity: 0.5, marginLeft: '2px' }}>™</span>
+                </h1>
+                <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">AI Interpretability &amp; Explainability Dashboard</p>
                 <ServiceInfoDropdown config={lensInfo} className="mt-2" />
               </div>
             </div>

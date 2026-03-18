@@ -84,7 +84,7 @@ export default function ModeAnalytics() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white">Council Mode Analytics</h1>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>COUNCIL MODE ANALYTICS</h1>
           <p className="text-gray-400">Track usage patterns and decision effectiveness</p>
         </div>
         <div className="flex items-center gap-3">

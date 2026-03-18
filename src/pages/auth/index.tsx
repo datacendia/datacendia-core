@@ -65,7 +65,7 @@ export const LoginPage: React.FC = () => {
             <span className="text-xl font-semibold text-neutral-900">Datacendia</span>
           </div>
 
-          <h1 className="text-2xl font-bold text-neutral-900 mb-2">Welcome back</h1>
+          <h1 className="text-2xl mb-2" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>WELCOME BACK</h1>
           <p className="text-neutral-500 mb-8">Sign in to your account to continue</p>
 
           {/* OAuth Buttons */}
@@ -282,7 +282,7 @@ export const RegisterPage: React.FC = () => {
           <span className="text-xl font-semibold text-neutral-900">Datacendia</span>
         </div>
 
-        <h1 className="text-2xl font-bold text-neutral-900 mb-2">Create your account</h1>
+        <h1 className="text-2xl mb-2" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>CREATE YOUR ACCOUNT</h1>
         <p className="text-neutral-500 mb-8">Start your 14-day free trial</p>
 
         {error && (
@@ -425,7 +425,7 @@ export const ForgotPasswordPage: React.FC = () => {
           <div className="w-16 h-16 bg-success-light rounded-full flex items-center justify-center mx-auto mb-6">
             <span className="text-3xl">✉️</span>
           </div>
-          <h1 className="text-2xl font-bold text-neutral-900 mb-4">Check your email</h1>
+          <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>CHECK YOUR EMAIL</h1>
           <p className="text-neutral-600 mb-8">
             We've sent a password reset link to <strong>{email}</strong>
           </p>
@@ -447,7 +447,7 @@ export const ForgotPasswordPage: React.FC = () => {
           <span className="text-xl font-semibold text-neutral-900">Datacendia</span>
         </div>
 
-        <h1 className="text-2xl font-bold text-neutral-900 mb-2">Forgot your password?</h1>
+        <h1 className="text-2xl mb-2" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>FORGOT YOUR PASSWORD?</h1>
         <p className="text-neutral-500 mb-8">Enter your email and we'll send you a reset link</p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -524,7 +524,7 @@ export const ResetPasswordPage: React.FC = () => {
           <span className="text-xl font-semibold text-neutral-900">Datacendia</span>
         </div>
 
-        <h1 className="text-2xl font-bold text-neutral-900 mb-2">Reset your password</h1>
+        <h1 className="text-2xl mb-2" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>RESET YOUR PASSWORD</h1>
         <p className="text-neutral-500 mb-8">Enter your new password below</p>
 
         {error && (

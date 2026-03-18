@@ -527,7 +527,7 @@ export default function SovereignStackPage() {
               <div className="p-2 bg-indigo-100 rounded-lg">
                 <Server className="w-6 h-6 text-indigo-600" />
               </div>
-              <h1 className="text-2xl font-bold text-neutral-900">Sovereign Stack</h1>
+              <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>SOVEREIGN STACK</h1>
             </div>
             <p className="text-neutral-600">
               Infrastructure management for your air-gapped, self-hosted platform

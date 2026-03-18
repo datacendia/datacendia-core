@@ -130,11 +130,13 @@ export const DecisionDebtPage: React.FC = () => {
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
           <span className="text-4xl">📊</span>
-          <h1 className="text-3xl font-bold text-neutral-900">Decision Debt Dashboard</h1>
+          <div>
+            <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+              DECISION DEBT<span style={{ fontWeight: 200, fontSize: '0.7em', opacity: 0.5, marginLeft: '2px' }}>™</span>
+            </h1>
+            <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">See every decision that's stuck and what it's costing you</p>
+          </div>
         </div>
-        <p className="text-neutral-600 text-lg">
-          See every decision that's stuck, who's blocking it, and what it's costing you per day.
-        </p>
       </div>
 
       {/* Score and Summary */}

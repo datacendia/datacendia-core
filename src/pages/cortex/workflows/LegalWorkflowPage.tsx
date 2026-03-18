@@ -161,8 +161,8 @@ const LegalWorkflowPage: React.FC = () => {
               <Scale className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold">Legal Decision Workflow</h1>
-              <p className="text-sm text-neutral-400">12-Step Integrated Flow with Audit-Safe Proof</p>
+              <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>LEGAL DECISION WORKFLOW</h1>
+              <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">12-Step Integrated Flow with Audit-Safe Proof</p>
             </div>
           </div>
         </div>

@@ -138,7 +138,7 @@ export const AerospacePage: React.FC = () => {
                   ✈️ DO-178C Compliant
                 </span>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Aerospace / Defense</h1>
+              <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>AEROSPACE / DEFENSE</h1>
               <p className="text-xl text-neutral-300 max-w-3xl mb-6">
                 Mission-critical decision intelligence for defense contractors, space programs, 
                 and aviation. Air-gapped deployment with hardware-signed audit trails.

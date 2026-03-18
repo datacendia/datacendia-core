@@ -116,7 +116,7 @@ export const GovernmentLegalPage: React.FC = () => {
                   19% Market Share
                 </span>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Government & Legal Services</h1>
+              <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>GOVERNMENT & LEGAL SERVICES</h1>
               <p className="text-xl text-neutral-300 max-w-3xl mb-6">
                 Sovereign AI platform for policy analysis, procurement decisions, and contract
                 intelligence. SCIF-ready deployment meets EU AI Act sovereignty mandates.
