@@ -274,7 +274,7 @@ export const EUBankingPage: React.FC = () => {
                 <span className="px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-medium">Basel III CRR/CRD</span>
                 <span className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm font-medium">EU AI Act 2024/1689</span>
               </div>
-              <h1 className="text-4xl font-bold mb-3">EU Banking Compliance</h1>
+              <h1 className="text-2xl mb-3" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>EU BANKING COMPLIANCE</h1>
               <p className="text-lg text-neutral-300 max-w-3xl">
                 Real-time Basel III capital adequacy, liquidity monitoring, and EU AI Act compliance
                 for mid-tier EU banks. Genuine CRR/CRD IV calculations with EBA stress testing.

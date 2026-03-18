@@ -109,7 +109,7 @@ export const RealEstateConstructionPage: React.FC = () => {
                   🔒 85% Sovereignty
                 </span>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Real Estate / Construction</h1>
+              <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>REAL ESTATE / CONSTRUCTION</h1>
               <p className="text-xl text-neutral-300 max-w-3xl mb-6">
                 Development decisions, project intelligence, and property portfolio optimization.
                 From site selection to construction management to asset disposition.

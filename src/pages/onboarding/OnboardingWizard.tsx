@@ -253,7 +253,7 @@ const WelcomeStep: React.FC = () => (
     <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-2xl flex items-center justify-center">
       <Brain className="w-10 h-10 text-white" />
     </div>
-    <h1 className="text-3xl font-bold text-white mb-4">Welcome to Datacendia</h1>
+    <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>WELCOME TO DATACENDIA</h1>
     <p className="text-slate-400 text-lg max-w-lg mx-auto mb-8">
       Your AI-powered organizational intelligence platform. Let's set up your account in just a few
       minutes.

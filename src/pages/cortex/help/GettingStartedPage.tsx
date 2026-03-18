@@ -159,7 +159,7 @@ export const GettingStartedPage: React.FC = () => {
       <div>
         <div className="flex items-center gap-2 mb-1">
           <Compass className="w-5 h-5 text-amber-400" />
-          <h1 className="text-xl font-bold text-neutral-100">Getting Started</h1>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>GETTING STARTED</h1>
         </div>
         <p className="text-sm text-neutral-400">
           Welcome to Datacendia — Decision Crisis Immunization Infrastructure. Here's everything you need to get started.

@@ -194,8 +194,8 @@ const LegalDemoShowcasePage: React.FC = () => {
               <Gavel className="w-8 h-8 text-amber-400" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold">Legal Demo Showcase</h1>
-              <p className="text-gray-400">Enterprise Legal Vertical - One-Click Demo Scenarios</p>
+              <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>LEGAL DEMO SHOWCASE</h1>
+              <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Enterprise Legal Vertical — One-Click Demo Scenarios</p>
             </div>
           </div>
           <p className="text-gray-500 italic mt-2">

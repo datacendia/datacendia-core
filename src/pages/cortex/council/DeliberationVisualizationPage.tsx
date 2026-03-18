@@ -318,8 +318,8 @@ export const DeliberationVisualizationPage: React.FC = () => {
                 <Eye className="w-8 h-8" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold">Real-Time Deliberation Visualization</h1>
-                <p className="text-indigo-200">Watch AI agents deliberate live</p>
+                <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>DELIBERATION VISUALIZATION</h1>
+                <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Watch AI agents deliberate live</p>
               </div>
             </div>
             

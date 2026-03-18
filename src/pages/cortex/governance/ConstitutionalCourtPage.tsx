@@ -89,8 +89,10 @@ export default function ConstitutionalCourtPage() {
         <div className="flex items-center gap-3">
           <Scale className="h-8 w-8 text-indigo-600" />
           <div>
-            <h1 className="text-2xl font-bold">CendiaCourt™</h1>
-            <p className="text-muted-foreground">Formal dispute resolution with precedent tracking</p>
+            <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+              CENDIACOURT<span style={{ fontWeight: 200, fontSize: '0.7em', opacity: 0.5, marginLeft: '2px' }}>™</span>
+            </h1>
+            <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Formal dispute resolution with precedent tracking</p>
             <ServiceInfoDropdown config={governInfo} className="mt-2" />
           </div>
         </div>

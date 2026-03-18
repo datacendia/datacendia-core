@@ -172,8 +172,8 @@ export const ServicesCatalogPage: React.FC = () => {
     <div className="p-6 lg:p-8 max-w-7xl mx-auto">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900">Services Catalog</h1>
-          <p className="text-neutral-500">Professional services to accelerate your success</p>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>SERVICES CATALOG</h1>
+          <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Professional services to accelerate your success</p>
         </div>
         <button
           onClick={() => navigate('/services/request')}
@@ -250,7 +250,7 @@ export const ServiceRequestPage: React.FC = () => {
           <div className="w-16 h-16 bg-success-light rounded-full flex items-center justify-center mx-auto mb-6">
             <span className="text-3xl">✓</span>
           </div>
-          <h1 className="text-2xl font-bold text-neutral-900 mb-4">Request Submitted!</h1>
+          <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>REQUEST SUBMITTED!</h1>
           <p className="text-neutral-600 mb-6">
             Your service request has been received. Our team will contact you within 24 hours.
           </p>
@@ -265,7 +265,7 @@ export const ServiceRequestPage: React.FC = () => {
 
   return (
     <div className="p-6 lg:p-8 max-w-2xl mx-auto">
-      <h1 className="text-2xl font-bold text-neutral-900 mb-2">Request a Service</h1>
+      <h1 className="text-2xl mb-2" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>REQUEST A SERVICE</h1>
       <p className="text-neutral-500 mb-8">
         Tell us about your needs and we'll get back to you shortly
       </p>
@@ -408,7 +408,7 @@ export const MyServiceRequestsPage: React.FC = () => {
   return (
     <div className="p-6 lg:p-8 max-w-5xl mx-auto">
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-neutral-900">My Service Requests</h1>
+        <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>MY SERVICE REQUESTS</h1>
         <a
           href="/services/request"
           className="px-4 py-2 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors"
@@ -519,7 +519,7 @@ export const ServicesManagementPage: React.FC = () => {
   return (
     <div className="p-6 lg:p-8 max-w-7xl mx-auto">
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-neutral-900">Services Management</h1>
+        <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>SERVICES MANAGEMENT</h1>
         <div className="flex gap-2">
           <select className="h-10 px-3 border border-neutral-300 rounded-lg">
             <option>All Status</option>

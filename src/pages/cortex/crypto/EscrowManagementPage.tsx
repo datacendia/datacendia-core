@@ -200,10 +200,12 @@ export const EscrowManagementPage: React.FC = () => {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-zinc-100 flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <Lock className="w-6 h-6 text-amber-400" />
-            CendiaEscrow™
-          </h1>
+            <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+              CENDIAESCROW<span style={{ fontWeight: 200, fontSize: '0.7em', opacity: 0.5, marginLeft: '2px' }}>™</span>
+            </h1>
+          </div>
           <p className="text-sm text-zinc-500 mt-1">Cryptographic decision escrow with Shamir Secret Sharing and VDF time-locks</p>
           <ServiceInfoDropdown config={escrowInfo} className="mt-2" />
         </div>

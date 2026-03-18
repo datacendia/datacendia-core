@@ -802,13 +802,13 @@ const ComplianceDashboard: React.FC = () => {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+          <div className="flex items-center gap-3">
             <Shield className="w-8 h-8 text-cyan-400" />
-            Five Rings of Sovereignty
-          </h1>
-          <p className="text-gray-400 mt-1">
-            Complete compliance framework mapping across all 8 pillars
-          </p>
+            <div>
+              <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>FIVE RINGS OF SOVEREIGNTY</h1>
+              <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Complete compliance framework mapping across all 8 pillars</p>
+            </div>
+          </div>
         </div>
         <button
           onClick={generateBundle}

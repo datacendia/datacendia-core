@@ -479,7 +479,7 @@ export const ControlCenterPage: React.FC = () => {
   return (
     <div>
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-white">Control Center</h1>
+        <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>CONTROL CENTER</h1>
         <p className="text-neutral-400">
           Manage all platform features, agents, suites, and pricing
         </p>

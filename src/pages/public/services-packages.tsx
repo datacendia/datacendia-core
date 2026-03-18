@@ -301,7 +301,7 @@ export const ServicesPage: React.FC = () => {
       {/* Hero */}
       <section className="bg-white py-16 border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-neutral-900 mb-4">Professional Services</h1>
+          <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>PROFESSIONAL SERVICES</h1>
           <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
             Expert guidance to maximize your Datacendia investment
           </p>
@@ -470,7 +470,7 @@ export const PackagesPage: React.FC = () => {
       {/* Hero */}
       <section className="bg-white py-16 border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-neutral-900 mb-4">Solution Packages</h1>
+          <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>SOLUTION PACKAGES</h1>
           <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
             Pre-configured bundles designed for your success
           </p>

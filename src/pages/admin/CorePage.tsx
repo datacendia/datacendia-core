@@ -310,8 +310,8 @@ export default function CorePage() {
             <Crown className="w-7 h-7 text-white" />
           </div>
           <div>
-            <h1 className="text-3xl font-bold text-white">Datacendia Core</h1>
-            <p className="text-neutral-400">Internal Admin Suite • Dogfooding Mode</p>
+            <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>DATACENDIA CORE</h1>
+            <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Internal Admin Suite • Dogfooding Mode</p>
           </div>
         </div>
         <p className="text-neutral-500 mt-4 max-w-2xl">

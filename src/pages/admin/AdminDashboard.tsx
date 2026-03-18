@@ -328,7 +328,7 @@ const AdminDashboard: React.FC = () => {
       <header className="bg-white border-b border-neutral-200 px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <h1 className="text-2xl font-bold text-neutral-900">🛡️ Admin Dashboard</h1>
+            <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>🛡️ ADMIN DASHBOARD</h1>
             {impersonating && (
               <div className="flex items-center gap-2 px-3 py-1.5 bg-amber-100 text-amber-800 rounded-full text-sm">
                 <span>👤 Impersonating: {tenants.find((t) => t.id === impersonating)?.name}</span>

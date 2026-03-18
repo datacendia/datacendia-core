@@ -275,10 +275,10 @@ export default function UEFAWalkthroughPage() {
           <ChevronRight className="h-3 w-3" />
           <span>UEFA Financial Sustainability</span>
         </div>
-        <h1 className="text-3xl font-bold flex items-center gap-3">
+        <div className="flex items-center gap-3">
           <Gavel className="h-8 w-8 text-indigo-600" />
-          Procedural Integrity Walkthrough
-        </h1>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>PROCEDURAL INTEGRITY WALKTHROUGH</h1>
+        </div>
         <p className="text-muted-foreground max-w-3xl">
           Synthetic demonstration of how Datacendia ensures regulatory decisions remain
           defensible under CAS appeal. Based on public patterns from Financial Fair Play enforcement.

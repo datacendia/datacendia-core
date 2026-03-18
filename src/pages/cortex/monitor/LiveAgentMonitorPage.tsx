@@ -419,8 +419,8 @@ export const LiveAgentMonitorPage: React.FC = () => {
                 <Activity className="w-8 h-8 text-blue-400" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                  CendiaPulse™
+                <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+                  CENDIAPULSE<span style={{ fontWeight: 200, fontSize: '0.7em', opacity: 0.5, marginLeft: '2px' }}>™</span>
                 </h1>
                 <p className="text-sm text-gray-400">Real-time AI agent activity • Compliance enforcement • Risk scoring</p>
                 <ServiceInfoDropdown config={pulseInfo} className="mt-2" />

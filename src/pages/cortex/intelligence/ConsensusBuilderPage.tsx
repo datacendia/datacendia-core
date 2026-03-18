@@ -94,7 +94,7 @@ export const ConsensusBuilderPage: React.FC = () => {
             <span className="text-slate-600 text-xs">/</span>
             <span className="text-xs text-slate-400">DECIDE</span>
           </div>
-          <h1 className="text-xl font-bold text-neutral-100">Consensus Builder</h1>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>CONSENSUS BUILDER</h1>
           <p className="text-sm text-neutral-500 mt-0.5">Multi-stakeholder weighted voting and compromise modeling</p>
         </div>
         <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-neutral-800 border border-neutral-700">

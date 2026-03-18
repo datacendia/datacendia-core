@@ -112,8 +112,8 @@ export const AlertsPage: React.FC = () => {
     <div className="p-6 lg:p-8 max-w-6xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900">Alerts</h1>
-          <p className="text-neutral-500">Monitor and manage system alerts</p>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>ALERTS</h1>
+          <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Monitor and manage system alerts</p>
         </div>
         <button
           onClick={() => {
@@ -417,8 +417,8 @@ export const MetricsPage: React.FC = () => {
     <div className="p-6 lg:p-8 max-w-7xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900">Metrics</h1>
-          <p className="text-neutral-500">Key performance indicators and business metrics</p>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>METRICS</h1>
+          <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Key performance indicators and business metrics</p>
         </div>
         <button
           onClick={() => {

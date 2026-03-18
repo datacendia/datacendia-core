@@ -165,9 +165,9 @@ export const HomePage: React.FC = () => {
               Datacendia is a Sovereign Enterprise Intelligence Platform
             </p>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-900 leading-tight mb-6">
-              Your organization's intelligence,{' '}
-              <span className="text-primary-600">sovereign and whole</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl leading-tight mb-6" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.15em', color: '#e8e4e0' }}>
+              YOUR ORGANIZATION'S INTELLIGENCE,{' '}
+              <span className="text-primary-400">SOVEREIGN AND WHOLE</span>
             </h1>
 
             <p className="text-xl text-neutral-600 mb-4 max-w-2xl mx-auto">

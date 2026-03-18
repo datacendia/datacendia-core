@@ -411,8 +411,8 @@ export const VerticalsHubPage: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900/20 via-neutral-900 to-neutral-900"></div>
         <div className="relative max-w-7xl mx-auto px-6 py-16">
           <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold mb-4">
-              Industry <span className="text-primary-400">Verticals</span>
+            <h1 className="text-4xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+              INDUSTRY <span className="text-primary-400">VERTICALS</span>
             </h1>
             <p className="text-xl text-neutral-400 max-w-3xl mx-auto">
               Purpose-built AI decision intelligence for regulated industries. Each vertical

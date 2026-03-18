@@ -319,10 +319,10 @@ export const SystemHealthPage: React.FC = () => {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+          <div className="flex items-center gap-3">
             <HeartPulse className="w-7 h-7 text-amber-500" />
-            System Health
-          </h1>
+            <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>SYSTEM HEALTH</h1>
+          </div>
           <p className="text-neutral-400 mt-1">
             Real-time infrastructure monitoring and alerting
           </p>

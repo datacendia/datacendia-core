@@ -136,7 +136,7 @@ export const UserProfilePage: React.FC = () => {
             {profile?.name?.split(' ').map(n => n[0]).join('').toUpperCase() || 'U'}
           </div>
           <div>
-            <h1 className="text-xl font-bold text-neutral-100">{profile?.name}</h1>
+            <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>{profile?.name?.toUpperCase()}</h1>
             <p className="text-sm text-neutral-400">{profile?.email}</p>
             <div className="flex items-center gap-2 mt-1">
               <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded border bg-amber-500/15 text-amber-400 border-amber-500/30">

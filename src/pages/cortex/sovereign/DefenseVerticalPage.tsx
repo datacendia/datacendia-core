@@ -241,8 +241,8 @@ export const DefenseVerticalPage: React.FC = () => {
               <Shield className="w-8 h-8" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold">Defense & National Security</h1>
-              <p className="text-slate-300">DIU-Ready | FedRAMP High | CMMC Level 3 | ITAR Compliant</p>
+              <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>DEFENSE & NATIONAL SECURITY</h1>
+              <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">DIU-Ready | FedRAMP High | CMMC Level 3 | ITAR Compliant</p>
             </div>
           </div>
           

@@ -141,7 +141,7 @@ export const PostDeliberationPanel: React.FC = () => {
             <span className="text-slate-600 text-xs">/</span>
             <span className="text-xs text-slate-400">The Council</span>
           </div>
-          <h1 className="text-xl font-bold text-neutral-100">Post-Deliberation Panel</h1>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>POST-DELIBERATION</h1>
           <p className="text-sm text-neutral-500 mt-0.5">{output.title}</p>
         </div>
         <div className="flex gap-2">

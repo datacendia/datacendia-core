@@ -51,7 +51,7 @@ const SLIDES: Slide[] = [
         <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-8">
           <Brain className="w-12 h-12 text-white" />
         </div>
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">Datacendia</h1>
+        <h1 className="text-5xl md:text-7xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>DATACENDIA</h1>
         <p className="text-2xl text-purple-300 mb-8">Sovereign Enterprise Intelligence</p>
         <div className="text-slate-400 text-lg">Investor Presentation • 2025</div>
       </div>
@@ -458,7 +458,7 @@ const SLIDES: Slide[] = [
         <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-8">
           <Brain className="w-12 h-12 text-white" />
         </div>
-        <h1 className="text-5xl font-bold text-white mb-4">Thank You</h1>
+        <h1 className="text-5xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>THANK YOU</h1>
         <p className="text-2xl text-purple-300 mb-8">
           Let's build the future of enterprise intelligence together
         </p>

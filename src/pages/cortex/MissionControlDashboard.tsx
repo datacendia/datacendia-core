@@ -280,8 +280,8 @@ export const MissionControlDashboard: React.FC = () => {
       {/* ================================================================ */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-xl font-bold text-neutral-100">
-            {getGreeting()}, {userName}
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+            {getGreeting().toUpperCase()}, {userName.toUpperCase()}
           </h1>
           <p className="text-sm text-neutral-500 mt-0.5">
             Institutional Mission Control — {orgName}

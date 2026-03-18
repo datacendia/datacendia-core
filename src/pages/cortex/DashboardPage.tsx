@@ -424,8 +424,8 @@ export const DashboardPage: React.FC = () => {
       {/* ================================================================= */}
       <div className="mb-8 flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900">
-            {getGreeting()}, {userName}
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+            {getGreeting().toUpperCase()}, {userName.toUpperCase()}
           </h1>
           <p className="text-neutral-500 mt-1">{t('dashboard.subtitle', { company: orgName })}</p>
           {journeyCompleted && (

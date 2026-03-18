@@ -124,8 +124,8 @@ export const SmartCityPage: React.FC = () => {
               <span className="text-emerald-400 text-sm font-medium">Municipal Government Vertical</span>
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Cendia<span className="text-emerald-400">City</span>™
+            <h1 className="text-4xl md:text-5xl mb-6" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+              CENDIACITY<span style={{ fontWeight: 200, fontSize: '0.7em', opacity: 0.5, marginLeft: '2px' }}>™</span>
             </h1>
             
             <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">

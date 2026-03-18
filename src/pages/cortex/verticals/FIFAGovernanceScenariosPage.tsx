@@ -278,7 +278,7 @@ const ScenarioDetail = ({
                 Council Mode: {scenario.councilMode}
               </Badge>
             </div>
-            <h1 className="text-2xl font-bold">{scenario.title}</h1>
+            <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>{scenario.title.toUpperCase()}</h1>
             <p className="text-muted-foreground mt-1">{scenario.subtitle}</p>
           </div>
         </div>
@@ -652,10 +652,10 @@ export default function FIFAGovernanceScenariosPage() {
 
             <div className="flex items-start justify-between">
               <div>
-                <h1 className="text-3xl font-bold flex items-center gap-3">
+                <div className="flex items-center gap-3">
                   <Gavel className="h-8 w-8 text-indigo-600" />
-                  Governance Crisis Scenarios
-                </h1>
+                  <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>GOVERNANCE CRISIS SCENARIOS</h1>
+                </div>
                 <p className="text-muted-foreground mt-2 max-w-2xl">
                   High-impact scenarios that demonstrate institutional protection under scrutiny.
                   Each scenario shows The Council™ deliberating a real governance challenge

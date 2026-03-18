@@ -109,7 +109,7 @@ export const TelecommunicationsPage: React.FC = () => {
                   🔒 95% Sovereignty
                 </span>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Telecommunications</h1>
+              <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>TELECOMMUNICATIONS</h1>
               <p className="text-xl text-neutral-300 max-w-3xl mb-6">
                 Network optimization, churn prediction, and spectrum management intelligence. From
                 5G rollout decisions to customer retention to billing assurance.

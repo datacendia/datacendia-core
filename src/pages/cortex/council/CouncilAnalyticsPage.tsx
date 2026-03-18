@@ -85,7 +85,7 @@ export const CouncilAnalyticsPage: React.FC = () => {
             <span className="text-slate-600 text-xs">/</span>
             <span className="text-xs text-slate-400">The Council</span>
           </div>
-          <h1 className="text-xl font-bold text-neutral-100">Council Analytics</h1>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>COUNCIL ANALYTICS</h1>
           <p className="text-sm text-neutral-500 mt-0.5">Agent performance, consensus trends, and decision quality metrics</p>
         </div>
         <div className="flex gap-1.5">

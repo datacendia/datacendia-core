@@ -113,8 +113,8 @@ export const StatementOfFactsPage: React.FC = () => {
             <span className="text-slate-600 text-xs">/</span>
             <span className="text-xs text-slate-400">DCII</span>
           </div>
-          <h1 className="text-xl font-bold text-neutral-100 flex items-center gap-2">
-            <Scale className="w-5 h-5 text-orange-400" /> Statement of Facts Generator
+          <h1 className="text-2xl flex items-center gap-2" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+            <Scale className="w-5 h-5 text-orange-400" /> STATEMENT OF FACTS<span style={{ fontWeight: 200, fontSize: '0.7em', opacity: 0.5, marginLeft: '2px' }}>™</span>
           </h1>
           <p className="text-sm text-neutral-500 mt-0.5">Legal-grade chronological fact statements from deliberation evidence</p>
         </div>

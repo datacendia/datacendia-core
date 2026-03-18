@@ -109,7 +109,7 @@ export const ComplianceReadinessPage: React.FC = () => {
               <Shield className="w-5 h-5 text-violet-400" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-neutral-100">Compliance Readiness</h1>
+              <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>COMPLIANCE READINESS</h1>
               <p className="text-sm text-neutral-500">Foundation tier compliance overview & checklist</p>
             </div>
           </div>

@@ -136,7 +136,7 @@ export const AgriculturePage: React.FC = () => {
                   🔗 Supply Chain
                 </span>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Agriculture / AgTech</h1>
+              <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>AGRICULTURE / AGTECH</h1>
               <p className="text-xl text-neutral-300 max-w-3xl mb-6">
                 Farm-to-table decision intelligence. Optimize yields, manage supply chains, 
                 and meet sustainability goals with AI-powered agricultural insights.

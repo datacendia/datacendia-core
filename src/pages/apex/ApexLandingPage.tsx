@@ -101,11 +101,11 @@ export const ApexLandingPage: React.FC = () => {
               <span className="text-primary-300 text-sm font-medium">Apex Product Suite</span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Premium Intelligence
+            <h1 className="text-4xl md:text-5xl mb-6" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+              PREMIUM INTELLIGENCE
               <br />
-              <span className="bg-gradient-to-r from-primary-400 to-cyan-400 bg-clip-text text-transparent">
-                Standalone Solutions
+              <span className="text-primary-400">
+                STANDALONE SOLUTIONS
               </span>
             </h1>
 

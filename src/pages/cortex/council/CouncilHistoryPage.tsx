@@ -127,7 +127,7 @@ export const CouncilHistoryPage: React.FC = () => {
             <span className="text-slate-600 text-xs">/</span>
             <span className="text-xs text-slate-400">The Council</span>
           </div>
-          <h1 className="text-xl font-bold text-neutral-100">Council History</h1>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>COUNCIL HISTORY</h1>
           <p className="text-sm text-neutral-500 mt-0.5">Browse and search all past deliberations</p>
         </div>
         <button className="px-3 py-2 border border-neutral-700 rounded-lg text-sm text-neutral-300 hover:bg-neutral-800 flex items-center gap-2">

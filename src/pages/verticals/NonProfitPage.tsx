@@ -136,7 +136,7 @@ export const NonProfitPage: React.FC = () => {
                   💰 Donor Friendly
                 </span>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Non-Profit / NGO</h1>
+              <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>NON-PROFIT / NGO</h1>
               <p className="text-xl text-neutral-300 max-w-3xl mb-6">
                 Decision intelligence for foundations, charities, and aid organizations. 
                 From impact measurement to grant compliance to donor relations.

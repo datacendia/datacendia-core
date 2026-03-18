@@ -127,8 +127,8 @@ export const WorkflowsListPage: React.FC = () => {
     <div className="p-6 lg:p-8 max-w-6xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900">Workflows</h1>
-          <p className="text-neutral-500">Automate your business processes</p>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>WORKFLOWS</h1>
+          <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Automate your business processes</p>
         </div>
         <button
           onClick={() => navigate('/cortex/bridge/workflows/new')}
@@ -454,8 +454,8 @@ export const ApprovalsPage: React.FC = () => {
     <div className="p-6 lg:p-8 max-w-5xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900">Approvals</h1>
-          <p className="text-neutral-500">Review and approve pending requests</p>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>APPROVALS</h1>
+          <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Review and approve pending requests</p>
         </div>
         <div className="flex items-center gap-4">
           <span className="px-3 py-1 bg-warning-light text-warning-dark text-sm font-medium rounded-full">
@@ -645,8 +645,8 @@ export const BridgeIntegrationsPage: React.FC = () => {
     <div className="p-6 lg:p-8 max-w-6xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900">Integrations</h1>
-          <p className="text-neutral-500">Connect your tools and services</p>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>INTEGRATIONS</h1>
+          <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Connect your tools and services</p>
         </div>
         <button className="px-4 py-2 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors">
           + Request Integration

@@ -117,11 +117,13 @@ export const LiveDemoPage: React.FC = () => {
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
           <span className="text-4xl">⚡</span>
-          <h1 className="text-3xl font-bold text-neutral-900">Live Demo Mode</h1>
+          <div>
+            <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
+              LIVE DEMO<span style={{ fontWeight: 200, fontSize: '0.7em', opacity: 0.5, marginLeft: '2px' }}>™</span>
+            </h1>
+            <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">Connect to your data and run a real deliberation</p>
+          </div>
         </div>
-        <p className="text-neutral-600 text-lg">
-          Connect to YOUR data right now and run a real deliberation.
-        </p>
       </div>
 
       {!session?.status || session.status === 'pending' ? (

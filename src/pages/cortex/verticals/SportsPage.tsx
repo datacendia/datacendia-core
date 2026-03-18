@@ -328,10 +328,10 @@ export default function SportsPage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold flex items-center gap-3">
+          <div className="flex items-center gap-3">
             <Trophy className="h-8 w-8 text-green-600" />
-            Sports DDGI
-          </h1>
+            <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>SPORTS DDGI</h1>
+          </div>
           <p className="text-muted-foreground mt-1">
             Transfer decisions, contract governance, FFP compliance
           </p>

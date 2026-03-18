@@ -110,7 +110,7 @@ export const EnergyUtilitiesPage: React.FC = () => {
                   🔒 100% Sovereignty
                 </span>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Energy & Utilities</h1>
+              <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>ENERGY & UTILITIES</h1>
               <p className="text-xl text-neutral-300 max-w-3xl mb-6">
                 Grid intelligence and regulatory compliance for the energy transition. NERC CIP
                 compliant with full air-gap capability for critical infrastructure.

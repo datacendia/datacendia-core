@@ -269,7 +269,7 @@ const ActiveWalkthrough: React.FC<{
               <span className={categoryConfig.color}>{categoryConfig.icon}</span>
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-white">{scenario.name}</h1>
+              <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>{scenario.name.toUpperCase()}</h1>
               <p className="text-gray-400">{scenario.category} • {scenario.estimatedDuration}</p>
             </div>
           </div>
@@ -520,10 +520,10 @@ const WalkthroughsPage: React.FC = () => {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+          <div className="flex items-center gap-3">
             <BookOpen className="w-8 h-8 text-cyan-400" />
-            Workflow Walkthroughs
-          </h1>
+            <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>WORKFLOW WALKTHROUGHS</h1>
+          </div>
           <p className="text-gray-400 mt-1">
             Step-by-step guides for enterprise decision workflows
           </p>

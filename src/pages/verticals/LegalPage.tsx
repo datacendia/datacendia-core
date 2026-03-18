@@ -502,7 +502,7 @@ export const LegalPage: React.FC = () => {
                   📋 Audit-Grade
                 </span>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Legal / Law Firms</h1>
+              <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>LEGAL / LAW FIRMS</h1>
               <p className="text-xl text-neutral-300 max-w-3xl mb-6">
                 Privilege-preserving AI with audit-grade decision packets. The only legal AI your
                 General Counsel will approve—because data never leaves your infrastructure and every

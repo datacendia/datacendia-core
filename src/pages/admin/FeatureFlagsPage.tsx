@@ -411,10 +411,10 @@ export const FeatureFlagsPage: React.FC = () => {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white flex items-center gap-3">
+          <div className="flex items-center gap-3">
             <Flag className="w-7 h-7 text-amber-500" />
-            Feature Flags
-          </h1>
+            <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>FEATURE FLAGS</h1>
+          </div>
           <p className="text-neutral-400 mt-1">
             Manage feature toggles, A/B testing, and progressive rollouts
           </p>

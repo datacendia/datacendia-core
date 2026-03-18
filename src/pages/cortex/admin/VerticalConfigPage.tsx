@@ -381,8 +381,8 @@ export const VerticalConfigPage: React.FC = () => {
               <Settings className="w-7 h-7 text-purple-400" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold">Vertical Configuration</h1>
-              <p className="text-sm text-gray-400">
+              <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>VERTICAL CONFIGURATION</h1>
+              <p className="text-[11px] uppercase tracking-[0.25em] text-white/60 font-light">
                 Customize your industry vertical and toggle services
               </p>
             </div>

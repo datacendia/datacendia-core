@@ -136,7 +136,7 @@ export const AutomotivePage: React.FC = () => {
                   ✅ IATF 16949
                 </span>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Automotive</h1>
+              <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>AUTOMOTIVE</h1>
               <p className="text-xl text-neutral-300 max-w-3xl mb-6">
                 Decision intelligence for OEMs, Tier 1 suppliers, and EV manufacturers. 
                 From product engineering to supply chain resilience to quality management.

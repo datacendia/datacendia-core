@@ -147,7 +147,7 @@ export const IndustrialServicesPage: React.FC = () => {
                   ✅ GA
                 </span>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Industrial Services</h1>
+              <h1 className="text-2xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>INDUSTRIAL SERVICES</h1>
               <p className="text-xl text-neutral-300 max-w-3xl mb-6">
                 Project-based decision intelligence for industrial maintenance, repair, and
                 construction companies. Safety-first AI with OSHA, ISO 45001, and SUNAFIL

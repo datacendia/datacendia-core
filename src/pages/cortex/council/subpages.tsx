@@ -124,7 +124,7 @@ export const DeliberationViewPage: React.FC = () => {
           >
             ← Back to Council
           </button>
-          <h1 className="text-2xl font-bold text-neutral-900">Deliberation in Progress</h1>
+          <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>DELIBERATION IN PROGRESS</h1>
         </div>
         <div className="flex items-center gap-4">
           {isLive && (
@@ -355,7 +355,7 @@ export const AgentProfilePage: React.FC = () => {
           </div>
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
-              <h1 className="text-2xl font-bold text-neutral-900">{agent.name}</h1>
+              <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>{agent.name.toUpperCase()}</h1>
               <span
                 className={cn(
                   'flex items-center gap-1.5 px-2 py-1 rounded-full text-xs font-medium',
