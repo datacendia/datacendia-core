@@ -90,10 +90,10 @@ def generate_investor_deck(firm, output_dir):
     
     old_adjacency_text = "a16z has backed the data stack (Databricks, dbt) and AI infra (Anyscale). Datacendia completes the stack: governance, ac"
     if new_portfolio:
-        portfolio_str = ', '.join(new_portfolio[:4])
-        new_adjacency = f"{name}'s portfolio includes {portfolio_str}. Datacendia completes the stack with AI governance and audit."
+        data_co = new_portfolio[0] if new_portfolio else 'Databricks'
+        new_adjacency = f"{data_co} governs data. Datacendia governs the decisions made with that data. Together they close the AI accountability gap."
     else:
-        new_adjacency = f"Datacendia adds AI governance and cryptographic audit trails to {name}'s portfolio."
+        new_adjacency = f"Databricks governs data. Datacendia governs decisions made with that data. The missing AI accountability layer."
     replacements[old_adjacency_text] = new_adjacency[:120]
     
     # Replace portfolio company names in slide 2
