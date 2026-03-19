@@ -424,6 +424,26 @@ const SlideEditor: React.FC<{
   );
 };
 
+// ─── File URL Helper ────────────────────────────────────────────────────────
+const CATEGORY_FOLDER_MAP: Record<DeckCategory, string> = {
+  main: '',
+  investor: 'investor',
+  'investor-50': 'investor-50',
+  'investor-100': 'investor-100',
+  sales: 'sales',
+  'design-partner': 'design-partner',
+  gamma: 'gamma',
+};
+
+function getDeckUrl(deck: DeckFile, format: 'pptx' | 'pdf'): string {
+  const folder = CATEGORY_FOLDER_MAP[deck.category];
+  const filename = format === 'pdf' ? deck.filename.replace('.pptx', '.pdf') : deck.filename;
+  if (folder) {
+    return `/pitch-decks/${folder}/${format}/${filename}`;
+  }
+  return `/pitch-decks/${format}/${filename}`;
+}
+
 // ─── Deck Detail Panel ──────────────────────────────────────────────────────
 const DeckDetail: React.FC<{
   deck: DeckFile;
@@ -475,13 +495,21 @@ const DeckDetail: React.FC<{
           <button onClick={onOpenEditor} className="flex-1 flex items-center justify-center gap-1 px-3 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-xs text-white font-medium">
             <Edit3 className="w-3.5 h-3.5" /> Edit Slides
           </button>
-          <button className="flex items-center justify-center gap-1 px-3 py-2 bg-neutral-700 hover:bg-neutral-600 rounded-lg text-xs text-neutral-300">
+          <a
+            href={getDeckUrl(deck, 'pptx')}
+            download={deck.filename}
+            className="flex items-center justify-center gap-1 px-3 py-2 bg-neutral-700 hover:bg-neutral-600 rounded-lg text-xs text-neutral-300"
+          >
             <Download className="w-3.5 h-3.5" /> PPTX
-          </button>
+          </a>
           {deck.hasPdf && (
-            <button className="flex items-center justify-center gap-1 px-3 py-2 bg-neutral-700 hover:bg-neutral-600 rounded-lg text-xs text-neutral-300">
+            <a
+              href={getDeckUrl(deck, 'pdf')}
+              download={deck.filename.replace('.pptx', '.pdf')}
+              className="flex items-center justify-center gap-1 px-3 py-2 bg-neutral-700 hover:bg-neutral-600 rounded-lg text-xs text-neutral-300"
+            >
               <Download className="w-3.5 h-3.5" /> PDF
-            </button>
+            </a>
           )}
         </div>
       </div>
