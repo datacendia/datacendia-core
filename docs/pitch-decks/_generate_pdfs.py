@@ -66,7 +66,8 @@ def batch_convert(pptx_paths, progress_label=""):
 
 def main():
     folders = ['pptx', 'investor/pptx', 'sales/pptx', 'design-partner/pptx', 
-               'gamma/pptx', 'investor-50/pptx', 'investor-100/pptx']
+               'gamma/pptx', 'investor-50/pptx', 'investor-100/pptx',
+               'investor-500/pptx', 'enterprise/pptx', 'regional/pptx']
     
     test_mode = '--test' in sys.argv
     
