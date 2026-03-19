@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import {
   Search, FileText, Upload, Download, Trash2, Plus, Edit3,
-  ChevronRight, ChevronDown, Eye, Copy, Filter, Globe,
+  ChevronRight, ChevronLeft, ChevronDown, Eye, Copy, Filter, Globe,
   Building2, Users, Briefcase, Image, Type, Layers,
   MoreVertical, X, Check, ArrowLeft, Maximize2, Minimize2,
   FolderOpen, Tag, Calendar, Mail, ExternalLink, RefreshCw,
@@ -81,7 +81,11 @@ const REGION_CONFIG: Record<Region, { label: string; flag: string }> = {
 
 // ─── Deck builder helper ─────────────────────────────────────────────────────
 function mkDeck(id: number, cat: DeckCategory, num: string, slug: string, name: string, type: string, region: Region, loc = '', aum = '', web = '', thesis = '', portfolio: string[] = []): DeckFile {
-  return { id: String(id), filename: `${num}-${slug}.pptx`, category: cat, status: 'ready', targetName: name, targetType: type, region, location: loc, aum, website: web, contactName: '', contactEmail: '', portfolioCompanies: portfolio, thesisAngle: thesis, slideCount: 10, slides: [], hasPdf: true, lastModified: new Date(), notes: '' };
+  const gradients = ['from-neutral-800 to-neutral-900','from-amber-900/30 to-neutral-900','from-red-900/30 to-neutral-900','from-blue-900/30 to-neutral-900','from-green-900/30 to-neutral-900','from-purple-900/30 to-neutral-900','from-cyan-900/30 to-neutral-900','from-neutral-700 to-neutral-900','from-amber-900/40 to-neutral-900','from-neutral-800 to-neutral-950'];
+  const titles = [`Prepared for ${name}`, 'Alignment & Opportunity', 'The Problem', 'The Solution', 'Platform Proof', 'Multi-Agent Decision Engine', 'Decision Audit Trail', 'Founder & Team', 'The Ask', 'Next Steps'];
+  const texts = [['Cover slide'], [`Why Datacendia aligns with ${name}`], ['Enterprise AI has no accountability layer'], ['Multi-agent deliberation with cryptographic evidence'], ['205K+ tests, 156 endpoints, live platform'], ['Role-specific agents: CFO, CISO, Legal, Strategy, Risk'], ['Every decision tracked with full evidence chain'], ['Stuart Rainey — 7 years at TCS/PGIM'], ['$1.5M Pre-Seed — $7M Pre-Money'], ['Schedule deep dive, technical demo, data room']];
+  const slides: SlideData[] = titles.map((t, i) => ({ id: String(i+1), number: i+1, title: t, texts: texts[i], hasImage: i === 5 || i === 6, imageName: i === 5 ? '02-council-deliberation.png' : i === 6 ? '05-decisions.png' : undefined, thumbnailColor: `bg-gradient-to-br ${gradients[i]}` }));
+  return { id: String(id), filename: `${num}-${slug}.pptx`, category: cat, status: 'ready', targetName: name, targetType: type, region, location: loc, aum, website: web, contactName: '', contactEmail: '', portfolioCompanies: portfolio, thesisAngle: thesis, slideCount: 10, slides, hasPdf: true, lastModified: new Date(), notes: '' };
 }
 
 function batchDecks(items: string[], cat: DeckCategory, type: string, region: Region, pad: number, start: number, out: DeckFile[], idRef: { v: number }) {
@@ -510,14 +514,19 @@ function getDeckUrl(deck: DeckFile, format: 'pptx' | 'pdf'): string {
   return `/pitch-decks/${format}/${filename}`;
 }
 
-// ─── Deck Detail Panel ──────────────────────────────────────────────────────
+// ─── Deck Detail Panel (with slide preview) ─────────────────────────────────
 const DeckDetail: React.FC<{
   deck: DeckFile;
   onClose: () => void;
   onUpdate: (deck: DeckFile) => void;
   onOpenEditor: () => void;
 }> = ({ deck, onClose, onUpdate, onOpenEditor }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [showInfo, setShowInfo] = useState(false);
   const [editField, setEditField] = useState<string | null>(null);
+  const slide = deck.slides[currentSlide];
+  const hasPrev = currentSlide > 0;
+  const hasNext = currentSlide < deck.slides.length - 1;
 
   const updateField = (field: keyof DeckFile, value: any) => {
     onUpdate({ ...deck, [field]: value });
@@ -544,93 +553,153 @@ const DeckDetail: React.FC<{
   );
 
   return (
-    <div className="w-[400px] border-l border-neutral-700 bg-neutral-900 overflow-y-auto">
-      <div className="p-4 border-b border-neutral-800">
-        <div className="flex items-center justify-between mb-3">
+    <div className="w-[440px] border-l border-neutral-700 bg-neutral-900 flex flex-col overflow-hidden">
+      {/* Header row */}
+      <div className="flex-shrink-0 px-4 py-2.5 border-b border-neutral-800 flex items-center justify-between">
+        <div className="flex-1 min-w-0">
           <h3 className="text-sm font-semibold text-white truncate">{deck.targetName}</h3>
-          <button onClick={onClose} className="p-1 hover:bg-neutral-700 rounded"><X className="w-4 h-4 text-neutral-500" /></button>
+          <div className="flex items-center gap-1.5 mt-0.5">
+            <CategoryBadge category={deck.category} />
+            <StatusBadge status={deck.status} />
+            {deck.region && <span className="text-[10px] text-neutral-500">{REGION_CONFIG[deck.region]?.flag}</span>}
+          </div>
         </div>
-        <div className="flex items-center gap-2 mb-3">
-          <CategoryBadge category={deck.category} />
-          <StatusBadge status={deck.status} />
-          {deck.region && (
-            <span className="text-xs text-neutral-400">{REGION_CONFIG[deck.region]?.flag} {REGION_CONFIG[deck.region]?.label}</span>
-          )}
-        </div>
-        <div className="flex gap-2">
-          <button onClick={onOpenEditor} className="flex-1 flex items-center justify-center gap-1 px-3 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-xs text-white font-medium">
-            <Edit3 className="w-3.5 h-3.5" /> Edit Slides
-          </button>
-          <a
-            href={getDeckUrl(deck, 'pptx')}
-            download={deck.filename}
-            className="flex items-center justify-center gap-1 px-3 py-2 bg-neutral-700 hover:bg-neutral-600 rounded-lg text-xs text-neutral-300"
-          >
-            <Download className="w-3.5 h-3.5" /> PPTX
-          </a>
-          {deck.hasPdf && (
-            <a
-              href={getDeckUrl(deck, 'pdf')}
-              download={deck.filename.replace('.pptx', '.pdf')}
-              className="flex items-center justify-center gap-1 px-3 py-2 bg-neutral-700 hover:bg-neutral-600 rounded-lg text-xs text-neutral-300"
-            >
-              <Download className="w-3.5 h-3.5" /> PDF
-            </a>
-          )}
-        </div>
+        <button onClick={onClose} className="p-1 hover:bg-neutral-700 rounded ml-2"><X className="w-4 h-4 text-neutral-500" /></button>
       </div>
 
-      {/* Metadata */}
-      <div className="p-4 space-y-3">
-        <h4 className="text-xs font-semibold text-neutral-400 uppercase tracking-wider">Deck Info</h4>
-        <EditableField label="Target" field="targetName" value={deck.targetName} />
-        <EditableField label="Type" field="targetType" value={deck.targetType} />
-        <EditableField label="Location" field="location" value={deck.location} />
-        <EditableField label="AUM" field="aum" value={deck.aum} />
-        <EditableField label="Website" field="website" value={deck.website} />
-        <EditableField label="Thesis / Angle" field="thesisAngle" value={deck.thesisAngle} />
+      {/* ── Slide Preview ────────────────────────────────────────────────── */}
+      {slide && (
+        <div className="flex-shrink-0 px-4 pt-3">
+          {/* Main slide canvas */}
+          <div className={`relative aspect-[16/9] rounded-xl ${slide.thumbnailColor} border border-neutral-700/50 overflow-hidden group`}>
+            {/* Slide content */}
+            <div className="absolute inset-0 flex flex-col justify-center px-6">
+              <p className="text-[10px] uppercase tracking-widest text-neutral-500 mb-1">Slide {slide.number} of {deck.slides.length}</p>
+              <h4 className="text-base font-semibold text-white leading-tight">{slide.title}</h4>
+              {slide.texts.map((t, i) => (
+                <p key={i} className="text-xs text-neutral-400 mt-1 leading-relaxed">{t}</p>
+              ))}
+              {slide.hasImage && (
+                <div className="mt-2 flex items-center gap-1.5 text-[10px] text-blue-400/70">
+                  <Image className="w-3 h-3" />
+                  <span>{slide.imageName}</span>
+                </div>
+              )}
+            </div>
 
-        <h4 className="text-xs font-semibold text-neutral-400 uppercase tracking-wider pt-2">Contact</h4>
-        <EditableField label="Contact Name" field="contactName" value={deck.contactName} />
-        <EditableField label="Email" field="contactEmail" value={deck.contactEmail} />
+            {/* Prev / Next arrows (visible on hover) */}
+            {hasPrev && (
+              <button
+                onClick={() => setCurrentSlide(c => c - 1)}
+                className="absolute left-1.5 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/60 hover:bg-black/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <ChevronLeft className="w-4 h-4 text-white" />
+              </button>
+            )}
+            {hasNext && (
+              <button
+                onClick={() => setCurrentSlide(c => c + 1)}
+                className="absolute right-1.5 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-black/60 hover:bg-black/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <ChevronRight className="w-4 h-4 text-white" />
+              </button>
+            )}
+          </div>
 
-        <h4 className="text-xs font-semibold text-neutral-400 uppercase tracking-wider pt-2">Status</h4>
-        <div className="flex flex-wrap gap-1">
-          {(Object.keys(STATUS_CONFIG) as DeckStatus[]).map(s => (
-            <button
-              key={s}
-              onClick={() => updateField('status', s)}
-              className={`px-2 py-1 rounded text-[10px] border transition-colors ${deck.status === s ? STATUS_CONFIG[s].color : 'text-neutral-500 border-neutral-700 hover:border-neutral-500'}`}
-            >
-              {STATUS_CONFIG[s].label}
-            </button>
-          ))}
+          {/* Thumbnail strip */}
+          <div className="flex gap-1.5 mt-2 overflow-x-auto pb-2 scrollbar-thin">
+            {deck.slides.map((s, i) => (
+              <button
+                key={s.id}
+                onClick={() => setCurrentSlide(i)}
+                className={`flex-shrink-0 w-14 h-8 rounded ${s.thumbnailColor} border transition-all flex items-center justify-center ${
+                  i === currentSlide ? 'border-blue-500 ring-1 ring-blue-500/40 scale-105' : 'border-neutral-700/40 hover:border-neutral-500 opacity-60 hover:opacity-100'
+                }`}
+              >
+                <span className="text-[8px] text-white/70 font-medium">{i + 1}</span>
+              </button>
+            ))}
+          </div>
         </div>
+      )}
 
-        <h4 className="text-xs font-semibold text-neutral-400 uppercase tracking-wider pt-2">Notes</h4>
-        <textarea
-          className="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-neutral-300 focus:outline-none focus:border-blue-500 resize-none"
-          rows={3}
-          value={deck.notes}
-          onChange={(e) => onUpdate({ ...deck, notes: e.target.value })}
-          placeholder="Add notes..."
-        />
+      {/* Action buttons */}
+      <div className="flex-shrink-0 px-4 py-2 flex gap-2">
+        <button onClick={onOpenEditor} className="flex-1 flex items-center justify-center gap-1 px-3 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-xs text-white font-medium">
+          <Edit3 className="w-3.5 h-3.5" /> Edit Slides
+        </button>
+        <a href={getDeckUrl(deck, 'pptx')} download={deck.filename} className="flex items-center justify-center gap-1 px-3 py-2 bg-neutral-700 hover:bg-neutral-600 rounded-lg text-xs text-neutral-300">
+          <Download className="w-3.5 h-3.5" /> PPTX
+        </a>
+        {deck.hasPdf && (
+          <a href={getDeckUrl(deck, 'pdf')} download={deck.filename.replace('.pptx', '.pdf')} className="flex items-center justify-center gap-1 px-3 py-2 bg-neutral-700 hover:bg-neutral-600 rounded-lg text-xs text-neutral-300">
+            <Download className="w-3.5 h-3.5" /> PDF
+          </a>
+        )}
+      </div>
 
-        {deck.portfolioCompanies.length > 0 && (
-          <>
-            <h4 className="text-xs font-semibold text-neutral-400 uppercase tracking-wider pt-2">Portfolio Companies</h4>
+      {/* ── Collapsible metadata ─────────────────────────────────────────── */}
+      <div className="flex-1 overflow-y-auto border-t border-neutral-800">
+        <button
+          onClick={() => setShowInfo(!showInfo)}
+          className="w-full px-4 py-2 flex items-center justify-between text-[10px] uppercase tracking-wider text-neutral-500 hover:text-neutral-300"
+        >
+          <span>Deck Info & Metadata</span>
+          {showInfo ? <ChevronDown className="w-3.5 h-3.5" /> : <ChevronRight className="w-3.5 h-3.5" />}
+        </button>
+
+        {showInfo && (
+          <div className="px-4 pb-4 space-y-3">
+            <EditableField label="Target" field="targetName" value={deck.targetName} />
+            <EditableField label="Type" field="targetType" value={deck.targetType} />
+            <EditableField label="Location" field="location" value={deck.location} />
+            <EditableField label="AUM" field="aum" value={deck.aum} />
+            <EditableField label="Website" field="website" value={deck.website} />
+            <EditableField label="Thesis / Angle" field="thesisAngle" value={deck.thesisAngle} />
+
+            <h4 className="text-xs font-semibold text-neutral-400 uppercase tracking-wider pt-2">Contact</h4>
+            <EditableField label="Contact Name" field="contactName" value={deck.contactName} />
+            <EditableField label="Email" field="contactEmail" value={deck.contactEmail} />
+
+            <h4 className="text-xs font-semibold text-neutral-400 uppercase tracking-wider pt-2">Status</h4>
             <div className="flex flex-wrap gap-1">
-              {deck.portfolioCompanies.map(c => (
-                <span key={c} className="px-2 py-0.5 bg-neutral-800 border border-neutral-700 rounded text-[10px] text-neutral-300">{c}</span>
+              {(Object.keys(STATUS_CONFIG) as DeckStatus[]).map(s => (
+                <button
+                  key={s}
+                  onClick={() => updateField('status', s)}
+                  className={`px-2 py-1 rounded text-[10px] border transition-colors ${deck.status === s ? STATUS_CONFIG[s].color : 'text-neutral-500 border-neutral-700 hover:border-neutral-500'}`}
+                >
+                  {STATUS_CONFIG[s].label}
+                </button>
               ))}
             </div>
-          </>
-        )}
 
-        <div className="pt-2 text-[10px] text-neutral-600">
-          <p>{deck.slideCount} slides · {deck.filename}</p>
-          <p>Modified: {deck.lastModified.toLocaleDateString()}</p>
-        </div>
+            <h4 className="text-xs font-semibold text-neutral-400 uppercase tracking-wider pt-2">Notes</h4>
+            <textarea
+              className="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-neutral-300 focus:outline-none focus:border-blue-500 resize-none"
+              rows={3}
+              value={deck.notes}
+              onChange={(e) => onUpdate({ ...deck, notes: e.target.value })}
+              placeholder="Add notes..."
+            />
+
+            {deck.portfolioCompanies.length > 0 && (
+              <>
+                <h4 className="text-xs font-semibold text-neutral-400 uppercase tracking-wider pt-2">Portfolio</h4>
+                <div className="flex flex-wrap gap-1">
+                  {deck.portfolioCompanies.map(c => (
+                    <span key={c} className="px-2 py-0.5 bg-neutral-800 border border-neutral-700 rounded text-[10px] text-neutral-300">{c}</span>
+                  ))}
+                </div>
+              </>
+            )}
+
+            <div className="pt-2 text-[10px] text-neutral-600">
+              <p>{deck.slideCount} slides · {deck.filename}</p>
+              <p>Modified: {deck.lastModified.toLocaleDateString()}</p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
