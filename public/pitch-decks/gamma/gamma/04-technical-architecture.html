@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Datacendia — Technical Architecture</title>
+<link rel="stylesheet" href="gamma.css">
+</head>
+<body>
+
+<!-- SLIDE 1: HERO -->
+<div class="slide slide--hero" style="text-align:center;align-items:center">
+<div class="s-header"><div class="logo"><img src="../../logo.png" alt="Datacendia">Datacendia</div><div class="deck-type">Technical Architecture</div><div class="s-num">1 / 8</div></div>
+<div class="confidential">Confidential</div>
+<div class="relative z-10">
+<div class="eyebrow" style="letter-spacing:4px">Technical Deep Dive</div>
+<h1 class="gold-gradient" style="margin-bottom:24px">Multi-Agent Deliberation<br>Architecture</h1>
+<p class="subtitle" style="margin:0 auto 32px;text-align:center">50+ specialized AI agent presets, cryptographic audit chains, zero-copy data architecture, and 4 deployment modes — from cloud to air-gapped.</p>
+<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+<span class="tag tag--gold">156 API Endpoints</span>
+<span class="tag tag--blue">14 AI Agents</span>
+<span class="tag tag--purple">16 Connectors</span>
+<span class="tag tag--green">26 Languages</span>
+</div>
+</div>
+<div class="s-footer"><span>&copy; 2024–2026 Datacendia, LLC</span><span>Confidential</span></div>
+</div>
+
+<!-- SLIDE 2: SYSTEM OVERVIEW -->
+<div class="slide slide--dark">
+<div class="s-header"><div class="logo"><img src="../../logo.png" alt="Datacendia">Datacendia</div><div class="deck-type">Technical Architecture</div><div class="s-num">2 / 8</div></div>
+<div class="relative z-10">
+<div class="eyebrow">System Architecture</div>
+<h2 style="margin-bottom:32px">Four-Layer Platform Stack</h2>
+<div class="grid-2">
+<div class="glass glass--gold glow-gold" style="padding:28px;margin-bottom:16px">
+<h4 class="gold">Layer 1 — Decision Interface</h4>
+<p class="text2 mt-8" style="font-size:13px">React 18 SPA with 82 route files, real-time WebSocket updates, i18n for 26 languages with RTL support. Responsive design system with dark mode. Decision Replay Theater for step-by-step visualization.</p>
+</div>
+<div class="glass glass--blue" style="padding:28px;margin-bottom:16px">
+<h4 class="blue">Layer 2 — Core Suite (13 Decision Tools)</h4>
+<p class="text2 mt-8" style="font-size:13px">CendiaChronos (time machine), Ghost Board (AI board meetings), CendiaPreMortem (failure analysis), Decision Debt, CendiaLive (real-time deliberation), CendiaReplay, CendiaEcho (outcome tracking), CendiaLens (interpretability), CendiaCollapse (stress-testing), CendiaPulse (mission control), CendiaCrisis (incident response), CendiaROI, CendiaDCII.</p>
+</div>
+<div class="glass glass--purple" style="padding:28px">
+<h4 class="purple">Layer 3 — Trust Layer (16 Compliance Tools)</h4>
+<p class="text2 mt-8" style="font-size:13px">CendiaOversight (regulatory radar), CendiaNotary (crypto signing), CendiaVault (evidence storage), CendiaProvenance (decision lineage), Decision Packets, CendiaCrucible + CendiaRedTeam (adversarial testing), SGAS, CendiaCourt, CendiaSandbox, CendiaZKP, CendiaInsure, CendiaQuantumKMS, CendiaCarbon, CendiaJurisdiction, CendiaCompliance.</p>
+</div>
+<div class="glass glass--green" style="padding:28px">
+<h4 class="green">Layer 4 — Data &amp; Deployment</h4>
+<p class="text2 mt-8" style="font-size:13px">Zero-copy architecture with 16 native connectors (Snowflake, Databricks, PostgreSQL, BigQuery, etc). 4 deployment modes. 11 sovereign patterns. Zero-trust security. API-first with 156 endpoints.</p>
+</div>
+</div>
+</div>
+<div class="s-footer"><span>&copy; 2024–2026 Datacendia, LLC</span><span>Confidential</span></div>
+</div>
+
+<!-- SLIDE 3: THE COUNCIL ENGINE -->
+<div class="slide slide--accent">
+<div class="s-header"><div class="logo"><img src="../../logo.png" alt="Datacendia">Datacendia</div><div class="deck-type">Technical Architecture</div><div class="s-num">3 / 8</div></div>
+<div class="relative z-10">
+<div class="eyebrow--purple" style="font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:16px">The Council Engine</div>
+<h2 style="margin-bottom:24px">Multi-Agent Deliberation Flow</h2>
+<div class="glass" style="padding:32px;margin-bottom:24px">
+<div class="grid-5" style="text-align:center">
+<div><div class="tag tag--gold" style="display:block;margin-bottom:8px">Input</div><p class="muted" style="font-size:10px">Decision query + data context</p></div>
+<div><div class="tag tag--blue" style="display:block;margin-bottom:8px">Fan-Out</div><p class="muted" style="font-size:10px">50+ agents receive prompt</p></div>
+<div><div class="tag tag--purple" style="display:block;margin-bottom:8px">Deliberate</div><p class="muted" style="font-size:10px">Analysis, debate, challenge</p></div>
+<div><div class="tag tag--green" style="display:block;margin-bottom:8px">Vote</div><p class="muted" style="font-size:10px">Confidence-weighted votes</p></div>
+<div><div class="tag tag--gold" style="display:block;margin-bottom:8px">Synthesize</div><p class="muted" style="font-size:10px">Arbiter produces decision</p></div>
+</div>
+</div>
+<div class="grid-3">
+<div class="glass" style="padding:20px">
+<h4 style="font-size:14px">12 Deliberation Modes</h4>
+<p class="text2 mt-8" style="font-size:12px">Consensus, Adversarial, Red Team, Speed, Deep Analysis, Compliance-First, Financial-First, Risk-Heavy, Innovation, Balanced, PreMortem, Ghost Board</p>
+</div>
+<div class="glass" style="padding:20px">
+<h4 style="font-size:14px">Agent Independence</h4>
+<p class="text2 mt-8" style="font-size:12px">Each agent has unique system prompts, domain knowledge, and reasoning chains. No agent can see another's initial analysis — preventing groupthink.</p>
+</div>
+<div class="glass" style="padding:20px">
+<h4 style="font-size:14px">Dissent Preservation</h4>
+<p class="text2 mt-8" style="font-size:12px">Minority opinions are preserved with full reasoning. The Red Team agent actively challenges consensus. Human intervention points at every stage.</p>
+</div>
+</div>
+<div class="screenshot-wrap screenshot-wrap--lg mt-24"><img src="../screenshots/council-deliberation.png" alt="The Council Live UI"><div class="screenshot-caption">The Council™ — Live multi-agent deliberation with fan-out, debate, and synthesis</div></div>
+</div>
+<div class="s-footer"><span>&copy; 2024–2026 Datacendia, LLC</span><span>Confidential</span></div>
+</div>
+
+<!-- SLIDE 4: ZERO-COPY DATA -->
+<div class="slide slide--blue">
+<div class="s-header"><div class="logo"><img src="../../logo.png" alt="Datacendia">Datacendia</div><div class="deck-type">Technical Architecture</div><div class="s-num">4 / 8</div></div>
+<div class="relative z-10">
+<div class="eyebrow--blue" style="font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:16px">Data Architecture</div>
+<h2 style="margin-bottom:32px">Zero-Copy — Your Data Never Moves</h2>
+<div class="grid-2">
+<div>
+<p class="text2" style="font-size:16px;line-height:1.7;margin-bottom:24px">Traditional analytics platforms copy your data into their infrastructure. Datacendia queries your data in place — it never leaves your database.</p>
+<table>
+<thead><tr><th>Connector</th><th>Protocol</th></tr></thead>
+<tbody>
+<tr><td>Snowflake</td><td>Native SQL + Cortex</td></tr>
+<tr><td>Databricks</td><td>Delta Lake / Unity Catalog</td></tr>
+<tr><td>PostgreSQL</td><td>Native driver</td></tr>
+<tr><td>BigQuery</td><td>Storage API</td></tr>
+<tr><td>SQL Server</td><td>TDS</td></tr>
+<tr><td>MongoDB</td><td>Wire protocol</td></tr>
+<tr><td>Oracle</td><td>OCI driver</td></tr>
+<tr><td>+ 9 more</td><td>Native protocols</td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<div class="glass glass--gold glow-gold" style="padding:28px;margin-bottom:16px">
+<h4 class="gold">Why Zero-Copy Matters</h4>
+<ul class="mt-16">
+<li><strong>No data exfiltration surface</strong> — data stays in your security perimeter</li>
+<li><strong>No ETL pipelines</strong> — no maintenance, no data drift, no stale copies</li>
+<li><strong>No compliance burden</strong> — data sovereignty is automatic</li>
+<li><strong>Real-time freshness</strong> — agents always query live data</li>
+</ul>
+</div>
+<div class="glass glass--blue" style="padding:28px">
+<h4 class="blue">Competitive Advantage</h4>
+<p class="text2 mt-8" style="font-size:13px">Palantir copies your data. Databricks copies your data. Snowflake stores your data. Datacendia is the only platform that provides AI decision intelligence without ever possessing a copy of your data.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="s-footer"><span>&copy; 2024–2026 Datacendia, LLC</span><span>Confidential</span></div>
+</div>
+
+<!-- SLIDE 5: DCII -->
+<div class="slide slide--dark">
+<div class="s-header"><div class="logo"><img src="../../logo.png" alt="Datacendia">Datacendia</div><div class="deck-type">Technical Architecture</div><div class="s-num">5 / 8</div></div>
+<div class="relative z-10">
+<div class="eyebrow">DCII</div>
+<h2 style="margin-bottom:32px">Cryptographic Audit Infrastructure</h2>
+<div class="grid-3">
+<div class="glass glass--gold" style="padding:24px">
+<h4 class="gold">Truth</h4>
+<p class="text2 mt-8" style="font-size:13px">Verification layer. Every claim made by an agent is cross-referenced against data sources. Confidence scores based on evidence strength.</p>
+</div>
+<div class="glass glass--blue" style="padding:24px">
+<h4 class="blue">Notary</h4>
+<p class="text2 mt-8" style="font-size:13px">Timestamping service. SHA-256 hash of every deliberation step with RFC 3161 timestamp. Immutable, tamper-evident chain.</p>
+</div>
+<div class="glass glass--purple" style="padding:24px">
+<h4 class="purple">Witness</h4>
+<p class="text2 mt-8" style="font-size:13px">Attestation protocol. Independent verification that deliberation followed the declared mode and all agents participated.</p>
+</div>
+<div class="glass" style="padding:24px">
+<h4>Timestamp</h4>
+<p class="text2 mt-8" style="font-size:13px">Precise temporal ordering of all events. Enables "decision replay" — reconstructing exact deliberation sequence.</p>
+</div>
+<div class="glass" style="padding:24px">
+<h4>Similarity</h4>
+<p class="text2 mt-8" style="font-size:13px">Deduplication and pattern matching. Identifies when a current decision resembles past deliberations, surfacing historical context.</p>
+</div>
+<div class="glass" style="padding:24px">
+<h4>Memory</h4>
+<p class="text2 mt-8" style="font-size:13px">Institutional knowledge persistence. Agents learn from past deliberations without retraining — organizational wisdom accumulates.</p>
+</div>
+</div>
+<div class="glass mt-24" style="padding:20px 28px">
+<p class="text2" style="font-size:14px"><strong class="gold">For auditors &amp; regulators:</strong> Hand them the DCII hash chain — every agent's reasoning, every vote, every dissent, cryptographically timestamped and tamper-evident. This is the audit infrastructure that AI governance demands.</p>
+</div>
+<div class="grid-2 mt-24">
+<div class="screenshot-wrap"><img src="../screenshots/dcii-truth.png" alt="DCII Truth Engine"><div class="screenshot-caption">CendiaDCII Truth — Verification and evidence cross-referencing</div></div>
+<div class="screenshot-wrap"><img src="../screenshots/dcii-notary.png" alt="DCII Notary"><div class="screenshot-caption">CendiaDCII Notary — SHA-256 hash chain with RFC 3161 timestamps</div></div>
+</div>
+</div>
+<div class="s-footer"><span>&copy; 2024–2026 Datacendia, LLC</span><span>Confidential</span></div>
+</div>
+
+<!-- SLIDE 5B: PLATFORM PROOF -->
+<div class="slide slide--dark">
+<div class="s-header"><div class="logo"><img src="../../logo.png" alt="Datacendia">Datacendia</div><div class="deck-type">Technical Architecture</div><div class="s-num">5b / 8</div></div>
+<div class="relative z-10">
+<div class="eyebrow">Production Platform</div>
+<h2 style="margin-bottom:24px">Enterprise UI — Not a Prototype</h2>
+<div class="grid-2">
+<div class="screenshot-wrap"><img src="../screenshots/graph-explorer.png" alt="Knowledge Graph"><div class="screenshot-caption">CendiaGraph — Knowledge graph with entity relationships and lineage</div></div>
+<div class="screenshot-wrap"><img src="../screenshots/pulse.png" alt="CendiaPulse"><div class="screenshot-caption">CendiaPulse — Real-time health monitoring and anomaly detection</div></div>
+</div>
+<div class="grid-2 mt-24">
+<div class="screenshot-wrap"><img src="../screenshots/dashboard.png" alt="Dashboard"><div class="screenshot-caption">Cortex Dashboard — Organizational health at a glance</div></div>
+<div class="screenshot-wrap"><img src="../screenshots/decisions-list.png" alt="Decisions"><div class="screenshot-caption">Decision history with synthesis and confidence scores</div></div>
+</div>
+</div>
+<div class="s-footer"><span>&copy; 2024–2026 Datacendia, LLC</span><span>Confidential</span></div>
+</div>
+
+<!-- SLIDE 6: DEPLOYMENT MODES -->
+<div class="slide slide--gold">
+<div class="s-header"><div class="logo"><img src="../../logo.png" alt="Datacendia">Datacendia</div><div class="deck-type">Technical Architecture</div><div class="s-num">6 / 8</div></div>
+<div class="relative z-10">
+<div class="eyebrow">Deployment</div>
+<h2 style="margin-bottom:32px">Four Modes — Same Platform, Same API</h2>
+<table>
+<thead><tr><th>Mode</th><th>Data Location</th><th>Network</th><th>Models</th><th>Updates</th></tr></thead>
+<tbody>
+<tr><td><strong style="color:var(--text)">Cloud SaaS</strong></td><td>Our infra (encrypted)</td><td>Public internet (TLS 1.3)</td><td>Cloud LLMs</td><td>Continuous</td></tr>
+<tr><td><strong style="color:var(--text)">Private Cloud</strong></td><td>Your VPC</td><td>VPN / Private Link</td><td>Your LLM or ours</td><td>Managed</td></tr>
+<tr><td><strong style="color:var(--text)">On-Premises</strong></td><td>Your data center</td><td>Internal only</td><td>Local models</td><td>Release packages</td></tr>
+<tr><td><strong style="color:var(--text)">Air-Gapped</strong></td><td>Isolated network</td><td>No external</td><td>Embedded models</td><td>Secure media</td></tr>
+</tbody>
+</table>
+<div class="grid-2 mt-24">
+<div class="glass glass--gold" style="padding:24px">
+<h4 class="gold">Same API Across All Modes</h4>
+<p class="text2 mt-8" style="font-size:13px">156 REST endpoints work identically regardless of deployment mode. Code written for Cloud works on Air-Gapped without modification.</p>
+</div>
+<div class="glass" style="padding:24px">
+<h4>Migration Path</h4>
+<p class="text2 mt-8" style="font-size:13px">Start on Cloud SaaS for evaluation. Migrate to Private Cloud or On-Prem for production. No re-architecture required — just redeploy.</p>
+</div>
+</div>
+</div>
+<div class="s-footer"><span>&copy; 2024–2026 Datacendia, LLC</span><span>Confidential</span></div>
+</div>
+
+<!-- SLIDE 7: TECH STACK -->
+<div class="slide slide--dark">
+<div class="s-header"><div class="logo"><img src="../../logo.png" alt="Datacendia">Datacendia</div><div class="deck-type">Technical Architecture</div><div class="s-num">7 / 8</div></div>
+<div class="relative z-10">
+<div class="eyebrow">Tech Stack</div>
+<h2 style="margin-bottom:32px">Modern Enterprise Stack</h2>
+<div class="grid-2">
+<div>
+<table>
+<thead><tr><th>Layer</th><th>Technology</th></tr></thead>
+<tbody>
+<tr><td><strong style="color:var(--text)">Frontend</strong></td><td>React 18, TypeScript, TailwindCSS, Vite</td></tr>
+<tr><td><strong style="color:var(--text)">Backend</strong></td><td>Node.js, Express, TypeScript</td></tr>
+<tr><td><strong style="color:var(--text)">Database</strong></td><td>PostgreSQL + customer connectors</td></tr>
+<tr><td><strong style="color:var(--text)">AI/ML</strong></td><td>Multi-model (OpenAI, Anthropic, local)</td></tr>
+<tr><td><strong style="color:var(--text)">Auth</strong></td><td>JWT + RBAC + MFA</td></tr>
+<tr><td><strong style="color:var(--text)">Crypto</strong></td><td>SHA-256 hash chains, ZKP-ready</td></tr>
+<tr><td><strong style="color:var(--text)">Deploy</strong></td><td>Docker, Kubernetes, Helm charts</td></tr>
+<tr><td><strong style="color:var(--text)">CI/CD</strong></td><td>GitHub Actions, Railway, Netlify</td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<div class="glass glass--gold glow-gold" style="padding:28px;margin-bottom:16px">
+<h4 class="gold">Why This Stack</h4>
+<p class="text2 mt-8" style="font-size:13px">TypeScript end-to-end for type safety. React for the richest enterprise UI library ecosystem. PostgreSQL for reliability. Docker/K8s for deployment flexibility. Multi-model AI to avoid vendor lock-in.</p>
+</div>
+<div class="glass" style="padding:28px">
+<h4>Open Source Core</h4>
+<p class="text2 mt-8" style="font-size:13px">Foundation tier is Apache 2.0 licensed (datacendia-core). Enterprise and Strategic tiers are commercial. This drives developer adoption and enterprise conversion.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="s-footer"><span>&copy; 2024–2026 Datacendia, LLC</span><span>Confidential</span></div>
+</div>
+
+<!-- SLIDE 8: CTA -->
+<div class="slide slide--cta" style="text-align:center;align-items:center">
+<div class="s-header"><div class="logo"><img src="../../logo.png" alt="Datacendia">Datacendia</div><div class="deck-type">Technical Architecture</div><div class="s-num">8 / 8</div></div>
+<div class="relative z-10">
+<div class="eyebrow" style="letter-spacing:4px">Deep Dive</div>
+<h2 style="margin-bottom:16px">Ready for Technical Diligence</h2>
+<p class="subtitle" style="margin:0 auto 40px;text-align:center">Full codebase available for review. Architecture designed for enterprise scale, government compliance, and sovereign deployment from day one.</p>
+<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:40px">
+<span class="tag tag--gold" style="font-size:14px;padding:10px 24px">Live Architecture Review</span>
+<span class="tag tag--blue" style="font-size:14px;padding:10px 24px">Codebase Walkthrough</span>
+<span class="tag tag--purple" style="font-size:14px;padding:10px 24px">Security Audit</span>
+</div>
+<div class="glass glass--gold glow-gold" style="display:inline-block;padding:24px 48px">
+<p style="font-size:16px;font-weight:600;color:var(--gold)">contact@datacendia.com</p>
+<p class="muted mt-8" style="font-size:14px">datacendia.com</p>
+</div>
+</div>
+<div class="s-footer"><span>&copy; 2024–2026 Datacendia, LLC</span><span>Confidential</span></div>
+</div>
+
+
+
+
+
+<!-- SCREENSHOT SLIDE: PLATFORM PROOF -->
+<div class="slide" style="background:var(--bg-primary)">
+<div style="position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:20px 80px;z-index:10"><div style="font-weight:800;font-size:12px;color:var(--gold);letter-spacing:3px;text-transform:uppercase">Datacendia</div><div style="font-size:10px;color:var(--text-muted)">Technical Architecture</div></div>
+<div style="position:relative;z-index:10;display:grid;grid-template-columns:38% 60%;gap:2%;align-items:center;height:100%;padding:80px 80px 60px">
+<div>
+<div style="font-size:11px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:12px">Multi-Agent Decision Engine</div>
+<h2 style="font-size:24px;font-weight:800;line-height:1.3;margin-bottom:24px">Decisions Made by Specialized AI Agents — Not One Black Box</h2>
+<ul style="list-style:none;padding:0;margin:0">
+<li style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:14px;padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--gold)">→</span> Each decision is deliberated by role-specific agents: CFO, CISO, Legal, Strategy, Risk, and more</li>
+<li style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:14px;padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--gold)">→</span> Every agent provides a confidence score and reasoning — dissenting views are preserved, not hidden</li>
+<li style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:14px;padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--gold)">→</span> War Room, Governed Deliberation, and Quick Brief modes adapt to the urgency and stakes of each decision</li>
+</ul>
+</div>
+<div style="border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.08)">
+<img src="../screenshots/02-council-deliberation.png" alt="Decisions Made by Specialized AI Agents — Not One Black Box" style="width:100%;display:block">
+</div>
+</div>
+<div style="position:absolute;bottom:20px;left:80px;right:80px;display:flex;justify-content:space-between;font-size:9px;color:var(--text-muted)"><span>&copy; 2024–2026 Datacendia, LLC</span><span>datacendia.com</span></div>
+</div>
+
+<!-- SCREENSHOT SLIDE: PLATFORM PROOF -->
+<div class="slide" style="background:var(--bg-primary)">
+<div style="position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:20px 80px;z-index:10"><div style="font-weight:800;font-size:12px;color:var(--gold);letter-spacing:3px;text-transform:uppercase">Datacendia</div><div style="font-size:10px;color:var(--text-muted)">Technical Architecture</div></div>
+<div style="position:relative;z-index:10;display:grid;grid-template-columns:38% 60%;gap:2%;align-items:center;height:100%;padding:80px 80px 60px">
+<div>
+<div style="font-size:11px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:12px">Decision Audit Trail</div>
+<h2 style="font-size:24px;font-weight:800;line-height:1.3;margin-bottom:24px">Every Decision Tracked with Confidence, Agents, and Full Evidence Chain</h2>
+<ul style="list-style:none;padding:0;margin:0">
+<li style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:14px;padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--gold)">→</span> Complete decision history — searchable by status, confidence level, agent participation, and date</li>
+<li style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:14px;padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--gold)">→</span> Each decision links to the full deliberation record: who participated, what they recommended, and why</li>
+<li style="font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:14px;padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--gold)">→</span> Regulators and auditors can trace any decision back to its evidence and reasoning in seconds</li>
+</ul>
+</div>
+<div style="border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.08)">
+<img src="../screenshots/05-decisions.png" alt="Every Decision Tracked with Confidence, Agents, and Full Evidence Chain" style="width:100%;display:block">
+</div>
+</div>
+<div style="position:absolute;bottom:20px;left:80px;right:80px;display:flex;justify-content:space-between;font-size:9px;color:var(--text-muted)"><span>&copy; 2024–2026 Datacendia, LLC</span><span>datacendia.com</span></div>
+</div>
+
+</body>
+</html>
