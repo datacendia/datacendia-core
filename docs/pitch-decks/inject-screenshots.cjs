@@ -265,7 +265,7 @@ function processFile(filePath) {
   
   // Strip existing screenshot slides so we can re-inject with updated screenshots
   if (content.includes('<!-- SCREENSHOT SLIDE: PLATFORM PROOF -->')) {
-    content = content.replace(/\n<!-- SCREENSHOT SLIDE: PLATFORM PROOF -->\n[\s\S]*?(?=<!-- SLIDE |<\/body>)/g, '\n');
+    content = content.replace(/\n*<!-- SCREENSHOT SLIDE: PLATFORM PROOF -->\n<div class="slide"[\s\S]*?datacendia\.com<\/span><\/div>\n<\/div>\n/g, '\n');
     console.log(`  REPLACING existing screenshots: ${filename}`);
   }
   

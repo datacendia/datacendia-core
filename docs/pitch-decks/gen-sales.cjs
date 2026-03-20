@@ -30,7 +30,7 @@ const sales = [
   { id:'01-fortune-500', cat:'Fortune 500', title:'Datacendia for Fortune 500 Enterprises', sub:'Enterprise-scale decision intelligence with sovereign deployment',
     metrics:[['$50K','Pilot Entry — 90 Days'],['$500K+','Enterprise Annual License'],['500+','Users Per Deployment'],['99.99%','SLA Uptime']],
     problems:['Decision-making fragmented across dozens of tools and vendors','No unified audit trail for AI-assisted decisions','CLOUD Act exposure with current cloud AI vendors','Regulatory compliance evidence is manual and fragmented','No way to replay or verify past AI recommendations','Board and regulators demanding AI accountability'],
-    solutions:['<strong>14-agent Council</strong> — Unified decision intelligence across all domains','<strong>Cryptographic evidence</strong> — Immutable audit trail for every decision','<strong>Sovereign deployment</strong> — Private cloud or on-prem, no CLOUD Act exposure','<strong>One-click compliance</strong> — Automated evidence for SOC 2, ISO 27001, GDPR','<strong>Decision replay</strong> — Reproduce and verify any past decision','<strong>Zero-copy architecture</strong> — Data never leaves your infrastructure'],
+    solutions:['<strong>50+ agent Council</strong> — Unified decision intelligence across all domains','<strong>Cryptographic evidence</strong> — Immutable audit trail for every decision','<strong>Sovereign deployment</strong> — Private cloud or on-prem, no CLOUD Act exposure','<strong>One-click compliance</strong> — Automated evidence for SOC 2, ISO 27001, GDPR','<strong>Decision replay</strong> — Reproduce and verify any past decision','<strong>Zero-copy architecture</strong> — Data never leaves your infrastructure'],
     ctaHead:'Enterprise Intelligence Starts Here', ctaSub:'Join the enterprises building accountable AI.', ctaActs:['Executive Briefing','Architecture Review','Pilot Program'] },
 
   { id:'02-mid-market', cat:'Mid-Market', title:'Datacendia for Mid-Market Companies', sub:'Enterprise-grade decision intelligence at mid-market scale',
@@ -88,8 +88,8 @@ const sales = [
     metricsEye:'THE SPEED PROBLEM',
     metrics:[['23 days','Avg Enterprise Decision Cycle'],['67%','Decisions Delayed by Missing Data'],['$1.8M','Cost of Delayed Strategic Decisions'],['12','Council Modes for Every Speed']],
     problems:['Strategic decisions taking weeks or months','Missing data from key stakeholders causing delays','No structured process for cross-functional decisions','Slow consensus-building across departments','Information scattered across dozens of systems','Analysis paralysis on high-stakes decisions'],
-    solutions:['<strong>Rapid mode</strong> — Decisions in minutes, not weeks','<strong>14 agents simultaneously</strong> — Every perspective analyzed in parallel','<strong>Zero-copy data</strong> — Query all systems without waiting for ETL','<strong>12 council modes</strong> — Right process for every decision type','<strong>Structured dissent</strong> — Disagreements surfaced immediately, not weeks later','<strong>Evidence packets</strong> — Documentation generated automatically, not manually'],
-    ctaHead:'Decisions in Hours, Not Weeks', ctaSub:'14 agents. 12 modes. Zero delays.', ctaActs:['Speed Demo','ROI Calculator','Pilot Program'] },
+    solutions:['<strong>Rapid mode</strong> — Decisions in minutes, not weeks','<strong>50+ agents simultaneously</strong> — Every perspective analyzed in parallel','<strong>Zero-copy data</strong> — Query all systems without waiting for ETL','<strong>12 council modes</strong> — Right process for every decision type','<strong>Structured dissent</strong> — Disagreements surfaced immediately, not weeks later','<strong>Evidence packets</strong> — Documentation generated automatically, not manually'],
+    ctaHead:'Decisions in Hours, Not Weeks', ctaSub:'50+ agents. 12 modes. Zero delays.', ctaActs:['Speed Demo','ROI Calculator','Pilot Program'] },
 
   { id:'11-ai-trust', cat:'AI Trust & Accountability', title:'Build Trust in AI with Datacendia', sub:'Explainable, auditable, replayable AI — not a black box',
     metricsEye:'THE TRUST DEFICIT',
@@ -211,7 +211,7 @@ const compDefs = [
     tbl:[['Multi-agent deliberation','—','✓'],['Cryptographic audit trail','—','✓'],['Scenario simulation','—','✓'],['Decision replay','—','✓'],['Air-gapped deployment','—','✓'],['Dissent tracking','—','✓'],['Compliance evidence','—','✓'],['Zero-copy architecture','—','✓']] },
   { id:'17-vs-cloud-ai', name:'Cloud AI (ChatGPT/Azure/Bedrock)',
     them:['Single-model AI responses','General-purpose chatbot','Cloud-only deployment','Vendor-managed infrastructure','Prompt-based interaction'],
-    us:['14-agent structured deliberation','Domain-specific decision intelligence','4 deployment modes including air-gapped','Customer-owned infrastructure option','Formal dissent and adversarial challenge'],
+    us:['50+ agent structured deliberation','Domain-specific decision intelligence','4 deployment modes including air-gapped','Customer-owned infrastructure option','Formal dissent and adversarial challenge'],
     tbl:[['Multi-agent deliberation','—','✓'],['Cryptographic audit trail','—','✓'],['Air-gapped deployment','—','✓'],['Dissent tracking','—','✓'],['Decision replay','—','✓'],['Zero-copy data','—','✓'],['Never trains on your data','Varies','✓'],['CLOUD Act safe (on-prem)','—','✓']] },
   { id:'18-vs-data-platforms', name:'Data Platforms (Palantir/Databricks)',
     them:['Data integration and ETL','Data lakehouse/warehouse','ML model training','Data engineering workflows','Enterprise data management'],
@@ -223,7 +223,7 @@ const compDefs = [
     tbl:[['AI decision-making','—','✓'],['Multi-agent analysis','—','✓'],['Automatic evidence','—','✓'],['Cryptographic signatures','—','✓'],['Decision replay','—','✓'],['Air-gapped deployment','Rare','✓'],['Zero-copy data','—','✓'],['Dissent tracking','—','✓']] },
   { id:'20-vs-chatbots', name:'AI Chatbots (ChatGPT/Copilot/Claude)',
     them:['General-purpose chat interface','Single-model responses','Cloud-only operation','Consumer-grade AI','Prompt-based Q&A'],
-    us:['14-agent domain-specific deliberation','Structured dissent and adversarial challenge','4 deployment modes including air-gapped','Enterprise-grade with cryptographic evidence','Formal decision process with evidence'],
+    us:['50+ agent domain-specific deliberation','Structured dissent and adversarial challenge','4 deployment modes including air-gapped','Enterprise-grade with cryptographic evidence','Formal decision process with evidence'],
     tbl:[['Multi-agent deliberation','—','✓'],['Structured dissent','—','✓'],['Cryptographic evidence','—','✓'],['Air-gapped deployment','—','✓'],['Decision replay','—','✓'],['Domain-specific agents','—','✓'],['Compliance evidence','—','✓'],['Enterprise SLA','—','✓']] },
 ];
 

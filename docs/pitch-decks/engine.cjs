@@ -8,7 +8,7 @@ const path = require('path');
 const D = {
   tagline: 'Decision Crisis Immunization Infrastructure',
   mission: 'Turn data and AI into accountable, explainable decisions — on your infrastructure, under your control.',
-  endpoints: 156, routeFiles: 82, connectors: 16, languages: 26, modes: 4, agents: 14, councilModes: 12, sovPatterns: 11,
+  endpoints: 156, routeFiles: 82, connectors: 16, languages: 26, modes: 4, agents: '50+', councilModes: 12, sovPatterns: 11,
 };
 
 const TIERS = [
@@ -97,12 +97,12 @@ function guaranteeS(dt, n, tot) { return quoteS(dt,n,tot,"Deploy Datacendia for 
 
 function whatWeDoS(dt, n, tot) {
   return twoColS(dt,n,tot,'WHAT WE BUILD','Decision Crisis Immunization Infrastructure',
-    `<p style="color:var(--text-secondary);font-size:16px;line-height:1.7">Not a chatbot. A system of specialized intelligences that debate, dissent, and decide — with cryptographic proof of every step.</p><div class="divider" style="margin:20px 0"></div><ul><li><strong>Multi-agent deliberation</strong> — 14 specialized agents</li><li><strong>Cryptographic audit trail</strong> — immutable evidence</li><li><strong>Zero-copy architecture</strong> — data never leaves your DB</li><li><strong>Sovereign deployment</strong> — air-gapped to cloud</li></ul>`,
-    `<div class="card card--gold"><h4 class="gold">The Council™</h4><p style="color:var(--text-secondary);font-size:14px;margin-top:8px">14 agents (CFO, CISO, Risk, Strategy, Legal) deliberate on your data. You get a boardroom debate, not a chatbot answer.</p></div><div class="card card--blue" style="margin-top:16px"><h4 class="blue">Audit Provenance™</h4><p style="color:var(--text-secondary);font-size:14px;margin-top:8px">Every decision, vote, dissent — hashed, timestamped, exportable. When the auditor says "prove it," hand them this.</p></div>`);
+    `<p style="color:var(--text-secondary);font-size:16px;line-height:1.7">Not a chatbot. A system of specialized intelligences that debate, dissent, and decide — with cryptographic proof of every step.</p><div class="divider" style="margin:20px 0"></div><ul><li><strong>Multi-agent deliberation</strong> — 50+ specialized agent presets</li><li><strong>Cryptographic audit trail</strong> — immutable evidence</li><li><strong>Zero-copy architecture</strong> — data never leaves your DB</li><li><strong>Sovereign deployment</strong> — air-gapped to cloud</li></ul>`,
+    `<div class="card card--gold"><h4 class="gold">The Council™</h4><p style="color:var(--text-secondary);font-size:14px;margin-top:8px">50+ agent presets (CFO, CISO, Risk, Strategy, Legal) deliberate on your data. You get a boardroom debate, not a chatbot answer.</p></div><div class="card card--blue" style="margin-top:16px"><h4 class="blue">Audit Provenance™</h4><p style="color:var(--text-secondary);font-size:14px;margin-top:8px">Every decision, vote, dissent — hashed, timestamped, exportable. When the auditor says "prove it," hand them this.</p></div>`);
 }
 
 function councilS(dt, n, tot) {
-  return cardsS(dt,n,tot,'THE COUNCIL','14 Specialized AI Agents Deliberate',AGENTS_SHORT.slice(0,6).map(a=>[`${a[0]} — ${a[1]}`,`Specialized ${a[1].toLowerCase()} analysis`,'card--gold']),3);
+  return cardsS(dt,n,tot,'THE COUNCIL','50+ Specialized AI Agent Presets Deliberate',AGENTS_SHORT.slice(0,6).map(a=>[`${a[0]} — ${a[1]}`,`Specialized ${a[1].toLowerCase()} analysis`,'card--gold']),3);
 }
 
 // Build and write a deck

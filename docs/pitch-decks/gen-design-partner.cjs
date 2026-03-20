@@ -13,7 +13,7 @@ function dpDeck(id, cfg) {
     e.quoteS(dt, 2, T, cfg.quote),
     e.whatWeDoS(dt, 3, T),
     e.cardsS(dt, 4, T, cfg.cat.toUpperCase(), cfg.cardsTitle || 'How Datacendia Helps', cfg.cards || [
-      ['Multi-Agent Deliberation','14 specialized agents analyze from every perspective','card--gold'],
+      ['Multi-Agent Deliberation','50+ specialized agent presets analyze from every perspective','card--gold'],
       ['Cryptographic Evidence','Immutable audit trail for every decision','card--blue'],
       ['Sovereign Deployment','Cloud, private cloud, on-prem, or air-gapped','card--green'],
     ], 3),
@@ -96,7 +96,7 @@ const dps = [
     quote:'Strategy without evidence is opinion. Multi-agent deliberation turns strategic planning into a documented, replayable process.',
     cards:[['CEO Agent','Strategic synthesis and recommendation','card--gold'],['CFO Agent','Financial modeling and fiscal analysis','card--blue'],['CMO Agent','Market intelligence and competitive analysis','card--purple']],
     ucTitle:'Strategy Scenarios',
-    useCases:['<strong>Strategic planning</strong> — Multi-agent scenario analysis with documented tradeoffs','<strong>Market entry analysis</strong> — Multi-perspective assessment of new market opportunities','<strong>Competitive intelligence</strong> — AI-powered competitive analysis with evidence','<strong>M&A evaluation</strong> — Comprehensive due diligence with 14-agent deliberation','<strong>Innovation pipeline</strong> — R&D investment analysis with risk assessment'] },
+    useCases:['<strong>Strategic planning</strong> — Multi-agent scenario analysis with documented tradeoffs','<strong>Market entry analysis</strong> — Multi-perspective assessment of new market opportunities','<strong>Competitive intelligence</strong> — AI-powered competitive analysis with evidence','<strong>M&A evaluation</strong> — Comprehensive due diligence with 50+ agent deliberation','<strong>Innovation pipeline</strong> — R&D investment analysis with risk assessment'] },
 
   { id:'13-operations-leaders', cat:'Operations', title:'Operations Leaders Design Partnership', sub:'Operational efficiency, supply chain, and workflow optimization',
     quote:'Operational decisions have second and third-order consequences. CendiaCascade maps the butterfly effects before you commit.',
@@ -106,9 +106,9 @@ const dps = [
 
   // BY CAPABILITY (14-18)
   { id:'14-council-deliberation', cat:'The Council', title:'Council Deliberation Design Partnership', sub:'Multi-agent AI deliberation — structured debate, dissent, and decision',
-    quote:"You don't get a chatbot answer. You get a boardroom debate. 14 specialized agents deliberating with structured dissent and adversarial challenge.",
+    quote:"You don't get a chatbot answer. You get a boardroom debate. 50+ specialized agent presets deliberating with structured dissent and adversarial challenge.",
     cardsTitle:'Council Capabilities',
-    cards:[['14 Specialized Agents','CFO, CISO, CTO, Risk, Legal, Red Team, and more','card--gold'],['12 Deliberation Modes','War Room, Due Diligence, Crisis, Innovation Lab, etc.','card--blue'],['Formal Dissent','Protected disagreement logged and tracked to outcome','card--purple']],
+    cards:[['50+ Specialized Agent Presets','CFO, CISO, Risk, Strategy, Legal deliberate on your data','card--gold'],['12 Deliberation Modes','War Room, Due Diligence, Crisis, Innovation Lab, etc.','card--blue'],['Formal Dissent','Protected disagreement logged and tracked to outcome','card--purple']],
     ucTitle:'Council Use Cases',
     useCases:['<strong>M&A due diligence</strong> — Ingest documents, simulate regulatory blocks, synthesize risk-adjusted price','<strong>Supply chain shock</strong> — Map dependencies, flag disruptions, stress-test alternatives','<strong>Regulatory change</strong> — Absorb regulation, map impact, generate compliance evidence','<strong>Crisis response</strong> — Rapid multi-domain assessment with action plan','<strong>Investment committee</strong> — Financial modeling with risk assessment and dissent tracking'] },
 
