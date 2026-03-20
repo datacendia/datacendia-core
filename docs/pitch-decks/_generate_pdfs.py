@@ -12,6 +12,13 @@ except ImportError:
 
 BASE = r'C:\Users\Stu\datacendia-core\docs\pitch-decks'
 
+def get_pdf_output_path(pptx_path):
+    """Normalize PPTX path and compute corresponding PDF output path."""
+    pptx_path = os.path.normpath(pptx_path)
+    pdf_path = pptx_path.replace('\\pptx\\', '\\pdf\\').replace('/pptx/', '/pdf/')
+    pdf_path = pdf_path.replace('.pptx', '.pdf')
+    return pdf_path
+
 def pptx_to_pdf(pptx_path, pdf_path):
     """Convert a single PPTX to PDF using PowerPoint."""
     powerpoint = comtypes.client.CreateObject("Powerpoint.Application")
@@ -36,8 +43,7 @@ def batch_convert(pptx_paths, progress_label=""):
     try:
         for i, pptx_path in enumerate(pptx_paths):
             # Determine PDF output path (same folder structure, pptx/ -> pdf/)
-            pdf_path = pptx_path.replace('\\pptx\\', '\\pdf\\').replace('/pptx/', '/pdf/')
-            pdf_path = pdf_path.replace('.pptx', '.pdf')
+            pdf_path = get_pdf_output_path(pptx_path)
             
             # Ensure pdf directory exists
             pdf_dir = os.path.dirname(pdf_path)
