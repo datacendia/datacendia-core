@@ -6,6 +6,9 @@ DOCS_BASE = r'c:\Users\Stu\datacendia-core\docs\pitch-decks'
 PUBLIC_BASE = r'c:\Users\Stu\datacendia-core\public\pitch-decks'
 
 FOLDERS = [
+    'investor-500',
+    'investor-100',
+    'investor-50',
     'design-partner',
     'enterprise',
     'regional',
