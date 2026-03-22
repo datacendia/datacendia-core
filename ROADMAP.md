@@ -3,6 +3,18 @@
 > Last audited: March 21, 2026
 > Source: Automated audit of `datacendia-core` (Community Edition) and `datacendia-components` (Full Platform)
 
+### How to Read This Roadmap
+
+Each item is tagged with its **source repo** and **work type**:
+
+| Tag | Meaning |
+|-----|---------|
+| 🟢 `core` | Work happens in datacendia-core (Community Edition, Apache 2.0) |
+| 🔵 `components` | Work happens in datacendia-components (Full Platform, paid tiers) |
+| 🔗 `wire-up` | Code already exists in components — needs integration/activation, not new development |
+| 🔨 `build-new` | New code required — does not exist in either repo yet |
+| 🔧 `harden` | Code exists but needs production hardening, testing, or UX polish |
+
 ---
 
 ## Platform Maturity Summary
@@ -78,30 +90,30 @@ These are gated behind the upgrade page in core but fully implemented in compone
 
 Context: a16z's Guido Appenzeller described the need for scoped AI agent proxies. CendiaGateway governs outbound data (User → AI), but the market also needs inbound scoping (AI Agent → Enterprise Systems).
 
-| Item | Description | Effort | Priority |
-|------|-------------|--------|----------|
-| **Agent Identity** | Add `agentId` field to interactions. Track which AI agent (not just which user) performed each action | 2 days | Critical |
-| **Inbound Scope Definitions** | Define what enterprise data an agent can read (by resource type, department, data classification) | 1 week | High |
-| **OAuth2 Scope Proxy** | Wrap Gmail/Outlook/Salesforce APIs with CendiaGateway-enforced scopes | 2 weeks | High |
-| **Scope Visibility UX** | Dashboard showing "this agent can access X but not Y" in plain language | 3 days | High |
-| **Scope Audit Trail** | Log every scope check (allowed/denied) with cryptographic evidence | 3 days | Medium |
+| Item | Description | Effort | Priority | Source |
+|------|-------------|--------|----------|--------|
+| **Agent Identity** | Add `agentId` field to interactions. Track which AI agent (not just which user) performed each action | 2 days | Critical | 🟢 `core` 🔨 `build-new` |
+| **Inbound Scope Definitions** | Define what enterprise data an agent can read (by resource type, department, data classification) | 1 week | High | 🔵 `components` 🔨 `build-new` |
+| **OAuth2 Scope Proxy** | Wrap Gmail/Outlook/Salesforce APIs with CendiaGateway-enforced scopes | 2 weeks | High | 🔵 `components` 🔨 `build-new` |
+| **Scope Visibility UX** | Dashboard showing "this agent can access X but not Y" in plain language | 3 days | High | 🟢 `core` 🔨 `build-new` |
+| **Scope Audit Trail** | Log every scope check (allowed/denied) with cryptographic evidence | 3 days | Medium | 🟢 `core` 🔧 `harden` |
 
 ### P1.2 PII Detection — Production Hardening
 
-| Item | Description | Effort | Priority |
-|------|-------------|--------|----------|
-| **Presidio Integration** | PIIDetector.ts notes "production would add ML-based NER." PresidioPIIService.ts exists (10KB) — wire it in | 3 days | High |
-| **PII Evaluation Metrics** | PIIEvaluationMetrics.ts (15KB) exists — surface precision/recall/F1 on dashboard | 2 days | Medium |
-| **Custom PII Patterns** | Allow orgs to define industry-specific PII (e.g., medical record numbers, IBAN formats) | 3 days | Medium |
+| Item | Description | Effort | Priority | Source |
+|------|-------------|--------|----------|--------|
+| **Presidio Integration** | PIIDetector.ts notes "production would add ML-based NER." PresidioPIIService.ts exists (10KB) — wire it in | 3 days | High | 🟢 `core` 🔗 `wire-up` |
+| **PII Evaluation Metrics** | PIIEvaluationMetrics.ts (15KB) exists — surface precision/recall/F1 on dashboard | 2 days | Medium | 🟢 `core` 🔗 `wire-up` |
+| **Custom PII Patterns** | Allow orgs to define industry-specific PII (e.g., medical record numbers, IBAN formats) | 3 days | Medium | 🟢 `core` 🔨 `build-new` |
 
 ### P1.3 Design Partner Readiness
 
-| Item | Description | Effort | Priority |
-|------|-------------|--------|----------|
-| **Single-tenant deployment script** | One-click deploy for a design partner's environment (Docker Compose + .env template) | 3 days | Critical |
-| **Onboarding wizard** | First-run setup: connect AI providers, set initial policies, invite users | 1 week | High |
-| **Usage dashboard for partner** | Self-service view of their governance stats, PII detections, cost tracking | 3 days | High |
-| **Evidence export for partner** | One-click Governance Receipt export (PDF) for their compliance team | 2 days | High |
+| Item | Description | Effort | Priority | Source |
+|------|-------------|--------|----------|--------|
+| **Single-tenant deployment script** | One-click deploy for a design partner's environment (Docker Compose + .env template) | 3 days | Critical | 🔵 `components` 🔧 `harden` |
+| **Onboarding wizard** | First-run setup: connect AI providers, set initial policies, invite users | 1 week | High | 🔵 `components` 🔨 `build-new` |
+| **Usage dashboard for partner** | Self-service view of their governance stats, PII detections, cost tracking | 3 days | High | 🟢 `core` 🔧 `harden` |
+| **Evidence export for partner** | One-click Governance Receipt export (PDF) for their compliance team | 2 days | High | 🟢 `core` 🔗 `wire-up` |
 
 ---
 
@@ -111,32 +123,32 @@ Context: a16z's Guido Appenzeller described the need for scoped AI agent proxies
 
 106 services are stubs in core but fully implemented in components. The sovereign deployment services are critical for enterprise sales:
 
-| Item | Description | Effort | Priority |
-|------|-------------|--------|----------|
-| **Air-gapped deployment** | QRAirGapBridge (25KB in components) — USB/QR-based update mechanism for disconnected environments | 1 week | High |
-| **Data Diode** | DataDiodeService (38KB) — one-way data flow for classified environments | 1 week | High |
-| **TPM Attestation** | TPMAttestationService (24KB) — hardware-rooted trust for deployment integrity | 3 days | Medium |
-| **Portable Instance** | PortableInstanceService (25KB) — single-binary deployment for edge/field use | 1 week | Medium |
-| **Federated Mesh** | FederatedMeshService (43KB) — multi-org governance without centralized data | 2 weeks | Medium |
+| Item | Description | Effort | Priority | Source |
+|------|-------------|--------|----------|--------|
+| **Air-gapped deployment** | QRAirGapBridge (25KB in components) — USB/QR-based update mechanism for disconnected environments | 1 week | High | 🔵 `components` 🔗 `wire-up` |
+| **Data Diode** | DataDiodeService (38KB) — one-way data flow for classified environments | 1 week | High | 🔵 `components` 🔗 `wire-up` |
+| **TPM Attestation** | TPMAttestationService (24KB) — hardware-rooted trust for deployment integrity | 3 days | Medium | 🔵 `components` 🔗 `wire-up` |
+| **Portable Instance** | PortableInstanceService (25KB) — single-binary deployment for edge/field use | 1 week | Medium | 🔵 `components` 🔗 `wire-up` |
+| **Federated Mesh** | FederatedMeshService (43KB) — multi-org governance without centralized data | 2 weeks | Medium | 🔵 `components` 🔗 `wire-up` |
 
 ### P2.2 Crown Jewels (Enterprise Tier Unlocks)
 
-| Item | Description | Size in Components | Priority |
-|------|-------------|-------------------|----------|
-| **Echo** (Decision Playback) | Full replay of any historical decision with all context | 45 KB | High |
-| **Gnosis** (Knowledge Synthesis) | Cross-decision knowledge graph + pattern detection | 26 KB | High |
-| **Red Team** | Adversarial testing of AI governance policies | 25 KB | High |
-| **Crucible** (AI Stress Testing / COLLAPSE) | Systematic failure mode analysis for AI systems | 99 KB | Medium |
+| Item | Description | Size in Components | Priority | Source |
+|------|-------------|-------------------|----------|--------|
+| **Echo** (Decision Playback) | Full replay of any historical decision with all context | 45 KB | High | 🔵 `components` 🔗 `wire-up` |
+| **Gnosis** (Knowledge Synthesis) | Cross-decision knowledge graph + pattern detection | 26 KB | High | 🔵 `components` 🔗 `wire-up` |
+| **Red Team** | Adversarial testing of AI governance policies | 25 KB | High | 🔵 `components` 🔗 `wire-up` |
+| **Crucible** (AI Stress Testing / COLLAPSE) | Systematic failure mode analysis for AI systems | 99 KB | Medium | 🔵 `components` 🔗 `wire-up` |
 
 ### P2.3 Compliance Automation
 
-| Item | Description | Effort | Priority |
-|------|-------------|--------|----------|
-| **EU AI Act Article 12** | Automated logging requirements compliance check | 1 week | Critical |
-| **SOC 2 Type II evidence package** | Auto-generate SOC 2 evidence from gateway logs | 2 weeks | High |
-| **ISO 42001 gap scanner** | Map current governance posture to ISO 42001 requirements | 1 week | High |
-| **DORA operational resilience** | Financial services compliance package | 1 week | High |
-| **HIPAA AI governance** | Healthcare-specific PII rules + BAA template | 3 days | High |
+| Item | Description | Effort | Priority | Source |
+|------|-------------|--------|----------|--------|
+| **EU AI Act Article 12** | Automated logging requirements compliance check | 1 week | Critical | 🔵 `components` 🔧 `harden` |
+| **SOC 2 Type II evidence package** | Auto-generate SOC 2 evidence from gateway logs | 2 weeks | High | 🔵 `components` 🔨 `build-new` |
+| **ISO 42001 gap scanner** | Map current governance posture to ISO 42001 requirements | 1 week | High | 🔵 `components` 🔧 `harden` |
+| **DORA operational resilience** | Financial services compliance package | 1 week | High | 🔵 `components` 🔧 `harden` |
+| **HIPAA AI governance** | Healthcare-specific PII rules + BAA template | 3 days | High | 🟢 `core` 🔨 `build-new` |
 
 ---
 
@@ -144,25 +156,25 @@ Context: a16z's Guido Appenzeller described the need for scoped AI agent proxies
 
 ### P3.1 Intelligence Layer
 
-| Item | Description | Size in Components | Priority |
-|------|-------------|-------------------|----------|
-| **CendiaHorizon** (Predictive Governance) | Forecast governance risks before they materialize | 72 KB | High |
-| **CendiaScout** (Threat Intelligence) | Monitor for emerging AI governance threats | 41 KB | Medium |
-| **DecisionDNA** (Decision Fingerprinting) | Unique fingerprint for every decision pattern | 35 KB | Medium |
-| **CendiaPanopticon** (Observability) | Full-stack AI observability across the platform | 50 KB | Medium |
+| Item | Description | Size in Components | Priority | Source |
+|------|-------------|-------------------|----------|--------|
+| **CendiaHorizon** (Predictive Governance) | Forecast governance risks before they materialize | 72 KB | High | 🔵 `components` 🔗 `wire-up` |
+| **CendiaScout** (Threat Intelligence) | Monitor for emerging AI governance threats | 41 KB | Medium | 🔵 `components` 🔗 `wire-up` |
+| **DecisionDNA** (Decision Fingerprinting) | Unique fingerprint for every decision pattern | 35 KB | Medium | 🔵 `components` 🔗 `wire-up` |
+| **CendiaPanopticon** (Observability) | Full-stack AI observability across the platform | 50 KB | Medium | 🔵 `components` 🔗 `wire-up` |
 
 ### P3.2 Integration Ecosystem
 
-| Item | Description | Effort | Priority |
-|------|-------------|--------|----------|
-| **Salesforce connector** | Log AI-assisted CRM decisions | 2 weeks | High |
-| **ServiceNow connector** | Governance tickets + approval workflows | 2 weeks | High |
-| **Jira/Atlassian connector** | Decision tracking in project management | 1 week | Medium |
-| **Slack/Teams bot** | Real-time governance alerts + approval requests | 1 week | Medium |
-| **Power BI / Tableau embed** | Governance dashboards in existing BI tools | 1 week | Medium |
-| **Splunk/Elastic SIEM** | SIEMIntegration.ts exists (15KB) — productize | 3 days | Medium |
-| **Terraform provider** | Infrastructure-as-code for gateway policies | 2 weeks | Low |
-| **GitHub Actions** | CI/CD governance checks for AI model deployments | 1 week | Low |
+| Item | Description | Effort | Priority | Source |
+|------|-------------|--------|----------|--------|
+| **Salesforce connector** | Log AI-assisted CRM decisions | 2 weeks | High | 🔵 `components` 🔨 `build-new` |
+| **ServiceNow connector** | Governance tickets + approval workflows | 2 weeks | High | 🔵 `components` 🔨 `build-new` |
+| **Jira/Atlassian connector** | Decision tracking in project management | 1 week | Medium | 🔵 `components` 🔨 `build-new` |
+| **Slack/Teams bot** | Real-time governance alerts + approval requests | 1 week | Medium | 🔵 `components` 🔨 `build-new` |
+| **Power BI / Tableau embed** | Governance dashboards in existing BI tools | 1 week | Medium | 🔵 `components` 🔨 `build-new` |
+| **Splunk/Elastic SIEM** | SIEMIntegration.ts exists (15KB) — productize | 3 days | Medium | 🟢 `core` 🔗 `wire-up` |
+| **Terraform provider** | Infrastructure-as-code for gateway policies | 2 weeks | Low | 🔵 `components` 🔨 `build-new` |
+| **GitHub Actions** | CI/CD governance checks for AI model deployments | 1 week | Low | 🟢 `core` 🔨 `build-new` |
 
 ### P3.3 Vertical Deep Dives
 
@@ -187,32 +199,32 @@ Context: a16z's Guido Appenzeller described the need for scoped AI agent proxies
 
 ### P4.1 Cryptographic Sovereignty
 
-| Item | Description | Size in Components | Priority |
-|------|-------------|-------------------|----------|
-| **Post-Quantum KMS** | PostQuantumKMSService (20KB) — lattice-based key management | 20 KB | Medium |
-| **Time-Lock Encryption** | TimeLockService (23KB) — time-delayed decryption for sensitive decisions | 23 KB | Low |
-| **Verifiable Delay Functions** | VerifiableDelayService (12KB in core) — provable time delays | Already built | Low |
-| **Zero-Knowledge Proofs** | ZeroKnowledgeProofService (18KB) — prove compliance without revealing data | 18 KB | Medium |
+| Item | Description | Size in Components | Priority | Source |
+|------|-------------|-------------------|----------|--------|
+| **Post-Quantum KMS** | PostQuantumKMSService (20KB) — lattice-based key management | 20 KB | Medium | 🔵 `components` 🔗 `wire-up` |
+| **Time-Lock Encryption** | TimeLockService (23KB) — time-delayed decryption for sensitive decisions | 23 KB | Low | 🔵 `components` 🔗 `wire-up` |
+| **Verifiable Delay Functions** | VerifiableDelayService (12KB in core) — provable time delays | Already built | Low | 🟢 `core` ✅ `done` |
+| **Zero-Knowledge Proofs** | ZeroKnowledgeProofService (18KB) — prove compliance without revealing data | 18 KB | Medium | 🔵 `components` 🔗 `wire-up` |
 
 ### P4.2 Advanced AI Governance
 
-| Item | Description | Size | Priority |
-|------|-------------|------|----------|
-| **Local RLHF** | LocalRLHFService (33KB) — fine-tune governance models on-prem | 33 KB | Medium |
-| **Shadow Council** | ShadowCouncilService (21KB) — adversarial deliberation for stress testing | 21 KB | Medium |
-| **Cognitive Bias Mitigation** | CognitiveBiasMitigationService (27KB) — detect and mitigate bias in AI decisions | 27 KB | Medium |
-| **Synthetic Media Auth** | SyntheticMediaAuthService (36KB) — deepfake detection for evidence integrity | 36 KB | Low |
-| **NLP Bias Detection** | NLPBiasDetectionService (17KB) — language-level bias analysis | 17 KB | Medium |
+| Item | Description | Size | Priority | Source |
+|------|-------------|------|----------|--------|
+| **Local RLHF** | LocalRLHFService (33KB) — fine-tune governance models on-prem | 33 KB | Medium | 🔵 `components` 🔗 `wire-up` |
+| **Shadow Council** | ShadowCouncilService (21KB) — adversarial deliberation for stress testing | 21 KB | Medium | 🔵 `components` 🔗 `wire-up` |
+| **Cognitive Bias Mitigation** | CognitiveBiasMitigationService (27KB) — detect and mitigate bias in AI decisions | 27 KB | Medium | 🔵 `components` 🔗 `wire-up` |
+| **Synthetic Media Auth** | SyntheticMediaAuthService (36KB) — deepfake detection for evidence integrity | 36 KB | Low | 🔵 `components` 🔗 `wire-up` |
+| **NLP Bias Detection** | NLPBiasDetectionService (17KB) — language-level bias analysis | 17 KB | Medium | 🔵 `components` 🔗 `wire-up` |
 
 ### P4.3 Market Expansion
 
-| Item | Description | Effort | Priority |
-|------|-------------|--------|----------|
-| **FedRAMP authorization** | Required for US government sales | 6+ months | High |
-| **IL4/IL5 certification** | Required for DoD classified environments | 6+ months | Medium |
-| **EU AI Act conformity assessment** | Third-party certification | 3 months | High |
-| **ISO 42001 certification** | AI management system certification | 3 months | High |
-| **SOC 2 Type II audit** | Required for enterprise procurement | 3 months | Critical |
+| Item | Description | Effort | Priority | Source |
+|------|-------------|--------|----------|--------|
+| **FedRAMP authorization** | Required for US government sales | 6+ months | High | 🔵 `components` 🔨 `build-new` |
+| **IL4/IL5 certification** | Required for DoD classified environments | 6+ months | Medium | 🔵 `components` 🔨 `build-new` |
+| **EU AI Act conformity assessment** | Third-party certification | 3 months | High | Both repos |
+| **ISO 42001 certification** | AI management system certification | 3 months | High | Both repos |
+| **SOC 2 Type II audit** | Required for enterprise procurement | 3 months | Critical | Both repos |
 
 ---
 
@@ -233,15 +245,15 @@ Context: a16z's Guido Appenzeller described the need for scoped AI agent proxies
 
 ### Needed
 
-| Component | Description | Priority |
-|-----------|-------------|----------|
-| **Kubernetes Helm chart** | Enterprise deployment standard | High |
-| **Horizontal scaling** | Stateless gateway instances behind LB | High |
-| **Redis caching** | cache.service.ts exists but needs Redis backend | Medium |
-| **Kafka event streaming** | kafka/ directory exists (41KB) — wire up | Medium |
-| **Neo4j graph database** | graphIngestion.ts exists — connect for lineage | Medium |
-| **Prometheus + Grafana** | metrics/ exists — expose /metrics endpoint | Medium |
-| **E2E test suite** | 205K+ unit tests exist — add integration/E2E | High |
+| Component | Description | Priority | Source |
+|-----------|-------------|----------|--------|
+| **Kubernetes Helm chart** | Enterprise deployment standard | High | 🔵 `components` 🔨 `build-new` |
+| **Horizontal scaling** | Stateless gateway instances behind LB | High | 🟢 `core` 🔧 `harden` |
+| **Redis caching** | cache.service.ts exists but needs Redis backend | Medium | 🟢 `core` 🔗 `wire-up` |
+| **Kafka event streaming** | kafka/ directory exists (41KB) — wire up | Medium | 🔵 `components` 🔗 `wire-up` |
+| **Neo4j graph database** | graphIngestion.ts exists — connect for lineage | Medium | 🔵 `components` 🔗 `wire-up` |
+| **Prometheus + Grafana** | metrics/ exists — expose /metrics endpoint | Medium | 🟢 `core` 🔗 `wire-up` |
+| **E2E test suite** | 205K+ unit tests exist — add integration/E2E | High | Both repos 🔨 `build-new` |
 
 ---
 
