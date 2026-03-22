@@ -13,7 +13,7 @@
 | **License** | Apache 2.0 (free, open-source) | Paid (Enterprise + Strategic tiers) |
 | **Focus** | Cloud AI governance — governing interactions with online AI APIs | Full AI governance — cloud, local LLMs, on-prem, sovereign, air-gapped |
 | **Gateway** | Reverse proxy for cloud AI (OpenAI, Anthropic, Gemini, etc.) + browser extension | Everything in core + inbound scope proxy, OAuth2 agent scoping, local LLM governance |
-| **Backend services** | 290 files (~4.2 MB) — Foundation tier fully built | 284 files (~8.6 MB) — all 106 Enterprise/Strategic services fully built |
+| **Backend** | 290 service files (~4.2 MB) — Foundation tier | **1,747 .ts/.tsx files (27.5 MB)** — 454 services, 160 routes, 200,000+ tests, 35 connectors, 321 frontend pages/components |
 | **Stubs** | 49 (Enterprise/Strategic features gated → UpgradePage) | 0 (everything implemented) |
 | **Target user** | Developer trying Datacendia, open-source community, design partner pilot | Paying enterprise customer, regulated industry, sovereign deployment |
 
@@ -72,7 +72,7 @@
 | **Documentation site** | Developer docs, API reference, quickstart guides | 2 weeks | 🔨 Build new |
 | **Helm chart (basic)** | Single-node Kubernetes deployment for core | 1 week | 🔨 Build new |
 | **Plugin SDK** | Let community build custom PII detectors, policy rules, and integrations | 2 weeks | 🔨 Build new |
-| **E2E test suite** | 205K+ unit tests exist — add integration/E2E coverage | 2 weeks | 🔨 Build new |
+| **E2E test suite** | 200,000+ unit tests exist across both repos — add integration/E2E coverage | 2 weeks | 🔨 Build new |
 | **18 vertical stubs** | Fill the remaining vertical index stubs (aerospace, agriculture, automotive, etc.) | 1 week | 🔧 Harden |
 
 ---
@@ -81,7 +81,7 @@
 
 > Full Platform. Paid. Enterprise + Strategic tiers.
 > Goal: Revenue. Everything customers pay for lives here.
-> All 106 Enterprise/Strategic services are **already fully implemented** (~8.6 MB of backend code).
+> **454 services (9.1 MB), 160 API routes, 200,000+ tests, 35 connectors, 321 frontend pages/components — 1,747 files totalling 27.5 MB of production code.**
 
 ## What's Already Built in Components (on top of everything in Core)
 
