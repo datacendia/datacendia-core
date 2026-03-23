@@ -413,9 +413,11 @@ function generateEmail(inv) {
 
   // "Why [Firm]" — use rich data for inv100, archetype template for inv500
   let whyParagraph;
-  if (inv._source === 'inv100' && inv.hookSlide) {
-    // Use the rich hookSlide + whyAlign data directly
-    whyParagraph = `${inv.hookSlide} ${inv.whyAlign}`;
+  if (inv._source === 'inv100' && inv.whyAlign) {
+    // Use the rich whyAlign (thesis hook) + hookSlide (portfolio connection)
+    whyParagraph = inv.hookSlide
+      ? `${inv.whyAlign} ${inv.hookSlide}`
+      : inv.whyAlign;
   } else {
     // Use archetype template
     const templateFn = WHY_TEMPLATES[archetype] || WHY_TEMPLATES['general-vc'];

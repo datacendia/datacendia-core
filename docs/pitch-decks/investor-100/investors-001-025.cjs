@@ -8,9 +8,9 @@ module.exports = [
     hq: 'Menlo Park, CA', stage: 'Seed to Growth', aum: '$35B+',
     thesis: 'AI is eating software. a16z\'s dedicated AI fund backs infrastructure that becomes the default layer for enterprise AI adoption.',
     portfolio: ['Databricks', 'Anyscale', 'Hex', 'dbt Labs', 'Replit'],
-    whyAlign: 'Datacendia is the missing governance layer for enterprise AI — the infrastructure that sits between AI deployment and regulatory compliance. As AI adoption accelerates, every enterprise needs cryptographic proof of AI decisions.',
-    hookSlide: 'a16z has backed the data stack (Databricks, dbt) and AI infra (Anyscale). Datacendia completes the stack: governance, accountability, and regulatory compliance for every AI decision.',
-    keyAngle: 'AI governance is the next infrastructure default',
+    whyAlign: 'Guido Appenzeller recently said "there\'s a huge opportunity for startups to create these proxies" with scoped access and trust boundaries. That\'s exactly what Datacendia is — decision infrastructure where AI agents operate within cryptographic trust boundaries, every action is evidence-logged, and enterprises control exactly what each agent can touch.',
+    hookSlide: 'a16z backed the data stack (Databricks, dbt) and AI infra (Anyscale). Datacendia adds the governance layer: cryptographic proof of what each AI agent can access, what it decided, and why. Scoped trust for AI — not a chatbot.',
+    keyAngle: 'Scoped AI agents with cryptographic trust boundaries',
     sector: 'AI Infrastructure',
   },
   {
