@@ -168,7 +168,7 @@
 
 | # | Firm | Key Partner(s) to Target | Website | How to Submit | Priority | Deck File |
 |---|------|-------------------------|---------|---------------|----------|-----------|
-| 121 | **IDB Lab (Inter-American Development Bank)** | Graham Macmillan (CEO), César Buenadicha, Yuri Soares | [bidlab.org](https://bidlab.org/en) | 🌐 [bidlab.org/en/origination](https://bidlab.org/en/origination) (contact IDB Lab specialist) | ⭐⭐⭐ | 121-idb-lab |
+| 121 | **IDB Lab (Inter-American Development Bank)** | Graham Macmillan (CEO), César Buenadicha, Yuri Soares | [bidlab.org](https://bidlab.org/en) | 🌐 [bidlab.org — How to Apply](https://bidlab.org/en/products/financing/intro-how-apply) | ⭐⭐⭐ | 121-idb-lab |
 
 ---
 
