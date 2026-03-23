@@ -48,7 +48,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Andreessen Horowitz (a16z). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -79,7 +79,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Sequoia Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -108,9 +108,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Greylock Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -141,7 +141,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Zero-copy architecture: data never leaves customer databases — read-only connections, customer-owned encryption
 - Sovereign deployment: air-gapped with TPM 2.0 attestation and HSM key storage
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Lightspeed Venture Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -172,7 +172,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Radical Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -203,7 +203,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Air Street Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -234,7 +234,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Lux Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -265,7 +265,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for General Catalyst. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -296,7 +296,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation with 50+ specialized agent presets and cryptographic audit trail
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped — developer-friendly architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Index Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -327,7 +327,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Felicis Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -356,9 +356,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Bessemer Venture Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -387,9 +387,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Insight Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -418,9 +418,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Sapphire Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -451,7 +451,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation with 50+ specialized agent presets and cryptographic audit trail
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped — developer-friendly architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Battery Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -480,9 +480,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Salesforce Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -513,7 +513,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Zero-copy architecture: data never leaves customer databases — read-only connections, customer-owned encryption
 - Sovereign deployment: air-gapped with TPM 2.0 attestation and HSM key storage
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Accel Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -544,7 +544,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Madrona Venture Group. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -575,7 +575,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Menlo Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -606,7 +606,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Emergence Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -635,9 +635,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Iconiq Growth. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -668,7 +668,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation with 50+ specialized agent presets and cryptographic audit trail
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped — developer-friendly architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Redpoint Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -699,7 +699,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Craft Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -730,7 +730,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Wing Venture Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -761,7 +761,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for FirstMark Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -792,7 +792,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures link every AI decision back to source data lineage
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Scale Venture Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -823,7 +823,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Zero-copy architecture: data never leaves customer databases — read-only connections, customer-owned encryption
 - Sovereign deployment: air-gapped with TPM 2.0 attestation and HSM key storage
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Cyberstarts. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -854,7 +854,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for YL Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -885,7 +885,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Zero-copy architecture: data never leaves customer databases — read-only connections, customer-owned encryption
 - Sovereign deployment: air-gapped with TPM 2.0 attestation and HSM key storage
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Ten Eleven Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -916,7 +916,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for NightDragon. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -947,7 +947,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for ForgePoint Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -978,7 +978,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Paladin Capital Group. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1009,7 +1009,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for DataTribe. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1040,7 +1040,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for In-Q-Tel. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1071,7 +1071,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Shield Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1102,7 +1102,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Razor's Edge Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1133,7 +1133,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Founders Fund. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1164,7 +1164,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Eclipse Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1195,7 +1195,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for QED Investors. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1226,7 +1226,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Ribbit Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1257,7 +1257,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for NYCA Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1288,7 +1288,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Fin Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1321,7 +1321,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Motive Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1352,7 +1352,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Plug and Play Tech Center. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1383,7 +1383,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Anthemis Group. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1416,7 +1416,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for FTV Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1447,7 +1447,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Atomico. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1478,7 +1478,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Balderton Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1509,7 +1509,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Northzone. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1540,7 +1540,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for EQT Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1571,7 +1571,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Earlybird Venture Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1602,7 +1602,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Lakestar. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1633,7 +1633,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Cherry Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1664,7 +1664,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Speedinvest. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1695,7 +1695,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Point Nine Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1726,7 +1726,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Dawn Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1757,7 +1757,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Singular. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1788,7 +1788,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Creandum. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1819,7 +1819,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for HV Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1850,7 +1850,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures link every AI decision back to source data lineage
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Project A Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1881,7 +1881,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Zero-copy architecture: data never leaves customer databases — read-only connections, customer-owned encryption
 - Sovereign deployment: air-gapped with TPM 2.0 attestation and HSM key storage
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Molten Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1912,7 +1912,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Omidyar Network. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1945,7 +1945,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Generation Investment Management. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -1976,7 +1976,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for DBL Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2009,7 +2009,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for The Rise Fund (TPG). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2040,7 +2040,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Breakthrough Energy Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2071,7 +2071,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Zero-copy architecture: data never leaves customer databases — read-only connections, customer-owned encryption
 - Sovereign deployment: air-gapped with TPM 2.0 attestation and HSM key storage
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for M12 (Microsoft Ventures). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2102,7 +2102,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or private cloud — PHI never leaves healthcare infrastructure
 - Compliance automation: SOC 2, ISO 27001, HIPAA evidence packets generated automatically
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for GV (Google Ventures). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2133,7 +2133,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Zero-copy architecture: data never leaves customer databases — read-only connections, customer-owned encryption
 - Sovereign deployment: air-gapped with TPM 2.0 attestation and HSM key storage
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Intel Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2162,9 +2162,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Nvidia Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2195,7 +2195,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Zero-copy architecture: data never leaves customer databases — read-only connections, customer-owned encryption
 - Sovereign deployment: air-gapped with TPM 2.0 attestation and HSM key storage
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Cisco Investments. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2224,9 +2224,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for SAP.iO. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2255,9 +2255,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Workday Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2286,9 +2286,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for ServiceNow Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2319,7 +2319,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Zero-copy architecture: data never leaves customer databases — read-only connections, customer-owned encryption
 - Sovereign deployment: air-gapped with TPM 2.0 attestation and HSM key storage
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Samsung Next. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2350,7 +2350,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Lockheed Martin Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2379,9 +2379,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Coatue Management. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2410,9 +2410,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Tiger Global Management. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2443,7 +2443,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Innovation Endeavors. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2474,7 +2474,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or private cloud — PHI never leaves healthcare infrastructure
 - Compliance automation: SOC 2, ISO 27001, HIPAA evidence packets generated automatically
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Obvious Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2505,7 +2505,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Future Positive Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2538,7 +2538,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Compliance automation for 17 jurisdictions: EU AI Act, GDPR, DORA, SOC 2, ISO 27001, HIPAA, FedRAMP pathway
 - NVIDIA Inception member; enterprise pricing from $50K pilots to $100M+ nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Temasek Holdings. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2571,7 +2571,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Compliance automation for 17 jurisdictions: EU AI Act, GDPR, DORA, SOC 2, ISO 27001, HIPAA, FedRAMP pathway
 - NVIDIA Inception member; enterprise pricing from $50K pilots to $100M+ nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Mubadala Investment Company. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2604,7 +2604,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Compliance automation for 17 jurisdictions: EU AI Act, GDPR, DORA, SOC 2, ISO 27001, HIPAA, FedRAMP pathway
 - NVIDIA Inception member; enterprise pricing from $50K pilots to $100M+ nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Abu Dhabi Investment Authority. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2637,7 +2637,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Compliance automation for 17 jurisdictions: EU AI Act, GDPR, DORA, SOC 2, ISO 27001, HIPAA, FedRAMP pathway
 - NVIDIA Inception member; enterprise pricing from $50K pilots to $100M+ nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for GIC (Government of Singapore). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2670,7 +2670,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Compliance automation for 17 jurisdictions: EU AI Act, GDPR, DORA, SOC 2, ISO 27001, HIPAA, FedRAMP pathway
 - NVIDIA Inception member; enterprise pricing from $50K pilots to $100M+ nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Norges Bank Investment Management. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2701,7 +2701,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Khosla Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2732,7 +2732,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for New Enterprise Associates (NEA). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2763,7 +2763,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Norwest Venture Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2792,9 +2792,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for IVP (Institutional Venture Partners). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2823,9 +2823,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Sands Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2856,7 +2856,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or private cloud — PHI never leaves healthcare infrastructure
 - Compliance automation: SOC 2, ISO 27001, HIPAA evidence packets generated automatically
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for a16z Bio + Health. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2887,7 +2887,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for 8VC. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2920,7 +2920,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Zero-copy architecture: data never leaves customer databases — read-only connections, customer-owned encryption
 - Sovereign deployment: air-gapped with TPM 2.0 attestation and HSM key storage
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Thoma Bravo. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2951,7 +2951,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for SoftBank Vision Fund. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -2980,9 +2980,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Accenture Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3011,9 +3011,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Deloitte Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3044,7 +3044,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or private cloud — PHI never leaves healthcare infrastructure
 - Compliance automation: SOC 2, ISO 27001, HIPAA evidence packets generated automatically
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Canaan Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3073,9 +3073,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for SIG (Susquehanna Growth Equity). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3106,7 +3106,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for B Capital Group. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3137,7 +3137,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Owl Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3168,7 +3168,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or private cloud — PHI never leaves healthcare infrastructure
 - Compliance automation: SOC 2, ISO 27001, HIPAA evidence packets generated automatically
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Mozilla Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3199,7 +3199,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Kapor Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3230,7 +3230,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Luminate Group. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3261,7 +3261,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Ford Foundation (Technology & Society). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3292,7 +3292,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for MacArthur Foundation. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3323,7 +3323,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Open Society Foundations. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3354,7 +3354,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Patrick J. McGovern Foundation. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3385,7 +3385,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Responsible Innovation Labs. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3416,7 +3416,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Sovereign Tech Fund. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3447,7 +3447,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Next Generation Internet (NGI). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3478,7 +3478,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Bpifrance (La French Tech). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3509,7 +3509,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Sprind (Federal Agency for Disruptive Innovation). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3538,9 +3538,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for European Innovation Council (EIC). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3573,7 +3573,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Tikehau Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3606,7 +3606,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Eurazeo. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3637,7 +3637,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Digital Catapult. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3668,7 +3668,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Baillie Gifford. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3701,7 +3701,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Schroders Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3730,9 +3730,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Swisscom Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3763,7 +3763,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Deep Tech Alliance (EU). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3792,9 +3792,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Benchmark. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3825,7 +3825,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Kleiner Perkins. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3854,9 +3854,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for a16z Growth. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3885,9 +3885,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Dragoneer Investment Group. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3916,9 +3916,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Greenoaks Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3949,7 +3949,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Paradigm. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3978,9 +3978,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Altimeter Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4009,9 +4009,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Addition. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4040,9 +4040,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Spark Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4071,9 +4071,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Union Square Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4102,9 +4102,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Thrive Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4133,9 +4133,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Initialized Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4166,7 +4166,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures link every AI decision back to source data lineage
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Social Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4195,9 +4195,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for DST Global. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4228,7 +4228,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures link every AI decision back to source data lineage
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Goodwater Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4259,7 +4259,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Lytical Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4290,7 +4290,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for MarconiVentures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4321,7 +4321,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Defense Innovation Unit (DIU). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4352,7 +4352,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Socap Global. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4385,7 +4385,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Zero-copy architecture: data never leaves customer databases — read-only connections, customer-owned encryption
 - Sovereign deployment: air-gapped with TPM 2.0 attestation and HSM key storage
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Crosspoint Capital Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4416,7 +4416,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for NYDIG. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4447,7 +4447,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Canapi Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4478,7 +4478,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Clocktower Technology Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4509,7 +4509,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or private cloud — PHI never leaves healthcare infrastructure
 - Compliance automation: SOC 2, ISO 27001, HIPAA evidence packets generated automatically
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for F-Prime Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4540,7 +4540,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Oak Hc/ft. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4569,9 +4569,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for General Atlantic. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4600,9 +4600,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Warburg Pincus. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4631,9 +4631,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for KKR (Technology Group). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4664,7 +4664,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Accel (Europe). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4695,7 +4695,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Index Ventures (Europe). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4726,7 +4726,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for General Catalyst (EU Office). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4757,7 +4757,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Partech. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4788,7 +4788,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for MMC Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4819,7 +4819,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Notion Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4848,9 +4848,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Highland Europe. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4879,9 +4879,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Verdane. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4912,7 +4912,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Eight Roads Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4945,7 +4945,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Sofina. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -4976,7 +4976,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Eurazeo Venture (ex-Idinvest). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5007,7 +5007,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Zero-copy architecture: data never leaves customer databases — read-only connections, customer-owned encryption
 - Sovereign deployment: air-gapped with TPM 2.0 attestation and HSM key storage
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Nauta Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5038,7 +5038,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Cavalry Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5069,7 +5069,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Keen Venture Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5100,7 +5100,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Breega. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5131,7 +5131,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or private cloud — PHI never leaves healthcare infrastructure
 - Compliance automation: SOC 2, ISO 27001, HIPAA evidence packets generated automatically
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Seventure Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5162,7 +5162,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Alma Mundi Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5193,7 +5193,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Caixa Capital Risc. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5224,7 +5224,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for CDP Venture Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5255,7 +5255,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Peak XV Partners (ex-Sequoia India). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5284,9 +5284,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Hillhouse Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5317,7 +5317,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Vertex Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5348,7 +5348,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Global Brain. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5379,7 +5379,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Wavemaker Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5410,7 +5410,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Jungle Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5443,7 +5443,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Sparx Group. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5474,7 +5474,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Macquarie Technology Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5505,7 +5505,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Blackbird Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5536,7 +5536,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Square Peg Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5569,7 +5569,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Compliance automation for 17 jurisdictions: EU AI Act, GDPR, DORA, SOC 2, ISO 27001, HIPAA, FedRAMP pathway
 - NVIDIA Inception member; enterprise pricing from $50K pilots to $100M+ nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for ADQ. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5602,7 +5602,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Compliance automation for 17 jurisdictions: EU AI Act, GDPR, DORA, SOC 2, ISO 27001, HIPAA, FedRAMP pathway
 - NVIDIA Inception member; enterprise pricing from $50K pilots to $100M+ nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Public Investment Fund (PIF). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5633,7 +5633,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Hub71. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5664,7 +5664,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Misk Foundation. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5695,7 +5695,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-language platform (26 languages including Arabic) with cryptographic decision evidence
 - NVIDIA Inception member; pricing from $50K pilots to $100M+ nation-scale sovereign deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Wamda Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5726,7 +5726,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Shorooq Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5757,7 +5757,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-language platform (26 languages including Arabic) with cryptographic decision evidence
 - NVIDIA Inception member; pricing from $50K pilots to $100M+ nation-scale sovereign deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for BECO Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5788,7 +5788,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-language platform (26 languages including Arabic) with cryptographic decision evidence
 - NVIDIA Inception member; pricing from $50K pilots to $100M+ nation-scale sovereign deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Nuwa Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5821,7 +5821,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Compliance automation for 17 jurisdictions: EU AI Act, GDPR, DORA, SOC 2, ISO 27001, HIPAA, FedRAMP pathway
 - NVIDIA Inception member; enterprise pricing from $50K pilots to $100M+ nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for CDPQ (Caisse de dépôt). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5854,7 +5854,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Compliance automation for 17 jurisdictions: EU AI Act, GDPR, DORA, SOC 2, ISO 27001, HIPAA, FedRAMP pathway
 - NVIDIA Inception member; enterprise pricing from $50K pilots to $100M+ nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for CPP Investments. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5885,7 +5885,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for A* (A-Star) Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5916,7 +5916,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation with 50+ specialized agent presets and cryptographic audit trail
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped — developer-friendly architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Amplify Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5947,7 +5947,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Bessemer Venture Partners (India). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5976,9 +5976,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Bold Capital Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6007,9 +6007,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Bowery Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6038,9 +6038,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for BVP Forge. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6071,7 +6071,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Zero-copy architecture: data never leaves customer databases — read-only connections, customer-owned encryption
 - Sovereign deployment: air-gapped with TPM 2.0 attestation and HSM key storage
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Cota Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6100,9 +6100,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Costanoa Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6131,9 +6131,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Decibel Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6162,9 +6162,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Eniac Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6193,9 +6193,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Fika Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6224,9 +6224,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Foundry Group. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6255,9 +6255,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Greycroft. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6286,9 +6286,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Homebrew. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6317,9 +6317,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Lerer Hippeau. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6348,9 +6348,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Matrix Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6379,9 +6379,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Maveron. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6410,9 +6410,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for NFX. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6441,9 +6441,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Osage Venture Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6474,7 +6474,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or private cloud — PHI never leaves healthcare infrastructure
 - Compliance automation: SOC 2, ISO 27001, HIPAA evidence packets generated automatically
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Polaris Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6503,9 +6503,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for RRE Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6534,9 +6534,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Shasta Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6567,7 +6567,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures link every AI decision back to source data lineage
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Sutter Hill Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6596,9 +6596,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Upfront Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6627,9 +6627,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Blisce. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6660,7 +6660,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Capnamic Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6691,7 +6691,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Daphni. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6722,7 +6722,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Elaia Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6753,7 +6753,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-language platform (26 languages including Arabic) with cryptographic decision evidence
 - NVIDIA Inception member; pricing from $50K pilots to $100M+ nation-scale sovereign deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Eleven Global Strategy. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6782,9 +6782,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Eurazeo Growth. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6815,7 +6815,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Fly Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6846,7 +6846,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Headline (ex-e.ventures). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6877,7 +6877,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Holtzbrinck Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6908,7 +6908,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Isai. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6939,7 +6939,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for K Fund. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -6972,7 +6972,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Kinnevik. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7003,7 +7003,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for LocalGlobe. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7034,7 +7034,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Mangrove Capital Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7065,7 +7065,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Moonfire Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7096,7 +7096,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for New Wave. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7127,7 +7127,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Octopus Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7158,7 +7158,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Picus Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7189,7 +7189,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Saga Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7220,7 +7220,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Seedcamp. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7251,7 +7251,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Target Global. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7280,9 +7280,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for TQ Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7313,7 +7313,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Ventech. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7344,7 +7344,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Access Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7375,7 +7375,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for B Dash Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7404,9 +7404,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for CyberAgent Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7437,7 +7437,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for East Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7468,7 +7468,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Gobi Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7499,7 +7499,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Golden Gate Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7530,7 +7530,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Infocomm Investments. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7561,7 +7561,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for JAFCO Group. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7592,7 +7592,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Legend Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7623,7 +7623,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Matrix Partners India. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7654,7 +7654,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Monks Hill Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7685,7 +7685,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for OpenSpace Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7716,7 +7716,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Pavilion Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7747,7 +7747,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Saison Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7778,7 +7778,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for China Renaissance. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7809,7 +7809,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Sirius Venture Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7840,7 +7840,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Strive. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7871,7 +7871,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Valar Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7902,7 +7902,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Venturra. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7931,9 +7931,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for VY Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7962,9 +7962,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Kaszek Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -7993,9 +7993,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Monashees. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8024,9 +8024,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Valor Capital Group. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8055,9 +8055,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for SoftBank Latin America Fund. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8088,7 +8088,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Flourish Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8119,7 +8119,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Catalyst Fund. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8150,7 +8150,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for TLcom Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8179,9 +8179,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Partech Africa. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8212,7 +8212,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-language platform (26 languages including Arabic) with cryptographic decision evidence
 - NVIDIA Inception member; pricing from $50K pilots to $100M+ nation-scale sovereign deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Sawari Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8243,7 +8243,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Novastar Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8274,7 +8274,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Algebra Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8305,7 +8305,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for CRE Venture Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8336,7 +8336,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Deep Knowledge Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8365,9 +8365,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for DG Daiwa Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8398,7 +8398,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Global Founders Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8429,7 +8429,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Horizons Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8460,7 +8460,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Coral Capital (James Riney). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8491,7 +8491,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Kima Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8520,9 +8520,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Luxor Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8553,9 +8553,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Marathon Asset Management. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8584,9 +8584,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Meritech Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8615,9 +8615,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Nerdy (Varsity Tutors parent). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8646,9 +8646,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Blue Owl (ex-Owl Rock). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8677,9 +8677,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Permira. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8708,9 +8708,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Providence Equity. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8739,9 +8739,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Silver Lake. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8770,9 +8770,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for TA Associates. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8803,7 +8803,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for TeleSoft Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8832,9 +8832,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Vitruvian Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8867,7 +8867,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or private cloud — PHI never leaves healthcare infrastructure
 - Compliance automation: SOC 2, ISO 27001, HIPAA evidence packets generated automatically
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Welsh Carson. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8896,9 +8896,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for a16z Crypto. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8927,9 +8927,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Abbey Road Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8958,9 +8958,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Acrew Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -8989,9 +8989,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Alchemy Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9022,7 +9022,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Align Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9051,9 +9051,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Aluminari Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9084,7 +9084,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Anthos Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9117,7 +9117,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Avenir Growth Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9146,9 +9146,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Base10 Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9177,9 +9177,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Bedrock Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9210,7 +9210,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for B Capital Group Asia. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9241,7 +9241,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Bilge Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9270,9 +9270,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Blackhorn Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9303,7 +9303,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for BlueYard Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9332,9 +9332,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for BoxGroup. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9363,9 +9363,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Burda Principal Investments. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9394,9 +9394,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Caffeinated Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9425,9 +9425,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Canaan Partners (II). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9458,7 +9458,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Cathay Innovation. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9489,9 +9489,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Cendana Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9522,7 +9522,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Clockwork Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9551,9 +9551,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Coller Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9586,7 +9586,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Compliance automation for 17 jurisdictions: EU AI Act, GDPR, DORA, SOC 2, ISO 27001, HIPAA, FedRAMP pathway
 - NVIDIA Inception member; enterprise pricing from $50K pilots to $100M+ nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Commonfund Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9615,9 +9615,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Contrary Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9646,9 +9646,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Correlation Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9677,9 +9677,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Crossbeam Venture Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9708,9 +9708,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for D1 Capital Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9739,9 +9739,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for DCM Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9770,9 +9770,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Dedicated Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9801,9 +9801,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Defy Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9834,7 +9834,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Drake Star Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9863,9 +9863,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Elad Gil (Solo GP). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9894,9 +9894,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Elephant Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9927,7 +9927,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Embark Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9956,9 +9956,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Endeavor Catalyst. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -9987,9 +9987,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Engage Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10018,9 +10018,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Entr Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10051,7 +10051,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Euclid Transatlantic Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10082,7 +10082,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Zero-copy architecture: data never leaves customer databases — read-only connections, customer-owned encryption
 - Sovereign deployment: air-gapped with TPM 2.0 attestation and HSM key storage
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Evolution Equity Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10111,9 +10111,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Existing Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10144,7 +10144,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Felix Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10177,7 +10177,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Fidelity International. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10206,9 +10206,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for First Round Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10237,9 +10237,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Five Elms Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10268,9 +10268,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Floodgate. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10299,9 +10299,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Forerunner Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10332,7 +10332,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Formation 8 / Formation Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10361,9 +10361,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Frog Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10394,7 +10394,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Fuel Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10423,9 +10423,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for G Squared. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10456,7 +10456,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for GAW Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10487,7 +10487,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for General Catalyst (Asia). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10518,7 +10518,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Global Founders Capital (GFC). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10547,9 +10547,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Google for Startups. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10580,7 +10580,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Gratitude Railroad. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10609,9 +10609,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Grotech Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10642,7 +10642,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Hampleton Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10671,9 +10671,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Harbert Management. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10704,7 +10704,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or private cloud — PHI never leaves healthcare infrastructure
 - Compliance automation: SOC 2, ISO 27001, HIPAA evidence packets generated automatically
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Hartford HealthCare Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10733,9 +10733,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Henkel dx Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10766,7 +10766,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Hero Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10797,7 +10797,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Hoxton Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10826,9 +10826,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for HubSpot Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10857,9 +10857,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Hyundai Cradle. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10888,9 +10888,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for IBM Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10921,7 +10921,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for IFG (Irish Funds Group). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10952,7 +10952,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Zero-copy architecture: data never leaves customer databases — read-only connections, customer-owned encryption
 - Sovereign deployment: air-gapped with TPM 2.0 attestation and HSM key storage
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for IGL Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -10983,7 +10983,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for IMEC.istart. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11014,7 +11014,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Inventus Capital Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11043,9 +11043,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for IP Group. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11074,9 +11074,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Invus Group. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11105,9 +11105,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for JMI Equity. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11138,7 +11138,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for J.p. Morgan Growth Equity. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11167,9 +11167,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Junction Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11200,7 +11200,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for K Fund (Korea). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11229,9 +11229,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Kairos Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11260,9 +11260,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Kerry Group Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11293,7 +11293,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Kuang-Chi. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11324,7 +11324,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Lanx Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11353,9 +11353,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Latitude Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11384,9 +11384,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Launchpad Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11415,9 +11415,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Lead Edge Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11446,9 +11446,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Liberty Mutual Strategic Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11481,7 +11481,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or private cloud — PHI never leaves healthcare infrastructure
 - Compliance automation: SOC 2, ISO 27001, HIPAA evidence packets generated automatically
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Linden Capital Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11510,9 +11510,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Livingbridge. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11543,7 +11543,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for LvlUp Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11572,9 +11572,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for M13. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11605,7 +11605,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures link every AI decision back to source data lineage
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Manifold Group. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11634,9 +11634,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Marchmont Holdings. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11665,9 +11665,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Mayfield Fund. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11698,7 +11698,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Meka Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11727,9 +11727,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Microsoft M12 (II). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11758,9 +11758,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Mithril Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11791,7 +11791,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Montage Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11822,7 +11822,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Morningside Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11855,7 +11855,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Motive Partners (Asia). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11886,7 +11886,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-language platform (26 languages including Arabic) with cryptographic decision evidence
 - NVIDIA Inception member; pricing from $50K pilots to $100M+ nation-scale sovereign deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Mubadala Technology Fund. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11917,7 +11917,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Zero-copy architecture: data never leaves customer databases — read-only connections, customer-owned encryption
 - Sovereign deployment: air-gapped with TPM 2.0 attestation and HSM key storage
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Mundi Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11946,9 +11946,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Naver D2sf. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -11977,9 +11977,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for NEO (Network of Entrepreneurs). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12008,9 +12008,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for New Enterprise Associates (II). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12039,9 +12039,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for NYC Venture Fund. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12072,7 +12072,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures link every AI decision back to source data lineage
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for North Bridge Venture Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12101,9 +12101,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Northpond Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12132,9 +12132,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for NTT Venture Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12163,9 +12163,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Ocean Bio-Chem Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12198,7 +12198,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Compliance automation for 17 jurisdictions: EU AI Act, GDPR, DORA, SOC 2, ISO 27001, HIPAA, FedRAMP pathway
 - NVIDIA Inception member; enterprise pricing from $50K pilots to $100M+ nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for OMERS Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12227,9 +12227,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for One Way Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12260,7 +12260,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation with 50+ specialized agent presets and cryptographic audit trail
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped — developer-friendly architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Open Ocean. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12289,9 +12289,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Osborne Clarke Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12320,9 +12320,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for OVO Fund. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12351,9 +12351,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Oxford Science Enterprises. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12382,9 +12382,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Panache Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12415,7 +12415,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Peak XV (ex-Sequoia Sea). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12444,9 +12444,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Pelion Venture Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12475,9 +12475,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Penn Mutual Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12506,9 +12506,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Phoenix Venture Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12539,7 +12539,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Playground Global. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12570,7 +12570,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Plug and Play Japan. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12599,9 +12599,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Point72 Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12630,9 +12630,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Prologis Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12663,7 +12663,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Propel Venture Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12692,9 +12692,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for PTC Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12725,7 +12725,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for PUMA Springboard. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12754,9 +12754,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Qualcomm Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12785,9 +12785,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Quantum Valley Investments. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12818,7 +12818,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Radcliffe Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12849,7 +12849,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Zero-copy architecture: data never leaves customer databases — read-only connections, customer-owned encryption
 - Sovereign deployment: air-gapped with TPM 2.0 attestation and HSM key storage
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Rain Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12880,7 +12880,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Reactor. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12911,7 +12911,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Redline Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12940,9 +12940,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Republic. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -12973,7 +12973,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures link every AI decision back to source data lineage
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Ridge Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13002,9 +13002,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Ripple Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13035,7 +13035,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures link every AI decision back to source data lineage
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Rocketship.vc. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13064,9 +13064,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Salesforce Ventures (Asia). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13095,9 +13095,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Samsung Catalyst Fund. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13126,9 +13126,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for SAP.iO / Sapphire Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13159,7 +13159,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Scale Asia Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13190,7 +13190,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Scout Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13219,9 +13219,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for SEQ Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13252,7 +13252,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Shunwei Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13283,7 +13283,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures link every AI decision back to source data lineage
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for SignalFire. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13314,7 +13314,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Sky9 Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13343,9 +13343,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Slow Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13376,7 +13376,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for SmartFin Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13407,7 +13407,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for SoFi Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13436,9 +13436,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Spring Mountain Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13467,9 +13467,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Standard Crypto. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13500,7 +13500,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Starburst Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13531,7 +13531,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Starts Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13564,7 +13564,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Zero-copy architecture: data never leaves customer databases — read-only connections, customer-owned encryption
 - Sovereign deployment: air-gapped with TPM 2.0 attestation and HSM key storage
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for SteelPoint Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13595,9 +13595,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for StepStone Group. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13628,7 +13628,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Strong Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13657,9 +13657,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Superhuman Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13688,9 +13688,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for SVB Capital (Silicon Valley Bank). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13719,9 +13719,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Swisscom Ventures (II). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13750,9 +13750,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Tao Capital Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13783,7 +13783,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or private cloud — PHI never leaves healthcare infrastructure
 - Compliance automation: SOC 2, ISO 27001, HIPAA evidence packets generated automatically
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Tata Capital Healthcare Fund. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13812,9 +13812,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for TCV. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13843,9 +13843,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Tech Coast Angels. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13874,9 +13874,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for TechNexus. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13905,9 +13905,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Telefónica Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13936,9 +13936,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Tenor Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13969,7 +13969,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for TF Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -13998,9 +13998,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Telstra Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14029,9 +14029,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Tom Advisors Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14060,9 +14060,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for True Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14091,9 +14091,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Two Sigma Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14124,7 +14124,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Union Tech Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14155,7 +14155,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
 - Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Valar Ventures (II). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14184,9 +14184,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Valor Equity Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14215,9 +14215,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Vanedge Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14246,9 +14246,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Vector Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14279,7 +14279,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Venture Highway. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14308,9 +14308,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Venture Reality Fund. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14341,7 +14341,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Volta Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14370,9 +14370,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Warburg Pincus (Asia). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14403,7 +14403,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Wide Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14432,9 +14432,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Wild Basin Investments. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14463,9 +14463,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Wing Venture Capital (II). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14494,9 +14494,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Work-Bench. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14527,7 +14527,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for World Fund. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14558,7 +14558,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for X Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14589,7 +14589,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Y Analytics. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14620,7 +14620,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Sovereign deployment: on-prem or EU-jurisdiction cloud — data never leaves customer infrastructure
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees — regulator-ready audit packets on demand
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Yabeo Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14649,9 +14649,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for York IE. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14682,7 +14682,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: immutable audit trail compliant with emerging APAC AI governance frameworks
 - NVIDIA Inception member; enterprise pricing from $50K pilots to nation-scale deployments
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Z Venture Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14711,9 +14711,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Zedcrest Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14742,9 +14742,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Zenith Venture Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14775,7 +14775,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Zetta Venture Partners. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14806,7 +14806,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Zinc VC. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14835,9 +14835,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Zions Bancorporation Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14868,7 +14868,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Zodiac Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14897,9 +14897,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform
 - Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement
 - Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Zurich Insurance Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14928,9 +14928,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Zweig DiMenna. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14959,9 +14959,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for 1517 Fund. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -14990,9 +14990,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for 10x Capital. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -15021,9 +15021,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com
 - Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)
 - Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture
-- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel
+- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for 137 Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -15052,9 +15052,9 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com
 - Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
-- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel
+- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for 22 Ventures. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 

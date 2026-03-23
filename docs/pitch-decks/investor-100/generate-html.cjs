@@ -174,7 +174,7 @@ ul li::before{content:'→';position:absolute;left:0;color:#D4AF37;font-weight:7
       <div class="card-title">NVIDIA Inception Member</div>
       <div class="card-text">
         <p style="margin-bottom:8px">Accepted into NVIDIA's elite startup program.</p>
-        <p>Access to NVIDIA DGX Cloud, technical mentorship, co-marketing, and enterprise customer introductions.</p>
+        <p>Access to NVIDIA DGX Cloud, technical mentorship, and co-marketing opportunities.</p>
       </div>
     </div>
   </div>

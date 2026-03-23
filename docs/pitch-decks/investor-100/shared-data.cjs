@@ -20,8 +20,8 @@ const ASK = {
   headline: '$1.5M Pre-Seed — $7M Pre-Money Valuation',
   cards: [
     { title: 'What\'s Built', text: '205K+ passing tests. 156 validated API endpoints. Live production platform at app.datacendia.com.' },
-    { title: 'Traction', text: '2 warm enterprise intros (financial institution, Big 4 channel). NVIDIA Inception member.' },
-    { title: 'Use of Funds', text: 'GTM hiring, SOC 2 Type II certification, first enterprise pilots.' },
+    { title: 'Traction', text: 'NVIDIA Inception member. Live production platform at app.datacendia.com. Open-core Apache 2.0 foundation.' },
+    { title: 'Use of Funds', text: 'First enterprise pilots, SOC 2 Type II certification, EU AI Act regulatory validation.' },
   ],
   footer: '$8.5M post-money · 21.5% dilution · Engineering risk resolved — GTM-stage investment.',
 };

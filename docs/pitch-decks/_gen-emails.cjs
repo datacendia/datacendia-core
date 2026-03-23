@@ -202,7 +202,7 @@ const WHATS_BUILT = {
     '- 205K+ passing tests, 156 validated API endpoints, enterprise-ready platform',
     '- Zero-copy integration: connects to PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — no ETL, no data movement',
     '- Sovereign deployment: private cloud, on-prem, or air-gapped — deploys within existing enterprise infrastructure',
-    '- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel',
+    '- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier',
   ],
   'sovereign': [
     '- 205K+ passing tests, 156 validated API endpoints, production platform at app.datacendia.com',
@@ -214,7 +214,7 @@ const WHATS_BUILT = {
     '- 205K+ passing tests, 156 validated API endpoints, production platform live at app.datacendia.com',
     '- Revenue model: $50K pilot → $500K department → $1.5M enterprise → $100M+ nation-scale (90-day money-back guarantee)',
     '- Multi-agent deliberation with cryptographic evidence — no competitor has equivalent architecture',
-    '- NVIDIA Inception member; active design-partner pipeline with enterprise and Big 4 advisory channel',
+    '- NVIDIA Inception member; 5-tier pricing from community (free) to nation-scale ($100M+)',
   ],
   'european': [
     '- 205K+ passing tests, 156 validated API endpoints, live production platform',
@@ -256,7 +256,7 @@ const WHATS_BUILT = {
     '- 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com',
     '- Multi-agent deliberation: 50+ specialized agent presets with cryptographic evidence (Ed25519, Merkle trees)',
     '- Sovereign deployment: cloud, private cloud, on-prem, air-gapped',
-    '- NVIDIA Inception member; active design-partner conversations with a financial institution and Big 4 channel',
+    '- NVIDIA Inception member; open-core Apache 2.0 foundation with enterprise tier',
   ],
 };
 
@@ -461,7 +461,7 @@ function generateEmail(inv) {
     lines.push(line);
   }
   lines.push('');
-  lines.push("**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.");
+  lines.push("**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.");
   lines.push('');
   lines.push(`I've attached a deck personalized for ${firm}. Happy to schedule a 20-minute deep dive or live demo at your convenience.`);
   lines.push('');
