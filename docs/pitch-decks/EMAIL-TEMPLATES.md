@@ -27,9 +27,8 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation with cryptographic evidence (Ed25519, Merkle trees, RFC 3161)
 - Sovereign deployment: cloud, private cloud, on-prem, air-gapped
 - NVIDIA Inception member
-- Active design-partner conversations with a financial institution and Big 4 channel
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first 3 design partners, SOC 2 Type II, and EU AI Act regulatory validation.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for [FIRM NAME]. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -227,7 +226,7 @@ Hi [FIRST NAME],
 
 Following up on my email from [DATE]. I wanted to share a quick update:
 
-- [UPDATE 1 — e.g., "We've signed our first design partner (Fortune 500 financial institution)"]
+- [UPDATE 1 — e.g., "We've completed SOC 2 Type II certification"]
 - [UPDATE 2 — e.g., "SOC 2 Type II audit is underway"]
 - [UPDATE 3 — e.g., "Published our DDGI framework on ISO/IEC JTC 1/SC 42 standards track"]
 
