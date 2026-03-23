@@ -627,6 +627,226 @@ export const governmentVerticalCustomization: VerticalCustomization = {
 };
 
 // =============================================================================
+// CLIMATE RISK AI GOVERNANCE VERTICAL
+// =============================================================================
+
+export const climateRiskVerticalCustomization: VerticalCustomization = {
+  id: 'climate-risk',
+  name: 'Climate Risk AI Governance',
+  shortName: 'Climate Risk',
+  tier: 'growth',
+  status: 'ga',
+
+  branding: {
+    primaryColor: '#059669', // Emerald green
+    secondaryColor: '#047857',
+    accentColor: '#34D399',
+    icon: '🌍',
+    tagline: 'Decision evidence for climate risk AI models',
+    heroTitle: 'AI Governance for Climate Risk',
+    heroSubtitle: 'Cryptographic audit trails for ESG scoring, climate stress tests, and sustainability disclosures',
+  },
+
+  coreServices: ['council', 'ledger', 'evidence-vault', 'chronos', 'predict', 'panopticon'],
+  recommendedServices: ['crucible', 'bridge', 'sovereign', 'veto'],
+  excludedServices: [],
+
+  defaultAgents: [
+    'climate-risk-analyst',
+    'esg-compliance-officer',
+    'sustainability-auditor',
+    'scenario-modeler',
+  ],
+  optionalAgents: [
+    'biodiversity-analyst',
+    'carbon-accounting-officer',
+    'transition-risk-analyst',
+    'physical-risk-modeler',
+  ],
+
+  agentPresets: [
+    {
+      id: 'climate-stress-test',
+      name: 'Climate Stress Test Governance',
+      description: 'Decision evidence for climate scenario analysis and stress testing',
+      defaultAgents: ['climate-risk-analyst', 'scenario-modeler', 'esg-compliance-officer', 'sustainability-auditor'],
+      optionalAgents: ['transition-risk-analyst', 'physical-risk-modeler'],
+      requiredApprovals: ['esg-compliance-officer'],
+      maxDeliberationRounds: 6,
+    },
+    {
+      id: 'esg-scoring-audit',
+      name: 'ESG Scoring Audit',
+      description: 'Fairness and transparency evidence for AI-driven ESG ratings',
+      defaultAgents: ['esg-compliance-officer', 'sustainability-auditor', 'climate-risk-analyst'],
+      optionalAgents: ['carbon-accounting-officer'],
+      requiredApprovals: ['sustainability-auditor'],
+      maxDeliberationRounds: 5,
+    },
+    {
+      id: 'tcfd-tnfd-disclosure',
+      name: 'TCFD/TNFD Disclosure Pack',
+      description: 'Generate audit-grade evidence packages for climate and nature-related disclosures',
+      defaultAgents: ['sustainability-auditor', 'climate-risk-analyst', 'esg-compliance-officer', 'scenario-modeler'],
+      optionalAgents: ['biodiversity-analyst'],
+      requiredApprovals: ['esg-compliance-officer', 'sustainability-auditor'],
+      maxDeliberationRounds: 8,
+    },
+  ],
+
+  compliance: {
+    frameworks: ['TCFD', 'TNFD', 'EU CSRD', 'IFRS S1', 'IFRS S2', 'ECB Climate Risk Guide', 'ISO 14001', 'Basel III Pillar 3 ESG'],
+    certifications: ['TCFD Aligned', 'CSRD Compliant', 'ISSB Compliant'],
+    dataResidency: ['EU', 'US', 'Global', 'Client-Specified'],
+    retentionPolicies: {
+      default: 2555, // 7 years
+      audit: 3650,   // 10 years
+      legal: 7300,   // 20 years (climate litigation)
+    },
+    requiredApprovals: ['esg-compliance-officer', 'sustainability-auditor'],
+  },
+
+  integrations: [
+    { id: 'bloomberg-esg', name: 'Bloomberg ESG Data', category: 'ESG Data', difficulty: 'medium', timeline: '4-6 weeks', notes: 'ESG scores, carbon data, climate scenarios', required: false },
+    { id: 'msci-esg', name: 'MSCI ESG Ratings', category: 'ESG Data', difficulty: 'medium', timeline: '4-6 weeks', notes: 'ESG ratings integration for portfolio climate risk', required: false },
+    { id: 'cdp', name: 'CDP (Carbon Disclosure Project)', category: 'Disclosure', difficulty: 'easy', timeline: '2-4 weeks', notes: 'CDP questionnaire response automation', required: false },
+    { id: 'gresb', name: 'GRESB', category: 'Real Assets ESG', difficulty: 'easy', timeline: '2-4 weeks', notes: 'Real estate and infrastructure ESG benchmarking', required: false },
+  ],
+
+  useCases: [
+    { id: 'climate-stress-test', name: 'Climate Stress Test Evidence', description: 'Cryptographic audit trail for climate scenario analysis models', services: ['council', 'predict', 'evidence-vault', 'chronos'], category: 'climate', roi: '100% audit readiness' },
+    { id: 'esg-scoring-governance', name: 'ESG Scoring Governance', description: 'Decision evidence for AI-driven ESG ratings and scoring', services: ['council', 'ledger', 'evidence-vault', 'veto'], category: 'esg' },
+    { id: 'tcfd-disclosure-pack', name: 'TCFD/TNFD Disclosure Pack', description: 'Automated evidence packages for climate and nature disclosures', services: ['panopticon', 'evidence-vault', 'chronos', 'ledger'], category: 'disclosure', roi: '60% faster reporting' },
+    { id: 'transition-risk-audit', name: 'Transition Risk Model Audit', description: 'Governance evidence for AI models predicting carbon transition impacts', services: ['predict', 'council', 'evidence-vault', 'crucible'], category: 'climate' },
+    { id: 'green-lending-evidence', name: 'Green Lending Decision Evidence', description: 'Audit trails for AI-assisted green bond and sustainability-linked loan decisions', services: ['council', 'ledger', 'evidence-vault', 'predict'], category: 'lending' },
+    { id: 'carbon-accounting-audit', name: 'Carbon Accounting AI Audit', description: 'Evidence for AI-assisted Scope 1/2/3 emissions calculations', services: ['ledger', 'evidence-vault', 'chronos', 'panopticon'], category: 'carbon' },
+  ],
+
+  pricing: {
+    pilot: { price: '$50,000', includes: 'One climate risk model audit, 30 days' },
+    professional: { price: '$200,000-$500,000/year', includes: 'Core Suite + 4 Climate Agents + TCFD/TNFD packs' },
+    enterprise: { price: '$500,000-$1,500,000/year', includes: '+ All specialists, portfolio-wide climate governance' },
+    sovereign: { price: '$2,000,000+', includes: '+ Central bank grade, multi-jurisdiction, on-prem' },
+  },
+
+  dashboardWidgets: ['climate-risk-score', 'esg-compliance-status', 'disclosure-deadlines', 'scenario-results', 'carbon-metrics'],
+  navigationItems: ['council', 'climate-risk', 'esg-scoring', 'disclosures', 'scenarios', 'compliance', 'reports'],
+  featureFlags: { climateStressTest: true, esgScoring: true, tcfdDisclosure: true, tnfdDisclosure: true, carbonAccounting: true },
+  supportedDataSources: ['esg-ratings', 'carbon-data', 'climate-scenarios', 'emissions-data', 'sustainability-reports'],
+  dataIngestionPipelines: ['bloomberg-esg-sync', 'msci-esg-sync', 'cdp-import', 'emissions-import'],
+};
+
+// =============================================================================
+// FAIRNESS & GENDER AI GOVERNANCE VERTICAL
+// =============================================================================
+
+export const fairnessAIVerticalCustomization: VerticalCustomization = {
+  id: 'fairness-ai',
+  name: 'Fairness & Gender AI Governance',
+  shortName: 'Fairness AI',
+  tier: 'growth',
+  status: 'ga',
+
+  branding: {
+    primaryColor: '#8B5CF6', // Violet
+    secondaryColor: '#7C3AED',
+    accentColor: '#C4B5FD',
+    icon: '⚖️',
+    tagline: 'Bias detection and fairness evidence for AI decisions',
+    heroTitle: 'AI That Proves Fairness',
+    heroSubtitle: 'Cryptographic evidence of bias testing, demographic impact analysis, and equitable AI outcomes',
+  },
+
+  coreServices: ['council', 'ledger', 'evidence-vault', 'predict', 'veto', 'ethics'],
+  recommendedServices: ['crucible', 'panopticon', 'bridge', 'chronos'],
+  excludedServices: [],
+
+  defaultAgents: [
+    'bias-auditor',
+    'fairness-analyst',
+    'demographic-impact-assessor',
+    'ethics-compliance-officer',
+  ],
+  optionalAgents: [
+    'gender-equity-analyst',
+    'disparate-impact-tester',
+    'accessibility-officer',
+    'inclusion-metrics-analyst',
+  ],
+
+  agentPresets: [
+    {
+      id: 'lending-fairness-audit',
+      name: 'Lending Fairness Audit',
+      description: 'Bias detection and fairness evidence for AI credit scoring and lending decisions',
+      defaultAgents: ['bias-auditor', 'fairness-analyst', 'demographic-impact-assessor', 'ethics-compliance-officer'],
+      optionalAgents: ['disparate-impact-tester', 'gender-equity-analyst'],
+      requiredApprovals: ['ethics-compliance-officer'],
+      maxDeliberationRounds: 8,
+    },
+    {
+      id: 'hiring-fairness-audit',
+      name: 'Hiring Algorithm Fairness',
+      description: 'Gender and demographic fairness testing for AI-assisted hiring and HR decisions',
+      defaultAgents: ['bias-auditor', 'fairness-analyst', 'gender-equity-analyst', 'ethics-compliance-officer'],
+      optionalAgents: ['disparate-impact-tester'],
+      requiredApprovals: ['ethics-compliance-officer', 'gender-equity-analyst'],
+      maxDeliberationRounds: 6,
+    },
+    {
+      id: 'model-bias-assessment',
+      name: 'Model Bias Assessment',
+      description: 'Comprehensive bias testing across protected classes with fairness evidence generation',
+      defaultAgents: ['bias-auditor', 'fairness-analyst', 'demographic-impact-assessor', 'ethics-compliance-officer'],
+      optionalAgents: ['inclusion-metrics-analyst'],
+      requiredApprovals: ['bias-auditor', 'ethics-compliance-officer'],
+      maxDeliberationRounds: 10,
+    },
+  ],
+
+  compliance: {
+    frameworks: ['ECOA', 'CFPB AI Guidance', 'EU AI Act Art. 10', 'ISO/IEC TR 24027', 'NIST AI RMF', 'Title VII Civil Rights Act', 'EEOC AI Guidance'],
+    certifications: ['ISO 42001 (Fairness)', 'Fairness Audit Certificate'],
+    dataResidency: ['US', 'EU', 'Global', 'Client-Specified'],
+    retentionPolicies: {
+      default: 2555, // 7 years
+      audit: 3650,   // 10 years
+      legal: 7300,   // 20 years (discrimination litigation)
+    },
+    requiredApprovals: ['ethics-compliance-officer', 'bias-auditor'],
+  },
+
+  integrations: [
+    { id: 'aequitas', name: 'Aequitas (Bias Toolkit)', category: 'Bias Detection', difficulty: 'easy', timeline: '2-3 weeks', notes: 'Open-source bias and fairness audit toolkit', required: false },
+    { id: 'fairlearn', name: 'Fairlearn', category: 'Fairness Library', difficulty: 'easy', timeline: '2-3 weeks', notes: 'Microsoft fairness assessment library integration', required: false },
+    { id: 'ai-fairness-360', name: 'AI Fairness 360', category: 'Bias Detection', difficulty: 'easy', timeline: '2-3 weeks', notes: 'IBM open-source bias detection toolkit', required: false },
+    { id: 'hr-systems', name: 'HR / ATS Systems', category: 'HR Data', difficulty: 'medium', timeline: '4-8 weeks', notes: 'Workday, SAP SuccessFactors, Greenhouse', required: false },
+  ],
+
+  useCases: [
+    { id: 'lending-bias-audit', name: 'Lending Bias Audit', description: 'Detect and evidence gender/racial bias in AI credit scoring', services: ['council', 'predict', 'evidence-vault', 'veto'], category: 'lending', roi: 'Regulatory compliance' },
+    { id: 'hiring-fairness', name: 'Hiring Algorithm Fairness', description: 'Gender and demographic impact assessment for AI-assisted hiring', services: ['council', 'predict', 'evidence-vault', 'crucible'], category: 'hr' },
+    { id: 'disparate-impact-test', name: 'Disparate Impact Testing', description: 'Automated four-fifths rule testing with cryptographic evidence', services: ['predict', 'evidence-vault', 'ledger'], category: 'compliance', roi: '100% audit readiness' },
+    { id: 'gender-disaggregated-audit', name: 'Gender-Disaggregated Impact Audit', description: 'Evidence of AI decision outcomes broken down by gender with fairness metrics', services: ['predict', 'evidence-vault', 'ledger', 'panopticon'], category: 'gender' },
+    { id: 'adverse-action-evidence', name: 'Adverse Action Evidence Pack', description: 'ECOA/CFPB-compliant explanation evidence for AI-driven credit denials', services: ['council', 'evidence-vault', 'ledger', 'veto'], category: 'lending' },
+    { id: 'model-fairness-certificate', name: 'Model Fairness Certificate', description: 'Cryptographically signed fairness assessment with demographic parity metrics', services: ['predict', 'evidence-vault', 'ledger', 'council'], category: 'certification' },
+  ],
+
+  pricing: {
+    pilot: { price: '$35,000', includes: 'One model fairness audit, 15 days' },
+    professional: { price: '$150,000-$400,000/year', includes: 'Core Suite + 4 Fairness Agents + bias testing' },
+    enterprise: { price: '$400,000-$1,000,000/year', includes: '+ All specialists, portfolio-wide fairness governance' },
+    sovereign: { price: '$1,500,000+', includes: '+ Regulator-grade, multi-jurisdiction, on-prem' },
+  },
+
+  dashboardWidgets: ['fairness-score', 'bias-alerts', 'demographic-parity', 'disparate-impact-metrics', 'audit-status'],
+  navigationItems: ['council', 'bias-audit', 'fairness-testing', 'demographics', 'compliance', 'reports'],
+  featureFlags: { biasDetection: true, fairnessMetrics: true, genderDisaggregation: true, disparateImpactTest: true, adverseActionEvidence: true },
+  supportedDataSources: ['model-predictions', 'demographic-data', 'credit-decisions', 'hiring-data', 'hr-records'],
+  dataIngestionPipelines: ['model-output-import', 'demographic-sync', 'credit-decision-import', 'ats-sync'],
+};
+
+// =============================================================================
 // VERTICAL REGISTRY
 // =============================================================================
 
@@ -635,6 +855,8 @@ export const VERTICAL_CUSTOMIZATIONS: Record<string, VerticalCustomization> = {
   healthcare: healthcareVerticalCustomization,
   financial: financialVerticalCustomization,
   government: governmentVerticalCustomization,
+  'climate-risk': climateRiskVerticalCustomization,
+  'fairness-ai': fairnessAIVerticalCustomization,
 };
 
 // =============================================================================

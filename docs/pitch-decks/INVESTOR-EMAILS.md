@@ -3261,7 +3261,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
+**The ask:** $750K–$2M grant to deploy Datacendia as open-source AI governance infrastructure across LatAm fintech ecosystems. Engineering is built (205K+ tests, 156 endpoints). Funds go to multi-country deployment, local partner onboarding, gender-disaggregated impact measurement, and climate risk AI governance pilots.
 
 I've attached a deck personalized for Ford Foundation (Technology & Society). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3292,7 +3292,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
+**The ask:** $750K–$2M grant to deploy Datacendia as open-source AI governance infrastructure across LatAm fintech ecosystems. Engineering is built (205K+ tests, 156 endpoints). Funds go to multi-country deployment, local partner onboarding, gender-disaggregated impact measurement, and climate risk AI governance pilots.
 
 I've attached a deck personalized for MacArthur Foundation. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3323,7 +3323,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic evidence: Ed25519/RSA-PSS signatures, Merkle trees — every decision replayable and verifiable
 - Zero-copy architecture: no data movement, no external dependencies, customer-owned keys
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
+**The ask:** $750K–$2M grant to deploy Datacendia as open-source AI governance infrastructure across LatAm fintech ecosystems. Engineering is built (205K+ tests, 156 endpoints). Funds go to multi-country deployment, local partner onboarding, gender-disaggregated impact measurement, and climate risk AI governance pilots.
 
 I've attached a deck personalized for Open Society Foundations. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3354,7 +3354,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
+**The ask:** $750K–$2M grant to deploy Datacendia as open-source AI governance infrastructure across LatAm fintech ecosystems. Engineering is built (205K+ tests, 156 endpoints). Funds go to multi-country deployment, local partner onboarding, gender-disaggregated impact measurement, and climate risk AI governance pilots.
 
 I've attached a deck personalized for Patrick J. McGovern Foundation. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -3776,7 +3776,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ### IDB Lab (Inter-American Development Bank)
 **Deck:** `investor-100/pptx/121-idb-lab.pptx`
-*Development Finance / Venture · Washington, DC · IDB Group ($20B+ annual)*
+*Development Finance (Grants + Equity) · Washington, DC · IDB Group ($20B+ annual)*
 
 **Subject:** Datacendia — Accountable AI Infrastructure with Decision Evidence | For IDB Lab (Inter-American Development Bank)
 
@@ -3786,7 +3786,7 @@ Hi [FIRST NAME],
 
 I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer for enterprise AI — the infrastructure that produces cryptographic proof of how AI-assisted decisions are made.
 
-**Why IDB Lab (Inter-American Development Bank):** IDB Lab has an active responsible AI initiative for Latin America and features "Gender, AI, and Decision-Making" on their homepage. Brazil's AI Act, Mexico's AI strategy, and regional governance frameworks create demand for AI decision evidence infrastructure across 26 LatAm countries. IDB Lab invests in tech solving development challenges across 26 LatAm countries. Datacendia provides sovereign AI governance infrastructure — air-gapped deployment, multi-language support (26 languages including Spanish and Portuguese), and compliance mapping for regional AI regulations.
+**Why IDB Lab (Inter-American Development Bank):** IDB Lab funds ecosystem-level AI governance infrastructure — not individual startups. Datacendia deploys as open-source sovereign AI governance across LatAm fintech ecosystems: bias detection for AI lending (expanding financial access to underserved segments), climate risk AI governance for green finance (TCFD/TNFD compliance), and gender-disaggregated impact assessment. Multi-stakeholder: partner with central banks, fintechs, and universities across Brazil, Mexico, Colombia. Datacendia is open-source AI governance infrastructure deployable across 26 LatAm countries. Three IDB Lab impact challenges in one platform: (1) Financial inclusion — fairness evidence for AI lending prevents discrimination against women and underserved populations, (2) Climate — decision evidence for ESG scoring and green lending models, (3) Gender — bias detection and gender-disaggregated AI audit trails. Sovereign deployment: data stays in-country, supports Spanish and Portuguese, maps to Brazil LGPD and regional AI regulations.
 
 **What's built (not idea-stage):**
 - 205K+ passing tests, 156 validated API endpoints, live at app.datacendia.com
@@ -3794,7 +3794,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
 - Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
+**The ask:** $750K–$2M grant to deploy Datacendia as open-source AI governance infrastructure across LatAm fintech ecosystems. Engineering is built (205K+ tests, 156 endpoints). Funds go to multi-country deployment, local partner onboarding, gender-disaggregated impact measurement, and climate risk AI governance pilots.
 
 I've attached a deck personalized for IDB Lab (Inter-American Development Bank). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
@@ -5695,7 +5695,7 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 - Cryptographic decision evidence: Ed25519 signatures, Merkle trees, RFC 3161 timestamping
 - 4 deployment modes: cloud, private cloud, on-prem, air-gapped
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
+**The ask:** $750K–$2M grant to deploy Datacendia as open-source AI governance infrastructure across LatAm fintech ecosystems. Engineering is built (205K+ tests, 156 endpoints). Funds go to multi-country deployment, local partner onboarding, gender-disaggregated impact measurement, and climate risk AI governance pilots.
 
 I've attached a deck personalized for Misk Foundation. Happy to schedule a 20-minute deep dive or live demo at your convenience.
 

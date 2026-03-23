@@ -461,7 +461,13 @@ function generateEmail(inv) {
     lines.push(line);
   }
   lines.push('');
-  lines.push("**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.");
+  // Custom ask for grant/development finance funders vs standard VC equity ask
+  const isGrantFunder = inv.type && (inv.type.includes('Grant') || inv.type.includes('Development Finance') || inv.type.includes('Foundation'));
+  if (isGrantFunder) {
+    lines.push("**The ask:** $750K–$2M grant to deploy Datacendia as open-source AI governance infrastructure across LatAm fintech ecosystems. Engineering is built (205K+ tests, 156 endpoints). Funds go to multi-country deployment, local partner onboarding, gender-disaggregated impact measurement, and climate risk AI governance pilots.");
+  } else {
+    lines.push("**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.");
+  }
   lines.push('');
   lines.push(`I've attached a deck personalized for ${firm}. Happy to schedule a 20-minute deep dive or live demo at your convenience.`);
   lines.push('');
