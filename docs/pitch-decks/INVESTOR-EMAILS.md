@@ -1187,7 +1187,7 @@ Hi [FIRST NAME],
 
 I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer for enterprise AI — the infrastructure that produces cryptographic proof of how AI-assisted decisions are made.
 
-**Why QED Investors:** QED's Capital One DNA means they understand financial regulation deeply. DORA + EU AI Act create mandatory AI governance for every financial institution. QED (Capital One co-founder) knows financial regulation. DORA mandates AI operational resilience for financial institutions by Jan 2025. Datacendia delivers: cryptographic evidence for every AI decision.
+**Why QED Investors:** QED's Capital One DNA means they understand financial regulation deeply. DORA + EU AI Act create mandatory AI governance for every financial institution. QED (Capital One co-founder) knows financial regulation. DORA mandates AI operational resilience for financial institutions since Jan 2025. Datacendia delivers: cryptographic evidence for every AI decision.
 
 **What's built (not idea-stage):**
 - 205K+ passing tests, 156 validated API endpoints, compliance-first architecture
@@ -1379,7 +1379,7 @@ I'm Stuart Rainey, founder of Datacendia (datacendia.com). We make AI decisions 
 
 **Why Anthemis:** You invest at the intersection of fintech, AI, and climate — that's exactly where we sit. Every AI lending decision needs fairness evidence. Every climate risk model needs an audit trail. Datacendia is the accountability layer across all three. Your portfolio companies (ComplyAdvantage, Railsbank, Betterment) face these requirements today.
 
-**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Pre-seed stage, London + remote, operating across EU and US markets.
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Pre-seed stage, Peru + Ireland, operating across EU and US markets.
 
 **The ask:** $1.5M pre-seed at $7M pre-money. Engineering is resolved — funds go to first enterprise pilots and EU AI Act regulatory validation.
 

@@ -77,8 +77,8 @@ module.exports = [
     hq: 'Arlington, VA', stage: 'Seed to Series B', aum: 'N/A (Government)',
     thesis: 'CIA\'s strategic investment arm. Identifies and adapts cutting-edge technology for the US intelligence community.',
     portfolio: ['Palantir', 'Keyhole (Google Earth)', 'Recorded Future', 'FireEye'],
-    whyAlign: 'The intelligence community needs AI governance that runs offline with full accountability. Datacendia\'s air-gapped deployment with cryptographic evidence was designed for this.',
-    hookSlide: 'In-Q-Tel backed Palantir for intelligence analysis. Datacendia complements that: AI decision governance with cryptographic evidence, air-gapped deployment, and TPM hardware root of trust.',
+    whyAlign: 'The intelligence community needs AI governance that runs fully offline with hardware-rooted accountability. Datacendia was designed for this: air-gapped deployment, TPM 2.0 attestation, and cryptographic evidence for every AI decision — no external dependencies.',
+    hookSlide: 'Palantir gives the IC data analytics. Recorded Future gives threat intelligence. Datacendia adds what neither provides: verifiable proof of how AI-assisted decisions were made, who approved them, and why — deployable in classified environments.',
     keyAngle: 'AI decision governance for intelligence operations',
     sector: 'Intelligence / Defense',
   },
@@ -127,10 +127,32 @@ module.exports = [
     hq: 'Alexandria, VA', stage: 'Seed to Growth', aum: '$6B+',
     thesis: 'Fintech specialist founded by Capital One co-founder. Deep financial services expertise and regulatory understanding.',
     portfolio: ['Nubank', 'Klarna', 'SoFi', 'CreditKarma', 'Remitly'],
-    whyAlign: 'QED\'s Capital One DNA means they understand financial regulation deeply. DORA + EU AI Act create mandatory AI governance for every financial institution.',
-    hookSlide: 'QED (Capital One co-founder) knows financial regulation. DORA mandates AI operational resilience for financial institutions by Jan 2025. Datacendia delivers: cryptographic evidence for every AI decision.',
-    keyAngle: 'DORA-mandated AI governance for financial services',
+    whyAlign: 'QED\'s Capital One DNA means deep understanding of financial regulation. DORA (in effect since Jan 2025) and the EU AI Act now mandate AI governance for every financial institution — and no incumbent solves this.',
+    hookSlide: 'Nubank, Klarna, SoFi, and CreditKarma all deploy AI for lending and credit decisions. Each faces growing regulatory demand for explainability and audit evidence. Datacendia is the governance infrastructure QED\'s portfolio companies need today.',
+    keyAngle: 'AI governance infrastructure for fintech lending and credit',
     sector: 'Fintech / RegTech',
+    customEmail: `**Subject:** Datacendia — AI governance infrastructure for fintech lending and credit
+
+**Body:**
+
+Hi [FIRST NAME],
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build the accountability layer for AI decisions in financial services — proving how and why every AI-assisted lending, credit, and risk decision was made.
+
+**The problem:** DORA is now in effect. The EU AI Act enforcement begins this year. Every fintech deploying AI for credit scoring, lending, or risk assessment needs verifiable evidence of fairness and compliance — and no platform provides this today.
+
+**Why QED:** You built QED from Capital One's DNA — deep financial regulation expertise. Your portfolio (Nubank, Klarna, SoFi, CreditKarma) all face these requirements. Datacendia is the governance infrastructure they need: audit-ready evidence for every AI decision, exportable for regulators on demand.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Pre-seed stage, Peru + Ireland, operating across EU and US markets.
+
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering is resolved — funds go to first enterprise pilots and EU AI Act regulatory validation.
+
+Deck attached. Happy to do a 20-minute walkthrough at your convenience.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com`,
   },
   {
     id: '039-ribbit', firm: 'Ribbit Capital', type: 'Venture Capital',
@@ -147,10 +169,32 @@ module.exports = [
     hq: 'New York, NY', stage: 'Series A to B', aum: '~$1B',
     thesis: 'Financial services technology. Founded by Hans Morris (ex-Visa President, ex-Citi CFO). 100+ senior financial services LP advisors. Deep regulatory expertise and bank network.',
     portfolio: ['Socure', 'Alloy', 'AcadiaSoft', 'Figure'],
-    whyAlign: 'Nyca bridges Wall Street and Silicon Valley — Hans Morris built the firm specifically to connect fintech to regulated financial institutions. DORA, EU AI Act, and Basel III create mandatory AI governance demand, and Nyca\'s 100+ senior financial services advisors understand this better than any VC.',
-    hookSlide: 'Nyca backed Socure (identity verification), Alloy (compliance automation), and Figure (blockchain lending) — all face AI governance requirements. Datacendia is the decision evidence layer their portfolio companies and their bank customers both need.',
+    whyAlign: 'Nyca bridges Wall Street and Silicon Valley — Hans Morris built the firm to connect fintech to regulated financial institutions. DORA, EU AI Act, and Basel III now create mandatory AI governance demand, and Nyca\'s 100+ senior financial services advisors understand this landscape better than any VC.',
+    hookSlide: 'Socure (identity verification), Alloy (compliance automation), and Figure (digital lending) all deploy AI for high-stakes financial decisions. Each needs audit-grade evidence of how those decisions are made. Datacendia is the governance layer Nyca\'s portfolio and their bank customers both need.',
     keyAngle: 'AI governance infrastructure for regulated financial services',
     sector: 'Financial Regulation',
+    customEmail: `**Subject:** Datacendia — AI decision evidence for regulated financial institutions
+
+**Body:**
+
+Hi [FIRST NAME],
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build the accountability layer for AI decisions in financial services — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators.
+
+**The problem:** DORA is now in effect. The EU AI Act enforcement begins this year. Every bank and fintech using AI for lending, compliance, or risk needs verifiable decision evidence — and no platform provides this today.
+
+**Why Nyca:** Hans Morris built Nyca to connect fintech to regulated financial institutions — that intersection is exactly where this problem lives. Your portfolio (Socure, Alloy, Figure) all deploy AI for high-stakes financial decisions and face growing governance requirements. Your 100+ senior financial services advisors understand this demand better than any VC.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Pre-seed stage, Peru + Ireland, operating across EU and US markets.
+
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering is resolved — funds go to first enterprise pilots and EU AI Act regulatory validation.
+
+Deck attached. Happy to do a 20-minute walkthrough at your convenience.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com`,
   },
   {
     id: '041-fin-capital', firm: 'Fin Capital', type: 'Venture Capital',

@@ -72,7 +72,7 @@ ul li::before{content:'→';position:absolute;left:0;color:#D4AF37;font-weight:7
   <div class="investor-badge">PREPARED FOR ${esc(inv.firm.toUpperCase())}</div>
   <p class="eyebrow">DATACENDIA</p>
   <h1>${esc(title)}</h1>
-  <p class="subtitle center">Decision Crisis Immunization Infrastructure — personalized to ${esc(inv.firm)}'s investment thesis</p>
+  <p class="subtitle center">Sovereign AI Decision Evidence Infrastructure — personalized to ${esc(inv.firm)}${inv.firm.endsWith('s') ? "'" : "'s"} investment thesis</p>
   <div class="gold-line"></div>
   <p class="subtitle center" style="margin-top:16px;font-size:14px">${esc(inv.type)} · ${esc(inv.hq)} · ${esc(inv.stage)} · ${esc(inv.aum)} AUM</p>
   <div class="footer"><span>&copy; 2024&ndash;2026 Datacendia, LLC</span><span>datacendia.com</span></div>
@@ -112,7 +112,7 @@ ul li::before{content:'→';position:absolute;left:0;color:#D4AF37;font-weight:7
   <ul>
     <li>AI systems make high-stakes decisions with no audit trail, no evidence, and no dissent tracking</li>
     <li>EU AI Act (enforcement 2025&ndash;2026) mandates governance for high-risk AI — penalties up to &euro;35M or 7% of global revenue</li>
-    <li>DORA requires operational resilience documentation for all AI systems in financial services by Jan 2025</li>
+    <li>DORA (in effect since Jan 2025) requires operational resilience documentation for all AI systems in financial services</li>
     <li>No existing platform provides cryptographic proof of AI-assisted decisions</li>
     <li>Enterprises face regulatory risk with every AI deployment — and have no solution</li>
   </ul>

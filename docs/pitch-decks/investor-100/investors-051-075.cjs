@@ -187,10 +187,32 @@ module.exports = [
     hq: 'Santa Clara, CA', stage: 'Series A to Growth', aum: '$1B+',
     thesis: 'NVIDIA\'s strategic investment arm. Backs AI companies that expand GPU adoption and the NVIDIA ecosystem.',
     portfolio: ['CoreWeave', 'Inflection AI', 'Recursion', 'Cohere'],
-    whyAlign: 'Datacendia is already an NVIDIA Inception member. NVIDIA Ventures can deepen the relationship — Datacendia drives GPU demand through multi-agent AI deliberation.',
-    hookSlide: 'Datacendia is already NVIDIA Inception member. NVIDIA Ventures can deepen this: multi-agent deliberation = GPU-intensive workloads. Enterprise governance drives enterprise GPU adoption.',
-    keyAngle: 'Existing NVIDIA relationship → deeper strategic alignment',
+    whyAlign: 'Datacendia is already an NVIDIA Inception member. As enterprises adopt AI at scale, they need governance infrastructure that proves every AI decision is accountable. That governance layer drives GPU demand — every deliberation runs inference.',
+    hookSlide: 'CoreWeave provides compute, Cohere provides models, Recursion applies AI to discovery. Datacendia adds what\'s missing: the accountability layer that makes enterprise AI deployable in regulated industries. More governed AI = more enterprise adoption = more GPU demand.',
+    keyAngle: 'AI governance drives enterprise GPU adoption at scale',
     sector: 'AI / GPU Computing',
+    customEmail: `**Subject:** Datacendia — AI governance that drives enterprise GPU adoption
+
+**Body:**
+
+Hi [FIRST NAME],
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We're an NVIDIA Inception member building the accountability layer for enterprise AI — the infrastructure that proves how and why every AI-assisted decision was made.
+
+**The opportunity:** Enterprises want to deploy AI at scale but can't — regulators demand evidence of how AI decisions are made (EU AI Act, DORA, SEC AI guidance). Datacendia removes that blocker. More governed AI means more enterprise adoption means more GPU demand.
+
+**Why NVIDIA Ventures:** Your portfolio provides compute (CoreWeave), models (Cohere), and AI applications (Recursion). Datacendia adds the missing piece: governance infrastructure that makes enterprise AI deployable in regulated industries. We're already in the NVIDIA ecosystem through Inception — a Ventures investment deepens that strategic alignment.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Pre-seed stage, Peru + Ireland, operating across EU and US markets.
+
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering is resolved — funds go to first enterprise pilots and EU AI Act regulatory validation.
+
+Deck attached. Happy to do a 20-minute walkthrough or live demo at your convenience.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com`,
   },
   {
     id: '070-cisco', firm: 'Cisco Investments', type: 'Corporate VC',
