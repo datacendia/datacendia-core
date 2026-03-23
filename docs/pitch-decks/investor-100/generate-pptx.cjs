@@ -195,7 +195,7 @@ function buildPPTX(inv) {
   s5.addText('Production platform at app.datacendia.com\nMulti-agent deliberation, decision audit trails, compliance dashboards, AI governance gateway \u2014 all live.', { x: 1.1, y: 5.1, w: 4.8, h: 1.2, fontSize: 11, color: MUTED, lineSpacingMultiple: 1.5, valign: 'top' });
   s5.addShape(pptx.ShapeType.roundRect, { x: 7, y: 4.5, w: 5.5, h: 2, fill: { color: CARD_BG }, rectRadius: 0.1 });
   s5.addText('NVIDIA Inception Member', { x: 7.3, y: 4.7, w: 5, h: 0.3, fontSize: 13, color: GOLD, bold: true });
-  s5.addText('Accepted into NVIDIA\u2019s elite startup program.\nDGX Cloud access, technical mentorship, co-marketing, and enterprise customer introductions.', { x: 7.3, y: 5.1, w: 4.8, h: 1.2, fontSize: 11, color: MUTED, lineSpacingMultiple: 1.5, valign: 'top' });
+  s5.addText('Accepted into NVIDIA\u2019s elite startup program.\nDGX Cloud access, technical mentorship, and co-marketing opportunities.', { x: 7.3, y: 5.1, w: 4.8, h: 1.2, fontSize: 11, color: MUTED, lineSpacingMultiple: 1.5, valign: 'top' });
   addFooter(s5);
 
   // Screenshot slides
