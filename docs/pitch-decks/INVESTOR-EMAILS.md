@@ -1239,7 +1239,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ### NYCA Partners
 **Deck:** `investor-100/pptx/040-nyca.pptx`
-*Venture Capital · New York, NY · $1B+*
+*Venture Capital · New York, NY · ~$1B*
 
 **Subject:** Datacendia — DORA & EU AI Act Decision Evidence Infrastructure | For NYCA Partners
 
@@ -1249,7 +1249,7 @@ Hi [FIRST NAME],
 
 I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer for enterprise AI — the infrastructure that produces cryptographic proof of how AI-assisted decisions are made.
 
-**Why NYCA Partners:** Nyca's regulatory network (including former OCC Comptroller) understands mandates better than any VC. DORA, EU AI Act, and Basel III create mandatory AI governance demand. Nyca's regulatory advisory network has unmatched insight. They know AI governance will be mandatory. Datacendia is built for the regulations Nyca's network enforces.
+**Why NYCA Partners:** Nyca bridges Wall Street and Silicon Valley — Hans Morris built the firm specifically to connect fintech to regulated financial institutions. DORA, EU AI Act, and Basel III create mandatory AI governance demand, and Nyca's 100+ senior financial services advisors understand this better than any VC. Nyca backed Socure (identity verification), Alloy (compliance automation), and Figure (blockchain lending) — all face AI governance requirements. Datacendia is the decision evidence layer their portfolio companies and their bank customers both need.
 
 **What's built (not idea-stage):**
 - 205K+ passing tests, 156 validated API endpoints, compliance-first architecture

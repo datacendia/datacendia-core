@@ -65,7 +65,7 @@
 |---|------|-------------------------|---------|---------------|----------|-----------|
 | 038 | **QED Investors** | Nigel Morris (co-founder), Frank Rotman | [qedinvestors.com](https://www.qedinvestors.com) | 🌐 [qedinvestors.com/contact](https://www.qedinvestors.com/contact/) | ⭐⭐⭐ | 038-qed |
 | 039 | **Ribbit Capital** | Micky Malka (founder), Nick Shalek | [ribbitcap.com](https://www.ribbitcap.com) | 🤝 Warm intro preferred / 🔗 LinkedIn | ⭐⭐ | 039-ribbit |
-| 040 | **Nyca Partners** | Hans Morris (founder, ex-OCC), David Bielan | [nyca.com](https://www.nyca.com) | 🌐 [nyca.com/contact](https://www.nyca.com/contact/) | ⭐⭐⭐ | 040-nyca |
+| 040 | **Nyca Partners** | Hans Morris (founder, ex-Visa President, ex-Citi CFO), Ravi Mohan (Partner & COO), Stephanie Khoo (Partner) | [nyca.com](https://www.nyca.com) | 🌐 [nyca.com/contact](https://www.nyca.com/contact/) | ⭐⭐⭐ | 040-nyca |
 | 041 | **Fin Capital** | Logan Allin (founder) | [fincapital.com](https://www.fincapital.com) | 🌐 [fincapital.com/contact](https://www.fincapital.com/contact/) | ⭐⭐ | 041-fin-capital |
 | 042 | **Motive Partners** | Rob Heyvaert, Stephen Daffron | [motivepartners.com](https://www.motivepartners.com) | 🌐 [motivepartners.com/contact](https://www.motivepartners.com/contact/) | ⭐⭐ | 042-motive |
 | 043 | **Plug and Play** | Saeed Amidi (CEO) | [plugandplaytechcenter.com](https://www.plugandplaytechcenter.com) | 🌐 [plugandplaytechcenter.com/startups](https://www.plugandplaytechcenter.com/startups/) | ⭐ | 043-plug-and-play |

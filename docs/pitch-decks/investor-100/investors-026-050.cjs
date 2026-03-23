@@ -144,12 +144,12 @@ module.exports = [
   },
   {
     id: '040-nyca', firm: 'Nyca Partners', type: 'Venture Capital',
-    hq: 'New York, NY', stage: 'Series A to B', aum: '$1B+',
-    thesis: 'Financial services technology. Co-founded by Hans Morris (ex-Visa, ex-Citigroup). Former OCC Comptroller as advisor. Deep regulatory expertise and bank network.',
+    hq: 'New York, NY', stage: 'Series A to B', aum: '~$1B',
+    thesis: 'Financial services technology. Founded by Hans Morris (ex-Visa President, ex-Citi CFO). 100+ senior financial services LP advisors. Deep regulatory expertise and bank network.',
     portfolio: ['Socure', 'Alloy', 'AcadiaSoft', 'Figure'],
-    whyAlign: 'Nyca\'s regulatory network (including former OCC Comptroller) understands mandates better than any VC. DORA, EU AI Act, and Basel III create mandatory AI governance demand.',
-    hookSlide: 'Nyca\'s regulatory advisory network has unmatched insight. They know AI governance will be mandatory. Datacendia is built for the regulations Nyca\'s network enforces.',
-    keyAngle: 'Regulatory expertise meets AI governance mandate',
+    whyAlign: 'Nyca bridges Wall Street and Silicon Valley — Hans Morris built the firm specifically to connect fintech to regulated financial institutions. DORA, EU AI Act, and Basel III create mandatory AI governance demand, and Nyca\'s 100+ senior financial services advisors understand this better than any VC.',
+    hookSlide: 'Nyca backed Socure (identity verification), Alloy (compliance automation), and Figure (blockchain lending) — all face AI governance requirements. Datacendia is the decision evidence layer their portfolio companies and their bank customers both need.',
+    keyAngle: 'AI governance infrastructure for regulated financial services',
     sector: 'Financial Regulation',
   },
   {
