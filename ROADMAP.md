@@ -1,6 +1,6 @@
 # Datacendia Product Roadmap
 
-> Last audited: March 21, 2026
+> Last audited: March 23, 2026
 > Source: Automated audit of `datacendia-core` and `datacendia-components`
 
 ---
@@ -48,7 +48,7 @@
 | **Agent Identity** | Add `agentId` field to gateway interactions — track which AI agent performed each action, not just which user | 2 days | 🔨 Build new |
 | **Scope Visibility UX** | Dashboard showing "this agent can access X but not Y" in plain language — the trust UX that the a16z post says is missing | 3 days | 🔨 Build new |
 | **Scope Audit Trail** | Log every scope check (allowed/denied) with cryptographic evidence — already have the signing infra, just need the scope events | 3 days | 🔧 Harden |
-| **Presidio PII Integration** | `PresidioPIIService.ts` (10KB) exists — wire ML-based NER into the regex-based `PIIDetector.ts` | 3 days | 🔗 Wire up |
+| ~~**Presidio PII Integration**~~ | ~~`PresidioPIIService.ts` wired into gateway `/scan` and `/test-pii` — ML-based NER with regex fallback~~ | ~~3 days~~ | ✅ Done |
 | **PII Evaluation Metrics** | `PIIEvaluationMetrics.ts` (15KB) exists — surface precision/recall/F1 on the gateway dashboard | 2 days | 🔗 Wire up |
 | **Custom PII Patterns** | Let orgs define industry-specific PII patterns (medical record numbers, IBANs, etc.) | 3 days | 🔨 Build new |
 | **HIPAA PII rules** | Healthcare-specific PII blocking rules for design partner #1 | 3 days | 🔨 Build new |
@@ -58,9 +58,9 @@
 | Item | Description | Effort | Work Type |
 |------|-------------|--------|-----------|
 | **Usage dashboard polish** | Self-service view of governance stats, PII detections, cost tracking — already exists, needs UX polish | 3 days | 🔧 Harden |
-| **Evidence export (PDF)** | One-click Governance Receipt export — `ManifestExporter.ts` (17KB) and `RegulatorsReceiptService.ts` (58KB) exist | 2 days | 🔗 Wire up |
+| ~~**Evidence export (PDF)**~~ | ~~Governance Receipt export (HTML/CSV/JSON) + Regulator's Receipt PDF routes fully wired~~ | ~~2 days~~ | ✅ Done |
 | **Splunk/Elastic SIEM** | `SIEMIntegration.ts` (15KB) exists — productize for design partners who need SIEM forwarding | 3 days | 🔗 Wire up |
-| **Prometheus /metrics** | `metrics/` directory exists — expose standard /metrics endpoint for Grafana | 2 days | 🔗 Wire up |
+| ~~**Prometheus /metrics**~~ | ~~`trackRequest` middleware wired into pipeline; `/metrics` exposes sovereign mode, business metrics, request latency~~ | ~~2 days~~ | ✅ Done |
 | **Horizontal scaling** | Make gateway stateless behind a load balancer for production deployments | 1 week | 🔧 Harden |
 | **Redis caching** | `cache.service.ts` exists — wire up Redis for session/policy caching | 3 days | 🔗 Wire up |
 | **GitHub Actions CI/CD** | Governance checks for AI model deployments in CI pipelines | 1 week | 🔨 Build new |
@@ -147,8 +147,8 @@ These services are built but need packaging for customers:
 |------|-------------|--------|-----------|
 | **Single-tenant deployment script** | Docker Compose + .env template for design partner environments | 3 days | 🔧 Harden |
 | **Onboarding wizard** | First-run setup: connect AI providers, set policies, invite users, pick tier | 1 week | 🔨 Build new |
-| **Tier licensing enforcement** | `licensing.service.ts` (18KB) exists — wire into route middleware | 3 days | 🔗 Wire up |
-| **Feature flags** | `FeatureControlService.ts` (43KB) exists — expose in admin UI | 3 days | 🔗 Wire up |
+| ~~**Tier licensing enforcement**~~ | ~~`requireLicense` middleware wired into all enterprise domain routes with pillar-based gating~~ | ~~3 days~~ | ✅ Done |
+| ~~**Feature flags**~~ | ~~Database-backed CRUD + tenant-specific overrides wired into admin API~~ | ~~3 days~~ | ✅ Done |
 | **Tenant isolation** | `TenantService.ts` (18KB) exists — multi-tenant data isolation | 1 week | 🔗 Wire up |
 
 ### E2. Inbound Scope Proxy — The "Scoped Gmail" Play (Weeks 2–8)
