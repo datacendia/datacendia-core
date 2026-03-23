@@ -4,7 +4,7 @@ Each email below is **individually customized** based on investor archetype, por
 
 Replace `[FIRST NAME]` with the actual contact name. Attach the **PDF version** of the deck.
 
-**Total: 483 personalized emails**
+**Total: 484 personalized emails**
 
 ## Archetype Distribution
 
@@ -18,7 +18,7 @@ Replace `[FIRST NAME]` with the actual contact name. Attach the **PDF version** 
 | Asia-Pacific | 39 |
 | Corporate Strategic | 33 |
 | Fintech | 33 |
-| Impact / ESG | 20 |
+| Impact / ESG | 21 |
 | Cybersecurity | 18 |
 | Healthcare | 12 |
 | Sovereign / Institutional | 11 |
@@ -3766,6 +3766,37 @@ I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer
 **The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
 
 I've attached a deck personalized for Deep Tech Alliance (EU). Happy to schedule a 20-minute deep dive or live demo at your convenience.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com
+
+---
+
+### IDB Lab (Inter-American Development Bank)
+**Deck:** `investor-100/pptx/121-idb-lab.pptx`
+*Development Finance / Venture · Washington, DC · IDB Group ($20B+ annual)*
+
+**Subject:** Datacendia — Accountable AI Infrastructure with Decision Evidence | For IDB Lab (Inter-American Development Bank)
+
+**Body:**
+
+Hi [FIRST NAME],
+
+I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer for enterprise AI — the infrastructure that produces cryptographic proof of how AI-assisted decisions are made.
+
+**Why IDB Lab (Inter-American Development Bank):** IDB Lab has an active responsible AI initiative for Latin America and features "Gender, AI, and Decision-Making" on their homepage. Brazil's AI Act, Mexico's AI strategy, and regional governance frameworks create demand for AI decision evidence infrastructure across 26 LatAm countries. IDB Lab invests in tech solving development challenges across 26 LatAm countries. Datacendia provides sovereign AI governance infrastructure — air-gapped deployment, multi-language support (26 languages including Spanish and Portuguese), and compliance mapping for regional AI regulations.
+
+**What's built (not idea-stage):**
+- 205K+ passing tests, 156 validated API endpoints, live at app.datacendia.com
+- Formal dissent tracking: every AI disagreement is logged, protected, and linked to outcomes — accountability by design
+- Multi-agent deliberation: 50+ agent presets ensure diverse perspectives on every decision, not AI groupthink
+- Cryptographic transparency: immutable evidence of how decisions were made, exportable for stakeholders
+
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
+
+I've attached a deck personalized for IDB Lab (Inter-American Development Bank). Happy to schedule a 20-minute deep dive or live demo at your convenience.
 
 Best,
 Stuart Rainey

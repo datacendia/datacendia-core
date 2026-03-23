@@ -202,4 +202,14 @@ module.exports = [
     keyAngle: 'European deep tech network for sovereign AI governance',
     sector: 'Digital Sovereignty / EU Network',
   },
+  {
+    id: '121-idb-lab', firm: 'IDB Lab (Inter-American Development Bank)', type: 'Development Finance / Venture',
+    hq: 'Washington, DC', stage: 'Early Stage (Equity, Loans, Grants)', aum: 'IDB Group ($20B+ annual)',
+    thesis: 'Innovation arm of the IDB Group. Invests in technology solving development challenges in Latin America and the Caribbean. Active responsible AI initiative for the region. CEO: Graham Macmillan.',
+    portfolio: ['Innogen Delta I', 'AgVentures III', '100+ portfolio companies across LatAm/Caribbean'],
+    whyAlign: 'IDB Lab has an active responsible AI initiative for Latin America and features "Gender, AI, and Decision-Making" on their homepage. Brazil\'s AI Act, Mexico\'s AI strategy, and regional governance frameworks create demand for AI decision evidence infrastructure across 26 LatAm countries.',
+    hookSlide: 'IDB Lab invests in tech solving development challenges across 26 LatAm countries. Datacendia provides sovereign AI governance infrastructure — air-gapped deployment, multi-language support (26 languages including Spanish and Portuguese), and compliance mapping for regional AI regulations.',
+    keyAngle: 'Sovereign AI governance for Latin American governments and financial institutions',
+    sector: 'Development Finance / Sovereign AI',
+  },
 ];

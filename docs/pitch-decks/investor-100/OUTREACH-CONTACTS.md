@@ -69,7 +69,7 @@
 | 041 | **Fin Capital** | Logan Allin (founder) | [fincapital.com](https://www.fincapital.com) | 🌐 [fincapital.com/contact](https://www.fincapital.com/contact/) | ⭐⭐ | 041-fin-capital |
 | 042 | **Motive Partners** | Rob Heyvaert, Stephen Daffron | [motivepartners.com](https://www.motivepartners.com) | 🌐 [motivepartners.com/contact](https://www.motivepartners.com/contact/) | ⭐⭐ | 042-motive |
 | 043 | **Plug and Play** | Saeed Amidi (CEO) | [plugandplaytechcenter.com](https://www.plugandplaytechcenter.com) | 🌐 [plugandplaytechcenter.com/startups](https://www.plugandplaytechcenter.com/startups/) | ⭐ | 043-plug-and-play |
-| 044 | **Anthemis Group** | Amy Nauiokas (founder), Ruth Foxe Blader | [anthemis.com](https://www.anthemis.com) | 🌐 [anthemis.com/contact](https://www.anthemis.com/contact/) | ⭐⭐ | 044-anthemis |
+| 044 | **Anthemis Group** | Amy Nauiokas (founder), Sean Park, Naoshir Vachha | [anthemis.com](https://www.anthemis.com) | 🌐 [anthemis.com/contact](https://www.anthemis.com/contact/) | ⭐⭐ | 044-anthemis |
 | 045 | **FTV Capital** | Brad Bernstein, John Harris | [ftvcapital.com](https://www.ftvcapital.com) | 🌐 [ftvcapital.com/contact](https://www.ftvcapital.com/contact/) | ⭐⭐ | 045-ftv |
 
 ---
@@ -161,6 +161,14 @@
 | 098 | **SIG (Susquehanna)** | Jeff Lunsford, Ian Sigalow | [sig.com](https://sig.com) | 🤝 Warm intro preferred | ⭐ | 098-susquehanna |
 | 099 | **B Capital Group** | Eduardo Saverin, Raj Ganguly | [bcapgroup.com](https://www.bcapgroup.com) | 🌐 [bcapgroup.com/contact](https://www.bcapgroup.com/contact/) | ⭐⭐ | 099-b-capital |
 | 100 | **Owl Ventures** | Tory Patterson, Ian Sobieski | [owlvc.com](https://www.owlvc.com) | 🌐 [owlvc.com/contact](https://www.owlvc.com/contact/) | ⭐ | 100-owl-ventures |
+
+---
+
+## Tier 9: AI Ethics, Responsible AI, Development Finance, Digital Sovereignty (101–121)
+
+| # | Firm | Key Partner(s) to Target | Website | How to Submit | Priority | Deck File |
+|---|------|-------------------------|---------|---------------|----------|-----------|
+| 121 | **IDB Lab (Inter-American Development Bank)** | Graham Macmillan (CEO), César Buenadicha, Yuri Soares | [bidlab.org](https://bidlab.org/en) | 🌐 [bidlab.org/en/origination](https://bidlab.org/en/origination) (contact IDB Lab specialist) | ⭐⭐⭐ | 121-idb-lab |
 
 ---
 
