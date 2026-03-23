@@ -185,12 +185,34 @@ module.exports = [
   {
     id: '044-anthemis', firm: 'Anthemis Group', type: 'Venture Capital',
     hq: 'London, UK', stage: 'Seed to Series B', aum: '$1B+',
-    thesis: 'Financial services transformation. European-based with deep insurance and banking networks. Focus on embedded finance and regtech.',
+    thesis: 'Early-stage ventures shaping the digital economy across fintech, AI, climate, health, and embedded innovation. Especially excited by founders working at the intersections of these systems. Finance as a powerful enabler.',
     portfolio: ['Betterment', 'Trov', 'Railsbank', 'ComplyAdvantage'],
-    whyAlign: 'Anthemis understands European financial regulation deeply. EU AI Act + DORA create immediate demand for AI governance in every European financial institution.',
-    hookSlide: 'Anthemis (London) specializes in financial services transformation. EU AI Act + DORA mandate AI governance across European finance. Datacendia is purpose-built for this regulatory moment.',
-    keyAngle: 'European financial AI governance mandate',
-    sector: 'Fintech / RegTech',
+    whyAlign: 'Anthemis invests at the intersection of fintech, AI, and climate — exactly where Datacendia sits. Every AI-driven lending decision needs fairness evidence (ECOA, CFPB). Every climate risk model needs audit trails (TCFD, TNFD). EU AI Act + DORA make this mandatory across European finance. Datacendia is the accountability layer that makes AI in financial services trustworthy and auditable.',
+    hookSlide: 'Anthemis backs founders at the intersection of fintech × AI × climate. Datacendia is that intersection: decision evidence infrastructure proving AI lending is fair, climate risk models are governed, and every AI decision in finance has a cryptographic audit trail. EU AI Act and DORA make this mandatory.',
+    keyAngle: 'AI accountability at the fintech × climate × fairness intersection',
+    sector: 'Fintech / AI Governance / Climate',
+    customEmail: `**Subject:** Datacendia — AI accountability infrastructure for finance, climate, and fairness
+
+**Body:**
+
+Hi [FIRST NAME],
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We make AI decisions in financial services accountable and auditable — the infrastructure layer that proves how and why every AI-assisted decision was made.
+
+**The problem we solve:** Regulators now require that AI-driven lending, credit scoring, and climate risk models produce verifiable evidence of fairness and compliance. The EU AI Act, DORA, ECOA, and TCFD create mandatory audit requirements that no financial institution can meet with current tooling.
+
+**Why Anthemis:** You invest at the intersection of fintech, AI, and climate — that's exactly where we sit. Every AI lending decision needs fairness evidence. Every climate risk model needs an audit trail. Datacendia is the accountability layer across all three. Your portfolio companies (ComplyAdvantage, Railsbank, Betterment) face these requirements today.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Pre-seed stage, London + remote, operating across EU and US markets.
+
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering is resolved — funds go to first enterprise pilots and EU AI Act regulatory validation.
+
+I've attached our deck. Happy to do a 20-minute walkthrough at your convenience.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com`,
   },
   {
     id: '045-ftv', firm: 'FTV Capital', type: 'Growth Equity',

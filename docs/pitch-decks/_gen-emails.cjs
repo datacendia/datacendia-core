@@ -369,6 +369,7 @@ function normalize(inv, source) {
       id: inv.id,
       num: parseInt((inv.id || '').split('-')[0]) || 0,
       slug: (inv.id || '').replace(/^\d+-/, ''),
+      customEmail: inv.customEmail || '',
       _source: 'inv100',
     };
   } else {
@@ -400,6 +401,22 @@ function generateEmail(inv) {
   const archetype = classifyArchetype(inv);
   const firm = inv._firm;
   const deckPath = getDeckPath(inv);
+
+  // Custom email override — if investor has a customEmail field, use it verbatim
+  if (inv.customEmail) {
+    const ctxParts = [];
+    if (inv.type) ctxParts.push(inv.type);
+    if (inv.hq || inv.loc) ctxParts.push(inv.hq || inv.loc);
+    if (inv.aum) ctxParts.push(inv.aum);
+    const contextLine = ctxParts.length ? `*${ctxParts.join(' · ')}*` : '';
+    const lines = [];
+    lines.push(`### ${firm}`);
+    lines.push(`**Deck:** \`${deckPath}\``);
+    if (contextLine) lines.push(contextLine);
+    lines.push('');
+    lines.push(inv.customEmail.trim());
+    return { text: lines.join('\n'), archetype };
+  }
 
   // Context line
   const ctxParts = [];

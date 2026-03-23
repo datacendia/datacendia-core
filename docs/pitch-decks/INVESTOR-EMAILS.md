@@ -14,10 +14,10 @@ Replace `[FIRST NAME]` with the actual contact name. Attach the **PDF version** 
 | AI/ML Infrastructure | 55 |
 | Growth / PE / Crossover | 54 |
 | European | 43 |
-| Defense & Government | 39 |
+| Defense & Government | 40 |
 | Asia-Pacific | 39 |
 | Corporate Strategic | 33 |
-| Fintech | 33 |
+| Fintech | 32 |
 | Impact / ESG | 21 |
 | Cybersecurity | 18 |
 | Healthcare | 12 |
@@ -1367,25 +1367,23 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 **Deck:** `investor-100/pptx/044-anthemis.pptx`
 *Venture Capital · London, UK · $1B+*
 
-**Subject:** Datacendia — DORA & EU AI Act Decision Evidence Infrastructure | For Anthemis Group
+**Subject:** Datacendia — AI accountability infrastructure for finance, climate, and fairness
 
 **Body:**
 
 Hi [FIRST NAME],
 
-I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer for enterprise AI — the infrastructure that produces cryptographic proof of how AI-assisted decisions are made.
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We make AI decisions in financial services accountable and auditable — the infrastructure layer that proves how and why every AI-assisted decision was made.
 
-**Why Anthemis Group:** Anthemis understands European financial regulation deeply. EU AI Act + DORA create immediate demand for AI governance in every European financial institution. Anthemis (London) specializes in financial services transformation. EU AI Act + DORA mandate AI governance across European finance. Datacendia is purpose-built for this regulatory moment.
+**The problem we solve:** Regulators now require that AI-driven lending, credit scoring, and climate risk models produce verifiable evidence of fairness and compliance. The EU AI Act, DORA, ECOA, and TCFD create mandatory audit requirements that no financial institution can meet with current tooling.
 
-**What's built (not idea-stage):**
-- 205K+ passing tests, 156 validated API endpoints, compliance-first architecture
-- Automated evidence for SOC 2, ISO 27001, GDPR, DORA, and EU AI Act — one-click audit packets
-- Cryptographic decision evidence: immutable audit trail with Ed25519 signatures for every AI action
-- Sovereign deployment: private cloud or on-prem, no CLOUD Act exposure, zero-copy data architecture
+**Why Anthemis:** You invest at the intersection of fintech, AI, and climate — that's exactly where we sit. Every AI lending decision needs fairness evidence. Every climate risk model needs an audit trail. Datacendia is the accountability layer across all three. Your portfolio companies (ComplyAdvantage, Railsbank, Betterment) face these requirements today.
 
-**The ask:** $1.5M pre-seed at $7M pre-money. Engineering risk is resolved — this is a GTM-stage investment. Funds go to first enterprise pilots, SOC 2 Type II certification, and EU AI Act regulatory validation.
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Pre-seed stage, London + remote, operating across EU and US markets.
 
-I've attached a deck personalized for Anthemis Group. Happy to schedule a 20-minute deep dive or live demo at your convenience.
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering is resolved — funds go to first enterprise pilots and EU AI Act regulatory validation.
+
+I've attached our deck. Happy to do a 20-minute walkthrough at your convenience.
 
 Best,
 Stuart Rainey

@@ -69,7 +69,7 @@
 | 041 | **Fin Capital** | Logan Allin (founder) | [fincapital.com](https://www.fincapital.com) | 🌐 [fincapital.com/contact](https://www.fincapital.com/contact/) | ⭐⭐ | 041-fin-capital |
 | 042 | **Motive Partners** | Rob Heyvaert, Stephen Daffron | [motivepartners.com](https://www.motivepartners.com) | 🌐 [motivepartners.com/contact](https://www.motivepartners.com/contact/) | ⭐⭐ | 042-motive |
 | 043 | **Plug and Play** | Saeed Amidi (CEO) | [plugandplaytechcenter.com](https://www.plugandplaytechcenter.com) | 🌐 [plugandplaytechcenter.com/startups](https://www.plugandplaytechcenter.com/startups/) | ⭐ | 043-plug-and-play |
-| 044 | **Anthemis Group** | Amy Nauiokas (founder), Sean Park, Naoshir Vachha | [anthemis.com](https://www.anthemis.com) | 🌐 [anthemis.com/contact](https://www.anthemis.com/contact/) | ⭐⭐ | 044-anthemis |
+| 044 | **Anthemis Group** | Amy Nauiokas (founder), Sean Park, Naoshir Vachha | [anthemis.com](https://www.anthemis.com) | ✉️ pitch@anthemis.com · [How to Pitch](https://www.anthemis.com/how-to-pitch-us/) | ⭐⭐⭐ | 044-anthemis |
 | 045 | **FTV Capital** | Brad Bernstein, John Harris | [ftvcapital.com](https://www.ftvcapital.com) | 🌐 [ftvcapital.com/contact](https://www.ftvcapital.com/contact/) | ⭐⭐ | 045-ftv |
 
 ---
