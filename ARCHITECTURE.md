@@ -134,23 +134,30 @@ Eight frontend components provide user-facing interfaces for the platform's cryp
 | **CendiaEscrow™** | `/cortex/crypto/escrow` | Shamir SSS + VDF time-lock management | Preview |
 | **CendiaReplay™** | `/cortex/council/replay-theater` | Decision deliberation playback theater | Preview |
 
-### Enterprise Tier Services (gated in Community Edition)
-The following services are available in the full platform (`datacendia-components`) and show an upgrade page in the Community Edition:
+### Paid Tier Services (gated in Community Edition)
+
+The following services are available in paid tiers (`datacendia-components`) and show an upgrade page in the Community Edition. All sidebar items for gated features show a lock icon and redirect to `/cortex/upgrade`.
 
 | Service | Route | Tier | Purpose |
 |---------|-------|------|----------|
-| **CendiaCompliance™** | `/cortex/compliance/continuous-monitor` | Enterprise | Continuous compliance monitoring |
-| **CendiaGapScan™** | `/cortex/compliance/gap-scanner` | Enterprise | Gap analysis across 8 frameworks |
-| **CendiaEscrow™** | `/cortex/crypto/escrow` | Enterprise | Shamir SSS + VDF time-locks |
-| **CendiaCourt™** | `/cortex/governance/constitutional-court` | Enterprise | Dispute resolution |
-| **CendiaPulse™** | `/cortex/monitor/live` | Enterprise | Real-time agent monitor |
-| **CendiaEcho™** | `/cortex/crown/echo` | Enterprise | Decision outcome tracking |
-| **CendiaGnosis™** | `/cortex/crown/gnosis` | Enterprise | Sovereign education engine |
+| **CendiaCompliance™** | `/cortex/compliance/continuous-monitor` | Foundation | Continuous compliance monitoring |
+| **CendiaGapScan™** | `/cortex/compliance/gap-scanner` | Foundation | Gap analysis across 8+ frameworks |
+| **CendiaEcho™** | `/cortex/crown/echo` | Foundation | Decision outcome tracking |
+| **CendiaGnosis™** | `/cortex/crown/gnosis` | Foundation | Cross-decision knowledge graph |
+| **OmniTranslate** | via API | Foundation | 26-language compliance translation |
 | **CendiaRedTeam™** | `/cortex/crown/red-team` | Enterprise | Automated adversarial testing |
-| **COLLAPSE** | `/cortex/sovereign/collapse` | Strategic | Policy stress-testing |
+| **CendiaEscrow™** | `/cortex/crypto/escrow` | Enterprise | Shamir SSS + VDF time-locks |
+| **CendiaCourt™** | `/cortex/governance/constitutional-court` | Enterprise | Constitutional court / dispute resolution |
+| **CendiaPulse™** | `/cortex/monitor/live` | Enterprise | Real-time agent monitor |
+| **Shadow Council** | via API | Enterprise | Parallel adversarial deliberation |
+| **SSO/MFA** | via Keycloak | Enterprise | Enterprise authentication |
+| **SIEM Integration** | via API | Enterprise | Splunk, Sentinel, QRadar, Elastic |
+| **ZK Proofs** | `/cortex/security/zkp` | Enterprise | Zero-knowledge compliance proofs |
+| **COLLAPSE** | `/cortex/sovereign/collapse` | Strategic | Policy stress-testing (12 adversarial agents) |
 | **SGAS** | `/cortex/sovereign/sgas` | Strategic | Synthetic governance agents |
-| **Verticals** | `/verticals` | Strategic | 30 full vertical packs |
-| **Frontier** | `/cortex/sovereign/sanctuary` | Strategic | Crisis bunker capabilities |
+| **Verticals** | `/verticals/*` | Strategic | 30 full vertical packs (12+ agents each) |
+| **Federated Mesh** | via API | Strategic | Multi-org governance federation |
+| **Air-Gapped** | via sovereign toggle | Strategic | Data diode, TPM, portable instances |
 
 ### ServiceInfoDropdown (v0.2.3+)
 Foundation tier service pages include a collapsible `ServiceInfoDropdown` component that provides:
@@ -166,13 +173,13 @@ All decisions are recorded in a Merkle tree structure. Each entry is cryptograph
 ### Domain Routers
 The 156 route files are organized into 14 logical domain routers (auth, council, data, governance, security, sovereign, legal, verticals, platform, simulation, workflows, intelligence, demo, enterprise). Each domain router aggregates related routes under a single prefix.
 
-## Community vs Enterprise
+## Pricing Tiers (5 Tiers)
 
-This is the **Community Edition** (Apache 2.0), which provides the **Foundation tier**: Council, Replay, DECIDE, DCII, and Gateway. Enterprise and Strategic tier features (Comply, Escrow, Crown Jewels, COLLAPSE, Sovereign patterns, etc.) are available in the full platform via the private `datacendia-components` repository.
+This is the **Community Edition** (Apache 2.0, free), providing the base platform: Council, Replay, DECIDE, DCII, Gateway, PII (regex), Evidence, 18+ verticals.
 
-Enterprise and Strategic navigation items in the sidebar show a lock icon and redirect to an upgrade page explaining what's available and how to get access.
+Paid tiers (Pilot $50K, Foundation $150K–$500K, Enterprise $500K–$1.5M, Strategic $1.5M+) are in `datacendia-components`. See [TIER-MAPPING.md](TIER-MAPPING.md) and [docs/PRICING.md](docs/PRICING.md) for complete details.
 
-The backend uses dynamic `import()` inside try/catch for enterprise modules, so the community edition runs without them.
+Gated sidebar items show a lock icon and redirect to `/cortex/upgrade` (tier-aware, detects feature from URL). The backend uses dynamic `import()` inside try/catch for paid modules, so the Community Edition runs without them.
 
 ## Related Repos
 

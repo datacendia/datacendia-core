@@ -148,54 +148,83 @@
 | **Traceability Matrix** | `decision-governance-infrastructure/docs/TRACEABILITY-MATRIX.md` | DGI → Core mapping |
 | **SBOM** | `datacendia-marketing/trust/sbom.json` | Platform (CycloneDX) |
 
-## Tier Architecture
+## Tier Architecture (5 Tiers)
 
 ```
 ┌────────────────────────────────────────────────────────────────────┐
-│                 STRATEGIC (datacendia-components)                    │
-│  COLLAPSE · SGAS · Full Vertical Packs · Frontier                  │
-│  CendiaNation · Defense/Pharma/Govt Packs                          │
+│                  STRATEGIC — $1.5M+/yr (components)                 │
+│  Air-gapped · Data diode · TPM attestation · Federated mesh       │
+│  Post-quantum crypto · Portable instances · CendiaBlackBox        │
+│  CendiaMirage · Nation-scale deployment · Defense-grade            │
 │  ──────────────────────────────────────────────────────────────────│
-│                ENTERPRISE (datacendia-components)                    │
-│  Stress-Test · Comply · Gap Scan · Escrow · Govern                 │
-│  Sovereign (18 routes / 22 patterns) · Operate (CendiaPulse)       │
-│  Crown Jewels: Echo · Gnosis · RedTeam                             │
-│  15 C-Suite Agents · 35+ Modes · SSO/CAC/PIV                      │
-│  CendiaApotheosis · OmniTranslate · CendiaCrucible                │
-│  CendiaOrchestrate (60+ services, all tiers)                      │
+│                  ENTERPRISE — $500K–$1.5M/yr (components)           │
+│  COLLAPSE stress testing · Shadow Council · 12 adversarial agents  │
+│  SSO/MFA (Keycloak) · SIEM (Splunk, Sentinel, QRadar)            │
+│  Zero-Knowledge Proofs · Multi-tenant · Constitutional Court       │
+│  Sovereign LLM providers · Sovereign online toggle                │
+│  CendiaRedTeam · Decision DNA · CendiaApotheosis                 │
 │  ──────────────────────────────────────────────────────────────────│
-│                 FOUNDATION (datacendia-core — Apache 2.0)            │
-│  The Council™ · CendiaReplay™ · CendiaGateway™                     │
-│  DECIDE: Chronos · PreMortem · Ghost Board · Decision Debt         │
-│  DCII: Truth · Notary · Witness · Timestamp · Similarity · Memory  │
-│  Pulse (monitoring) · Bridge (workflows) · Graph (knowledge)       │
-│  Compliance Readiness · Immutable Audit Ledger · Ollama/NIM        │
-│  Service Orchestration Workflow Builder (17 Foundation services)    │
-│  26 Vertical Frameworks (hub teaser) · Docker Compose              │
-│  Browser Extensions · ServiceInfoDropdown (guided onboarding)      │
+│                  FOUNDATION — $150K–$500K/yr (components)           │
+│  Full compliance engines (Basel III, EU AI Act, cross-jurisdiction) │
+│  ML-based PII (Presidio) · Echo/Gnosis evidence · OmniTranslate  │
+│  Expanded verticals (30, full decision schemas, 12+ agents each)  │
+│  Gap Scanner · Regulatory Sandbox · Advanced analytics            │
+│  ──────────────────────────────────────────────────────────────────│
+│                  PILOT — $50K/yr (components)                       │
+│  Managed deployment · 99.5% SLA · Priority support                │
+│  Full deliberation engine · 90-day money-back guarantee           │
+│  Dedicated onboarding · Basic compliance mapping                  │
+│  ──────────────────────────────────────────────────────────────────│
+│                  COMMUNITY — Free (datacendia-core, Apache 2.0)     │
+│  The Council™ · CendiaReplay™ · CendiaGateway™                    │
+│  DECIDE: Chronos · PreMortem · Ghost Board · Decision Debt        │
+│  DCII: Truth · Notary · Witness · Timestamp · Similarity · Memory │
+│  Pulse (monitoring) · Bridge (workflows) · Graph (knowledge)      │
+│  PII detection (regex) · Immutable audit ledger · Evidence vault  │
+│  18+ industry verticals (basic) · Browser extensions              │
+│  Service Orchestration Workflow Builder (17 services)             │
+│  Self-hosted · No SLA · No managed support                       │
 └────────────────────────────────────────────────────────────────────┘
 ```
 
+## Sovereign Online Toggle (Enterprise+)
+
+Enterprise and Strategic tiers support fully sovereign deployments via a master environment toggle:
+
+```
+DATACENDIA_ONLINE_MODE=false         → All external calls blocked
+DATACENDIA_CLOUD_AI_FALLBACK=error   → Hard 503 (auditor-safe default)
+DATACENDIA_CLOUD_AI_FALLBACK=local   → Silent route to Ollama/NIM/Triton
+```
+
+When offline mode is active:
+- Cloud AI providers (OpenAI, Anthropic) → blocked or routed to local LLM
+- External data feeds (FRED) → cached/local datasets
+- External notifications (email, webhook, SIEM) → internal event bus only
+- System validates at startup that local providers are configured
+
+The `SovereignModeService` lives in `datacendia-components/backend/src/services/sovereign/SovereignModeService.ts` and is wired into the InferenceService, FREDDataService, SIEMIntegration, email, and WebhookNotifier.
+
 ## Cross-Repo Comparison: Core vs Components
 
-| Dimension | Core (Foundation) | Components (Enterprise+Strategic) |
-|-----------|-------------------|-----------------------------------|
-| **License** | Apache 2.0 (open source) | Proprietary |
-| **Price** | Free | From $499/mo (Enterprise) / Custom (Strategic) |
-| **Total Routes** | ~170 accessible (~249 total, 79 gated) | ~274 total (~104 additional) |
-| **Deliberation Engine** | ✅ Full (13 pages) | — (included via Core) |
-| **Decision Intelligence** | 4 core tools (Chronos, PreMortem, GhostBoard, DecisionDebt) | +8 advanced (Lens, AuditProvenance, Regulatory, Orbit, Consensus, What-If, Synthesis, RDP) |
-| **Crisis Immunization** | ✅ Full DCII (7 pages) | — (included via Core) |
-| **AI Gateway** | ✅ CendiaGateway + browser extensions | — (included via Core) |
-| **Knowledge Graph** | ✅ (3 pages: Explorer, Lineage, Entity) | — (included via Core) |
-| **Compliance** | ✅ Basic (readiness checklist, 1 page) | ✅ 4 services (Continuous Monitor, Sandbox, Cross-Jurisdiction, Receipt) |
-| **Governance/Court** | ❌ (gated → UpgradePage) | ✅ 2 services (Decision Packets, Constitutional Court) |
-| **Crown Jewels** | ❌ (gated → UpgradePage) | ✅ 3 dashboards (Echo, RedTeam, Gnosis) |
-| **Sovereign Deployment** | ❌ (gated → UpgradePage) | ✅ 18 routes (13 sovereign pages, 22 architectural patterns) |
-| **Industry Verticals** | Hub teaser only (list visible, pages gated) | ✅ 26 full vertical packs |
-| **Stress Testing** | ❌ (gated → UpgradePage) | ✅ CendiaCrucible + AdversarialRedTeam + COLLAPSE (Strategic) |
-| **Live Operations** | Basic (Pulse — 3 pages) | ✅ CendiaPulse WebSocket (LiveAgentMonitor) |
-| **Service Orchestration** | ✅ Workflow Builder (17 Foundation services) | ✅ Workflow Builder (60+ services, all tiers) |
-| **ZKP / Crypto** | ❌ (gated → UpgradePage) | ✅ Escrow + ZKP |
-| **SSO/CAC/PIV** | ❌ | ✅ SSOService + CAC/PIV auth |
-| **HA / Monitoring** | Docker Compose (dev) | Production HA + Prometheus/Grafana/Jaeger |
+| Dimension | Community (Core) | Pilot+ (Components) |
+|-----------|-----------------|---------------------|
+| **License** | Apache 2.0 (open source) | Commercial |
+| **Price** | Free | $50K – $1.5M+/yr |
+| **Deliberation Engine** | ✅ Full (13 pages) | ✅ (included via Core) |
+| **Decision Intelligence** | 4 core (Chronos, PreMortem, GhostBoard, DecisionDebt) | +8 advanced (Lens, Regulatory, Orbit, Consensus, What-If, Synthesis, RDP, Decision DNA) |
+| **DCII Services** | ✅ Full (7 pages) | ✅ (included via Core) |
+| **CendiaGateway** | ✅ + browser extensions | ✅ (included via Core) |
+| **PII Detection** | Regex (10 types) | ML-based (Presidio, 40+ types) — Foundation+ |
+| **Compliance** | Basic (enforcer + dashboard) | Full engines (Basel III, EU AI Act, cross-jurisdiction) — Foundation+ |
+| **Evidence** | Basic (vault + export) | Echo/Gnosis audit replay — Foundation+ |
+| **Industry Verticals** | 18 basic templates | 30 expanded (12+ agents each) — Foundation+ |
+| **Stress Testing** | ❌ (gated → UpgradePage) | COLLAPSE + 12 adversarial agents — Enterprise+ |
+| **Crown Jewels** | ❌ (gated → UpgradePage) | Echo, Gnosis, RedTeam — Foundation+ |
+| **SSO/MFA** | ❌ | Keycloak integration — Enterprise+ |
+| **SIEM** | ❌ | Splunk, Sentinel, QRadar, Elastic — Enterprise+ |
+| **Sovereign/Air-gapped** | ❌ | Online toggle + air-gapped deployment — Enterprise+/Strategic |
+| **ZK Proofs** | ❌ (gated → UpgradePage) | ✅ — Enterprise+ |
+| **Federated Mesh** | ❌ | Multi-org governance — Strategic |
+| **Post-Quantum Crypto** | ❌ | Dilithium, SPHINCS+ — Strategic |
+| **Managed Platform** | Self-hosted only | Managed deployment + SLA — Pilot+ |

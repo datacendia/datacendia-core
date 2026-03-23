@@ -381,30 +381,45 @@ See [COMMUNITY.md](COMMUNITY.md) for the full open-source boundary definition.
 
 ---
 
-## Enterprise Edition
+## Pricing & Tiers
 
-**Datacendia Enterprise** adds premium capabilities for regulated industries:
+Datacendia uses an **open-core** model. The Community tier is this repository (Apache 2.0, free). All paid tiers are in [datacendia-components](https://github.com/datacendia/datacendia-components) (commercial license).
 
-| Feature | Community | Enterprise |
-|---------|:---------:|:----------:|
-| Council Engine | Yes | Yes |
-| Immutable Audit Ledger | Yes | Yes |
-| 29 Vertical Frameworks | Yes | Yes |
-| Infrastructure (Kafka, Temporal, etc.) | Yes | Yes |
-| CendiaGateway (AI governance proxy) | Yes | Yes |
-| CendiaReplay (decision playback theater) | Yes | Yes |
-| DCII Service UIs (Truth, Notary, Witness, etc.) | Yes | Yes |
-| ServiceInfoDropdown (guided onboarding) | Yes | Yes |
-| Service Orchestration Workflow Builder (17 services) | Yes | Yes (60+ services) |
-| Stress-Test, Comply, Gap Scan, Escrow | -- | Yes |
-| Govern, Sovereign, Operate (CendiaPulse) | -- | Yes |
-| Crown Jewels (Echo, Gnosis, RedTeam) | -- | Yes |
-| COLLAPSE, SGAS, Full Verticals, Frontier | -- | Yes |
-| 22 Sovereign Architecture Patterns | -- | Yes |
-| CendiaApotheosis Self-Improvement | -- | Yes |
-| OmniTranslate (100+ languages) | -- | Yes |
-| Full Vertical Packs (12+ agents/industry) | -- | Yes |
-| Enterprise SLA & Support | -- | Yes |
+| Tier | Price | What You Get |
+|------|-------|-------------|
+| **Community** | Free (Apache 2.0) | Cloud AI governance, basic Council, regex PII, evidence vault, 18+ verticals, CendiaGateway. Self-hosted. No SLA. |
+| **Pilot** | $50K/yr | Managed deployment, 99.5% SLA, priority support, full deliberation engine, 90-day money-back guarantee. |
+| **Foundation** | $150K--$500K/yr | Full compliance engines (Basel III, EU AI Act, cross-jurisdiction), ML-based PII (Presidio), Echo/Gnosis evidence, OmniTranslate (26 languages), expanded verticals. |
+| **Enterprise** | $500K--$1.5M/yr | COLLAPSE stress testing, 12 adversarial agents, Shadow Council, sovereign LLM providers (Ollama/NIM/Triton), SSO/MFA, SIEM, ZK proofs, multi-tenant. |
+| **Strategic** | $1.5M+/yr | Air-gapped, data diode, TPM attestation, federated mesh, post-quantum crypto, defense-grade, portable instances. |
+
+### Feature Comparison
+
+| Capability | Community | Pilot | Foundation | Enterprise | Strategic |
+|-----------|:---------:|:-----:|:----------:|:----------:|:---------:|
+| Council Engine (multi-agent deliberation) | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Immutable Audit Ledger (Merkle-signed) | ✅ | ✅ | ✅ | ✅ | ✅ |
+| CendiaGateway (AI governance proxy) | ✅ | ✅ | ✅ | ✅ | ✅ |
+| CendiaReplay (decision playback) | ✅ | ✅ | ✅ | ✅ | ✅ |
+| DCII Services (Truth, Notary, Witness) | ✅ | ✅ | ✅ | ✅ | ✅ |
+| PII Detection | Regex | Regex | ML (Presidio) | ML + Custom | ML + Custom |
+| Industry Verticals | 18 basic | 18 basic | 30 expanded | 30 full | 30 full + custom |
+| Managed Platform & SLA | -- | ✅ 99.5% | ✅ 99.9% | ✅ 99.95% | ✅ Custom |
+| Compliance Engines (Basel III, EU AI Act) | -- | -- | ✅ | ✅ | ✅ |
+| Echo/Gnosis Evidence & Audit Replay | -- | -- | ✅ | ✅ | ✅ |
+| OmniTranslate (26 languages) | -- | -- | ✅ | ✅ | ✅ |
+| COLLAPSE Stress Testing | -- | -- | -- | ✅ | ✅ |
+| Shadow Council & Red Team | -- | -- | -- | ✅ | ✅ |
+| SSO/MFA (Keycloak) | -- | -- | -- | ✅ | ✅ |
+| SIEM Integration (Splunk, Sentinel) | -- | -- | -- | ✅ | ✅ |
+| Sovereign LLM Providers (offline) | -- | -- | -- | ✅ | ✅ |
+| Zero-Knowledge Proofs | -- | -- | -- | ✅ | ✅ |
+| Air-Gapped Deployment | -- | -- | -- | -- | ✅ |
+| Data Diode & TPM Attestation | -- | -- | -- | -- | ✅ |
+| Federated Mesh (multi-org) | -- | -- | -- | -- | ✅ |
+| Post-Quantum Cryptography | -- | -- | -- | -- | ✅ |
+
+> **Detailed tier mapping:** See [TIER-MAPPING.md](TIER-MAPPING.md) for the complete service-by-service breakdown.
 
 **Contact:** [enterprise@datacendia.com](mailto:enterprise@datacendia.com) &middot; [datacendia.com](https://datacendia.com)
 
