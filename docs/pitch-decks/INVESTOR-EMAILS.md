@@ -71,7 +71,7 @@ Hi [FIRST NAME],
 
 I'm Stuart Rainey, founder of Datacendia. I've built the decision evidence layer for enterprise AI — the infrastructure that produces cryptographic proof of how AI-assisted decisions are made.
 
-**Why Sequoia Capital:** Datacendia is creating the AI governance category — no incumbent exists. Like Snowflake did for cloud data, Datacendia defines how enterprises prove AI accountability. Sequoia invested in Snowflake (data cloud) and Scale AI (data labeling). Datacendia is the next data infrastructure layer: cryptographic proof that AI decisions are accountable.
+**Why Sequoia Capital:** David Cahn wrote in December 2025 that "big enterprises are struggling to implement AI in-house, which is leading to fatigue and disappointment" and that "with enterprises facing adoption fatigue on DIY implementations, startups are gaining even more momentum." Datacendia is exactly that startup — purpose-built AI governance infrastructure so enterprises don't have to build it themselves. Sequoia invested in Snowflake (data cloud), Scale AI (data labeling), and Vanta (compliance automation). Datacendia is the next infrastructure layer: cryptographic proof that AI decisions are accountable — solving the enterprise adoption fatigue David identified.
 
 **What's built (not idea-stage):**
 - 205K+ passing tests, 156 validated API endpoints, live production platform at app.datacendia.com

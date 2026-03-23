@@ -18,9 +18,9 @@ module.exports = [
     hq: 'Menlo Park, CA', stage: 'Seed to Growth', aum: '$85B+',
     thesis: 'Back daring founders building legendary companies. Sequoia focuses on companies that can define or reshape entire categories.',
     portfolio: ['Stripe', 'Snowflake', 'Notion', 'Scale AI', 'Vanta'],
-    whyAlign: 'Datacendia is creating the AI governance category — no incumbent exists. Like Snowflake did for cloud data, Datacendia defines how enterprises prove AI accountability.',
-    hookSlide: 'Sequoia invested in Snowflake (data cloud) and Scale AI (data labeling). Datacendia is the next data infrastructure layer: cryptographic proof that AI decisions are accountable.',
-    keyAngle: 'Category-defining AI governance infrastructure',
+    whyAlign: 'David Cahn wrote in December 2025 that "big enterprises are struggling to implement AI in-house, which is leading to fatigue and disappointment" and that "with enterprises facing adoption fatigue on DIY implementations, startups are gaining even more momentum." Datacendia is exactly that startup — purpose-built AI governance infrastructure so enterprises don\'t have to build it themselves.',
+    hookSlide: 'Sequoia invested in Snowflake (data cloud), Scale AI (data labeling), and Vanta (compliance automation). Datacendia is the next infrastructure layer: cryptographic proof that AI decisions are accountable — solving the enterprise adoption fatigue David identified.',
+    keyAngle: 'Solving enterprise AI adoption fatigue with purpose-built governance infrastructure',
     sector: 'AI Infrastructure',
   },
   {
