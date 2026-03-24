@@ -917,12 +917,12 @@ module.exports = [
     contactUrl: 'https://kinexon.com/contact/',
   },
   {
-    company: 'Celtic FC', vertical: 'sport', subCategory: 'Football Club (Scottish Premiership)',
+    company: 'Celtic FC', vertical: 'sport', subCategory: 'European Football — 1967 European Cup Winners',
     hq: 'Glasgow, Scotland',
-    aiUseCase: 'AI match analysis, player recruitment, and fan engagement',
-    painPoint: 'AI drives scouting, tactical analysis, and fan engagement for one of Europe\'s most historic clubs — UEFA FFP, Scottish FA governance, and EU AI Act require verifiable evidence of AI-assisted recruitment and performance decisions.',
+    aiUseCase: 'AI scouting, tactical match analysis, and fan engagement for a 55-time Scottish league champion and 1967 European Cup winner',
+    painPoint: 'Celtic FC (est. 1887) is a publicly traded company (Celtic plc) with 55 league titles, 42 Scottish Cups, and a 60,411-seat stadium — AI-driven scouting and match analytics decisions carry investor governance, UEFA FFP, and EU AI Act obligations requiring verifiable evidence.',
     contact: 'Michael Nicholson', contactTitle: 'Chief Executive',
-    contactEmail: 'https://www.linkedin.com/company/celtic-football-club/',
-    contactUrl: 'https://www.celticfc.com/contact-us',
+    contactEmail: 'commercial@celticfc.co.uk',
+    contactUrl: 'https://www.celticfc.com/help-and-faqs/contact-us',
   },
 ];

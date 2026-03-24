@@ -43,7 +43,12 @@ function generateEmail(company) {
   const v = company.vertical;
   const regs = verticalRegulations[v] || 'emerging AI governance regulations';
 
-  const subject = `Design partnership — AI decision evidence for ${company.aiUseCase.toLowerCase().split(' ').slice(0, 6).join(' ')}`;
+  // Smart truncation: use full text if ≤12 words, otherwise trim and strip trailing junk words
+  const words = company.aiUseCase.split(' ');
+  let subjectUseCase = words.length <= 12 ? words.join(' ') : words.slice(0, 10).join(' ');
+  const trailingJunk = /\s+(and|or|for|in|of|the|a|an|with|to|&|—|-|,)$/i;
+  while (trailingJunk.test(subjectUseCase)) subjectUseCase = subjectUseCase.replace(trailingJunk, '');
+  const subject = `Design partnership — AI decision evidence for ${subjectUseCase}`;
 
   const body = `Hi ${company.contact.split(' ')[0]},
 
@@ -51,11 +56,11 @@ I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build AI decision 
 
 **Why this matters for ${company.company}:** ${company.painPoint}${company.regulatoryHook ? ' ' + company.regulatoryHook : ''} Regulations including ${regs} are converging on one requirement: verifiable evidence of AI decision-making.
 
-**The offer:** 90-day design partnership at no cost. Datacendia layers onto your existing AI pipeline and produces cryptographic evidence for every AI decision — decision rationale, fairness metrics, and compliance documentation. You get audit-ready AI governance. We get product feedback from a leader in ${company.subCategory.toLowerCase()}.
+**The offer:** 90-day design partnership at no cost. Datacendia layers onto your existing AI pipeline and produces cryptographic evidence for every AI decision — decision rationale, fairness metrics, and compliance documentation. You get audit-ready AI governance. We get product feedback from a leader in ${company.subCategory}.
 
 **What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to your existing infrastructure without moving data. Sovereign deployment available (on-prem, air-gapped, or private cloud).
 
-Would a 20-minute walkthrough make sense? Happy to demo how Datacendia integrates with ${company.aiUseCase.toLowerCase()}.
+Would a 20-minute walkthrough make sense? Happy to demo how Datacendia integrates with ${company.aiUseCase}.
 
 Best,
 Stuart Rainey
