@@ -100,7 +100,7 @@ function buildPPTX(inv) {
   s1.addText(`PREPARED FOR ${inv.firm.toUpperCase()}`, { x: 4.5, y: 1.8, w: 4.3, h: 0.45, fontSize: 10, color: BG, bold: true, align: 'center', valign: 'middle' });
   s1.addText('DATACENDIA', { x: 0.5, y: 2.5, w: 12, h: 0.4, fontSize: 11, color: GOLD, letterSpacing: 3, align: 'center' });
   s1.addText(`Datacendia for ${inv.firm}`, { x: 0.5, y: 3.0, w: 12, h: 1.2, fontSize: 34, color: WHITE, bold: true, align: 'center' });
-  s1.addText('Decision Crisis Immunization Infrastructure', { x: 1.5, y: 4.4, w: 10, h: 0.5, fontSize: 15, color: MUTED, align: 'center' });
+  s1.addText('Sovereign AI Decision Evidence Infrastructure', { x: 1.5, y: 4.4, w: 10, h: 0.5, fontSize: 15, color: MUTED, align: 'center' });
   s1.addShape(pptx.ShapeType.line, { x: 5.5, y: 5.1, w: 2.3, h: 0, line: { color: GOLD, width: 2 } });
   s1.addText(`${inv.type} \u00B7 ${inv.hq} \u00B7 ${inv.stage} \u00B7 ${inv.aum} AUM`, { x: 2, y: 5.4, w: 9, h: 0.4, fontSize: 12, color: MUTED, align: 'center' });
   addFooter(s1);
@@ -135,7 +135,7 @@ function buildPPTX(inv) {
   const problems = [
     'AI systems make high-stakes decisions with no audit trail, no evidence, and no dissent tracking',
     'EU AI Act (2025\u20132026) mandates governance for high-risk AI \u2014 penalties up to \u20AC35M or 7% revenue',
-    'DORA requires AI operational resilience for financial services by Jan 2025',
+    'DORA (in effect since Jan 2025) requires AI operational resilience for all financial services',
     'No existing platform provides cryptographic proof of AI-assisted decisions',
     'Enterprises face regulatory risk with every AI deployment \u2014 and have no solution',
   ];
