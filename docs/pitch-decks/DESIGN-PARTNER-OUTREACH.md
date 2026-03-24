@@ -5,7 +5,7 @@
 
 ## Table of Contents
 
-- **🏟️ Sport** (108 companies)
+- **🏟️ Sport** (126 companies)
 - **🏥 Healthcare** (100 companies)
 - **🏦 Finance** (100 companies)
 - **🛡️ Defence** (100 companies)
@@ -130,6 +130,24 @@
 | 106 | **FC Internazionale Milano** | Alessandro Antonello | CEO Corporate | [LinkedIn](https://www.linkedin.com/company/fc-internazionale-milano/) | AI scouting, tactical analytics, and financial compliance for the 2024 Serie A champions under new US private equity ownership |
 | 107 | **Atletico Madrid** | Miguel Ángel Gil Marín | CEO | [LinkedIn](https://www.linkedin.com/company/atletico-de-madrid/) | AI scouting, player development analytics, and financial compliance for Spain's third-largest club |
 | 108 | **CONMEBOL** | Alejandro Domínguez | President | [LinkedIn](https://www.linkedin.com/company/conmebol/) | AI match integrity monitoring, VAR implementation, Copa Libertadores commercial analytics, and anti-corruption compliance across 10 South American federations |
+| 109 | **Chelsea FC** | Laurence Sherwood | CEO (interim) | [LinkedIn](https://www.linkedin.com/company/chelsea-football-club/) | AI scouting, multi-club network analytics, and financial compliance for the most expensive club acquisition in sports history |
+| 110 | **Newcastle United** | Darren Eales | CEO | [LinkedIn](https://www.linkedin.com/company/newcastle-united/) | AI scouting, performance analytics, and commercial growth for a club backed by the world's largest sovereign wealth fund |
+| 111 | **Tottenham Hotspur** | Daniel Levy | Chairman | [LinkedIn](https://www.linkedin.com/company/tottenham-hotspur/) | AI scouting, $1.2B stadium operational analytics, NFL London hosting, and commercial optimization |
+| 112 | **Borussia Dortmund** | Hans-Joachim Watzke | CEO / Managing Director | [LinkedIn](https://www.linkedin.com/company/bvb/) | AI scouting, youth development analytics, and financial compliance for Germany's only major listed football club |
+| 113 | **AFC Ajax** | Alex Kroes | CEO | [LinkedIn](https://www.linkedin.com/company/afc-ajax/) | AI scouting, youth development analytics, and data-driven recruitment for the club that invented modern football development |
+| 114 | **SL Benfica** | Rui Costa | President | [LinkedIn](https://www.linkedin.com/company/sport-lisboa-e-benfica/) | AI scouting, youth academy analytics, and financial compliance for the world's most member-rich club |
+| 115 | **Brighton & Hove Albion** | Paul Barber | CEO & Deputy Chairman | [LinkedIn](https://www.linkedin.com/company/brighton-and-hove-albion/) | AI scouting, proprietary analytics models, and data-driven recruitment for the world's most analytics-forward football club |
+| 116 | **Brentford FC** | Jon Varney | CEO | [LinkedIn](https://www.linkedin.com/company/brentford-fc/) | AI scouting, SmartOdds analytics integration, and B-team model governance for football's most data-native club |
+| 117 | **Rangers FC** | James Bisgrove | CEO (former — post may have changed) | [LinkedIn](https://www.linkedin.com/company/rangers-football-club/) | AI scouting, financial compliance, and governance for a club rebuilt from liquidation |
+| 118 | **CR Flamengo** | Rodolfo Landim | President | [LinkedIn](https://www.linkedin.com/company/clube-de-regatas-do-flamengo/) | AI scouting, youth development analytics, and financial compliance for South America's most popular football club |
+| 119 | **Al-Hilal SFC** | Esteve Calzada | CEO | [LinkedIn](https://www.linkedin.com/company/alhilal-saudi-club/) | AI scouting, performance analytics, and commercial growth for Saudi Arabia's most successful club under Vision 2030 |
+| 120 | **International Olympic Committee (IOC)** | Christophe De Kepper | Director General | [LinkedIn](https://www.linkedin.com/company/international-olympic-committee/) | AI judging systems, anti-doping analytics, athlete tracking, and broadcast AI for the world's largest multi-sport event |
+| 121 | **FIA / Formula 1** | Stefano Domenicali | CEO, Formula 1 | [LinkedIn](https://www.linkedin.com/company/formula1/) | AI race strategy, car regulation enforcement, safety systems, and broadcast analytics for the world's premier motorsport |
+| 122 | **World Rugby** | Alan Gilpin | CEO | [LinkedIn](https://www.linkedin.com/company/world-rugby/) | AI head impact detection, concussion protocol enforcement, and player welfare analytics for the sport facing the most acute brain injury crisis |
+| 123 | **International Cricket Council (ICC)** | Geoff Allardice | CEO | [LinkedIn](https://www.linkedin.com/company/international-cricket-council/) | AI-powered Decision Review System (DRS), match integrity monitoring, and financial governance for cricket's $10B+ global ecosystem |
+| 124 | **ATP / WTA / ITF (Tennis)** | Andrea Gaudenzi | ATP Chairman | [LinkedIn](https://www.linkedin.com/company/atp-tour/) | AI line-calling (Hawk-Eye Live), match integrity monitoring, and performance analytics for professional tennis |
+| 125 | **PGA Tour / LIV Golf** | Jay Monahan | Commissioner, PGA Tour | [LinkedIn](https://www.linkedin.com/company/pga-tour/) | AI player performance analytics, ShotLink tracking, and financial governance for golf's $10B+ merger between PGA Tour and Saudi PIF's LIV Golf |
+| 126 | **UFC (Endeavor/TKO Group)** | Dana White | CEO | [LinkedIn](https://www.linkedin.com/company/ufc/) | AI fighter safety monitoring, weight-cutting analytics, matchmaking algorithms, and broadcast optimization for the world's largest MMA promotion |
 
 ### 1. FIFA
 **Contact:** Johannes Holzmüller — Director of Football Technology & Innovation
@@ -2939,6 +2957,474 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
+### 109. Chelsea FC
+**Contact:** Laurence Sherwood — CEO (interim)
+**LinkedIn: https://www.linkedin.com/company/chelsea-football-club/**
+**HQ:** London, UK
+
+**Subject:** Design partnership — AI decision evidence for AI scouting, multi-club network analytics, and financial compliance
+
+Hi Laurence,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build AI decision evidence infrastructure — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators and stakeholders.
+
+**Why this matters for Chelsea FC:** Chelsea FC (est. 1905, 6 league titles, 2 Champions League, Stamford Bridge 40,341) were acquired for $5.2B by Clearlake Capital/Todd Boehly in 2022. Since then, Chelsea have spent £1B+ on transfers with a multi-club network (Strasbourg, Vitória de Guimarães). Premier League PSR scrutiny is intense — AI-driven transfer amortization, multi-club loan governance, and salary modelling require audit-grade evidence for Clearlake LP investors, Premier League, and UEFA FSR. Regulations including FIFA AI Ethics Framework, World Anti-Doping Agency regulations, and emerging sports integrity legislation are converging on one requirement: verifiable evidence of AI decision-making.
+
+**The offer:** 90-day design partnership at no cost. Datacendia layers onto your existing AI pipeline and produces cryptographic evidence for every AI decision — decision rationale, fairness metrics, and compliance documentation. You get audit-ready AI governance. We get product feedback from a leader in Premier League — Clearlake Capital / Todd Boehly, $5.2B Acquisition.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to your existing infrastructure without moving data. Sovereign deployment available (on-prem, air-gapped, or private cloud).
+
+Would a 20-minute walkthrough make sense? Happy to demo how Datacendia integrates with AI scouting, multi-club network analytics, and financial compliance for the most expensive club acquisition in sports history.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com
+
+---
+
+### 110. Newcastle United
+**Contact:** Darren Eales — CEO
+**LinkedIn: https://www.linkedin.com/company/newcastle-united/**
+**HQ:** Newcastle upon Tyne, UK
+
+**Subject:** Design partnership — AI decision evidence for AI scouting, performance analytics, and commercial growth for a club
+
+Hi Darren,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build AI decision evidence infrastructure — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators and stakeholders.
+
+**Why this matters for Newcastle United:** Newcastle United (est. 1892, 4 league titles, St James' Park 52,305) were acquired by Saudi Arabia's Public Investment Fund ($700B AUM) in 2021. Rapid investment under intense sportswashing scrutiny means every AI-assisted transfer, commercial, and stadium expansion decision must be transparently governed — verifiable by Premier League PSR, UEFA FSR, UK government oversight, and international media. Regulations including FIFA AI Ethics Framework, World Anti-Doping Agency regulations, and emerging sports integrity legislation are converging on one requirement: verifiable evidence of AI decision-making.
+
+**The offer:** 90-day design partnership at no cost. Datacendia layers onto your existing AI pipeline and produces cryptographic evidence for every AI decision — decision rationale, fairness metrics, and compliance documentation. You get audit-ready AI governance. We get product feedback from a leader in Premier League — Saudi PIF ($700B Sovereign Wealth Fund).
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to your existing infrastructure without moving data. Sovereign deployment available (on-prem, air-gapped, or private cloud).
+
+Would a 20-minute walkthrough make sense? Happy to demo how Datacendia integrates with AI scouting, performance analytics, and commercial growth for a club backed by the world's largest sovereign wealth fund.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com
+
+---
+
+### 111. Tottenham Hotspur
+**Contact:** Daniel Levy — Chairman
+**LinkedIn: https://www.linkedin.com/company/tottenham-hotspur/**
+**HQ:** London, UK
+
+**Subject:** Design partnership — AI decision evidence for AI scouting, $1.2B stadium operational analytics, NFL London hosting, and commercial optimization
+
+Hi Daniel,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build AI decision evidence infrastructure — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators and stakeholders.
+
+**Why this matters for Tottenham Hotspur:** Tottenham Hotspur (est. 1882, 2 league titles, Tottenham Hotspur Stadium 62,850 — newest in PL) are owned by ENIC Group (Joe Lewis/Daniel Levy). The $1.2B stadium hosts NFL London games and concerts — AI-driven multi-use venue management, matchday operations, and commercial modelling across football and NFL require verifiable evidence for ENIC governance, Premier League PSR, UEFA FSR, and NFL partnership compliance. Regulations including FIFA AI Ethics Framework, World Anti-Doping Agency regulations, and emerging sports integrity legislation are converging on one requirement: verifiable evidence of AI decision-making.
+
+**The offer:** 90-day design partnership at no cost. Datacendia layers onto your existing AI pipeline and produces cryptographic evidence for every AI decision — decision rationale, fairness metrics, and compliance documentation. You get audit-ready AI governance. We get product feedback from a leader in Premier League — $1.2B Stadium, ENIC Group, NFL London Partner.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to your existing infrastructure without moving data. Sovereign deployment available (on-prem, air-gapped, or private cloud).
+
+Would a 20-minute walkthrough make sense? Happy to demo how Datacendia integrates with AI scouting, $1.2B stadium operational analytics, NFL London hosting, and commercial optimization.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com
+
+---
+
+### 112. Borussia Dortmund
+**Contact:** Hans-Joachim Watzke — CEO / Managing Director
+**LinkedIn: https://www.linkedin.com/company/bvb/**
+**HQ:** Dortmund, Germany
+
+**Subject:** Design partnership — AI decision evidence for AI scouting, youth development analytics, and financial compliance for Germany's
+
+Hi Hans-Joachim,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build AI decision evidence infrastructure — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators and stakeholders.
+
+**Why this matters for Borussia Dortmund:** Borussia Dortmund (est. 1909, 8 Bundesliga titles, 1 Champions League, Signal Iduna Park 81,365 — largest in Germany) is listed on Borsa Frankfurt (BVB.DE) under Bundesliga 50+1 fan ownership rule. AI-driven scouting (Bellingham, Sancho, Haaland pipeline), youth development, and financial modelling must satisfy BaFin (German securities regulator), DFL licensing, UEFA FSR, and 50+1 governance transparency. Regulations including FIFA AI Ethics Framework, World Anti-Doping Agency regulations, and emerging sports integrity legislation are converging on one requirement: verifiable evidence of AI decision-making.
+
+**The offer:** 90-day design partnership at no cost. Datacendia layers onto your existing AI pipeline and produces cryptographic evidence for every AI decision — decision rationale, fairness metrics, and compliance documentation. You get audit-ready AI governance. We get product feedback from a leader in Bundesliga — Borsa Frankfurt Listed (BVB.DE), Signal Iduna Park 81,365.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to your existing infrastructure without moving data. Sovereign deployment available (on-prem, air-gapped, or private cloud).
+
+Would a 20-minute walkthrough make sense? Happy to demo how Datacendia integrates with AI scouting, youth development analytics, and financial compliance for Germany's only major listed football club.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com
+
+---
+
+### 113. AFC Ajax
+**Contact:** Alex Kroes — CEO
+**LinkedIn: https://www.linkedin.com/company/afc-ajax/**
+**HQ:** Amsterdam, Netherlands
+
+**Subject:** Design partnership — AI decision evidence for AI scouting, youth development analytics, and data-driven recruitment
+
+Hi Alex,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build AI decision evidence infrastructure — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators and stakeholders.
+
+**Why this matters for AFC Ajax:** AFC Ajax (est. 1900, 36 Eredivisie titles, 4 European Cups, Johan Cruyff Arena 55,500) is listed on Euronext Amsterdam (AJAX). Ajax's legendary academy produced Cruyff, Bergkamp, Seedorf, de Jong, de Ligt — AI-driven youth development, sell-on timing, and financial modelling must satisfy AFM (Dutch securities regulator), KNVB licensing, UEFA FSR, and shareholder governance. Regulations including FIFA AI Ethics Framework, World Anti-Doping Agency regulations, and emerging sports integrity legislation are converging on one requirement: verifiable evidence of AI decision-making.
+
+**The offer:** 90-day design partnership at no cost. Datacendia layers onto your existing AI pipeline and produces cryptographic evidence for every AI decision — decision rationale, fairness metrics, and compliance documentation. You get audit-ready AI governance. We get product feedback from a leader in Eredivisie — Euronext Listed, Johan Cruyff Legacy, Total Football Academy.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to your existing infrastructure without moving data. Sovereign deployment available (on-prem, air-gapped, or private cloud).
+
+Would a 20-minute walkthrough make sense? Happy to demo how Datacendia integrates with AI scouting, youth development analytics, and data-driven recruitment for the club that invented modern football development.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com
+
+---
+
+### 114. SL Benfica
+**Contact:** Rui Costa — President
+**LinkedIn: https://www.linkedin.com/company/sport-lisboa-e-benfica/**
+**HQ:** Lisbon, Portugal
+
+**Subject:** Design partnership — AI decision evidence for AI scouting, youth academy analytics, and financial compliance
+
+Hi Rui,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build AI decision evidence infrastructure — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators and stakeholders.
+
+**Why this matters for SL Benfica:** SL Benfica (est. 1904, 38 Primeira Liga titles, 2 European Cups, Estádio da Luz 64,642) is listed on Euronext Lisbon (SLBEN) with a world-record 260,000+ socios. Portuguese football faces corruption investigations (Operation E-toupeira, Operation Lex). AI-driven scouting, academy development (João Félix, Bernardo Silva pipeline), and financial governance require verifiable evidence for CMVM (Portuguese securities regulator), Liga Portugal, UEFA FSR, and socios transparency. Regulations including FIFA AI Ethics Framework, World Anti-Doping Agency regulations, and emerging sports integrity legislation are converging on one requirement: verifiable evidence of AI decision-making.
+
+**The offer:** 90-day design partnership at no cost. Datacendia layers onto your existing AI pipeline and produces cryptographic evidence for every AI decision — decision rationale, fairness metrics, and compliance documentation. You get audit-ready AI governance. We get product feedback from a leader in Primeira Liga — Euronext Listed, 260,000 Socios (World Record).
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to your existing infrastructure without moving data. Sovereign deployment available (on-prem, air-gapped, or private cloud).
+
+Would a 20-minute walkthrough make sense? Happy to demo how Datacendia integrates with AI scouting, youth academy analytics, and financial compliance for the world's most member-rich club.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com
+
+---
+
+### 115. Brighton & Hove Albion
+**Contact:** Paul Barber — CEO & Deputy Chairman
+**LinkedIn: https://www.linkedin.com/company/brighton-and-hove-albion/**
+**HQ:** Brighton, UK
+
+**Subject:** Design partnership — AI decision evidence for AI scouting, proprietary analytics models, and data-driven recruitment
+
+Hi Paul,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build AI decision evidence infrastructure — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators and stakeholders.
+
+**Why this matters for Brighton & Hove Albion:** Brighton (est. 1901, Amex Stadium 31,800) are owned by Tony Bloom, a professional gambler and founder of StarLizard (betting analytics). Brighton's entire recruitment model is AI/data-driven — Caicedo (£115M sale), Mac Allister, Mitoma all identified by proprietary models. When AI IS the competitive strategy, governance of those AI models is existential — EU AI Act, Premier League PSR, and model validation require evidence infrastructure. Regulations including FIFA AI Ethics Framework, World Anti-Doping Agency regulations, and emerging sports integrity legislation are converging on one requirement: verifiable evidence of AI decision-making.
+
+**The offer:** 90-day design partnership at no cost. Datacendia layers onto your existing AI pipeline and produces cryptographic evidence for every AI decision — decision rationale, fairness metrics, and compliance documentation. You get audit-ready AI governance. We get product feedback from a leader in Premier League — Tony Bloom (Professional Gambler), Most Data-Driven Club in World Football.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to your existing infrastructure without moving data. Sovereign deployment available (on-prem, air-gapped, or private cloud).
+
+Would a 20-minute walkthrough make sense? Happy to demo how Datacendia integrates with AI scouting, proprietary analytics models, and data-driven recruitment for the world's most analytics-forward football club.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com
+
+---
+
+### 116. Brentford FC
+**Contact:** Jon Varney — CEO
+**LinkedIn: https://www.linkedin.com/company/brentford-fc/**
+**HQ:** London, UK
+
+**Subject:** Design partnership — AI decision evidence for AI scouting, SmartOdds analytics integration, and B-team model governance
+
+Hi Jon,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build AI decision evidence infrastructure — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators and stakeholders.
+
+**Why this matters for Brentford FC:** Brentford FC (est. 1889, Gtech Community Stadium 17,250) are owned by Matthew Benham, founder of SmartOdds (betting analytics) and Matchbook (betting exchange). Brentford operate a B-team instead of academy, use AI for all recruitment, and Benham also owns FC Midtjylland (Denmark). AI-driven multi-club recruitment, salary modelling, and sell-on timing under Premier League PSR and UEFA rules require governance evidence. Regulations including FIFA AI Ethics Framework, World Anti-Doping Agency regulations, and emerging sports integrity legislation are converging on one requirement: verifiable evidence of AI decision-making.
+
+**The offer:** 90-day design partnership at no cost. Datacendia layers onto your existing AI pipeline and produces cryptographic evidence for every AI decision — decision rationale, fairness metrics, and compliance documentation. You get audit-ready AI governance. We get product feedback from a leader in Premier League — Matthew Benham (SmartOdds), Data-Driven From Ownership Level.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to your existing infrastructure without moving data. Sovereign deployment available (on-prem, air-gapped, or private cloud).
+
+Would a 20-minute walkthrough make sense? Happy to demo how Datacendia integrates with AI scouting, SmartOdds analytics integration, and B-team model governance for football's most data-native club.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com
+
+---
+
+### 117. Rangers FC
+**Contact:** James Bisgrove — CEO (former — post may have changed)
+**LinkedIn: https://www.linkedin.com/company/rangers-football-club/**
+**HQ:** Glasgow, Scotland
+
+**Subject:** Design partnership — AI decision evidence for AI scouting, financial compliance, and governance for a club rebuilt from liquidation
+
+Hi James,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build AI decision evidence infrastructure — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators and stakeholders.
+
+**Why this matters for Rangers FC:** Rangers FC (est. 1872, 55 league titles — joint record with Celtic, Ibrox Stadium 50,817) were liquidated in 2012 and rebuilt from the fourth tier. Post-liquidation, financial governance is existential — AI-driven transfer, salary, and commercial decisions must satisfy Scottish FA licensing, UEFA club licensing (for European competition), and shareholders who remember the consequences of financial mismanagement. Regulations including FIFA AI Ethics Framework, World Anti-Doping Agency regulations, and emerging sports integrity legislation are converging on one requirement: verifiable evidence of AI decision-making.
+
+**The offer:** 90-day design partnership at no cost. Datacendia layers onto your existing AI pipeline and produces cryptographic evidence for every AI decision — decision rationale, fairness metrics, and compliance documentation. You get audit-ready AI governance. We get product feedback from a leader in Scottish Premiership — Liquidation Survivors, Old Firm Rivalry.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to your existing infrastructure without moving data. Sovereign deployment available (on-prem, air-gapped, or private cloud).
+
+Would a 20-minute walkthrough make sense? Happy to demo how Datacendia integrates with AI scouting, financial compliance, and governance for a club rebuilt from liquidation.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com
+
+---
+
+### 118. CR Flamengo
+**Contact:** Rodolfo Landim — President
+**LinkedIn: https://www.linkedin.com/company/clube-de-regatas-do-flamengo/**
+**HQ:** Rio de Janeiro, Brazil
+
+**Subject:** Design partnership — AI decision evidence for AI scouting, youth development analytics, and financial compliance for South
+
+Hi Rodolfo,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build AI decision evidence infrastructure — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators and stakeholders.
+
+**Why this matters for CR Flamengo:** CR Flamengo (est. 1895, 8 Brasileirão titles, 3 Copa Libertadores, Maracanã 78,838 shared) is the most popular club in South America (~45M fans). Brazil's LGPD (data protection law), CONMEBOL regulations, CBF licensing, and massive youth development pipeline (Vinicius Jr, Lucas Paquetá) all require verifiable AI governance. Flamengo's election-based governance (socios model) means AI decisions face democratic scrutiny. Regulations including FIFA AI Ethics Framework, World Anti-Doping Agency regulations, and emerging sports integrity legislation are converging on one requirement: verifiable evidence of AI decision-making.
+
+**The offer:** 90-day design partnership at no cost. Datacendia layers onto your existing AI pipeline and produces cryptographic evidence for every AI decision — decision rationale, fairness metrics, and compliance documentation. You get audit-ready AI governance. We get product feedback from a leader in Brasileirão — Largest Club in South America, 45M+ Fans.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to your existing infrastructure without moving data. Sovereign deployment available (on-prem, air-gapped, or private cloud).
+
+Would a 20-minute walkthrough make sense? Happy to demo how Datacendia integrates with AI scouting, youth development analytics, and financial compliance for South America's most popular football club.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com
+
+---
+
+### 119. Al-Hilal SFC
+**Contact:** Esteve Calzada — CEO
+**LinkedIn: https://www.linkedin.com/company/alhilal-saudi-club/**
+**HQ:** Riyadh, Saudi Arabia
+
+**Subject:** Design partnership — AI decision evidence for AI scouting, performance analytics, and commercial growth for Saudi Arabia's
+
+Hi Esteve,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build AI decision evidence infrastructure — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators and stakeholders.
+
+**Why this matters for Al-Hilal SFC:** Al-Hilal (est. 1957, 19 Saudi league titles, 4 AFC Champions League, Kingdom Arena 25,000 with new 45,000-seat stadium planned) is owned by Saudi PIF as part of Vision 2030's sports investment strategy. After signing Neymar (€90M) and other global stars, AI-driven recruitment, performance analytics, and commercial growth require governance evidence for PIF sovereign fund reporting, Saudi Arabian Football Federation, AFC regulations, and international media scrutiny. Regulations including FIFA AI Ethics Framework, World Anti-Doping Agency regulations, and emerging sports integrity legislation are converging on one requirement: verifiable evidence of AI decision-making.
+
+**The offer:** 90-day design partnership at no cost. Datacendia layers onto your existing AI pipeline and produces cryptographic evidence for every AI decision — decision rationale, fairness metrics, and compliance documentation. You get audit-ready AI governance. We get product feedback from a leader in Saudi Pro League — PIF Ownership, Saudi Vision 2030.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to your existing infrastructure without moving data. Sovereign deployment available (on-prem, air-gapped, or private cloud).
+
+Would a 20-minute walkthrough make sense? Happy to demo how Datacendia integrates with AI scouting, performance analytics, and commercial growth for Saudi Arabia's most successful club under Vision 2030.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com
+
+---
+
+### 120. International Olympic Committee (IOC)
+**Contact:** Christophe De Kepper — Director General
+**LinkedIn: https://www.linkedin.com/company/international-olympic-committee/**
+**HQ:** Lausanne, Switzerland
+
+**Subject:** Design partnership — AI decision evidence for AI judging systems, anti-doping analytics, athlete tracking, and broadcast AI
+
+Hi Christophe,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build AI decision evidence infrastructure — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators and stakeholders.
+
+**Why this matters for International Olympic Committee (IOC):** The IOC (est. 1894, 206 National Olympic Committees, $7.6B revenue per Olympiad) uses AI in judging (gymnastics scoring), anti-doping (WADA partnership), broadcast production, and athlete performance tracking. AI judging decisions affecting medal outcomes for 10,000+ athletes from 206 nations require verifiable evidence — WADA compliance, CAS appeal readiness, and EU AI Act transparency for AI-assisted judging. Regulations including FIFA AI Ethics Framework, World Anti-Doping Agency regulations, and emerging sports integrity legislation are converging on one requirement: verifiable evidence of AI decision-making.
+
+**The offer:** 90-day design partnership at no cost. Datacendia layers onto your existing AI pipeline and produces cryptographic evidence for every AI decision — decision rationale, fairness metrics, and compliance documentation. You get audit-ready AI governance. We get product feedback from a leader in Olympic Movement — 206 NOCs, $7.6B Revenue per Olympiad.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to your existing infrastructure without moving data. Sovereign deployment available (on-prem, air-gapped, or private cloud).
+
+Would a 20-minute walkthrough make sense? Happy to demo how Datacendia integrates with AI judging systems, anti-doping analytics, athlete tracking, and broadcast AI for the world's largest multi-sport event.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com
+
+---
+
+### 121. FIA / Formula 1
+**Contact:** Stefano Domenicali — CEO, Formula 1
+**LinkedIn: https://www.linkedin.com/company/formula1/**
+**HQ:** Paris, France (FIA) / London, UK (F1)
+
+**Subject:** Design partnership — AI decision evidence for AI race strategy, car regulation enforcement, safety systems, and broadcast
+
+Hi Stefano,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build AI decision evidence infrastructure — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators and stakeholders.
+
+**Why this matters for FIA / Formula 1:** FIA (est. 1904) governs Formula 1 ($3B+ annual revenue, Liberty Media NYSE:FWONA). AI-driven race strategy (tire degradation models, pit window optimization), car regulation enforcement (cost cap monitoring, technical compliance), and safety systems (halo, barrier design) all involve decisions affecting driver safety, race outcomes, and $140M+ cost cap compliance. Teams challenge FIA decisions at CAS — every ruling needs evidence. Regulations including FIFA AI Ethics Framework, World Anti-Doping Agency regulations, and emerging sports integrity legislation are converging on one requirement: verifiable evidence of AI decision-making.
+
+**The offer:** 90-day design partnership at no cost. Datacendia layers onto your existing AI pipeline and produces cryptographic evidence for every AI decision — decision rationale, fairness metrics, and compliance documentation. You get audit-ready AI governance. We get product feedback from a leader in Motorsport — AI Race Strategy, Car Regulation, $3B+ Annual Revenue.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to your existing infrastructure without moving data. Sovereign deployment available (on-prem, air-gapped, or private cloud).
+
+Would a 20-minute walkthrough make sense? Happy to demo how Datacendia integrates with AI race strategy, car regulation enforcement, safety systems, and broadcast analytics for the world's premier motorsport.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com
+
+---
+
+### 122. World Rugby
+**Contact:** Alan Gilpin — CEO
+**LinkedIn: https://www.linkedin.com/company/world-rugby/**
+**HQ:** Dublin, Ireland
+
+**Subject:** Design partnership — AI decision evidence for AI head impact detection, concussion protocol enforcement, and player welfare
+
+Hi Alan,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build AI decision evidence infrastructure — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators and stakeholders.
+
+**Why this matters for World Rugby:** World Rugby (est. 1886, 130+ member unions) faces the most serious concussion/CTE crisis in professional sport — class action lawsuits from former players, parliamentary inquiries, and insurance costs threatening the game's viability. AI-driven head impact detection (mouthguard sensors, video analysis), return-to-play protocols, and player welfare tracking need court-admissible evidence. Every concussion decision could become a legal exhibit. Regulations including FIFA AI Ethics Framework, World Anti-Doping Agency regulations, and emerging sports integrity legislation are converging on one requirement: verifiable evidence of AI decision-making.
+
+**The offer:** 90-day design partnership at no cost. Datacendia layers onto your existing AI pipeline and produces cryptographic evidence for every AI decision — decision rationale, fairness metrics, and compliance documentation. You get audit-ready AI governance. We get product feedback from a leader in Global Rugby Governance — Concussion Crisis, CTE Litigation.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to your existing infrastructure without moving data. Sovereign deployment available (on-prem, air-gapped, or private cloud).
+
+Would a 20-minute walkthrough make sense? Happy to demo how Datacendia integrates with AI head impact detection, concussion protocol enforcement, and player welfare analytics for the sport facing the most acute brain injury crisis.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com
+
+---
+
+### 123. International Cricket Council (ICC)
+**Contact:** Geoff Allardice — CEO
+**LinkedIn: https://www.linkedin.com/company/international-cricket-council/**
+**HQ:** Dubai, UAE
+
+**Subject:** Design partnership — AI decision evidence for AI-powered Decision Review System (DRS), match integrity monitoring, and financial
+
+Hi Geoff,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build AI decision evidence infrastructure — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators and stakeholders.
+
+**Why this matters for International Cricket Council (ICC):** The ICC (est. 1909, 108 member nations) oversees cricket's DRS (ball-tracking AI, Snickometer, UltraEdge) — AI decisions reverse umpire calls in matches worth $100M+ in broadcast revenue. IPL franchises worth $5B+ use AI for auction strategy and player analytics. Cricket's match-fixing history (Hansie Cronje, spot-fixing scandals) means AI-driven integrity monitoring across India, Australia, England, Pakistan requires verifiable evidence for ICC Anti-Corruption Unit and national police. Regulations including FIFA AI Ethics Framework, World Anti-Doping Agency regulations, and emerging sports integrity legislation are converging on one requirement: verifiable evidence of AI decision-making.
+
+**The offer:** 90-day design partnership at no cost. Datacendia layers onto your existing AI pipeline and produces cryptographic evidence for every AI decision — decision rationale, fairness metrics, and compliance documentation. You get audit-ready AI governance. We get product feedback from a leader in Global Cricket Governance — DRS, IPL $10B+ Ecosystem, Match-Fixing.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to your existing infrastructure without moving data. Sovereign deployment available (on-prem, air-gapped, or private cloud).
+
+Would a 20-minute walkthrough make sense? Happy to demo how Datacendia integrates with AI-powered Decision Review System (DRS), match integrity monitoring, and financial governance for cricket's $10B+ global ecosystem.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com
+
+---
+
+### 124. ATP / WTA / ITF (Tennis)
+**Contact:** Andrea Gaudenzi — ATP Chairman
+**LinkedIn: https://www.linkedin.com/company/atp-tour/**
+**HQ:** London, UK (ATP) / St. Petersburg, FL (WTA)
+
+**Subject:** Design partnership — AI decision evidence for AI line-calling (Hawk-Eye Live), match integrity monitoring, and performance analytics
+
+Hi Andrea,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build AI decision evidence infrastructure — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators and stakeholders.
+
+**Why this matters for ATP / WTA / ITF (Tennis):** The ATP/WTA/ITF govern professional tennis with AI-powered Hawk-Eye Live replacing human line judges at Grand Slams ($350M+ prize money). AI line-calling decisions affect match outcomes — players and national federations have no mechanism to audit AI accuracy. The Tennis Integrity Agency (TIA) uses AI for match-fixing detection across 70,000+ professional matches annually. EU AI Act transparency requirements apply. Regulations including FIFA AI Ethics Framework, World Anti-Doping Agency regulations, and emerging sports integrity legislation are converging on one requirement: verifiable evidence of AI decision-making.
+
+**The offer:** 90-day design partnership at no cost. Datacendia layers onto your existing AI pipeline and produces cryptographic evidence for every AI decision — decision rationale, fairness metrics, and compliance documentation. You get audit-ready AI governance. We get product feedback from a leader in Global Tennis Governance — Hawk-Eye AI, Match Integrity, Grand Slams.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to your existing infrastructure without moving data. Sovereign deployment available (on-prem, air-gapped, or private cloud).
+
+Would a 20-minute walkthrough make sense? Happy to demo how Datacendia integrates with AI line-calling (Hawk-Eye Live), match integrity monitoring, and performance analytics for professional tennis.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com
+
+---
+
+### 125. PGA Tour / LIV Golf
+**Contact:** Jay Monahan — Commissioner, PGA Tour
+**LinkedIn: https://www.linkedin.com/company/pga-tour/**
+**HQ:** Ponte Vedra Beach, FL (PGA) / London, UK (LIV)
+
+**Subject:** Design partnership — AI decision evidence for AI player performance analytics, ShotLink tracking, and financial governance
+
+Hi Jay,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build AI decision evidence infrastructure — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators and stakeholders.
+
+**Why this matters for PGA Tour / LIV Golf:** The PGA Tour and LIV Golf (Saudi PIF) are merging in a $10B+ deal facing US DOJ antitrust scrutiny and Congressional hearings. AI-driven ShotLink player tracking (ball speed, launch angle, strokes gained), player valuation models for contract negotiations, and financial governance of the merged entity all require verifiable evidence for US DOJ, IRS (501(c)(6) nonprofit status for PGA), and Saudi PIF sovereign fund reporting. Regulations including FIFA AI Ethics Framework, World Anti-Doping Agency regulations, and emerging sports integrity legislation are converging on one requirement: verifiable evidence of AI decision-making.
+
+**The offer:** 90-day design partnership at no cost. Datacendia layers onto your existing AI pipeline and produces cryptographic evidence for every AI decision — decision rationale, fairness metrics, and compliance documentation. You get audit-ready AI governance. We get product feedback from a leader in Professional Golf — PIF Merger, Antitrust, Player Data Analytics.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to your existing infrastructure without moving data. Sovereign deployment available (on-prem, air-gapped, or private cloud).
+
+Would a 20-minute walkthrough make sense? Happy to demo how Datacendia integrates with AI player performance analytics, ShotLink tracking, and financial governance for golf's $10B+ merger between PGA Tour and Saudi PIF's LIV Golf.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com
+
+---
+
+### 126. UFC (Endeavor/TKO Group)
+**Contact:** Dana White — CEO
+**LinkedIn: https://www.linkedin.com/company/ufc/**
+**HQ:** Las Vegas, NV
+
+**Subject:** Design partnership — AI decision evidence for AI fighter safety monitoring, weight-cutting analytics, matchmaking algorithms, and broadcast
+
+Hi Dana,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build AI decision evidence infrastructure — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators and stakeholders.
+
+**Why this matters for UFC (Endeavor/TKO Group):** UFC (owned by TKO Group Holdings, NYSE:TKO, $21B+ enterprise value) uses AI for fighter performance analytics, matchmaking algorithms, and broadcast production. Fighter safety is the critical issue — AI-driven weight-cut monitoring, concussion detection, and fight-stoppage recommendations affect fighter welfare. State Athletic Commissions regulate each event differently. NYSE listing requires SOX-compliant AI governance for material decisions. Regulations including FIFA AI Ethics Framework, World Anti-Doping Agency regulations, and emerging sports integrity legislation are converging on one requirement: verifiable evidence of AI decision-making.
+
+**The offer:** 90-day design partnership at no cost. Datacendia layers onto your existing AI pipeline and produces cryptographic evidence for every AI decision — decision rationale, fairness metrics, and compliance documentation. You get audit-ready AI governance. We get product feedback from a leader in Mixed Martial Arts — NYSE:TKO, Fighter Safety AI, Weight Management.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to your existing infrastructure without moving data. Sovereign deployment available (on-prem, air-gapped, or private cloud).
+
+Would a 20-minute walkthrough make sense? Happy to demo how Datacendia integrates with AI fighter safety monitoring, weight-cutting analytics, matchmaking algorithms, and broadcast optimization for the world's largest MMA promotion.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com
+
+---
+
 ---
 
 # 🏥 Healthcare
@@ -3046,7 +3532,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 | 99 | **Owkin** | Thomas Clozel | CEO & Co-founder | [LinkedIn](https://www.linkedin.com/in/thomasclozel/) | AI federated learning for drug development and diagnostics |
 | 100 | **Doctolib** | Stanislas Niox-Château | CEO & Co-founder | [LinkedIn](https://www.linkedin.com/in/stanislasniox/) | AI appointment management and patient triage |
 
-### 109. Mayo Clinic
+### 127. Mayo Clinic
 **Contact:** John Halamka — President, Mayo Clinic Platform
 **LinkedIn: https://www.linkedin.com/in/johnhalamka/**
 **HQ:** Rochester, MN
@@ -3072,7 +3558,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 110. Cleveland Clinic
+### 128. Cleveland Clinic
 **Contact:** Tom Mihaljevic — CEO & President
 **LinkedIn: https://www.linkedin.com/in/tom-mihaljevic/**
 **HQ:** Cleveland, OH
@@ -3098,7 +3584,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 111. Johns Hopkins Medicine
+### 129. Johns Hopkins Medicine
 **Contact:** Atif Zafar — Chief Clinical Transformation & AI Officer
 **LinkedIn: https://www.linkedin.com/in/atifzafar/**
 **HQ:** Baltimore, MD
@@ -3124,7 +3610,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 112. Kaiser Permanente
+### 130. Kaiser Permanente
 **Contact:** Greg Adams — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/greg-adams-kp/**
 **HQ:** Oakland, CA
@@ -3150,7 +3636,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 113. HCA Healthcare
+### 131. HCA Healthcare
 **Contact:** Sam Hazen — CEO
 **LinkedIn: https://www.linkedin.com/in/samhazen/**
 **HQ:** Nashville, TN
@@ -3176,7 +3662,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 114. NHS England
+### 132. NHS England
 **Contact:** Timothy Ferris — National Director of Transformation
 **LinkedIn: https://www.linkedin.com/in/timothy-ferris/**
 **HQ:** London, UK
@@ -3202,7 +3688,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 115. Mass General Brigham
+### 133. Mass General Brigham
 **Contact:** Anne Klibanski — President & CEO
 **LinkedIn: https://www.linkedin.com/in/anne-klibanski/**
 **HQ:** Boston, MA
@@ -3228,7 +3714,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 116. Mount Sinai Health System
+### 134. Mount Sinai Health System
 **Contact:** Eric Schadt — Dean of AI and Human Health, Icahn School
 **LinkedIn: https://www.linkedin.com/in/eric-schadt/**
 **HQ:** New York, NY
@@ -3254,7 +3740,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 117. Intermountain Health
+### 135. Intermountain Health
 **Contact:** Rob Allen — President & CEO
 **LinkedIn: https://www.linkedin.com/in/rob-allen-intermountain/**
 **HQ:** Salt Lake City, UT
@@ -3280,7 +3766,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 118. Ascension Health
+### 136. Ascension Health
 **Contact:** Joseph Impicciche — President & CEO
 **LinkedIn: https://www.linkedin.com/in/joseph-impicciche/**
 **HQ:** St. Louis, MO
@@ -3306,7 +3792,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 119. Charité – Universitätsmedizin Berlin
+### 137. Charité – Universitätsmedizin Berlin
 **Contact:** Heyo K. Kroemer — CEO
 **LinkedIn: https://www.linkedin.com/in/heyo-kroemer/**
 **HQ:** Berlin, Germany
@@ -3332,7 +3818,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 120. AP-HP (Assistance Publique – Hôpitaux de Paris)
+### 138. AP-HP (Assistance Publique – Hôpitaux de Paris)
 **Contact:** Nicolas Revel — Director General
 **LinkedIn: https://www.linkedin.com/in/nicolas-revel/**
 **HQ:** Paris, France
@@ -3358,7 +3844,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 121. Cleveland Clinic Abu Dhabi
+### 139. Cleveland Clinic Abu Dhabi
 **Contact:** Rakesh Suri — CEO
 **LinkedIn: https://www.linkedin.com/in/rakesh-suri/**
 **HQ:** Abu Dhabi, UAE
@@ -3384,7 +3870,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 122. Apollo Hospitals
+### 140. Apollo Hospitals
 **Contact:** Prathap C. Reddy — Founder Chairman
 **LinkedIn: https://www.linkedin.com/in/prathap-c-reddy/**
 **HQ:** Chennai, India
@@ -3410,7 +3896,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 123. Ramsay Health Care
+### 141. Ramsay Health Care
 **Contact:** Craig McNally — Managing Director & CEO
 **LinkedIn: https://www.linkedin.com/in/craig-mcnally/**
 **HQ:** Sydney, Australia
@@ -3436,7 +3922,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 124. CommonSpirit Health
+### 142. CommonSpirit Health
 **Contact:** Wright Lassiter III — CEO
 **LinkedIn: https://www.linkedin.com/in/wright-lassiter/**
 **HQ:** Chicago, IL
@@ -3462,7 +3948,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 125. Providence Health
+### 143. Providence Health
 **Contact:** Sara Vaezy — EVP & Chief Strategy and Digital Officer
 **LinkedIn: https://www.linkedin.com/in/sara-vaezy/**
 **HQ:** Renton, WA
@@ -3488,7 +3974,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 126. Advocate Health
+### 144. Advocate Health
 **Contact:** Eugene Woods — CEO
 **LinkedIn: https://www.linkedin.com/in/eugene-woods/**
 **HQ:** Charlotte, NC
@@ -3514,7 +4000,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 127. Nuffield Health
+### 145. Nuffield Health
 **Contact:** Steve Gray — CEO
 **LinkedIn: https://www.linkedin.com/in/steve-gray-nuffield/**
 **HQ:** London, UK
@@ -3540,7 +4026,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 128. Bumrungrad International Hospital
+### 146. Bumrungrad International Hospital
 **Contact:** Arin Jira — CEO
 **LinkedIn: https://www.linkedin.com/in/arin-jira/**
 **HQ:** Bangkok, Thailand
@@ -3566,7 +4052,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 129. Tempus AI
+### 147. Tempus AI
 **Contact:** Eric Lefkofsky — Founder & CEO
 **LinkedIn: https://www.linkedin.com/in/ericlefkofsky/**
 **HQ:** Chicago, IL
@@ -3592,7 +4078,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 130. Viz.ai
+### 148. Viz.ai
 **Contact:** Chris Mansi — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/chrismansi/**
 **HQ:** San Francisco, CA
@@ -3618,7 +4104,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 131. Aidoc
+### 149. Aidoc
 **Contact:** Elad Walach — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/eladwalach/**
 **HQ:** Tel Aviv, Israel
@@ -3644,7 +4130,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 132. PathAI
+### 150. PathAI
 **Contact:** Andy Beck — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/andybeck/**
 **HQ:** Boston, MA
@@ -3670,7 +4156,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 133. Butterfly Network
+### 151. Butterfly Network
 **Contact:** Todd Fruchterman — President & CEO
 **LinkedIn: https://www.linkedin.com/in/toddfruchterman/**
 **HQ:** Burlington, MA
@@ -3696,7 +4182,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 134. Arterys (Tempus)
+### 152. Arterys (Tempus)
 **Contact:** Fabien Beckers — Founder
 **LinkedIn: https://www.linkedin.com/in/fabienbeckers/**
 **HQ:** San Francisco, CA
@@ -3722,7 +4208,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 135. Paige AI
+### 153. Paige AI
 **Contact:** Andy Moye — CEO
 **LinkedIn: https://www.linkedin.com/in/andymoye/**
 **HQ:** New York, NY
@@ -3748,7 +4234,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 136. Zebra Medical Vision (Nanox)
+### 154. Zebra Medical Vision (Nanox)
 **Contact:** Erez Meltzer — CEO (Nanox)
 **LinkedIn: https://www.linkedin.com/in/erezmeltzer/**
 **HQ:** Haifa, Israel
@@ -3774,7 +4260,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 137. Verily (Alphabet)
+### 155. Verily (Alphabet)
 **Contact:** Stephen Gillett — CEO
 **LinkedIn: https://www.linkedin.com/in/stephengillett/**
 **HQ:** South San Francisco, CA
@@ -3800,7 +4286,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 138. Flatiron Health (Roche)
+### 156. Flatiron Health (Roche)
 **Contact:** Carolyn Starrett — CEO
 **LinkedIn: https://www.linkedin.com/in/carolynstarrett/**
 **HQ:** New York, NY
@@ -3826,7 +4312,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 139. Olive AI
+### 157. Olive AI
 **Contact:** Sean Lane — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/seanlane/**
 **HQ:** Columbus, OH
@@ -3852,7 +4338,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 140. Nuance (Microsoft)
+### 158. Nuance (Microsoft)
 **Contact:** Mark Benjamin — CEO
 **LinkedIn: https://www.linkedin.com/in/mark-benjamin-nuance/**
 **HQ:** Burlington, MA
@@ -3878,7 +4364,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 141. GE HealthCare
+### 159. GE HealthCare
 **Contact:** Peter Arduini — President & CEO
 **LinkedIn: https://www.linkedin.com/in/peterarduini/**
 **HQ:** Chicago, IL
@@ -3904,7 +4390,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 142. Siemens Healthineers
+### 160. Siemens Healthineers
 **Contact:** Bernd Montag — CEO
 **LinkedIn: https://www.linkedin.com/in/berndmontag/**
 **HQ:** Erlangen, Germany
@@ -3930,7 +4416,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 143. Philips Healthcare
+### 161. Philips Healthcare
 **Contact:** Roy Jakobs — CEO
 **LinkedIn: https://www.linkedin.com/in/royjakobs/**
 **HQ:** Amsterdam, Netherlands
@@ -3956,7 +4442,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 144. Medtronic
+### 162. Medtronic
 **Contact:** Geoffrey Martha — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/geoffrey-martha/**
 **HQ:** Dublin, Ireland
@@ -3982,7 +4468,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 145. Intuitive Surgical
+### 163. Intuitive Surgical
 **Contact:** Gary Guthart — CEO
 **LinkedIn: https://www.linkedin.com/in/gary-guthart/**
 **HQ:** Sunnyvale, CA
@@ -4008,7 +4494,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 146. Babylon Health
+### 164. Babylon Health
 **Contact:** Ali Parsa — Founder
 **LinkedIn: https://www.linkedin.com/in/ali-parsa/**
 **HQ:** London, UK
@@ -4034,7 +4520,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 147. Ada Health
+### 165. Ada Health
 **Contact:** Daniel Nathrath — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/danielnathrath/**
 **HQ:** Berlin, Germany
@@ -4060,7 +4546,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 148. Recursion Pharmaceuticals
+### 166. Recursion Pharmaceuticals
 **Contact:** Chris Gibson — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/chrisgibsonphd/**
 **HQ:** Salt Lake City, UT
@@ -4086,7 +4572,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 149. Insilico Medicine
+### 167. Insilico Medicine
 **Contact:** Alex Zhavoronkov — Founder & CEO
 **LinkedIn: https://www.linkedin.com/in/alexzhavoronkov/**
 **HQ:** Hong Kong
@@ -4112,7 +4598,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 150. BenevolentAI
+### 168. BenevolentAI
 **Contact:** Joerg Moeller — CEO
 **LinkedIn: https://www.linkedin.com/in/joergmoeller/**
 **HQ:** London, UK
@@ -4138,7 +4624,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 151. Owkin
+### 169. Owkin
 **Contact:** Thomas Clozel — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/thomas-clozel/**
 **HQ:** Paris, France
@@ -4164,7 +4650,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 152. Exscientia
+### 170. Exscientia
 **Contact:** Andrew Hopkins — Founder & CEO
 **LinkedIn: https://www.linkedin.com/in/andrew-hopkins-exscientia/**
 **HQ:** Oxford, UK
@@ -4190,7 +4676,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 153. Lunit
+### 171. Lunit
 **Contact:** Brandon Suh — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/brandon-suh/**
 **HQ:** Seoul, South Korea
@@ -4216,7 +4702,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 154. Pfizer
+### 172. Pfizer
 **Contact:** Lidia Fonseca — Chief Digital & Technology Officer
 **LinkedIn: https://www.linkedin.com/in/lidiafonseca/**
 **HQ:** New York, NY
@@ -4242,7 +4728,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 155. Roche
+### 173. Roche
 **Contact:** Thomas Schinecker — CEO
 **LinkedIn: https://www.linkedin.com/in/thomas-schinecker/**
 **HQ:** Basel, Switzerland
@@ -4268,7 +4754,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 156. Novartis
+### 174. Novartis
 **Contact:** Vas Narasimhan — CEO
 **LinkedIn: https://www.linkedin.com/in/vasnarasimhan/**
 **HQ:** Basel, Switzerland
@@ -4294,7 +4780,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 157. AstraZeneca
+### 175. AstraZeneca
 **Contact:** Pascal Soriot — CEO
 **LinkedIn: https://www.linkedin.com/in/pascal-soriot/**
 **HQ:** Cambridge, UK
@@ -4320,7 +4806,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 158. Johnson & Johnson (MedTech)
+### 176. Johnson & Johnson (MedTech)
 **Contact:** Joaquin Duato — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/joaquin-duato/**
 **HQ:** New Brunswick, NJ
@@ -4346,7 +4832,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 159. Merck (MSD)
+### 177. Merck (MSD)
 **Contact:** Robert Davis — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/robert-davis-merck/**
 **HQ:** Rahway, NJ
@@ -4372,7 +4858,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 160. Sanofi
+### 178. Sanofi
 **Contact:** Paul Hudson — CEO
 **LinkedIn: https://www.linkedin.com/in/paul-hudson-sanofi/**
 **HQ:** Paris, France
@@ -4398,7 +4884,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 161. GSK
+### 179. GSK
 **Contact:** Emma Walmsley — CEO
 **LinkedIn: https://www.linkedin.com/in/emma-walmsley/**
 **HQ:** London, UK
@@ -4424,7 +4910,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 162. Bayer
+### 180. Bayer
 **Contact:** Bill Anderson — CEO
 **LinkedIn: https://www.linkedin.com/in/bill-anderson-bayer/**
 **HQ:** Leverkusen, Germany
@@ -4450,7 +4936,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 163. AbbVie
+### 181. AbbVie
 **Contact:** Rob Michael — President & COO
 **LinkedIn: https://www.linkedin.com/in/rob-michael/**
 **HQ:** North Chicago, IL
@@ -4476,7 +4962,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 164. Amgen
+### 182. Amgen
 **Contact:** Robert Bradway — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/robert-bradway/**
 **HQ:** Thousand Oaks, CA
@@ -4502,7 +4988,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 165. Eli Lilly
+### 183. Eli Lilly
 **Contact:** David Ricks — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/david-ricks/**
 **HQ:** Indianapolis, IN
@@ -4528,7 +5014,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 166. Takeda
+### 184. Takeda
 **Contact:** Christophe Weber — CEO
 **LinkedIn: https://www.linkedin.com/in/christophe-weber-takeda/**
 **HQ:** Tokyo, Japan
@@ -4554,7 +5040,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 167. Regeneron
+### 185. Regeneron
 **Contact:** Leonard Schleifer — Founder, President & CEO
 **LinkedIn: https://www.linkedin.com/in/leonard-schleifer/**
 **HQ:** Tarrytown, NY
@@ -4580,7 +5066,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 168. Moderna
+### 186. Moderna
 **Contact:** Stéphane Bancel — CEO
 **LinkedIn: https://www.linkedin.com/in/stephanebancel/**
 **HQ:** Cambridge, MA
@@ -4606,7 +5092,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 169. BioNTech
+### 187. BioNTech
 **Contact:** Ugur Sahin — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/ugursahin/**
 **HQ:** Mainz, Germany
@@ -4632,7 +5118,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 170. Epic Systems
+### 188. Epic Systems
 **Contact:** Judy Faulkner — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/judy-faulkner/**
 **HQ:** Verona, WI
@@ -4658,7 +5144,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 171. Cerner (Oracle Health)
+### 189. Cerner (Oracle Health)
 **Contact:** Mike Sicilia — EVP, Oracle Health
 **LinkedIn: https://www.linkedin.com/in/mikesicilia/**
 **HQ:** Kansas City, MO
@@ -4684,7 +5170,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 172. Veeva Systems
+### 190. Veeva Systems
 **Contact:** Peter Gassner — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/petergassner/**
 **HQ:** Pleasanton, CA
@@ -4710,7 +5196,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 173. Teladoc Health
+### 191. Teladoc Health
 **Contact:** Chuck Divita — CEO
 **LinkedIn: https://www.linkedin.com/in/chuckdivita/**
 **HQ:** Purchase, NY
@@ -4736,7 +5222,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 174. Doximity
+### 192. Doximity
 **Contact:** Jeff Tangney — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/jtangney/**
 **HQ:** San Francisco, CA
@@ -4762,7 +5248,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 175. Hims & Hers Health
+### 193. Hims & Hers Health
 **Contact:** Andrew Dudum — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/andrewdudum/**
 **HQ:** San Francisco, CA
@@ -4788,7 +5274,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 176. Oscar Health
+### 194. Oscar Health
 **Contact:** Mark Bertolini — CEO
 **LinkedIn: https://www.linkedin.com/in/mark-bertolini/**
 **HQ:** New York, NY
@@ -4814,7 +5300,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 177. Clover Health
+### 195. Clover Health
 **Contact:** Andrew Toy — CEO
 **LinkedIn: https://www.linkedin.com/in/andrewtoy/**
 **HQ:** Franklin, TN
@@ -4840,7 +5326,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 178. Ro (Roman)
+### 196. Ro (Roman)
 **Contact:** Zachariah Reitano — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/zachariah-reitano/**
 **HQ:** New York, NY
@@ -4866,7 +5352,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 179. Cerebras Systems
+### 197. Cerebras Systems
 **Contact:** Andrew Feldman — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/andrewfeldman/**
 **HQ:** Sunnyvale, CA
@@ -4892,7 +5378,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 180. Regard
+### 198. Regard
 **Contact:** Eli Ben-Joseph — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/elibenjoseph/**
 **HQ:** Los Angeles, CA
@@ -4918,7 +5404,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 181. Abridge
+### 199. Abridge
 **Contact:** Shiv Rao — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/shivrao/**
 **HQ:** Pittsburgh, PA
@@ -4944,7 +5430,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 182. Hippocratic AI
+### 200. Hippocratic AI
 **Contact:** Munjal Shah — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/munjal/**
 **HQ:** Palo Alto, CA
@@ -4970,7 +5456,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 183. Komodo Health
+### 201. Komodo Health
 **Contact:** Arif Nathoo — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/arif-nathoo/**
 **HQ:** San Francisco, CA
@@ -4996,7 +5482,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 184. UnitedHealth Group (Optum)
+### 202. UnitedHealth Group (Optum)
 **Contact:** Andrew Witty — CEO
 **LinkedIn: https://www.linkedin.com/in/andrew-witty/**
 **HQ:** Minnetonka, MN
@@ -5022,7 +5508,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 185. CVS Health (Aetna)
+### 203. CVS Health (Aetna)
 **Contact:** Karen Lynch — CEO
 **LinkedIn: https://www.linkedin.com/in/karen-lynch-cvs/**
 **HQ:** Woonsocket, RI
@@ -5048,7 +5534,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 186. Cigna (The Cigna Group)
+### 204. Cigna (The Cigna Group)
 **Contact:** David Cordani — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/david-cordani/**
 **HQ:** Bloomfield, CT
@@ -5074,7 +5560,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 187. Humana
+### 205. Humana
 **Contact:** Jim Rechtin — CEO
 **LinkedIn: https://www.linkedin.com/in/jim-rechtin/**
 **HQ:** Louisville, KY
@@ -5100,7 +5586,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 188. Anthem (Elevance Health)
+### 206. Anthem (Elevance Health)
 **Contact:** Gail Boudreaux — CEO
 **LinkedIn: https://www.linkedin.com/in/gail-boudreaux/**
 **HQ:** Indianapolis, IN
@@ -5126,7 +5612,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 189. Centene Corporation
+### 207. Centene Corporation
 **Contact:** Sarah London — CEO
 **LinkedIn: https://www.linkedin.com/in/sarah-london-centene/**
 **HQ:** St. Louis, MO
@@ -5152,7 +5638,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 190. BUPA
+### 208. BUPA
 **Contact:** Iñaki Ereño — Group CEO
 **LinkedIn: https://www.linkedin.com/in/inaki-ereno/**
 **HQ:** London, UK
@@ -5178,7 +5664,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 191. AXA Health
+### 209. AXA Health
 **Contact:** Thomas Buberl — CEO (AXA Group)
 **LinkedIn: https://www.linkedin.com/in/thomas-buberl/**
 **HQ:** Paris, France
@@ -5204,7 +5690,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 192. Niva Bupa (formerly Max Bupa)
+### 210. Niva Bupa (formerly Max Bupa)
 **Contact:** Krishnan Ramachandran — CEO
 **LinkedIn: https://www.linkedin.com/in/krishnan-ramachandran/**
 **HQ:** New Delhi, India
@@ -5230,7 +5716,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 193. Medibank (Australia)
+### 211. Medibank (Australia)
 **Contact:** David Koczkar — CEO
 **LinkedIn: https://www.linkedin.com/in/david-koczkar/**
 **HQ:** Melbourne, Australia
@@ -5256,7 +5742,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 194. Ping An Good Doctor
+### 212. Ping An Good Doctor
 **Contact:** Fang Weihao — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/company/ping-an-good-doctor/**
 **HQ:** Shanghai, China
@@ -5282,7 +5768,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 195. Babylon (acquired by eMed)
+### 213. Babylon (acquired by eMed)
 **Contact:** Pat Carroll — CMO (eMed)
 **LinkedIn: https://www.linkedin.com/in/patcarroll/**
 **HQ:** Austin, TX
@@ -5308,7 +5794,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 196. Collective Health
+### 214. Collective Health
 **Contact:** Ali Diab — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/alidiab/**
 **HQ:** San Francisco, CA
@@ -5334,7 +5820,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 197. Waystar
+### 215. Waystar
 **Contact:** Matt Hawkins — CEO
 **LinkedIn: https://www.linkedin.com/in/matthawkins/**
 **HQ:** Louisville, KY
@@ -5360,7 +5846,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 198. Change Healthcare (Optum)
+### 216. Change Healthcare (Optum)
 **Contact:** Andrew Witty — CEO (UnitedHealth Group)
 **LinkedIn: https://www.linkedin.com/in/andrew-witty/**
 **HQ:** Nashville, TN
@@ -5386,7 +5872,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 199. Teladoc Health
+### 217. Teladoc Health
 **Contact:** Chuck Divita — CEO
 **LinkedIn: https://www.linkedin.com/in/chuckdivita/**
 **HQ:** Purchase, NY
@@ -5412,7 +5898,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 200. Veracyte
+### 218. Veracyte
 **Contact:** Marc Stapley — CEO
 **LinkedIn: https://www.linkedin.com/in/marcstapley/**
 **HQ:** South San Francisco, CA
@@ -5438,7 +5924,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 201. Butterfly Network
+### 219. Butterfly Network
 **Contact:** Joseph DeVivo — President & CEO
 **LinkedIn: https://www.linkedin.com/in/josephdevivo/**
 **HQ:** Burlington, MA
@@ -5464,7 +5950,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 202. Hims & Hers Health
+### 220. Hims & Hers Health
 **Contact:** Andrew Dudum — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/andrewdudum/**
 **HQ:** San Francisco, CA
@@ -5490,7 +5976,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 203. Recursion Pharmaceuticals
+### 221. Recursion Pharmaceuticals
 **Contact:** Chris Gibson — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/chrisgibson/**
 **HQ:** Salt Lake City, UT
@@ -5516,7 +6002,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 204. Exscientia
+### 222. Exscientia
 **Contact:** David Hallett — CEO
 **LinkedIn: https://www.linkedin.com/in/david-hallett/**
 **HQ:** Oxford, UK
@@ -5542,7 +6028,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 205. Babylon Health
+### 223. Babylon Health
 **Contact:** CTO Office — Babylon Health
 **LinkedIn: https://www.linkedin.com/company/babylonhealth/**
 **HQ:** London, UK
@@ -5568,7 +6054,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 206. Docplanner (Doctoralia)
+### 224. Docplanner (Doctoralia)
 **Contact:** Mariusz Gralewski — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/mariuszgralewski/**
 **HQ:** Warsaw, Poland
@@ -5594,7 +6080,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 207. Owkin
+### 225. Owkin
 **Contact:** Thomas Clozel — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/thomasclozel/**
 **HQ:** Paris, France
@@ -5620,7 +6106,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 208. Doctolib
+### 226. Doctolib
 **Contact:** Stanislas Niox-Château — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/stanislasniox/**
 **HQ:** Paris, France
@@ -5753,7 +6239,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 | 99 | **Monzo Bank** | TS Anil | CEO | [LinkedIn](https://www.linkedin.com/in/ts-anil/) | AI gambling block and financial wellbeing features |
 | 100 | **Starling Bank** | Raman Bhatia | CEO | [LinkedIn](https://www.linkedin.com/in/raman-bhatia/) | AI fraud prevention and SME lending |
 
-### 209. JPMorgan Chase
+### 227. JPMorgan Chase
 **Contact:** Teresa Heitsenrether — Chief Data & Analytics Officer
 **LinkedIn: https://www.linkedin.com/in/teresa-heitsenrether/**
 **HQ:** New York, NY
@@ -5779,7 +6265,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 210. Goldman Sachs
+### 228. Goldman Sachs
 **Contact:** Marco Argenti — Chief Information Officer
 **LinkedIn: https://www.linkedin.com/in/marcoargenti/**
 **HQ:** New York, NY
@@ -5805,7 +6291,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 211. Bank of America
+### 229. Bank of America
 **Contact:** Aditya Bhasin — CTO & CIO
 **LinkedIn: https://www.linkedin.com/in/adityabhasin/**
 **HQ:** Charlotte, NC
@@ -5831,7 +6317,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 212. Citigroup
+### 230. Citigroup
 **Contact:** Tim Ryan — Chief Compliance Officer
 **LinkedIn: https://www.linkedin.com/in/timryan-citi/**
 **HQ:** New York, NY
@@ -5857,7 +6343,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 213. Wells Fargo
+### 231. Wells Fargo
 **Contact:** Chintan Mehta — Chief Digital & Technology Officer
 **LinkedIn: https://www.linkedin.com/in/chintanmehta/**
 **HQ:** San Francisco, CA
@@ -5883,7 +6369,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 214. Morgan Stanley
+### 232. Morgan Stanley
 **Contact:** Jeff McMillan — Head of Firm-Wide AI
 **LinkedIn: https://www.linkedin.com/in/jeff-mcmillan/**
 **HQ:** New York, NY
@@ -5909,7 +6395,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 215. HSBC
+### 233. HSBC
 **Contact:** David Knott — Group Chief Data & Analytics Officer
 **LinkedIn: https://www.linkedin.com/in/david-knott/**
 **HQ:** London, UK
@@ -5935,7 +6421,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 216. Barclays
+### 234. Barclays
 **Contact:** Alistair Maycock — Chief Data Officer
 **LinkedIn: https://www.linkedin.com/in/alistair-maycock/**
 **HQ:** London, UK
@@ -5961,7 +6447,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 217. Deutsche Bank
+### 235. Deutsche Bank
 **Contact:** Bernd Leukert — Chief Technology, Data & Innovation Officer
 **LinkedIn: https://www.linkedin.com/in/berndleukert/**
 **HQ:** Frankfurt, Germany
@@ -5987,7 +6473,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 218. BNP Paribas
+### 236. BNP Paribas
 **Contact:** Olivier Malafronte — Group Chief Data Officer
 **LinkedIn: https://www.linkedin.com/in/olivier-malafronte/**
 **HQ:** Paris, France
@@ -6013,7 +6499,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 219. UBS
+### 237. UBS
 **Contact:** Mike Dargan — Group Chief Digital & Information Officer
 **LinkedIn: https://www.linkedin.com/in/mikedargan/**
 **HQ:** Zurich, Switzerland
@@ -6039,7 +6525,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 220. Standard Chartered
+### 238. Standard Chartered
 **Contact:** Roel Louwhoff — Chief Operating Officer
 **LinkedIn: https://www.linkedin.com/in/roel-louwhoff/**
 **HQ:** London, UK
@@ -6065,7 +6551,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 221. Société Générale
+### 239. Société Générale
 **Contact:** Carlos Gonçalves — Chief Data Officer
 **LinkedIn: https://www.linkedin.com/in/carlosgoncalves/**
 **HQ:** Paris, France
@@ -6091,7 +6577,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 222. ING Group
+### 240. ING Group
 **Contact:** Benoît Legrand — Chief Innovation Officer
 **LinkedIn: https://www.linkedin.com/in/benoitlegrand/**
 **HQ:** Amsterdam, Netherlands
@@ -6117,7 +6603,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 223. Santander
+### 241. Santander
 **Contact:** Juan Cerruti — Chief Data & AI Officer
 **LinkedIn: https://www.linkedin.com/in/juancerruti/**
 **HQ:** Madrid, Spain
@@ -6143,7 +6629,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 224. Toronto-Dominion Bank (TD)
+### 242. Toronto-Dominion Bank (TD)
 **Contact:** Greg Braca — President & CEO, TD Bank America
 **LinkedIn: https://www.linkedin.com/in/greg-braca/**
 **HQ:** Toronto, Canada
@@ -6169,7 +6655,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 225. Commonwealth Bank of Australia
+### 243. Commonwealth Bank of Australia
 **Contact:** Matt Comyn — CEO
 **LinkedIn: https://www.linkedin.com/in/matt-comyn/**
 **HQ:** Sydney, Australia
@@ -6195,7 +6681,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 226. DBS Bank
+### 244. DBS Bank
 **Contact:** Jimmy Ng — Group Chief Information Officer
 **LinkedIn: https://www.linkedin.com/in/jimmy-ng-dbs/**
 **HQ:** Singapore
@@ -6221,7 +6707,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 227. Nomura Holdings
+### 245. Nomura Holdings
 **Contact:** Kentaro Okuda — Group CEO
 **LinkedIn: https://www.linkedin.com/in/kentaro-okuda/**
 **HQ:** Tokyo, Japan
@@ -6247,7 +6733,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 228. Macquarie Group
+### 246. Macquarie Group
 **Contact:** Shemara Wikramanayake — Managing Director & CEO
 **LinkedIn: https://www.linkedin.com/in/shemara-wikramanayake/**
 **HQ:** Sydney, Australia
@@ -6273,7 +6759,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 229. Mizuho Financial Group
+### 247. Mizuho Financial Group
 **Contact:** Masahiro Kihara — President & Group CEO
 **LinkedIn: https://www.linkedin.com/in/masahiro-kihara/**
 **HQ:** Tokyo, Japan
@@ -6299,7 +6785,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 230. Crédit Agricole
+### 248. Crédit Agricole
 **Contact:** Philippe Brassac — CEO
 **LinkedIn: https://www.linkedin.com/in/philippe-brassac/**
 **HQ:** Montrouge, France
@@ -6325,7 +6811,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 231. Rabobank
+### 249. Rabobank
 **Contact:** Wiebe Draijer — Chairman of the Executive Board
 **LinkedIn: https://www.linkedin.com/in/wiebe-draijer/**
 **HQ:** Utrecht, Netherlands
@@ -6351,7 +6837,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 232. Intesa Sanpaolo
+### 250. Intesa Sanpaolo
 **Contact:** Carlo Messina — CEO
 **LinkedIn: https://www.linkedin.com/in/carlo-messina/**
 **HQ:** Turin, Italy
@@ -6377,7 +6863,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 233. National Australia Bank (NAB)
+### 251. National Australia Bank (NAB)
 **Contact:** Andrew Irvine — CEO
 **LinkedIn: https://www.linkedin.com/in/andrew-irvine-nab/**
 **HQ:** Melbourne, Australia
@@ -6403,7 +6889,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 234. Stripe
+### 252. Stripe
 **Contact:** David Singleton — CTO
 **LinkedIn: https://www.linkedin.com/in/dsingleton/**
 **HQ:** San Francisco, CA
@@ -6429,7 +6915,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 235. Square (Block)
+### 253. Square (Block)
 **Contact:** Jack Dorsey — Chairman & CEO (Block)
 **LinkedIn: https://www.linkedin.com/in/jackdorsey/**
 **HQ:** San Francisco, CA
@@ -6455,7 +6941,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 236. Revolut
+### 254. Revolut
 **Contact:** Nik Storonsky — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/nstoronsky/**
 **HQ:** London, UK
@@ -6481,7 +6967,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 237. Wise (TransferWise)
+### 255. Wise (TransferWise)
 **Contact:** Kristo Käärmann — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/kkaarmann/**
 **HQ:** London, UK
@@ -6507,7 +6993,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 238. Monzo
+### 256. Monzo
 **Contact:** TS Anil — CEO
 **LinkedIn: https://www.linkedin.com/in/tsanil/**
 **HQ:** London, UK
@@ -6533,7 +7019,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 239. N26
+### 257. N26
 **Contact:** Valentin Stalf — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/valentinstalf/**
 **HQ:** Berlin, Germany
@@ -6559,7 +7045,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 240. Chime
+### 258. Chime
 **Contact:** Chris Britt — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/chrisbritt/**
 **HQ:** San Francisco, CA
@@ -6585,7 +7071,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 241. SoFi
+### 259. SoFi
 **Contact:** Anthony Noto — CEO
 **LinkedIn: https://www.linkedin.com/in/anthonynoto/**
 **HQ:** San Francisco, CA
@@ -6611,7 +7097,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 242. Plaid
+### 260. Plaid
 **Contact:** Zach Perret — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/zachperret/**
 **HQ:** San Francisco, CA
@@ -6637,7 +7123,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 243. Adyen
+### 261. Adyen
 **Contact:** Pieter van der Does — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/pieter-van-der-does/**
 **HQ:** Amsterdam, Netherlands
@@ -6663,7 +7149,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 244. Checkout.com
+### 262. Checkout.com
 **Contact:** Guillaume Pousaz — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/guillaumepousaz/**
 **HQ:** London, UK
@@ -6689,7 +7175,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 245. Marqeta
+### 263. Marqeta
 **Contact:** Simon Khalaf — CEO
 **LinkedIn: https://www.linkedin.com/in/simonkhalaf/**
 **HQ:** Oakland, CA
@@ -6715,7 +7201,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 246. Brex
+### 264. Brex
 **Contact:** Pedro Franceschi — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/pedrofranceschi/**
 **HQ:** San Francisco, CA
@@ -6741,7 +7227,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 247. Ramp
+### 265. Ramp
 **Contact:** Eric Glyman — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/ericglyman/**
 **HQ:** New York, NY
@@ -6767,7 +7253,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 248. Robinhood
+### 266. Robinhood
 **Contact:** Vlad Tenev — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/vladtenev/**
 **HQ:** Menlo Park, CA
@@ -6793,7 +7279,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 249. Affirm
+### 267. Affirm
 **Contact:** Max Levchin — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/maxlevchin/**
 **HQ:** San Francisco, CA
@@ -6819,7 +7305,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 250. Klarna
+### 268. Klarna
 **Contact:** Sebastian Siemiatkowski — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/sebastiansiemiatkowski/**
 **HQ:** Stockholm, Sweden
@@ -6845,7 +7331,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 251. Nubank
+### 269. Nubank
 **Contact:** David Vélez — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/davidvelez/**
 **HQ:** São Paulo, Brazil
@@ -6871,7 +7357,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 252. Mercado Pago (MercadoLibre)
+### 270. Mercado Pago (MercadoLibre)
 **Contact:** Marcos Galperin — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/marcosgalperin/**
 **HQ:** Buenos Aires, Argentina
@@ -6897,7 +7383,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 253. Ant Group (Alipay)
+### 271. Ant Group (Alipay)
 **Contact:** Eric Jing — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/company/antgroup/**
 **HQ:** Hangzhou, China
@@ -6923,7 +7409,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 254. Razorpay
+### 272. Razorpay
 **Contact:** Harshil Mathur — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/harshilmathur/**
 **HQ:** Bangalore, India
@@ -6949,7 +7435,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 255. Paytm (One97 Communications)
+### 273. Paytm (One97 Communications)
 **Contact:** Vijay Shekhar Sharma — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/vijayshekharsharma/**
 **HQ:** Noida, India
@@ -6975,7 +7461,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 256. Starling Bank
+### 274. Starling Bank
 **Contact:** Anne Boden — Founder
 **LinkedIn: https://www.linkedin.com/in/anneboden/**
 **HQ:** London, UK
@@ -7001,7 +7487,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 257. Bunq
+### 275. Bunq
 **Contact:** Ali Niknam — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/aliniknam/**
 **HQ:** Amsterdam, Netherlands
@@ -7027,7 +7513,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 258. BlackRock
+### 276. BlackRock
 **Contact:** Rob Goldstein — COO
 **LinkedIn: https://www.linkedin.com/in/rob-goldstein/**
 **HQ:** New York, NY
@@ -7053,7 +7539,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 259. Vanguard
+### 277. Vanguard
 **Contact:** Tim Buckley — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/timbuckley-vanguard/**
 **HQ:** Malvern, PA
@@ -7079,7 +7565,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 260. Fidelity Investments
+### 278. Fidelity Investments
 **Contact:** Abigail Johnson — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/abigail-johnson/**
 **HQ:** Boston, MA
@@ -7105,7 +7591,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 261. State Street
+### 279. State Street
 **Contact:** Ron O'Hanley — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/ron-ohanley/**
 **HQ:** Boston, MA
@@ -7131,7 +7617,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 262. Citadel
+### 280. Citadel
 **Contact:** Ken Griffin — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/ken-griffin/**
 **HQ:** Miami, FL
@@ -7157,7 +7643,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 263. Two Sigma
+### 281. Two Sigma
 **Contact:** David Siegel — Co-Chairman
 **LinkedIn: https://www.linkedin.com/in/david-siegel/**
 **HQ:** New York, NY
@@ -7183,7 +7669,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 264. Bridgewater Associates
+### 282. Bridgewater Associates
 **Contact:** Nir Bar Dea — CEO
 **LinkedIn: https://www.linkedin.com/in/nirbardea/**
 **HQ:** Westport, CT
@@ -7209,7 +7695,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 265. DE Shaw
+### 283. DE Shaw
 **Contact:** David E. Shaw — Founder
 **LinkedIn: https://www.linkedin.com/company/d-e-shaw-group/**
 **HQ:** New York, NY
@@ -7235,7 +7721,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 266. Man Group
+### 284. Man Group
 **Contact:** Robyn Grew — CEO
 **LinkedIn: https://www.linkedin.com/in/robyn-grew/**
 **HQ:** London, UK
@@ -7261,7 +7747,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 267. AQR Capital Management
+### 285. AQR Capital Management
 **Contact:** Cliff Asness — Managing Principal & Co-founder
 **LinkedIn: https://www.linkedin.com/in/cliff-asness/**
 **HQ:** Greenwich, CT
@@ -7287,7 +7773,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 268. Schroders
+### 286. Schroders
 **Contact:** Peter Harrison — Group CEO
 **LinkedIn: https://www.linkedin.com/in/peter-harrison-schroders/**
 **HQ:** London, UK
@@ -7313,7 +7799,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 269. Amundi
+### 287. Amundi
 **Contact:** Valérie Baudson — CEO
 **LinkedIn: https://www.linkedin.com/in/valerie-baudson/**
 **HQ:** Paris, France
@@ -7339,7 +7825,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 270. PIMCO
+### 288. PIMCO
 **Contact:** Emmanuel Roman — CEO
 **LinkedIn: https://www.linkedin.com/in/emmanuel-roman/**
 **HQ:** Newport Beach, CA
@@ -7365,7 +7851,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 271. T. Rowe Price
+### 289. T. Rowe Price
 **Contact:** Rob Sharps — President & CEO
 **LinkedIn: https://www.linkedin.com/in/rob-sharps/**
 **HQ:** Baltimore, MD
@@ -7391,7 +7877,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 272. Invesco
+### 290. Invesco
 **Contact:** Andrew Schlossberg — President & CEO
 **LinkedIn: https://www.linkedin.com/in/andrewschlossberg/**
 **HQ:** Atlanta, GA
@@ -7417,7 +7903,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 273. Wealthfront
+### 291. Wealthfront
 **Contact:** David Fortunato — CEO
 **LinkedIn: https://www.linkedin.com/in/david-fortunato/**
 **HQ:** Palo Alto, CA
@@ -7443,7 +7929,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 274. Betterment
+### 292. Betterment
 **Contact:** Sarah Levy — CEO
 **LinkedIn: https://www.linkedin.com/in/sarahlevy-betterment/**
 **HQ:** New York, NY
@@ -7469,7 +7955,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 275. Qontigo (Deutsche Börse)
+### 293. Qontigo (Deutsche Börse)
 **Contact:** Hamish Seegopaul — CEO
 **LinkedIn: https://www.linkedin.com/in/hamishseegopaul/**
 **HQ:** Frankfurt, Germany
@@ -7495,7 +7981,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 276. MSCI
+### 294. MSCI
 **Contact:** Henry Fernandez — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/henry-fernandez/**
 **HQ:** New York, NY
@@ -7521,7 +8007,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 277. Moody's Analytics
+### 295. Moody's Analytics
 **Contact:** Rob Fauber — President & CEO (Moody's Corp)
 **LinkedIn: https://www.linkedin.com/in/rob-fauber/**
 **HQ:** New York, NY
@@ -7547,7 +8033,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 278. Socure
+### 296. Socure
 **Contact:** Johnny Ayers — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/johnnyayers/**
 **HQ:** New York, NY
@@ -7573,7 +8059,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 279. Alloy
+### 297. Alloy
 **Contact:** Tommy Nicholas — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/tommynicholas/**
 **HQ:** New York, NY
@@ -7599,7 +8085,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 280. ComplyAdvantage
+### 298. ComplyAdvantage
 **Contact:** Charles Delingpole — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/charlesdelingpole/**
 **HQ:** New York, NY
@@ -7625,7 +8111,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 281. Chainalysis
+### 299. Chainalysis
 **Contact:** Michael Gronager — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/gronager/**
 **HQ:** New York, NY
@@ -7651,7 +8137,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 282. Elliptic
+### 300. Elliptic
 **Contact:** Simone Maini — CEO
 **LinkedIn: https://www.linkedin.com/in/simonemaini/**
 **HQ:** London, UK
@@ -7677,7 +8163,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 283. Featurespace
+### 301. Featurespace
 **Contact:** Martina King — CEO
 **LinkedIn: https://www.linkedin.com/in/martinaking/**
 **HQ:** Cambridge, UK
@@ -7703,7 +8189,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 284. Feedzai
+### 302. Feedzai
 **Contact:** Nuno Sebastião — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/nunosebastiao/**
 **HQ:** New York, NY
@@ -7729,7 +8215,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 285. Sardine
+### 303. Sardine
 **Contact:** Soups Ranjan — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/soupsranjan/**
 **HQ:** San Francisco, CA
@@ -7755,7 +8241,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 286. Unit21
+### 304. Unit21
 **Contact:** Trisha Kothari — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/trishakothari/**
 **HQ:** San Francisco, CA
@@ -7781,7 +8267,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 287. Hummingbird
+### 305. Hummingbird
 **Contact:** Brian Clark — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/brian-clark-hummingbird/**
 **HQ:** New York, NY
@@ -7807,7 +8293,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 288. Nasdaq
+### 306. Nasdaq
 **Contact:** Adena Friedman — Chair & CEO
 **LinkedIn: https://www.linkedin.com/in/adenafriedman/**
 **HQ:** New York, NY
@@ -7833,7 +8319,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 289. London Stock Exchange Group (LSEG)
+### 307. London Stock Exchange Group (LSEG)
 **Contact:** David Schwimmer — CEO
 **LinkedIn: https://www.linkedin.com/in/david-schwimmer-lseg/**
 **HQ:** London, UK
@@ -7859,7 +8345,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 290. CME Group
+### 308. CME Group
 **Contact:** Terry Duffy — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/terry-duffy/**
 **HQ:** Chicago, IL
@@ -7885,7 +8371,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 291. Deutsche Börse
+### 309. Deutsche Börse
 **Contact:** Theodor Weimer — CEO
 **LinkedIn: https://www.linkedin.com/in/theodor-weimer/**
 **HQ:** Frankfurt, Germany
@@ -7911,7 +8397,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 292. Intercontinental Exchange (ICE)
+### 310. Intercontinental Exchange (ICE)
 **Contact:** Jeffrey Sprecher — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/jeffrey-sprecher/**
 **HQ:** Atlanta, GA
@@ -7937,7 +8423,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 293. Singapore Exchange (SGX)
+### 311. Singapore Exchange (SGX)
 **Contact:** Loh Boon Chye — CEO
 **LinkedIn: https://www.linkedin.com/in/loh-boon-chye/**
 **HQ:** Singapore
@@ -7963,7 +8449,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 294. Hong Kong Exchanges (HKEX)
+### 312. Hong Kong Exchanges (HKEX)
 **Contact:** Nicolas Aguzin — CEO
 **LinkedIn: https://www.linkedin.com/in/nicolas-aguzin/**
 **HQ:** Hong Kong
@@ -7989,7 +8475,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 295. Euronext
+### 313. Euronext
 **Contact:** Stéphane Boujnah — CEO
 **LinkedIn: https://www.linkedin.com/in/stephaneboujnah/**
 **HQ:** Amsterdam, Netherlands
@@ -8015,7 +8501,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 296. B3 (Brasil Bolsa Balcão)
+### 314. B3 (Brasil Bolsa Balcão)
 **Contact:** Gilson Finkelsztain — CEO
 **LinkedIn: https://www.linkedin.com/in/gilson-finkelsztain/**
 **HQ:** São Paulo, Brazil
@@ -8041,7 +8527,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 297. Japan Exchange Group (JPX)
+### 315. Japan Exchange Group (JPX)
 **Contact:** Hiromi Yamaji — CEO
 **LinkedIn: https://www.linkedin.com/company/japan-exchange-group/**
 **HQ:** Tokyo, Japan
@@ -8067,7 +8553,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 298. Standard Chartered
+### 316. Standard Chartered
 **Contact:** Bill Winters — Group CEO
 **LinkedIn: https://www.linkedin.com/in/bill-winters/**
 **HQ:** London, UK
@@ -8093,7 +8579,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 299. Macquarie Group
+### 317. Macquarie Group
 **Contact:** Shemara Wikramanayake — CEO
 **LinkedIn: https://www.linkedin.com/in/shemara-wikramanayake/**
 **HQ:** Sydney, Australia
@@ -8119,7 +8605,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 300. Nomura Holdings
+### 318. Nomura Holdings
 **Contact:** Kentaro Okuda — Group CEO
 **LinkedIn: https://www.linkedin.com/company/nomura/**
 **HQ:** Tokyo, Japan
@@ -8145,7 +8631,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 301. KKR & Co.
+### 319. KKR & Co.
 **Contact:** Scott Nuttall — Co-CEO
 **LinkedIn: https://www.linkedin.com/in/scott-nuttall/**
 **HQ:** New York, NY
@@ -8171,7 +8657,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 302. Apollo Global Management
+### 320. Apollo Global Management
 **Contact:** Marc Rowan — CEO
 **LinkedIn: https://www.linkedin.com/in/marc-rowan/**
 **HQ:** New York, NY
@@ -8197,7 +8683,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 303. Carlyle Group
+### 321. Carlyle Group
 **Contact:** Harvey Schwartz — CEO
 **LinkedIn: https://www.linkedin.com/in/harvey-schwartz/**
 **HQ:** Washington, DC
@@ -8223,7 +8709,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 304. Affirm
+### 322. Affirm
 **Contact:** Max Levchin — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/maxlevchin/**
 **HQ:** San Francisco, CA
@@ -8249,7 +8735,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 305. SoFi Technologies
+### 323. SoFi Technologies
 **Contact:** Anthony Noto — CEO
 **LinkedIn: https://www.linkedin.com/in/anthonynoto/**
 **HQ:** San Francisco, CA
@@ -8275,7 +8761,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 306. Wise (TransferWise)
+### 324. Wise (TransferWise)
 **Contact:** Kristo Käärmann — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/kristokaarmann/**
 **HQ:** London, UK
@@ -8301,7 +8787,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 307. Monzo Bank
+### 325. Monzo Bank
 **Contact:** TS Anil — CEO
 **LinkedIn: https://www.linkedin.com/in/ts-anil/**
 **HQ:** London, UK
@@ -8327,7 +8813,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 308. Starling Bank
+### 326. Starling Bank
 **Contact:** Raman Bhatia — CEO
 **LinkedIn: https://www.linkedin.com/in/raman-bhatia/**
 **HQ:** London, UK
@@ -8460,7 +8946,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 | 99 | **Nexter (KNDS)** | Nicolas Chamussy | CEO, KNDS France | [LinkedIn](https://www.linkedin.com/company/nexter-group/) | AI armoured vehicle systems and fire control |
 | 100 | **Diehl Defence** | Helmut Rauch | Managing Director | [LinkedIn](https://www.linkedin.com/company/diehl-defence/) | AI missile guidance and air defence systems |
 
-### 309. Lockheed Martin
+### 327. Lockheed Martin
 **Contact:** Daniel Jablonsky — President, Rotary & Mission Systems
 **LinkedIn: https://www.linkedin.com/in/daniel-jablonsky/**
 **HQ:** Bethesda, MD
@@ -8486,7 +8972,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 310. Raytheon Technologies (RTX)
+### 328. Raytheon Technologies (RTX)
 **Contact:** Chris Calio — President & CEO
 **LinkedIn: https://www.linkedin.com/in/chris-calio/**
 **HQ:** Arlington, VA
@@ -8512,7 +8998,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 311. Northrop Grumman
+### 329. Northrop Grumman
 **Contact:** Kathy Warden — Chairman, President & CEO
 **LinkedIn: https://www.linkedin.com/in/kathy-warden/**
 **HQ:** Falls Church, VA
@@ -8538,7 +9024,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 312. General Dynamics
+### 330. General Dynamics
 **Contact:** Phebe Novakovic — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/phebe-novakovic/**
 **HQ:** Reston, VA
@@ -8564,7 +9050,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 313. L3Harris Technologies
+### 331. L3Harris Technologies
 **Contact:** Christopher Kubasik — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/chris-kubasik/**
 **HQ:** Melbourne, FL
@@ -8590,7 +9076,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 314. BAE Systems
+### 332. BAE Systems
 **Contact:** Charles Woodburn — CEO
 **LinkedIn: https://www.linkedin.com/in/charles-woodburn/**
 **HQ:** London, UK
@@ -8616,7 +9102,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 315. Thales Group
+### 333. Thales Group
 **Contact:** Patrice Caine — Chairman
 **LinkedIn: https://www.linkedin.com/in/patrice-caine/**
 **HQ:** Paris, France
@@ -8642,7 +9128,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 316. Leonardo S.p.A.
+### 334. Leonardo S.p.A.
 **Contact:** Roberto Cingolani — CEO
 **LinkedIn: https://www.linkedin.com/in/roberto-cingolani/**
 **HQ:** Rome, Italy
@@ -8668,7 +9154,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 317. Airbus Defence & Space
+### 335. Airbus Defence & Space
 **Contact:** Michael Schoellhorn — CEO, Airbus Defence & Space
 **LinkedIn: https://www.linkedin.com/in/michael-schoellhorn/**
 **HQ:** Munich, Germany
@@ -8694,7 +9180,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 318. Rheinmetall
+### 336. Rheinmetall
 **Contact:** Armin Papperger — CEO
 **LinkedIn: https://www.linkedin.com/in/armin-papperger/**
 **HQ:** Düsseldorf, Germany
@@ -8720,7 +9206,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 319. SAAB
+### 337. SAAB
 **Contact:** Micael Johansson — President & CEO
 **LinkedIn: https://www.linkedin.com/in/micael-johansson/**
 **HQ:** Stockholm, Sweden
@@ -8746,7 +9232,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 320. Elbit Systems
+### 338. Elbit Systems
 **Contact:** Bezhalel Machlis — President & CEO
 **LinkedIn: https://www.linkedin.com/in/bezhalel-machlis/**
 **HQ:** Haifa, Israel
@@ -8772,7 +9258,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 321. Rafael Advanced Defense Systems
+### 339. Rafael Advanced Defense Systems
 **Contact:** Yoav Har-Even — President & CEO
 **LinkedIn: https://www.linkedin.com/in/yoav-har-even/**
 **HQ:** Haifa, Israel
@@ -8798,7 +9284,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 322. Hanwha Aerospace
+### 340. Hanwha Aerospace
 **Contact:** Son Jae-il — CEO
 **LinkedIn: https://www.linkedin.com/company/hanwha-aerospace/**
 **HQ:** Changwon, South Korea
@@ -8824,7 +9310,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 323. Hindustan Aeronautics (HAL)
+### 341. Hindustan Aeronautics (HAL)
 **Contact:** C. B. Ananthakrishnan — CMD
 **LinkedIn: https://www.linkedin.com/company/hal-india/**
 **HQ:** Bangalore, India
@@ -8850,7 +9336,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 324. Turkish Aerospace Industries (TAI)
+### 342. Turkish Aerospace Industries (TAI)
 **Contact:** Temel Kotil — CEO
 **LinkedIn: https://www.linkedin.com/in/temel-kotil/**
 **HQ:** Ankara, Turkey
@@ -8876,7 +9362,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 325. MBDA
+### 343. MBDA
 **Contact:** Eric Béranger — CEO
 **LinkedIn: https://www.linkedin.com/in/eric-beranger/**
 **HQ:** Paris, France
@@ -8902,7 +9388,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 326. Kongsberg Defence & Aerospace
+### 344. Kongsberg Defence & Aerospace
 **Contact:** Eirik Lie — President, Kongsberg Defence & Aerospace
 **LinkedIn: https://www.linkedin.com/in/eirik-lie/**
 **HQ:** Kongsberg, Norway
@@ -8928,7 +9414,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 327. Dassault Aviation
+### 345. Dassault Aviation
 **Contact:** Eric Trappier — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/eric-trappier/**
 **HQ:** Paris, France
@@ -8954,7 +9440,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 328. General Atomics
+### 346. General Atomics
 **Contact:** Linden Blue — CEO
 **LinkedIn: https://www.linkedin.com/company/general-atomics/**
 **HQ:** San Diego, CA
@@ -8980,7 +9466,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 329. Palantir Technologies
+### 347. Palantir Technologies
 **Contact:** Alex Karp — CEO
 **LinkedIn: https://www.linkedin.com/in/alex-karp/**
 **HQ:** Denver, CO
@@ -9006,7 +9492,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 330. Anduril Industries
+### 348. Anduril Industries
 **Contact:** Palmer Luckey — Founder
 **LinkedIn: https://www.linkedin.com/in/palmerluckey/**
 **HQ:** Costa Mesa, CA
@@ -9032,7 +9518,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 331. Shield AI
+### 349. Shield AI
 **Contact:** Brandon Tseng — President & Co-founder
 **LinkedIn: https://www.linkedin.com/in/brandon-tseng/**
 **HQ:** San Diego, CA
@@ -9058,7 +9544,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 332. Rebellion Defence
+### 350. Rebellion Defence
 **Contact:** Oliver Lewis — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/oliverlewis/**
 **HQ:** Washington, DC
@@ -9084,7 +9570,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 333. Primer
+### 351. Primer
 **Contact:** Sean Gourley — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/seangourley/**
 **HQ:** San Francisco, CA
@@ -9110,7 +9596,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 334. Scale AI
+### 352. Scale AI
 **Contact:** Alexandr Wang — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/alexandrwang/**
 **HQ:** San Francisco, CA
@@ -9136,7 +9622,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 335. C3.ai
+### 353. C3.ai
 **Contact:** Thomas Siebel — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/thomas-siebel/**
 **HQ:** Redwood City, CA
@@ -9162,7 +9648,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 336. Maxar Technologies
+### 354. Maxar Technologies
 **Contact:** Dan Jablonsky — CEO
 **LinkedIn: https://www.linkedin.com/in/dan-jablonsky/**
 **HQ:** Westminster, CO
@@ -9188,7 +9674,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 337. Planet Labs
+### 355. Planet Labs
 **Contact:** Will Marshall — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/willmarshall/**
 **HQ:** San Francisco, CA
@@ -9214,7 +9700,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 338. BlackSky Technology
+### 356. BlackSky Technology
 **Contact:** Brian O'Toole — CEO
 **LinkedIn: https://www.linkedin.com/in/brian-otoole/**
 **HQ:** Herndon, VA
@@ -9240,7 +9726,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 339. Booz Allen Hamilton
+### 357. Booz Allen Hamilton
 **Contact:** Horacio Rozanski — President & CEO
 **LinkedIn: https://www.linkedin.com/in/horaciorozanski/**
 **HQ:** McLean, VA
@@ -9266,7 +9752,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 340. Leidos
+### 358. Leidos
 **Contact:** Tom Bell — CEO
 **LinkedIn: https://www.linkedin.com/in/tom-bell-leidos/**
 **HQ:** Reston, VA
@@ -9292,7 +9778,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 341. SAIC
+### 359. SAIC
 **Contact:** Toni Townes-Whitley — CEO
 **LinkedIn: https://www.linkedin.com/in/tonitowneswhitley/**
 **HQ:** Reston, VA
@@ -9318,7 +9804,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 342. Peraton
+### 360. Peraton
 **Contact:** Stu Shea — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/stu-shea/**
 **HQ:** Herndon, VA
@@ -9344,7 +9830,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 343. Sierra Nevada Corporation (SNC)
+### 361. Sierra Nevada Corporation (SNC)
 **Contact:** Fatih Ozmen — Owner & CEO
 **LinkedIn: https://www.linkedin.com/in/fatih-ozmen/**
 **HQ:** Sparks, NV
@@ -9370,7 +9856,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 344. Kratos Defense & Security
+### 362. Kratos Defense & Security
 **Contact:** Eric DeMarco — President & CEO
 **LinkedIn: https://www.linkedin.com/in/eric-demarco/**
 **HQ:** San Diego, CA
@@ -9396,7 +9882,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 345. AeroVironment
+### 363. AeroVironment
 **Contact:** Wahid Nawabi — Chairman, President & CEO
 **LinkedIn: https://www.linkedin.com/in/wahidnawabi/**
 **HQ:** Arlington, VA
@@ -9422,7 +9908,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 346. Textron Systems
+### 364. Textron Systems
 **Contact:** Lisa Atherton — President & CEO
 **LinkedIn: https://www.linkedin.com/in/lisa-atherton/**
 **HQ:** Hunt Valley, MD
@@ -9448,7 +9934,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 347. Curtiss-Wright
+### 365. Curtiss-Wright
 **Contact:** Lynn Bamford — President & CEO
 **LinkedIn: https://www.linkedin.com/in/lynn-bamford/**
 **HQ:** Davidson, NC
@@ -9474,7 +9960,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 348. Mercury Systems
+### 366. Mercury Systems
 **Contact:** Bill Ballhaus — President & CEO
 **LinkedIn: https://www.linkedin.com/in/bill-ballhaus/**
 **HQ:** Andover, MA
@@ -9500,7 +9986,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 349. Hensoldt
+### 367. Hensoldt
 **Contact:** Thomas Müller — CEO
 **LinkedIn: https://www.linkedin.com/in/thomas-mueller-hensoldt/**
 **HQ:** Taufkirchen, Germany
@@ -9526,7 +10012,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 350. QinetiQ
+### 368. QinetiQ
 **Contact:** Steve Sheridan — CEO
 **LinkedIn: https://www.linkedin.com/in/steve-sheridan/**
 **HQ:** Farnborough, UK
@@ -9552,7 +10038,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 351. Babcock International
+### 369. Babcock International
 **Contact:** David Lockwood — CEO
 **LinkedIn: https://www.linkedin.com/in/david-lockwood/**
 **HQ:** London, UK
@@ -9578,7 +10064,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 352. Ultra Electronics (Advent)
+### 370. Ultra Electronics (Advent)
 **Contact:** Simon Pryce — CEO
 **LinkedIn: https://www.linkedin.com/in/simon-pryce/**
 **HQ:** London, UK
@@ -9604,7 +10090,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 353. CACI International
+### 371. CACI International
 **Contact:** John Mengucci — President & CEO
 **LinkedIn: https://www.linkedin.com/in/john-mengucci/**
 **HQ:** Reston, VA
@@ -9630,7 +10116,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 354. ManTech International (Carlyle)
+### 372. ManTech International (Carlyle)
 **Contact:** Matt Tait — CEO
 **LinkedIn: https://www.linkedin.com/in/matt-tait/**
 **HQ:** Herndon, VA
@@ -9656,7 +10142,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 355. Parsons Corporation
+### 373. Parsons Corporation
 **Contact:** Carey Smith — Chair, President & CEO
 **LinkedIn: https://www.linkedin.com/in/carey-smith/**
 **HQ:** Centreville, VA
@@ -9682,7 +10168,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 356. ICF International
+### 374. ICF International
 **Contact:** John Wasson — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/john-wasson/**
 **HQ:** Reston, VA
@@ -9708,7 +10194,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 357. Recorded Future
+### 375. Recorded Future
 **Contact:** Christopher Ahlberg — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/christopherahlberg/**
 **HQ:** Boston, MA
@@ -9734,7 +10220,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 358. Mandiant (Google Cloud)
+### 376. Mandiant (Google Cloud)
 **Contact:** Kevin Mandia — CEO (Mandiant)
 **LinkedIn: https://www.linkedin.com/in/kevinmandia/**
 **HQ:** Reston, VA
@@ -9760,7 +10246,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 359. CrowdStrike
+### 377. CrowdStrike
 **Contact:** George Kurtz — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/georgekurtz/**
 **HQ:** Austin, TX
@@ -9786,7 +10272,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 360. Palo Alto Networks
+### 378. Palo Alto Networks
 **Contact:** Nikesh Arora — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/nikesharora/**
 **HQ:** Santa Clara, CA
@@ -9812,7 +10298,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 361. Fortinet
+### 379. Fortinet
 **Contact:** Ken Xie — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/kenxie/**
 **HQ:** Sunnyvale, CA
@@ -9838,7 +10324,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 362. Splunk (Cisco)
+### 380. Splunk (Cisco)
 **Contact:** Gary Steele — SVP & GM, Splunk (Cisco)
 **LinkedIn: https://www.linkedin.com/in/garysteele/**
 **HQ:** San Francisco, CA
@@ -9864,7 +10350,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 363. Trellix (Musarubra)
+### 381. Trellix (Musarubra)
 **Contact:** Bryan Palma — CEO
 **LinkedIn: https://www.linkedin.com/in/bryanpalma/**
 **HQ:** Milpitas, CA
@@ -9890,7 +10376,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 364. Varonis Systems
+### 382. Varonis Systems
 **Contact:** Yaki Faitelson — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/yaki-faitelson/**
 **HQ:** New York, NY
@@ -9916,7 +10402,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 365. SentinelOne
+### 383. SentinelOne
 **Contact:** Tomer Weingarten — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/tomerweingarten/**
 **HQ:** Mountain View, CA
@@ -9942,7 +10428,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 366. Darktrace
+### 384. Darktrace
 **Contact:** Poppy Gustafsson — CEO
 **LinkedIn: https://www.linkedin.com/in/poppy-gustafsson/**
 **HQ:** Cambridge, UK
@@ -9968,7 +10454,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 367. Cybereason
+### 385. Cybereason
 **Contact:** Lior Div — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/liordiv/**
 **HQ:** Boston, MA
@@ -9994,7 +10480,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 368. NATO Communications & Information Agency (NCIA)
+### 386. NATO Communications & Information Agency (NCIA)
 **Contact:** Ludwig Decamps — General Manager
 **LinkedIn: https://www.linkedin.com/company/ncia/**
 **HQ:** Brussels, Belgium
@@ -10020,7 +10506,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 369. DARPA
+### 387. DARPA
 **Contact:** Stefanie Tompkins — Director
 **LinkedIn: https://www.linkedin.com/in/stefanietompkins/**
 **HQ:** Arlington, VA
@@ -10046,7 +10532,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 370. Defence Science & Technology Laboratory (DSTL)
+### 388. Defence Science & Technology Laboratory (DSTL)
 **Contact:** Paul Hollinshead — Chief Executive
 **LinkedIn: https://www.linkedin.com/in/paul-hollinshead/**
 **HQ:** Porton Down, UK
@@ -10072,7 +10558,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 371. DISA (Defence Information Systems Agency)
+### 389. DISA (Defence Information Systems Agency)
 **Contact:** Lt. Gen. Robert Skinner — Director
 **LinkedIn: https://www.linkedin.com/company/daboradisa/**
 **HQ:** Fort Meade, MD
@@ -10098,7 +10584,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 372. US Army Futures Command
+### 390. US Army Futures Command
 **Contact:** Gen. James Rainey — Commanding General
 **LinkedIn: https://www.linkedin.com/company/armyfuturescommand/**
 **HQ:** Austin, TX
@@ -10124,7 +10610,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 373. Naval Information Warfare Center (NIWC)
+### 391. Naval Information Warfare Center (NIWC)
 **Contact:** Technical Director — NIWC Pacific
 **LinkedIn: https://www.linkedin.com/company/niwc-pacific/**
 **HQ:** San Diego, CA
@@ -10150,7 +10636,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 374. Air Force Research Laboratory (AFRL)
+### 392. Air Force Research Laboratory (AFRL)
 **Contact:** Brig. Gen. Scott Cain — Commander
 **LinkedIn: https://www.linkedin.com/company/afresearchlab/**
 **HQ:** Wright-Patterson AFB, OH
@@ -10176,7 +10662,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 375. Australian Signals Directorate (ASD)
+### 393. Australian Signals Directorate (ASD)
 **Contact:** Rachel Noble — Director-General
 **LinkedIn: https://www.linkedin.com/company/australian-signals-directorate/**
 **HQ:** Canberra, Australia
@@ -10202,7 +10688,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 376. Canadian Armed Forces (DND)
+### 394. Canadian Armed Forces (DND)
 **Contact:** Gen. Wayne Eyre — Chief of the Defence Staff
 **LinkedIn: https://www.linkedin.com/company/national-defence/**
 **HQ:** Ottawa, Canada
@@ -10228,7 +10714,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 377. German Bundeswehr (Cyber and Information Domain)
+### 395. German Bundeswehr (Cyber and Information Domain)
 **Contact:** Lt. Gen. Michael Vetter — Commander, CIR
 **LinkedIn: https://www.linkedin.com/company/bundeswehr/**
 **HQ:** Bonn, Germany
@@ -10254,7 +10740,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 378. Japan Self-Defence Forces (JSDF)
+### 396. Japan Self-Defence Forces (JSDF)
 **Contact:** Ministry of Defense — Technology Strategy Division
 **LinkedIn: https://www.linkedin.com/company/japan-ministry-of-defense/**
 **HQ:** Tokyo, Japan
@@ -10280,7 +10766,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 379. DXC Technology (Defence)
+### 397. DXC Technology (Defence)
 **Contact:** Raul Fernandez — President & CEO
 **LinkedIn: https://www.linkedin.com/in/raulfernandez/**
 **HQ:** Ashburn, VA
@@ -10306,7 +10792,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 380. Atos Defence & Security
+### 398. Atos Defence & Security
 **Contact:** Pierre Barnabé — CEO (Eviden)
 **LinkedIn: https://www.linkedin.com/in/pierre-barnabe/**
 **HQ:** Paris, France
@@ -10332,7 +10818,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 381. CGI Group (Defence)
+### 399. CGI Group (Defence)
 **Contact:** George Schindler — President & CEO
 **LinkedIn: https://www.linkedin.com/in/george-schindler/**
 **HQ:** Montreal, Canada
@@ -10358,7 +10844,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 382. Capgemini (Defence)
+### 400. Capgemini (Defence)
 **Contact:** Aiman Ezzat — CEO
 **LinkedIn: https://www.linkedin.com/in/aiman-ezzat/**
 **HQ:** Paris, France
@@ -10384,7 +10870,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 383. Rolls-Royce Defence
+### 401. Rolls-Royce Defence
 **Contact:** Tufan Erginbilgic — CEO
 **LinkedIn: https://www.linkedin.com/in/tufan-erginbilgic/**
 **HQ:** London, UK
@@ -10410,7 +10896,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 384. Safran Defence
+### 402. Safran Defence
 **Contact:** Olivier Andriès — CEO (Safran Group)
 **LinkedIn: https://www.linkedin.com/in/olivier-andries/**
 **HQ:** Paris, France
@@ -10436,7 +10922,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 385. CAE (Defence & Security)
+### 403. CAE (Defence & Security)
 **Contact:** Marc Parent — President & CEO
 **LinkedIn: https://www.linkedin.com/in/marcparent/**
 **HQ:** Montreal, Canada
@@ -10462,7 +10948,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 386. BWX Technologies
+### 404. BWX Technologies
 **Contact:** Rex Geveden — President & CEO
 **LinkedIn: https://www.linkedin.com/in/rex-geveden/**
 **HQ:** Lynchburg, VA
@@ -10488,7 +10974,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 387. Chemring Group
+### 405. Chemring Group
 **Contact:** Michael Sheridan — CEO
 **LinkedIn: https://www.linkedin.com/in/michael-sheridan-chemring/**
 **HQ:** Romsey, UK
@@ -10514,7 +11000,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 388. Collins Aerospace (RTX)
+### 406. Collins Aerospace (RTX)
 **Contact:** Stephen Timm — President
 **LinkedIn: https://www.linkedin.com/in/stephen-timm/**
 **HQ:** Charlotte, NC
@@ -10540,7 +11026,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 389. Skydio
+### 407. Skydio
 **Contact:** Adam Bry — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/adambry/**
 **HQ:** San Mateo, CA
@@ -10566,7 +11052,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 390. Joby Aviation (Defence)
+### 408. Joby Aviation (Defence)
 **Contact:** JoeBen Bevirt — Founder & CEO
 **LinkedIn: https://www.linkedin.com/in/joeben/**
 **HQ:** Santa Cruz, CA
@@ -10592,7 +11078,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 391. Saronic Technologies
+### 409. Saronic Technologies
 **Contact:** Dino Mavrookas — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/dinomavrookas/**
 **HQ:** Austin, TX
@@ -10618,7 +11104,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 392. Epirus
+### 410. Epirus
 **Contact:** Andy Lowery — CEO
 **LinkedIn: https://www.linkedin.com/in/andylowery/**
 **HQ:** Torrance, CA
@@ -10644,7 +11130,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 393. Istari Digital
+### 411. Istari Digital
 **Contact:** Dan Bruns — CEO
 **LinkedIn: https://www.linkedin.com/in/danbruns/**
 **HQ:** Arlington, VA
@@ -10670,7 +11156,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 394. Second Front Systems
+### 412. Second Front Systems
 **Contact:** Palmer Luckey / Tyler Sweatt — Co-founder / CEO
 **LinkedIn: https://www.linkedin.com/in/tylersweatt/**
 **HQ:** Washington, DC
@@ -10696,7 +11182,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 395. Gecko Robotics
+### 413. Gecko Robotics
 **Contact:** Jake Loosararian — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/jakeloosararian/**
 **HQ:** Pittsburgh, PA
@@ -10722,7 +11208,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 396. Rebellion Defense (UK)
+### 414. Rebellion Defense (UK)
 **Contact:** Nicole Sherwood — Managing Director, UK
 **LinkedIn: https://www.linkedin.com/in/nicolesherwood/**
 **HQ:** London, UK
@@ -10748,7 +11234,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 397. Hadean
+### 415. Hadean
 **Contact:** Craig Sherrin — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/craigsherrin/**
 **HQ:** London, UK
@@ -10774,7 +11260,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 398. Helsing
+### 416. Helsing
 **Contact:** Gundbert Scherf — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/gundbert-scherf/**
 **HQ:** Munich, Germany
@@ -10800,7 +11286,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 399. Lockheed Martin Skunk Works
+### 417. Lockheed Martin Skunk Works
 **Contact:** John Clark — VP & GM, Skunk Works
 **LinkedIn: https://www.linkedin.com/company/lockheed-martin/**
 **HQ:** Palmdale, CA
@@ -10826,7 +11312,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 400. SpaceX (Starshield)
+### 418. SpaceX (Starshield)
 **Contact:** Bill Gerstenmaier — VP, Build & Flight Reliability
 **LinkedIn: https://www.linkedin.com/company/spacex/**
 **HQ:** Hawthorne, CA
@@ -10852,7 +11338,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 401. L3Harris WESCAM
+### 419. L3Harris WESCAM
 **Contact:** WESCAM Division — L3Harris
 **LinkedIn: https://www.linkedin.com/company/l3harris-technologies/**
 **HQ:** Burlington, Canada
@@ -10878,7 +11364,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 402. Avio Aero (GE Aerospace)
+### 420. Avio Aero (GE Aerospace)
 **Contact:** Riccardo Procacci — CEO
 **LinkedIn: https://www.linkedin.com/company/avio-aero/**
 **HQ:** Rivalta, Italy
@@ -10904,7 +11390,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 403. Israel Aerospace Industries (IAI)
+### 421. Israel Aerospace Industries (IAI)
 **Contact:** Boaz Levy — President & CEO
 **LinkedIn: https://www.linkedin.com/company/israel-aerospace-industries/**
 **HQ:** Lod, Israel
@@ -10930,7 +11416,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 404. ST Engineering
+### 422. ST Engineering
 **Contact:** Vincent Chong — President & CEO
 **LinkedIn: https://www.linkedin.com/company/st-engineering/**
 **HQ:** Singapore
@@ -10956,7 +11442,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 405. Thales Alenia Space
+### 423. Thales Alenia Space
 **Contact:** Hervé Derrey — CEO
 **LinkedIn: https://www.linkedin.com/company/thales-alenia-space/**
 **HQ:** Cannes, France
@@ -10982,7 +11468,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 406. Bharat Electronics Limited (BEL)
+### 424. Bharat Electronics Limited (BEL)
 **Contact:** Bhanu Prakash Srivastava — CMD
 **LinkedIn: https://www.linkedin.com/company/bharat-electronics-limited/**
 **HQ:** Bangalore, India
@@ -11008,7 +11494,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 407. Nexter (KNDS)
+### 425. Nexter (KNDS)
 **Contact:** Nicolas Chamussy — CEO, KNDS France
 **LinkedIn: https://www.linkedin.com/company/nexter-group/**
 **HQ:** Versailles, France
@@ -11034,7 +11520,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 408. Diehl Defence
+### 426. Diehl Defence
 **Contact:** Helmut Rauch — Managing Director
 **LinkedIn: https://www.linkedin.com/company/diehl-defence/**
 **HQ:** Überlingen, Germany
@@ -11167,7 +11653,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 | 99 | **Clearway Energy** | Craig Cornelius | CEO | [LinkedIn](https://www.linkedin.com/in/craigcornelius/) | AI renewable fleet optimization and energy trading |
 | 100 | **OPower (Oracle Utilities)** | Rodger Smith | GM, Oracle Energy & Water | [LinkedIn](https://www.linkedin.com/in/rodgersmith/) | AI behavioral energy efficiency and demand response |
 
-### 409. Shell
+### 427. Shell
 **Contact:** Dan Jeavons — VP of Data Science
 **LinkedIn: https://www.linkedin.com/in/danjeavons/**
 **HQ:** London, UK
@@ -11193,7 +11679,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 410. BP
+### 428. BP
 **Contact:** Morag Watson — SVP of Digital Science & Engineering
 **LinkedIn: https://www.linkedin.com/in/moragwatson/**
 **HQ:** London, UK
@@ -11219,7 +11705,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 411. TotalEnergies
+### 429. TotalEnergies
 **Contact:** Patrick Pouyanné — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/patrick-pouyanne/**
 **HQ:** Paris, France
@@ -11245,7 +11731,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 412. ExxonMobil
+### 430. ExxonMobil
 **Contact:** Darren Woods — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/darren-woods/**
 **HQ:** Spring, TX
@@ -11271,7 +11757,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 413. Chevron
+### 431. Chevron
 **Contact:** Bill Braun — VP of Technology
 **LinkedIn: https://www.linkedin.com/in/billbraun/**
 **HQ:** San Ramon, CA
@@ -11297,7 +11783,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 414. Equinor
+### 432. Equinor
 **Contact:** Anders Opedal — President & CEO
 **LinkedIn: https://www.linkedin.com/in/anders-opedal/**
 **HQ:** Stavanger, Norway
@@ -11323,7 +11809,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 415. Saudi Aramco
+### 433. Saudi Aramco
 **Contact:** Amin Nasser — President & CEO
 **LinkedIn: https://www.linkedin.com/company/saudi-aramco/**
 **HQ:** Dhahran, Saudi Arabia
@@ -11349,7 +11835,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 416. ENI
+### 434. ENI
 **Contact:** Claudio Descalzi — CEO
 **LinkedIn: https://www.linkedin.com/in/claudiodescalzi/**
 **HQ:** Rome, Italy
@@ -11375,7 +11861,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 417. Repsol
+### 435. Repsol
 **Contact:** Josu Jon Imaz — CEO
 **LinkedIn: https://www.linkedin.com/in/josu-jon-imaz/**
 **HQ:** Madrid, Spain
@@ -11401,7 +11887,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 418. Petrobras
+### 436. Petrobras
 **Contact:** Jean Paul Prates — CEO
 **LinkedIn: https://www.linkedin.com/company/petrobras/**
 **HQ:** Rio de Janeiro, Brazil
@@ -11427,7 +11913,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 419. ConocoPhillips
+### 437. ConocoPhillips
 **Contact:** Ryan Lance — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/ryanlance/**
 **HQ:** Houston, TX
@@ -11453,7 +11939,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 420. Woodside Energy
+### 438. Woodside Energy
 **Contact:** Meg O'Neill — CEO
 **LinkedIn: https://www.linkedin.com/in/meg-oneill/**
 **HQ:** Perth, Australia
@@ -11479,7 +11965,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 421. Schlumberger (SLB)
+### 439. Schlumberger (SLB)
 **Contact:** Olivier Le Peuch — CEO
 **LinkedIn: https://www.linkedin.com/in/olivier-le-peuch/**
 **HQ:** Houston, TX
@@ -11505,7 +11991,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 422. Halliburton
+### 440. Halliburton
 **Contact:** Jeff Miller — Chairman, President & CEO
 **LinkedIn: https://www.linkedin.com/in/jeff-miller-halliburton/**
 **HQ:** Houston, TX
@@ -11531,7 +12017,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 423. Baker Hughes
+### 441. Baker Hughes
 **Contact:** Lorenzo Simonelli — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/lorenzosimonelli/**
 **HQ:** Houston, TX
@@ -11557,7 +12043,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 424. Enel Group
+### 442. Enel Group
 **Contact:** Flavio Cattaneo — CEO
 **LinkedIn: https://www.linkedin.com/in/flavio-cattaneo/**
 **HQ:** Rome, Italy
@@ -11583,7 +12069,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 425. EDF (Électricité de France)
+### 443. EDF (Électricité de France)
 **Contact:** Luc Rémont — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/luc-remont/**
 **HQ:** Paris, France
@@ -11609,7 +12095,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 426. E.ON
+### 444. E.ON
 **Contact:** Leonhard Birnbaum — CEO
 **LinkedIn: https://www.linkedin.com/in/leonhard-birnbaum/**
 **HQ:** Essen, Germany
@@ -11635,7 +12121,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 427. Iberdrola
+### 445. Iberdrola
 **Contact:** Ignacio Galán — Executive Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/ignaciogalan/**
 **HQ:** Bilbao, Spain
@@ -11661,7 +12147,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 428. Duke Energy
+### 446. Duke Energy
 **Contact:** Lynn Good — Chair, President & CEO
 **LinkedIn: https://www.linkedin.com/in/lynn-good/**
 **HQ:** Charlotte, NC
@@ -11687,7 +12173,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 429. Southern Company
+### 447. Southern Company
 **Contact:** Chris Womack — Chairman, President & CEO
 **LinkedIn: https://www.linkedin.com/in/chris-womack/**
 **HQ:** Atlanta, GA
@@ -11713,7 +12199,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 430. NextEra Energy
+### 448. NextEra Energy
 **Contact:** John Ketchum — President & CEO
 **LinkedIn: https://www.linkedin.com/in/john-ketchum/**
 **HQ:** Juno Beach, FL
@@ -11739,7 +12225,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 431. Dominion Energy
+### 449. Dominion Energy
 **Contact:** Robert Blue — President & CEO
 **LinkedIn: https://www.linkedin.com/in/robert-blue/**
 **HQ:** Richmond, VA
@@ -11765,7 +12251,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 432. Exelon (ComEd, PECO, BGE)
+### 450. Exelon (ComEd, PECO, BGE)
 **Contact:** Calvin Butler — President & CEO
 **LinkedIn: https://www.linkedin.com/in/calvin-butler/**
 **HQ:** Chicago, IL
@@ -11791,7 +12277,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 433. National Grid
+### 451. National Grid
 **Contact:** John Pettigrew — CEO
 **LinkedIn: https://www.linkedin.com/in/john-pettigrew/**
 **HQ:** London, UK
@@ -11817,7 +12303,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 434. SSE plc
+### 452. SSE plc
 **Contact:** Alistair Phillips-Davies — CEO
 **LinkedIn: https://www.linkedin.com/in/alistair-phillips-davies/**
 **HQ:** Perth, Scotland
@@ -11843,7 +12329,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 435. Engie
+### 453. Engie
 **Contact:** Catherine MacGregor — CEO
 **LinkedIn: https://www.linkedin.com/in/catherine-macgregor/**
 **HQ:** Paris, France
@@ -11869,7 +12355,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 436. RWE
+### 454. RWE
 **Contact:** Markus Krebber — CEO
 **LinkedIn: https://www.linkedin.com/in/markus-krebber/**
 **HQ:** Essen, Germany
@@ -11895,7 +12381,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 437. Vattenfall
+### 455. Vattenfall
 **Contact:** Anna Borg — President & CEO
 **LinkedIn: https://www.linkedin.com/in/anna-borg/**
 **HQ:** Stockholm, Sweden
@@ -11921,7 +12407,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 438. Ørsted
+### 456. Ørsted
 **Contact:** Mads Nipper — CEO
 **LinkedIn: https://www.linkedin.com/in/mads-nipper/**
 **HQ:** Fredericia, Denmark
@@ -11947,7 +12433,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 439. Fortum
+### 457. Fortum
 **Contact:** Markus Rauramo — President & CEO
 **LinkedIn: https://www.linkedin.com/in/markus-rauramo/**
 **HQ:** Espoo, Finland
@@ -11973,7 +12459,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 440. AES Corporation
+### 458. AES Corporation
 **Contact:** Andrés Gluski — President & CEO
 **LinkedIn: https://www.linkedin.com/in/andres-gluski/**
 **HQ:** Arlington, VA
@@ -11999,7 +12485,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 441. AGL Energy
+### 459. AGL Energy
 **Contact:** Damien Nicks — CEO & Managing Director
 **LinkedIn: https://www.linkedin.com/in/damiennicks/**
 **HQ:** Sydney, Australia
@@ -12025,7 +12511,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 442. Tokyo Electric Power (TEPCO)
+### 460. Tokyo Electric Power (TEPCO)
 **Contact:** Tomoaki Kobayakawa — President
 **LinkedIn: https://www.linkedin.com/company/tepco/**
 **HQ:** Tokyo, Japan
@@ -12051,7 +12537,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 443. Eskom
+### 461. Eskom
 **Contact:** Dan Marokane — CEO
 **LinkedIn: https://www.linkedin.com/in/dan-marokane/**
 **HQ:** Johannesburg, South Africa
@@ -12077,7 +12563,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 444. Siemens Energy
+### 462. Siemens Energy
 **Contact:** Christian Bruch — President & CEO
 **LinkedIn: https://www.linkedin.com/in/christian-bruch/**
 **HQ:** Munich, Germany
@@ -12103,7 +12589,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 445. Vestas
+### 463. Vestas
 **Contact:** Henrik Andersen — Group President & CEO
 **LinkedIn: https://www.linkedin.com/in/henrikandersen/**
 **HQ:** Aarhus, Denmark
@@ -12129,7 +12615,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 446. Goldwind
+### 464. Goldwind
 **Contact:** Cao Zhigang — Chairman
 **LinkedIn: https://www.linkedin.com/company/goldwind/**
 **HQ:** Urumqi, China
@@ -12155,7 +12641,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 447. First Solar
+### 465. First Solar
 **Contact:** Mark Widmar — CEO
 **LinkedIn: https://www.linkedin.com/in/markwidmar/**
 **HQ:** Tempe, AZ
@@ -12181,7 +12667,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 448. Enphase Energy
+### 466. Enphase Energy
 **Contact:** Badri Kothandaraman — President & CEO
 **LinkedIn: https://www.linkedin.com/in/badrikothandaraman/**
 **HQ:** Fremont, CA
@@ -12207,7 +12693,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 449. SolarEdge Technologies
+### 467. SolarEdge Technologies
 **Contact:** Shuki Nir — CEO
 **LinkedIn: https://www.linkedin.com/in/shuki-nir/**
 **HQ:** Herzliya, Israel
@@ -12233,7 +12719,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 450. Tesla Energy
+### 468. Tesla Energy
 **Contact:** Drew Baglino — Former SVP of Energy (advisor role)
 **LinkedIn: https://www.linkedin.com/in/drewbaglino/**
 **HQ:** Austin, TX
@@ -12259,7 +12745,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 451. Fluence Energy
+### 469. Fluence Energy
 **Contact:** Julian Nebreda — President & CEO
 **LinkedIn: https://www.linkedin.com/in/juliannebreda/**
 **HQ:** Arlington, VA
@@ -12285,7 +12771,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 452. Stem Inc.
+### 470. Stem Inc.
 **Contact:** John Carrington — CEO
 **LinkedIn: https://www.linkedin.com/in/johncarrington/**
 **HQ:** San Francisco, CA
@@ -12311,7 +12797,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 453. Octopus Energy
+### 471. Octopus Energy
 **Contact:** Greg Jackson — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/gregjackson/**
 **HQ:** London, UK
@@ -12337,7 +12823,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 454. Schneider Electric
+### 472. Schneider Electric
 **Contact:** Peter Herweck — CEO
 **LinkedIn: https://www.linkedin.com/in/peterherweck/**
 **HQ:** Rueil-Malmaison, France
@@ -12363,7 +12849,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 455. ABB
+### 473. ABB
 **Contact:** Björn Rosengren — CEO
 **LinkedIn: https://www.linkedin.com/in/bjornrosengren/**
 **HQ:** Zurich, Switzerland
@@ -12389,7 +12875,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 456. Honeywell Process Solutions
+### 474. Honeywell Process Solutions
 **Contact:** Vimal Kapur — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/vimalkapur/**
 **HQ:** Charlotte, NC
@@ -12415,7 +12901,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 457. Emerson Electric
+### 475. Emerson Electric
 **Contact:** Lal Karsanbhai — President & CEO
 **LinkedIn: https://www.linkedin.com/in/lalkarsanbhai/**
 **HQ:** St. Louis, MO
@@ -12441,7 +12927,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 458. AVEVA (Schneider subsidiary)
+### 476. AVEVA (Schneider subsidiary)
 **Contact:** Caspar Herzberg — CEO
 **LinkedIn: https://www.linkedin.com/in/casparherzberg/**
 **HQ:** Cambridge, UK
@@ -12467,7 +12953,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 459. Envision Group
+### 477. Envision Group
 **Contact:** Lei Zhang — Founder & CEO
 **LinkedIn: https://www.linkedin.com/in/lei-zhang-envision/**
 **HQ:** Shanghai, China
@@ -12493,7 +12979,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 460. Bloom Energy
+### 478. Bloom Energy
 **Contact:** KR Sridhar — Founder, Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/kr-sridhar/**
 **HQ:** San Jose, CA
@@ -12519,7 +13005,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 461. Plug Power
+### 479. Plug Power
 **Contact:** Andy Marsh — CEO
 **LinkedIn: https://www.linkedin.com/in/andy-marsh/**
 **HQ:** Latham, NY
@@ -12545,7 +13031,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 462. Itron
+### 480. Itron
 **Contact:** Tom Deitrich — President & CEO
 **LinkedIn: https://www.linkedin.com/in/tomdeitrich/**
 **HQ:** Liberty Lake, WA
@@ -12571,7 +13057,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 463. Landis+Gyr
+### 481. Landis+Gyr
 **Contact:** Werner Lieberherr — CEO
 **LinkedIn: https://www.linkedin.com/in/wernerlieberherr/**
 **HQ:** Cham, Switzerland
@@ -12597,7 +13083,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 464. AutoGrid (Schneider)
+### 482. AutoGrid (Schneider)
 **Contact:** Amit Narayan — Founder & CEO
 **LinkedIn: https://www.linkedin.com/in/amitnarayan/**
 **HQ:** Redwood City, CA
@@ -12623,7 +13109,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 465. Bidgely
+### 483. Bidgely
 **Contact:** Abhay Gupta — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/abhaygupta/**
 **HQ:** San Jose, CA
@@ -12649,7 +13135,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 466. Uplight
+### 484. Uplight
 **Contact:** Max Dunn — CEO
 **LinkedIn: https://www.linkedin.com/in/maxdunn/**
 **HQ:** Boulder, CO
@@ -12675,7 +13161,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 467. GridBeyond
+### 485. GridBeyond
 **Contact:** Michael Phelan — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/michaelphelan/**
 **HQ:** Dublin, Ireland
@@ -12701,7 +13187,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 468. Reactive Technologies
+### 486. Reactive Technologies
 **Contact:** Marc Sheridan — CEO
 **LinkedIn: https://www.linkedin.com/in/marcsheridan/**
 **HQ:** London, UK
@@ -12727,7 +13213,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 469. Sense (energy monitoring)
+### 487. Sense (energy monitoring)
 **Contact:** Mike Phillips — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/mikephillips/**
 **HQ:** Cambridge, MA
@@ -12753,7 +13239,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 470. SparkCognition
+### 488. SparkCognition
 **Contact:** Amir Husain — Founder & CEO
 **LinkedIn: https://www.linkedin.com/in/amirhusain/**
 **HQ:** Austin, TX
@@ -12779,7 +13265,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 471. Opus One Solutions (GE)
+### 489. Opus One Solutions (GE)
 **Contact:** Joshua Wong — Founder & CEO
 **LinkedIn: https://www.linkedin.com/in/joshuawong/**
 **HQ:** Richmond Hill, Canada
@@ -12805,7 +13291,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 472. Drift (energy)
+### 490. Drift (energy)
 **Contact:** Greg Robinson — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/gregrobinson/**
 **HQ:** Houston, TX
@@ -12831,7 +13317,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 473. Kayrros
+### 491. Kayrros
 **Contact:** Antoine Halff — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/antoine-halff/**
 **HQ:** Paris, France
@@ -12857,7 +13343,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 474. Persefoni
+### 492. Persefoni
 **Contact:** Kentaro Kawamori — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/kentarokawamori/**
 **HQ:** Tempe, AZ
@@ -12883,7 +13369,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 475. Watershed
+### 493. Watershed
 **Contact:** Taylor Francis — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/taylorfrancis/**
 **HQ:** San Francisco, CA
@@ -12909,7 +13395,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 476. NuScale Power
+### 494. NuScale Power
 **Contact:** John Hopkins — President & CEO
 **LinkedIn: https://www.linkedin.com/in/john-hopkins-nuscale/**
 **HQ:** Portland, OR
@@ -12935,7 +13421,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 477. X-energy
+### 495. X-energy
 **Contact:** Clay Sell — CEO
 **LinkedIn: https://www.linkedin.com/in/clay-sell/**
 **HQ:** Rockville, MD
@@ -12961,7 +13447,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 478. TerraPower
+### 496. TerraPower
 **Contact:** Chris Levesque — President & CEO
 **LinkedIn: https://www.linkedin.com/in/chrislevesque/**
 **HQ:** Bellevue, WA
@@ -12987,7 +13473,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 479. Nel ASA
+### 497. Nel ASA
 **Contact:** Håkon Volldal — CEO
 **LinkedIn: https://www.linkedin.com/in/hakonvolldal/**
 **HQ:** Oslo, Norway
@@ -13013,7 +13499,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 480. ITM Power
+### 498. ITM Power
 **Contact:** Dennis Sherwood — CEO
 **LinkedIn: https://www.linkedin.com/in/dennis-sherwood/**
 **HQ:** Sheffield, UK
@@ -13039,7 +13525,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 481. Ceres Power
+### 499. Ceres Power
 **Contact:** Phil Caldwell — CEO
 **LinkedIn: https://www.linkedin.com/in/philcaldwell/**
 **HQ:** Horsham, UK
@@ -13065,7 +13551,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 482. Air Liquide
+### 500. Air Liquide
 **Contact:** François Jackow — CEO
 **LinkedIn: https://www.linkedin.com/in/francois-jackow/**
 **HQ:** Paris, France
@@ -13091,7 +13577,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 483. Linde plc
+### 501. Linde plc
 **Contact:** Sanjiv Lamba — CEO
 **LinkedIn: https://www.linkedin.com/in/sanjivlamba/**
 **HQ:** Woking, UK
@@ -13117,7 +13603,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 484. Fusion Energy (Commonwealth Fusion)
+### 502. Fusion Energy (Commonwealth Fusion)
 **Contact:** Bob Mumgaard — CEO
 **LinkedIn: https://www.linkedin.com/in/bobmumgaard/**
 **HQ:** Devens, MA
@@ -13143,7 +13629,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 485. TAE Technologies
+### 503. TAE Technologies
 **Contact:** Michl Binderbauer — CEO
 **LinkedIn: https://www.linkedin.com/in/michlbinderbauer/**
 **HQ:** Foothill Ranch, CA
@@ -13169,7 +13655,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 486. BHP
+### 504. BHP
 **Contact:** Mike Henry — CEO
 **LinkedIn: https://www.linkedin.com/in/mike-henry-bhp/**
 **HQ:** Melbourne, Australia
@@ -13195,7 +13681,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 487. Rio Tinto
+### 505. Rio Tinto
 **Contact:** Jakob Stausholm — CEO
 **LinkedIn: https://www.linkedin.com/in/jakob-stausholm/**
 **HQ:** London, UK
@@ -13221,7 +13707,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 488. Vale
+### 506. Vale
 **Contact:** Eduardo Bartolomeo — CEO
 **LinkedIn: https://www.linkedin.com/in/eduardo-bartolomeo/**
 **HQ:** Rio de Janeiro, Brazil
@@ -13247,7 +13733,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 489. Glencore
+### 507. Glencore
 **Contact:** Gary Nagle — CEO
 **LinkedIn: https://www.linkedin.com/in/gary-nagle/**
 **HQ:** Baar, Switzerland
@@ -13273,7 +13759,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 490. Anglo American
+### 508. Anglo American
 **Contact:** Duncan Wanblad — CEO
 **LinkedIn: https://www.linkedin.com/in/duncan-wanblad/**
 **HQ:** London, UK
@@ -13299,7 +13785,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 491. Centrica
+### 509. Centrica
 **Contact:** Chris O'Shea — CEO
 **LinkedIn: https://www.linkedin.com/in/chris-oshea/**
 **HQ:** Windsor, UK
@@ -13325,7 +13811,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 492. Xcel Energy
+### 510. Xcel Energy
 **Contact:** Bob Frenzel — Chairman, President & CEO
 **LinkedIn: https://www.linkedin.com/in/bob-frenzel/**
 **HQ:** Minneapolis, MN
@@ -13351,7 +13837,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 493. Entergy
+### 511. Entergy
 **Contact:** Drew Marsh — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/drew-marsh/**
 **HQ:** New Orleans, LA
@@ -13377,7 +13863,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 494. Sempra Energy
+### 512. Sempra Energy
 **Contact:** Jeffrey Martin — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/jeffreywmartin/**
 **HQ:** San Diego, CA
@@ -13403,7 +13889,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 495. Consolidated Edison (ConEd)
+### 513. Consolidated Edison (ConEd)
 **Contact:** Timothy Cawley — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/timothy-cawley/**
 **HQ:** New York, NY
@@ -13429,7 +13915,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 496. WEC Energy Group
+### 514. WEC Energy Group
 **Contact:** Scott Lauber — President & CEO
 **LinkedIn: https://www.linkedin.com/in/scott-lauber/**
 **HQ:** Milwaukee, WI
@@ -13455,7 +13941,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 497. Eversource Energy
+### 515. Eversource Energy
 **Contact:** Joe Nolan — Chairman, President & CEO
 **LinkedIn: https://www.linkedin.com/in/joe-nolan/**
 **HQ:** Hartford, CT
@@ -13481,7 +13967,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 498. Canadian Natural Resources
+### 516. Canadian Natural Resources
 **Contact:** Scott Stauth — President
 **LinkedIn: https://www.linkedin.com/company/canadian-natural/**
 **HQ:** Calgary, Canada
@@ -13507,7 +13993,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 499. TC Energy
+### 517. TC Energy
 **Contact:** François Poirier — President & CEO
 **LinkedIn: https://www.linkedin.com/in/francoispoirier/**
 **HQ:** Calgary, Canada
@@ -13533,7 +14019,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 500. Naturgy (Gas Natural)
+### 518. Naturgy (Gas Natural)
 **Contact:** Francisco Reynés — Executive Chairman
 **LinkedIn: https://www.linkedin.com/in/francisco-reynes/**
 **HQ:** Madrid, Spain
@@ -13559,7 +14045,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 501. Neste
+### 519. Neste
 **Contact:** Matti Lehmus — President & CEO
 **LinkedIn: https://www.linkedin.com/in/matti-lehmus/**
 **HQ:** Espoo, Finland
@@ -13585,7 +14071,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 502. Sunrun
+### 520. Sunrun
 **Contact:** Mary Powell — CEO
 **LinkedIn: https://www.linkedin.com/in/marypowell/**
 **HQ:** San Francisco, CA
@@ -13611,7 +14097,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 503. Pattern Energy
+### 521. Pattern Energy
 **Contact:** Hunter Armistead — CEO
 **LinkedIn: https://www.linkedin.com/in/hunter-armistead/**
 **HQ:** San Francisco, CA
@@ -13637,7 +14123,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 504. Northland Power
+### 522. Northland Power
 **Contact:** Mike Crawley — President & CEO
 **LinkedIn: https://www.linkedin.com/in/mike-crawley/**
 **HQ:** Toronto, Canada
@@ -13663,7 +14149,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 505. EDP Renewables
+### 523. EDP Renewables
 **Contact:** Miguel Stilwell de Andrade — CEO (EDP Group)
 **LinkedIn: https://www.linkedin.com/in/miguel-stilwell-de-andrade/**
 **HQ:** Madrid, Spain
@@ -13689,7 +14175,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 506. Brookfield Renewable Partners
+### 524. Brookfield Renewable Partners
 **Contact:** Connor Teskey — CEO
 **LinkedIn: https://www.linkedin.com/in/connor-teskey/**
 **HQ:** Toronto, Canada
@@ -13715,7 +14201,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 507. Clearway Energy
+### 525. Clearway Energy
 **Contact:** Craig Cornelius — CEO
 **LinkedIn: https://www.linkedin.com/in/craigcornelius/**
 **HQ:** San Francisco, CA
@@ -13741,7 +14227,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 508. OPower (Oracle Utilities)
+### 526. OPower (Oracle Utilities)
 **Contact:** Rodger Smith — GM, Oracle Energy & Water
 **LinkedIn: https://www.linkedin.com/in/rodgersmith/**
 **HQ:** Arlington, VA
@@ -13874,7 +14360,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 | 99 | **Lincoln Financial** | Ellen Cooper | President & CEO | [LinkedIn](https://www.linkedin.com/in/ellencooper/) | AI annuity pricing and life underwriting |
 | 100 | **Voya Financial** | Heather Lavallee | CEO | [LinkedIn](https://www.linkedin.com/in/heather-lavallee/) | AI retirement plan optimization and benefits administration |
 
-### 509. Allianz
+### 527. Allianz
 **Contact:** Oliver Bäte — CEO
 **LinkedIn: https://www.linkedin.com/in/oliver-baete/**
 **HQ:** Munich, Germany
@@ -13900,7 +14386,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 510. AXA
+### 528. AXA
 **Contact:** Thomas Buberl — CEO
 **LinkedIn: https://www.linkedin.com/in/thomas-buberl/**
 **HQ:** Paris, France
@@ -13926,7 +14412,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 511. Zurich Insurance Group
+### 529. Zurich Insurance Group
 **Contact:** Mario Greco — Group CEO
 **LinkedIn: https://www.linkedin.com/in/mario-greco/**
 **HQ:** Zurich, Switzerland
@@ -13952,7 +14438,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 512. Munich Re
+### 530. Munich Re
 **Contact:** Joachim Wenning — Chairman of the Board
 **LinkedIn: https://www.linkedin.com/in/joachim-wenning/**
 **HQ:** Munich, Germany
@@ -13978,7 +14464,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 513. Swiss Re
+### 531. Swiss Re
 **Contact:** Christian Mumenthaler — Group CEO
 **LinkedIn: https://www.linkedin.com/in/christian-mumenthaler/**
 **HQ:** Zurich, Switzerland
@@ -14004,7 +14490,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 514. Generali
+### 532. Generali
 **Contact:** Philippe Donnet — Group CEO
 **LinkedIn: https://www.linkedin.com/in/philippe-donnet/**
 **HQ:** Trieste, Italy
@@ -14030,7 +14516,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 515. Prudential Financial
+### 533. Prudential Financial
 **Contact:** Charles Lowrey — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/charles-lowrey/**
 **HQ:** Newark, NJ
@@ -14056,7 +14542,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 516. MetLife
+### 534. MetLife
 **Contact:** Michel Khalaf — President & CEO
 **LinkedIn: https://www.linkedin.com/in/michel-khalaf/**
 **HQ:** New York, NY
@@ -14082,7 +14568,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 517. Chubb
+### 535. Chubb
 **Contact:** Evan Greenberg — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/evan-greenberg/**
 **HQ:** Zurich, Switzerland
@@ -14108,7 +14594,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 518. AIG (American International Group)
+### 536. AIG (American International Group)
 **Contact:** Peter Zaffino — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/peter-zaffino/**
 **HQ:** New York, NY
@@ -14134,7 +14620,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 519. Aviva
+### 537. Aviva
 **Contact:** Amanda Blanc — Group CEO
 **LinkedIn: https://www.linkedin.com/in/amanda-blanc/**
 **HQ:** London, UK
@@ -14160,7 +14646,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 520. Legal & General
+### 538. Legal & General
 **Contact:** António Simões — Group CEO
 **LinkedIn: https://www.linkedin.com/in/antonio-simoes/**
 **HQ:** London, UK
@@ -14186,7 +14672,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 521. Hannover Re
+### 539. Hannover Re
 **Contact:** Jean-Jacques Henchoz — CEO
 **LinkedIn: https://www.linkedin.com/in/jean-jacques-henchoz/**
 **HQ:** Hannover, Germany
@@ -14212,7 +14698,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 522. SCOR
+### 540. SCOR
 **Contact:** Thierry Léger — CEO
 **LinkedIn: https://www.linkedin.com/in/thierry-leger/**
 **HQ:** Paris, France
@@ -14238,7 +14724,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 523. Tokio Marine Holdings
+### 541. Tokio Marine Holdings
 **Contact:** Satoru Komiya — Group CEO
 **LinkedIn: https://www.linkedin.com/company/tokio-marine/**
 **HQ:** Tokyo, Japan
@@ -14264,7 +14750,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 524. Ping An Insurance
+### 542. Ping An Insurance
 **Contact:** Ma Mingzhe — Founder & Chairman
 **LinkedIn: https://www.linkedin.com/company/ping-an-insurance/**
 **HQ:** Shenzhen, China
@@ -14290,7 +14776,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 525. Samsung Life Insurance
+### 543. Samsung Life Insurance
 **Contact:** Cheon Yeong-pil — CEO
 **LinkedIn: https://www.linkedin.com/company/samsung-life-insurance/**
 **HQ:** Seoul, South Korea
@@ -14316,7 +14802,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 526. Manulife Financial
+### 544. Manulife Financial
 **Contact:** Roy Gori — President & CEO
 **LinkedIn: https://www.linkedin.com/in/roy-gori/**
 **HQ:** Toronto, Canada
@@ -14342,7 +14828,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 527. Sun Life Financial
+### 545. Sun Life Financial
 **Contact:** Kevin Strain — President & CEO
 **LinkedIn: https://www.linkedin.com/in/kevin-strain/**
 **HQ:** Toronto, Canada
@@ -14368,7 +14854,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 528. Great-West Lifeco
+### 546. Great-West Lifeco
 **Contact:** Paul Fink — CEO
 **LinkedIn: https://www.linkedin.com/in/paul-fink/**
 **HQ:** Winnipeg, Canada
@@ -14394,7 +14880,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 529. Aflac
+### 547. Aflac
 **Contact:** Daniel Amos — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/daniel-amos/**
 **HQ:** Columbus, GA
@@ -14420,7 +14906,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 530. Travelers Companies
+### 548. Travelers Companies
 **Contact:** Alan Schnitzer — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/alan-schnitzer/**
 **HQ:** New York, NY
@@ -14446,7 +14932,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 531. Liberty Mutual
+### 549. Liberty Mutual
 **Contact:** Tim Sweeney — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/tim-sweeney-libertymutual/**
 **HQ:** Boston, MA
@@ -14472,7 +14958,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 532. Hartford Financial Services
+### 550. Hartford Financial Services
 **Contact:** Christopher Swift — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/christopherswift/**
 **HQ:** Hartford, CT
@@ -14498,7 +14984,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 533. Intact Financial
+### 551. Intact Financial
 **Contact:** Charles Brindamour — CEO
 **LinkedIn: https://www.linkedin.com/in/charles-brindamour/**
 **HQ:** Toronto, Canada
@@ -14524,7 +15010,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 534. Lemonade
+### 552. Lemonade
 **Contact:** Daniel Schreiber — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/danielschreiber/**
 **HQ:** New York, NY
@@ -14550,7 +15036,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 535. Root Insurance
+### 553. Root Insurance
 **Contact:** Alex Timm — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/alextimm/**
 **HQ:** Columbus, OH
@@ -14576,7 +15062,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 536. Hippo Insurance
+### 554. Hippo Insurance
 **Contact:** Rick McCathron — CEO
 **LinkedIn: https://www.linkedin.com/in/rickmccathron/**
 **HQ:** Austin, TX
@@ -14602,7 +15088,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 537. Wefox
+### 555. Wefox
 **Contact:** Mark Hartigan — CEO
 **LinkedIn: https://www.linkedin.com/in/markhartigan/**
 **HQ:** Berlin, Germany
@@ -14628,7 +15114,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 538. Alan (French insurtech)
+### 556. Alan (French insurtech)
 **Contact:** Jean-Charles Samuelian-Werve — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/jcsamuelian/**
 **HQ:** Paris, France
@@ -14654,7 +15140,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 539. Tractable
+### 557. Tractable
 **Contact:** Alex Dalyac — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/alexdalyac/**
 **HQ:** London, UK
@@ -14680,7 +15166,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 540. Shift Technology
+### 558. Shift Technology
 **Contact:** Jeremy Jawish — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/jeremyjawish/**
 **HQ:** Paris, France
@@ -14706,7 +15192,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 541. Snapsheet
+### 559. Snapsheet
 **Contact:** Brad Weisberg — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/bradweisberg/**
 **HQ:** Chicago, IL
@@ -14732,7 +15218,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 542. CCC Intelligent Solutions
+### 560. CCC Intelligent Solutions
 **Contact:** Githesh Ramamurthy — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/githesh-ramamurthy/**
 **HQ:** Chicago, IL
@@ -14758,7 +15244,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 543. Verisk Analytics
+### 561. Verisk Analytics
 **Contact:** Lee Shavel — President & CEO
 **LinkedIn: https://www.linkedin.com/in/lee-shavel/**
 **HQ:** Jersey City, NJ
@@ -14784,7 +15270,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 544. Guidewire Software
+### 562. Guidewire Software
 **Contact:** Mike Rosenbaum — CEO
 **LinkedIn: https://www.linkedin.com/in/mikerosenbaum/**
 **HQ:** San Mateo, CA
@@ -14810,7 +15296,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 545. Duck Creek Technologies
+### 563. Duck Creek Technologies
 **Contact:** Mike Jackowski — CEO
 **LinkedIn: https://www.linkedin.com/in/mikejackowski/**
 **HQ:** Boston, MA
@@ -14836,7 +15322,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 546. Majesco (Thoma Bravo)
+### 564. Majesco (Thoma Bravo)
 **Contact:** Adam Elster — CEO
 **LinkedIn: https://www.linkedin.com/in/adamelster/**
 **HQ:** Morristown, NJ
@@ -14862,7 +15348,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 547. Earnix
+### 565. Earnix
 **Contact:** Udi Ziv — CEO
 **LinkedIn: https://www.linkedin.com/in/udiziv/**
 **HQ:** Tel Aviv, Israel
@@ -14888,7 +15374,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 548. Clearcover
+### 566. Clearcover
 **Contact:** Kyle Nakatsuji — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/kylenakatsuji/**
 **HQ:** Chicago, IL
@@ -14914,7 +15400,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 549. Coalition
+### 567. Coalition
 **Contact:** Joshua Motta — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/joshuamotta/**
 **HQ:** San Francisco, CA
@@ -14940,7 +15426,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 550. At-Bay
+### 568. At-Bay
 **Contact:** Rotem Iram — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/rotemiram/**
 **HQ:** San Francisco, CA
@@ -14966,7 +15452,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 551. Corvus Insurance (Travelers)
+### 569. Corvus Insurance (Travelers)
 **Contact:** Phil Edmundson — Founder
 **LinkedIn: https://www.linkedin.com/in/philedmundson/**
 **HQ:** Boston, MA
@@ -14992,7 +15478,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 552. Pie Insurance
+### 570. Pie Insurance
 **Contact:** John Kvasnic — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/johnkvasnic/**
 **HQ:** Washington, DC
@@ -15018,7 +15504,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 553. Bolttech
+### 571. Bolttech
 **Contact:** Rob Schimek — Group CEO
 **LinkedIn: https://www.linkedin.com/in/robschimek/**
 **HQ:** Singapore
@@ -15044,7 +15530,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 554. ZhongAn Online P&C Insurance
+### 572. ZhongAn Online P&C Insurance
 **Contact:** Jiang Xing — CEO
 **LinkedIn: https://www.linkedin.com/company/zhongan/**
 **HQ:** Shanghai, China
@@ -15070,7 +15556,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 555. Oscar Health
+### 573. Oscar Health
 **Contact:** Mark Bertolini — CEO
 **LinkedIn: https://www.linkedin.com/in/mark-bertolini/**
 **HQ:** New York, NY
@@ -15096,7 +15582,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 556. Kin Insurance
+### 574. Kin Insurance
 **Contact:** Sean Harper — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/seanharper/**
 **HQ:** Chicago, IL
@@ -15122,7 +15608,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 557. Branch Insurance
+### 575. Branch Insurance
 **Contact:** Steve Lekas — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/stevelekas/**
 **HQ:** Columbus, OH
@@ -15148,7 +15634,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 558. Marshmallow
+### 576. Marshmallow
 **Contact:** Oliver Kent-Braham — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/oliverkentbraham/**
 **HQ:** London, UK
@@ -15174,7 +15660,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 559. Marsh McLennan
+### 577. Marsh McLennan
 **Contact:** John Doyle — President & CEO
 **LinkedIn: https://www.linkedin.com/in/john-doyle/**
 **HQ:** New York, NY
@@ -15200,7 +15686,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 560. Aon
+### 578. Aon
 **Contact:** Greg Case — CEO
 **LinkedIn: https://www.linkedin.com/in/greg-case/**
 **HQ:** Dublin, Ireland
@@ -15226,7 +15712,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 561. Willis Towers Watson (WTW)
+### 579. Willis Towers Watson (WTW)
 **Contact:** Carl Hess — CEO
 **LinkedIn: https://www.linkedin.com/in/carl-hess/**
 **HQ:** London, UK
@@ -15252,7 +15738,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 562. Gallagher
+### 580. Gallagher
 **Contact:** J. Patrick Gallagher Jr. — Chairman, President & CEO
 **LinkedIn: https://www.linkedin.com/in/pat-gallagher/**
 **HQ:** Rolling Meadows, IL
@@ -15278,7 +15764,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 563. Brown & Brown
+### 581. Brown & Brown
 **Contact:** J. Powell Brown — President & CEO
 **LinkedIn: https://www.linkedin.com/in/powell-brown/**
 **HQ:** Daytona Beach, FL
@@ -15304,7 +15790,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 564. Howden Group
+### 582. Howden Group
 **Contact:** David Howden — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/david-howden/**
 **HQ:** London, UK
@@ -15330,7 +15816,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 565. Lockton
+### 583. Lockton
 **Contact:** Ron Lockton — Chairman
 **LinkedIn: https://www.linkedin.com/in/ron-lockton/**
 **HQ:** Kansas City, MO
@@ -15356,7 +15842,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 566. Hub International
+### 584. Hub International
 **Contact:** Marc Cohen — President & CEO
 **LinkedIn: https://www.linkedin.com/in/marc-cohen-hub/**
 **HQ:** Chicago, IL
@@ -15382,7 +15868,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 567. Ryan Specialty
+### 585. Ryan Specialty
 **Contact:** Tim Turner — President & CEO
 **LinkedIn: https://www.linkedin.com/in/timturner-ryanspecialty/**
 **HQ:** Chicago, IL
@@ -15408,7 +15894,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 568. Hyperion Insurance (Howden)
+### 586. Hyperion Insurance (Howden)
 **Contact:** David Howden — Group CEO
 **LinkedIn: https://www.linkedin.com/in/david-howden/**
 **HQ:** London, UK
@@ -15434,7 +15920,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 569. Lloyd's of London
+### 587. Lloyd's of London
 **Contact:** John Neal — CEO
 **LinkedIn: https://www.linkedin.com/in/john-neal-lloyds/**
 **HQ:** London, UK
@@ -15460,7 +15946,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 570. Beazley
+### 588. Beazley
 **Contact:** Adrian Cox — CEO
 **LinkedIn: https://www.linkedin.com/in/adrian-cox/**
 **HQ:** London, UK
@@ -15486,7 +15972,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 571. Hiscox
+### 589. Hiscox
 **Contact:** Aki Hussain — Group CEO
 **LinkedIn: https://www.linkedin.com/in/aki-hussain/**
 **HQ:** Hamilton, Bermuda
@@ -15512,7 +15998,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 572. Lancashire Holdings
+### 590. Lancashire Holdings
 **Contact:** Alex Maloney — Group CEO
 **LinkedIn: https://www.linkedin.com/in/alex-maloney/**
 **HQ:** Hamilton, Bermuda
@@ -15538,7 +16024,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 573. Brit Insurance
+### 591. Brit Insurance
 **Contact:** Matthew Wilson — Group CEO
 **LinkedIn: https://www.linkedin.com/in/matthew-wilson-brit/**
 **HQ:** London, UK
@@ -15564,7 +16050,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 574. Berkshire Hathaway Specialty Insurance
+### 592. Berkshire Hathaway Specialty Insurance
 **Contact:** Peter Eastwood — President
 **LinkedIn: https://www.linkedin.com/in/peter-eastwood/**
 **HQ:** Boston, MA
@@ -15590,7 +16076,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 575. Everest Re Group
+### 593. Everest Re Group
 **Contact:** Juan Andrade — President & CEO
 **LinkedIn: https://www.linkedin.com/in/juan-andrade/**
 **HQ:** Hamilton, Bermuda
@@ -15616,7 +16102,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 576. RenaissanceRe
+### 594. RenaissanceRe
 **Contact:** Kevin O'Donnell — President & CEO
 **LinkedIn: https://www.linkedin.com/in/kevin-odonnell/**
 **HQ:** Hamilton, Bermuda
@@ -15642,7 +16128,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 577. Arch Capital Group
+### 595. Arch Capital Group
 **Contact:** Marc Grandisson — CEO
 **LinkedIn: https://www.linkedin.com/in/marc-grandisson/**
 **HQ:** Hamilton, Bermuda
@@ -15668,7 +16154,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 578. Aspen Insurance Holdings
+### 596. Aspen Insurance Holdings
 **Contact:** Mark Cloutier — Group CEO
 **LinkedIn: https://www.linkedin.com/in/mark-cloutier/**
 **HQ:** Hamilton, Bermuda
@@ -15694,7 +16180,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 579. Parametrix
+### 597. Parametrix
 **Contact:** Neta Rozy — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/netarozy/**
 **HQ:** New York, NY
@@ -15720,7 +16206,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 580. FloodFlash
+### 598. FloodFlash
 **Contact:** Adam Rimmer — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/adamrimmer/**
 **HQ:** London, UK
@@ -15746,7 +16232,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 581. Descartes Underwriting
+### 599. Descartes Underwriting
 **Contact:** Tanguy Touffut — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/tanguytouffut/**
 **HQ:** Paris, France
@@ -15772,7 +16258,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 582. Arbol (dClimate)
+### 600. Arbol (dClimate)
 **Contact:** Siddhartha Jha — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/siddharthajha/**
 **HQ:** New York, NY
@@ -15798,7 +16284,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 583. Groundspeed Analytics
+### 601. Groundspeed Analytics
 **Contact:** Andrew Robinson — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/andrewrobinson-gs/**
 **HQ:** Detroit, MI
@@ -15824,7 +16310,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 584. Planck (insurtech)
+### 602. Planck (insurtech)
 **Contact:** Elad Tsur — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/eladtsur/**
 **HQ:** New York, NY
@@ -15850,7 +16336,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 585. Cape Analytics
+### 603. Cape Analytics
 **Contact:** Ryan Kottenstette — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/ryankottenstette/**
 **HQ:** Mountain View, CA
@@ -15876,7 +16362,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 586. Zesty.ai
+### 604. Zesty.ai
 **Contact:** Attila Toth — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/attilatoth/**
 **HQ:** San Francisco, CA
@@ -15902,7 +16388,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 587. Kettle (reinsurance)
+### 605. Kettle (reinsurance)
 **Contact:** Andrew Engler — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/andrewengler/**
 **HQ:** San Francisco, CA
@@ -15928,7 +16414,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 588. Stable Insurance
+### 606. Stable Insurance
 **Contact:** David Plumb — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/davidplumb/**
 **HQ:** London, UK
@@ -15954,7 +16440,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 589. ELEMENT Insurance
+### 607. ELEMENT Insurance
 **Contact:** Christian Macht — CEO
 **LinkedIn: https://www.linkedin.com/in/christian-macht/**
 **HQ:** Berlin, Germany
@@ -15980,7 +16466,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 590. Qover
+### 608. Qover
 **Contact:** Quentin Colmant — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/quentincolmant/**
 **HQ:** Brussels, Belgium
@@ -16006,7 +16492,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 591. Wakam
+### 609. Wakam
 **Contact:** Olivier Jaillon — CEO
 **LinkedIn: https://www.linkedin.com/in/olivierjaillon/**
 **HQ:** Paris, France
@@ -16032,7 +16518,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 592. Surety (digital bonds)
+### 610. Surety (digital bonds)
 **Contact:** Nick Patel — CEO
 **LinkedIn: https://www.linkedin.com/in/nickpatel/**
 **HQ:** San Francisco, CA
@@ -16058,7 +16544,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 593. Vouch Insurance
+### 611. Vouch Insurance
 **Contact:** Sam Hodges — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/samhodges/**
 **HQ:** San Francisco, CA
@@ -16084,7 +16570,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 594. Sompo Holdings
+### 612. Sompo Holdings
 **Contact:** Kengo Sakurada — Group CEO
 **LinkedIn: https://www.linkedin.com/company/sompo-holdings/**
 **HQ:** Tokyo, Japan
@@ -16110,7 +16596,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 595. MS&AD Insurance Group
+### 613. MS&AD Insurance Group
 **Contact:** Noriyuki Hara — Group CEO
 **LinkedIn: https://www.linkedin.com/company/msad-insurance-group/**
 **HQ:** Tokyo, Japan
@@ -16136,7 +16622,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 596. QBE Insurance Group
+### 614. QBE Insurance Group
 **Contact:** Andrew Horton — Group CEO
 **LinkedIn: https://www.linkedin.com/in/andrew-horton/**
 **HQ:** Sydney, Australia
@@ -16162,7 +16648,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 597. IAG (Insurance Australia Group)
+### 615. IAG (Insurance Australia Group)
 **Contact:** Nick Hawkins — CEO & Managing Director
 **LinkedIn: https://www.linkedin.com/in/nick-hawkins/**
 **HQ:** Sydney, Australia
@@ -16188,7 +16674,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 598. Mapfre
+### 616. Mapfre
 **Contact:** Antonio Huertas — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/antonio-huertas/**
 **HQ:** Madrid, Spain
@@ -16214,7 +16700,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 599. Talanx (HDI)
+### 617. Talanx (HDI)
 **Contact:** Torsten Leue — CEO
 **LinkedIn: https://www.linkedin.com/in/torsten-leue/**
 **HQ:** Hannover, Germany
@@ -16240,7 +16726,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 600. Discovery Limited
+### 618. Discovery Limited
 **Contact:** Adrian Gore — Group CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/adrian-gore/**
 **HQ:** Johannesburg, South Africa
@@ -16266,7 +16752,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 601. FWD Group
+### 619. FWD Group
 **Contact:** Huynh Thanh Phong — Group CEO
 **LinkedIn: https://www.linkedin.com/in/huynh-thanh-phong/**
 **HQ:** Hong Kong
@@ -16292,7 +16778,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 602. Fairfax Financial
+### 620. Fairfax Financial
 **Contact:** Prem Watsa — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/prem-watsa/**
 **HQ:** Toronto, Canada
@@ -16318,7 +16804,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 603. Markel Corporation
+### 621. Markel Corporation
 **Contact:** Tom Gayner — CEO
 **LinkedIn: https://www.linkedin.com/in/tom-gayner/**
 **HQ:** Glen Allen, VA
@@ -16344,7 +16830,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 604. Suncorp Group
+### 622. Suncorp Group
 **Contact:** Steve Johnston — CEO & Managing Director
 **LinkedIn: https://www.linkedin.com/in/steve-johnston/**
 **HQ:** Brisbane, Australia
@@ -16370,7 +16856,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 605. Unum Group
+### 623. Unum Group
 **Contact:** Rick McKenney — President & CEO
 **LinkedIn: https://www.linkedin.com/in/rick-mckenney/**
 **HQ:** Chattanooga, TN
@@ -16396,7 +16882,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 606. Principal Financial Group
+### 624. Principal Financial Group
 **Contact:** Dan Houston — Chairman, President & CEO
 **LinkedIn: https://www.linkedin.com/in/dan-houston/**
 **HQ:** Des Moines, IA
@@ -16422,7 +16908,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 607. Lincoln Financial
+### 625. Lincoln Financial
 **Contact:** Ellen Cooper — President & CEO
 **LinkedIn: https://www.linkedin.com/in/ellencooper/**
 **HQ:** Radnor, PA
@@ -16448,7 +16934,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 608. Voya Financial
+### 626. Voya Financial
 **Contact:** Heather Lavallee — CEO
 **LinkedIn: https://www.linkedin.com/in/heather-lavallee/**
 **HQ:** New York, NY
@@ -16581,7 +17067,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 | 99 | **OECD (Digital Policy)** | Ulrik Vestergaard Knudsen | Deputy Secretary-General | [LinkedIn](https://www.linkedin.com/company/oecd/) | AI policy analysis and governance framework development |
 | 100 | **Inter-American Development Bank (IDB)** | Ilan Goldfajn | President | [LinkedIn](https://www.linkedin.com/company/inter-american-development-bank/) | AI development project analytics and fAIr LAC initiative |
 
-### 609. US Department of Health and Human Services (HHS)
+### 627. US Department of Health and Human Services (HHS)
 **Contact:** Andrea Palm — Deputy Secretary
 **LinkedIn: https://www.linkedin.com/company/us-hhs/**
 **HQ:** Washington, DC
@@ -16607,7 +17093,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 610. US Social Security Administration (SSA)
+### 628. US Social Security Administration (SSA)
 **Contact:** Martin O'Malley — Commissioner
 **LinkedIn: https://www.linkedin.com/company/social-security-administration/**
 **HQ:** Baltimore, MD
@@ -16633,7 +17119,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 611. US Internal Revenue Service (IRS)
+### 629. US Internal Revenue Service (IRS)
 **Contact:** Daniel Werfel — Commissioner
 **LinkedIn: https://www.linkedin.com/company/irs/**
 **HQ:** Washington, DC
@@ -16659,7 +17145,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 612. US Department of Veterans Affairs (VA)
+### 630. US Department of Veterans Affairs (VA)
 **Contact:** Denis McDonough — Secretary
 **LinkedIn: https://www.linkedin.com/company/department-of-veterans-affairs/**
 **HQ:** Washington, DC
@@ -16685,7 +17171,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 613. US Department of Homeland Security (DHS)
+### 631. US Department of Homeland Security (DHS)
 **Contact:** Alejandro Mayorkas — Secretary
 **LinkedIn: https://www.linkedin.com/company/daboradisa/**
 **HQ:** Washington, DC
@@ -16711,7 +17197,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 614. US Customs and Border Protection (CBP)
+### 632. US Customs and Border Protection (CBP)
 **Contact:** Troy Miller — Acting Commissioner
 **LinkedIn: https://www.linkedin.com/company/cbp/**
 **HQ:** Washington, DC
@@ -16737,7 +17223,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 615. US Federal Bureau of Investigation (FBI)
+### 633. US Federal Bureau of Investigation (FBI)
 **Contact:** Director's Office — FBI HQ
 **LinkedIn: https://www.linkedin.com/company/fbi/**
 **HQ:** Washington, DC
@@ -16763,7 +17249,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 616. US Environmental Protection Agency (EPA)
+### 634. US Environmental Protection Agency (EPA)
 **Contact:** Michael Regan — Administrator
 **LinkedIn: https://www.linkedin.com/company/us-epa/**
 **HQ:** Washington, DC
@@ -16789,7 +17275,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 617. US Department of Education
+### 635. US Department of Education
 **Contact:** Miguel Cardona — Secretary
 **LinkedIn: https://www.linkedin.com/company/us-department-of-education/**
 **HQ:** Washington, DC
@@ -16815,7 +17301,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 618. US Department of Labor (DOL)
+### 636. US Department of Labor (DOL)
 **Contact:** Julie Su — Acting Secretary
 **LinkedIn: https://www.linkedin.com/company/u-s-department-of-labor/**
 **HQ:** Washington, DC
@@ -16841,7 +17327,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 619. US Census Bureau
+### 637. US Census Bureau
 **Contact:** Robert Santos — Director
 **LinkedIn: https://www.linkedin.com/company/uscensusbureau/**
 **HQ:** Suitland, MD
@@ -16867,7 +17353,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 620. US General Services Administration (GSA)
+### 638. US General Services Administration (GSA)
 **Contact:** Robin Carnahan — Administrator
 **LinkedIn: https://www.linkedin.com/company/us-general-services-administration/**
 **HQ:** Washington, DC
@@ -16893,7 +17379,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 621. US Patent and Trademark Office (USPTO)
+### 639. US Patent and Trademark Office (USPTO)
 **Contact:** Kathi Vidal — Under Secretary & Director
 **LinkedIn: https://www.linkedin.com/company/uspto/**
 **HQ:** Alexandria, VA
@@ -16919,7 +17405,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 622. US Food and Drug Administration (FDA)
+### 640. US Food and Drug Administration (FDA)
 **Contact:** Robert Califf — Commissioner
 **LinkedIn: https://www.linkedin.com/company/fda/**
 **HQ:** Silver Spring, MD
@@ -16945,7 +17431,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 623. Centers for Medicare & Medicaid Services (CMS)
+### 641. Centers for Medicare & Medicaid Services (CMS)
 **Contact:** Chiquita Brooks-LaSure — Administrator
 **LinkedIn: https://www.linkedin.com/company/centers-for-medicare-medicaid-services/**
 **HQ:** Baltimore, MD
@@ -16971,7 +17457,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 624. NASA
+### 642. NASA
 **Contact:** Bill Nelson — Administrator
 **LinkedIn: https://www.linkedin.com/company/nasa/**
 **HQ:** Washington, DC
@@ -16997,7 +17483,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 625. US Department of Energy (DOE)
+### 643. US Department of Energy (DOE)
 **Contact:** Jennifer Granholm — Secretary
 **LinkedIn: https://www.linkedin.com/company/department-of-energy/**
 **HQ:** Washington, DC
@@ -17023,7 +17509,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 626. US Securities and Exchange Commission (SEC)
+### 644. US Securities and Exchange Commission (SEC)
 **Contact:** Gary Gensler — Chairman
 **LinkedIn: https://www.linkedin.com/company/sec/**
 **HQ:** Washington, DC
@@ -17049,7 +17535,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 627. Federal Reserve System
+### 645. Federal Reserve System
 **Contact:** Jerome Powell — Chairman
 **LinkedIn: https://www.linkedin.com/company/federal-reserve-system/**
 **HQ:** Washington, DC
@@ -17075,7 +17561,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 628. US Department of Transportation (DOT)
+### 646. US Department of Transportation (DOT)
 **Contact:** Pete Buttigieg — Secretary
 **LinkedIn: https://www.linkedin.com/company/us-dot/**
 **HQ:** Washington, DC
@@ -17101,7 +17587,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 629. UK Government Digital Service (GDS)
+### 647. UK Government Digital Service (GDS)
 **Contact:** Tom Read — CEO
 **LinkedIn: https://www.linkedin.com/company/government-digital-service/**
 **HQ:** London, UK
@@ -17127,7 +17613,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 630. NHS England
+### 648. NHS England
 **Contact:** Amanda Pritchard — CEO
 **LinkedIn: https://www.linkedin.com/company/nhs-england/**
 **HQ:** London, UK
@@ -17153,7 +17639,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 631. HM Revenue & Customs (HMRC)
+### 649. HM Revenue & Customs (HMRC)
 **Contact:** Jim Harra — First Permanent Secretary & CEO
 **LinkedIn: https://www.linkedin.com/company/hmrc/**
 **HQ:** London, UK
@@ -17179,7 +17665,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 632. UK Department for Work and Pensions (DWP)
+### 650. UK Department for Work and Pensions (DWP)
 **Contact:** Peter Schofield — Permanent Secretary
 **LinkedIn: https://www.linkedin.com/company/dwp-digital/**
 **HQ:** London, UK
@@ -17205,7 +17691,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 633. UK Home Office
+### 651. UK Home Office
 **Contact:** Matthew Rycroft — Permanent Secretary
 **LinkedIn: https://www.linkedin.com/company/the-home-office/**
 **HQ:** London, UK
@@ -17231,7 +17717,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 634. UK Ministry of Justice
+### 652. UK Ministry of Justice
 **Contact:** Antonia Romeo — Permanent Secretary
 **LinkedIn: https://www.linkedin.com/company/ministry-of-justice/**
 **HQ:** London, UK
@@ -17257,7 +17743,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 635. UK National Crime Agency (NCA)
+### 653. UK National Crime Agency (NCA)
 **Contact:** Graeme Biggar — Director General
 **LinkedIn: https://www.linkedin.com/company/national-crime-agency/**
 **HQ:** London, UK
@@ -17283,7 +17769,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 636. UK Financial Conduct Authority (FCA)
+### 654. UK Financial Conduct Authority (FCA)
 **Contact:** Nikhil Rathi — CEO
 **LinkedIn: https://www.linkedin.com/company/fca/**
 **HQ:** London, UK
@@ -17309,7 +17795,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 637. UK Ofcom
+### 655. UK Ofcom
 **Contact:** Melanie Dawes — CEO
 **LinkedIn: https://www.linkedin.com/company/ofcom/**
 **HQ:** London, UK
@@ -17335,7 +17821,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 638. UK Ofgem
+### 656. UK Ofgem
 **Contact:** Jonathan Brearley — CEO
 **LinkedIn: https://www.linkedin.com/company/ofgem/**
 **HQ:** London, UK
@@ -17361,7 +17847,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 639. Transport for London (TfL)
+### 657. Transport for London (TfL)
 **Contact:** Andy Lord — Commissioner
 **LinkedIn: https://www.linkedin.com/company/transport-for-london/**
 **HQ:** London, UK
@@ -17387,7 +17873,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 640. UK Met Office
+### 658. UK Met Office
 **Contact:** Penny Endersby — Chief Executive
 **LinkedIn: https://www.linkedin.com/company/metoffice/**
 **HQ:** Exeter, UK
@@ -17413,7 +17899,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 641. UK Land Registry
+### 659. UK Land Registry
 **Contact:** Mike Harlow — Chief Executive
 **LinkedIn: https://www.linkedin.com/company/hm-land-registry/**
 **HQ:** Plymouth, UK
@@ -17439,7 +17925,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 642. UK Companies House
+### 660. UK Companies House
 **Contact:** Louise Smyth — Chief Executive
 **LinkedIn: https://www.linkedin.com/company/companies-house/**
 **HQ:** Cardiff, UK
@@ -17465,7 +17951,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 643. UK AI Safety Institute (AISI)
+### 661. UK AI Safety Institute (AISI)
 **Contact:** Ian Hogarth — Chair
 **LinkedIn: https://www.linkedin.com/in/ianhogarth/**
 **HQ:** London, UK
@@ -17491,7 +17977,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 644. European Commission (DG CONNECT)
+### 662. European Commission (DG CONNECT)
 **Contact:** Roberto Viola — Director-General, DG CONNECT
 **LinkedIn: https://www.linkedin.com/in/roberto-viola/**
 **HQ:** Brussels, Belgium
@@ -17517,7 +18003,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 645. EU Agency for Cybersecurity (ENISA)
+### 663. EU Agency for Cybersecurity (ENISA)
 **Contact:** Juhan Lepassaar — Executive Director
 **LinkedIn: https://www.linkedin.com/company/enisa/**
 **HQ:** Athens, Greece
@@ -17543,7 +18029,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 646. German Federal Office for Information Security (BSI)
+### 664. German Federal Office for Information Security (BSI)
 **Contact:** Claudia Plattner — President
 **LinkedIn: https://www.linkedin.com/company/bsi/**
 **HQ:** Bonn, Germany
@@ -17569,7 +18055,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 647. French National Commission on Informatics and Liberty (CNIL)
+### 665. French National Commission on Informatics and Liberty (CNIL)
 **Contact:** Marie-Laure Denis — President
 **LinkedIn: https://www.linkedin.com/company/cnil/**
 **HQ:** Paris, France
@@ -17595,7 +18081,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 648. Netherlands Authority for Digital Infrastructure
+### 666. Netherlands Authority for Digital Infrastructure
 **Contact:** Angelique van der Meulen — Board Member
 **LinkedIn: https://www.linkedin.com/company/rijksinspectie-digitale-infrastructuur/**
 **HQ:** The Hague, Netherlands
@@ -17621,7 +18107,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 649. Estonian e-Governance Academy
+### 667. Estonian e-Governance Academy
 **Contact:** Hannes Astok — Director
 **LinkedIn: https://www.linkedin.com/company/e-governance-academy/**
 **HQ:** Tallinn, Estonia
@@ -17647,7 +18133,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 650. City of Amsterdam (AI Registry)
+### 668. City of Amsterdam (AI Registry)
 **Contact:** Geert Pauwels — CTO
 **LinkedIn: https://www.linkedin.com/company/municipality-of-amsterdam/**
 **HQ:** Amsterdam, Netherlands
@@ -17673,7 +18159,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 651. City of Helsinki (AI Register)
+### 669. City of Helsinki (AI Register)
 **Contact:** Mikko Rusama — CDO
 **LinkedIn: https://www.linkedin.com/in/mikkorusama/**
 **HQ:** Helsinki, Finland
@@ -17699,7 +18185,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 652. Swiss Federal Administration (Digital Transformation)
+### 670. Swiss Federal Administration (Digital Transformation)
 **Contact:** Peppino Giarritta — Federal Delegate for Digital Transformation
 **LinkedIn: https://www.linkedin.com/in/peppinogiarritta/**
 **HQ:** Bern, Switzerland
@@ -17725,7 +18211,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 653. Danish Agency for Digital Government
+### 671. Danish Agency for Digital Government
 **Contact:** Adam Wolf — Director General
 **LinkedIn: https://www.linkedin.com/company/digitaliseringsstyrelsen/**
 **HQ:** Copenhagen, Denmark
@@ -17751,7 +18237,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 654. Swedish Authority for Privacy Protection (IMY)
+### 672. Swedish Authority for Privacy Protection (IMY)
 **Contact:** Lena Lindgren Schelin — Director General
 **LinkedIn: https://www.linkedin.com/company/imy/**
 **HQ:** Stockholm, Sweden
@@ -17777,7 +18263,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 655. Bundesdruckerei (Germany)
+### 673. Bundesdruckerei (Germany)
 **Contact:** Stefan Hofschen — CEO
 **LinkedIn: https://www.linkedin.com/company/bundesdruckerei/**
 **HQ:** Berlin, Germany
@@ -17803,7 +18289,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 656. SERI (Swiss State Secretariat for Education, Research)
+### 674. SERI (Swiss State Secretariat for Education, Research)
 **Contact:** Martina Hirayama — State Secretary
 **LinkedIn: https://www.linkedin.com/company/sbfi-sefri-seri/**
 **HQ:** Bern, Switzerland
@@ -17829,7 +18315,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 657. Italian Digital Transformation Agency (AgID)
+### 675. Italian Digital Transformation Agency (AgID)
 **Contact:** Mario Nobile — Director General
 **LinkedIn: https://www.linkedin.com/company/agaboraid/**
 **HQ:** Rome, Italy
@@ -17855,7 +18341,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 658. Spanish Digital Transformation Agency
+### 676. Spanish Digital Transformation Agency
 **Contact:** Carme Artigas — Secretary of State for Digitalization
 **LinkedIn: https://www.linkedin.com/in/carme-artigas/**
 **HQ:** Madrid, Spain
@@ -17881,7 +18367,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 659. Singapore Government Technology Agency (GovTech)
+### 677. Singapore Government Technology Agency (GovTech)
 **Contact:** Goh Wei Boon — Chief Executive
 **LinkedIn: https://www.linkedin.com/company/govtech-singapore/**
 **HQ:** Singapore
@@ -17907,7 +18393,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 660. Digital Transformation Agency (Australia)
+### 678. Digital Transformation Agency (Australia)
 **Contact:** Chris Fechner — CEO
 **LinkedIn: https://www.linkedin.com/company/dta-gov-au/**
 **HQ:** Canberra, Australia
@@ -17933,7 +18419,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 661. New Zealand Department of Internal Affairs
+### 679. New Zealand Department of Internal Affairs
 **Contact:** Paul James — Chief Executive
 **LinkedIn: https://www.linkedin.com/company/nz-dia/**
 **HQ:** Wellington, New Zealand
@@ -17959,7 +18445,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 662. Japan Digital Agency
+### 680. Japan Digital Agency
 **Contact:** Takuya Hirai — Minister
 **LinkedIn: https://www.linkedin.com/company/digital-agency-japan/**
 **HQ:** Tokyo, Japan
@@ -17985,7 +18471,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 663. South Korea National Information Society Agency (NIA)
+### 681. South Korea National Information Society Agency (NIA)
 **Contact:** Moon Yong-sik — President
 **LinkedIn: https://www.linkedin.com/company/nia-kr/**
 **HQ:** Daegu, South Korea
@@ -18011,7 +18497,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 664. India Ministry of Electronics and IT (MeitY)
+### 682. India Ministry of Electronics and IT (MeitY)
 **Contact:** Ashwini Vaishnaw — Minister
 **LinkedIn: https://www.linkedin.com/company/meity/**
 **HQ:** New Delhi, India
@@ -18037,7 +18523,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 665. UAE AI Office
+### 683. UAE AI Office
 **Contact:** Omar bin Sultan Al Olama — Minister of State for AI
 **LinkedIn: https://www.linkedin.com/in/omaralolama/**
 **HQ:** Abu Dhabi, UAE
@@ -18063,7 +18549,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 666. Saudi Arabia National Data Management Office (NDMO)
+### 684. Saudi Arabia National Data Management Office (NDMO)
 **Contact:** Dr. Abdullah Eid Al-Thiqah — Secretary-General
 **LinkedIn: https://www.linkedin.com/company/sdaia/**
 **HQ:** Riyadh, Saudi Arabia
@@ -18089,7 +18575,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 667. Rwanda Information Society Authority (RISA)
+### 685. Rwanda Information Society Authority (RISA)
 **Contact:** Didier Nkurikiyimfura — Director General
 **LinkedIn: https://www.linkedin.com/company/risa-rwanda/**
 **HQ:** Kigali, Rwanda
@@ -18115,7 +18601,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 668. Kenya ICT Authority
+### 686. Kenya ICT Authority
 **Contact:** Stanley Kamanguya — CEO
 **LinkedIn: https://www.linkedin.com/company/icta-kenya/**
 **HQ:** Nairobi, Kenya
@@ -18141,7 +18627,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 669. Palantir (Government Division)
+### 687. Palantir (Government Division)
 **Contact:** Akash Jain — President, Palantir USG
 **LinkedIn: https://www.linkedin.com/in/akash-jain/**
 **HQ:** Denver, CO
@@ -18167,7 +18653,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 670. Maximus
+### 688. Maximus
 **Contact:** Bruce Caswell — President & CEO
 **LinkedIn: https://www.linkedin.com/in/brucecaswell/**
 **HQ:** Tysons, VA
@@ -18193,7 +18679,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 671. Tyler Technologies
+### 689. Tyler Technologies
 **Contact:** Lynn Moore — President & CEO
 **LinkedIn: https://www.linkedin.com/in/lynnmoore/**
 **HQ:** Plano, TX
@@ -18219,7 +18705,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 672. Salesforce Government Cloud
+### 690. Salesforce Government Cloud
 **Contact:** Dave Rey — SVP, Public Sector
 **LinkedIn: https://www.linkedin.com/in/daverey/**
 **HQ:** San Francisco, CA
@@ -18245,7 +18731,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 673. ServiceNow (Government)
+### 691. ServiceNow (Government)
 **Contact:** Rick Wagner — VP, Public Sector
 **LinkedIn: https://www.linkedin.com/in/rick-wagner/**
 **HQ:** Santa Clara, CA
@@ -18271,7 +18757,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 674. Socure
+### 692. Socure
 **Contact:** Johnny Ayers — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/johnnyayers/**
 **HQ:** Midtown Manhattan, NY
@@ -18297,7 +18783,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 675. ID.me
+### 693. ID.me
 **Contact:** Blake Hall — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/blakehall/**
 **HQ:** McLean, VA
@@ -18323,7 +18809,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 676. Mark43
+### 694. Mark43
 **Contact:** Scott Crouch — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/scottcrouch/**
 **HQ:** New York, NY
@@ -18349,7 +18835,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 677. Axon
+### 695. Axon
 **Contact:** Rick Smith — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/ricksmith/**
 **HQ:** Scottsdale, AZ
@@ -18375,7 +18861,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 678. Motorola Solutions
+### 696. Motorola Solutions
 **Contact:** Greg Brown — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/greg-brown-motorola/**
 **HQ:** Chicago, IL
@@ -18401,7 +18887,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 679. Civica
+### 697. Civica
 **Contact:** Aaron Sawyer — CEO
 **LinkedIn: https://www.linkedin.com/in/aaron-sawyer/**
 **HQ:** London, UK
@@ -18427,7 +18913,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 680. Mastek
+### 698. Mastek
 **Contact:** Hiral Chandrana — Global CEO
 **LinkedIn: https://www.linkedin.com/in/hiralchandrana/**
 **HQ:** Mumbai, India / London, UK
@@ -18453,7 +18939,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 681. Sopra Steria (Government)
+### 699. Sopra Steria (Government)
 **Contact:** Cyril Malargé — CEO
 **LinkedIn: https://www.linkedin.com/in/cyrilmalarge/**
 **HQ:** Paris, France
@@ -18479,7 +18965,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 682. Atos (Government Division)
+### 700. Atos (Government Division)
 **Contact:** Pierre Barnabé — CEO (Eviden)
 **LinkedIn: https://www.linkedin.com/in/pierre-barnabe/**
 **HQ:** Paris, France
@@ -18505,7 +18991,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 683. Thoughtworks (Government Practice)
+### 701. Thoughtworks (Government Practice)
 **Contact:** Guo Xiao — CEO
 **LinkedIn: https://www.linkedin.com/in/guoxiao/**
 **HQ:** Chicago, IL
@@ -18531,7 +19017,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 684. New York City Office of Technology & Innovation
+### 702. New York City Office of Technology & Innovation
 **Contact:** Matthew Fraser — Commissioner & CTO
 **LinkedIn: https://www.linkedin.com/in/matthewfraser/**
 **HQ:** New York, NY
@@ -18557,7 +19043,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 685. City of San Francisco (DataSF)
+### 703. City of San Francisco (DataSF)
 **Contact:** CIO Office — Department of Technology
 **LinkedIn: https://www.linkedin.com/company/city-county-of-san-francisco/**
 **HQ:** San Francisco, CA
@@ -18583,7 +19069,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 686. State of California (CDT)
+### 704. State of California (CDT)
 **Contact:** Liana Bailey-Crimmins — Director, CDT
 **LinkedIn: https://www.linkedin.com/in/lianabc/**
 **HQ:** Sacramento, CA
@@ -18609,7 +19095,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 687. State of Texas (DIR)
+### 705. State of Texas (DIR)
 **Contact:** Amanda Crawford — Executive Director, DIR
 **LinkedIn: https://www.linkedin.com/in/amandacrawford/**
 **HQ:** Austin, TX
@@ -18635,7 +19121,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 688. State of New York (ITS)
+### 706. State of New York (ITS)
 **Contact:** Dru Rai — CIO, ITS
 **LinkedIn: https://www.linkedin.com/in/dru-rai/**
 **HQ:** Albany, NY
@@ -18661,7 +19147,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 689. City of Toronto (Digital Services)
+### 707. City of Toronto (Digital Services)
 **Contact:** CTO Office — Technology Services
 **LinkedIn: https://www.linkedin.com/company/city-of-toronto/**
 **HQ:** Toronto, Canada
@@ -18687,7 +19173,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 690. City of Barcelona (Digital Innovation)
+### 708. City of Barcelona (Digital Innovation)
 **Contact:** Digital Innovation Office — City Council
 **LinkedIn: https://www.linkedin.com/company/ajuntament-de-barcelona/**
 **HQ:** Barcelona, Spain
@@ -18713,7 +19199,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 691. City of Seoul (Smart City Division)
+### 709. City of Seoul (Smart City Division)
 **Contact:** Smart City Office — Seoul Metropolitan Government
 **LinkedIn: https://www.linkedin.com/company/seoul-metropolitan-government/**
 **HQ:** Seoul, South Korea
@@ -18739,7 +19225,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 692. City of Dubai (Smart Dubai)
+### 710. City of Dubai (Smart Dubai)
 **Contact:** Smart Dubai Office — Government
 **LinkedIn: https://www.linkedin.com/company/smart-dubai/**
 **HQ:** Dubai, UAE
@@ -18765,7 +19251,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 693. City of Tallinn (Digital Services)
+### 711. City of Tallinn (Digital Services)
 **Contact:** CTO Office — Tallinn City Government
 **LinkedIn: https://www.linkedin.com/company/tallinn-city-government/**
 **HQ:** Tallinn, Estonia
@@ -18791,7 +19277,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 694. City of London Corporation
+### 712. City of London Corporation
 **Contact:** CIO Office — City of London Corporation
 **LinkedIn: https://www.linkedin.com/company/city-of-london-corporation/**
 **HQ:** London, UK
@@ -18817,7 +19303,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 695. State of Virginia (VITA)
+### 713. State of Virginia (VITA)
 **Contact:** Robert Osmond — CIO, VITA
 **LinkedIn: https://www.linkedin.com/in/robertosmond/**
 **HQ:** Richmond, VA
@@ -18843,7 +19329,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 696. State of Colorado (OIT)
+### 714. State of Colorado (OIT)
 **Contact:** Theresa Szczurek — CIO
 **LinkedIn: https://www.linkedin.com/in/theresaszczurek/**
 **HQ:** Denver, CO
@@ -18869,7 +19355,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 697. City of Chicago (DoIT)
+### 715. City of Chicago (DoIT)
 **Contact:** CIO Office — Department of Innovation & Technology
 **LinkedIn: https://www.linkedin.com/company/city-of-chicago/**
 **HQ:** Chicago, IL
@@ -18895,7 +19381,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 698. City of Los Angeles (ITA)
+### 716. City of Los Angeles (ITA)
 **Contact:** Ted Ross — CIO & GM, ITA
 **LinkedIn: https://www.linkedin.com/in/tedross/**
 **HQ:** Los Angeles, CA
@@ -18921,7 +19407,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 699. Australian Taxation Office (ATO)
+### 717. Australian Taxation Office (ATO)
 **Contact:** Chris Jordan — Commissioner
 **LinkedIn: https://www.linkedin.com/company/australian-taxation-office/**
 **HQ:** Canberra, Australia
@@ -18947,7 +19433,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 700. Service Canada
+### 718. Service Canada
 **Contact:** CIO Office — Employment and Social Development Canada
 **LinkedIn: https://www.linkedin.com/company/esdc-edsc/**
 **HQ:** Ottawa, Canada
@@ -18973,7 +19459,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 701. INRIA (French National Institute for AI Research)
+### 719. INRIA (French National Institute for AI Research)
 **Contact:** Bruno Sportisse — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/brunosportisse/**
 **HQ:** Paris, France
@@ -18999,7 +19485,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 702. Alan Turing Institute
+### 720. Alan Turing Institute
 **Contact:** Mark Maydon — CEO
 **LinkedIn: https://www.linkedin.com/company/the-alan-turing-institute/**
 **HQ:** London, UK
@@ -19025,7 +19511,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 703. European Medicines Agency (EMA)
+### 721. European Medicines Agency (EMA)
 **Contact:** Emer Cooke — Executive Director
 **LinkedIn: https://www.linkedin.com/company/european-medicines-agency/**
 **HQ:** Amsterdam, Netherlands
@@ -19051,7 +19537,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 704. Europol
+### 722. Europol
 **Contact:** Catherine De Bolle — Executive Director
 **LinkedIn: https://www.linkedin.com/company/europol/**
 **HQ:** The Hague, Netherlands
@@ -19077,7 +19563,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 705. World Bank Group
+### 723. World Bank Group
 **Contact:** Ajay Banga — President
 **LinkedIn: https://www.linkedin.com/company/the-world-bank/**
 **HQ:** Washington, DC
@@ -19103,7 +19589,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 706. United Nations (UN OICT)
+### 724. United Nations (UN OICT)
 **Contact:** Atefeh Riazi — CIO, UN OICT
 **LinkedIn: https://www.linkedin.com/in/atefehriazi/**
 **HQ:** New York, NY
@@ -19129,7 +19615,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 707. OECD (Digital Policy)
+### 725. OECD (Digital Policy)
 **Contact:** Ulrik Vestergaard Knudsen — Deputy Secretary-General
 **LinkedIn: https://www.linkedin.com/company/oecd/**
 **HQ:** Paris, France
@@ -19155,7 +19641,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 708. Inter-American Development Bank (IDB)
+### 726. Inter-American Development Bank (IDB)
 **Contact:** Ilan Goldfajn — President
 **LinkedIn: https://www.linkedin.com/company/inter-american-development-bank/**
 **HQ:** Washington, DC
@@ -19288,7 +19774,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 | 99 | **Practical Law (Thomson Reuters)** | Steve Hasker | President & CEO, Thomson Reuters | [LinkedIn](https://www.linkedin.com/in/stevehasker/) | AI legal precedent and practice note generation |
 | 100 | **Clio** | Jack Newton | CEO & Founder | [LinkedIn](https://www.linkedin.com/in/jacknewton/) | AI legal practice management and client intake |
 
-### 709. Clifford Chance
+### 727. Clifford Chance
 **Contact:** Charles Adams — Managing Partner
 **LinkedIn: https://www.linkedin.com/in/charles-adams/**
 **HQ:** London, UK
@@ -19314,7 +19800,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 710. Allen & Overy (A&O Shearman)
+### 728. Allen & Overy (A&O Shearman)
 **Contact:** Wim Dejonghe — Senior Partner
 **LinkedIn: https://www.linkedin.com/in/wimdejonghe/**
 **HQ:** London, UK
@@ -19340,7 +19826,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 711. Linklaters
+### 729. Linklaters
 **Contact:** Paul Lewis — Managing Partner
 **LinkedIn: https://www.linkedin.com/in/paul-lewis-linklaters/**
 **HQ:** London, UK
@@ -19366,7 +19852,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 712. Freshfields Bruckhaus Deringer
+### 730. Freshfields Bruckhaus Deringer
 **Contact:** Georgia Dawson — Senior Partner
 **LinkedIn: https://www.linkedin.com/in/georgia-dawson/**
 **HQ:** London, UK
@@ -19392,7 +19878,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 713. Slaughter and May
+### 731. Slaughter and May
 **Contact:** Deborah Finkler — Managing Partner
 **LinkedIn: https://www.linkedin.com/in/deborah-finkler/**
 **HQ:** London, UK
@@ -19418,7 +19904,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 714. Kirkland & Ellis
+### 732. Kirkland & Ellis
 **Contact:** Jon Ballis — Chairman
 **LinkedIn: https://www.linkedin.com/in/jon-ballis/**
 **HQ:** Chicago, IL
@@ -19444,7 +19930,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 715. Latham & Watkins
+### 733. Latham & Watkins
 **Contact:** Rich Trobman — Chair & Managing Partner
 **LinkedIn: https://www.linkedin.com/in/richtrobman/**
 **HQ:** Los Angeles, CA
@@ -19470,7 +19956,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 716. Baker McKenzie
+### 734. Baker McKenzie
 **Contact:** Milton Cheng — Global Chair
 **LinkedIn: https://www.linkedin.com/in/milton-cheng/**
 **HQ:** Chicago, IL
@@ -19496,7 +19982,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 717. DLA Piper
+### 735. DLA Piper
 **Contact:** Simon Levine — Global Co-CEO
 **LinkedIn: https://www.linkedin.com/in/simonlevine/**
 **HQ:** London, UK / Chicago, IL
@@ -19522,7 +20008,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 718. White & Case
+### 736. White & Case
 **Contact:** David Koschik — Chair
 **LinkedIn: https://www.linkedin.com/in/david-koschik/**
 **HQ:** New York, NY
@@ -19548,7 +20034,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 719. Herbert Smith Freehills
+### 737. Herbert Smith Freehills
 **Contact:** Justin D'Agostino — Global CEO
 **LinkedIn: https://www.linkedin.com/in/justindagostino/**
 **HQ:** London, UK
@@ -19574,7 +20060,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 720. Norton Rose Fulbright
+### 738. Norton Rose Fulbright
 **Contact:** Mohamed Bah — Global CEO
 **LinkedIn: https://www.linkedin.com/in/mohamed-bah/**
 **HQ:** London, UK
@@ -19600,7 +20086,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 721. Hogan Lovells
+### 739. Hogan Lovells
 **Contact:** Miguel Zaldivar — CEO
 **LinkedIn: https://www.linkedin.com/in/miguelzaldivar/**
 **HQ:** London, UK / Washington, DC
@@ -19626,7 +20112,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 722. Dentons
+### 740. Dentons
 **Contact:** Elliott Portnoy — Global CEO
 **LinkedIn: https://www.linkedin.com/in/elliottportnoy/**
 **HQ:** London, UK / Washington, DC
@@ -19652,7 +20138,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 723. Ashurst
+### 741. Ashurst
 **Contact:** Paul Jenkins — Managing Partner
 **LinkedIn: https://www.linkedin.com/in/paul-jenkins-ashurst/**
 **HQ:** London, UK
@@ -19678,7 +20164,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 724. Simmons & Simmons
+### 742. Simmons & Simmons
 **Contact:** Jeremy Hoyland — Managing Partner
 **LinkedIn: https://www.linkedin.com/in/jeremyhoyland/**
 **HQ:** London, UK
@@ -19704,7 +20190,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 725. Eversheds Sutherland
+### 743. Eversheds Sutherland
 **Contact:** Lee Ranson — CEO
 **LinkedIn: https://www.linkedin.com/in/leeranson/**
 **HQ:** London, UK / Atlanta, GA
@@ -19730,7 +20216,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 726. CMS Law
+### 744. CMS Law
 **Contact:** Stephen Millar — Managing Partner
 **LinkedIn: https://www.linkedin.com/in/stephenmillar/**
 **HQ:** London, UK
@@ -19756,7 +20242,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 727. Reed Smith
+### 745. Reed Smith
 **Contact:** Sandy Thomas — Global Managing Partner
 **LinkedIn: https://www.linkedin.com/in/sandy-thomas/**
 **HQ:** Pittsburgh, PA
@@ -19782,7 +20268,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 728. Pinsent Masons
+### 746. Pinsent Masons
 **Contact:** Vicky Siviter — Senior Partner
 **LinkedIn: https://www.linkedin.com/in/vickysiviter/**
 **HQ:** London, UK
@@ -19808,7 +20294,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 729. Osborne Clarke
+### 747. Osborne Clarke
 **Contact:** Simon Beswick — Managing Partner
 **LinkedIn: https://www.linkedin.com/in/simonbeswick/**
 **HQ:** London, UK
@@ -19834,7 +20320,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 730. Goodwin Procter
+### 748. Goodwin Procter
 **Contact:** Rob Insolia — Chairman
 **LinkedIn: https://www.linkedin.com/in/rob-insolia/**
 **HQ:** Boston, MA
@@ -19860,7 +20346,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 731. Cooley
+### 749. Cooley
 **Contact:** Mathew Garrahan — Managing Partner
 **LinkedIn: https://www.linkedin.com/in/mathewgarrahan/**
 **HQ:** Palo Alto, CA
@@ -19886,7 +20372,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 732. Davis Polk & Wardwell
+### 750. Davis Polk & Wardwell
 **Contact:** Neil Barr — Managing Partner
 **LinkedIn: https://www.linkedin.com/in/neil-barr/**
 **HQ:** New York, NY
@@ -19912,7 +20398,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 733. Sullivan & Cromwell
+### 751. Sullivan & Cromwell
 **Contact:** Joseph Shenker — Chairman
 **LinkedIn: https://www.linkedin.com/in/joseph-shenker/**
 **HQ:** New York, NY
@@ -19938,7 +20424,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 734. Skadden, Arps, Slate, Meagher & Flom
+### 752. Skadden, Arps, Slate, Meagher & Flom
 **Contact:** Julie North — Executive Partner
 **LinkedIn: https://www.linkedin.com/in/julie-north/**
 **HQ:** New York, NY
@@ -19964,7 +20450,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 735. Wachtell, Lipton, Rosen & Katz
+### 753. Wachtell, Lipton, Rosen & Katz
 **Contact:** David Katz — Partner
 **LinkedIn: https://www.linkedin.com/company/wachtell-lipton-rosen-katz/**
 **HQ:** New York, NY
@@ -19990,7 +20476,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 736. Jones Day
+### 754. Jones Day
 **Contact:** Gregory Shumaker — Managing Partner
 **LinkedIn: https://www.linkedin.com/in/gregoryshumaker/**
 **HQ:** Cleveland, OH
@@ -20016,7 +20502,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 737. Quinn Emanuel Urquhart & Sullivan
+### 755. Quinn Emanuel Urquhart & Sullivan
 **Contact:** John Quinn — Managing Partner
 **LinkedIn: https://www.linkedin.com/in/john-quinn/**
 **HQ:** Los Angeles, CA
@@ -20042,7 +20528,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 738. Mishcon de Reya
+### 756. Mishcon de Reya
 **Contact:** Kevin Gold — Managing Partner
 **LinkedIn: https://www.linkedin.com/in/kevin-gold/**
 **HQ:** London, UK
@@ -20068,7 +20554,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 739. Deloitte
+### 757. Deloitte
 **Contact:** Joe Ucuzoglu — Global CEO
 **LinkedIn: https://www.linkedin.com/in/joeucuzoglu/**
 **HQ:** London, UK
@@ -20094,7 +20580,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 740. PricewaterhouseCoopers (PwC)
+### 758. PricewaterhouseCoopers (PwC)
 **Contact:** Mohamed Kande — Global Chairman
 **LinkedIn: https://www.linkedin.com/in/mohamedkande/**
 **HQ:** London, UK
@@ -20120,7 +20606,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 741. Ernst & Young (EY)
+### 759. Ernst & Young (EY)
 **Contact:** Janet Truncale — Global Chair & CEO
 **LinkedIn: https://www.linkedin.com/in/janettruncale/**
 **HQ:** London, UK
@@ -20146,7 +20632,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 742. KPMG
+### 760. KPMG
 **Contact:** Bill Thomas — Global Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/billthomaskpmg/**
 **HQ:** Amstelveen, Netherlands
@@ -20172,7 +20658,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 743. McKinsey & Company
+### 761. McKinsey & Company
 **Contact:** Bob Sternfels — Global Managing Partner
 **LinkedIn: https://www.linkedin.com/in/bob-sternfels/**
 **HQ:** New York, NY
@@ -20198,7 +20684,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 744. Boston Consulting Group (BCG)
+### 762. Boston Consulting Group (BCG)
 **Contact:** Christoph Schweizer — Global Chair & CEO
 **LinkedIn: https://www.linkedin.com/in/christoph-schweizer/**
 **HQ:** Boston, MA
@@ -20224,7 +20710,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 745. Bain & Company
+### 763. Bain & Company
 **Contact:** Christoph Pieper — Managing Partner
 **LinkedIn: https://www.linkedin.com/in/christophpieper/**
 **HQ:** Boston, MA
@@ -20250,7 +20736,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 746. Accenture
+### 764. Accenture
 **Contact:** Julie Sweet — Chair & CEO
 **LinkedIn: https://www.linkedin.com/in/juliesweet/**
 **HQ:** Dublin, Ireland
@@ -20276,7 +20762,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 747. Oliver Wyman
+### 765. Oliver Wyman
 **Contact:** Nick Studer — President & CEO
 **LinkedIn: https://www.linkedin.com/in/nickstuder/**
 **HQ:** New York, NY
@@ -20302,7 +20788,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 748. FTI Consulting
+### 766. FTI Consulting
 **Contact:** Steven Gunby — President & CEO
 **LinkedIn: https://www.linkedin.com/in/stevengunby/**
 **HQ:** Washington, DC
@@ -20328,7 +20814,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 749. Alvarez & Marsal
+### 767. Alvarez & Marsal
 **Contact:** Tony Alvarez — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/tony-alvarez/**
 **HQ:** New York, NY
@@ -20354,7 +20840,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 750. Grant Thornton
+### 768. Grant Thornton
 **Contact:** Seth Siegel — CEO
 **LinkedIn: https://www.linkedin.com/in/sethsiegel/**
 **HQ:** Chicago, IL
@@ -20380,7 +20866,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 751. BDO International
+### 769. BDO International
 **Contact:** Wayne Berson — Global Chairman
 **LinkedIn: https://www.linkedin.com/in/wayneberson/**
 **HQ:** Brussels, Belgium
@@ -20406,7 +20892,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 752. RSM International
+### 770. RSM International
 **Contact:** Jean Stephens — CEO, RSM International
 **LinkedIn: https://www.linkedin.com/in/jean-stephens/**
 **HQ:** London, UK
@@ -20432,7 +20918,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 753. Mazars (Forvis Mazars)
+### 771. Mazars (Forvis Mazars)
 **Contact:** Ton Tuinier — CEO, Forvis Mazars
 **LinkedIn: https://www.linkedin.com/in/tontuinier/**
 **HQ:** Paris, France
@@ -20458,7 +20944,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 754. Thomson Reuters (Legal)
+### 772. Thomson Reuters (Legal)
 **Contact:** Steve Hasker — President & CEO
 **LinkedIn: https://www.linkedin.com/in/stevehasker/**
 **HQ:** Toronto, Canada
@@ -20484,7 +20970,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 755. LexisNexis (RELX)
+### 773. LexisNexis (RELX)
 **Contact:** Mike Walsh — CEO, LexisNexis Legal & Professional
 **LinkedIn: https://www.linkedin.com/in/mikewalsh/**
 **HQ:** New York, NY
@@ -20510,7 +20996,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 756. Harvey AI
+### 774. Harvey AI
 **Contact:** Winston Weinberg — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/winstonweinberg/**
 **HQ:** San Francisco, CA
@@ -20536,7 +21022,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 757. Casetext (Thomson Reuters)
+### 775. Casetext (Thomson Reuters)
 **Contact:** Jake Heller — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/jakeheller/**
 **HQ:** San Francisco, CA
@@ -20562,7 +21048,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 758. Relativity (kCura)
+### 776. Relativity (kCura)
 **Contact:** Mike Gamson — CEO
 **LinkedIn: https://www.linkedin.com/in/mikegamson/**
 **HQ:** Chicago, IL
@@ -20588,7 +21074,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 759. Everlaw
+### 777. Everlaw
 **Contact:** AJ Shankar — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/ajshankar/**
 **HQ:** Oakland, CA
@@ -20614,7 +21100,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 760. Luminance
+### 778. Luminance
 **Contact:** Eleanor Weaver — CEO
 **LinkedIn: https://www.linkedin.com/in/eleanorweaver/**
 **HQ:** London, UK
@@ -20640,7 +21126,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 761. Kira Systems (Litera)
+### 779. Kira Systems (Litera)
 **Contact:** Noah Waisberg — Co-founder
 **LinkedIn: https://www.linkedin.com/in/noahwaisberg/**
 **HQ:** Toronto, Canada
@@ -20666,7 +21152,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 762. Ironclad
+### 780. Ironclad
 **Contact:** Jason Boehmig — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/jasonboehmig/**
 **HQ:** San Francisco, CA
@@ -20692,7 +21178,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 763. Juro
+### 781. Juro
 **Contact:** Richard Mabey — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/richardmabey/**
 **HQ:** London, UK
@@ -20718,7 +21204,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 764. Legatics
+### 782. Legatics
 **Contact:** Anthony Sherur — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/anthonysherur/**
 **HQ:** London, UK
@@ -20744,7 +21230,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 765. Diligent
+### 783. Diligent
 **Contact:** Brian Stafford — CEO
 **LinkedIn: https://www.linkedin.com/in/brianstafford/**
 **HQ:** New York, NY
@@ -20770,7 +21256,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 766. Litera
+### 784. Litera
 **Contact:** Sheryl Holliday — CEO
 **LinkedIn: https://www.linkedin.com/in/sherylholliday/**
 **HQ:** Chicago, IL
@@ -20796,7 +21282,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 767. NetDocuments
+### 785. NetDocuments
 **Contact:** Josh Baxter — CEO
 **LinkedIn: https://www.linkedin.com/in/joshbaxter/**
 **HQ:** Lehi, UT
@@ -20822,7 +21308,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 768. iManage
+### 786. iManage
 **Contact:** Neil Araujo — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/neilaraujo/**
 **HQ:** Chicago, IL
@@ -20848,7 +21334,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 769. DISCO
+### 787. DISCO
 **Contact:** Eric Friedberg — CEO
 **LinkedIn: https://www.linkedin.com/in/ericfriedberg/**
 **HQ:** Austin, TX
@@ -20874,7 +21360,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 770. Eigen Technologies
+### 788. Eigen Technologies
 **Contact:** Lewis Liu — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/lewisliu/**
 **HQ:** London, UK
@@ -20900,7 +21386,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 771. Checkbox
+### 789. Checkbox
 **Contact:** Evan Wong — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/evanwong/**
 **HQ:** Sydney, Australia
@@ -20926,7 +21412,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 772. Legalist
+### 790. Legalist
 **Contact:** Eva Shang — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/evashang/**
 **HQ:** San Francisco, CA
@@ -20952,7 +21438,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 773. Lex Machina (LexisNexis)
+### 791. Lex Machina (LexisNexis)
 **Contact:** Josh Becker — CEO
 **LinkedIn: https://www.linkedin.com/in/joshbecker/**
 **HQ:** San Jose, CA
@@ -20978,7 +21464,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 774. Compliance.ai
+### 792. Compliance.ai
 **Contact:** Kayvan Alikhani — CEO
 **LinkedIn: https://www.linkedin.com/in/kayvanalikhani/**
 **HQ:** San Jose, CA
@@ -21004,7 +21490,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 775. CUBE Global
+### 793. CUBE Global
 **Contact:** Ben Richmond — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/benrichmond/**
 **HQ:** London, UK
@@ -21030,7 +21516,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 776. Ascent RegTech
+### 794. Ascent RegTech
 **Contact:** Brian Clark — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/brianclark/**
 **HQ:** Chicago, IL
@@ -21056,7 +21542,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 777. Behavox
+### 795. Behavox
 **Contact:** Erkin Adylov — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/erkinadylov/**
 **HQ:** New York, NY
@@ -21082,7 +21568,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 778. Global Relay
+### 796. Global Relay
 **Contact:** Warren Roy — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/warrenroy/**
 **HQ:** Vancouver, Canada
@@ -21108,7 +21594,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 779. Smarsh
+### 797. Smarsh
 **Contact:** Brian Cramer — CEO
 **LinkedIn: https://www.linkedin.com/in/briancramer/**
 **HQ:** Portland, OR
@@ -21134,7 +21620,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 780. OneTrust
+### 798. OneTrust
 **Contact:** Kabir Barday — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/kabirbarday/**
 **HQ:** Atlanta, GA
@@ -21160,7 +21646,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 781. TrustArc
+### 799. TrustArc
 **Contact:** Dan Clarke — President
 **LinkedIn: https://www.linkedin.com/in/danclarke/**
 **HQ:** San Francisco, CA
@@ -21186,7 +21672,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 782. BigID
+### 800. BigID
 **Contact:** Dimitri Sirota — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/dsirota/**
 **HQ:** New York, NY
@@ -21212,7 +21698,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 783. Securiti
+### 801. Securiti
 **Contact:** Rehan Jalil — CEO
 **LinkedIn: https://www.linkedin.com/in/rehanjalil/**
 **HQ:** San Jose, CA
@@ -21238,7 +21724,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 784. Robert Half
+### 802. Robert Half
 **Contact:** M. Keith Waddell — President & CEO
 **LinkedIn: https://www.linkedin.com/in/keithwaddell/**
 **HQ:** Menlo Park, CA
@@ -21264,7 +21750,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 785. Hays plc
+### 803. Hays plc
 **Contact:** Dirk Hahn — Group CEO
 **LinkedIn: https://www.linkedin.com/in/dirk-hahn/**
 **HQ:** London, UK
@@ -21290,7 +21776,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 786. PageGroup
+### 804. PageGroup
 **Contact:** Nicholas Kirk — CEO
 **LinkedIn: https://www.linkedin.com/in/nicholas-kirk/**
 **HQ:** London, UK
@@ -21316,7 +21802,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 787. Adecco Group
+### 805. Adecco Group
 **Contact:** Denis Machuel — CEO
 **LinkedIn: https://www.linkedin.com/in/denismachuel/**
 **HQ:** Zurich, Switzerland
@@ -21342,7 +21828,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 788. Randstad
+### 806. Randstad
 **Contact:** Sander van 't Noordende — CEO
 **LinkedIn: https://www.linkedin.com/in/sandervtnoo/**
 **HQ:** Diemen, Netherlands
@@ -21368,7 +21854,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 789. Mercer (Marsh McLennan)
+### 807. Mercer (Marsh McLennan)
 **Contact:** Martine Ferland — President & CEO
 **LinkedIn: https://www.linkedin.com/in/martineferland/**
 **HQ:** New York, NY
@@ -21394,7 +21880,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 790. Willis Towers Watson (Talent)
+### 808. Willis Towers Watson (Talent)
 **Contact:** Carl Hess — CEO
 **LinkedIn: https://www.linkedin.com/in/carl-hess/**
 **HQ:** London, UK
@@ -21420,7 +21906,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 791. Korn Ferry
+### 809. Korn Ferry
 **Contact:** Gary Burnison — CEO
 **LinkedIn: https://www.linkedin.com/in/garyburnison/**
 **HQ:** Los Angeles, CA
@@ -21446,7 +21932,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 792. Spencer Stuart
+### 810. Spencer Stuart
 **Contact:** Ben Williams — CEO
 **LinkedIn: https://www.linkedin.com/in/benwilliams/**
 **HQ:** Chicago, IL
@@ -21472,7 +21958,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 793. Heidrick & Struggles
+### 811. Heidrick & Struggles
 **Contact:** Krishnan Rajagopalan — President & CEO
 **LinkedIn: https://www.linkedin.com/in/krishnanrajagopalan/**
 **HQ:** Chicago, IL
@@ -21498,7 +21984,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 794. Clyde & Co
+### 812. Clyde & Co
 **Contact:** Carolena Gordon — Senior Partner
 **LinkedIn: https://www.linkedin.com/in/carolena-gordon/**
 **HQ:** London, UK
@@ -21524,7 +22010,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 795. Travers Smith
+### 813. Travers Smith
 **Contact:** Andrew Gillen — Managing Partner
 **LinkedIn: https://www.linkedin.com/in/andrew-gillen/**
 **HQ:** London, UK
@@ -21550,7 +22036,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 796. Squire Patton Boggs
+### 814. Squire Patton Boggs
 **Contact:** Mark Ruehlmann — Global Managing Partner
 **LinkedIn: https://www.linkedin.com/in/mark-ruehlmann/**
 **HQ:** Cleveland, OH
@@ -21576,7 +22062,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 797. Mayer Brown
+### 815. Mayer Brown
 **Contact:** Jon Van Gorp — Chairman
 **LinkedIn: https://www.linkedin.com/in/jon-van-gorp/**
 **HQ:** Chicago, IL
@@ -21602,7 +22088,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 798. Morrison Foerster
+### 816. Morrison Foerster
 **Contact:** Craig Martin — Chairman
 **LinkedIn: https://www.linkedin.com/in/craig-martin/**
 **HQ:** San Francisco, CA
@@ -21628,7 +22114,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 799. Bird & Bird
+### 817. Bird & Bird
 **Contact:** David Kerr — CEO
 **LinkedIn: https://www.linkedin.com/in/david-kerr/**
 **HQ:** London, UK
@@ -21654,7 +22140,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 800. Sidley Austin
+### 818. Sidley Austin
 **Contact:** Yvette McGee Brown — Managing Partner
 **LinkedIn: https://www.linkedin.com/in/yvette-mcgee-brown/**
 **HQ:** Chicago, IL
@@ -21680,7 +22166,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 801. Greenberg Traurig
+### 819. Greenberg Traurig
 **Contact:** Brian Duffy — Executive Chairman
 **LinkedIn: https://www.linkedin.com/in/brian-duffy/**
 **HQ:** Miami, FL
@@ -21706,7 +22192,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 802. Orrick Herrington & Sutcliffe
+### 820. Orrick Herrington & Sutcliffe
 **Contact:** Mitch Zuklie — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/mitch-zuklie/**
 **HQ:** San Francisco, CA
@@ -21732,7 +22218,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 803. Womble Bond Dickinson
+### 821. Womble Bond Dickinson
 **Contact:** Betty Temple — Chair
 **LinkedIn: https://www.linkedin.com/in/betty-temple/**
 **HQ:** Winston-Salem, NC
@@ -21758,7 +22244,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 804. Kennedys Law
+### 822. Kennedys Law
 **Contact:** Nick Thomas — Senior Partner
 **LinkedIn: https://www.linkedin.com/in/nick-thomas/**
 **HQ:** London, UK
@@ -21784,7 +22270,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 805. Littler Mendelson
+### 823. Littler Mendelson
 **Contact:** Erin Webber — Managing Director & President
 **LinkedIn: https://www.linkedin.com/in/erin-webber/**
 **HQ:** San Francisco, CA
@@ -21810,7 +22296,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 806. Wolters Kluwer Legal
+### 824. Wolters Kluwer Legal
 **Contact:** Nancy McKinstry — CEO
 **LinkedIn: https://www.linkedin.com/in/nancymckinstry/**
 **HQ:** Alphen aan den Rijn, Netherlands
@@ -21836,7 +22322,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 807. Practical Law (Thomson Reuters)
+### 825. Practical Law (Thomson Reuters)
 **Contact:** Steve Hasker — President & CEO, Thomson Reuters
 **LinkedIn: https://www.linkedin.com/in/stevehasker/**
 **HQ:** London, UK
@@ -21862,7 +22348,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 808. Clio
+### 826. Clio
 **Contact:** Jack Newton — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/jacknewton/**
 **HQ:** Vancouver, Canada
@@ -21995,7 +22481,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 | 99 | **Monday.com** | Roy Mann | CEO & Co-founder | [LinkedIn](https://www.linkedin.com/in/roymann/) | AI workflow automation and project intelligence |
 | 100 | **Coupa Software** | Leagh Turner | CEO | [LinkedIn](https://www.linkedin.com/in/leaghturner/) | AI spend analytics and supply chain risk |
 
-### 809. Microsoft
+### 827. Microsoft
 **Contact:** Eric Boyd — CVP, AI Platform
 **LinkedIn: https://www.linkedin.com/in/ericboyd/**
 **HQ:** Redmond, WA
@@ -22021,7 +22507,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 810. Google Cloud
+### 828. Google Cloud
 **Contact:** Thomas Kurian — CEO, Google Cloud
 **LinkedIn: https://www.linkedin.com/in/thomas-kurian-469b6219/**
 **HQ:** Mountain View, CA
@@ -22047,7 +22533,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 811. Amazon Web Services (AWS)
+### 829. Amazon Web Services (AWS)
 **Contact:** Matt Garman — CEO, AWS
 **LinkedIn: https://www.linkedin.com/in/mattgarman/**
 **HQ:** Seattle, WA
@@ -22073,7 +22559,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 812. Oracle
+### 830. Oracle
 **Contact:** Safra Catz — CEO
 **LinkedIn: https://www.linkedin.com/in/safra-catz/**
 **HQ:** Austin, TX
@@ -22099,7 +22585,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 813. IBM
+### 831. IBM
 **Contact:** Rob Thomas — SVP, Software & Chief Commercial Officer
 **LinkedIn: https://www.linkedin.com/in/robdthomas/**
 **HQ:** Armonk, NY
@@ -22125,7 +22611,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 814. Salesforce
+### 832. Salesforce
 **Contact:** Marc Benioff — Chair & CEO
 **LinkedIn: https://www.linkedin.com/in/marcbenioff/**
 **HQ:** San Francisco, CA
@@ -22151,7 +22637,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 815. SAP
+### 833. SAP
 **Contact:** Christian Klein — CEO
 **LinkedIn: https://www.linkedin.com/in/christianklein/**
 **HQ:** Walldorf, Germany
@@ -22177,7 +22663,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 816. ServiceNow
+### 834. ServiceNow
 **Contact:** Bill McDermott — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/billrmcdermott/**
 **HQ:** Santa Clara, CA
@@ -22203,7 +22689,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 817. Workday
+### 835. Workday
 **Contact:** Carl Eschenbach — CEO
 **LinkedIn: https://www.linkedin.com/in/carleschenbach/**
 **HQ:** Pleasanton, CA
@@ -22229,7 +22715,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 818. Snowflake
+### 836. Snowflake
 **Contact:** Sridhar Ramaswamy — CEO
 **LinkedIn: https://www.linkedin.com/in/sridharramaswamy/**
 **HQ:** Bozeman, MT
@@ -22255,7 +22741,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 819. Databricks
+### 837. Databricks
 **Contact:** Ali Ghodsi — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/alighodsi/**
 **HQ:** San Francisco, CA
@@ -22281,7 +22767,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 820. Palantir Technologies
+### 838. Palantir Technologies
 **Contact:** Alex Karp — CEO
 **LinkedIn: https://www.linkedin.com/in/alex-karp/**
 **HQ:** Denver, CO
@@ -22307,7 +22793,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 821. Confluent
+### 839. Confluent
 **Contact:** Jay Kreps — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/jaykreps/**
 **HQ:** Mountain View, CA
@@ -22333,7 +22819,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 822. MongoDB
+### 840. MongoDB
 **Contact:** Dev Ittycheria — President & CEO
 **LinkedIn: https://www.linkedin.com/in/devittycheria/**
 **HQ:** New York, NY
@@ -22359,7 +22845,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 823. Elastic
+### 841. Elastic
 **Contact:** Ash Kulkarni — CEO
 **LinkedIn: https://www.linkedin.com/in/ashkulkarni/**
 **HQ:** San Francisco, CA
@@ -22385,7 +22871,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 824. OpenAI
+### 842. OpenAI
 **Contact:** Sam Altman — CEO
 **LinkedIn: https://www.linkedin.com/in/samaltman/**
 **HQ:** San Francisco, CA
@@ -22411,7 +22897,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 825. Anthropic
+### 843. Anthropic
 **Contact:** Dario Amodei — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/darioamodei/**
 **HQ:** San Francisco, CA
@@ -22437,7 +22923,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 826. Cohere
+### 844. Cohere
 **Contact:** Aidan Gomez — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/aidangomez/**
 **HQ:** Toronto, Canada
@@ -22463,7 +22949,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 827. Mistral AI
+### 845. Mistral AI
 **Contact:** Arthur Mensch — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/arthurmensch/**
 **HQ:** Paris, France
@@ -22489,7 +22975,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 828. Hugging Face
+### 846. Hugging Face
 **Contact:** Clément Delangue — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/clementdelangue/**
 **HQ:** New York, NY
@@ -22515,7 +23001,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 829. Stability AI
+### 847. Stability AI
 **Contact:** Prem Akkaraju — CEO
 **LinkedIn: https://www.linkedin.com/in/premakkaraju/**
 **HQ:** London, UK
@@ -22541,7 +23027,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 830. Weights & Biases
+### 848. Weights & Biases
 **Contact:** Lukas Biewald — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/lukasbiewald/**
 **HQ:** San Francisco, CA
@@ -22567,7 +23053,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 831. MLflow (Databricks)
+### 849. MLflow (Databricks)
 **Contact:** Matei Zaharia — Co-founder & CTO, Databricks
 **LinkedIn: https://www.linkedin.com/in/mateizaharia/**
 **HQ:** San Francisco, CA
@@ -22593,7 +23079,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 832. DataRobot
+### 850. DataRobot
 **Contact:** Debanjan Saha — CEO
 **LinkedIn: https://www.linkedin.com/in/debanjansaha/**
 **HQ:** Boston, MA
@@ -22619,7 +23105,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 833. H2O.ai
+### 851. H2O.ai
 **Contact:** Sri Ambati — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/sriambati/**
 **HQ:** Mountain View, CA
@@ -22645,7 +23131,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 834. Domino Data Lab
+### 852. Domino Data Lab
 **Contact:** Thomas Robinson — CEO
 **LinkedIn: https://www.linkedin.com/in/thomasarobinson/**
 **HQ:** San Francisco, CA
@@ -22671,7 +23157,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 835. Tecton
+### 853. Tecton
 **Contact:** Kevin Stumpf — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/kevinstumpf/**
 **HQ:** San Francisco, CA
@@ -22697,7 +23183,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 836. Labelbox
+### 854. Labelbox
 **Contact:** Manu Sharma — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/manusharma/**
 **HQ:** San Francisco, CA
@@ -22723,7 +23209,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 837. Snorkel AI
+### 855. Snorkel AI
 **Contact:** Alex Ratner — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/alexratner/**
 **HQ:** Palo Alto, CA
@@ -22749,7 +23235,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 838. Determined AI (HPE)
+### 856. Determined AI (HPE)
 **Contact:** Evan Sparks — Co-founder
 **LinkedIn: https://www.linkedin.com/in/evansparks/**
 **HQ:** San Francisco, CA
@@ -22775,7 +23261,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 839. Atlassian
+### 857. Atlassian
 **Contact:** Mike Cannon-Brookes — Co-CEO
 **LinkedIn: https://www.linkedin.com/in/mcannonbrookes/**
 **HQ:** Sydney, Australia
@@ -22801,7 +23287,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 840. HubSpot
+### 858. HubSpot
 **Contact:** Yamini Rangan — CEO
 **LinkedIn: https://www.linkedin.com/in/yaminirangan/**
 **HQ:** Cambridge, MA
@@ -22827,7 +23313,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 841. Zendesk
+### 859. Zendesk
 **Contact:** Tom Eggemeier — CEO
 **LinkedIn: https://www.linkedin.com/in/teggemeier/**
 **HQ:** San Francisco, CA
@@ -22853,7 +23339,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 842. Shopify
+### 860. Shopify
 **Contact:** Tobi Lütke — CEO
 **LinkedIn: https://www.linkedin.com/in/tobias-lutke/**
 **HQ:** Ottawa, Canada
@@ -22879,7 +23365,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 843. Stripe
+### 861. Stripe
 **Contact:** Patrick Collison — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/patrickcollison/**
 **HQ:** San Francisco, CA
@@ -22905,7 +23391,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 844. Twilio
+### 862. Twilio
 **Contact:** Khozema Shipchandler — CEO
 **LinkedIn: https://www.linkedin.com/in/khozemaz/**
 **HQ:** San Francisco, CA
@@ -22931,7 +23417,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 845. Datadog
+### 863. Datadog
 **Contact:** Olivier Pomel — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/olivierpomel/**
 **HQ:** New York, NY
@@ -22957,7 +23443,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 846. Cloudflare
+### 864. Cloudflare
 **Contact:** Matthew Prince — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/matthewprince/**
 **HQ:** San Francisco, CA
@@ -22983,7 +23469,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 847. Okta
+### 865. Okta
 **Contact:** Todd McKinnon — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/toddmckinnon/**
 **HQ:** San Francisco, CA
@@ -23009,7 +23495,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 848. CrowdStrike
+### 866. CrowdStrike
 **Contact:** George Kurtz — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/georgekurtz/**
 **HQ:** Austin, TX
@@ -23035,7 +23521,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 849. Zscaler
+### 867. Zscaler
 **Contact:** Jay Chaudhry — CEO, Chairman & Founder
 **LinkedIn: https://www.linkedin.com/in/jaychaudhry/**
 **HQ:** San Jose, CA
@@ -23061,7 +23547,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 850. UiPath
+### 868. UiPath
 **Contact:** Daniel Dines — Co-CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/danieldines/**
 **HQ:** New York, NY
@@ -23087,7 +23573,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 851. Veeva Systems
+### 869. Veeva Systems
 **Contact:** Peter Gassner — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/petergassner/**
 **HQ:** Pleasanton, CA
@@ -23113,7 +23599,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 852. Splunk (Cisco)
+### 870. Splunk (Cisco)
 **Contact:** Gary Steele — SVP & GM, Splunk
 **LinkedIn: https://www.linkedin.com/in/garysteele/**
 **HQ:** San Francisco, CA
@@ -23139,7 +23625,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 853. Nutanix
+### 871. Nutanix
 **Contact:** Rajiv Ramaswami — President & CEO
 **LinkedIn: https://www.linkedin.com/in/rajivramaswami/**
 **HQ:** San Jose, CA
@@ -23165,7 +23651,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 854. HashiCorp
+### 872. HashiCorp
 **Contact:** Dave McJannet — CEO
 **LinkedIn: https://www.linkedin.com/in/davemcjannet/**
 **HQ:** San Francisco, CA
@@ -23191,7 +23677,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 855. Airtable
+### 873. Airtable
 **Contact:** Howie Liu — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/howieliu/**
 **HQ:** San Francisco, CA
@@ -23217,7 +23703,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 856. Notion
+### 874. Notion
 **Contact:** Ivan Zhao — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/ivanhzhao/**
 **HQ:** San Francisco, CA
@@ -23243,7 +23729,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 857. Canva
+### 875. Canva
 **Contact:** Melanie Perkins — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/melanieperkins/**
 **HQ:** Sydney, Australia
@@ -23269,7 +23755,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 858. Figma
+### 876. Figma
 **Contact:** Dylan Field — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/dylanfield/**
 **HQ:** San Francisco, CA
@@ -23295,7 +23781,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 859. NVIDIA
+### 877. NVIDIA
 **Contact:** Jensen Huang — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/jenhsunhuang/**
 **HQ:** Santa Clara, CA
@@ -23321,7 +23807,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 860. AMD
+### 878. AMD
 **Contact:** Lisa Su — Chair & CEO
 **LinkedIn: https://www.linkedin.com/in/lisasu/**
 **HQ:** Santa Clara, CA
@@ -23347,7 +23833,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 861. Intel
+### 879. Intel
 **Contact:** Pat Gelsinger — CEO
 **LinkedIn: https://www.linkedin.com/in/patgelsinger/**
 **HQ:** Santa Clara, CA
@@ -23373,7 +23859,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 862. Cerebras Systems
+### 880. Cerebras Systems
 **Contact:** Andrew Feldman — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/andrewdfeldman/**
 **HQ:** Sunnyvale, CA
@@ -23399,7 +23885,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 863. Groq
+### 881. Groq
 **Contact:** Jonathan Ross — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/jonathanross/**
 **HQ:** Mountain View, CA
@@ -23425,7 +23911,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 864. SambaNova Systems
+### 882. SambaNova Systems
 **Contact:** Rodrigo Liang — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/rodrigoliang/**
 **HQ:** Palo Alto, CA
@@ -23451,7 +23937,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 865. Together AI
+### 883. Together AI
 **Contact:** Vipul Vd Prakash — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/vipulprakash/**
 **HQ:** San Francisco, CA
@@ -23477,7 +23963,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 866. Replicate
+### 884. Replicate
 **Contact:** Ben Firshman — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/bfirsh/**
 **HQ:** San Francisco, CA
@@ -23503,7 +23989,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 867. Anyscale
+### 885. Anyscale
 **Contact:** Robert Nishihara — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/robertnishihara/**
 **HQ:** San Francisco, CA
@@ -23529,7 +24015,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 868. Modal
+### 886. Modal
 **Contact:** Erik Bernhardsson — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/erikbern/**
 **HQ:** New York, NY
@@ -23555,7 +24041,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 869. Credo AI
+### 887. Credo AI
 **Contact:** Navrina Singh — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/navrinasingh/**
 **HQ:** San Francisco, CA
@@ -23581,7 +24067,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 870. Arthur AI
+### 888. Arthur AI
 **Contact:** Adam Wenchel — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/adamwenchel/**
 **HQ:** New York, NY
@@ -23607,7 +24093,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 871. Fiddler AI
+### 889. Fiddler AI
 **Contact:** Krishna Gade — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/krishnagade/**
 **HQ:** Palo Alto, CA
@@ -23633,7 +24119,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 872. Robust Intelligence (now Cisco)
+### 890. Robust Intelligence (now Cisco)
 **Contact:** Yaron Singer — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/yarongsinger/**
 **HQ:** San Francisco, CA
@@ -23659,7 +24145,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 873. Holistic AI
+### 891. Holistic AI
 **Contact:** Emre Kazim — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/emrekazim/**
 **HQ:** London, UK
@@ -23685,7 +24171,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 874. Fairly AI
+### 892. Fairly AI
 **Contact:** Saeed Mohajeri — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/saeedmohajeri/**
 **HQ:** Toronto, Canada
@@ -23711,7 +24197,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 875. Monitaur
+### 893. Monitaur
 **Contact:** Anthony Habayeb — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/anthonyhabayeb/**
 **HQ:** Austin, TX
@@ -23737,7 +24223,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 876. ValidMind
+### 894. ValidMind
 **Contact:** Andrew Clark — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/andrewclark/**
 **HQ:** New York, NY
@@ -23763,7 +24249,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 877. TruEra
+### 895. TruEra
 **Contact:** Will Uppington — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/willuppington/**
 **HQ:** Redwood City, CA
@@ -23789,7 +24275,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 878. Lumenova AI
+### 896. Lumenova AI
 **Contact:** Shameek Kundu — CEO
 **LinkedIn: https://www.linkedin.com/in/shameekkundu/**
 **HQ:** London, UK
@@ -23815,7 +24301,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 879. GitHub (Microsoft)
+### 897. GitHub (Microsoft)
 **Contact:** Thomas Dohmke — CEO
 **LinkedIn: https://www.linkedin.com/in/thomasdohmke/**
 **HQ:** San Francisco, CA
@@ -23841,7 +24327,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 880. GitLab
+### 898. GitLab
 **Contact:** Sid Sijbrandij — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/sijbrandij/**
 **HQ:** San Francisco, CA
@@ -23867,7 +24353,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 881. Vercel
+### 899. Vercel
 **Contact:** Guillermo Rauch — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/guillermo-rauch/**
 **HQ:** San Francisco, CA
@@ -23893,7 +24379,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 882. Supabase
+### 900. Supabase
 **Contact:** Paul Copplestone — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/paulcopplestone/**
 **HQ:** San Francisco, CA
@@ -23919,7 +24405,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 883. Pinecone
+### 901. Pinecone
 **Contact:** Edo Liberty — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/edoliberty/**
 **HQ:** New York, NY
@@ -23945,7 +24431,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 884. Weaviate
+### 902. Weaviate
 **Contact:** Bob van Luijt — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/bobvanluijt/**
 **HQ:** Amsterdam, Netherlands
@@ -23971,7 +24457,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 885. LangChain
+### 903. LangChain
 **Contact:** Harrison Chase — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/harrisonchase/**
 **HQ:** San Francisco, CA
@@ -23997,7 +24483,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 886. LlamaIndex
+### 904. LlamaIndex
 **Contact:** Jerry Liu — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/jerryjliu/**
 **HQ:** San Francisco, CA
@@ -24023,7 +24509,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 887. Dify
+### 905. Dify
 **Contact:** Luyu Zhang — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/luyuzhang/**
 **HQ:** San Francisco, CA
@@ -24049,7 +24535,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 888. Render
+### 906. Render
 **Contact:** Anurag Goel — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/anuragoel/**
 **HQ:** San Francisco, CA
@@ -24075,7 +24561,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 889. Railway
+### 907. Railway
 **Contact:** Jake Cooper — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/jakejcooper/**
 **HQ:** San Francisco, CA
@@ -24101,7 +24587,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 890. Fly.io
+### 908. Fly.io
 **Contact:** Kurt Mackey — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/kurtmackey/**
 **HQ:** Chicago, IL
@@ -24127,7 +24613,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 891. Retool
+### 909. Retool
 **Contact:** David Hsu — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/davidjhsu/**
 **HQ:** San Francisco, CA
@@ -24153,7 +24639,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 892. Temporal
+### 910. Temporal
 **Contact:** Maxim Fateev — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/fateev/**
 **HQ:** Seattle, WA
@@ -24179,7 +24665,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 893. PostHog
+### 911. PostHog
 **Contact:** James Hawkins — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/j-hawkins/**
 **HQ:** London, UK
@@ -24205,7 +24691,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 894. Cisco Systems
+### 912. Cisco Systems
 **Contact:** Chuck Robbins — Chair & CEO
 **LinkedIn: https://www.linkedin.com/in/chuckrobbins/**
 **HQ:** San Jose, CA
@@ -24231,7 +24717,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 895. VMware (Broadcom)
+### 913. VMware (Broadcom)
 **Contact:** Hock Tan — CEO, Broadcom
 **LinkedIn: https://www.linkedin.com/in/hocktan/**
 **HQ:** Palo Alto, CA
@@ -24257,7 +24743,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 896. Palo Alto Networks
+### 914. Palo Alto Networks
 **Contact:** Nikesh Arora — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/nikesharora/**
 **HQ:** Santa Clara, CA
@@ -24283,7 +24769,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 897. Dynatrace
+### 915. Dynatrace
 **Contact:** Rick McConnell — CEO
 **LinkedIn: https://www.linkedin.com/in/rickmcconnell/**
 **HQ:** Waltham, MA
@@ -24309,7 +24795,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 898. New Relic
+### 916. New Relic
 **Contact:** Ashan Willy — CEO
 **LinkedIn: https://www.linkedin.com/in/ashanwilly/**
 **HQ:** San Francisco, CA
@@ -24335,7 +24821,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 899. Freshworks
+### 917. Freshworks
 **Contact:** Dennis Woodside — CEO
 **LinkedIn: https://www.linkedin.com/in/denniswoodside/**
 **HQ:** San Mateo, CA
@@ -24361,7 +24847,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 900. Zoom Video Communications
+### 918. Zoom Video Communications
 **Contact:** Eric Yuan — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/ericsyuan/**
 **HQ:** San Jose, CA
@@ -24387,7 +24873,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 901. DocuSign
+### 919. DocuSign
 **Contact:** Allan Thygesen — CEO
 **LinkedIn: https://www.linkedin.com/in/allanthygesen/**
 **HQ:** San Francisco, CA
@@ -24413,7 +24899,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 902. Amplitude
+### 920. Amplitude
 **Contact:** Spenser Skates — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/spenserskates/**
 **HQ:** San Francisco, CA
@@ -24439,7 +24925,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 903. Braze
+### 921. Braze
 **Contact:** Bill Magnuson — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/billmagnuson/**
 **HQ:** New York, NY
@@ -24465,7 +24951,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 904. Confluent
+### 922. Confluent
 **Contact:** Jay Kreps — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/jaykreps/**
 **HQ:** Mountain View, CA
@@ -24491,7 +24977,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 905. Miro
+### 923. Miro
 **Contact:** Andrey Khusid — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/andreykhusid/**
 **HQ:** San Francisco, CA
@@ -24517,7 +25003,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 906. Asana
+### 924. Asana
 **Contact:** Dustin Moskovitz — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/dmoskov/**
 **HQ:** San Francisco, CA
@@ -24543,7 +25029,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 907. Monday.com
+### 925. Monday.com
 **Contact:** Roy Mann — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/roymann/**
 **HQ:** Tel Aviv, Israel
@@ -24569,7 +25055,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 908. Coupa Software
+### 926. Coupa Software
 **Contact:** Leagh Turner — CEO
 **LinkedIn: https://www.linkedin.com/in/leaghturner/**
 **HQ:** San Mateo, CA
@@ -24702,7 +25188,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 | 99 | **Five AI (Bosch)** | Stan Sherbourne | CEO | [LinkedIn](https://www.linkedin.com/company/five-ai/) | AI autonomous driving software for urban environments |
 | 100 | **Minieye** | Liu Guoqing | CEO & Founder | [LinkedIn](https://www.linkedin.com/company/minieye/) | AI ADAS perception for Chinese and global OEMs |
 
-### 909. Tesla
+### 927. Tesla
 **Contact:** Ashok Elluswamy — VP of Autopilot & AI
 **LinkedIn: https://www.linkedin.com/in/ashokelluswamy/**
 **HQ:** Austin, TX
@@ -24728,7 +25214,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 910. Toyota Motor Corporation
+### 928. Toyota Motor Corporation
 **Contact:** Koji Sato — President & CEO
 **LinkedIn: https://www.linkedin.com/company/toyota-motor-corporation/**
 **HQ:** Toyota City, Japan
@@ -24754,7 +25240,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 911. Volkswagen Group
+### 929. Volkswagen Group
 **Contact:** Oliver Blume — CEO
 **LinkedIn: https://www.linkedin.com/in/oliver-blume/**
 **HQ:** Wolfsburg, Germany
@@ -24780,7 +25266,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 912. BMW Group
+### 930. BMW Group
 **Contact:** Oliver Zipse — Chairman of the Board
 **LinkedIn: https://www.linkedin.com/in/oliver-zipse/**
 **HQ:** Munich, Germany
@@ -24806,7 +25292,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 913. Mercedes-Benz
+### 931. Mercedes-Benz
 **Contact:** Ola Källenius — Chairman of the Board
 **LinkedIn: https://www.linkedin.com/in/ola-kaellenius/**
 **HQ:** Stuttgart, Germany
@@ -24832,7 +25318,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 914. General Motors (Cruise)
+### 932. General Motors (Cruise)
 **Contact:** Mary Barra — Chair & CEO
 **LinkedIn: https://www.linkedin.com/in/mary-barra/**
 **HQ:** Detroit, MI
@@ -24858,7 +25344,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 915. Ford Motor Company
+### 933. Ford Motor Company
 **Contact:** Jim Farley — President & CEO
 **LinkedIn: https://www.linkedin.com/in/jim-farley/**
 **HQ:** Dearborn, MI
@@ -24884,7 +25370,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 916. Stellantis
+### 934. Stellantis
 **Contact:** Carlos Tavares — CEO
 **LinkedIn: https://www.linkedin.com/in/carlos-tavares/**
 **HQ:** Amsterdam, Netherlands
@@ -24910,7 +25396,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 917. Hyundai Motor Group
+### 935. Hyundai Motor Group
 **Contact:** Jaehoon Chang — President & CEO
 **LinkedIn: https://www.linkedin.com/company/hyundai-motor-group/**
 **HQ:** Seoul, South Korea
@@ -24936,7 +25422,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 918. Nissan Motor Company
+### 936. Nissan Motor Company
 **Contact:** Makoto Uchida — President & CEO
 **LinkedIn: https://www.linkedin.com/company/nissan-motor-company/**
 **HQ:** Yokohama, Japan
@@ -24962,7 +25448,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 919. Honda Motor Company
+### 937. Honda Motor Company
 **Contact:** Toshihiro Mibe — President & CEO
 **LinkedIn: https://www.linkedin.com/company/honda/**
 **HQ:** Tokyo, Japan
@@ -24988,7 +25474,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 920. BYD Company
+### 938. BYD Company
 **Contact:** Wang Chuanfu — Chairman & President
 **LinkedIn: https://www.linkedin.com/company/byd/**
 **HQ:** Shenzhen, China
@@ -25014,7 +25500,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 921. NIO
+### 939. NIO
 **Contact:** William Li — Founder, Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/williamli/**
 **HQ:** Shanghai, China
@@ -25040,7 +25526,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 922. XPeng
+### 940. XPeng
 **Contact:** He Xiaopeng — Chairman & CEO
 **LinkedIn: https://www.linkedin.com/in/hexiaopeng/**
 **HQ:** Guangzhou, China
@@ -25066,7 +25552,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 923. Rivian
+### 941. Rivian
 **Contact:** RJ Scaringe — Founder & CEO
 **LinkedIn: https://www.linkedin.com/in/rjscaringe/**
 **HQ:** Irvine, CA
@@ -25092,7 +25578,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 924. Lucid Motors
+### 942. Lucid Motors
 **Contact:** Peter Rawlinson — CEO & CTO
 **LinkedIn: https://www.linkedin.com/in/peterrawlinson/**
 **HQ:** Newark, CA
@@ -25118,7 +25604,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 925. Volvo Cars
+### 943. Volvo Cars
 **Contact:** Jim Rowan — CEO
 **LinkedIn: https://www.linkedin.com/in/jimrowan/**
 **HQ:** Gothenburg, Sweden
@@ -25144,7 +25630,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 926. Audi (VW Group)
+### 944. Audi (VW Group)
 **Contact:** Gernot Döllner — CEO
 **LinkedIn: https://www.linkedin.com/in/gernot-doellner/**
 **HQ:** Ingolstadt, Germany
@@ -25170,7 +25656,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 927. Porsche
+### 945. Porsche
 **Contact:** Oliver Blume — Chairman
 **LinkedIn: https://www.linkedin.com/company/porsche-ag/**
 **HQ:** Stuttgart, Germany
@@ -25196,7 +25682,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 928. Renault Group
+### 946. Renault Group
 **Contact:** Luca de Meo — CEO
 **LinkedIn: https://www.linkedin.com/in/luca-de-meo/**
 **HQ:** Boulogne-Billancourt, France
@@ -25222,7 +25708,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 929. Geely Automobile
+### 947. Geely Automobile
 **Contact:** Li Shufu — Chairman
 **LinkedIn: https://www.linkedin.com/company/geely/**
 **HQ:** Hangzhou, China
@@ -25248,7 +25734,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 930. Tata Motors (Jaguar Land Rover)
+### 948. Tata Motors (Jaguar Land Rover)
 **Contact:** Natarajan Chandrasekaran — Chairman
 **LinkedIn: https://www.linkedin.com/company/taboramotors/**
 **HQ:** Mumbai, India
@@ -25274,7 +25760,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 931. Mazda Motor Corporation
+### 949. Mazda Motor Corporation
 **Contact:** Masahiro Moro — President & CEO
 **LinkedIn: https://www.linkedin.com/company/mazda-motor-corporation/**
 **HQ:** Hiroshima, Japan
@@ -25300,7 +25786,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 932. Subaru Corporation
+### 950. Subaru Corporation
 **Contact:** Atsushi Osaki — President & CEO
 **LinkedIn: https://www.linkedin.com/company/subaru-corporation/**
 **HQ:** Tokyo, Japan
@@ -25326,7 +25812,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 933. Polestar
+### 951. Polestar
 **Contact:** Thomas Ingenlath — CEO
 **LinkedIn: https://www.linkedin.com/in/thomas-ingenlath/**
 **HQ:** Gothenburg, Sweden
@@ -25352,7 +25838,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 934. Waymo (Alphabet)
+### 952. Waymo (Alphabet)
 **Contact:** Tekedra Mawakana — Co-CEO
 **LinkedIn: https://www.linkedin.com/in/tekedra/**
 **HQ:** Mountain View, CA
@@ -25378,7 +25864,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 935. Cruise (GM)
+### 953. Cruise (GM)
 **Contact:** Marc Whitten — CEO
 **LinkedIn: https://www.linkedin.com/in/marc-whitten/**
 **HQ:** San Francisco, CA
@@ -25404,7 +25890,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 936. Aurora Innovation
+### 954. Aurora Innovation
 **Contact:** Chris Urmson — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/chris-urmson/**
 **HQ:** Pittsburgh, PA
@@ -25430,7 +25916,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 937. Nuro
+### 955. Nuro
 **Contact:** Jiajun Zhu — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/jiajun-zhu/**
 **HQ:** Mountain View, CA
@@ -25456,7 +25942,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 938. Zoox (Amazon)
+### 956. Zoox (Amazon)
 **Contact:** Aicha Evans — CEO
 **LinkedIn: https://www.linkedin.com/in/aichaevans/**
 **HQ:** Foster City, CA
@@ -25482,7 +25968,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 939. Motional (Hyundai/Aptiv)
+### 957. Motional (Hyundai/Aptiv)
 **Contact:** Karl Iagnemma — President & CEO
 **LinkedIn: https://www.linkedin.com/in/karliagnemma/**
 **HQ:** Boston, MA
@@ -25508,7 +25994,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 940. Argo AI (legacy → Ford/VW tech)
+### 958. Argo AI (legacy → Ford/VW tech)
 **Contact:** AV Engineering Teams — Ford & VW
 **LinkedIn: https://www.linkedin.com/company/argo-ai/**
 **HQ:** Pittsburgh, PA
@@ -25534,7 +26020,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 941. Mobileye (Intel)
+### 959. Mobileye (Intel)
 **Contact:** Amnon Shashua — President & CEO
 **LinkedIn: https://www.linkedin.com/in/amnon-shashua/**
 **HQ:** Jerusalem, Israel
@@ -25560,7 +26046,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 942. Baidu Apollo
+### 960. Baidu Apollo
 **Contact:** Robin Li — CEO, Baidu
 **LinkedIn: https://www.linkedin.com/in/robin-li/**
 **HQ:** Beijing, China
@@ -25586,7 +26072,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 943. Pony.ai
+### 961. Pony.ai
 **Contact:** James Peng — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/jamespeng/**
 **HQ:** Guangzhou, China
@@ -25612,7 +26098,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 944. WeRide
+### 962. WeRide
 **Contact:** Tony Han — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/tony-han/**
 **HQ:** Guangzhou, China
@@ -25638,7 +26124,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 945. TuSimple
+### 963. TuSimple
 **Contact:** Cheng Lu — CEO
 **LinkedIn: https://www.linkedin.com/in/cheng-lu/**
 **HQ:** San Diego, CA
@@ -25664,7 +26150,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 946. Kodiak Robotics
+### 964. Kodiak Robotics
 **Contact:** Don Burnette — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/donburnette/**
 **HQ:** Mountain View, CA
@@ -25690,7 +26176,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 947. Gatik
+### 965. Gatik
 **Contact:** Gautam Narang — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/gautamnarang/**
 **HQ:** Mountain View, CA
@@ -25716,7 +26202,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 948. May Mobility
+### 966. May Mobility
 **Contact:** Edwin Olson — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/edwin-olson/**
 **HQ:** Ann Arbor, MI
@@ -25742,7 +26228,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 949. Oxbotica
+### 967. Oxbotica
 **Contact:** Gavin Jackson — CEO
 **LinkedIn: https://www.linkedin.com/in/gavin-jackson/**
 **HQ:** Oxford, UK
@@ -25768,7 +26254,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 950. Wayve
+### 968. Wayve
 **Contact:** Alex Kendall — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/alexkendall/**
 **HQ:** London, UK
@@ -25794,7 +26280,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 951. Oxa (Oxbotica spinout)
+### 969. Oxa (Oxbotica spinout)
 **Contact:** Gavin Jackson — CEO
 **LinkedIn: https://www.linkedin.com/company/oaboraxa/**
 **HQ:** Oxford, UK
@@ -25820,7 +26306,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 952. EasyMile
+### 970. EasyMile
 **Contact:** Gilbert Gagnaire — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/gilbertgagnaire/**
 **HQ:** Toulouse, France
@@ -25846,7 +26332,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 953. Bosch
+### 971. Bosch
 **Contact:** Stefan Hartung — Chairman of the Board
 **LinkedIn: https://www.linkedin.com/in/stefan-hartung/**
 **HQ:** Gerlingen, Germany
@@ -25872,7 +26358,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 954. Continental AG
+### 972. Continental AG
 **Contact:** Nikolai Setzer — CEO
 **LinkedIn: https://www.linkedin.com/in/nikolai-setzer/**
 **HQ:** Hannover, Germany
@@ -25898,7 +26384,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 955. Denso Corporation
+### 973. Denso Corporation
 **Contact:** Koji Arima — President & CEO
 **LinkedIn: https://www.linkedin.com/company/denso/**
 **HQ:** Kariya, Japan
@@ -25924,7 +26410,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 956. ZF Friedrichshafen
+### 974. ZF Friedrichshafen
 **Contact:** Holger Klein — CEO
 **LinkedIn: https://www.linkedin.com/in/holger-klein/**
 **HQ:** Friedrichshafen, Germany
@@ -25950,7 +26436,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 957. Aptiv
+### 975. Aptiv
 **Contact:** Kevin Clark — President & CEO
 **LinkedIn: https://www.linkedin.com/in/kevinpjclark/**
 **HQ:** Dublin, Ireland
@@ -25976,7 +26462,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 958. Magna International
+### 976. Magna International
 **Contact:** Swamy Kotagiri — CEO
 **LinkedIn: https://www.linkedin.com/in/swamy-kotagiri/**
 **HQ:** Aurora, Canada
@@ -26002,7 +26488,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 959. Valeo
+### 977. Valeo
 **Contact:** Christophe Périllat — CEO
 **LinkedIn: https://www.linkedin.com/in/christophe-perillat/**
 **HQ:** Paris, France
@@ -26028,7 +26514,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 960. NVIDIA (Automotive)
+### 978. NVIDIA (Automotive)
 **Contact:** Ali Kani — VP & GM, Automotive
 **LinkedIn: https://www.linkedin.com/in/alikani/**
 **HQ:** Santa Clara, CA
@@ -26054,7 +26540,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 961. Qualcomm (Automotive)
+### 979. Qualcomm (Automotive)
 **Contact:** Nakul Duggal — GM, Automotive
 **LinkedIn: https://www.linkedin.com/in/nakulduggal/**
 **HQ:** San Diego, CA
@@ -26080,7 +26566,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 962. Luminar Technologies
+### 980. Luminar Technologies
 **Contact:** Austin Russell — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/austinrussell/**
 **HQ:** Orlando, FL
@@ -26106,7 +26592,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 963. Velodyne Lidar (Ouster)
+### 981. Velodyne Lidar (Ouster)
 **Contact:** Angus Pacala — CEO, Ouster
 **LinkedIn: https://www.linkedin.com/in/angus-pacala/**
 **HQ:** San Francisco, CA
@@ -26132,7 +26618,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 964. Innoviz Technologies
+### 982. Innoviz Technologies
 **Contact:** Omer Keilaf — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/omer-keilaf/**
 **HQ:** Rosh HaAyin, Israel
@@ -26158,7 +26644,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 965. Hesai Technology
+### 983. Hesai Technology
 **Contact:** Yifan Li — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/yifanli/**
 **HQ:** Shanghai, China
@@ -26184,7 +26670,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 966. Cerence
+### 984. Cerence
 **Contact:** Stefan Ortmanns — CEO
 **LinkedIn: https://www.linkedin.com/in/stefan-ortmanns/**
 **HQ:** Burlington, MA
@@ -26210,7 +26696,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 967. HERE Technologies
+### 985. HERE Technologies
 **Contact:** Gino Ferru — CEO
 **LinkedIn: https://www.linkedin.com/in/ginoferru/**
 **HQ:** Amsterdam, Netherlands
@@ -26236,7 +26722,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 968. TomTom
+### 986. TomTom
 **Contact:** Harold Goddijn — CEO
 **LinkedIn: https://www.linkedin.com/in/harold-goddijn/**
 **HQ:** Amsterdam, Netherlands
@@ -26262,7 +26748,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 969. Blackberry QNX
+### 987. Blackberry QNX
 **Contact:** John Chicken — SVP & Co-Head, IoT
 **LinkedIn: https://www.linkedin.com/company/blackberry/**
 **HQ:** Waterloo, Canada
@@ -26288,7 +26774,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 970. Elektrobit (Continental)
+### 988. Elektrobit (Continental)
 **Contact:** Maria Anhalt — CEO
 **LinkedIn: https://www.linkedin.com/in/maria-anhalt/**
 **HQ:** Erlangen, Germany
@@ -26314,7 +26800,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 971. Synopsys (Automotive)
+### 989. Synopsys (Automotive)
 **Contact:** Sassine Ghazi — President & CEO
 **LinkedIn: https://www.linkedin.com/in/sassineghazi/**
 **HQ:** Sunnyvale, CA
@@ -26340,7 +26826,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 972. Uber Technologies
+### 990. Uber Technologies
 **Contact:** Dara Khosrowshahi — CEO
 **LinkedIn: https://www.linkedin.com/in/darakhosrowshahi/**
 **HQ:** San Francisco, CA
@@ -26366,7 +26852,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 973. Lyft
+### 991. Lyft
 **Contact:** David Risher — CEO
 **LinkedIn: https://www.linkedin.com/in/davidrisher/**
 **HQ:** San Francisco, CA
@@ -26392,7 +26878,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 974. Grab Holdings
+### 992. Grab Holdings
 **Contact:** Anthony Tan — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/anthonytan/**
 **HQ:** Singapore
@@ -26418,7 +26904,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 975. DiDi Global
+### 993. DiDi Global
 **Contact:** Cheng Wei — CEO & Founder
 **LinkedIn: https://www.linkedin.com/company/didiglobal/**
 **HQ:** Beijing, China
@@ -26444,7 +26930,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 976. Bolt Technology
+### 994. Bolt Technology
 **Contact:** Markus Villig — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/markusvillig/**
 **HQ:** Tallinn, Estonia
@@ -26470,7 +26956,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 977. Joby Aviation
+### 995. Joby Aviation
 **Contact:** JoeBen Bevirt — Founder & CEO
 **LinkedIn: https://www.linkedin.com/in/joeben/**
 **HQ:** Santa Cruz, CA
@@ -26496,7 +26982,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 978. Lilium
+### 996. Lilium
 **Contact:** Klaus Roewe — CEO
 **LinkedIn: https://www.linkedin.com/in/klausroewe/**
 **HQ:** Munich, Germany
@@ -26522,7 +27008,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 979. Archer Aviation
+### 997. Archer Aviation
 **Contact:** Adam Goldstein — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/adamgoldstein/**
 **HQ:** San Jose, CA
@@ -26548,7 +27034,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 980. Lime
+### 998. Lime
 **Contact:** Wayne Ting — CEO
 **LinkedIn: https://www.linkedin.com/in/wayting/**
 **HQ:** San Francisco, CA
@@ -26574,7 +27060,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 981. Bird Global
+### 999. Bird Global
 **Contact:** Shane Torchiana — CEO
 **LinkedIn: https://www.linkedin.com/in/shanetorchiana/**
 **HQ:** Miami, FL
@@ -26600,7 +27086,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 982. Voi Technology
+### 1000. Voi Technology
 **Contact:** Fredrik Hjelm — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/fredrikhjelm/**
 **HQ:** Stockholm, Sweden
@@ -26626,7 +27112,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 983. Getaround (Europcar Mobility)
+### 1001. Getaround (Europcar Mobility)
 **Contact:** Sam Zaid — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/samzaid/**
 **HQ:** Paris, France
@@ -26652,7 +27138,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 984. Waze (Alphabet)
+### 1002. Waze (Alphabet)
 **Contact:** Nir Erez — GM, Waze
 **LinkedIn: https://www.linkedin.com/in/nirerez/**
 **HQ:** Tel Aviv, Israel
@@ -26678,7 +27164,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 985. Mapbox
+### 1003. Mapbox
 **Contact:** Peter Sirota — CEO
 **LinkedIn: https://www.linkedin.com/in/petersirota/**
 **HQ:** Washington, DC
@@ -26704,7 +27190,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 986. Optimus Ride / Motional
+### 1004. Optimus Ride / Motional
 **Contact:** Ryan Chin — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/ryanchin/**
 **HQ:** Boston, MA
@@ -26730,7 +27216,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 987. Geotab
+### 1005. Geotab
 **Contact:** Neil Cawse — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/neilcawse/**
 **HQ:** Oakville, Canada
@@ -26756,7 +27242,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 988. Samsara
+### 1006. Samsara
 **Contact:** Sanjit Biswas — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/sanjitbiswas/**
 **HQ:** San Francisco, CA
@@ -26782,7 +27268,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 989. Lytx
+### 1007. Lytx
 **Contact:** Brandon Nixon — CEO
 **LinkedIn: https://www.linkedin.com/in/brandonnixon/**
 **HQ:** San Diego, CA
@@ -26808,7 +27294,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 990. Cambridge Mobile Telematics (CMT)
+### 1008. Cambridge Mobile Telematics (CMT)
 **Contact:** Hari Balakrishnan — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/haribalakrishnan/**
 **HQ:** Cambridge, MA
@@ -26834,7 +27320,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 991. Nauto
+### 1009. Nauto
 **Contact:** Stefan Heck — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/stefanheck/**
 **HQ:** Palo Alto, CA
@@ -26860,7 +27346,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 992. Wejo (automotive data)
+### 1010. Wejo (automotive data)
 **Contact:** Richard Barlow — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/richardbarlow/**
 **HQ:** Manchester, UK
@@ -26886,7 +27372,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 993. Otonomo (Urgently)
+### 1011. Otonomo (Urgently)
 **Contact:** Ben Volkow — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/benvolkow/**
 **HQ:** Herzliya, Israel
@@ -26912,7 +27398,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 994. Upstream Security
+### 1012. Upstream Security
 **Contact:** Yoav Levy — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/yoavlevy/**
 **HQ:** Herzliya, Israel
@@ -26938,7 +27424,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 995. Argus Cyber Security (Continental)
+### 1013. Argus Cyber Security (Continental)
 **Contact:** Ofer Ben-Noon — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/oferben-noon/**
 **HQ:** Tel Aviv, Israel
@@ -26964,7 +27450,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 996. Karamba Security
+### 1014. Karamba Security
 **Contact:** Ami Dotan — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/amidotan/**
 **HQ:** Hod HaSharon, Israel
@@ -26990,7 +27476,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 997. DriveU.auto
+### 1015. DriveU.auto
 **Contact:** Oren Betzaleli — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/orenbetzaleli/**
 **HQ:** Tel Aviv, Israel
@@ -27016,7 +27502,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 998. Phantom Auto
+### 1016. Phantom Auto
 **Contact:** Elliot Katz — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/elliotkatz/**
 **HQ:** Mountain View, CA
@@ -27042,7 +27528,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 999. Autobrains
+### 1017. Autobrains
 **Contact:** Igal Raichelgauz — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/igalraichelgauz/**
 **HQ:** Tel Aviv, Israel
@@ -27068,7 +27554,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 1000. Applied Intuition
+### 1018. Applied Intuition
 **Contact:** Qasar Younis — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/qasaryounis/**
 **HQ:** Mountain View, CA
@@ -27094,7 +27580,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 1001. Foretellix
+### 1019. Foretellix
 **Contact:** Ziv Binyamini — CEO & Co-founder
 **LinkedIn: https://www.linkedin.com/in/zivbinyamini/**
 **HQ:** Tel Aviv, Israel
@@ -27120,7 +27606,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 1002. Torc Robotics (Daimler Truck)
+### 1020. Torc Robotics (Daimler Truck)
 **Contact:** Peter Vaughan Schmidt — CEO
 **LinkedIn: https://www.linkedin.com/in/petervaughanschmidt/**
 **HQ:** Blacksburg, VA
@@ -27146,7 +27632,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 1003. Einride
+### 1021. Einride
 **Contact:** Robert Falck — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/robertfalck/**
 **HQ:** Stockholm, Sweden
@@ -27172,7 +27658,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 1004. Comma.ai
+### 1022. Comma.ai
 **Contact:** George Hotz — CEO & Founder
 **LinkedIn: https://www.linkedin.com/in/georgehotz/**
 **HQ:** San Diego, CA
@@ -27198,7 +27684,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 1005. Cavnue
+### 1023. Cavnue
 **Contact:** Tyler Duvall — CEO
 **LinkedIn: https://www.linkedin.com/in/tylerduvall/**
 **HQ:** Detroit, MI
@@ -27224,7 +27710,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 1006. Veoneer (Qualcomm/SSW Partners)
+### 1024. Veoneer (Qualcomm/SSW Partners)
 **Contact:** Nishant Batra — CEO
 **LinkedIn: https://www.linkedin.com/in/nishantbatra/**
 **HQ:** Stockholm, Sweden
@@ -27250,7 +27736,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 1007. Five AI (Bosch)
+### 1025. Five AI (Bosch)
 **Contact:** Stan Sherbourne — CEO
 **LinkedIn: https://www.linkedin.com/company/five-ai/**
 **HQ:** Cambridge, UK
@@ -27276,7 +27762,7 @@ contact@datacendia.com | datacendia.com | app.datacendia.com
 
 ---
 
-### 1008. Minieye
+### 1026. Minieye
 **Contact:** Liu Guoqing — CEO & Founder
 **LinkedIn: https://www.linkedin.com/company/minieye/**
 **HQ:** Shenzhen, China
