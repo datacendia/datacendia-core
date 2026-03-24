@@ -916,4 +916,13 @@ module.exports = [
     contactEmail: 'https://www.linkedin.com/in/olivertrinchera/',
     contactUrl: 'https://kinexon.com/contact/',
   },
+  {
+    company: 'Celtic FC', vertical: 'sport', subCategory: 'Football Club (Scottish Premiership)',
+    hq: 'Glasgow, Scotland',
+    aiUseCase: 'AI match analysis, player recruitment, and fan engagement',
+    painPoint: 'AI drives scouting, tactical analysis, and fan engagement for one of Europe\'s most historic clubs — UEFA FFP, Scottish FA governance, and EU AI Act require verifiable evidence of AI-assisted recruitment and performance decisions.',
+    contact: 'Michael Nicholson', contactTitle: 'Chief Executive',
+    contactEmail: 'https://www.linkedin.com/company/celtic-football-club/',
+    contactUrl: 'https://www.celticfc.com/contact-us',
+  },
 ];
