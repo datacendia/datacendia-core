@@ -51,6 +51,28 @@ module.exports = [
     hookSlide: 'Dawn invested in Collibra ($5.8B data governance) and Darktrace (AI security). Datacendia sits at the intersection: AI decision governance with cryptographic security. Next Collibra-scale opportunity.',
     keyAngle: 'AI decision governance — the next Collibra',
     sector: 'European Enterprise',
+    customEmail: `**Subject:** Datacendia — AI decision governance (the next Collibra)
+
+**Body:**
+
+Hi Haakon,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build the accountability layer for enterprise AI — proving how and why every AI-assisted decision was made, with audit-grade evidence for regulators.
+
+**The pattern:** GDPR created Collibra ($5.8B). The EU AI Act creates the next category: AI decision governance. Every enterprise deploying AI needs verifiable proof of how decisions are made — and no platform provides this today.
+
+**Why Dawn:** You backed Collibra (data governance) and Darktrace (AI security). Datacendia sits at the intersection: AI decision governance with cryptographic security. You've already seen this category trajectory — Datacendia is the AI-era equivalent of what Collibra built for data.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Pre-seed stage, Peru + Ireland, operating across EU and US markets.
+
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering is resolved — funds go to first enterprise pilots and EU AI Act regulatory validation.
+
+Deck attached. Happy to do a 20-minute walkthrough at your convenience.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com`,
   },
   {
     id: '056-singular', firm: 'Singular', type: 'Venture Capital',
@@ -161,6 +183,28 @@ module.exports = [
     hookSlide: 'M12 backs AI/enterprise that extends Azure. As Azure AI scales, enterprise customers need governance — Datacendia provides compliance, audit trails, and accountability for Azure AI deployments.',
     keyAngle: 'AI governance layer for Azure enterprise customers',
     sector: 'Enterprise AI / Cloud',
+    customEmail: `**Subject:** Datacendia — AI governance layer for Azure enterprise customers
+
+**Body:**
+
+Hi Nagraj,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build the accountability layer for enterprise AI — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators.
+
+**The problem:** Enterprises deploying Azure AI (Copilot, OpenAI Service, Cognitive Services) face EU AI Act and DORA mandates requiring verifiable governance for every AI decision. Microsoft doesn't build this compliance layer natively — it's an ecosystem opportunity.
+
+**Why M12:** Your portfolio extends the Azure enterprise ecosystem. Datacendia is the governance layer Azure customers need: compliance evidence for every AI decision, deployable on Azure or on-prem, integrating with existing Microsoft infrastructure. Every Azure AI deployment that adds Datacendia becomes stickier and more defensible.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to existing databases without data movement. Pre-seed stage.
+
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering is resolved — funds go to first enterprise pilots and EU AI Act regulatory validation.
+
+Deck attached. Happy to do a 20-minute walkthrough at your convenience.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com`,
   },
   {
     id: '067-gv', firm: 'GV (Google Ventures)', type: 'Corporate VC',
@@ -273,5 +317,27 @@ contact@datacendia.com | datacendia.com | app.datacendia.com`,
     hookSlide: 'Lockheed Martin programs use AI at scale. Datacendia provides ITAR-compliant, air-gapped AI governance with TPM attestation — purpose-built for defense program requirements.',
     keyAngle: 'ITAR-compliant AI governance for defense programs',
     sector: 'Defense',
+    customEmail: `**Subject:** Datacendia — AI governance for defense programs (air-gapped, ITAR-ready)
+
+**Body:**
+
+Hi Chris,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build sovereign AI decision evidence infrastructure — cryptographic proof of how and why every AI-assisted decision was made, deployable in air-gapped and classified environments.
+
+**The problem:** Defense programs use AI for mission planning, intelligence analysis, and logistics — but have no way to produce verifiable evidence of how those AI decisions were made. Every AI decision is an unauditable artifact in environments where accountability is mandatory.
+
+**Why Lockheed Martin Ventures:** Your programs deploy AI at scale across defense and intelligence. Datacendia provides what's missing: ITAR-compliant AI governance with air-gapped deployment, TPM 2.0 hardware attestation, and cryptographic evidence chains — purpose-built for defense program requirements. Dual-use architecture also serves commercial regulated industries.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, 11 sovereign deployment patterns. Air-gapped, on-prem, zero external dependencies. Pre-seed stage.
+
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering is resolved — funds go to first enterprise pilots and defense program validation.
+
+Deck attached. Happy to do a 20-minute walkthrough or classified-environment deployment demo.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com`,
   },
 ];

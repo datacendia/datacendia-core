@@ -11,6 +11,28 @@ module.exports = [
     hookSlide: 'Cyberstarts backed Wiz ($12B) and Axonius — security for cloud and assets. Datacendia is security for AI decisions: cryptographic proof, zero-trust architecture, sovereign deployment.',
     keyAngle: 'Zero-trust security for AI decisions',
     sector: 'Cybersecurity',
+    customEmail: `**Subject:** Datacendia — zero-trust security for AI decisions
+
+**Body:**
+
+Hi Gili,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We've built zero-trust security for AI decisions — cryptographic proof of how and why every AI-assisted decision was made.
+
+**The problem:** Enterprises deploy AI for high-stakes decisions with no audit trail, no integrity verification, and no tamper evidence. Every AI decision is an unsigned, unverified artifact. For security teams, this is an open attack surface.
+
+**Why Cyberstarts:** You backed Wiz (cloud security, $12B) and Axonius (asset security). Those solved security for cloud infrastructure and endpoints. Datacendia solves the next gap: security for AI decisions. Every decision is signed with Ed25519, anchored in Merkle trees, and deployed with zero-trust architecture.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Sovereign deployment — air-gapped, on-prem, or private cloud. Pre-seed stage.
+
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering is resolved — funds go to first enterprise pilots and EU AI Act regulatory validation.
+
+Deck attached. Happy to do a 20-minute walkthrough at your convenience.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com`,
   },
   {
     id: '027-yl-ventures', firm: 'YL Ventures', type: 'Venture Capital',
@@ -21,6 +43,28 @@ module.exports = [
     hookSlide: 'YL\'s CISO advisory board validates gaps. Ask any enterprise CISO: AI decisions need audit trails. Datacendia provides cryptographic evidence for every AI action — CISO-validated.',
     keyAngle: 'CISO-validated AI security gap',
     sector: 'Cybersecurity',
+    customEmail: `**Subject:** Datacendia — the AI security gap your CISOs are flagging
+
+**Body:**
+
+Hi Yoav,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We've built the security layer for AI decisions — cryptographic proof of how every AI-assisted decision was made, verifiable by any auditor or CISO.
+
+**The problem:** Ask any enterprise CISO: AI systems make high-stakes decisions with no audit trail, no integrity verification, and no evidence chain. Every AI decision is an unverified artifact — a security gap that grows with every deployment.
+
+**Why YL Ventures:** Your CISO advisory board validates real security gaps before you invest. This is one of them. Your portfolio (Axonius, Orca Security) secured assets and cloud. Datacendia secures AI decisions — Ed25519 signatures, Merkle tree evidence chains, zero-trust architecture.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Sovereign deployment — air-gapped, on-prem, or private cloud. Pre-seed stage.
+
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering is resolved — funds go to first enterprise pilots and EU AI Act regulatory validation.
+
+Deck attached. Happy to do a 20-minute walkthrough — or better, a CISO advisory board session.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com`,
   },
   {
     id: '028-ten-eleven', firm: 'Ten Eleven Ventures', type: 'Venture Capital',
@@ -31,6 +75,28 @@ module.exports = [
     hookSlide: 'Ten Eleven: security follows every tech wave. Cloud needed Twistlock, email needed Abnormal. AI needs Datacendia — cryptographic governance for every AI decision.',
     keyAngle: 'Security for the AI wave',
     sector: 'Cybersecurity',
+    customEmail: `**Subject:** Datacendia — security for the AI wave
+
+**Body:**
+
+Hi Alex,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We've built the security layer for AI decisions — cryptographic proof of how and why every AI-assisted decision was made.
+
+**The pattern:** Every technology wave creates a new security category. Cloud needed Twistlock. Email needed Abnormal Security. AI needs Datacendia. The AI wave is the largest yet — and AI decisions currently have zero cryptographic integrity.
+
+**Why Ten Eleven:** You're the largest dedicated cybersecurity fund, and your thesis is exactly this: security must evolve with every new technology wave. Datacendia is the security evolution for the AI wave — Ed25519-signed decisions, Merkle tree evidence, sovereign deployment.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. EU AI Act and DORA compliance built in. Pre-seed stage.
+
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering is resolved — funds go to first enterprise pilots and EU AI Act regulatory validation.
+
+Deck attached. Happy to do a 20-minute walkthrough at your convenience.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com`,
   },
   {
     id: '029-nightdragon', firm: 'NightDragon', type: 'Venture Capital',
@@ -277,6 +343,28 @@ contact@datacendia.com | datacendia.com | app.datacendia.com`,
     hookSlide: 'Atomico champions European tech globally (Klarna, Wise). EU AI Act makes Europe the AI governance epicenter. Datacendia is built EU-first with 23 jurisdictions — then scales globally.',
     keyAngle: 'EU AI Act makes Europe the AI governance market',
     sector: 'European Tech',
+    customEmail: `**Subject:** Datacendia — EU AI Act creates a new European infrastructure category
+
+**Body:**
+
+Hi Niklas,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build the accountability layer for enterprise AI — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators.
+
+**The opportunity:** The EU AI Act enforcement begins this year. Every enterprise deploying AI in Europe needs verifiable governance — and no platform provides this today. Europe is creating the world's largest AI governance market, just as GDPR created the privacy market.
+
+**Why Atomico:** You champion European technology that scales globally — Klarna, Wise, Graphcore. The EU AI Act gives European companies a regulatory head start, just like GDPR did. Datacendia is built EU-first with sovereign deployment, then scales to every jurisdiction. This is a European advantage, not a compliance burden.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Pre-seed stage, Peru + Ireland, operating across EU and US markets.
+
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering is resolved — funds go to first enterprise pilots and EU AI Act regulatory validation.
+
+Deck attached. Happy to do a 20-minute walkthrough at your convenience.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com`,
   },
   {
     id: '047-balderton', firm: 'Balderton Capital', type: 'Venture Capital',
@@ -287,6 +375,28 @@ contact@datacendia.com | datacendia.com | app.datacendia.com`,
     hookSlide: 'Balderton is Europe\'s enterprise authority. EU AI Act creates a €2B+ AI governance market in Europe alone. Datacendia is purpose-built: sovereign deployment, EU regulatory mapping, GDPR-native.',
     keyAngle: 'European AI governance market leader',
     sector: 'European Enterprise',
+    customEmail: `**Subject:** Datacendia — AI governance infrastructure for European enterprise
+
+**Body:**
+
+Hi Suranga,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build the accountability layer for enterprise AI — proving how and why every AI-assisted decision was made, with audit-grade evidence for regulators.
+
+**The opportunity:** EU AI Act enforcement begins this year. Every enterprise deploying AI in Europe needs verifiable governance — penalties up to €35M or 7% of global revenue. GDPR created Collibra. The EU AI Act creates the next category: AI decision governance. Datacendia is purpose-built for it.
+
+**Why Balderton:** You're European-only and back category-defining enterprise companies. Your portfolio (Revolut, GoCardless) faces these requirements today. Datacendia is sovereign-deployed, GDPR-native, and EU regulatory-mapped — built by a European founder for the European market first, then global.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Pre-seed stage, Peru + Ireland, operating across EU and US markets.
+
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering is resolved — funds go to first enterprise pilots and EU AI Act regulatory validation.
+
+Deck attached. Happy to do a 20-minute walkthrough at your convenience.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com`,
   },
   {
     id: '048-northzone', firm: 'Northzone', type: 'Venture Capital',
