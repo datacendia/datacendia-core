@@ -140,6 +140,8 @@ export const routes = {
   adminFeatures: '/admin/features',
   adminRDLab: '/admin/rd-lab',
   sandboxCeltic: '/sandbox/celtic',
+  sandboxUefa: '/sandbox/uefa',
+  sandboxFifa: '/sandbox/fifa',
 };
 
 export default router;
