@@ -14,8 +14,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { Activity, Banknote, Scale, Globe, FileText, Shield, MessageSquare, Database, Eye, DollarSign, AlertTriangle as Gavel, Users, Ban, Landmark, FlaskConical } from 'lucide-react';
-import type { ScenarioConfig, Agent } from './SandboxShared';
-import { AccessGate, SandboxShell } from './SandboxShared';
+import type { ScenarioConfig, Agent, ShellLabels } from './SandboxShared';
+import { AccessGate, SandboxShell, DEFAULT_LABELS, ES_LABELS } from './SandboxShared';
+import { ES_DATA } from './conmebol-i18n-es';
+import type { ScenarioES } from './conmebol-i18n-es';
 
 // =============================================================================
 // CONMEBOL-SPECIFIC AGENT DEFINITIONS
@@ -526,18 +528,90 @@ const SCENARIOS: ScenarioConfig[] = [SCENARIO_DOJ, SCENARIO_MATCHFIX, SCENARIO_T
 // EXPORT — PAGE WITH ACCESS GATE
 // =============================================================================
 
+// =============================================================================
+// LANGUAGE TOGGLE HELPER
+// =============================================================================
+
+function applySpanish(scenarios: ScenarioConfig[]): ScenarioConfig[] {
+  return scenarios.map((s) => {
+    const t = ES_DATA[s.id];
+    if (!t) return s;
+    return {
+      ...s,
+      title: t.title,
+      subtitle: t.subtitle,
+      banner: t.banner,
+      idleTitle: t.idleTitle,
+      idleDesc: t.idleDesc,
+      phaseLabels: t.phaseLabels,
+      scenarioNum: t.scenarioNum,
+      agents: s.agents.map((a) => ({
+        ...a,
+        role: t.agentRoles[a.id] || a.role,
+      })),
+      connectors: s.connectors.map((c, i) => ({
+        ...c,
+        name: t.connectors[i]?.name || c.name,
+        type: t.connectors[i]?.type || c.type,
+        detail: t.connectors[i]?.detail || c.detail,
+      })),
+      script: s.script.map((msg, i) => ({
+        ...msg,
+        content: t.scriptContent[i] || msg.content,
+      })),
+      receiptTemplate: {
+        ...s.receiptTemplate,
+        ...t.receipt,
+      },
+    };
+  });
+}
+
+const SCENARIOS_ES = applySpanish(SCENARIOS);
+
+const FOOTER_EN = '200+ regulatory scenarios mapped for CONMEBOL \u00b7 10 live deliberation demos \u00b7 Post-FIFAgate governance architecture available on request';
+const FOOTER_ES = '200+ escenarios regulatorios mapeados para CONMEBOL \u00b7 10 demos de deliberaci\u00f3n en vivo \u00b7 Arquitectura de gobernanza post-FIFAgate disponible a solicitud';
+
+// =============================================================================
+// LANGUAGE TOGGLE BUTTON
+// =============================================================================
+
+const LangToggle: React.FC<{ lang: 'en' | 'es'; onToggle: () => void }> = ({ lang, onToggle }) => (
+  <button
+    onClick={onToggle}
+    className="px-3 py-1.5 text-[10px] bg-white/5 border border-white/10 rounded-lg text-white/60 hover:bg-white/10 hover:text-white/80 flex items-center gap-1.5 transition-all"
+    title={lang === 'en' ? 'Cambiar a Espa\u00f1ol' : 'Switch to English'}
+  >
+    <Globe className="w-3 h-3" />
+    <span className="font-semibold">{lang === 'en' ? 'ES' : 'EN'}</span>
+  </button>
+);
+
+// =============================================================================
+// EXPORT — PAGE WITH ACCESS GATE + LANGUAGE TOGGLE
+// =============================================================================
+
 const ConmebolSandboxPage: React.FC = () => {
   const [unlocked, setUnlocked] = useState(false);
+  const [lang, setLang] = useState<'en' | 'es'>('en');
 
   useEffect(() => {
     if (sessionStorage.getItem('conmebol-sandbox-unlocked') === 'true') {
       setUnlocked(true);
     }
+    const savedLang = sessionStorage.getItem('conmebol-sandbox-lang');
+    if (savedLang === 'es') setLang('es');
   }, []);
 
   const handleUnlock = () => {
     sessionStorage.setItem('conmebol-sandbox-unlocked', 'true');
     setUnlocked(true);
+  };
+
+  const toggleLang = () => {
+    const next = lang === 'en' ? 'es' : 'en';
+    setLang(next);
+    sessionStorage.setItem('conmebol-sandbox-lang', next);
   };
 
   if (!unlocked) {
@@ -559,10 +633,12 @@ const ConmebolSandboxPage: React.FC = () => {
 
   return (
     <SandboxShell
-      scenarios={SCENARIOS}
+      scenarios={lang === 'es' ? SCENARIOS_ES : SCENARIOS}
       orgLabel="CONMEBOL"
       accent="amber"
-      footerNote="200+ regulatory scenarios mapped for CONMEBOL · 10 live deliberation demos · Post-FIFAgate governance architecture available on request"
+      footerNote={lang === 'es' ? FOOTER_ES : FOOTER_EN}
+      labels={lang === 'es' ? ES_LABELS : DEFAULT_LABELS}
+      headerExtra={<LangToggle lang={lang} onToggle={toggleLang} />}
     />
   );
 };
