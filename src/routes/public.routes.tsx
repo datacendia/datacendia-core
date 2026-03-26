@@ -91,6 +91,7 @@ const CendiaSentryPage = lazy(() =>
 const CelticSandboxPage = lazy(() => import('../pages/sandbox/CelticSandboxPage'));
 const UefaSandboxPage = lazy(() => import('../pages/sandbox/UefaSandboxPage'));
 const FifaSandboxPage = lazy(() => import('../pages/sandbox/FifaSandboxPage'));
+const ConmebolSandboxPage = lazy(() => import('../pages/sandbox/ConmebolSandboxPage'));
 
 // Pitch
 const PitchDeck = lazy(() => import('../pages/pitch').then((m) => ({ default: m.PitchDeck })));
@@ -161,6 +162,7 @@ export const publicRoutes: RouteObject[] = [
   { path: '/sandbox/celtic', element: w(CelticSandboxPage) },
   { path: '/sandbox/uefa', element: w(UefaSandboxPage) },
   { path: '/sandbox/fifa', element: w(FifaSandboxPage) },
+  { path: '/sandbox/conmebol', element: w(ConmebolSandboxPage) },
 
   // Pitch
   { path: '/pitch', element: w(PitchDeck) },
