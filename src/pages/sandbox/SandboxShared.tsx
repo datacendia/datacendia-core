@@ -83,6 +83,66 @@ export interface ScenarioConfig {
   phaseLabels: [string, string, string];
 }
 
+export interface ShellLabels {
+  dataConnectors: string;
+  activeCouncil: string;
+  deliberationTitle: string;
+  readyToBegin: string;
+  phase: string;
+  deliberationComplete: string;
+  runDeliberation: string;
+  generateReceipt: string;
+  generatingBundle: string;
+  simulationNote: string;
+  selectScenario: string;
+  reset: string;
+  confidential: string;
+  executiveSandbox: string;
+  connectorLive: string;
+  connectorSync: string;
+  connectorReady: string;
+}
+
+export const DEFAULT_LABELS: ShellLabels = {
+  dataConnectors: 'Data Connectors',
+  activeCouncil: 'Active Council',
+  deliberationTitle: 'Multi-Agent Deliberation',
+  readyToBegin: 'Ready to begin',
+  phase: 'Phase',
+  deliberationComplete: 'Deliberation Complete \u2014 Consensus Reached',
+  runDeliberation: 'Run Deliberation',
+  generateReceipt: "Generate Regulator's Receipt",
+  generatingBundle: 'Generating Cryptographic Evidence Bundle...',
+  simulationNote: 'SIMULATION NOTE:',
+  selectScenario: 'Select Scenario',
+  reset: 'Reset',
+  confidential: 'CONFIDENTIAL',
+  executiveSandbox: 'EXECUTIVE SANDBOX',
+  connectorLive: 'LIVE',
+  connectorSync: 'SYNC',
+  connectorReady: 'READY',
+};
+
+export const ES_LABELS: ShellLabels = {
+  dataConnectors: 'Conectores de Datos',
+  activeCouncil: 'Consejo Activo',
+  deliberationTitle: 'Deliberaci\u00f3n Multi-Agente',
+  readyToBegin: 'Listo para comenzar',
+  phase: 'Fase',
+  deliberationComplete: 'Deliberaci\u00f3n Completa \u2014 Consenso Alcanzado',
+  runDeliberation: 'Iniciar Deliberaci\u00f3n',
+  generateReceipt: 'Generar Recibo del Regulador',
+  generatingBundle: 'Generando Paquete de Evidencia Criptogr\u00e1fica...',
+  simulationNote: 'NOTA DE SIMULACI\u00d3N:',
+  selectScenario: 'Seleccionar Escenario',
+  reset: 'Reiniciar',
+  confidential: 'CONFIDENCIAL',
+  executiveSandbox: 'SANDBOX EJECUTIVO',
+  connectorLive: 'ACTIVO',
+  connectorSync: 'SYNC',
+  connectorReady: 'LISTO',
+};
+
 // =============================================================================
 // HELPERS
 // =============================================================================
@@ -188,10 +248,12 @@ export const AccessGate: React.FC<{
 // COMPONENT — CONNECTOR PANEL
 // =============================================================================
 
-export const ConnectorPanel: React.FC<{ connectors: Connector[] }> = ({ connectors }) => (
+export const ConnectorPanel: React.FC<{ connectors: Connector[]; labels?: ShellLabels }> = ({ connectors, labels }) => {
+  const L = labels || DEFAULT_LABELS;
+  return (
   <div className="bg-[#111118] border border-white/10 rounded-xl p-4">
     <h3 className="text-xs font-semibold tracking-[0.15em] text-white/60 uppercase mb-4 flex items-center gap-2">
-      <Database className="w-3.5 h-3.5" /> Data Connectors
+      <Database className="w-3.5 h-3.5" /> {L.dataConnectors}
     </h3>
     <div className="space-y-3">
       {connectors.map((c) => (
@@ -204,7 +266,7 @@ export const ConnectorPanel: React.FC<{ connectors: Connector[] }> = ({ connecto
               <span className="text-xs font-medium text-white/80 truncate">{c.name}</span>
               <span className={`flex items-center gap-1 text-[10px] ${c.status === 'connected' ? 'text-emerald-400' : c.status === 'syncing' ? 'text-amber-400' : 'text-blue-400'}`}>
                 <span className={`w-1.5 h-1.5 rounded-full ${c.status === 'connected' ? 'bg-emerald-400' : c.status === 'syncing' ? 'bg-amber-400 animate-pulse' : 'bg-blue-400'}`} />
-                {c.status === 'connected' ? 'LIVE' : c.status === 'syncing' ? 'SYNC' : 'READY'}
+                {c.status === 'connected' ? L.connectorLive : c.status === 'syncing' ? L.connectorSync : L.connectorReady}
               </span>
             </div>
             <p className="text-[10px] text-white/40 mt-0.5">{c.type}</p>
@@ -215,6 +277,7 @@ export const ConnectorPanel: React.FC<{ connectors: Connector[] }> = ({ connecto
     </div>
   </div>
 );
+};
 
 // =============================================================================
 // COMPONENT — AGENT CARD
@@ -373,10 +436,13 @@ export const ScenarioSelector: React.FC<{
   onSelect: (id: string) => void;
   disabled: boolean;
   accent?: string;
-}> = ({ scenarios, activeId, onSelect, disabled, accent = 'emerald' }) => (
+  labels?: ShellLabels;
+}> = ({ scenarios, activeId, onSelect, disabled, accent = 'emerald', labels }) => {
+  const L = labels || DEFAULT_LABELS;
+  return (
   <div className="mb-6">
     <h3 className="text-xs font-semibold tracking-[0.15em] text-white/40 uppercase mb-3 flex items-center gap-2">
-      <Zap className="w-3.5 h-3.5" /> Select Scenario
+      <Zap className="w-3.5 h-3.5" /> {L.selectScenario}
     </h3>
     <div className="flex flex-wrap gap-2">
       {scenarios.map((s) => {
@@ -402,6 +468,7 @@ export const ScenarioSelector: React.FC<{
     </div>
   </div>
 );
+};
 
 // =============================================================================
 // MAIN SANDBOX SHELL — Reusable across all sandbox pages
@@ -412,7 +479,10 @@ export const SandboxShell: React.FC<{
   orgLabel: string;
   accent?: string;
   footerNote?: string;
-}> = ({ scenarios, orgLabel, accent = 'emerald', footerNote }) => {
+  headerExtra?: React.ReactNode;
+  labels?: ShellLabels;
+}> = ({ scenarios, orgLabel, accent = 'emerald', footerNote, headerExtra, labels: _labels }) => {
+  const L = _labels || DEFAULT_LABELS;
   const [activeScenarioId, setActiveScenarioId] = useState<string>(scenarios[0].id);
   const [phase, setPhase] = useState<Phase>('idle');
   const [visibleMessages, setVisibleMessages] = useState<number>(0);
@@ -499,9 +569,10 @@ export const SandboxShell: React.FC<{
             <span className={`text-xs tracking-wider text-${accent}-400/80`}>{orgLabel} SANDBOX</span>
           </div>
           <div className="flex items-center gap-3">
+            {headerExtra}
             {phase !== 'idle' && (
               <button onClick={handleReset} className="px-3 py-1.5 text-[10px] bg-white/5 border border-white/10 rounded-lg text-white/50 hover:bg-white/10 flex items-center gap-1.5">
-                <RotateCcw className="w-3 h-3" /> Reset
+                <RotateCcw className="w-3 h-3" /> {L.reset}
               </button>
             )}
             <span className="text-[10px] text-white/30 tracking-wider font-mono">v2.4.1</span>
@@ -512,12 +583,12 @@ export const SandboxShell: React.FC<{
       <div className="bg-amber-500/5 border-b border-amber-500/20">
         <div className="max-w-7xl mx-auto px-4 py-2.5 flex items-center gap-3">
           <AlertTriangle className="w-4 h-4 text-amber-400 flex-shrink-0" />
-          <p className="text-xs text-amber-400/80"><strong>SIMULATION NOTE:</strong> {scenario.banner}</p>
+          <p className="text-xs text-amber-400/80"><strong>{L.simulationNote}</strong> {scenario.banner}</p>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-6">
-        <ScenarioSelector scenarios={scenarios} activeId={activeScenarioId} onSelect={handleSelectScenario} disabled={isRunning} accent={accent} />
+        <ScenarioSelector scenarios={scenarios} activeId={activeScenarioId} onSelect={handleSelectScenario} disabled={isRunning} accent={accent} labels={L} />
 
         <div className="mb-6">
           <h1 className="text-xl font-light tracking-wider text-white/90 mb-1">{scenario.title}</h1>
@@ -526,10 +597,10 @@ export const SandboxShell: React.FC<{
 
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-3 space-y-4">
-            <ConnectorPanel connectors={scenario.connectors} />
+            <ConnectorPanel connectors={scenario.connectors} labels={L} />
             <div className="bg-[#111118] border border-white/10 rounded-xl p-4">
               <h3 className="text-xs font-semibold tracking-[0.15em] text-white/60 uppercase mb-4 flex items-center gap-2">
-                <Users className="w-3.5 h-3.5" /> Active Council
+                <Users className="w-3.5 h-3.5" /> {L.activeCouncil}
               </h3>
               <div className="space-y-2">
                 {scenario.agents.map((agent) => (
@@ -547,14 +618,14 @@ export const SandboxShell: React.FC<{
               <div className="px-5 py-4 border-b border-white/10 flex items-center justify-between">
                 <div>
                   <h2 className="text-sm font-semibold text-white/80 flex items-center gap-2">
-                    <Radio className={`w-4 h-4 text-${accent}-400`} /> Multi-Agent Deliberation
+                    <Radio className={`w-4 h-4 text-${accent}-400`} /> {L.deliberationTitle}
                   </h2>
                   <p className="text-[10px] text-white/40 mt-0.5">
-                    {phase === 'idle' ? 'Ready to begin' :
-                     phase === 'phase1' ? `Phase 1 — ${scenario.phaseLabels[0]}` :
-                     phase === 'phase2' ? `Phase 2 — ${scenario.phaseLabels[1]}` :
-                     phase === 'phase3' ? `Phase 3 — ${scenario.phaseLabels[2]}` :
-                     'Deliberation Complete — Consensus Reached'}
+                    {phase === 'idle' ? L.readyToBegin :
+                     phase === 'phase1' ? `${L.phase} 1 — ${scenario.phaseLabels[0]}` :
+                     phase === 'phase2' ? `${L.phase} 2 — ${scenario.phaseLabels[1]}` :
+                     phase === 'phase3' ? `${L.phase} 3 — ${scenario.phaseLabels[2]}` :
+                     L.deliberationComplete}
                   </p>
                 </div>
                 <div className="flex items-center gap-1.5">
@@ -578,19 +649,19 @@ export const SandboxShell: React.FC<{
                     <button onClick={runDeliberation}
                       className={`px-8 py-3 bg-gradient-to-r from-${accent}-600 to-${accent}-700 text-white rounded-xl font-medium text-sm tracking-wider hover:from-${accent}-500 hover:to-${accent}-600 transition-all flex items-center gap-2 shadow-lg shadow-${accent}-900/30`}
                     >
-                      <Play className="w-4 h-4" /> Run Deliberation
+                      <Play className="w-4 h-4" /> {L.runDeliberation}
                     </button>
                   </div>
                 ) : (
                   <>
-                    {renderPhaseMarker(`Phase 1 — ${scenario.phaseLabels[0]}`, 'phase1', phase)}
+                    {renderPhaseMarker(`${L.phase} 1 — ${scenario.phaseLabels[0]}`, 'phase1', phase)}
                     {scenario.script.filter((m) => m.phase === 'phase1').map((msg) => {
                       const gi = scenario.script.indexOf(msg);
                       return <MessageBubble key={gi} msg={msg} agents={scenario.agents} visible={gi < visibleMessages} />;
                     })}
                     {getPhaseOrder(phase) >= getPhaseOrder('phase2') && (
                       <>
-                        {renderPhaseMarker(`Phase 2 — ${scenario.phaseLabels[1]}`, 'phase2', phase)}
+                        {renderPhaseMarker(`${L.phase} 2 — ${scenario.phaseLabels[1]}`, 'phase2', phase)}
                         {scenario.script.filter((m) => m.phase === 'phase2').map((msg) => {
                           const gi = scenario.script.indexOf(msg);
                           return <MessageBubble key={gi} msg={msg} agents={scenario.agents} visible={gi < visibleMessages} />;
@@ -599,7 +670,7 @@ export const SandboxShell: React.FC<{
                     )}
                     {getPhaseOrder(phase) >= getPhaseOrder('phase3') && (
                       <>
-                        {renderPhaseMarker(`Phase 3 — ${scenario.phaseLabels[2]}`, 'phase3', phase)}
+                        {renderPhaseMarker(`${L.phase} 3 — ${scenario.phaseLabels[2]}`, 'phase3', phase)}
                         {scenario.script.filter((m) => m.phase === 'phase3').map((msg) => {
                           const gi = scenario.script.indexOf(msg);
                           return <MessageBubble key={gi} msg={msg} agents={scenario.agents} visible={gi < visibleMessages} />;
@@ -617,9 +688,9 @@ export const SandboxShell: React.FC<{
                     className="w-full py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-xl font-semibold text-sm tracking-wider hover:from-emerald-400 hover:to-emerald-500 transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/40 disabled:opacity-60"
                   >
                     {generatingReceipt ? (
-                      <><span className="animate-spin w-4 h-4 border-2 border-white/30 border-t-white rounded-full" /> Generating Cryptographic Evidence Bundle...</>
+                      <><span className="animate-spin w-4 h-4 border-2 border-white/30 border-t-white rounded-full" /> {L.generatingBundle}</>
                     ) : (
-                      <><Fingerprint className="w-5 h-5" /> Generate Regulator's Receipt</>
+                      <><Fingerprint className="w-5 h-5" /> {L.generateReceipt}</>
                     )}
                   </button>
                 </div>
@@ -632,7 +703,7 @@ export const SandboxShell: React.FC<{
 
         <div className="mt-12 pt-6 border-t border-white/5 text-center">
           <p className="text-[10px] text-white/20 tracking-wider">
-            CONFIDENTIAL &middot; DATACENDIA, LLC &middot; {orgLabel} EXECUTIVE SANDBOX &middot; {new Date().getFullYear()}
+            {L.confidential} &middot; DATACENDIA, LLC &middot; {orgLabel} {L.executiveSandbox} &middot; {new Date().getFullYear()}
           </p>
           {footerNote && <p className="text-[10px] text-white/15 mt-1">{footerNote}</p>}
         </div>
