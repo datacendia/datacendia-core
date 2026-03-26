@@ -139,6 +139,7 @@ export const routes = {
   adminHealth: '/admin/health',
   adminFeatures: '/admin/features',
   adminRDLab: '/admin/rd-lab',
+  sandboxCeltic: '/sandbox/celtic',
 };
 
 export default router;
