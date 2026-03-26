@@ -87,6 +87,9 @@ const CendiaSentryPage = lazy(() =>
   import('../pages/apex').then((m) => ({ default: m.CendiaSentryPage }))
 );
 
+// Sandbox
+const CelticSandboxPage = lazy(() => import('../pages/sandbox/CelticSandboxPage'));
+
 // Pitch
 const PitchDeck = lazy(() => import('../pages/pitch').then((m) => ({ default: m.PitchDeck })));
 
@@ -151,6 +154,9 @@ export const publicRoutes: RouteObject[] = [
   { path: '/apex/sentry', element: w(CendiaSentryPage) },
   { path: '/products/cendia-forecast', element: w(CendiaForecastPage) },
   { path: '/products/cendia-sentry', element: w(CendiaSentryPage) },
+
+  // Sandbox — Design Partner Demos
+  { path: '/sandbox/celtic', element: w(CelticSandboxPage) },
 
   // Pitch
   { path: '/pitch', element: w(PitchDeck) },
