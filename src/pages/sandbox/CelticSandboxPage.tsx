@@ -13,6 +13,7 @@
 // Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import {
   Shield, Lock, ChevronRight, AlertTriangle, CheckCircle, XCircle,
   Radio, Activity, FileText, Download, Clock, Users, Zap,
@@ -984,13 +985,20 @@ function renderPhaseMarker(label: string, phaseId: Phase, currentPhase: Phase) {
 // =============================================================================
 
 const CelticSandboxPage: React.FC = () => {
+  const [searchParams] = useSearchParams();
   const [unlocked, setUnlocked] = useState(false);
 
   useEffect(() => {
     if (sessionStorage.getItem('celtic-sandbox-unlocked') === 'true') {
       setUnlocked(true);
+      return;
     }
-  }, []);
+    const keyParam = searchParams.get('key');
+    if (keyParam && keyParam.trim().toUpperCase() === 'CELTIC-PLC-26') {
+      sessionStorage.setItem('celtic-sandbox-unlocked', 'true');
+      setUnlocked(true);
+    }
+  }, [searchParams]);
 
   const handleUnlock = () => {
     sessionStorage.setItem('celtic-sandbox-unlocked', 'true');
