@@ -93,6 +93,12 @@ const UefaSandboxPage = lazy(() => import('../pages/sandbox/UefaSandboxPage'));
 const FifaSandboxPage = lazy(() => import('../pages/sandbox/FifaSandboxPage'));
 const ConmebolSandboxPage = lazy(() => import('../pages/sandbox/ConmebolSandboxPage'));
 
+// New Template-Driven Sandboxes
+const UfcSandboxPage = lazy(() => import('../pages/sandbox/UfcSandboxPage'));
+const MilanSandboxPage = lazy(() => import('../pages/sandbox/MilanSandboxPage'));
+const Formula1SandboxPage = lazy(() => import('../pages/sandbox/Formula1SandboxPage'));
+const NflSandboxPage = lazy(() => import('../pages/sandbox/NflSandboxPage'));
+
 // Pitch
 const PitchDeck = lazy(() => import('../pages/pitch').then((m) => ({ default: m.PitchDeck })));
 
@@ -163,6 +169,11 @@ export const publicRoutes: RouteObject[] = [
   { path: '/sandbox/uefa', element: w(UefaSandboxPage) },
   { path: '/sandbox/fifa', element: w(FifaSandboxPage) },
   { path: '/sandbox/conmebol', element: w(ConmebolSandboxPage) },
+  // Template-driven sandboxes (config-based)
+  { path: '/sandbox/ufc', element: w(UfcSandboxPage) },
+  { path: '/sandbox/milan', element: w(MilanSandboxPage) },
+  { path: '/sandbox/f1', element: w(Formula1SandboxPage) },
+  { path: '/sandbox/nfl', element: w(NflSandboxPage) },
 
   // Pitch
   { path: '/pitch', element: w(PitchDeck) },
