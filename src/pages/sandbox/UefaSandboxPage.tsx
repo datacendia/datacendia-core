@@ -2,7 +2,7 @@
  * Page — UEFA Sandbox Demo
  *
  * Bespoke sandbox for UEFA / Aleksander Čeferin executive outreach.
- * 5 fully scripted multi-agent deliberation scenarios at regulator scale.
+ * 6 fully scripted multi-agent deliberation scenarios at regulator scale.
  *
  * Access: /sandbox/uefa (Key: UEFA-FSR-26)
  *
@@ -13,7 +13,7 @@
 // Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 
 import React, { useState, useEffect } from 'react';
-import { Activity, Banknote, Scale, Globe, FileText, Shield, MessageSquare, Database, Shuffle, DollarSign } from 'lucide-react';
+import { Activity, Banknote, Scale, Globe, FileText, Shield, MessageSquare, Database, Shuffle, DollarSign, Search, Cpu, Radio, BarChart3 } from 'lucide-react';
 import type { ScenarioConfig, Agent } from './SandboxShared';
 import { AccessGate, SandboxShell } from './SandboxShared';
 
@@ -31,6 +31,8 @@ const A = {
   drawMaster: { id: 'draw', name: 'Draw Ceremony Agent', role: 'Seeding Algorithm & Ball Allocation AI', icon: '🎱', color: 'text-orange-400', borderColor: 'border-orange-500/40', bgColor: 'bg-orange-500/10' } as Agent,
   distribution: { id: 'distrib', name: 'Prize Distribution Agent', role: 'Revenue Allocation & Statutory Compliance', icon: '💰', color: 'text-yellow-400', borderColor: 'border-yellow-500/40', bgColor: 'bg-yellow-500/10' } as Agent,
   antiTrust: { id: 'antitrust', name: 'Competition Law Agent', role: 'TFEU Article 101/102 & CJEU Precedent', icon: '🇪🇺', color: 'text-sky-400', borderColor: 'border-sky-500/40', bgColor: 'bg-sky-500/10' } as Agent,
+  integrityOfficer: { id: 'integrity-officer', name: 'Integrity Officer Agent', role: 'Sportradar AI Feed Analysis & Betting Anomaly Detection', icon: '🕵️', color: 'text-red-400', borderColor: 'border-red-500/40', bgColor: 'bg-red-500/10' } as Agent,
+  technicalAudit: { id: 'tech-audit', name: 'Technical Audit Agent', role: 'Post-Quantum Cryptography & Evidence Chain Integrity', icon: '👨‍💻', color: 'text-teal-400', borderColor: 'border-teal-500/40', bgColor: 'bg-teal-500/10' } as Agent,
 };
 
 // =============================================================================
@@ -274,10 +276,56 @@ const SCENARIO_SUPERLEAGUE: ScenarioConfig = {
 };
 
 // =============================================================================
+// SCENARIO 6 — CONFERENCE LEAGUE INTEGRITY AUDIT
+// =============================================================================
+
+const SCENARIO_INTEGRITY_AUDIT: ScenarioConfig = {
+  id: 'integrity-audit',
+  title: 'The "Conference League" Integrity Audit — Match-Fixing Investigation',
+  subtitle: 'UECL Group Stage · 450% betting anomaly · CendiaWhistle tip · Biometric deviation · CAS prosecution-ready',
+  banner: 'Simulating a match-fixing investigation triggered by a Sportradar AI betting anomaly and a CendiaWhistle anonymous tip. The platform must build a court-admissible evidence bundle that meets the CAS "Comfortable Satisfaction" standard while guaranteeing whistleblower anonymity.',
+  risk: 'Critical',
+  scenarioNum: 'Integrity Audit',
+  icon: <Search className="w-4 h-4" />,
+  color: 'text-red-400',
+  agents: [A.integrityOfficer, A.legalAgent, A.technicalAudit],
+  connectors: [
+    { name: 'Sportradar AI Feed', status: 'connected', type: 'Betting Market Anomaly Detection', icon: <BarChart3 className="w-4 h-4" />, detail: '450% anomaly in "Total Goals Over 3.5" at 78\'' },
+    { name: 'CendiaWhistle Portal', status: 'connected', type: 'Anonymous Tip Ingestion', icon: <MessageSquare className="w-4 h-4" />, detail: 'Ring Signature ID: 0x8f...e2 verified' },
+    { name: 'VAR Audio Archive', status: 'connected', type: 'Match Footage & Audio', icon: <Radio className="w-4 h-4" />, detail: 'Full match VAR footage + referee comms loaded' },
+    { name: 'Player Biometric Tracking', status: 'syncing', type: 'GPS & Heat-Map Analysis', icon: <Cpu className="w-4 h-4" />, detail: '5-year positional heat-map baseline loaded' },
+  ],
+  script: [
+    { agentId: 'integrity-officer', phase: 'phase1', type: 'warning', delay: 800, content: 'Sportradar AI feed detected a 450% anomaly in "Total Goals Over 3.5" betting markets in the 78th minute. Matching intelligence received via CendiaWhistle (Ring Signature ID: 0x8f...e2) alleging a specific defender was bribed. Ingesting match footage and player biometric tracking data. The anomaly is concentrated in 3 Asian-market bookmakers and appeared within a 90-second window — consistent with insider knowledge of an imminent deliberate error. Cross-referencing the whistleblower\'s timestamp against VAR audio channels.' },
+    { agentId: 'legal', phase: 'phase2', type: 'dissent', delay: 2500, content: 'CRITICAL WARNING. The betting data source uses an unencrypted API. If we present this at CAS, the defence will argue the data could have been tampered with post-match. Furthermore, the whistleblower\'s identity must remain anonymous, but their "credibility" must be provable. Without a cryptographic seal on the raw data feed, this prosecution will fail the "Comfortable Satisfaction" standard required by CAS Code Art. R47. We need mathematical proof of evidence integrity, not just correlation.' },
+    { agentId: 'tech-audit', phase: 'phase2', type: 'analysis', delay: 2500, content: 'Applying ML-DSA-65 post-quantum signature to the raw betting feed — sealing the data at the moment of ingestion with RFC 3161 trusted timestamp. Cross-referencing VAR audio with the whistleblower\'s specific timestamp. Evidence chain is now locked: (1) Raw Sportradar feed → ML-DSA-65 sealed at 2026-03-27T10:14:22.001Z, (2) CendiaWhistle tip → Ring Signature verified, credibility score 94.2% without identity disclosure, (3) VAR audio 77:41-82:30 → SHA-256 hashed and sealed. Chain of custody is cryptographically unbreakable.' },
+    { agentId: 'integrity-officer', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Correlation confirmed. The defender\'s positioning at 81:04 deviates from their 5-year heat-map mean by 4.2 standard deviations, coinciding with the betting spike. Specifically: the defender moved 14 metres out of their expected zone toward the near post, creating a 23-metre gap exploited for the goal at 81:22. This positional anomaly has a probability of occurring naturally of 0.003%. Reasoning chain documented and sealed into the Merkle evidence tree.' },
+    { agentId: 'legal', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. The Regulator\'s Receipt now contains the full chain of custody: Whistleblower Metadata + Encrypted Betting Feed + VAR Audio + Biometric Deviation. The ML-DSA-65 post-quantum seal eliminates any "data tampering" defence. The Ring Signature proves whistleblower credibility without identity disclosure. Evidence bundle is ready for the UEFA Disciplinary Committee and subsequent CAS Appeal. Legal standard met: "Comfortable Satisfaction" per CAS Code Art. R47. This is not detection — this is Court-Admissible Truth.' },
+  ],
+  receiptTemplate: {
+    hash: 'SHA-256:4d77e8b3f0c42a1d9e6f5a2c7b8d3e1f0a9b4c5d6e7f8a1b2c3d4e5f6a7b8b12',
+    merkleRoot: 'f821a9c3e7d4b6f2a1c8e5d9b3f7a2c6d4e8f1a5b9c3d7e2f6a4b8c1d5e9f99ac',
+    merkleLabel: 'Merkle Tree Root (Anonymous Tip + Sportradar Feed + VAR Audio + Biometric Deviation)',
+    complianceLabel: 'Legal Standard',
+    complianceValue: '"COMFORTABLE SATISFACTION"',
+    complianceThreshold: 'CAS Code Art. R47',
+    agents: ['Integrity Officer Agent', 'Legal Counsel Agent', 'Technical Audit Agent'],
+    dissents: 1,
+    dissentResolved: true,
+    guaranteeTitle: 'Anonymity Guarantee — Linkable Ring Signature (CendiaWhistle Protocol)',
+    guaranteeBody: 'This cryptographic bundle seals the complete match-fixing investigation: Sportradar AI betting anomaly (450% spike), CendiaWhistle anonymous tip (Ring Signature 0x8f...e2), VAR audio correlation, and player biometric deviation (4.2σ from 5-year mean). Every evidence item is ML-DSA-65 sealed with RFC 3161 timestamps. The whistleblower\'s identity is mathematically unextractable. Evidence bundle meets the CAS "Comfortable Satisfaction" standard. Detection is only half the battle — this is the Legal Integrity of that detection.',
+    evidenceChain: 'Sportradar 450% anomaly (78\') → CendiaWhistle Ring Signature (0x8f...e2) → VAR Audio (77:41-82:30) → Player biometric deviation (4.2σ at 81:04) → ML-DSA-65 post-quantum seal → RFC 3161 timestamp → Merkle evidence tree → UEFA Disciplinary Committee referral',
+  },
+  idleTitle: 'Ready to Investigate',
+  idleDesc: '3 AI agents will investigate a Conference League match-fixing allegation — correlating betting anomalies, anonymous tips, VAR footage, and player biometrics into a CAS prosecution-ready evidence bundle.',
+  phaseLabels: ['Intelligence & Detection', 'Conflict & Evidence Validation', 'Resolution & Prosecution Ready'],
+};
+
+// =============================================================================
 // ALL SCENARIOS
 // =============================================================================
 
-const SCENARIOS: ScenarioConfig[] = [SCENARIO_FSR_AUDIT, SCENARIO_WHISTLE, SCENARIO_DRAW, SCENARIO_PRIZE, SCENARIO_SUPERLEAGUE];
+const SCENARIOS: ScenarioConfig[] = [SCENARIO_FSR_AUDIT, SCENARIO_WHISTLE, SCENARIO_DRAW, SCENARIO_PRIZE, SCENARIO_SUPERLEAGUE, SCENARIO_INTEGRITY_AUDIT];
 
 // =============================================================================
 // EXPORT — PAGE WITH ACCESS GATE
@@ -319,7 +367,7 @@ const UefaSandboxPage: React.FC = () => {
       scenarios={SCENARIOS}
       orgLabel="UEFA"
       accent="blue"
-      footerNote="200+ regulatory scenarios mapped for UEFA · Full architecture document available on request"
+      footerNote="201 regulatory scenarios mapped for UEFA · Full architecture document available on request"
     />
   );
 };
