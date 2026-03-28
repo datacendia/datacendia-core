@@ -53,7 +53,7 @@ const SLIDES: Slide[] = [
         </div>
         <h1 className="text-5xl md:text-7xl mb-4" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>DATACENDIA</h1>
         <p className="text-2xl text-purple-300 mb-8">Sovereign Enterprise Intelligence</p>
-        <div className="text-slate-400 text-lg">Investor Presentation • 2025</div>
+        <div className="text-slate-400 text-lg">Investor Presentation • 2026 • 33 Design Partners</div>
       </div>
     ),
   },
@@ -63,6 +63,10 @@ const SLIDES: Slide[] = [
     content: (
       <div className="h-full flex flex-col justify-center p-12">
         <h2 className="text-4xl font-bold text-white mb-8">The Enterprise Intelligence Crisis</h2>
+        <div className="bg-purple-500/10 rounded-xl border border-purple-500/30 p-4 mb-6">
+          <p className="text-purple-300 font-semibold">33 Design Partners • 6,600+ Scenarios • 4 Live Demos</p>
+          <p className="text-slate-400 text-sm mt-2">Celtic FC, UEFA, FIFA, CONMEBOL, Barcelona, Real Madrid, Man United, Liverpool, AC Milan, PSG, NFL, UFC, World Rugby</p>
+        </div>
         <div className="grid md:grid-cols-3 gap-6">
           {[
             { stat: '200+', label: 'SaaS tools per enterprise', icon: '🌊', color: 'red' },
@@ -93,11 +97,37 @@ const SLIDES: Slide[] = [
     ),
   },
   {
-    id: 'solution',
-    title: 'The Solution',
+    id: 'demos',
+    title: 'Live Sandbox Demos',
     content: (
       <div className="h-full flex flex-col justify-center p-12">
-        <h2 className="text-4xl font-bold text-white mb-4">Introducing The Cortex</h2>
+        <h2 className="text-4xl font-bold text-white mb-4">Live Sandbox Demos</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          {[
+            { name: 'Celtic FC', url: '/sandbox/celtic', key: 'CELTIC-PLC-26', desc: '5 multi-agent scenarios', color: 'emerald' },
+            { name: 'UEFA', url: '/sandbox/uefa', key: 'UEFA-FSR-26', desc: '5 regulator scenarios', color: 'blue' },
+            { name: 'FIFA', url: '/sandbox/fifa', key: 'FIFA-WC-26', desc: '5 World Cup scenarios', color: 'indigo' },
+            { name: 'CONMEBOL', url: '/sandbox/conmebol', key: 'CONMEBOL-26', desc: 'Spanish i18n support', color: 'purple' },
+          ].map((demo) => (
+            <div key={demo.name} className="bg-slate-800/50 rounded-xl border border-slate-700 p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className={`text-xl font-bold text-${demo.color}-400`}>{demo.name}</h3>
+                <span className="text-xs text-slate-500 bg-slate-700 px-2 py-1 rounded">{demo.key}</span>
+              </div>
+              <p className="text-slate-400 mb-3">{demo.desc}</p>
+              <div className="text-xs text-slate-500">{demo.url}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: 'solution',
+    title: 'Our Solution',
+    content: (
+      <div className="h-full flex flex-col justify-center p-12">
+        <h2 className="text-4xl font-bold text-white mb-4">The Council: Multi-Agent Deliberation</h2>
         <p className="text-xl text-slate-400 mb-8">
           The unified intelligence platform that transforms how organizations think, decide, and
           act.
@@ -179,16 +209,42 @@ const SLIDES: Slide[] = [
     ),
   },
   {
-    id: 'market',
-    title: 'Market',
+    id: 'partners',
+    title: '33 Design Partners',
     content: (
       <div className="h-full flex flex-col justify-center p-12">
-        <h2 className="text-4xl font-bold text-white mb-8">$150B+ Total Addressable Market</h2>
+        <h2 className="text-4xl font-bold text-white mb-8">33 Design Partners • 6,600+ Scenarios</h2>
+        <div className="grid md:grid-cols-3 gap-4 mb-8">
+          {[
+            { category: 'Football Clubs', count: 9, examples: 'Celtic, Barcelona, Real Madrid, Man United, Liverpool, AC Milan, PSG, Ajax, Benfica' },
+            { category: 'Governing Bodies', count: 3, examples: 'UEFA, FIFA, CONMEBOL' },
+            { category: 'Sports Verticals', count: 4, examples: 'NFL, UFC, World Rugby' },
+          ].map((cat) => (
+            <div key={cat.category} className="bg-slate-800/50 rounded-xl border border-slate-700 p-6 text-center">
+              <div className="text-3xl font-bold text-cyan-400 mb-2">{cat.count}</div>
+              <div className="text-white font-semibold mb-2">{cat.category}</div>
+              <div className="text-xs text-slate-500">{cat.examples}</div>
+            </div>
+          ))}
+        </div>
+        <div className="bg-green-500/10 rounded-xl border border-green-500/30 p-4">
+          <p className="text-green-400 font-semibold">Each Partner: 200+ Detailed Scenarios</p>
+          <p className="text-slate-400 text-sm mt-1">Decision Type, Problem, Datacendia Solution, Applicable Regulations</p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: 'market',
+    title: 'Market Opportunity',
+    content: (
+      <div className="h-full flex flex-col justify-center p-12">
+        <h2 className="text-4xl font-bold text-white mb-8">$150B+ Enterprise Intelligence Market</h2>
         <div className="grid md:grid-cols-3 gap-6 mb-8">
           {[
-            { label: 'TAM', value: '$150B', desc: 'Enterprise Intelligence' },
-            { label: 'SAM', value: '$45B', desc: 'Mid-Market + Enterprise' },
-            { label: 'SOM', value: '$2B', desc: 'Year 5 Target' },
+            { label: 'TAM', value: '$150B+', desc: 'Enterprise Intelligence' },
+            { label: 'SAM', value: '$45B', desc: 'Sports + Regulators' },
+            { label: 'SOM', value: '$5B', desc: 'Year 5 Target' },
           ].map((item) => (
             <div
               key={item.label}
