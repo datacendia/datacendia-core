@@ -111,6 +111,16 @@ const RelativitySandboxPage = lazy(() => import('../pages/sandbox/RelativitySand
 const IroncladIcertisSandboxPage = lazy(() => import('../pages/sandbox/IroncladIcertisSandboxPage'));
 const ClioSandboxPage = lazy(() => import('../pages/sandbox/ClioSandboxPage'));
 
+// Asia & Africa Sandboxes
+const SamsungSandboxPage = lazy(() => import('../pages/sandbox/SamsungSandboxPage'));
+const InfosysSandboxPage = lazy(() => import('../pages/sandbox/InfosysSandboxPage'));
+const ToyotaSandboxPage = lazy(() => import('../pages/sandbox/ToyotaSandboxPage'));
+const GrabSandboxPage = lazy(() => import('../pages/sandbox/GrabSandboxPage'));
+const MtnSandboxPage = lazy(() => import('../pages/sandbox/MtnSandboxPage'));
+const SafaricomSandboxPage = lazy(() => import('../pages/sandbox/SafaricomSandboxPage'));
+const DangoteSandboxPage = lazy(() => import('../pages/sandbox/DangoteSandboxPage'));
+const AfdbSandboxPage = lazy(() => import('../pages/sandbox/AfdbSandboxPage'));
+
 // Pitch
 const PitchDeck = lazy(() => import('../pages/pitch').then((m) => ({ default: m.PitchDeck })));
 
@@ -206,6 +216,19 @@ export const publicRoutes: RouteObject[] = [
   { path: '/sandbox/ironclad', element: w(IroncladIcertisSandboxPage) },
   { path: '/sandbox/icertis', element: w(IroncladIcertisSandboxPage) },
   { path: '/sandbox/clio', element: w(ClioSandboxPage) },
+
+  // Asia Sandboxes
+  { path: '/sandbox/samsung', element: w(SamsungSandboxPage) },
+  { path: '/sandbox/infosys', element: w(InfosysSandboxPage) },
+  { path: '/sandbox/toyota', element: w(ToyotaSandboxPage) },
+  { path: '/sandbox/grab', element: w(GrabSandboxPage) },
+
+  // Africa Sandboxes
+  { path: '/sandbox/mtn', element: w(MtnSandboxPage) },
+  { path: '/sandbox/safaricom', element: w(SafaricomSandboxPage) },
+  { path: '/sandbox/mpesa', element: w(SafaricomSandboxPage) },
+  { path: '/sandbox/dangote', element: w(DangoteSandboxPage) },
+  { path: '/sandbox/afdb', element: w(AfdbSandboxPage) },
 
   // Pitch
   { path: '/pitch', element: w(PitchDeck) },
