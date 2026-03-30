@@ -121,6 +121,11 @@ const SafaricomSandboxPage = lazy(() => import('../pages/sandbox/SafaricomSandbo
 const DangoteSandboxPage = lazy(() => import('../pages/sandbox/DangoteSandboxPage'));
 const AfdbSandboxPage = lazy(() => import('../pages/sandbox/AfdbSandboxPage'));
 
+// Game-Changer Sandboxes
+const BinanceSandboxPage = lazy(() => import('../pages/sandbox/BinanceSandboxPage'));
+const RocketLawyerSandboxPage = lazy(() => import('../pages/sandbox/RocketLawyerSandboxPage'));
+const CanvaSandboxPage = lazy(() => import('../pages/sandbox/CanvaSandboxPage'));
+
 // Pitch
 const PitchDeck = lazy(() => import('../pages/pitch').then((m) => ({ default: m.PitchDeck })));
 
@@ -229,6 +234,12 @@ export const publicRoutes: RouteObject[] = [
   { path: '/sandbox/mpesa', element: w(SafaricomSandboxPage) },
   { path: '/sandbox/dangote', element: w(DangoteSandboxPage) },
   { path: '/sandbox/afdb', element: w(AfdbSandboxPage) },
+
+  // Game-Changer Sandboxes
+  { path: '/sandbox/binance', element: w(BinanceSandboxPage) },
+  { path: '/sandbox/rocket-lawyer', element: w(RocketLawyerSandboxPage) },
+  { path: '/sandbox/rocketlawyer', element: w(RocketLawyerSandboxPage) },
+  { path: '/sandbox/canva', element: w(CanvaSandboxPage) },
 
   // Pitch
   { path: '/pitch', element: w(PitchDeck) },
