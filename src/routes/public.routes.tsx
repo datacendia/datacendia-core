@@ -101,6 +101,7 @@ const NflSandboxPage = lazy(() => import('../pages/sandbox/NflSandboxPage'));
 const GrupoFigerSandboxPage = lazy(() => import('../pages/sandbox/GrupoFigerSandboxPage'));
 const BurnleySandboxPage = lazy(() => import('../pages/sandbox/BurnleySandboxPage'));
 const FpfPeruSandboxPage = lazy(() => import('../pages/sandbox/FpfPeruSandboxPage'));
+const ThomsonReutersSandboxPage = lazy(() => import('../pages/sandbox/ThomsonReutersSandboxPage'));
 
 // Pitch
 const PitchDeck = lazy(() => import('../pages/pitch').then((m) => ({ default: m.PitchDeck })));
@@ -182,6 +183,8 @@ export const publicRoutes: RouteObject[] = [
   { path: '/sandbox/burnley', element: w(BurnleySandboxPage) },
   { path: '/sandbox/fpf-peru', element: w(FpfPeruSandboxPage) },
   { path: '/sandbox/peru', element: w(FpfPeruSandboxPage) },
+  { path: '/sandbox/thomson-reuters', element: w(ThomsonReutersSandboxPage) },
+  { path: '/sandbox/tr', element: w(ThomsonReutersSandboxPage) },
 
   // Pitch
   { path: '/pitch', element: w(PitchDeck) },
