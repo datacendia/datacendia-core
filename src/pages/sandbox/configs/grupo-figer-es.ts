@@ -245,4 +245,239 @@ const S5: TemplateScenario = {
   phaseLabels: ['Evaluación Fiscal y AML', 'Defensa de Auditoría y Datos', 'Paquete y Sellado'],
 };
 
-export const ES_SCENARIOS: TemplateScenario[] = [S1, S2, S3, S4, S5];
+// =============================================================================
+// SCENARIO 6 — DERECHOS DE IMAGEN MULTI-JURISDICCIÓN
+// =============================================================================
+
+const S6: TemplateScenario = {
+  id: 'image-rights',
+  title: 'Derechos de Imagen Multi-Jurisdicción',
+  subtitle: 'Brasil PJ · España sociedad · UK ingreso personal · Arabia Saudita empleador · 4 regímenes fiscales',
+  banner: 'Un cliente de Figer juega en España pero tiene contratos de derechos de imagen en Brasil, el Reino Unido y Arabia Saudita. Cada jurisdicción trata los derechos de imagen de manera diferente. Una estructura incorrecta genera impuestos retroactivos y multas en las 4 jurisdicciones simultáneamente.',
+  risk: 'Alto',
+  scenarioNum: 'Imagen',
+  icon: 'eye',
+  color: 'text-violet-400',
+  agents: [A.financialAgent, A.legalAgent, A.dataProtection, A.fifaCompliance],
+  connectors: [
+    { name: 'Receita Federal do Brasil', status: 'connected', type: 'Autoridad Tributaria Brasileña', icon: 'landmark', detail: 'Empresa PJ de imagen — declaración anual en 60 días' },
+    { name: 'Agencia Tributaria (España)', status: 'connected', type: 'Autoridad Tributaria Española', icon: 'landmark', detail: 'IRPF imagen no residente — evaluación Ley Beckham' },
+    { name: 'HMRC (Reino Unido)', status: 'syncing', type: 'Autoridad Tributaria UK', icon: 'landmark', detail: 'Patrocinio de imagen de marca UK — evaluación de retención' },
+    { name: 'GAZT (Arabia Saudita)', status: 'ready', type: 'Autoridad Tributaria Saudí', icon: 'landmark', detail: 'Derechos de imagen como ingreso laboral — 0% impuesto personal' },
+  ],
+  script: [
+    { agentId: 'financial', phase: 'phase1', type: 'warning', delay: 800, content: 'ALERTA DE DERECHOS DE IMAGEN MULTI-JURISDICCIÓN. Cliente de Figer juega en LaLiga. Ingresos por imagen de 4 jurisdicciones: (1) BRASIL — PJ del jugador recibe R$3.2M/año de 2 patrocinadores. Tasa PJ ~11% vs personal 27.5%. Receita Federal desafía estructuras PJ sin "sustancia comercial." (2) ESPAÑA — Club paga 15% del salario como imagen a través de sociedad civil. La Ley Beckham permite 24% para no residentes — pero los ingresos de imagen pueden no calificar. (3) UK — £400K de patrocinio con marca británica. HMRC grava derechos de imagen de no residentes bajo Sección 966 ITA 2007. (4) ARABIA SAUDITA — R$1.8M de partidos de exhibición. 0% impuesto personal pero posible reclasificación como ingreso empresarial (20% Zakat). Exposición total si las estructuras fallan: €2.1M estimados en impuestos retroactivos.' },
+    { agentId: 'legal', phase: 'phase1', type: 'analysis', delay: 2500, content: 'Evaluación jurisdicción por jurisdicción. BRASIL: La PJ tiene 2 contratos de patrocinio y 1 empleado — cumple umbral mínimo de sustancia según decisiones recientes del CARF. Riesgo: MEDIO. ESPAÑA: La sociedad civil está siendo cuestionada por Agencia Tributaria cuando el jugador es socio único. Riesgo: ALTO. UK: Sección 966 ITA 2007 requiere retención. La marca UK paga bruto actualmente — sin retención. HMRC impondrá multas. Riesgo: CRÍTICO. ARABIA SAUDITA: Riesgo BAJO — raramente aplica a artistas extranjeros.' },
+    { agentId: 'data', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISENSO REGISTRADO. Las estructuras de imagen involucran datos financieros del jugador en 4 jurisdicciones — LGPD, GDPR, UK GDPR y PDPL saudí. Si cualquier autoridad solicita la estructura global (común en auditorías), Figer debe navegar 4 regímenes de protección de datos. El CRS de la OCDE comparte automáticamente información entre España y Brasil — las contradicciones serán detectadas en 12-18 meses. Figer debe garantizar que las 4 estructuras cuenten la misma historia.' },
+    { agentId: 'fifa', phase: 'phase2', type: 'flag', delay: 2000, content: 'ALERTA ELEVADA. El Artículo 22 del Reglamento de Agentes FIFA 2023 exige actuar en "el mejor interés del cliente." Si las estructuras de imagen generan impuestos retroactivos, el jugador puede reclamar negligencia de Figer. Además, todas las estructuras financieras deben documentarse para auditoría FIFA. La estructura de 4 jurisdicciones debe divulgarse completamente en la declaración anual de cumplimiento FIFA de Figer.' },
+    { agentId: 'financial', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Proponiendo Paquete de Cumplimiento de Imagen Datacendia: (1) UK URGENTE — Implementar retención Sección 966 inmediatamente. Divulgación voluntaria a HMRC (multas reducidas 10-30% vs 100%). (2) ESPAÑA — Verificar que la sociedad civil tiene carácter asociativo genuino. Si no, reestructurar. (3) BRASIL — Documentar sustancia comercial PJ. (4) SAUDITA — Mantener tratamiento actual. (5) Verificación de consistencia transfronteriza — Datacendia mapea las 4 estructuras asegurando coherencia ante intercambio automático CRS. (6) Declaración FIFA preparada. Todo sellado criptográficamente.' },
+    { agentId: 'legal', phase: 'phase3', type: 'resolution', delay: 2500, content: 'La divulgación voluntaria UK es la acción inmediata crítica. La reestructuración de la sociedad civil española debe ocurrir este año fiscal. La verificación de consistencia CRS es el elemento más valioso — la mayoría de agentes nunca verifican coherencia entre jurisdicciones. La divulgación FIFA protege la licencia de Figer. Disenso RETIRADO. Este paquete transforma asesoría fragmentada en cumplimiento global integrado.' },
+  ],
+  receiptTemplate: {
+    hash: 'SHA-256:a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8',
+    merkleRoot: 'b9c1d3e5f7a9b1c3d5e7f9a1b3c5d7e9f1a3b5c7d9e1f3a5b7c9d1e3f5a7b9c1',
+    merkleLabel: 'Árbol Merkle (Brasil PJ + España sociedad + UK retención + Saudita + Consistencia CRS + Divulgación FIFA)',
+    complianceLabel: 'Cumplimiento de Derechos de Imagen',
+    complianceValue: 'DIVULGACIÓN UK PRESENTADA — 4 JURISDICCIONES ALINEADAS',
+    complianceThreshold: 'Consistencia CRS verificada',
+    agents: ['Agente Financiero', 'Agente Legal', 'Agente de Datos', 'Agente FIFA'],
+    dissents: 1,
+    dissentResolved: true,
+    guaranteeTitle: 'Grupo Figer — Evidencia de Derechos de Imagen Multi-Jurisdicción Sellada',
+    guaranteeBody: 'Este paquete sella cumplimiento de derechos de imagen en 4 jurisdicciones: sustancia PJ brasileña, reestructuración sociedad española, divulgación voluntaria HMRC, documentación saudí, verificación CRS y divulgación FIFA.',
+    evidenceChain: 'Auditoría PJ Brasil → Revisión sociedad España → Divulgación voluntaria UK → Evaluación saudí → Consistencia CRS → Declaración FIFA → Sellado → ML-DSA-65',
+  },
+  idleTitle: 'Listo para Deliberar',
+  idleDesc: '4 agentes IA realizarán revisión de derechos de imagen multi-jurisdicción — alineando estructuras fiscales en Brasil, España, UK y Arabia Saudita.',
+  phaseLabels: ['Análisis Jurisdiccional', 'Protección de Datos y FIFA', 'Alineación Global y Sellado'],
+};
+
+// =============================================================================
+// SCENARIO 7 — LICENCIAMIENTO DE AGENTES FIFA
+// =============================================================================
+
+const S7: TemplateScenario = {
+  id: 'agent-licensing',
+  title: 'Licenciamiento de Agentes FIFA — Cumplimiento Multi-Federación',
+  subtitle: '11 jurisdicciones · Examen anual · Requisitos DPC · Conducta · Divulgación de honorarios',
+  banner: 'Figer opera en 11 jurisdicciones y debe mantener licencias con cada federación nacional. El Reglamento de Agentes FIFA 2023 introdujo exámenes anuales obligatorios, desarrollo profesional continuo y estándares de conducta. Una licencia vencida significa que Figer no puede actuar legalmente en esa jurisdicción.',
+  risk: 'Alto',
+  scenarioNum: 'Licencias',
+  icon: 'shield-check',
+  color: 'text-blue-400',
+  agents: [A.fifaCompliance, A.legalAgent, A.transferAgent, A.integrityAgent],
+  connectors: [
+    { name: 'Plataforma de Agentes FIFA', status: 'connected', type: 'Registro Global', icon: 'shield', detail: 'Figer registrado — examen anual en 45 días' },
+    { name: 'Registro CBF', status: 'connected', type: 'FA Brasileña', icon: 'database', detail: 'Licencia principal — 200+ mandatos activos' },
+    { name: 'Portal Multi-Federación', status: 'syncing', type: '10 Federaciones Adicionales', icon: 'globe', detail: 'FA, RFEF, DFB, FIGC, FFF, SAFF, UAEFA, QFA, USSF, JFA' },
+    { name: 'Sistema de Seguimiento DPC', status: 'connected', type: 'Desarrollo Profesional', icon: 'book-open', detail: '12 horas DPC anuales requeridas — 8 completadas' },
+  ],
+  script: [
+    { agentId: 'fifa', phase: 'phase1', type: 'warning', delay: 800, content: 'AUDITORÍA DE LICENCIAS FIFA. Verificación anual en 11 jurisdicciones: (1) Examen FIFA anual — en 45 días. Tasa de aprobación 2025: 71%. (2) CBF — Licencia vigente, renovación octubre 2026. (3) FA (Inglaterra) — Requisito DPC: 15 horas anuales, 8 completadas, faltan 7. (4) RFEF (España) — Nuevo requisito 2026: certificación AML anual. NO COMPLETADA. (5) SAFF (Arabia Saudita) — Renovación requiere seguro de responsabilidad profesional que cubra operaciones saudíes. Póliza actual EXCLUYE Medio Oriente. BRECHA CRÍTICA.' },
+    { agentId: 'legal', phase: 'phase1', type: 'analysis', delay: 2500, content: 'Evaluación de riesgo. La brecha de seguro SAFF es la más crítica — sin seguro válido, la licencia SAFF está técnicamente suspendida. Transacciones con clubes saudíes durante la exclusión son legalmente vulnerables. Arabia Saudita representa ~15% del volumen anual de transferencias de Figer (US$75M+). La certificación AML de RFEF es la segunda prioridad — España es el mayor mercado europeo. El déficit DPC de FA es manejable. El examen FIFA es riesgo de continuidad del negocio.' },
+    { agentId: 'transfer', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISENSO REGISTRADO. Hay 3 negociaciones activas con clubes saudíes — honorarios potenciales de £2.1M. Si divulgamos la brecha de seguro, estos acuerdos pueden colapsar. Pero si completamos y luego se descubre, los 3 honorarios están en riesgo más procedimientos disciplinarios FIFA. La opción comercialmente atractiva (completar primero, arreglar después) es la opción de catástrofe regulatoria. Debemos obtener cobertura de emergencia ANTES de cualquier actividad saudí adicional.' },
+    { agentId: 'integrity', phase: 'phase2', type: 'flag', delay: 2000, content: 'ALERTA ELEVADA. FIFA suspendió 14 agentes en 2025 por licencias inadecuadas — 5 por brechas de seguro, 3 por DPC vencido. En todos los casos, las transacciones durante el período fueron investigadas y los honorarios sujetos a decomiso. La posición de FIFA: operar sin licencia válida en CUALQUIER jurisdicción contamina TODAS las transacciones. La brecha SAFF debe tratarse como emergencia organizacional.' },
+    { agentId: 'fifa', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Proponiendo Paquete de Cumplimiento de Licencias Datacendia: (1) INMEDIATO — Extensión de emergencia a póliza de seguro para Medio Oriente. Objetivo: 48 horas. Sin actividad saudí hasta confirmar. (2) Certificación AML RFEF — programar en 14 días. (3) DPC FA — registrar 3 cursos (7 horas) en 30 días. (4) Preparación examen FIFA. (5) Calendario automatizado de renovación — cada federación, cada plazo, con alertas de 90 días. (6) Revisión retroactiva de transacciones saudíes durante brecha — preparar divulgación voluntaria a SAFF si es necesario. Todo sellado criptográficamente.' },
+    { agentId: 'transfer', phase: 'phase3', type: 'resolution', delay: 2500, content: 'El binder de seguro de emergencia elimina el riesgo inmediato. Las 3 negociaciones saudíes se reanudan con cobertura confirmada — pausa de 48 horas comercialmente manejable. El calendario automatizado es el mayor valor a largo plazo — previene recurrencia en las 11 jurisdicciones. La divulgación voluntaria SAFF demuestra detección proactiva. Disenso RETIRADO. Esto transforma una crisis de cumplimiento en mejora sistemática de gobernanza.' },
+  ],
+  receiptTemplate: {
+    hash: 'SHA-256:b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9',
+    merkleRoot: 'c1d3e5f7a9b1c3d5e7f9a1b3c5d7e9f1a3b5c7d9e1f3a5b7c9d1e3f5a7b9c1d3',
+    merkleLabel: 'Árbol Merkle (11 licencias + Seguro + DPC + Certificación AML + Examen)',
+    complianceLabel: 'Estado de Licencias',
+    complianceValue: 'SEGURO RESTAURADO — 11 LICENCIAS VERIFICADAS',
+    complianceThreshold: 'Reglamento de Agentes FIFA 2023 — todas las jurisdicciones',
+    agents: ['Agente FIFA', 'Agente Legal', 'Agente de Transferencias', 'Agente de Integridad'],
+    dissents: 1,
+    dissentResolved: true,
+    guaranteeTitle: 'Grupo Figer — Evidencia de Licenciamiento Multi-Federación Sellada',
+    guaranteeBody: 'Este paquete sella cumplimiento de licencias en 11 jurisdicciones: verificación de seguro, DPC, certificación AML, registro de examen y calendario automatizado.',
+    evidenceChain: 'Emergencia de seguro → Restauración SAFF → AML RFEF → DPC FA → Examen FIFA → Calendario → Revisión retroactiva → Sellado → ML-DSA-65',
+  },
+  idleTitle: 'Listo para Deliberar',
+  idleDesc: '4 agentes IA auditarán licencias en 11 jurisdicciones — verificando seguro, DPC, certificaciones y exámenes.',
+  phaseLabels: ['Auditoría y Detección de Brechas', 'Evaluación de Riesgo y Debate', 'Remediación y Sellado'],
+};
+
+// =============================================================================
+// SCENARIO 8 — SOLIDARIDAD Y COMPENSACIÓN POR FORMACIÓN
+// =============================================================================
+
+const S8: TemplateScenario = {
+  id: 'training-compensation',
+  title: 'Solidaridad y Compensación por Formación — Ruta de Escolinhas',
+  subtitle: 'FIFA RSTP Artículos 20-21 · 6 clubes formadores · Edad 12-23 · R$4.8M en reclamos',
+  banner: 'Un cliente de Figer se transfiere de un club de Série A a la Bundesliga por €18M. Bajo los Artículos 20-21 del RSTP FIFA, cada club que formó al jugador entre 12 y 23 años tiene derecho a compensación. El jugador pasó por 3 escolinhas brasileñas, 2 clubes de Série B y el club actual. Rastrear esta historia en el sistema fragmentado de fútbol juvenil brasileño es uno de los mayores desafíos de cumplimiento del fútbol mundial.',
+  risk: 'Alto',
+  scenarioNum: 'Formación',
+  icon: 'trending-up',
+  color: 'text-cyan-400',
+  agents: [A.transferAgent, A.financialAgent, A.legalAgent, A.fifaCompliance],
+  connectors: [
+    { name: 'Sistema BID CBF', status: 'connected', type: 'Registro de Jugadores', icon: 'database', detail: 'Historial: 6 clubes desde los 12 — registros BID fragmentados' },
+    { name: 'Portal FIFA TMS', status: 'connected', type: 'Sistema de Coincidencia de Transferencias', icon: 'shield', detail: 'Transferencia internacional €18M — mecanismo de solidaridad activado' },
+    { name: 'Sistema DFB', status: 'syncing', type: 'FA Alemana', icon: 'globe', detail: 'Registro pendiente — ventana de reclamos abierta' },
+    { name: 'Registro de Clubes Brasileños', status: 'connected', type: 'Escolinhas y Clubes Juveniles', icon: 'search', detail: '3 escolinhas — 1 disuelta, 1 fusionada, 1 activa' },
+  ],
+  script: [
+    { agentId: 'transfer', phase: 'phase1', type: 'warning', delay: 800, content: 'ALERTA DE SOLIDARIDAD Y COMPENSACIÓN POR FORMACIÓN. Transferencia internacional por €18M activa RSTP FIFA: (1) MECANISMO DE SOLIDARIDAD (Artículo 21) — 5% de €18M (€900K) distribuido a clubes formadores proporcionalmente por años de formación entre 12-23. Historial BID CBF: Edad 12-14: Escolinha Futebol Arte (São Paulo) — DISUELTA en 2022. Edad 14-16: Escolinha Craque do Futuro — FUSIONADA en 2023. Edad 16-18: EC Juventude (Série B) — activo. Edad 18-19: Guarani FC (Série B) — activo. Edad 19-23: Club actual Série A — activo. Las escolinhas disuelta y fusionada crean un problema documental — ¿quién recibe su parte de los €900K?' },
+    { agentId: 'financial', phase: 'phase1', type: 'analysis', delay: 2500, content: 'Cálculo de pagos de solidaridad. €900K total: Escolinha Futebol Arte (12-14, 2 años): Categoría IV, €54K (6%). Escolinha Craque do Futuro (14-16, 2 años): Categoría IV, €54K (6%). EC Juventude (16-18, 2 años): Categoría III, €72K (8%). Guarani FC (18-19, 1 año): Categoría III, €36K (4%). Club Série A actual (19-23, 4 años): Categoría I, €684K (76%). Problema: €54K para una entidad disuelta y €54K para una fusionada. Los registros BID de CBF no rastrean consistentemente entidades sucesoras de clubes juveniles.' },
+    { agentId: 'legal', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISENSO REGISTRADO. La escolinha disuelta crea un vacío legal. Bajo el Código Civil brasileño (Lei 10.406/02), los activos residuales van a una entidad con propósitos similares — pero las escolinhas raramente siguen procedimientos formales de disolución. CAS 2021/A/7892 estableció que el club comprador asume el riesgo de pagar a la entidad incorrecta. Figer debe obtener: (1) Registros de disolución de la Junta Comercial de São Paulo, (2) Registro CBF confirmando entidad sobreviviente de la fusión. Sin estos documentos, el club de la Bundesliga debe custodiar los €108K hasta confirmar sucesores.' },
+    { agentId: 'fifa', phase: 'phase2', type: 'flag', delay: 2000, content: 'ALERTA ELEVADA. El registro DFB no puede completarse hasta resolver obligaciones de solidaridad. La Circular FIFA 1709 requiere reconocimiento al registrar en TMS. Además, el club actual de Série A puede disputar la asignación — si reclaman formación desde los 18 (no 19), su parte aumenta. Los registros BID muestran registro a los 19 pero el club puede presentar evidencia de formación informal anterior.' },
+    { agentId: 'transfer', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Proponiendo Paquete de Resolución Datacendia: (1) Escolinha disuelta — buscar registros de Junta Comercial. Sin sucesor, los €54K se distribuyen proporcionalmente según Circular 1709. (2) Escolinha fusionada — consulta BID CBF para confirmar entidad sobreviviente. (3) Disputa de edad del club Série A — la fecha BID controla. (4) Custodia de €108K para permitir registro TMS. (5) Calendario de pagos de solidaridad para 6 clubes. Todo sellado criptográficamente.' },
+    { agentId: 'legal', phase: 'phase3', type: 'resolution', delay: 2500, content: 'La custodia permite que el registro TMS proceda protegiendo al club de doble pago. CAS ha validado custodias en disputas de solidaridad (CAS 2023/A/9456). La Junta Comercial resolverá en 10-15 días. La fecha BID controla la disputa de edad. Disenso RETIRADO. Este paquete resuelve un desafío únicamente brasileño.' },
+  ],
+  receiptTemplate: {
+    hash: 'SHA-256:c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0',
+    merkleRoot: 'd3e5f7a9b1c3d5e7f9a1b3c5d7e9f1a3b5c7d9e1f3a5b7c9d1e3f5a7b9c1d3e5',
+    merkleLabel: 'Árbol Merkle (6 clubes + Cálculo + Búsqueda club disuelto + Custodia + Verificación BID)',
+    complianceLabel: 'Estado de Solidaridad',
+    complianceValue: 'CUSTODIA ESTABLECIDA — REGISTRO TMS PROCEDIENDO',
+    complianceThreshold: 'FIFA RSTP Artículos 20-21 cumplidos',
+    agents: ['Agente de Transferencias', 'Agente Financiero', 'Agente Legal', 'Agente FIFA'],
+    dissents: 1,
+    dissentResolved: true,
+    guaranteeTitle: 'Grupo Figer — Evidencia de Solidaridad y Compensación Sellada',
+    guaranteeBody: 'Este paquete sella cumplimiento del mecanismo de solidaridad: historial de 6 clubes, cálculo proporcional, resolución de escolinhas, custodia y verificación BID CBF.',
+    evidenceChain: 'Rastreo BID → 6 clubes → Cálculo → Búsqueda club disuelto → Confirmación fusión → Custodia → Registro TMS → Sellado → ML-DSA-65',
+  },
+  idleTitle: 'Listo para Deliberar',
+  idleDesc: '4 agentes IA rastrearán el historial de formación del jugador — calculando pagos de solidaridad, resolviendo clubes disueltos y gestionando custodia.',
+  phaseLabels: ['Historial y Cálculo', 'Resolución de Clubes y Disputas', 'Custodia y Registro TMS'],
+};
+
+// =============================================================================
+// SCENARIO 9 — TOPE SALARIAL LALIGA
+// =============================================================================
+
+const S9: TemplateScenario = {
+  id: 'laliga-salary-cap',
+  title: 'Tope Salarial LaLiga — Evaluación de Viabilidad',
+  subtitle: 'LaLiga LCFP · Club al 95% del tope · Demanda de €8M · Plazo de registro',
+  banner: 'Figer negocia la transferencia de un internacional brasileño a LaLiga. El jugador demanda €8M/año bruto. La LCFP de LaLiga impone topes salariales estrictos — a diferencia de otras ligas. El club ya está al 95% de su tope. Si el acuerdo se estructura incorrectamente, LaLiga rechazará el registro.',
+  risk: 'Alto',
+  scenarioNum: 'LaLiga',
+  icon: 'trending-up',
+  color: 'text-amber-400',
+  agents: [A.financialAgent, A.transferAgent, A.legalAgent, A.fifaCompliance],
+  connectors: [
+    { name: 'Portal LCFP LaLiga', status: 'connected', type: 'Gestión de Tope Salarial', icon: 'banknote', detail: 'Club al 95% de €120M — €6M disponibles' },
+    { name: 'Sistema RFEF', status: 'connected', type: 'FA Española', icon: 'database', detail: 'Plazo de registro: 31 agosto 2026' },
+    { name: 'Sistema CBF', status: 'connected', type: 'Salida FA Brasileña', icon: 'globe', detail: 'ITC pendiente — procesamiento CBF 5-7 días' },
+    { name: 'Modelado de Contratos Figer', status: 'connected', type: 'Motor de Estructura Salarial', icon: 'trending-up', detail: 'Jugador demanda €8M bruto — €2M sobre disponible' },
+  ],
+  script: [
+    { agentId: 'financial', phase: 'phase1', type: 'warning', delay: 800, content: 'CRISIS DE TOPE SALARIAL LALIGA. Posición LCFP del club: Tope total €120M. Compromisos actuales €114M (95%). Margen disponible: €6M. Demanda del jugador: €8M bruto/año. DÉFICIT: €2M. La LCFP es un TOPE DURO — no una guía. Si el club excede su tope, LaLiga rechazará el registro. A diferencia de Premier League o Bundesliga, no hay mecanismo de "cumplir o explicar." Opciones: (1) Club vende o presta jugador para liberar espacio — ventana cierra en 14 días. (2) Jugador acepta €6M (reducción del 25%). (3) Estructuración creativa — imagen separada, bonificaciones variables.' },
+    { agentId: 'transfer', phase: 'phase1', type: 'analysis', delay: 2500, content: 'Análisis de estructura contractual. LCFP cuenta: (a) Salario fijo — completo contra tope, (b) Bonificaciones — valor "esperado" (50-70%), (c) Derechos de imagen — EXCLUIDOS si pagados por entidad separada y limitados al 15%, (d) Prima de fichaje — amortizada. Estructura propuesta: Fijo: €5M. Imagen: €1.5M por sociedad civil (excluido, dentro del 15%). Bonificaciones: €3M máximo, LCFP cuenta 60% = €1.8M. Valor total: €8.5M. Impacto LCFP: €6.8M. Aún €800K sobre margen. El club DEBE liberar €800K con una salida.' },
+    { agentId: 'legal', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISENSO REGISTRADO. La exclusión del 15% de imagen está siendo agresivamente cuestionada por LaLiga. En 2025, LaLiga desafió 12 estructuras de imagen. Si LaLiga reclasifica los €1.5M como salario, el impacto salta de €6.8M a €8.3M — catastróficamente sobre el tope. El jugador debe tener valor comercial demostrable. Además, la amortización de prima de fichaje asume contrato de 4 años — salida anticipada acelera el impacto.' },
+    { agentId: 'fifa', phase: 'phase2', type: 'flag', delay: 2000, content: 'ALERTA ELEVADA. El procesamiento ITC de CBF toma 5-7 días. El plazo de registro es 31 de agosto — 14 días. ITC tardío significa que el jugador no puede jugar hasta enero 2027. Además, el Reglamento de Agentes FIFA requiere divulgación del honorario de Figer para evaluación LCFP.' },
+    { agentId: 'financial', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Proponiendo Paquete de Viabilidad LaLiga Datacendia: (1) Estructura: €5M fijo + €1.5M imagen + €3M bonificaciones. LCFP: €6.8M. (2) Evidencia de imagen — valoración comercial del jugador. (3) Club libera Jugador Y (€900K) para espacio. (4) Expedición ITC CBF. (5) Honorario Figer pagado por club vendedor para minimizar impacto LCFP. (6) Prima: €2M amortizada en 4 años = €500K/año. Total LCFP: €7.3M. Con salida Jugador Y (€900K): neto €6.4M contra €6.9M disponible. VIABLE. Todo sellado.' },
+    { agentId: 'legal', phase: 'phase3', type: 'resolution', delay: 2500, content: 'La estructura funciona si: (a) Jugador Y sale antes del plazo, (b) evidencia de imagen soporta €1.5M, (c) ITC CBF llega antes del 28 de agosto. El modelado simultáneo de salida/llegada es crítico — LaLiga evalúa al momento del registro. Pago de honorario por club vendedor es práctica estándar. Disenso RETIRADO. Estructura viable — ajustada pero defendible.' },
+  ],
+  receiptTemplate: {
+    hash: 'SHA-256:d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1',
+    merkleRoot: 'e5f7a9b1c3d5e7f9a1b3c5d7e9f1a3b5c7d9e1f3a5b7c9d1e3f5a7b9c1d3e5f7',
+    merkleLabel: 'Árbol Merkle (Cálculo LCFP + Estructura + Valoración imagen + ITC + Modelado de espacio)',
+    complianceLabel: 'Estado LCFP LaLiga',
+    complianceValue: 'ESTRUCTURA VIABLE — €6.4M vs €6.9M',
+    complianceThreshold: 'Tope duro LCFP cumplido',
+    agents: ['Agente Financiero', 'Agente de Transferencias', 'Agente Legal', 'Agente FIFA'],
+    dissents: 1,
+    dissentResolved: true,
+    guaranteeTitle: 'Grupo Figer — Evidencia de Tope Salarial LaLiga Sellada',
+    guaranteeBody: 'Este paquete sella cumplimiento LCFP: modelado contractual, valoración de imagen, simulación de espacio, ITC CBF y estructura de honorarios.',
+    evidenceChain: 'Evaluación LCFP → Modelado → Valoración imagen → Salida → ITC CBF → Honorarios → Registro → Sellado → ML-DSA-65',
+  },
+  idleTitle: 'Listo para Deliberar',
+  idleDesc: '4 agentes IA evaluarán viabilidad de tope salarial LaLiga — modelando contratos, exclusiones de imagen y plazos de registro.',
+  phaseLabels: ['Análisis de Tope y Contrato', 'Imagen y Riesgo', 'Confirmación y Sellado'],
+};
+
+// =============================================================================
+// SCENARIO 10 — LEI PELÉ vs FIFA RSTP
+// =============================================================================
+
+const S10: TemplateScenario = {
+  id: 'lei-pele-rstp',
+  title: 'Lei Pelé vs FIFA RSTP — Disputa de Terminación Unilateral',
+  subtitle: 'Jugador invoca Lei Pelé · Club reclama RSTP · Batalla jurisdiccional CAS · €6M de compensación',
+  banner: 'Un cliente de Figer quiere dejar su club brasileño por una oferta europea. Bajo Lei Pelé, los jugadores pueden terminar contratos con compensación limitada. Bajo FIFA RSTP Artículo 17, la compensación es ilimitada. El club invoca RSTP; el jugador invoca Lei Pelé. Este conflicto jurisdiccional es el tema más litigado del derecho futbolístico brasileño.',
+  risk: 'Crítico',
+  scenarioNum: 'Lei Pelé',
+  icon: 'gavel',
+  color: 'text-rose-400',
+  agents: [A.legalAgent, A.casArbitration, A.transferAgent, A.financialAgent],
+  connectors: [
+    { name: 'Departamento Legal CBF', status: 'connected', type: 'FA Brasileña', icon: 'scale', detail: 'Contrato registrado — 3 años restantes de contrato de 5' },
+    { name: 'Tribunal Laboral (TRT)', status: 'syncing', type: 'Justiça do Trabalho', icon: 'gavel', detail: 'Lei Pelé Art. 28 — "cláusula penal"' },
+    { name: 'FIFA DRC', status: 'connected', type: 'Cámara de Resolución de Disputas', icon: 'shield', detail: 'Club presentó reclamo RSTP Art. 17 — €6M' },
+    { name: 'Registro CAS', status: 'ready', type: 'Tribunal Arbitral del Deporte', icon: 'gavel', detail: 'Jurisdicción de apelación — ¿CAS o tribunal laboral?' },
+  ],
+  script: [
+    { agentId: 'legal', phase: 'phase1', type: 'warning', delay: 800, content: 'CONFLICTO LEI PELÉ vs FIFA RSTP. Contrato de 5 años desde enero 2024. Ahora tiene 2 años y 3 meses — dentro del "período protegido" FIFA. El jugador quiere aceptar oferta de la Bundesliga. LEI PELÉ: Artículo 28 — la "cláusula penal" fija compensación: R$25M (≈€4.2M). El jugador puede terminar después del primer año pagando la cláusula. LEGAL bajo ley brasileña. FIFA RSTP: Artículo 17 — terminación durante período protegido con compensación basada en "especificidad del deporte" — puede exceder la cláusula. El club demanda €6M. ¿Qué jurisdicción prevalece — FIFA DRC o Tribunal Laboral brasileño?' },
+    { agentId: 'cas', phase: 'phase1', type: 'analysis', delay: 2500, content: 'ANÁLISIS JURISDICCIONAL CAS. El tema más litigado en fútbol sudamericano. CAS 2020/A/7156 — CAS decidió que RSTP aplica a transferencias internacionales incluso cuando el contrato doméstico se rige por ley brasileña. El reclamo de €6M es procedimentalmente válido. Sin embargo, CAS 2022/A/8234 introdujo matiz: donde la ley laboral brasileña provee protecciones específicas (cláusula penal), CAS debe considerar las "expectativas legítimas" del jugador. La posición emergente: la compensación RSTP Art. 17 no debe "exceder sustancialmente" la cláusula penal. Esto sugiere compensación más cerca de €4.2M que €6M — pero no es certero.' },
+    { agentId: 'transfer', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISENSO REGISTRADO. El club de la Bundesliga no firmará si hay disputa pendiente — serían corresponsables bajo RSTP Art. 17(2) como "club inductor." Invocar terminación unilateral Lei Pelé sin acuerdo del club alemán es un callejón sin salida. Figer debe negociar una resolución comercial — la vía legal destruye el acuerdo.' },
+    { agentId: 'financial', phase: 'phase2', type: 'flag', delay: 2000, content: 'ALERTA ELEVADA. Modelado financiero. Club brasileño: €6M (RSTP Art. 17). Figer/jugador: €4.2M (cláusula penal). CAS probable: €4.5-5.5M. Presupuesto del club alemán: €12M total. Si Figer negocia transferencia consensual a €5M: el club alemán ahorra €7M, el club brasileño obtiene más que la cláusula, el jugador evita 12-18 meses de disputa. Además, bajo Lei Pelé Art. 29, clubes formadores tienen derechos de solidaridad — el club brasileño puede tener obligaciones propias pendientes. Esto crea una palanca de contrademanda.' },
+    { agentId: 'legal', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Proponiendo Estrategia de Resolución Datacendia: (1) NO invocar terminación unilateral Lei Pelé — mata el acuerdo. (2) Negociar transferencia consensual usando cláusula penal como PISO y RSTP Art. 17 como TECHO. Objetivo: €5M. (3) Presentar tendencia CAS al club brasileño — €5M negociado es mejor que €4.5M después de 18 meses de litigio. (4) Usar contrademanda de solidaridad como palanca. (5) Estructurar como fee de transferencia (no compensación por terminación) — permite honorario estándar de agente. (6) Documentación sellada como seguro si la negociación falla. Todo con marca temporal criptográfica.' },
+    { agentId: 'cas', phase: 'phase3', type: 'resolution', delay: 2500, content: 'La estrategia de negociación comercial es correcta. CAS tarda 12-18 meses, cuesta €50-100K y crea incertidumbre. €5M consensual beneficia a todos: el club brasileño supera la cláusula penal, el club alemán está bajo presupuesto, el jugador evita disputa. La contrademanda de solidaridad es palanca genuina. El paquete Datacendia sirve como seguro. Disenso RETIRADO. Esto transforma una batalla jurisdiccional en un acuerdo comercial.' },
+  ],
+  receiptTemplate: {
+    hash: 'SHA-256:e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2',
+    merkleRoot: 'f7a9b1c3d5e7f9a1b3c5d7e9f1a3b5c7d9e1f3a5b7c9d1e3f5a7b9c1d3e5f7a9',
+    merkleLabel: 'Árbol Merkle (Lei Pelé + RSTP Art. 17 + Jurisprudencia CAS + Modelado + Contrademanda solidaridad)',
+    complianceLabel: 'Estado de Resolución de Disputas',
+    complianceValue: 'TRANSFERENCIA CONSENSUAL — €5M',
+    complianceThreshold: 'Lei Pelé + FIFA RSTP reconciliados',
+    agents: ['Agente Legal', 'Agente CAS', 'Agente de Transferencias', 'Agente Financiero'],
+    dissents: 1,
+    dissentResolved: true,
+    guaranteeTitle: 'Grupo Figer — Evidencia de Resolución Lei Pelé vs FIFA RSTP Sellada',
+    guaranteeBody: 'Este paquete sella evidencia de resolución: análisis Lei Pelé, evaluación RSTP Art. 17, tendencia CAS, modelado financiero, documentación de contrademanda de solidaridad y acuerdo de transferencia consensual.',
+    evidenceChain: 'Análisis Lei Pelé → RSTP Art. 17 → Precedentes CAS → Modelado → Contrademanda → Negociación → Transferencia → Sellado → ML-DSA-65',
+  },
+  idleTitle: 'Listo para Deliberar',
+  idleDesc: '4 agentes IA navegarán el conflicto Lei Pelé vs FIFA RSTP — modelando resultados CAS, estructurando negociación y sellando evidencia.',
+  phaseLabels: ['Análisis Jurisdiccional', 'Estrategia de Negociación', 'Resolución y Sellado'],
+};
+
+export const ES_SCENARIOS: TemplateScenario[] = [S1, S2, S3, S4, S5, S6, S7, S8, S9, S10];
