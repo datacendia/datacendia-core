@@ -1,0 +1,302 @@
+/**
+ * Universitario de Deportes Sandbox Config
+ *
+ * 5 fully scripted scenarios for Peru's most titled club.
+ * Access: /sandbox/universitario (Key: UDEP-26)
+ *
+ * @module pages/sandbox/configs/universitario
+ */
+
+// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
+
+import type { OrgSandboxConfig } from '../SandboxTemplate';
+import { ES_SCENARIOS } from './universitario-es';
+
+const config: OrgSandboxConfig = {
+  orgLabel: 'UNIVERSITARIO DE DEPORTES',
+  accessKey: 'UDEP-26',
+  sessionKey: 'universitario-sandbox-unlocked',
+
+  accent: 'amber',
+  accentColor: 'text-amber-400',
+  accentHover: 'from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600',
+  ringColor: 'focus:ring-amber-500/30',
+  borderColor: 'border-amber-500/30',
+  gradientFrom: 'from-amber-600/20',
+  gradientTo: 'to-amber-900/20',
+
+  footerNote: '100 regulatory scenarios mapped for Universitario de Deportes · FPF, CONMEBOL, FIFA, SUNAT, INDECOPI, INDECI, SUNAFIL',
+
+  i18n: {
+    footerNote: '100 escenarios regulatorios mapeados para Universitario de Deportes · FPF, CONMEBOL, FIFA, SUNAT, INDECOPI, INDECI, SUNAFIL',
+    labels: {
+      dataConnectors: 'Conectores de Datos',
+      activeCouncil: 'Consejo Activo',
+      deliberationTitle: 'Deliberación Multi-Agente',
+      readyToBegin: 'Listo para comenzar',
+      phase: 'Fase',
+      deliberationComplete: 'Deliberación Completa — Consenso Alcanzado',
+      runDeliberation: 'Iniciar Deliberación',
+      generateReceipt: 'Generar Recibo del Regulador',
+      generatingBundle: 'Generando Paquete de Evidencia Criptográfica...',
+      simulationNote: 'NOTA DE SIMULACIÓN:',
+      selectScenario: 'Seleccionar Escenario',
+      reset: 'Reiniciar',
+      confidential: 'CONFIDENCIAL',
+      executiveSandbox: 'SANDBOX EJECUTIVO',
+      connectorLive: 'ACTIVO',
+      connectorSync: 'SYNC',
+      connectorReady: 'LISTO',
+    },
+    scenarios: ES_SCENARIOS,
+  },
+
+  scenarios: [
+    // SCENARIO 1 — COPA LIBERTADORES PLAYER SALES
+    {
+      id: 'libertadores-transfers',
+      title: 'Copa Libertadores Player Sales — Evidence for CONMEBOL & FIFA TMS',
+      subtitle: 'Tricampeón 2023-25 · €14.70M squad value · European scouts · Transfer transparency for 80,000 socios',
+      banner: 'Simulating transfer governance for Peru\'s most valuable squad. Three consecutive Liga 1 titles have elevated La U\'s market value to €14.70M — highest in Peru. European clubs are bidding for two first-team players simultaneously. AI-driven transfer valuations must be auditable for CONMEBOL club licensing, FIFA TMS compliance, FPF regulations, and defensible to 80,000+ socios.',
+      risk: 'High',
+      scenarioNum: 'Transfer',
+      icon: 'arrow-right-left',
+      color: 'text-amber-400',
+      agents: [
+        { id: 'transfer-val', name: 'Transfer Valuation Agent', role: 'Market Analysis & Fair Value Assessment', icon: '📊', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'conmebol-lic', name: 'CONMEBOL Licensing Agent', role: 'Club Licensing & Competition Compliance', icon: '🏆', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'fifa-tms', name: 'FIFA TMS Agent', role: 'Transfer Matching System & RSTP Compliance', icon: '🌐', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+        { id: 'financial-sust', name: 'Financial Sustainability Agent', role: 'SUNAT Compliance & Revenue Impact', icon: '💰', color: 'text-cyan-400', borderColor: 'border-cyan-500/40', bgColor: 'bg-cyan-500/10' },
+      ],
+      connectors: [
+        { name: 'FIFA TMS', status: 'connected', type: 'Transfer Matching', icon: 'globe', detail: '2 active transfer negotiations — Belgium & Portugal clubs' },
+        { name: 'CONMEBOL Licensing', status: 'connected', type: 'Club Licensing', icon: 'check-circle', detail: 'Copa Libertadores 2026 group stage — squad value threshold monitored' },
+        { name: 'SUNAT Portal', status: 'connected', type: 'Tax Compliance', icon: 'database', detail: 'Impuesto a la Renta withholding calculations for international transfers' },
+        { name: 'Transfermarkt Data', status: 'syncing', type: 'Market Intelligence', icon: 'bar-chart', detail: 'Real-time squad valuation: €14.70M — highest in Peru' },
+      ],
+      script: [
+        { agentId: 'transfer-val', phase: 'phase1', type: 'warning', delay: 800, content: 'TRANSFER GOVERNANCE ALERT — SIMULTANEOUS BIDS. Two European clubs have submitted formal offers: (1) Belgian Pro League: €2.8M for midfielder (Transfermarkt €1.5M, 86% premium). (2) Portuguese Primeira Liga: €1.9M for right-back (Transfermarkt €1.2M, 58% premium). Combined: €4.7M — 32% of La U\'s total squad value. As tricampeón, losing two starters risks Copa Libertadores 2026. However, premiums represent significant value for a socios-owned club with SUNAT obligations. Key question: can La U sell both and remain competitive, or must one be blocked on sporting grounds?' },
+        { agentId: 'conmebol-lic', phase: 'phase1', type: 'analysis', delay: 2500, content: 'CONMEBOL Club Licensing analysis: (1) Squad: 28 registered, losing 2 requires replacements within window (max 30). (2) Foreign quota: 7 of 8 max — both departing are Peruvian, no impact. (3) Financial indicators: €4.7M income strengthens position — wage payments current (12 months), overdue payables improve. (4) Competition impact: selling before Copa draw (March) allows pre-season integration; after draw is riskier. (5) From licensing perspective, both sales permissible — financial position improves. But sporting impact must be independently assessed.' },
+        { agentId: 'financial-sust', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT LOGGED — SUNAT IMPLICATIONS. Combined €4.7M (~PEN 18.5M). SUNAT Impuesto a la Renta: 29.5% on net transfer profit. Academy-developed players = zero acquisition cost = full amount taxable. SUNAT liability: ~€1.39M. La U\'s historical tax debt means large income triggers enhanced audit. Agent fees: both intermediaries claim 8% — above FIFA FFAR selling club cap (3-6%). Above-cap fees risk FIFA sanctions AND SUNAT deductibility challenge. My dissent: accepting BOTH simultaneously creates concentrated taxable event. Recommend staggering: sell one now, one mid-year window, spreading tax impact across two fiscal periods.' },
+        { agentId: 'fifa-tms', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — FIFA TMS COMPLIANCE. Both transfers via TMS: (1) ITCs — FPF must issue, 5-10 business days. (2) Training compensation: Player A developed from age 14 — solidarity mechanism entitlements must be registered. (3) TPO: neither player has third-party ownership — VERIFIED. (4) Agent check: Agent 1 is FIFA-licensed (compliant). Agent 2\'s licence expired 3 months ago — HARD-STOP. Cannot be party to transaction until renewed. CRITICAL: Player B\'s Portuguese deal cannot proceed with unlicensed agent.' },
+        { agentId: 'transfer-val', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Proposing Transfer Governance Protocol: (1) AGENT HARD-STOP: Player B paused until Agent 2 renews or is replaced. Evidence sealed. (2) STAGGERED SALES: Player A (Belgium) proceeds now — €2.8M. Player B deferred to mid-year — spreading SUNAT impact. (3) SUNAT ALLOCATION: 40% of Player A proceeds to historical debt reduction. (4) REPLACEMENT: €1.2M ring-fenced for Copa Libertadores reinforcement. (5) SOLIDARITY: Training compensation entitlements registered in TMS before completion. (6) SOCIOS TRANSPARENCY: Full rationale published — sporting merit, financial benefit, SUNAT allocation, Copa mitigation. 80,000 owners deserve evidence, not promises.' },
+        { agentId: 'financial-sust', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. Staggered structure addresses SUNAT concentration risk. Agent hard-stop provides natural stagger. For CONMEBOL: financial position strengthened. For socios: the Regulator\'s Receipt provides cryptographic proof that every transfer decision was deliberated with sporting, financial, regulatory, and governance considerations. La U\'s tricampeón legacy is protected by governance, not gambled for cash.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:ud10123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'ud20123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (Transfer valuations + FIFA TMS + CONMEBOL licensing + SUNAT allocation + Agent verification)',
+        complianceLabel: 'Transfer Governance',
+        complianceValue: 'AGENT HARD-STOP ACTIVE',
+        complianceThreshold: 'FIFA FFAR — unlicensed agent blocked',
+        agents: ['Transfer Valuation Agent', 'CONMEBOL Licensing Agent', 'FIFA TMS Agent', 'Financial Sustainability Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'Universitario — Copa Libertadores Transfer Governance',
+        guaranteeBody: 'This cryptographic bundle seals the complete transfer deliberation: dual European bids (€4.7M combined), staggered sale structure, agent licence hard-stop, CONMEBOL licensing compliance, FIFA TMS solidarity registration, and socios transparency.',
+        evidenceChain: 'European bids → Market valuation → CONMEBOL check → SUNAT modelling → Agent verification → Hard-stop → Stagger proposal → Socios transparency → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will govern simultaneous European transfer bids — balancing Copa Libertadores competitiveness, SUNAT obligations, FIFA agent compliance, and transparency to 80,000 socios.',
+      phaseLabels: ['Transfer Analysis & CONMEBOL Impact', 'SUNAT & Agent Compliance', 'Staggered Sale Protocol'],
+    },
+
+    // SCENARIO 2 — SUNAT TAX DEBT GOVERNANCE
+    {
+      id: 'sunat-debt',
+      title: 'SUNAT Tax Debt — Financial Fair Play Under Fiscal Pressure',
+      subtitle: 'Historical tax obligations · CONMEBOL licensing risk · Payment schedules · Amnesty programmes',
+      banner: 'Simulating financial governance for Universitario\'s structural SUNAT challenge. Every financial decision must document its tax compliance posture for SUNAT audits and CONMEBOL Club Licensing financial requirements.',
+      risk: 'Critical',
+      scenarioNum: 'SUNAT',
+      icon: 'landmark',
+      color: 'text-red-400',
+      agents: [
+        { id: 'sunat-compliance', name: 'SUNAT Compliance Agent', role: 'Tax Obligation Tracking & Audit Defence', icon: '🏛️', color: 'text-red-400', borderColor: 'border-red-500/40', bgColor: 'bg-red-500/10' },
+        { id: 'conmebol-fin', name: 'CONMEBOL Financial Agent', role: 'Club Licensing Financial Indicators', icon: '🏆', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'legal-tax', name: 'Legal Agent', role: 'Código Tributario & Amnesty Strategy', icon: '⚖️', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'financial-ops', name: 'Financial Operations Agent', role: 'Cash Flow & Payment Schedule Management', icon: '📊', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+      ],
+      connectors: [
+        { name: 'SUNAT Portal', status: 'connected', type: 'Tax Authority', icon: 'landmark', detail: 'Active tax debt: PEN 8.2M — payment schedule in force' },
+        { name: 'CONMEBOL Licensing', status: 'connected', type: 'Financial Review', icon: 'check-circle', detail: 'Overdue payables indicator: AMBER — debt reduction required' },
+        { name: 'Club Financial System', status: 'connected', type: 'Cash Flow', icon: 'database', detail: 'Monthly cash flow: PEN 3.1M revenue vs PEN 2.8M obligations' },
+        { name: 'Amnesty Programme', status: 'syncing', type: 'Restructuring', icon: 'file-text', detail: 'SUNAT amnesty Decreto Legislativo — application window open' },
+      ],
+      script: [
+        { agentId: 'sunat-compliance', phase: 'phase1', type: 'warning', delay: 800, content: 'SUNAT COMPLIANCE ALERT. Current position: (1) Historical debt: PEN 8.2M — unpaid Impuesto a la Renta and EsSalud contributions. (2) Active fraccionamiento: PEN 180K/month x 48 months. 14 months paid, 34 remaining. (3) Copa Libertadores prize money (~$400K) creates new taxable income. Transfer income adds further exposure. (4) Clubs with historical debt and large income events are flagged for enhanced SUNAT audit. (5) AFP/ONP: 3 staff with delayed contributions — PEN 12K. Must be regularised to avoid SUNAFIL intervention.' },
+        { agentId: 'conmebol-fin', phase: 'phase1', type: 'analysis', delay: 2500, content: 'CONMEBOL financial indicators: (1) OVERDUE PAYABLES: active fraccionamiento satisfies CONMEBOL IF payments remain current. Missing ONE payment changes AMBER to RED — triggering Copa eligibility review. (2) WAGE PAYMENT: 12 months current — compliant. (3) FINANCIAL STATEMENTS: SUNAT debt appears as contingent liability — auditors must confirm fraccionamiento active. (4) Situation is manageable but fragile — one missed payment, one audit dispute, or large unplanned tax event tips indicator to RED. Copa participation depends on maintaining this exact posture for 34 months.' },
+        { agentId: 'legal-tax', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT — AMNESTY OPPORTUNITY. Decreto Legislativo amnesty: waiver of 90% of interest/penalties if principal paid within 90 days. La U\'s PEN 8.2M includes ~PEN 3.1M interest/penalties. Under amnesty: PEN 5.41M total (saving PEN 2.79M). However: requires lump-sum in 90 days. Monthly surplus is only PEN 300K — cannot self-fund. Needs transfer income or bridge financing. Current fraccionamiento (PEN 180K x 34 = PEN 6.12M) costs MORE but spreads over 34 months. My dissent: optimal path depends on transfer timing. Must MODEL both paths before committing.' },
+        { agentId: 'financial-ops', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — CASH FLOW MODELS. PATH A (fraccionamiento): PEN 6.12M over 34 months. Predictable, no financing needed, CONMEBOL stays AMBER. PATH B (amnesty): PEN 5.41M lump sum. If Player A transfer (€2.8M = ~PEN 11M) completes within 60 days: allocate PEN 5.41M to amnesty, PEN 5.59M to operations. Saving vs A: PEN 710K. CONMEBOL moves AMBER→GREEN. RISK: Path B depends entirely on transfer timing. Failed amnesty damages SUNAT relationship. AFP gap (PEN 12K) must resolve immediately — SUNAFIL violation.' },
+        { agentId: 'sunat-compliance', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Proposing SUNAT Governance Protocol: (1) IMMEDIATE: AFP/ONP gap resolved this week, sealed for SUNAFIL. (2) CONDITIONAL AMNESTY: Prepare application now (costs nothing). If transfer completes in 60 days: EXECUTE amnesty. If delayed: CONTINUE fraccionamiento. Decision point sealed with timestamp. (3) CONMEBOL: monthly compliance package — fraccionamiento current, AFP resolved, indicators tracked. (4) AUDIT DEFENCE: every financial decision produces tax compliance memo proactively. (5) SOCIOS: quarterly SUNAT report — debt progress, payment adherence, amnesty status.' },
+        { agentId: 'legal-tax', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. Conditional path preserves both options. Preparing amnesty costs nothing but provides PEN 710K optionality. Sealed decision point means choice is made on evidence, not pressure. Moving AMBER→GREEN would be the strongest Copa Libertadores licensing signal. For socios: 80,000 owners see SUNAT strategy governed by data, not hope. Receipt exports to SUNAT, CONMEBOL, SUNAFIL, and socios simultaneously.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:ud30123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'ud40123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (SUNAT debt + Fraccionamiento + Amnesty modelling + AFP/ONP + CONMEBOL indicators)',
+        complianceLabel: 'SUNAT Compliance',
+        complianceValue: 'CONDITIONAL AMNESTY PREPARED',
+        complianceThreshold: 'Fraccionamiento current — amnesty conditional on transfer',
+        agents: ['SUNAT Compliance Agent', 'CONMEBOL Financial Agent', 'Legal Agent', 'Financial Operations Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'Universitario — SUNAT Tax Governance',
+        guaranteeBody: 'Bundle seals: PEN 8.2M debt management, fraccionamiento compliance (14/48), conditional amnesty (PEN 710K saving), AFP/ONP resolution, CONMEBOL indicators, socios transparency.',
+        evidenceChain: 'SUNAT audit → Fraccionamiento → Amnesty model → Transfer timing → AFP resolution → CONMEBOL → Socios report → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will govern SUNAT tax strategy — balancing historical debt, amnesty opportunity, Copa Libertadores requirements, and socios transparency.',
+      phaseLabels: ['Tax Position & CONMEBOL Impact', 'Amnesty vs Fraccionamiento', 'Conditional Path & Transparency'],
+    },
+
+    // SCENARIO 3 — ESTADIO MONUMENTAL SAFETY
+    {
+      id: 'monumental-safety',
+      title: 'Estadio Monumental — South America\'s Largest Stadium Governance',
+      subtitle: '80,093 capacity · Copa Libertadores nights · INDECI compliance · Emergency protocols',
+      banner: 'Simulating venue governance at South America\'s largest stadium. Copa Libertadores group stage requires safety planning, crowd control, medical protocols, and CONMEBOL venue certification for 80,093 capacity.',
+      risk: 'High',
+      scenarioNum: 'Stadium',
+      icon: 'building',
+      color: 'text-blue-400',
+      agents: [
+        { id: 'venue-gov', name: 'Venue Governance Agent', role: 'CONMEBOL Certification & Capacity Management', icon: '🏟️', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'safety-indeci', name: 'INDECI Safety Agent', role: 'Civil Defence & Emergency Protocols', icon: '🛡️', color: 'text-red-400', borderColor: 'border-red-500/40', bgColor: 'bg-red-500/10' },
+        { id: 'medical-stadium', name: 'Medical Response Agent', role: 'Emergency Medical Services & Crowd Medicine', icon: '🏥', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+        { id: 'security-ops', name: 'Security Operations Agent', role: 'Crowd Control & Public Order', icon: '🔒', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+      ],
+      connectors: [
+        { name: 'INDECI Portal', status: 'connected', type: 'Civil Defence', icon: 'shield', detail: 'Ley 29664 compliance — annual certification due in 30 days' },
+        { name: 'CONMEBOL Venue System', status: 'connected', type: 'Venue Certification', icon: 'check-circle', detail: 'Copa Libertadores venue inspection scheduled — Week 3' },
+        { name: 'Lima Municipality', status: 'connected', type: 'Municipal Permits', icon: 'landmark', detail: 'Event permit for 80,093 capacity — Ate district approval' },
+        { name: 'Emergency Services', status: 'syncing', type: 'Medical & Fire', icon: 'heart', detail: '12 ambulance positions + fire brigade coordination' },
+      ],
+      script: [
+        { agentId: 'venue-gov', phase: 'phase1', type: 'warning', delay: 800, content: 'VENUE GOVERNANCE — COPA LIBERTADORES CERTIFICATION. Monumental (80,093) must pass CONMEBOL inspection: (1) Seating: 76,000 compliant, 4,093 in Sector Sur need numbering. (2) Floodlighting: 1,380 lux NW corner — below 1,400 minimum. (3) Media: 180 of 200 required positions. (4) VAR room: compliant but AC unit is 8 years old. (5) Pitch: passed FPF but CONMEBOL standards higher. All 5 items must resolve in 3 weeks.' },
+        { agentId: 'safety-indeci', phase: 'phase1', type: 'analysis', delay: 2500, content: 'INDECI assessment for 80,093: (1) Evacuation: current 12 min via 48 gates — INDECI requires 8 min. Sector Norte gates obstructed. (2) Fire: 312 of 340 extinguishers. Deficit 28. (3) Emergency lighting: Sector Este generators — 2 failed startup test. (4) Certification expires in 30 days — lapse means no municipal permit means no Copa match. (5) Last emergency drill: 14 months ago — INDECI requires every 12 months. 2 months overdue.' },
+        { agentId: 'security-ops', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT — SECURITY DEFICIT. Copa Libertadores requires 1:250 = 321 minimum officers. Contracted (SUCAMEC-licensed): 280. CONMEBOL delegate requires dedicated perimeters absorbing 60 officers — leaves 220 for general (1:364, below minimum). Visiting fan segregation needs 30 more. My dissent: 280 is INSUFFICIENT. Need minimum 380. Current contractor cannot scale in 3 weeks.' },
+        { agentId: 'medical-stadium', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — MEDICAL CAPACITY. (1) Pitch-side: COMPLIANT. (2) Spectator medical: 6 of 8 required points — need 2 temporary (Sector Sur, Norte). (3) Crowd crush: Monumental has had pressure incidents at Noche Crema — CONMEBOL requires density monitoring plan (NOT in place). (4) Hospital: nearest Level III 8km away — CONMEBOL recommends cardiac transport pre-positioned. (5) Heat: Feb-March matches can reach 30°C — water distribution plan for 80,093 required.' },
+        { agentId: 'venue-gov', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Monumental Governance Protocol: (1) WEEK 1: Clear obstructions → 8 min evacuation. Order extinguishers. Schedule drill. (2) WEEK 2: Emergency drill with INDECI observers. Deploy 2 medical points. Install crowd density monitoring. (3) SECURITY: Contract second provider for 100 officers. Total 380. PNP coordination documented. (4) WEEK 3: Seat numbering, floodlighting, media positions, VAR AC, pitch test — all complete. (5) INDECI submission with sealed evidence. CONMEBOL delegate receives complete venue bundle.' },
+        { agentId: 'security-ops', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. Second contractor resolves deficit — 380 officers exceeds minimum by 18%. PNP agreement documented. Every task has owner, deadline, and sealed evidence. For CONMEBOL: the most comprehensive inspection package any Peruvian club has produced. 80,093 spectators deserve governance matching the venue\'s scale.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:ud50123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'ud60123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (INDECI + CONMEBOL venue + Security + Medical + Evacuation + Drill)',
+        complianceLabel: 'Venue Safety',
+        complianceValue: '5 GAPS — 3-WEEK RESOLUTION',
+        complianceThreshold: 'CONMEBOL inspection Week 3 · INDECI renewal 30 days',
+        agents: ['Venue Governance Agent', 'INDECI Safety Agent', 'Medical Response Agent', 'Security Operations Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'Estadio Monumental — Copa Libertadores Venue Governance',
+        guaranteeBody: 'Seals: 80,093-capacity safety resolution, INDECI certification renewal, CONMEBOL venue preparation, security scaling to 380, crowd density monitoring.',
+        evidenceChain: 'Venue audit → 5 gaps → INDECI drill (Wk2) → Security scaling → Medical → CONMEBOL inspection (Wk3) → INDECI cert → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will govern safety at South America\'s largest stadium — resolving INDECI gaps, scaling security, and producing comprehensive venue evidence.',
+      phaseLabels: ['Venue Audit & Safety Gaps', 'Security & Medical Capacity', 'Resolution & Certification'],
+    },
+
+    // SCENARIO 4 — YOUTH ACADEMY
+    {
+      id: 'youth-academy',
+      title: 'Youth Academy — Código de los Niños y Adolescentes Compliance',
+      subtitle: 'National team pipeline · FIFA Article 19 · Education requirements · Safeguarding',
+      banner: 'Simulating youth development governance for La U\'s academy. AI governs CNA compliance, FIFA Article 19 for international recruits, education requirements, and safeguarding documentation.',
+      risk: 'High',
+      scenarioNum: 'Youth',
+      icon: 'users',
+      color: 'text-emerald-400',
+      agents: [
+        { id: 'youth-safeguard', name: 'Youth Safeguarding Agent', role: 'CNA Compliance & Child Protection', icon: '👦', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+        { id: 'education-track', name: 'Education Agent', role: 'Ley General de Educación & School Verification', icon: '📚', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'fifa-youth', name: 'FIFA Article 19 Agent', role: 'International Minor Recruitment Hard-Stop', icon: '🌐', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'welfare-monitor', name: 'Welfare Monitoring Agent', role: 'Physical & Mental Health Oversight', icon: '💚', color: 'text-cyan-400', borderColor: 'border-cyan-500/40', bgColor: 'bg-cyan-500/10' },
+      ],
+      connectors: [
+        { name: 'FPF Youth Registry', status: 'connected', type: 'Player Registration', icon: 'database', detail: '42 academy players aged 12-18 — registration compliance tracked' },
+        { name: 'MINEDU Portal', status: 'connected', type: 'Education Verification', icon: 'book-open', detail: 'School enrollment verification for all 42 minors' },
+        { name: 'FIFA TMS (Minors)', status: 'connected', type: 'Article 19', icon: 'globe', detail: '2 international youth enquiries pending — hard-stop active' },
+        { name: 'MIMP Coordination', status: 'syncing', type: 'Child Protection', icon: 'shield', detail: 'Ministerio de la Mujer — safeguarding protocol registered' },
+      ],
+      script: [
+        { agentId: 'youth-safeguard', phase: 'phase1', type: 'warning', delay: 800, content: 'YOUTH SAFEGUARDING AUDIT — 42 minors: (1) Parental consent: 40/42 verified. 2 players (Cusco, ages 13-14) have "uncle" consent — legally insufficient under CNA Ley 27337. (2) Education: 39/42 have MINEDU enrollment. 3 show attendance below 60% (training conflicts). (3) Medical: all 42 have annual certificates. 4 ages 12-13 lack dental exams. (4) Youth residence: 8 provincial players — no independent welfare inspection in 18 months (CNA best practice: annual).' },
+        { agentId: 'education-track', phase: 'phase1', type: 'analysis', delay: 2500, content: 'EDUCATION ANALYSIS. 3 low-attendance players: Player X (15): 52%, afternoon training overlaps Tues/Thurs. Player Y (16): 58%, FPF U-17 call-ups counted as absences. Player Z (14): 47% — training overlap PLUS family economic pressure. Under Ley 28044 and CNA Art. 14: education is a fundamental right superseding sporting commitments. If academy schedule prevents attendance, the schedule must change — not the school.' },
+        { agentId: 'fifa-youth', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT — FIFA ARTICLE 19. Two international enquiries: (1) Argentine club for 16-year-old trial. Art. 19 exceptions: parents relocating (no), EU/EEA (no), 50km border (Lima-Buenos Aires 3,500km — no). HARD-STOP. (2) Colombian club for 17-year-old loan. Same analysis — no exceptions apply. HARD-STOP. My dissent: academy director has been communicating "informally" with both clubs. Any arrangement resulting in a minor crossing borders for football violates Art. 19 regardless of formality. Communications must be documented and CEASED.' },
+        { agentId: 'welfare-monitor', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — IMMEDIATE WELFARE. (1) Player Z (14, 47%): family economic situation requires intervention. La U cannot benefit from a minor\'s development while fundamental rights are compromised. Options: scholarship covering education + family support, or release until education stabilises. (2) Youth residence: DEMUNA inspection overdue 6 months — undocumented conditions = CNA liability. (3) "Uncle" consent players: if living away from parents without legal guardianship, may be CNA violation. (4) No psychological welfare programme documented for 12-13 year olds.' },
+        { agentId: 'youth-safeguard', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Youth Governance Protocol: (1) IMMEDIATE: "Uncle" consent players suspended until legal guardian consent obtained. Player Z — scholarship + family assessment + schedule modification. DEMUNA inspection requested within 5 days. (2) EDUCATION: Zero school-hour conflicts. FPF call-ups coordinated with MINEDU as excused. Below 70% triggers suspension. (3) ARTICLE 19: Both enquiries formally BLOCKED. Director briefed — all foreign club communications pre-approved. (4) WELFARE: Annual psychological assessments. Youth residence inspected annually. Provincial players — family communication schedule. (5) All actions sealed for FPF, MIMP, MINEDU, FIFA.' },
+        { agentId: 'fifa-youth', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. Article 19 hard-stops confirmed in writing. Informal communications addressed. La U\'s academy produces national team talent — but production must never cost children\'s rights. CNA, Ley de Educación, and Art. 19 exist because children in football are vulnerable. 42 children in La U\'s care deserve the same governance rigour as 80,093 Monumental spectators.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:ud70123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'ud80123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (CNA + Education + FIFA Art. 19 + Welfare + DEMUNA)',
+        complianceLabel: 'Youth Safeguarding',
+        complianceValue: '2 ARTICLE 19 HARD-STOPS',
+        complianceThreshold: 'CNA Ley 27337 + FIFA RSTP Art. 19',
+        agents: ['Youth Safeguarding Agent', 'Education Agent', 'FIFA Article 19 Agent', 'Welfare Monitoring Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'Universitario — Youth Academy Safeguarding',
+        guaranteeBody: 'Seals: 42-minor audit, 2 consent deficiencies, 3 education gaps, 2 Article 19 hard-stops, welfare intervention, DEMUNA inspection.',
+        evidenceChain: 'Academy audit → Consent check → Education → Art. 19 enquiries → Hard-stops → Welfare → Player Z intervention → DEMUNA → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will audit La U\'s youth academy — enforcing CNA compliance, blocking Article 19 violations, and ensuring 42 children receive proper protection.',
+      phaseLabels: ['Academy Audit & Gaps', 'Article 19 & Welfare', 'Youth Governance Protocol'],
+    },
+
+    // SCENARIO 5 — LA NOCHE CREMA COMMERCIAL
+    {
+      id: 'noche-crema',
+      title: 'La Noche Crema — Commercial Event Governance',
+      subtitle: '80,000+ attendance · Dynamic pricing · INDECOPI · Gambling advertising · Socios transparency',
+      banner: 'Simulating commercial governance for Peru\'s biggest pre-season event. AI-driven ticket pricing, sponsorship activation, and broadcast terms must demonstrate fair practice to INDECOPI, MINCETUR, and 80,000 socios.',
+      risk: 'Medium',
+      scenarioNum: 'Commercial',
+      icon: 'ticket',
+      color: 'text-purple-400',
+      agents: [
+        { id: 'commercial-gov', name: 'Commercial Governance Agent', role: 'Pricing Strategy & Fair Trading', icon: '🎫', color: 'text-purple-400', borderColor: 'border-purple-500/40', bgColor: 'bg-purple-500/10' },
+        { id: 'indecopi-agent', name: 'INDECOPI Agent', role: 'Competition Law & Consumer Protection', icon: '⚖️', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'sponsor-brand', name: 'Sponsorship Agent', role: 'Brand Safety & Gambling Advertising', icon: '📢', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'socios-gov', name: 'Socios Governance Agent', role: 'Member Transparency & Accountability', icon: '🏛️', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+      ],
+      connectors: [
+        { name: 'Ticketing Platform', status: 'connected', type: 'Sales Data', icon: 'ticket', detail: '65,000 sold — 15,093 remaining. Dynamic pricing active.' },
+        { name: 'INDECOPI Registry', status: 'connected', type: 'Fair Trading', icon: 'scale', detail: '2 prior pricing complaints (resolved)' },
+        { name: 'MINCETUR Portal', status: 'connected', type: 'Gambling Advertising', icon: 'shield', detail: 'Betting sponsor compliance check required' },
+        { name: 'Socios Portal', status: 'syncing', type: 'Members', icon: 'users', detail: '80,000+ socios — pricing transparency pending' },
+      ],
+      script: [
+        { agentId: 'commercial-gov', phase: 'phase1', type: 'warning', delay: 800, content: 'NOCHE CREMA 2026 COMMERCIAL ALERT. (1) 65,000 of 80,093 sold. Dynamic pricing on remaining: PEN 80-250 (original PEN 35-120, up to 108% increase). (2) Socios 20% discount: 35,000 purchased. (3) 14 sponsors — lead is betting company (Apuesta Total) at family event with minors. (4) L1 Max exclusive broadcast — PEN 800K minimum. Staff livestream last year triggered legal threat. (5) Revenue projection: PEN 4.2M — most important non-match event.' },
+        { agentId: 'indecopi-agent', phase: 'phase1', type: 'analysis', delay: 2500, content: 'INDECOPI analysis: Ley 29571 allows dynamic pricing IF: (a) disclosed that prices change, (b) no misleading "starting price" advertising, (c) consistent within categories. La U\'s website shows minimal "prices subject to change" — below best practice. 2 prior complaints noted. 108% increase is legal but reputational risk. Socios resale creating grey market — if detected, INDECOPI could investigate secondary market practices.' },
+        { agentId: 'sponsor-brand', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT — GAMBLING ADVERTISING. Apuesta Total has: perimeter LED, jersey logo, sector naming ("Sector Apuesta Total Norte"), concourse booth with "free bet" app download incentives. MINCETUR DS 006-2023: cannot target minors, must include responsible gambling messaging. Concourse booth offering free bets at family event = promotional targeting issue. Sector naming associates gambling with stadium experience. My dissent: booth must relocate to age-verified zone (18+). Free bet promos must not be visible from general areas.' },
+        { agentId: 'socios-gov', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — SOCIOS GOVERNANCE. (1) Revenue allocation: PEN 4.2M projected but no allocation plan published. (2) Social media: socios complaining about 108% increases — "We OWN this club and we\'re priced out." Legitimate governance challenge at next assembly. (3) Betting sponsor (PEN 2.5M/year) was never put to socios vote. (4) Provincial socios without L1 Max cannot watch — equity issue. (5) No Noche Crema commercial transparency report has ever been produced.' },
+        { agentId: 'commercial-gov', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Noche Crema Governance Protocol: (1) PRICING: Enhanced dynamic pricing disclosure page. INDECOPI-ready documentation. Resale monitoring. (2) GAMBLING: Booth relocated to 18+ zone. Free bets restricted. Sector naming retained with responsible gambling signage. MINCETUR package sealed. (3) SOCIOS: First-ever Commercial Report within 30 days — revenue, allocation, sponsor rationale, pricing methodology. (4) BROADCAST: Negotiate 24h delayed free-to-air for provincial socios. Social media policy briefing — zero tolerance. (5) ALLOCATION: 40% squad, 30% SUNAT debt, 20% facilities, 10% academy.' },
+        { agentId: 'sponsor-brand', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. Booth relocation addresses MINCETUR. Age-verified zone protects minors. For INDECOPI: enhanced disclosure transforms complaint risk into transparency showcase. For socios: first-ever commercial report creates precedent — 80,000 owners see how their club generates and allocates revenue. La Noche Crema is the governance showcase for socios democracy in football.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:ud90123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'uda0123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (Dynamic pricing + INDECOPI + MINCETUR gambling + Socios transparency + Broadcast)',
+        complianceLabel: 'Commercial Governance',
+        complianceValue: 'GAMBLING AD RELOCATED',
+        complianceThreshold: 'MINCETUR DS 006-2023 · INDECOPI Ley 29571',
+        agents: ['Commercial Governance Agent', 'INDECOPI Agent', 'Sponsorship Agent', 'Socios Governance Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'Universitario — Noche Crema Commercial Governance',
+        guaranteeBody: 'Seals: dynamic pricing governance, INDECOPI fair trading, MINCETUR gambling compliance, socios transparency report, broadcast exclusivity, revenue allocation plan.',
+        evidenceChain: 'Revenue analysis → Dynamic pricing → INDECOPI check → Gambling advertising → MINCETUR → Socios report → Allocation plan → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will govern La Noche Crema — balancing dynamic pricing, gambling advertising compliance, and transparency to 80,000 socios.',
+      phaseLabels: ['Commercial Analysis & Pricing', 'Gambling & Socios Governance', 'Commercial Protocol'],
+    },
+  ],
+};
+
+export default config;
