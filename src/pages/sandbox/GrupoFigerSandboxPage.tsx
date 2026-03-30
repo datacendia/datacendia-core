@@ -2,7 +2,7 @@
  * Page — Grupo Figer Sandbox Demo (Trilingual EN/ES/PT)
  *
  * Bespoke sandbox for Grupo Figer — Brazil's largest sports agency.
- * 5 fully scripted multi-agent deliberation scenarios with trilingual support.
+ * 10 fully scripted multi-agent deliberation scenarios with trilingual support.
  *
  * Access: /sandbox/figer (Key: FIGER-26)
  *
