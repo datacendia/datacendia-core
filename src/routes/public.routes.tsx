@@ -126,6 +126,10 @@ const BinanceSandboxPage = lazy(() => import('../pages/sandbox/BinanceSandboxPag
 const RocketLawyerSandboxPage = lazy(() => import('../pages/sandbox/RocketLawyerSandboxPage'));
 const CanvaSandboxPage = lazy(() => import('../pages/sandbox/CanvaSandboxPage'));
 
+// EU & Latin America Sandboxes
+const SapSandboxPage = lazy(() => import('../pages/sandbox/SapSandboxPage'));
+const FepcmacSandboxPage = lazy(() => import('../pages/sandbox/FepcmacSandboxPage'));
+
 // Pitch
 const PitchDeck = lazy(() => import('../pages/pitch').then((m) => ({ default: m.PitchDeck })));
 
@@ -240,6 +244,11 @@ export const publicRoutes: RouteObject[] = [
   { path: '/sandbox/rocket-lawyer', element: w(RocketLawyerSandboxPage) },
   { path: '/sandbox/rocketlawyer', element: w(RocketLawyerSandboxPage) },
   { path: '/sandbox/canva', element: w(CanvaSandboxPage) },
+
+  // EU & Latin America Sandboxes
+  { path: '/sandbox/sap', element: w(SapSandboxPage) },
+  { path: '/sandbox/fepcmac', element: w(FepcmacSandboxPage) },
+  { path: '/sandbox/cajas', element: w(FepcmacSandboxPage) },
 
   // Pitch
   { path: '/pitch', element: w(PitchDeck) },
