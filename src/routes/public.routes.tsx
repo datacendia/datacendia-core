@@ -102,6 +102,14 @@ const GrupoFigerSandboxPage = lazy(() => import('../pages/sandbox/GrupoFigerSand
 const BurnleySandboxPage = lazy(() => import('../pages/sandbox/BurnleySandboxPage'));
 const FpfPeruSandboxPage = lazy(() => import('../pages/sandbox/FpfPeruSandboxPage'));
 const ThomsonReutersSandboxPage = lazy(() => import('../pages/sandbox/ThomsonReutersSandboxPage'));
+const LexisNexisSandboxPage = lazy(() => import('../pages/sandbox/LexisNexisSandboxPage'));
+const HarveyAiSandboxPage = lazy(() => import('../pages/sandbox/HarveyAiSandboxPage'));
+const WoltersKluwerSandboxPage = lazy(() => import('../pages/sandbox/WoltersKluwerSandboxPage'));
+const BloombergLawSandboxPage = lazy(() => import('../pages/sandbox/BloombergLawSandboxPage'));
+const VlexSandboxPage = lazy(() => import('../pages/sandbox/VlexSandboxPage'));
+const RelativitySandboxPage = lazy(() => import('../pages/sandbox/RelativitySandboxPage'));
+const IroncladIcertisSandboxPage = lazy(() => import('../pages/sandbox/IroncladIcertisSandboxPage'));
+const ClioSandboxPage = lazy(() => import('../pages/sandbox/ClioSandboxPage'));
 
 // Pitch
 const PitchDeck = lazy(() => import('../pages/pitch').then((m) => ({ default: m.PitchDeck })));
@@ -185,6 +193,19 @@ export const publicRoutes: RouteObject[] = [
   { path: '/sandbox/peru', element: w(FpfPeruSandboxPage) },
   { path: '/sandbox/thomson-reuters', element: w(ThomsonReutersSandboxPage) },
   { path: '/sandbox/tr', element: w(ThomsonReutersSandboxPage) },
+  { path: '/sandbox/lexisnexis', element: w(LexisNexisSandboxPage) },
+  { path: '/sandbox/lexis', element: w(LexisNexisSandboxPage) },
+  { path: '/sandbox/harvey', element: w(HarveyAiSandboxPage) },
+  { path: '/sandbox/harvey-ai', element: w(HarveyAiSandboxPage) },
+  { path: '/sandbox/wolters-kluwer', element: w(WoltersKluwerSandboxPage) },
+  { path: '/sandbox/wk', element: w(WoltersKluwerSandboxPage) },
+  { path: '/sandbox/bloomberg-law', element: w(BloombergLawSandboxPage) },
+  { path: '/sandbox/bloomberg', element: w(BloombergLawSandboxPage) },
+  { path: '/sandbox/vlex', element: w(VlexSandboxPage) },
+  { path: '/sandbox/relativity', element: w(RelativitySandboxPage) },
+  { path: '/sandbox/ironclad', element: w(IroncladIcertisSandboxPage) },
+  { path: '/sandbox/icertis', element: w(IroncladIcertisSandboxPage) },
+  { path: '/sandbox/clio', element: w(ClioSandboxPage) },
 
   // Pitch
   { path: '/pitch', element: w(PitchDeck) },
