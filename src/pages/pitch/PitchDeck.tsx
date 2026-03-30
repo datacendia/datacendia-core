@@ -108,6 +108,7 @@ const SLIDES: Slide[] = [
             { name: 'UEFA', url: '/sandbox/uefa', key: 'UEFA-FSR-26', desc: '5 regulator scenarios', color: 'blue' },
             { name: 'FIFA', url: '/sandbox/fifa', key: 'FIFA-WC-26', desc: '5 World Cup scenarios', color: 'indigo' },
             { name: 'CONMEBOL', url: '/sandbox/conmebol', key: 'CONMEBOL-26', desc: 'Spanish i18n support', color: 'purple' },
+            { name: 'Grupo Figer', url: '/sandbox/figer', key: 'FIGER-26', desc: 'Trilingual EN/ES/PT · 5 scenarios', color: 'emerald' },
           ].map((demo) => (
             <div key={demo.name} className="bg-slate-800/50 rounded-xl border border-slate-700 p-6">
               <div className="flex items-center justify-between mb-4">

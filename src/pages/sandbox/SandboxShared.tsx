@@ -143,6 +143,26 @@ export const ES_LABELS: ShellLabels = {
   connectorReady: 'LISTO',
 };
 
+export const PT_LABELS: ShellLabels = {
+  dataConnectors: 'Conectores de Dados',
+  activeCouncil: 'Conselho Ativo',
+  deliberationTitle: 'Delibera\u00e7\u00e3o Multi-Agente',
+  readyToBegin: 'Pronto para iniciar',
+  phase: 'Fase',
+  deliberationComplete: 'Delibera\u00e7\u00e3o Conclu\u00edda \u2014 Consenso Alcan\u00e7ado',
+  runDeliberation: 'Iniciar Delibera\u00e7\u00e3o',
+  generateReceipt: 'Gerar Recibo do Regulador',
+  generatingBundle: 'Gerando Pacote de Evid\u00eancia Criptogr\u00e1fica...',
+  simulationNote: 'NOTA DE SIMULA\u00c7\u00c3O:',
+  selectScenario: 'Selecionar Cen\u00e1rio',
+  reset: 'Reiniciar',
+  confidential: 'CONFIDENCIAL',
+  executiveSandbox: 'SANDBOX EXECUTIVO',
+  connectorLive: 'ATIVO',
+  connectorSync: 'SYNC',
+  connectorReady: 'PRONTO',
+};
+
 // =============================================================================
 // HELPERS
 // =============================================================================
