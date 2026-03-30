@@ -10,6 +10,7 @@
 // Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 
 import type { OrgSandboxConfig } from '../SandboxTemplate';
+import { ES_SCENARIOS } from './fpf-peru-es';
 
 const config: OrgSandboxConfig = {
   orgLabel: 'FPF Perú',
@@ -25,6 +26,30 @@ const config: OrgSandboxConfig = {
   gradientTo: 'to-red-900/20',
 
   footerNote: '100 regulatory scenarios mapped for FPF Perú · Full architecture document available on request',
+
+  i18n: {
+    footerNote: '100 escenarios regulatorios mapeados para FPF Perú · Documento de arquitectura completo disponible bajo solicitud',
+    labels: {
+      dataConnectors: 'Conectores de Datos',
+      activeCouncil: 'Consejo Activo',
+      deliberationTitle: 'Deliberación Multi-Agente',
+      readyToBegin: 'Listo para comenzar',
+      phase: 'Fase',
+      deliberationComplete: 'Deliberación Completa — Consenso Alcanzado',
+      runDeliberation: 'Iniciar Deliberación',
+      generateReceipt: 'Generar Recibo del Regulador',
+      generatingBundle: 'Generando Paquete de Evidencia Criptográfica...',
+      simulationNote: 'NOTA DE SIMULACIÓN:',
+      selectScenario: 'Seleccionar Escenario',
+      reset: 'Reiniciar',
+      confidential: 'CONFIDENCIAL',
+      executiveSandbox: 'SANDBOX EJECUTIVO',
+      connectorLive: 'ACTIVO',
+      connectorSync: 'SYNC',
+      connectorReady: 'LISTO',
+    },
+    scenarios: ES_SCENARIOS,
+  },
 
   scenarios: [
     // SCENARIO 1 — POST-CORRUPTION INSTITUTIONAL REBUILD
@@ -172,6 +197,104 @@ const config: OrgSandboxConfig = {
       idleTitle: 'Ready to Deliberate',
       idleDesc: '4 AI agents will govern player safety at 3,400m altitude — enforcing mandatory acclimatisation, excluding symptomatic players, and building the evidence that defends Peru\'s right to play at altitude.',
       phaseLabels: ['Altitude Medical Assessment', 'Liability & Emergency Response', 'Mandatory Safety Protocol'],
+    },
+
+    // SCENARIO 4 — YOUTH ACADEMY: MINOR EXPLOITATION & TRAFFICKING
+    {
+      id: 'youth-trafficking',
+      title: 'Youth Academy — AI Detects Minor Trafficking Through Fake Agent Networks',
+      subtitle: 'FIFA Article 19 · Minors under 18 · Fake academies · 47 children at risk · Fiscalía referral',
+      banner: 'Simulating the youth protection crisis: AI analysis of Liga 1 youth registration data reveals a network of fake agent intermediaries funnelling minors from Andean provinces to Lima through unregistered "academies." 47 minors aged 12-16 are identified in exploitative conditions — no education, no parental consent, no federation registration. FIFA Article 19 (protection of minors) is being systematically violated.',
+      risk: 'Critical',
+      scenarioNum: 'Youth',
+      icon: 'users',
+      color: 'text-orange-400',
+      agents: [
+        { id: 'youth-protect', name: 'Youth Protection Agent', role: 'FIFA Article 19 & Minor Safeguarding', icon: '👦', color: 'text-orange-400', borderColor: 'border-orange-500/40', bgColor: 'bg-orange-500/10' },
+        { id: 'legal-youth', name: 'Legal Agent', role: 'Peruvian Child Protection Law & Fiscalía Coordination', icon: '⚖️', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'registry-ai', name: 'Registration Agent', role: 'Player Database Analysis & Network Detection', icon: '🔍', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'welfare-youth', name: 'Child Welfare Agent', role: 'MIMP Coordination & Family Reunification', icon: '🏠', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+      ],
+      connectors: [
+        { name: 'FPF Youth Registry', status: 'connected', type: 'Player Registration', icon: 'database', detail: '47 minors: no parental consent forms, no education certificates' },
+        { name: 'Agent Registry', status: 'connected', type: 'FIFA Agent Database', icon: 'users', detail: '5 "agents" — none hold FIFA licences, 3 have prior fraud convictions' },
+        { name: 'MIMP Portal', status: 'connected', type: 'Child Protection', icon: 'shield', detail: 'Ministerio de la Mujer y Poblaciones Vulnerables — child trafficking unit' },
+        { name: 'Fiscalía Especializada', status: 'syncing', type: 'Criminal Investigation', icon: 'alert-triangle', detail: 'Trafficking in persons (Ley 28950) — minors aggravating factor' },
+      ],
+      script: [
+        { agentId: 'registry-ai', phase: 'phase1', type: 'warning', delay: 800, content: 'YOUTH REGISTRATION ANOMALY DETECTED. AI analysis of FPF youth registration database flagged a pattern across 47 minors aged 12-16: (1) All 47 registered in the last 8 months across 4 Lima-based "academies" — Academia Futuro Dorado, Escuela de Talentos Perú, Centro de Formación Nacional, and Academia Estrellas del Sur. (2) None of the 4 academies are registered with FPF as official youth development centres. (3) All 47 minors originate from 3 Andean provinces: Cusco, Puno, and Huancavelica — among Peru\'s poorest regions. (4) Parental consent forms: 47/47 missing or contain inconsistencies (photocopied signatures, addresses that don\'t match national ID records). (5) Education certificates: 0/47 have current school enrolment documentation — a legal requirement under Peru\'s Ley General de Educación (Ley 28044). (6) Agent analysis: 5 individuals listed as "representantes" for all 47 minors. None hold FIFA agent licences. Cross-reference: 3 of the 5 have prior convictions for fraud (estafa) in Cusco and Puno courts. (7) Network pattern: the same 5 individuals recruited all 47 children from rural communities, promising families that their sons would receive professional football training and education in Lima. The families received no written contracts and no ongoing communication.' },
+        { agentId: 'welfare-youth', phase: 'phase1', type: 'analysis', delay: 2500, content: 'CHILD WELFARE ASSESSMENT. Field investigation findings for the 4 unregistered academies: (1) Academia Futuro Dorado (San Juan de Lurigancho): 14 minors living in a single rented house. No training facilities — children are taken to public parks. No educational provision. Children work selling candy on buses during the day to "contribute to academy costs." (2) Escuela de Talentos Perú (Villa El Salvador): 12 minors. Conditions similar. 2 minors showed signs of malnutrition. None attend school. (3) Centro de Formación Nacional (Ate): 11 minors. "Head coach" has no football coaching credentials. Children train 6 hours/day on a dirt pitch. No medical examinations on record. (4) Academia Estrellas del Sur (Chorrillos): 10 minors. 3 minors under age 13 — below even the minimum age for competitive youth registration. The "academies" are not training facilities — they are holding operations. The children are shown to Liga 1 and Liga 2 clubs as "available talent." If a club signs one: the "agent" takes 40-60% of any signing fee. The children who are not signed remain in exploitative conditions indefinitely. 8 children have been in the system for over 6 months with no club placement and no education.' },
+        { agentId: 'legal-youth', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT LOGGED. Legal framework requires IMMEDIATE action — not investigation delay: (1) Peruvian Law 28950 (Trafficking in Persons): recruiting minors from vulnerable communities with false promises of employment/education, transporting them to Lima, and exploiting their labour constitutes trafficking. The involvement of minors is an aggravating factor — sentences of 12-20 years. (2) FIFA Article 19: international transfer of minors under 18 is prohibited except under 3 narrow exceptions. While these are domestic (not international) transfers, FIFA\'s general principle of minor protection applies — FPF must enforce equivalent protections domestically. (3) Ley 28044 (Education): every child must be enrolled in school. Zero school enrolment for 47 children is a mass violation that triggers MINEDU (Ministry of Education) jurisdiction. (4) Código de los Niños y Adolescentes (Ley 27337): children have the right to live with their families. Separation requires judicial authorisation. None of these children have court-authorised separation. (5) My dissent: FPF cannot merely "investigate" — FPF must refer to the Fiscalía Especializada contra la Trata de Personas IMMEDIATELY and coordinate with MIMP for emergency child protection measures. Every day of delay is a day these children remain in exploitative conditions.' },
+        { agentId: 'youth-protect', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — SYSTEMIC FAILURE. This is not an isolated incident — it is a systemic failure in Peruvian youth football governance: (1) FPF has no mandatory verification for youth academy registration. Any individual can create an "academia" and register children. (2) FPF has no cross-reference between youth registration and school enrolment. A child can be registered as a player without proof of education. (3) FPF has no agent verification for youth transactions. Unlicensed individuals can represent minors. (4) The 47 children identified are likely a fraction of the total. If 4 fake academies operate in Lima: how many operate in provincial cities? The business model is simple: recruit talented children from poor families with promises of football careers, bring them to Lima, show them to clubs, take most of the fee if they\'re signed, and abandon them if they\'re not. This is football trafficking — and FPF\'s lack of youth governance infrastructure enabled it. Without CendiaSupervision: these 47 children would not have been detected. With CendiaSupervision: the registration anomaly analysis identified the pattern. Now we must act.' },
+        { agentId: 'registry-ai', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Proposing Datacendia Youth Protection Protocol for FPF: (1) IMMEDIATE RESPONSE: Fiscalía referral within 24 hours. MIMP emergency child protection measures for all 47 minors. Family reunification coordination with Cusco, Puno, and Huancavelica DEMUNA offices. (2) YOUTH REGISTRATION REFORM: Every youth registration requires: (a) verified parental consent (biometric or notarised), (b) current school enrolment certificate, (c) medical examination certificate, (d) licensed agent or direct family representation. CendiaSupervision verifies all 4 before registration is accepted. (3) ACADEMY ACCREDITATION: All youth academies must be registered with FPF and meet minimum standards: licensed coaches, educational provision, adequate facilities, and regular welfare inspections. Unregistered academies cannot register players. (4) NETWORK DETECTION: CendiaSupervision continuously analyses registration patterns — clustering by agent, origin province, academy, and timing. Trafficking networks create detectable patterns. (5) FAMILY COMMUNICATION: Parents receive automated verification when their child is registered, transferred, or deregistered. No child moves through the system without family notification.' },
+        { agentId: 'legal-youth', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. The immediate Fiscalía referral + MIMP coordination addresses every urgency concern. The 47 children are protected TODAY — not after an investigation. The sealed evidence bundle (registration anomalies, field investigation findings, agent criminal records, welfare assessments) is provided to the Fiscalía with chain-of-custody integrity for prosecution. For FIFA: FPF demonstrates that it discovered a youth trafficking network through AI-powered governance, referred to criminal authorities immediately, protected the children, AND implemented systemic reforms to prevent recurrence. This is exactly the kind of proactive child protection FIFA expects from federations. The sealed evidence — from detection to referral to reform — proves FPF\'s youth governance is now among the most rigorous in South America. Peru\'s children deserve football opportunities without exploitation. CendiaSupervision ensures the system protects them.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:fp70123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'fp80123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (Youth registration anomaly + Field investigation + Fiscalía referral + MIMP coordination)',
+        complianceLabel: 'Youth Protection',
+        complianceValue: '47 MINORS PROTECTED',
+        complianceThreshold: 'FIFA Article 19 + Ley 28950 (trafficking)',
+        agents: ['Youth Protection Agent', 'Legal Agent', 'Registration Agent', 'Child Welfare Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'FPF Youth Protection — Anti-Trafficking Governance',
+        guaranteeBody: 'AI registration analysis detected 47 minors in exploitative fake academies. 5 unlicensed agents identified (3 with prior fraud convictions). Fiscalía referral within 24 hours. MIMP emergency child protection activated. Family reunification initiated. Youth registration reform implemented: biometric parental consent, school enrolment verification, academy accreditation.',
+        evidenceChain: 'Registration anomaly (47 minors) → Agent cross-reference (5 unlicensed) → Field investigation (4 fake academies) → Welfare assessment → Fiscalía referral → MIMP coordination → Family reunification → Registration reform → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will expose a youth trafficking network operating through fake football academies — protecting 47 children and reforming FPF\'s youth registration system.',
+      phaseLabels: ['Registration Anomaly & Network Detection', 'Child Protection Law & Immediate Action', 'Youth Reform & Anti-Trafficking Protocol'],
+    },
+
+    // SCENARIO 5 — BROADCASTING RIGHTS: FINANCIAL TRANSPARENCY & CLUB DISTRIBUTION
+    {
+      id: 'broadcast-transparency',
+      title: 'Broadcasting Rights — AI Audit Reveals $7M/Year Underpayment to Liga 1 Clubs',
+      subtitle: 'Derechos de TV · Single-bidder tender · Below-market valuation · Club financial crisis · SBS reporting obligations',
+      banner: 'Simulating the broadcasting rights crisis: AI financial analysis compares Liga 1\'s broadcasting deal ($28M/year) against comparable South American markets and discovers the deal is $7-12M/year below fair market value. The single-bidder tender process — connected to the now-arrested FPF president — cost Peruvian football clubs millions in lost revenue, pushing 6 clubs toward insolvency.',
+      risk: 'Critical',
+      scenarioNum: 'TV Rights',
+      icon: 'tv',
+      color: 'text-blue-400',
+      agents: [
+        { id: 'broadcast-ai', name: 'Broadcast Revenue Agent', role: 'Market Valuation & Comparable Analysis', icon: '📺', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'legal-broadcast', name: 'Legal Agent', role: 'Contract Forensics & Anti-Corruption', icon: '⚖️', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'club-finance', name: 'Club Financial Agent', role: 'Liga 1 Club Viability & Revenue Distribution', icon: '💰', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+        { id: 'fifa-broadcast', name: 'FIFA Relations Agent', role: 'Governance Standards & Commercial Best Practice', icon: '🌐', color: 'text-cyan-400', borderColor: 'border-cyan-500/40', bgColor: 'bg-cyan-500/10' },
+      ],
+      connectors: [
+        { name: 'Broadcasting Contract', status: 'connected', type: 'Contract Analysis', icon: 'file-text', detail: 'Liga 1 TV deal: $28M/year — single bidder, no competitive tender' },
+        { name: 'CONMEBOL Market Data', status: 'connected', type: 'Comparable Analysis', icon: 'bar-chart', detail: 'Comparable leagues: Chile $38M, Colombia $42M, Ecuador $22M (smaller market)' },
+        { name: 'Club Financial Database', status: 'connected', type: 'Revenue Distribution', icon: 'database', detail: '18 Liga 1 clubs: 6 in financial distress, 3 with salary arrears' },
+        { name: 'Fiscalía Evidence', status: 'syncing', type: 'Corruption Investigation', icon: 'shield', detail: 'Lozano-era broadcasting tender: intermediary payments under investigation' },
+      ],
+      script: [
+        { agentId: 'broadcast-ai', phase: 'phase1', type: 'warning', delay: 800, content: 'BROADCASTING REVENUE ALERT. Comparable market analysis for Liga 1 TV rights: (1) Current deal: $28M/year with GolPerú (Movistar), signed 2019, 5-year term with auto-renewal. Single bidder — no competitive tender process documented. (2) Comparable South American leagues by market size and audience: Chilean Primera División: $38M/year (market size: 19M population). Colombian Liga BetPlay: $42M/year (market size: 52M population). Ecuadorian LigaPro: $22M/year (market size: 18M population). Paraguayan División Profesional: $12M/year (market size: 7M population). (3) Peru: 34M population, growing middle class, passionate football culture, national team qualified for 2018 World Cup. Market fundamentals support a fair value of $35-40M/year — $7-12M/year MORE than the current deal. (4) The revenue gap over the 5-year contract: $35-60M total underpayment. Distributed across 18 Liga 1 clubs: each club lost $1.9-3.3M over 5 years. For provincial clubs operating on $2-4M annual budgets: this is the difference between viability and insolvency. (5) The auto-renewal clause means the below-market deal continues indefinitely unless FPF actively terminates and retenders.' },
+        { agentId: 'legal-broadcast', phase: 'phase1', type: 'analysis', delay: 2500, content: 'CONTRACT FORENSICS. The broadcasting tender process reveals governance failures: (1) The 2019 tender was announced with a 14-day bidding window — international broadcasters (ESPN, DAZN, beIN Sports) require 60-90 days for market analysis. The compressed timeline effectively excluded competition. (2) The tender documents specified technical requirements that only the incumbent (Movistar/GolPerú) could meet — including "existing terrestrial infrastructure covering 85% of national territory." (3) The intermediary: a company called Mediapro Perú SAC received a 12% commission ($3.36M/year) for "brokering" the deal. Mediapro Perú SAC\'s beneficial owner: a business associate of former FPF President Lozano, now under Fiscalía investigation. (4) The commission structure is unusual — standard broadcasting commissions are 3-5%. The 12% commission on a below-market deal suggests the intermediary\'s role was not genuine brokering but facilitation of a predetermined outcome. (5) Total intermediary payments over the 5-year term: $16.8M — extracted from funds that should have gone to Liga 1 clubs. Combined with the below-market pricing: Peruvian football lost $52-77M in revenue over 5 years through this single transaction.' },
+        { agentId: 'club-finance', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT LOGGED. The financial impact on Liga 1 clubs is devastating: (1) Of 18 Liga 1 clubs: 6 are in financial distress (unable to meet current obligations). 3 have salary arrears of 2-4 months. 2 face potential relegation for financial non-compliance. (2) Broadcasting revenue represents 35-45% of total revenue for provincial clubs. The $7-12M/year underpayment means provincial clubs receive $389K-$667K LESS per year than they should. For a club with a $2.5M budget: that\'s 15-27% of total revenue lost. (3) The salary arrears directly enable match-fixing (as documented in Scenario 2). Players earning $1,200/month who haven\'t been paid for 4 months are vulnerable to fixers. The broadcasting underpayment → salary arrears → match-fixing pipeline is a direct causal chain. (4) My dissent: FPF must terminate the current broadcasting contract immediately and retender competitively. Every month the below-market deal continues costs Liga 1 clubs $583K-$1M in lost revenue. The auto-renewal must be blocked before it triggers. The Fiscalía investigation into the intermediary should not delay the retender — the clubs cannot wait for criminal proceedings that may take years.' },
+        { agentId: 'fifa-broadcast', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — FIFA GOVERNANCE STANDARDS. FIFA\'s Club Licensing system and Financial Sustainability Regulations require federations to demonstrate transparent commercial governance: (1) Broadcasting rights are typically a federation\'s largest commercial asset. A below-market deal with a single bidder and a politically connected intermediary is textbook governance failure. (2) FIFA\'s 90-day review of FPF specifically includes commercial contract transparency. If FIFA discovers the broadcasting deal was structured to benefit insiders rather than clubs: it strengthens the case for a Normalisation Committee. (3) CONMEBOL\'s Club Licensing: clubs must demonstrate financial viability. If 6 Liga 1 clubs fail financial viability tests because broadcasting revenue is artificially suppressed: CONMEBOL may exclude them from continental competitions. (4) The reform opportunity: a transparent, competitive retender — documented with sealed evidence of the process — demonstrates to FIFA that post-Lozano FPF prioritises club welfare over insider enrichment. Without CendiaSupervision: the below-market deal auto-renews. Clubs continue to suffer. FIFA sees no reform. With CendiaSupervision: the market analysis proves the underpayment, the retender is transparent, and FIFA sees commercial governance in action.' },
+        { agentId: 'broadcast-ai', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Proposing Datacendia Broadcasting Governance Protocol for FPF: (1) IMMEDIATE: Block the auto-renewal clause by formal notice within the contractual window. CendiaSupervision seals the notice with timestamp proving compliance with termination requirements. (2) COMPETITIVE RETENDER: 90-day international bidding window. Requirements published in English, Spanish, and Portuguese. Technical requirements designed for market competition — not incumbent advantage. CendiaSupervision seals every stage: publication, bidder registration, bid submission, evaluation, and award. (3) INDEPENDENT VALUATION: Commissioned market valuation from an independent sports consultancy — CendiaSupervision seals the methodology and findings. Target: $35-40M/year based on comparable analysis. (4) INTERMEDIARY PROHIBITION: No commissions to intermediaries in the retender process. All negotiations direct between FPF and bidders. CendiaSupervision monitors for undisclosed intermediary involvement. (5) CLUB DISTRIBUTION TRANSPARENCY: Revenue distribution formula published and sealed. Every club sees exactly how broadcasting revenue is allocated — performance-based, solidarity-based, and equal-share components. Monthly distribution reports sealed and auditable. (6) FISCALÍA EVIDENCE: The market analysis, intermediary commission documentation, and tender process forensics are provided to the Fiscalía as evidence in the Lozano corruption prosecution.' },
+        { agentId: 'club-finance', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. The auto-renewal block + competitive retender addresses the revenue crisis. Conservative estimate: a competitive retender yields $35-38M/year — $7-10M/year increase. Per club: $389-556K additional annual revenue. For the 6 financially distressed clubs: this additional revenue addresses salary arrears within 3 months and restores financial viability within 12 months. The match-fixing vulnerability (Scenario 2) is reduced because players are paid on time. For FIFA: the sealed retender process is the strongest possible evidence of commercial governance reform. Every step — from market valuation to bid evaluation to club distribution — is transparent and immutable. Post-Lozano FPF proves that broadcasting rights serve CLUBS AND FANS, not insiders. CendiaSupervision transforms Peru\'s most corrupt commercial transaction into its most transparent — sealed evidence of a federation that chose accountability over enrichment.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:fp90123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'fpa0123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (Market valuation + Tender forensics + Retender process + Club distribution + Fiscalía referral)',
+        complianceLabel: 'Commercial Governance',
+        complianceValue: '$7-12M/YEAR UNDERPAYMENT PROVEN',
+        complianceThreshold: 'Fair value: $35-40M. Current: $28M. Retender initiated.',
+        agents: ['Broadcast Revenue Agent', 'Legal Agent', 'Club Financial Agent', 'FIFA Relations Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'FPF Broadcasting — Transparent Commercial Governance',
+        guaranteeBody: 'Market analysis proved $7-12M/year underpayment ($52-77M over 5 years). Single-bidder tender with 12% intermediary commission documented. Auto-renewal blocked. Competitive retender initiated (90-day international window). Club distribution formula published. Fiscalía evidence package provided.',
+        evidenceChain: 'Current deal ($28M) → Comparable analysis ($35-40M) → Underpayment ($7-12M/year) → Intermediary forensics (12%, $16.8M) → Auto-renewal blocked → Retender published → Bids sealed → Independent valuation → Club distribution → Fiscalía evidence → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will audit Liga 1\'s broadcasting deal — proving a $7-12M/year underpayment caused by insider corruption and initiating a transparent retender that restores millions to Peruvian clubs.',
+      phaseLabels: ['Market Valuation & Corruption Forensics', 'Club Financial Crisis & Revenue Pipeline', 'Competitive Retender & Transparent Distribution'],
     },
   ],
 };
