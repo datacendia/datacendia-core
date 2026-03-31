@@ -1,0 +1,302 @@
+/**
+ * Cusco FC Sandbox Config
+ *
+ * 5 fully scripted scenarios for Cusco's Liga 1 club.
+ * Access: /sandbox/cusco-fc (Key: CUSCO-26)
+ *
+ * @module pages/sandbox/configs/cusco-fc
+ */
+
+// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
+
+import type { OrgSandboxConfig } from '../SandboxTemplate';
+import { ES_SCENARIOS } from './cusco-fc-es';
+
+const config: OrgSandboxConfig = {
+  orgLabel: 'CUSCO FC',
+  accessKey: 'CUSCO-26',
+  sessionKey: 'cusco-fc-sandbox-unlocked',
+
+  accent: 'sky',
+  accentColor: 'text-sky-400',
+  accentHover: 'from-sky-600 to-sky-700 hover:from-sky-500 hover:to-sky-600',
+  ringColor: 'focus:ring-sky-500/30',
+  borderColor: 'border-sky-500/30',
+  gradientFrom: 'from-sky-600/20',
+  gradientTo: 'to-sky-900/20',
+
+  footerNote: '100 regulatory scenarios mapped for Cusco FC · FPF, CONMEBOL, FIFA, SUNAT, INDECI, UNESCO, Ministerio de Cultura, DS N° 115-2025-PCM',
+
+  i18n: {
+    footerNote: '100 escenarios regulatorios mapeados para Cusco FC · FPF, CONMEBOL, FIFA, SUNAT, INDECI, UNESCO, Ministerio de Cultura, DS N° 115-2025-PCM',
+    labels: {
+      dataConnectors: 'Conectores de Datos',
+      activeCouncil: 'Consejo Activo',
+      deliberationTitle: 'Deliberación Multi-Agente',
+      readyToBegin: 'Listo para comenzar',
+      phase: 'Fase',
+      deliberationComplete: 'Deliberación Completa — Consenso Alcanzado',
+      runDeliberation: 'Iniciar Deliberación',
+      generateReceipt: 'Generar Recibo del Regulador',
+      generatingBundle: 'Generando Paquete de Evidencia Criptográfica...',
+      simulationNote: 'NOTA DE SIMULACIÓN:',
+      selectScenario: 'Seleccionar Escenario',
+      reset: 'Reiniciar',
+      confidential: 'CONFIDENCIAL',
+      executiveSandbox: 'SANDBOX EJECUTIVO',
+      connectorLive: 'ACTIVO',
+      connectorSync: 'SYNC',
+      connectorReady: 'LISTO',
+    },
+    scenarios: ES_SCENARIOS,
+  },
+
+  scenarios: [
+    // SCENARIO 1 — EXTREME ALTITUDE SAFETY (3,400m)
+    {
+      id: 'altitude-3400',
+      title: 'Extreme Altitude Safety — Governing Football at 3,400m',
+      subtitle: 'Estadio Garcilaso · SpO2 monitoring · Cardiac risk · FIFA 2007 ban debate · Acclimatisation protocols',
+      banner: 'Simulating the most extreme altitude governance challenge in Peruvian club football. At 3,400m, Cusco FC\'s Estadio Inca Garcilaso de la Vega pushes visiting players into physiologically dangerous territory — SpO2 drops to 89%, VO2 max reduced 15-25%, and acute mountain sickness affects 20-30% of sea-level visitors.',
+      risk: 'Critical',
+      scenarioNum: 'Altitude',
+      icon: 'mountain',
+      color: 'text-red-400',
+      agents: [
+        { id: 'medical-extreme', name: 'Medical Agent', role: 'High-Altitude Physiology & Cardiac Risk', icon: '🏥', color: 'text-red-400', borderColor: 'border-red-500/40', bgColor: 'bg-red-500/10' },
+        { id: 'legal-altitude', name: 'Legal Agent', role: 'FIFA Regulations & Liability Defence', icon: '⚖️', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'sporting-equity', name: 'Sporting Equity Agent', role: 'Competitive Balance & Acclimatisation', icon: '⚽', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+        { id: 'emergency-cusco', name: 'Emergency Agent', role: 'Medical Evacuation & Hospital Access', icon: '🚑', color: 'text-cyan-400', borderColor: 'border-cyan-500/40', bgColor: 'bg-cyan-500/10' },
+      ],
+      connectors: [
+        { name: 'Altitude Monitor', status: 'connected', type: 'Physiology', icon: 'heart', detail: 'Visitor SpO2: 89% avg at 3,400m — 3 players symptomatic' },
+        { name: 'FIFA Database', status: 'connected', type: 'Altitude Research', icon: 'database', detail: '2007 ban: Bolivia/Peru/Ecuador coalition reversed 2008' },
+        { name: 'Hospital Map', status: 'connected', type: 'Emergency', icon: 'map-pin', detail: 'Cusco: 2 cardiac-capable hospitals within 15 min' },
+        { name: 'Acclimatisation Log', status: 'syncing', type: 'Player Welfare', icon: 'clock', detail: 'Visitor arrived 4h early — minimum recommended: 24h' },
+      ],
+      script: [
+        { agentId: 'medical-extreme', phase: 'phase1', type: 'warning', delay: 800, content: 'MEDICAL ALERT — 3,400m EXTREME ALTITUDE. Match at Estadio Inca Garcilaso de la Vega, Cusco. Visiting team assessment: (1) Average SpO2: 89% (normal sea level: 96-99%). 3 players below 87% — symptomatic. (2) Heart rate: +18% elevation across squad. (3) Two players reporting headache and nausea — classic AMS (acute mountain sickness). (4) VO2 max reduction: 15-25% — aerobic capacity devastated. (5) Team arrived 4 hours ago. Recommended acclimatisation: minimum 24 hours at 3,400m. (6) At this altitude, atmospheric pressure is 66% of sea level. Every high-intensity sprint is physiologically equivalent to running with reduced lung capacity. (7) Historical: 3 oxygen incidents at Garcilaso in 2 seasons. No fatalities, but 1 player hospitalised overnight.' },
+        { agentId: 'sporting-equity', phase: 'phase1', type: 'analysis', delay: 2500, content: 'COMPETITIVE EQUITY — 5-SEASON ANALYSIS. (1) Cusco FC home win rate: 68% (league average: 48%). (2) Visitor win rate at Garcilaso: 18% (league average away: 38%). (3) Visitor goals per match: 0.6 (league average: 1.2). (4) 2nd half visitor collapse: performance drops 28% — fatigue amplified catastrophically at 3,400m. (5) Substitution patterns: visitors average 0.8 more subs at Garcilaso vs sea-level. (6) Comparison: Juliaca (3,827m) visitor win rate 15%. Arequipa (2,335m) visitor win rate 24%. Cusco sits between. (7) The FIFA 2007 ban targeted exactly this advantage. Bolivia/Peru/Ecuador coalition argued altitude is integral to South American football. The ban was reversed in 2008 but the debate can reopen with ANY serious cardiac incident at altitude.' },
+        { agentId: 'emergency-cusco', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT — EMERGENCY CAPACITY INADEQUATE. Cusco medical assessment: (1) 2 cardiac-capable hospitals within 15 min — ADEQUATE for standard emergencies. (2) 1 ambulance at stadium + 1 at nearest hospital. (3) BUT: night evacuation to Lima limited — 1h by air, no scheduled medical flights after 22:00. (4) The 3 players below 87% SpO2 are in SYMPTOMATIC range. At this level, cardiac arrhythmia risk elevates. (5) Current FPF protocol: no continuous SpO2 monitoring during play. No mandatory exclusion threshold. (6) My dissent: the 3 symptomatic players must be EXCLUDED as precaution. Playing with SpO2 below 87% at 3,400m is medically indefensible. If a cardiac event occurs during play, Cusco FC, FPF, and Liga 1 face existential liability — and the 2007 debate reopens with Peru as the cautionary example.' },
+        { agentId: 'legal-altitude', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — LIABILITY CHAIN. If cardiac event occurs: (1) Did FPF enforce acclimatisation? Visitor arrived 4h vs 24h recommended = documented failure. But "recommended" is not "required." (2) Did club follow medical guidance? If FPF recommended 24h and club ignored, club bears primary liability. (3) Does the recommendation have legal force? If it\'s advisory only, FPF is not absolved. (4) FIFA will examine whether governance was adequate. (5) The 2007 debate reopens with Peru as NEGATIVE example if governance was inadequate. (6) Bolivia, Ecuador — Peru\'s altitude coalition partners — lose credibility too. (7) CRITICAL: the difference between "incident with governance" and "incident without governance" is the difference between defending altitude football and losing it.' },
+        { agentId: 'medical-extreme', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Datacendia Extreme Altitude Protocol (3,400m+): (1) MANDATORY 24h acclimatisation above 2,500m — 3-0 forfeit for late arrival. No exceptions. (2) PRE-MATCH SpO2 assessment — exclusion below 90%. Not advisory. MANDATORY. Match proceeds with available players. (3) IN-MATCH SpO2 portable monitoring — mandatory substitution below 85%. (4) EMERGENCY protocol per venue, sealed and tested. Cusco: 2 ambulances (1 cardiac-equipped), helicopter standby for evening matches. (5) FIFA EVIDENCE: every match at 3,400m+ produces a sealed safety package — SpO2 data, acclimatisation compliance, medical incidents, emergency readiness. (6) This creates the world\'s most rigorous altitude governance. If FIFA ever revisits the ban, Peru has EVIDENCE, not arguments.' },
+        { agentId: 'emergency-cusco', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. Mandatory acclimatisation + SpO2 barriers address everything: the 3 symptomatic players are EXCLUDED, the 4h arrival problem is eliminated, in-match monitoring catches deterioration, emergency planning is venue-specific and tested. For FIFA: this is governance MORE rigorous than any worldwide altitude protocol. The 2007 debate was about whether altitude football could be safe. This protocol doesn\'t just argue it can — it PROVES it, match by match, sealed cryptographically. Cusco\'s 3,400m becomes a SHOWCASE, not a liability — matches at extreme altitude are safe WITH adequate governance.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:cf10123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'cf20123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (SpO2 data + Acclimatisation + In-match monitoring + Emergency + FIFA defence)',
+        complianceLabel: 'Altitude Safety',
+        complianceValue: '3 PLAYERS EXCLUDED — SpO2 < 90%',
+        complianceThreshold: 'Mandatory 24h acclimatisation · SpO2 90% barrier',
+        agents: ['Medical Agent', 'Legal Agent', 'Sporting Equity Agent', 'Emergency Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'Cusco FC — Extreme Altitude Governance at 3,400m',
+        guaranteeBody: 'Seals: SpO2 pre-match (3 excluded < 90%), mandatory 24h acclimatisation, in-match portable monitoring, venue-specific emergency protocol, FIFA altitude defence evidence package.',
+        evidenceChain: 'Match (3,400m) → Acclimatisation 24h → SpO2 check → 3 excluded → In-match monitor → Emergency plan → Review → FIFA package → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will govern football at 3,400m — mandatory acclimatisation, symptomatic player exclusion, and evidence to defend Peru\'s right to play at extreme altitude.',
+      phaseLabels: ['Medical Assessment & Performance Data', 'Emergency Capacity & Liability', 'Mandatory Altitude Protocol'],
+    },
+
+    // SCENARIO 2 — UNESCO HERITAGE VENUE GOVERNANCE
+    {
+      id: 'unesco-heritage',
+      title: 'UNESCO Heritage Venue — Governing Football in a World Heritage City',
+      subtitle: 'Estadio Garcilaso · Historic centre buffer zone · Ministerio de Cultura · Noise ordinance · Tourism impact',
+      banner: 'Simulating the unique governance challenge of operating a major football venue within a UNESCO World Heritage Site buffer zone. Cusco\'s historic centre designation imposes restrictions on noise, crowd management, infrastructure modification, and commercial activity that no other Liga 1 club faces.',
+      risk: 'High',
+      scenarioNum: 'Heritage',
+      icon: 'landmark',
+      color: 'text-amber-400',
+      agents: [
+        { id: 'heritage-gov', name: 'Heritage Agent', role: 'UNESCO & Ministerio de Cultura Compliance', icon: '🏛️', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'venue-ops', name: 'Venue Operations Agent', role: 'Stadium Management & Infrastructure', icon: '🏟️', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'tourism-agent', name: 'Tourism Impact Agent', role: 'Visitor Economy & Community Relations', icon: '🌍', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+        { id: 'legal-heritage', name: 'Legal Agent', role: 'Cultural Heritage Law & Municipal Ordinance', icon: '⚖️', color: 'text-cyan-400', borderColor: 'border-cyan-500/40', bgColor: 'bg-cyan-500/10' },
+      ],
+      connectors: [
+        { name: 'Ministerio de Cultura', status: 'connected', type: 'Heritage Authority', icon: 'landmark', detail: 'Estadio Garcilaso: within UNESCO buffer zone — modification restricted' },
+        { name: 'UNESCO Monitoring', status: 'connected', type: 'World Heritage', icon: 'globe', detail: 'Cusco WHC inscription 1983 — periodic monitoring active' },
+        { name: 'Municipal Cusco', status: 'connected', type: 'Noise & Events', icon: 'volume-2', detail: 'Noise ordinance: 85dB limit 22:00-07:00 — Copa matches end ~23:00' },
+        { name: 'Tourism Board', status: 'syncing', type: 'Visitor Economy', icon: 'users', detail: 'Cusco: 3.2M tourists/year — matchday traffic conflicts' },
+      ],
+      script: [
+        { agentId: 'heritage-gov', phase: 'phase1', type: 'warning', delay: 800, content: 'HERITAGE GOVERNANCE ALERT. Estadio Inca Garcilaso de la Vega (42,000) sits within the UNESCO World Heritage buffer zone of Cusco\'s historic centre (WHC inscription 1983). This creates unique restrictions: (1) STRUCTURAL: Any modification to the stadium requires Ministerio de Cultura approval (Ley 28296). New construction or expansion is effectively prohibited within the buffer zone. (2) NOISE: Municipal ordinance limits amplified sound to 85dB after 22:00. Copa Libertadores evening matches (kick-off 19:00) extend to 23:00 — post-match celebrations routinely breach the limit. (3) VISUAL: No commercial signage visible from designated heritage viewpoints. LED perimeter boards visible from Sacsayhuamán hillside. (4) TRAFFIC: 42,000 fans in a historic centre designed for pedestrian and llama traffic — not modern crowd management.' },
+        { agentId: 'tourism-agent', phase: 'phase1', type: 'analysis', delay: 2500, content: 'TOURISM IMPACT ANALYSIS. Cusco receives 3.2M tourists annually — the city\'s economic lifeblood. (1) Matchday traffic blocks access to Plaza de Armas, Qorikancha, and San Blas from 3h before to 2h after. Hotels report guest complaints. (2) 3 tour operators filed formal complaints with Municipal: "football events disrupt tourist experience." (3) HOWEVER: football tourism IS growing. 12% of Cusco FC home fans are domestic tourists combining football + Machu Picchu. Copa Libertadores could attract international football tourists — Buenos Aires, São Paulo, Bogotá. (4) Cusco\'s tourist infrastructure (hotels, restaurants, transport) can absorb 42,000 matchday visitors better than any other provincial city. (5) The tension: heritage preservation vs football as cultural event vs tourism economy. These don\'t have to conflict — but without governance, they will.' },
+        { agentId: 'legal-heritage', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT — LEGAL COMPLEXITY UNPRECEDENTED. (1) Ley 28296 (Cultural Heritage): Ministerio approval for ANY venue modification. Process: 90-180 days. CONMEBOL requires improvements in 3 weeks? Impossible under heritage law. (2) UNESCO: if Cusco\'s WHC status is threatened by stadium-related impacts, Peru loses more than football governance — it loses cultural heritage designation worth billions in tourism. (3) Noise ordinance: 85dB after 22:00 is municipal law, not advisory. Fines: PEN 10K-50K per event. 6 evening Copa matches = PEN 60K-300K in fines. (4) My dissent: Cusco FC CANNOT comply with both CONMEBOL venue standards AND heritage restrictions simultaneously. Something must give. The question is what — and the answer must NOT be UNESCO status.' },
+        { agentId: 'venue-ops', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — CONMEBOL vs HERITAGE CONFLICT. CONMEBOL Copa requirements vs Ministerio restrictions: (1) LED boards: CONMEBOL requires. Heritage says no visible commercial from viewpoints. CONFLICT. (2) Temporary structures (media compound, VIP, broadcast): CONMEBOL requires. Heritage restricts any construction. CONFLICT. (3) Noise: CONMEBOL expects full matchday atmosphere. Heritage limits to 85dB post-22:00. CONFLICT. (4) Capacity: 42,000 but heritage-zone traffic management limits practical ingress to ~35,000 in heritage-compliant timeframe. CONFLICT. (5) If Cusco FC cannot host Copa at Garcilaso, they play in Lima — losing home advantage, altitude advantage, matchday revenue, and civic identity. Heritage governance must enable football, not prevent it.' },
+        { agentId: 'heritage-gov', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Datacendia Heritage-Football Governance Protocol: (1) MINISTERIO PARTNERSHIP: Pre-submit all Copa improvements as "temporary reversible installations" — heritage law allows temporary structures with 30-day approval (vs 180 for permanent). (2) LED BOARDS: Directional LED panels angled AWAY from heritage viewpoints. Ministerio-approved visibility study sealed. (3) NOISE: Sound engineering to contain 85dB post-22:00 at heritage boundary. Directional speaker arrays. Sealed acoustic measurement per match. (4) TRAFFIC: Phased ingress starting 4h before. Tourist corridors maintained. Municipal police coordination documented. (5) CAPACITY: 35,000 operational cap for Copa matches — heritage-compliant. Remaining 7,000 seats blocked with sealed justification. (6) UNESCO ENHANCEMENT: Position Cusco FC matches as "living cultural heritage" — football in the Andes IS culture. Partner with UNESCO on sports-heritage framework.' },
+        { agentId: 'legal-heritage', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. "Temporary reversible installations" solves the legal timeline. Directional LEDs and acoustic engineering resolve the visibility and noise conflicts. The 35,000 cap is pragmatic — CONMEBOL will accept documented heritage justification. The UNESCO partnership is inspired: rather than football threatening heritage, position Cusco FC as evidence that football and heritage COEXIST. Andean football at 3,400m in a UNESCO World Heritage city is unique in world football. The Regulator\'s Receipt seals every match: CONMEBOL compliance + heritage compliance + acoustic data + traffic management. No other club in South America faces this challenge — Cusco FC governs it.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:cf30123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'cf40123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (UNESCO + Ministerio de Cultura + Acoustic data + Traffic + CONMEBOL venue)',
+        complianceLabel: 'Heritage Governance',
+        complianceValue: '35,000 CAP — HERITAGE COMPLIANT',
+        complianceThreshold: 'Ley 28296 + UNESCO WHC + CONMEBOL venue standards',
+        agents: ['Heritage Agent', 'Venue Operations Agent', 'Tourism Impact Agent', 'Legal Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'Cusco FC — UNESCO Heritage Venue Governance',
+        guaranteeBody: 'Seals: temporary installation approval, directional LED study, acoustic containment (85dB boundary), 35,000 heritage cap, phased ingress plan, tourist corridor maintenance, UNESCO sports-heritage partnership.',
+        evidenceChain: 'Ministerio → Temporary installations → LED study → Acoustic engineering → Traffic plan → 35K cap → CONMEBOL → UNESCO partnership → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will navigate the unprecedented challenge of governing professional football within a UNESCO World Heritage buffer zone.',
+      phaseLabels: ['Heritage Restrictions & Tourism Impact', 'CONMEBOL vs Heritage Conflicts', 'Heritage-Football Coexistence Protocol'],
+    },
+
+    // SCENARIO 3 — COPA LIBERTADORES QUALIFICATION COMPLIANCE
+    {
+      id: 'copa-qualification',
+      title: 'Copa Libertadores Qualification — CONMEBOL Licensing at 3,400m',
+      subtitle: 'Financial indicators · Venue certification · Squad registration · Medical infrastructure · Travel logistics',
+      banner: 'Simulating CONMEBOL club licensing compliance for Cusco FC\'s Copa Libertadores campaign. The club must satisfy financial, infrastructure, sporting, and medical requirements — all complicated by 3,400m altitude, UNESCO heritage restrictions, and provincial resources.',
+      risk: 'High',
+      scenarioNum: 'CONMEBOL',
+      icon: 'trophy',
+      color: 'text-blue-400',
+      agents: [
+        { id: 'licensing-agent', name: 'Licensing Agent', role: 'CONMEBOL Club Licensing & Documentation', icon: '🏆', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'financial-cusco', name: 'Financial Agent', role: 'FFP Indicators & SUNAT Compliance', icon: '💰', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'medical-copa', name: 'Medical Infrastructure Agent', role: 'Altitude Medical & CONMEBOL Standards', icon: '🏥', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+        { id: 'operations-copa', name: 'Operations Agent', role: 'Travel Logistics & Matchday Standards', icon: '✈️', color: 'text-cyan-400', borderColor: 'border-cyan-500/40', bgColor: 'bg-cyan-500/10' },
+      ],
+      connectors: [
+        { name: 'CONMEBOL Licensing', status: 'connected', type: 'Club Licensing', icon: 'check-circle', detail: 'Application submitted — 4 criteria under review' },
+        { name: 'SUNAT Portal', status: 'connected', type: 'Tax Compliance', icon: 'landmark', detail: 'Current obligations: PEN 3.8M — installment plan active' },
+        { name: 'INDECI Cusco', status: 'connected', type: 'Safety Certification', icon: 'shield', detail: 'Garcilaso certification renewal — seismic zone III' },
+        { name: 'Travel System', status: 'syncing', type: 'Logistics', icon: 'plane', detail: 'Cusco airport: limited international connections' },
+      ],
+      script: [
+        { agentId: 'licensing-agent', phase: 'phase1', type: 'warning', delay: 800, content: 'CONMEBOL LICENSING ASSESSMENT — CUSCO FC. 5 criteria areas: (1) SPORTING: Squad of 25 registered — compliant. Youth development programme — registered but below CONMEBOL tier 2 standards. (2) INFRASTRUCTURE: Estadio Garcilaso 42,000 — capacity compliant. BUT: heritage restrictions limit modifications (see Scenario 2). VAR room compliant. Pitch compliant. (3) PERSONNEL: Technical director licensed — compliant. Club secretary — compliant. Medical team — 4 of 6 required positions filled. (4) LEGAL: Club registered with FPF — compliant. Statutes — compliant. (5) FINANCIAL: This is where problems emerge. Overdue payables, SUNAT obligations, and wage-to-revenue ratio are all in AMBER or approaching RED thresholds.' },
+        { agentId: 'financial-cusco', phase: 'phase1', type: 'analysis', delay: 2500, content: 'FINANCIAL DEEP-DIVE. (1) Revenue: PEN 12.8M/year (broadcast PEN 4.2M, matchday PEN 3.8M, sponsors PEN 3.1M, transfers PEN 1.7M). (2) Wages: PEN 8.9M = 69.5% of revenue. CONMEBOL AMBER threshold: 70%. ONE additional signing pushes to RED. (3) Overdue payables: PEN 620K — 2 suppliers (PEN 380K) + SUNAT installment (PEN 240K overdue). CONMEBOL limit: 30 days overdue = FLAG. Both suppliers are 45+ days. (4) SUNAT total: PEN 3.8M debt. Installment plan active but 1 payment missed. (5) Transfer receivables: PEN 800K from Liga 1 club — 60 days overdue. (6) Net position: fragile but recoverable IF overdue payables are resolved within 30 days AND missed SUNAT payment is caught up.' },
+        { agentId: 'medical-copa', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT — MEDICAL INFRASTRUCTURE GAP. CONMEBOL Copa Libertadores medical requirements: (1) Matchday medical team: 6 positions (2 doctors, 2 paramedics, 1 physiotherapist, 1 cardiologist). Cusco FC has 4 — missing cardiologist and 1 paramedic. (2) At 3,400m, the cardiologist requirement is not bureaucratic — it\'s SAFETY CRITICAL. Altitude-induced cardiac events require immediate specialist response. (3) Cusco has cardiologists at Hospital Regional — but they\'re not contracted to the club. CONMEBOL requires DEDICATED matchday personnel. (4) My dissent: Cusco FC should not receive Copa licensing without a contracted cardiologist. The altitude medical risk (Scenario 1) makes this non-negotiable. Submitting licensing without addressing this is both unsafe and will likely be rejected.' },
+        { agentId: 'operations-copa', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — TRAVEL LOGISTICS. Cusco\'s airport (Alejandro Velasco Astete): (1) No direct international flights to Buenos Aires, São Paulo, or Bogotá. All Copa away travel requires Lima connection — adds 3-6 hours. (2) Altitude: teams departing Cusco (3,400m) for sea-level away matches need reverse acclimatisation. (3) Budget impact: PEN 52K per away trip (vs PEN 38K from Lima). 3 group-stage away matches: PEN 156K. (4) Home logistics: visiting teams arrive at Cusco airport (limited slots) — ground transport to Garcilaso through heritage zone. (5) CONMEBOL requires documented travel and acclimatisation plans. Cusco\'s geographical isolation makes this more complex than any other Peruvian Copa participant.' },
+        { agentId: 'licensing-agent', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Datacendia Copa Licensing Protocol: (1) FINANCIAL: Resolve 2 supplier payables (PEN 380K) within 15 days. Catch up missed SUNAT installment (PEN 240K). Chase transfer receivable (PEN 800K — formal demand with evidence). (2) MEDICAL: Contract cardiologist from Hospital Regional — PEN 3,500/matchday (18 matches = PEN 63K). Contract 1 additional paramedic. (3) YOUTH: Submit enhanced youth development plan to CONMEBOL — leverage Cusco\'s unique altitude training advantage. (4) TRAVEL: Pre-book all Copa travel through Lima hub. Document acclimatisation protocols for away matches. (5) HERITAGE: Submit Ministerio de Cultura temporary installation approvals (Scenario 2) as part of venue package. (6) EVIDENCE: Sealed licensing package with financial remediation timeline, medical contracts, travel plans.' },
+        { agentId: 'medical-copa', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. Contracted cardiologist at PEN 63K/season is affordable and closes the critical gap. Combined with Scenario 1\'s altitude protocol, Cusco FC\'s medical infrastructure becomes the STRONGEST in Liga 1 for altitude venues. For CONMEBOL: a provincial club at 3,400m with a contracted cardiologist, SpO2 monitoring, and sealed emergency protocols exceeds the medical standard of most South American Copa participants. For Cusco: the licensing package transforms weaknesses (altitude, heritage, geography) into governance showcases. The Regulator\'s Receipt proves Cusco FC earned its Copa place through governance, not just results.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:cf50123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'cf60123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (CONMEBOL licensing + Financial remediation + Medical contracts + Travel + Heritage)',
+        complianceLabel: 'Copa Licensing',
+        complianceValue: 'FINANCIAL REMEDIATION — 15 DAYS',
+        complianceThreshold: 'CONMEBOL Club Licensing Manual 2026',
+        agents: ['Licensing Agent', 'Financial Agent', 'Medical Infrastructure Agent', 'Operations Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'Cusco FC — Copa Libertadores Licensing Governance',
+        guaranteeBody: 'Seals: financial remediation (PEN 620K payables + SUNAT catch-up), cardiologist contract, enhanced youth plan, travel logistics, heritage venue approvals, complete licensing evidence package.',
+        evidenceChain: 'Licensing review → Financial gap → Payables → SUNAT → Medical (cardiologist) → Travel → Heritage → Youth → Sealed package → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will govern Copa Libertadores licensing compliance — resolving financial gaps, medical infrastructure, and heritage-zone venue challenges.',
+      phaseLabels: ['Licensing Assessment & Financial Gap', 'Medical Infrastructure & Travel', 'Remediation & Evidence Package'],
+    },
+
+    // SCENARIO 4 — FAN DATA PROTECTION IN A TOURISM CITY
+    {
+      id: 'fan-data-tourism',
+      title: 'Fan Data Protection — Ley 29733 in Peru\'s Tourism Capital',
+      subtitle: 'Tourist-fan overlap · ANPDP compliance · International data · Matchday collection · Ticket platforms',
+      banner: 'Simulating data protection governance for the only Liga 1 club where the fan base significantly overlaps with international tourism. Cusco FC\'s ticketing, fan engagement, and commercial operations process data from Peruvian fans AND international tourists — creating cross-border data governance challenges unique in Liga 1.',
+      risk: 'Medium',
+      scenarioNum: 'Data',
+      icon: 'shield',
+      color: 'text-emerald-400',
+      agents: [
+        { id: 'data-protect', name: 'Data Protection Agent', role: 'Ley 29733 & ANPDP Compliance', icon: '🔒', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+        { id: 'commercial-data', name: 'Commercial Agent', role: 'Fan Engagement & Ticket Platform', icon: '📊', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'legal-data', name: 'Legal Agent', role: 'Cross-Border Data & International Privacy', icon: '⚖️', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'tourism-data', name: 'Tourism Data Agent', role: 'International Visitor Data & MINCETUR', icon: '🌍', color: 'text-cyan-400', borderColor: 'border-cyan-500/40', bgColor: 'bg-cyan-500/10' },
+      ],
+      connectors: [
+        { name: 'ANPDP Registry', status: 'connected', type: 'Data Authority', icon: 'shield', detail: 'Database registration: 2 of 4 fan databases registered — 2 missing' },
+        { name: 'Ticket Platform', status: 'connected', type: 'Commercial', icon: 'ticket', detail: 'Teleticket API: processes DNI + passport data for 42,000' },
+        { name: 'MINCETUR Tourism', status: 'connected', type: 'Tourism', icon: 'globe', detail: '12% of home attendees are domestic/international tourists' },
+        { name: 'DS 115-2025-PCM', status: 'syncing', type: 'AI Governance', icon: 'cpu', detail: 'AI-driven fan analytics — decree compliance required' },
+      ],
+      script: [
+        { agentId: 'data-protect', phase: 'phase1', type: 'warning', delay: 800, content: 'DATA PROTECTION AUDIT — CUSCO FC. Ley 29733 compliance assessment: (1) Fan databases: 4 identified — season tickets, matchday purchases, social media engagement, merchandise. Only 2 registered with ANPDP. 2 UNREGISTERED = violation. (2) Consent: Season ticket form includes consent clause. But matchday ticket purchases via Teleticket: consent buried in T&Cs — not "free, prior, express, and informed" per Art. 13.5. (3) Data retention: no retention policy. Fan data from 2019 onwards stored indefinitely — Ley 29733 requires defined retention periods. (4) International tourist data: 12% of attendees provide passport numbers through Teleticket. This is CROSS-BORDER PERSONAL DATA. No cross-border transfer assessment conducted. (5) AI analytics: fan engagement platform uses AI to target promotions — DS N° 115-2025-PCM applies.' },
+        { agentId: 'tourism-data', phase: 'phase1', type: 'analysis', delay: 2500, content: 'TOURISM-FAN DATA OVERLAP. Unique to Cusco FC: (1) Domestic tourists: ~8% of home attendance. Buy tickets online, provide DNI, no local address. Data processed by Teleticket (Lima-based). (2) International tourists: ~4% of attendance. Provide passport numbers, nationality, hotel address. Mostly Brazilian, Argentine, American. (3) Tour operators: 3 operators package "Cusco FC + Machu Picchu" experiences — collecting fan data on behalf of club. No data processing agreements in place. (4) Copa Libertadores: international visitors increase to ~15% — Argentine and Brazilian away fans. (5) Hotel partnerships: Cusco FC fan discount at 4 hotels — guest data shared bidirectionally WITHOUT data processing agreements. (6) No other Liga 1 club has this tourism-data complexity.' },
+        { agentId: 'legal-data', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT — CROSS-BORDER DATA RISK. (1) Passport data from Argentine/Brazilian/American tourists: if transferred outside Peru, Ley 29733 Art. 15 requires adequate protection or consent. (2) Teleticket servers: Lima — domestic transfer, compliant. But Teleticket uses AWS (US region) for backup — this IS cross-border transfer. (3) EU tourists (GDPR nationals): ~2% of international visitors. Processing their data without GDPR-compliant consent creates EU regulatory exposure. (4) DS N° 115-2025-PCM: AI-driven fan analytics MUST include transparency and human override. Current system has neither. (5) My dissent: Cusco FC must STOP AI-driven analytics immediately until DS 115 compliance is achieved. ANPDP fines for unregistered databases: up to 100 UIT (~PEN 515K). The risk is real and imminent.' },
+        { agentId: 'commercial-data', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — COMMERCIAL IMPACT OF COMPLIANCE. (1) AI analytics drives 22% of merchandise revenue through targeted promotions. Stopping it loses PEN 180K/year. (2) Hotel partnerships generate PEN 120K/year. Pausing for DPAs loses 2-3 months of revenue. (3) Tour operator packages bring 3,200 fans/year at PEN 35 avg ticket = PEN 112K. (4) Total commercial activity at risk during compliance remediation: PEN 412K. (5) However: ANPDP fine for 2 unregistered databases: up to PEN 1.03M. Cross-border violation: additional sanctions. (6) The math is clear: compliance cost << non-compliance risk. But the remediation must preserve commercial relationships.' },
+        { agentId: 'data-protect', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Datacendia Data Protection Protocol: (1) IMMEDIATE: Register 2 missing databases with ANPDP (5 business days). (2) CONSENT: Redesign Teleticket consent flow — separate, prominent, language-appropriate (Spanish + English + Portuguese for Copa). (3) RETENTION: 3-year policy for matchday data, 5-year for season tickets, annual purge of inactive. (4) CROSS-BORDER: Data processing agreements with Teleticket (AWS), hotel partners, tour operators. Standard contractual clauses. (5) AI ANALYTICS: DS 115 compliance — transparency notice on fan platform, human override for targeting decisions, algorithmic impact assessment sealed. (6) TOURIST DATA: Separate consent flow for passport holders — multilingual, explicit, purpose-limited. (7) All remediation documented and sealed for ANPDP audit readiness.' },
+        { agentId: 'legal-data', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. ANPDP registration + DS 115 compliance addresses the immediate risk. AI analytics can RESUME once transparency and human override are implemented (estimated 2 weeks). Commercial impact minimised. For ANPDP: Cusco FC becomes the first Liga 1 club with comprehensive cross-border data governance — a model for any club with international fan engagement. For DS 115: AI fan analytics with sealed transparency and override documentation positions Cusco FC as a pioneer in Peru\'s new AI governance framework. Tourism and football data CAN coexist — with governance.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:cf70123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'cf80123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (ANPDP registration + Consent + Cross-border DPAs + DS 115 + Retention policy)',
+        complianceLabel: 'Data Protection',
+        complianceValue: '2 DATABASES REGISTERED — AI PAUSED',
+        complianceThreshold: 'Ley 29733 + DS N° 115-2025-PCM',
+        agents: ['Data Protection Agent', 'Commercial Agent', 'Legal Agent', 'Tourism Data Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'Cusco FC — Fan Data Protection in Tourism Capital',
+        guaranteeBody: 'Seals: ANPDP registration (4 databases), redesigned consent, 3-year retention policy, cross-border DPAs (Teleticket, hotels, operators), DS 115 AI compliance, multilingual tourist consent.',
+        evidenceChain: 'Data audit → 2 unregistered → ANPDP → Consent redesign → Retention → Cross-border DPAs → DS 115 → AI resume → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will govern data protection at Peru\'s most tourism-exposed football club — resolving ANPDP gaps, cross-border data, and AI analytics compliance.',
+      phaseLabels: ['Data Audit & Tourism Overlap', 'Cross-Border Risk & AI Compliance', 'Comprehensive Data Protocol'],
+    },
+
+    // SCENARIO 5 — REGIONAL POLITICAL GOVERNANCE
+    {
+      id: 'regional-politics',
+      title: 'Regional Political Governance — Cusco\'s Football in Political Crossfire',
+      subtitle: 'Gobierno Regional · Municipal funding · Election cycles · Infrastructure promises · Independence',
+      banner: 'Simulating political governance for a club embedded in one of Peru\'s most politically active regions. Cusco\'s regional government, municipal authority, and national representatives all claim influence over Cusco FC — creating governance conflicts around public funding, infrastructure, and political independence.',
+      risk: 'High',
+      scenarioNum: 'Politics',
+      icon: 'building',
+      color: 'text-purple-400',
+      agents: [
+        { id: 'governance-pol', name: 'Governance Agent', role: 'Institutional Independence & Board Integrity', icon: '🏛️', color: 'text-purple-400', borderColor: 'border-purple-500/40', bgColor: 'bg-purple-500/10' },
+        { id: 'legal-pol', name: 'Legal Agent', role: 'Public Funding Law & Anti-Corruption', icon: '⚖️', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'financial-pol', name: 'Financial Agent', role: 'Public-Private Governance & OSCE', icon: '💰', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'community-pol', name: 'Community Agent', role: 'Civic Identity & Fan Representation', icon: '🌍', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+      ],
+      connectors: [
+        { name: 'Gobierno Regional Cusco', status: 'connected', type: 'Regional Government', icon: 'landmark', detail: 'PEN 2.5M infrastructure commitment — election-linked' },
+        { name: 'Municipal Cusco', status: 'connected', type: 'Local Authority', icon: 'building', detail: 'Stadium access and event permits — politically conditional' },
+        { name: 'OSCE Portal', status: 'connected', type: 'Public Contracting', icon: 'file-text', detail: 'Public funding requires OSCE procurement compliance' },
+        { name: 'Contraloría', status: 'syncing', type: 'Audit Authority', icon: 'shield', detail: 'Public fund usage — Contraloría oversight active' },
+      ],
+      script: [
+        { agentId: 'governance-pol', phase: 'phase1', type: 'warning', delay: 800, content: 'POLITICAL GOVERNANCE ALERT. Cusco FC operates in a politically charged environment: (1) Gobierno Regional committed PEN 2.5M for "sports infrastructure development" — announced at rally 4 months before regional elections. (2) Regional Governor wants Cusco FC branding at government-funded youth facilities. (3) Municipal Cusco: event permits for Garcilaso require "coordination" with Mayor\'s office — permits have been delayed after club declined to feature Mayor at Copa ceremony. (4) Congressional representative proposed national bill naming Cusco FC as "cultural heritage of Cusco region" — which would bring government funding BUT also government oversight. (5) 2 of 7 board members are politically connected — one to Regional Governor, one to opposition party. Board votes on infrastructure spending have split along political lines.' },
+        { agentId: 'financial-pol', phase: 'phase1', type: 'analysis', delay: 2500, content: 'PUBLIC FUNDING ANALYSIS. PEN 2.5M Gobierno Regional commitment: (1) Legal basis: Ley del Deporte allows regional government investment in sports infrastructure. (2) OSCE requirement: public funds require competitive procurement under Ley de Contrataciones del Estado. (3) Contraloría: any public expenditure over PEN 500K triggers audit. (4) Current proposal: Regional Government contracts directly with Cusco FC for facility improvements. This bypasses OSCE competitive bidding — potential violation. (5) If audited and found non-compliant: Cusco FC returns funds + Regional Governor faces criminal liability (peculado). (6) Historical precedent: 3 Peruvian clubs have faced Contraloría investigations for public fund misuse. One resulted in club president prosecution.' },
+        { agentId: 'legal-pol', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT — POLITICAL CAPTURE RISK. (1) PEN 2.5M "commitment" with branding requirements = political sponsorship disguised as infrastructure investment. If Regional Governor uses Cusco FC facilities for political events, it violates electoral advertising regulations. (2) Permit delays after declining Mayor appearance = soft coercion. Documented but difficult to prove legally. (3) Cultural heritage bill: creates legal mechanism for GOVERNMENT BOARD APPOINTMENTS. This is political capture — once government appoints board members, club independence is gone. (4) My dissent: Cusco FC should DECLINE the PEN 2.5M in its current form. The political strings make it a governance liability. Instead, propose arms-length public-private partnership with OSCE compliance and zero branding obligations.' },
+        { agentId: 'community-pol', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — COMMUNITY IDENTITY. (1) Cusco FC is THE civic institution of Cusco (after the Cathedral and Machu Picchu). Fans see the club as belonging to the COMMUNITY, not to politicians. (2) Social media: 68% of fan comments on PEN 2.5M are negative — "they want to own our club." (3) Ultra groups: publicly stated they will protest ANY political branding at Garcilaso. (4) Regional identity: Cusqueños have historically resisted Lima and government control. Political interference activates deep cultural resistance. (5) Fan referendum: 73% opposed government board appointees in informal poll. (6) The fans are right: political independence is what makes Cusco FC a civic institution. Losing it would be irreversible.' },
+        { agentId: 'governance-pol', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Datacendia Political Independence Protocol: (1) PEN 2.5M: DECLINE direct transfer. Propose PUBLIC-PRIVATE PARTNERSHIP through Gobierno Regional\'s sports infrastructure fund with OSCE procurement. Cusco FC contributes matching PEN 500K. Zero branding obligations. Contraloría-compliant from day one. (2) PERMITS: Document permit delays with timestamps. File formal administrative appeal if pattern continues. Sealed evidence for Defensoría del Pueblo if needed. (3) HERITAGE BILL: Formally oppose government board appointments. Counter-propose fan-elected board structure with transparency requirements. (4) BOARD: 2 politically-connected members must declare conflicts of interest on infrastructure votes. Recusal protocol sealed. (5) COMMUNITY: Publish governance independence charter — "Cusco FC belongs to Cusco, not to politicians." Fan endorsement via assembly.' },
+        { agentId: 'legal-pol', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. The public-private partnership preserves the PEN 2.5M investment while eliminating political capture risk. OSCE compliance + Contraloría readiness = zero legal exposure. For FIFA: political independence is a core governance requirement — clubs influenced by government face sanctions. Cusco FC\'s governance independence charter, sealed with evidence, is exactly what FIFA\'s governance committee requires. For Cusco: the fans are right. The club belongs to the community. The Regulator\'s Receipt proves that every decision — especially those involving political pressure — is governed independently, transparently, and with evidence.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:cf90123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'cfa0123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (Political independence + OSCE + Contraloría + Permit documentation + Board recusal)',
+        complianceLabel: 'Political Independence',
+        complianceValue: 'PEN 2.5M RESTRUCTURED — OSCE COMPLIANT',
+        complianceThreshold: 'OSCE + Contraloría + FIFA political independence',
+        agents: ['Governance Agent', 'Legal Agent', 'Financial Agent', 'Community Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'Cusco FC — Political Independence Governance',
+        guaranteeBody: 'Seals: PEN 2.5M restructured to OSCE-compliant PPP, permit delay documentation, heritage bill counter-proposal, board conflict recusal protocol, governance independence charter.',
+        evidenceChain: 'Political pressure → PEN 2.5M analysis → OSCE restructure → Permits documented → Heritage bill → Board recusal → Independence charter → Community assembly → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will defend Cusco FC\'s political independence — restructuring public funding, documenting pressure, and protecting the club\'s civic identity.',
+      phaseLabels: ['Political Pressure & Public Funding', 'Capture Risk & Community Identity', 'Independence Protocol & OSCE Compliance'],
+    },
+  ],
+};
+
+export default config;

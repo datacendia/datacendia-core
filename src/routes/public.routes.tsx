@@ -126,6 +126,14 @@ const BinanceSandboxPage = lazy(() => import('../pages/sandbox/BinanceSandboxPag
 const RocketLawyerSandboxPage = lazy(() => import('../pages/sandbox/RocketLawyerSandboxPage'));
 const CanvaSandboxPage = lazy(() => import('../pages/sandbox/CanvaSandboxPage'));
 
+// Peru Liga 1 Club Sandboxes
+const UniversitarioSandboxPage = lazy(() => import('../pages/sandbox/UniversitarioSandboxPage'));
+const AlianzaLimaSandboxPage = lazy(() => import('../pages/sandbox/AlianzaLimaSandboxPage'));
+const SportingCristalSandboxPage = lazy(() => import('../pages/sandbox/SportingCristalSandboxPage'));
+const MelgarSandboxPage = lazy(() => import('../pages/sandbox/MelgarSandboxPage'));
+const CuscoFcSandboxPage = lazy(() => import('../pages/sandbox/CuscoFcSandboxPage'));
+const AdtSandboxPage = lazy(() => import('../pages/sandbox/AdtSandboxPage'));
+
 // EU & Latin America Sandboxes
 const SapSandboxPage = lazy(() => import('../pages/sandbox/SapSandboxPage'));
 const FepcmacSandboxPage = lazy(() => import('../pages/sandbox/FepcmacSandboxPage'));
@@ -210,6 +218,18 @@ export const publicRoutes: RouteObject[] = [
   { path: '/sandbox/burnley', element: w(BurnleySandboxPage) },
   { path: '/sandbox/fpf-peru', element: w(FpfPeruSandboxPage) },
   { path: '/sandbox/peru', element: w(FpfPeruSandboxPage) },
+  { path: '/sandbox/universitario', element: w(UniversitarioSandboxPage) },
+  { path: '/sandbox/la-u', element: w(UniversitarioSandboxPage) },
+  { path: '/sandbox/alianza-lima', element: w(AlianzaLimaSandboxPage) },
+  { path: '/sandbox/alianza', element: w(AlianzaLimaSandboxPage) },
+  { path: '/sandbox/sporting-cristal', element: w(SportingCristalSandboxPage) },
+  { path: '/sandbox/cristal', element: w(SportingCristalSandboxPage) },
+  { path: '/sandbox/melgar', element: w(MelgarSandboxPage) },
+  { path: '/sandbox/fbc-melgar', element: w(MelgarSandboxPage) },
+  { path: '/sandbox/cusco-fc', element: w(CuscoFcSandboxPage) },
+  { path: '/sandbox/cusco', element: w(CuscoFcSandboxPage) },
+  { path: '/sandbox/adt', element: w(AdtSandboxPage) },
+  { path: '/sandbox/tarma', element: w(AdtSandboxPage) },
   { path: '/sandbox/thomson-reuters', element: w(ThomsonReutersSandboxPage) },
   { path: '/sandbox/tr', element: w(ThomsonReutersSandboxPage) },
   { path: '/sandbox/lexisnexis', element: w(LexisNexisSandboxPage) },
