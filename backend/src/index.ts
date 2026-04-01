@@ -385,6 +385,12 @@ app.use('/api/v1/rapids', rapidsRoutes);             // NVIDIA RAPIDS GPU analyt
 app.use('/api/v1/flink', flinkRoutes);               // Apache Flink CEP stream processing
 app.use('/api/v1/gateway', gatewayRoutes);           // CendiaGateway™ — AI Governance Gateway
 
+// Sandbox Analytics - Track demo engagement for Thomson Reuters
+import('../src/routes/sandbox-analytics.js').then(mod => {
+  app.use('/api', mod.default as any);
+  logger.info('📊 Sandbox Analytics API available at /api/sandbox-*');
+}).catch(() => { /* Module not available */ });
+
 // SPA catch-all: serve index.html for non-API routes (after all API routes)
 if (fs.existsSync(frontendDist) && fs.existsSync(path.join(frontendDist, 'index.html'))) {
   app.get('*', (req, res, next) => {

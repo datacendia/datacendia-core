@@ -14,7 +14,12 @@ import {
   Shield, Lock, ChevronRight, AlertTriangle, CheckCircle, XCircle,
   Radio, Activity, FileText, Download, Users, Zap,
   Database, ShieldCheck, Fingerprint, Link2, Play, RotateCcw,
+  TrendingUp, Clock, Share, Eye, BarChart3, ChevronDown,
 } from 'lucide-react';
+import { ComplianceScore, DecisionTimeline, EvidenceExplorer, ExportSharePanel, PreMortemAnalysis, GhostBoard, DecisionDebtTracker, ChronosTimeline, LiveDemoMode } from './SandboxEnhanced';
+import Rule11Certification from './Rule11Certification';
+import { Rule11ExportButton } from './Rule11CertificationPro';
+import { ComplianceScore as ComplianceScorePro } from './ComplianceScorePro';
 
 // =============================================================================
 // TYPES
@@ -63,6 +68,46 @@ export interface ReceiptData {
   guaranteeTitle: string;
   guaranteeBody: string;
   evidenceChain: string;
+  complianceScore?: number;
+  timelineEvents?: TimelineEvent[];
+  // Cortex Intelligence properties
+  preMortemFailures?: Array<{
+    type: string;
+    probability: number;
+    impact: string;
+    description: string;
+  }>;
+  ghostAlternatives?: Array<{
+    path: string;
+    probability: number;
+    outcome: string;
+    reason: string;
+  }>;
+  decisionDebt?: Array<{
+    decision: string;
+    date: string;
+    impact: number;
+    accumulated: boolean;
+  }>;
+  totalDecisionDebt?: number;
+  chronosEvents?: Array<{
+    period: string;
+    change: string;
+    magnitude: number;
+    trend: 'improving' | 'declining' | 'stable';
+  }>;
+  liveDemoActive?: boolean;
+  liveDemoAction?: string;
+  liveDemoProgress?: number;
+}
+
+export interface TimelineEvent {
+  timestamp: string;
+  type: 'analysis' | 'flag' | 'warning' | 'dissent' | 'proposal' | 'resolution' | 'withdrawal';
+  title: string;
+  description: string;
+  agent?: string;
+  impact: 'high' | 'medium' | 'low';
 }
 
 export interface ScenarioConfig {
@@ -101,6 +146,13 @@ export interface ShellLabels {
   connectorLive: string;
   connectorSync: string;
   connectorReady: string;
+  complianceScore: string;
+  timeline: string;
+  evidenceExplorer: string;
+  shareReport: string;
+  exportData: string;
+  viewDetails: string;
+  hideDetails: string;
 }
 
 export const DEFAULT_LABELS: ShellLabels = {
@@ -109,7 +161,7 @@ export const DEFAULT_LABELS: ShellLabels = {
   deliberationTitle: 'Multi-Agent Deliberation',
   readyToBegin: 'Ready to begin',
   phase: 'Phase',
-  deliberationComplete: 'Deliberation Complete \u2014 Consensus Reached',
+  deliberationComplete: 'Deliberation Complete — Consensus Reached',
   runDeliberation: 'Run Deliberation',
   generateReceipt: "Generate Regulator's Receipt",
   generatingBundle: 'Generating Cryptographic Evidence Bundle...',
@@ -121,19 +173,26 @@ export const DEFAULT_LABELS: ShellLabels = {
   connectorLive: 'LIVE',
   connectorSync: 'SYNC',
   connectorReady: 'READY',
+  complianceScore: 'Compliance Score',
+  timeline: 'Decision Timeline',
+  evidenceExplorer: 'Evidence Explorer',
+  shareReport: 'Share Report',
+  exportData: 'Export Data',
+  viewDetails: 'View Details',
+  hideDetails: 'Hide Details',
 };
 
 export const ES_LABELS: ShellLabels = {
   dataConnectors: 'Conectores de Datos',
   activeCouncil: 'Consejo Activo',
-  deliberationTitle: 'Deliberaci\u00f3n Multi-Agente',
+  deliberationTitle: 'Deliberación Multi-Agente',
   readyToBegin: 'Listo para comenzar',
   phase: 'Fase',
-  deliberationComplete: 'Deliberaci\u00f3n Completa \u2014 Consenso Alcanzado',
-  runDeliberation: 'Iniciar Deliberaci\u00f3n',
+  deliberationComplete: 'Deliberación Completa — Consenso Alcanzado',
+  runDeliberation: 'Iniciar Deliberación',
   generateReceipt: 'Generar Recibo del Regulador',
-  generatingBundle: 'Generando Paquete de Evidencia Criptogr\u00e1fica...',
-  simulationNote: 'NOTA DE SIMULACI\u00d3N:',
+  generatingBundle: 'Generando Paquete de Evidencia Criptográfica...',
+  simulationNote: 'NOTA DE SIMULACIÓN:',
   selectScenario: 'Seleccionar Escenario',
   reset: 'Reiniciar',
   confidential: 'CONFIDENCIAL',
@@ -141,26 +200,40 @@ export const ES_LABELS: ShellLabels = {
   connectorLive: 'ACTIVO',
   connectorSync: 'SYNC',
   connectorReady: 'LISTO',
+  complianceScore: 'Puntuación de Cumplimiento',
+  timeline: 'Línea de Tiempo de Decisiones',
+  evidenceExplorer: 'Explorador de Evidencia',
+  shareReport: 'Compartir Informe',
+  exportData: 'Exportar Datos',
+  viewDetails: 'Ver Detalles',
+  hideDetails: 'Ocultar Detalles',
 };
 
 export const PT_LABELS: ShellLabels = {
   dataConnectors: 'Conectores de Dados',
   activeCouncil: 'Conselho Ativo',
-  deliberationTitle: 'Delibera\u00e7\u00e3o Multi-Agente',
+  deliberationTitle: 'Deliberação Multi-Agente',
   readyToBegin: 'Pronto para iniciar',
   phase: 'Fase',
-  deliberationComplete: 'Delibera\u00e7\u00e3o Conclu\u00edda \u2014 Consenso Alcan\u00e7ado',
-  runDeliberation: 'Iniciar Delibera\u00e7\u00e3o',
+  deliberationComplete: 'Deliberação Concluída — Consenso Alcançado',
+  runDeliberation: 'Iniciar Deliberação',
   generateReceipt: 'Gerar Recibo do Regulador',
-  generatingBundle: 'Gerando Pacote de Evid\u00eancia Criptogr\u00e1fica...',
-  simulationNote: 'NOTA DE SIMULA\u00c7\u00c3O:',
-  selectScenario: 'Selecionar Cen\u00e1rio',
+  generatingBundle: 'Gerando Pacote de Evidência Criptográfica...',
+  simulationNote: 'NOTA DE SIMULAÇÃO:',
+  selectScenario: 'Selecionar Cenário',
   reset: 'Reiniciar',
   confidential: 'CONFIDENCIAL',
   executiveSandbox: 'SANDBOX EXECUTIVO',
   connectorLive: 'ATIVO',
   connectorSync: 'SYNC',
   connectorReady: 'PRONTO',
+  complianceScore: 'Pontuação de Conformidade',
+  timeline: 'Linha do Tempo de Decisões',
+  evidenceExplorer: 'Explorador de Evidências',
+  shareReport: 'Compartilhar Relatório',
+  exportData: 'Exportar Dados',
+  viewDetails: 'Ver Detalhes',
+  hideDetails: 'Ocultar Detalhes',
 };
 
 // =============================================================================
@@ -717,7 +790,86 @@ export const SandboxShell: React.FC<{
               )}
             </div>
 
-            {receipt && <div className="mt-6"><RegulatorsReceipt receipt={receipt} accent={accent} /></div>}
+            {receipt && (
+              <>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  {/* Left Column - Compliance Score & Key Metrics */}
+                  <div className="space-y-6">
+                    <div className="bg-black/40 border border-white/10 rounded-xl">
+                      <ComplianceScorePro 
+                        phase={phase}
+                        citationsVerified={phase === 'phase2' ? Math.floor((visibleMessages / scenario.script.filter(m => m.phase === 'phase2').length) * 14) : phase === 'phase3' ? 14 : 0}
+                        totalCitations={14}
+                      />
+                    </div>
+                    
+                    {/* Cortex Intelligence Components - Left */}
+                    {receipt.preMortemFailures && receipt.preMortemFailures.length > 0 && (
+                      <PreMortemAnalysis failures={receipt.preMortemFailures} accent={accent} labels={L} />
+                    )}
+                    {receipt.decisionDebt && receipt.totalDecisionDebt !== undefined && (
+                      <DecisionDebtTracker debt={receipt.decisionDebt} totalDebt={receipt.totalDecisionDebt} accent={accent} labels={L} />
+                    )}
+                    {receipt.liveDemoActive !== undefined && (
+                      <LiveDemoMode 
+                        isActive={receipt.liveDemoActive} 
+                        currentAction={receipt.liveDemoAction || 'Processing...'} 
+                        progress={receipt.liveDemoProgress || 0} 
+                        accent={accent} 
+                        labels={L} 
+                      />
+                    )}
+                  </div>
+                  
+                  {/* Right Column - Timeline & Analysis */}
+                  <div className="space-y-6">
+                    <DecisionTimeline 
+                      events={receipt.timelineEvents || [
+                        {
+                          timestamp: receipt.timestamp,
+                          type: 'resolution',
+                          title: 'Sandbox Completed',
+                          description: 'Multi-agent deliberation complete with consensus',
+                          impact: 'medium'
+                        }
+                      ]} 
+                      accent={accent} 
+                    />
+                    <EvidenceExplorer receipt={receipt} accent={accent} labels={L} />
+                    
+                    {/* Cortex Intelligence Components - Right */}
+                    {receipt.ghostAlternatives && receipt.ghostAlternatives.length > 0 && (
+                      <GhostBoard alternatives={receipt.ghostAlternatives} accent={accent} labels={L} />
+                    )}
+                    {receipt.chronosEvents && receipt.chronosEvents.length > 0 && (
+                      <ChronosTimeline events={receipt.chronosEvents} accent={accent} labels={L} />
+                    )}
+                  </div>
+                </div>
+                
+                {/* Bottom Row - Export/Share & Rule 11 Certification */}
+                <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <ExportSharePanel receipt={receipt} accent={accent} labels={L} />
+                  <div className="bg-black/40 border border-white/10 rounded-xl p-4">
+                    <div className="mb-3">
+                      <h3 className="text-sm font-semibold tracking-[0.15em] text-white/60 uppercase flex items-center gap-2">
+                        <FileText className="w-4 h-4" /> Rule 11 Certification
+                      </h3>
+                    </div>
+                    <Rule11ExportButton 
+                      caseNumber="24-cv-3847"
+                      citationCount={14}
+                      wordsModified={847}
+                      className="w-full"
+                    />
+                    <div className="mt-2 text-xs text-white/30 text-center">
+                      Professional court-ready certification document
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-6"><RegulatorsReceipt receipt={receipt} accent={accent} /></div>
+              </>
+            )}
           </div>
         </div>
 
