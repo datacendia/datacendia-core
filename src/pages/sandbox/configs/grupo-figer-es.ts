@@ -478,6 +478,49 @@ const S10: TemplateScenario = {
   idleTitle: 'Listo para Deliberar',
   idleDesc: '4 agentes IA navegarán el conflicto Lei Pelé vs FIFA RSTP — modelando resultados CAS, estructurando negociación y sellando evidencia.',
   phaseLabels: ['Análisis Jurisdiccional', 'Estrategia de Negociación', 'Resolución y Sellado'],
-};
+
+        complianceScore: 91,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.158Z",
+            "type": "analysis",
+            "title": "System Assessment - Doble Representación — Transferencia a la Premier League",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: System Assessment analysis for Grupo Figer Es completed with industry-specific compliance checks",
+            "agent": "Tech Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.158Z",
+            "type": "warning",
+            "title": "Privacy Compliance - Doble Representación — Transferencia a la Premier League",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Privacy Compliance analysis for Grupo Figer Es completed with industry-specific compliance checks",
+            "agent": "Privacy Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.158Z",
+            "type": "dissent",
+            "title": "Security Risk - Doble Representación — Transferencia a la Premier League",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Security Risk analysis for Grupo Figer Es completed with industry-specific compliance checks",
+            "agent": "Security Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.158Z",
+            "type": "proposal",
+            "title": "Governance Framework - Doble Representación — Transferencia a la Premier League",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Governance Framework analysis for Grupo Figer Es completed with industry-specific compliance checks",
+            "agent": "Platform Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.158Z",
+            "type": "resolution",
+            "title": "Compliance Certified - Doble Representación — Transferencia a la Premier League",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Compliance Certified analysis for Grupo Figer Es completed with industry-specific compliance checks",
+            "agent": "Audit Agent",
+            "impact": "high"
+      }
+]};
 
 export const ES_SCENARIOS: TemplateScenario[] = [S1, S2, S3, S4, S5, S6, S7, S8, S9, S10];

@@ -47,6 +47,13 @@ const config: OrgSandboxConfig = {
       connectorLive: 'ACTIVO',
       connectorSync: 'SYNC',
       connectorReady: 'LISTO',
+      complianceScore: 'Puntuación de Cumplimiento',
+      timeline: 'Línea de Tiempo',
+      evidenceExplorer: 'Explorador de Evidencia',
+      shareReport: 'Compartir Informe',
+      exportData: 'Exportar Datos',
+      viewDetails: 'Ver Detalles',
+      hideDetails: 'Ocultar Detalles',
     },
     scenarios: ES_SCENARIOS,
   },
@@ -95,6 +102,49 @@ const config: OrgSandboxConfig = {
         guaranteeTitle: 'Sporting Cristal — Grupo Romero Corporate Governance',
         guaranteeBody: 'Seals: SOX-equivalent override accountability, related-party independent review, materiality threshold automation, SMV disclosure, SUNAT transfer pricing defence.',
         evidenceChain: 'Materiality flag → Override accountability → Related-party review → Arm\'s-length evidence → Board approval → SMV disclosure → ML-DSA-65 seal',
+        complianceScore: 87,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.198Z",
+            "type": "analysis",
+            "title": "System Assessment - Grupo Romero Corporate Governance — SOX-Equivalent Obligations",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: System Assessment analysis for Sporting Cristal completed with industry-specific compliance checks",
+            "agent": "Tech Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.198Z",
+            "type": "warning",
+            "title": "Privacy Compliance - Grupo Romero Corporate Governance — SOX-Equivalent Obligations",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Privacy Compliance analysis for Sporting Cristal completed with industry-specific compliance checks",
+            "agent": "Privacy Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.198Z",
+            "type": "dissent",
+            "title": "Security Risk - Grupo Romero Corporate Governance — SOX-Equivalent Obligations",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Security Risk analysis for Sporting Cristal completed with industry-specific compliance checks",
+            "agent": "Security Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.198Z",
+            "type": "proposal",
+            "title": "Governance Framework - Grupo Romero Corporate Governance — SOX-Equivalent Obligations",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Governance Framework analysis for Sporting Cristal completed with industry-specific compliance checks",
+            "agent": "Platform Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.198Z",
+            "type": "resolution",
+            "title": "Compliance Certified - Grupo Romero Corporate Governance — SOX-Equivalent Obligations",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Compliance Certified analysis for Sporting Cristal completed with industry-specific compliance checks",
+            "agent": "Audit Agent",
+            "impact": "high"
+      }
+]
       },
       idleTitle: 'Ready to Deliberate',
       idleDesc: '4 AI agents govern Sporting Cristal under Grupo Romero\'s corporate standards — SOX-equivalent compliance, related-party governance, and dual football/corporate regulatory obligations.',
@@ -297,6 +347,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Social Metrics & Verification', 'Environmental Baseline', 'ESG Protocol'],
     },
   ],
-};
+
+        complianceScore: 92,
+        timelineEvents: [
+          {
+            timestamp: new Date(Date.now() - 180000).toISOString(),
+            type: 'analysis',
+            title: 'Grupo Romero Corporate Governance — SOX-Equivalent Obligations Analysis Started',
+            description: 'AI governance analysis initiated',
+            agent: 'AI Governance Agent',
+            impact: 'high'
+          },
+          {
+            timestamp: new Date(Date.now() - 120000).toISOString(),
+            type: 'warning',
+            title: 'Compliance Requirements Identified',
+            description: 'Industry-specific compliance requirements detected',
+            agent: 'Compliance Agent',
+            impact: 'medium'
+          },
+          {
+            timestamp: new Date(Date.now() - 60000).toISOString(),
+            type: 'dissent',
+            title: 'Risk Assessment Required',
+            description: 'Potential compliance gaps need attention',
+            agent: 'Risk Agent',
+            impact: 'medium'
+          },
+          {
+            timestamp: new Date(Date.now() - 30000).toISOString(),
+            type: 'proposal',
+            title: 'Enhanced Governance Proposed',
+            description: 'Datacendia governance protocol recommended',
+            agent: 'Datacendia Agent',
+            impact: 'high'
+          },
+          {
+            timestamp: new Date().toISOString(),
+            type: 'resolution',
+            title: 'Compliance Achieved',
+            description: 'All requirements met with cryptographic evidence',
+            agent: 'Compliance Agent',
+            impact: 'high'
+          }
+        ]};
 
 export default config;

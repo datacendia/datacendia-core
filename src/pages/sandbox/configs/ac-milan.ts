@@ -282,6 +282,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Milan Lab AI Scouting', 'FSR & Legal Compliance', 'Quad-Governance Execution'],
     },
   ],
-};
+
+        complianceScore: 93,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.107Z",
+            "type": "analysis",
+            "title": "System Assessment - RedBird Capital LP Governance — €1.2B Acquisition Evidence",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: System Assessment analysis for Ac Milan completed with industry-specific compliance checks",
+            "agent": "Tech Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.108Z",
+            "type": "warning",
+            "title": "Privacy Compliance - RedBird Capital LP Governance — €1.2B Acquisition Evidence",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Privacy Compliance analysis for Ac Milan completed with industry-specific compliance checks",
+            "agent": "Privacy Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.108Z",
+            "type": "dissent",
+            "title": "Security Risk - RedBird Capital LP Governance — €1.2B Acquisition Evidence",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Security Risk analysis for Ac Milan completed with industry-specific compliance checks",
+            "agent": "Security Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.108Z",
+            "type": "proposal",
+            "title": "Governance Framework - RedBird Capital LP Governance — €1.2B Acquisition Evidence",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Governance Framework analysis for Ac Milan completed with industry-specific compliance checks",
+            "agent": "Platform Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.108Z",
+            "type": "resolution",
+            "title": "Compliance Certified - RedBird Capital LP Governance — €1.2B Acquisition Evidence",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Compliance Certified analysis for Ac Milan completed with industry-specific compliance checks",
+            "agent": "Audit Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

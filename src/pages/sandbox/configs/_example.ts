@@ -96,6 +96,49 @@ const config: OrgSandboxConfig = {
   //   labels: ES_LABELS,  // import from SandboxShared
   //   scenarios: [ ... ]  // same structure as above, with Spanish text
   // },
-};
+
+        complianceScore: 86,
+        timelineEvents: [
+          {
+            timestamp: new Date(Date.now() - 180000).toISOString(),
+            type: 'analysis',
+            title: 'Example Scenario — Compliance Audit Analysis Started',
+            description: 'AI governance analysis initiated',
+            agent: 'AI Governance Agent',
+            impact: 'high'
+          },
+          {
+            timestamp: new Date(Date.now() - 120000).toISOString(),
+            type: 'warning',
+            title: 'Compliance Requirements Identified',
+            description: 'Industry-specific compliance requirements detected',
+            agent: 'Compliance Agent',
+            impact: 'medium'
+          },
+          {
+            timestamp: new Date(Date.now() - 60000).toISOString(),
+            type: 'dissent',
+            title: 'Risk Assessment Required',
+            description: 'Potential compliance gaps need attention',
+            agent: 'Risk Agent',
+            impact: 'medium'
+          },
+          {
+            timestamp: new Date(Date.now() - 30000).toISOString(),
+            type: 'proposal',
+            title: 'Enhanced Governance Proposed',
+            description: 'Datacendia governance protocol recommended',
+            agent: 'Datacendia Agent',
+            impact: 'high'
+          },
+          {
+            timestamp: new Date().toISOString(),
+            type: 'resolution',
+            title: 'Compliance Achieved',
+            description: 'All requirements met with cryptographic evidence',
+            agent: 'Compliance Agent',
+            impact: 'high'
+          }
+        ]};
 
 export default config;

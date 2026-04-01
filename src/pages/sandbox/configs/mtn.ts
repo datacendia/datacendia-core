@@ -266,6 +266,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Banking AML on Mobile Money & Mass Freeze', 'BoG Investigation & Inclusion Reversal', 'Informal Economy Profiles & Contextual AML'],
     },
   ],
-};
+
+        complianceScore: 93,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.178Z",
+            "type": "analysis",
+            "title": "Transaction Monitoring - MTN MoMo — POPIA Automated Credit Scoring Violation",
+            "description": "Regulatory compliance, AML/KYC, financial risk management: Transaction Monitoring analysis for Mtn completed with industry-specific compliance checks",
+            "agent": "AML Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.178Z",
+            "type": "warning",
+            "title": "Regulatory Alert - MTN MoMo — POPIA Automated Credit Scoring Violation",
+            "description": "Regulatory compliance, AML/KYC, financial risk management: Regulatory Alert analysis for Mtn completed with industry-specific compliance checks",
+            "agent": "Compliance Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.178Z",
+            "type": "dissent",
+            "title": "Risk Assessment - MTN MoMo — POPIA Automated Credit Scoring Violation",
+            "description": "Regulatory compliance, AML/KYC, financial risk management: Risk Assessment analysis for Mtn completed with industry-specific compliance checks",
+            "agent": "Risk Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.178Z",
+            "type": "proposal",
+            "title": "Control Enhancement - MTN MoMo — POPIA Automated Credit Scoring Violation",
+            "description": "Regulatory compliance, AML/KYC, financial risk management: Control Enhancement analysis for Mtn completed with industry-specific compliance checks",
+            "agent": "Governance Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.178Z",
+            "type": "resolution",
+            "title": "Regulatory Approval - MTN MoMo — POPIA Automated Credit Scoring Violation",
+            "description": "Regulatory compliance, AML/KYC, financial risk management: Regulatory Approval analysis for Mtn completed with industry-specific compliance checks",
+            "agent": "Supervisor Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

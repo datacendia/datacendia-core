@@ -266,6 +266,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Track Record Bias & 91% International', 'AU Confrontation & Capacity Building Failure', 'Proportional Scoring & African Preference'],
     },
   ],
-};
+
+        complianceScore: 85,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.112Z",
+            "type": "analysis",
+            "title": "Transaction Monitoring - AfDB AI — Sovereign Loan Underwriting Gender Bias",
+            "description": "Regulatory compliance, AML/KYC, financial risk management: Transaction Monitoring analysis for Afdb completed with industry-specific compliance checks",
+            "agent": "AML Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.112Z",
+            "type": "warning",
+            "title": "Regulatory Alert - AfDB AI — Sovereign Loan Underwriting Gender Bias",
+            "description": "Regulatory compliance, AML/KYC, financial risk management: Regulatory Alert analysis for Afdb completed with industry-specific compliance checks",
+            "agent": "Compliance Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.112Z",
+            "type": "dissent",
+            "title": "Risk Assessment - AfDB AI — Sovereign Loan Underwriting Gender Bias",
+            "description": "Regulatory compliance, AML/KYC, financial risk management: Risk Assessment analysis for Afdb completed with industry-specific compliance checks",
+            "agent": "Risk Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.112Z",
+            "type": "proposal",
+            "title": "Control Enhancement - AfDB AI — Sovereign Loan Underwriting Gender Bias",
+            "description": "Regulatory compliance, AML/KYC, financial risk management: Control Enhancement analysis for Afdb completed with industry-specific compliance checks",
+            "agent": "Governance Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.112Z",
+            "type": "resolution",
+            "title": "Regulatory Approval - AfDB AI — Sovereign Loan Underwriting Gender Bias",
+            "description": "Regulatory compliance, AML/KYC, financial risk management: Regulatory Approval analysis for Afdb completed with industry-specific compliance checks",
+            "agent": "Supervisor Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

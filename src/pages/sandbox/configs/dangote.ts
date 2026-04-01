@@ -266,6 +266,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Import Parity Pricing & 67% Margin', 'FCCPC Investigation & Consumer Impact', 'Cost-Plus Model & Margin Transparency'],
     },
   ],
-};
+
+        complianceScore: 89,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.138Z",
+            "type": "analysis",
+            "title": "Transaction Monitoring - Dangote AI — NDPR Employee Surveillance Violation",
+            "description": "Regulatory compliance, AML/KYC, financial risk management: Transaction Monitoring analysis for Dangote completed with industry-specific compliance checks",
+            "agent": "AML Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.138Z",
+            "type": "warning",
+            "title": "Regulatory Alert - Dangote AI — NDPR Employee Surveillance Violation",
+            "description": "Regulatory compliance, AML/KYC, financial risk management: Regulatory Alert analysis for Dangote completed with industry-specific compliance checks",
+            "agent": "Compliance Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.138Z",
+            "type": "dissent",
+            "title": "Risk Assessment - Dangote AI — NDPR Employee Surveillance Violation",
+            "description": "Regulatory compliance, AML/KYC, financial risk management: Risk Assessment analysis for Dangote completed with industry-specific compliance checks",
+            "agent": "Risk Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.138Z",
+            "type": "proposal",
+            "title": "Control Enhancement - Dangote AI — NDPR Employee Surveillance Violation",
+            "description": "Regulatory compliance, AML/KYC, financial risk management: Control Enhancement analysis for Dangote completed with industry-specific compliance checks",
+            "agent": "Governance Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.138Z",
+            "type": "resolution",
+            "title": "Regulatory Approval - Dangote AI — NDPR Employee Surveillance Violation",
+            "description": "Regulatory compliance, AML/KYC, financial risk management: Regulatory Approval analysis for Dangote completed with industry-specific compliance checks",
+            "agent": "Supervisor Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

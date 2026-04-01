@@ -269,6 +269,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Schrems II Gap & Missing TIA', 'DPA Investigation & €8.2M Fine Risk', 'EU Hosting & Transfer Governance'],
     },
   ],
-};
+
+        complianceScore: 89,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.183Z",
+            "type": "analysis",
+            "title": "Legal Research Complete - aiR for Privilege — 1,400 Documents Improperly Withheld",
+            "description": "Professional responsibility, ethics compliance, malpractice prevention: Legal Research Complete analysis for Relativity completed with industry-specific compliance checks",
+            "agent": "AI Research Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.183Z",
+            "type": "warning",
+            "title": "Ethics Review Required - aiR for Privilege — 1,400 Documents Improperly Withheld",
+            "description": "Professional responsibility, ethics compliance, malpractice prevention: Ethics Review Required analysis for Relativity completed with industry-specific compliance checks",
+            "agent": "Ethics Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.183Z",
+            "type": "dissent",
+            "title": "Professional Liability Risk - aiR for Privilege — 1,400 Documents Improperly Withheld",
+            "description": "Professional responsibility, ethics compliance, malpractice prevention: Professional Liability Risk analysis for Relativity completed with industry-specific compliance checks",
+            "agent": "Risk Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.183Z",
+            "type": "proposal",
+            "title": "Supervision Protocol - aiR for Privilege — 1,400 Documents Improperly Withheld",
+            "description": "Professional responsibility, ethics compliance, malpractice prevention: Supervision Protocol analysis for Relativity completed with industry-specific compliance checks",
+            "agent": "Attorney Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.183Z",
+            "type": "resolution",
+            "title": "Bar Complaint Avoided - aiR for Privilege — 1,400 Documents Improperly Withheld",
+            "description": "Professional responsibility, ethics compliance, malpractice prevention: Bar Complaint Avoided analysis for Relativity completed with industry-specific compliance checks",
+            "agent": "Compliance Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

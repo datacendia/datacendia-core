@@ -270,6 +270,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Tier 1-Only vs Full Cascading', 'Board Liability & False Compliance', 'Cascading Detection & Amendment Programme'],
     },
   ],
-};
+
+        complianceScore: 85,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.172Z",
+            "type": "analysis",
+            "title": "System Assessment - Ironclad AI — Uncapped Carve-Out Missed",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: System Assessment analysis for Ironclad Icertis completed with industry-specific compliance checks",
+            "agent": "Tech Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.172Z",
+            "type": "warning",
+            "title": "Privacy Compliance - Ironclad AI — Uncapped Carve-Out Missed",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Privacy Compliance analysis for Ironclad Icertis completed with industry-specific compliance checks",
+            "agent": "Privacy Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.172Z",
+            "type": "dissent",
+            "title": "Security Risk - Ironclad AI — Uncapped Carve-Out Missed",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Security Risk analysis for Ironclad Icertis completed with industry-specific compliance checks",
+            "agent": "Security Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.172Z",
+            "type": "proposal",
+            "title": "Governance Framework - Ironclad AI — Uncapped Carve-Out Missed",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Governance Framework analysis for Ironclad Icertis completed with industry-specific compliance checks",
+            "agent": "Platform Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.172Z",
+            "type": "resolution",
+            "title": "Compliance Certified - Ironclad AI — Uncapped Carve-Out Missed",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Compliance Certified analysis for Ironclad Icertis completed with industry-specific compliance checks",
+            "agent": "Audit Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

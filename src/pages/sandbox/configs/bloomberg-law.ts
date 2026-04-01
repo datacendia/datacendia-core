@@ -269,6 +269,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Rescinded Deal in Comparable Set', 'Shareholder Appraisal & Board Liability', 'Deal Status Verification & Corrected Opinion'],
     },
   ],
-};
+
+        complianceScore: 94,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.125Z",
+            "type": "analysis",
+            "title": "System Assessment - BLAW AI — Materiality Analysis with Wrong Market Data",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: System Assessment analysis for Bloomberg Law completed with industry-specific compliance checks",
+            "agent": "Tech Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.125Z",
+            "type": "warning",
+            "title": "Privacy Compliance - BLAW AI — Materiality Analysis with Wrong Market Data",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Privacy Compliance analysis for Bloomberg Law completed with industry-specific compliance checks",
+            "agent": "Privacy Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.125Z",
+            "type": "dissent",
+            "title": "Security Risk - BLAW AI — Materiality Analysis with Wrong Market Data",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Security Risk analysis for Bloomberg Law completed with industry-specific compliance checks",
+            "agent": "Security Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.125Z",
+            "type": "proposal",
+            "title": "Governance Framework - BLAW AI — Materiality Analysis with Wrong Market Data",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Governance Framework analysis for Bloomberg Law completed with industry-specific compliance checks",
+            "agent": "Platform Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.125Z",
+            "type": "resolution",
+            "title": "Compliance Certified - BLAW AI — Materiality Analysis with Wrong Market Data",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Compliance Certified analysis for Bloomberg Law completed with industry-specific compliance checks",
+            "agent": "Audit Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

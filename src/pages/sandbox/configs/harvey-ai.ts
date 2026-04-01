@@ -272,6 +272,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['AI Dependency & Skills Decline', 'Model Rule 1.1 & Competence Crisis', 'Development Governance & Manual Proficiency'],
     },
   ],
-};
+
+        complianceScore: 93,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.167Z",
+            "type": "analysis",
+            "title": "System Assessment - Harvey Research — No Verification Backbone",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: System Assessment analysis for Harvey Ai completed with industry-specific compliance checks",
+            "agent": "Tech Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.167Z",
+            "type": "warning",
+            "title": "Privacy Compliance - Harvey Research — No Verification Backbone",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Privacy Compliance analysis for Harvey Ai completed with industry-specific compliance checks",
+            "agent": "Privacy Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.167Z",
+            "type": "dissent",
+            "title": "Security Risk - Harvey Research — No Verification Backbone",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Security Risk analysis for Harvey Ai completed with industry-specific compliance checks",
+            "agent": "Security Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.167Z",
+            "type": "proposal",
+            "title": "Governance Framework - Harvey Research — No Verification Backbone",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Governance Framework analysis for Harvey Ai completed with industry-specific compliance checks",
+            "agent": "Platform Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.167Z",
+            "type": "resolution",
+            "title": "Compliance Certified - Harvey Research — No Verification Backbone",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Compliance Certified analysis for Harvey Ai completed with industry-specific compliance checks",
+            "agent": "Audit Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

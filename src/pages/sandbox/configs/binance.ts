@@ -266,6 +266,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Stop-Loss Visibility & Internal Trading', 'CFTC Investigation & $2.1B Manipulation', 'Information Barrier & Anti-Hunting Detection'],
     },
   ],
-};
+
+        complianceScore: 90,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.122Z",
+            "type": "analysis",
+            "title": "Transaction Monitoring - Binance KYC AI — Sanctions Evasion False Negative",
+            "description": "Regulatory compliance, AML/KYC, financial risk management: Transaction Monitoring analysis for Binance completed with industry-specific compliance checks",
+            "agent": "AML Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.122Z",
+            "type": "warning",
+            "title": "Regulatory Alert - Binance KYC AI — Sanctions Evasion False Negative",
+            "description": "Regulatory compliance, AML/KYC, financial risk management: Regulatory Alert analysis for Binance completed with industry-specific compliance checks",
+            "agent": "Compliance Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.122Z",
+            "type": "dissent",
+            "title": "Risk Assessment - Binance KYC AI — Sanctions Evasion False Negative",
+            "description": "Regulatory compliance, AML/KYC, financial risk management: Risk Assessment analysis for Binance completed with industry-specific compliance checks",
+            "agent": "Risk Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.122Z",
+            "type": "proposal",
+            "title": "Control Enhancement - Binance KYC AI — Sanctions Evasion False Negative",
+            "description": "Regulatory compliance, AML/KYC, financial risk management: Control Enhancement analysis for Binance completed with industry-specific compliance checks",
+            "agent": "Governance Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.122Z",
+            "type": "resolution",
+            "title": "Regulatory Approval - Binance KYC AI — Sanctions Evasion False Negative",
+            "description": "Regulatory compliance, AML/KYC, financial risk management: Regulatory Approval analysis for Binance completed with industry-specific compliance checks",
+            "agent": "Supervisor Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

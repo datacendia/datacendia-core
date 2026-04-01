@@ -269,6 +269,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Wrong Transitional Rate & Capital Shortfall', 'SREP Downgrade & Market Impact', 'Schedule Verification & Internal Remediation'],
     },
   ],
-};
+
+        complianceScore: 92,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.216Z",
+            "type": "analysis",
+            "title": "System Assessment - CCH AnswerConnect AI — Modified Revenue Ruling",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: System Assessment analysis for Wolters Kluwer completed with industry-specific compliance checks",
+            "agent": "Tech Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.216Z",
+            "type": "warning",
+            "title": "Privacy Compliance - CCH AnswerConnect AI — Modified Revenue Ruling",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Privacy Compliance analysis for Wolters Kluwer completed with industry-specific compliance checks",
+            "agent": "Privacy Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.216Z",
+            "type": "dissent",
+            "title": "Security Risk - CCH AnswerConnect AI — Modified Revenue Ruling",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Security Risk analysis for Wolters Kluwer completed with industry-specific compliance checks",
+            "agent": "Security Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.216Z",
+            "type": "proposal",
+            "title": "Governance Framework - CCH AnswerConnect AI — Modified Revenue Ruling",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Governance Framework analysis for Wolters Kluwer completed with industry-specific compliance checks",
+            "agent": "Platform Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.216Z",
+            "type": "resolution",
+            "title": "Compliance Certified - CCH AnswerConnect AI — Modified Revenue Ruling",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Compliance Certified analysis for Wolters Kluwer completed with industry-specific compliance checks",
+            "agent": "Audit Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

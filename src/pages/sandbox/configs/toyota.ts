@@ -266,6 +266,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['91% False Positives & Alert Fatigue', 'Warranty Overrun & NPS Collapse', 'Precision-Recall & Tiered Alerts'],
     },
   ],
-};
+
+        complianceScore: 90,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.203Z",
+            "type": "analysis",
+            "title": "Safety System Test - Toyota Teammate — ADS Edge Case Failure",
+            "description": "Safety standards, autonomous systems, manufacturing compliance: Safety System Test analysis for Toyota completed with industry-specific compliance checks",
+            "agent": "Safety Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.203Z",
+            "type": "warning",
+            "title": "Regulatory Review - Toyota Teammate — ADS Edge Case Failure",
+            "description": "Safety standards, autonomous systems, manufacturing compliance: Regulatory Review analysis for Toyota completed with industry-specific compliance checks",
+            "agent": "Compliance Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.203Z",
+            "type": "dissent",
+            "title": "Safety Risk - Toyota Teammate — ADS Edge Case Failure",
+            "description": "Safety standards, autonomous systems, manufacturing compliance: Safety Risk analysis for Toyota completed with industry-specific compliance checks",
+            "agent": "Risk Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.203Z",
+            "type": "proposal",
+            "title": "Safety Protocol - Toyota Teammate — ADS Edge Case Failure",
+            "description": "Safety standards, autonomous systems, manufacturing compliance: Safety Protocol analysis for Toyota completed with industry-specific compliance checks",
+            "agent": "Engineering Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.203Z",
+            "type": "resolution",
+            "title": "Safety Certified - Toyota Teammate — ADS Edge Case Failure",
+            "description": "Safety standards, autonomous systems, manufacturing compliance: Safety Certified analysis for Toyota completed with industry-specific compliance checks",
+            "agent": "Regulator Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

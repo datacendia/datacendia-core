@@ -272,6 +272,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Yellow Flag & Generic AI Summary', 'Issue Overlap & Motion Failure', 'Issue-Level Analysis & Case-Fact Matching'],
     },
   ],
-};
+
+        complianceScore: 88,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.175Z",
+            "type": "analysis",
+            "title": "Legal Research Complete - Lexis+ AI Brief — Holding Mischaracterisation",
+            "description": "Professional responsibility, ethics compliance, malpractice prevention: Legal Research Complete analysis for Lexisnexis completed with industry-specific compliance checks",
+            "agent": "AI Research Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.175Z",
+            "type": "warning",
+            "title": "Ethics Review Required - Lexis+ AI Brief — Holding Mischaracterisation",
+            "description": "Professional responsibility, ethics compliance, malpractice prevention: Ethics Review Required analysis for Lexisnexis completed with industry-specific compliance checks",
+            "agent": "Ethics Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.175Z",
+            "type": "dissent",
+            "title": "Professional Liability Risk - Lexis+ AI Brief — Holding Mischaracterisation",
+            "description": "Professional responsibility, ethics compliance, malpractice prevention: Professional Liability Risk analysis for Lexisnexis completed with industry-specific compliance checks",
+            "agent": "Risk Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.175Z",
+            "type": "proposal",
+            "title": "Supervision Protocol - Lexis+ AI Brief — Holding Mischaracterisation",
+            "description": "Professional responsibility, ethics compliance, malpractice prevention: Supervision Protocol analysis for Lexisnexis completed with industry-specific compliance checks",
+            "agent": "Attorney Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.175Z",
+            "type": "resolution",
+            "title": "Bar Complaint Avoided - Lexis+ AI Brief — Holding Mischaracterisation",
+            "description": "Professional responsibility, ethics compliance, malpractice prevention: Bar Complaint Avoided analysis for Lexisnexis completed with industry-specific compliance checks",
+            "agent": "Compliance Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

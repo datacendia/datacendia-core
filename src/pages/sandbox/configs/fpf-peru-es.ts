@@ -251,5 +251,48 @@ export const ES_SCENARIOS: TemplateScenario[] = [
     idleTitle: 'Listo para Deliberar',
     idleDesc: '4 agentes auditarán el contrato de transmisión de Liga 1 — probando subpago de $7-12M/año causado por corrupción interna e iniciando relicitación transparente.',
     phaseLabels: ['Valuación y Forensia de Corrupción', 'Crisis Financiera de Clubes', 'Relicitación Competitiva y Distribución Transparente'],
-  },
+  
+        complianceScore: 88,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.147Z",
+            "type": "analysis",
+            "title": "System Assessment - Post-Lozano — Reconstrucción Institucional Bajo Escrutinio de FIFA",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: System Assessment analysis for Fpf Peru Es completed with industry-specific compliance checks",
+            "agent": "Tech Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.147Z",
+            "type": "warning",
+            "title": "Privacy Compliance - Post-Lozano — Reconstrucción Institucional Bajo Escrutinio de FIFA",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Privacy Compliance analysis for Fpf Peru Es completed with industry-specific compliance checks",
+            "agent": "Privacy Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.147Z",
+            "type": "dissent",
+            "title": "Security Risk - Post-Lozano — Reconstrucción Institucional Bajo Escrutinio de FIFA",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Security Risk analysis for Fpf Peru Es completed with industry-specific compliance checks",
+            "agent": "Security Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.147Z",
+            "type": "proposal",
+            "title": "Governance Framework - Post-Lozano — Reconstrucción Institucional Bajo Escrutinio de FIFA",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Governance Framework analysis for Fpf Peru Es completed with industry-specific compliance checks",
+            "agent": "Platform Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.147Z",
+            "type": "resolution",
+            "title": "Compliance Certified - Post-Lozano — Reconstrucción Institucional Bajo Escrutinio de FIFA",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Compliance Certified analysis for Fpf Peru Es completed with industry-specific compliance checks",
+            "agent": "Audit Agent",
+            "impact": "high"
+      }
+]},
 ];

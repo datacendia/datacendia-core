@@ -266,6 +266,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Generic Template & Void Non-Compete', 'Court Invalidation & $340K Attorney Fees', 'State Enforceability & Alternative Protection'],
     },
   ],
-};
+
+        complianceScore: 93,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.185Z",
+            "type": "analysis",
+            "title": "System Assessment - Rocket Lawyer AI — Non-Compete Clause in Ban State",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: System Assessment analysis for Rocket Lawyer completed with industry-specific compliance checks",
+            "agent": "Tech Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.185Z",
+            "type": "warning",
+            "title": "Privacy Compliance - Rocket Lawyer AI — Non-Compete Clause in Ban State",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Privacy Compliance analysis for Rocket Lawyer completed with industry-specific compliance checks",
+            "agent": "Privacy Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.185Z",
+            "type": "dissent",
+            "title": "Security Risk - Rocket Lawyer AI — Non-Compete Clause in Ban State",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Security Risk analysis for Rocket Lawyer completed with industry-specific compliance checks",
+            "agent": "Security Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.185Z",
+            "type": "proposal",
+            "title": "Governance Framework - Rocket Lawyer AI — Non-Compete Clause in Ban State",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Governance Framework analysis for Rocket Lawyer completed with industry-specific compliance checks",
+            "agent": "Platform Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.185Z",
+            "type": "resolution",
+            "title": "Compliance Certified - Rocket Lawyer AI — Non-Compete Clause in Ban State",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Compliance Certified analysis for Rocket Lawyer completed with industry-specific compliance checks",
+            "agent": "Audit Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

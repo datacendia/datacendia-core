@@ -266,6 +266,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['One-Click Face Extraction & NCII Pipeline', 'eSafety Investigation & 8,400 Victims', 'Abuse Detection & Forensic Watermarking'],
     },
   ],
-};
+
+        complianceScore: 90,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.132Z",
+            "type": "analysis",
+            "title": "System Assessment - Canva Magic Design — Trademark Replication Crisis",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: System Assessment analysis for Canva completed with industry-specific compliance checks",
+            "agent": "Tech Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.132Z",
+            "type": "warning",
+            "title": "Privacy Compliance - Canva Magic Design — Trademark Replication Crisis",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Privacy Compliance analysis for Canva completed with industry-specific compliance checks",
+            "agent": "Privacy Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.132Z",
+            "type": "dissent",
+            "title": "Security Risk - Canva Magic Design — Trademark Replication Crisis",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Security Risk analysis for Canva completed with industry-specific compliance checks",
+            "agent": "Security Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.132Z",
+            "type": "proposal",
+            "title": "Governance Framework - Canva Magic Design — Trademark Replication Crisis",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Governance Framework analysis for Canva completed with industry-specific compliance checks",
+            "agent": "Platform Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.132Z",
+            "type": "resolution",
+            "title": "Compliance Certified - Canva Magic Design — Trademark Replication Crisis",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Compliance Certified analysis for Canva completed with industry-specific compliance checks",
+            "agent": "Audit Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

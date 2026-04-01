@@ -272,6 +272,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['AI Brand Risk vs Protected Speech', 'Kaepernick Legacy & Discriminatory Scoring', 'Speech Exclusion & Bias Correction'],
     },
   ],
-};
+
+        complianceScore: 85,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.181Z",
+            "type": "analysis",
+            "title": "Transfer Valuation - Concussion Protocol — CTE Crisis Governance",
+            "description": "Transfer compliance, FFP regulations, player contracts, league governance: Transfer Valuation analysis for Nfl completed with industry-specific compliance checks",
+            "agent": "Scouting Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.181Z",
+            "type": "warning",
+            "title": "FFP Compliance Check - Concussion Protocol — CTE Crisis Governance",
+            "description": "Transfer compliance, FFP regulations, player contracts, league governance: FFP Compliance Check analysis for Nfl completed with industry-specific compliance checks",
+            "agent": "Financial Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.181Z",
+            "type": "dissent",
+            "title": "League Regulation Alert - Concussion Protocol — CTE Crisis Governance",
+            "description": "Transfer compliance, FFP regulations, player contracts, league governance: League Regulation Alert analysis for Nfl completed with industry-specific compliance checks",
+            "agent": "Compliance Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.181Z",
+            "type": "proposal",
+            "title": "Transfer Protocol - Concussion Protocol — CTE Crisis Governance",
+            "description": "Transfer compliance, FFP regulations, player contracts, league governance: Transfer Protocol analysis for Nfl completed with industry-specific compliance checks",
+            "agent": "Director Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.181Z",
+            "type": "resolution",
+            "title": "League Approval - Concussion Protocol — CTE Crisis Governance",
+            "description": "Transfer compliance, FFP regulations, player contracts, league governance: League Approval analysis for Nfl completed with industry-specific compliance checks",
+            "agent": "Federation Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

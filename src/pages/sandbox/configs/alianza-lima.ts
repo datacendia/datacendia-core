@@ -47,6 +47,13 @@ const config: OrgSandboxConfig = {
       connectorLive: 'ACTIVO',
       connectorSync: 'SYNC',
       connectorReady: 'LISTO',
+      complianceScore: 'Puntuación de Cumplimiento',
+      timeline: 'Línea de Tiempo',
+      evidenceExplorer: 'Explorador de Evidencia',
+      shareReport: 'Compartir Informe',
+      exportData: 'Exportar Datos',
+      viewDetails: 'Ver Detalles',
+      hideDetails: 'Ocultar Detalles',
     },
     scenarios: ES_SCENARIOS,
   },
@@ -95,6 +102,49 @@ const config: OrgSandboxConfig = {
         guaranteeTitle: 'Alianza Lima — Player Conduct Governance',
         guaranteeBody: 'Seals: 3-player disciplinary, Fiscalía evidence preservation, Ley 30364 victim support, socios transparency, sponsor management, FPF Tribunal bundle.',
         evidenceChain: 'Incident → Suspension → Evidence preservation → Fiscalía → Victim support → Hearings → FPF Tribunal → Socios → ML-DSA-65 seal',
+        complianceScore: 82,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.119Z",
+            "type": "analysis",
+            "title": "System Assessment - Player Conduct Scandal — Disciplinary Governance & Criminal Proceedings",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: System Assessment analysis for Alianza Lima completed with industry-specific compliance checks",
+            "agent": "Tech Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.119Z",
+            "type": "warning",
+            "title": "Privacy Compliance - Player Conduct Scandal — Disciplinary Governance & Criminal Proceedings",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Privacy Compliance analysis for Alianza Lima completed with industry-specific compliance checks",
+            "agent": "Privacy Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.119Z",
+            "type": "dissent",
+            "title": "Security Risk - Player Conduct Scandal — Disciplinary Governance & Criminal Proceedings",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Security Risk analysis for Alianza Lima completed with industry-specific compliance checks",
+            "agent": "Security Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.119Z",
+            "type": "proposal",
+            "title": "Governance Framework - Player Conduct Scandal — Disciplinary Governance & Criminal Proceedings",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Governance Framework analysis for Alianza Lima completed with industry-specific compliance checks",
+            "agent": "Platform Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.119Z",
+            "type": "resolution",
+            "title": "Compliance Certified - Player Conduct Scandal — Disciplinary Governance & Criminal Proceedings",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Compliance Certified analysis for Alianza Lima completed with industry-specific compliance checks",
+            "agent": "Audit Agent",
+            "impact": "high"
+      }
+]
       },
       idleTitle: 'Ready to Deliberate',
       idleDesc: '4 AI agents will govern Alianza Lima\'s conduct crisis — due process, victim-centred response, evidence preservation, and institutional accountability.',
@@ -297,6 +347,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Tax & Licensing Review', 'Related-Party & Audit Risk', 'Compliance Protocol'],
     },
   ],
-};
+
+        complianceScore: 91,
+        timelineEvents: [
+          {
+            timestamp: new Date(Date.now() - 180000).toISOString(),
+            type: 'analysis',
+            title: 'Player Conduct Scandal — Disciplinary Governance & Criminal Proceedings Analysis Started',
+            description: 'AI governance analysis initiated',
+            agent: 'AI Governance Agent',
+            impact: 'high'
+          },
+          {
+            timestamp: new Date(Date.now() - 120000).toISOString(),
+            type: 'warning',
+            title: 'Compliance Requirements Identified',
+            description: 'Industry-specific compliance requirements detected',
+            agent: 'Compliance Agent',
+            impact: 'medium'
+          },
+          {
+            timestamp: new Date(Date.now() - 60000).toISOString(),
+            type: 'dissent',
+            title: 'Risk Assessment Required',
+            description: 'Potential compliance gaps need attention',
+            agent: 'Risk Agent',
+            impact: 'medium'
+          },
+          {
+            timestamp: new Date(Date.now() - 30000).toISOString(),
+            type: 'proposal',
+            title: 'Enhanced Governance Proposed',
+            description: 'Datacendia governance protocol recommended',
+            agent: 'Datacendia Agent',
+            impact: 'high'
+          },
+          {
+            timestamp: new Date().toISOString(),
+            type: 'resolution',
+            title: 'Compliance Achieved',
+            description: 'All requirements met with cryptographic evidence',
+            agent: 'Compliance Agent',
+            impact: 'high'
+          }
+        ]};
 
 export default config;

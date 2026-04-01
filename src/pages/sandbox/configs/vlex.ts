@@ -269,6 +269,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Common Law Only & Missing Statute', 'Weaker Claim & Solicitor Duty', 'Statutory Override & Dual-Track Pleading'],
     },
   ],
-};
+
+        complianceScore: 88,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.213Z",
+            "type": "analysis",
+            "title": "Legal Research Complete - Vincent AI — Multi-Jurisdiction Research Confusion",
+            "description": "Professional responsibility, ethics compliance, malpractice prevention: Legal Research Complete analysis for Vlex completed with industry-specific compliance checks",
+            "agent": "AI Research Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.213Z",
+            "type": "warning",
+            "title": "Ethics Review Required - Vincent AI — Multi-Jurisdiction Research Confusion",
+            "description": "Professional responsibility, ethics compliance, malpractice prevention: Ethics Review Required analysis for Vlex completed with industry-specific compliance checks",
+            "agent": "Ethics Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.213Z",
+            "type": "dissent",
+            "title": "Professional Liability Risk - Vincent AI — Multi-Jurisdiction Research Confusion",
+            "description": "Professional responsibility, ethics compliance, malpractice prevention: Professional Liability Risk analysis for Vlex completed with industry-specific compliance checks",
+            "agent": "Risk Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.213Z",
+            "type": "proposal",
+            "title": "Supervision Protocol - Vincent AI — Multi-Jurisdiction Research Confusion",
+            "description": "Professional responsibility, ethics compliance, malpractice prevention: Supervision Protocol analysis for Vlex completed with industry-specific compliance checks",
+            "agent": "Attorney Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.213Z",
+            "type": "resolution",
+            "title": "Bar Complaint Avoided - Vincent AI — Multi-Jurisdiction Research Confusion",
+            "description": "Professional responsibility, ethics compliance, malpractice prevention: Bar Complaint Avoided analysis for Vlex completed with industry-specific compliance checks",
+            "agent": "Compliance Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

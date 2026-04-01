@@ -251,5 +251,48 @@ export const ES_SCENARIOS: TemplateScenario[] = [
     idleTitle: 'Listo para Deliberar',
     idleDesc: '4 agentes de IA gobiernan el reporte ESG de Cristal — la primera divulgación de sostenibilidad estándar GRI para un club de fútbol peruano.',
     phaseLabels: ['Métricas Sociales y Verificación', 'Base Ambiental', 'Protocolo ESG'],
-  },
+  
+        complianceScore: 89,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.196Z",
+            "type": "analysis",
+            "title": "System Assessment - Gobernanza Corporativa Grupo Romero — Obligaciones Equivalentes a SOX",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: System Assessment analysis for Sporting Cristal Es completed with industry-specific compliance checks",
+            "agent": "Tech Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.196Z",
+            "type": "warning",
+            "title": "Privacy Compliance - Gobernanza Corporativa Grupo Romero — Obligaciones Equivalentes a SOX",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Privacy Compliance analysis for Sporting Cristal Es completed with industry-specific compliance checks",
+            "agent": "Privacy Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.196Z",
+            "type": "dissent",
+            "title": "Security Risk - Gobernanza Corporativa Grupo Romero — Obligaciones Equivalentes a SOX",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Security Risk analysis for Sporting Cristal Es completed with industry-specific compliance checks",
+            "agent": "Security Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.196Z",
+            "type": "proposal",
+            "title": "Governance Framework - Gobernanza Corporativa Grupo Romero — Obligaciones Equivalentes a SOX",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Governance Framework analysis for Sporting Cristal Es completed with industry-specific compliance checks",
+            "agent": "Platform Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.196Z",
+            "type": "resolution",
+            "title": "Compliance Certified - Gobernanza Corporativa Grupo Romero — Obligaciones Equivalentes a SOX",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Compliance Certified analysis for Sporting Cristal Es completed with industry-specific compliance checks",
+            "agent": "Audit Agent",
+            "impact": "high"
+      }
+]},
 ];
