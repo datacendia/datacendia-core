@@ -93,7 +93,8 @@ const UefaSandboxPage = lazy(() => import('../pages/sandbox/UefaSandboxPage'));
 const FifaSandboxPage = lazy(() => import('../pages/sandbox/FifaSandboxPage'));
 const ConmebolSandboxPage = lazy(() => import('../pages/sandbox/ConmebolSandboxPage'));
 
-// New Template-Driven Sandboxes
+// Product Showcase
+const ProductShowcase = lazy(() => import('../pages/sandbox/ProductShowcase').then((m) => ({ default: m.ProductShowcase })));
 const UfcSandboxPage = lazy(() => import('../pages/sandbox/UfcSandboxPage'));
 const MilanSandboxPage = lazy(() => import('../pages/sandbox/MilanSandboxPage'));
 const Formula1SandboxPage = lazy(() => import('../pages/sandbox/Formula1SandboxPage'));
@@ -125,6 +126,10 @@ const AfdbSandboxPage = lazy(() => import('../pages/sandbox/AfdbSandboxPage'));
 const BinanceSandboxPage = lazy(() => import('../pages/sandbox/BinanceSandboxPage'));
 const RocketLawyerSandboxPage = lazy(() => import('../pages/sandbox/RocketLawyerSandboxPage'));
 const CanvaSandboxPage = lazy(() => import('../pages/sandbox/CanvaSandboxPage'));
+
+// Financial AI Sandboxes
+const DanelfinSandboxPage = lazy(() => import('../pages/sandbox/DanelfinSandboxPage'));
+const KavoutSandboxPage = lazy(() => import('../pages/sandbox/KavoutSandboxPage'));
 
 // EU & Latin America Sandboxes
 const SapSandboxPage = lazy(() => import('../pages/sandbox/SapSandboxPage'));
@@ -195,6 +200,8 @@ export const publicRoutes: RouteObject[] = [
   { path: '/products/cendia-forecast', element: w(CendiaForecastPage) },
   { path: '/products/cendia-sentry', element: w(CendiaSentryPage) },
 
+  // Product Showcase
+  { path: '/showcase', element: w(ProductShowcase) },
   // Sandbox — Design Partner Demos
   { path: '/sandbox/celtic', element: w(CelticSandboxPage) },
   { path: '/sandbox/uefa', element: w(UefaSandboxPage) },
@@ -244,6 +251,10 @@ export const publicRoutes: RouteObject[] = [
   { path: '/sandbox/rocket-lawyer', element: w(RocketLawyerSandboxPage) },
   { path: '/sandbox/rocketlawyer', element: w(RocketLawyerSandboxPage) },
   { path: '/sandbox/canva', element: w(CanvaSandboxPage) },
+
+  // Financial AI Sandboxes
+  { path: '/sandbox/danelfin', element: w(DanelfinSandboxPage) },
+  { path: '/sandbox/kavout', element: w(KavoutSandboxPage) },
 
   // EU & Latin America Sandboxes
   { path: '/sandbox/sap', element: w(SapSandboxPage) },
