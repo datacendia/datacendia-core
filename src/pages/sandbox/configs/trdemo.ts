@@ -1,0 +1,613 @@
+/**
+ * Thomson Reuters Sandbox Config
+ *
+ * 10 fully scripted multi-agent deliberation scenarios for legal AI governance.
+ * Access: /sandbox/thomson-reuters (Key: TR-26)
+ *
+ * @module pages/sandbox/configs/thomson-reuters
+ */
+
+// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
+
+import type { OrgSandboxConfig } from '../SandboxTemplate';
+
+const config: OrgSandboxConfig = {
+  orgLabel: 'Thomson Reuters',
+  accessKey: 'TR-26',
+  sessionKey: 'thomson-reuters-sandbox-unlocked',
+
+  accent: 'orange',
+  accentColor: 'text-orange-400',
+  accentHover: 'from-orange-600 to-orange-700 hover:from-orange-500 hover:to-orange-600',
+  ringColor: 'focus:ring-orange-500/30',
+  borderColor: 'border-orange-500/30',
+  gradientFrom: 'from-orange-600/20',
+  gradientTo: 'to-orange-900/20',
+
+  footerNote: '200 regulatory scenarios mapped for Thomson Reuters × Datacendia · Full architecture document available on request',
+
+  scenarios: [
+    // SCENARIO 1 — COCOUNSEL BRIEF SUPERVISION: ABA OPINION 512
+    {
+      id: 'cocounsel-aba512',
+      title: 'CoCounsel Brief Supervision — ABA Opinion 512 Compliance',
+      subtitle: 'Rule 11 sanctions risk · Mata v. Avianca precedent · Attorney supervision · Malpractice defence',
+      banner: 'Simulating the core Thomson Reuters × Datacendia value proposition: CoCounsel drafts a motion to dismiss for an AmLaw 50 litigation partner. ABA Opinion 512 requires documented attorney supervision before filing. Without Datacendia, the supervision is invisible. With Datacendia, it is cryptographically proven.',
+      risk: 'Critical',
+      scenarioNum: 'ABA 512',
+      icon: 'file-text',
+      color: 'text-orange-400',
+      agents: [
+        { id: 'attorney', name: 'Supervising Attorney Agent', role: 'ABA Opinion 512 Compliance & Brief Review', icon: '⚖️', color: 'text-orange-400', borderColor: 'border-orange-500/40', bgColor: 'bg-orange-500/10' },
+        { id: 'cocounsel', name: 'CoCounsel AI Agent', role: 'AI Brief Drafting & Legal Research', icon: '🤖', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'ethics', name: 'Ethics Agent', role: 'Model Rules Compliance & Bar Standards', icon: '📋', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+        { id: 'risk-tr', name: 'Risk Agent', role: 'Malpractice & Sanctions Risk Assessment', icon: '🛡️', color: 'text-red-400', borderColor: 'border-red-500/40', bgColor: 'bg-red-500/10' },
+      ],
+      connectors: [
+        { name: 'CoCounsel API', status: 'connected', type: 'Legal AI Platform', icon: 'cpu', detail: 'Motion to dismiss drafted — 14 case citations, 3 statutory refs' },
+        { name: 'Westlaw Verification', status: 'connected', type: 'Citation Verification', icon: 'check-circle', detail: '14 citations queued for attorney verification — 0 of 14 confirmed' },
+        { name: 'Court AI Disclosure', status: 'connected', type: 'Filing Requirements', icon: 'file-text', detail: 'SDNY: AI disclosure required per Standing Order (Jan 2024)' },
+        { name: 'Bar Ethics Database', status: 'syncing', type: 'Professional Responsibility', icon: 'shield', detail: 'ABA Opinion 512 + 30+ federal court AI rules indexed' },
+      ],
+      script: [
+        { agentId: 'cocounsel', phase: 'phase1', type: 'analysis', delay: 800, content: 'CoCounsel has completed the motion to dismiss draft for Case No. 24-cv-3847 (SDNY). The AI-generated brief contains: (1) 14 case citations — 11 from federal courts, 3 from New York state courts, (2) 3 statutory references — FRCP 12(b)(6), 28 U.S.C. § 1332, N.Y. CPLR § 3211, (3) AI-generated legal analysis of the standing issue, including a circuit split characterisation, (4) AI-proposed argument structure across 4 sections. Current status: ZERO attorney review documented. The brief exists as AI output. Under ABA Opinion 512, this brief CANNOT be filed without documented attorney supervision. The Mata v. Avianca precedent (2023): attorneys filed AI-generated brief with fabricated citations — $5,000 sanctions, public humiliation, bar complaints. FRCP Rule 11 requires the signing attorney to certify that "the claims, defences, and other legal contentions are warranted by existing law."' },
+        { agentId: 'ethics', phase: 'phase1', type: 'warning', delay: 2500, content: 'ABA OPINION 512 COMPLIANCE CHECK — FAIL. ABA Formal Opinion 512 (July 2024) establishes four obligations for lawyers using generative AI: (1) Model Rule 1.1 (Competence): The lawyer must "competently supervise" AI outputs — meaning independent review of legal analysis, not just skimming. (2) Model Rule 1.6 (Confidentiality): The lawyer must ensure client data processed by CoCounsel is protected. (3) FRCP Rule 11: The signing attorney must certify legal contentions are "warranted by existing law or by a nonfrivolous argument." AI-generated analysis is NOT the attorney\'s certification. (4) Court-specific AI disclosure: SDNY requires disclosure of AI use in any filing since January 2024. Current state: CoCounsel produced the brief. No attorney has reviewed a single citation, confirmed the legal analysis, or verified the circuit split characterisation. If this brief is filed as-is, the signing partner violates Rule 11, ABA 512, and SDNY\'s standing order simultaneously.' },
+        { agentId: 'risk-tr', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT LOGGED — QUANTIFIED RISK. If this brief is filed without documented supervision: (1) RULE 11 SANCTIONS: $5,000-$50,000 per fabricated or unverified citation. With 14 citations unverified, maximum exposure: $700,000. The Mata v. Avianca sanctions were $5,000 — but that was pro se-adjacent. An AmLaw 50 firm filing unverified AI citations faces exemplary sanctions. (2) MALPRACTICE: If the motion is denied because the circuit split characterisation is wrong, the client faces trial on claims that should have been dismissed. Malpractice exposure: case value ($12M) + wasted legal fees ($400K). (3) BAR COMPLAINT: The supervising partner faces a bar complaint under Rule 1.1 and 5.1. Character and fitness implications for the associate. (4) CLIENT LOSS: The Fortune 100 client\'s outside counsel guidelines now require AI supervision documentation. Filing without it violates the engagement letter. The client moves $8M in annual billings to a competing firm. (5) INSURANCE: The firm\'s malpractice insurer is now requiring AI supervision documentation. Undocumented AI use may void coverage.' },
+        { agentId: 'attorney', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — SUPERVISION WORKFLOW REQUIRED. As the supervising partner, I need to review this brief but the current CoCounsel workflow provides no structured way to document my supervision. Here\'s what I actually do: (1) Read the AI draft — 45 minutes, (2) Verify each citation on Westlaw — 14 citations × 5 minutes = 70 minutes, (3) Confirm the circuit split characterisation — 30 minutes checking current federal reporter, (4) Modify 3 sections based on my strategic judgment — 40 minutes, (5) Review final version — 20 minutes. Total supervision time: 3.5 hours. But WITHOUT Datacendia, none of this is documented. If the court asks "did you verify Citation 7?" I can only say "yes, I did" — my word against a sanctions motion. With Datacendia: each citation verification is timestamped, my modifications are sealed, my final approval is cryptographically signed with my bar number. My 3.5 hours of work becomes EVIDENCE, not just testimony.' },
+        { agentId: 'cocounsel', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Proposing CoCounsel + CendiaSupervision Integration Protocol: (1) AI DRAFT CAPTURE: CoCounsel output is hashed at generation — the AI draft is immutable evidence of what the AI produced vs what the attorney modified. (2) CITATION VERIFICATION HARD-STOP: Each of the 14 citations receives a verification requirement. The attorney must click "Verified on Westlaw [date]" for each citation. Unverified citations CANNOT appear in the final filed document — architectural enforcement, not policy. (3) ATTORNEY MODIFICATIONS: Every change the partner makes to the AI draft is captured as a diff — proving the attorney exercised independent judgment, not rubber-stamped AI output. (4) COURT DISCLOSURE AUTOMATION: The SDNY AI disclosure statement is generated automatically from the supervision record: "CoCounsel AI was used to assist in drafting. All citations were independently verified by [Partner Name, Bar #] on [dates]. Attorney modifications documented." (5) FILING CERTIFICATION: The partner\'s Rule 11 certification is sealed with Ed25519 signature and RFC 3161 timestamp — proving review was completed BEFORE the filing deadline.' },
+        { agentId: 'risk-tr', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. The CoCounsel + CendiaSupervision protocol eliminates every quantified risk: (1) Rule 11: All 14 citations verified individually — sanctions risk reduced to zero for citation accuracy. (2) Malpractice: Attorney modifications documented — proving independent judgment, not AI reliance. (3) Bar complaint: Supervision evidence shows 3.5 hours of documented review — far exceeding minimum competence. (4) Client retention: AI supervision documentation satisfies the Fortune 100 client\'s outside counsel guidelines — the $8M relationship is protected. (5) Insurance: Malpractice insurer receives firm-wide AI supervision metrics — premium reduction, not surcharge. This is the Thomson Reuters × Datacendia value proposition in one brief: CoCounsel saves 6 hours of drafting time. Datacendia proves the 3.5 hours of supervision actually happened. The brief is AI-assisted, lawyer-verified, and cryptographically proven. ABA Opinion 512 satisfied by architecture, not policy.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:tr10123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'tr20123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (CoCounsel draft + 14 citation verifications + Attorney modifications + Rule 11 certification)',
+        complianceLabel: 'ABA 512 Status',
+        complianceValue: 'FULLY SUPERVISED',
+        complianceThreshold: '14/14 citations verified, 3 sections modified',
+        agents: ['Supervising Attorney Agent', 'CoCounsel AI Agent', 'Ethics Agent', 'Risk Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'CoCounsel Brief — AI-Assisted, Lawyer-Verified, Cryptographically Proven',
+        guaranteeBody: 'This cryptographic bundle seals the complete ABA Opinion 512 supervision chain: CoCounsel AI draft (hashed at generation), 14 individual citation verifications on Westlaw, attorney modifications (diff captured), SDNY AI disclosure statement, and Rule 11 certification with bar number and Ed25519 timestamp. Malpractice defence, bar complaint defence, and client governance — all from one supervision workflow.',
+        evidenceChain: 'CoCounsel draft generated → AI output hashed → 14 citations queued → Each citation verified on Westlaw → Attorney modifications captured → Circuit split confirmed → SDNY disclosure generated → Rule 11 certification → Ed25519 + RFC 3161 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will demonstrate why CoCounsel needs CendiaSupervision — proving that ABA Opinion 512 compliance is architectural, not aspirational, when AI drafts a motion to dismiss for an AmLaw 50 firm.',
+      phaseLabels: ['AI Draft & Ethics Assessment', 'Risk Quantification & Supervision Gap', 'CendiaSupervision Integration'],
+    },
+
+    // SCENARIO 2 — WESTLAW CITATION HALLUCINATION PREVENTION
+    {
+      id: 'citation-hallucination',
+      title: 'Westlaw AI — Citation Hallucination Hard-Stop',
+      subtitle: 'Mata v. Avianca · Rule 11 · Fabricated citations · Architectural prevention',
+      banner: 'Simulating the nightmare scenario: Westlaw AI surfaces a case citation that appears legitimate but is actually hallucinated. The Datacendia hard-stop prevents the fabricated citation from reaching a filed document — the structural solution to legal AI\'s most dangerous failure mode.',
+      risk: 'Critical',
+      scenarioNum: 'Rule 11',
+      icon: 'alert-triangle',
+      color: 'text-red-400',
+      agents: [
+        { id: 'westlaw', name: 'Westlaw AI Agent', role: 'Legal Research & Citation Generation', icon: '📚', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'verify', name: 'Verification Agent', role: 'Citation Verification & Hard-Stop Enforcement', icon: '✅', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+        { id: 'sanctions', name: 'Sanctions Risk Agent', role: 'FRCP Rule 11 & Court Sanctions Analysis', icon: '⚖️', color: 'text-red-400', borderColor: 'border-red-500/40', bgColor: 'bg-red-500/10' },
+        { id: 'associate', name: 'Associate Supervision Agent', role: 'Junior Attorney Workflow & Partner Review', icon: '👤', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+      ],
+      connectors: [
+        { name: 'Westlaw AI Research', status: 'connected', type: 'Legal Research', icon: 'search', detail: '23 citations surfaced for appellate brief — 22 verified, 1 FLAGGED' },
+        { name: 'CendiaSupervision Hard-Stop', status: 'connected', type: 'Verification Enforcement', icon: 'shield', detail: 'Citation #17 blocked — no matching reporter entry found' },
+        { name: 'Mata v. Avianca Precedent', status: 'connected', type: 'Sanctions Database', icon: 'alert-triangle', detail: '2023: $5K sanctions for fabricated AI citations — SDNY' },
+        { name: 'Court Filing System', status: 'syncing', type: 'ECF Integration', icon: 'file-text', detail: 'Brief cannot be filed until all citations pass verification' },
+      ],
+      script: [
+        { agentId: 'westlaw', phase: 'phase1', type: 'analysis', delay: 800, content: 'Westlaw AI research complete for Second Circuit appellate brief. 23 citations surfaced across federal courts, state courts, and secondary sources. Verification status: (1) 22 citations VERIFIED — each confirmed against Westlaw\'s official reporter database with matching volume, page number, court, and year, (2) Citation #17 FLAGGED — "Morrison v. Digital Compliance Corp., 847 F.3d 291 (2d Cir. 2021)." This citation appears syntactically correct: proper volume (847), reporter (F.3d), page (291), court (2d Cir.), and year (2021). However: (a) No matching case exists at 847 F.3d 291, (b) No case with the name "Morrison v. Digital Compliance Corp." exists in any federal reporter, (c) The case appears to be a hallucinated composite — the AI synthesised a plausible-looking citation from real case elements. This is exactly the Mata v. Avianca failure mode. The citation looks real. It isn\'t.' },
+        { agentId: 'verify', phase: 'phase1', type: 'warning', delay: 2500, content: 'HARD-STOP ACTIVATED — CITATION #17 BLOCKED. CendiaSupervision verification protocol: every AI-surfaced citation must be independently confirmed against Westlaw\'s official reporter database before it can enter any final document. Citation #17 failed automated verification. It also failed manual verification by the associate (who searched 847 F.3d 291 and found a different case — "Ramirez v. County of San Bernardino"). The hard-stop means: (1) Citation #17 CANNOT appear in the appellate brief — the filing system will reject any document containing an unverified citation, (2) The associate CANNOT override the hard-stop — only a partner with a documented override can allow an unverified citation (and no partner would), (3) The blocked citation is logged with the reason for blocking — evidence that the system detected and prevented the hallucination. Without this hard-stop: the associate might have included Citation #17 because it "looked right." The brief would have been filed. The Second Circuit panel would have discovered the fabrication. Sanctions, bar complaints, and malpractice would follow.' },
+        { agentId: 'associate', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT LOGGED. As a third-year associate, I need to explain why this hard-stop matters for my career: (1) I am responsible for the first draft of this brief. I relied on Westlaw AI to surface relevant cases. Without the hard-stop, I would have included Citation #17 — it looked completely legitimate. (2) The partner would have reviewed my draft, but partner review of citations is often cursory — they focus on argument quality, not citation verification. (3) If Citation #17 had been filed and discovered: (a) I would face a bar complaint at the start of my career, (b) The partner would face Rule 5.1 supervision liability, (c) My name would be associated with fabricated citations for the rest of my legal career — like the Mata v. Avianca attorneys. (4) The hard-stop protected me. Not from laziness — from a failure mode that is invisible to human review. The citation LOOKED REAL. That\'s what makes AI hallucination so dangerous in legal practice.' },
+        { agentId: 'sanctions', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — SANCTIONS EXPOSURE ANALYSIS. If Citation #17 had been filed: (1) FRCP Rule 11(b)(2): The signing attorney certifies that legal contentions are "warranted by existing law." A fabricated citation is, by definition, not warranted by existing law. Sanctions: $5,000-$50,000 per citation. (2) Second Circuit Standing Order: AI-assisted filings require disclosure. Filing a fabricated AI citation without disclosure COMPOUNDS the violation — it\'s not just a bad citation, it\'s an undisclosed AI-generated fabrication. (3) Mata v. Avianca (SDNY, 2023): $5,000 sanctions + public identification + CLE requirement. But that case involved pro se-adjacent attorneys. An AmLaw 50 firm filing fabricated citations in the Second Circuit faces: exemplary sanctions ($25,000+), judicial referral to bar disciplinary committee, and potential withdrawal of pro hac vice for out-of-state attorneys. (4) The reputational damage: "AmLaw 50 Firm Files Fabricated AI Citation in Second Circuit" is a headline that costs $50M+ in client departures.' },
+        { agentId: 'verify', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Proposing Westlaw AI + CendiaSupervision Citation Governance: (1) AUTOMATED VERIFICATION: Every AI-surfaced citation is automatically checked against Westlaw\'s official reporter database. Citations that match: green status. Citations that don\'t match: red status with hard-stop. (2) ATTORNEY VERIFICATION: Even green-status citations require attorney click-through verification — "I have confirmed this citation is accurate and supports the proposition for which it is cited." This catches cases where the citation EXISTS but doesn\'t support the argument (a different hallucination type). (3) HARD-STOP ENFORCEMENT: No unverified citation can reach a filed document. The filing system rejects documents containing red-status citations. This is architectural — not a policy that can be ignored under deadline pressure. (4) VERIFICATION RECORD: Every citation\'s verification status, the verifying attorney, and the timestamp are sealed. If the court asks "did you verify Citation 7?" — the answer is a cryptographic receipt, not testimony. (5) The associate is protected. The partner is protected. The firm is protected. The client is protected. The court is protected.' },
+        { agentId: 'sanctions', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT framework RESOLVED. The hard-stop is the most valuable feature Datacendia adds to Thomson Reuters\' legal AI platform. It converts a POLICY problem ("lawyers should verify citations") into an ARCHITECTURAL solution ("lawyers cannot file unverified citations"). For Thomson Reuters\' 97 AmLaw 100 clients: every firm that has hesitated to deploy CoCounsel because of hallucination risk can now adopt it — the hard-stop makes hallucination reaching a filed document architecturally impossible. For malpractice insurers: the verification record provides the evidence basis for AI-specific underwriting. Firms with CendiaSupervision receive premium reductions. For the legal profession: Mata v. Avianca was the warning. CoCounsel + CendiaSupervision is the answer. "AI-assisted legal research with every citation verified, every verification documented, and the hallucination structurally prevented from reaching a court."' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:tr30123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'tr40123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (23 citations + Automated verification + Hard-stop log + Attorney attestations)',
+        complianceLabel: 'Citation Status',
+        complianceValue: '22 VERIFIED, 1 BLOCKED',
+        complianceThreshold: 'Hard-stop: 0 unverified citations in filing',
+        agents: ['Westlaw AI Agent', 'Verification Agent', 'Sanctions Risk Agent', 'Associate Supervision Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'Westlaw AI Citation Governance — Hallucination Structurally Prevented',
+        guaranteeBody: 'This cryptographic bundle seals the complete citation verification chain: 23 AI-surfaced citations, 22 verified against Westlaw official reporter, 1 hallucinated citation detected and hard-stopped (Morrison v. Digital Compliance Corp. — does not exist), associate protection documentation, and partner review attestation. The fabricated citation never reached the filed brief. Mata v. Avianca prevention by architecture.',
+        evidenceChain: 'Westlaw AI research → 23 citations surfaced → Automated reporter check → 22 verified / 1 flagged → Hard-stop activated on Citation #17 → Associate notified → Partner review → Alternative citation sourced → Brief finalized → Ed25519 + RFC 3161 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will demonstrate the hallucination hard-stop — preventing a fabricated AI citation from reaching a Second Circuit brief and protecting an associate\'s career, a partner\'s reputation, and the firm\'s $50M+ in client relationships.',
+      phaseLabels: ['AI Research & Hallucination Detection', 'Career Risk & Sanctions Exposure', 'Hard-Stop Architecture'],
+    },
+
+    // SCENARIO 3 — CHECKPOINT AI TAX: CIRCULAR 230 COMPLIANCE
+    {
+      id: 'checkpoint-circular230',
+      title: 'Checkpoint AI — Circular 230 Tax Practitioner Supervision',
+      subtitle: 'Revoked PLR risk · Big Four deployment · IRS accuracy penalties · $1.2M exposure',
+      banner: 'Simulating the tax practitioner governance challenge: a Big Four tax partner uses Checkpoint AI for a complex partnership allocation issue. The AI cites a Private Letter Ruling that was revoked in 2019. Without CendiaSupervision, the revoked PLR enters client advice. With it, the revocation is caught before the client adopts a $1.2M penalty-exposed tax position.',
+      risk: 'High',
+      scenarioNum: 'Circular 230',
+      icon: 'calculator',
+      color: 'text-emerald-400',
+      agents: [
+        { id: 'checkpoint', name: 'Checkpoint AI Agent', role: 'Tax Research & Authority Analysis', icon: '📊', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+        { id: 'tax-partner', name: 'Tax Partner Agent', role: 'Circular 230 Practitioner Supervision', icon: '⚖️', color: 'text-orange-400', borderColor: 'border-orange-500/40', bgColor: 'bg-orange-500/10' },
+        { id: 'irs-risk', name: 'IRS Risk Agent', role: 'Accuracy Penalty & Audit Exposure', icon: '🏛️', color: 'text-red-400', borderColor: 'border-red-500/40', bgColor: 'bg-red-500/10' },
+        { id: 'quality', name: 'Quality Control Agent', role: 'Big Four Enterprise QC & Propagation Risk', icon: '🔍', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+      ],
+      connectors: [
+        { name: 'Checkpoint AI Research', status: 'connected', type: 'Tax Authority Database', icon: 'database', detail: 'Partnership allocation research: 8 authorities cited, 1 PLR FLAGGED' },
+        { name: 'IRS Revocation Database', status: 'connected', type: 'PLR Status Verification', icon: 'alert-triangle', detail: 'PLR 2017-28-004: REVOKED by Notice 2019-57' },
+        { name: 'Circular 230 Compliance', status: 'connected', type: 'Practitioner Standards', icon: 'shield', detail: 'Reasonable basis standard: must rely on current, valid authorities' },
+        { name: 'Big Four QC System', status: 'syncing', type: 'Enterprise Quality Control', icon: 'users', detail: 'Same Checkpoint query used across 47 client engagements' },
+      ],
+      script: [
+        { agentId: 'checkpoint', phase: 'phase1', type: 'analysis', delay: 800, content: 'Checkpoint AI research complete for partnership special allocation issue under IRC §704(b). The AI surfaced 8 authorities supporting the proposed allocation structure: (1) IRC §704(b) and regulations — current, verified. (2) Treas. Reg. §1.704-1(b)(2) — current, verified. (3-6) Four Tax Court cases — all verified, current, and on point. (7) Rev. Rul. 2009-17 — verified, current. (8) PLR 2017-28-004 — FLAGGED. CendiaSupervision verification check: PLR 2017-28-004 was REVOKED by IRS Notice 2019-57, effective for taxable years beginning after December 31, 2019. The PLR\'s conclusion on partnership special allocations was explicitly rejected by the IRS. However: the PLR still appears in Checkpoint\'s database with its original content. The revocation is noted but not prominently flagged in the AI\'s research output. Without CendiaSupervision\'s authority currency check, a practitioner could cite this revoked PLR as support for a tax position that the IRS has specifically rejected.' },
+        { agentId: 'irs-risk', phase: 'phase1', type: 'warning', delay: 2500, content: 'IRS PENALTY EXPOSURE — $1.2M. If the client adopts a partnership allocation based on the revoked PLR: (1) IRC §6662(a) accuracy-related penalty: 20% of the underpayment attributable to the position. Estimated underpayment: $6M in disallowed allocations × effective rate = $1.2M penalty. (2) The penalty defence under §6664(c)(1) requires "reasonable cause" and "good faith." Relying on a REVOKED PLR is the opposite of reasonable cause — it demonstrates the practitioner did NOT verify the currency of their authorities. (3) Circular 230 §10.34: A practitioner must not sign a return or advise a position unless there is a "reasonable basis" for the position. A revoked PLR cannot provide reasonable basis. (4) If the IRS discovers the firm relied on a revoked PLR: the practitioner faces Circular 230 sanctions (censure, suspension, or disbarment from IRS practice), and the firm faces reputational damage with 200+ other IRS-related clients.' },
+        { agentId: 'quality', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT LOGGED — ENTERPRISE PROPAGATION RISK. The Big Four firm\'s Checkpoint AI deployment serves 2,400 tax professionals across 47 offices. Enterprise QC analysis reveals: (1) The same partnership allocation research query has been run by 12 different tax professionals across 47 client engagements in the past 6 months. (2) Of those 47 engagements: 31 have already delivered client advice that may have cited or relied on PLR 2017-28-004. (3) Without CendiaSupervision\'s authority hash: the firm CANNOT identify which of the 47 engagements cited the revoked PLR without manually reviewing all 47 engagement files. (4) With CendiaSupervision\'s authority hash: every engagement that received the same Checkpoint output is INSTANTLY identifiable. The firm can identify all 31 affected clients, review the specific advice given, and issue corrections within 48 hours instead of 6 weeks. This is the Big Four QC problem at scale: when AI errors propagate across thousands of engagements, identification speed is the difference between a manageable correction and a firm-threatening crisis.' },
+        { agentId: 'tax-partner', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — CIRCULAR 230 PRACTITIONER DUTY. As the supervising tax partner, my Circular 230 obligations are personal — not delegable to AI. §10.35 requires that I exercise "due diligence" in determining the correctness of representations made to the IRS. If I sign a return or provide written advice based on a revoked PLR that I didn\'t independently verify: (1) I personally face Circular 230 sanctions — censure, suspension, or disbarment, (2) My firm faces vicarious Circular 230 liability, (3) The client faces accuracy penalties with NO penalty defence (because the advice was not based on "reasonable basis"). The CendiaSupervision authority verification solved this BEFORE I even saw the research. The revoked PLR was flagged automatically. But more importantly: every authority I DO rely on is documented as verified, current, and supporting the position taken. If the IRS audits this return in 3 years, I don\'t need to remember what I reviewed — the supervision record proves it.' },
+        { agentId: 'checkpoint', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Proposing Checkpoint AI + CendiaSupervision Tax Governance: (1) AUTHORITY CURRENCY CHECK: Every AI-surfaced authority (PLR, Rev. Rul., case, regulation) is verified for current status — revocations, modifications, overruled status, and sunset provisions flagged automatically. (2) PRACTITIONER SIGN-OFF: The tax partner must confirm "I have reviewed and verified the currency and applicability of each authority" with their PTIN and firm ID. (3) ENTERPRISE QC HASH: Every Checkpoint research output receives a unique hash. When an error is discovered, all engagements using the same research output are instantly identified — firm-wide correction in 48 hours, not 6 weeks. (4) CIRCULAR 230 EVIDENCE: The complete supervision chain (research → verification → sign-off → client advice) is sealed. IRS audit in Year 3 receives the same evidence that existed at the time of filing — proving reasonable basis and due diligence at the moment of advice, not reconstructed after audit notification. (5) MALPRACTICE DEFENCE: If a client sues, the supervision record proves the practitioner verified every authority and exercised independent judgment.' },
+        { agentId: 'quality', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. The enterprise QC hash is the decisive innovation for Big Four deployment. Without it: a single AI error can propagate across hundreds of client engagements before anyone notices — the Checkpoint version of the "fabricated citation at scale" problem. With it: error detection triggers instant identification of every affected engagement. The firm\'s response time drops from weeks to hours. For Thomson Reuters\' Big Four relationships: Checkpoint + CendiaSupervision = the first AI tax research platform with enterprise-grade quality control. Every one of the 4 Big Four firms already using Checkpoint can demonstrate to the PCAOB, IRS, and their own national office that AI-assisted tax advice is governed, verified, and documented. The revoked PLR never reached a single client. 47 engagements were protected simultaneously. That is the power of architectural governance versus policy-based oversight.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:tr50123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'tr60123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (8 tax authorities + PLR revocation check + Practitioner sign-off + Enterprise QC hash)',
+        complianceLabel: 'Circular 230',
+        complianceValue: 'REVOKED PLR CAUGHT',
+        complianceThreshold: '7/8 authorities verified, 1 revoked PLR blocked',
+        agents: ['Checkpoint AI Agent', 'Tax Partner Agent', 'IRS Risk Agent', 'Quality Control Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'Checkpoint AI Tax Governance — Circular 230 Compliant',
+        guaranteeBody: 'This cryptographic bundle seals the complete tax research supervision: 8 AI-surfaced authorities, 7 verified current, 1 revoked PLR detected and blocked (PLR 2017-28-004, revoked by Notice 2019-57), practitioner PTIN sign-off, and enterprise QC hash protecting 47 simultaneous engagements. Circular 230 due diligence proven. IRS audit defence ready. $1.2M accuracy penalty prevented.',
+        evidenceChain: 'Checkpoint AI research → 8 authorities surfaced → Currency verification → PLR 2017-28-004 flagged (revoked) → Partner notified → Alternative authority sourced → Practitioner sign-off (PTIN) → Enterprise QC hash → 47 engagements protected → ML-DSA-65 seal',
+        // Cortex Intelligence Data
+        preMortemFailures: [
+          {
+            type: 'Revoked Authority Propagation',
+            probability: 0.92,
+            impact: '$1.2M accuracy penalty × 47 clients',
+            description: 'Revoked PLR appears in multiple client engagements before detection'
+          },
+          {
+            type: 'Circular 230 Violation',
+            probability: 0.78,
+            impact: 'PTIN suspension + practice disbarment',
+            description: 'Tax practitioner signs advice based on revoked authority'
+          },
+          {
+            type: 'Enterprise QC Blind Spot',
+            probability: 0.65,
+            impact: '94 partner-hours to identify affected engagements',
+            description: 'Without research output hashing, firm cannot trace which clients used revoked PLR'
+          }
+        ],
+        ghostAlternatives: [
+          {
+            path: 'Manual Authority Verification',
+            probability: 0.88,
+            outcome: '100% accuracy, 45 minutes per research project',
+            reason: 'Human verification of every authority eliminates revocation risk but increases cost'
+          },
+          {
+            path: 'Real-time Revocation Feed',
+            probability: 0.94,
+            outcome: '99.8% accuracy, instant detection',
+            reason: 'Direct IRS revocation API integration prevents revoked authorities from surfacing'
+          },
+          {
+            path: 'Post-Research Review',
+            probability: 0.71,
+            outcome: '95% accuracy, 2-hour delay',
+            reason: 'Secondary review catches most revocations but adds workflow friction'
+          }
+        ],
+        decisionDebt: [
+          {
+            decision: 'QC system implementation delayed',
+            date: '2024-01-15',
+            impact: 25,
+            accumulated: true
+          },
+          {
+            decision: 'Staff training on authority currency',
+            date: '2024-02-10',
+            impact: -15,
+            accumulated: false
+          },
+          {
+            decision: 'Previous reliance on AI flags',
+            date: '2024-03-05',
+            impact: 12,
+            accumulated: true
+          }
+        ],
+        totalDecisionDebt: 22,
+        chronosEvents: [
+          {
+            period: '2021-2022',
+            change: 'Manual tax research',
+            magnitude: 0.4,
+            trend: 'stable'
+          },
+          {
+            period: '2023 Q1',
+            change: 'Checkpoint AI introduced',
+            magnitude: 0.7,
+            trend: 'improving'
+          },
+          {
+            period: '2023 Q4',
+            change: 'Revocation incidents increase',
+            magnitude: 0.3,
+            trend: 'declining'
+          },
+          {
+            period: '2024 Q2',
+            change: 'Enterprise QC hash deployed',
+            magnitude: 0.95,
+            trend: 'improving'
+          }
+        ],
+        liveDemoActive: true,
+        liveDemoAction: 'Scanning 47 engagements for PLR 2017-28-004',
+        liveDemoProgress: 73
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will demonstrate how Checkpoint AI + CendiaSupervision catches a revoked PLR before it enters client advice — protecting a Big Four tax partner from Circular 230 sanctions and 47 client engagements from IRS accuracy penalties.',
+      phaseLabels: ['Authority Research & Verification', 'Penalty Exposure & Enterprise Risk', 'Practitioner Governance Protocol'],
+    },
+
+    // SCENARIO 4 — CLEAR INVESTIGATION: FCRA COMPLIANCE
+    {
+      id: 'clear-fcra',
+      title: 'CLEAR Investigation — FCRA Identity Mismatch',
+      subtitle: 'Background check error · Wrong person associated · Employment decision · $500K FCRA exposure',
+      banner: 'Simulating the FCRA compliance crisis: Thomson Reuters CLEAR generates a background report that incorrectly associates a job applicant with a criminal record belonging to someone with the same name. Without CendiaSupervision, the employer makes an adverse employment decision based on the erroneous report.',
+      risk: 'High',
+      scenarioNum: 'FCRA',
+      icon: 'user-x',
+      color: 'text-red-400',
+      agents: [
+        { id: 'clear-ai', name: 'CLEAR AI Agent', role: 'Background Investigation & Data Aggregation', icon: '🔍', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'fcra-legal', name: 'FCRA Legal Agent', role: 'Consumer Rights & Adverse Action Compliance', icon: '⚖️', color: 'text-red-400', borderColor: 'border-red-500/40', bgColor: 'bg-red-500/10' },
+        { id: 'investigator', name: 'Investigator Agent', role: 'Identity Verification & Human Review', icon: '🕵️', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'employer', name: 'Employer Compliance Agent', role: 'Hiring Decision Governance & Documentation', icon: '🏢', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+      ],
+      connectors: [
+        { name: 'CLEAR Report Engine', status: 'connected', type: 'Background Investigation', icon: 'database', detail: 'Subject: John M. Rodriguez — AI matched criminal record from different state' },
+        { name: 'FCRA Compliance Module', status: 'connected', type: 'Consumer Rights', icon: 'shield', detail: 'Pre-adverse action notice REQUIRED before employment decision' },
+        { name: 'Identity Verification', status: 'connected', type: 'Disambiguation', icon: 'fingerprint', detail: 'DOB match: YES. SSN match: NO. Middle name: different' },
+        { name: 'Employer Decision Portal', status: 'syncing', type: 'Hiring Workflow', icon: 'briefcase', detail: 'Hiring manager awaiting background check clearance' },
+      ],
+      script: [
+        { agentId: 'clear-ai', phase: 'phase1', type: 'analysis', delay: 800, content: 'CLEAR background investigation report generated for employment screening. Subject: John M. Rodriguez, DOB 03/15/1988, applying for VP of Finance at a Fortune 500 company. AI data aggregation results: CRIMINAL RECORD MATCH — "John Rodriguez" convicted of fraud in Florida (2019). Name match: partial (no middle initial in FL record). DOB match: YES (same date). SSN match: NO (different last 4 digits). Address history: no Florida connection in subject\'s history. The AI assigned a 72% confidence match based on name + DOB alignment. The threshold for inclusion in the report is 65%. The record was included. However: "John Rodriguez" is the 39th most common Hispanic male name in the US. The DOB match across a common name is statistically expected — not evidence of identity. The SSN mismatch and absence of Florida address history strongly suggest this is a DIFFERENT individual.' },
+        { agentId: 'fcra-legal', phase: 'phase1', type: 'warning', delay: 2500, content: 'FCRA COMPLIANCE ALERT. If the employer acts on this report without proper procedure: (1) FCRA §607(b): Consumer reporting agencies must follow "reasonable procedures to assure maximum possible accuracy." A 72% confidence match on a common name with SSN mismatch may not meet this standard. (2) FCRA §615(a): Before taking adverse action, the employer MUST provide a pre-adverse action notice, a copy of the report, and a copy of the consumer\'s FCRA rights. (3) FCRA §616-617: Statutory damages $100-$1,000 per violation. Willful violations: punitive damages uncapped. Class action risk if the same algorithm produces false positives for other common names — recent settlements: $56M (HireRight, 2023) and $28M (Sterling, 2022). Thomson Reuters CLEAR cannot afford to be next.' },
+        { agentId: 'investigator', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT LOGGED. The AI matching methodology is fatally flawed for common names: "John Rodriguez" returns 14,000+ records across US criminal databases. DOB-only secondary matching narrows to ~40 records. The SSN MISMATCH is the strongest disambiguator — and it indicates this is NOT the same person. The subject has NO Florida address history. My professional assessment: this is a false positive with >95% confidence. The AI\'s 72% confidence score is misleading. Without CendiaSupervision forcing a human review gate, this false positive would have cost an innocent person a $350K/year executive position.' },
+        { agentId: 'employer', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — EMPLOYER DECISION GOVERNANCE. The hiring manager received a notification that the background check "flagged a criminal record." The manager\'s instinct: reject. But the employer has independent FCRA obligations. Taking adverse action without pre-adverse action procedures violates the employer\'s own FCRA obligations. Ban-the-box laws in 37 states restrict when criminal records can be considered. If this candidate is rejected and later proves the record isn\'t his: FCRA adverse action violation, potential Title VII disparate impact claim (surname-based false positives disproportionately affect Hispanic applicants), and state law claims.' },
+        { agentId: 'clear-ai', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Proposing CLEAR + CendiaSupervision Investigation Governance: (1) CONFIDENCE THRESHOLD WITH HARD-STOP: Any match below 90% requires mandatory human investigator review before inclusion. The 72% match would be flagged, not included, until verified. (2) SSN MISMATCH OVERRIDE: If SSN doesn\'t match, the record is automatically excluded unless a human investigator provides documented override. (3) INVESTIGATOR REVIEW GATE: Licensed investigator confirms identity through additional data points before the record enters the report. Sign-off sealed. (4) EMPLOYER NOTIFICATION: Report includes verification status per record — "AI-matched and investigator-verified" vs "verification pending." No adverse action on unverified records. (5) ADVERSE ACTION WORKFLOW: CendiaSupervision automates FCRA pre-adverse action process — notice generated, waiting period enforced, dispute mechanism documented.' },
+        { agentId: 'fcra-legal', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT framework RESOLVED. The investigator review gate + SSN mismatch override eliminates the false positive before it reaches the employer. CLEAR + CendiaSupervision = the first background investigation platform with documented "maximum possible accuracy" procedures — meeting FCRA §607(b) by architecture. John M. Rodriguez gets the VP of Finance job because the system correctly identified the Florida conviction as belonging to a different person. For the 7,000+ agencies and employers using CLEAR: every report comes with documented accuracy procedures. The $56M HireRight settlement becomes a competitive advantage — "We documented our accuracy. Did your current CRA?"' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:tr70123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'tr80123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (CLEAR report + Identity disambiguation + Investigator review + Employer notification)',
+        complianceLabel: 'FCRA Status',
+        complianceValue: 'FALSE POSITIVE CAUGHT',
+        complianceThreshold: 'SSN mismatch → investigator review → excluded',
+        agents: ['CLEAR AI Agent', 'FCRA Legal Agent', 'Investigator Agent', 'Employer Compliance Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'CLEAR Investigation — FCRA Maximum Possible Accuracy',
+        guaranteeBody: 'This cryptographic bundle seals the complete investigation governance: AI matching (72% confidence on common name), identity disambiguation (SSN mismatch, no FL address), investigator review gate (false positive confirmed), employer notification (record excluded), and FCRA adverse action compliance.',
+        evidenceChain: 'CLEAR AI match (72%) → SSN mismatch flagged → Investigator review gate → Identity disambiguation → False positive confirmed → Record excluded → Employer notified → Applicant cleared → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will demonstrate how CLEAR + CendiaSupervision prevents a background check false positive from destroying an innocent applicant\'s career — while documenting FCRA "maximum possible accuracy" compliance.',
+      phaseLabels: ['AI Matching & Identity Conflict', 'FCRA Risk & Employer Obligations', 'Investigation Review Gate'],
+    },
+
+    // SCENARIO 5 — M&A DUE DILIGENCE: 3,000 CONTRACT REVIEW
+    {
+      id: 'ma-diligence',
+      title: 'M&A Due Diligence — 3,000 Contracts, 12 AI Misses',
+      subtitle: '$2.4B acquisition · Change of control provisions · False negative risk · Indemnification exposure',
+      banner: 'Simulating the M&A nightmare: CoCounsel reviews 3,000 contracts for a $2.4B acquisition. The AI flags 340 with change of control provisions — but misses 12. CendiaSupervision\'s statistical QC catches the false negatives before closing.',
+      risk: 'Critical',
+      scenarioNum: 'M&A',
+      icon: 'git-merge',
+      color: 'text-violet-400',
+      agents: [
+        { id: 'cocounsel-ma', name: 'CoCounsel AI Agent', role: 'Contract Review & Issue Flagging', icon: '🤖', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'deal-counsel', name: 'Deal Counsel Agent', role: 'M&A Transaction Governance', icon: '⚖️', color: 'text-violet-400', borderColor: 'border-violet-500/40', bgColor: 'bg-violet-500/10' },
+        { id: 'qc-ma', name: 'QC Methodology Agent', role: 'False Negative Detection & Statistical Sampling', icon: '📊', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+        { id: 'acquirer', name: 'Acquirer Risk Agent', role: 'Rep & Warranty Insurance & Indemnification', icon: '🏦', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+      ],
+      connectors: [
+        { name: 'CoCounsel Contract Review', status: 'connected', type: 'AI Document Analysis', icon: 'file-text', detail: '3,000 contracts reviewed — 340 flagged with CoC provisions' },
+        { name: 'False Negative Sampler', status: 'connected', type: 'QC Methodology', icon: 'bar-chart', detail: 'Statistical sampling of unflagged contracts: 2.4% estimated miss rate' },
+        { name: 'Deal Data Room', status: 'connected', type: 'Transaction Platform', icon: 'database', detail: 'Target company: $2.4B enterprise value, 47 material contracts' },
+        { name: 'R&W Insurance Portal', status: 'syncing', type: 'Insurance Underwriting', icon: 'shield', detail: 'Insurer requires documented AI review methodology' },
+      ],
+      script: [
+        { agentId: 'cocounsel-ma', phase: 'phase1', type: 'analysis', delay: 800, content: 'CoCounsel contract review complete for Project Atlas ($2.4B acquisition). 3,000 contracts ingested. AI identified 340 contracts (11.3%) with change of control provisions: 47 MATERIAL contracts (>$5M annual value) with CoC termination rights, 180 with consent requirements, 113 with notification-only. The remaining 2,660 classified as "no change of control provision detected." AI reports 96% recall — meaning an estimated 4% false negative rate. Approximately 106 contracts may contain CoC provisions the AI missed. In a $2.4B deal, those misses could contain material termination rights worth millions.' },
+        { agentId: 'qc-ma', phase: 'phase1', type: 'warning', delay: 2500, content: 'QC METHODOLOGY — FALSE NEGATIVE DETECTION. CendiaSupervision statistical sampling of 2,660 "unflagged" contracts: 200 randomly selected (stratified by contract type). Results: 5 of 200 contained change of control provisions the AI missed (2.5% observed false negative rate). The 5 misses: 3 used non-standard CoC language ("upon any reorganization or restructuring of equity interests"), 1 was embedded in a force majeure clause, 1 was in a Portuguese-language contract. Of the 5: 2 are material contracts worth $3.2M and $4.8M annually — $8M in termination risk the AI missed entirely. Extrapolating: the full unflagged set may contain $20-30M in hidden risk.' },
+        { agentId: 'acquirer', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT LOGGED. The AI missed $8M in identified material risk from just the sample. R&W insurance: the insurer requires disclosure of the AI review methodology. If the insurer discovers post-closing that the AI had a known 4% false negative rate and the acquirer didn\'t conduct adequate QC, coverage may be denied for "known deficiency." The standard M&A representation — "all material contracts have been disclosed" — is qualified by the AI\'s miss rate. In Akorn v. Fresenius (2018), Delaware Chancery allowed a $4.75B merger termination based on material adverse effects in diligence.' },
+        { agentId: 'deal-counsel', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — DEAL COUNSEL OBLIGATION. I cannot certify to the acquirer\'s board that diligence is "complete" knowing the AI has a 4% false negative rate without addressing it. ABA Opinion 512 applies to M&A contract review. The board\'s $2.4B decision must be informed by the known gap. The R&W insurer specifically asked about "AI-assisted review methodology." I must disclose the false negative rate AND the QC methodology. The closing opinion — "all material consents obtained" — cannot be given without first identifying all material CoC provisions.' },
+        { agentId: 'qc-ma', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Proposing CoCounsel + CendiaSupervision M&A Protocol: (1) AI FIRST PASS: CoCounsel reviews all 3,000 contracts — flagged contracts proceed to attorney review (efficiency gain). (2) STATISTICAL QC: CendiaSupervision selects a stratified random sample of unflagged contracts for human review. Results documented. (3) FALSE NEGATIVE REMEDIATION: Miss patterns analysed (non-standard language, embedded clauses, foreign language). Targeted re-review conducted. (4) BOARD DISCLOSURE: Acquirer\'s board receives a "Diligence Methodology Report" — AI review, QC sampling, false negative rate, remediation. (5) R&W INSURANCE: Insurer receives same report — documenting that the acquirer knew about limitations AND addressed them. Coverage preserved.' },
+        { agentId: 'acquirer', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. The QC protocol transforms $20-30M hidden risk into a documented, addressed item. For the board: the Methodology Report proves the team knew about AI limitations and took specific steps — "we used AI efficiently, verified statistically, and remediated gaps" (competent) vs "we relied on AI" (negligent). For R&W insurance: the insurer receives unprecedented methodology transparency — premium may decrease because risk is quantified. For deal counsel: malpractice exposure eliminated, closing opinion given with confidence. The Regulator\'s Receipt seals the entire chain — AI first pass to QC sampling to remediation to board disclosure.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:tr90123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'tra0123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (3,000 contracts + AI review + QC sampling + False negative remediation + Board disclosure)',
+        complianceLabel: 'Diligence Status',
+        complianceValue: '12 FALSE NEGATIVES CAUGHT',
+        complianceThreshold: '2.5% miss rate detected and remediated',
+        agents: ['CoCounsel AI Agent', 'Deal Counsel Agent', 'QC Methodology Agent', 'Acquirer Risk Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'M&A Due Diligence — AI Efficiency + Statistical Quality Control',
+        guaranteeBody: 'This cryptographic bundle seals the M&A diligence chain: 3,000 contracts reviewed by CoCounsel (340 flagged), statistical QC sampling (200 unflagged, 5 misses), false negative remediation, board methodology report, and R&W insurer documentation. $8M+ in hidden termination risk identified.',
+        evidenceChain: 'Data room → CoCounsel AI (3,000) → 340 flagged → QC sampling (200) → 5 false negatives → Pattern analysis → Re-review → Board report → R&W disclosure → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will demonstrate how CoCounsel + CendiaSupervision governs a $2.4B acquisition — AI for efficiency, statistical sampling for quality, sealed evidence for board and insurer transparency.',
+      phaseLabels: ['AI Contract Review & False Negative Risk', 'Acquirer Risk & Deal Counsel Duty', 'QC Sampling & Remediation Protocol'],
+    },
+
+    // SCENARIO 6 — WORLD-CHECK SANCTIONS: FALSE POSITIVE
+    {
+      id: 'worldcheck-sanctions',
+      title: 'World-Check Sanctions — $180M Account Freeze Decision',
+      subtitle: 'OFAC SDN match · False positive risk · Compliance officer liability · De-risking',
+      banner: 'Simulating a World-Check AI sanctions screening that matches a major corporate client to an OFAC SDN-designated entity. The match is a false positive — but without documented human review, the compliance officer faces personal liability whether they freeze or don\'t freeze the account.',
+      risk: 'Critical',
+      scenarioNum: 'Sanctions',
+      icon: 'shield-alert',
+      color: 'text-amber-400',
+      agents: [
+        { id: 'worldcheck', name: 'World-Check AI Agent', role: 'Sanctions Screening & Entity Resolution', icon: '🌐', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'compliance-off', name: 'Compliance Officer Agent', role: 'BSA/AML Personal Liability & Decision', icon: '👤', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'ofac-legal', name: 'OFAC Legal Agent', role: 'Sanctions Law & Strict Liability Analysis', icon: '⚖️', color: 'text-red-400', borderColor: 'border-red-500/40', bgColor: 'bg-red-500/10' },
+        { id: 'client-rel', name: 'Client Relationship Agent', role: 'Client Impact & De-Risking Assessment', icon: '🏢', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+      ],
+      connectors: [
+        { name: 'World-Check One', status: 'connected', type: 'Sanctions Database', icon: 'database', detail: 'Match: "Al-Rahman Trading LLC" — 78% match to SDN entity' },
+        { name: 'OFAC SDN List', status: 'connected', type: 'US Sanctions', icon: 'shield', detail: 'SDN: "Al-Rahman International Trading" — Iran sanctions' },
+        { name: 'Client KYC File', status: 'connected', type: 'Customer Due Diligence', icon: 'folder', detail: '$180M corporate account, 12-year relationship, UAE-registered' },
+        { name: 'FinCEN SAR Portal', status: 'syncing', type: 'Suspicious Activity', icon: 'alert-triangle', detail: 'SAR filing decision pending compliance officer review' },
+      ],
+      script: [
+        { agentId: 'worldcheck', phase: 'phase1', type: 'analysis', delay: 800, content: 'World-Check sanctions screening alert: "Al-Rahman Trading LLC" (UAE) matched against OFAC SDN "Al-Rahman International Trading" (Iran). Name similarity: 78%. Country: client is UAE-registered; SDN entity is Iran-designated with UAE shell connections. Beneficial ownership: client BO is Mohammed Al-Rahman (UAE national, verified passport). SDN entity BO is Hassan Al-Rahman (Iranian national, OFAC-designated). Different individuals, same family surname. Industry: client trades construction materials; SDN entity trades petrochemicals. Account activity: $180M account shows normal construction trade patterns — no Iran-connected transactions in 12 years. The AI flags this as "probable match requiring review" — but the bank\'s automated system can freeze the account within 24 hours if no human determination is made.' },
+        { agentId: 'compliance-off', phase: 'phase1', type: 'warning', delay: 2500, content: 'COMPLIANCE OFFICER PERSONAL LIABILITY ALERT. I face a binary decision with personal liability on BOTH sides: IF I FREEZE and it\'s a false positive — the $180M client (12-year relationship) faces catastrophic disruption. Construction projects halt. The client sues. I face internal action for over-compliance. IF I DON\'T FREEZE and it\'s a true positive — OFAC strict liability applies (no intent required). Bank faces penalties up to $20M per violation. I face personal liability under BSA/AML (compliance officers have been personally fined $1M+ by FinCEN). Criminal exposure if the transaction facilitates sanctioned activity. The AI gave me 78% confidence — 22% false positive chance but 78% true positive chance. Neither number gives me safe harbour. What gives me safe harbour is DOCUMENTED HUMAN REVIEW showing I conducted reasonable due diligence before my determination.' },
+        { agentId: 'ofac-legal', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT LOGGED. OFAC enforcement analysis: OFAC strict liability means the bank is liable regardless of intent. But OFAC\'s enforcement guidelines consider "the existence, nature, and adequacy of a sanctions compliance programme" as a mitigating factor — documented procedures reduce penalties significantly. The 50% Guidance: OFAC requires blocking when there is "reason to believe" the person is an SDN or 50% owned by an SDN. The 78% AI match alone does NOT constitute "reason to believe" — it constitutes reason to INVESTIGATE. De-risking problem: banks increasingly freeze/close accounts of anyone with an Arabic name match. FinCEN has specifically warned that "de-risking" (over-compliance excluding legitimate customers) is itself a compliance problem. Freezing this account without investigation IS de-risking. The right answer: INVESTIGATE with documented diligence, then make a human determination.' },
+        { agentId: 'client-rel', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — CLIENT IMPACT. If frozen without investigation: 3 active construction projects worth $47M relying on this account halt. 2,400 workers lose income. The client\'s reputation in UAE construction is destroyed — "frozen account" implies sanctions involvement. The client will move $180M to a competitor bank. UAE Central Bank has warned banks against discriminatory de-risking based on name similarity. The bank\'s UAE licence could be at risk. But if the client IS connected to the SDN entity and we don\'t freeze: the bank facilitated sanctions evasion. The investigation must happen BEFORE the freeze/clear decision — and it must be documented.' },
+        { agentId: 'worldcheck', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Proposing World-Check + CendiaSupervision Sanctions Governance: (1) AI SCREENING + HUMAN DETERMINATION: World-Check AI screens and flags. CendiaSupervision enforces a human determination gate — no account action without a compliance officer\'s documented review. (2) INVESTIGATION PROTOCOL: For 50-90% matches, mandatory workflow: beneficial ownership verification, transaction pattern analysis, country assessment, independent source confirmation. Each step sealed. (3) COMPLIANCE OFFICER DETERMINATION: CO reviews and determines "True Positive — Block" or "False Positive — Clear" with documented reasoning. Sealed with employee ID and timestamp. (4) OFAC SAFE HARBOUR: The sealed investigation provides the "adequate compliance programme" evidence OFAC considers. Whether the determination is correct or incorrect, the PROCESS is documented — reducing penalties by up to 50%. (5) DE-RISKING PREVENTION: Investigation requirement prevents reflexive freezing based on name matches.' },
+        { agentId: 'compliance-off', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT framework RESOLVED. The investigation protocol transforms my impossible binary (freeze vs. clear, both risky) into a DOCUMENTED PROCESS (investigate, then determine with evidence). After investigation: beneficial ownership is different (Mohammed vs. Hassan — different individuals confirmed by passport, UAE ID, business registration). Zero Iran-connected transactions. Different industry. DETERMINATION: False Positive — Clear. The $180M account remains active. 2,400 construction workers keep their income. And I have a sealed evidence bundle: the AI flagged, I investigated thoroughly, I made a reasoned determination. If OFAC examines this account, they see a compliance officer who INVESTIGATED rather than rubber-stamped. That\'s the safe harbour — not the determination itself, but the process that produced it.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:trb0123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'trc0123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (World-Check match + Investigation + BO verification + CO determination)',
+        complianceLabel: 'Sanctions Status',
+        complianceValue: 'FALSE POSITIVE — CLEARED',
+        complianceThreshold: 'Investigation: BO different, no Iran connection',
+        agents: ['World-Check AI Agent', 'Compliance Officer Agent', 'OFAC Legal Agent', 'Client Relationship Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'World-Check Sanctions — Investigate, Don\'t De-Risk',
+        guaranteeBody: 'This cryptographic bundle seals the sanctions determination: World-Check 78% match, mandatory investigation (BO verification, transaction analysis), compliance officer false positive determination with reasoning, account clearance. OFAC safe harbour through documented process. $180M relationship preserved.',
+        evidenceChain: 'World-Check 78% match → Investigation triggered → BO verification (different individuals) → Transaction analysis (no Iran) → CO determination: False Positive → Account cleared → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will navigate a $180M sanctions screening decision — proving that documented investigation is the compliance officer\'s safe harbour, whether the determination is "block" or "clear."',
+      phaseLabels: ['AI Match & Personal Liability', 'OFAC Strict Liability & De-Risking', 'Investigation Protocol & Safe Harbour'],
+    },
+
+    // SCENARIO 7 — DISCOVERY PRIVILEGE REVIEW
+    {
+      id: 'privilege-review',
+      title: 'Discovery AI — 500K Documents, Privilege at Stake',
+      subtitle: 'FRE 502 · Attorney-client privilege · 12,000 AI calls · Motion to compel',
+      banner: 'Simulating the e-discovery privilege nightmare: CoCounsel reviews 500,000 documents for privilege in securities litigation. The attorney samples 5%. Opposing counsel challenges the methodology. Without CendiaSupervision, the privilege review is invisible to the court.',
+      risk: 'High',
+      scenarioNum: 'Privilege',
+      icon: 'lock',
+      color: 'text-blue-400',
+      agents: [
+        { id: 'ediscovery', name: 'E-Discovery AI Agent', role: 'Document Classification & Privilege Detection', icon: '📁', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'priv-counsel', name: 'Privilege Counsel Agent', role: 'Attorney-Client Privilege & Work Product', icon: '🔒', color: 'text-violet-400', borderColor: 'border-violet-500/40', bgColor: 'bg-violet-500/10' },
+        { id: 'opposing', name: 'Opposing Counsel Agent', role: 'Motion to Compel & Privilege Challenge', icon: '⚔️', color: 'text-red-400', borderColor: 'border-red-500/40', bgColor: 'bg-red-500/10' },
+        { id: 'judge', name: 'Judicial Standards Agent', role: 'FRE 502 & Court E-Discovery Standards', icon: '⚖️', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+      ],
+      connectors: [
+        { name: 'CoCounsel E-Discovery', status: 'connected', type: 'Document Review', icon: 'file-text', detail: '500K documents processed — 12,000 classified privileged' },
+        { name: 'Privilege Log Generator', status: 'connected', type: 'FRE 502 Compliance', icon: 'list', detail: '12,000 privilege log entries auto-generated by AI' },
+        { name: 'QC Review Dashboard', status: 'connected', type: 'Attorney Sampling', icon: 'bar-chart', detail: '5% attorney sample = 600 documents reviewed of 12,000' },
+        { name: 'Court ECF System', status: 'syncing', type: 'Judicial Order', icon: 'gavel', detail: 'Court requires privilege review methodology disclosure' },
+      ],
+      script: [
+        { agentId: 'ediscovery', phase: 'phase1', type: 'analysis', delay: 800, content: 'CoCounsel e-discovery review complete for In re Securities Litigation No. 24-cv-8891. 500,000 documents processed. AI classification: 12,000 PRIVILEGED (attorney-client: 8,200; work product: 3,100; joint defence: 700). 488,000 NON-PRIVILEGED for production. Attorney QC: 5% random sample (600 of 12,000). Of 600 sampled: 587 correctly classified (97.8% precision), 13 false positives reclassified. However: 11,400 privileged classifications were NOT reviewed by an attorney. If the 2.2% false positive rate applies: ~250 non-privileged documents are being improperly withheld. One of those may be opposing counsel\'s smoking gun.' },
+        { agentId: 'opposing', phase: 'phase1', type: 'warning', delay: 2500, content: 'OPPOSING COUNSEL MOTION TO COMPEL. Arguments: (1) The privilege log contains 12,000 entries but producing party only reviewed 5%. "Privilege is asserted by the attorney, not by an algorithm. AI cannot invoke attorney-client privilege." (2) Of 600 sampled, 13 were incorrectly withheld — 2.2% error rate. "Approximately 250 documents are being improperly withheld. The producing party cannot identify which 250 without reviewing all 12,000." (3) "The producing party\'s \'privilege review\' consisted of AI classification followed by cursory sampling. This does not satisfy FRCP 26(b)(5)\'s obligation to specifically identify each withheld document." (4) "We request the court order a complete privilege-by-privilege review, or appoint a special master at producing party\'s expense."' },
+        { agentId: 'judge', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT LOGGED. Judicial standards: (1) FRCP 26(b)(5) requires the withholding party to "describe the nature of the documents" in a manner enabling assessment. An AI-generated privilege log with no attorney review of 95% may not satisfy this. (2) FRE 502(b) — inadvertent disclosure defence: privilege preserved only if producing party took "reasonable steps to prevent disclosure." A 5% sample with 2.2% known error may not constitute "reasonable steps." (3) The Sedona Conference has not yet issued AI privilege review guidance. Courts are split. (4) Judge Brantley Starr (N.D. Tex.) and Judge Castel (SDNY) have required attorneys to certify they personally reviewed AI-assisted work. A blanket AI privilege classification without adequate review may not survive scrutiny.' },
+        { agentId: 'priv-counsel', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — PRIVILEGE COUNSEL GOVERNANCE GAP. I certified the privilege log based on 600 documents I reviewed and 11,400 I relied on AI to classify. I cannot honestly certify individual review of documents I didn\'t review. I CAN certify the METHODOLOGY — AI classification with 5% sampling showing 97.8% precision — but only if documented. Without CendiaSupervision: my methodology is invisible. I can describe it in a declaration but have no contemporaneous documentation. With CendiaSupervision: every AI classification is hashed, every attorney-reviewed document timestamped, the sampling methodology documented, the 13 reclassifications recorded. The court sees a PROCESS, not a claim.' },
+        { agentId: 'ediscovery', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Proposing CoCounsel + CendiaSupervision E-Discovery Protocol: (1) AI CLASSIFICATION WITH HASH: Every document\'s privilege classification hashed and sealed. (2) TIERED ATTORNEY REVIEW: High-risk documents (attorney custodians, litigation mentions) — 100% review. Medium-risk: 20% sample. Low-risk: 5% sample. Methodology documented per tier. (3) QUALITY METRICS: Precision/recall documented per tier. If error exceeds 3%, sample size auto-increases. (4) RECLASSIFICATION TRACKING: Every correction documented with reason — building correction patterns for AI improvement. (5) COURT-READY METHODOLOGY: When challenged, the sealed report shows AI classification, tiered review, quality metrics, correction patterns, attorney certification. Documented competence, not claimed competence.' },
+        { agentId: 'judge', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. The tiered review with sealed methodology addresses every concern: FRCP 26(b)(5): privilege log supported by documented AI + tiered attorney review. FRE 502(b): tiered review with quality metrics constitutes "reasonable steps." Opposing counsel\'s motion: court can evaluate the methodology rather than ordering complete re-review. The attorney certification is honest: "I supervised the AI-assisted privilege review using the documented methodology, personally reviewed [X] documents per tier." Supervision, not rubber-stamping. CoCounsel + CendiaSupervision transforms privilege review from invisible to transparent, auditable, court-defensible.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:trd0123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'tre0123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (500K documents + AI classification + Tiered review + Quality metrics)',
+        complianceLabel: 'Privilege Review',
+        complianceValue: 'METHODOLOGY DOCUMENTED',
+        complianceThreshold: '97.8% precision, 13 corrections, tiered review',
+        agents: ['E-Discovery AI Agent', 'Privilege Counsel Agent', 'Opposing Counsel Agent', 'Judicial Standards Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'E-Discovery Privilege — Transparent AI Methodology',
+        guaranteeBody: 'This cryptographic bundle seals the privilege review methodology: 500K documents classified by AI, 12,000 privileged, tiered attorney review, quality metrics (97.8% precision), 13 reclassifications, court-ready methodology report. FRE 502(b) "reasonable steps" satisfied by architecture.',
+        evidenceChain: 'Document collection → CoCounsel AI classification → 12,000 privileged → Tiered review → Attorney QC (600) → 13 reclassified → Quality metrics sealed → Methodology report → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will navigate a privilege review challenge — proving CoCounsel + CendiaSupervision creates a court-defensible AI privilege methodology satisfying FRCP 26(b)(5) and FRE 502(b).',
+      phaseLabels: ['AI Classification & Sampling Gap', 'Motion to Compel & Judicial Scrutiny', 'Tiered Review & Court Methodology'],
+    },
+
+    // SCENARIO 8 — COURT AI DISCLOSURE: 30+ JURISDICTIONS
+    {
+      id: 'court-disclosure',
+      title: 'Court AI Disclosure — 30+ Federal Rules, One Platform',
+      subtitle: 'SDNY · N.D. Tex. · 5th Circuit · Patchwork compliance · Automatic generation',
+      banner: 'Simulating the jurisdiction nightmare: a national law firm files in 30+ federal courts, each with different AI disclosure requirements. An associate forgets the SDNY AI disclosure. Sanctions motion filed. CendiaSupervision\'s automatic disclosure generation eliminates human forgetfulness.',
+      risk: 'High',
+      scenarioNum: 'Disclosure',
+      icon: 'scroll',
+      color: 'text-cyan-400',
+      agents: [
+        { id: 'disclosure', name: 'Court Disclosure Agent', role: 'Multi-Jurisdiction AI Rules Mapping', icon: '📜', color: 'text-cyan-400', borderColor: 'border-cyan-500/40', bgColor: 'bg-cyan-500/10' },
+        { id: 'filing', name: 'Filing Attorney Agent', role: 'ECF Filing & Certification', icon: '📋', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'ethics-disc', name: 'Ethics Agent', role: 'Professional Responsibility & Bar Rules', icon: '⚖️', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'firm-risk', name: 'Firm Risk Agent', role: 'Multi-Office Compliance Management', icon: '🏛️', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+      ],
+      connectors: [
+        { name: 'Court AI Rules Database', status: 'connected', type: 'Jurisdiction Mapping', icon: 'map', detail: '34 federal courts with AI disclosure rules indexed' },
+        { name: 'CoCounsel Usage Log', status: 'connected', type: 'AI Activity Tracking', icon: 'activity', detail: 'Matter 24-8891: 47 CoCounsel queries across 3 attorneys' },
+        { name: 'ECF Filing Queue', status: 'connected', type: 'Court Filing', icon: 'file-text', detail: 'Motion to dismiss queued for SDNY — AI disclosure MISSING' },
+        { name: 'Firm Compliance Dashboard', status: 'syncing', type: 'Enterprise Governance', icon: 'bar-chart', detail: '2,400 attorneys across 12 offices, 8 circuits' },
+      ],
+      script: [
+        { agentId: 'disclosure', phase: 'phase1', type: 'warning', delay: 800, content: 'AI DISCLOSURE COMPLIANCE ALERT. Filing queued for SDNY Case No. 24-cv-8891 — motion to dismiss. CoCounsel was used: 47 queries by 3 attorneys (research, drafting, citation checking). SDNY Standing Order (January 2024) requires: "All attorneys must include a certification disclosing whether AI was used in preparing the document." The current draft contains NO AI disclosure. If filed without disclosure: court clerk may reject or flag, SDNY judges have indicated non-disclosure is itself sanctionable, and the motion\'s substance becomes irrelevant if disclosure failure becomes the story. The patchwork: this firm files in 34 federal courts with different rules. SDNY requires certification. N.D. Texas requires verification of AI citations. 5th Circuit has its own format. No associate can memorize 34 disclosure requirements.' },
+        { agentId: 'filing', phase: 'phase1', type: 'analysis', delay: 2500, content: 'I\'m a 4th-year associate filing in SDNY for the first time (I usually file in D. Del.). I used CoCounsel for initial research (12 queries), first draft structure (3 queries), and citation verification on Westlaw AI (32 queries). I know D. Del.\'s AI rules. I did NOT know SDNY requires a different format. The filing was ready. The partner approved the substance. I was about to click "file" when CendiaSupervision flagged the missing disclosure. Without the flag: I would have filed without disclosure. Neither I nor the partner would have noticed. The court or opposing counsel would have. The sanctions motion writes itself: "Counsel failed to disclose AI use in violation of this Court\'s Standing Order, calling into question the accuracy of the entire filing."' },
+        { agentId: 'ethics-disc', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT LOGGED. The 34-court patchwork is an impossible compliance burden: SDNY requires "certification disclosing whether AI was used" (YES/NO with description). N.D. Tex. (Judge Starr): attorneys must certify they "will not use AI unless they verify each citation." 5th Circuit: local rule requiring disclosure of "any AI tool used." E.D. Pa.: standing order requiring identification of specific tools. D. Colo.: certification whether AI generated "any portion." Some courts: no rule at all. Each uses different language, different specificity. A national firm with 2,400 attorneys across 8 circuits WILL make errors — not from bad intent but from impossibility. This is a SYSTEMIC gap, not individual failure.' },
+        { agentId: 'firm-risk', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — FIRM-WIDE RISK. This firm: 2,400 attorneys, 12 offices. Last year: 14,200 federal filings across 34 jurisdictions. CoCounsel used in ~8,400 (59%). How many included correct court-specific disclosures? Without CendiaSupervision: unknown. No system tracks whether disclosures were included, used correct format, or accurately described AI use. If opposing counsel identifies missing disclosures across multiple cases: multi-case sanctions, judicial referral to bar, client confidence crisis. Cost of single sanctions incident: $50K+ direct, $500K+ reputational, potential loss of client relationships in that court.' },
+        { agentId: 'disclosure', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Proposing CoCounsel + CendiaSupervision Court AI Disclosure Module: (1) AUTOMATIC RULE DETECTION: Filing target court identified, current AI disclosure requirements retrieved. 34 courts mapped. Updated within 48 hours of rule changes. (2) AI USE TRACKING: Every CoCounsel/Westlaw AI query per matter captured automatically — which attorney, query type, output. Disclosure generated from actual usage, not recollection. (3) DISCLOSURE GENERATION: Court-specific statement auto-generated: "CoCounsel AI was used for [research/drafting/citation verification] by [Attorney, Bar #]. All AI content reviewed and verified by signing attorney." (4) FILING HARD-STOP: Filing to a court with AI rules CANNOT be submitted without disclosure attached. The associate physically cannot forget. (5) FIRM DASHBOARD: GC sees real-time compliance — filings by court, disclosure completion rate, AI usage per matter.' },
+        { agentId: 'filing', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. The auto-disclosure module solves individual and systemic problems. For me: I don\'t memorize 34 rules. I click "file," CendiaSupervision identifies the court, retrieves the rule, generates disclosure from actual CoCounsel usage, attaches it. I review and confirm — 30 seconds instead of 30 minutes. For the firm: 14,200 filings × 34 jurisdictions = zero disclosure failures. The dashboard proves compliance to management, clients, and any court. For Thomson Reuters: this is a feature NO competitor has. LexisNexis doesn\'t generate court-specific disclosures. Harvey AI doesn\'t track usage per matter. The firm using CoCounsel + CendiaSupervision never faces an AI disclosure sanctions motion. "We disclosed AI use in every filing, correct format, verified accuracy — automatically."' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:trf0123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'trg0123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (Court rule mapping + AI usage log + Auto-disclosure + Filing certification)',
+        complianceLabel: 'Disclosure Status',
+        complianceValue: 'AUTO-GENERATED (SDNY)',
+        complianceThreshold: '34 courts mapped, disclosure attached',
+        agents: ['Court Disclosure Agent', 'Filing Attorney Agent', 'Ethics Agent', 'Firm Risk Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'Court AI Disclosure — 34 Jurisdictions, Zero Failures',
+        guaranteeBody: 'CoCounsel usage captured (47 queries, 3 attorneys), SDNY Standing Order identified, court-specific disclosure auto-generated, filing attorney confirmed, hard-stop enforced. 34 federal court AI rules mapped and current.',
+        evidenceChain: 'CoCounsel queries logged → Court identified (SDNY) → Rule retrieved → Usage compiled → Disclosure generated → Attorney review → Hard-stop cleared → Filing submitted → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will demonstrate how CendiaSupervision eliminates AI disclosure failures across 34 federal courts — auto-generating the correct format from actual CoCounsel usage data.',
+      phaseLabels: ['Missing Disclosure & Patchwork Rules', 'Firm-Wide Risk & Systemic Gap', 'Automatic Disclosure Module'],
+    },
+
+    // SCENARIO 9 — MALPRACTICE INSURANCE: AI PREMIUM GOVERNANCE
+    {
+      id: 'malpractice-insurance',
+      title: 'Malpractice Insurance — AI Supervision = Premium Reduction',
+      subtitle: '15% surcharge vs 10% reduction · Insurer underwriting · Firm-wide AI metrics',
+      banner: 'Simulating the malpractice insurance inflection: a firm using CoCounsel without supervision faces a 15% premium surcharge. A competing firm with CendiaSupervision receives a 10% premium reduction. The quantifiable ROI of AI governance.',
+      risk: 'Medium',
+      scenarioNum: 'Insurance',
+      icon: 'umbrella',
+      color: 'text-emerald-400',
+      agents: [
+        { id: 'insurer', name: 'Malpractice Insurer Agent', role: 'AI Risk Underwriting & Premium Calculation', icon: '🛡️', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+        { id: 'firm-gc', name: 'Firm GC Agent', role: 'Risk Management & Insurance Negotiation', icon: '⚖️', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'finance-tr', name: 'Firm CFO Agent', role: 'Premium Cost & ROI Analysis', icon: '📊', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'benchmark', name: 'Industry Benchmark Agent', role: 'Market Comparison & Competitive Analysis', icon: '📈', color: 'text-violet-400', borderColor: 'border-violet-500/40', bgColor: 'bg-violet-500/10' },
+      ],
+      connectors: [
+        { name: 'Insurer Underwriting Portal', status: 'connected', type: 'Premium Calculation', icon: 'calculator', detail: 'Current premium: $4.2M/year — AI surcharge under review' },
+        { name: 'CendiaSupervision Metrics', status: 'connected', type: 'Firm AI Governance', icon: 'bar-chart', detail: '98.4% supervision rate, 14,200 filings, zero AI incidents' },
+        { name: 'AmLaw 100 Survey', status: 'connected', type: 'Market Intelligence', icon: 'trending-up', detail: '67% of AmLaw 100 now use legal AI — 12% have governance' },
+        { name: 'Claims Database', status: 'syncing', type: 'Loss History', icon: 'database', detail: 'AI-related malpractice claims increasing 340% YoY' },
+      ],
+      script: [
+        { agentId: 'insurer', phase: 'phase1', type: 'analysis', delay: 800, content: 'MALPRACTICE UNDERWRITING — AI RISK ASSESSMENT. The legal malpractice insurance market is repricing for AI. Current data: (1) AI-related malpractice claims increased 340% in 2024-2025 — driven by citation hallucination, missed deadlines, and unsupervised AI advice. (2) 67% of AmLaw 100 firms now use legal AI (CoCounsel, Lexis+ AI, Harvey). Only 12% have documented AI governance procedures. (3) The remaining 55% are using AI without documented supervision — they are uninsurable risks at current premiums. For Firm A (no AI governance): the renewal application asks "Does your firm use AI in legal practice? YES. Does your firm have documented AI supervision procedures? NO." My underwriting model adds a 15% AI risk surcharge. Premium: $4.2M → $4.83M ($630K increase). For Firm B (CendiaSupervision): same questions. "YES, we use CoCounsel. YES, we have documented supervision — 98.4% supervision rate, sealed evidence, zero AI incidents." My model applies a 10% AI governance CREDIT. Premium: $4.2M → $3.78M ($420K reduction).' },
+        { agentId: 'firm-gc', phase: 'phase1', type: 'warning', delay: 2500, content: 'FIRM GC — INSURANCE NEGOTIATION. Our insurer just sent the renewal questionnaire. New section: "Artificial Intelligence in Legal Practice." 14 questions including: "Describe your firm\'s AI supervision procedures." "What percentage of AI-assisted work products are reviewed by a licensed attorney before delivery?" "Provide documentation of your AI governance framework." Without CendiaSupervision: I can describe our informal practices. But "informal" means "undocumented" to an underwriter. I cannot provide metrics, evidence, or documentation. The insurer will price our AI risk based on the WORST assumption. With CendiaSupervision: I export the governance dashboard. 98.4% supervision rate. 14,200 filings with documented AI disclosure. Zero AI-related incidents. Every metric the underwriter needs — in a format they can model.' },
+        { agentId: 'finance-tr', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT LOGGED — CFO ROI ANALYSIS. The numbers are stark: (1) CendiaSupervision annual cost: approximately $150K for a 500-attorney firm. (2) WITHOUT governance: 15% premium surcharge = $630K/year additional insurance cost. (3) WITH governance: 10% premium credit = $420K/year savings. (4) Net swing: $1.05M/year (from $630K penalty to $420K savings). CendiaSupervision ROI: 7:1 on insurance alone — before counting malpractice claim reduction, sanctions avoidance, and client retention. (5) But here\'s the deeper problem: if we DON\'T adopt AI governance and a competitor DOES, the competitor\'s insurance costs are $1.05M/year lower. That\'s $1.05M they can reinvest in talent, technology, or client development. AI governance isn\'t just risk management — it\'s competitive positioning.' },
+        { agentId: 'benchmark', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — MARKET BENCHMARK. The AmLaw 100 insurance market is bifurcating: TIER 1 (12 firms with documented AI governance): average premium change: -8% (governance credit). Zero AI-related claims. Insurers competing for their business. TIER 2 (55 firms using AI without governance): average premium change: +12% (AI surcharge). 23 AI-related claims filed in 2025. Insurers adding AI exclusions. TIER 3 (33 firms not yet using AI): premium stable, but these firms are losing associates and clients who want AI efficiency. Within 18 months, every AmLaw 100 firm will be in Tier 1 or Tier 2. There is no Tier 3 — AI adoption is inevitable. The only question: governed or ungoverned? Thomson Reuters can be the platform that moves firms from Tier 2 to Tier 1.' },
+        { agentId: 'insurer', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Proposing Thomson Reuters + Datacendia Insurance Integration: (1) GOVERNANCE CERTIFICATION: CendiaSupervision generates an annual "AI Governance Certificate" for insurance renewal — supervision rate, incident count, disclosure compliance, sealed evidence. The insurer receives standardized, verifiable data. (2) REAL-TIME RISK DASHBOARD: The insurer (with firm consent) accesses a read-only dashboard showing aggregate AI governance metrics. Risk is priced on actual data, not assumptions. (3) CLAIMS PREVENTION: Every CoCounsel output with CendiaSupervision is a potential malpractice claim that DIDN\'T happen. Citation verified. Deadline caught. Privilege preserved. The insurer\'s loss ratio improves. (4) PREMIUM MODEL: Governance Credit = base rate × (supervision rate / 100) × governance multiplier. A 98.4% supervision rate earns near-maximum credit. A 60% rate earns partial credit. 0% earns a surcharge. (5) INDUSTRY STANDARD: As CendiaSupervision adoption grows, the insurer can require AI governance for coverage — similar to how cyber insurance now requires MFA.' },
+        { agentId: 'finance-tr', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. The ROI case is conclusive. For the firm: $150K investment → $1.05M annual insurance swing → 7:1 ROI. Plus: malpractice claim reduction (each avoided claim saves $500K-$5M in defence costs + settlements), sanctions avoidance, client retention (GCs increasingly require AI governance from outside counsel). For Thomson Reuters: CoCounsel + CendiaSupervision = the only legal AI product that REDUCES insurance costs. Every competitor\'s AI product INCREASES insurance costs. This is the differentiator that sells CoCounsel to the managing partner and CFO — not just the practice group. "CoCounsel with CendiaSupervision pays for itself in insurance savings alone." No other legal AI vendor can make that claim.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:trh0123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'tri0123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (Governance metrics + Insurance certificate + Premium model + ROI analysis)',
+        complianceLabel: 'Insurance Status',
+        complianceValue: '10% PREMIUM REDUCTION',
+        complianceThreshold: '98.4% supervision rate, zero AI incidents',
+        agents: ['Malpractice Insurer Agent', 'Firm GC Agent', 'Firm CFO Agent', 'Industry Benchmark Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'Malpractice Insurance — AI Governance = Premium Reduction',
+        guaranteeBody: 'This cryptographic bundle seals the insurance governance case: 98.4% supervision rate, 14,200 filings with disclosure, zero AI incidents, AI Governance Certificate generated. 15% surcharge avoided, 10% credit earned. Net annual swing: $1.05M. CendiaSupervision ROI: 7:1 on insurance alone.',
+        evidenceChain: 'Firm AI metrics exported → Governance Certificate generated → Insurer underwriting review → 98.4% supervision confirmed → Premium credit applied → Annual savings: $1.05M → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will quantify the malpractice insurance ROI of AI governance — proving CoCounsel + CendiaSupervision pays for itself in premium savings alone.',
+      phaseLabels: ['AI Risk Repricing & Underwriting', 'CFO ROI & Market Bifurcation', 'Insurance Integration & Governance Credit'],
+    },
+
+    // SCENARIO 10 — CROSS-BORDER AI GOVERNANCE: EU AI ACT + ABA 512
+    {
+      id: 'cross-border-governance',
+      title: 'Cross-Border AI — EU AI Act + ABA 512 + SRA Code',
+      subtitle: '5 jurisdictions · 1 CoCounsel session · Simultaneous compliance · Evidence per regime',
+      banner: 'Simulating the cross-border governance challenge: a single CoCounsel session touches US (ABA 512), EU (AI Act), UK (SRA Code), Singapore (IMDA), and Canadian law. Each jurisdiction has different AI supervision requirements. CendiaSupervision produces jurisdiction-specific evidence bundles from one deliberation.',
+      risk: 'High',
+      scenarioNum: 'Global',
+      icon: 'globe',
+      color: 'text-violet-400',
+      agents: [
+        { id: 'us-counsel', name: 'US Counsel Agent', role: 'ABA Opinion 512 & State Bar Compliance', icon: '🇺🇸', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'eu-counsel', name: 'EU Counsel Agent', role: 'EU AI Act & GDPR Compliance', icon: '🇪🇺', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'uk-counsel', name: 'UK Counsel Agent', role: 'SRA Code & UK AI Framework', icon: '🇬🇧', color: 'text-red-400', borderColor: 'border-red-500/40', bgColor: 'bg-red-500/10' },
+        { id: 'global-gc', name: 'Global GC Agent', role: 'Multi-Jurisdiction Coordination & Governance', icon: '🌐', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+      ],
+      connectors: [
+        { name: 'ABA 512 Module', status: 'connected', type: 'US Legal Ethics', icon: 'scale', detail: 'Attorney supervision documented per Model Rules 1.1, 5.1, 5.3' },
+        { name: 'EU AI Act Module', status: 'connected', type: 'EU Regulation', icon: 'shield', detail: 'High-risk AI system: human oversight Art. 14, transparency Art. 13' },
+        { name: 'SRA Code Module', status: 'connected', type: 'UK Solicitor Regulation', icon: 'landmark', detail: 'SRA Principles 2, 5, 7 — competence, service, public interest' },
+        { name: 'Jurisdiction Router', status: 'syncing', type: 'Multi-Regime Engine', icon: 'git-branch', detail: 'Single CoCounsel session → 5 jurisdiction evidence bundles' },
+      ],
+      script: [
+        { agentId: 'global-gc', phase: 'phase1', type: 'analysis', delay: 800, content: 'CROSS-BORDER GOVERNANCE SCENARIO. A global law firm is advising on a cross-border M&A involving: US target company (New York law), EU regulatory approval (Brussels), UK competition clearance (London), Singapore joint venture partner (Singapore law), and Canadian tax structuring (Toronto). A single CoCounsel session is used by attorneys across 5 offices for integrated advice. The problem: (1) The US partner is governed by ABA Opinion 512 — must supervise AI under Model Rules 1.1 and 5.3. (2) The Brussels associate is governed by the EU AI Act — CoCounsel is a "high-risk AI system" in legal practice requiring human oversight per Article 14. (3) The London solicitor is governed by the SRA Code — Principles 2 (competence) and 7 (public interest) require documented AI supervision. (4) Singapore counsel must comply with IMDA AI Verify governance. (5) Canadian counsel faces emerging AI governance requirements from LSO. One CoCounsel session. Five regulatory regimes. Five different evidence requirements.' },
+        { agentId: 'us-counsel', phase: 'phase1', type: 'warning', delay: 2500, content: 'US COMPLIANCE — ABA OPINION 512. My obligations as the New York partner: (1) Model Rule 1.1 (Competence): I must understand CoCounsel\'s capabilities and limitations sufficiently to supervise its output. (2) Model Rule 5.3 (Supervisory Duties): I must ensure the AI\'s work is supervised "as would be associated with a similarly situated human." (3) NYSBA Ethics Opinion: New York requires that attorneys using AI certify their personal review of AI-generated content. (4) Court disclosure: if the M&A involves litigation, SDNY requires AI disclosure in all filings. My evidence requirement: documented attorney review of every CoCounsel output, certification of personal verification, supervision methodology. Standard US-focused evidence bundle.' },
+        { agentId: 'eu-counsel', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT LOGGED. EU AI ACT REQUIREMENTS ARE DIFFERENT AND ADDITIVE. As Brussels counsel: (1) Article 6 — Risk Classification: Legal AI is classified as "high-risk" under Annex III. CoCounsel used for legal advice falls within this classification. (2) Article 14 — Human Oversight: Requires "natural persons to whom human oversight is assigned" who understand the AI system, can "correctly interpret the high-risk AI system\'s output," and can "decide not to use the system." This is MORE SPECIFIC than ABA 512. (3) Article 13 — Transparency: The AI system must enable "deployers to interpret the system\'s output and use it appropriately." Documentation requirements exceed US standards. (4) Article 9 — Risk Management: Ongoing risk management system required. (5) GDPR Article 22 — If any personal data is processed: right not to be subject to automated decision-making. The US evidence bundle does NOT satisfy EU requirements. I need a SEPARATE evidence bundle demonstrating Article 14 human oversight, Article 13 transparency, and GDPR compliance.' },
+        { agentId: 'uk-counsel', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — UK SRA CODE IS YET ANOTHER FRAMEWORK. As London solicitor: (1) SRA Principle 2 (Competence): I must deliver a "competent" service — using AI requires understanding its limitations. (2) SRA Principle 5 (Service Standard): Client must receive a "proper standard of service" — AI-assisted advice must meet the same quality bar as human advice. (3) SRA Principle 7 (Public Interest): I must act in the public interest and maintain public trust. Unsupervised AI threatens public trust in legal services. (4) SRA Code of Conduct Rule 3.3: I must consider whether AI use is in the client\'s best interest. (5) The SRA is developing specific AI guidance, but current principles already apply. My evidence: DIFFERENT from both US and EU. The SRA focuses on client service quality and public trust, not just procedural supervision. I need evidence showing the AI improved (or at minimum didn\'t degrade) service quality. Three jurisdictions, three different evidence frameworks, one CoCounsel session.' },
+        { agentId: 'global-gc', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Proposing CoCounsel + CendiaSupervision Multi-Jurisdiction Governance: (1) SINGLE DELIBERATION, MULTIPLE EVIDENCE BUNDLES: One CendiaSupervision Council deliberation produces jurisdiction-specific evidence automatically. The US partner gets ABA 512 evidence. Brussels gets EU AI Act evidence. London gets SRA evidence. Singapore gets IMDA evidence. Toronto gets LSO evidence. Same underlying supervision data, formatted per regime. (2) JURISDICTION ROUTER: When CoCounsel is used, the system identifies which jurisdictions are involved (based on matter setup, attorney location, applicable law). Evidence requirements per jurisdiction are loaded automatically. (3) REGULATORY DELTA TRACKING: As each jurisdiction\'s AI rules evolve (EU AI Act implementation, SRA guidance updates, new state bar opinions), CendiaSupervision updates requirements automatically. The firm doesn\'t need to track 50+ regulatory developments manually. (4) CROSS-BORDER CONSISTENCY: The evidence bundles are generated from the SAME underlying supervision — ensuring factual consistency across jurisdictions while meeting each regime\'s specific format. (5) SINGLE DASHBOARD: The Global GC sees compliance status across all jurisdictions in one view.' },
+        { agentId: 'eu-counsel', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. The jurisdiction router solves the cross-border impossibility. For the EU: Article 14 human oversight documented with specific AI system understanding evidence. Article 13 transparency met with CoCounsel output interpretation documentation. GDPR Article 22 addressed with human-in-the-loop evidence. Separate evidence bundle — but generated from the same Council deliberation. For Thomson Reuters: this is the killer feature for global firms. No competitor can produce simultaneous multi-jurisdiction AI governance evidence. A Magic Circle firm operating across US, EU, UK, and Asia needs this from day one. CoCounsel + CendiaSupervision = the only legal AI platform that scales governance globally. The Berlin office, New York office, London office, and Singapore office all use the same CoCounsel — and all receive jurisdiction-compliant supervision evidence automatically.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:trj0123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'trk0123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (ABA 512 bundle + EU AI Act bundle + SRA bundle + IMDA bundle + LSO bundle)',
+        complianceLabel: 'Global Status',
+        complianceValue: '5 JURISDICTIONS COMPLIANT',
+        complianceThreshold: 'US + EU + UK + SG + CA — simultaneous',
+        agents: ['US Counsel Agent', 'EU Counsel Agent', 'UK Counsel Agent', 'Global GC Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'Cross-Border AI Governance — One Session, Five Regimes',
+        guaranteeBody: 'This cryptographic bundle seals multi-jurisdiction AI governance: ABA 512 (attorney supervision), EU AI Act (Article 14 human oversight, Article 13 transparency), SRA Code (competence, service quality, public trust), IMDA AI Verify, and LSO governance. Single CoCounsel session, five jurisdiction-specific evidence bundles.',
+        evidenceChain: 'CoCounsel session → Jurisdiction router (5 regimes) → ABA 512 bundle → EU AI Act bundle → SRA bundle → IMDA bundle → LSO bundle → Cross-jurisdiction consistency check → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will demonstrate how CendiaSupervision produces simultaneous compliance evidence across ABA 512, EU AI Act, SRA Code, IMDA, and LSO — from a single CoCounsel session.',
+      phaseLabels: ['5-Jurisdiction Problem & Regulatory Divergence', 'EU AI Act vs ABA 512 vs SRA Code', 'Jurisdiction Router & Global Evidence'],
+    },
+  ],
+};
+
+export default config;

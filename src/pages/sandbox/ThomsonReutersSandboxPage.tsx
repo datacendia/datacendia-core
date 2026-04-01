@@ -11,10 +11,16 @@
 
 import React from 'react';
 import SandboxTemplatePage from './SandboxTemplate';
-import trConfig from './configs/thomson-reuters';
+import trConfig from './configs/trdemo';
+import { SandboxTracker } from './SandboxTracker';
 
 export const ThomsonReutersSandboxPage: React.FC = () => {
-  return <SandboxTemplatePage config={trConfig} />;
+  return (
+    <>
+      <SandboxTracker sandboxId="thomson-reuters" />
+      <SandboxTemplatePage config={trConfig} />
+    </>
+  );
 };
 
 export default ThomsonReutersSandboxPage;
