@@ -5,8 +5,15 @@
  */
 
 import { Router } from 'express';
-import { emailService } from '../../backend/src/services/email.js';
 const router = Router();
+
+// Import email service with proper path handling
+let emailService: any = null;
+try {
+  emailService = require('../../backend/src/services/email.js').emailService;
+} catch (err: any) {
+  console.log('Email service not available, using fallback');
+}
 
 // In-memory storage for demo (in production, use database)
 const visits: any[] = [];
@@ -47,11 +54,12 @@ router.post('/sandbox-visit', (req, res) => {
       
       const targetName = targetNames[ref as keyof typeof targetNames] || ref;
       
-      // Send email alert to Stuart
-      emailService.send({
-        to: 'stuart.rainey@datacendia.com',
-        subject: `🎯 THOMSON REUTERS TARGET VISITED! (${targetName})`,
-        text: `
+      // Send email alert to Stuart (only if email service is available)
+      if (emailService) {
+        emailService.send({
+          to: 'stuart.rainey@datacendia.com',
+          subject: `🎯 THOMSON REUTERS TARGET VISITED! (${targetName})`,
+          text: `
 🎯 TARGET ENGAGEMENT ALERT
 
 ${targetName} just opened the Thomson Reuters sandbox demo!
@@ -82,11 +90,14 @@ This is a high-intent signal - they clicked your personalized link!
 
 — Datacendia Platform
         `.trim(),
-      }).catch(err => {
-        console.error('❌ Failed to send target visit email:', err);
-      });
-      
-      console.log(`🎯 TARGET VISIT ALERT SENT: ${targetName}`);
+        }).catch((err: any) => {
+          console.error('❌ Failed to send target visit email:', err);
+        });
+        
+        console.log(`🎯 TARGET VISIT ALERT SENT: ${targetName}`);
+      } else {
+        console.log(`🎯 TARGET VISIT DETECTED: ${targetName} (email service unavailable)`);
+      }
     }
     
     res.json({ success: true, visitId: visit.id });
@@ -141,11 +152,12 @@ router.post('/sandbox-event', (req, res) => {
       
       const eventDesc = eventDescriptions[event as keyof typeof eventDescriptions] || event;
       
-      // Send high-intent alert to Stuart
-      emailService.send({
-        to: 'stuart.rainey@datacendia.com',
-        subject: `🔥 HIGH-INTENT ACTION! ${targetName} - ${eventDesc}`,
-        text: `
+      // Send high-intent alert to Stuart (only if email service is available)
+      if (emailService) {
+        emailService.send({
+          to: 'stuart.rainey@datacendia.com',
+          subject: `🔥 HIGH-INTENT ACTION! ${targetName} - ${eventDesc}`,
+          text: `
 🔥 HIGH-INTENT ENGAGEMENT ALERT
 
 ${targetName} just took a high-value action in the Thomson Reuters demo!
@@ -178,11 +190,14 @@ This could be the moment to close!
 
 — Datacendia Platform
         `.trim(),
-      }).catch(err => {
-        console.error('❌ Failed to send high-intent event email:', err);
-      });
-      
-      console.log(`🔥 HIGH-INTENT ALERT SENT: ${targetName} - ${eventDesc}`);
+        }).catch((err: any) => {
+          console.error('❌ Failed to send high-intent event email:', err);
+        });
+        
+        console.log(`🔥 HIGH-INTENT ALERT SENT: ${targetName} - ${eventDesc}`);
+      } else {
+        console.log(`🔥 HIGH-INTENT ACTION DETECTED: ${targetName} - ${eventDesc} (email service unavailable)`);
+      }
     }
     
     res.json({ success: true, eventId: eventRecord.id });
