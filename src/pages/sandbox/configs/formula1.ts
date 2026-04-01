@@ -282,6 +282,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Regulation Scope Assessment', 'Consistency & AI Act Challenges', 'Governance Protocol Activation'],
     },
   ],
-};
+
+        complianceScore: 94,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.145Z",
+            "type": "analysis",
+            "title": "Transfer Valuation - Cost Cap Enforcement — The Red Bull Precedent",
+            "description": "Transfer compliance, FFP regulations, player contracts, league governance: Transfer Valuation analysis for Formula1 completed with industry-specific compliance checks",
+            "agent": "Scouting Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.145Z",
+            "type": "warning",
+            "title": "FFP Compliance Check - Cost Cap Enforcement — The Red Bull Precedent",
+            "description": "Transfer compliance, FFP regulations, player contracts, league governance: FFP Compliance Check analysis for Formula1 completed with industry-specific compliance checks",
+            "agent": "Financial Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.145Z",
+            "type": "dissent",
+            "title": "League Regulation Alert - Cost Cap Enforcement — The Red Bull Precedent",
+            "description": "Transfer compliance, FFP regulations, player contracts, league governance: League Regulation Alert analysis for Formula1 completed with industry-specific compliance checks",
+            "agent": "Compliance Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.145Z",
+            "type": "proposal",
+            "title": "Transfer Protocol - Cost Cap Enforcement — The Red Bull Precedent",
+            "description": "Transfer compliance, FFP regulations, player contracts, league governance: Transfer Protocol analysis for Formula1 completed with industry-specific compliance checks",
+            "agent": "Director Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.145Z",
+            "type": "resolution",
+            "title": "League Approval - Cost Cap Enforcement — The Red Bull Precedent",
+            "description": "Transfer compliance, FFP regulations, player contracts, league governance: League Approval analysis for Formula1 completed with industry-specific compliance checks",
+            "agent": "Federation Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

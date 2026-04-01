@@ -266,6 +266,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Blind Invoice Matching & 340 Carousel Invoices', 'OLAF Investigation & €180M Reassessment', 'Circular Detection & Missing Trader Indicators'],
     },
   ],
-};
+
+        complianceScore: 89,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.193Z",
+            "type": "analysis",
+            "title": "System Assessment - SAP SuccessFactors — EU AI Act High-Risk HR System",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: System Assessment analysis for Sap completed with industry-specific compliance checks",
+            "agent": "Tech Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.193Z",
+            "type": "warning",
+            "title": "Privacy Compliance - SAP SuccessFactors — EU AI Act High-Risk HR System",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Privacy Compliance analysis for Sap completed with industry-specific compliance checks",
+            "agent": "Privacy Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.193Z",
+            "type": "dissent",
+            "title": "Security Risk - SAP SuccessFactors — EU AI Act High-Risk HR System",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Security Risk analysis for Sap completed with industry-specific compliance checks",
+            "agent": "Security Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.193Z",
+            "type": "proposal",
+            "title": "Governance Framework - SAP SuccessFactors — EU AI Act High-Risk HR System",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Governance Framework analysis for Sap completed with industry-specific compliance checks",
+            "agent": "Platform Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.193Z",
+            "type": "resolution",
+            "title": "Compliance Certified - SAP SuccessFactors — EU AI Act High-Risk HR System",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Compliance Certified analysis for Sap completed with industry-specific compliance checks",
+            "agent": "Audit Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

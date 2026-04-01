@@ -272,6 +272,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Impact Detection & Match Context', 'Legal Risk & Player Welfare', 'Hard-Stop Protocol & Evidence Sealing'],
     },
   ],
-};
+
+        complianceScore: 92,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.129Z",
+            "type": "analysis",
+            "title": "System Assessment - Post-Relegation P&S — £39M Loss Threshold",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: System Assessment analysis for Burnley Fc completed with industry-specific compliance checks",
+            "agent": "Tech Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.129Z",
+            "type": "warning",
+            "title": "Privacy Compliance - Post-Relegation P&S — £39M Loss Threshold",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Privacy Compliance analysis for Burnley Fc completed with industry-specific compliance checks",
+            "agent": "Privacy Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.129Z",
+            "type": "dissent",
+            "title": "Security Risk - Post-Relegation P&S — £39M Loss Threshold",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Security Risk analysis for Burnley Fc completed with industry-specific compliance checks",
+            "agent": "Security Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.129Z",
+            "type": "proposal",
+            "title": "Governance Framework - Post-Relegation P&S — £39M Loss Threshold",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Governance Framework analysis for Burnley Fc completed with industry-specific compliance checks",
+            "agent": "Platform Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.129Z",
+            "type": "resolution",
+            "title": "Compliance Certified - Post-Relegation P&S — £39M Loss Threshold",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Compliance Certified analysis for Burnley Fc completed with industry-specific compliance checks",
+            "agent": "Audit Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

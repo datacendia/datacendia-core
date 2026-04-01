@@ -282,6 +282,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['SOX AI Governance Assessment', 'Control Gap Discovery', 'Remediation & Disclosure Strategy'],
     },
   ],
-};
+
+        complianceScore: 94,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.205Z",
+            "type": "analysis",
+            "title": "System Assessment - Weight-Cut Monitoring — Fighter Safety AI",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: System Assessment analysis for Ufc Tko completed with industry-specific compliance checks",
+            "agent": "Tech Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.205Z",
+            "type": "warning",
+            "title": "Privacy Compliance - Weight-Cut Monitoring — Fighter Safety AI",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Privacy Compliance analysis for Ufc Tko completed with industry-specific compliance checks",
+            "agent": "Privacy Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.205Z",
+            "type": "dissent",
+            "title": "Security Risk - Weight-Cut Monitoring — Fighter Safety AI",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Security Risk analysis for Ufc Tko completed with industry-specific compliance checks",
+            "agent": "Security Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.205Z",
+            "type": "proposal",
+            "title": "Governance Framework - Weight-Cut Monitoring — Fighter Safety AI",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Governance Framework analysis for Ufc Tko completed with industry-specific compliance checks",
+            "agent": "Platform Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.205Z",
+            "type": "resolution",
+            "title": "Compliance Certified - Weight-Cut Monitoring — Fighter Safety AI",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Compliance Certified analysis for Ufc Tko completed with industry-specific compliance checks",
+            "agent": "Audit Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

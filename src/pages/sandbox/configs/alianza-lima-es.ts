@@ -251,5 +251,48 @@ export const ES_SCENARIOS: TemplateScenario[] = [
     idleTitle: 'Listo para Deliberar',
     idleDesc: '4 agentes de IA gobiernan el cumplimiento financiero de Alianza Lima — estructuras de derechos de imagen, precios de transferencia SUNAT, licencia CONMEBOL y transparencia ante socios.',
     phaseLabels: ['Revisión Tributaria y Licencia', 'Riesgo de Partes Relacionadas y Auditoría', 'Protocolo de Cumplimiento'],
-  },
+  
+        complianceScore: 87,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.116Z",
+            "type": "analysis",
+            "title": "System Assessment - Escándalo de Conducta — Gobernanza Disciplinaria y Procedimientos Penales",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: System Assessment analysis for Alianza Lima Es completed with industry-specific compliance checks",
+            "agent": "Tech Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.116Z",
+            "type": "warning",
+            "title": "Privacy Compliance - Escándalo de Conducta — Gobernanza Disciplinaria y Procedimientos Penales",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Privacy Compliance analysis for Alianza Lima Es completed with industry-specific compliance checks",
+            "agent": "Privacy Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.116Z",
+            "type": "dissent",
+            "title": "Security Risk - Escándalo de Conducta — Gobernanza Disciplinaria y Procedimientos Penales",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Security Risk analysis for Alianza Lima Es completed with industry-specific compliance checks",
+            "agent": "Security Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.116Z",
+            "type": "proposal",
+            "title": "Governance Framework - Escándalo de Conducta — Gobernanza Disciplinaria y Procedimientos Penales",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Governance Framework analysis for Alianza Lima Es completed with industry-specific compliance checks",
+            "agent": "Platform Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.116Z",
+            "type": "resolution",
+            "title": "Compliance Certified - Escándalo de Conducta — Gobernanza Disciplinaria y Procedimientos Penales",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Compliance Certified analysis for Alianza Lima Es completed with industry-specific compliance checks",
+            "agent": "Audit Agent",
+            "impact": "high"
+      }
+]},
 ];

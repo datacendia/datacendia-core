@@ -271,6 +271,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Client Tier Scheduling & 27-Point Yield Gap', 'KFTC Investigation & SME Cost Disadvantage', 'Design-Based Allocation & Yield Floor'],
     },
   ],
-};
+
+        complianceScore: 90,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.190Z",
+            "type": "analysis",
+            "title": "Energy Assessment - Samsung AI — Korean PIPA Automated Profiling Violation",
+            "description": "Environmental compliance, safety regulations, ESG reporting: Energy Assessment analysis for Samsung completed with industry-specific compliance checks",
+            "agent": "Energy Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.190Z",
+            "type": "warning",
+            "title": "Environmental Review - Samsung AI — Korean PIPA Automated Profiling Violation",
+            "description": "Environmental compliance, safety regulations, ESG reporting: Environmental Review analysis for Samsung completed with industry-specific compliance checks",
+            "agent": "Environmental Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.190Z",
+            "type": "dissent",
+            "title": "Climate Risk - Samsung AI — Korean PIPA Automated Profiling Violation",
+            "description": "Environmental compliance, safety regulations, ESG reporting: Climate Risk analysis for Samsung completed with industry-specific compliance checks",
+            "agent": "Climate Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.190Z",
+            "type": "proposal",
+            "title": "Energy Protocol - Samsung AI — Korean PIPA Automated Profiling Violation",
+            "description": "Environmental compliance, safety regulations, ESG reporting: Energy Protocol analysis for Samsung completed with industry-specific compliance checks",
+            "agent": "Sustainability Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.190Z",
+            "type": "resolution",
+            "title": "ESG Certified - Samsung AI — Korean PIPA Automated Profiling Violation",
+            "description": "Environmental compliance, safety regulations, ESG reporting: ESG Certified analysis for Samsung completed with industry-specific compliance checks",
+            "agent": "Regulator Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

@@ -266,6 +266,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Hallucinated Eligibility & 60K Affected', 'Parliamentary Inquiry & Government Trust', 'RAG Verification & Citation Requirement'],
     },
   ],
-};
+
+        complianceScore: 89,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.169Z",
+            "type": "analysis",
+            "title": "System Assessment - Infosys AI — India DPDP Act Cross-Border Transfer Violation",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: System Assessment analysis for Infosys completed with industry-specific compliance checks",
+            "agent": "Tech Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.169Z",
+            "type": "warning",
+            "title": "Privacy Compliance - Infosys AI — India DPDP Act Cross-Border Transfer Violation",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Privacy Compliance analysis for Infosys completed with industry-specific compliance checks",
+            "agent": "Privacy Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.169Z",
+            "type": "dissent",
+            "title": "Security Risk - Infosys AI — India DPDP Act Cross-Border Transfer Violation",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Security Risk analysis for Infosys completed with industry-specific compliance checks",
+            "agent": "Security Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.169Z",
+            "type": "proposal",
+            "title": "Governance Framework - Infosys AI — India DPDP Act Cross-Border Transfer Violation",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Governance Framework analysis for Infosys completed with industry-specific compliance checks",
+            "agent": "Platform Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.169Z",
+            "type": "resolution",
+            "title": "Compliance Certified - Infosys AI — India DPDP Act Cross-Border Transfer Violation",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Compliance Certified analysis for Infosys completed with industry-specific compliance checks",
+            "agent": "Audit Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

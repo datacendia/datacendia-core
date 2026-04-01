@@ -266,6 +266,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Cost-Only Viability & 48 Closures Proposed', 'SBS Intervention & Social Mandate', 'Social Viability Scoring & Last-Mile Guarantee'],
     },
   ],
-};
+
+        complianceScore: 90,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.141Z",
+            "type": "analysis",
+            "title": "Public Assessment - Caja Huancayo — AI Credit Scoring Geographic & Ethnic Bias",
+            "description": "Public accountability, procurement rules, transparency requirements: Public Assessment analysis for Fepcmac completed with industry-specific compliance checks",
+            "agent": "Public Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.141Z",
+            "type": "warning",
+            "title": "Transparency Review - Caja Huancayo — AI Credit Scoring Geographic & Ethnic Bias",
+            "description": "Public accountability, procurement rules, transparency requirements: Transparency Review analysis for Fepcmac completed with industry-specific compliance checks",
+            "agent": "Transparency Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.141Z",
+            "type": "dissent",
+            "title": "Public Risk - Caja Huancayo — AI Credit Scoring Geographic & Ethnic Bias",
+            "description": "Public accountability, procurement rules, transparency requirements: Public Risk analysis for Fepcmac completed with industry-specific compliance checks",
+            "agent": "Oversight Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.141Z",
+            "type": "proposal",
+            "title": "Public Protocol - Caja Huancayo — AI Credit Scoring Geographic & Ethnic Bias",
+            "description": "Public accountability, procurement rules, transparency requirements: Public Protocol analysis for Fepcmac completed with industry-specific compliance checks",
+            "agent": "Government Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.141Z",
+            "type": "resolution",
+            "title": "Public Approved - Caja Huancayo — AI Credit Scoring Geographic & Ethnic Bias",
+            "description": "Public accountability, procurement rules, transparency requirements: Public Approved analysis for Fepcmac completed with industry-specific compliance checks",
+            "agent": "Citizen Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

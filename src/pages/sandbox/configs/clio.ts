@@ -270,6 +270,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Expired SOL & Demand Letter Trap', 'Malpractice Exposure & Bar Discipline', 'Intake SOL Check & Hard-Stop Governance'],
     },
   ],
-};
+
+        complianceScore: 91,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.135Z",
+            "type": "analysis",
+            "title": "Legal Research Complete - Clio Duo — Solo Practitioner Statute Amendment",
+            "description": "Professional responsibility, ethics compliance, malpractice prevention: Legal Research Complete analysis for Clio completed with industry-specific compliance checks",
+            "agent": "AI Research Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.135Z",
+            "type": "warning",
+            "title": "Ethics Review Required - Clio Duo — Solo Practitioner Statute Amendment",
+            "description": "Professional responsibility, ethics compliance, malpractice prevention: Ethics Review Required analysis for Clio completed with industry-specific compliance checks",
+            "agent": "Ethics Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.135Z",
+            "type": "dissent",
+            "title": "Professional Liability Risk - Clio Duo — Solo Practitioner Statute Amendment",
+            "description": "Professional responsibility, ethics compliance, malpractice prevention: Professional Liability Risk analysis for Clio completed with industry-specific compliance checks",
+            "agent": "Risk Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.135Z",
+            "type": "proposal",
+            "title": "Supervision Protocol - Clio Duo — Solo Practitioner Statute Amendment",
+            "description": "Professional responsibility, ethics compliance, malpractice prevention: Supervision Protocol analysis for Clio completed with industry-specific compliance checks",
+            "agent": "Attorney Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.135Z",
+            "type": "resolution",
+            "title": "Bar Complaint Avoided - Clio Duo — Solo Practitioner Statute Amendment",
+            "description": "Professional responsibility, ethics compliance, malpractice prevention: Bar Complaint Avoided analysis for Clio completed with industry-specific compliance checks",
+            "agent": "Compliance Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;

@@ -251,5 +251,48 @@ export const ES_SCENARIOS: TemplateScenario[] = [
     idleTitle: 'Listo para Deliberar',
     idleDesc: '4 agentes de IA gobernarán La Noche Crema — equilibrando precios dinámicos, cumplimiento de publicidad de apuestas y transparencia para 80,000 socios.',
     phaseLabels: ['Análisis Comercial y Precios', 'Apuestas y Gobernanza de Socios', 'Protocolo Comercial'],
-  },
+  
+        complianceScore: 94,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.208Z",
+            "type": "analysis",
+            "title": "System Assessment - Ventas Copa Libertadores — Evidencia para CONMEBOL y FIFA TMS",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: System Assessment analysis for Universitario Es completed with industry-specific compliance checks",
+            "agent": "Tech Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.208Z",
+            "type": "warning",
+            "title": "Privacy Compliance - Ventas Copa Libertadores — Evidencia para CONMEBOL y FIFA TMS",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Privacy Compliance analysis for Universitario Es completed with industry-specific compliance checks",
+            "agent": "Privacy Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.208Z",
+            "type": "dissent",
+            "title": "Security Risk - Ventas Copa Libertadores — Evidencia para CONMEBOL y FIFA TMS",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Security Risk analysis for Universitario Es completed with industry-specific compliance checks",
+            "agent": "Security Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.208Z",
+            "type": "proposal",
+            "title": "Governance Framework - Ventas Copa Libertadores — Evidencia para CONMEBOL y FIFA TMS",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Governance Framework analysis for Universitario Es completed with industry-specific compliance checks",
+            "agent": "Platform Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.208Z",
+            "type": "resolution",
+            "title": "Compliance Certified - Ventas Copa Libertadores — Evidencia para CONMEBOL y FIFA TMS",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Compliance Certified analysis for Universitario Es completed with industry-specific compliance checks",
+            "agent": "Audit Agent",
+            "impact": "high"
+      }
+]},
 ];

@@ -126,6 +126,44 @@ export interface TemplateScenario {
     guaranteeTitle: string;
     guaranteeBody: string;
     evidenceChain: string;
+    complianceScore?: number;
+    timelineEvents?: {
+      timestamp: string;
+      type: 'analysis' | 'flag' | 'warning' | 'dissent' | 'proposal' | 'resolution' | 'withdrawal';
+      title: string;
+      description: string;
+      agent?: string;
+      impact: 'high' | 'medium' | 'low';
+    }[];
+    // Cortex Intelligence properties
+    preMortemFailures?: Array<{
+      type: string;
+      probability: number;
+      impact: string;
+      description: string;
+    }>;
+    ghostAlternatives?: Array<{
+      path: string;
+      probability: number;
+      outcome: string;
+      reason: string;
+    }>;
+    decisionDebt?: Array<{
+      decision: string;
+      date: string;
+      impact: number;
+      accumulated: boolean;
+    }>;
+    totalDecisionDebt?: number;
+    chronosEvents?: Array<{
+      period: string;
+      change: string;
+      magnitude: number;
+      trend: 'improving' | 'declining' | 'stable';
+    }>;
+    liveDemoActive?: boolean;
+    liveDemoAction?: string;
+    liveDemoProgress?: number;
   };
   idleTitle: string;
   idleDesc: string;

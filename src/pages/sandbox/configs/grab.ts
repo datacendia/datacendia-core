@@ -266,6 +266,49 @@ const config: OrgSandboxConfig = {
       phaseLabels: ['Revenue-First Routing & Hawker Neglect', 'UNESCO Heritage Threat & Government Review', 'Equal Service & Hawker Rider Pool'],
     },
   ],
-};
+
+        complianceScore: 94,
+        timelineEvents: [
+      {
+            "timestamp": "2026-04-01T12:18:01.151Z",
+            "type": "analysis",
+            "title": "System Assessment - GrabFin AI — MAS Fair Lending Violation",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: System Assessment analysis for Grab completed with industry-specific compliance checks",
+            "agent": "Tech Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:19:01.151Z",
+            "type": "warning",
+            "title": "Privacy Compliance - GrabFin AI — MAS Fair Lending Violation",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Privacy Compliance analysis for Grab completed with industry-specific compliance checks",
+            "agent": "Privacy Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:20:01.151Z",
+            "type": "dissent",
+            "title": "Security Risk - GrabFin AI — MAS Fair Lending Violation",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Security Risk analysis for Grab completed with industry-specific compliance checks",
+            "agent": "Security Agent",
+            "impact": "medium"
+      },
+      {
+            "timestamp": "2026-04-01T12:21:01.151Z",
+            "type": "proposal",
+            "title": "Governance Framework - GrabFin AI — MAS Fair Lending Violation",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Governance Framework analysis for Grab completed with industry-specific compliance checks",
+            "agent": "Platform Agent",
+            "impact": "high"
+      },
+      {
+            "timestamp": "2026-04-01T12:22:01.151Z",
+            "type": "resolution",
+            "title": "Compliance Certified - GrabFin AI — MAS Fair Lending Violation",
+            "description": "Data protection, cybersecurity, IP rights, platform governance: Compliance Certified analysis for Grab completed with industry-specific compliance checks",
+            "agent": "Audit Agent",
+            "impact": "high"
+      }
+]};
 
 export default config;
