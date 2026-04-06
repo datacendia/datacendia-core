@@ -168,6 +168,16 @@ export interface TemplateScenario {
   idleTitle: string;
   idleDesc: string;
   phaseLabels: [string, string, string];
+  // Allow top-level placement (some configs place these outside receiptTemplate)
+  complianceScore?: number;
+  timelineEvents?: {
+    timestamp: string;
+    type: 'analysis' | 'flag' | 'warning' | 'dissent' | 'proposal' | 'resolution' | 'withdrawal';
+    title: string;
+    description: string;
+    agent?: string;
+    impact: 'high' | 'medium' | 'low';
+  }[];
 }
 
 export interface OrgSandboxConfig {
@@ -195,6 +205,16 @@ export interface OrgSandboxConfig {
     labels: ShellLabels;
     scenarios: TemplateScenario[];  // same structure, translated text
   };
+  // Allow top-level placement (some configs place these outside scenarios array)
+  complianceScore?: number;
+  timelineEvents?: {
+    timestamp: string;
+    type: 'analysis' | 'flag' | 'warning' | 'dissent' | 'proposal' | 'resolution' | 'withdrawal';
+    title: string;
+    description: string;
+    agent?: string;
+    impact: 'high' | 'medium' | 'low';
+  }[];
 }
 
 // =============================================================================

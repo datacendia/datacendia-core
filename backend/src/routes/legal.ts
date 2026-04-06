@@ -685,10 +685,10 @@ router.get('/modes/:id', (req: Request<{ id: string }>, res: Response): void => 
  */
 router.get('/modes/category/:category', (req: Request<{ category: string }>, res: Response): void => {
   try {
-    const category = req.params.category as LegalModeCategory;
+    const category = req.params.category as unknown as LegalModeCategory;
     const validCategories = ['major', 'core-practice', 'role-based', 'traditional', 'specialized'];
     
-    if (!validCategories.includes(category)) {
+    if (!validCategories.includes(category as any)) {
       res.status(400).json({ 
         error: 'Invalid category',
         validCategories 
@@ -953,7 +953,7 @@ router.get('/jury/archetypes', (_req: Request, res: Response): void => {
   const jurorAgents = getJurorAgents();
   res.json({
     archetypes,
-    baseAgents: jurorAgents.map(a => ({ id: a.id, name: a.name, role: a.role })),
+    baseAgents: jurorAgents.map((a: any) => ({ id: a.id, name: a.name, role: a.role })),
     totalArchetypes: Object.keys(archetypes).length,
     description: '12 juror personality archetypes for building realistic jury panels',
   });
@@ -973,15 +973,15 @@ router.post('/jury/build', (req: Request, res: Response): void => {
     }
     
     // Validate composition if provided
-    const validArchetypes: JurorArchetype[] = [
+    const validArchetypes = [
       'skeptic', 'emotional', 'analytical', 'foreperson',
       'pragmatist', 'rule-follower', 'life-experience', 'quiet-observer',
       'quick-decider', 'holdout', 'mediator', 'detail-checker'
-    ];
+    ] as unknown as JurorArchetype[];
     
     if (composition) {
       for (const key of Object.keys(composition)) {
-        if (!validArchetypes.includes(key as JurorArchetype)) {
+        if (!validArchetypes.includes(key as unknown as JurorArchetype)) {
           res.status(400).json({ 
             error: `Invalid archetype: ${key}`,
             validArchetypes 
@@ -993,7 +993,7 @@ router.post('/jury/build', (req: Request, res: Response): void => {
     
     const panel = buildJuryPanel(
       caseId,
-      composition as Partial<Record<JurorArchetype, number>>,
+      composition as any,
       alternates ?? 2
     );
     

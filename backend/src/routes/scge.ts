@@ -111,7 +111,7 @@ router.get('/populations', (_req: Request, res: Response) => {
   const populations = syntheticPopulationService.listPopulations();
   res.json({
     count: populations.length,
-    populations: populations.map(p => ({
+    populations: populations.map((p: any) => ({
       id: p.id,
       name: p.name,
       totalSize: p.totalSize,
@@ -127,7 +127,7 @@ router.get('/populations', (_req: Request, res: Response) => {
 router.get('/policies/templates', (_req: Request, res: Response) => {
   res.json({
     count: DEFAULT_POLICY_TEMPLATES.length,
-    templates: DEFAULT_POLICY_TEMPLATES.map(t => ({
+    templates: DEFAULT_POLICY_TEMPLATES.map((t: any) => ({
       name: t.name,
       domain: t.domain,
       rulesCount: t.rules.length,
@@ -161,7 +161,7 @@ router.get('/policies', (_req: Request, res: Response) => {
   const policies = policyInjectionService.listPolicies();
   res.json({
     count: policies.length,
-    policies: policies.map(p => ({
+    policies: policies.map((p: any) => ({
       id: p.id,
       name: p.name,
       domain: p.domain,
@@ -215,7 +215,7 @@ router.post('/policies/:id/evaluate', (req: Request, res: Response) => {
 router.get('/events/scenarios', (_req: Request, res: Response) => {
   res.json({
     count: DEFAULT_EVENT_SCENARIOS.length,
-    scenarios: DEFAULT_EVENT_SCENARIOS.map(s => ({
+    scenarios: DEFAULT_EVENT_SCENARIOS.map((s: any) => ({
       id: s.id,
       name: s.name,
       description: s.description,
@@ -227,7 +227,7 @@ router.get('/events/scenarios', (_req: Request, res: Response) => {
 router.post('/events/sequence', (req: Request, res: Response) => {
   try {
     const { scenarioId, seed } = req.body;
-    const scenario = DEFAULT_EVENT_SCENARIOS.find(s => s.id === scenarioId);
+    const scenario = DEFAULT_EVENT_SCENARIOS.find((s: any) => s.id === scenarioId);
     
     if (!scenario) {
       res.status(400).json({ error: 'Scenario not found' });
@@ -252,7 +252,7 @@ router.get('/events/sequences', (_req: Request, res: Response) => {
   const sequences = eventInjectionService.listSequences();
   res.json({
     count: sequences.length,
-    sequences: sequences.map(s => ({
+    sequences: sequences.map((s: any) => ({
       id: s.id,
       name: s.name,
       eventCount: s.events.length,
@@ -269,7 +269,7 @@ router.get('/stressors', (_req: Request, res: Response) => {
   const stressors = stressorLibraryService.listStressors();
   res.json({
     count: stressors.length,
-    stressors: stressors.map(s => ({
+    stressors: stressors.map((s: any) => ({
       id: s.id,
       name: s.name,
       type: s.type,
@@ -363,7 +363,7 @@ router.post('/simulation', async (req: Request, res: Response) => {
       .filter(Boolean);
 
     // Generate event sequence
-    const scenario = DEFAULT_EVENT_SCENARIOS.find(s => s.id === scenarioId) || DEFAULT_EVENT_SCENARIOS[0]!;
+    const scenario = DEFAULT_EVENT_SCENARIOS.find((s: any) => s.id === scenarioId) || DEFAULT_EVENT_SCENARIOS[0]!;
     const eventSequence = eventInjectionService.generateScenarioSequence(scenario, seed || Date.now());
     const eventConfig = eventInjectionService.createInjectionConfig(eventSequence);
 
@@ -485,7 +485,7 @@ router.get('/simulations', (_req: Request, res: Response) => {
   res.json({
     active: {
       count: active.length,
-      simulations: active.map(s => ({
+      simulations: active.map((s: any) => ({
         id: s.id,
         phase: s.phase,
         currentTime: s.currentTime,
@@ -493,7 +493,7 @@ router.get('/simulations', (_req: Request, res: Response) => {
     },
     completed: {
       count: completed.length,
-      simulations: completed.map(r => ({
+      simulations: completed.map((r: any) => ({
         id: r.id,
         configId: r.configId,
         startTime: r.startTime,

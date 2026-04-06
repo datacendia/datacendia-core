@@ -142,7 +142,7 @@ router.post('/transform-query', async (req: Request, res: Response) => {
     }
 
     const tableMapping = mapping.tableMappings.find(
-      (t) => t.canonicalEntity === entity
+      (t: any) => t.canonicalEntity === entity
     );
     if (!tableMapping) {
       res.status(404).json({

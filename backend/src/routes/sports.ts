@@ -514,7 +514,7 @@ router.get('/knowledge/provenance', (req: Request, res: Response) => {
  * List all available agent presets
  */
 router.get('/agents', (_req: Request, res: Response) => {
-  const agents = SPORTS_AGENT_PRESETS.map(a => ({
+  const agents = SPORTS_AGENT_PRESETS.map((a: any) => ({
     id: a.id,
     role: a.role,
     displayLabel: a.displayLabel,
@@ -553,7 +553,7 @@ router.get('/agents/workflow/:workflow', (req: Request, res: Response) => {
   
   res.json({
     workflow,
-    agents: agents.map(a => ({
+    agents: agents.map((a: any) => ({
       id: a.id,
       role: a.role,
       displayLabel: a.displayLabel,

@@ -703,7 +703,7 @@ router.post('/query', async (req: Request, res: Response, next: NextFunction) =>
               id: crypto.randomUUID(),
               query_id: councilQuery.id,
               agent_id: agent.id,
-              analysis: response.content,
+              analysis: response,
               sources: (graphContext.sources || []) as Prisma.InputJsonValue,
               confidence: 0.85, // Would be calculated from model response
             },
@@ -713,7 +713,7 @@ router.post('/query', async (req: Request, res: Response, next: NextFunction) =>
             agentId: agent.id,
             agentCode: agent.code,
             agentName: agent.name,
-            analysis: response.content,
+            analysis: response,
             sources: (graphContext.sources || []) as Prisma.InputJsonValue,
             confidence: 0.85,
           };
@@ -742,7 +742,7 @@ router.post('/query', async (req: Request, res: Response, next: NextFunction) =>
       ], {
         model: chiefModel,
       });
-      summary = summaryResponse.content;
+      summary = summaryResponse;
     } else if (validResponses.length === 1) {
       summary = validResponses[0]!.analysis;
     }
@@ -1383,7 +1383,7 @@ IMPORTANT: Return ONLY valid JSON, no markdown or extra text.`;
     let summaryObj;
     try {
       // Try to extract JSON from the response
-      const jsonMatch = summaryResponse.content.match(/\{[\s\S]*\}/);
+      const jsonMatch = summaryResponse.match(/\{[\s\S]*\}/);
       if (jsonMatch) {
         summaryObj = JSON.parse(jsonMatch[0]);
       } else {
@@ -1394,7 +1394,7 @@ IMPORTANT: Return ONLY valid JSON, no markdown or extra text.`;
       summaryObj = {
         title: `Executive Summary: ${deliberation.question?.substring(0, 50)}...`,
         question: deliberation.question,
-        recommendation: summaryResponse.content.substring(0, 500),
+        recommendation: summaryResponse.substring(0, 500),
         keyFindings: ['Analysis completed', 'See full deliberation for details'],
         riskFactors: ['Review recommended before action'],
         nextSteps: ['Review synthesis', 'Assign decision owner', 'Set implementation timeline'],
@@ -1525,7 +1525,7 @@ Format this as professional meeting minutes suitable for audit and compliance pu
     res.json({
       success: true,
       minutes: {
-        content: minutesResponse.content,
+        content: minutesResponse,
         date: deliberation.created_at?.toISOString().split('T')[0] || new Date().toISOString().split('T')[0],
         question: deliberation.question,
         status: deliberation.status,
@@ -1775,7 +1775,7 @@ async function processDeliberation(
           deliberation_id: deliberationId,
           agent_id: agent.id,
           phase: 'initial_analysis',
-          content: response.content,
+          content: response,
           sources: (context.sources || []) as Prisma.InputJsonValue,
           confidence: 0.85,
         },
@@ -1785,7 +1785,7 @@ async function processDeliberation(
         type: 'agent_message',
         agentId: agent.id,
         agentCode: agent.code,
-        content: response.content,
+        content: response,
         phase: 'initial_analysis',
       });
     }
@@ -1828,7 +1828,7 @@ async function processDeliberation(
           deliberation_id: deliberationId,
           agent_id: critiqueAgent.id,
           phase: 'cross_examination',
-          content: critiqueResponse.content,
+          content: critiqueResponse,
           target_agent_id: targetMessage.agent_id,
           confidence: 0.8,
         },
@@ -1838,7 +1838,7 @@ async function processDeliberation(
         type: 'agent_message',
         agentId: critiqueAgent.id,
         targetAgentId: targetMessage.agent_id,
-        content: critiqueResponse.content,
+        content: critiqueResponse,
         phase: 'cross_examination',
       });
     }
@@ -1871,7 +1871,7 @@ async function processDeliberation(
           deliberation_id: deliberationId,
           agent_id: chiefAgent.id,
           phase: 'synthesis',
-          content: synthesisResponse.content,
+          content: synthesisResponse,
           confidence: 0.82,
         },
       });

@@ -34,9 +34,9 @@ router.get('/status', async (req: Request, res: Response) => {
     
     // Get counts for metrics
     const [threatCount, signalCount, briefingCount] = await Promise.all([
-      cendiaAegisService.getActiveThreats(orgId).then(t => t.length).catch(() => 0),
-      cendiaAegisService.getRecentSignals(orgId, { limit: 100 }).then(s => s.length).catch(() => 0),
-      cendiaAegisService.getBriefings(orgId, 100).then(b => b.length).catch(() => 0),
+      cendiaAegisService.getActiveThreats(orgId).then((t: any) => t.length).catch(() => 0),
+      cendiaAegisService.getRecentSignals(orgId, { limit: 100 }).then((s: any) => s.length).catch(() => 0),
+      cendiaAegisService.getBriefings(orgId, 100).then((b: any) => b.length).catch(() => 0),
     ]);
     
     res.json({

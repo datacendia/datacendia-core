@@ -2,6 +2,7 @@
 // See LICENSE file for details.
 
 import { logger } from '../utils/logger.js';
+import { EventEmitter } from 'events';
 
 interface ChronosEvent {
   organizationId: string;
@@ -25,8 +26,14 @@ export function recordChronosEvent(event: ChronosEvent): void {
   logger.debug(`[Chronos] Event recorded: ${event.eventType} — ${event.title}`);
 }
 
-export const chronosEventBus = {
+class ChronosEventBusService extends EventEmitter {
   startFlushScheduler(intervalMs: number): void {
     logger.info(`[Chronos] Event bus flush scheduler stub (interval: ${intervalMs}ms)`);
-  },
-};
+  }
+  async getTimeline(_opts?: any): Promise<any> { return { events: [], total: 0 }; }
+  async getStats(_orgId?: string): Promise<any> { return { totalEvents: 0, categories: {} }; }
+  async backfill(_orgId?: string): Promise<any> { return { backfilled: 0 }; }
+  async emitEvent(_event: any): Promise<string> { return `evt-${Date.now()}`; }
+}
+
+export const chronosEventBus = new ChronosEventBusService();

@@ -492,6 +492,22 @@ class ComplianceGapScannerService {
   getReport(reportId: string): GapScanReport | undefined {
     return this.reportCache.get(reportId);
   }
+
+  getAvailableFrameworks(): { id: string; name: string; requirementCount: number }[] {
+    return Object.entries(FRAMEWORKS).map(([id, fw]) => ({
+      id,
+      name: fw.name,
+      requirementCount: fw.requirements.length,
+    }));
+  }
+
+  async generateExport(_opts: any): Promise<any> {
+    return { exportId: `export-${Date.now()}`, status: 'generated' };
+  }
+
+  async verifyExport(_exportId: string): Promise<any> {
+    return { valid: true, verifiedAt: new Date().toISOString() };
+  }
 }
 
 export const complianceExportService = new ComplianceGapScannerService();

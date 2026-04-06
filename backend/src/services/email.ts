@@ -141,6 +141,29 @@ class EmailService {
       replyTo: data.email,
     });
   }
+  async sendVerificationEmail(to: string, name: string, token: string): Promise<boolean> {
+    return this.send({
+      to,
+      subject: 'Verify your Datacendia account',
+      text: `Hello ${name},\n\nPlease verify your account using this token: ${token}\n\nIf you did not create an account, please ignore this email.`,
+    });
+  }
+
+  async sendPasswordResetEmail(to: string, name: string, token: string): Promise<boolean> {
+    return this.send({
+      to,
+      subject: 'Reset your Datacendia password',
+      text: `Hello ${name},\n\nYou requested a password reset. Use this token: ${token}\n\nIf you did not request this, please ignore this email.`,
+    });
+  }
+
+  async sendWelcomeEmail(to: string, name: string): Promise<boolean> {
+    return this.send({
+      to,
+      subject: 'Welcome to Datacendia',
+      text: `Welcome ${name}!\n\nYour Datacendia account is ready. Start making better decisions today.\n\n— The Datacendia Team`,
+    });
+  }
 }
 
 export const emailService = new EmailService();

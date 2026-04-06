@@ -34,9 +34,9 @@ router.get('/status', async (req: Request, res: Response) => {
     
     // Get counts for metrics
     const [entityCount, opportunityCount, relationshipCount] = await Promise.all([
-      cendiaSymbiontService.getEntities(orgId, {}).then(e => e.length).catch(() => 0),
-      cendiaSymbiontService.getOpportunities(orgId).then(o => o.length).catch(() => 0),
-      cendiaSymbiontService.getRelationships(orgId).then(r => r.length).catch(() => 0),
+      cendiaSymbiontService.getEntities(orgId, {}).then((e: any) => e.length).catch(() => 0),
+      cendiaSymbiontService.getOpportunities(orgId).then((o: any) => o.length).catch(() => 0),
+      cendiaSymbiontService.getRelationships(orgId).then((r: any) => r.length).catch(() => 0),
     ]);
     
     res.json({

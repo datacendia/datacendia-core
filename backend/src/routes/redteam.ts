@@ -184,14 +184,14 @@ router.get('/dashboard', async (req: Request, res: Response, next: NextFunction)
 
     // Categorize exploits by severity
     const bySeverity = {
-      critical: exploits.filter(e => e.severity === 'critical').length,
-      high: exploits.filter(e => e.severity === 'high').length,
-      medium: exploits.filter(e => e.severity === 'medium').length,
-      low: exploits.filter(e => e.severity === 'low').length,
+      critical: exploits.filter((e: any) => e.severity === 'critical').length,
+      high: exploits.filter((e: any) => e.severity === 'high').length,
+      medium: exploits.filter((e: any) => e.severity === 'medium').length,
+      low: exploits.filter((e: any) => e.severity === 'low').length,
     };
 
     // Calculate total potential damage
-    const totalPotentialDamage = exploits.reduce((sum, e) => {
+    const totalPotentialDamage = exploits.reduce((sum: any, e: any) => {
       return sum + (e.damageEstimate.financial || 0);
     }, 0);
 
@@ -254,7 +254,7 @@ router.get('/evil-twin', async (req: Request, res: Response, next: NextFunction)
         exploitPathsFound: exploits.length,
         byAttackVector: byVector,
         mostVulnerableSystems: mostVulnerable,
-        topExploits: exploits.slice(0, 7).map(e => ({
+        topExploits: exploits.slice(0, 7).map((e: any) => ({
           id: e.id,
           title: e.title,
           description: e.description,

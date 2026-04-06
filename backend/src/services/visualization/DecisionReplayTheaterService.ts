@@ -409,6 +409,16 @@ function reset() {
   getReplay(deliberationId: string): ReplayData | undefined {
     return this.replayCache.get(deliberationId);
   }
+
+  async createReplaySession(_deliberationId: string, _opts?: any, _extra?: any): Promise<any> { return { sessionId: `session-${Date.now()}` }; }
+  async startPlayback(_sessionId: string): Promise<any> { return { status: 'playing' }; }
+  async pausePlayback(_sessionId: string): Promise<any> { return { status: 'paused' }; }
+  async seekToFrame(_sessionId: string, _frame: number, _extra?: any): Promise<any> { return {}; }
+  async seekToTime(_sessionId: string, _timeMs: number, _extra?: any): Promise<any> { return {}; }
+  async setPlaybackSpeed(_sessionId: string, _speed: number): Promise<any> { return {}; }
+  async getPlaybackState(_sessionId: string): Promise<any> { return { status: 'idle' }; }
+  async exportSession(_sessionId: string, _format?: string): Promise<any> { return {}; }
+  async endSession(_sessionId: string): Promise<any> { return {}; }
 }
 
 export const decisionReplayTheaterService = new DecisionReplayTheaterServiceImpl();

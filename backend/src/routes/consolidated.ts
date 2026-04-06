@@ -149,7 +149,7 @@ router.post('/ghost-board/rehearse', async (req: Request, res: Response): Promis
       success: true,
       rehearsalId: result.id,
       topic: result.topic,
-      aiQuestions: result.questions.map(q => ({
+      aiQuestions: result.questions.map((q: any) => ({
         director: q.director,
         question: q.question,
         followUp: q.followUp,
@@ -261,7 +261,7 @@ router.get('/decision-debt/list', async (req: Request, res: Response) => {
 
     res.json({
       success: true,
-      stuckDecisions: result.decisions.map(d => ({
+      stuckDecisions: result.decisions.map((d: any) => ({
         id: d.id,
         title: d.title,
         daysStuck: d.daysStuck,

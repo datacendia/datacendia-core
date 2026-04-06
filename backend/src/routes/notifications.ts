@@ -117,10 +117,10 @@ router.post('/send', async (req: Request, res: Response) => {
     const notifPayload: Parameters<typeof notificationService.send>[0] = {
       userId: payload.userId,
       organizationId: payload.organizationId,
-      type: payload.type as NotificationType,
+      type: payload.type as unknown as NotificationType,
       title: payload.title,
       message: payload.message,
-      channels: payload.channels as NotificationChannel[],
+      channels: payload.channels as unknown as NotificationChannel[],
     };
     if (payload.link) {
       notifPayload.link = payload.link;
@@ -267,7 +267,7 @@ router.put('/preferences', async (req: Request, res: Response) => {
     if (parsed.webhookUrl !== undefined) preferences['webhookUrl'] = parsed.webhookUrl;
     if (parsed.slackChannel !== undefined) preferences['slackChannel'] = parsed.slackChannel;
     if (parsed.teamsChannel !== undefined) preferences['teamsChannel'] = parsed.teamsChannel;
-    const success = await notificationService.updateUserPreferences(userId, preferences as Partial<import('../services/NotificationService.js').NotificationPreferences>);
+    const success = await notificationService.updateUserPreferences(userId, preferences as any);
     res.json({ success });
   } catch (error) {
     if (error instanceof z.ZodError) {

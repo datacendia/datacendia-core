@@ -801,7 +801,7 @@ router.post('/ai/start', async (req: Request, res: Response) => {
     const conversation = adminAIService.getConversation(sessionId);
     res.json({ 
       sessionId, 
-      messages: conversation?.filter(m => m.role !== 'system') || [] 
+      messages: conversation?.filter((m: any) => m.role !== 'system') || [] 
     });
   } catch (error) {
     logger.error('Admin API: Start AI session error', error);
@@ -829,7 +829,7 @@ router.get('/ai/conversation/:sessionId', async (req: Request, res: Response) =>
     if (!conversation) {
       return res.status(404).json({ error: 'Conversation not found' });
     }
-    res.json({ messages: conversation.filter(m => m.role !== 'system') });
+    res.json({ messages: conversation.filter((m: any) => m.role !== 'system') });
   } catch (error) {
     logger.error('Admin API: Get conversation error', error);
     res.status(500).json({ error: 'Failed to get conversation' });

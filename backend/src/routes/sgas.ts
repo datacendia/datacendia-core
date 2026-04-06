@@ -164,7 +164,7 @@ router.get('/deliberations', (_req: Request, res: Response) => {
   
   res.json({
     count: deliberations.length,
-    deliberations: deliberations.map(d => ({
+    deliberations: deliberations.map((d: any) => ({
       id: d.graph.id,
       proposalId: d.graph.proposalId,
       status: d.graph.status,
@@ -182,31 +182,31 @@ router.get('/deliberations', (_req: Request, res: Response) => {
 
 router.get('/agents', (_req: Request, res: Response) => {
   res.json({
-    decision: decisionAgentsService.getAgents().map(a => ({
+    decision: decisionAgentsService.getAgents().map((a: any) => ({
       id: a.id,
       name: a.name,
       objective: a.objective,
       capabilities: a.capabilities.length,
     })),
-    institutional: institutionalAgentsService.getAgents().map(a => ({
+    institutional: institutionalAgentsService.getAgents().map((a: any) => ({
       id: a.id,
       name: a.name,
       type: a.institutionType,
       authorities: a.authorities.length,
     })),
-    adversarial: adversarialAgentsService.getAgents().map(a => ({
+    adversarial: adversarialAgentsService.getAgents().map((a: any) => ({
       id: a.id,
       name: a.name,
       attackType: a.attackProfile.type,
       sophistication: a.attackProfile.sophistication,
     })),
-    observer: observerAgentsService.getAgents().map(a => ({
+    observer: observerAgentsService.getAgents().map((a: any) => ({
       id: a.id,
       name: a.name,
       observationType: a.observationType,
       metrics: a.metrics.length,
     })),
-    metaGovernance: metaGovernanceAgentsService.getAgents().map(a => ({
+    metaGovernance: metaGovernanceAgentsService.getAgents().map((a: any) => ({
       id: a.id,
       name: a.name,
       patterns: a.detectionPatterns.length,

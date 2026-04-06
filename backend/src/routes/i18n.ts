@@ -47,7 +47,7 @@ router.get('/languages', async (req: Request, res: Response) => {
 
     const languages = Object.entries(SUPPORTED_LANGUAGES).map(([code, info]) => ({
       code,
-      ...info,
+      ...(info as any),
     }));
     
     const response = {

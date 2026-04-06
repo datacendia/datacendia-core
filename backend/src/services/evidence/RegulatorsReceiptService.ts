@@ -691,7 +691,7 @@ export class RegulatorsReceiptService {
         overallScore: score.overallScore,
         band: score.band,
         certificationLevel: score.certificationLevel,
-        dimensions: score.dimensions.map(d => ({
+        dimensions: score.dimensions.map((d: any) => ({
           name: d.name,
           primitive: d.primitive,
           score: d.score,
@@ -942,7 +942,7 @@ export class RegulatorsReceiptService {
         currentScore = await iissSvc.calculateScore(organizationId, org?.name || 'Unknown', initiatedBy);
       }
 
-      const currentScores = currentScore.dimensions.map(d => ({
+      const currentScores = currentScore.dimensions.map((d: any) => ({
         primitive: d.primitive,
         score: d.score,
         maxScore: d.maxScore,
@@ -1017,7 +1017,7 @@ export class RegulatorsReceiptService {
       }
 
       // 4. Calculate trends
-      const trends: ReceiptDriftAnalysis['trends'] = currentScores.map(cs => {
+      const trends: ReceiptDriftAnalysis['trends'] = currentScores.map((cs: any) => {
         const baseline = baselineScores?.find(b => b.primitive === cs.primitive);
         if (!baseline) return { primitive: cs.primitive, direction: 'stable' as const, delta: 0 };
         const delta = cs.score - baseline.score;

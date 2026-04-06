@@ -138,14 +138,14 @@ router.post('/datasets/:id/generate', (req, res) => {
       });
     } else {
       const data = sampleDataService.generateDataset(id, scale);
-      const totalRecords = data.reduce((sum, t) => sum + t.records.length, 0);
+      const totalRecords = data.reduce((sum: any, t: any) => sum + t.records.length, 0);
       
       res.json({
         success: true,
         data: {
           dataset: dataset.name,
           format: 'json',
-          tables: data.map(t => ({
+          tables: data.map((t: any) => ({
             tableName: t.tableName,
             schema: t.schema,
             recordCount: t.records.length,
@@ -193,7 +193,7 @@ router.post('/datasets/:id/preview', (req, res) => {
       data: {
         dataset: dataset.name,
         preview: true,
-        tables: data.map(t => ({
+        tables: data.map((t: any) => ({
           tableName: t.tableName,
           schema: t.schema,
           sampleRecords: t.records.slice(0, 10),
@@ -234,7 +234,7 @@ router.post('/quick-load/:datasetId', (req, res) => {
     
     // Generate the data
     const data = sampleDataService.generateDataset(datasetId, scale);
-    const totalRecords = data.reduce((sum, t) => sum + t.records.length, 0);
+    const totalRecords = data.reduce((sum: any, t: any) => sum + t.records.length, 0);
     
     res.json({
       success: true,
@@ -243,7 +243,7 @@ router.post('/quick-load/:datasetId', (req, res) => {
         datasetId,
         datasetName: dataset.name,
         connectionId: connectionId || 'demo-connection',
-        tables: data.map(t => ({
+        tables: data.map((t: any) => ({
           tableName: t.tableName,
           recordCount: t.records.length,
           schema: t.schema,

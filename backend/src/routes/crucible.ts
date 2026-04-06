@@ -86,7 +86,7 @@ router.get('/templates', async (req: Request, res: Response, next: NextFunction)
     const templates = cendiaCrucibleService.getScenarioTemplates();
     
     // Transform to array format with metadata
-    const templateList = Object.entries(templates).map(([type, template]) => ({
+    const templateList = Object.entries(templates).map(([type, template]: [string, any]) => ({
       type,
       name: template.name,
       description: template.description,
@@ -257,7 +257,7 @@ router.get('/simulations/:id/universes', async (req: Request, res: Response, nex
     
     // Filter by sentiment if specified
     if (sentiment) {
-      universes = universes.filter(u => u.outcome_sentiment === sentiment);
+      universes = universes.filter((u: any) => u.outcome_sentiment === sentiment);
     }
 
     res.json({
@@ -266,11 +266,11 @@ router.get('/simulations/:id/universes', async (req: Request, res: Response, nex
       meta: {
         total: universes.length,
         sentimentDistribution: {
-          catastrophic: universes.filter(u => u.outcome_sentiment === 'CATASTROPHIC').length,
-          negative: universes.filter(u => u.outcome_sentiment === 'NEGATIVE').length,
-          neutral: universes.filter(u => u.outcome_sentiment === 'NEUTRAL').length,
-          positive: universes.filter(u => u.outcome_sentiment === 'POSITIVE').length,
-          optimal: universes.filter(u => u.outcome_sentiment === 'OPTIMAL').length,
+          catastrophic: universes.filter((u: any) => u.outcome_sentiment === 'CATASTROPHIC').length,
+          negative: universes.filter((u: any) => u.outcome_sentiment === 'NEGATIVE').length,
+          neutral: universes.filter((u: any) => u.outcome_sentiment === 'NEUTRAL').length,
+          positive: universes.filter((u: any) => u.outcome_sentiment === 'POSITIVE').length,
+          optimal: universes.filter((u: any) => u.outcome_sentiment === 'OPTIMAL').length,
         },
       },
     });
@@ -300,11 +300,11 @@ router.get('/simulations/:id/impacts', async (req: Request, res: Response, next:
     let impacts = simulation.impacts;
     
     if (category) {
-      impacts = impacts.filter(i => i.impact_category === category);
+      impacts = impacts.filter((i: any) => i.impact_category === category);
     }
     
     if (severity) {
-      impacts = impacts.filter(i => i.severity === severity);
+      impacts = impacts.filter((i: any) => i.severity === severity);
     }
 
     res.json({
@@ -313,11 +313,11 @@ router.get('/simulations/:id/impacts', async (req: Request, res: Response, next:
       meta: {
         total: impacts.length,
         bySeverity: {
-          critical: impacts.filter(i => i.severity === 'CRITICAL').length,
-          high: impacts.filter(i => i.severity === 'HIGH').length,
-          medium: impacts.filter(i => i.severity === 'MEDIUM').length,
-          low: impacts.filter(i => i.severity === 'LOW').length,
-          minimal: impacts.filter(i => i.severity === 'MINIMAL').length,
+          critical: impacts.filter((i: any) => i.severity === 'CRITICAL').length,
+          high: impacts.filter((i: any) => i.severity === 'HIGH').length,
+          medium: impacts.filter((i: any) => i.severity === 'MEDIUM').length,
+          low: impacts.filter((i: any) => i.severity === 'LOW').length,
+          minimal: impacts.filter((i: any) => i.severity === 'MINIMAL').length,
         },
       },
     });

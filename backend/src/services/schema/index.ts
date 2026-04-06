@@ -705,3 +705,16 @@ export const generateSGASId: any = new Proxy({}, {
 });
 
 export class ComplianceViolation { [key: string]: any; }
+
+export const CANONICAL_ENTITIES: string[] = [
+  'Organization', 'User', 'Agent', 'Deliberation', 'Decision',
+  'Policy', 'Risk', 'Compliance', 'Audit', 'Evidence',
+];
+
+export const CANONICAL_FIELDS: Record<string, string[]> = {
+  Organization: ['id', 'name', 'domain', 'tier', 'created_at'],
+  User: ['id', 'email', 'name', 'role', 'organization_id'],
+  Agent: ['id', 'name', 'role', 'model', 'organization_id'],
+  Deliberation: ['id', 'question', 'mode', 'status', 'confidence', 'organization_id'],
+  Decision: ['id', 'deliberation_id', 'outcome', 'rationale', 'created_at'],
+};
