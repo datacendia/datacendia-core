@@ -15,7 +15,7 @@
  * Name + email → instant platform access via /api/v1/auth/demo-access
  */
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, ArrowDown, Terminal, Scale, ShieldCheck, MessageCircle, Users, FileWarning, Fingerprint, Archive, FileCheck2, Shield, Lock, Award, ChevronDown, X, Check, ExternalLink, Github } from 'lucide-react';
 import { Logo } from '../../components/brand/Logo';
@@ -46,6 +46,37 @@ const DIFF_ROWS = ['memory', 'dissent', 'proof', 'accountability', 'sovereignty'
 
 const FAQ_KEYS = ['dataSafe', 'internet', 'llms', 'openSource', 'different', 'compliance', 'setup', 'verify'] as const;
 
+const HERO_PHRASES = [
+  'Every AI Decision',
+  'Every LLM Output',
+  'Every Agent Action',
+  'Every Model Prediction',
+  'Every Autonomous Choice',
+];
+
+const STATS = [
+  { value: '47', suffix: '+', label: 'Governance Services', color: 'text-indigo-400' },
+  { value: '15', suffix: '', label: 'C-Suite AI Agents', color: 'text-emerald-400' },
+  { value: '9', suffix: '', label: 'DCII Integrity Primitives', color: 'text-amber-400' },
+  { value: '16', suffix: '', label: 'Languages Supported', color: 'text-rose-400' },
+];
+
+const useScrollReveal = () => {
+  const ref = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); observer.unobserve(el); } },
+      { threshold: 0.15 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+  return { ref, isVisible };
+};
+
 const SovereignLandingPage: React.FC = () => {
   const { t } = useTranslation();
   const { loginWithToken } = useAuth();
@@ -57,6 +88,44 @@ const SovereignLandingPage: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const ctaRef = useRef<HTMLElement>(null);
   const problemRef = useRef<HTMLElement>(null);
+
+  // Animated hero cycling text
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const current = HERO_PHRASES[phraseIndex];
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        if (charIndex < current.length) {
+          setCharIndex(charIndex + 1);
+        } else {
+          setTimeout(() => setIsDeleting(true), 2000);
+        }
+      } else {
+        if (charIndex > 0) {
+          setCharIndex(charIndex - 1);
+        } else {
+          setIsDeleting(false);
+          setPhraseIndex((phraseIndex + 1) % HERO_PHRASES.length);
+        }
+      }
+    }, isDeleting ? 30 : 60);
+    return () => clearTimeout(timeout);
+  }, [charIndex, isDeleting, phraseIndex]);
+
+  // Scroll reveal hooks for sections
+  const problemReveal = useScrollReveal();
+  const whatIsReveal = useScrollReveal();
+  const killRoomReveal = useScrollReveal();
+  const solutionReveal = useScrollReveal();
+  const audienceReveal = useScrollReveal();
+  const pricingReveal = useScrollReveal();
+  const previewReveal = useScrollReveal();
+  const diffReveal = useScrollReveal();
+  const faqReveal = useScrollReveal();
+  const statsReveal = useScrollReveal();
 
   const handleDemoAccess = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
@@ -105,9 +174,40 @@ const SovereignLandingPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#09090b] text-white antialiased selection:bg-indigo-900/30">
+      {/* Keyframe animations */}
+      <style>{`
+        @keyframes float-orb {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(30px, -50px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+        @keyframes fade-up {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse-glow {
+          0%, 100% { opacity: 0.4; }
+          50% { opacity: 0.8; }
+        }
+        @keyframes shimmer {
+          0% { background-position: -200% 0; }
+          100% { background-position: 200% 0; }
+        }
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .typing-cursor { display: inline-block; width: 2px; height: 1em; background: #818cf8; margin-left: 2px; animation: pulse-glow 1s ease-in-out infinite; vertical-align: text-bottom; }
+      `}</style>
+
       {/* Background */}
       <div className="fixed inset-0 bg-gradient-to-b from-[#09090b] via-[#0c0c10] to-[#09090b] pointer-events-none" />
       <div className="fixed inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+
+      {/* Animated gradient orbs */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-indigo-600/[0.07] blur-[120px]" style={{ animation: 'float-orb 20s ease-in-out infinite' }} />
+        <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] rounded-full bg-purple-600/[0.05] blur-[120px]" style={{ animation: 'float-orb 25s ease-in-out infinite reverse' }} />
+        <div className="absolute -bottom-20 left-1/3 w-[400px] h-[400px] rounded-full bg-emerald-600/[0.04] blur-[100px]" style={{ animation: 'float-orb 22s ease-in-out infinite 5s' }} />
+      </div>
 
       {/* Nav */}
       <nav className="relative z-50 px-6 py-5 flex justify-between items-center max-w-6xl mx-auto">
@@ -132,13 +232,16 @@ const SovereignLandingPage: React.FC = () => {
       </nav>
 
       {/* ═══════════════════════════ HERO ═══════════════════════════ */}
-      <section className="relative z-10 px-6 pt-16 sm:pt-24 pb-12 max-w-6xl mx-auto">
+      <section className="relative z-10 px-6 pt-16 sm:pt-24 pb-12 max-w-6xl mx-auto" style={{ animation: 'fade-up 1s ease-out' }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left: Headline + CTAs */}
           <div>
             <p className="text-[11px] tracking-[0.25em] text-indigo-400/80 uppercase mb-6 font-mono">{t('landing.hero.label')}</p>
             <h1 className="text-3xl sm:text-4xl md:text-[2.75rem] font-medium leading-[1.15] mb-6 text-white">
-              {t('landing.hero.headline')}
+              Cryptographic Proof for<br />
+              <span className="text-indigo-400">{HERO_PHRASES[phraseIndex].slice(0, charIndex)}</span>
+              <span className="typing-cursor" />
+              <br />Your Enterprise Makes.
             </h1>
             <p className="text-base sm:text-lg text-gray-400 font-light leading-relaxed mb-8 max-w-xl">
               {t('landing.hero.subheadline')}
@@ -225,8 +328,22 @@ const SovereignLandingPage: React.FC = () => {
         </div>
       </section>
 
+      {/* ═══════════════════════════ STATS BAR ═══════════════════════════ */}
+      <section ref={statsReveal.ref as React.RefObject<HTMLElement>} className={`relative z-10 px-6 py-16 border-t border-white/[0.04] reveal ${statsReveal.isVisible ? 'visible' : ''}`}>
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {STATS.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className={`text-3xl sm:text-4xl font-light ${stat.color} mb-1`}>{stat.value}<span className="text-lg">{stat.suffix}</span></p>
+                <p className="text-[11px] text-gray-500 tracking-wider uppercase">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ═══════════════════════════ THE PROBLEM ═══════════════════════════ */}
-      <section ref={problemRef} className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+      <section ref={problemReveal.ref as React.RefObject<HTMLElement>} className={`relative z-10 px-6 py-24 border-t border-white/[0.04] reveal ${problemReveal.isVisible ? 'visible' : ''}`}>
         <div className="max-w-3xl mx-auto">
           <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-6">{t('landing.problem.label')}</p>
           <p className="text-lg sm:text-xl text-gray-300 font-light leading-relaxed">
@@ -237,7 +354,7 @@ const SovereignLandingPage: React.FC = () => {
       </section>
 
       {/* ═══════════════════════════ WHAT IS DATACENDIA? ═══════════════════════════ */}
-      <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+      <section ref={whatIsReveal.ref as React.RefObject<HTMLElement>} className={`relative z-10 px-6 py-24 border-t border-white/[0.04] reveal ${whatIsReveal.isVisible ? 'visible' : ''}`}>
         <div className="max-w-5xl mx-auto">
           <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-16 text-center">{t('landing.whatIs.label')}</p>
 
@@ -278,7 +395,7 @@ const SovereignLandingPage: React.FC = () => {
       </section>
 
       {/* ═══════════════════════════ KILL ROOM — DECISION ARCHITECTURE ═══════════════════════════ */}
-      <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+      <section ref={killRoomReveal.ref as React.RefObject<HTMLElement>} className={`relative z-10 px-6 py-24 border-t border-white/[0.04] reveal ${killRoomReveal.isVisible ? 'visible' : ''}`}>
         <div className="max-w-5xl mx-auto">
           <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-3 text-center">{t('landing.killRoom.label')}</p>
           <p className="text-sm text-gray-500 text-center mb-16">{t('landing.killRoom.subtitle')}</p>
@@ -395,7 +512,7 @@ const SovereignLandingPage: React.FC = () => {
       </section>
 
       {/* ═══════════════════════════ THE SOLUTION — 3 BEATS ═══════════════════════════ */}
-      <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+      <section ref={solutionReveal.ref as React.RefObject<HTMLElement>} className={`relative z-10 px-6 py-24 border-t border-white/[0.04] reveal ${solutionReveal.isVisible ? 'visible' : ''}`}>
         <div className="max-w-5xl mx-auto">
           <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-16 text-center">{t('landing.solution.label')}</p>
 
@@ -440,7 +557,7 @@ const SovereignLandingPage: React.FC = () => {
       </section>
 
       {/* ═══════════════════════════ AUDIENCE SECTIONS ═══════════════════════════ */}
-      <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+      <section ref={audienceReveal.ref as React.RefObject<HTMLElement>} className={`relative z-10 px-6 py-24 border-t border-white/[0.04] reveal ${audienceReveal.isVisible ? 'visible' : ''}`}>
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           {/* Developers */}
           <div className="p-6 rounded-xl border border-white/[0.06] bg-white/[0.015]">
@@ -480,7 +597,7 @@ const SovereignLandingPage: React.FC = () => {
       </section>
 
       {/* ═══════════════════════════ COSS PRICING ANCHOR ═══════════════════════════ */}
-      <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+      <section ref={pricingReveal.ref as React.RefObject<HTMLElement>} className={`relative z-10 px-6 py-24 border-t border-white/[0.04] reveal ${pricingReveal.isVisible ? 'visible' : ''}`}>
         <div className="max-w-4xl mx-auto">
           <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-3 text-center">{t('landing.pricing.label')}</p>
           <p className="text-sm text-gray-500 text-center mb-16">{t('landing.pricing.subtitle')}</p>
@@ -543,7 +660,7 @@ const SovereignLandingPage: React.FC = () => {
       </section>
 
       {/* ═══════════════════════════ PLATFORM PREVIEW ═══════════════════════════ */}
-      <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+      <section ref={previewReveal.ref as React.RefObject<HTMLElement>} className={`relative z-10 px-6 py-24 border-t border-white/[0.04] reveal ${previewReveal.isVisible ? 'visible' : ''}`}>
         <div className="max-w-5xl mx-auto">
           <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-3 text-center">{t('landing.preview.label')}</p>
           <p className="text-sm text-gray-500 text-center mb-12 max-w-2xl mx-auto">{t('landing.preview.subtitle')}</p>
@@ -626,7 +743,7 @@ const SovereignLandingPage: React.FC = () => {
       </section>
 
       {/* ═══════════════════════════ WHY NOT CHATGPT? ═══════════════════════════ */}
-      <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+      <section ref={diffReveal.ref as React.RefObject<HTMLElement>} className={`relative z-10 px-6 py-24 border-t border-white/[0.04] reveal ${diffReveal.isVisible ? 'visible' : ''}`}>
         <div className="max-w-4xl mx-auto">
           <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-3 text-center">{t('landing.differentiator.label')}</p>
           <p className="text-base sm:text-lg text-gray-400 text-center mb-12 font-light">{t('landing.differentiator.subtitle')}</p>
@@ -667,7 +784,7 @@ const SovereignLandingPage: React.FC = () => {
       </section>
 
       {/* ═══════════════════════════ FAQ ═══════════════════════════ */}
-      <section className="relative z-10 px-6 py-24 border-t border-white/[0.04]">
+      <section ref={faqReveal.ref as React.RefObject<HTMLElement>} className={`relative z-10 px-6 py-24 border-t border-white/[0.04] reveal ${faqReveal.isVisible ? 'visible' : ''}`}>
         <div className="max-w-3xl mx-auto">
           <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-12 text-center">{t('landing.faq.label')}</p>
 

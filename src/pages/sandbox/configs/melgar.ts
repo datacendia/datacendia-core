@@ -1,0 +1,302 @@
+/**
+ * FBC Melgar Sandbox Config
+ *
+ * 5 fully scripted scenarios for Arequipa's dominant club.
+ * Access: /sandbox/melgar (Key: MELGAR-26)
+ *
+ * @module pages/sandbox/configs/melgar
+ */
+
+// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
+
+import type { OrgSandboxConfig } from '../SandboxTemplate';
+import { ES_SCENARIOS } from './melgar-es';
+
+const config: OrgSandboxConfig = {
+  orgLabel: 'FBC MELGAR',
+  accessKey: 'MELGAR-26',
+  sessionKey: 'melgar-sandbox-unlocked',
+
+  accent: 'red',
+  accentColor: 'text-red-400',
+  accentHover: 'from-red-600 to-red-700 hover:from-red-500 hover:to-red-600',
+  ringColor: 'focus:ring-red-500/30',
+  borderColor: 'border-red-500/30',
+  gradientFrom: 'from-red-600/20',
+  gradientTo: 'to-red-900/20',
+
+  footerNote: '100 regulatory scenarios mapped for FBC Melgar · FPF, CONMEBOL, FIFA, SUNAT, INDECI, L1 Max, SUNAFIL, DS N° 115-2025-PCM',
+
+  i18n: {
+    footerNote: '100 escenarios regulatorios mapeados para FBC Melgar · FPF, CONMEBOL, FIFA, SUNAT, INDECI, L1 Max, SUNAFIL, DS N° 115-2025-PCM',
+    labels: {
+      dataConnectors: 'Conectores de Datos',
+      activeCouncil: 'Consejo Activo',
+      deliberationTitle: 'Deliberación Multi-Agente',
+      readyToBegin: 'Listo para comenzar',
+      phase: 'Fase',
+      deliberationComplete: 'Deliberación Completa — Consenso Alcanzado',
+      runDeliberation: 'Iniciar Deliberación',
+      generateReceipt: 'Generar Recibo del Regulador',
+      generatingBundle: 'Generando Paquete de Evidencia Criptográfica...',
+      simulationNote: 'NOTA DE SIMULACIÓN:',
+      selectScenario: 'Seleccionar Escenario',
+      reset: 'Reiniciar',
+      confidential: 'CONFIDENCIAL',
+      executiveSandbox: 'SANDBOX EJECUTIVO',
+      connectorLive: 'ACTIVO',
+      connectorSync: 'SYNC',
+      connectorReady: 'LISTO',
+    },
+    scenarios: ES_SCENARIOS,
+  },
+
+  scenarios: [
+    // SCENARIO 1 — L1 MAX BROADCASTING DISPUTE
+    {
+      id: 'l1max-broadcast',
+      title: 'L1 Max Broadcasting Dispute — Regional Revenue vs National Contract',
+      subtitle: 'Exclusive deal · Provincial attendance drop · INDECOPI competition · Club coalition · €9.29M squad',
+      banner: 'Simulating the broadcasting governance crisis gripping Peruvian football. L1 Max\'s exclusive OTT deal has shifted fans from stadiums to screens — Melgar\'s Arequipa fanbase reports 22% attendance decline. AI must govern Melgar\'s position in the club coalition challenging the deal while protecting revenue.',
+      risk: 'Critical',
+      scenarioNum: 'Broadcast',
+      icon: 'tv',
+      color: 'text-red-400',
+      agents: [
+        { id: 'broadcast-gov', name: 'Broadcasting Agent', role: 'Revenue Analysis & Contract Governance', icon: '📺', color: 'text-red-400', borderColor: 'border-red-500/40', bgColor: 'bg-red-500/10' },
+        { id: 'legal-broadcast', name: 'Legal Agent', role: 'INDECOPI Competition Law & Contract Analysis', icon: '⚖️', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'commercial-melgar', name: 'Commercial Agent', role: 'Attendance Impact & Sponsorship Modelling', icon: '📊', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'fan-engagement', name: 'Fan Engagement Agent', role: 'Arequipa Fanbase & Regional Identity', icon: '🏟️', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+      ],
+      connectors: [
+        { name: 'L1 Max Dashboard', status: 'connected', type: 'Broadcasting Data', icon: 'tv', detail: 'Melgar viewership: 185K avg — 3rd in Liga 1' },
+        { name: 'INDECOPI Portal', status: 'connected', type: 'Competition Authority', icon: 'scale', detail: 'Exclusive OTT deal under preliminary review' },
+        { name: 'Attendance System', status: 'connected', type: 'Gate Revenue', icon: 'users', detail: 'UNSA 45,000 cap — avg attendance down 22% YoY' },
+        { name: 'FPF Commercial', status: 'syncing', type: 'Revenue Distribution', icon: 'database', detail: 'Club coalition: 8 clubs challenging distribution formula' },
+      ],
+      script: [
+        { agentId: 'broadcast-gov', phase: 'phase1', type: 'warning', delay: 800, content: 'BROADCASTING GOVERNANCE CRISIS. L1 Max exclusive OTT deal analysis for Melgar: (1) Annual broadcast share: PEN 4.8M — 28% of total revenue. (2) Pre-L1 Max (free-to-air split): PEN 3.2M but attendance generated PEN 2.4M more in gate/F&B. Net position WORSE under L1 Max by ~PEN 800K/year. (3) Arequipa market: 1.1M metro, passionate fanbase, UNSA holds 45,000. Average attendance dropped from 28,000 to 21,800 (-22%). (4) L1 Max subscription: PEN 25/month — in a city where minimum wage is PEN 1,025. Price barrier excludes significant portion of Melgar\'s working-class fanbase. (5) 8-club coalition forming to challenge distribution — Melgar is the largest provincial club in the coalition.' },
+        { agentId: 'commercial-melgar', phase: 'phase1', type: 'analysis', delay: 2500, content: 'Commercial impact deep-dive: (1) Gate revenue: PEN 2.4M lost annually (6,200 fewer fans × PEN 25 avg ticket × 15 home matches). (2) Matchday F&B: PEN 480K lost (concessions proportional to attendance). (3) Sponsorship: Local sponsors (Cervecería del Sur, Socosani) tied to attendance — 2 sponsors reduced by 15% citing "fewer eyes in stadium." (4) Merchandise: 18% decline in matchday sales. (5) Total L1 Max-attributable revenue loss: PEN 3.6M. Against PEN 1.6M broadcast uplift = NET LOSS of PEN 2.0M annually. (6) For Lima clubs with smaller stadiums, L1 Max is net positive. For Arequipa\'s 45,000-seat UNSA, the math is devastatingly negative.' },
+        { agentId: 'legal-broadcast', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT LOGGED — COALITION STRATEGY RISK. INDECOPI analysis: (1) Ley de Libre Competencia (DL 1034): exclusive OTT deal may constitute abuse of dominant position IF no reasonable alternatives exist. (2) However: FPF collectively negotiated — clubs consented. Breaking collective deal risks FPF sanctions. (3) Coalition of 8 clubs lacks legal standing as separate entity — must act through FPF governance. (4) Precedent: Colombian clubs challenged Dimayor broadcasting — resulted in 18-month legal battle with NO matches broadcast. My dissent: Melgar should NOT lead public confrontation. Instead, propose governance reform WITHIN FPF — variable distribution formula that accounts for stadium size and regional market impact.' },
+        { agentId: 'fan-engagement', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — AREQUIPA IDENTITY AT STAKE. (1) Melgar is Arequipa\'s ONLY Liga 1 club — civic institution, not just football. (2) 68% of surveyed fans say they attend fewer matches because "I already paid for L1 Max." (3) Ultra groups organizing "No a L1 Max" protests — risk of stadium incidents. (4) Regional pride: Arequipeños view Lima-centric broadcasting as another example of centralism. L1 Max\'s Lima headquarters and Lima-focused marketing reinforces this. (5) Youth engagement: 14-22 age group shifted to pirate streams — L1 Max loses them, Melgar loses connection. (6) The broadcasting deal is eroding the club-community bond that makes Melgar valuable in the first place.' },
+        { agentId: 'broadcast-gov', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Datacendia Broadcasting Governance Protocol: (1) EVIDENCE PACKAGE: Document PEN 2.0M net annual loss with sealed financial analysis — present to FPF board. (2) REFORM PROPOSAL: Variable distribution formula — base share + attendance multiplier + regional market factor. Melgar\'s 45,000 UNSA generates more community value than 10,000-seat Lima venues. (3) HYBRID MODEL: Negotiate free-to-air delayed broadcast (24h) for Arequipa market to rebuild attendance. L1 Max retains live exclusivity. (4) INDECOPI: File formal competition analysis (not complaint) — creates regulatory pressure without confrontation. (5) SPONSORSHIP: Present sealed attendance data to sponsors showing recovery trajectory under hybrid model.' },
+        { agentId: 'legal-broadcast', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. Internal reform + hybrid model avoids Colombian-style catastrophe. Evidence-based approach through FPF governance is legally sound. INDECOPI analysis (not complaint) creates pressure without litigation risk. For CONMEBOL: demonstrates Melgar governs commercial decisions with data. For Arequipa: the hybrid model reconnects L1 Max subscribers AND stadium fans. The Regulator\'s Receipt seals Melgar\'s position: not anti-broadcasting, but pro-fair distribution. Arequipa\'s 1.1M people deserve equitable access to their club.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:mg10123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'mg20123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (Revenue analysis + Attendance impact + INDECOPI + Coalition + Hybrid model)',
+        complianceLabel: 'Broadcasting Governance',
+        complianceValue: 'PEN 2.0M NET ANNUAL LOSS DOCUMENTED',
+        complianceThreshold: 'FPF governance reform + INDECOPI analysis filed',
+        agents: ['Broadcasting Agent', 'Legal Agent', 'Commercial Agent', 'Fan Engagement Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'FBC Melgar — L1 Max Broadcasting Governance',
+        guaranteeBody: 'Cryptographic bundle seals: PEN 2.0M net loss documentation, 22% attendance decline analysis, INDECOPI competition filing, FPF reform proposal, hybrid model for Arequipa market, sponsorship recovery trajectory.',
+        evidenceChain: 'L1 Max data → Revenue analysis → Attendance (-22%) → Sponsor impact → INDECOPI → FPF reform → Hybrid model → Arequipa market → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will govern Melgar\'s response to the L1 Max broadcasting crisis — balancing revenue, competition law, fan engagement, and Arequipa\'s regional identity.',
+      phaseLabels: ['Revenue & Attendance Impact', 'Legal Strategy & Regional Identity', 'Hybrid Model & FPF Reform'],
+    },
+
+    // SCENARIO 2 — ESTADIO UNSA SAFETY & INDECI
+    {
+      id: 'unsa-safety',
+      title: 'Estadio Monumental UNSA — Safety Governance for 45,000-Seat Venue',
+      subtitle: 'INDECI certification · CONMEBOL inspection · Arequipa seismic zone · University partnership',
+      banner: 'Simulating venue safety governance for Melgar\'s shared university stadium. The UNSA sits in one of Peru\'s most seismically active zones — INDECI and CONMEBOL require earthquake-resilient emergency protocols that standard stadium governance cannot address.',
+      risk: 'High',
+      scenarioNum: 'Safety',
+      icon: 'shield',
+      color: 'text-amber-400',
+      agents: [
+        { id: 'venue-safety', name: 'Venue Safety Agent', role: 'INDECI Certification & Emergency Protocols', icon: '🏟️', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'seismic-agent', name: 'Seismic Risk Agent', role: 'Arequipa Earthquake & Volcanic Monitoring', icon: '🌋', color: 'text-red-400', borderColor: 'border-red-500/40', bgColor: 'bg-red-500/10' },
+        { id: 'conmebol-venue', name: 'CONMEBOL Agent', role: 'Continental Venue Standards', icon: '🏆', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'university-rel', name: 'University Relations Agent', role: 'UNSA Partnership & Dual-Use Governance', icon: '🎓', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+      ],
+      connectors: [
+        { name: 'INDECI Portal', status: 'connected', type: 'Civil Defence', icon: 'shield', detail: 'Arequipa Zone IV (highest seismic risk) — certification due' },
+        { name: 'IGP Seismic', status: 'connected', type: 'Earthquake Monitor', icon: 'activity', detail: 'Arequipa: 3 events >4.0 in last 90 days — Misti active' },
+        { name: 'CONMEBOL Venues', status: 'connected', type: 'Inspection', icon: 'check-circle', detail: 'Copa Libertadores venue inspection — Week 4' },
+        { name: 'UNSA Admin', status: 'syncing', type: 'University', icon: 'building', detail: 'Dual-use agreement: 18 match days + university events' },
+      ],
+      script: [
+        { agentId: 'venue-safety', phase: 'phase1', type: 'warning', delay: 800, content: 'VENUE SAFETY AUDIT — ESTADIO UNSA (45,000). INDECI assessment: (1) Evacuation: 14 minutes via 36 gates — INDECI requires 8 minutes for seismic zone IV. CRITICAL GAP. (2) Structural: Last seismic assessment 2019 — 6 years old. Post-2001 Arequipa earthquake (8.4 magnitude) retrofit was partial. (3) Fire: 298 of 320 extinguishers current. Tribune B lacks sprinkler coverage. (4) Emergency lighting: 4 generators — 1 failed last test. (5) Medical: 4 of 6 required stations operational. (6) Signage: 40% in Spanish only — CONMEBOL requires bilingual (Spanish/English) for continental matches.' },
+        { agentId: 'seismic-agent', phase: 'phase1', type: 'analysis', delay: 2500, content: 'AREQUIPA SEISMIC RISK — ELEVATED. (1) Zone IV: highest seismic classification in Peru. 3 significant events (>4.0) in 90 days. (2) Misti volcano: 17km from stadium — active monitoring. Last eruption 1985. IGP classification: "potentially active." (3) Historical: 2001 earthquake (8.4) caused partial stadium damage. 2024 swarm: 47 micro-events in Arequipa basin. (4) UNSA sits on alluvial soil — amplification factor 1.4x. (5) During a match with 45,000: a 6.0+ event during evacuation from upper tribunes creates crush risk. Current 14-minute evacuation is UNACCEPTABLE for seismic zone IV. (6) No earthquake-specific evacuation protocol exists — only generic INDECI template.' },
+        { agentId: 'university-rel', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT — DUAL-USE GOVERNANCE CONFLICT. UNSA owns the stadium. Melgar leases 18 matchdays. (1) Capital improvements require UNSA board approval — bureaucratic process (60-90 days). (2) UNSA\'s priority: academic events, graduation ceremonies. Football is secondary. (3) Melgar has invested PEN 2.8M in upgrades but UNSA controls scheduling. (4) Seismic retrofit: estimated PEN 4.5M. Who pays? Melgar\'s lease doesn\'t include structural obligations. (5) My dissent: Melgar cannot guarantee safety compliance at a venue it doesn\'t own. Either UNSA accepts shared safety governance with Melgar or Melgar must plan alternative venue contingency.' },
+        { agentId: 'conmebol-venue', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — CONMEBOL INSPECTION WEEK 4. Requirements: (1) Seismic certificate current (Melgar\'s is 6 years old — FAIL). (2) Evacuation under 10 minutes (14 — FAIL). (3) All medical stations operational (4/6 — FAIL). (4) Bilingual signage (40% non-compliant — FAIL). (5) VAR room climate-controlled (compliant). (6) Pitch: compliant. 4 of 6 CONMEBOL requirements FAIL. If Copa Libertadores venue is rejected, Melgar must play at neutral venue — likely Lima. Playing "home" Copa matches in Lima destroys Arequipa identity and matchday revenue.' },
+        { agentId: 'venue-safety', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Datacendia UNSA Safety Protocol: (1) JOINT GOVERNANCE: Propose Melgar-UNSA Safety Committee with quarterly reviews — Melgar funds football-related upgrades, UNSA funds structural. Evidence of agreement sealed. (2) SEISMIC: Commission independent assessment (2 weeks, PEN 85K). Earthquake-specific evacuation protocol for 45,000 — not generic INDECI. (3) EVACUATION: Clear Tribune B obstructions + add 4 emergency exits = target 9 minutes. (4) MEDICAL: Deploy 2 temporary stations for Copa matches. (5) SIGNAGE: Bilingual signage kit installed Week 2. (6) CONMEBOL PACKAGE: Present joint governance + seismic assessment + improvements as evidence of systematic safety management.' },
+        { agentId: 'university-rel', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. Joint Safety Committee resolves the dual-use governance gap. UNSA benefits: modern safety infrastructure serves university events too. Shared cost model is fair — structural (UNSA), operational (Melgar). For CONMEBOL: the joint governance model may be the first university-football safety partnership in South American football. For Arequipa: keeping Copa Libertadores at the UNSA means everything. 45,000 Arequipeños in their stadium, governed by the most rigorous safety protocol in provincial Peru.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:mg30123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'mg40123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (INDECI + Seismic assessment + CONMEBOL venue + UNSA joint governance + Evacuation)',
+        complianceLabel: 'Venue Safety',
+        complianceValue: '4 CONMEBOL GAPS — JOINT GOVERNANCE',
+        complianceThreshold: 'INDECI Zone IV · CONMEBOL Week 4 inspection',
+        agents: ['Venue Safety Agent', 'Seismic Risk Agent', 'CONMEBOL Agent', 'University Relations Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'FBC Melgar — UNSA Seismic Safety Governance',
+        guaranteeBody: 'Seals: UNSA 45,000 audit, 4 CONMEBOL gaps, seismic Zone IV assessment, joint Melgar-UNSA Safety Committee, earthquake-specific evacuation protocol, bilingual signage, Copa venue defence.',
+        evidenceChain: 'INDECI audit → Seismic risk → UNSA dual-use → CONMEBOL gaps → Joint committee → Evacuation (9 min) → Medical → Signage → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will govern venue safety at Peru\'s most seismically exposed stadium — resolving dual-use governance and defending Copa Libertadores hosting.',
+      phaseLabels: ['Safety Audit & Seismic Risk', 'Dual-Use Governance & CONMEBOL', 'Joint Safety Protocol'],
+    },
+
+    // SCENARIO 3 — AREQUIPA ALTITUDE GOVERNANCE (2,335m)
+    {
+      id: 'altitude-arequipa',
+      title: 'Arequipa Altitude Governance — 2,335m Medical & Competitive Protocols',
+      subtitle: 'Moderate altitude · Acclimatisation · SpO2 monitoring · FIFA 2007 debate · Visitor welfare',
+      banner: 'Simulating altitude governance at Arequipa\'s 2,335m — moderate altitude that sits just below FIFA\'s historical 2,500m threshold. While less extreme than Cusco (3,400m), visiting teams from sea-level Lima still experience measurable physiological impact requiring governance.',
+      risk: 'Medium',
+      scenarioNum: 'Altitude',
+      icon: 'mountain',
+      color: 'text-cyan-400',
+      agents: [
+        { id: 'medical-alt', name: 'Medical Agent', role: 'Altitude Physiology & Player Welfare', icon: '🏥', color: 'text-cyan-400', borderColor: 'border-cyan-500/40', bgColor: 'bg-cyan-500/10' },
+        { id: 'sporting-alt', name: 'Sporting Agent', role: 'Competitive Equity & Acclimatisation', icon: '⚽', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+        { id: 'legal-alt', name: 'Legal Agent', role: 'FIFA Regulations & Liability Framework', icon: '⚖️', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'data-alt', name: 'Data Analytics Agent', role: 'Historical Performance & Physiological Modelling', icon: '📊', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+      ],
+      connectors: [
+        { name: 'Altitude Monitor', status: 'connected', type: 'Physiology', icon: 'heart', detail: 'Visitor SpO2: 93% avg at 2,335m (normal: 96-99%)' },
+        { name: 'FIFA Research', status: 'connected', type: 'Altitude Studies', icon: 'database', detail: '2007 ban threshold: 2,500m — Arequipa is 165m below' },
+        { name: 'Performance Data', status: 'connected', type: 'Match Analytics', icon: 'bar-chart', detail: 'Visitor win rate at UNSA: 24% vs 38% league average' },
+        { name: 'Medical Protocol', status: 'syncing', type: 'Player Health', icon: 'activity', detail: 'Pre-match SpO2 assessment framework under development' },
+      ],
+      script: [
+        { agentId: 'medical-alt', phase: 'phase1', type: 'warning', delay: 800, content: 'ALTITUDE ASSESSMENT — 2,335m AREQUIPA. Physiological impact on visiting teams: (1) SpO2: average 93% vs 96-99% at sea level — measurable but not symptomatic for most. (2) VO2 max reduction: 8-12% (vs 15-25% at 3,400m Cusco). (3) Heart rate: +10-12% elevation. (4) Recovery: slower between high-intensity efforts. (5) Historical incidents: 2 visitors required oxygen in last 3 seasons (pre-existing conditions). (6) Key difference from extreme altitude: 2,335m rarely causes AMS (acute mountain sickness). Headache/nausea in <5% of visitors. However, athletic performance IS measurably impacted — the question is governance, not emergency.' },
+        { agentId: 'data-alt', phase: 'phase1', type: 'analysis', delay: 2500, content: 'PERFORMANCE DATA — 5 SEASONS. (1) Melgar home win rate: 62% (league avg home: 48%). (2) Visitor win rate at UNSA: 24% (league avg away: 38%). (3) Visitor goals per match: 0.8 (league avg: 1.2). (4) 2nd half visitor performance drops 18% (fatigue amplified by altitude). (5) Substitution patterns: visitors average 0.4 more subs per match at UNSA vs sea-level venues. (6) Comparison: Cusco (3,400m) visitor win rate 18%, Juliaca (3,827m) 15%. Arequipa\'s 24% shows moderate but significant advantage. (7) Pattern: visiting teams that arrive 12+ hours early perform 15% better than same-day arrivals.' },
+        { agentId: 'legal-alt', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT — VOLUNTARY vs MANDATORY GOVERNANCE. (1) FIFA\'s 2007 ban was at 2,500m — Arequipa at 2,335m was NEVER restricted. (2) No FPF regulation requires altitude protocols below 2,500m. (3) CONMEBOL: no specific altitude requirements at this elevation. (4) My dissent: implementing formal altitude governance at 2,335m creates a PRECEDENT that could be used against Peruvian altitude football. If Melgar voluntarily says "our altitude needs governance," FIFA could extend restrictions. The 2007 coalition (Bolivia/Peru/Ecuador) fought to REMOVE restrictions. Adding them voluntarily undermines that fight.' },
+        { agentId: 'sporting-alt', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — COMPETITIVE CONTEXT. (1) Melgar\'s home advantage IS their competitive edge — €9.29M squad can\'t compete with Lima clubs (€11-14.7M) on talent alone. (2) Arequipa\'s altitude is part of the competitive landscape, not a hazard. (3) However: 2 oxygen incidents create liability exposure. (4) If Melgar documents that it PROACTIVELY manages visitor welfare at moderate altitude, it strengthens the argument that Peruvian football governs altitude responsibly — which helps Cusco (3,400m) and Juliaca (3,827m) keep their matches.' },
+        { agentId: 'medical-alt', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Datacendia Moderate Altitude Protocol (2,335m): (1) VOLUNTARY BEST PRACTICE — not regulatory requirement. Framed as "visitor welfare" not "altitude restriction." (2) PRE-MATCH: SpO2 check offered (not mandatory). Results sealed but not published. (3) RECOMMENDATION: 12h arrival for visiting teams (recommendation, not requirement). Data shows 15% performance improvement. (4) MEDICAL: Oxygen stations at pitch-side + 2 tribune positions. Already good practice — now documented. (5) DATA CONTRIBUTION: Anonymised physiological data contributed to FPF/FIFA altitude research — positions Melgar as governance leader. (6) FRAMING: "Melgar demonstrates that altitude IS governed responsibly at every elevation in Peru."' },
+        { agentId: 'legal-alt', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. "Voluntary best practice" framing resolves the precedent concern. By positioning this as visitor welfare (not altitude restriction), Melgar contributes to Peru\'s altitude defence. The sealed data creates an evidence base: "At 2,335m, incidents are rare and managed — this supports, not undermines, altitude football." For FIFA: if the 2007 debate ever resurfaces, Peru can show governance at EVERY elevation — from sea-level Lima to 3,827m Juliaca. Melgar fills the moderate-altitude gap in that evidence chain.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:mg50123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'mg60123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (SpO2 data + Performance analytics + Voluntary protocol + FIFA altitude defence)',
+        complianceLabel: 'Altitude Governance',
+        complianceValue: 'VOLUNTARY BEST PRACTICE — 2,335m',
+        complianceThreshold: 'Below FIFA 2,500m threshold — proactive governance',
+        agents: ['Medical Agent', 'Sporting Agent', 'Legal Agent', 'Data Analytics Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'FBC Melgar — Moderate Altitude Governance',
+        guaranteeBody: 'Seals: 2,335m voluntary protocol, SpO2 visitor assessment, 5-season performance analysis, 12h arrival recommendation, FIFA altitude defence contribution, medical readiness documentation.',
+        evidenceChain: 'Altitude data → SpO2 (93%) → Performance (5yr) → Voluntary protocol → FIFA defence → Medical → Data contribution → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will develop voluntary altitude governance — positioning Melgar as a responsible steward of moderate-altitude football while defending Peru\'s right to play at elevation.',
+      phaseLabels: ['Physiological & Performance Data', 'Precedent Risk & Competitive Context', 'Voluntary Best Practice Protocol'],
+    },
+
+    // SCENARIO 4 — YOUTH ACADEMY REGIONAL PIPELINE
+    {
+      id: 'youth-arequipa',
+      title: 'Youth Academy — Arequipa Regional Development Pipeline',
+      subtitle: 'Southern Peru talent · CNA compliance · FIFA Article 19 · Education integration · Provincial pride',
+      banner: 'Simulating youth development governance for southern Peru\'s primary talent pipeline. Melgar\'s academy draws from Arequipa, Tacna, Moquegua, and Puno — governing education, safeguarding, and family separation for minors from Peru\'s poorest regions.',
+      risk: 'High',
+      scenarioNum: 'Youth',
+      icon: 'users',
+      color: 'text-emerald-400',
+      agents: [
+        { id: 'youth-safeguard', name: 'Safeguarding Agent', role: 'CNA Compliance & Minor Protection', icon: '👦', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+        { id: 'education-agent', name: 'Education Agent', role: 'Ley General de Educación & School Verification', icon: '📚', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'regional-dev', name: 'Regional Development Agent', role: 'Southern Peru Talent & Community Impact', icon: '🌍', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'welfare-youth', name: 'Welfare Agent', role: 'Health, Nutrition & Family Connection', icon: '💚', color: 'text-cyan-400', borderColor: 'border-cyan-500/40', bgColor: 'bg-cyan-500/10' },
+      ],
+      connectors: [
+        { name: 'FPF Youth Registry', status: 'connected', type: 'Player Registration', icon: 'database', detail: '38 academy players 12-18 — 14 from outside Arequipa' },
+        { name: 'MINEDU Portal', status: 'connected', type: 'Education Verification', icon: 'book-open', detail: 'School enrolment check for all 38 minors' },
+        { name: 'MIMP Coordination', status: 'connected', type: 'Child Protection', icon: 'shield', detail: 'DEMUNA registration for 14 non-local minors' },
+        { name: 'Family Contact System', status: 'syncing', type: 'Communication', icon: 'phone', detail: 'Monthly family reports — 3 families unreachable' },
+      ],
+      script: [
+        { agentId: 'youth-safeguard', phase: 'phase1', type: 'warning', delay: 800, content: 'SAFEGUARDING AUDIT — 38 ACADEMY MINORS. (1) Parental consent: 36/38 verified. 2 players from Puno (ages 13, 14) have consent from "family friend" — legally insufficient under CNA Ley 27337. (2) DEMUNA registration: 14 non-local minors — 11 registered with Arequipa DEMUNA, 3 NOT registered. (3) Education: 35/38 enrolled. 3 with attendance below 55% (training conflicts). (4) Medical: 38 annual certificates. 2 minors from Tacna without dental checks. (5) Residential: 14 in academy housing — last independent inspection 20 months ago. (6) Family contact: 11 families in regular contact. 3 families from remote Puno villages — no phone, no internet. Letters sent but unconfirmed receipt.' },
+        { agentId: 'education-agent', phase: 'phase1', type: 'analysis', delay: 2500, content: 'EDUCATION ANALYSIS. 3 players below 55% attendance: (1) Player A (15, Moquegua): 52% — afternoon training overlaps Tuesday/Thursday school. (2) Player B (14, Puno): 48% — language barrier. Quechua first language, struggling in Spanish-medium school. No academic support provided by club. (3) Player C (16, Arequipa): 54% — FPF U-17 call-ups counted as absences. Under Ley 28044: education is non-negotiable. Player B\'s situation is particularly concerning — a 14-year-old Quechua speaker relocated 400km from home without language support is not just an education failure, it\'s a welfare failure.' },
+        { agentId: 'regional-dev', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT — REGIONAL DEVELOPMENT TENSION. (1) Melgar is southern Peru\'s ONLY elite academy. Without it, talent from Tacna, Moquegua, Puno has no pathway except Lima (1,000km away). (2) Closing gaps is essential, but overly restrictive protocols could reduce regional intake — pushing families toward unregistered "academies" (FPF Peru Scenario 4 documented this). (3) My dissent: the 3 unreachable families from remote Puno cannot be contacted by standard methods. Sending Melgar staff to villages costs PEN 3,500 per trip. On Melgar\'s budget, this is significant. (4) SOLUTION MUST BE: proportionate to a provincial club\'s resources. Lima standards applied rigidly to Arequipa realities will fail.' },
+        { agentId: 'welfare-youth', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — IMMEDIATE WELFARE CONCERNS. (1) Player B (14, Quechua speaker): isolated, academic failure, 400km from family, no language support = high vulnerability. Risk of dropout and exploitation. (2) 3 unreachable families: if families don\'t know where their children are, CNA Art. 8 (right to live with family) is compromised. (3) Academy housing: 20-month inspection gap. (4) Nutrition: 2 players from Puno showing signs of protein deficiency — altitude adjustment from 3,827m to 2,335m affects appetite. (5) Psychological support: zero. 14-year-olds separated from families in a different culture need structured wellbeing support.' },
+        { agentId: 'youth-safeguard', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Datacendia Regional Youth Protocol: (1) IMMEDIATE: Player B — Quechua tutor + academic support. 2 Puno players — suspend until legal guardian consent obtained. DEMUNA registration for 3 unregistered. Housing inspection within 10 days. (2) FAMILY CONTACT: Partner with Puno DEMUNA for in-person family visits. Cost-shared with FPF regional development fund. (3) EDUCATION: Zero school-hour training conflicts. FPF call-ups coordinated with MINEDU. Below 65% triggers suspension. (4) NUTRITION: Altitude-transition dietary programme. (5) WELLBEING: Quarterly psychological assessments. Quechua-speaking counsellor for Puno/Cusco minors. (6) PROPORTIONATE: Protocol scaled to provincial club resources — FPF co-funding for regional welfare.' },
+        { agentId: 'regional-dev', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. FPF co-funding makes regional welfare proportionate. DEMUNA partnerships leverage existing infrastructure. The protocol doesn\'t restrict regional intake — it makes it SAFER. For CONMEBOL: Melgar\'s regional academy becomes a model for provincial youth development across South America. For southern Peru: 14 non-local minors deserve the same safeguarding as Lima academy players. Melgar\'s mission — developing Arequipa\'s talent — is only legitimate if every child is protected. The Regulator\'s Receipt proves they are.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:mg70123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'mg80123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (CNA audit + Education + DEMUNA + Family contact + Regional welfare)',
+        complianceLabel: 'Youth Safeguarding',
+        complianceValue: '2 SUSPENSIONS + QUECHUA SUPPORT',
+        complianceThreshold: 'CNA Ley 27337 + Ley 28044 + FPF Regional',
+        agents: ['Safeguarding Agent', 'Education Agent', 'Regional Development Agent', 'Welfare Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'FBC Melgar — Regional Youth Academy Governance',
+        guaranteeBody: 'Seals: 38-minor audit, 2 consent suspensions, 3 education interventions, Quechua language support, DEMUNA partnerships, family contact protocol, FPF co-funded regional welfare.',
+        evidenceChain: 'Audit (38) → Consent (2 gaps) → Education (3 below 55%) → Player B (Quechua) → DEMUNA → Family visits → Nutrition → Housing → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will govern southern Peru\'s primary youth pipeline — ensuring safeguarding, education, and family connection for minors from the country\'s poorest regions.',
+      phaseLabels: ['Safeguarding & Education Audit', 'Regional Challenges & Welfare', 'Proportionate Regional Protocol'],
+    },
+
+    // SCENARIO 5 — COPA LIBERTADORES FINANCIAL SUSTAINABILITY
+    {
+      id: 'copa-finance',
+      title: 'Copa Libertadores Financial Sustainability — Provincial Club in Continental Competition',
+      subtitle: '€9.29M squad · CONMEBOL licensing · SUNAT compliance · Travel costs · Squad depth',
+      banner: 'Simulating financial governance for a provincial club competing in the Copa Libertadores. Melgar\'s €9.29M squad must navigate continental travel costs, prize money allocation, SUNAT obligations on international income, and CONMEBOL financial fair play — all on a budget 37% smaller than Universitario.',
+      risk: 'High',
+      scenarioNum: 'Finance',
+      icon: 'landmark',
+      color: 'text-blue-400',
+      agents: [
+        { id: 'financial-copa', name: 'Financial Agent', role: 'Copa Budget & Cash Flow Management', icon: '💰', color: 'text-blue-400', borderColor: 'border-blue-500/40', bgColor: 'bg-blue-500/10' },
+        { id: 'conmebol-fin', name: 'CONMEBOL Licensing Agent', role: 'Financial Fair Play & Indicators', icon: '🏆', color: 'text-amber-400', borderColor: 'border-amber-500/40', bgColor: 'bg-amber-500/10' },
+        { id: 'sunat-intl', name: 'SUNAT Agent', role: 'International Income & Tax Treaties', icon: '🏛️', color: 'text-red-400', borderColor: 'border-red-500/40', bgColor: 'bg-red-500/10' },
+        { id: 'sporting-depth', name: 'Sporting Agent', role: 'Squad Management & Continental Rotation', icon: '⚽', color: 'text-emerald-400', borderColor: 'border-emerald-500/40', bgColor: 'bg-emerald-500/10' },
+      ],
+      connectors: [
+        { name: 'CONMEBOL Finance', status: 'connected', type: 'Club Licensing', icon: 'check-circle', detail: 'Financial indicators: AMBER — overdue payables threshold' },
+        { name: 'SUNAT International', status: 'connected', type: 'Tax Compliance', icon: 'landmark', detail: 'Copa prize money: withholding on foreign-source income' },
+        { name: 'Travel Budget', status: 'connected', type: 'Cost Management', icon: 'plane', detail: 'Group stage: 3 away matches — avg $45K per trip from Arequipa' },
+        { name: 'Cash Flow Model', status: 'syncing', type: 'Financial Planning', icon: 'bar-chart', detail: 'Monthly surplus: PEN 180K — Copa costs: PEN 540K/trip' },
+      ],
+      script: [
+        { agentId: 'financial-copa', phase: 'phase1', type: 'warning', delay: 800, content: 'COPA LIBERTADORES FINANCIAL ANALYSIS. Melgar Group Stage budget: (1) Prize money: $1.0M guaranteed (group stage). If advance: $1.5M (R16). (2) Travel: 3 away matches from Arequipa. Buenos Aires: $48K. São Paulo: $52K. Bogotá: $38K. Total travel: $138K (~PEN 540K). (3) Squad reinforcement for continental depth: PEN 2.1M (3 players). (4) Additional matchday staff, security, medical for CONMEBOL standards: PEN 320K. (5) Total Copa investment: ~PEN 3.5M. (6) Monthly surplus: PEN 180K. Copa costs EXCEED 19 months of surplus. (7) Timing: costs are front-loaded (travel, reinforcements) but prize money arrives after group stage completion. Cash flow gap: PEN 2.8M for 4 months.' },
+        { agentId: 'conmebol-fin', phase: 'phase1', type: 'analysis', delay: 2500, content: 'CONMEBOL Financial Fair Play assessment: (1) Current indicators: AMBER. Overdue payables: PEN 420K (2 suppliers, 1 SUNAT installment). (2) Copa investment pushes debt-to-revenue ratio from 0.62 to 0.78 — still below 0.80 RED threshold, but margin is razor-thin. (3) Wage-to-revenue: currently 68%. Adding 3 reinforcements pushes to 74% — AMBER remains but approaches RED (75%). (4) Going concern: if Melgar is eliminated in group stage AND doesn\'t sell any players, there\'s a 4-month cash deficit post-Copa. (5) CONMEBOL requires "reasonable expectation of financial continuity." Current trajectory requires prize money OR transfer income to maintain continuity.' },
+        { agentId: 'sunat-intl', phase: 'phase2', type: 'dissent', delay: 2000, content: 'DISSENT — SUNAT INTERNATIONAL INCOME. (1) Copa prize money ($1.0M = ~PEN 3.9M): foreign-source income, fully taxable. Impuesto a la Renta: 29.5% = PEN 1.15M. (2) CONMEBOL pays in USD — exchange rate risk over 4-month group stage. (3) Melgar\'s existing SUNAT installment plan: missing ONE payment = acceleration of entire debt. Copa cash flow gap makes this likely in Month 2. (4) Agent fees for 3 reinforcements: deductibility requires FIFA FFAR compliance documentation. (5) My dissent: Melgar should NOT sign 3 reinforcements before securing bridge financing. If Copa cash flow gap forces missed SUNAT payment, the entire installment plan collapses — Copa becomes financially destructive.' },
+        { agentId: 'sporting-depth', phase: 'phase2', type: 'flag', delay: 2500, content: 'FLAG — SQUAD DEPTH REALITY. (1) Liga 1 + Copa requires 40+ competitive matches. Current squad: 26. Industry minimum for dual competition: 28-30. (2) 3 reinforcements is minimum, not luxury. Without depth: injury/suspension gaps force youth players into continental competition prematurely. (3) Alternative: 2 reinforcements (PEN 1.4M vs 2.1M) + promote 2 academy graduates. Saves PEN 700K but increases sporting risk. (4) Continental rotation: Melgar\'s first team plays Thursday (Copa) then Sunday (Liga 1) — recovery at 2,335m altitude is 15% slower than sea level. Squad depth is a welfare issue, not just sporting.' },
+        { agentId: 'financial-copa', phase: 'phase3', type: 'proposal', delay: 2000, content: 'Datacendia Copa Financial Protocol: (1) BRIDGE FINANCING: PEN 2.8M short-term credit facility against Copa prize money receivable. Negotiate with local bank using CONMEBOL payment schedule as collateral. (2) STAGGERED REINFORCEMENTS: Sign 2 immediately (PEN 1.4M) + 1 on loan with option (defers PEN 700K). (3) SUNAT PROTECTION: Ring-fence 2 SUNAT installments (PEN 360K) before any Copa spending. Never miss a payment. (4) CONMEBOL: Monthly financial reporting with sealed evidence — proactive compliance. (5) CONTINGENCY: If eliminated in group stage, player sale (1 first-team) covers deficit. Target identified, valuation sealed, not activated unless needed. (6) PRIZE MONEY: 40% debt reduction, 30% squad, 20% infrastructure, 10% academy.' },
+        { agentId: 'sunat-intl', phase: 'phase3', type: 'resolution', delay: 2500, content: 'DISSENT WITHDRAWN. SUNAT ring-fencing + bridge financing resolves the cash flow gap without risking the installment plan. Loan-with-option reduces front-loaded cost. For CONMEBOL: Melgar demonstrates that a provincial club with PEN 180K monthly surplus can compete continentally WITH governance — not recklessly. The contingency plan (player sale if eliminated) shows financial maturity. For Arequipa: Copa Libertadores is the city\'s biggest sporting moment. Governed properly, it strengthens the club. Governed recklessly, it could destroy it. The Regulator\'s Receipt ensures the former.' },
+      ],
+      receiptTemplate: {
+        hash: 'SHA-256:mg90123456789abcdef0123456789abcdef0123456789abcdef012345678abcde',
+        merkleRoot: 'mga0123456789abcdef0123456789abcdef0123456789abcdef012345678abcdef',
+        merkleLabel: 'Merkle Tree Root (Copa budget + Bridge finance + SUNAT ring-fence + CONMEBOL FFP + Contingency)',
+        complianceLabel: 'Financial Sustainability',
+        complianceValue: 'BRIDGE FINANCE + SUNAT RING-FENCE',
+        complianceThreshold: 'CONMEBOL debt-to-revenue < 0.80 · SUNAT installments protected',
+        agents: ['Financial Agent', 'CONMEBOL Licensing Agent', 'SUNAT Agent', 'Sporting Agent'],
+        dissents: 1,
+        dissentResolved: true,
+        guaranteeTitle: 'FBC Melgar — Copa Libertadores Financial Governance',
+        guaranteeBody: 'Seals: PEN 3.5M Copa budget, bridge financing against prize money, SUNAT ring-fence (PEN 360K), staggered reinforcements, CONMEBOL FFP compliance, contingency player sale, prize money allocation.',
+        evidenceChain: 'Copa draw → Budget (PEN 3.5M) → Cash gap (PEN 2.8M) → Bridge finance → SUNAT ring-fence → Reinforcements → CONMEBOL → Contingency → Prize allocation → ML-DSA-65 seal',
+      },
+      idleTitle: 'Ready to Deliberate',
+      idleDesc: '4 AI agents will govern Copa Libertadores finances for a provincial club — ensuring continental ambition doesn\'t destroy financial stability.',
+      phaseLabels: ['Copa Budget & Cash Flow Gap', 'SUNAT & CONMEBOL Risk', 'Bridge Finance & Contingency'],
+    },
+  ],
+};
+
+export default config;

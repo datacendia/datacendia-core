@@ -131,6 +131,25 @@ const CanvaSandboxPage = lazy(() => import('../pages/sandbox/CanvaSandboxPage'))
 const DanelfinSandboxPage = lazy(() => import('../pages/sandbox/DanelfinSandboxPage'));
 const KavoutSandboxPage = lazy(() => import('../pages/sandbox/KavoutSandboxPage'));
 
+// Peru Liga 1 Club Sandboxes
+const UniversitarioSandboxPage = lazy(() => import('../pages/sandbox/UniversitarioSandboxPage'));
+const AlianzaLimaSandboxPage = lazy(() => import('../pages/sandbox/AlianzaLimaSandboxPage'));
+const SportingCristalSandboxPage = lazy(() => import('../pages/sandbox/SportingCristalSandboxPage'));
+const MelgarSandboxPage = lazy(() => import('../pages/sandbox/MelgarSandboxPage'));
+const CuscoFcSandboxPage = lazy(() => import('../pages/sandbox/CuscoFcSandboxPage'));
+const AdtSandboxPage = lazy(() => import('../pages/sandbox/AdtSandboxPage'));
+
+// Investor Sandboxes
+const MozillaSandboxPage = lazy(() => import('../pages/sandbox/MozillaSandboxPage'));
+const LuxCapitalSandboxPage = lazy(() => import('../pages/sandbox/LuxCapitalSandboxPage'));
+const WingVcSandboxPage = lazy(() => import('../pages/sandbox/WingVcSandboxPage'));
+const NfxSandboxPage = lazy(() => import('../pages/sandbox/NfxSandboxPage'));
+const IndexVenturesSandboxPage = lazy(() => import('../pages/sandbox/IndexVenturesSandboxPage'));
+const GeneralCatalystSandboxPage = lazy(() => import('../pages/sandbox/GeneralCatalystSandboxPage'));
+
+// Banking Sandboxes
+const ScotiabankSandboxPage = lazy(() => import('../pages/sandbox/ScotiabankSandboxPage'));
+
 // EU & Latin America Sandboxes
 const SapSandboxPage = lazy(() => import('../pages/sandbox/SapSandboxPage'));
 const FepcmacSandboxPage = lazy(() => import('../pages/sandbox/FepcmacSandboxPage'));
@@ -217,6 +236,18 @@ export const publicRoutes: RouteObject[] = [
   { path: '/sandbox/burnley', element: w(BurnleySandboxPage) },
   { path: '/sandbox/fpf-peru', element: w(FpfPeruSandboxPage) },
   { path: '/sandbox/peru', element: w(FpfPeruSandboxPage) },
+  { path: '/sandbox/universitario', element: w(UniversitarioSandboxPage) },
+  { path: '/sandbox/la-u', element: w(UniversitarioSandboxPage) },
+  { path: '/sandbox/alianza-lima', element: w(AlianzaLimaSandboxPage) },
+  { path: '/sandbox/alianza', element: w(AlianzaLimaSandboxPage) },
+  { path: '/sandbox/sporting-cristal', element: w(SportingCristalSandboxPage) },
+  { path: '/sandbox/cristal', element: w(SportingCristalSandboxPage) },
+  { path: '/sandbox/melgar', element: w(MelgarSandboxPage) },
+  { path: '/sandbox/fbc-melgar', element: w(MelgarSandboxPage) },
+  { path: '/sandbox/cusco-fc', element: w(CuscoFcSandboxPage) },
+  { path: '/sandbox/cusco', element: w(CuscoFcSandboxPage) },
+  { path: '/sandbox/adt', element: w(AdtSandboxPage) },
+  { path: '/sandbox/tarma', element: w(AdtSandboxPage) },
   { path: '/sandbox/thomson-reuters', element: w(ThomsonReutersSandboxPage) },
   { path: '/sandbox/tr', element: w(ThomsonReutersSandboxPage) },
   { path: '/sandbox/lexisnexis', element: w(LexisNexisSandboxPage) },
@@ -255,6 +286,36 @@ export const publicRoutes: RouteObject[] = [
   // Financial AI Sandboxes
   { path: '/sandbox/danelfin', element: w(DanelfinSandboxPage) },
   { path: '/sandbox/kavout', element: w(KavoutSandboxPage) },
+
+  // Peru Liga 1 Club Sandboxes
+  { path: '/sandbox/universitario', element: w(UniversitarioSandboxPage) },
+  { path: '/sandbox/u', element: w(UniversitarioSandboxPage) },
+  { path: '/sandbox/alianza-lima', element: w(AlianzaLimaSandboxPage) },
+  { path: '/sandbox/alianza', element: w(AlianzaLimaSandboxPage) },
+  { path: '/sandbox/sporting-cristal', element: w(SportingCristalSandboxPage) },
+  { path: '/sandbox/cristal', element: w(SportingCristalSandboxPage) },
+  { path: '/sandbox/melgar', element: w(MelgarSandboxPage) },
+  { path: '/sandbox/cusco-fc', element: w(CuscoFcSandboxPage) },
+  { path: '/sandbox/adt', element: w(AdtSandboxPage) },
+
+  // Investor Sandboxes
+  { path: '/sandbox/mozilla', element: w(MozillaSandboxPage) },
+  { path: '/sandbox/mozilla-ventures', element: w(MozillaSandboxPage) },
+  { path: '/sandbox/moz', element: w(MozillaSandboxPage) },
+  { path: '/sandbox/lux', element: w(LuxCapitalSandboxPage) },
+  { path: '/sandbox/lux-capital', element: w(LuxCapitalSandboxPage) },
+  { path: '/sandbox/wing', element: w(WingVcSandboxPage) },
+  { path: '/sandbox/wing-vc', element: w(WingVcSandboxPage) },
+  { path: '/sandbox/nfx', element: w(NfxSandboxPage) },
+  { path: '/sandbox/nfx-currier', element: w(NfxSandboxPage) },
+  { path: '/sandbox/index', element: w(IndexVenturesSandboxPage) },
+  { path: '/sandbox/index-ventures', element: w(IndexVenturesSandboxPage) },
+  { path: '/sandbox/gc', element: w(GeneralCatalystSandboxPage) },
+  { path: '/sandbox/general-catalyst', element: w(GeneralCatalystSandboxPage) },
+
+  // Banking Sandboxes
+  { path: '/sandbox/scotiabank', element: w(ScotiabankSandboxPage) },
+  { path: '/sandbox/scotia', element: w(ScotiabankSandboxPage) },
 
   // EU & Latin America Sandboxes
   { path: '/sandbox/sap', element: w(SapSandboxPage) },

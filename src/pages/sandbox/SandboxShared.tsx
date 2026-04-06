@@ -9,12 +9,13 @@
 
 // Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import {
   Shield, Lock, ChevronRight, AlertTriangle, CheckCircle, XCircle,
-  Radio, Activity, FileText, Download, Users, Zap,
+  Radio, Activity, FileText, Download, Users, Zap, Info,
   Database, ShieldCheck, Fingerprint, Link2, Play, RotateCcw,
   TrendingUp, Clock, Share, Eye, BarChart3, ChevronDown,
+  Search, ArrowRight, PanelRightOpen, X,
 } from 'lucide-react';
 import { ComplianceScore, DecisionTimeline, EvidenceExplorer, ExportSharePanel, PreMortemAnalysis, GhostBoard, DecisionDebtTracker, ChronosTimeline, LiveDemoMode } from './SandboxEnhanced';
 import Rule11Certification from './Rule11Certification';
@@ -402,7 +403,10 @@ export const AgentCard: React.FC<{ agent: Agent; active: boolean; speaking: bool
 // COMPONENT — MESSAGE BUBBLE
 // =============================================================================
 
-export const MessageBubble: React.FC<{ msg: AgentMessage; agents: Agent[]; visible: boolean }> = ({ msg, agents, visible }) => {
+export const MessageBubble: React.FC<{
+  msg: AgentMessage; agents: Agent[]; visible: boolean;
+  selected?: boolean; onSelect?: () => void;
+}> = ({ msg, agents, visible, selected, onSelect }) => {
   const agent = agents.find((a) => a.id === msg.agentId);
   if (!visible || !agent) return null;
   const typeStyles: Record<string, string> = {
@@ -420,11 +424,24 @@ export const MessageBubble: React.FC<{ msg: AgentMessage; agents: Agent[]; visib
   };
   const badge = typeBadges[msg.type];
   return (
-    <div className={`border-l-2 ${typeStyles[msg.type]} pl-4 py-3 animate-fadeIn`}>
+    <div
+      role="button"
+      tabIndex={0}
+      aria-label={`${agent.name} ${badge.label}: ${msg.content.slice(0, 80)}...`}
+      aria-pressed={selected}
+      onClick={onSelect}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onSelect?.(); } }}
+      className={`border-l-2 ${typeStyles[msg.type]} pl-4 py-3 animate-fadeIn cursor-pointer transition-all duration-200 rounded-r-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20 ${
+        selected
+          ? 'bg-white/[0.06] ring-1 ring-white/10'
+          : 'hover:bg-white/[0.03]'
+      }`}
+    >
       <div className="flex items-center gap-2 mb-1.5">
         <span className="text-lg">{agent.icon}</span>
         <span className={`text-xs font-semibold ${agent.color}`}>{agent.name}</span>
         <span className={`text-[9px] font-bold tracking-wider px-2 py-0.5 rounded-full ${badge.color}`}>{badge.label}</span>
+        {selected && <Eye className="w-3 h-3 text-white/30 ml-auto" />}
       </div>
       <p className="text-sm text-white/80 leading-relaxed">{msg.content}</p>
     </div>
@@ -520,6 +537,309 @@ export const RegulatorsReceipt: React.FC<{ receipt: ReceiptData; accent?: string
 };
 
 // =============================================================================
+// HELPERS — Parse reasoning steps from message content
+// =============================================================================
+
+interface ReasoningStep {
+  label: string;
+  detail: string;
+  status: 'complete' | 'active' | 'pending';
+  icon: React.ReactNode;
+}
+
+/** Extract reasoning steps from an agent message. Parses numbered items, key statements, and conclusions. */
+function deriveReasoningSteps(msg: AgentMessage, agent: Agent): ReasoningStep[] {
+  const content = msg.content;
+  const steps: ReasoningStep[] = [];
+
+  // Step 1: Always starts with data ingestion
+  steps.push({
+    label: 'Data Ingestion',
+    detail: `${agent.name} connected to governance data sources and regulatory frameworks.`,
+    status: 'complete',
+    icon: <Database className="w-3 h-3" />,
+  });
+
+  // Step 2: Extract numbered points from content — (1), (2), etc.
+  const numbered = content.match(/\(\d+\)\s*[^(]+/g);
+  if (numbered && numbered.length > 0) {
+    steps.push({
+      label: 'Pattern Analysis',
+      detail: `Identified ${numbered.length} key factor${numbered.length > 1 ? 's' : ''}: ${numbered.slice(0, 3).map(n => n.replace(/\(\d+\)\s*/, '').split('.')[0].split('—')[0].trim()).join(', ')}${numbered.length > 3 ? '...' : ''}`,
+      status: 'complete',
+      icon: <Search className="w-3 h-3" />,
+    });
+  }
+
+  // Step 3: Look for percentage/number citations
+  const stats = content.match(/\d+\.?\d*%|\$[\d,.]+[BMK]?|€[\d,.]+[BMK]?|£[\d,.]+[BMK]?|\d+[BMK]\+?/g);
+  if (stats && stats.length > 0) {
+    const unique = [...new Set(stats)].slice(0, 4);
+    steps.push({
+      label: 'Quantitative Assessment',
+      detail: `Evaluated metrics: ${unique.join(', ')}. Cross-referenced against regulatory thresholds.`,
+      status: 'complete',
+      icon: <Activity className="w-3 h-3" />,
+    });
+  }
+
+  // Step 4: Regulatory/legal references
+  const regRefs = content.match(/Article \d+|Art\. \d+|Section \d+|Rule \d+|GDPR|EU AI Act|SOC 2|HIPAA|PCI|ITAR|NIST|FCA|SEC|PSD2|DORA|DSA/g);
+  if (regRefs && regRefs.length > 0) {
+    const unique = [...new Set(regRefs)].slice(0, 4);
+    steps.push({
+      label: 'Regulatory Mapping',
+      detail: `Matched against ${unique.join(', ')}. Compliance gap analysis complete.`,
+      status: 'complete',
+      icon: <ShieldCheck className="w-3 h-3" />,
+    });
+  }
+
+  // Step 5: Cendia service references
+  const services = content.match(/Cendia\w+™/g);
+  if (services && services.length > 0) {
+    const unique = [...new Set(services)].slice(0, 3);
+    steps.push({
+      label: 'Service Orchestration',
+      detail: `Routed through ${unique.join(', ')} for evidence generation.`,
+      status: 'complete',
+      icon: <Link2 className="w-3 h-3" />,
+    });
+  }
+
+  // Step 6: Risk / dissent / resolution conclusion
+  const typeConclusion: Record<string, { label: string; detail: string; icon: React.ReactNode }> = {
+    analysis: { label: 'Assessment Published', detail: 'Analysis sealed to governance ledger with evidence hash.', icon: <FileText className="w-3 h-3" /> },
+    warning: { label: 'Warning Issued', detail: 'Risk threshold exceeded. Alert propagated to council.', icon: <AlertTriangle className="w-3 h-3" /> },
+    dissent: { label: 'Dissent Registered', detail: 'Disagreement logged with cryptographic attestation. Requires resolution.', icon: <XCircle className="w-3 h-3" /> },
+    flag: { label: 'Flag Raised', detail: 'Critical finding flagged for council review and human oversight.', icon: <AlertTriangle className="w-3 h-3" /> },
+    proposal: { label: 'Proposal Formulated', detail: 'Governance recommendation constructed from evidence chain.', icon: <ArrowRight className="w-3 h-3" /> },
+    resolution: { label: 'Consensus Reached', detail: 'All dissents addressed. Resolution sealed with multi-agent signatures.', icon: <CheckCircle className="w-3 h-3" /> },
+    withdrawal: { label: 'Dissent Withdrawn', detail: 'Objection resolved through evidence. Withdrawal logged immutably.', icon: <CheckCircle className="w-3 h-3" /> },
+  };
+  const conclusion = typeConclusion[msg.type] || typeConclusion.analysis;
+  steps.push({
+    label: conclusion.label,
+    detail: conclusion.detail,
+    status: 'complete',
+    icon: conclusion.icon,
+  });
+
+  return steps;
+}
+
+// =============================================================================
+// COMPONENT — AGENT REASONING PANEL
+// =============================================================================
+
+export const AgentReasoningPanel: React.FC<{
+  messages: AgentMessage[];
+  agents: Agent[];
+  visibleCount: number;
+  typingAgent: string | null;
+  phase: Phase;
+  accent?: string;
+  selectedIdx?: number | null;
+}> = ({ messages, agents, visibleCount, typingAgent, phase, accent = 'emerald', selectedIdx }) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [expandedStep, setExpandedStep] = useState<number | null>(null);
+
+  // Get the most recent visible message
+  const visibleMessages = messages.slice(0, visibleCount);
+  const latestMsg = visibleMessages.length > 0 ? visibleMessages[visibleMessages.length - 1] : null;
+  const typingAgentData = typingAgent ? agents.find(a => a.id === typingAgent) : null;
+
+  // Show reasoning for selected message, or latest if none selected
+  const focusedIdx = selectedIdx != null && selectedIdx < visibleMessages.length ? selectedIdx : (visibleMessages.length > 0 ? visibleMessages.length - 1 : null);
+  const focusedMsg = focusedIdx != null ? visibleMessages[focusedIdx] : null;
+  const focusedAgent = focusedMsg ? agents.find(a => a.id === focusedMsg.agentId) : null;
+
+  // Derive reasoning steps for the focused message
+  const steps = useMemo(() => {
+    if (!focusedMsg || !focusedAgent) return [];
+    return deriveReasoningSteps(focusedMsg, focusedAgent);
+  }, [focusedMsg, focusedAgent]);
+
+  // Reset expanded step when focused message changes
+  useEffect(() => { setExpandedStep(null); }, [focusedIdx]);
+
+  useEffect(() => {
+    if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+  }, [visibleCount, typingAgent]);
+
+  return (
+    <div className="bg-[#111118] border border-white/10 rounded-xl overflow-hidden h-full flex flex-col">
+      {/* Header */}
+      <div className="px-4 py-3 border-b border-white/10 flex-shrink-0">
+        <h3 className="text-xs font-semibold tracking-[0.15em] text-white/50 uppercase flex items-center gap-2">
+          <Eye className="w-3.5 h-3.5" /> Agent Reasoning
+        </h3>
+        <p className="text-[10px] text-white/30 mt-0.5">Step-by-step formulation trace</p>
+      </div>
+
+      <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4 min-h-0">
+        {phase === 'idle' ? (
+          <div className="flex flex-col items-center justify-center h-full text-center py-12">
+            <Eye className="w-8 h-8 text-white/10 mb-3" />
+            <p className="text-[11px] text-white/30">Run a deliberation to see agent reasoning</p>
+          </div>
+        ) : (
+          <>
+            {/* History: show agent + type for each prior message */}
+            {visibleMessages.slice(0, -1).map((msg, i) => {
+              const a = agents.find(ag => ag.id === msg.agentId);
+              if (!a) return null;
+              const typeBadge: Record<string, { label: string; color: string }> = {
+                analysis: { label: 'ANALYSIS', color: 'text-cyan-400' },
+                warning: { label: 'WARNING', color: 'text-red-500' },
+                dissent: { label: 'DISSENT', color: 'text-amber-400' },
+                flag: { label: 'FLAG', color: 'text-red-400' },
+                proposal: { label: 'PROPOSAL', color: 'text-emerald-400' },
+                resolution: { label: 'RESOLVED', color: 'text-emerald-500' },
+                withdrawal: { label: 'WITHDRAWN', color: 'text-emerald-300' },
+              };
+              const badge = typeBadge[msg.type] || typeBadge.analysis;
+              return (
+                <div key={i} className="flex items-center gap-2 opacity-40">
+                  <span className="text-sm">{a.icon}</span>
+                  <span className="text-[10px] text-white/60 truncate flex-1">{a.name}</span>
+                  <span className={`text-[8px] font-bold tracking-wider ${badge.color}`}>{badge.label}</span>
+                  <CheckCircle className="w-3 h-3 text-emerald-400/40 flex-shrink-0" />
+                </div>
+              );
+            })}
+
+            {/* Active: typing state */}
+            {typingAgentData && !latestMsg && (
+              <div className="bg-white/[0.02] border border-white/[0.06] rounded-lg p-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-sm">{typingAgentData.icon}</span>
+                  <span className={`text-[11px] font-semibold ${typingAgentData.color}`}>{typingAgentData.name}</span>
+                  <span className="text-[9px] text-white/30 animate-pulse">processing...</span>
+                </div>
+                <div className="space-y-2 ml-5">
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                    <span className="text-[10px] text-white/40">Ingesting data sources...</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Current: detailed reasoning steps for focused message */}
+            {focusedMsg && focusedAgent && (
+              <div className="bg-white/[0.02] border border-white/[0.06] rounded-lg p-3">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-sm">{focusedAgent.icon}</span>
+                  <span className={`text-[11px] font-semibold ${focusedAgent.color}`}>{focusedAgent.name}</span>
+                </div>
+                {selectedIdx != null && (
+                  <p className="text-[9px] text-white/25 mb-3 ml-6">Message {(selectedIdx ?? 0) + 1} of {visibleMessages.length} — click steps below to expand</p>
+                )}
+                <div className="space-y-0 ml-1">
+                  {steps.map((step, i) => (
+                    <div
+                      key={i}
+                      role="button"
+                      tabIndex={0}
+                      aria-expanded={expandedStep === i}
+                      aria-label={`${step.label}: ${step.detail}`}
+                      className="flex items-start gap-2.5 relative cursor-pointer group focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20 rounded"
+                      onClick={() => setExpandedStep(expandedStep === i ? null : i)}
+                      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setExpandedStep(expandedStep === i ? null : i); } }}
+                    >
+                      {/* Vertical connector line */}
+                      {i < steps.length - 1 && (
+                        <div className="absolute left-[7px] top-[18px] w-px h-[calc(100%-4px)] bg-white/[0.06]" />
+                      )}
+                      {/* Step dot */}
+                      <div className={`w-[15px] h-[15px] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors ${
+                        step.status === 'complete' ? 'bg-emerald-500/15 text-emerald-400' :
+                        step.status === 'active' ? `bg-${accent}-500/15 text-${accent}-400` :
+                        'bg-white/[0.04] text-white/20'
+                      } ${expandedStep === i ? 'ring-1 ring-white/20' : ''}`}>
+                        {step.icon}
+                      </div>
+                      {/* Step content */}
+                      <div className="pb-3 flex-1 min-w-0">
+                        <div className="flex items-center gap-1.5">
+                          <p className={`text-[10px] font-semibold transition-colors ${
+                            expandedStep === i ? 'text-white/90' : 'text-white/70 group-hover:text-white/80'
+                          }`}>{step.label}</p>
+                          <ChevronDown className={`w-2.5 h-2.5 text-white/30 transition-transform duration-200 ${
+                            expandedStep === i ? 'rotate-180' : ''
+                          }`} />
+                        </div>
+                        <p className="text-[9px] text-white/40 leading-relaxed mt-0.5">{step.detail}</p>
+                        {expandedStep === i && (
+                          <div className="mt-2 p-2 bg-white/[0.03] border border-white/[0.06] rounded-md animate-fadeIn">
+                            <p className="text-[9px] text-white/50 leading-relaxed">
+                              <span className="font-semibold text-white/60">How it works:</span>{' '}
+                              {step.label === 'Data Ingestion'
+                                ? `${focusedAgent.name} connects to all configured data connectors and governance frameworks, pulling real-time regulatory feeds, internal policy documents, and market intelligence. Each data source is validated and timestamped before analysis begins.`
+                                : step.label === 'Pattern Analysis'
+                                ? `Advanced pattern recognition scans the ingested data for structural similarities, anomalies, and correlations across historical precedents. Key factors are ranked by relevance and impact score before being passed to quantitative models.`
+                                : step.label === 'Quantitative Assessment'
+                                ? `Statistical models evaluate the identified metrics against regulatory thresholds, industry benchmarks, and historical baselines. Confidence intervals and variance analysis ensure output reliability.`
+                                : step.label === 'Regulatory Mapping'
+                                ? `Each finding is cross-referenced against the applicable regulatory framework. Gap analysis identifies compliance shortfalls and maps remediation pathways with estimated timelines.`
+                                : step.label === 'Service Orchestration'
+                                ? `The agent orchestrates Cendia platform services to generate cryptographically verifiable evidence packages, route approvals, and trigger downstream compliance workflows automatically.`
+                                : `${focusedAgent.name} synthesizes all prior reasoning steps into a final position, applying weighted scoring across risk, compliance, and governance dimensions. The output is sealed with a cryptographic attestation to the governance ledger.`
+                              }
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Typing indicator when agent is processing next message */}
+            {typingAgentData && latestMsg && (
+              <div className="bg-white/[0.02] border border-white/[0.06] rounded-lg p-3">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm">{typingAgentData.icon}</span>
+                  <span className={`text-[11px] font-semibold ${typingAgentData.color}`}>{typingAgentData.name}</span>
+                  <span className="text-[9px] text-white/30 animate-pulse">formulating response...</span>
+                </div>
+                <div className="space-y-1.5 ml-5 mt-2">
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                    <span className="text-[10px] text-white/40">Ingesting governance data...</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" style={{ animationDelay: '300ms' }} />
+                    <span className="text-[10px] text-white/30">Cross-referencing regulations...</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white/20 animate-pulse" style={{ animationDelay: '600ms' }} />
+                    <span className="text-[10px] text-white/20">Formulating position...</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Complete state */}
+            {phase === 'complete' && (
+              <div className="border-t border-white/[0.06] pt-3 mt-2">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-emerald-400" />
+                  <span className="text-[11px] font-semibold text-emerald-400">Deliberation Complete</span>
+                </div>
+                <p className="text-[9px] text-white/30 mt-1 ml-6">All agents have published positions. {visibleMessages.length} reasoning chains sealed.</p>
+              </div>
+            )}
+          </>
+        )}
+      </div>
+    </div>
+  );
+};
+
+// =============================================================================
 // COMPONENT — SCENARIO SELECTOR
 // =============================================================================
 
@@ -532,29 +852,80 @@ export const ScenarioSelector: React.FC<{
   labels?: ShellLabels;
 }> = ({ scenarios, activeId, onSelect, disabled, accent = 'emerald', labels }) => {
   const L = labels || DEFAULT_LABELS;
+  const [expanded, setExpanded] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const filteredScenarios = searchQuery.trim()
+    ? scenarios.filter((s) => s.title.toLowerCase().includes(searchQuery.toLowerCase()) || s.subtitle?.toLowerCase().includes(searchQuery.toLowerCase()))
+    : scenarios;
+  const visibleScenarios = expanded || searchQuery.trim() ? filteredScenarios : filteredScenarios.slice(0, 10);
+  const hasMore = filteredScenarios.length > 10 && !searchQuery.trim();
+
   return (
   <div className="mb-6">
-    <h3 className="text-xs font-semibold tracking-[0.15em] text-white/40 uppercase mb-3 flex items-center gap-2">
-      <Zap className="w-3.5 h-3.5" /> {L.selectScenario}
-    </h3>
-    <div className="flex flex-wrap gap-2">
-      {scenarios.map((s) => {
+    {/* Section header — matches dashboard style */}
+    <div className="flex items-center justify-between mb-4">
+      <h3 className="text-xs font-semibold tracking-[0.15em] text-white/40 uppercase flex items-center gap-2">
+        <Zap className="w-3.5 h-3.5" /> {L.selectScenario}
+        <span className={`ml-1 text-[10px] px-1.5 py-0.5 rounded-full bg-${accent}-500/10 text-${accent}-400`}>{filteredScenarios.length}</span>
+      </h3>
+      <div className="flex items-center gap-3">
+        <div className="relative">
+          <Search className="w-3 h-3 text-white/30 absolute left-2 top-1/2 -translate-y-1/2" />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search scenarios..."
+            className="text-[10px] bg-white/[0.04] border border-white/[0.08] rounded-lg pl-6 pr-2 py-1.5 text-white/70 placeholder:text-white/20 focus:outline-none focus:border-white/20 w-40 transition-colors"
+          />
+        </div>
+        {hasMore && (
+          <button onClick={() => setExpanded(!expanded)} className="text-[10px] text-white/30 hover:text-white/50 transition-colors flex items-center gap-1">
+            {expanded ? 'Show Less' : `View All (${scenarios.length})`} <ChevronRight className={`w-3 h-3 transition-transform ${expanded ? 'rotate-90' : ''}`} />
+          </button>
+        )}
+      </div>
+    </div>
+
+    {/* Card grid — dashboard-style layout */}
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2.5">
+      {visibleScenarios.map((s) => {
         const isActive = s.id === activeId;
+        const riskColor = s.risk === 'Critical' ? 'red' : s.risk === 'High' ? 'amber' : 'cyan';
         return (
           <button key={s.id} onClick={() => !disabled && onSelect(s.id)} disabled={disabled}
-            className={`px-3 py-2 rounded-lg text-xs font-medium transition-all flex items-center gap-2 border ${
+            className={`group relative text-left rounded-xl border p-3 transition-all ${
               isActive
-                ? `bg-${accent}-500/10 border-${accent}-500/40 text-${accent}-400`
-                : 'bg-white/[0.02] border-white/10 text-white/50 hover:border-white/20 hover:text-white/70'
+                ? `bg-${accent}-500/[0.08] border-${accent}-500/30`
+                : 'bg-[#111118] border-white/[0.06] hover:border-white/[0.12] hover:bg-white/[0.03]'
             } ${disabled && !isActive ? 'opacity-40 cursor-not-allowed' : 'cursor-pointer'}`}
           >
-            {s.icon}
-            <span>{s.title.length > 35 ? s.title.slice(0, 35) + '...' : s.title}</span>
-            <span className={`text-[9px] px-1.5 py-0.5 rounded-full ${
-              s.risk === 'Critical' ? 'bg-red-500/10 text-red-400' :
-              s.risk === 'High' ? 'bg-amber-500/10 text-amber-400' :
-              'bg-cyan-500/10 text-cyan-400'
-            }`}>{s.scenarioNum}</span>
+            {/* Top row: icon + number */}
+            <div className="flex items-center justify-between mb-2">
+              <div className={`w-7 h-7 rounded-lg flex items-center justify-center ${
+                isActive
+                  ? `bg-${accent}-500/15 text-${accent}-400`
+                  : `bg-white/[0.04] text-white/40 group-hover:text-white/60`
+              }`}>
+                {s.icon}
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className={`w-1.5 h-1.5 rounded-full ${
+                  s.risk === 'Critical' ? 'bg-red-400' : s.risk === 'High' ? 'bg-amber-400' : 'bg-cyan-400'
+                }`} />
+                <span className={`text-[10px] font-mono ${isActive ? `text-${accent}-400/70` : 'text-white/20'}`}>{s.scenarioNum}</span>
+              </div>
+            </div>
+
+            {/* Title */}
+            <p className={`text-[11px] font-medium leading-tight line-clamp-2 mb-1.5 ${
+              isActive ? `text-${accent}-300` : 'text-white/70 group-hover:text-white/80'
+            }`}>{s.title}</p>
+
+            {/* Risk badge */}
+            <span className={`text-[9px] font-semibold tracking-wider px-1.5 py-0.5 rounded bg-${riskColor}-500/10 text-${riskColor}-400`}>
+              {s.risk.toUpperCase()}
+            </span>
           </button>
         );
       })}
@@ -582,6 +953,8 @@ export const SandboxShell: React.FC<{
   const [typingAgent, setTypingAgent] = useState<string | null>(null);
   const [receipt, setReceipt] = useState<ReceiptData | null>(null);
   const [generatingReceipt, setGeneratingReceipt] = useState(false);
+  const [selectedMessageIdx, setSelectedMessageIdx] = useState<number | null>(null);
+  const [mobileReasoningOpen, setMobileReasoningOpen] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const timeoutsRef = useRef<NodeJS.Timeout[]>([]);
 
@@ -600,6 +973,7 @@ export const SandboxShell: React.FC<{
     setTypingAgent(null);
     setReceipt(null);
     setGeneratingReceipt(false);
+    setSelectedMessageIdx(null);
   };
 
   const runDeliberation = useCallback(() => {
@@ -608,6 +982,7 @@ export const SandboxShell: React.FC<{
     setTypingAgent(null);
     setReceipt(null);
     setGeneratingReceipt(false);
+    setSelectedMessageIdx(null);
     timeoutsRef.current.forEach(clearTimeout);
     timeoutsRef.current = [];
 
@@ -706,7 +1081,7 @@ export const SandboxShell: React.FC<{
             </div>
           </div>
 
-          <div className="col-span-12 lg:col-span-9">
+          <div className="col-span-12 lg:col-span-6">
             <div className="bg-[#111118] border border-white/10 rounded-xl overflow-hidden">
               <div className="px-5 py-4 border-b border-white/10 flex items-center justify-between">
                 <div>
@@ -750,14 +1125,16 @@ export const SandboxShell: React.FC<{
                     {renderPhaseMarker(`${L.phase} 1 — ${scenario.phaseLabels[0]}`, 'phase1', phase)}
                     {scenario.script.filter((m) => m.phase === 'phase1').map((msg) => {
                       const gi = scenario.script.indexOf(msg);
-                      return <MessageBubble key={gi} msg={msg} agents={scenario.agents} visible={gi < visibleMessages} />;
+                      return <MessageBubble key={gi} msg={msg} agents={scenario.agents} visible={gi < visibleMessages}
+                        selected={selectedMessageIdx === gi} onSelect={() => setSelectedMessageIdx(gi)} />;
                     })}
                     {getPhaseOrder(phase) >= getPhaseOrder('phase2') && (
                       <>
                         {renderPhaseMarker(`${L.phase} 2 — ${scenario.phaseLabels[1]}`, 'phase2', phase)}
                         {scenario.script.filter((m) => m.phase === 'phase2').map((msg) => {
                           const gi = scenario.script.indexOf(msg);
-                          return <MessageBubble key={gi} msg={msg} agents={scenario.agents} visible={gi < visibleMessages} />;
+                          return <MessageBubble key={gi} msg={msg} agents={scenario.agents} visible={gi < visibleMessages}
+                            selected={selectedMessageIdx === gi} onSelect={() => setSelectedMessageIdx(gi)} />;
                         })}
                       </>
                     )}
@@ -766,7 +1143,8 @@ export const SandboxShell: React.FC<{
                         {renderPhaseMarker(`${L.phase} 3 — ${scenario.phaseLabels[2]}`, 'phase3', phase)}
                         {scenario.script.filter((m) => m.phase === 'phase3').map((msg) => {
                           const gi = scenario.script.indexOf(msg);
-                          return <MessageBubble key={gi} msg={msg} agents={scenario.agents} visible={gi < visibleMessages} />;
+                          return <MessageBubble key={gi} msg={msg} agents={scenario.agents} visible={gi < visibleMessages}
+                            selected={selectedMessageIdx === gi} onSelect={() => setSelectedMessageIdx(gi)} />;
                         })}
                       </>
                     )}
@@ -777,6 +1155,12 @@ export const SandboxShell: React.FC<{
 
               {phase === 'complete' && !receipt && (
                 <div className="px-5 py-4 border-t border-white/10 bg-emerald-500/[0.03]">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Lock className="w-3 h-3 text-white/20" />
+                    <p className="text-[9px] text-white/30">
+                      Evidence hash · Merkle proof · Compliance status · {scenario.script.length} agent signatures
+                    </p>
+                  </div>
                   <button onClick={handleGenerateReceipt} disabled={generatingReceipt}
                     className="w-full py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-xl font-semibold text-sm tracking-wider hover:from-emerald-400 hover:to-emerald-500 transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/40 disabled:opacity-60"
                   >
@@ -871,7 +1255,55 @@ export const SandboxShell: React.FC<{
               </>
             )}
           </div>
+
+          {/* Right column: Agent Reasoning Panel — collapsible drawer on mobile */}
+          <div className="hidden lg:block col-span-3">
+            <AgentReasoningPanel
+              messages={scenario.script}
+              agents={scenario.agents}
+              visibleCount={visibleMessages}
+              typingAgent={typingAgent}
+              phase={phase}
+              accent={accent}
+              selectedIdx={selectedMessageIdx}
+            />
+          </div>
         </div>
+
+        {/* Mobile: floating reasoning toggle button */}
+        {phase !== 'idle' && (
+          <button
+            onClick={() => setMobileReasoningOpen(true)}
+            className={`lg:hidden fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-${accent}-600 text-white shadow-lg shadow-${accent}-900/40 flex items-center justify-center hover:bg-${accent}-500 transition-colors`}
+            aria-label="Open agent reasoning panel"
+          >
+            <Eye className="w-5 h-5" />
+          </button>
+        )}
+
+        {/* Mobile: slide-over reasoning panel */}
+        {mobileReasoningOpen && (
+          <div className="lg:hidden fixed inset-0 z-50">
+            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setMobileReasoningOpen(false)} />
+            <div className="absolute right-0 top-0 bottom-0 w-80 max-w-[85vw] bg-[#0a0a0f] border-l border-white/10 shadow-2xl overflow-y-auto">
+              <div className="flex items-center justify-between px-4 py-3 border-b border-white/10 sticky top-0 bg-[#0a0a0f] z-10">
+                <span className="text-xs font-semibold text-white/50 tracking-wider uppercase">Agent Reasoning</span>
+                <button onClick={() => setMobileReasoningOpen(false)} className="p-1 text-white/40 hover:text-white/70">
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+              <AgentReasoningPanel
+                messages={scenario.script}
+                agents={scenario.agents}
+                visibleCount={visibleMessages}
+                typingAgent={typingAgent}
+                phase={phase}
+                accent={accent}
+                selectedIdx={selectedMessageIdx}
+              />
+            </div>
+          </div>
+        )}
 
         <div className="mt-12 pt-6 border-t border-white/5 text-center">
           <p className="text-[10px] text-white/20 tracking-wider">
