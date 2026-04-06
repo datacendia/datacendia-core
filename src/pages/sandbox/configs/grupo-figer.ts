@@ -67,7 +67,6 @@ const config: FigerTrilingualConfig = {
       connectorLive: 'ACTIVO',
       connectorSync: 'SYNC',
       connectorReady: 'LISTO',
-    ,
       complianceScore: 'Compliance Score',
       timeline: 'Decision Timeline',
       evidenceExplorer: 'Evidence Explorer',

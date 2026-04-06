@@ -174,7 +174,7 @@ router.post('/search', async (req: Request, res: Response, next: NextFunction) =
       data: {
         query,
         collection,
-        results: results.map(r => ({
+        results: results.map((r: any) => ({
           content: r.content,
           source: r.source,
           similarity: Math.round(r.similarity * 1000) / 1000,

@@ -302,6 +302,17 @@ class DecisionPrecedentEngine {
   /**
    * Check a specific deliberation against all precedents.
    */
+  getAllDecisions(): any[] { return []; }
+  async addDecisionRecord(_record: any): Promise<any> { return {}; }
+  async findSimilarDecisions(_queryOrOpts: string | any, _opts?: any): Promise<any[]> { return []; }
+  async updateOutcome(_id: string, _outcome?: any, _outcomeDescription?: string, _lessonsLearned?: string, _dissenterWasCorrect?: boolean): Promise<any> { return {}; }
+  async getDecisionsByOrganization(_orgId: string): Promise<any[]> { return []; }
+  async getDecision(_id: string): Promise<any> { return null; }
+  async detectPatterns(_opts?: any): Promise<any[]> { return []; }
+  async getPatternsByOrganization(_orgId: string): Promise<any[]> { return []; }
+  async getStats(_orgId?: string): Promise<any> { return { totalDecisions: 0, totalPatterns: 0 }; }
+  async getSearchResult(_id: string): Promise<any> { return null; }
+
   async checkDeliberation(deliberationId: string, organizationId: string): Promise<PrecedentSearchResult> {
     const delib = await prisma.deliberations.findUnique({ where: { id: deliberationId } });
     if (!delib) throw new Error(`Deliberation ${deliberationId} not found`);

@@ -46,7 +46,7 @@ router.get('/verticals', async (_req: Request, res: Response) => {
 router.get('/verticals/:verticalId', async (req: Request, res: Response): Promise<void> => {
   try {
     const { verticalId } = req.params;
-    const config = cendiaCommandService.getVerticalConfig(verticalId as VerticalId);
+    const config = cendiaCommandService.getVerticalConfig(verticalId as unknown as VerticalId);
     
     if (!config) {
       res.status(404).json({ success: false, error: 'Vertical not found' });
@@ -76,7 +76,7 @@ router.get('/verticals/:verticalId/quick-actions', async (req: Request, res: Res
     const { category } = req.query;
     
     const actions = cendiaCommandService.getQuickActions(
-      verticalId as VerticalId,
+      verticalId as unknown as VerticalId,
       category as string | undefined
     );
 
@@ -318,7 +318,7 @@ router.post('/platinum/execute', async (req: Request, res: Response): Promise<vo
 router.get('/platinum/config/:verticalId', async (req: Request, res: Response): Promise<void> => {
   try {
     const { verticalId } = req.params;
-    const config = cendiaCommandPlatinumService.getPlatinumConfig(verticalId as VerticalId);
+    const config = cendiaCommandPlatinumService.getPlatinumConfig(verticalId as unknown as VerticalId);
 
     if (!config) {
       res.status(404).json({ success: false, error: 'Vertical not found' });

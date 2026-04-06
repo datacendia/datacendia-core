@@ -97,7 +97,7 @@ export function apiCache(options: CacheOptions = {}): (req: Request, res: Respon
 
     // Try to serve from cache
     cacheService.get<{ statusCode: number; body: any; headers: Record<string, string> }>(cacheKey)
-      .then(cached => {
+      .then((cached: any) => {
         if (cached) {
           // Set cache headers
           res.setHeader('X-Cache', 'HIT');

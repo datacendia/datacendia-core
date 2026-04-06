@@ -135,7 +135,7 @@ router.get('/siem/integrations', (req: Request, res: Response) => {
     const integrations = siemIntegration.getIntegrations(organizationId as string);
     
     // Mask credentials in response
-    const safeIntegrations = integrations.map(i => ({
+    const safeIntegrations = integrations.map((i: any) => ({
       ...i,
       credentials: {
         token: i.credentials.token ? '***' : undefined,
@@ -256,7 +256,7 @@ router.post('/compliance/export', async (req: Request, res: Response) => {
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
-    const validFrameworks: ComplianceFramework[] = ['soc2', 'hipaa', 'gdpr', 'iso27001', 'nist', 'pci_dss'];
+    const validFrameworks = ['soc2', 'hipaa', 'gdpr', 'iso27001', 'nist', 'pci_dss'] as unknown as ComplianceFramework[];
     if (!validFrameworks.includes(framework)) {
       return res.status(400).json({ error: `Invalid framework. Must be one of: ${validFrameworks.join(', ')}` });
     }
@@ -372,14 +372,14 @@ router.get('/sbom/licenses', async (_req: Request, res: Response) => {
       for (const [category, licenseList] of Object.entries(categories)) {
         if (licenseList.includes(license)) {
           categorized[category].licenses.push(license);
-          categorized[category].count += count;
+          categorized[category].count += count as number;
           found = true;
           break;
         }
       }
       if (!found) {
         categorized['other'].licenses.push(license);
-        categorized['other'].count += count;
+        categorized['other'].count += count as number;
       }
     }
 

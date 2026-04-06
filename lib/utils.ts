@@ -6,8 +6,11 @@ export function formatCurrency(value: number, currency = 'USD', locale = 'en-US'
   return new Intl.NumberFormat(locale, { style: 'currency', currency }).format(value);
 }
 
-export function formatNumber(value: number, locale = 'en-US'): string {
-  return new Intl.NumberFormat(locale).format(value);
+export function formatNumber(value: number, decimalsOrLocale: number | string = 'en-US'): string {
+  if (typeof decimalsOrLocale === 'number') {
+    return new Intl.NumberFormat('en-US', { minimumFractionDigits: decimalsOrLocale, maximumFractionDigits: decimalsOrLocale }).format(value);
+  }
+  return new Intl.NumberFormat(decimalsOrLocale).format(value);
 }
 
 export function formatBytes(bytes: number, decimals = 2): string {

@@ -34,9 +34,9 @@ router.get('/status', async (req: Request, res: Response) => {
     
     // Get counts for metrics
     const [artifactCount, migrationCount, successorCount] = await Promise.all([
-      cendiaEternalService.getArtifacts(orgId, {}).then(a => a.length).catch(() => 0),
-      cendiaEternalService.getMigrations(orgId).then(m => m.length).catch(() => 0),
-      cendiaEternalService.getSuccessors(orgId).then(s => s.length).catch(() => 0),
+      cendiaEternalService.getArtifacts(orgId, {}).then((a: any) => a.length).catch(() => 0),
+      cendiaEternalService.getMigrations(orgId).then((m: any) => m.length).catch(() => 0),
+      cendiaEternalService.getSuccessors(orgId).then((s: any) => s.length).catch(() => 0),
     ]);
     
     res.json({

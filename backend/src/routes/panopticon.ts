@@ -36,9 +36,9 @@ router.get('/status', async (req: Request, res: Response) => {
     
     // Get counts for dashboard
     const [regulationCount, violationCount, gapCount] = await Promise.all([
-      cendiaPanopticonService.getOrganizationRegulations(orgId).then(r => r.length).catch(() => 0),
-      cendiaPanopticonService.getOpenViolations(orgId).then(v => v.length).catch(() => 0),
-      cendiaPanopticonService.getComplianceGaps(orgId).then(g => g.length).catch(() => 0),
+      cendiaPanopticonService.getOrganizationRegulations(orgId).then((r: any) => r.length).catch(() => 0),
+      cendiaPanopticonService.getOpenViolations(orgId).then((v: any) => v.length).catch(() => 0),
+      cendiaPanopticonService.getComplianceGaps(orgId).then((g: any) => g.length).catch(() => 0),
     ]);
     
     res.json({

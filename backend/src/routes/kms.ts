@@ -344,9 +344,9 @@ router.get('/keys', async (_req: Request, res: Response) => {
     
     res.json({
       success: true,
-      keys: keys.map(key => ({
+      keys: keys.map((key: any) => ({
         keyId: key.keyId,
-        alias: key.keyId.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+        alias: key.keyId.replace(/-/g, ' ').replace(/\b\w/g, (l: any) => l.toUpperCase()),
         provider: key.provider,
         algorithm: key.algorithm,
         keySpec: key.keySpec,
@@ -382,27 +382,27 @@ router.get('/providers', async (_req: Request, res: Response) => {
         connected: status.provider === 'local',
         latency: 2,
         lastCheck: new Date().toISOString(),
-        keyCount: keys.filter(k => k.provider === 'local').length,
+        keyCount: keys.filter((k: any) => k.provider === 'local').length,
       },
       {
         provider: 'AWS KMS',
         connected: status.provider === 'aws-kms',
         lastCheck: new Date().toISOString(),
-        keyCount: keys.filter(k => k.provider === 'aws-kms').length,
+        keyCount: keys.filter((k: any) => k.provider === 'aws-kms').length,
         error: !process.env['AWS_KMS_KEY_ID'] ? 'Not configured - Air-gapped mode active' : undefined,
       },
       {
         provider: 'HashiCorp Vault',
         connected: status.provider === 'hashicorp-vault',
         lastCheck: new Date().toISOString(),
-        keyCount: keys.filter(k => k.provider === 'hashicorp-vault').length,
+        keyCount: keys.filter((k: any) => k.provider === 'hashicorp-vault').length,
         error: !process.env['VAULT_TOKEN'] ? 'Not configured' : undefined,
       },
       {
         provider: 'Azure Key Vault',
         connected: status.provider === 'azure-keyvault',
         lastCheck: new Date().toISOString(),
-        keyCount: keys.filter(k => k.provider === 'azure-keyvault').length,
+        keyCount: keys.filter((k: any) => k.provider === 'azure-keyvault').length,
         error: !process.env['AZURE_KEYVAULT_URL'] ? 'Not configured' : undefined,
       },
     ];

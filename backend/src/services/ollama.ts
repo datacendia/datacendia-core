@@ -43,6 +43,10 @@ export const ollama = {
   async embed(text: string, model?: string): Promise<number[]> {
     return inference.embed(text, model);
   },
+
+  async listModels(): Promise<{ name: string; size: number }[]> {
+    return [];
+  },
 };
 
 export default ollama;

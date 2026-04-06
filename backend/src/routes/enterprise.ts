@@ -509,7 +509,7 @@ router.post('/guardian/customers/:id/care-package', authenticate, async (req: Re
 // Get at-risk customers
 router.get('/guardian/customers/at-risk', authenticate, async (_req: Request, res: Response) => {
   try {
-    const customers = cendiaGuardianService.getAllCustomers().filter(c => c.healthScore < 60);
+    const customers = cendiaGuardianService.getAllCustomers().filter((c: any) => c.healthScore < 60);
     res.json({ customers });
   } catch (error) {
     logger.error('Failed to get at-risk customers:', error);

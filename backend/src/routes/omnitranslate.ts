@@ -145,7 +145,7 @@ router.get('/languages/rtl', (_req: Request, res: Response) => {
     res.json({
       success: true,
       count: rtlLanguages.length,
-      languages: rtlLanguages.map(code => ({
+      languages: rtlLanguages.map((code: any) => ({
         code,
         ...OMNITRANSLATE_LANGUAGES[code],
       })),

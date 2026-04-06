@@ -74,7 +74,7 @@ router.get('/test-suites', async (_req: Request, res: Response) => {
       owasp: {
         name: 'OWASP Top 10 (2023)',
         testCount: suites.owasp.length,
-        tests: suites.owasp.map(t => ({
+        tests: suites.owasp.map((t: any) => ({
           id: t.id,
           name: t.name,
           category: t.category,
@@ -85,7 +85,7 @@ router.get('/test-suites', async (_req: Request, res: Response) => {
       ai: {
         name: 'AI Adversarial Tests',
         testCount: suites.ai.length,
-        tests: suites.ai.map(t => ({
+        tests: suites.ai.map((t: any) => ({
           id: t.id,
           name: t.name,
           category: t.category,
@@ -94,7 +94,7 @@ router.get('/test-suites', async (_req: Request, res: Response) => {
       chaos: {
         name: 'Chaos Engineering',
         testCount: suites.chaos.length,
-        tests: suites.chaos.map(t => ({
+        tests: suites.chaos.map((t: any) => ({
           id: t.id,
           name: t.name,
           category: t.category,
@@ -162,7 +162,7 @@ router.get('/reports', async (req: Request, res: Response, next: NextFunction) =
 
     res.json({
       success: true,
-      data: reports.map(r => ({
+      data: reports.map((r: any) => ({
         id: r.id,
         runType: r.runType,
         securityScore: r.securityScore,
@@ -189,7 +189,7 @@ router.get('/reports/:id', async (req: Request, res: Response, next: NextFunctio
     const { id } = req.params;
     
     const reports = await enterpriseRedTeamService.getReports(req.organizationId!);
-    const report = reports.find(r => r.id === id);
+    const report = reports.find((r: any) => r.id === id);
     
     if (!report) {
       throw errors.notFound('Report not found');
@@ -232,14 +232,14 @@ router.get('/reports/:id/compliance/:framework', async (req: Request, res: Respo
     const { id, framework = '' } = req.params;
     
     const reports = await enterpriseRedTeamService.getReports(req.organizationId!);
-    const report = reports.find(r => r.id === id);
+    const report = reports.find((r: any) => r.id === id);
     
     if (!report) {
       throw errors.notFound('Report not found');
     }
 
     const frameworkStatus = report.complianceStatus.find(
-      c => c.framework === framework.toUpperCase().replace('-', '_')
+      (c: any) => c.framework === framework.toUpperCase().replace('-', '_')
     );
 
     if (!frameworkStatus) {
@@ -247,8 +247,8 @@ router.get('/reports/:id/compliance/:framework', async (req: Request, res: Respo
     }
 
     // Filter results relevant to this framework
-    const relevantResults = report.results.filter(r =>
-      r.complianceImpact.some(i => i.framework === framework.toUpperCase().replace('-', '_'))
+    const relevantResults = report.results.filter((r: any) =>
+      r.complianceImpact.some((i: any) => i.framework === framework.toUpperCase().replace('-', '_'))
     );
 
     res.json({
@@ -260,13 +260,13 @@ router.get('/reports/:id/compliance/:framework', async (req: Request, res: Respo
         findings: frameworkStatus.findings,
         criticalFindings: frameworkStatus.criticalFindings,
         assessmentDate: frameworkStatus.lastAssessed,
-        results: relevantResults.map(r => ({
+        results: relevantResults.map((r: any) => ({
           testId: r.testId,
           name: r.name,
           passed: r.passed,
           severity: r.severity,
           control: r.complianceImpact.find(
-            i => i.framework === framework.toUpperCase().replace('-', '_')
+            (i: any) => i.framework === framework.toUpperCase().replace('-', '_')
           )?.control,
           remediation: r.remediation,
         })),
@@ -370,7 +370,7 @@ router.get('/compliance-dashboard', async (req: Request, res: Response, next: Ne
       data: {
         lastAssessment: latestReport.endTime,
         securityScore: latestReport.securityScore,
-        frameworks: latestReport.complianceStatus.map(c => ({
+        frameworks: latestReport.complianceStatus.map((c: any) => ({
           name: c.framework,
           compliant: c.compliant,
           score: c.score,

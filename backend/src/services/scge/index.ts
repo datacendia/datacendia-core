@@ -7,15 +7,15 @@ export interface OperationalRiskData { [key: string]: any; }
 
 export interface SimulationConfig { [key: string]: any; }
 
-export interface DecisionType { [key: string]: any; }
+export const DecisionType = { STRATEGIC: 'strategic', OPERATIONAL: 'operational', TACTICAL: 'tactical', REGULATORY: 'regulatory', EMERGENCY: 'emergency' } as const;
 
 export interface DecisionContext { [key: string]: any; }
 
 export interface BudgetContext { [key: string]: any; }
 
-export interface ConstraintType { [key: string]: any; }
+export const ConstraintType = { BUDGET: 'budget', LEGAL: 'legal', REGULATORY: 'regulatory', TIMELINE: 'timeline', RESOURCE: 'resource', POLITICAL: 'political' } as const;
 
-export interface InstitutionalState { [key: string]: any; }
+export const InstitutionalState = { STABLE: 'stable', TRANSITIONAL: 'transitional', CRISIS: 'crisis', REFORM: 'reform' } as const;
 
 export const config: any = new Proxy({}, {
   get: (_t: any, prop: string) => {
@@ -613,17 +613,17 @@ export const DEFAULT_STRESSOR_LIBRARY: any = new Proxy({}, {
 
 export class PopulationParameters { [key: string]: any; }
 
-export class AccessVariance { [key: string]: any; }
+export const AccessVariance = { NONE: 'none', LOW: 'low', MODERATE: 'moderate', HIGH: 'high', EXTREME: 'extreme' } as const;
 
-export class InformationAsymmetry { [key: string]: any; }
+export const InformationAsymmetry = { NONE: 'none', LOW: 'low', MODERATE: 'moderate', HIGH: 'high', EXTREME: 'extreme' } as const;
 
-export class MobilityConstraint { [key: string]: any; }
+export const MobilityConstraint = { NONE: 'none', LIMITED: 'limited', MODERATE: 'moderate', SEVERE: 'severe', EXTREME: 'extreme' } as const;
 
-export class ResourceScarcity { [key: string]: any; }
+export const ResourceScarcity = { ABUNDANT: 'abundant', ADEQUATE: 'adequate', CONSTRAINED: 'constrained', SCARCE: 'scarce', CRITICAL: 'critical' } as const;
 
-export class ComplianceVariance { [key: string]: any; }
+export const ComplianceVariance = { FULL_COMPLIANCE: 'full_compliance', MODERATE_COMPLIANCE: 'moderate_compliance', LOW_COMPLIANCE: 'low_compliance', NON_COMPLIANCE: 'non_compliance' } as const;
 
-export class PolicyDomain { [key: string]: any; }
+export const PolicyDomain = { ZONING: 'zoning', TAXATION: 'taxation', EDUCATION: 'education', HEALTHCARE: 'healthcare', TRANSPORT: 'transport', ENVIRONMENT: 'environment', HOUSING: 'housing', SAFETY: 'safety' } as const;
 
 export const generateSCGEId: any = new Proxy({}, {
   get: (_t: any, prop: string) => {
@@ -689,13 +689,13 @@ export class HistoricalBaseline { [key: string]: any; }
 
 export class Constraint { [key: string]: any; }
 
-export class EnforcementLevel { [key: string]: any; }
+export const EnforcementLevel = { ADVISORY: 'advisory', SOFT: 'soft', MODERATE: 'moderate', STRICT: 'strict', MANDATORY: 'mandatory' } as const;
 
-export class RiskLevel { [key: string]: any; }
+export const RiskLevel = { LOW: 'low', MEDIUM: 'medium', HIGH: 'high', CRITICAL: 'critical' } as const;
 
-export class UrgencyLevel { [key: string]: any; }
+export const UrgencyLevel = { LOW: 'low', ROUTINE: 'routine', MEDIUM: 'medium', HIGH: 'high', EMERGENCY: 'emergency' } as const;
 
-export class SensitivityLevel { [key: string]: any; }
+export const SensitivityLevel = { PUBLIC: 'public', INTERNAL: 'internal', CONFIDENTIAL: 'confidential', RESTRICTED: 'restricted' } as const;
 
 export const generateSGASId: any = new Proxy({}, {
   get: (_t: any, prop: string) => {

@@ -52,7 +52,7 @@ router.get('/series', async (_req: Request, res: Response, next: NextFunction) =
     
     const seriesList = Object.entries(series).map(([key, value]) => ({
       key,
-      ...value,
+      ...(value as any),
     }));
 
     res.json({
@@ -75,7 +75,7 @@ router.get('/series', async (_req: Request, res: Response, next: NextFunction) =
  */
 router.get('/series/:seriesId/data', async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const seriesId = req.params['seriesId'] as FREDSeriesId;
+    const seriesId = req.params['seriesId'] as unknown as FREDSeriesId;
     
     if (!FRED_SERIES[seriesId]) {
       throw errors.badRequest(`Unknown series: ${seriesId}`);
@@ -100,14 +100,14 @@ router.post('/forecast', async (req: Request, res: Response, next: NextFunction)
   try {
     const { seriesId, periodsAhead, confidenceLevel } = ForecastSchema.parse(req.body);
     
-    if (!FRED_SERIES[seriesId as FREDSeriesId]) {
+    if (!FRED_SERIES[seriesId as unknown as FREDSeriesId]) {
       throw errors.badRequest(`Unknown series: ${seriesId}`);
     }
 
     logger.info('[Forecasting] Generating forecast', { seriesId, periodsAhead, confidenceLevel });
 
     const result = await timeSeriesForecaster.forecast(
-      seriesId as FREDSeriesId,
+      seriesId as unknown as FREDSeriesId,
       periodsAhead,
       confidenceLevel
     );
@@ -139,7 +139,7 @@ router.post('/forecast/batch', async (req: Request, res: Response, next: NextFun
 
     // Validate all series IDs
     for (const id of seriesIds) {
-      if (!FRED_SERIES[id as FREDSeriesId]) {
+      if (!(FRED_SERIES as any)[id]) {
         throw errors.badRequest(`Unknown series: ${id}`);
       }
     }
@@ -147,13 +147,13 @@ router.post('/forecast/batch', async (req: Request, res: Response, next: NextFun
     logger.info('[Forecasting] Generating batch forecast', { count: seriesIds.length, periodsAhead });
 
     const results = await timeSeriesForecaster.forecastMultiple(
-      seriesIds as FREDSeriesId[],
+      seriesIds as unknown as FREDSeriesId[],
       periodsAhead
     );
 
     // Convert Map to object for JSON response
     const forecasts: Record<string, any> = {};
-    results.forEach((value, key) => {
+    results.forEach((value: any, key: any) => {
       forecasts[key] = value;
     });
 
@@ -177,7 +177,7 @@ router.post('/forecast/batch', async (req: Request, res: Response, next: NextFun
 router.get('/accuracy', async (_req: Request, res: Response, next: NextFunction) => {
   try {
     // Generate forecasts for key indicators and compile accuracy
-    const keyIndicators: FREDSeriesId[] = ['GDP', 'UNRATE', 'CPIAUCSL', 'FEDFUNDS'];
+    const keyIndicators = ['GDP', 'UNRATE', 'CPIAUCSL', 'FEDFUNDS'] as unknown as FREDSeriesId[];
     
     const results = await timeSeriesForecaster.forecastMultiple(keyIndicators, 6);
     
@@ -185,7 +185,7 @@ router.get('/accuracy', async (_req: Request, res: Response, next: NextFunction)
     let totalMAPE = 0;
     let count = 0;
 
-    results.forEach((result, seriesId) => {
+    results.forEach((result: any, seriesId: any) => {
       accuracyMetrics.push({
         seriesId,
         seriesName: result.seriesName,
