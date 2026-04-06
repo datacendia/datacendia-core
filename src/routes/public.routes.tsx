@@ -138,6 +138,9 @@ const AdtSandboxPage = lazy(() => import('../pages/sandbox/AdtSandboxPage'));
 const MozillaSandboxPage = lazy(() => import('../pages/sandbox/MozillaSandboxPage'));
 const LuxCapitalSandboxPage = lazy(() => import('../pages/sandbox/LuxCapitalSandboxPage'));
 const WingVcSandboxPage = lazy(() => import('../pages/sandbox/WingVcSandboxPage'));
+const NfxSandboxPage = lazy(() => import('../pages/sandbox/NfxSandboxPage'));
+const IndexVenturesSandboxPage = lazy(() => import('../pages/sandbox/IndexVenturesSandboxPage'));
+const GeneralCatalystSandboxPage = lazy(() => import('../pages/sandbox/GeneralCatalystSandboxPage'));
 
 // EU & Latin America Sandboxes
 const SapSandboxPage = lazy(() => import('../pages/sandbox/SapSandboxPage'));
@@ -278,6 +281,12 @@ export const publicRoutes: RouteObject[] = [
   { path: '/sandbox/lux-capital', element: w(LuxCapitalSandboxPage) },
   { path: '/sandbox/wing', element: w(WingVcSandboxPage) },
   { path: '/sandbox/wing-vc', element: w(WingVcSandboxPage) },
+  { path: '/sandbox/nfx', element: w(NfxSandboxPage) },
+  { path: '/sandbox/nfx-currier', element: w(NfxSandboxPage) },
+  { path: '/sandbox/index', element: w(IndexVenturesSandboxPage) },
+  { path: '/sandbox/index-ventures', element: w(IndexVenturesSandboxPage) },
+  { path: '/sandbox/gc', element: w(GeneralCatalystSandboxPage) },
+  { path: '/sandbox/general-catalyst', element: w(GeneralCatalystSandboxPage) },
 
   // EU & Latin America Sandboxes
   { path: '/sandbox/sap', element: w(SapSandboxPage) },
