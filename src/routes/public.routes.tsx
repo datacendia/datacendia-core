@@ -142,6 +142,9 @@ const NfxSandboxPage = lazy(() => import('../pages/sandbox/NfxSandboxPage'));
 const IndexVenturesSandboxPage = lazy(() => import('../pages/sandbox/IndexVenturesSandboxPage'));
 const GeneralCatalystSandboxPage = lazy(() => import('../pages/sandbox/GeneralCatalystSandboxPage'));
 
+// Banking Sandboxes
+const ScotiabankSandboxPage = lazy(() => import('../pages/sandbox/ScotiabankSandboxPage'));
+
 // EU & Latin America Sandboxes
 const SapSandboxPage = lazy(() => import('../pages/sandbox/SapSandboxPage'));
 const FepcmacSandboxPage = lazy(() => import('../pages/sandbox/FepcmacSandboxPage'));
@@ -287,6 +290,10 @@ export const publicRoutes: RouteObject[] = [
   { path: '/sandbox/index-ventures', element: w(IndexVenturesSandboxPage) },
   { path: '/sandbox/gc', element: w(GeneralCatalystSandboxPage) },
   { path: '/sandbox/general-catalyst', element: w(GeneralCatalystSandboxPage) },
+
+  // Banking Sandboxes
+  { path: '/sandbox/scotiabank', element: w(ScotiabankSandboxPage) },
+  { path: '/sandbox/scotia', element: w(ScotiabankSandboxPage) },
 
   // EU & Latin America Sandboxes
   { path: '/sandbox/sap', element: w(SapSandboxPage) },
