@@ -9,6 +9,7 @@
 
 import crypto from 'crypto';
 import { logger } from '../../utils/logger.js';
+import { persistServiceRecord, loadServiceRecords } from '../../utils/servicePersistence.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -90,6 +91,103 @@ export interface ScanConfig {
   authorizedTools?: string[];
   departments?: string[];
   timeRange?: string;
+  // When true, use only real ingested detections (no synthetic fill)
+  realDataOnly?: boolean;
+}
+
+// ---------------------------------------------------------------------------
+// Real data integration surface
+// ---------------------------------------------------------------------------
+
+export type DataSourceType =
+  | 'endpoint_agent'      // Datacendia endpoint agent installed on employee devices
+  | 'browser_extension'   // Datacendia browser extension (Chrome/Edge/Firefox)
+  | 'siem_webhook'        // SIEM push (Splunk HEC, Elastic, Sentinel, etc.)
+  | 'proxy_log'           // Network proxy / DLP log (Zscaler, Netskope, Palo Alto)
+  | 'api_hook'            // Direct API instrumentation hook
+  | 'manual';             // Manually submitted detection
+
+export interface RealDetectionInput {
+  sourceType: DataSourceType;
+  organizationId: string;
+  // Detection payload — maps directly to ShadowAIDetection fields
+  userId: string;
+  userEmail: string;
+  department: string;
+  aiTool: string;
+  provider: string;
+  dataClassification: ShadowAIDetection['dataClassification'];
+  piiTypesDetected: string[];
+  dataSizeBytes: number;
+  action: ShadowAIDetection['action'];
+  riskScore: number;
+  // Optional metadata from the source
+  sourceMetadata?: Record<string, unknown>;
+  timestamp?: string;
+}
+
+// ---------------------------------------------------------------------------
+// Dynamic compliance gap evaluator
+// ---------------------------------------------------------------------------
+
+function buildComplianceGaps(
+  piiExposures: number,
+  sourceCodeLeaks: number,
+  unauthorizedCount: number,
+  totalInteractions: number,
+  hasAuditTrail: boolean,
+  confidentialLeaks: number,
+): ShadowAIScanResult['complianceGaps'] {
+  return [
+    {
+      framework: 'EU AI Act',
+      requirement: 'Article 12 — Record-keeping',
+      status: hasAuditTrail ? 'partial' : 'non_compliant',
+      finding: hasAuditTrail
+        ? `${totalInteractions} AI interactions detected; audit coverage is incomplete — gaps remain`
+        : `${totalInteractions} AI interactions detected with no automated logging or audit trail`,
+    },
+    {
+      framework: 'EU AI Act',
+      requirement: 'Article 14 — Human oversight',
+      status: unauthorizedCount > 3 ? 'non_compliant' : unauthorizedCount > 0 ? 'partial' : 'compliant',
+      finding: unauthorizedCount > 0
+        ? `${unauthorizedCount} unauthorized AI tool${unauthorizedCount > 1 ? 's' : ''} in active use with no oversight controls`
+        : 'All detected AI tools are within the authorized set',
+    },
+    {
+      framework: 'GDPR',
+      requirement: 'Article 35 — DPIA',
+      status: piiExposures > 0 ? 'non_compliant' : 'partial',
+      finding: piiExposures > 0
+        ? `${piiExposures} PII exposure${piiExposures > 1 ? 's' : ''} detected — no Data Protection Impact Assessment on file for AI tools processing personal data`
+        : 'No PII exposures detected in this scan period; DPIA status unverified',
+    },
+    {
+      framework: 'NIST AI RMF',
+      requirement: 'GOVERN 1.1',
+      status: unauthorizedCount > 0 ? 'non_compliant' : 'partial',
+      finding: unauthorizedCount > 0
+        ? `${unauthorizedCount} unauthorized tools indicate no enforced AI risk management policy`
+        : 'No unauthorized tools detected; formal AI risk management policy not yet verified',
+    },
+    {
+      framework: 'SOC 2',
+      requirement: 'CC6.1 — Logical access',
+      status: unauthorizedCount > 0 ? 'partial' : 'compliant',
+      finding: unauthorizedCount > 0
+        ? `${unauthorizedCount} AI tool${unauthorizedCount > 1 ? 's' : ''} not included in logical access control inventory`
+        : 'All detected AI tools appear within the access control scope',
+    },
+    {
+      framework: 'ISO 42001',
+      requirement: 'Clause 6.1 — Risk assessment',
+      status: sourceCodeLeaks > 0 || confidentialLeaks > 0 ? 'non_compliant' : 'partial',
+      finding: sourceCodeLeaks > 0 || confidentialLeaks > 0
+        ? `${sourceCodeLeaks} source code leak${sourceCodeLeaks !== 1 ? 's' : ''} and ${confidentialLeaks} confidential data leak${confidentialLeaks !== 1 ? 's' : ''} indicate AI systems are outside organizational risk scope`
+        : 'No high-severity leaks detected; AI risk assessment coverage unverified',
+    },
+  ];
 }
 
 // ---------------------------------------------------------------------------
@@ -155,13 +253,84 @@ function generateDetections(count: number): ShadowAIDetection[] {
 
 class ShadowAIScannerService {
   private scans = new Map<string, ShadowAIScanResult>();
+  // Real detections buffered per organization, keyed by organizationId
+  private realDetections = new Map<string, ShadowAIDetection[]>();
+  private initialized = false;
+
+  // ---------------------------------------------------------------------------
+  // Real data ingestion — called by endpoint agents, browser ext, SIEM webhooks
+  // ---------------------------------------------------------------------------
+
+  async ingestDetection(input: RealDetectionInput): Promise<string> {
+    const detection: ShadowAIDetection = {
+      id: `real-${crypto.randomUUID().slice(0, 8)}`,
+      timestamp: input.timestamp || new Date().toISOString(),
+      userId: input.userId,
+      userEmail: input.userEmail,
+      department: input.department,
+      aiTool: input.aiTool,
+      provider: input.provider,
+      dataClassification: input.dataClassification,
+      piiTypesDetected: input.piiTypesDetected,
+      dataSizeBytes: input.dataSizeBytes,
+      action: input.action,
+      riskScore: input.riskScore,
+      integrityHash: `sha256:${crypto.createHash('sha256').update(JSON.stringify(input)).digest('hex').slice(0, 16)}`,
+    };
+
+    const orgBuffer = this.realDetections.get(input.organizationId) ?? [];
+    orgBuffer.push(detection);
+    this.realDetections.set(input.organizationId, orgBuffer);
+
+    await persistServiceRecord({
+      serviceName: 'ShadowAIScanner',
+      recordType: 'detection',
+      organizationId: input.organizationId,
+      referenceId: detection.id,
+      data: { detection, organizationId: input.organizationId, sourceType: input.sourceType, sourceMetadata: input.sourceMetadata },
+    });
+
+    logger.info(`[ShadowAI] Ingested real detection ${detection.id} from ${input.sourceType} for org ${input.organizationId}`);
+    return detection.id;
+  }
+
+  async loadFromDB(): Promise<void> {
+    if (this.initialized) return;
+    this.initialized = true;
+    try {
+      // Restore persisted scan results
+      const scanRecs = await loadServiceRecords({ serviceName: 'ShadowAIScanner', recordType: 'scan', limit: 500 });
+      for (const rec of scanRecs) {
+        const d = rec.data as ShadowAIScanResult;
+        if (d?.scanId) this.scans.set(d.scanId, d);
+      }
+      // Restore real detections per org
+      const detRecs = await loadServiceRecords({ serviceName: 'ShadowAIScanner', recordType: 'detection', limit: 5000 });
+      for (const rec of detRecs) {
+        const d = rec.data as { detection: ShadowAIDetection; organizationId: string; sourceType: DataSourceType };
+        if (!d?.detection?.id || !d?.organizationId) continue;
+        const buf = this.realDetections.get(d.organizationId) ?? [];
+        buf.push(d.detection);
+        this.realDetections.set(d.organizationId, buf);
+      }
+      if (scanRecs.length > 0) logger.info(`[ShadowAI] Restored ${scanRecs.length} scans, ${detRecs.length} raw detections from DB`);
+    } catch (err) {
+      logger.warn(`[ShadowAI] DB restore skipped: ${(err as Error).message}`);
+    }
+  }
 
   async runScan(config: ScanConfig): Promise<ShadowAIScanResult> {
+    await this.loadFromDB();
     const start = Date.now();
     const scanId = `scan-${crypto.randomUUID().slice(0, 12)}`;
     const empCount = config.employeeCount || 500;
     const authorized = config.authorizedTools || ['Copilot'];
-    const detections = generateDetections(Math.min(empCount, 200));
+
+    // Prefer real ingested detections; fall back to synthetic unless realDataOnly
+    const orgRealDetections = this.realDetections.get(config.organizationId) ?? [];
+    const detections = orgRealDetections.length > 0 || config.realDataOnly
+      ? orgRealDetections
+      : generateDetections(Math.min(empCount, 200));
 
     const piiExposures = detections.filter(d => d.piiTypesDetected.length > 0).length;
     const sourceCodeLeaks = detections.filter(d => d.department === 'Engineering' && d.dataClassification !== 'public').length;
@@ -239,14 +408,15 @@ class ShadowAIScannerService {
       },
     ];
 
-    const complianceGaps: ShadowAIScanResult['complianceGaps'] = [
-      { framework: 'EU AI Act', requirement: 'Article 12 — Record-keeping', status: 'non_compliant', finding: 'No automated logging of AI system interactions or decisions' },
-      { framework: 'EU AI Act', requirement: 'Article 14 — Human oversight', status: 'partial', finding: 'Some tools have human review but no systematic enforcement' },
-      { framework: 'GDPR', requirement: 'Article 35 — DPIA', status: 'non_compliant', finding: 'No Data Protection Impact Assessment for AI tools processing personal data' },
-      { framework: 'NIST AI RMF', requirement: 'GOVERN 1.1', status: 'non_compliant', finding: 'No AI risk management policies or procedures in place' },
-      { framework: 'SOC 2', requirement: 'CC6.1 — Logical access', status: 'partial', finding: 'AI tools not included in access control inventory' },
-      { framework: 'ISO 42001', requirement: 'Clause 6.1 — Risk assessment', status: 'non_compliant', finding: 'AI systems not covered by organizational risk assessment' },
-    ];
+    const hasAuditTrail = orgRealDetections.length > 0; // real data implies some audit trail
+    const complianceGaps = buildComplianceGaps(
+      piiExposures,
+      sourceCodeLeaks,
+      unauthorizedTools.length,
+      detections.length,
+      hasAuditTrail,
+      confidentialLeaks,
+    );
 
     const scanData = JSON.stringify({ scanId, config, detections: detections.length });
     const result: ShadowAIScanResult = {
@@ -275,16 +445,30 @@ class ShadowAIScannerService {
     };
 
     this.scans.set(scanId, result);
-    logger.info(`[ShadowAI] Scan ${scanId} complete: ${uniqueUsers} users, ${unauthorizedTools.length} unauthorized tools, $${estimatedExposure.toLocaleString()} exposure`);
+    await persistServiceRecord({
+      serviceName: 'ShadowAIScanner',
+      recordType: 'scan',
+      organizationId: config.organizationId,
+      referenceId: scanId,
+      data: result,
+    });
+    logger.info(`[ShadowAI] Scan ${scanId} complete: ${uniqueUsers} users, ${unauthorizedTools.length} unauthorized tools, $${estimatedExposure.toLocaleString()} exposure (${orgRealDetections.length > 0 ? 'real data' : 'synthetic demo'})`);
     return result;
   }
 
   async getScan(scanId: string): Promise<ShadowAIScanResult | null> {
+    await this.loadFromDB();
     return this.scans.get(scanId) ?? null;
   }
 
   async listScans(orgId: string): Promise<ShadowAIScanResult[]> {
+    await this.loadFromDB();
     return [...this.scans.values()].filter(s => s.organizationId === orgId);
+  }
+
+  // Returns real detection count buffered for an org (useful for UI to show live vs demo mode)
+  getRealDetectionCount(orgId: string): number {
+    return this.realDetections.get(orgId)?.length ?? 0;
   }
 }
 
