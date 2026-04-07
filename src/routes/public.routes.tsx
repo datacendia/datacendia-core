@@ -165,6 +165,11 @@ const IncidentForensicsPage = lazy(() =>
   import('../pages/cortex/wedge').then((m) => ({ default: m.IncidentForensicsPage }))
 );
 
+// Ops Agents
+const OpsAgentsPage = lazy(() =>
+  import('../pages/cortex/ops').then((m) => ({ default: m.OpsAgentsPage }))
+);
+
 // Pitch
 const PitchDeck = lazy(() => import('../pages/pitch').then((m) => ({ default: m.PitchDeck })));
 
@@ -340,6 +345,11 @@ export const publicRoutes: RouteObject[] = [
   { path: '/sandbox/sap', element: w(SapSandboxPage) },
   { path: '/sandbox/fepcmac', element: w(FepcmacSandboxPage) },
   { path: '/sandbox/cajas', element: w(FepcmacSandboxPage) },
+
+  // Ops Agents — Everyday AI task agents
+  { path: '/ops-agents', element: w(OpsAgentsPage) },
+  { path: '/ops', element: w(OpsAgentsPage) },
+  { path: '/agents/ops', element: w(OpsAgentsPage) },
 
   // Pitch
   { path: '/pitch', element: w(PitchDeck) },
