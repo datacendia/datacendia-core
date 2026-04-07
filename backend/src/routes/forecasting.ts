@@ -77,7 +77,7 @@ router.get('/series/:seriesId/data', async (req: Request, res: Response, next: N
   try {
     const seriesId = req.params['seriesId'] as unknown as FREDSeriesId;
     
-    if (!FRED_SERIES[seriesId]) {
+    if (!FRED_SERIES[seriesId as unknown as keyof typeof FRED_SERIES]) {
       throw errors.badRequest(`Unknown series: ${seriesId}`);
     }
 
@@ -100,7 +100,7 @@ router.post('/forecast', async (req: Request, res: Response, next: NextFunction)
   try {
     const { seriesId, periodsAhead, confidenceLevel } = ForecastSchema.parse(req.body);
     
-    if (!FRED_SERIES[seriesId as unknown as FREDSeriesId]) {
+    if (!FRED_SERIES[seriesId as unknown as keyof typeof FRED_SERIES]) {
       throw errors.badRequest(`Unknown series: ${seriesId}`);
     }
 

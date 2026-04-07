@@ -3,9 +3,23 @@
 
 // Auto-generated stub — implement as needed
 
+export interface SalaryQuery {
+  title: string;
+  role?: string;
+  level?: string;
+  location?: string;
+  experience?: number;
+  yearsExperience?: number;
+  industry?: string;
+  skills?: string[];
+  companySize?: 'startup' | 'small' | 'medium' | 'large' | 'enterprise';
+}
+
 export const marketSalaryService: any = new Proxy({}, {
   get: (_t: any, prop: string) => {
     if (prop === 'then') return undefined;
     return (..._args: any[]) => Promise.resolve({});
   },
 });
+
+export default marketSalaryService;

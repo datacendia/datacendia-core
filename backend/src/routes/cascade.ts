@@ -128,7 +128,7 @@ router.post('/analyze', async (req: Request, res: Response) => {
     }
 
     // Validate change type
-    if (!Object.values(ChangeType).includes(changeSpec.type)) {
+    if (!(Object.values(ChangeType) as string[]).includes(changeSpec.type)) {
       res.status(400).json({
         error: 'Invalid change type',
         validTypes: Object.values(ChangeType),

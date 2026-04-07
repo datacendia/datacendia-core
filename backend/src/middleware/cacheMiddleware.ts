@@ -96,7 +96,7 @@ export function apiCache(options: CacheOptions = {}): (req: Request, res: Respon
     const cacheKey = generateCacheKey(req, opts);
 
     // Try to serve from cache
-    cacheService.get<{ statusCode: number; body: any; headers: Record<string, string> }>(cacheKey)
+    cacheService.get(cacheKey)
       .then((cached: any) => {
         if (cached) {
           // Set cache headers
@@ -107,7 +107,7 @@ export function apiCache(options: CacheOptions = {}): (req: Request, res: Respon
           if (cached.headers) {
             Object.entries(cached.headers).forEach(([key, value]) => {
               if (!['transfer-encoding', 'content-length'].includes(key.toLowerCase())) {
-                res.setHeader(key, value);
+                res.setHeader(key, value as string);
               }
             });
           }

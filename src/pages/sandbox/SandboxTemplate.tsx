@@ -221,7 +221,10 @@ export interface OrgSandboxConfig {
 // RESOLVER — Convert pure data → ScenarioConfig (with JSX icons)
 // =============================================================================
 
-function resolveScenarios(templates: TemplateScenario[]): ScenarioConfig[] {
+function resolveScenarios(
+  templates: TemplateScenario[],
+  configFallback?: { complianceScore?: number; timelineEvents?: TemplateScenario['timelineEvents'] },
+): ScenarioConfig[] {
   return templates.map((t) => ({
     ...t,
     icon: resolveIcon(t.icon),
@@ -230,6 +233,11 @@ function resolveScenarios(templates: TemplateScenario[]): ScenarioConfig[] {
       ...c,
       icon: resolveIcon(c.icon),
     })) as Connector[],
+    receiptTemplate: {
+      ...t.receiptTemplate,
+      complianceScore: t.receiptTemplate.complianceScore ?? t.complianceScore ?? configFallback?.complianceScore,
+      timelineEvents: t.receiptTemplate.timelineEvents ?? t.timelineEvents ?? configFallback?.timelineEvents,
+    },
   }));
 }
 
@@ -256,8 +264,9 @@ export const SandboxTemplatePage: React.FC<{ config: OrgSandboxConfig }> = ({ co
   const [unlocked, setUnlocked] = useState(false);
   const [lang, setLang] = useState<'en' | 'es'>('en');
 
-  const scenariosEN = resolveScenarios(config.scenarios);
-  const scenariosES = config.i18n ? resolveScenarios(config.i18n.scenarios) : null;
+  const fallback = { complianceScore: config.complianceScore, timelineEvents: config.timelineEvents };
+  const scenariosEN = resolveScenarios(config.scenarios, fallback);
+  const scenariosES = config.i18n ? resolveScenarios(config.i18n.scenarios, fallback) : null;
 
   useEffect(() => {
     if (sessionStorage.getItem(config.sessionKey) === 'true') {

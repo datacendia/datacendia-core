@@ -62,7 +62,7 @@ router.post('/keys', async (req: Request, res: Response) => {
 });
 
 router.get('/keys', (_req: Request, res: Response) => {
-  const keys = hsmAdapter.listKeys().map(({ _softwareKey, ...k }) => k);
+  const keys = hsmAdapter.listKeys().map(({ _softwareKey: _, ...k }: any) => k);
   res.json({ success: true, data: keys });
 });
 
