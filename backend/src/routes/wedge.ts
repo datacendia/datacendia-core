@@ -24,6 +24,16 @@ const router = Router();
 // WEDGE 1: Shadow AI Scanner
 // ---------------------------------------------------------------------------
 
+router.post('/shadow-scan/ingest', async (req: Request, res: Response) => {
+  try {
+    const detectionId = await shadowAIScannerService.ingestDetection(req.body);
+    res.json({ success: true, detectionId });
+  } catch (error) {
+    logger.error('[Wedge] Ingest detection error:', error);
+    res.status(500).json({ success: false, error: 'Ingest failed' });
+  }
+});
+
 router.post('/shadow-scan', async (req: Request, res: Response) => {
   try {
     const result = await shadowAIScannerService.runScan(req.body);
