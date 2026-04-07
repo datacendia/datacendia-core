@@ -25,8 +25,10 @@ import {
 } from 'lucide-react';
 import { cn } from '../../../lib/utils';
 
-const MAX_PROMPT_LENGTH = 32_000;
-const MAX_CONTEXT_LENGTH = 128_000;
+// Community-tier limits (enterprise unlocks higher limits)
+const MAX_PROMPT_LENGTH = 8_000;
+const MAX_CONTEXT_LENGTH = 16_000;
+const COMMUNITY_AGENTS: OpsAgentType[] = ['report', 'analytics'];
 
 // =============================================================================
 // TYPES
@@ -76,26 +78,19 @@ const AGENT_COLORS: Record<OpsAgentType, { bg: string; border: string; text: str
   pipeline: { bg: 'bg-amber-500/10', border: 'border-amber-500/30', text: 'text-amber-400', glow: 'shadow-amber-500/20' },
 };
 
+// Community tier: 1 quick prompt per agent; enterprise unlocks full library
 const QUICK_PROMPTS: Record<OpsAgentType, Array<{ label: string; prompt: string }>> = {
   report: [
     { label: 'Weekly AI Usage Report', prompt: 'Generate a weekly AI usage report for our organization. Include: total interactions by department, top tools used, cost breakdown, PII exposure incidents, and recommended actions.' },
-    { label: 'Executive Summary', prompt: 'Create a one-page executive summary of our AI governance posture. Include risk score, compliance status across EU AI Act and GDPR, and top 3 priorities.' },
-    { label: 'Vendor Comparison Report', prompt: 'Generate a comparison report of AI vendors (OpenAI, Anthropic, Google, Microsoft) across: pricing, data privacy, compliance certifications, and enterprise features.' },
   ],
   analytics: [
     { label: 'Department AI Spend Analysis', prompt: 'Analyze AI spending patterns by department. Show which departments spend the most, identify anomalies, and project next quarter costs.' },
-    { label: 'Risk Trend Analysis', prompt: 'Analyze the trend of security risks over the last 6 months. Identify if PII exposures are increasing or decreasing and which departments are improving.' },
-    { label: 'Decision Quality Metrics', prompt: 'Calculate decision quality metrics: accuracy rate, human override rate, confidence calibration, and time-to-decision. Flag any degradation trends.' },
   ],
   nlp: [
     { label: 'Classify Support Tickets', prompt: 'Classify the following support tickets into categories: billing, technical, feature-request, security, compliance. Output as JSON with confidence scores.' },
-    { label: 'Summarize Meeting Notes', prompt: 'Summarize the following meeting notes into: key decisions made, action items with owners, open questions, and any compliance-relevant discussions.' },
-    { label: 'Contract Risk Review', prompt: 'Review this AI vendor contract and flag: data usage rights, IP ownership clauses, liability limitations, indemnification gaps, and auto-renewal terms.' },
   ],
   pipeline: [
     { label: 'ETL Pipeline for Reports', prompt: 'Design an ETL pipeline that: extracts data from our PostgreSQL database, transforms it into weekly report format, and loads it into a report storage bucket. Include scheduling and error handling.' },
-    { label: 'Real-time Alert Pipeline', prompt: 'Build a pipeline that monitors AI model predictions in real-time, detects when accuracy drops below 85%, and sends alerts via email and Slack.' },
-    { label: 'Data Quality Pipeline', prompt: 'Scaffold a data quality pipeline that validates incoming data against schema, checks for PII, flags duplicates, and quarantines bad records.' },
   ],
 };
 
@@ -521,6 +516,29 @@ export function OpsAgentsPage() {
                   onClick={() => setSelectedAgent(agent.type)}
                 />
               ))}
+              {/* Locked enterprise agents shown as upgrade prompts */}
+              {!agents.find(a => a.type === 'nlp') && (
+                <div className="flex items-center gap-3 p-3 rounded-xl border border-dashed border-zinc-800 opacity-50">
+                  <div className="p-2 rounded-lg bg-purple-500/10 text-purple-400">
+                    <Brain className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-sm font-semibold text-zinc-400">NLP Agent</div>
+                    <div className="text-[10px] text-zinc-600">Enterprise</div>
+                  </div>
+                </div>
+              )}
+              {!agents.find(a => a.type === 'pipeline') && (
+                <div className="flex items-center gap-3 p-3 rounded-xl border border-dashed border-zinc-800 opacity-50">
+                  <div className="p-2 rounded-lg bg-amber-500/10 text-amber-400">
+                    <Workflow className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-sm font-semibold text-zinc-400">Pipeline Agent</div>
+                    <div className="text-[10px] text-zinc-600">Enterprise</div>
+                  </div>
+                </div>
+              )}
               {agents.length === 0 && (
                 <div className="text-xs text-zinc-500 text-center py-4">Loading agents...</div>
               )}
