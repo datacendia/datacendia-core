@@ -22,8 +22,10 @@
 | 14 | [Vertical Industry Agents](./vertical-agents.md) | VerticalAgentsService (107 modules), Healthcare, Finance, Legal, Manufacturing, Sports, Insurance | 3 |
 | 15 | [Data & Infrastructure](./data-infrastructure.md) | PostgreSQL, Redis, VectorDB, Kafka, Streaming, Email, Notifications, Backup, servicePersistence | 5 |
 | 16 | [Strategic & Forecasting](./strategic-forecasting.md) | Strategic Intelligence (7 modules), Forecasting, EnhancedLLM, ExecutiveSummary, PostDeliberation | 3 |
+| 17 | [Advanced Analysis Features](./advanced-analysis-features.md) | Ghost Board, Chronos, Pre-Mortem, Decision Debt, Regulatory Absorb, Live Demo, Collapse Mode, Druid, SCGE, SGAS | 12 |
+| 18 | [SCGE & SGAS](./scge-sgas.md) | Synthetic Community Governance Engine, Self-Governing Agent System, Agent orchestration | 6 |
 
-**Total: 16 documents · ~54 Mermaid diagrams · Covering 350+ service files**
+**Total: 18 documents · ~70 Mermaid diagrams · Covering 350+ service files**
 
 ## Service Count by Domain
 
