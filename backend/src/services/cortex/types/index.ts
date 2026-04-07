@@ -1,6 +1,10 @@
 // Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 
+
+
+
+import { withFallback } from '../../_serviceProxy.js';
 // Auto-generated stub — implement as needed
 
 export interface QueryParams { [key: string]: any; }
@@ -17,68 +21,23 @@ export interface GatewayRequest { [key: string]: any; }
 
 export interface GatewayResponse { [key: string]: any; }
 
-export const DEFAULT_PROVIDERS: any = new Proxy({}, {
-  get: (_t: any, prop: string) => {
-    if (prop === 'then') return undefined;
-    return (..._args: any[]) => Promise.resolve({});
-  },
-});
+export const DEFAULT_PROVIDERS: any = withFallback({});
 
-export const MODEL_PRICING: any = new Proxy({}, {
-  get: (_t: any, prop: string) => {
-    if (prop === 'then') return undefined;
-    return (..._args: any[]) => Promise.resolve({});
-  },
-});
+export const MODEL_PRICING: any = withFallback({});
 
-export const RING_BUFFER_SIZE: any = new Proxy({}, {
-  get: (_t: any, prop: string) => {
-    if (prop === 'then') return undefined;
-    return (..._args: any[]) => Promise.resolve({});
-  },
-});
+export const RING_BUFFER_SIZE: any = withFallback({});
 
-export const FLUSH_BATCH_SIZE: any = new Proxy({}, {
-  get: (_t: any, prop: string) => {
-    if (prop === 'then') return undefined;
-    return (..._args: any[]) => Promise.resolve({});
-  },
-});
+export const FLUSH_BATCH_SIZE: any = withFallback({});
 
-export const FLUSH_INTERVAL_MS: any = new Proxy({}, {
-  get: (_t: any, prop: string) => {
-    if (prop === 'then') return undefined;
-    return (..._args: any[]) => Promise.resolve({});
-  },
-});
+export const FLUSH_INTERVAL_MS: any = withFallback({});
 
-export const MERKLE_LEAF_LIMIT: any = new Proxy({}, {
-  get: (_t: any, prop: string) => {
-    if (prop === 'then') return undefined;
-    return (..._args: any[]) => Promise.resolve({});
-  },
-});
+export const MERKLE_LEAF_LIMIT: any = withFallback({});
 
-export const hashData: any = new Proxy({}, {
-  get: (_t: any, prop: string) => {
-    if (prop === 'then') return undefined;
-    return (..._args: any[]) => Promise.resolve({});
-  },
-});
+export const hashData: any = withFallback({});
 
-export const signData: any = new Proxy({}, {
-  get: (_t: any, prop: string) => {
-    if (prop === 'then') return undefined;
-    return (..._args: any[]) => Promise.resolve({});
-  },
-});
+export const signData: any = withFallback({});
 
-export const emptyCounters: any = new Proxy({}, {
-  get: (_t: any, prop: string) => {
-    if (prop === 'then') return undefined;
-    return (..._args: any[]) => Promise.resolve({});
-  },
-});
+export const emptyCounters: any = withFallback({});
 
 export type AggregateCounters = Record<string, number>;
 

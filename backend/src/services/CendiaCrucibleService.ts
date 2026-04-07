@@ -1,20 +1,10 @@
 // Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 
-// Auto-generated stub — implement as needed
+import { withFallback } from './_serviceProxy.js';
 
-export const cendiaCrucibleService: any = new Proxy({}, {
-  get: (_t: any, prop: string) => {
-    if (prop === 'then') return undefined;
-    return (..._args: any[]) => Promise.resolve({});
-  },
-});
+export const cendiaCrucibleService: any = withFallback({});
 
-export const SCENARIO_TEMPLATES: any = new Proxy({}, {
-  get: (_t: any, prop: string) => {
-    if (prop === 'then') return undefined;
-    return (..._args: any[]) => Promise.resolve({});
-  },
-});
+export const SCENARIO_TEMPLATES: Record<string, any> = {};
 
 export default cendiaCrucibleService;
