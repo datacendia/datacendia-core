@@ -120,9 +120,9 @@ Verification: app.datacendia.com/verify/${receipt.hash?.slice(-8) || 'hash'}
         
         <button
           onClick={generateCertification}
-          className={`w-full py-2 px-4 bg-${accent}-500/20 hover:bg-${accent}-500/30 
-                     border border-${accent}-500/30 rounded-lg transition-all duration-200
-                     flex items-center justify-center gap-2 text-sm font-medium text-white`}
+          className="w-full py-2 px-4 bg-emerald-500/20 hover:bg-emerald-500/30 
+                     border border-emerald-500/30 rounded-lg transition-all duration-200
+                     flex items-center justify-center gap-2 text-sm font-medium text-white"
         >
           <Download className="w-4 h-4" />
           Generate Rule 11 Certification

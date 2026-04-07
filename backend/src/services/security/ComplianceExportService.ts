@@ -302,7 +302,7 @@ class ComplianceGapScannerService {
     // ---------------------------------------------------------------------------
     const ninetyDaysAgo = new Date(Date.now() - 90 * 24 * 60 * 60 * 1000);
     const staleDecisions = deliberations.filter(d =>
-      d.created_at < ninetyDaysAgo && d.status !== 'ARCHIVED'
+      d.created_at < ninetyDaysAgo && (d.status as string) !== 'ARCHIVED'
     );
     if (staleDecisions.length > 10) {
       findings.push({

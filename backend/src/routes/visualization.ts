@@ -189,9 +189,7 @@ router.post('/replay/create', async (req: Request, res: Response) => {
  * Start playback
  */
 router.post('/replay/:sessionId/play', (req: Request, res: Response) => {
-  const { speed } = req.body;
-  
-  const state = decisionReplayTheaterService.startPlayback(req.params.sessionId, speed);
+  const state = decisionReplayTheaterService.startPlayback(req.params.sessionId);
   
   res.json({ success: true, state });
 });

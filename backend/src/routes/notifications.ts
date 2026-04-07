@@ -114,7 +114,7 @@ router.post('/send', async (req: Request, res: Response) => {
   try {
     const payload = sendNotificationSchema.parse(req.body);
     
-    const notifPayload: Parameters<typeof notificationService.send>[0] = {
+    const notifPayload: any = {
       userId: payload.userId,
       organizationId: payload.organizationId,
       type: payload.type as unknown as NotificationType,
