@@ -9,6 +9,7 @@
 
 import crypto from 'crypto';
 import { logger } from '../../utils/logger.js';
+import { persistServiceRecord, loadServiceRecords } from '../../utils/servicePersistence.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -263,6 +264,22 @@ function calculateScore(q: GovernanceQuestionnaire): GovernanceReport['governanc
 
 class GovernanceReportService {
   private reports = new Map<string, GovernanceReport>();
+  private initialized = false;
+
+  async loadFromDB(): Promise<void> {
+    if (this.initialized) return;
+    this.initialized = true;
+    try {
+      const recs = await loadServiceRecords({ serviceName: 'GovernanceReport', recordType: 'report', limit: 500 });
+      for (const rec of recs) {
+        const d = rec.data as GovernanceReport;
+        if (d?.reportId) this.reports.set(d.reportId, d);
+      }
+      if (recs.length > 0) logger.info(`[GovernanceReport] Restored ${recs.length} reports from DB`);
+    } catch (err) {
+      logger.warn(`[GovernanceReport] DB restore skipped: ${(err as Error).message}`);
+    }
+  }
 
   async generateReport(q: GovernanceQuestionnaire): Promise<GovernanceReport> {
     const reportId = `gov-${crypto.randomUUID().slice(0, 12)}`;
@@ -404,15 +421,24 @@ class GovernanceReportService {
     };
 
     this.reports.set(reportId, report);
+    await persistServiceRecord({
+      serviceName: 'GovernanceReport',
+      recordType: 'report',
+      organizationId: q.organizationName,
+      referenceId: reportId,
+      data: report,
+    });
     logger.info(`[GovernanceReport] Generated ${reportId} for ${q.organizationName}: score=${overallScore}, risk=${riskLevel}`);
     return report;
   }
 
   async getReport(reportId: string): Promise<GovernanceReport | null> {
+    await this.loadFromDB();
     return this.reports.get(reportId) ?? null;
   }
 
   async listReports(): Promise<GovernanceReport[]> {
+    await this.loadFromDB();
     return [...this.reports.values()];
   }
 }

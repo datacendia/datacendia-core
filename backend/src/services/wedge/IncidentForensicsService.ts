@@ -9,6 +9,7 @@
 
 import crypto from 'crypto';
 import { logger } from '../../utils/logger.js';
+import { persistServiceRecord, loadServiceRecords } from '../../utils/servicePersistence.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -129,6 +130,22 @@ export interface ForensicAnalysis {
 
 class IncidentForensicsService {
   private incidents = new Map<string, ForensicAnalysis>();
+  private initialized = false;
+
+  async loadFromDB(): Promise<void> {
+    if (this.initialized) return;
+    this.initialized = true;
+    try {
+      const recs = await loadServiceRecords({ serviceName: 'IncidentForensics', recordType: 'report', limit: 500 });
+      for (const rec of recs) {
+        const d = rec.data as ForensicAnalysis;
+        if (d?.reportId) this.incidents.set(d.reportId, d);
+      }
+      if (recs.length > 0) logger.info(`[IncidentForensics] Restored ${recs.length} reports from DB`);
+    } catch (err) {
+      logger.warn(`[IncidentForensics] DB restore skipped: ${(err as Error).message}`);
+    }
+  }
 
   async submitIncident(submission: IncidentSubmission): Promise<ForensicAnalysis> {
     const reportId = `forensic-${crypto.randomUUID().slice(0, 12)}`;
@@ -321,15 +338,24 @@ class IncidentForensicsService {
     };
 
     this.incidents.set(reportId, analysis);
+    await persistServiceRecord({
+      serviceName: 'IncidentForensics',
+      recordType: 'report',
+      organizationId: submission.organizationId || submission.organizationName || 'unknown',
+      referenceId: reportId,
+      data: analysis,
+    });
     logger.info(`[IncidentForensics] Report ${reportId} generated for ${submission.title}: severity=${submission.severity}, evidence=${evidenceChain.length} items`);
     return analysis;
   }
 
   async getReport(reportId: string): Promise<ForensicAnalysis | null> {
+    await this.loadFromDB();
     return this.incidents.get(reportId) ?? null;
   }
 
   async listReports(orgId?: string): Promise<ForensicAnalysis[]> {
+    await this.loadFromDB();
     const all = [...this.incidents.values()];
     return orgId ? all.filter(r => r.organizationName === orgId) : all;
   }
