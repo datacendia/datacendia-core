@@ -154,6 +154,17 @@ const ScotiabankSandboxPage = lazy(() => import('../pages/sandbox/ScotiabankSand
 const SapSandboxPage = lazy(() => import('../pages/sandbox/SapSandboxPage'));
 const FepcmacSandboxPage = lazy(() => import('../pages/sandbox/FepcmacSandboxPage'));
 
+// Wedge Products — Lead-gen pages, no auth required
+const ShadowAIScannerPage = lazy(() =>
+  import('../pages/cortex/wedge').then((m) => ({ default: m.ShadowAIScannerPage }))
+);
+const GovernanceReportPage = lazy(() =>
+  import('../pages/cortex/wedge').then((m) => ({ default: m.GovernanceReportPage }))
+);
+const IncidentForensicsPage = lazy(() =>
+  import('../pages/cortex/wedge').then((m) => ({ default: m.IncidentForensicsPage }))
+);
+
 // Pitch
 const PitchDeck = lazy(() => import('../pages/pitch').then((m) => ({ default: m.PitchDeck })));
 
@@ -167,6 +178,14 @@ export const publicRoutes: RouteObject[] = [
   { path: '/old-home', element: w(LandingPage) },
   { path: '/legacy-home', element: w(HomePage) },
   { path: '/pricing', element: w(PricingPage) },
+
+  // Wedge Products — Free tools that drive client acquisition
+  { path: '/shadow-scan', element: w(ShadowAIScannerPage) },
+  { path: '/shadow-ai', element: w(ShadowAIScannerPage) },
+  { path: '/governance-report', element: w(GovernanceReportPage) },
+  { path: '/ai-governance-report', element: w(GovernanceReportPage) },
+  { path: '/incident-forensics', element: w(IncidentForensicsPage) },
+  { path: '/ai-forensics', element: w(IncidentForensicsPage) },
   { path: '/demo', element: w(DemoRequestPage) },
   { path: '/product', element: w(ProductPage) },
   { path: '/products', element: <Navigate to="/product" replace /> },

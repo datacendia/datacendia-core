@@ -95,6 +95,7 @@ import openbaoRoutes from './routes/openbao.js';
 import rapidsRoutes from './routes/rapids.js';
 import flinkRoutes from './routes/flink.js';
 import gatewayRoutes from './routes/gateway.js';
+import wedgeRoutes from './routes/wedge.js';
 import { registerPlatformServices } from './core/services/PlatformServices.js';
 import { applyPerformanceIndexes } from './startup/applyIndexes.js';
 import { apiCache, CACHE_TTLS } from './middleware/cacheMiddleware.js';
@@ -384,6 +385,7 @@ app.use('/api/v1/openbao', openbaoRoutes);           // OpenBao/Vault secrets & 
 app.use('/api/v1/rapids', rapidsRoutes);             // NVIDIA RAPIDS GPU analytics + Confidential Computing
 app.use('/api/v1/flink', flinkRoutes);               // Apache Flink CEP stream processing
 app.use('/api/v1/gateway', gatewayRoutes);           // CendiaGateway™ — AI Governance Gateway
+app.use('/api/v1/wedge', wedgeRoutes);               // Wedge Products — Shadow AI, Governance Report, Incident Forensics
 
 // Sandbox Analytics - Track demo engagement for Thomson Reuters
 import('./routes/sandbox-analytics.js').then(mod => {
