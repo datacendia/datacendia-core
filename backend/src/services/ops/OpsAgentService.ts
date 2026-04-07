@@ -2,14 +2,17 @@
 // See LICENSE file for details.
 
 // =============================================================================
-// OPS AGENT SERVICE
+// OPS AGENT SERVICE — Community Edition
 // Practical, everyday AI agents that execute tasks (not deliberate).
 //
-// Agent types:
-//   1. Report Automation — generate/schedule structured reports from data
-//   2. Analytics          — descriptive stats, trends, anomalies, conversational BI
+// Community tier includes:
+//   1. Report Automation — generate structured reports from data
+//   2. Analytics          — descriptive stats, trends, anomalies
+//
+// Enterprise tier (datacendia-components) adds:
 //   3. NLP               — classify, summarize, extract, sentiment-analyze text
 //   4. Pipeline Builder   — scaffold data pipelines from plain-English descriptions
+//   + Scheduled tasks, higher limits, integrity hashing, multi-org RBAC
 //
 // These complement the Governance/Council agents (which deliberate and audit).
 // Ops agents DO things; Governance agents THINK about things.
@@ -202,12 +205,14 @@ Rules:
 // Constants
 // ---------------------------------------------------------------------------
 
-const MAX_PROMPT_LENGTH = 32_000;
-const MAX_CONTEXT_LENGTH = 128_000;
-const MAX_CONCURRENT_TASKS = 10;
-const MAX_TASK_HISTORY = 2_000;
-const TASK_TTL_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
-const VALID_AGENT_TYPES: OpsAgentType[] = ['report', 'analytics', 'nlp', 'pipeline'];
+// Community-tier limits (enterprise overrides in datacendia-components)
+const MAX_PROMPT_LENGTH = 8_000;
+const MAX_CONTEXT_LENGTH = 16_000;
+const MAX_CONCURRENT_TASKS = 3;
+const MAX_TASK_HISTORY = 50;
+const TASK_TTL_MS = 3 * 24 * 60 * 60 * 1000; // 3 days
+const COMMUNITY_AGENT_TYPES: OpsAgentType[] = ['report', 'analytics'];
+const VALID_AGENT_TYPES: OpsAgentType[] = COMMUNITY_AGENT_TYPES;
 
 // ---------------------------------------------------------------------------
 // Service
@@ -220,7 +225,7 @@ class OpsAgentService {
   private initialized = false;
 
   getAgents(): OpsAgent[] {
-    return AGENT_DEFINITIONS;
+    return AGENT_DEFINITIONS.filter(a => COMMUNITY_AGENT_TYPES.includes(a.type));
   }
 
   getAgent(agentType: OpsAgentType): OpsAgent | undefined {
@@ -334,10 +339,9 @@ class OpsAgentService {
 
       const result = this.parseResult(task.agentType, response, options?.format);
 
-      // Add integrity hash to result
+      // Enterprise tier adds integrity hashing — see datacendia-components
       result.metadata = {
         ...result.metadata,
-        integrityHash: `sha256:${crypto.createHash('sha256').update(result.content).digest('hex')}`,
         agentType: task.agentType,
         tokenEstimate: Math.ceil(result.content.length / 4),
       };
