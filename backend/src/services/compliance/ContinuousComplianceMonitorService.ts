@@ -510,8 +510,8 @@ export class ContinuousComplianceMonitorService {
         const d = rec.data as any;
 
 
-        if (d?.id) {
-          const key = d.organizationId && d.framework ? `${d.organizationId}-${d.framework}` : d.id;
+        if (d?.id && d.organizationId && d.framework) {
+          const key = `${d.organizationId}-${d.framework}`;
           const existing = this.snapshots.get(key) || [];
           existing.push(d);
           this.snapshots.set(key, existing);

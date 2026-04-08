@@ -543,8 +543,9 @@ export class VerticalRegistry {
         // Vertical registration records are informational — verticals self-register on startup.
         // This load validates persistence is working for the registry.
       }
-    } catch (_err) {
+    } catch (err) {
       // Non-critical — verticals re-register on startup
+      // Cannot use logger here as VerticalPattern has no logger import
     }
   }
 }
