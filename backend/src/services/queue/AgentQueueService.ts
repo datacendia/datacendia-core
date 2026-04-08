@@ -536,7 +536,7 @@ class AgentQueueService extends EventEmitter {
       restored += recs.length;
 
 
-      const recs_1 = await loadServiceRecords({ serviceName: 'AgentQueue', recordType: 'record', limit: 1000 });
+      const recs_1 = await loadServiceRecords({ serviceName: 'AgentQueue', recordType: 'worker', limit: 1000 });
 
 
       for (const rec of recs_1) {
@@ -554,7 +554,7 @@ class AgentQueueService extends EventEmitter {
       restored += recs_1.length;
 
 
-      const recs_2 = await loadServiceRecords({ serviceName: 'AgentQueue', recordType: 'record', limit: 1000 });
+      const recs_2 = await loadServiceRecords({ serviceName: 'AgentQueue', recordType: 'queueEvent', limit: 1000 });
 
 
       for (const rec of recs_2) {

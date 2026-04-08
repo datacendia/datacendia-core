@@ -83,9 +83,16 @@ export const VERTICAL_AGENTS = [
   ...SPORTS_AGENTS,
 ];
 
-// Complete agent registry
+// Deduplicate: vertical agents take precedence over premium agents with the same code
+const verticalCodes = new Set(VERTICAL_AGENTS.map(a => a.code));
+const coreCodes = new Set(CORE_WITHOUT_CLO.map(a => a.code));
+const PREMIUM_UNIQUE = PREMIUM_AGENTS.filter(
+  a => !verticalCodes.has(a.code) && !coreCodes.has(a.code)
+);
+
+// Complete agent registry (no duplicate codes)
 export const DOMAIN_AGENTS = [
   ...CORE_WITHOUT_CLO,
   ...VERTICAL_AGENTS,
-  ...PREMIUM_AGENTS,
+  ...PREMIUM_UNIQUE,
 ];

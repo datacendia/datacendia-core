@@ -357,7 +357,7 @@ export class AgentsService extends BaseService {
       restored += recs.length;
 
 
-      const recs_1 = await loadServiceRecords({ serviceName: 'Agents', recordType: 'record', limit: 1000 });
+      const recs_1 = await loadServiceRecords({ serviceName: 'Agents', recordType: 'interaction', limit: 1000 });
 
 
       for (const rec of recs_1) {

@@ -188,7 +188,7 @@ export const ENTERPRISE_AGENTS: DomainAgent[] = [
     systemPrompt: `You are External Auditor. Maintain independence - you have NO loyalty to management.`,
     model: 'qwen2.5:14b',
     premium: true,
-    premiumTier: 'strategic',
+    premiumTier: 'enterprise',
   },
   {
     id: 'agent-int-auditor',
@@ -203,7 +203,7 @@ export const ENTERPRISE_AGENTS: DomainAgent[] = [
     systemPrompt: `You are Internal Auditor. Rate findings by severity: Critical, High, Medium, Low.`,
     model: 'qwen2.5:14b',
     premium: true,
-    premiumTier: 'strategic',
+    premiumTier: 'enterprise',
   },
   // Healthcare Pack
   {
@@ -219,7 +219,7 @@ export const ENTERPRISE_AGENTS: DomainAgent[] = [
     systemPrompt: `You are CMIO. Bridge clinical medicine and information technology.`,
     model: 'qwen2.5:14b',
     premium: true,
-    premiumTier: 'strategic',
+    premiumTier: 'enterprise',
   },
   {
     id: 'agent-pso',
@@ -234,7 +234,7 @@ export const ENTERPRISE_AGENTS: DomainAgent[] = [
     systemPrompt: `You are Patient Safety Officer. Always prioritize patient welfare.`,
     model: 'qwen2.5:14b',
     premium: true,
-    premiumTier: 'strategic',
+    premiumTier: 'enterprise',
   },
   {
     id: 'agent-hco',
@@ -249,7 +249,7 @@ export const ENTERPRISE_AGENTS: DomainAgent[] = [
     systemPrompt: `You are Healthcare Compliance. Cite relevant regulations: 45 CFR, 42 CFR.`,
     model: 'qwen2.5:14b',
     premium: true,
-    premiumTier: 'strategic',
+    premiumTier: 'enterprise',
   },
   {
     id: 'agent-cod',
@@ -264,7 +264,7 @@ export const ENTERPRISE_AGENTS: DomainAgent[] = [
     systemPrompt: `You are Clinical Operations. Optimize healthcare delivery for efficiency and quality.`,
     model: 'qwen2.5:14b',
     premium: true,
-    premiumTier: 'strategic',
+    premiumTier: 'enterprise',
   },
   // Finance Pack
   {
@@ -280,7 +280,7 @@ export const ENTERPRISE_AGENTS: DomainAgent[] = [
     systemPrompt: `You are Quant. Use precise mathematical notation and confidence intervals.`,
     model: 'qwen2.5:14b',
     premium: true,
-    premiumTier: 'strategic',
+    premiumTier: 'enterprise',
   },
   {
     id: 'agent-pm',
@@ -295,7 +295,7 @@ export const ENTERPRISE_AGENTS: DomainAgent[] = [
     systemPrompt: `You are Portfolio Manager. Always consider fiduciary duty and suitability.`,
     model: 'qwen2.5:14b',
     premium: true,
-    premiumTier: 'strategic',
+    premiumTier: 'enterprise',
   },
   {
     id: 'agent-cro-finance',
@@ -310,7 +310,7 @@ export const ENTERPRISE_AGENTS: DomainAgent[] = [
     systemPrompt: `You are Credit Risk Officer. Rate credits using AAA to D scales.`,
     model: 'qwen2.5:14b',
     premium: true,
-    premiumTier: 'strategic',
+    premiumTier: 'enterprise',
   },
   {
     id: 'agent-treasury',
@@ -325,7 +325,7 @@ export const ENTERPRISE_AGENTS: DomainAgent[] = [
     systemPrompt: `You are Treasury. Use metrics: DSO, DPO, DIO, cash conversion cycle.`,
     model: 'qwen2.5:14b',
     premium: true,
-    premiumTier: 'strategic',
+    premiumTier: 'enterprise',
   },
   // Legal Pack (Enterprise)
   {
@@ -341,7 +341,7 @@ export const ENTERPRISE_AGENTS: DomainAgent[] = [
     systemPrompt: `You are Contract Specialist. Identify red flag clauses and propose alternatives.`,
     model: 'qwen2.5:14b',
     premium: true,
-    premiumTier: 'strategic',
+    premiumTier: 'enterprise',
   },
   {
     id: 'agent-ip',
@@ -356,7 +356,7 @@ export const ENTERPRISE_AGENTS: DomainAgent[] = [
     systemPrompt: `You are IP Counsel. Reference USPTO, EPO, WIPO procedures.`,
     model: 'qwen2.5:14b',
     premium: true,
-    premiumTier: 'strategic',
+    premiumTier: 'enterprise',
   },
   {
     id: 'agent-litigation',
@@ -371,7 +371,7 @@ export const ENTERPRISE_AGENTS: DomainAgent[] = [
     systemPrompt: `You are Litigation Expert. Analyze cases using FRCP and relevant precedent.`,
     model: 'qwen2.5:14b',
     premium: true,
-    premiumTier: 'strategic',
+    premiumTier: 'enterprise',
   },
   {
     id: 'agent-regulatory',
@@ -386,7 +386,7 @@ export const ENTERPRISE_AGENTS: DomainAgent[] = [
     systemPrompt: `You are Regulatory Affairs. Cite relevant CFR sections and agency guidance.`,
     model: 'qwen2.5:14b',
     premium: true,
-    premiumTier: 'strategic',
+    premiumTier: 'enterprise',
   },
 ];
 

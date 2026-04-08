@@ -1,5 +1,5 @@
 // =============================================================================
-// AI AGENTS TESTS - All 30 Agents
+// AI AGENTS TESTS - All 28 Agents
 // =============================================================================
 
 import { describe, it, expect } from 'vitest';
@@ -55,9 +55,8 @@ const VALID_MODELS = [
 
 describe('AI Agent Configuration Tests', () => {
   describe('Agent Count', () => {
-    it('should have exactly 30 agents defined', () => {
+    it('should have exactly 28 agents defined', () => {
       expect(DOMAIN_AGENTS.length).toBe(28); // 14 core + 2 audit + 4 healthcare + 4 finance + 4 legal
-      // Note: 28 defined here, 2 more may be defined elsewhere
     });
 
     it('should have 14 core agents', () => {
@@ -65,7 +64,7 @@ describe('AI Agent Configuration Tests', () => {
       expect(coreAgents.length).toBe(14);
     });
 
-    it('should have 16 premium agents across packs', () => {
+    it('should have 14 premium agents across packs', () => {
       const premiumAgents = DOMAIN_AGENTS.filter(a => a.premium);
       expect(premiumAgents.length).toBe(14); // 2 + 4 + 4 + 4
     });

@@ -65,6 +65,7 @@ const FINANCIAL_AGENT_NAMES: Record<string, string> = {
 // =============================================================================
 const CORE_AGENT_NAMES: Record<string, string> = {
   // C-Suite roles - keep professional titles
+  'chief': 'Strategic Analysis',
   'cfo': 'Financial Analysis',
   'coo': 'Operations Analysis',
   'ciso': 'Security Analysis',
@@ -72,7 +73,22 @@ const CORE_AGENT_NAMES: Record<string, string> = {
   'cmo': 'Marketing Analysis',
   'chro': 'Human Resources Analysis',
   'clo': 'Legal Analysis',
-  'cro': 'Risk Analysis',
+  'cro': 'Revenue Analysis',
+  'cdo': 'Data Intelligence Analysis',
+  'cpo': 'Product Strategy Analysis',
+  'caio': 'AI Strategy Analysis',
+  'cso': 'Sustainability Analysis',
+  'cio': 'Investment Intelligence Analysis',
+  'cco': 'Communications Analysis',
+  'risk': 'Risk Assessment Analysis',
+  
+  // Support agents
+  'partnerships': 'Strategic Partnerships Analysis',
+  'analyst': 'Strategic Analysis',
+  'arbiter': 'Conflict Resolution Analysis',
+  'actuary': 'Actuarial Analysis',
+  'redteam': 'Red Team Analysis',
+  'union': 'Employee Advocacy Analysis',
   
   // Adversarial/Red Team
   'adversarial-reviewer': 'Stress Test Analysis',
@@ -84,6 +100,30 @@ const CORE_AGENT_NAMES: Record<string, string> = {
   'legal-counsel': 'Legal Analysis',
   'strategy': 'Strategy Analysis',
   'operations': 'Operations Analysis',
+
+  // Premium Foundation
+  'cxo': 'Customer Experience Analysis',
+  'procurement': 'Procurement Analysis',
+  'ma': 'M&A Intelligence Analysis',
+  'innovation': 'Innovation Analysis',
+  'ir': 'Investor Relations Analysis',
+  'ethics': 'Ethics & Governance Analysis',
+  'crisis': 'Crisis Management Analysis',
+  'gov-relations': 'Government Relations Analysis',
+
+  // Premium Enterprise
+  'ext-auditor': 'External Audit Analysis',
+  'int-auditor': 'Internal Audit Analysis',
+  'pso': 'Patient Safety Analysis',
+  'hco': 'Healthcare Compliance Analysis',
+  'cod': 'Clinical Operations Analysis',
+  'quant': 'Quantitative Analysis',
+  'pm': 'Portfolio Management Analysis',
+  'cro-finance': 'Credit Risk Analysis',
+  'contracts': 'Contract Analysis',
+  'ip': 'Intellectual Property Analysis',
+  'litigation': 'Litigation Analysis',
+  'regulatory': 'Regulatory Affairs Analysis',
 };
 
 // =============================================================================
@@ -110,6 +150,18 @@ const LEGAL_AGENT_NAMES: Record<string, string> = {
 // HEALTHCARE VERTICAL AGENTS
 // =============================================================================
 const HEALTHCARE_AGENT_NAMES: Record<string, string> = {
+  'cmio': 'Medical Information Analysis',
+  'patient-safety': 'Patient Safety Analysis',
+  'clinical-ops': 'Clinical Operations Analysis',
+  'healthcare-compliance': 'Healthcare Compliance Analysis',
+  'physician': 'Clinical Analysis',
+  'nurse-leader': 'Nursing Leadership Analysis',
+  'pharmacist': 'Pharmacy Analysis',
+  'case-manager': 'Case Management Analysis',
+  'health-informatics': 'Health Informatics Analysis',
+  'revenue-cycle': 'Revenue Cycle Analysis',
+  'infection-control': 'Infection Control Analysis',
+  'medical-director': 'Medical Director Analysis',
   'care-coordinator': 'Care Coordination Analysis',
   'clinical-advisor': 'Clinical Analysis',
   'capacity-oracle': 'Capacity Analysis',
@@ -120,62 +172,236 @@ const HEALTHCARE_AGENT_NAMES: Record<string, string> = {
 // OTHER VERTICAL AGENTS
 // =============================================================================
 const OTHER_AGENT_NAMES: Record<string, string> = {
+  // Finance Vertical
+  'quant-analyst': 'Quantitative Analysis',
+  'portfolio-manager': 'Portfolio Analysis',
+  'credit-risk': 'Credit Risk Analysis',
+  'treasury': 'Treasury Analysis',
+  'investment-banker': 'Investment Banking Analysis',
+  'financial-compliance': 'Financial Compliance Analysis',
+  'market-risk': 'Market Risk Analysis',
+  'wealth-advisor': 'Wealth Advisory Analysis',
+  'trading-desk': 'Trading Analysis',
+  'financial-analyst': 'Financial Analysis',
+  'fund-accountant': 'Fund Accounting Analysis',
+  'fintech-strategist': 'Fintech Strategy Analysis',
+
+  // Legal Vertical
+  'prosecutor': 'Prosecution Analysis',
+  'defense-attorney': 'Defense Analysis',
+  'judge': 'Judicial Analysis',
+  'juror-skeptic': 'Skeptical Juror Analysis',
+  'juror-emotional': 'Emotional Impact Analysis',
+  'juror-analytical': 'Analytical Juror Analysis',
+  'juror-foreperson': 'Jury Foreperson Analysis',
+  'matter-lead': 'Matter Analysis',
+  'research-counsel': 'Research Analysis',
+  'contract-counsel': 'Contract Analysis',
+  'litigation-strategist': 'Litigation Analysis',
+  'risk-counsel': 'Risk & Liability Analysis',
+  'opposing-counsel': 'Adversarial Analysis',
+  'privilege-officer': 'Privilege Analysis',
+  'evidence-officer': 'Evidence Analysis',
+  'regulatory-specialist': 'Regulatory Analysis',
+  'ip-specialist': 'Intellectual Property Analysis',
+  'employment-specialist': 'Employment Analysis',
+  'commercial-advisor': 'Commercial Analysis',
+  'forensics': 'Forensic Analysis',
+
   // Manufacturing
+  'plant-manager': 'Plant Operations Analysis',
+  'quality-engineer': 'Quality Engineering Analysis',
+  'supply-chain-mfg': 'Supply Chain Analysis',
+  'process-engineer': 'Process Engineering Analysis',
+  'production-planner': 'Production Planning Analysis',
+  'maintenance-manager': 'Maintenance Analysis',
+  'safety-director': 'Safety Analysis',
+  'production-manager': 'Production Management Analysis',
+  'industrial-engineer': 'Industrial Engineering Analysis',
+  'materials-manager': 'Materials Analysis',
+  'tooling-engineer': 'Tooling Analysis',
+  'ehs-manager': 'Environmental Health & Safety Analysis',
   'production-master': 'Production Analysis',
   'predict-maintain': 'Maintenance Analysis',
   'quality-vision': 'Quality Analysis',
   'supply-sync': 'Supply Chain Analysis',
-  
+
   // Technology
+  'product-manager': 'Product Analysis',
+  'engineering-manager': 'Engineering Analysis',
+  'architect': 'Architecture Analysis',
+  'devops-lead': 'DevOps Analysis',
+  'security-engineer': 'Security Engineering Analysis',
+  'data-engineer': 'Data Engineering Analysis',
+  'ml-engineer': 'ML Engineering Analysis',
+  'ux-lead': 'UX Analysis',
+  'qa-lead': 'QA Analysis',
+  'tech-writer': 'Technical Documentation Analysis',
   'site-reliability': 'Reliability Analysis',
   'security-fortress': 'Security Analysis',
   'dev-velocity': 'Engineering Analysis',
   'data-architect': 'Data Analysis',
-  
+
   // Energy
+  'grid-operator': 'Grid Operations Analysis',
+  'energy-trader': 'Energy Trading Analysis',
+  'renewable-developer': 'Renewable Development Analysis',
+  'environmental-energy': 'Environmental Compliance Analysis',
+  'energy-analyst': 'Energy Analysis',
+  'asset-manager-energy': 'Asset Management Analysis',
+  'transmission-planner': 'Transmission Planning Analysis',
+  'storage-specialist': 'Energy Storage Analysis',
+  'utility-regulatory': 'Utility Regulatory Analysis',
   'grid-balancer': 'Grid Analysis',
   'renewable-optimizer': 'Renewable Analysis',
   'asset-guardian': 'Asset Analysis',
   'demand-response': 'Demand Analysis',
-  
+
   // Government
+  'policy-analyst': 'Policy Analysis',
+  'procurement-officer': 'Procurement Analysis',
+  'grants-manager': 'Grants Analysis',
+  'foia-officer': 'FOIA Analysis',
+  'cybersecurity-gov': 'Government Cybersecurity Analysis',
+  'budget-analyst-gov': 'Budget Analysis',
+  'program-manager-gov': 'Program Management Analysis',
+  'hr-specialist-gov': 'HR Analysis',
+  'inspector-general': 'Inspector General Analysis',
+  'legislative-affairs': 'Legislative Analysis',
+  'ethics-officer-gov': 'Ethics Analysis',
+  'public-affairs': 'Public Affairs Analysis',
   'policy-advisor': 'Policy Analysis',
   'citizen-engagement': 'Citizen Services Analysis',
   'budget-optimizer': 'Budget Analysis',
   'transparency-engine': 'Transparency Analysis',
   'infrastructure-planner': 'Infrastructure Analysis',
-  
-  // Logistics
-  'route-optimizer': 'Route Analysis',
-  'warehouse-brain': 'Warehouse Analysis',
-  'demand-predictor': 'Demand Analysis',
-  'carrier-manager': 'Carrier Analysis',
-  
-  // Retail
-  'merchandising-ai': 'Merchandising Analysis',
-  'pricing-engine': 'Pricing Analysis',
-  'customer-insight': 'Customer Analysis',
-  'omnichannel-sync': 'Omnichannel Analysis',
-  
-  // Education
-  'student-success': 'Student Success Analysis',
-  'learning-advisor': 'Learning Analysis',
-  'enrollment-optimizer': 'Enrollment Analysis',
-  'workforce-connector': 'Workforce Analysis',
-  
-  // Real Estate
-  'valuation-engine': 'Valuation Analysis',
-  'lease-optimizer': 'Lease Analysis',
-  'property-manager': 'Property Analysis',
-  'investment-analyst': 'Investment Analysis',
-  
+
   // Insurance
+  'underwriter': 'Underwriting Analysis',
+  'claims-adjuster': 'Claims Analysis',
+  'insurance-actuary': 'Actuarial Analysis',
+  'insurance-compliance': 'Insurance Compliance Analysis',
+  'loss-control': 'Loss Control Analysis',
+  'reinsurance': 'Reinsurance Analysis',
+  'product-development-ins': 'Product Development Analysis',
+  'policy-admin': 'Policy Administration Analysis',
+  'siu': 'Special Investigation Analysis',
+  'agency-manager': 'Agency Management Analysis',
+  'pricing-analyst': 'Pricing Analysis',
+  'carrier-relations': 'Carrier Relations Analysis',
   'underwriting-ai': 'Underwriting Analysis',
   'claims-processor': 'Claims Analysis',
   'actuarial-engine': 'Actuarial Analysis',
   'insurance-policy-advisor': 'Insurance Policy Analysis',
-  
+
+  // Pharmaceutical
+  'clinical-development': 'Clinical Development Analysis',
+  'regulatory-affairs': 'Regulatory Affairs Analysis',
+  'pharmacovigilance': 'Pharmacovigilance Analysis',
+  'market-access': 'Market Access Analysis',
+  'medical-affairs': 'Medical Affairs Analysis',
+  'supply-chain-pharma': 'Pharma Supply Chain Analysis',
+  'qa-pharma': 'Quality Assurance Analysis',
+  'biostatistician': 'Biostatistics Analysis',
+  'cmc': 'Chemistry Manufacturing Analysis',
+  'preclinical': 'Preclinical Analysis',
+
+  // Retail
+  'store-ops': 'Store Operations Analysis',
+  'merchandising': 'Merchandising Analysis',
+  'ecommerce': 'E-Commerce Analysis',
+  'supply-chain-retail': 'Retail Supply Chain Analysis',
+  'customer-insights': 'Customer Insights Analysis',
+  'loss-prevention': 'Loss Prevention Analysis',
+  'category-manager': 'Category Management Analysis',
+  'visual-merchandiser': 'Visual Merchandising Analysis',
+  'inventory-planner': 'Inventory Planning Analysis',
+  'warehouse-manager': 'Warehouse Analysis',
+  'merchandising-ai': 'Merchandising Analysis',
+  'pricing-engine': 'Pricing Analysis',
+  'customer-insight': 'Customer Analysis',
+  'omnichannel-sync': 'Omnichannel Analysis',
+
+  // Real Estate
+  'development-manager': 'Development Analysis',
+  'leasing-director': 'Leasing Analysis',
+  'asset-manager-re': 'Asset Management Analysis',
+  'market-research-re': 'Market Research Analysis',
+  'construction-manager': 'Construction Analysis',
+  'sustainability-re': 'Sustainability Analysis',
+  'investment-analyst-re': 'Investment Analysis',
+  'capital-markets-re': 'Capital Markets Analysis',
+  'valuation-engine': 'Valuation Analysis',
+  'lease-optimizer': 'Lease Analysis',
+  'property-manager': 'Property Analysis',
+  'investment-analyst': 'Investment Analysis',
+
+  // Transportation
+  'fleet-manager': 'Fleet Management Analysis',
+  'logistics-planner': 'Logistics Analysis',
+  'dispatch': 'Dispatch Analysis',
+  'customs-broker': 'Customs Analysis',
+  'last-mile': 'Last Mile Delivery Analysis',
+  'freight-broker': 'Freight Analysis',
+  'transportation-analyst': 'Transportation Analysis',
+  'route-optimizer': 'Route Analysis',
+  'warehouse-brain': 'Warehouse Analysis',
+  'demand-predictor': 'Demand Analysis',
+  'carrier-manager': 'Carrier Analysis',
+
+  // Media
+  'content-strategist': 'Content Strategy Analysis',
+  'ad-sales': 'Advertising Sales Analysis',
+  'audience-development': 'Audience Development Analysis',
+  'programming': 'Programming Analysis',
+  'rights-licensing': 'Rights & Licensing Analysis',
+  'social-media-manager': 'Social Media Analysis',
+  'subscription': 'Subscription Analysis',
+  'analytics-media': 'Media Analytics Analysis',
+  'media-content': 'Content Analysis',
+  'media-streaming': 'Streaming Analysis',
+
+  // Professional Services
+  'partner': 'Partner Analysis',
+  'engagement-manager': 'Engagement Management Analysis',
+  'consultant': 'Consulting Analysis',
+  'deal-advisory': 'Deal Advisory Analysis',
+  'risk-advisory': 'Risk Advisory Analysis',
+  'tax-advisor': 'Tax Advisory Analysis',
+  'audit-partner': 'Audit Analysis',
+  'technology-consulting': 'Technology Consulting Analysis',
+  'hr-consulting': 'HR Consulting Analysis',
+  'gm': 'General Management Analysis',
+
+  // Education
+  'provost': 'Academic Affairs Analysis',
+  'department-chair': 'Department Analysis',
+  'registrar': 'Registrar Analysis',
+  'enrollment': 'Enrollment Analysis',
+  'student-affairs': 'Student Affairs Analysis',
+  'institutional-research': 'Institutional Research Analysis',
+  'accreditation': 'Accreditation Analysis',
+  'academic-tech': 'Academic Technology Analysis',
+  'advancement': 'Advancement Analysis',
+  'research-admin': 'Research Administration Analysis',
+  'ai-ethics': 'AI Ethics Analysis',
+  'student-success': 'Student Success Analysis',
+  'learning-advisor': 'Learning Analysis',
+  'enrollment-optimizer': 'Enrollment Analysis',
+  'workforce-connector': 'Workforce Analysis',
+
   // Sports
+  'scouting': 'Scouting Analysis',
+  'sports-medicine': 'Sports Medicine Analysis',
+  'analytics-sports': 'Sports Analytics Analysis',
+  'salary-cap': 'Salary Cap Analysis',
+  'player-development': 'Player Development Analysis',
+  'sports-marketing': 'Sports Marketing Analysis',
+  'ticket-ops': 'Ticket Operations Analysis',
+  'compliance-sports': 'Sports Compliance Analysis',
+  'sports-agent': 'Sports Agent Analysis',
+  'brand-partnerships': 'Brand Partnerships Analysis',
+  'acquisitions': 'Acquisitions Analysis',
   'sports-gm': 'General Management Analysis',
   'sports-analytics': 'Performance Analysis',
   'sports-coaching': 'Coaching Analysis',
@@ -184,10 +410,6 @@ const OTHER_AGENT_NAMES: Record<string, string> = {
   'sports-scouting': 'Scouting Analysis',
   'sports-fan-experience': 'Fan Experience Analysis',
   'sports-venue': 'Venue Analysis',
-  
-  // Media
-  'media-content': 'Content Analysis',
-  'media-streaming': 'Streaming Analysis',
 };
 
 // =============================================================================
