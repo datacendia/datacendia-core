@@ -510,7 +510,12 @@ export class ContinuousComplianceMonitorService {
         const d = rec.data as any;
 
 
-        if (d?.id && !this.controls.has(d.id)) this.controls.set(d.id, d);
+        if (d?.id) {
+          const key = d.organizationId && d.framework ? `${d.organizationId}-${d.framework}` : d.id;
+          const existing = this.snapshots.get(key) || [];
+          existing.push(d);
+          this.snapshots.set(key, existing);
+        }
 
 
       }
@@ -528,7 +533,7 @@ export class ContinuousComplianceMonitorService {
         const d = rec.data as any;
 
 
-        if (d?.id && !this.alerts.has(d.id)) this.alerts.set(d.id, d);
+        if (d?.id && !this.drifts.has(d.id)) this.drifts.set(d.id, d);
 
 
       }
@@ -537,7 +542,7 @@ export class ContinuousComplianceMonitorService {
       restored += recs_1.length;
 
 
-      const recs_2 = await loadServiceRecords({ serviceName: 'ContinuousCompliance', recordType: 'drift', limit: 1000 });
+      const recs_2 = await loadServiceRecords({ serviceName: 'ContinuousCompliance', recordType: 'control', limit: 1000 });
 
 
       for (const rec of recs_2) {
@@ -546,7 +551,7 @@ export class ContinuousComplianceMonitorService {
         const d = rec.data as any;
 
 
-        if (d?.id && !this.drifts.has(d.id)) this.drifts.set(d.id, d);
+        if (d?.id && !this.controls.has(d.id)) this.controls.set(d.id, d);
 
 
       }
@@ -555,7 +560,7 @@ export class ContinuousComplianceMonitorService {
       restored += recs_2.length;
 
 
-      const recs_3 = await loadServiceRecords({ serviceName: 'ContinuousCompliance', recordType: 'snapshot', limit: 1000 });
+      const recs_3 = await loadServiceRecords({ serviceName: 'ContinuousCompliance', recordType: 'alert', limit: 1000 });
 
 
       for (const rec of recs_3) {
@@ -564,7 +569,7 @@ export class ContinuousComplianceMonitorService {
         const d = rec.data as any;
 
 
-        if (d?.id && !this.snapshots.has(d.id)) this.snapshots.set(d.id, d);
+        if (d?.id && !this.alerts.has(d.id)) this.alerts.set(d.id, d);
 
 
       }

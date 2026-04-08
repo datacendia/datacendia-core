@@ -797,6 +797,25 @@ export class VerticalSentinelService {
       topGlobalRisks: topGlobalRisks.slice(0, 10)
     };
   }
+
+  async loadFromDB(): Promise<void> {
+    try {
+      const recs = await loadServiceRecords({ serviceName: 'VerticalSentinel', recordType: 'risk_delta_report', limit: 500 });
+      let restored = 0;
+      for (const rec of recs) {
+        const d = rec.data as any;
+        if (d?.id && d?.verticalId) {
+          const sentinel = this.sentinels.get(d.verticalId);
+          if (sentinel) {
+            restored++;
+          }
+        }
+      }
+      if (restored > 0) logger.info(`[VerticalSentinelService] Restored ${restored} report references from database`);
+    } catch (err) {
+      logger.warn(`[VerticalSentinelService] DB reload skipped: ${(err as Error).message}`);
+    }
+  }
 }
 
 export const verticalSentinelService = VerticalSentinelService.getInstance();

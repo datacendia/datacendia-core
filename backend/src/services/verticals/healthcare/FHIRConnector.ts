@@ -39,7 +39,7 @@
 
 import crypto from 'crypto';
 import { logger } from '../../../utils/logger.js';
-import { persistServiceRecord } from '../../../utils/servicePersistence.js';
+import { persistServiceRecord, loadServiceRecords } from '../../../utils/servicePersistence.js';
 
 // =============================================================================
 // TYPES
@@ -345,5 +345,20 @@ export class FHIRConnector {
         'Consent', 'AuditEvent',
       ],
     };
+  }
+
+  async loadFromDB(): Promise<void> {
+    try {
+      const recs = await loadServiceRecords({ serviceName: 'FHIRConnector', recordType: 'phi_access', limit: 1000 });
+      for (const rec of recs) {
+        const d = rec.data as any;
+        if (d) {
+          this.accessLog.push(d as FHIRAccessLog);
+        }
+      }
+      if (recs.length > 0) logger.info(`[FHIRConnector] Restored ${recs.length} PHI access logs from database`);
+    } catch (err) {
+      logger.warn(`[FHIRConnector] DB reload skipped: ${(err as Error).message}`);
+    }
   }
 }

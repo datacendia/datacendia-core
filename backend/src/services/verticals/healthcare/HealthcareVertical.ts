@@ -331,6 +331,42 @@ export class ConsentOverrideLedger {
       byDecisionType
     };
   }
+
+  async loadFromDB(): Promise<void> {
+    try {
+      let restored = 0;
+
+      const consentRecs = await loadServiceRecords({ serviceName: 'HealthcareVertical', recordType: 'patient_consent', limit: 1000 });
+      for (const rec of consentRecs) {
+        const d = rec.data as any;
+        if (d?.patientId) {
+          const existing = this.consents.get(d.patientId) || [];
+          if (!existing.some(c => c.id === d.id)) {
+            existing.push(d);
+            this.consents.set(d.patientId, existing);
+          }
+        }
+      }
+      restored += consentRecs.length;
+
+      const overrideRecs = await loadServiceRecords({ serviceName: 'HealthcareVertical', recordType: 'clinical_override', limit: 1000 });
+      for (const rec of overrideRecs) {
+        const d = rec.data as any;
+        if (d?.decisionId) {
+          const existing = this.overrides.get(d.decisionId) || [];
+          if (!existing.some(o => o.id === d.id)) {
+            existing.push(d);
+            this.overrides.set(d.decisionId, existing);
+          }
+        }
+      }
+      restored += overrideRecs.length;
+
+      if (restored > 0) logger.info(`[ConsentOverrideLedger] Restored ${restored} records from database`);
+    } catch (err) {
+      logger.warn(`[ConsentOverrideLedger] DB reload skipped: ${(err as Error).message}`);
+    }
+  }
 }
 
 // ============================================================================
