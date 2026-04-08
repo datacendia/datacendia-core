@@ -79,3 +79,8 @@ k6-results.json
 .stryker-tmp/
 k6-results.json
 *.log
+
+# Pitch deck materials (maintained in private repo)
+docs/pitch-decks/**
+!docs/pitch-decks/README.md
+public/pitch-decks/
