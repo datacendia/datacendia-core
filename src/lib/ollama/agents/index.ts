@@ -60,9 +60,6 @@ import { PROFESSIONAL_SERVICES_AGENTS } from './professional-services';
 import { EDUCATION_AGENTS } from './education';
 import { SPORTS_AGENTS } from './sports';
 
-// Filter out CLO from CORE_AGENTS since it's in LEGAL_AGENTS
-const CORE_WITHOUT_CLO = CORE_AGENTS.filter(a => a.code !== 'clo');
-
 // All vertical agents combined
 export const VERTICAL_AGENTS = [
   ...LEGAL_AGENTS,
@@ -85,14 +82,14 @@ export const VERTICAL_AGENTS = [
 
 // Deduplicate: vertical agents take precedence over premium agents with the same code
 const verticalCodes = new Set(VERTICAL_AGENTS.map(a => a.code));
-const coreCodes = new Set(CORE_WITHOUT_CLO.map(a => a.code));
+const coreCodes = new Set(CORE_AGENTS.map(a => a.code));
 const PREMIUM_UNIQUE = PREMIUM_AGENTS.filter(
   a => !verticalCodes.has(a.code) && !coreCodes.has(a.code)
 );
 
 // Complete agent registry (no duplicate codes)
 export const DOMAIN_AGENTS = [
-  ...CORE_WITHOUT_CLO,
+  ...CORE_AGENTS,
   ...VERTICAL_AGENTS,
   ...PREMIUM_UNIQUE,
 ];

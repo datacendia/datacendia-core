@@ -688,7 +688,7 @@ export class CrossJurisdictionEngineService {
       restored += recs.length;
 
 
-      const recs_1 = await loadServiceRecords({ serviceName: 'CrossJurisdiction', recordType: 'assessment', limit: 1000 });
+      const recs_1 = await loadServiceRecords({ serviceName: 'CrossJurisdiction', recordType: 'matrix', limit: 1000 });
 
 
       for (const rec of recs_1) {
@@ -706,7 +706,7 @@ export class CrossJurisdictionEngineService {
       restored += recs_1.length;
 
 
-      const recs_2 = await loadServiceRecords({ serviceName: 'CrossJurisdiction', recordType: 'assessment', limit: 1000 });
+      const recs_2 = await loadServiceRecords({ serviceName: 'CrossJurisdiction', recordType: 'conflict', limit: 1000 });
 
 
       for (const rec of recs_2) {

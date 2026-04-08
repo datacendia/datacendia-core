@@ -877,7 +877,7 @@ Output only the improved text, nothing else.`;
       restored += recs.length;
 
 
-      const recs_1 = await loadServiceRecords({ serviceName: 'CendiaBrand', recordType: 'record', limit: 1000 });
+      const recs_1 = await loadServiceRecords({ serviceName: 'CendiaBrand', recordType: 'sentiment', limit: 1000 });
 
 
       for (const rec of recs_1) {

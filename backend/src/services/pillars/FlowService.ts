@@ -811,7 +811,7 @@ export class FlowService extends BaseService {
       restored += recs.length;
 
 
-      const recs_1 = await loadServiceRecords({ serviceName: 'Flow', recordType: 'record', limit: 1000 });
+      const recs_1 = await loadServiceRecords({ serviceName: 'Flow', recordType: 'execution', limit: 1000 });
 
 
       for (const rec of recs_1) {
@@ -829,7 +829,7 @@ export class FlowService extends BaseService {
       restored += recs_1.length;
 
 
-      const recs_2 = await loadServiceRecords({ serviceName: 'Flow', recordType: 'record', limit: 1000 });
+      const recs_2 = await loadServiceRecords({ serviceName: 'Flow', recordType: 'approval', limit: 1000 });
 
 
       for (const rec of recs_2) {

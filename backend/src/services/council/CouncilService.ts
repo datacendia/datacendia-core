@@ -1526,7 +1526,7 @@ export class CouncilService extends EventEmitter {
       restored += recs.length;
 
 
-      const recs_1 = await loadServiceRecords({ serviceName: 'Council', recordType: 'record', limit: 1000 });
+      const recs_1 = await loadServiceRecords({ serviceName: 'Council', recordType: 'tracer', limit: 1000 });
 
 
       for (const rec of recs_1) {

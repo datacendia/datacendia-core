@@ -1070,7 +1070,7 @@ Output JSON:
       restored += recs.length;
 
 
-      const recs_1 = await loadServiceRecords({ serviceName: 'CendiaSupport', recordType: 'record', limit: 1000 });
+      const recs_1 = await loadServiceRecords({ serviceName: 'CendiaSupport', recordType: 'responseTemplate', limit: 1000 });
 
 
       for (const rec of recs_1) {

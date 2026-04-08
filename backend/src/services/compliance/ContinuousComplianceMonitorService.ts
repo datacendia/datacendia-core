@@ -537,7 +537,7 @@ export class ContinuousComplianceMonitorService {
       restored += recs_1.length;
 
 
-      const recs_2 = await loadServiceRecords({ serviceName: 'ContinuousCompliance', recordType: 'drift_detected', limit: 1000 });
+      const recs_2 = await loadServiceRecords({ serviceName: 'ContinuousCompliance', recordType: 'drift', limit: 1000 });
 
 
       for (const rec of recs_2) {
@@ -555,7 +555,7 @@ export class ContinuousComplianceMonitorService {
       restored += recs_2.length;
 
 
-      const recs_3 = await loadServiceRecords({ serviceName: 'ContinuousCompliance', recordType: 'drift_detected', limit: 1000 });
+      const recs_3 = await loadServiceRecords({ serviceName: 'ContinuousCompliance', recordType: 'snapshot', limit: 1000 });
 
 
       for (const rec of recs_3) {
@@ -573,7 +573,7 @@ export class ContinuousComplianceMonitorService {
       restored += recs_3.length;
 
 
-      const recs_4 = await loadServiceRecords({ serviceName: 'ContinuousCompliance', recordType: 'drift_detected', limit: 1000 });
+      const recs_4 = await loadServiceRecords({ serviceName: 'ContinuousCompliance', recordType: 'update', limit: 1000 });
 
 
       for (const rec of recs_4) {

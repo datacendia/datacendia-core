@@ -172,9 +172,7 @@ const HEALTHCARE_AGENT_NAMES: Record<string, string> = {
 // OTHER VERTICAL AGENTS
 // =============================================================================
 const OTHER_AGENT_NAMES: Record<string, string> = {
-  // Finance Vertical
-  'quant-analyst': 'Quantitative Analysis',
-  'portfolio-manager': 'Portfolio Analysis',
+  // Finance Vertical (unique to this section)
   'credit-risk': 'Credit Risk Analysis',
   'treasury': 'Treasury Analysis',
   'investment-banker': 'Investment Banking Analysis',
@@ -186,7 +184,7 @@ const OTHER_AGENT_NAMES: Record<string, string> = {
   'fund-accountant': 'Fund Accounting Analysis',
   'fintech-strategist': 'Fintech Strategy Analysis',
 
-  // Legal Vertical
+  // Legal Vertical (unique to this section)
   'prosecutor': 'Prosecution Analysis',
   'defense-attorney': 'Defense Analysis',
   'judge': 'Judicial Analysis',
@@ -194,18 +192,9 @@ const OTHER_AGENT_NAMES: Record<string, string> = {
   'juror-emotional': 'Emotional Impact Analysis',
   'juror-analytical': 'Analytical Juror Analysis',
   'juror-foreperson': 'Jury Foreperson Analysis',
-  'matter-lead': 'Matter Analysis',
-  'research-counsel': 'Research Analysis',
-  'contract-counsel': 'Contract Analysis',
-  'litigation-strategist': 'Litigation Analysis',
-  'risk-counsel': 'Risk & Liability Analysis',
-  'opposing-counsel': 'Adversarial Analysis',
-  'privilege-officer': 'Privilege Analysis',
-  'evidence-officer': 'Evidence Analysis',
   'regulatory-specialist': 'Regulatory Analysis',
   'ip-specialist': 'Intellectual Property Analysis',
   'employment-specialist': 'Employment Analysis',
-  'commercial-advisor': 'Commercial Analysis',
   'forensics': 'Forensic Analysis',
 
   // Manufacturing

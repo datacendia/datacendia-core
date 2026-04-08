@@ -1130,7 +1130,7 @@ export class TestEvidenceLedgerService extends EventEmitter {
       restored += recs.length;
 
 
-      const recs_1 = await loadServiceRecords({ serviceName: 'TestEvidenceLedger', recordType: 'record', limit: 1000 });
+      const recs_1 = await loadServiceRecords({ serviceName: 'TestEvidenceLedger', recordType: 'block', limit: 1000 });
 
 
       for (const rec of recs_1) {
@@ -1148,7 +1148,7 @@ export class TestEvidenceLedgerService extends EventEmitter {
       restored += recs_1.length;
 
 
-      const recs_2 = await loadServiceRecords({ serviceName: 'TestEvidenceLedger', recordType: 'record', limit: 1000 });
+      const recs_2 = await loadServiceRecords({ serviceName: 'TestEvidenceLedger', recordType: 'suite', limit: 1000 });
 
 
       for (const rec of recs_2) {
