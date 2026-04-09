@@ -138,7 +138,7 @@ I've been building Datacendia and just released it under Apache 2.0.
 
 **What I need from the community:**
 - Feedback on the deliberation model and evidence format
-- Contributors for additional compliance frameworks
+- Contributors for additional compliance frameworks — specifically looking for anyone familiar with GDPR Article 22 automated decision-making or NIST AI RMF to review our framework mappings
 - Bug reports and feature requests
 
 GitHub: https://github.com/datacendia/datacendia-core
@@ -165,6 +165,8 @@ I built Datacendia to solve a specific problem: enterprise AI systems make high-
 - Multi-agent deliberation with adversarial cross-examination (agents genuinely challenge each other)
 - Deterministic replay — you can reproduce any deliberation with the same inputs
 - Policy Collapse Mode — stress-tests decisions under failure conditions
+
+**How this differs from AutoGen / CrewAI:** Those frameworks orchestrate agents to complete tasks. Datacendia's agents are adversarial by design — they're structured to disagree, cross-examine, and find failure modes. The output isn't a completed task, it's a signed evidence packet proving the decision was stress-tested. Think "AI red team for every decision" rather than "AI team that executes."
 
 Runs locally with Ollama. Apache 2.0.
 
@@ -233,10 +235,10 @@ I've been building Datacendia for the past year. It's an open-core AI governance
 
 **What it does:** Multiple AI agents deliberate on enterprise decisions and produce cryptographically signed evidence packets that regulators, courts, and auditors can verify independently.
 
-**Traction so far:**
+**Where I'm at:**
 - NVIDIA Inception Program member
-- 60+ sandbox demos built for specific enterprise customers
-- Live at https://app.datacendia.com
+- Pre-launch: 60+ enterprise-specific sandbox demos built, converting first design partners now
+- Live demo at https://app.datacendia.com — fully functional, not a landing page
 
 **What I'm looking for:**
 - Design partners willing to do a free 30-day pilot
