@@ -211,7 +211,7 @@ const MAX_CONTEXT_LENGTH = 16_000;
 const MAX_CONCURRENT_TASKS = 3;
 const MAX_TASK_HISTORY = 50;
 const TASK_TTL_MS = 3 * 24 * 60 * 60 * 1000; // 3 days
-const COMMUNITY_AGENT_TYPES: OpsAgentType[] = ['report', 'analytics'];
+const COMMUNITY_AGENT_TYPES: OpsAgentType[] = ['report', 'analytics', 'nlp', 'pipeline'];
 const VALID_AGENT_TYPES: OpsAgentType[] = COMMUNITY_AGENT_TYPES;
 
 // ---------------------------------------------------------------------------

@@ -46,7 +46,7 @@ import {
   Factory, Gavel, HeartPulse, Banknote, Building, ShieldCheck, Pill,
   Zap, Monitor, ShoppingCart, HardHat, Truck, Clapperboard,
   GraduationCap, Trophy, Columns, FileSignature, TrendingUp, Siren,
-  Compass, FileCheck,
+  Compass, FileCheck, Bot,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -319,6 +319,13 @@ const foundationGroup: NavGroup = {
       icon: Zap,
       path: '/cortex/workflows/builder',
       tooltip: 'Service Orchestration — drag-and-drop workflow builder',
+    },
+    {
+      id: 'ops-agents',
+      label: 'Ops Agents',
+      icon: Bot,
+      path: '/ops-agents',
+      tooltip: 'AI task agents — Reports, Analytics, NLP, Pipeline Builder',
     },
   ],
 };
