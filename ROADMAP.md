@@ -1,6 +1,6 @@
 # Datacendia Product Roadmap
 
-> Last audited: March 23, 2026
+> Last audited: April 9, 2026
 > Source: Automated audit of `datacendia-core` and `datacendia-components`
 
 ---
@@ -185,7 +185,26 @@ This is the a16z opportunity. Core handles outbound (User → AI). Components ha
 | **Neo4j graph database** | graphIngestion.ts (12KB) exists — connect for decision lineage | 1 week | 🔗 Wire up |
 | **Kubernetes Helm chart** | Production-grade multi-node deployment | 1 week | 🔨 Build new |
 
-### E5. Strategic Moat (Weeks 25–52)
+### E5. Web Components & Framework-Agnostic Widget Distribution (Weeks 8–24)
+
+Enterprise customers standardize on Angular, Vue, or Svelte — not just React. Rather than maintaining parallel frontends, we ship **framework-agnostic Web Components** that any enterprise can embed in their existing stack.
+
+| Phase | Item | Description | Effort | Work Type |
+|-------|------|-------------|--------|-----------|
+| **Now** | Ship the launch | React + Vite core platform. No framework diversification until post-pilot. | — | 🚀 Ship |
+| **Post-pilot (Month 2–3)** | Evidence Viewer Web Component | `<dcii-evidence-viewer>` — renders a decision packet with hash verification, signature status, and Merkle proof. Built with Lit, zero framework dependencies. Embeddable in Angular, Vue, React, or vanilla HTML. | 1 week | 🔨 Build new |
+| **Post-pilot (Month 2–3)** | PII Scanner Web Component | `<cendia-pii-scanner>` — drop-in PII detection widget with real-time scanning, confidence badges, and redacted output preview. Connects to CendiaGateway `/scan` API. | 1 week | 🔨 Build new |
+| **Post-pilot (Month 2–3)** | Council Status Badge | `<council-status-badge>` — lightweight inline component showing deliberation status, confidence score, and agent count. For embedding in dashboards, ticketing systems, or CRM views. | 3 days | 🔨 Build new |
+| **Enterprise deals** | `@datacendia/widgets` npm package | Package all Web Components with typed Angular, Vue, and React wrappers. Tree-shakeable, SSR-compatible, themeable via CSS custom properties. | 2 weeks | 📦 Package |
+| **Enterprise deals** | Angular Admin Portal | Separate Angular-based enterprise admin console for SSO config, RBAC management, compliance reporting, and tenant settings. Hits existing Express API — no backend duplication. | 4 weeks | 🔨 Build new |
+
+**Architecture decision:** Web Components (Lit) as the base layer, with thin framework wrappers generated via `@lit/react`, `@lit-labs/vue-utils`, and Angular's `CUSTOM_ELEMENTS_SCHEMA`. One codebase, all frameworks supported. This avoids maintaining parallel React/Angular/Vue implementations while giving enterprise customers native integration.
+
+**Why not rewrite core in Angular:** The React + Vite + Tailwind stack (92+ components, 40+ pages, real-time WebSocket, deep state management) is production-grade and shipping. Angular is a **distribution strategy for enterprise customers**, not a platform migration. When Thomson Reuters says "we need this in our Angular app," we ship the widget package — not a rewrite.
+
+---
+
+### E6. Strategic Moat (Weeks 25–52)
 
 All of these are already built — the work is **testing, documentation, and customer-facing packaging**:
 
@@ -249,13 +268,16 @@ These apply to both repos:
 
 | Date | Milestone |
 |------|-----------|
-| **Now** | Send first 10 design partner decks |
+| **Now** | Ship launch — HN, LinkedIn, Reddit, Product Hunt |
+| **Week 1** | Send first 10 design partner decks |
 | **Week 2** | First design partner call (PGIM / Matt Fitzgerald) |
 | **Week 4** | Agent Identity + Presidio PII live in core gateway |
 | **Week 6** | First design partner LOI signed |
 | **Week 8** | SOC 2 Type II audit initiated |
+| **Week 8–12** | Web Components proof-of-concept: `<dcii-evidence-viewer>`, `<cendia-pii-scanner>` |
 | **Week 12** | 3 design partners active, investor deck update |
 | **Week 16** | Pre-seed close ($1.5M) |
+| **Week 16–24** | `@datacendia/widgets` npm package with Angular/Vue/React wrappers |
 | **Week 24** | EU AI Act conformity assessment |
 | **Week 36** | FedRAMP process initiated |
 | **Week 52** | 10 paying customers, Series A prep |
