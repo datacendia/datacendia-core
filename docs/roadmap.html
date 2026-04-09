@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datacendia Roadmap 2026</title>
+  <meta name="description" content="Datacendia product roadmap for 2026 - transparent timeline of enterprise features and capabilities in development.">
+  <link rel="canonical" href="https://datacendia.com/roadmap/">
+  <link rel="icon" type="image/svg+xml" href="https://datacendia.com/assets/favicon.svg">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --bg-elevated: #111118;
+      --bg-card: #16161e;
+      --text: #e4e4e7;
+      --text-muted: #71717a;
+      --gold: #c9a84c;
+      --gold-dim: rgba(201,168,76,.15);
+      --border: rgba(255,255,255,.06);
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-elevated);
+      padding: 16px 0;
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+    .header-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { font-size: 1.1rem; font-weight: 600; letter-spacing: .12em; color: var(--text); }
+    .logo span { color: var(--gold); }
+    .header-links { display: flex; gap: 20px; font-size: .85rem; }
+    .header-links a { color: var(--text-muted); }
+    .header-links a:hover { color: var(--gold); text-decoration: none; }
+
+    .hero {
+      max-width: 1100px; margin: 0 auto; padding: 80px 24px 60px;
+      text-align: center;
+    }
+    .hero h1 { font-size: 2.4rem; font-weight: 300; letter-spacing: .06em; margin-bottom: 16px; }
+    .hero h1 em { font-style: normal; color: var(--gold); }
+    .hero p { color: var(--text-muted); max-width: 640px; margin: 0 auto 32px; font-size: 1.05rem; }
+    .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 24px; border-radius: 8px; font-size: .9rem; font-weight: 500;
+      transition: all .2s;
+    }
+    .btn-gold { background: var(--gold); color: #0a0a0f; }
+    .btn-gold:hover { background: #d4b55a; text-decoration: none; }
+    .btn-outline { border: 1px solid var(--border); color: var(--text-muted); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); text-decoration: none; }
+
+    .roadmap {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px 80px;
+    }
+    .quarter {
+      margin-bottom: 60px;
+    }
+    .quarter-header {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 24px;
+    }
+    .quarter-badge {
+      background: var(--gold-dim); color: var(--gold);
+      padding: 6px 12px; border-radius: 6px; font-size: .8rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+    }
+    .quarter-title {
+      font-size: 1.8rem; font-weight: 600; }
+    .quarter-subtitle {
+      color: var(--text-muted); font-size: 1rem; margin-top: 4px; }
+
+    .features {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px;
+    }
+    .feature {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px; transition: border-color .2s;
+    }
+    .feature:hover { border-color: rgba(201,168,76,.25); }
+    .feature-header {
+      display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px;
+    }
+    .feature-icon {
+      width: 24px; height: 24px; background: var(--gold-dim);
+      border-radius: 6px; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .feature-title {
+      font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+    .feature-description {
+      color: var(--text-muted); font-size: .9rem; line-height: 1.6; margin-bottom: 16px; }
+    .feature-status {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 10px; border-radius: 4px; font-size: .75rem; font-weight: 500;
+    }
+    .status-planning {
+      background: rgba(59, 130, 246, .1); color: #3b82f6;
+    }
+    .status-development {
+      background: rgba(251, 146, 60, .1); color: #fb923c;
+    }
+    .status-testing {
+      background: rgba(163, 230, 53, .1); color: #84cc16;
+    }
+    .status-done {
+      background: rgba(34, 197, 94, .1); color: #22c55e;
+    }
+
+    .priority {
+      margin-top: 12px;
+    }
+    .priority-label {
+      font-size: .75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 4px; }
+    .priority-badge {
+      display: inline-block;
+      padding: 2px 8px; border-radius: 4px; font-size: .7rem; font-weight: 500;
+    }
+    .priority-high { background: rgba(239, 68, 68, .1); color: #ef4444; }
+    .priority-medium { background: rgba(245, 158, 11, .1); color: #f59e0b; }
+    .priority-low { background: rgba(107, 114, 128, .1); color: #6b7280; }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px; text-align: center;
+      color: var(--text-muted); font-size: .8rem;
+    }
+    .footer a { color: var(--text-muted); }
+    .footer a:hover { color: var(--gold); }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.6rem; }
+      .hero { padding: 48px 16px 40px; }
+      .roadmap { padding: 0 16px 48px; }
+      .features { grid-template-columns: 1fr; }
+      .quarter-title { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-inner">
+      <div class="logo">Datacendia<span>.</span></div>
+      <div class="header-links">
+        <a href="/">Home</a>
+        <a href="/docs">Docs</a>
+        <a href="/roadmap">Roadmap</a>
+        <a href="https://app.datacendia.com">Demo</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Product <em>Roadmap</em></h1>
+    <p>Transparent development timeline for Datacendia enterprise features. We're building these capabilities to meet Fortune 500 requirements.</p>
+    <div class="hero-actions">
+      <a href="https://app.datacendia.com" class="btn btn-gold">Try Live Demo</a>
+      <a href="https://datacendia.com/briefing.html" class="btn btn-outline">Request Pilot</a>
+    </div>
+  </div>
+
+  <div class="roadmap">
+
+    <div class="quarter">
+      <div class="quarter-header">
+        <div class="quarter-badge">Q2 2026</div>
+        <div>
+          <div class="quarter-title">Enterprise Infrastructure</div>
+          <div class="quarter-subtitle">Foundation for enterprise-grade deployment and security</div>
+        </div>
+      </div>
+      
+      <div class="features">
+        <div class="feature">
+          <div class="feature-header">
+            <div class="feature-icon">HSM</div>
+            <div>
+              <div class="feature-title">HSM Key Management</div>
+              <div class="feature-description">Hardware Security Module integration for enterprise-grade key management and cryptographic operations.</div>
+            </div>
+          </div>
+          <div class="feature-status status-planning">Planning</div>
+          <div class="priority">
+            <div class="priority-label">Priority</div>
+            <span class="priority-badge priority-high">HIGH</span>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <div class="feature-icon">SLA</div>
+            <div>
+              <div class="feature-title">99.99% Uptime Infrastructure</div>
+              <div class="feature-description">Multi-region deployment with load balancers, auto-scaling, and disaster recovery for enterprise SLA guarantees.</div>
+            </div>
+          </div>
+          <div class="feature-status status-planning">Planning</div>
+          <div class="priority">
+            <div class="priority-label">Priority</div>
+            <span class="priority-badge priority-high">HIGH</span>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <div class="feature-icon">TRC</div>
+            <div>
+              <div class="feature-title">Distributed Tracing</div>
+              <div class="feature-description">OpenTelemetry implementation with Jaeger/Zipkin integration for enterprise observability.</div>
+            </div>
+          </div>
+          <div class="feature-status status-planning">Planning</div>
+          <div class="priority">
+            <div class="priority-label">Priority</div>
+            <span class="priority-badge priority-high">HIGH</span>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <div class="feature-icon">7Y</div>
+            <div>
+              <div class="feature-title">7-Year Audit Retention</div>
+              <div class="feature-description">Long-term storage configuration for regulatory compliance with automated archival policies.</div>
+            </div>
+          </div>
+          <div class="feature-status status-development">Development</div>
+          <div class="priority">
+            <div class="priority-label">Priority</div>
+            <span class="priority-badge priority-high">HIGH</span>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <div class="feature-icon">ZTA</div>
+            <div>
+              <div class="feature-title">Zero-Trust Architecture</div>
+              <div class="feature-description">Implementation of ZTA principles with micro-segmentation and continuous authentication.</div>
+            </div>
+          </div>
+          <div class="feature-status status-planning">Planning</div>
+          <div class="priority">
+            <div class="priority-label">Priority</div>
+            <span class="priority-badge priority-high">HIGH</span>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <div class="feature-icon">ADV</div>
+            <div>
+              <div class="feature-title">Advanced Caching</div>
+              <div class="feature-description">Redis cluster with multi-tier caching strategy for enterprise-scale performance.</div>
+            </div>
+          </div>
+          <div class="feature-status status-planning">Planning</div>
+          <div class="priority">
+            <div class="priority-label">Priority</div>
+            <span class="priority-badge priority-medium">MEDIUM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quarter">
+      <div class="quarter-header">
+        <div class="quarter-badge">Q3 2026</div>
+        <div>
+          <div class="quarter-title">Enterprise Integrations</div>
+          <div class="quarter-subtitle">Connectors for major enterprise systems and platforms</div>
+        </div>
+      </div>
+      
+      <div class="features">
+        <div class="feature">
+          <div class="feature-header">
+            <div class="feature-icon">SF</div>
+            <div>
+              <div class="feature-title">Salesforce Connector</div>
+              <div class="feature-description">CRM integration with real-time sync for customer data and AI decision workflows.</div>
+            </div>
+          </div>
+          <div class="feature-status status-planning">Planning</div>
+          <div class="priority">
+            <div class="priority-label">Priority</div>
+            <span class="priority-badge priority-high">HIGH</span>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <div class="feature-icon">SAP</div>
+            <div>
+              <div class="feature-title">SAP Connector</div>
+              <div class="feature-description">ERP integration for enterprise workflows with SAP S/4HANA and Business Suite.</div>
+            </div>
+          </div>
+          <div class="feature-status status-planning">Planning</div>
+          <div class="priority">
+            <div class="priority-label">Priority</div>
+            <span class="priority-badge priority-high">HIGH</span>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <div class="feature-icon">ORA</div>
+            <div>
+              <div class="feature-title">Oracle Connector</div>
+              <div class="feature-description">Database integration for legacy systems with Oracle Database and Fusion Middleware.</div>
+            </div>
+          </div>
+          <div class="feature-status status-planning">Planning</div>
+          <div class="priority">
+            <div class="priority-label">Priority</div>
+            <span class="priority-badge priority-medium">MEDIUM</span>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <div class="feature-icon">M365</div>
+            <div>
+              <div class="feature-title">Microsoft 365 Integration</div>
+              <div class="feature-description">Office 365 and Teams integration for enterprise collaboration workflows.</div>
+            </div>
+          </div>
+          <div class="feature-status status-planning">Planning</div>
+          <div class="priority">
+            <div class="priority-label">Priority</div>
+            <span class="priority-badge priority-medium">MEDIUM</span>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <div class="feature-icon">ESB</div>
+            <div>
+              <div class="feature-title">Enterprise Service Bus</div>
+              <div class="feature-description">Apache Kafka with advanced routing for enterprise event-driven architecture.</div>
+            </div>
+          </div>
+          <div class="feature-status status-planning">Planning</div>
+          <div class="priority">
+            <div class="priority-label">Priority</div>
+            <span class="priority-badge priority-medium">MEDIUM</span>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <div class="feature-icon">SDK</div>
+            <div>
+              <div class="feature-title">Developer SDKs</div>
+              <div class="feature-description">Python, Java, .NET, Node.js SDKs for custom integration development.</div>
+            </div>
+          </div>
+          <div class="feature-status status-planning">Planning</div>
+          <div class="priority">
+            <div class="priority-label">Priority</div>
+            <span class="priority-badge priority-low">LOW</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quarter">
+      <div class="quarter-header">
+        <div class="quarter-badge">Q4 2026</div>
+        <div>
+          <div class="quarter-title">Advanced Enterprise Features</div>
+          <div class="quarter-subtitle">Complete enterprise platform with advanced capabilities</div>
+        </div>
+      </div>
+      
+      <div class="features">
+        <div class="feature">
+          <div class="feature-header">
+            <div class="feature-icon">WHT</div>
+            <div>
+              <div class="feature-title">Complete White-Labeling</div>
+              <div class="feature-description">Full brand customization with advanced theming and asset processing pipeline.</div>
+            </div>
+          </div>
+          <div class="feature-status status-planning">Planning</div>
+          <div class="priority">
+            <div class="priority-label">Priority</div>
+            <span class="priority-badge priority-medium">MEDIUM</span>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <div class="feature-icon">BI</div>
+            <div>
+              <div class="feature-title">Business Intelligence</div>
+              <div class="feature-description">Custom dashboards and reporting with predictive analytics and insights.</div>
+            </div>
+          </div>
+          <div class="feature-status status-planning">Planning</div>
+          <div class="priority">
+            <div class="priority-label">Priority</div>
+            <span class="priority-badge priority-medium">MEDIUM</span>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <div class="feature-icon">247</div>
+            <div>
+              <div class="feature-title">24/7 Enterprise Support</div>
+              <div class="feature-description">L1/L2/L3 support structure with dedicated account managers and SLA management.</div>
+            </div>
+          </div>
+          <div class="feature-status status-planning">Planning</div>
+          <div class="priority">
+            <div class="priority-label">Priority</div>
+            <span class="priority-badge priority-medium">MEDIUM</span>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <div class="feature-icon">QA</div>
+            <div>
+              <div class="feature-title">Quality Gates</div>
+              <div class="feature-description">Automated testing pipeline with security scanning and performance validation.</div>
+            </div>
+          </div>
+          <div class="feature-status status-planning">Planning</div>
+          <div class="priority">
+            <div class="priority-label">Priority</div>
+            <span class="priority-badge priority-low">LOW</span>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <div class="feature-icon">ZK</div>
+            <div>
+              <div class="feature-title">Zero-Knowledge Architecture</div>
+              <div class="feature-description">Advanced privacy protection with zero-knowledge proofs and confidential computing.</div>
+            </div>
+          </div>
+          <div class="feature-status status-planning">Planning</div>
+          <div class="priority">
+            <div class="priority-label">Priority</div>
+            <span class="priority-badge priority-low">LOW</span>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-header">
+            <div class="feature-icon">PRO</div>
+            <div>
+              <div class="feature-title">Professional Services</div>
+              <div class="feature-description">Implementation team for enterprise deployment, migration, and custom development.</div>
+            </div>
+          </div>
+          <div class="feature-status status-planning">Planning</div>
+          <div class="priority">
+            <div class="priority-label">Priority</div>
+            <span class="priority-badge priority-low">LOW</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>
+      <strong>Transparency Commitment:</strong> This roadmap reflects our current development priorities and timeline. 
+      Dates may shift based on customer feedback and technical complexity. 
+      <a href="https://datacendia.com/briefing.html">Contact us</a> for enterprise collaboration opportunities.
+    </p>
+    <p style="margin-top: 12px;">
+      Built by <a href="https://datacendia.com">Datacendia</a> &middot; 
+      <a href="https://github.com/datacendia/datacendia-core">Open Source</a> &middot; 
+      <a href="mailto:enterprise@datacendia.com">enterprise@datacendia.com</a>
+    </p>
+    <p style="margin-top: 12px;">
+      Last updated: April 2026
+    </p>
+  </div>
+
+</body>
+</html>

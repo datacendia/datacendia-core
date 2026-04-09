@@ -103,23 +103,47 @@ Datacendia is the only AI platform where every decision is auditable, explainabl
 
 ### Key Capabilities
 
-- **CendiaGateway™** -- AI governance proxy that sits between employees and AI providers. PII detection, policy enforcement, cryptographic audit trail. Browser extensions for Chrome, Firefox, Safari.
-- **The Council** -- Multi-agent deliberation with configurable agent panels (financial, legal, ethical, adversarial, domain-specific)
+### Currently Implemented (Can Demo Today)
+- **CendiaGateway** -- AI governance proxy with PII detection, policy enforcement, and SIEM integration
+- **The Council** -- Multi-agent deliberation with configurable agent panels
 - **Immutable Audit Ledger** -- Every decision cryptographically signed with Merkle tree integrity
-- **Cryptographic Services** -- 8 frontend UIs for forensic-grade, independently verifiable decision infrastructure:
-  - **CendiaVerify™** -- Public verification portal (`/verify`) for third-party receipt validation
-  - **CendiaEvidence™** -- Evidence package download (ZIP, standalone HTML verifier, JSON)
-  - **CendiaGapScan™** -- Compliance gap scanner across 8 regulatory frameworks
-  - **CendiaStamp™** -- Cryptographic seal SVG renderer with Ed25519 + ML-DSA-65 dual-signature badge
-  - **CendiaPrecedent™** -- TF-IDF similar decisions panel with precedent matching
-  - **CendiaRedTeam™** -- 6-vector adversarial analysis report with gate decision
-  - **CendiaEscrow™** -- Shamir Secret Sharing (3-of-5) with VDF time-locks
-  - **CendiaReplay™** -- Decision Replay Theater with full deliberation playback
-- **Service Orchestration Workflow Builder** -- Visual drag-and-drop workflow builder. Drag any platform service into a canvas, configure steps, save/load workflows with persistent localStorage, and run simulations. Core includes 17 Foundation services; Enterprise includes 60+.
+- **Cryptographic Services** -- 8 frontend UIs for forensic-grade verification:
+  - **CendiaVerify** -- Public verification portal (`/verify`) for third-party receipt validation
+  - **CendiaEvidence** -- Evidence package download (ZIP, standalone HTML verifier, JSON)
+  - **CendiaGapScan** -- Compliance gap scanner across 8 regulatory frameworks
+  - **CendiaStamp** -- Cryptographic seal SVG renderer with Ed25519 signatures
+  - **CendiaPrecedent** -- TF-IDF similar decisions panel with precedent matching
+  - **CendiaRedTeam** -- 6-vector adversarial analysis report with gate decision
+  - **CendiaEscrow** -- Shamir Secret Sharing (3-of-5) with VDF time-locks
+  - **CendiaReplay** -- Decision Replay Theater with full deliberation playback
+- **Service Orchestration Workflow Builder** -- Visual drag-and-drop workflow builder with 17 Foundation services
 - **30 Industry Vertical Frameworks** -- Financial, Healthcare, Legal, Defense, Insurance, Energy, Government, Manufacturing, Pharmaceutical, Sports, and 19 more
-- **Sovereign-First** -- Runs fully air-gapped. No cloud dependency. Your data stays yours.
-- **LLM-Agnostic** -- Works with Ollama, NVIDIA Triton, NVIDIA NIM, or any OpenAI-compatible API
-- **Enterprise Infrastructure** -- Kafka event streaming, Temporal workflows, OPA policies, OpenBao secrets, NeMo Guardrails, RAPIDS GPU analytics, Flink CEP
+- **Enterprise Security** -- JWT authentication, role-based access control, encryption at rest/in transit
+- **WCAG 2.1 AA Accessibility** -- 57 passing tests for enterprise accessibility compliance
+- **Multi-Tenant Architecture** -- Database-level isolation with configurable tenant separation
+- **Basic White-Labeling** -- CSS-based theming with brand customization
+- **SIEM Integration** -- Splunk, Datadog, Sentinel, ELK for security event forwarding
+- **Performance Monitoring** -- Core Web Vitals tracking with real-time metrics
+- **GDPR Compliance** -- Data subject rights implementation with audit trails
+
+### Enterprise Infrastructure (Opt-In)
+- **Apache Kafka** -- Durable event streaming (`KAFKA_ENABLED=true`)
+- **Temporal.io** -- Durable workflow orchestration (`TEMPORAL_ENABLED=true`)
+- **OPA** -- Data-driven policy-as-code (`OPA_ENABLED=true`)
+- **OpenBao/Vault** -- Secrets management (`OPENBAO_ENABLED=true`)
+- **NeMo Guardrails** -- LLM input/output rail evaluation (`NEMO_GUARDRAILS_ENABLED=true`)
+- **NVIDIA RAPIDS** -- GPU-accelerated analytics (`RAPIDS_ENABLED=true`)
+- **Apache Flink CEP** -- Real-time complex event processing (`FLINK_ENABLED=true`)
+
+### Roadmap Features (In Development)
+- **HSM Key Management** -- Hardware Security Module integration (Q2 2026)
+- **Enterprise Connectors** -- SAP, Salesforce, Oracle integrations (Q3 2026)
+- **99.99% Uptime SLA** -- Multi-region infrastructure deployment (Q2 2026)
+- **Distributed Tracing** -- Jaeger/Zipkin integration (Q2 2026)
+- **7-Year Audit Retention** -- Long-term storage configuration (Q2 2026)
+- **Advanced Analytics** -- Predictive monitoring and business intelligence (Q4 2026)
+
+See [enterprise-capabilities-audit.md](packages/widgets/enterprise-capabilities-audit.md) for complete capability matrix and [enterprise-roadmap.md](packages/widgets/enterprise-roadmap.md) for implementation timeline.
 
 ---
 
