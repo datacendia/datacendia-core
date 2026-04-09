@@ -11,42 +11,98 @@ Ready-to-post drafts for each platform. Copy, personalize the [bracketed] parts,
 
 ## 1. Show HN (Hacker News)
 
+> NOTE: HN strips all markdown formatting. This is written as plain prose on purpose.
+> Post as-is — no bold, no bullets, no headers.
+
 **Title:** Show HN: Datacendia – Open-source AI governance with cryptographic audit trails
 
 **Body:**
 
 Hi HN,
 
-I've been building Datacendia for the past year. It's an open-source platform where multiple AI agents with distinct C-suite perspectives (CFO, CISO, COO, Red Team) deliberate on enterprise decisions — then every interaction is recorded in a cryptographically signed, immutable audit trail.
+I've been building Datacendia for the past year. It's an open-source platform where multiple AI agents with distinct C-suite perspectives (CFO, CISO, COO, Red Team) deliberate on enterprise decisions, then every interaction is recorded in a cryptographically signed, immutable audit trail.
 
-**Why this exists:** I kept seeing companies deploy single-LLM chatbots for critical decisions. No audit trail, no adversarial challenge, no accountability. When a $1.7B acquisition goes sideways, "the AI said so" isn't a defensible position. The EU AI Act high-risk obligations take effect August 2026 — and most organizations have no way to prove their AI decisions were made correctly.
+I kept seeing companies deploy single-LLM chatbots for critical decisions. No audit trail, no adversarial challenge, no accountability. When a $1.7B acquisition goes sideways, "the AI said so" isn't a defensible position. The EU AI Act high-risk obligations take effect August 2026, and most organizations have no way to prove their AI decisions were made correctly.
 
-**What makes it different:**
-- **Multi-agent deliberation** — 20 governance agents + 4 ops agents deliberate and cross-examine each other, surfacing blind spots before you commit
-- **Cryptographic evidence** — every decision produces a SHA-256 hashed, Ed25519 signed, Merkle tree verified evidence packet. Verify with standard `openssl`, no vendor lock-in
-- **PII detection** — regex + heuristic NER engine with 460+ unit tests, zero mocks
-- **5 pre-seeded demos** — energy grid emergency, manufacturing safety defect, CRE acquisition, government IT modernization, medical device deployment
-- **Runs on your infrastructure** — on-prem, air-gapped, or cloud with Ollama. Your keys, your data
+20 governance agents plus 4 ops agents deliberate and cross-examine each other, surfacing blind spots before you commit. Every decision produces a SHA-256 hashed, Ed25519 signed, Merkle tree verified evidence packet — you can verify it with standard openssl, no vendor lock-in. The PII detection engine uses regex plus heuristic NER with 460+ unit tests and zero mocks. It ships with 5 pre-seeded industry demos: energy grid emergency, manufacturing safety defect, $1.7B CRE acquisition, government IT modernization, and medical device deployment. Runs on your infrastructure — on-prem, air-gapped, or cloud with Ollama. Your keys, your data.
 
-**Stack:** TypeScript, Express, React, Vite, PostgreSQL (pgvector), Redis, Prisma, Ollama. Apache 2.0.
+Stack: TypeScript, Express, React, Vite, PostgreSQL (pgvector), Redis, Prisma, Ollama. Apache 2.0.
 
-**Try it in 60 seconds:**
-```
-git clone https://github.com/datacendia/datacendia-core
-cd datacendia-core
-docker compose -f docker-compose.demo.yml up -d
-# Open http://localhost:5173
-```
+Try it (pre-built images, about 2 minutes on first pull):
 
-**Live demo (no install):** https://app.datacendia.com
+  git clone https://github.com/datacendia/datacendia-core
+  cd datacendia-core
+  docker compose -f docker-compose.demo.yml up -d
+  # Open http://localhost:5173
 
-I'm offering free white-glove pilots for compliance teams navigating EU AI Act, NIST AI RMF, or ISO 42001. Happy to pair with early adopters — feedback, issues, and contributors all welcome.
+Live demo if you don't want to install anything: https://app.datacendia.com
 
-GitHub: https://github.com/datacendia/datacendia-core
+I'm offering free white-glove pilots for compliance teams navigating EU AI Act, NIST AI RMF, or ISO 42001. Happy to pair with early adopters. Feedback, issues, and contributors all welcome.
+
+https://github.com/datacendia/datacendia-core
 
 ---
 
 ## 2. LinkedIn
+
+### 2a. Feed Post (short — stays above the fold)
+
+**Post:**
+
+Every AI decision your organization makes is a liability waiting to happen — unless you can prove it was made correctly.
+
+We just open-sourced Datacendia: cryptographic audit trails for every AI-assisted decision. Tamper-proof evidence packets that regulators, courts, and auditors can verify independently.
+
+Free 30-day pilot for compliance teams → datacendia.com/pilot
+Live demo (no signup) → app.datacendia.com
+GitHub (Apache 2.0) → github.com/datacendia/datacendia-core
+
+#AIGovernance #EUAIAct #OpenSource #Compliance
+
+> Attach: 5-slide carousel (see 2b below)
+
+### 2b. LinkedIn Carousel (5 slides)
+
+> Design as 1080x1080 slides, dark background (#0a0a0f), gold accent (#c9a84c), Inter font.
+> Export as PDF and upload as a document post.
+
+**Slide 1 — Hook**
+Headline: "Can you prove your AI decisions were made correctly?"
+Subtext: "EU AI Act enforcement begins August 2026."
+Visual: Lock icon with gold glow
+
+**Slide 2 — The Problem**
+Headline: "The status quo is indefensible"
+Three lines:
+- Single LLM answers with no adversarial challenge
+- No audit trail of what the AI actually recommended
+- "The AI said so" won't survive a regulator or a courtroom
+Visual: Red warning indicators
+
+**Slide 3 — The Council**
+Headline: "20 AI agents deliberate every decision"
+Subtext: "CFO, CISO, COO, Red Team — they cross-examine each other and surface blind spots before you commit."
+Visual: Screenshot of Council page mid-deliberation (capture from app.datacendia.com/cortex/council)
+
+**Slide 4 — The Evidence**
+Headline: "Cryptographic proof, not just logs"
+Three lines:
+- SHA-256 hashed
+- Ed25519 signed
+- Merkle tree verified
+Subtext: "Verify with standard openssl. No vendor lock-in."
+Visual: Screenshot of evidence packet with hash visible (capture from app.datacendia.com/cortex/dcii)
+
+**Slide 5 — CTA**
+Headline: "Free 30-day pilot"
+Three links:
+- datacendia.com/pilot
+- app.datacendia.com
+- github.com/datacendia/datacendia-core
+Badge: "NVIDIA Inception Program" + "Apache 2.0 Open Source"
+Visual: Datacendia logo + gold accent
+
+### 2c. Detailed LinkedIn Post (for follow-up or article)
 
 **Post:**
 
@@ -140,6 +196,8 @@ I've been building Datacendia and just released it under Apache 2.0.
 - Feedback on the deliberation model and evidence format
 - Contributors for additional compliance frameworks — specifically looking for anyone familiar with GDPR Article 22 automated decision-making or NIST AI RMF to review our framework mappings
 - Bug reports and feature requests
+
+**Good first issues:** https://github.com/datacendia/datacendia-core/labels/good%20first%20issue — labeled and scoped with clear instructions, including Storybook stories, test coverage for Council API routes, and Ollama model benchmarking.
 
 GitHub: https://github.com/datacendia/datacendia-core
 
@@ -282,18 +340,45 @@ Datacendia is the first open-source platform where multiple AI agents deliberate
 
 ## 6. Post-Launch Checklist
 
-- [ ] Record 30s demo GIF for README (use `scripts/record-demo.sh`)
-- [ ] Post Show HN (Tuesday or Wednesday, 10am ET)
-- [ ] Post LinkedIn
+**Pre-launch:**
+- [ ] Run `bash scripts/seed-github-issues.sh` to create labeled GitHub issues
+- [ ] Enable GitHub Discussions on the repo (Settings → Discussions)
+- [ ] Record 30s Council deliberation GIF → `docs/screenshots/demo.gif` (use `scripts/record-demo.sh`)
+- [ ] Record 15s terminal GIF for r/selfhosted (use `vhs scripts/demo.tape`)
+- [ ] Capture screenshots for each post (see asset plan in section 7)
+- [ ] Design LinkedIn carousel (5 slides, see section 2b)
+- [ ] Time a cold `docker compose` pull on a fresh machine — verify the "2 minutes" claim
+
+**Launch day (Tuesday or Wednesday, 10am ET):**
+- [ ] Post Show HN
+- [ ] Post LinkedIn feed post + carousel
 - [ ] Submit to Product Hunt
-- [ ] Post to r/selfhosted
-- [ ] Post to r/opensource
-- [ ] Post to r/artificial
-- [ ] Post to r/legaltech
-- [ ] Post to r/compliance
-- [ ] Post to r/startups
+- [ ] Post to r/selfhosted (with terminal GIF)
+- [ ] Post to r/opensource (with evidence packet screenshot)
+- [ ] Post to r/artificial (with architecture diagram + cross-exam screenshot)
+- [ ] Post to r/legaltech (with Thomson Reuters sandbox screenshot)
+- [ ] Post to r/compliance (with PII scanner screenshot)
+- [ ] Post to r/startups (with dashboard screenshot)
+
+**Post-launch (within 24h):**
 - [ ] DM 10-15 compliance/risk officers on LinkedIn using template (#3)
 - [ ] Contact NVIDIA Inception program manager for co-marketing
-- [ ] Follow up with all commenters within 24h
+- [ ] Follow up with ALL commenters within 24h
 - [ ] Submit to AlternativeTo, LibHunt, StackShare
 - [ ] Post to HN "Who is hiring?" thread if timing aligns
+- [ ] Post detailed LinkedIn article (section 2c) as day-2 follow-up
+
+---
+
+## 7. Visual Asset Plan
+
+| Post | Asset Type | What to Capture | URL / Source |
+|------|-----------|----------------|-------------|
+| Show HN | 30s GIF | Full Council deliberation: type question → agents respond → cross-examination → confidence score → decision packet with hash | `app.datacendia.com/cortex/council` |
+| LinkedIn (carousel) | 5 slides (1080x1080 PDF) | See section 2b: hook, problem, Council screenshot, evidence screenshot, CTA | Slides 3-4 from `app.datacendia.com/cortex/council` and `/cortex/dcii` |
+| r/selfhosted | 15s terminal GIF | `docker compose up -d` → containers starting → `curl localhost:3001/health \| jq .` → healthy → browser opens | Terminal (`vhs scripts/demo.tape`) |
+| r/opensource | Screenshot | DCII evidence packet: SHA-256 hash, Ed25519 signature, Merkle verification (green checks), openssl verify command | `app.datacendia.com/cortex/dcii` or `/cortex/crypto` |
+| r/artificial | Diagram + screenshot | 1) Mermaid architecture diagram (multi-agent flow) rendered as PNG  2) Cross-examination: agent challenging another | 1) `docs/architecture/advanced-analysis-features.md`  2) `app.datacendia.com/cortex/council` |
+| r/legaltech | Screenshot | Thomson Reuters sandbox: ABA 512 scenario, agents (Attorney, CoCounsel, Ethics, Risk), connectors, "Critical" badge | `app.datacendia.com/sandbox/thomson-reuters` (key: `TR-26`) |
+| r/compliance | Screenshot | CendiaGateway PII scanner: input with email/SSN/phone → "PII Detected" badges (98%, 99%, 95%) → redacted output → "3ms" | `app.datacendia.com/cortex/gateway` → PII tab |
+| r/startups | Screenshot | Dashboard with vertical industry selector open (23 industries), health score dimensions | `app.datacendia.com/cortex/dashboard` |
