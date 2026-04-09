@@ -1,0 +1,66 @@
+{
+  "healthcare": {
+    "name": "Healthcare",
+    "description": "Medical records and patient data with HIPAA compliance",
+    "sample": "Patient Jane Doe (DOB: 03/12/1972) has Medicare ID 123456789. Contact at jane.doe@hospital.org or 555-123-4567. Insurance: AETN-987654. SSN: 987-65-4321. Address: 123 Medical Dr, Boston, MA 02115. Doctor: Dr. Robert Smith MD. NPI: 1234567890.",
+    "pii_types": ["DOB", "Medical ID", "Email", "Phone", "Insurance ID", "SSN", "Address", "Doctor Name", "NPI"],
+    "policy": "hipaa",
+    "compliance_notes": "HIPAA requires protection of PHI including medical records, patient identifiers, and billing information."
+  },
+  "finance": {
+    "name": "Finance",
+    "description": "Financial transactions and banking data with GLBA compliance",
+    "sample": "Client Robert Johnson (Account #ACC123456) has SSN 456-78-9012. Email: robert.johnson@bank.com. Phone: 212-555-0198. Credit Card: 5555-4444-3333-2222. Routing: 021000021. Account Balance: $125,750.50. Advisor: Sarah Williams (License #FA-12345). Branch: 123 Wall Street, New York, NY 10005.",
+    "pii_types": ["Account Number", "SSN", "Email", "Phone", "Credit Card", "Routing Number", "Balance", "Advisor Name", "License", "Branch Address"],
+    "policy": "glba",
+    "compliance_notes": "GLBA requires protection of financial information including account numbers, transaction data, and personal identifiers."
+  },
+  "legal": {
+    "name": "Legal",
+    "description": "Case files and client information with attorney-client privilege",
+    "sample": "Case #2024-0456 involves attorney Michael Smith (Bar #12345). Contact michael.smith@lawfirm.com or 617-555-0123. Client SSN: 321-65-4987. DOB: 07/22/1965. Address: 456 Court Ave, Washington, DC 20001. Court: District of Columbia Superior Court. Judge: Hon. Patricia Johnson. Client: Confidential Corporation (EIN: 12-3456789).",
+    "pii_types": ["Case Number", "Attorney Name", "Bar Number", "Email", "Phone", "SSN", "DOB", "Address", "Court", "Judge", "Client Name", "EIN"],
+    "policy": "custom",
+    "compliance_notes": "Legal data requires protection of attorney-client communications, case details, and personally identifiable information."
+  },
+  "insurance": {
+    "name": "Insurance",
+    "description": "Policy and claims data with state insurance regulations",
+    "sample": "Policy #INS-789012 for James Wilson (DOB: 11/30/1958). Contact james.wilson@insurance.com or 800-555-0199. License: DL-1234567. SSN: 654-32-1987. Address: 789 Policy Blvd, Hartford, CT 06101. Claim #CL-2024-12345. Adjuster: Jennifer Brown (License #ADJ-98765). Vehicle: VIN 1HGCM82633A123456. Premium: $1,250.00 quarterly.",
+    "pii_types": ["Policy Number", "DOB", "Email", "Phone", "License", "SSN", "Address", "Claim Number", "Adjuster Name", "License", "VIN", "Premium"],
+    "policy": "custom",
+    "compliance_notes": "Insurance data requires protection of policy information, claims details, and personal identifiers per state regulations."
+  },
+  "government": {
+    "name": "Government",
+    "description": "Public sector data with FOIA and privacy act compliance",
+    "sample": "Citizen John Davis (SSN: 111-22-3333, DOB: 05/15/1960) has Passport #123456789. Contact john.davis@agency.gov or 202-555-0123. Address: 123 Federal Plaza, Washington, DC 20500. Employee ID: GOV-987654. Security Clearance: Secret. Case File: G-2024-45678. Supervisor: Maria Garcia (Phone: 202-555-0456).",
+    "pii_types": ["SSN", "DOB", "Passport Number", "Email", "Phone", "Address", "Employee ID", "Security Clearance", "Case File", "Supervisor Name", "Phone"],
+    "policy": "custom",
+    "compliance_notes": "Government data requires protection under Privacy Act and FOIA exemptions for personal information."
+  },
+  "education": {
+    "name": "Education",
+    "description": "Student records and academic data with FERPA compliance",
+    "sample": "Student Emily Chen (ID: STU-2024-7890, DOB: 09/20/2003) has FERPA restrictions. Contact emily.chen@university.edu or 415-555-0189. Address: 789 Campus Dr, Berkeley, CA 94720. GPA: 3.85. Major: Computer Science. Advisor: Dr. Alan Turing (Office: 510-555-0234). Parent: David Chen (Phone: 415-555-0456). SSN: 777-88-9999.",
+    "pii_types": ["Student ID", "DOB", "Email", "Phone", "Address", "GPA", "Major", "Advisor Name", "Phone", "Parent Name", "Phone", "SSN"],
+    "policy": "ferpa",
+    "compliance_notes": "Educational records require FERPA compliance for student privacy and parental access rights."
+  },
+  "retail": {
+    "name": "Retail",
+    "description": "Customer data and transaction information with PCI DSS compliance",
+    "sample": "Customer Sarah Miller (Loyalty #LOY-123456) has Member Since: 2019. Email: sarah.miller@email.com. Phone: 312-555-0178. Address: 456 Shopping Mall Ave, Chicago, IL 60601. Credit Card: 4444-3333-2222-1111 (Visa). Last Purchase: $234.56 on 03/15/2024. Store Card: 5555-6666-7777-8888. Birthday: 12/25/1985. SSN: 999-00-1111.",
+    "pii_types": ["Loyalty Number", "Email", "Phone", "Address", "Credit Card", "Purchase Amount", "Date", "Store Card", "Birthday", "SSN"],
+    "policy": "pci-dss",
+    "compliance_notes": "Retail data requires PCI DSS compliance for payment information and general privacy for customer data."
+  },
+  "telecommunications": {
+    "name": "Telecommunications",
+    "description": "Customer accounts and call records with telecom regulations",
+    "sample": "Customer Mike Johnson (Account #TEL-987654) has Phone: 555-123-4567. Email: mike.johnson@telecom.com. Address: 321 Network Dr, Dallas, TX 75201. SSN: 555-44-3333. DOB: 08/10/1975. IMEI: 123456789012345. SIM: 8901410321114512345. Plan: Unlimited Premium ($89.99/month). Call Records: Available for last 6 months.",
+    "pii_types": ["Account Number", "Phone", "Email", "Address", "SSN", "DOB", "IMEI", "SIM", "Plan", "Price", "Call Records"],
+    "policy": "custom",
+    "compliance_notes": "Telecom data requires protection under CPNI and general privacy regulations."
+  }
+}

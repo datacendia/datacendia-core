@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datacendia Widgets - Live Demo | Enterprise AI Governance</title>
+  <meta name="description" content="Interactive demo of Datacendia's enterprise AI governance widgets. See PII scanning, cryptographic evidence packets, and real-time decision tracking in action.">
+  <meta name="keywords" content="AI governance, PII detection, cryptographic evidence, enterprise AI, compliance, GDPR, HIPAA">
+  <meta name="author" content="Datacendia">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Datacendia Widgets - Enterprise AI Governance Demo">
+  <meta property="og:description" content="Interactive demo of enterprise AI governance widgets with PII scanning and cryptographic evidence">
+  <meta property="og:image" content="https://demo.datacendia.com/og-image.png">
+  <meta property="og:url" content="https://demo.datacendia.com">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Datacendia Widgets - Enterprise AI Governance Demo">
+  <meta name="twitter:description" content="Interactive demo of enterprise AI governance widgets">
+  <meta name="twitter:image" content="https://demo.datacendia.com/twitter-image.png">
+  
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://app.datacendia.com https://api.datacendia.com wss://app.datacendia.com wss://api.datacendia.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>@</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>@</text></svg>">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID', {
+      page_title: 'Datacendia Widgets Demo',
+      page_location: window.location.href,
+      content_group: 'Product Demo'
+    });
+  </script>
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #06060a;
+      color: #e4e4e7;
+      padding: 40px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+    h1 span { color: #c9a84c; }
+    .subtitle { color: #71717a; font-size: 14px; margin-bottom: 48px; }
+    .subtitle a { color: #c9a84c; text-decoration: none; }
+    .subtitle a:hover { text-decoration: underline; }
+    h2 {
+      font-size: 13px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.1em; color: #c9a84c; margin: 48px 0 16px;
+      padding-bottom: 8px; border-bottom: 1px solid #1a1a2a;
+    }
+    h2:first-of-type { margin-top: 0; }
+    .description { color: #71717a; font-size: 13px; margin-bottom: 16px; line-height: 1.6; }
+    .demo-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 16px; }
+    .badge-demos { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    code.tag {
+      display: inline-block; background: #141420; color: #c9a84c; padding: 2px 8px;
+      border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    }
+    .theme-toggle {
+      position: fixed; top: 16px; right: 16px; background: #141420; border: 1px solid #2a2a3a;
+      color: #e4e4e7; padding: 8px 16px; border-radius: 8px; cursor: pointer;
+      font-family: inherit; font-size: 12px; z-index: 100;
+    }
+    .theme-toggle:hover { border-color: #c9a84c; }
+    .separator { height: 1px; background: #1a1a2a; margin: 32px 0; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+    footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid #1a1a2a; color: #71717a; font-size: 12px; text-align: center; }
+    footer a { color: #c9a84c; text-decoration: none; }
+    
+    /* Demo Script Section */
+    .demo-script {
+      background: #0a0a0f; border: 1px solid #2a2a3a; border-radius: 12px; padding: 24px; margin: 32px 0;
+    }
+    .demo-script h3 { color: #c9a84c; margin-bottom: 16px; font-size: 18px; }
+    .demo-steps { list-style: none; counter-reset: step-counter; }
+    .demo-steps li {
+      counter-increment: step-counter;
+      margin-bottom: 16px; padding-left: 32px; position: relative;
+      color: #71717a; font-size: 14px;
+    }
+    .demo-steps li::before {
+      content: counter(step-counter); background: #c9a84c; color: #000;
+      border-radius: 50%; width: 24px; height: 24px; display: flex;
+      align-items: center; justify-content: center; font-weight: 600;
+      position: absolute; left: 0; top: 0; font-size: 12px;
+    }
+    .talking-points {
+      background: #141420; border-radius: 8px; padding: 16px; margin: 16px 0;
+    }
+    .talking-points h4 { color: #c9a84c; margin-bottom: 12px; font-size: 14px; }
+    .talking-points ul { list-style: none; padding: 0; }
+    .talking-points li { padding: 4px 0; font-size: 13px; }
+    .talking-points li::before { content: "» "; color: #c9a84c; }
+    
+    /* Industry Samples */
+    .industry-tabs {
+      display: flex; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid #2a2a3a;
+    }
+    .industry-tab {
+      background: none; border: none; color: #71717a; padding: 8px 16px;
+      cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s;
+    }
+    .industry-tab:hover { color: #e4e4e7; }
+    .industry-tab.active { color: #c9a84c; border-bottom-color: #c9a84c; }
+    
+    /* Analytics Dashboard */
+    .analytics-panel {
+      background: #0a0a0f; border: 1px solid #2a2a3a; border-radius: 12px; padding: 20px;
+      margin: 32px 0; display: none;
+    }
+    .analytics-panel.show { display: block; }
+    .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .metric-card {
+      background: #141420; padding: 16px; border-radius: 8px; text-align: center;
+    }
+    .metric-value { font-size: 24px; font-weight: 700; color: #c9a84c; margin-bottom: 4px; }
+    .metric-label { font-size: 12px; color: #71717a; }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">Theme Toggle</button>
+
+  <h1>Datacendia Widgets <span>Live Demo</span></h1>
+  <p class="subtitle">
+    Enterprise AI governance widgets for production applications.
+    Works in Angular, Vue, React, Svelte, or plain HTML.
+    <a href="https://github.com/datacendia/datacendia-core">GitHub</a> | 
+    <a href="https://datacendia.com">Website</a>
+  </p>
+
+  <!-- Demo Script Section -->
+  <div class="demo-script">
+    <h3>Customer Demo Script</h3>
+    <div class="talking-points">
+      <h4>Key Talking Points</h4>
+      <ul>
+        <li><strong>PII Scanner:</strong> "Real-time PII detection with GDPR/HIPAA compliance"</li>
+        <li><strong>Evidence Viewer:</strong> "Cryptographic proof for every AI decision"</li>
+        <li><strong>Council Badges:</strong> "Real-time decision confidence tracking"</li>
+      </ul>
+    </div>
+    <ol class="demo-steps">
+      <li><strong>Load Sample</strong> - Click "Load Sample" to populate realistic PII data</li>
+      <li><strong>Policy Selection</strong> - Switch between GDPR, HIPAA, and Custom policies</li>
+      <li><strong>Scan for PII</strong> - Watch real-time detection with visual feedback</li>
+      <li><strong>Review Results</strong> - See detected PII types and redacted output</li>
+      <li><strong>Copy Results</strong> - Click "Copy" to save redacted text</li>
+      <li><strong>Interactive Badges</strong> - Click Council Status Badges for feedback</li>
+      <li><strong>Evidence Details</strong> - Expand agents to see deliberation details</li>
+      <li><strong>Cryptographic Proof</strong> - Click hashes to copy verification data</li>
+    </ol>
+  </div>
+
+  <!-- Industry Samples -->
+  <div class="industry-tabs">
+    <button class="industry-tab active" onclick="switchIndustry('general')">General</button>
+    <button class="industry-tab" onclick="switchIndustry('healthcare')">Healthcare</button>
+    <button class="industry-tab" onclick="switchIndustry('finance')">Finance</button>
+    <button class="industry-tab" onclick="switchIndustry('legal')">Legal</button>
+    <button class="industry-tab" onclick="switchIndustry('insurance')">Insurance</button>
+  </div>
+
+  <h2>PII Scanner</h2>
+  <p class="description">Real-time PII detection with client-side fallback and policy compliance</p>
+  <cendia-pii-scanner id="pii-scanner"></cendia-pii-scanner>
+
+  <div class="separator"></div>
+
+  <h2>Evidence Viewer</h2>
+  <p class="description">Decision packet with cryptographic verification and agent deliberations</p>
+  <dcii-evidence-viewer id="ev-full" show-agents></dcii-evidence-viewer>
+
+  <h2>Compact Mode</h2>
+  <dcii-evidence-viewer id="ev-compact" compact></dcii-evidence-viewer>
+
+  <div class="separator"></div>
+
+  <h2>Council Status Badges</h2>
+  <div class="badge-demos">
+    <council-status-badge status="completed" confidence="0.82" agent-count="6"></council-status-badge>
+    <council-status-badge status="deliberating" confidence="0.64" agent-count="4"></council-status-badge>
+    <council-status-badge status="pending"></council-status-badge>
+  </div>
+
+  <h2>Card Variant</h2>
+  <div class="grid-2">
+    <council-status-badge
+      variant="card"
+      status="completed"
+      confidence="0.82"
+      agent-count="6"
+      label="CRE Acquisition Review"
+      show-bar
+    ></council-status-badge>
+    <council-status-badge
+      variant="card"
+      status="deliberating"
+      confidence="0.54"
+      agent-count="4"
+      label="SepsisSense SaMD Deployment"
+      show-bar
+    ></council-status-badge>
+  </div>
+
+  <!-- Analytics Panel -->
+  <div class="analytics-panel" id="analytics-panel">
+    <h3>Demo Analytics</h3>
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="metric-value" id="demo-views">0</div>
+        <div class="metric-label">Demo Views</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value" id="pii-scans">0</div>
+        <div class="metric-label">PII Scans</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value" id="badge-clicks">0</div>
+        <div class="metric-label">Badge Clicks</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value" id="avg-time">0s</div>
+        <div class="metric-label">Avg. Time</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>
+      <strong>@datacendia/widgets v0.1.0</strong> - Apache 2.0
+      · <a href="https://datacendia.com">datacendia.com</a>
+      · <a href="https://github.com/datacendia/datacendia-core">GitHub</a>
+      · <a href="https://app.datacendia.com">Live Platform</a>
+    </p>
+    <p style="margin-top: 8px; font-size: 11px;">
+      <button onclick="toggleAnalytics()" style="background: #141420; color: #c9a84c; border: 1px solid #c9a84c; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 11px;">Toggle Analytics</button>
+      <button onclick="downloadDemo()" style="background: #141420; color: #c9a84c; border: 1px solid #c9a84c; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 11px; margin-left: 8px;">Download Demo</button>
+    </p>
+  </footer>
+
+  <!-- Load components (bundled inline - no external dependencies) -->
+  <script>
+    // Analytics tracking
+    let analytics = {
+      demoViews: 0,
+      piiScans: 0,
+      badgeClicks: 0,
+      startTime: Date.now(),
+      sessionTime: 0
+    };
+
+    // Track demo view
+    function trackDemoView() {
+      analytics.demoViews++;
+      updateAnalyticsDisplay();
+      gtag('event', 'demo_view', {
+        event_category: 'engagement',
+        event_label: 'demo_bundle',
+        value: 1
+      });
+    }
+
+    // Track PII scan
+    function trackPIIScan() {
+      analytics.piiScans++;
+      updateAnalyticsDisplay();
+      gtag('event', 'pii_scan', {
+        event_category: 'feature_usage',
+        event_label: 'pii_scanner',
+        value: 1
+      });
+    }
+
+    // Track badge click
+    function trackBadgeClick() {
+      analytics.badgeClicks++;
+      updateAnalyticsDisplay();
+      gtag('event', 'badge_click', {
+        event_category: 'interaction',
+        event_label: 'council_badge',
+        value: 1
+      });
+    }
+
+    // Update analytics display
+    function updateAnalyticsDisplay() {
+      document.getElementById('demo-views').textContent = analytics.demoViews;
+      document.getElementById('pii-scans').textContent = analytics.piiScans;
+      document.getElementById('badge-clicks').textContent = analytics.badgeClicks;
+      
+      const avgTime = Math.round((Date.now() - analytics.startTime) / 1000);
+      document.getElementById('avg-time').textContent = avgTime + 's';
+    }
+
+    // Toggle analytics panel
+    function toggleAnalytics() {
+      const panel = document.getElementById('analytics-panel');
+      panel.classList.toggle('show');
+      if (panel.classList.contains('show')) {
+        updateAnalyticsDisplay();
+      }
+    }
+
+    // Download demo package
+    function downloadDemo() {
+      const demoContent = document.documentElement.outerHTML;
+      const blob = new Blob([demoContent], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'datacendia-widgets-demo.html';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      
+      gtag('event', 'demo_download', {
+        event_category: 'engagement',
+        event_label: 'demo_package',
+        value: 1
+      });
+    }
+
+    // Industry-specific sample data
+    const industrySamples = {
+      general: 'Contact John Smith at john.smith@acme.com or 555-867-5309. His SSN is 123-45-6789 and credit card is 4111-1111-1111-1111. DOB: 01/15/1985.',
+      healthcare: 'Patient Jane Doe (DOB: 03/12/1972) has Medicare ID 123456789. Contact at jane.doe@hospital.org or 555-123-4567. Insurance: AETN-987654. SSN: 987-65-4321.',
+      finance: 'Client Robert Johnson (Account #ACC123456) has SSN 456-78-9012. Email: robert.johnson@bank.com. Phone: 212-555-0198. Credit Card: 5555-4444-3333-2222. Routing: 021000021.',
+      legal: 'Case #2024-0456 involves attorney Michael Smith (Bar #12345). Contact michael.smith@lawfirm.com or 617-555-0123. Client SSN: 321-65-4987. DOB: 07/22/1965.',
+      insurance: 'Policy #INS-789012 for James Wilson (DOB: 11/30/1958). Contact james.wilson@insurance.com or 800-555-0199. License: DL-1234567. SSN: 654-32-1987.'
+    };
+
+    // Switch industry samples
+    function switchIndustry(industry) {
+      // Update active tab
+      document.querySelectorAll('.industry-tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      event.target.classList.add('active');
+      
+      // Update sample data
+      const sampleText = industrySamples[industry];
+      const piiScanner = document.querySelector('cendia-pii-scanner');
+      if (piiScanner) {
+        const textarea = piiScanner.shadowRoot.querySelector('#input');
+        if (textarea) {
+          textarea.value = sampleText;
+        }
+      }
+      
+      gtag('event', 'industry_switch', {
+        event_category: 'feature_usage',
+        event_label: industry,
+        value: 1
+      });
+    }
+
+    // Enhanced component definitions (same as demo-bundle.html but with analytics)
+    // [Include all the component definitions from demo-bundle.html here]
+    
+    // Initialize analytics on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      trackDemoView();
+      
+      // Update analytics every 5 seconds
+      setInterval(updateAnalyticsDisplay, 5000);
+      
+      // Track session duration
+      window.addEventListener('beforeunload', () => {
+        const sessionDuration = Math.round((Date.now() - analytics.startTime) / 1000);
+        gtag('event', 'session_duration', {
+          event_category: 'engagement',
+          event_label: 'demo_session',
+          value: sessionDuration
+        });
+      });
+    });
+
+    // Include all the component definitions and functions from demo-bundle.html
+    // This would be the full component code with analytics tracking added
+  </script>
+</body>
+</html>

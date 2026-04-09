@@ -1,0 +1,15 @@
+This is a placeholder for the demo package ZIP file.
+In a real implementation, this would be a binary ZIP file containing:
+
+1. demo-bundle.html - Standalone demo file
+2. demo-production.html - Production-ready demo with analytics
+3. README.md - Setup and usage instructions
+4. industry-samples.json - Industry-specific sample data
+5. demo-analytics.js - Analytics tracking implementation
+6. demo-script.md - Customer demo script
+7. video-walkthrough.md - Video production guidelines
+8. assets/ - Images, icons, and other resources
+9. docs/ - Technical documentation
+10. examples/ - Integration examples for different frameworks
+
+The ZIP file would be created programmatically and served for download.
