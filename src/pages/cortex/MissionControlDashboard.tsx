@@ -374,9 +374,11 @@ export const MissionControlDashboard: React.FC = () => {
               ))}
             </div>
             {IISS_PRIMITIVES.some((p) => p.status === 'warning') && (
-              <p className="text-xs text-yellow-400/80 mt-2 flex items-center gap-1">
-                <AlertTriangle className="w-3 h-3" />
-                {IISS_PRIMITIVES.filter((p) => p.status === 'warning').map((p) => `${p.id}: ${p.note}`).join(' · ')}
+              <p className="text-xs text-yellow-400/80 mt-2 flex items-start gap-1 flex-wrap break-words">
+                <AlertTriangle className="w-3 h-3 shrink-0 mt-0.5" />
+                <span className="break-words min-w-0">
+                  {IISS_PRIMITIVES.filter((p) => p.status === 'warning').map((p) => `${p.id}: ${p.note}`).join(' · ')}
+                </span>
               </p>
             )}
           </div>
@@ -393,7 +395,7 @@ export const MissionControlDashboard: React.FC = () => {
       {/* ================================================================ */}
       {/* STATS ROW                                                        */}
       {/* ================================================================ */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Active Now */}
         <div
           className="bg-neutral-900/80 border border-neutral-700/50 rounded-xl p-4 cursor-pointer hover:border-blue-500/30 transition-all"

@@ -1378,7 +1378,7 @@ const CortexLayoutInner: React.FC = () => {
               <HealthIndicator className="hidden sm:flex" />
 
               {/* Core Suite Dropdown (The "Brain") */}
-              <div className="relative">
+              <div className="relative hidden md:flex">
                 <button
                   onClick={() => setIsPremiumDropdownOpen(!isPremiumDropdownOpen)}
                   className={cn(
@@ -1501,7 +1501,7 @@ const CortexLayoutInner: React.FC = () => {
               </div>
 
               {/* Vertical Packs Dropdown (The "Specialist") */}
-              <div className="relative">
+              <div className="relative hidden md:flex">
                 <button
                   onClick={() => setIsEnterpriseDropdownOpen(!isEnterpriseDropdownOpen)}
                   className={cn(
@@ -1587,7 +1587,7 @@ const CortexLayoutInner: React.FC = () => {
               </div>
 
               {/* Admin Dropdown (hidden for non-admins in production) */}
-              <div className="relative">
+              <div className="relative hidden md:flex">
                 <button
                   onClick={() => setIsSovereignDropdownOpen(!isSovereignDropdownOpen)}
                   className={cn(
@@ -1680,18 +1680,6 @@ const CortexLayoutInner: React.FC = () => {
                 )}
               </div>
 
-              {/* Notifications */}
-              <button
-                aria-label="Notifications"
-                className="relative p-2 rounded-lg text-gray-400 hover:text-white hover:bg-sovereign-hover"
-              >
-                <Icons.Bell />
-                <span
-                  className="absolute top-1.5 right-1.5 w-2 h-2 bg-crimson-600 rounded-full"
-                  aria-hidden="true"
-                />
-              </button>
-
               {/* Demo Mode Toggle */}
               <DemoModeToggle />
 
@@ -1702,7 +1690,9 @@ const CortexLayoutInner: React.FC = () => {
               <ThemeToggle />
 
               {/* Language Selector */}
-              <LanguageSelector />
+              <div className="hidden md:block">
+                <LanguageSelector />
+              </div>
 
               {/* User menu */}
               <div className="relative">
@@ -1790,22 +1780,127 @@ const CortexLayoutInner: React.FC = () => {
             />
 
             {/* Sidebar */}
-            <aside className="absolute left-0 top-0 bottom-0 w-64 bg-sovereign-elevated shadow-2xl border-r border-sovereign-border-subtle">
+            <aside className="absolute left-0 top-0 bottom-0 w-64 bg-sovereign-elevated shadow-2xl border-r border-sovereign-border-subtle flex flex-col">
               {/* Logo */}
-              <div className="h-16 flex items-center justify-between px-4 border-b border-sovereign-border-subtle">
+              <div className="h-16 flex items-center justify-between px-4 border-b border-sovereign-border-subtle flex-shrink-0">
                 <Logo size="sm" />
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
                   aria-label="Close navigation menu"
                   className="p-1.5 rounded-md text-gray-400 hover:text-white hover:bg-sovereign-hover"
                 >
-                  �
+                  ✕
                 </button>
               </div>
 
               {/* Navigation */}
-              <nav className="py-4 px-2 space-y-1">
-                {navigationItems.map((item) => {
+              <nav className="flex-1 py-3 px-2 space-y-1 overflow-y-auto">
+                {/* Home / Mission Control */}
+                {(() => {
+                  const Icon = homeItem.icon;
+                  const active = isActive(homeItem.path);
+                  return (
+                    <button
+                      onClick={() => {
+                        navigate(homeItem.path);
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className={cn(
+                        'w-full flex items-center gap-3 px-3 py-2.5 rounded-lg',
+                        'transition-colors text-sm font-semibold',
+                        active
+                          ? 'bg-sovereign-active text-white border-l-2 border-cyan-500'
+                          : 'text-gray-400 hover:bg-sovereign-hover hover:text-white'
+                      )}
+                    >
+                      <Icon />
+                      <span>{homeItem.labelKey ? t(homeItem.labelKey) : homeItem.label}</span>
+                    </button>
+                  );
+                })()}
+
+                {/* Tier Groups */}
+                {tierGroups.map((group) => {
+                  const tierColorMap: Record<string, { label: string; active: string; dot: string }> = {
+                    blue:   { label: 'text-blue-400',   active: 'border-blue-500',   dot: 'bg-blue-400' },
+                    purple: { label: 'text-purple-400', active: 'border-purple-500', dot: 'bg-purple-400' },
+                    amber:  { label: 'text-amber-400',  active: 'border-amber-500',  dot: 'bg-amber-400' },
+                  };
+                  const tc = tierColorMap[group.color] || tierColorMap.blue;
+                  return (
+                    <div key={group.id} className="pt-3 mt-2 border-t border-sovereign-border-subtle">
+                      <div className="flex items-center gap-2 px-3 mb-2">
+                        <div className={cn('w-1.5 h-1.5 rounded-full', tc.dot)} />
+                        <p className={cn('text-[10px] font-bold uppercase tracking-widest', tc.label)}>
+                          {group.label}
+                        </p>
+                      </div>
+                      {group.items.map((item) => {
+                        const Icon = item.icon;
+                        const active = isActive(item.path) && !item.locked;
+                        return (
+                          <button
+                            key={item.id}
+                            onClick={() => {
+                              navigate(item.path);
+                              setIsMobileMenuOpen(false);
+                            }}
+                            className={cn(
+                              'w-full flex items-center gap-3 px-3 py-2 rounded-lg',
+                              'transition-colors text-sm',
+                              item.locked
+                                ? 'text-gray-600 hover:bg-sovereign-hover hover:text-gray-400'
+                                : active
+                                  ? `bg-sovereign-active text-white border-l-2 ${tc.active}`
+                                  : 'text-gray-400 hover:bg-sovereign-hover hover:text-white'
+                            )}
+                          >
+                            <Icon className={cn('w-5 h-5', item.locked && 'opacity-40')} />
+                            <span className="flex-1 flex items-center justify-between">
+                              <span className={item.locked ? 'opacity-60' : ''}>{item.labelKey ? t(item.labelKey) : item.label}</span>
+                              {item.locked && <Lock className="w-3 h-3 opacity-30" />}
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  );
+                })}
+
+                {/* Cross-cutting / System */}
+                <div className="pt-3 mt-2 border-t border-sovereign-border-subtle">
+                  <p className="px-3 text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-2">
+                    SYSTEM
+                  </p>
+                  {systemItems.map((item) => {
+                    const Icon = item.icon;
+                    const active = isActive(item.path);
+                    return (
+                      <button
+                        key={item.id}
+                        onClick={() => {
+                          navigate(item.path);
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className={cn(
+                          'w-full flex items-center gap-3 px-3 py-2 rounded-lg',
+                          'transition-colors text-sm',
+                          active
+                            ? 'bg-sovereign-active text-white border-l-2 border-cyan-500'
+                            : 'text-gray-400 hover:bg-sovereign-hover hover:text-white'
+                        )}
+                      >
+                        <Icon />
+                        <span>{item.labelKey ? t(item.labelKey) : item.label}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </nav>
+
+              {/* Bottom Navigation */}
+              <div className="py-4 px-2 border-t border-sovereign-border-subtle space-y-1 flex-shrink-0">
+                {bottomNavigationItems.map((item) => {
                   const Icon = item.icon;
                   const active = isActive(item.path);
                   return (
@@ -1828,7 +1923,20 @@ const CortexLayoutInner: React.FC = () => {
                     </button>
                   );
                 })}
-              </nav>
+              </div>
+
+              {/* User Section */}
+              <div className="p-4 border-t border-sovereign-border-subtle flex-shrink-0">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 bg-crimson-900/30 rounded-full flex items-center justify-center">
+                    <span className="text-crimson-400 font-medium text-sm">{userInitials}</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-medium text-white truncate">{user?.name || 'Stuart Rainey'}</p>
+                    <p className="text-xs text-gray-500 truncate">{user?.role === 'OWNER' ? t('label.owner') : t('label.admin')}</p>
+                  </div>
+                </div>
+              </div>
             </aside>
           </div>
         )}
