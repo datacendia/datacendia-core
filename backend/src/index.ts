@@ -321,19 +321,17 @@ if (config.nodeEnv === 'production') {
 
 // NOTE: /health endpoint is defined BEFORE middleware (line ~143) for liveness probes
 
-// OpenAPI/Swagger Documentation (dev only)
-if (config.nodeEnv === 'development') {
-  app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
-    explorer: true,
-    customCss: '.swagger-ui .topbar { display: none }',
-    customSiteTitle: 'Datacendia API Documentation',
-  }));
-  app.get('/api/docs.json', (_req, res) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.send(swaggerSpec);
-  });
-  logger.info('📚 API Documentation available at /api/docs');
-}
+// OpenAPI/Swagger Documentation (all environments — open-source project)
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
+  explorer: true,
+  customCss: '.swagger-ui .topbar { display: none }',
+  customSiteTitle: 'Datacendia API Documentation',
+}));
+app.get('/api/docs.json', (_req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  res.send(swaggerSpec);
+});
+logger.info('📚 API Documentation available at /api/docs');
 
 // =============================================================================
 // UNIVERSAL REDIS CACHE - Applied to all GET requests (40-60% faster responses)

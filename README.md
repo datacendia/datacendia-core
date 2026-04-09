@@ -56,6 +56,8 @@ docker pull ghcr.io/datacendia/datacendia:latest
 ```
 </details>
 
+> **API Docs:** Interactive OpenAPI documentation is available at [localhost:3001/api/docs](http://localhost:3001/api/docs) once the backend is running. Raw spec at `/api/docs.json`.
+
 ---
 
 ## What is Datacendia?
