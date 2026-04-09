@@ -210,7 +210,7 @@
               <textarea id="input" placeholder="Paste or type text to scan for PII..."></textarea>
             </div>
             <div class="buttons">
-              <button class="sample" onclick="loadSample()">Load Sample</button>
+              <button class="sample" onclick="handleLoadSample()">Load Sample</button>
               <button onclick="scanText()">Scan for PII</button>
             </div>
             <div id="status"></div>
@@ -305,10 +305,39 @@
     customElements.define('council-status-badge', CouncilStatusBadge);
 
     // Demo functions with real API integration
+    window.handleLoadSample = function() {
+      console.log('Load Sample button clicked');
+      loadSample();
+    };
+
     window.loadSample = function() {
-      const textarea = document.querySelector('#input');
-      if (textarea) {
-        textarea.value = 'Contact John Smith at john.smith@acme.com or 555-867-5309. His SSN is 123-45-6789 and credit card is 4111-1111-1111-1111. DOB: 01/15/1985.';
+      try {
+        console.log('Load Sample button clicked - loading sample text');
+        const textarea = document.querySelector('#input');
+        if (textarea) {
+          const sampleText = 'Contact John Smith at john.smith@acme.com or 555-867-5309. His SSN is 123-45-6789 and credit card is 4111-1111-1111-1111. DOB: 01/15/1985.';
+          textarea.value = sampleText;
+          
+          // Clear previous results
+          const status = document.querySelector('#status');
+          const detections = document.querySelector('#detections');
+          const redacted = document.querySelector('#redacted');
+          
+          if (status) status.innerHTML = '';
+          if (detections) detections.innerHTML = '';
+          if (redacted) redacted.innerHTML = '';
+          
+          console.log('Sample text loaded successfully:', sampleText);
+          
+          // Trigger input event to ensure reactivity
+          const event = new Event('input', { bubbles: true });
+          textarea.dispatchEvent(event);
+          
+        } else {
+          console.error('Could not find textarea element');
+        }
+      } catch (error) {
+        console.error('Error loading sample text:', error);
       }
     };
 
