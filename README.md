@@ -46,11 +46,14 @@ docker compose -f docker-compose.demo.yml up -d
 > **What you'll see:** A pre-seeded Council dashboard with 5 real deliberations across 5 industries -- Energy grid emergency, Manufacturing safety defect, $1.7B CRE acquisition, Veterans IT modernization, and SaMD medical device deployment. Full agent transcripts, cross-examinations, and cryptographically signed decision packets.
 
 <details>
-<summary><strong>⚠️ First run takes 5-15 minutes</strong> (Docker builds from source)</summary>
+<summary><strong>⚡ Pre-built images available</strong> — first run should take under 2 minutes</summary>
 
-Docker builds the backend and frontend from source on first run. Subsequent runs start in seconds. If you haven't pulled an Ollama model, AI agents will produce no output -- the demo data is still fully browseable.
+Docker pulls pre-built images from GHCR (`ghcr.io/datacendia/datacendia`). If you haven't pulled an Ollama model, AI agents will produce no output — the demo data is still fully browseable.
 
-**Pre-built images coming soon** -- follow this repo for updates.
+```bash
+# Pull the latest all-in-one image directly
+docker pull ghcr.io/datacendia/datacendia:latest
+```
 </details>
 
 ---

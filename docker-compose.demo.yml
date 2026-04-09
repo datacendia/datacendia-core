@@ -80,6 +80,7 @@ services:
   # Backend API — auto-migrates + auto-seeds demo data on startup
   # ---------------------------------------------------------------------------
   api:
+    image: ghcr.io/datacendia/datacendia-api:latest
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -120,6 +121,7 @@ services:
   # Frontend — connects to backend API
   # ---------------------------------------------------------------------------
   frontend:
+    image: ghcr.io/datacendia/datacendia-frontend:latest
     build:
       context: .
       dockerfile: Dockerfile.frontend
