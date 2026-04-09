@@ -1,0 +1,26 @@
+title: "[Q&A] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ask questions about Datacendia — setup, architecture, features, integrations, or anything else.
+  - type: textarea
+    attributes:
+      label: Your question
+      description: What would you like to know?
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Area
+      options:
+        - Setup / Installation
+        - Council (multi-agent deliberation)
+        - CendiaGateway (AI governance proxy)
+        - Evidence / Audit infrastructure
+        - Compliance / Regulatory
+        - Industry Verticals
+        - API / Backend
+        - Frontend / UI
+        - Other
