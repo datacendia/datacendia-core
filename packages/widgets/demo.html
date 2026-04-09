@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@datacendia/widgets — Live Demo</title>
+  <script type="importmap">
+    {
+      "imports": {
+        "lit": "https://cdn.jsdelivr.net/npm/lit@3.1.0/index.js",
+        "lit/decorators.js": "https://cdn.jsdelivr.net/npm/lit@3.1.0/decorators.js"
+      }
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
@@ -168,7 +176,7 @@
   <!-- ================================================================== -->
 
   <script type="module">
-    // Import all components
+    // Import all components (source files work directly in browsers with import map)
     import './src/components/dcii-evidence-viewer.js';
     import './src/components/cendia-pii-scanner.js';
     import './src/components/council-status-badge.js';

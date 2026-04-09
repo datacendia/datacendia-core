@@ -80,6 +80,12 @@ export class DciiEvidenceViewer extends LitElement {
   /** Decision packet ID to load */
   @property({ attribute: 'packet-id' }) packetId = '';
 
+  /** API key for authentication (optional) */
+  @property({ attribute: 'api-key' }) apiKey = '';
+
+  /** Number of retry attempts for failed requests */
+  @property({ type: Number, attribute: 'retry-attempts' }) retryAttempts = 3;
+
   /** Or pass a packet object directly (JSON string or object) */
   @property({ attribute: false }) packet: EvidencePacket | null = null;
 
@@ -129,31 +135,104 @@ export class DciiEvidenceViewer extends LitElement {
     if (!this.apiUrl || !this.packetId) return;
     this._loading = true;
     this._error = '';
-    try {
-      const res = await fetch(`${this.apiUrl}/council-packets/${this.packetId}`);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const json = await res.json();
-      this._packet = json.data ?? json;
-    } catch (e) {
-      this._error = (e as Error).message;
-    } finally {
-      this._loading = false;
+    
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    };
+    if (this.apiKey) {
+      headers['Authorization'] = `Bearer ${this.apiKey}`;
     }
+
+    let lastError: Error | null = null;
+    for (let attempt = 1; attempt <= this.retryAttempts; attempt++) {
+      try {
+        const res = await fetch(`${this.apiUrl}/council-packets/${this.packetId}`, {
+          headers,
+          signal: AbortSignal.timeout(10000), // 10s timeout
+        });
+        
+        if (!res.ok) {
+          if (res.status === 404) {
+            throw new Error('Decision packet not found');
+          } else if (res.status === 403) {
+            throw new Error('Access denied - check API key');
+          } else if (res.status >= 500) {
+            throw new Error(`Server error (${res.status}) - retrying...`);
+          } else {
+            throw new Error(`HTTP ${res.status}`);
+          }
+        }
+        
+        const json = await res.json();
+        this._packet = json.data ?? json;
+        this.dispatchEvent(new CustomEvent('dcii-packet-loaded', { 
+          detail: this._packet, 
+          bubbles: true, 
+          composed: true 
+        }));
+        return;
+      } catch (e) {
+        lastError = e as Error;
+        if (attempt < this.retryAttempts && (e as Error).name !== 'AbortError') {
+          await new Promise(resolve => setTimeout(resolve, 1000 * attempt)); // Exponential backoff
+        }
+      }
+    }
+    
+    this._error = lastError?.message || 'Failed to load packet';
+    this.dispatchEvent(new CustomEvent('dcii-error', { 
+      detail: { error: this._error, type: 'fetch' }, 
+      bubbles: true, 
+      composed: true 
+    }));
+    this._loading = false;
   }
 
   private async _verify() {
     if (!this.apiUrl || !this.packetId) return;
     this._verifying = true;
+    this._error = '';
+    
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    };
+    if (this.apiKey) {
+      headers['Authorization'] = `Bearer ${this.apiKey}`;
+    }
+
     try {
       const res = await fetch(`${this.apiUrl}/council-packets/${this.packetId}/verify`, {
         method: 'POST',
+        headers,
+        signal: AbortSignal.timeout(15000), // 15s timeout for verification
       });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      
+      if (!res.ok) {
+        if (res.status === 404) {
+          throw new Error('Decision packet not found for verification');
+        } else if (res.status === 403) {
+          throw new Error('Access denied - check API key for verification');
+        } else {
+          throw new Error(`Verification failed: HTTP ${res.status}`);
+        }
+      }
+      
       const json = await res.json();
       this._verification = json.data ?? json;
-      this.dispatchEvent(new CustomEvent('dcii-verified', { detail: this._verification, bubbles: true, composed: true }));
+      this.dispatchEvent(new CustomEvent('dcii-verified', { 
+        detail: this._verification, 
+        bubbles: true, 
+        composed: true 
+      }));
     } catch (e) {
       this._error = (e as Error).message;
+      this.dispatchEvent(new CustomEvent('dcii-error', { 
+        detail: { error: this._error, type: 'verify' }, 
+        bubbles: true, 
+        composed: true 
+      }));
     } finally {
       this._verifying = false;
     }
@@ -202,48 +281,67 @@ export class DciiEvidenceViewer extends LitElement {
     }
 
     return html`
-      <div class="dcii-root ${this.theme}">
+      <div class="dcii-root ${this.theme}" role="main" aria-label="DCII Evidence Packet">
         <!-- Header -->
-        <div class="header">
+        <header class="header">
           <div class="title-row">
-            <span class="logo">◆</span>
-            <span class="title">DCII Evidence Packet</span>
-            <span class="version">v${p.version}</span>
+            <span class="logo" aria-hidden="true">◆</span>
+            <h1 class="title">DCII Evidence Packet</h1>
+            <span class="version" aria-label="Version ${p.version}">v${p.version}</span>
           </div>
-          <div class="run-id">${p.runId}</div>
-        </div>
+          <div class="run-id" role="status" aria-live="polite">
+            <strong>Run ID:</strong> <code>${p.runId}</code>
+          </div>
+        </header>
 
         <!-- Decision summary -->
-        <div class="section">
-          <div class="section-label">Decision</div>
-          <div class="question">${p.question}</div>
+        <section class="section" aria-labelledby="decision-heading">
+          <h2 id="decision-heading" class="section-label">Decision</h2>
+          <div class="question" role="heading" aria-level="3">${p.question}</div>
           <div class="recommendation">${p.recommendation}</div>
-          <div class="confidence-row">
+          <div class="confidence-row" role="group" aria-label="Confidence score">
             <span class="confidence-label">Confidence</span>
-            <span class="confidence-bar">
+            <div class="confidence-bar" role="progressbar" 
+                 aria-valuenow="${Math.round(p.confidence * 100)}" 
+                 aria-valuemin="0" 
+                 aria-valuemax="100"
+                 aria-label="Confidence: ${Math.round(p.confidence * 100)}%">
               <span class="confidence-fill" style="width:${p.confidence * 100}%; background:${this._confidenceColor(p.confidence)}"></span>
-            </span>
-            <span class="confidence-value" style="color:${this._confidenceColor(p.confidence)}">${Math.round(p.confidence * 100)}%</span>
+            </div>
+            <span class="confidence-value" style="color:${this._confidenceColor(p.confidence)}" aria-label="${Math.round(p.confidence * 100)}% confidence">${Math.round(p.confidence * 100)}%</span>
           </div>
-          <div class="consensus ${p.consensusReached ? 'yes' : 'no'}">
+          <div class="consensus ${p.consensusReached ? 'yes' : 'no'}" role="status" aria-live="polite">
             ${p.consensusReached ? '✓ Consensus reached' : '✗ No consensus'}
           </div>
-        </div>
+        </section>
 
         <!-- Cryptographic integrity -->
-        <div class="section">
-          <div class="section-label">Cryptographic Integrity</div>
+        <section class="section" aria-labelledby="crypto-heading">
+          <h2 id="crypto-heading" class="section-label">Cryptographic Integrity</h2>
 
           <div class="crypto-row merkle-row">
             <span class="crypto-label">Merkle Root</span>
-            <code class="hash" @click=${() => this._copyToClipboard(p.merkleRoot)} title="Click to copy">${p.merkleRoot}</code>
+            <code class="hash" 
+                  tabindex="0"
+                  role="button"
+                  @click=${() => this._copyToClipboard(p.merkleRoot)}
+                  @keydown=${(e: KeyboardEvent) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this._copyToClipboard(p.merkleRoot); } }}
+                  aria-label="Merkle root hash. Press Enter or Space to copy to clipboard"
+                  title="Click to copy">${p.merkleRoot}</code>
           </div>
 
-          <div class="hash-grid">
-            ${Object.entries(p.artifactHashes).map(([key, hash]) => html`
-              <div class="hash-item" @click=${() => { this._expandedHash = this._expandedHash === key ? null : key; }}>
+          <div class="hash-grid" role="list" aria-label="Artifact hashes">
+            ${Object.entries(p.artifactHashes).map(([key, hash], index) => html`
+              <div class="hash-item" 
+                   role="listitem"
+                   tabindex="0"
+                   @click=${() => { this._expandedHash = this._expandedHash === key ? null : key; }}
+                   @keydown=${(e: KeyboardEvent) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this._expandedHash = this._expandedHash === key ? null : key; } }}
+                   aria-label="${key} hash. ${this._expandedHash === key ? 'Expanded' : 'Collapsed'}. Press Enter or Space to toggle"
+                   aria-expanded="${this._expandedHash === key}"
+                   aria-controls="hash-${key}">
                 <span class="hash-key">${key}</span>
-                <code class="hash-value">${this._expandedHash === key ? hash : this._short(hash)}</code>
+                <code class="hash-value" id="hash-${key}">${this._expandedHash === key ? hash : this._short(hash)}</code>
                 <span class="hash-algo">SHA-256</span>
               </div>
             `)}

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@datacendia/widgets - Live Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #06060a;
+      color: #e4e4e7;
+      padding: 40px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+    h1 span { color: #c9a84c; }
+    .subtitle { color: #71717a; font-size: 14px; margin-bottom: 48px; }
+    .subtitle a { color: #c9a84c; text-decoration: none; }
+    .subtitle a:hover { text-decoration: underline; }
+    h2 {
+      font-size: 13px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.1em; color: #c9a84c; margin: 48px 0 16px;
+      padding-bottom: 8px; border-bottom: 1px solid #1a1a2a;
+    }
+    h2:first-of-type { margin-top: 0; }
+    .description { color: #71717a; font-size: 13px; margin-bottom: 16px; line-height: 1.6; }
+    .demo-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 16px; }
+    .badge-demos { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    code.tag {
+      display: inline-block; background: #141420; color: #c9a84c; padding: 2px 8px;
+      border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    }
+    .theme-toggle {
+      position: fixed; top: 16px; right: 16px; background: #141420; border: 1px solid #2a2a3a;
+      color: #e4e4e7; padding: 8px 16px; border-radius: 8px; cursor: pointer;
+      font-family: inherit; font-size: 12px; z-index: 100;
+    }
+    .theme-toggle:hover { border-color: #c9a84c; }
+    .separator { height: 1px; background: #1a1a2a; margin: 32px 0; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+    footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid #1a1a2a; color: #71717a; font-size: 12px; text-align: center; }
+    footer a { color: #c9a84c; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">Theme Toggle</button>
+
+  <h1> <span>@datacendia/widgets</span></h1>
+  <p class="subtitle">
+    Framework-agnostic Web Components for AI governance.
+    Works in Angular, Vue, React, Svelte, or plain HTML.
+    <a href="https://github.com/datacendia/datacendia-core/tree/master/packages/widgets">GitHub</a>
+  </p>
+
+  <h2>Evidence Viewer</h2>
+  <p class="description">Decision packet with cryptographic verification</p>
+  <dcii-evidence-viewer id="ev-full" show-agents></dcii-evidence-viewer>
+
+  <h2>Compact Mode</h2>
+  <dcii-evidence-viewer id="ev-compact" compact></dcii-evidence-viewer>
+
+  <div class="separator"></div>
+
+  <h2>PII Scanner</h2>
+  <p class="description">Real-time PII detection with client-side fallback</p>
+  <cendia-pii-scanner id="pii-scanner"></cendia-pii-scanner>
+
+  <div class="separator"></div>
+
+  <h2>Council Status Badges</h2>
+  <div class="badge-demos">
+    <council-status-badge status="completed" confidence="0.82" agent-count="6"></council-status-badge>
+    <council-status-badge status="deliberating" confidence="0.64" agent-count="4"></council-status-badge>
+    <council-status-badge status="pending"></council-status-badge>
+  </div>
+
+  <h2>Card Variant</h2>
+  <div class="grid-2">
+    <council-status-badge
+      variant="card"
+      status="completed"
+      confidence="0.82"
+      agent-count="6"
+      label="CRE Acquisition Review"
+      show-bar
+    ></council-status-badge>
+    <council-status-badge
+      variant="card"
+      status="deliberating"
+      confidence="0.54"
+      agent-count="4"
+      label="SepsisSense SaMD Deployment"
+      show-bar
+    ></council-status-badge>
+  </div>
+
+  <footer>
+    <p>
+      <strong>@datacendia/widgets v0.1.0</strong> - Apache 2.0
+      · <a href="https://datacendia.com">datacendia.com</a>
+      · <a href="https://github.com/datacendia/datacendia-core">GitHub</a>
+      · <a href="https://app.datacendia.com">Live Platform</a>
+    </p>
+  </footer>
+
+  <!-- Load Lit from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/lit@3.1.0/index.js"></script>
+  
+  <!-- Load components (bundled inline) -->
+  <script>
+    // Inline minified component definitions for demo
+    // This is a simplified version that works in browsers without build tools
+    
+    // Evidence Viewer Component (simplified)
+    class DciiEvidenceViewer extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.innerHTML = `
+          <style>
+            :host { display: block; font-family: 'Inter', sans-serif; }
+            .root { background: #0a0a0f; color: #e4e4e7; border: 1px solid #2a2a3a; border-radius: 12px; padding: 20px; }
+            .root.light { background: #fff; color: #18181b; border-color: #e4e4e7; }
+            .header { border-bottom: 1px solid #2a2a3a; padding-bottom: 12px; margin-bottom: 16px; }
+            .title { font-size: 16px; font-weight: 600; color: #c9a84c; }
+            .run-id { font-family: monospace; font-size: 12px; color: #71717a; margin-top: 4px; }
+            .question { font-size: 14px; font-weight: 500; margin-bottom: 8px; }
+            .recommendation { font-size: 13px; color: #71717a; margin-bottom: 12px; }
+            .confidence { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+            .confidence-bar { flex: 1; height: 6px; background: #2a2a3a; border-radius: 3px; }
+            .confidence-fill { height: 100%; background: #22c55e; border-radius: 3px; }
+            .confidence-value { font-weight: 700; }
+            .consensus { font-size: 12px; color: #22c55e; }
+            .merkle { font-family: monospace; font-size: 11px; color: #c9a84c; background: #141420; padding: 4px 8px; border-radius: 4px; margin-top: 8px; }
+            .agents { margin-top: 16px; }
+            .agent { background: #141420; padding: 12px; border-radius: 8px; margin-bottom: 8px; }
+            .agent-name { font-weight: 600; margin-bottom: 4px; }
+            .agent-statement { font-size: 12px; color: #71717a; }
+            .compact { padding: 8px 16px; display: inline-flex; align-items: center; gap: 8px; font-size: 12px; }
+            .badge { background: #22c55e20; color: #22c55e; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+          </style>
+          <div class="root">
+            <div class="header">
+              <div class="title">DCII Evidence Packet</div>
+              <div class="run-id">RUN-LR8K42-A3F7E1C9</div>
+            </div>
+            <div class="question">Should Meridian Capital proceed with the $1.7B commercial real estate acquisition?</div>
+            <div class="recommendation">Proceed with enhanced due diligence. Requires additional environmental assessment and tenant retention analysis.</div>
+            <div class="confidence">
+              <span>Confidence</span>
+              <div class="confidence-bar"><div class="confidence-fill" style="width: 82%"></div></div>
+              <span class="confidence-value">82%</span>
+            </div>
+            <div class="consensus">Consensus reached</div>
+            <div class="merkle">Merkle Root: f0e1d2c3b4a5f0e1d2c3b4a5f0e1d2c3b4a5f0e1d2c3b4a5</div>
+            <div class="agents">
+              <div class="agent">
+                <div class="agent-name">CFO Agent</div>
+                <div class="agent-statement">At $1.7B, the cap rate is below the 10-year average. However, below-market rents provide upside.</div>
+              </div>
+              <div class="agent">
+                <div class="agent-name">CISO Agent</div>
+                <div class="agent-statement">Building management systems use legacy protocols. Recommend $2.4M security retrofit.</div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // PII Scanner Component (simplified)
+    class CendiaPiiScanner extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.innerHTML = `
+          <style>
+            :host { display: block; font-family: 'Inter', sans-serif; }
+            .root { background: #0a0a0f; color: #e4e4e7; border: 1px solid #2a2a3a; border-radius: 12px; padding: 20px; }
+            .root.light { background: #fff; color: #18181b; border-color: #e4e4e7; }
+            .input { margin-bottom: 12px; }
+            textarea { width: 100%; height: 100px; background: #141420; color: #e4e4e7; border: 1px solid #2a2a3a; border-radius: 8px; padding: 12px; font-family: inherit; resize: vertical; }
+            textarea::placeholder { color: #71717a; }
+            .buttons { display: flex; gap: 8px; margin-bottom: 16px; }
+            button { background: #c9a84c; color: #000; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+            button:hover { opacity: 0.9; }
+            .sample { background: transparent; color: #c9a84c; border: 1px solid #c9a84c; }
+            .status { padding: 12px; border-radius: 8px; margin-bottom: 16px; }
+            .status.found { background: #ef444420; color: #ef4444; }
+            .status.clean { background: #22c55e20; color: #22c55e; }
+            .detections { display: flex; flex-wrap: wrap; gap: 8px; }
+            .detection { background: #141420; padding: 8px 12px; border-radius: 6px; border-left: 3px solid #ef4444; }
+            .type { font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 4px; }
+            .value { font-family: monospace; font-size: 12px; color: #ef4444; margin-bottom: 2px; }
+            .redacted { font-family: monospace; font-size: 12px; color: #22c55e; }
+            .redacted-text { background: #141420; padding: 12px; border-radius: 8px; font-family: monospace; font-size: 13px; white-space: pre-wrap; }
+          </style>
+          <div class="root">
+            <div class="input">
+              <textarea id="input" placeholder="Paste or type text to scan for PII..."></textarea>
+            </div>
+            <div class="buttons">
+              <button class="sample" onclick="loadSample()">Load Sample</button>
+              <button onclick="scanText()">Scan for PII</button>
+            </div>
+            <div id="status"></div>
+            <div id="detections"></div>
+            <div id="redacted"></div>
+          </div>
+        `;
+      }
+    }
+
+    // Council Status Badge Component (simplified)
+    class CouncilStatusBadge extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        const status = this.getAttribute('status') || 'pending';
+        const confidence = this.getAttribute('confidence') || '0';
+        const agentCount = this.getAttribute('agent-count') || '0';
+        const variant = this.getAttribute('variant') || 'badge';
+        
+        const statusColors = {
+          completed: '#22c55e',
+          deliberating: '#3b82f6',
+          pending: '#eab308',
+          failed: '#ef4444'
+        };
+
+        const statusLabels = {
+          completed: 'Completed',
+          deliberating: 'Deliberating',
+          pending: 'Pending',
+          failed: 'Failed'
+        };
+
+        if (variant === 'card') {
+          this.shadowRoot.innerHTML = `
+            <style>
+              :host { display: block; }
+              .card { background: #0a0a0f; color: #e4e4e7; border: 1px solid #2a2a3a; border-radius: 10px; padding: 16px; }
+              .header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+              .dot { width: 8px; height: 8px; border-radius: 50%; background: ${statusColors[status]}; }
+              .label { font-weight: 600; }
+              .title { font-size: 13px; color: #71717a; margin-bottom: 12px; }
+              .metrics { display: flex; flex-direction: column; gap: 8px; }
+              .metric { display: flex; align-items: center; gap: 8px; }
+              .metric-label { font-size: 11px; color: #71717a; min-width: 70px; }
+              .metric-value { font-size: 14px; font-weight: 700; }
+              .conf-bar { flex: 1; height: 5px; background: #2a2a3a; border-radius: 3px; }
+              .conf-fill { height: 100%; background: ${confidence >= 0.8 ? '#22c55e' : confidence >= 0.6 ? '#eab308' : '#ef4444'}; border-radius: 3px; }
+            </style>
+            <div class="card">
+              <div class="header">
+                <div class="dot"></div>
+                <div class="label">${statusLabels[status]}</div>
+              </div>
+              <div class="title">${this.getAttribute('label') || 'Decision Review'}</div>
+              <div class="metrics">
+                <div class="metric">
+                  <span class="metric-label">Confidence</span>
+                  <div class="conf-bar"><div class="conf-fill" style="width: ${confidence * 100}%"></div></div>
+                  <span class="metric-value">${Math.round(confidence * 100)}%</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-label">Agents</span>
+                  <span class="metric-value">${agentCount}</span>
+                </div>
+              </div>
+            </div>
+          `;
+        } else {
+          this.shadowRoot.innerHTML = `
+            <style>
+              :host { display: inline-block; }
+              .badge { display: inline-flex; align-items: center; gap: 8px; background: #141420; color: #e4e4e7; border: 1px solid #2a2a3a; padding: 6px 14px; border-radius: 20px; font-size: 12px; }
+              .dot { width: 8px; height: 8px; border-radius: 50%; background: ${statusColors[status]}; }
+              .conf { font-weight: 700; color: ${confidence >= 0.8 ? '#22c55e' : confidence >= 0.6 ? '#eab308' : '#ef4444'}; }
+            </style>
+            <div class="badge">
+              <div class="dot"></div>
+              <span>${statusLabels[status]}</span>
+              ${confidence > 0 ? `<span class="conf">${Math.round(confidence * 100)}%</span>` : ''}
+              ${agentCount > 0 ? `<span>Agents: ${agentCount}</span>` : ''}
+            </div>
+          `;
+        }
+      }
+    }
+
+    // Register components
+    customElements.define('dcii-evidence-viewer', DciiEvidenceViewer);
+    customElements.define('cendia-pii-scanner', CendiaPiiScanner);
+    customElements.define('council-status-badge', CouncilStatusBadge);
+
+    // Demo functions with real API integration
+    window.loadSample = function() {
+      const textarea = document.querySelector('#input');
+      if (textarea) {
+        textarea.value = 'Contact John Smith at john.smith@acme.com or 555-867-5309. His SSN is 123-45-6789 and credit card is 4111-1111-1111-1111. DOB: 01/15/1985.';
+      }
+    };
+
+    window.scanText = async function() {
+      const textarea = document.querySelector('#input');
+      const status = document.querySelector('#status');
+      const detectionsDiv = document.querySelector('#detections');
+      const redacted = document.querySelector('#redacted');
+      
+      if (!textarea || !textarea.value.trim()) return;
+      
+      const text = textarea.value;
+      
+      // Try real API first, fallback to client-side
+      try {
+        const response = await fetch('https://app.datacendia.com/api/gateway/scan', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+            text: text,
+            policy: 'gdpr',
+            source: 'demo-widget'
+          }),
+          signal: AbortSignal.timeout(10000)
+        });
+        
+        if (response.ok) {
+          const result = await response.json();
+          renderScanResult(result);
+          return;
+        }
+      } catch (e) {
+        console.log('API unavailable, using client-side fallback');
+      }
+      
+      // Client-side fallback
+      const emailMatch = text.match(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}/g);
+      const ssnMatch = text.match(/\b\d{3}[-.\s]?\d{2}[-.\s]?\d{4}\b/g);
+      const phoneMatch = text.match(/\b(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}\b/g);
+      const dobMatch = text.match(/\b\d{1,2}\/\d{1,2}\/\d{4}\b/g);
+      
+      const hasPII = !!(emailMatch || ssnMatch || phoneMatch || dobMatch);
+      const piiDetections = [];
+      
+      if (emailMatch) {
+        emailMatch.forEach(e => piiDetections.push({ type: 'Email', value: e, redacted: '[REDACTED_GDPR]' }));
+      }
+      if (ssnMatch) {
+        ssnMatch.forEach(s => piiDetections.push({ type: 'SSN', value: s, redacted: '[REDACTED_GDPR]' }));
+      }
+      if (phoneMatch) {
+        phoneMatch.forEach(p => piiDetections.push({ type: 'Phone', value: p, redacted: '[REDACTED_GDPR]' }));
+      }
+      if (dobMatch) {
+        dobMatch.forEach(d => piiDetections.push({ type: 'DOB', value: d, redacted: '[REDACTED_GDPR]' }));
+      }
+      
+      renderScanResult({
+        hasPII,
+        detections: piiDetections,
+        types: piiDetections.map(d => d.type),
+        originalText: text,
+        redactedText: text,
+        scanDurationMs: Math.random() * 100 + 50,
+        policy: 'gdpr'
+      });
+    };
+
+    function renderScanResult(result) {
+      const status = document.querySelector('#status');
+      const detectionsDiv = document.querySelector('#detections');
+      const redacted = document.querySelector('#redacted');
+      
+      status.className = `status ${result.hasPII ? 'found' : 'clean'}`;
+      status.innerHTML = result.hasPII ? 
+        `Found ${result.detections.length} PII detection${result.detections.length > 1 ? 's' : ''} (${result.policy?.toUpperCase() || 'GDPR'} policy)` : 
+        'No PII detected';
+      
+      if (result.hasPII) {
+        let html = '<div class="detections">';
+        result.detections.forEach(d => {
+          html += `<div class="detection"><div class="type">${d.type}</div><div class="value">${d.value}</div><div class="redacted">${d.redacted}</div></div>`;
+        });
+        html += '</div>';
+        detectionsDiv.innerHTML = html;
+        
+        let redactedText = result.originalText;
+        result.detections.forEach(d => {
+          redactedText = redactedText.replace(d.value, d.redacted);
+        });
+        redacted.innerHTML = `<div class="redacted-text">${redactedText}</div>`;
+      } else {
+        detectionsDiv.innerHTML = '';
+        redacted.innerHTML = '';
+      }
+    }
+
+    // Theme toggle
+    window.toggleTheme = function() {
+      const isDark = document.body.style.background === 'rgb(6, 6, 10)';
+      const theme = isDark ? 'light' : 'dark';
+      
+      document.body.style.background = isDark ? '#f0f0f5' : '#06060a';
+      document.body.style.color = isDark ? '#18181b' : '#e4e4e7';
+      
+      document.querySelectorAll('.root, .card').forEach(el => {
+        el.classList.toggle('light', isDark);
+      });
+    };
+
+    // Load sample on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const compact = document.querySelector('#ev-compact');
+      if (compact) {
+        compact.shadowRoot.querySelector('.root').className = 'root compact';
+        compact.shadowRoot.querySelector('.root').innerHTML = `
+          <span class="badge">Verified</span>
+          <span>RUN-LR8K42-A3F7E1C9</span>
+          <span>f0e1d2c3b4a5</span>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>
