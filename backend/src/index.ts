@@ -97,6 +97,7 @@ import flinkRoutes from './routes/flink.js';
 import gatewayRoutes from './routes/gateway.js';
 import wedgeRoutes from './routes/wedge.js';
 import opsAgentsRoutes from './routes/ops-agents.js';
+import retentionRoutes from './routes/retention.js';
 import { registerPlatformServices } from './core/services/PlatformServices.js';
 import { applyPerformanceIndexes } from './startup/applyIndexes.js';
 import { apiCache, CACHE_TTLS } from './middleware/cacheMiddleware.js';
@@ -383,14 +384,15 @@ app.use('/api/v1/temporal', temporalRoutes);         // Temporal.io workflow orc
 app.use('/api/v1/openbao', openbaoRoutes);           // OpenBao/Vault secrets & KMS
 app.use('/api/v1/rapids', rapidsRoutes);             // NVIDIA RAPIDS GPU analytics + Confidential Computing
 app.use('/api/v1/flink', flinkRoutes);               // Apache Flink CEP stream processing
-app.use('/api/v1/gateway', gatewayRoutes);           // CendiaGateway™ — AI Governance Gateway
-app.use('/api/v1/wedge', wedgeRoutes);               // Wedge Products — Shadow AI, Governance Report, Incident Forensics
-app.use('/api/v1/ops-agents', opsAgentsRoutes);      // Ops Agents — Report, Analytics, NLP, Pipeline
+app.use('/api/v1/gateway', gatewayRoutes);           // CendiaGateway AI Governance Gateway
+app.use('/api/v1/wedge', wedgeRoutes);               // Wedge Products Shadow AI, Governance Report, Incident Forensics
+app.use('/api/v1/ops-agents', opsAgentsRoutes);      // Ops Agents Report, Analytics, NLP, Pipeline
+app.use('/api/v1/retention', retentionRoutes);       // 7-Year Audit Retention Management
 
 // Sandbox Analytics - Track demo engagement for Thomson Reuters
 import('./routes/sandbox-analytics.js').then(mod => {
   app.use('/api', mod.default as any);
-  logger.info('📊 Sandbox Analytics API available at /api/sandbox-*');
+  logger.info(' Sandbox Analytics API available at /api/sandbox-*');
 }).catch(() => { /* Module not available */ });
 
 // SPA catch-all: serve index.html for non-API routes (after all API routes)
