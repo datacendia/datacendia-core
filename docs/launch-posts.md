@@ -167,9 +167,7 @@ After a year of building, I'm releasing Datacendia as open source (Apache 2.0).
 - Pre-built GHCR images — first run takes under 2 minutes
 
 ```
-git clone https://github.com/datacendia/datacendia-core
-cd datacendia-core
-docker compose -f docker-compose.demo.yml up -d
+git clone https://github.com/datacendia/datacendia-core && cd datacendia-core && docker compose -f docker-compose.demo.yml up -d
 ```
 
 **Tech stack:** TypeScript, Express, React, Vite, PostgreSQL with pgvector, Redis, Prisma
@@ -341,9 +339,14 @@ Datacendia is the first open-source platform where multiple AI agents deliberate
 ## 6. Post-Launch Checklist
 
 **Pre-launch:**
+- [ ] Verify links: `datacendia.com/pilot` resolves (not 404), `app.datacendia.com` loads, GitHub issues are labeled
 - [ ] Run `bash scripts/seed-github-issues.sh` to create labeled GitHub issues
+- [ ] Confirm good-first-issue label URL works: `github.com/datacendia/datacendia-core/labels/good%20first%20issue`
 - [ ] Enable GitHub Discussions on the repo (Settings → Discussions)
+- [ ] Load-test `app.datacendia.com` — Reddit spikes can send hundreds of concurrent visitors
 - [ ] Record 30s Council deliberation GIF → `docs/screenshots/demo.gif` (use `scripts/record-demo.sh`)
+  - Use a clean Chrome profile (no autofill, no personal data in URL bar)
+  - Ensure the deliberation completes fully within 30s — if it times out mid-GIF, it's damaging
 - [ ] Record 15s terminal GIF for r/selfhosted (use `vhs scripts/demo.tape`)
 - [ ] Capture screenshots for each post (see asset plan in section 7)
 - [ ] Design LinkedIn carousel (5 slides, see section 2b)
