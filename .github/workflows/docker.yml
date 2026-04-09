@@ -41,7 +41,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/datacendia/datacendia-api
+          images: ${{ env.REGISTRY }}/${{ github.repository_owner }}/datacendia-api
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
@@ -79,7 +79,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/datacendia/datacendia-frontend
+          images: ${{ env.REGISTRY }}/${{ github.repository_owner }}/datacendia-frontend
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
@@ -117,7 +117,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/datacendia/datacendia
+          images: ${{ env.REGISTRY }}/${{ github.repository_owner }}/datacendia
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
