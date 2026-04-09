@@ -82,6 +82,9 @@ export class CouncilStatusBadge extends LitElement {
   /** Poll interval in ms (0 = no polling) */
   @property({ type: Number, attribute: 'poll-ms' }) pollMs = 0;
 
+  /** WebSocket URL for real-time updates (optional) */
+  @property({ attribute: 'ws-url' }) wsUrl = '';
+
   /** Display variant: 'badge' | 'card' | 'inline' */
   @property() variant: 'badge' | 'card' | 'inline' = 'badge';
 
@@ -95,6 +98,9 @@ export class CouncilStatusBadge extends LitElement {
   @state() private _loading = false;
   @state() private _error = '';
   @state() private _pollTimer: ReturnType<typeof setInterval> | null = null;
+  @state() private _ws: WebSocket | null = null;
+  @state() private _reconnectAttempts = 0;
+  @state() private _maxReconnectAttempts = 5;
 
   // -------------------------------------------------------------------------
   // Lifecycle
@@ -108,6 +114,9 @@ export class CouncilStatusBadge extends LitElement {
         this._pollTimer = setInterval(() => this._fetch(), this.pollMs);
       }
     }
+    if (this.wsUrl && this.deliberationId) {
+      this._connectWebSocket();
+    }
   }
 
   override disconnectedCallback() {
@@ -115,6 +124,85 @@ export class CouncilStatusBadge extends LitElement {
     if (this._pollTimer) {
       clearInterval(this._pollTimer);
       this._pollTimer = null;
+    }
+    if (this._ws) {
+      this._ws.close();
+      this._ws = null;
+    }
+  }
+
+  private _connectWebSocket() {
+    if (!this.wsUrl || !this.deliberationId) return;
+
+    try {
+      this._ws = new WebSocket(`${this.wsUrl}/deliberations/${this.deliberationId}`);
+      
+      this._ws.onopen = () => {
+        this._reconnectAttempts = 0;
+        this.dispatchEvent(new CustomEvent('council-ws-connected', { 
+          detail: { deliberationId: this.deliberationId }, 
+          bubbles: true, 
+          composed: true 
+        }));
+      };
+
+      this._ws.onmessage = (event) => {
+        try {
+          const data = JSON.parse(event.data);
+          if (data.type === 'deliberation_update' && data.payload) {
+            this._data = {
+              id: data.payload.id,
+              question: data.payload.question,
+              status: data.payload.status?.toLowerCase() ?? 'pending',
+              confidence: Number(data.payload.confidence) || 0,
+              agentCount: data.payload.agent_contributions?.length ?? data.payload.agentCount ?? 0,
+              consensusReached: data.payload.consensus_reached ?? data.payload.consensusReached ?? false,
+              createdAt: data.payload.created_at ?? data.payload.createdAt,
+              completedAt: data.payload.completed_at ?? data.payload.completedAt,
+              durationMs: data.payload.duration_ms ?? data.payload.durationMs,
+            };
+            
+            // Stop polling if WebSocket is connected and deliberation is complete
+            if (['completed', 'failed', 'cancelled'].includes(this._data.status) && this._pollTimer) {
+              clearInterval(this._pollTimer);
+              this._pollTimer = null;
+            }
+
+            this.dispatchEvent(new CustomEvent('council-status-update', {
+              detail: this._data,
+              bubbles: true,
+              composed: true,
+            }));
+          }
+        } catch (e) {
+          console.warn('Invalid WebSocket message:', e);
+        }
+      };
+
+      this._ws.onclose = (event) => {
+        if (!event.wasClean && this._reconnectAttempts < this._maxReconnectAttempts) {
+          this._reconnectAttempts++;
+          const delay = Math.min(1000 * Math.pow(2, this._reconnectAttempts), 30000);
+          setTimeout(() => this._connectWebSocket(), delay);
+        }
+        
+        this.dispatchEvent(new CustomEvent('council-ws-disconnected', { 
+          detail: { code: event.code, reason: event.reason }, 
+          bubbles: true, 
+          composed: true 
+        }));
+      };
+
+      this._ws.onerror = (error) => {
+        this._error = 'WebSocket connection error';
+        this.dispatchEvent(new CustomEvent('council-ws-error', { 
+          detail: { error }, 
+          bubbles: true, 
+          composed: true 
+        }));
+      };
+    } catch (e) {
+      this._error = 'Failed to connect to WebSocket';
     }
   }
 

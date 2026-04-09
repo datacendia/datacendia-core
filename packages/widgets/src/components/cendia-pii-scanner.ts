@@ -45,6 +45,7 @@ export interface PIIScanResult {
   originalText: string;
   redactedText: string;
   scanDurationMs: number;
+  policy?: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -78,6 +79,15 @@ export class CendiaPiiScanner extends LitElement {
   /** Endpoint path — defaults to /test-pii */
   @property() endpoint = '/test-pii';
 
+  /** API key for authentication (optional) */
+  @property({ attribute: 'api-key' }) apiKey = '';
+
+  /** Redaction policy: 'gdpr' | 'hipaa' | 'custom' */
+  @property() policy: 'gdpr' | 'hipaa' | 'custom' = 'gdpr';
+
+  /** Number of retry attempts for failed requests */
+  @property({ type: Number, attribute: 'retry-attempts' }) retryAttempts = 3;
+
   /** Textarea placeholder */
   @property() placeholder = 'Paste or type text to scan for PII…';
 
@@ -89,6 +99,9 @@ export class CendiaPiiScanner extends LitElement {
 
   /** Pre-filled sample text */
   @property({ attribute: 'sample-text' }) sampleText = '';
+
+  /** Enable real-time scanning with WebSocket updates */
+  @property({ type: Boolean, attribute: 'real-time' }) realTime = false;
 
   @state() private _input = '';
   @state() private _result: PIIScanResult | null = null;
@@ -138,20 +151,113 @@ export class CendiaPiiScanner extends LitElement {
       return;
     }
 
-    try {
-      const res = await fetch(`${this.apiUrl}${this.endpoint}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: this._input }),
-      });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      this._result = await res.json();
-      this._emitResult();
-    } catch (e) {
-      this._error = (e as Error).message;
-    } finally {
-      this._scanning = false;
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    };
+    if (this.apiKey) {
+      headers['Authorization'] = `Bearer ${this.apiKey}`;
     }
+
+    let lastError: Error | null = null;
+    for (let attempt = 1; attempt <= this.retryAttempts; attempt++) {
+      try {
+        const res = await fetch(`${this.apiUrl}${this.endpoint}`, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({ 
+            text: this._input,
+            policy: this.policy,
+            realTime: this.realTime
+          }),
+          signal: AbortSignal.timeout(12000), // 12s timeout
+        });
+        
+        if (!res.ok) {
+          if (res.status === 401) {
+            throw new Error('Authentication failed - check API key');
+          } else if (res.status === 403) {
+            throw new Error('Access denied - insufficient permissions');
+          } else if (res.status === 429) {
+            throw new Error('Rate limit exceeded - please wait');
+          } else if (res.status >= 500) {
+            throw new Error(`Server error (${res.status}) - retrying...`);
+          } else {
+            throw new Error(`Scan failed: HTTP ${res.status}`);
+          }
+        }
+        
+        const json = await res.json();
+        this._result = this._applyPolicyRedaction(json);
+        this._emitResult();
+        return;
+      } catch (e) {
+        lastError = e as Error;
+        if (attempt < this.retryAttempts && (e as Error).name !== 'AbortError') {
+          await new Promise(resolve => setTimeout(resolve, 800 * attempt)); // Exponential backoff
+        }
+      }
+    }
+    
+    this._error = lastError?.message || 'Failed to scan text';
+    this.dispatchEvent(new CustomEvent('pii-scan-error', { 
+      detail: { error: this._error, input: this._input }, 
+      bubbles: true, 
+      composed: true 
+    }));
+    this._scanning = false;
+  }
+
+  private _applyPolicyRedaction(result: PIIScanResult): PIIScanResult {
+    if (this.policy === 'custom' || !result.detections.length) return result;
+    
+    const policyRules: Record<string, Record<PIIType, string>> = {
+      gdpr: {
+        'person_name': '[REDACTED_GDPR]',
+        'email': '[REDACTED_GDPR]',
+        'phone': '[REDACTED_GDPR]',
+        'address': '[REDACTED_GDPR]',
+        'date_of_birth': '[REDACTED_GDPR]',
+        'medical_record': '[REDACTED_GDPR]',
+        'financial_id': '[REDACTED_GDPR]',
+        'ssn': '[REDACTED_GDPR]',
+        'credit_card': '[REDACTED_GDPR]',
+        'bank_account': '[REDACTED_GDPR]',
+        'passport': '[REDACTED_GDPR]',
+        'drivers_license': '[REDACTED_GDPR]',
+        'ip_address': '[REDACTED_GDPR]',
+      },
+      hipaa: {
+        'person_name': '[REDACTED_HIPAA]',
+        'email': '[REDACTED_HIPAA]',
+        'phone': '[REDACTED_HIPAA]',
+        'date_of_birth': '[REDACTED_HIPAA]',
+        'medical_record': '[REDACTED_HIPAA]',
+        'ssn': '[REDACTED_HIPAA]',
+        'drivers_license': '[REDACTED_HIPAA]',
+        'address': '[REDACTED_HIPAA]',
+        'credit_card': '[REDACTED_HIPAA]',
+        'bank_account': '[REDACTED_HIPAA]',
+        'passport': '[REDACTED_HIPAA]',
+        'financial_id': '[REDACTED_HIPAA]',
+        'ip_address': '[REDACTED_HIPAA]',
+      }
+    };
+
+    const rules = policyRules[this.policy];
+    let redactedText = result.originalText;
+
+    // Apply policy-specific redaction
+    result.detections.forEach(detection => {
+      const replacement = rules[detection.type] || detection.redacted;
+      redactedText = redactedText.replace(detection.value, replacement);
+    });
+
+    return {
+      ...result,
+      redactedText,
+      policy: this.policy,
+    };
   }
 
   private _emitResult() {
@@ -214,25 +320,37 @@ export class CendiaPiiScanner extends LitElement {
     const r = this._result;
 
     return html`
-      <div class="scanner-root ${this.theme}">
+      <div class="scanner-root ${this.theme}" role="main" aria-label="PII Scanner">
         <!-- Input -->
-        <div class="input-section">
+        <section class="input-section" aria-labelledby="input-heading">
           <div class="input-header">
-            <span class="section-label">Input</span>
-            <button class="sample-btn" @click=${this._loadSample}>Load Sample</button>
+            <h2 id="input-heading" class="section-label">Input</h2>
+            <button class="sample-btn" 
+                    @click=${this._loadSample}
+                    aria-label="Load sample text for PII scanning">Load Sample</button>
           </div>
           <textarea
             .value=${this._input}
             @input=${this._onInput}
             placeholder=${this.placeholder}
             rows="4"
+            aria-label="Text to scan for personally identifiable information"
+            aria-describedby="input-help"
           ></textarea>
-          <button class="scan-btn" @click=${this._scan} ?disabled=${this._scanning || !this._input.trim()}>
-            ${this._scanning ? 'Scanning…' : '🔍 Scan for PII'}
+          <div id="input-help" class="sr-only">Enter text to scan for PII such as emails, phone numbers, SSNs, or credit cards</div>
+          <button class="scan-btn" 
+                  @click=${this._scan} 
+                  ?disabled=${this._scanning || !this._input.trim()}
+                  aria-label="${this._scanning ? 'Scanning in progress' : 'Scan text for PII'}">
+            ${this._scanning ? 'Scanning...' : 'Search Scan for PII'}
           </button>
-        </div>
+        </section>
 
-        ${this._error ? html`<div class="error">⚠ ${this._error}</div>` : nothing}
+        ${this._error ? html`
+          <div class="error" role="alert" aria-live="polite">
+            <span aria-hidden="true"> </span> ${this._error}
+          </div>
+        ` : nothing}
 
         <!-- Results -->
         ${r ? html`
