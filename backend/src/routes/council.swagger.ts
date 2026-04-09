@@ -10,6 +10,104 @@
 
 /**
  * @swagger
+ * /council/status:
+ *   get:
+ *     summary: Council service status
+ *     description: Returns health and metrics for The Council service
+ *     tags: [Council]
+ *     responses:
+ *       200:
+ *         description: Service status
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                 data:
+ *                   type: object
+ *                   properties:
+ *                     service:
+ *                       type: string
+ *                       example: TheCouncil
+ *                     status:
+ *                       type: string
+ *                       example: operational
+ *                     agents:
+ *                       type: integer
+ *                     agentRoles:
+ *                       type: array
+ *                       items:
+ *                         type: string
+ *                     metrics:
+ *                       type: object
+ *                       properties:
+ *                         totalDeliberations:
+ *                           type: integer
+ *                         totalDecisions:
+ *                           type: integer
+ *                         totalMessages:
+ *                           type: integer
+ *
+ * /council/modes:
+ *   get:
+ *     summary: List deliberation modes
+ *     description: Get all available deliberation modes (executive, crisis, etc.)
+ *     tags: [Council]
+ *     responses:
+ *       200:
+ *         description: List of modes
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                 data:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       id:
+ *                         type: string
+ *                         example: executive
+ *                       name:
+ *                         type: string
+ *                       description:
+ *                         type: string
+ *                       agents:
+ *                         type: array
+ *                         items:
+ *                           type: string
+ *
+ * /council/decisions/recent:
+ *   get:
+ *     summary: Recent decisions
+ *     description: Get the most recent council decisions
+ *     tags: [Council]
+ *     parameters:
+ *       - in: query
+ *         name: limit
+ *         schema:
+ *           type: integer
+ *           default: 10
+ *     responses:
+ *       200:
+ *         description: Recent decisions list
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                 data:
+ *                   type: array
+ *                   items:
+ *                     $ref: '#/components/schemas/Decision'
+ *
  * /council/agents:
  *   get:
  *     summary: List all AI agents
