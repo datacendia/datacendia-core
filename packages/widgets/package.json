@@ -1,0 +1,77 @@
+{
+  "name": "@datacendia/widgets",
+  "version": "0.1.0",
+  "description": "Framework-agnostic Web Components for Datacendia — evidence viewer, PII scanner, council status badge",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.js"
+    },
+    "./evidence-viewer": {
+      "types": "./dist/components/dcii-evidence-viewer.d.ts",
+      "import": "./dist/components/dcii-evidence-viewer.js"
+    },
+    "./pii-scanner": {
+      "types": "./dist/components/cendia-pii-scanner.d.ts",
+      "import": "./dist/components/cendia-pii-scanner.js"
+    },
+    "./council-badge": {
+      "types": "./dist/components/council-status-badge.d.ts",
+      "import": "./dist/components/council-status-badge.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "lit": "^3.1.0"
+  },
+  "devDependencies": {
+    "@lit/react": "^1.0.0",
+    "typescript": "^5.4.0",
+    "rimraf": "^5.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "web-components",
+    "lit",
+    "ai-governance",
+    "evidence-viewer",
+    "pii-scanner",
+    "datacendia",
+    "angular",
+    "react",
+    "vue"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/datacendia/datacendia-core.git",
+    "directory": "packages/widgets"
+  },
+  "homepage": "https://datacendia.com",
+  "bugs": {
+    "url": "https://github.com/datacendia/datacendia-core/issues"
+  }
+}
