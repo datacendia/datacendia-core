@@ -1,0 +1,43 @@
+# Datacendia Demo Bundle - Production Deployment Configuration
+# Deploy to https://demo.datacendia.com
+
+name: Deploy Demo Bundle
+on:
+  push:
+    branches: [master]
+    paths: ['packages/widgets/demo-bundle.html']
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy Demo Bundle
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v2
+        with:
+          publish-dir: './packages/widgets'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: 'Deploy demo bundle from commit ${{ github.sha }}'
+          enable-pull-request-comment: false
+          enable-commit-comment: false
+          overwrites-pull-request-comment: false
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_DEMO }}
+          
+      - name: Deploy Success Notification
+        if: success()
+        run: |
+          echo "Demo bundle deployed successfully to https://demo.datacendia.com"
+          echo "Commit: ${{ github.sha }}"
+          echo "Deployed at: $(date)"
