@@ -2,11 +2,13 @@
 
 <div align="center">
 
-<img src="docs/Inception%20Badges/for-screen/nvidia-inception-program-badge-rgb-for-screen.svg" alt="NVIDIA Inception Program Member" height="60">
+<img src="docs/Inception%20Badges/for-screen/nvidia-inception-program-badge-rgb-for-screen.svg" alt="NVIDIA Inception Program Member" height="80">
 
-**The Defensible AI Platform -- open-source core, sovereign-first.**
+### The Defensible AI Platform
 
-Multi-agent deliberation &middot; Immutable audit trails &middot; Foundation tier &middot; 30 industry vertical frameworks &middot; Sovereign-first
+**Cryptographic proof and forensic trails for every AI decision.**
+
+When your AI makes a $500M acquisition recommendation, can you prove in court exactly what it considered, what it dissented on, and who signed off? Datacendia can.
 
 [![CI](https://github.com/datacendia/datacendia-core/actions/workflows/ci.yml/badge.svg)](https://github.com/datacendia/datacendia-core/actions/workflows/ci.yml)
 [![Security](https://github.com/datacendia/datacendia-core/actions/workflows/security.yml/badge.svg)](https://github.com/datacendia/datacendia-core/actions/workflows/security.yml)
@@ -19,31 +21,43 @@ Multi-agent deliberation &middot; Immutable audit trails &middot; Foundation tie
 [![Docker](https://img.shields.io/badge/Docker-Required-2496ED.svg?logo=docker&logoColor=white)](https://www.docker.com/)
 [![NVIDIA Inception](https://img.shields.io/badge/NVIDIA-Inception%20Program-76b900.svg?logo=nvidia&logoColor=white)](https://www.nvidia.com/en-us/startups/)
 
-[Getting Started](#getting-started) &middot; [Architecture](#architecture) &middot; [Verticals](#industry-verticals) &middot; [Infrastructure](#infrastructure-integrations) &middot; [Security Audit](docs/AUDIT-REPORT-2026-Q1.md) &middot; [Standards](#standards--governance) &middot; [Contributing](#contributing) &middot; [Enterprise Edition](#enterprise-edition)
+[**Try It Now →**](#try-it-in-60-seconds) &middot; [Architecture](#architecture) &middot; [Verticals](#industry-verticals) &middot; [Free Pilot](#free-pilot-program) &middot; [Security Audit](docs/AUDIT-REPORT-2026-Q1.md) &middot; [Standards](#standards--governance) &middot; [Contributing](#contributing)
 
 </div>
 
 ---
 
-## Requirements
+## Try It in 60 Seconds
 
-| Requirement | Version | Required |
-|-------------|---------|:--------:|
-| **Node.js** | 20.x or later | Yes |
-| **Docker** & Docker Compose | Latest | Yes |
-| **PostgreSQL** | 16+ | Yes (via Docker) |
-| **Redis** | 7+ | Yes (via Docker) |
-| **Ollama** | Latest | Yes (or Triton/NIM) |
-| **Neo4j** | 5+ | Optional (knowledge graph) |
-| **NVIDIA GPU** | CUDA 12+ | Optional (RAPIDS, Triton, CC) |
+```bash
+# 1. Install Ollama (https://ollama.com) and pull a model:
+ollama pull llama3.2:3b          # Fast — 2GB, good for demos
+# ollama pull qwen3:32b          # Production — 20GB, much better quality
 
-> **Quickest path:** Install Node.js 20+, Docker, and Ollama. Everything else runs in Docker containers.
+# 2. Run the platform:
+git clone https://github.com/datacendia/datacendia-core.git
+cd datacendia-core
+docker compose -f docker-compose.demo.yml up -d
+
+# 3. Open http://localhost:5173
+#    Demo login: sarah.chen@acme.demo (no password needed)
+```
+
+> **What you'll see:** A pre-seeded Council dashboard with 5 real deliberations across 5 industries -- Energy grid emergency, Manufacturing safety defect, $1.7B CRE acquisition, Veterans IT modernization, and SaMD medical device deployment. Full agent transcripts, cross-examinations, and cryptographically signed decision packets.
+
+<details>
+<summary><strong>⚠️ First run takes 5-15 minutes</strong> (Docker builds from source)</summary>
+
+Docker builds the backend and frontend from source on first run. Subsequent runs start in seconds. If you haven't pulled an Ollama model, AI agents will produce no output -- the demo data is still fully browseable.
+
+**Pre-built images coming soon** -- follow this repo for updates.
+</details>
 
 ---
 
 ## What is Datacendia?
 
-Datacendia is the only AI platform where every decision is auditable, explainable, and forensic-grade, independently verifiable. Multiple AI agents with distinct perspectives deliberate on your behalf -- then every decision is recorded in an immutable, auditable ledger.
+Datacendia is the only AI platform where every decision is auditable, explainable, and independently verifiable at forensic grade. Multiple AI agents with distinct perspectives deliberate on your behalf -- then every interaction is recorded in an immutable, cryptographically signed audit ledger.
 
 **This is not another chatbot.** It's an operating system for enterprise decisions.
 
@@ -197,43 +211,69 @@ curl -X POST http://localhost:3001/api/v1/gateway/federation/{id}/reports \
 
 ## Getting Started
 
-### Prerequisites
+### Option 1: Demo Mode (Recommended for first look)
 
-- **Node.js** 20.x+
-- **Docker** & Docker Compose
-- **Ollama** (or any supported LLM provider)
+See [Try It in 60 Seconds](#try-it-in-60-seconds) above. Pre-seeded data, no configuration needed.
 
-### Quick Start (20 minutes)
+### Option 2: Development Setup (~45 minutes first time)
+
+**Prerequisites:** Node.js 20+, Docker, Ollama
 
 ```bash
-# Clone
+# 1. Pull an Ollama model (do this first — it takes time)
+ollama pull llama3.2:3b          # Fast demo model (2GB download)
+# For production quality, use: ollama pull qwen3:32b (20GB download, 30-60 min)
+
+# 2. Clone and configure
 git clone https://github.com/datacendia/datacendia-core.git
 cd datacendia-core
-
-# Copy environment config
 cp backend/.env.example backend/.env
 
-# Start infrastructure
+# 3. Start infrastructure (Postgres, Redis, Neo4j)
 docker compose -f docker-compose.dev.yml up -d
 
-# Install dependencies (Prisma client auto-generates via postinstall)
+# 4. Install dependencies (Prisma client auto-generates via postinstall)
 npm install
 cd backend && npm install && cd ..
 
-# Run database migrations
+# 5. Run database migrations
 cd backend && npx prisma migrate deploy && cd ..
 
-# Start the platform
-npm run dev              # Frontend: http://localhost:5173
-cd backend && npm run dev # Backend:  http://localhost:3001
+# 6. Start the platform (two terminals)
+npm run dev              # Terminal 1 — Frontend: http://localhost:5173
+cd backend && npm run dev # Terminal 2 — Backend:  http://localhost:3001
 ```
 
-### Demo Mode (Docker, zero setup)
+<details>
+<summary><strong>Ollama Model Guide</strong></summary>
+
+| Model | Size | Quality | Best For |
+|-------|------|---------|----------|
+| `llama3.2:3b` | 2 GB | Good | Quick demos, testing |
+| `llama3.2:8b` | 5 GB | Better | Development |
+| `qwen3:32b` | 20 GB | Excellent | Production (default in .env) |
+| `llama3.3:70b` | 43 GB | Best | Enterprise (needs 48GB+ RAM/VRAM) |
+
+The `.env` defaults to `qwen3:32b`. To use a smaller model, edit `backend/.env`:
 
 ```bash
-docker compose -f docker-compose.demo.yml up -d
-# Open http://localhost:5173
+OLLAMA_MODEL=llama3.2:3b
+OLLAMA_MODEL_FAST=llama3.2:3b
 ```
+
+</details>
+
+### Requirements
+
+| Requirement | Version | Required |
+|-------------|---------|:--------:|
+| **Node.js** | 20.x or later | Yes |
+| **Docker** & Docker Compose | Latest | Yes |
+| **Ollama** | Latest | Yes (or Triton/NIM) |
+| **PostgreSQL** | 16+ | Via Docker |
+| **Redis** | 7+ | Via Docker |
+| **Neo4j** | 5+ | Optional (knowledge graph) |
+| **NVIDIA GPU** | CUDA 12+ | Optional (RAPIDS, Triton, CC) |
 
 ---
 
@@ -242,11 +282,11 @@ docker compose -f docker-compose.demo.yml up -d
 ```
 datacendia-core/
 |-- src/                          # React frontend (Vite + TypeScript + Tailwind)
-|   |-- components/               # 93 reusable UI components
+|   |-- components/               # 92 reusable UI components
 |   |   |-- crypto/               # CendiaEvidence, CendiaStamp
 |   |   |-- council/              # CendiaPrecedent, CendiaRedTeam, SimilarDecisions
 |   |   +-- ui/                   # ServiceInfoDropdown, shared UI
-|   |-- pages/                    # 176 page components
+|   |-- pages/                    # 240 page components
 |   |   |-- public/               # CendiaVerify (/verify)
 |   |   |-- cortex/crypto/        # CendiaEscrow
 |   |   |-- cortex/crown/         # Echo, Gnosis, RedTeam
@@ -285,7 +325,7 @@ datacendia-core/
 
 | Layer | Technology |
 |-------|-----------|
-| **Frontend** | React 18, TypeScript, Vite, Tailwind CSS, shadcn/ui (176 pages, 93 components) |
+| **Frontend** | React 18, TypeScript, Vite, Tailwind CSS, shadcn/ui (240 pages, 92 components) |
 | **Backend** | Node.js, Express, TypeScript |
 | **Database** | PostgreSQL 16 + Prisma ORM |
 | **Cache** | Redis 7 |
@@ -381,47 +421,28 @@ See [COMMUNITY.md](COMMUNITY.md) for the full open-source boundary definition.
 
 ---
 
-## Pricing & Tiers
+## Free Pilot Program
 
-Datacendia uses an **open-core** model. The Community tier is this repository (Apache 2.0, free). All paid tiers are in [datacendia-components](https://github.com/datacendia/datacendia-components) (commercial license).
+Datacendia uses an **open-core** model. This repository is the Community Edition (Apache 2.0, free forever).
 
-| Tier | Price | What You Get |
-|------|-------|-------------|
-| **Community** | Free (Apache 2.0) | Cloud AI governance, basic Council, regex PII, evidence vault, 18+ verticals, CendiaGateway. Self-hosted. No SLA. |
-| **Pilot** | $50K/yr | Managed deployment, 99.5% SLA, priority support, full deliberation engine, 90-day money-back guarantee. |
-| **Foundation** | $150K--$500K/yr | Full compliance engines (Basel III, EU AI Act, cross-jurisdiction), ML-based PII (Presidio), Echo/Gnosis evidence, OmniTranslate (26 languages), expanded verticals. |
-| **Enterprise** | $500K--$1.5M/yr | COLLAPSE stress testing, 12 adversarial agents, Shadow Council, sovereign LLM providers (Ollama/NIM/Triton), SSO/MFA, SIEM, ZK proofs, multi-tenant. |
-| **Strategic** | $1.5M+/yr | Air-gapped, data diode, TPM attestation, federated mesh, post-quantum crypto, defense-grade, portable instances. |
+**We're offering a free 90-day guided pilot** to qualified organizations navigating AI governance challenges (EU AI Act, HIPAA, Basel III, DORA, etc.). We'll help you deploy, configure for your industry, and prove value -- no commitment, no credit card.
 
-### Feature Comparison
+| What You Get | Community (This Repo) | Guided Pilot (Free) |
+|---|:---:|:---:|
+| Council Engine (multi-agent deliberation) | ✅ | ✅ |
+| CendiaGateway (AI governance proxy) | ✅ | ✅ |
+| Immutable Audit Ledger (Merkle-signed) | ✅ | ✅ |
+| DCII Services (Truth, Notary, Witness, Timestamp) | ✅ | ✅ |
+| CendiaReplay (decision playback) | ✅ | ✅ |
+| 30 Industry Vertical Frameworks | ✅ | ✅ |
+| White-glove deployment assistance | -- | ✅ |
+| Custom agent configuration for your industry | -- | ✅ |
+| Priority support (Slack/email) | -- | ✅ |
+| Compliance report for your regulatory framework | -- | ✅ |
 
-| Capability | Community | Pilot | Foundation | Enterprise | Strategic |
-|-----------|:---------:|:-----:|:----------:|:----------:|:---------:|
-| Council Engine (multi-agent deliberation) | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Immutable Audit Ledger (Merkle-signed) | ✅ | ✅ | ✅ | ✅ | ✅ |
-| CendiaGateway (AI governance proxy) | ✅ | ✅ | ✅ | ✅ | ✅ |
-| CendiaReplay (decision playback) | ✅ | ✅ | ✅ | ✅ | ✅ |
-| DCII Services (Truth, Notary, Witness) | ✅ | ✅ | ✅ | ✅ | ✅ |
-| PII Detection | Regex | Regex | ML (Presidio) | ML + Custom | ML + Custom |
-| Industry Verticals | 18 basic | 18 basic | 30 expanded | 30 full | 30 full + custom |
-| Managed Platform & SLA | -- | ✅ 99.5% | ✅ 99.9% | ✅ 99.95% | ✅ Custom |
-| Compliance Engines (Basel III, EU AI Act) | -- | -- | ✅ | ✅ | ✅ |
-| Echo/Gnosis Evidence & Audit Replay | -- | -- | ✅ | ✅ | ✅ |
-| OmniTranslate (26 languages) | -- | -- | ✅ | ✅ | ✅ |
-| COLLAPSE Stress Testing | -- | -- | -- | ✅ | ✅ |
-| Shadow Council & Red Team | -- | -- | -- | ✅ | ✅ |
-| SSO/MFA (Keycloak) | -- | -- | -- | ✅ | ✅ |
-| SIEM Integration (Splunk, Sentinel) | -- | -- | -- | ✅ | ✅ |
-| Sovereign LLM Providers (offline) | -- | -- | -- | ✅ | ✅ |
-| Zero-Knowledge Proofs | -- | -- | -- | ✅ | ✅ |
-| Air-Gapped Deployment | -- | -- | -- | -- | ✅ |
-| Data Diode & TPM Attestation | -- | -- | -- | -- | ✅ |
-| Federated Mesh (multi-org) | -- | -- | -- | -- | ✅ |
-| Post-Quantum Cryptography | -- | -- | -- | -- | ✅ |
+**→ [Request a Free Pilot](https://datacendia.com/briefing.html)** &middot; [enterprise@datacendia.com](mailto:enterprise@datacendia.com)
 
-> **Detailed tier mapping:** See [TIER-MAPPING.md](TIER-MAPPING.md) for the complete service-by-service breakdown.
-
-**Contact:** [enterprise@datacendia.com](mailto:enterprise@datacendia.com) &middot; [datacendia.com](https://datacendia.com)
+> Looking for Enterprise or Strategic tier features? See [TIER-MAPPING.md](TIER-MAPPING.md) for the complete service-by-service breakdown, or contact us for pricing.
 
 ---
 
@@ -440,6 +461,61 @@ DDGI is being prepared for submission to **ISO/IEC JTC 1/SC 42** (Artificial Int
 
 ---
 
+## Troubleshooting
+
+<details>
+<summary><strong>AI agents produce no output / Council deliberation is empty</strong></summary>
+
+Ollama must be running on your host machine and have at least one model pulled.
+
+```bash
+# Check Ollama is running:
+curl http://localhost:11434/api/tags
+
+# Pull a model if none are listed:
+ollama pull llama3.2:3b
+```
+
+Demo mode connects to `http://host.docker.internal:11434` -- this requires Ollama running on the host, not in Docker.
+</details>
+
+<details>
+<summary><strong>Docker build fails or is very slow</strong></summary>
+
+- Ensure Docker has at least 6 GB RAM allocated (Docker Desktop → Settings → Resources)
+- First build downloads all npm dependencies and compiles TypeScript -- this takes 5-15 min
+- Subsequent builds use cache and start in seconds
+</details>
+
+<details>
+<summary><strong>Prisma migration fails</strong></summary>
+
+```bash
+# If migrate deploy fails, try db push (works for fresh databases):
+cd backend && npx prisma db push
+```
+
+The Prisma schema uses split files (requires Prisma 5+). Run `npx prisma --version` to verify.
+</details>
+
+<details>
+<summary><strong>Port conflicts</strong></summary>
+
+The dev stack uses non-standard ports to avoid conflicts with local services:
+
+| Service | Port |
+|---------|------|
+| Frontend | 5173 |
+| Backend API | 3001 |
+| PostgreSQL | 5433 (not 5432) |
+| Redis | 6380 (not 6379) |
+| Neo4j | 7474 / 7687 |
+
+If ports are still in use, edit the port mappings in `docker-compose.dev.yml`.
+</details>
+
+---
+
 ## License
 
 Apache License 2.0 -- See [LICENSE](LICENSE) for details.
@@ -450,8 +526,12 @@ Copyright 2024-2026 Datacendia, LLC
 
 <div align="center">
 
-Built by [Datacendia](https://datacendia.com) &middot; [DDGI Framework](https://github.com/datacendia/decision-governance-infrastructure) &middot; NVIDIA Inception Program Member
+<img src="docs/Inception%20Badges/for-screen/nvidia-inception-program-badge-rgb-for-screen.svg" alt="NVIDIA Inception Program Member" height="50">
 
-*Last updated: March 16, 2026*
+Built by [Datacendia](https://datacendia.com) &middot; [DDGI Framework](https://github.com/datacendia/decision-governance-infrastructure) &middot; **NVIDIA Inception Program Member**
+
+**→ [Try the Platform](#try-it-in-60-seconds)** &middot; **[Request a Free Pilot](https://datacendia.com/briefing.html)** &middot; [enterprise@datacendia.com](mailto:enterprise@datacendia.com)
+
+*Last updated: April 2026*
 
 </div>

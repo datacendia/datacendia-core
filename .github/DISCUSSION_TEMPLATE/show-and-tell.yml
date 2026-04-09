@@ -1,0 +1,17 @@
+title: "[Show & Tell] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share how you're using Datacendia! Screenshots, use cases, integrations, or anything you've built on top of the platform.
+  - type: textarea
+    attributes:
+      label: What did you build?
+      description: Describe your use case, integration, or customization.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Screenshots or code
+      description: Optional — share visuals or code snippets.
