@@ -5,13 +5,13 @@
 // OPS AGENT SERVICE — Community Edition
 // Practical, everyday AI agents that execute tasks (not deliberate).
 //
-// Community tier includes:
+// All 4 agents available in the open-source community edition:
 //   1. Report Automation — generate structured reports from data
 //   2. Analytics          — descriptive stats, trends, anomalies
-//
-// Enterprise tier (datacendia-components) adds:
 //   3. NLP               — classify, summarize, extract, sentiment-analyze text
 //   4. Pipeline Builder   — scaffold data pipelines from plain-English descriptions
+//
+// Enterprise tier (datacendia-components) adds:
 //   + Scheduled tasks, higher limits, integrity hashing, multi-org RBAC
 //
 // These complement the Governance/Council agents (which deliberate and audit).
