@@ -1,0 +1,7 @@
+src/
+src/__tests__/
+vitest.config.ts
+tsconfig.json
+demo.html
+.gitignore
+node_modules/

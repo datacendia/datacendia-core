@@ -116,7 +116,7 @@ export class DciiEvidenceViewer extends LitElement {
     if (changed.has('packet') && this.packet) {
       this._packet = this.packet;
     }
-    if ((changed.has('apiUrl') || changed.has('packetId')) && this.apiUrl && this.packetId) {
+    if ((changed.has('apiUrl') || changed.has('packetId')) && this.apiUrl && this.packetId && !this._packet) {
       this._fetchPacket();
     }
   }

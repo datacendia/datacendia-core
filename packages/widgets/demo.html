@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@datacendia/widgets — Live Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #06060a;
+      color: #e4e4e7;
+      padding: 40px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+    h1 span { color: #c9a84c; }
+    .subtitle { color: #71717a; font-size: 14px; margin-bottom: 48px; }
+    .subtitle a { color: #c9a84c; text-decoration: none; }
+    .subtitle a:hover { text-decoration: underline; }
+    h2 {
+      font-size: 13px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.1em; color: #c9a84c; margin: 48px 0 16px;
+      padding-bottom: 8px; border-bottom: 1px solid #1a1a2a;
+    }
+    h2:first-of-type { margin-top: 0; }
+    .description { color: #71717a; font-size: 13px; margin-bottom: 16px; line-height: 1.6; }
+    .demo-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 16px; }
+    .badge-demos { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    code.tag {
+      display: inline-block; background: #141420; color: #c9a84c; padding: 2px 8px;
+      border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    }
+    .theme-toggle {
+      position: fixed; top: 16px; right: 16px; background: #141420; border: 1px solid #2a2a3a;
+      color: #e4e4e7; padding: 8px 16px; border-radius: 8px; cursor: pointer;
+      font-family: inherit; font-size: 12px; z-index: 100;
+    }
+    .theme-toggle:hover { border-color: #c9a84c; }
+    .separator { height: 1px; background: #1a1a2a; margin: 32px 0; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+    footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid #1a1a2a; color: #71717a; font-size: 12px; text-align: center; }
+    footer a { color: #c9a84c; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
+
+  <h1>◆ <span>@datacendia/widgets</span></h1>
+  <p class="subtitle">
+    Framework-agnostic Web Components for AI governance.
+    Works in Angular, Vue, React, Svelte, or plain HTML.
+    <a href="https://github.com/datacendia/datacendia-core/tree/master/packages/widgets">GitHub →</a>
+  </p>
+
+  <!-- ================================================================== -->
+  <!-- EVIDENCE VIEWER -->
+  <!-- ================================================================== -->
+
+  <h2>1. &lt;dcii-evidence-viewer&gt;</h2>
+  <p class="description">
+    Renders a decision packet with SHA-256 artifact hashes, Ed25519 signature, Merkle tree root,
+    agent contributions, and one-click integrity verification. Click any hash to copy.
+  </p>
+
+  <dcii-evidence-viewer id="ev-full" show-agents></dcii-evidence-viewer>
+
+  <h2>1b. Compact Mode</h2>
+  <p class="description">Minimal badge for inline use in tables or lists.</p>
+  <dcii-evidence-viewer id="ev-compact" compact></dcii-evidence-viewer>
+
+  <div class="separator"></div>
+
+  <!-- ================================================================== -->
+  <!-- PII SCANNER -->
+  <!-- ================================================================== -->
+
+  <h2>2. &lt;cendia-pii-scanner&gt;</h2>
+  <p class="description">
+    Real-time PII detection with confidence badges, severity colors, and redacted output preview.
+    This demo uses the <strong>client-side regex fallback</strong> — no backend required.
+    Click "Load Sample" then "Scan for PII" to see it work.
+  </p>
+
+  <cendia-pii-scanner id="pii-scanner"></cendia-pii-scanner>
+
+  <div class="separator"></div>
+
+  <!-- ================================================================== -->
+  <!-- COUNCIL STATUS BADGE -->
+  <!-- ================================================================== -->
+
+  <h2>3. &lt;council-status-badge&gt; — Badge Variant</h2>
+  <p class="description">Inline pill badges for embedding in tables, CRMs, or ticketing systems.</p>
+
+  <div class="badge-demos">
+    <council-status-badge status="completed" confidence="0.82" agent-count="6"></council-status-badge>
+    <council-status-badge status="deliberating" confidence="0.64" agent-count="4"></council-status-badge>
+    <council-status-badge status="cross_examination" confidence="0.71" agent-count="5"></council-status-badge>
+    <council-status-badge status="pending"></council-status-badge>
+    <council-status-badge status="failed" confidence="0.38" agent-count="3"></council-status-badge>
+  </div>
+
+  <h2>3b. Card Variant</h2>
+  <p class="description">Mini dashboard cards with optional confidence progress bars.</p>
+
+  <div class="grid-2">
+    <council-status-badge
+      variant="card"
+      status="completed"
+      confidence="0.82"
+      agent-count="6"
+      label="$1.7B CRE Acquisition — Full Due Diligence"
+      show-bar
+    ></council-status-badge>
+
+    <council-status-badge
+      variant="card"
+      status="deliberating"
+      confidence="0.54"
+      agent-count="4"
+      label="SepsisSense SaMD Deployment — FDA Compliance"
+      show-bar
+    ></council-status-badge>
+  </div>
+
+  <h2>3c. Inline Variant</h2>
+  <p class="description">
+    Minimal icon + percentage for embedding in text:
+    The acquisition review is
+    <council-status-badge variant="inline" status="completed" confidence="0.82"></council-status-badge>
+    while the SaMD deployment is still
+    <council-status-badge variant="inline" status="deliberating" confidence="0.54"></council-status-badge>
+  </p>
+
+  <div class="separator"></div>
+
+  <!-- ================================================================== -->
+  <!-- THEMING -->
+  <!-- ================================================================== -->
+
+  <h2>4. Light Theme</h2>
+  <p class="description">All components support <code class="tag">theme="light"</code> via CSS custom properties.</p>
+
+  <div style="background: #f8f8fa; padding: 24px; border-radius: 12px; margin-bottom: 16px;">
+    <div class="badge-demos" style="margin-bottom: 16px;">
+      <council-status-badge theme="light" status="completed" confidence="0.88" agent-count="6"></council-status-badge>
+      <council-status-badge theme="light" status="deliberating" confidence="0.64" agent-count="4"></council-status-badge>
+      <council-status-badge theme="light" variant="card" status="completed" confidence="0.82" label="Energy Grid Emergency Response" show-bar></council-status-badge>
+    </div>
+  </div>
+
+  <footer>
+    <p>
+      <strong>@datacendia/widgets v0.1.0</strong> — Apache 2.0
+      · <a href="https://datacendia.com">datacendia.com</a>
+      · <a href="https://github.com/datacendia/datacendia-core">GitHub</a>
+      · <a href="https://app.datacendia.com">Live Platform</a>
+    </p>
+  </footer>
+
+  <!-- ================================================================== -->
+  <!-- SCRIPTS -->
+  <!-- ================================================================== -->
+
+  <script type="module">
+    // Import all components
+    import './src/components/dcii-evidence-viewer.js';
+    import './src/components/cendia-pii-scanner.js';
+    import './src/components/council-status-badge.js';
+
+    // Static demo data for the evidence viewer (mirrors real DecisionPacket)
+    const DEMO_PACKET = {
+      id: 'pkt-demo-001',
+      runId: 'RUN-LR8K42-A3F7E1C9',
+      version: 1,
+      question: 'Should Meridian Capital proceed with the $1.7B commercial real estate acquisition of Harbor Point Tower given current market conditions?',
+      recommendation: 'Proceed with enhanced due diligence. The acquisition presents favorable long-term value but requires additional environmental assessment (Phase II ESA), tenant retention analysis for the 3 anchor tenants expiring in 2027, and a 15% valuation haircut stress test. The Red Team flagged interest rate sensitivity — model a 75bp rate increase scenario before final commitment.',
+      confidence: 0.82,
+      confidenceBounds: { lower: 0.72, upper: 0.89 },
+      consensusReached: true,
+      artifactHashes: {
+        question: 'a7f3c9b1d4e6f8a2c5d7e9f1a3b5c7d9e1f3a5b7c9d1e3f5a7b9c1d3e5f7a9b1',
+        context: 'b8e4d2c6f0a3e5d7c9b1a3f5e7d9c1b3a5f7e9d1c3b5a7f9e1d3c5b7a9f1e3d5',
+        recommendation: 'c9f5e3d7a1b4f6e8d0c2b4a6f8e0d2c4b6a8f0e2d4c6b8a0f2e4d6c8b0a2f4e6',
+        citations: 'd0a6f4e8b2c5a7f9e1d3c5b7a9f1e3d5a7c9b1d3e5f7a9b1c3d5e7f9a1b3c5d7',
+        contributions: 'e1b7a5f9c3d6b8a0f2e4d6c8b0a2f4e6a8c0b2d4f6e8a0c2b4d6f8e0a2c4b6d8',
+        dissents: 'f2c8b6a0d4e7c9b1d3f5a7e9c1b3d5f7a9e1c3b5d7f9a1e3c5b7d9f1a3e5c7b9',
+        toolCalls: '03d9c7b1e5f8d0a2c4e6f8a0b2d4e6c8f0a2b4d6e8c0f2a4b6d8e0c2f4a6b8d0',
+      },
+      merkleRoot: '9e4a7f2c8b1d5e3a6f9c2b7d4e8a1f5c3b6d9e2a5f8c1b4d7e0a3f6c9b2d5e8',
+      signature: {
+        algorithm: 'Ed25519',
+        keyId: 'key-governance-primary-2026',
+        signature: '4d8a2f6c9e1b5d3a7f0c4e8b2d6a9f3c7e1b5d9a3f7c0e4b8d2a6f0c3e7b1d5a9f3c7e1b4d8a2f6c0e4b8d2a6f9c3e7b1d5',
+        provider: 'datacendia-kms',
+        signedAt: '2026-04-09T14:32:18Z',
+      },
+      agentContributions: [
+        {
+          agentId: 'cfo-agent',
+          agentName: 'CFO Agent',
+          agentRole: 'Financial Analysis',
+          phase: 'analysis',
+          statement: 'At $1.7B, the cap rate of 5.2% is below the 10-year average of 5.8% for Class A office in this submarket. However, the below-market rents on 40% of the leasable area provide upside through mark-to-market at renewal. NPV analysis under base case shows positive returns at a 7.5% discount rate.',
+          confidence: 0.78,
+          timestamp: '2026-04-09T14:28:00Z',
+        },
+        {
+          agentId: 'ciso-agent',
+          agentName: 'CISO Agent',
+          agentRole: 'Security & Risk Assessment',
+          phase: 'analysis',
+          statement: 'Building management systems use legacy BACnet without encryption. Recommend budgeting $2.4M for IoT security retrofit. Cyber insurance underwriting will flag this — address before closing to avoid premium surcharge.',
+          confidence: 0.85,
+          timestamp: '2026-04-09T14:29:00Z',
+        },
+        {
+          agentId: 'red-team-agent',
+          agentName: 'Red Team Agent',
+          agentRole: 'Adversarial Challenge',
+          phase: 'cross_examination',
+          statement: 'CHALLENGE: The CFO\'s base case assumes stable occupancy at 94%. But 3 anchor tenants (38% of NRA) expire within 18 months. If even one doesn\'t renew, occupancy drops to 76% and the deal is underwater. The financial model needs a tenant departure stress test.',
+          confidence: 0.72,
+          timestamp: '2026-04-09T14:30:00Z',
+        },
+        {
+          agentId: 'coo-agent',
+          agentName: 'COO Agent',
+          agentRole: 'Operational Assessment',
+          phase: 'analysis',
+          statement: 'Property management transition from current operator (CBRE) to in-house team is feasible but requires 90-day overlap period. Estimated transition cost: $1.8M. Operational savings of $3.2M/year once stabilized.',
+          confidence: 0.81,
+          timestamp: '2026-04-09T14:31:00Z',
+        },
+      ],
+      regulatoryFrameworks: ['EU AI Act', 'NIST AI RMF', 'ISO 42001', 'SOC 2 Type II'],
+      createdAt: '2026-04-09T14:32:18Z',
+      retentionUntil: '2033-04-09T14:32:18Z',
+    };
+
+    // Inject demo data into evidence viewers
+    const evFull = document.getElementById('ev-full');
+    const evCompact = document.getElementById('ev-compact');
+    if (evFull) evFull.packet = DEMO_PACKET;
+    if (evCompact) evCompact.packet = DEMO_PACKET;
+  </script>
+
+  <script>
+    // Theme toggle (affects all components on page)
+    let isDark = true;
+    function toggleTheme() {
+      isDark = !isDark;
+      const theme = isDark ? 'dark' : 'light';
+      document.body.style.background = isDark ? '#06060a' : '#f0f0f5';
+      document.body.style.color = isDark ? '#e4e4e7' : '#18181b';
+      document.querySelectorAll('dcii-evidence-viewer, cendia-pii-scanner, council-status-badge').forEach(el => {
+        el.setAttribute('theme', theme);
+      });
+    }
+  </script>
+</body>
+</html>
