@@ -12,15 +12,15 @@ Framework-agnostic Web Components for embedding Datacendia features into any fro
 
 ## Testing
 
-The package includes solid testing with 57 passing tests covering all critical paths:
+The package includes comprehensive testing with 94 passing tests covering all critical paths:
 
 ```bash
 npm test
 ```
 
-**Test Coverage (57 passing tests):**
+**Test Coverage (94 passing tests):**
 
-**Core Functionality (57 tests)**
+**Core Functionality (94 tests)**
 - **Evidence Viewer (18 tests)**
   - Packet rendering and cryptographic verification
   - API integration with authentication and retry logic
@@ -38,6 +38,63 @@ npm test
   - Real-time WebSocket polling with reconnection
   - Status color coding and confidence visualization
   - Agent count and deliberation progress tracking
+
+**Policy Redaction (10 tests)**
+- **GDPR Policy (2 tests)**
+  - Comprehensive PII redaction for GDPR compliance
+  - Overlapping pattern handling and edge cases
+
+- **HIPAA Policy (2 tests)**
+  - Medical record number prioritization
+  - Healthcare-specific PII detection and redaction
+
+- **Custom Policy (1 test)**
+  - Original redaction values preservation
+  - Flexible policy configuration
+
+- **Edge Cases (5 tests)**
+  - Empty text handling and no PII scenarios
+  - Policy switching during active scans
+  - Malformed policy response handling
+  - Very long text with multiple PII instances
+
+**Accessibility (13 tests)**
+- **Keyboard Navigation (5 tests)**
+  - Evidence viewer hash item focus and interaction
+  - PII scanner button and input accessibility
+  - Council badge interactive elements
+
+- **ARIA Attributes (5 tests)**
+  - Proper landmark roles and semantic structure
+  - Live regions and progress announcements
+  - Screen reader compatibility
+
+- **Color Contrast (1 test)**
+  - Light and dark theme support
+
+- **Focus Management (2 tests)**
+  - Focus maintenance after interactions
+  - Proper focus restoration patterns
+
+**Error Handling (14 tests)**
+- **Network Failures (6 tests)**
+  - HTTP error handling (404, 403, 500)
+  - Rate limiting and authentication failures
+  - Retry logic with exponential backoff
+
+- **Timeouts (2 tests)**
+  - Fetch timeout handling
+  - Scan timeout management
+
+- **Edge Cases (3 tests)**
+  - Malformed JSON responses
+  - Empty API responses
+  - Missing configuration handling
+
+- **Error Events (3 tests)**
+  - Custom error event emission
+  - Error detail propagation
+  - WebSocket error events
 
 **Enterprise Features Tested:**
 - **API Integration**: Authentication, retry logic, timeout handling
