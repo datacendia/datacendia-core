@@ -17,7 +17,7 @@ import { Router, Request, Response } from 'express';
 import { logger } from '../utils/logger.js';
 import { prisma } from '../config/database.js';
 import { devAuth, requireRole } from '../middleware/auth.js';
-import { requireOrgScope } from '../middleware/tenantIsolation.js';
+import { requireOrgScope, orgWhere } from '../middleware/tenantIsolation.js';
 
 const router = Router();
 
@@ -33,6 +33,7 @@ router.get('/stats', async (req: Request, res: Response) => {
   try {
     // Get latest stats or create default
     let stats = await prisma.mesh_network_stats.findFirst({
+      where: orgWhere(req),
       orderBy: { recorded_at: 'desc' }
     });
 
@@ -40,6 +41,7 @@ router.get('/stats', async (req: Request, res: Response) => {
       // Create initial stats if none exist
       stats = await prisma.mesh_network_stats.create({
         data: {
+          organization_id: req.organizationId!,
           total_participants: 0,
           active_today: 0,
           data_points_shared: BigInt(0),
@@ -69,6 +71,7 @@ router.post('/stats', requireRole('ADMIN', 'SUPER_ADMIN'), async (req: Request, 
   try {
     const stats = await prisma.mesh_network_stats.create({
       data: {
+        organization_id: req.organizationId!,
         total_participants: req.body.total_participants || 0,
         active_today: req.body.active_today || 0,
         data_points_shared: BigInt(req.body.data_points_shared || 0),
@@ -101,7 +104,7 @@ router.get('/participants', async (req: Request, res: Response) => {
   try {
     const { industry, region, limit = 100 } = req.query;
     
-    const where: any = {};
+    const where: any = { ...orgWhere(req) };
     if (industry) where.industry = industry;
     if (region) where.region = region;
 
@@ -127,7 +130,7 @@ router.get('/benchmarks', async (req: Request, res: Response) => {
   try {
     const { industry, category } = req.query;
     
-    const where: any = {};
+    const where: any = { ...orgWhere(req) };
     if (industry) where.industry = industry;
     if (category) where.category = category;
 
@@ -152,7 +155,7 @@ router.get('/signals', async (req: Request, res: Response) => {
   try {
     const { severity, category, active } = req.query;
     
-    const where: any = {};
+    const where: any = { ...orgWhere(req) };
     if (severity) where.severity = severity;
     if (category) where.category = category;
     if (active === 'true') {
@@ -175,7 +178,7 @@ router.get('/signals', async (req: Request, res: Response) => {
 router.get('/signals/:id', async (req: Request, res: Response) => {
   try {
     const signal = await prisma.mesh_risk_signals.findUnique({
-      where: { id: req.params.id }
+      where: { id: req.params.id, ...orgWhere(req) }
     });
 
     if (!signal) {
@@ -194,6 +197,7 @@ router.post('/signals', requireRole('ADMIN', 'SUPER_ADMIN'), async (req: Request
   try {
     const signal = await prisma.mesh_risk_signals.create({
       data: {
+        organization_id: req.organizationId!,
         title: req.body.title,
         description: req.body.description,
         category: req.body.category,

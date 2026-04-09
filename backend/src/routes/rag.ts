@@ -19,7 +19,7 @@ import { prisma } from '../config/database.js';
 import { logger } from '../utils/logger.js';
 import { errors } from '../middleware/errorHandler.js';
 import { devAuth } from '../middleware/auth.js';
-import { requireOrgScope } from '../middleware/tenantIsolation.js';
+import { requireOrgScope, orgWhere } from '../middleware/tenantIsolation.js';
 import { enhancedLLM } from '../services/EnhancedLLMService.js';
 
 const router = Router();
@@ -70,6 +70,7 @@ const searchSchema = z.object({
  */
 router.get('/collections', async (req: Request, res: Response, next: NextFunction) => {
   try {
+    const orgId = req.organizationId!;
     const collections = await prisma.$queryRaw<Array<{
       collection: string;
       count: bigint;
@@ -80,6 +81,7 @@ router.get('/collections', async (req: Request, res: Response, next: NextFunctio
         COUNT(*) as count,
         AVG(LENGTH(content)) as avg_length
       FROM embeddings
+      WHERE organization_id = ${orgId}
       GROUP BY collection
       ORDER BY collection
     `;
@@ -196,8 +198,9 @@ router.delete('/collections/:collection', async (req: Request, res: Response, ne
   try {
     const { collection } = req.params;
 
+    const orgId = req.organizationId!;
     const result = await prisma.$executeRaw`
-      DELETE FROM embeddings WHERE collection = ${collection}
+      DELETE FROM embeddings WHERE collection = ${collection} AND organization_id = ${orgId}
     `;
 
     res.json({
@@ -219,6 +222,7 @@ router.delete('/collections/:collection', async (req: Request, res: Response, ne
  */
 router.get('/stats', async (req: Request, res: Response, next: NextFunction) => {
   try {
+    const orgId = req.organizationId!;
     const stats = await prisma.$queryRaw<Array<{
       total_documents: bigint;
       total_collections: bigint;
@@ -233,6 +237,7 @@ router.get('/stats', async (req: Request, res: Response, next: NextFunction) => 
         MIN(created_at) as oldest_document,
         MAX(created_at) as newest_document
       FROM embeddings
+      WHERE organization_id = ${orgId}
     `;
 
     const cacheStats = await prisma.$queryRaw<Array<{
@@ -243,7 +248,7 @@ router.get('/stats', async (req: Request, res: Response, next: NextFunction) => 
         COUNT(*) as cached_responses,
         AVG(LENGTH(response)) as avg_response_size
       FROM llm_cache
-      WHERE expires_at > NOW()
+      WHERE expires_at > NOW() AND organization_id = ${orgId}
     `.catch(() => [{ cached_responses: 0n, avg_response_size: 0 }]);
 
     res.json({
