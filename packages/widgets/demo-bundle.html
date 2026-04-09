@@ -273,7 +273,7 @@
       }
     }
 
-    // Council Status Badge Component (enhanced)
+    // Council Status Badge Component (enhanced with click handlers)
     class CouncilStatusBadge extends HTMLElement {
       constructor() {
         super();
@@ -282,6 +282,7 @@
         const confidence = this.getAttribute('confidence') || '0';
         const agentCount = this.getAttribute('agent-count') || '0';
         const variant = this.getAttribute('variant') || 'badge';
+        const label = this.getAttribute('label') || 'Decision Review';
         
         const statusColors = {
           completed: '#22c55e',
@@ -301,8 +302,9 @@
           this.shadowRoot.innerHTML = `
             <style>
               :host { display: block; }
-              .card { background: #0a0a0f; color: #e4e4e7; border: 1px solid #2a2a3a; border-radius: 10px; padding: 16px; transition: all 0.3s; cursor: pointer; }
+              .card { background: #0a0a0f; color: #e4e4e7; border: 1px solid #2a2a3a; border-radius: 10px; padding: 16px; transition: all 0.3s; cursor: pointer; position: relative; }
               .card:hover { border-color: #c9a84c; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(201, 168, 76, 0.1); }
+              .card.clicked { border-color: #c9a84c; background: #141420; }
               .header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
               .dot { width: 8px; height: 8px; border-radius: 50%; background: ${statusColors[status]}; animation: pulse 2s infinite; }
               .label { font-weight: 600; }
@@ -313,14 +315,17 @@
               .metric-value { font-size: 14px; font-weight: 700; }
               .conf-bar { flex: 1; height: 5px; background: #2a2a3a; border-radius: 3px; }
               .conf-fill { height: 100%; background: ${confidence >= 0.8 ? '#22c55e' : confidence >= 0.6 ? '#eab308' : '#ef4444'}; border-radius: 3px; transition: width 1s ease-out; }
+              .click-feedback { position: absolute; top: 8px; right: 8px; background: #c9a84c; color: #000; padding: 2px 6px; border-radius: 4px; font-size: 10px; opacity: 0; transition: opacity 0.3s; }
+              .card.clicked .click-feedback { opacity: 1; }
               @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
             </style>
-            <div class="card">
+            <div class="card" onclick="handleBadgeClick('${label}', '${status}', ${confidence}, ${agentCount}, this)">
+              <div class="click-feedback">Clicked!</div>
               <div class="header">
                 <div class="dot"></div>
                 <div class="label">${statusLabels[status]}</div>
               </div>
-              <div class="title">${this.getAttribute('label') || 'Decision Review'}</div>
+              <div class="title">${label}</div>
               <div class="metrics">
                 <div class="metric">
                   <span class="metric-label">Confidence</span>
@@ -338,13 +343,17 @@
           this.shadowRoot.innerHTML = `
             <style>
               :host { display: inline-block; }
-              .badge { display: inline-flex; align-items: center; gap: 8px; background: #141420; color: #e4e4e7; border: 1px solid #2a2a3a; padding: 6px 14px; border-radius: 20px; font-size: 12px; transition: all 0.2s; cursor: pointer; }
+              .badge { display: inline-flex; align-items: center; gap: 8px; background: #141420; color: #e4e4e7; border: 1px solid #2a2a3a; padding: 6px 14px; border-radius: 20px; font-size: 12px; transition: all 0.2s; cursor: pointer; position: relative; }
               .badge:hover { border-color: #c9a84c; transform: translateY(-1px); }
+              .badge.clicked { border-color: #c9a84c; background: #1a1a2a; }
               .dot { width: 8px; height: 8px; border-radius: 50%; background: ${statusColors[status]}; animation: pulse 2s infinite; }
               .conf { font-weight: 700; color: ${confidence >= 0.8 ? '#22c55e' : confidence >= 0.6 ? '#eab308' : '#ef4444'}; }
+              .click-feedback { position: absolute; top: -8px; right: -8px; background: #c9a84c; color: #000; padding: 2px 6px; border-radius: 4px; font-size: 10px; opacity: 0; transition: opacity 0.3s; z-index: 10; }
+              .badge.clicked .click-feedback { opacity: 1; }
               @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
             </style>
-            <div class="badge">
+            <div class="badge" onclick="handleBadgeClick('${label}', '${status}', ${confidence}, ${agentCount}, this)">
+              <div class="click-feedback">Clicked!</div>
               <div class="dot"></div>
               <span>${statusLabels[status]}</span>
               ${confidence > 0 ? `<span class="conf">${Math.round(confidence * 100)}%</span>` : ''}
@@ -570,6 +579,33 @@
       navigator.clipboard.writeText(text).then(() => {
         console.log('Text copied to clipboard');
       });
+    };
+
+    // Handle Council Badge clicks
+    window.handleBadgeClick = function(label, status, confidence, agentCount, element) {
+      console.log(`Council Badge clicked: ${label} (${status}, ${Math.round(confidence * 100)}% confidence, ${agentCount} agents)`);
+      
+      // Add clicked class for visual feedback
+      element.classList.add('clicked');
+      
+      // Remove clicked class after animation
+      setTimeout(() => {
+        element.classList.remove('clicked');
+      }, 1500);
+      
+      // Show detailed information in console
+      console.log(`Decision Details:
+- Label: ${label}
+- Status: ${status}
+- Confidence: ${Math.round(confidence * 100)}%
+- Active Agents: ${agentCount}
+- Click Time: ${new Date().toLocaleTimeString()}`);
+      
+      // You could add more interactive features here like:
+      // - Opening a modal with more details
+      // - Triggering animations in other components
+      // - Making API calls to get more information
+      // - Updating other parts of the UI
     };
 
     // Check API status (simplified to avoid CORS)
