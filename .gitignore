@@ -73,6 +73,9 @@ prisma/*.db-journal
 # Local development
 *.local
 
+# Internal / private
+.launch-drafts.md
+
 # Debug
 debug.log
 k6-results.json

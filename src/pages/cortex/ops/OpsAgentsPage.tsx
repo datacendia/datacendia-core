@@ -28,7 +28,7 @@ import { cn } from '../../../lib/utils';
 // Community-tier limits (enterprise unlocks higher limits)
 const MAX_PROMPT_LENGTH = 8_000;
 const MAX_CONTEXT_LENGTH = 16_000;
-const COMMUNITY_AGENTS: OpsAgentType[] = ['report', 'analytics'];
+const COMMUNITY_AGENTS: OpsAgentType[] = ['report', 'analytics', 'nlp', 'pipeline'];
 
 // =============================================================================
 // TYPES
@@ -82,15 +82,23 @@ const AGENT_COLORS: Record<OpsAgentType, { bg: string; border: string; text: str
 const QUICK_PROMPTS: Record<OpsAgentType, Array<{ label: string; prompt: string }>> = {
   report: [
     { label: 'Weekly AI Usage Report', prompt: 'Generate a weekly AI usage report for our organization. Include: total interactions by department, top tools used, cost breakdown, PII exposure incidents, and recommended actions.' },
+    { label: 'Board-Ready Decision Summary', prompt: 'Create a board-ready executive summary of last month\'s key decisions. Include: decisions made, agents consulted, confidence scores, dissenting opinions, compliance status, and strategic implications.' },
+    { label: 'Compliance Gap Report', prompt: 'Generate a compliance gap analysis report comparing our current AI governance posture against EU AI Act Article 14 (human oversight), NIST AI RMF, and SOC 2 Type II requirements. Flag gaps and recommend remediations.' },
   ],
   analytics: [
     { label: 'Department AI Spend Analysis', prompt: 'Analyze AI spending patterns by department. Show which departments spend the most, identify anomalies, and project next quarter costs.' },
+    { label: 'Decision Quality Trends', prompt: 'Analyze decision quality over the past 6 months. Track confidence scores, dissent frequency, override rates, and time-to-decision. Identify which decision types have improving or declining quality.' },
+    { label: 'Risk Exposure Dashboard', prompt: 'Build a risk exposure analysis: map open decisions by risk level (high/medium/low), identify decisions pending longer than SLA, and flag any with unresolved dissents or missing compliance gates.' },
   ],
   nlp: [
     { label: 'Classify Support Tickets', prompt: 'Classify the following support tickets into categories: billing, technical, feature-request, security, compliance. Output as JSON with confidence scores.' },
+    { label: 'Contract Risk Review', prompt: 'Review the following contract for risky clauses. Flag: unlimited liability, broad indemnification, IP assignment, non-compete restrictions, auto-renewal traps, and data ownership ambiguity. Quote specific language.' },
+    { label: 'Summarize Meeting Notes', prompt: 'Summarize the following meeting transcript into: key decisions made, action items with owners and deadlines, open questions, and risks raised. Keep it concise and board-ready.' },
   ],
   pipeline: [
     { label: 'ETL Pipeline for Reports', prompt: 'Design an ETL pipeline that: extracts data from our PostgreSQL database, transforms it into weekly report format, and loads it into a report storage bucket. Include scheduling and error handling.' },
+    { label: 'Real-Time Compliance Monitor', prompt: 'Design a streaming pipeline that: monitors AI interactions in real-time, checks each against governance policies, flags violations immediately, and generates daily compliance summaries. Include retry logic and alerting.' },
+    { label: 'Data Quality Pipeline', prompt: 'Scaffold a data quality pipeline that: ingests raw data from 3 sources (API, CSV uploads, database), validates schema and completeness, deduplicates records, applies business rules, and loads clean data into an analytics warehouse. Include error handling and dead-letter queues.' },
   ],
 };
 
