@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://app.datacendia.com https://api.datacendia.com wss://app.datacendia.com wss://api.datacendia.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   <title>@datacendia/widgets - Live Demo</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>@</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
@@ -114,7 +114,7 @@
   </footer>
 
   <!-- Load Lit from CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/lit@3.1.0/index.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/lit@3.1.0/index.js"></script>
   
   <!-- Load components (bundled inline) -->
   <script>
@@ -313,15 +313,23 @@
     window.loadSample = function() {
       try {
         console.log('Load Sample button clicked - loading sample text');
-        const textarea = document.querySelector('#input');
+        
+        // Find the PII scanner component and its shadow DOM
+        const piiScanner = document.querySelector('cendia-pii-scanner');
+        if (!piiScanner) {
+          console.error('Could not find PII scanner component');
+          return;
+        }
+        
+        const textarea = piiScanner.shadowRoot.querySelector('#input');
         if (textarea) {
           const sampleText = 'Contact John Smith at john.smith@acme.com or 555-867-5309. His SSN is 123-45-6789 and credit card is 4111-1111-1111-1111. DOB: 01/15/1985.';
           textarea.value = sampleText;
           
           // Clear previous results
-          const status = document.querySelector('#status');
-          const detections = document.querySelector('#detections');
-          const redacted = document.querySelector('#redacted');
+          const status = piiScanner.shadowRoot.querySelector('#status');
+          const detections = piiScanner.shadowRoot.querySelector('#detections');
+          const redacted = piiScanner.shadowRoot.querySelector('#redacted');
           
           if (status) status.innerHTML = '';
           if (detections) detections.innerHTML = '';
@@ -334,7 +342,7 @@
           textarea.dispatchEvent(event);
           
         } else {
-          console.error('Could not find textarea element');
+          console.error('Could not find textarea element in shadow DOM');
         }
       } catch (error) {
         console.error('Error loading sample text:', error);
@@ -342,10 +350,13 @@
     };
 
     window.scanText = async function() {
-      const textarea = document.querySelector('#input');
-      const status = document.querySelector('#status');
-      const detectionsDiv = document.querySelector('#detections');
-      const redacted = document.querySelector('#redacted');
+      const piiScanner = document.querySelector('cendia-pii-scanner');
+      if (!piiScanner) return;
+      
+      const textarea = piiScanner.shadowRoot.querySelector('#input');
+      const status = piiScanner.shadowRoot.querySelector('#status');
+      const detectionsDiv = piiScanner.shadowRoot.querySelector('#detections');
+      const redacted = piiScanner.shadowRoot.querySelector('#redacted');
       
       if (!textarea || !textarea.value.trim()) return;
       
@@ -407,9 +418,12 @@
     };
 
     function renderScanResult(result) {
-      const status = document.querySelector('#status');
-      const detectionsDiv = document.querySelector('#detections');
-      const redacted = document.querySelector('#redacted');
+      const piiScanner = document.querySelector('cendia-pii-scanner');
+      if (!piiScanner) return;
+      
+      const status = piiScanner.shadowRoot.querySelector('#status');
+      const detectionsDiv = piiScanner.shadowRoot.querySelector('#detections');
+      const redacted = piiScanner.shadowRoot.querySelector('#redacted');
       
       status.className = `status ${result.hasPII ? 'found' : 'clean'}`;
       status.innerHTML = result.hasPII ? 
