@@ -21,13 +21,15 @@ When your AI makes a $500M acquisition recommendation, can you prove in court ex
 [![Docker](https://img.shields.io/badge/Docker-Required-2496ED.svg?logo=docker&logoColor=white)](https://www.docker.com/)
 [![NVIDIA Inception](https://img.shields.io/badge/NVIDIA-Inception%20Program-76b900.svg?logo=nvidia&logoColor=white)](https://www.nvidia.com/en-us/startups/)
 
-[**Try It Now →**](#try-it-in-60-seconds) &middot; [Architecture](#architecture) &middot; [Verticals](#industry-verticals) &middot; [Free Pilot](#free-pilot-program) &middot; [Security Audit](docs/AUDIT-REPORT-2026-Q1.md) &middot; [Standards](#standards--governance) &middot; [Contributing](#contributing)
+[**Try It Now →**](#try-it-in-60-seconds) &middot; [**Live Demo**](https://app.datacendia.com) &middot; [Architecture](#architecture) &middot; [Verticals](#industry-verticals) &middot; [Free Pilot](#free-pilot-program) &middot; [Security Audit](docs/AUDIT-REPORT-2026-Q1.md) &middot; [Standards](#standards--governance) &middot; [Contributing](#contributing)
 
 </div>
 
 ---
 
 ## Try It in 60 Seconds
+
+> **Don't want to install anything?** Try the [live demo at app.datacendia.com](https://app.datacendia.com) — no signup required.
 
 ```bash
 # 1. Install Ollama (https://ollama.com) and pull a model:
