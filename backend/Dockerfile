@@ -7,8 +7,8 @@ WORKDIR /app
 COPY package*.json ./
 COPY prisma ./prisma/
 
-# Install dependencies
-RUN npm ci
+# Install dependencies (npm install instead of npm ci for workspace monorepo compatibility)
+RUN npm install
 
 # Generate Prisma client
 RUN npx prisma generate
