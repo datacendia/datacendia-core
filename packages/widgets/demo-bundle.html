@@ -572,35 +572,15 @@
       });
     };
 
-    // Check API status
-    window.checkApiStatus = async function() {
-      try {
-        const response = await fetch('https://app.datacendia.com/api/health', {
-          method: 'GET',
-          signal: AbortSignal.timeout(5000)
-        });
-        
-        const piiScanner = document.querySelector('cendia-pii-scanner');
-        if (piiScanner) {
-          const apiStatus = piiScanner.shadowRoot.querySelector('#api-status');
-          if (apiStatus) {
-            if (response.ok) {
-              apiStatus.className = 'api-status online';
-              apiStatus.textContent = 'Online';
-            } else {
-              apiStatus.className = 'api-status offline';
-              apiStatus.textContent = 'Offline';
-            }
-          }
-        }
-      } catch (error) {
-        const piiScanner = document.querySelector('cendia-pii-scanner');
-        if (piiScanner) {
-          const apiStatus = piiScanner.shadowRoot.querySelector('#api-status');
-          if (apiStatus) {
-            apiStatus.className = 'api-status offline';
-            apiStatus.textContent = 'Offline';
-          }
+    // Check API status (simplified to avoid CORS)
+    window.checkApiStatus = function() {
+      const piiScanner = document.querySelector('cendia-pii-scanner');
+      if (piiScanner) {
+        const apiStatus = piiScanner.shadowRoot.querySelector('#api-status');
+        if (apiStatus) {
+          // Always show as available for demo - real API calls will work or fallback to client-side
+          apiStatus.className = 'api-status online';
+          apiStatus.textContent = 'Demo Mode';
         }
       }
     };
@@ -638,7 +618,6 @@
       
       // Check API status
       checkApiStatus();
-      setInterval(checkApiStatus, 30000); // Check every 30 seconds
     });
   </script>
 </body>
