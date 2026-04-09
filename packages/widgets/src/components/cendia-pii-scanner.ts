@@ -308,8 +308,27 @@ export class CendiaPiiScanner extends LitElement {
   }
 
   private _loadSample() {
-    this._input = 'Contact John Smith at john.smith@acme.com or 555-867-5309. His SSN is 123-45-6789 and credit card is 4111-1111-1111-1111.';
-    this._result = null;
+    try {
+      console.log('Load Sample button clicked - loading sample text');
+      this._input = 'Contact John Smith at john.smith@acme.com or 555-867-5309. His SSN is 123-45-6789 and credit card is 4111-1111-1111-1111.';
+      this._result = null;
+      this._error = '';
+      
+      // Force a re-render
+      this.requestUpdate();
+      
+      console.log('Sample text loaded successfully:', this._input);
+      
+      // Emit an event to indicate sample was loaded
+      this.dispatchEvent(new CustomEvent('pii-sample-loaded', {
+        detail: { text: this._input },
+        bubbles: true,
+        composed: true
+      }));
+    } catch (error) {
+      console.error('Error loading sample text:', error);
+      this._error = 'Failed to load sample text';
+    }
   }
 
   // -------------------------------------------------------------------------
@@ -326,7 +345,10 @@ export class CendiaPiiScanner extends LitElement {
           <div class="input-header">
             <h2 id="input-heading" class="section-label">Input</h2>
             <button class="sample-btn" 
-                    @click=${this._loadSample}
+                    @click=${() => {
+                      console.log('Load Sample button clicked');
+                      this._loadSample();
+                    }}
                     aria-label="Load sample text for PII scanning">Load Sample</button>
           </div>
           <textarea

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Load Sample Button</title>
+    <script type="module" src="./src/components/cendia-pii-scanner.js"></script>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .debug-info {
+            background: #f5f5f5;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .error { background: #ffebee; color: #c62828; }
+        .success { background: #e8f5e8; color: #2e7d32; }
+        button {
+            background: #1976d2;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        button:hover { background: #1565c0; }
+        pre { background: #f8f9fa; padding: 10px; border-radius: 4px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>Debug Load Sample Button</h1>
+    
+    <div class="debug-info">
+        <h3>Debug Steps:</h3>
+        <ol>
+            <li>Open browser console (F12)</li>
+            <li>Click the "Load Sample" button in the PII scanner below</li>
+            <li>Check console for debug messages</li>
+            <li>Check if textarea gets populated with sample text</li>
+            <li>Try the manual test buttons below</li>
+        </ol>
+    </div>
+
+    <div class="debug-info">
+        <h3>Expected Console Output:</h3>
+        <pre>Load Sample button clicked
+Load Sample button clicked - loading sample text
+Sample text loaded successfully: Contact John Smith at john.smith@acme.com or 555-867-5309. His SSN is 123-45-6789 and credit card is 4111-1111-1111-1111.</pre>
+    </div>
+
+    <h2>PII Scanner Component</h2>
+    <cendia-pii-scanner id="pii-scanner"></cendia-pii-scanner>
+
+    <div class="debug-info">
+        <h3>Manual Tests:</h3>
+        <button onclick="testLoadSample()">Test Load Sample Programmatically</button>
+        <button onclick="checkComponentState()">Check Component State</button>
+        <button onclick="simulateButtonClick()">Simulate Button Click</button>
+        <button onclick="clearDebugOutput()">Clear Debug Output</button>
+        <pre id="debug-output"></pre>
+    </div>
+
+    <div class="debug-info">
+        <h3>Troubleshooting:</h3>
+        <ul>
+            <li><strong>Console Errors?</strong> Check for JavaScript errors in browser console</li>
+            <li><strong>Component Loading?</strong> Ensure the component imports correctly</li>
+            <li><strong>Shadow DOM Access?</strong> The button is inside shadow DOM</li>
+            <li><strong>Event Binding?</strong> Check if click events are properly bound</li>
+            <li><strong>Reactivity?</strong> Check if component re-renders after state change</li>
+        </ul>
+    </div>
+
+    <script>
+        function testLoadSample() {
+            const scanner = document.getElementById('pii-scanner');
+            if (scanner && typeof scanner._loadSample === 'function') {
+                console.log('Calling _loadSample method directly...');
+                try {
+                    scanner._loadSample();
+                    updateDebugOutput('SUCCESS: Called _loadSample method directly', 'success');
+                } catch (error) {
+                    console.error('Error calling _loadSample:', error);
+                    updateDebugOutput('ERROR: ' + error.message, 'error');
+                }
+            } else {
+                console.error('Could not find _loadSample method');
+                updateDebugOutput('ERROR: Could not find _loadSample method', 'error');
+            }
+        }
+
+        function checkComponentState() {
+            const scanner = document.getElementById('pii-scanner');
+            if (scanner) {
+                const state = {
+                    hasLoadSampleMethod: typeof scanner._loadSample === 'function',
+                    inputValue: scanner._input || 'undefined',
+                    resultValue: scanner._result || 'null',
+                    scanningState: scanner._scanning || 'false',
+                    errorState: scanner._error || 'none'
+                };
+                console.log('Component state:', state);
+                updateDebugOutput('Component State:\n' + JSON.stringify(state, null, 2));
+            } else {
+                updateDebugOutput('ERROR: Could not find scanner component', 'error');
+            }
+        }
+
+        function simulateButtonClick() {
+            const scanner = document.getElementById('pii-scanner');
+            const sampleBtn = scanner.shadowRoot?.querySelector('.sample-btn');
+            if (sampleBtn) {
+                console.log('Simulating button click...');
+                try {
+                    sampleBtn.click();
+                    updateDebugOutput('SUCCESS: Simulated button click', 'success');
+                } catch (error) {
+                    console.error('Error simulating click:', error);
+                    updateDebugOutput('ERROR: ' + error.message, 'error');
+                }
+            } else {
+                updateDebugOutput('ERROR: Could not find sample button in shadow DOM', 'error');
+            }
+        }
+
+        function clearDebugOutput() {
+            document.getElementById('debug-output').textContent = '';
+        }
+
+        function updateDebugOutput(text, type = 'info') {
+            const output = document.getElementById('debug-output');
+            output.textContent = text;
+            output.className = type === 'error' ? 'error' : type === 'success' ? 'success' : '';
+        }
+
+        // Monitor component events
+        document.addEventListener('DOMContentLoaded', () => {
+            const scanner = document.getElementById('pii-scanner');
+            
+            // Wait for component to load
+            setTimeout(() => {
+                console.log('Checking component initialization...');
+                
+                // Add event listeners for debugging
+                scanner.addEventListener('pii-sample-loaded', (e) => {
+                    console.log('pii-sample-loaded event fired:', e.detail);
+                    updateDebugOutput('SUCCESS: pii-sample-loaded event fired', 'success');
+                });
+                
+                // Add click listener to sample button
+                const sampleBtn = scanner.shadowRoot?.querySelector('.sample-btn');
+                if (sampleBtn) {
+                    console.log('Found sample button:', sampleBtn);
+                    sampleBtn.addEventListener('click', (e) => {
+                        console.log('Sample button clicked via event listener!', e);
+                        updateDebugOutput('Sample button was clicked (event listener)');
+                    });
+                } else {
+                    console.error('Could not find sample button');
+                    updateDebugOutput('ERROR: Could not find sample button in shadow DOM', 'error');
+                }
+                
+                // Check initial state
+                checkComponentState();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
