@@ -77,6 +77,64 @@ refactor(api): consolidate route handlers
 - Co-locate tests with source (`Component.test.tsx`)
 - Index files for barrel exports
 
+## Architecture Overview
+
+```
+datacendia-core/
+├── src/                    # React frontend (Vite + TailwindCSS)
+│   ├── components/         # Reusable UI components
+│   ├── contexts/           # React context providers (Auth, Theme, i18n)
+│   ├── pages/              # Route-level page components
+│   │   ├── auth/           # Login, Register, Verify
+│   │   ├── cortex/         # Main app shell (Council, Decisions, Data, etc.)
+│   │   └── public/         # Landing pages
+│   ├── stores/             # Zustand state management
+│   └── routes/             # React Router config
+├── backend/
+│   ├── src/
+│   │   ├── routes/         # Express route handlers
+│   │   ├── services/       # Business logic (Council, PII, LLM, Verticals)
+│   │   ├── middleware/      # Auth, tenant isolation, error handling
+│   │   ├── config/         # Database, Redis, environment config
+│   │   └── __tests__/      # Vitest unit + integration tests
+│   └── prisma/             # Schema + migrations
+├── tests/e2e/              # Playwright E2E tests
+├── docker-compose.demo.yml # One-command demo environment
+└── Dockerfile.allinone     # Railway / single-container deployment
+```
+
+**Key services:**
+- **The Council** — Multi-agent deliberation engine (`backend/src/services/council/`)
+- **DCII** — Decision Chain Integrity Infrastructure, cryptographic audit (`backend/src/services/dcii/`)
+- **PII Detector** — Regex + heuristic NER scanner (`backend/src/services/pii/`)
+- **CendiaGateway** — AI governance proxy (`backend/src/services/gateway/`)
+- **Tenant Isolation** — `orgWhere()` and `requireOrgScope` middleware for multi-tenant data safety
+
+## Testing
+
+### Unit Tests (Vitest)
+```bash
+cd backend && npx vitest run                         # All tests
+cd backend && npx vitest run src/__tests__/pii-detector.test.ts  # PII only
+cd backend && npx vitest run src/__tests__/council-api.test.ts   # Council API (needs running backend)
+```
+
+- **PII Detector**: 60 pure unit tests, no external dependencies
+- **Council API**: 18 integration tests against live backend (gracefully skip if offline)
+
+### E2E Tests (Playwright)
+```bash
+cd tests/e2e && npx playwright test tests/demo-mode.spec.ts  # Demo mode flow
+cd tests/e2e && npx playwright test                           # All E2E tests
+```
+
+Requires `docker compose -f docker-compose.demo.yml up -d` running.
+
+### Writing Tests
+- **No mocks** for API integration tests — test against the real running backend
+- Pure unit tests are fine for isolated logic (PII regex, data transforms)
+- E2E tests should be resilient to timing — use `waitForLoadState('networkidle')` and generous timeouts
+
 ## What to Contribute
 
 ### Good First Issues
