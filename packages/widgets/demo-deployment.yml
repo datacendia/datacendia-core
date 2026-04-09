@@ -5,13 +5,24 @@ name: Deploy Demo Bundle
 on:
   push:
     branches: [master]
-    paths: ['packages/widgets/demo-bundle.html']
+    paths: ['packages/widgets/demo-bundle.html', 'packages/widgets/demo-production.html', 'packages/widgets/demo-*']
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment environment'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+        - production
+        - staging
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: Deploy Demo Bundle
+    name: Deploy Demo Bundle to Production
+    environment: ${{ github.event.inputs.environment || 'production' }}
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -21,10 +32,32 @@ jobs:
         with:
           node-version: '18'
           
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+            
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run tests
+        run: npm test
+        
+      - name: Build demo assets
+        run: |
+          echo "Building demo assets..."
+          mkdir -p dist
+          cp packages/widgets/demo-production.html dist/index.html
+          cp packages/widgets/demo-bundle.html dist/demo-bundle.html
+          cp -r packages/widgets/assets dist/ 2>/dev/null || true
+          
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2
         with:
-          publish-dir: './packages/widgets'
+          publish-dir: './dist'
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: 'Deploy demo bundle from commit ${{ github.sha }}'
@@ -35,9 +68,25 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_DEMO }}
           
+      - name: Configure Netlify redirects
+        run: |
+          cat > dist/_redirects << EOF
+          /demo-bundle.html /demo-bundle.html 200
+          /demo /demo-bundle.html 200
+          /* /index.html 200
+          EOF
+          
       - name: Deploy Success Notification
         if: success()
         run: |
           echo "Demo bundle deployed successfully to https://demo.datacendia.com"
           echo "Commit: ${{ github.sha }}"
           echo "Deployed at: $(date)"
+          echo "Environment: ${{ github.event.inputs.environment || 'production' }}"
+          
+      - name: Performance Test
+        if: success()
+        run: |
+          echo "Running performance tests..."
+          curl -f https://demo.datacendia.com || exit 1
+          echo "Demo site is responding correctly"
