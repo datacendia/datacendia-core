@@ -1,0 +1,46 @@
+title: "[Pilot] "
+labels: ["pilot"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share your experience from a Datacendia pilot or evaluation. Your feedback directly shapes the roadmap.
+  - type: dropdown
+    attributes:
+      label: Pilot stage
+      options:
+        - Just started (week 1)
+        - Mid-pilot (week 2-3)
+        - Completed (week 4+)
+        - Evaluating (haven't started yet)
+  - type: textarea
+    attributes:
+      label: What worked well?
+      description: Features, workflows, or aspects that impressed you.
+  - type: textarea
+    attributes:
+      label: What needs improvement?
+      description: Pain points, missing features, or friction areas.
+  - type: dropdown
+    attributes:
+      label: Industry
+      options:
+        - Financial Services
+        - Healthcare
+        - Legal
+        - Government / Defense
+        - Energy / Utilities
+        - Manufacturing
+        - Technology
+        - Insurance
+        - Sports / Entertainment
+        - Other
+  - type: dropdown
+    attributes:
+      label: Deployment type
+      options:
+        - Docker Compose (local)
+        - Cloud hosted
+        - On-premise
+        - Air-gapped
+        - Haven't deployed yet

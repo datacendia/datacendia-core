@@ -1,0 +1,41 @@
+title: "[Feature] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest a feature or enhancement for Datacendia. We prioritize based on community interest and compliance impact.
+  - type: textarea
+    attributes:
+      label: Feature description
+      description: What would you like to see added or changed?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Use case
+      description: How would this feature help you or your organization?
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Area
+      options:
+        - Council (multi-agent deliberation)
+        - Evidence / DCII (audit infrastructure)
+        - CendiaGateway (AI governance proxy)
+        - PII Detection
+        - Compliance frameworks
+        - Industry Verticals
+        - API / Backend
+        - Frontend / UI
+        - Deployment / Docker
+        - Documentation
+        - Other
+  - type: dropdown
+    attributes:
+      label: Priority to you
+      options:
+        - Nice to have
+        - Important for my use case
+        - Blocking my adoption

@@ -1,0 +1,37 @@
+title: "[Compliance] "
+labels: ["compliance"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ask questions about using Datacendia for specific compliance frameworks, regulations, or audit requirements.
+  - type: textarea
+    attributes:
+      label: Your compliance question
+      description: What regulation, framework, or audit requirement are you working with?
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Framework
+      options:
+        - EU AI Act
+        - NIST AI RMF
+        - ISO 42001
+        - SOC 2
+        - HIPAA
+        - DORA
+        - ABA Opinion 512 (Legal)
+        - GDPR
+        - FedRAMP
+        - Multiple frameworks
+        - Custom / Internal
+        - Other
+  - type: dropdown
+    attributes:
+      label: Urgency
+      options:
+        - Exploring options
+        - Planning implementation
+        - Active compliance project
+        - Audit deadline approaching

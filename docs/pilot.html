@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free 30-Day Pilot — Datacendia</title>
+  <meta name="description" content="Get a free 30-day white-glove pilot of Datacendia — cryptographic AI governance for EU AI Act, NIST AI RMF, and ISO 42001 compliance.">
+  <link rel="canonical" href="https://datacendia.com/pilot">
+  <link rel="icon" type="image/svg+xml" href="https://datacendia.com/assets/favicon.svg">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --bg-elevated: #111118;
+      --bg-card: #16161e;
+      --text: #e4e4e7;
+      --text-muted: #71717a;
+      --gold: #c9a84c;
+      --gold-dim: rgba(201,168,76,.15);
+      --green: #22c55e;
+      --green-dim: rgba(34,197,94,.08);
+      --border: rgba(255,255,255,.06);
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-elevated);
+      padding: 16px 0;
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+    .header-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { font-size: 1.1rem; font-weight: 600; letter-spacing: .12em; color: var(--text); }
+    .logo span { color: var(--gold); }
+    .header-links { display: flex; gap: 20px; font-size: .85rem; }
+    .header-links a { color: var(--text-muted); }
+    .header-links a:hover { color: var(--gold); text-decoration: none; }
+
+    .hero {
+      max-width: 800px; margin: 0 auto; padding: 80px 24px 48px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block; padding: 4px 16px; border-radius: 20px;
+      font-size: .72rem; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--green);
+      background: var(--green-dim); border: 1px solid rgba(34,197,94,.2);
+      margin-bottom: 20px;
+    }
+    .hero h1 { font-size: 2.6rem; font-weight: 300; letter-spacing: .04em; margin-bottom: 16px; line-height: 1.2; }
+    .hero h1 em { font-style: normal; color: var(--gold); }
+    .hero p { color: var(--text-muted); max-width: 600px; margin: 0 auto 40px; font-size: 1.05rem; }
+
+    .includes {
+      max-width: 800px; margin: 0 auto; padding: 0 24px 60px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    }
+    .include-item {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px;
+    }
+    .include-item .icon { font-size: 1.4rem; margin-bottom: 8px; }
+    .include-item h3 { font-size: .95rem; font-weight: 600; margin-bottom: 6px; }
+    .include-item p { color: var(--text-muted); font-size: .85rem; line-height: 1.5; }
+
+    .form-section {
+      max-width: 600px; margin: 0 auto; padding: 0 24px 80px;
+    }
+    .form-section h2 {
+      font-size: 1.3rem; font-weight: 600; margin-bottom: 8px;
+      text-align: center;
+    }
+    .form-section .sub {
+      color: var(--text-muted); font-size: .9rem; text-align: center;
+      margin-bottom: 32px;
+    }
+    .form-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 36px;
+    }
+    .form-row { margin-bottom: 20px; }
+    .form-row label {
+      display: block; font-size: .82rem; font-weight: 500;
+      color: var(--text-muted); margin-bottom: 6px;
+      letter-spacing: .02em;
+    }
+    .form-row input, .form-row select, .form-row textarea {
+      width: 100%; padding: 10px 14px; border-radius: 8px;
+      border: 1px solid var(--border); background: var(--bg);
+      color: var(--text); font-family: var(--font); font-size: .9rem;
+      transition: border-color .2s;
+    }
+    .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+      outline: none; border-color: var(--gold);
+    }
+    .form-row textarea { resize: vertical; min-height: 80px; }
+    .form-row select { cursor: pointer; }
+    .form-row select option { background: var(--bg-card); color: var(--text); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .btn-submit {
+      width: 100%; padding: 14px; border: none; border-radius: 10px;
+      background: var(--gold); color: #0a0a0f; font-size: 1rem;
+      font-weight: 600; cursor: pointer; transition: background .2s;
+      margin-top: 8px;
+    }
+    .btn-submit:hover { background: #d4b55a; }
+    .btn-submit:disabled { opacity: .5; cursor: not-allowed; }
+
+    .trust {
+      max-width: 800px; margin: 0 auto; padding: 0 24px 60px;
+      text-align: center;
+    }
+    .trust-items {
+      display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .trust-item {
+      font-size: .82rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .trust-item .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--green); flex-shrink: 0;
+    }
+
+    .success-msg {
+      display: none; text-align: center; padding: 40px 20px;
+    }
+    .success-msg h3 { color: var(--green); font-size: 1.3rem; margin-bottom: 12px; }
+    .success-msg p { color: var(--text-muted); font-size: .95rem; }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px; text-align: center;
+      color: var(--text-muted); font-size: .8rem;
+    }
+    .footer a { color: var(--text-muted); }
+    .footer a:hover { color: var(--gold); }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.7rem; }
+      .hero { padding: 48px 16px 32px; }
+      .includes { grid-template-columns: 1fr; padding: 0 16px 40px; }
+      .form-section { padding: 0 16px 48px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .trust-items { flex-direction: column; align-items: center; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-inner">
+      <a href="https://datacendia.com" style="text-decoration:none">
+        <div class="logo">DATACEND<span>I</span>A</div>
+      </a>
+      <div class="header-links">
+        <a href="https://app.datacendia.com">Live Demo</a>
+        <a href="https://github.com/datacendia/datacendia-core">GitHub</a>
+        <a href="https://docs.datacendia.com">Docs</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="badge">Free &mdash; No Credit Card Required</div>
+    <h1>30-Day <em>White-Glove Pilot</em></h1>
+    <p>Get hands-on with cryptographic AI governance. We'll help you deploy Datacendia, configure it for your compliance frameworks, and run your first auditable AI deliberation &mdash; at no cost.</p>
+  </div>
+
+  <div class="includes">
+    <div class="include-item">
+      <div class="icon">&#x1F6E1;</div>
+      <h3>Dedicated Setup</h3>
+      <p>We deploy Datacendia on your infrastructure &mdash; cloud, on-prem, or air-gapped. Full configuration for your stack.</p>
+    </div>
+    <div class="include-item">
+      <div class="icon">&#x1F3DB;</div>
+      <h3>Framework Mapping</h3>
+      <p>Pre-configured for your compliance needs: EU AI Act, NIST AI RMF, ISO 42001, SOC 2, HIPAA, or custom frameworks.</p>
+    </div>
+    <div class="include-item">
+      <div class="icon">&#x1F4CA;</div>
+      <h3>Live Deliberation</h3>
+      <p>Run real decisions through the Council with your data. See multi-agent cross-examination and cryptographic evidence packets firsthand.</p>
+    </div>
+    <div class="include-item">
+      <div class="icon">&#x1F4AC;</div>
+      <h3>Ongoing Support</h3>
+      <p>Dedicated Slack channel with engineering access. Weekly check-ins to ensure you're getting full value from the platform.</p>
+    </div>
+  </div>
+
+  <div class="trust">
+    <div class="trust-items">
+      <div class="trust-item"><div class="dot"></div>Apache 2.0 Open Source</div>
+      <div class="trust-item"><div class="dot"></div>NVIDIA Inception Member</div>
+      <div class="trust-item"><div class="dot"></div>No vendor lock-in</div>
+      <div class="trust-item"><div class="dot"></div>Your keys, your data</div>
+    </div>
+  </div>
+
+  <div class="form-section">
+    <h2>Start Your Pilot</h2>
+    <p class="sub">Fill out the form below and we'll schedule a setup call within 48 hours.</p>
+    <div class="form-card">
+      <form id="pilot-form" action="https://formspree.io/f/xpwzgkjr" method="POST">
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required placeholder="Jane Smith">
+          </div>
+          <div class="form-row">
+            <label for="email">Work Email</label>
+            <input type="email" id="email" name="email" required placeholder="jane@company.com">
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" required placeholder="Acme Corp">
+          </div>
+          <div class="form-row">
+            <label for="role">Your Role</label>
+            <input type="text" id="role" name="role" placeholder="Chief Compliance Officer">
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="framework">Primary Compliance Framework</label>
+          <select id="framework" name="framework">
+            <option value="">Select a framework...</option>
+            <option value="eu-ai-act">EU AI Act</option>
+            <option value="nist-ai-rmf">NIST AI RMF</option>
+            <option value="iso-42001">ISO 42001</option>
+            <option value="soc2">SOC 2</option>
+            <option value="hipaa">HIPAA</option>
+            <option value="dora">DORA</option>
+            <option value="aba-512">ABA Opinion 512 (Legal)</option>
+            <option value="multiple">Multiple / Custom</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="deployment">Preferred Deployment</label>
+          <select id="deployment" name="deployment">
+            <option value="">Select deployment type...</option>
+            <option value="cloud">Cloud (we host)</option>
+            <option value="on-prem">On-premise</option>
+            <option value="air-gapped">Air-gapped / Sovereign</option>
+            <option value="hybrid">Hybrid</option>
+            <option value="unsure">Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="context">What are you trying to solve? (optional)</label>
+          <textarea id="context" name="context" placeholder="E.g., We need audit trails for our AI-assisted underwriting decisions before EU AI Act enforcement in August..."></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="New Pilot Request — Datacendia">
+        <input type="hidden" name="_next" value="https://datacendia.com/pilot.html#success">
+        <button type="submit" class="btn-submit" id="submit-btn">Request Pilot &rarr;</button>
+      </form>
+      <div class="success-msg" id="success-msg">
+        <h3>&#10003; Pilot Request Received</h3>
+        <p>We'll reach out within 48 hours to schedule your setup call. In the meantime, explore the <a href="https://app.datacendia.com">live demo</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2024&ndash;2026 Datacendia, LLC. All rights reserved.</p>
+    <p style="margin-top:8px">
+      <a href="https://datacendia.com">datacendia.com</a> &middot;
+      <a href="https://app.datacendia.com">app.datacendia.com</a> &middot;
+      <a href="https://github.com/datacendia">GitHub</a> &middot;
+      <a href="https://datacendia.com/privacy.html">Privacy</a> &middot;
+      <a href="https://datacendia.com/terms.html">Terms</a>
+    </p>
+  </footer>
+
+  <script>
+    // Show success message if redirected back with #success
+    if (window.location.hash === '#success') {
+      document.getElementById('pilot-form').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    }
+
+    // Client-side form enhancement
+    document.getElementById('pilot-form').addEventListener('submit', function(e) {
+      var btn = document.getElementById('submit-btn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+    });
+  </script>
+
+</body>
+</html>
