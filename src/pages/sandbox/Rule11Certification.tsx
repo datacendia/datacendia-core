@@ -42,12 +42,12 @@ existing law. The following AI tools were used:
 
 CITATION VERIFICATION TIMESTAMPS:
 ${receipt.timelineEvents?.filter(e => e.type === 'analysis').map((event, idx) => 
-  `[${idx + 1}] ${event.title} — Verified ${new Date(event.timestamp).toLocaleString('en-US', {
+  `[${idx + 1}] ${event.title} — Verified ${event.timestamp ? new Date(event.timestamp).toLocaleString('en-US', {
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
     timeZone: 'UTC'
-  })}`
+  }) : 'N/A'}`
 ).join('\n') || 'Citations verified during deliberation process'}
 
 ATTORNEY MODIFICATIONS: ${receipt.dissents || 0} sections modified (diff sealed)

@@ -1079,6 +1079,16 @@ export const SandboxShell: React.FC<{
                 ))}
               </div>
             </div>
+            {/* Live Compliance Score — visible during deliberation */}
+            {phase !== 'idle' && (
+              <div className="bg-[#111118] border border-white/10 rounded-xl overflow-hidden">
+                <ComplianceScorePro 
+                  phase={phase}
+                  citationsVerified={phase === 'phase2' ? Math.floor((visibleMessages / Math.max(scenario.script.filter(m => m.phase === 'phase2').length, 1)) * 14) : phase === 'phase3' || phase === 'complete' ? 14 : 0}
+                  totalCitations={14}
+                />
+              </div>
+            )}
           </div>
 
           <div className="col-span-12 lg:col-span-6">
