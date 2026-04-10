@@ -98,6 +98,14 @@ import gatewayRoutes from './routes/gateway.js';
 import wedgeRoutes from './routes/wedge.js';
 import opsAgentsRoutes from './routes/ops-agents.js';
 import retentionRoutes from './routes/retention.js';
+import serviceDiscoveryRoutes from './routes/service-discovery.js';
+import policyAuthoringRoutes from './routes/policy-authoring.js';
+import analyticsReportingRoutes from './routes/analytics-reporting.js';
+import stakeholderPortalsRoutes from './routes/stakeholder-portals.js';
+import remediationTicketingRoutes from './routes/remediation-ticketing.js';
+import modelRegistryRoutes from './routes/model-registry.js';
+import feedbackRoutes from './routes/feedback.js';
+import enterprisePlatinumRoutes from './routes/enterprise-platinum.js';
 import { registerPlatformServices } from './core/services/PlatformServices.js';
 import { applyPerformanceIndexes } from './startup/applyIndexes.js';
 import { apiCache, CACHE_TTLS } from './middleware/cacheMiddleware.js';
@@ -388,6 +396,14 @@ app.use('/api/v1/gateway', gatewayRoutes);           // CendiaGateway AI Governa
 app.use('/api/v1/wedge', wedgeRoutes);               // Wedge Products Shadow AI, Governance Report, Incident Forensics
 app.use('/api/v1/ops-agents', opsAgentsRoutes);      // Ops Agents Report, Analytics, NLP, Pipeline
 app.use('/api/v1/retention', retentionRoutes);       // 7-Year Audit Retention Management
+app.use('/api/v1/service-discovery', serviceDiscoveryRoutes);     // Unified Service Discovery & Marketplace
+app.use('/api/v1/policy-authoring', policyAuthoringRoutes);       // Custom Policy Authoring & Simulation
+app.use('/api/v1/analytics', analyticsReportingRoutes);           // Advanced Analytics & Reporting
+app.use('/api/v1/collaboration', stakeholderPortalsRoutes);       // Stakeholder Collaboration Portals
+app.use('/api/v1/remediation', remediationTicketingRoutes);       // Automated Remediation & Ticketing
+app.use('/api/v1/model-registry', modelRegistryRoutes);           // AI Model Lifecycle & Registry
+app.use('/api/v1/feedback', feedbackRoutes);                      // Continuous Feedback & Improvement Loop
+app.use('/api/v1/enterprise', enterprisePlatinumRoutes);          // Enterprise Platinum: Self-Healing, Governance Graph, RegSim, Ethics, Sovereignty, HITL, Trust, Agents
 
 // Sandbox Analytics - Track demo engagement for Thomson Reuters
 import('./routes/sandbox-analytics.js').then(mod => {

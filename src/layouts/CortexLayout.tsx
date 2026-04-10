@@ -337,6 +337,13 @@ const enterpriseGroup: NavGroup = {
   color: 'purple',
   items: [
     {
+      id: 'platinum',
+      label: 'Platinum',
+      icon: Shield,
+      path: '/cortex/enterprise',
+      tooltip: 'Enterprise Platinum Command Center — 17 services, Trust Score, Marketplace',
+    },
+    {
       id: 'stress-test',
       label: 'Stress-Test',
       icon: Flame,

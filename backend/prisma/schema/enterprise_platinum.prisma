@@ -1,0 +1,186 @@
+// Enterprise Platinum - Advanced Audit Services
+// AI Act compliance, GDPR audit trails, SOC 2 evidence, ISO 27001 controls
+
+model platinum_audit_trail {
+  id                  String   @id @default(uuid())
+  organization_id     String
+  entity_type         String   // contract, policy, risk, incident, decision, user, system
+  entity_id           String
+  action              String   // created, updated, deleted, approved, rejected, viewed, exported
+  actor_id            String?
+  actor_name          String?
+  actor_type          String?  // user, system, api, service
+  ip_address          String?
+  user_agent          String?
+  before_state        Json?    @default("{}")
+  after_state         Json?    @default("{}")
+  metadata            Json?    @default("{}")
+  compliance_domain   String   // gdpr, soc2, iso27001, ai_act, hipaa, pci_dss
+  retention_period    Int      @default(2555) // days (7 years default)
+  archived_at         DateTime?
+  created_at          DateTime @default(now())
+
+  @@index([organization_id])
+  @@index([entity_type, entity_id])
+  @@index([actor_id])
+  @@index([compliance_domain])
+  @@index([created_at])
+  @@index([archived_at])
+}
+
+model platinum_evidence_locker {
+  id                  String   @id @default(uuid())
+  organization_id     String
+  control_id          String
+  control_name        String
+  framework           String   // soc2, iso27001, pci_dss, hipaa, gdpr, ai_act
+  evidence_type       String   // screenshot, log, document, config, testimony, automated_test
+  evidence_url        String?
+  evidence_data       Json?    @default("{}")
+  collected_at        DateTime @default(now())
+  collected_by        String?
+  validity_period     DateTime
+  hash                String   // SHA-256 for integrity verification
+  status              String   @default("valid") // valid, expired, revoked, under_review
+  verification_notes   String?  @db.Text
+  created_at          DateTime @default(now())
+  updated_at          DateTime @default(now()) @updatedAt
+
+  @@index([organization_id])
+  @@index([control_id])
+  @@index([framework])
+  @@index([validity_period])
+  @@index([status])
+}
+
+model platinum_compliance_checklist {
+  id                  String   @id @default(uuid())
+  organization_id     String
+  framework           String   // soc2_type2, iso27001, pci_dss, hipaa, gdpr, ai_act
+  checklist_name      String
+  version             String
+  controls            Json     @default("[]")
+  progress            Decimal  @default(0) @db.Decimal(5, 2)
+  status              String   @default("in_progress") // not_started, in_progress, completed, failed
+  last_assessed_at    DateTime?
+  next_assessment_due DateTime
+  assessor_id         String?
+  findings            Json     @default("[]")
+  remediation_plan    Json?    @default("{}")
+  created_at          DateTime @default(now())
+  updated_at          DateTime @default(now()) @updatedAt
+
+  @@index([organization_id])
+  @@index([framework])
+  @@index([status])
+  @@index([next_assessment_due])
+}
+
+model platinum_ai_act_registry {
+  id                  String   @id @default(uuid())
+  organization_id     String
+  ai_system_id        String
+  ai_system_name      String
+  classification      String   // minimal, limited, high_risk, unacceptable
+  purpose             String   @db.Text
+  provider_name       String
+  deployment_date     DateTime
+  risk_level          String   // low, medium, high, critical
+  bias_assessment     Json     @default("{}")
+  explainability      Json     @default("{}")
+  human_oversight     Json     @default("{}")
+  accuracy_metrics    Json     @default("{}")
+  data_governance     Json     @default("{}")
+  compliance_status   String   @default("pending") // pending, compliant, non_compliant, under_review
+  registration_date   DateTime?
+  expiry_date         DateTime?
+  audit_trail_id      String?
+  created_at          DateTime @default(now())
+  updated_at          DateTime @default(now()) @updatedAt
+
+  @@index([organization_id])
+  @@index([classification])
+  @@index([compliance_status])
+  @@index([registration_date])
+  @@index([expiry_date])
+}
+
+model platinum_data_subject_rights {
+  id                  String   @id @default(uuid())
+  organization_id     String
+  subject_id          String
+  request_type        String   // access, deletion, portability, rectification, objection
+  status              String   @default("pending") // pending, processing, completed, rejected
+  requested_at        DateTime @default(now())
+  due_date            DateTime
+  processed_at        DateTime?
+  processed_by        String?
+  data_exported        Json?    @default("{}")
+  deletion_log        Json?    @default("{}")
+  denial_reason       String?  @db.Text
+  created_at          DateTime @default(now())
+  updated_at          DateTime @default(now()) @updatedAt
+
+  @@index([organization_id])
+  @@index([subject_id])
+  @@index([request_type])
+  @@index([status])
+  @@index([due_date])
+}
+
+model platinum_incident_response_log {
+  id                  String   @id @default(uuid())
+  organization_id     String
+  incident_id         String
+  incident_type       String   // data_breach, security_incident, privacy_violation, compliance_breach
+  severity            String   // low, medium, high, critical
+  detected_at         DateTime
+  reported_at         DateTime
+  response_team       Json     @default("[]")
+  timeline            Json     @default("[]")
+  mitigation_actions  Json     @default("[]")
+  affected_subjects   Int      @default(0)
+  notification_sent   Boolean  @default(false)
+  regulatory_filing   Boolean  @default(false)
+  status              String   @default("responding") // detected, responding, contained, resolved, closed
+  lessons_learned     Json?    @default("{}")
+  root_cause          String?  @db.Text
+  created_at          DateTime @default(now())
+  updated_at          DateTime @default(now()) @updatedAt
+  resolved_at         DateTime?
+
+  @@index([organization_id])
+  @@index([incident_id])
+  @@index([incident_type])
+  @@index([severity])
+  @@index([status])
+  @@index([detected_at])
+}
+
+model platinum_vendor_risk_assessment {
+  id                  String   @id @default(uuid())
+  organization_id     String
+  vendor_id           String
+  vendor_name         String
+  assessment_date     DateTime @default(now())
+  risk_score          Decimal  @db.Decimal(5, 2)
+  risk_tier           String   // low, medium, high, critical
+  security_score      Decimal  @db.Decimal(5, 2)
+  compliance_score    Decimal  @db.Decimal(5, 2)
+  privacy_score       Decimal  @db.Decimal(5, 2)
+  financial_score     Decimal  @db.Decimal(5, 2)
+  controls_verified   Json     @default("[]")
+  gaps_identified     Json     @default("[]")
+  remediation_required Boolean  @default(false)
+  next_review_date    DateTime
+  assessor_id         String?
+  status              String   @default("active") // active, under_review, deprecated
+  created_at          DateTime @default(now())
+  updated_at          DateTime @default(now()) @updatedAt
+
+  @@index([organization_id])
+  @@index([vendor_id])
+  @@index([risk_tier])
+  @@index([assessment_date])
+  @@index([next_review_date])
+}

@@ -1,0 +1,217 @@
+// Enterprise Deals - Rainmaker Deal Flow Management
+// Opportunity tracking, pipeline stages, deal analytics, commission tracking
+
+model deal_opportunities {
+  id                  String   @id @default(uuid())
+  organization_id     String
+  deal_name           String
+  account_name        String
+  industry            String
+  deal_size           Decimal  @db.Decimal(15, 2)
+  currency            String   @default("USD")
+  stage               String   @default("prospecting") // prospecting, qualification, proposal, negotiation, closing, won, lost
+  probability         Int      @default(10)
+  close_date          DateTime?
+  owner_id            String
+  owner_name          String
+  team_members        Json     @default("[]")
+  source              String   // inbound, outbound, referral, partner, marketing, event
+  campaign_id         String?
+  competitor          String?
+  primary_contact_id  String?
+  primary_contact_name String?
+  decision_makers     Json     @default("[]")
+  pain_points         Json     @default("[]")
+  solution_fit        Json     @default("{}")
+  value_proposition   Json     @default("{}")
+  next_action         String?  @db.Text
+  next_action_date    DateTime?
+  risk_factors        Json     @default("[]")
+  custom_fields       Json     @default("{}")
+  status              String   @default("active") // active, won, lost, abandoned
+  won_date            DateTime?
+  lost_date           DateTime?
+  lost_reason         String?
+  created_at          DateTime @default(now())
+  updated_at          DateTime @default(now()) @updatedAt
+
+  activities          deal_activities[]
+  documents           deal_documents[]
+  commissions         deal_commissions[]
+  forecast_entries     deal_forecast[]
+
+  @@index([organization_id])
+  @@index([stage])
+  @@index([owner_id])
+  @@index([status])
+  @@index([close_date])
+  @@index([created_at])
+}
+
+model deal_activities {
+  id                  String   @id @default(uuid())
+  opportunity_id      String
+  activity_type       String   // call, email, meeting, demo, proposal, follow_up, note, task
+  subject             String
+  description         String?  @db.Text
+  performed_by        String
+  performed_by_name   String
+  duration_minutes    Int?
+  outcome             String?
+  next_step           String?
+  scheduled_date      DateTime?
+  completed_date      DateTime?
+  attachments         Json     @default("[]")
+  custom_fields       Json     @default("{}")
+  created_at          DateTime @default(now())
+
+  opportunity deal_opportunities @relation(fields: [opportunity_id], references: [id], onDelete: Cascade)
+
+  @@index([opportunity_id])
+  @@index([activity_type])
+  @@index([performed_by])
+  @@index([scheduled_date])
+  @@index([completed_date])
+}
+
+model deal_documents {
+  id                  String   @id @default(uuid())
+  opportunity_id      String
+  document_type       String   // proposal, contract, msa, sow, quote, presentation, other
+  document_name       String
+  file_url            String
+  file_size           Int?
+  mime_type           String?
+  version             Int      @default(1)
+  uploaded_by         String
+  uploaded_by_name    String
+  shared_with         Json     @default("[]")
+  expiry_date         DateTime?
+  status              String   @default("active") // active, expired, superseded, withdrawn
+  metadata            Json     @default("{}")
+  created_at          DateTime @default(now())
+  updated_at          DateTime @default(now()) @updatedAt
+
+  opportunity deal_opportunities @relation(fields: [opportunity_id], references: [id], onDelete: Cascade)
+
+  @@index([opportunity_id])
+  @@index([document_type])
+  @@index([status])
+  @@index([created_at])
+}
+
+model deal_commissions {
+  id                  String   @id @default(uuid())
+  opportunity_id      String
+  sales_rep_id        String
+  sales_rep_name      String
+  commission_rate     Decimal  @db.Decimal(5, 4)
+  commission_amount   Decimal  @db.Decimal(15, 2)
+  currency            String   @default("USD")
+  tier                String   @default("standard") // standard, accelerator, bonus
+  split_percentage    Decimal  @default(100) @db.Decimal(5, 2)
+  status              String   @default("pending") // pending, approved, paid, reversed
+  approved_at          DateTime?
+  paid_at              DateTime?
+  approved_by         String?
+  paid_by             String?
+  reversal_reason     String?
+  created_at          DateTime @default(now())
+  updated_at          DateTime @default(now()) @updatedAt
+
+  opportunity deal_opportunities @relation(fields: [opportunity_id], references: [id], onDelete: Cascade)
+
+  @@index([opportunity_id])
+  @@index([sales_rep_id])
+  @@index([status])
+  @@index([created_at])
+}
+
+model deal_forecast {
+  id                  String   @id @default(uuid())
+  opportunity_id      String
+  forecast_period     String   // monthly, quarterly, annual
+  forecast_date       DateTime
+  expected_value      Decimal  @db.Decimal(15, 2)
+  probability_weighted_value Decimal @db.Decimal(15, 2)
+  currency            String   @default("USD")
+  category            String   // new_business, renewal, upsell, cross_sell
+  region              String?
+  product_line        String?
+  forecast_confidence String   // low, medium, high
+  notes               String?  @db.Text
+  created_at          DateTime @default(now())
+  updated_at          DateTime @default(now()) @updatedAt
+
+  opportunity deal_opportunities @relation(fields: [opportunity_id], references: [id], onDelete: Cascade)
+
+  @@index([opportunity_id])
+  @@index([forecast_period])
+  @@index([forecast_date])
+  @@index([category])
+}
+
+model deal_pipeline_stages {
+  id                  String   @id @default(uuid())
+  organization_id     String
+  stage_name          String
+  stage_order         Int
+  probability         Int
+  average_days        Int      @default(0)
+  win_rate            Decimal  @default(0) @db.Decimal(5, 2)
+  is_active           Boolean  @default(true)
+  entry_criteria      Json     @default("{}")
+  exit_criteria       Json     @default("{}")
+  created_at          DateTime @default(now())
+  updated_at          DateTime @default(now()) @updatedAt
+
+  @@unique([organization_id, stage_name])
+  @@index([organization_id])
+  @@index([stage_order])
+}
+
+model deal_quotas {
+  id                  String   @id @default(uuid())
+  organization_id     String
+  quota_period        String   // monthly, quarterly, annual
+  start_date          DateTime
+  end_date            DateTime
+  sales_rep_id        String
+  sales_rep_name      String
+  quota_target        Decimal  @db.Decimal(15, 2)
+  currency            String   @default("USD")
+  achieved            Decimal  @default(0) @db.Decimal(15, 2)
+  percentage          Decimal  @default(0) @db.Decimal(5, 2)
+  tier                String   @default("standard")
+  accelerators        Json     @default("[]")
+  status              String   @default("active") // active, completed, cancelled
+  created_at          DateTime @default(now())
+  updated_at          DateTime @default(now()) @updatedAt
+
+  @@index([organization_id])
+  @@index([sales_rep_id])
+  @@index([quota_period])
+  @@index([start_date])
+  @@index([end_date])
+}
+
+model deal_competitors {
+  id                  String   @id @default(uuid())
+  organization_id     String
+  competitor_name     String
+  industry            String
+  tier                String   // direct, indirect, emerging, market_leader
+  strengths           Json     @default("[]")
+  weaknesses          Json     @default("[]")
+  market_share        Decimal? @db.Decimal(5, 2)
+  typical_pricing     Json     @default("{}")
+  win_rate_vs         Decimal  @default(50) @db.Decimal(5, 2)
+  last_updated        DateTime @default(now())
+  notes               String?  @db.Text
+  created_at          DateTime @default(now())
+  updated_at          DateTime @default(now()) @updatedAt
+
+  @@index([organization_id])
+  @@index([industry])
+  @@index([tier])
+}
