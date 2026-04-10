@@ -462,162 +462,84 @@ model regulatory_audit_logs {
   @@index([created_at])
 }
 
-enum ApprovalStatus {
-  PENDING
-  APPROVED
-  REJECTED
-  CANCELLED
+model policy_definitions {
+  id              String   @id
+  organization_id String
+  name            String
+  description     String   @db.Text
+  domain          String
+  version         String
+  status          String
+  rules           Json     @default("[]")
+  conditions      Json     @default("[]")
+  actions         Json     @default("[]")
+  metadata        Json     @default("{}")
+  created_by      String
+  created_at      DateTime @default(now())
+  updated_at      DateTime @default(now()) @updatedAt
+  approved_by     String?
+  approved_at     DateTime?
+
+  organization organizations @relation(fields: [organization_id], references: [id])
+
+  versions policy_version_history[]
+  audits   policy_audit_entries[]
+
+  @@index([organization_id])
+  @@index([domain])
+  @@index([status])
+  @@unique([organization_id, name])
 }
 
-enum ApprovalType {
-  WORKFLOW
-  DELIBERATION
-  ACCESS
-  BUDGET
-  DATA_EXPORT
+model policy_templates {
+  id              String   @id
+  organization_id String?
+  name            String
+  description     String   @db.Text
+  domain          String
+  framework       String
+  rules           Json     @default("[]")
+  tags            Json     @default("[]")
+  created_by      String?
+  created_at      DateTime @default(now())
+  updated_at      DateTime @default(now()) @updatedAt
+
+  organization organizations? @relation(fields: [organization_id], references: [id])
+
+  @@index([domain])
+  @@index([framework])
 }
 
-enum PanopticonRegulationStatus {
-  DRAFT
-  ACTIVE
-  SUPERSEDED
-  RETIRED
+model policy_version_history {
+  id          String   @id @default(uuid())
+  policy_id   String
+  version     String
+  changes     String   @db.Text
+  changed_by  String
+  changed_at  DateTime @default(now())
+  diff        Json     @default("[]")
+
+  policy policy_definitions @relation(fields: [policy_id], references: [id], onDelete: Cascade)
+
+  @@index([policy_id])
+  @@index([changed_at])
+  @@unique([policy_id, version])
 }
 
-enum PanopticonRequirementType {
-  MANDATORY
-  RECOMMENDED
-  OPTIONAL
-  CONDITIONAL
-}
+model policy_audit_entries {
+  id         String   @id @default(uuid())
+  policy_id  String
+  action     String
+  user_id    String
+  timestamp  DateTime @default(now())
+  details    Json     @default("{}")
 
-enum PanopticonPriority {
-  CRITICAL
-  HIGH
-  MEDIUM
-  LOW
-}
+  policy policy_definitions @relation(fields: [policy_id], references: [id], onDelete: Cascade)
 
-enum PanopticonAutomationStatus {
-  FULLY_AUTOMATED
-  PARTIALLY_AUTOMATED
-  MANUAL
-  NOT_APPLICABLE
+  @@index([policy_id])
+  @@index([timestamp])
+  @@index([action])
 }
-
-enum PanopticonViolationType {
-  PROCESS_VIOLATION
-  DATA_VIOLATION
-  DOCUMENTATION_GAP
-  TIMELINE_BREACH
-  CONTROL_FAILURE
-}
-
-enum PanopticonViolationStatus {
-  OPEN
-  INVESTIGATING
-  REMEDIATION
-  RESOLVED
-  ACCEPTED_RISK
-}
-
-enum PanopticonForecastType {
-  NEW_REGULATION
-  AMENDMENT
-  ENFORCEMENT_ACTION
-  INDUSTRY_TREND
-  GEOPOLITICAL
-}
-
-enum EthicsCategory {
-  FAIRNESS
-  TRANSPARENCY
-  PRIVACY
-  ACCOUNTABILITY
-  SAFETY
-  HUMAN_OVERSIGHT
-}
-
-enum PrincipleStatus {
-  ACTIVE
-  DRAFT
-  DEPRECATED
-  UNDER_REVIEW
-}
-
-enum ReviewStatus {
-  PENDING
-  IN_REVIEW
-  COMPLETED
-  CANCELLED
-}
-
-enum ReviewResult {
-  APPROVED
-  REJECTED
-  CONDITIONAL
-  NEEDS_REVISION
-}
-
-enum BiasCheckStatus {
-  PENDING
-  RUNNING
-  COMPLETED
-  FAILED
-}
-
-enum RegulatoryDocStatus {
-  PENDING
-  PROCESSING
-  COMPLETED
-  FAILED
-}
-
-enum RegulatoryReviewStatus {
-  DRAFT
-  PENDING_REVIEW
-  APPROVED
-  REJECTED
-  CHANGES_REQUESTED
-}
-
-enum RegulatorySeverity {
-  CRITICAL
-  HIGH
-  MEDIUM
-  LOW
-  INFO
-}
-
-enum TriggerType {
-  AUTOMATIC
-  MANUAL
-  SCHEDULED
-}
-
-enum ConstraintType {
-  MANDATORY // Must be followed, blocks decisions if violated
-  ADVISORY // Warns but doesn't block
-  CONDITIONAL // Applies only under certain conditions
-}
-
-enum ConflictType {
-  DIRECT // Regulations directly contradict
-  POTENTIAL // May conflict depending on interpretation
-  SUPERSEDED // One regulation replaces another
-}
-
-enum ConflictResolution {
-  UNRESOLVED
-  RESOLVED_PRIORITY // One takes priority
-  RESOLVED_MERGED // Combined into unified rule
-  RESOLVED_EXCEPTION // Exception granted
-  FALSE_POSITIVE // Not actually a conflict
-}
-
-// =============================================================================
-// AI Constitutional Court - Dispute Resolution
-// =============================================================================
 
 model constitutional_disputes {
   id              String    @id @default(uuid())
@@ -669,10 +591,6 @@ model constitutional_opinions {
   @@index([dispute_id])
   @@index([case_number])
 }
-
-// =============================================================================
-// Override Accountability — Primitive C
-// =============================================================================
 
 model accountability_records {
   id                   String   @id @default(uuid())

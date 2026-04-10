@@ -154,6 +154,9 @@ const ScotiabankSandboxPage = lazy(() => import('../pages/sandbox/ScotiabankSand
 const SapSandboxPage = lazy(() => import('../pages/sandbox/SapSandboxPage'));
 const FepcmacSandboxPage = lazy(() => import('../pages/sandbox/FepcmacSandboxPage'));
 
+// Industrial Sandboxes
+const MrcPeruSandboxPage = lazy(() => import('../pages/sandbox/MrcPeruSandboxPage'));
+
 // Wedge Products — Lead-gen pages, no auth required
 const ShadowAIScannerPage = lazy(() =>
   import('../pages/cortex/wedge').then((m) => ({ default: m.ShadowAIScannerPage }))
@@ -345,6 +348,10 @@ export const publicRoutes: RouteObject[] = [
   { path: '/sandbox/sap', element: w(SapSandboxPage) },
   { path: '/sandbox/fepcmac', element: w(FepcmacSandboxPage) },
   { path: '/sandbox/cajas', element: w(FepcmacSandboxPage) },
+
+  // Industrial Sandboxes
+  { path: '/sandbox/mrc', element: w(MrcPeruSandboxPage) },
+  { path: '/sandbox/mrc-peru', element: w(MrcPeruSandboxPage) },
 
   // Ops Agents — Everyday AI task agents
   { path: '/ops-agents', element: w(OpsAgentsPage) },
