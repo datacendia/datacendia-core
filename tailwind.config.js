@@ -185,5 +185,12 @@ export default {
   		}
   	}
   },
+  // Safelist: dynamic accent classes used by sandbox configs via `bg-${accent}-500` patterns
+  safelist: [
+    {
+      pattern: /^(bg|text|border|from|to|hover:bg|hover:from|hover:to|shadow|ring|focus:ring)-(red|orange|amber|yellow|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|lime|slate)-(300|400|500|600|700|800|900)(\/\d+)?$/,
+      variants: ['hover'],
+    },
+  ],
   plugins: [require("tailwindcss-animate")],
 }

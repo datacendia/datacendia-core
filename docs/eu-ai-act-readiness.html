@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Are You AI Act Ready? — August 2, 2026 Deadline</title>
+  <meta name="description" content="EU AI Act high-risk enforcement begins August 2, 2026. Is your organization ready? Datacendia provides the audit trail infrastructure to prove compliance.">
+  <link rel="canonical" href="https://datacendia.com/eu-ai-act-readiness">
+  <link rel="icon" type="image/svg+xml" href="https://datacendia.com/assets/favicon.svg">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --bg-elevated: #111118;
+      --bg-card: #16161e;
+      --text: #e4e4e7;
+      --text-muted: #71717a;
+      --gold: #c9a84c;
+      --gold-dim: rgba(201,168,76,.15);
+      --red: #ef4444;
+      --red-dim: rgba(239,68,68,.1);
+      --border: rgba(255,255,255,.06);
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-elevated);
+      padding: 16px 0;
+    }
+    .header-inner {
+      max-width: 780px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { font-size: 1.1rem; font-weight: 600; letter-spacing: .12em; color: var(--text); }
+    .logo span { color: var(--gold); }
+
+    .page { max-width: 780px; margin: 0 auto; padding: 60px 24px 80px; }
+
+    /* Countdown banner */
+    .countdown {
+      background: var(--red-dim);
+      border: 1px solid rgba(239,68,68,.25);
+      border-radius: 12px;
+      padding: 28px 32px;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .countdown-label {
+      font-size: .75rem; font-weight: 700; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--red); margin-bottom: 8px;
+    }
+    .countdown-date {
+      font-size: 2.4rem; font-weight: 800; color: var(--text);
+      font-family: var(--font-mono); letter-spacing: .04em;
+    }
+    .countdown-sub {
+      font-size: .95rem; color: var(--text-muted); margin-top: 8px;
+    }
+    .countdown-days {
+      display: inline-block; margin-top: 12px;
+      background: rgba(239,68,68,.15); color: var(--red);
+      padding: 6px 16px; border-radius: 6px;
+      font-size: .85rem; font-weight: 700; font-family: var(--font-mono);
+    }
+
+    h1 { font-size: 2rem; font-weight: 300; margin-bottom: 12px; letter-spacing: .04em; }
+    h1 em { font-style: normal; color: var(--gold); }
+    h2 { font-size: 1.3rem; font-weight: 600; margin: 40px 0 16px; }
+    h3 { font-size: 1rem; font-weight: 600; margin: 24px 0 8px; }
+    p { color: var(--text-muted); margin-bottom: 16px; font-size: .95rem; }
+    strong { color: var(--text); }
+
+    .checklist {
+      list-style: none; margin: 0 0 32px; padding: 0;
+    }
+    .checklist li {
+      padding: 12px 16px; margin-bottom: 8px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 8px; font-size: .9rem;
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .checklist li .icon {
+      flex-shrink: 0; width: 20px; height: 20px; border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .7rem; font-weight: 700; margin-top: 2px;
+    }
+    .icon-red { background: var(--red-dim); color: var(--red); }
+    .icon-gold { background: var(--gold-dim); color: var(--gold); }
+
+    .penalty-box {
+      background: var(--red-dim); border: 1px solid rgba(239,68,68,.2);
+      border-radius: 10px; padding: 24px 28px; margin: 32px 0;
+    }
+    .penalty-box h3 { color: var(--red); margin-top: 0; }
+    .penalty-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;
+    }
+    .penalty-item {
+      text-align: center; padding: 16px;
+      background: rgba(0,0,0,.3); border-radius: 8px;
+    }
+    .penalty-amount {
+      font-size: 1.6rem; font-weight: 800; color: var(--red);
+      font-family: var(--font-mono);
+    }
+    .penalty-desc { font-size: .8rem; color: var(--text-muted); margin-top: 4px; }
+
+    .solution-box {
+      background: var(--gold-dim); border: 1px solid rgba(201,168,76,.2);
+      border-radius: 10px; padding: 28px 28px; margin: 32px 0;
+    }
+    .solution-box h3 { color: var(--gold); margin-top: 0; }
+
+    .features {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+      margin: 16px 0 24px; list-style: none; padding: 0;
+    }
+    .features li {
+      padding: 14px; background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 8px; font-size: .85rem; color: var(--text-muted);
+    }
+    .features li strong { display: block; color: var(--text); margin-bottom: 4px; font-size: .9rem; }
+
+    .cta {
+      text-align: center; margin: 48px 0 32px;
+      padding: 32px; background: var(--bg-card);
+      border: 1px solid var(--border); border-radius: 12px;
+    }
+    .cta h2 { margin-top: 0; }
+    .cta p { max-width: 500px; margin: 0 auto 20px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 12px 28px; border-radius: 8px; font-size: .95rem; font-weight: 600;
+      transition: all .2s; border: none; cursor: pointer;
+    }
+    .btn-gold { background: var(--gold); color: #0a0a0f; }
+    .btn-gold:hover { background: #d4b55a; text-decoration: none; }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 24px; text-align: center;
+      color: var(--text-muted); font-size: .8rem;
+    }
+
+    @media (max-width: 600px) {
+      .countdown-date { font-size: 1.6rem; }
+      .page { padding: 32px 16px 48px; }
+      .penalty-grid, .features { grid-template-columns: 1fr; }
+      h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-inner">
+      <div class="logo">Datacendia<span>.</span></div>
+      <a href="https://datacendia.com/briefing.html" class="btn btn-gold" style="font-size:.8rem;padding:8px 16px;">Request Briefing</a>
+    </div>
+  </div>
+
+  <div class="page">
+
+    <div class="countdown">
+      <div class="countdown-label">EU AI Act — High-Risk Enforcement</div>
+      <div class="countdown-date">August 2, 2026</div>
+      <div class="countdown-sub">Article 6 high-risk AI systems must be fully compliant</div>
+      <div class="countdown-days" id="countdown-days"></div>
+    </div>
+
+    <h1>Are You <em>AI Act Ready</em>?</h1>
+    <p>
+      The EU AI Act (Regulation 2024/1689) is the world's first comprehensive AI regulation.
+      <strong>High-risk AI system enforcement begins August 2, 2026.</strong>
+      If your organization deploys AI for credit scoring, insurance pricing, legal research,
+      hiring, or any Annex III high-risk use case — you must demonstrate compliance or face
+      penalties up to 7% of global annual turnover.
+    </p>
+
+    <h2>What the AI Act Requires (Articles 9–15)</h2>
+    <ul class="checklist">
+      <li>
+        <div class="icon icon-red">1</div>
+        <div><strong>Risk Management System (Art. 9)</strong> — Continuous identification, analysis, and mitigation of AI risks throughout the system lifecycle.</div>
+      </li>
+      <li>
+        <div class="icon icon-red">2</div>
+        <div><strong>Data Governance (Art. 10)</strong> — Training, validation, and testing datasets must meet quality criteria. Bias examination required.</div>
+      </li>
+      <li>
+        <div class="icon icon-red">3</div>
+        <div><strong>Technical Documentation (Art. 11)</strong> — Complete documentation of system design, development, and intended purpose before market placement.</div>
+      </li>
+      <li>
+        <div class="icon icon-red">4</div>
+        <div><strong>Record-Keeping &amp; Logging (Art. 12)</strong> — Automatic logging of events for traceability. Logs must be retained for the system's lifetime or a minimum period set by sector law.</div>
+      </li>
+      <li>
+        <div class="icon icon-red">5</div>
+        <div><strong>Transparency &amp; User Information (Art. 13)</strong> — Deployers must be informed of system capabilities, limitations, and intended use.</div>
+      </li>
+      <li>
+        <div class="icon icon-red">6</div>
+        <div><strong>Human Oversight (Art. 14)</strong> — Systems must allow effective human oversight, including the ability to override or stop the AI system.</div>
+      </li>
+      <li>
+        <div class="icon icon-red">7</div>
+        <div><strong>Accuracy, Robustness &amp; Cybersecurity (Art. 15)</strong> — Appropriate levels of accuracy, resilience to errors, and security against adversarial attacks.</div>
+      </li>
+    </ul>
+
+    <div class="penalty-box">
+      <h3>Non-Compliance Penalties (Art. 99)</h3>
+      <p style="color:var(--text-muted);font-size:.85rem;margin-bottom:0;">Applicable to providers and deployers of high-risk AI systems in the EU market.</p>
+      <div class="penalty-grid">
+        <div class="penalty-item">
+          <div class="penalty-amount">€35M</div>
+          <div class="penalty-desc">or 7% global turnover — prohibited AI practices</div>
+        </div>
+        <div class="penalty-item">
+          <div class="penalty-amount">€15M</div>
+          <div class="penalty-desc">or 3% global turnover — high-risk non-compliance</div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Most Organizations Are Not Ready</h2>
+    <p>
+      Based on our conversations with EU financial institutions and law firms,
+      the most common gaps are:
+    </p>
+    <ul class="checklist">
+      <li>
+        <div class="icon icon-red">✗</div>
+        <div><strong>No audit trail for AI decisions</strong> — AI outputs are used but not logged with the specificity Art. 12 requires.</div>
+      </li>
+      <li>
+        <div class="icon icon-red">✗</div>
+        <div><strong>Human oversight is informal</strong> — An employee "reviews" AI output but there's no documented, timestamped supervision chain.</div>
+      </li>
+      <li>
+        <div class="icon icon-red">✗</div>
+        <div><strong>No risk management lifecycle</strong> — Risk assessments were done once at procurement, not continuously as Art. 9 requires.</div>
+      </li>
+      <li>
+        <div class="icon icon-red">✗</div>
+        <div><strong>Technical documentation is incomplete</strong> — Model cards exist but don't cover the full Art. 11 requirements for system-level documentation.</div>
+      </li>
+    </ul>
+
+    <div class="solution-box">
+      <h3>What Datacendia Provides</h3>
+      <p style="color:var(--text-muted);font-size:.9rem;">
+        Datacendia is an open-source AI governance platform that produces
+        <strong style="color:var(--text)">cryptographically signed, forensic-grade audit trails</strong>
+        for every AI decision. It directly addresses Articles 9, 12, 13, and 14.
+      </p>
+      <ul class="features">
+        <li>
+          <strong>Art. 12 — Automatic Logging</strong>
+          Every AI interaction recorded in an immutable, Merkle-signed audit ledger with SHA-256 integrity
+        </li>
+        <li>
+          <strong>Art. 14 — Human Oversight</strong>
+          Multi-agent deliberation with documented human review, veto capability, and timestamped supervision chain
+        </li>
+        <li>
+          <strong>Art. 9 — Risk Management</strong>
+          CendiaRedTeam adversarial analysis + CendiaGapScan compliance gap scanner across 8 regulatory frameworks
+        </li>
+        <li>
+          <strong>Art. 13 — Transparency</strong>
+          CendiaVerify public verification portal — any third party can independently verify a decision's integrity
+        </li>
+        <li>
+          <strong>Art. 11 — Technical Docs</strong>
+          Decision packets with full agent reasoning, dissents, evidence chains, and cryptographic signatures
+        </li>
+        <li>
+          <strong>SIEM Integration</strong>
+          Forward security events to Splunk, Datadog, Sentinel, or ELK for enterprise monitoring
+        </li>
+      </ul>
+      <p style="color:var(--text-muted);font-size:.85rem;">
+        Apache 2.0 open source. Runs on-premise, air-gapped. No cloud dependency.
+        Works with any LLM — Ollama, OpenAI, NVIDIA Triton/NIM.
+      </p>
+    </div>
+
+    <h2>How It Works — 3 Steps</h2>
+    <ul class="checklist">
+      <li>
+        <div class="icon icon-gold">1</div>
+        <div><strong>Deploy Datacendia alongside your AI systems</strong> — CendiaGateway sits between employees and AI providers. Every interaction is logged, PII-scanned, and policy-enforced. 60-second Docker deployment.</div>
+      </li>
+      <li>
+        <div class="icon icon-gold">2</div>
+        <div><strong>AI decisions go through The Council</strong> — Multi-agent deliberation produces documented reasoning, dissent analysis, and risk assessment. Human oversight is built in, not bolted on.</div>
+      </li>
+      <li>
+        <div class="icon icon-gold">3</div>
+        <div><strong>Generate compliance evidence on demand</strong> — Regulator's Receipts, evidence packages (ZIP + standalone HTML verifier), and compliance gap reports ready for Art. 12 audit requests.</div>
+      </li>
+    </ul>
+
+    <h2>Who This Is For</h2>
+    <p>Organizations deploying AI in EU-regulated high-risk categories (Annex III):</p>
+    <ul class="checklist">
+      <li><div class="icon icon-gold">€</div><div><strong>Financial institutions</strong> — Credit scoring, fraud detection, algorithmic trading, insurance pricing</div></li>
+      <li><div class="icon icon-gold">⚖</div><div><strong>Law firms</strong> — AI-assisted legal research, contract analysis, litigation support</div></li>
+      <li><div class="icon icon-gold">🏥</div><div><strong>Healthcare</strong> — Clinical decision support, medical device AI (SaMD), insurance claims</div></li>
+      <li><div class="icon icon-gold">🏛</div><div><strong>Public sector</strong> — Benefits administration, immigration, law enforcement support tools</div></li>
+    </ul>
+
+    <div class="cta">
+      <h2>See It Working — 15 Minutes</h2>
+      <p>We'll walk through a live demo showing how Datacendia produces Art. 12-compliant audit trails for your specific AI use case. No pitch deck — just the product.</p>
+      <a href="https://datacendia.com/briefing.html" class="btn btn-gold">Request a Briefing →</a>
+      <p style="font-size:.8rem;color:var(--text-muted);margin-top:16px;margin-bottom:0;">
+        Or try it yourself: <a href="https://app.datacendia.com">app.datacendia.com</a> — no signup required
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>
+      <a href="https://datacendia.com">Datacendia</a> · 
+      <a href="https://github.com/datacendia/datacendia-core">Open Source (Apache 2.0)</a> · 
+      <a href="mailto:enterprise@datacendia.com">enterprise@datacendia.com</a>
+    </p>
+    <p style="margin-top:8px;">
+      EU AI Act references: Regulation (EU) 2024/1689. Enforcement dates per Art. 113.
+      This page is informational and does not constitute legal advice.
+    </p>
+  </div>
+
+  <script>
+    // Calculate days until August 2, 2026
+    const target = new Date('2026-08-02T00:00:00Z');
+    const now = new Date();
+    const diffMs = target - now;
+    const diffDays = Math.max(0, Math.ceil(diffMs / (1000 * 60 * 60 * 24)));
+    const el = document.getElementById('countdown-days');
+    if (diffDays > 0) {
+      el.textContent = diffDays + ' days remaining';
+    } else {
+      el.textContent = 'ENFORCEMENT IS LIVE';
+      el.style.background = 'rgba(239,68,68,.3)';
+    }
+  </script>
+
+</body>
+</html>
