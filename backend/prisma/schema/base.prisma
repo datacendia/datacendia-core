@@ -140,6 +140,10 @@ model organizations {
 
   // SSO - Enterprise Single Sign-On
   sso_identity_providers          sso_identity_providers[]
+
+  // Policy Authoring
+  policy_definitions              policy_definitions[]
+  policy_templates                policy_templates[]
 }
 
 model password_resets {

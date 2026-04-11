@@ -1,5 +1,165 @@
 // Governance Domain - Compliance, Panopticon, Regulatory, Ethics
 
+// =============================================================================
+// Enums
+// =============================================================================
+
+enum ApprovalType {
+  DELIBERATION
+  WORKFLOW
+  POLICY
+  OVERRIDE
+}
+
+enum ApprovalStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  EXPIRED
+}
+
+enum PanopticonRegulationStatus {
+  ACTIVE
+  DRAFT
+  SUPERSEDED
+  ARCHIVED
+}
+
+enum PanopticonRequirementType {
+  MANDATORY
+  RECOMMENDED
+  OPTIONAL
+  INFORMATIONAL
+}
+
+enum PanopticonPriority {
+  CRITICAL
+  HIGH
+  MEDIUM
+  LOW
+}
+
+enum PanopticonAutomationStatus {
+  MANUAL
+  PARTIAL
+  AUTOMATED
+  MONITORING
+}
+
+enum PanopticonViolationType {
+  NON_COMPLIANCE
+  BREACH
+  NEAR_MISS
+  OVERDUE
+  POLICY_CONFLICT
+}
+
+enum PanopticonViolationStatus {
+  OPEN
+  INVESTIGATING
+  REMEDIATED
+  ACCEPTED_RISK
+  CLOSED
+}
+
+enum PanopticonForecastType {
+  NEW_REGULATION
+  AMENDMENT
+  ENFORCEMENT_ACTION
+  INDUSTRY_TREND
+  COURT_RULING
+}
+
+enum EthicsCategory {
+  FAIRNESS
+  TRANSPARENCY
+  PRIVACY
+  ACCOUNTABILITY
+  SAFETY
+  HUMAN_OVERSIGHT
+}
+
+enum PrincipleStatus {
+  ACTIVE
+  DRAFT
+  DEPRECATED
+  UNDER_REVIEW
+}
+
+enum ReviewStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum ReviewResult {
+  PASS
+  FAIL
+  CONDITIONAL
+  NEEDS_REVIEW
+}
+
+enum BiasCheckStatus {
+  PENDING
+  RUNNING
+  COMPLETED
+  FAILED
+}
+
+enum RegulatoryDocStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+  ARCHIVED
+}
+
+enum RegulatoryReviewStatus {
+  DRAFT
+  PENDING_REVIEW
+  APPROVED
+  REJECTED
+  SUPERSEDED
+}
+
+enum RegulatorySeverity {
+  CRITICAL
+  HIGH
+  MEDIUM
+  LOW
+  INFORMATIONAL
+}
+
+enum TriggerType {
+  MANUAL
+  AUTOMATIC
+  SCHEDULED
+  EVENT_DRIVEN
+}
+
+enum ConstraintType {
+  BLOCKING
+  ADVISORY
+  INFORMATIONAL
+  CONDITIONAL
+}
+
+enum ConflictType {
+  DIRECT
+  POTENTIAL
+  JURISDICTIONAL
+  TEMPORAL
+}
+
+enum ConflictResolution {
+  UNRESOLVED
+  RESOLVED
+  ESCALATED
+  ACCEPTED
+  WAIVED
+}
+
 model approvals {
   id                  String              @id
   organization_id     String
