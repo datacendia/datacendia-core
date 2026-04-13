@@ -14,6 +14,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Shield, CheckCircle, Loader2 } from 'lucide-react';
+import DOMPurify from 'dompurify';
 
 interface CendiaStampSealProps {
   receiptHash: string;
@@ -52,7 +53,7 @@ export const CendiaStampSeal: React.FC<CendiaStampSealProps> = ({
         if (res.ok) {
           const svg = await res.text();
           if (svg.includes('<svg')) {
-            setSvgContent(svg);
+            setSvgContent(DOMPurify.sanitize(svg, { USE_PROFILES: { svg: true, svgFilters: true } }));
           } else {
             setUseFallback(true);
           }

@@ -30,6 +30,13 @@ const router = Router();
 router.use(devAuth);
 router.use(requireRole('ADMIN', 'SUPER_ADMIN'));
 
+// Infrastructure-critical secrets that must NEVER be read or written via API
+const BLOCKED_KEYS = new Set([
+  'DATABASE_URL', 'REDIS_URL', 'REDIS_PASSWORD', 'JWT_SECRET', 'JWT_REFRESH_SECRET',
+  'ENCRYPTION_KEY', 'SESSION_SECRET', 'NEO4J_PASSWORD', 'KEYCLOAK_CLIENT_SECRET',
+  'STRIPE_SECRET_KEY', 'STRIPE_WEBHOOK_SECRET',
+]);
+
 // =============================================================================
 // TYPES
 // =============================================================================
@@ -444,6 +451,13 @@ router.put('/', async (req: Request, res: Response, next: NextFunction) => {
     if (invalidKeys.length > 0) {
       throw errors.badRequest(`Invalid setting keys: ${invalidKeys.join(', ')}`);
     }
+
+    // Block writes to infrastructure-critical secrets
+    const blockedAttempts = Object.keys(settings).filter(k => BLOCKED_KEYS.has(k));
+    if (blockedAttempts.length > 0) {
+      logger.warn('Blocked admin API write attempt for infrastructure secrets', { keys: blockedAttempts, userId: req.user?.id });
+      throw errors.forbidden(`Cannot modify infrastructure secrets via API: ${blockedAttempts.join(', ')}. Use environment variables or a secrets manager.`);
+    }
     
     // Read current env
     const currentEnv = await readEnvFile();
@@ -519,6 +533,12 @@ router.put('/:key', async (req: Request, res: Response, next: NextFunction) => {
     
     if (!setting) {
       throw errors.badRequest(`Unknown setting key: ${key}`);
+    }
+
+    // Block writes to infrastructure-critical secrets
+    if (BLOCKED_KEYS.has(key)) {
+      logger.warn('Blocked admin API write attempt for infrastructure secret', { key, userId: req.user?.id });
+      throw errors.forbidden(`Cannot modify ${key} via API. Use environment variables or a secrets manager.`);
     }
     
     // Don't update if value is masked
@@ -721,6 +741,9 @@ router.get('/env', async (req: Request, res: Response, next: NextFunction) => {
         .flatMap(c => c.settings)
         .find(s => s.key === key);
       
+      if (BLOCKED_KEYS.has(key)) {
+        return `${key}=••••••••[REDACTED]••••••••`;
+      }
       if (setting?.sensitive && value) {
         return `${key}=${maskSensitiveValue(value)}`;
       }

@@ -29,6 +29,12 @@ const __dirname = path.dirname(__filename);
 
 const ENV_PATH = path.resolve(__dirname, '../../../.env');
 
+/** Mask a sensitive value, showing only first/last 2 chars */
+function maskValue(val: string): string {
+  if (!val || val.length < 6) return '••••••••';
+  return val.substring(0, 2) + '••••••••' + val.substring(val.length - 2);
+}
+
 /**
  * Parse .env file into key-value pairs
  */
@@ -119,7 +125,7 @@ router.get('/', async (_req: Request, res: Response) => {
     // Build structured response
     const variables = Object.entries(vars).map(([key, value]) => ({
       key,
-      value,
+      value: isSensitive(key) ? maskValue(value) : value,
       category: getCategoryForKey(key),
       description: getDescriptionForKey(key),
       required: isRequired(key),
@@ -244,9 +250,20 @@ router.get('/download', async (_req: Request, res: Response) => {
       });
     }
     
+    const raw = fs.readFileSync(ENV_PATH, 'utf8');
+    const masked = raw.split('\n').map(line => {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) return line;
+      const eqIdx = trimmed.indexOf('=');
+      if (eqIdx === -1) return line;
+      const k = trimmed.substring(0, eqIdx).trim();
+      const v = trimmed.substring(eqIdx + 1).trim();
+      if (isSensitive(k) && v) return `${k}=${maskValue(v)}`;
+      return line;
+    }).join('\n');
     res.setHeader('Content-Type', 'text/plain');
     res.setHeader('Content-Disposition', 'attachment; filename=".env"');
-    res.sendFile(ENV_PATH);
+    res.send(masked);
   } catch (error) {
     logger.error('Error downloading .env:', error);
     res.status(500).json({

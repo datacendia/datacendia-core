@@ -228,27 +228,9 @@ export const devAuth = async (
       return next();
     }
   } catch (dbError) {
-    logger.warn('Dev auth: DB lookup failed, falling back to hardcoded dev user', { error: dbError instanceof Error ? dbError.message : String(dbError) });
+    logger.error('Dev auth: DB lookup failed — no hardcoded fallback. Seed the database first.', { error: dbError instanceof Error ? dbError.message : String(dbError) });
+    throw errors.unauthorized('Dev auth bypass requires a seeded database with at least one admin user. Run: npx prisma db seed');
   }
-
-  req.user = {
-    id: 'dev-user-id',
-    email: 'dev@datacendia.com',
-    name: 'Dev User',
-    role: 'ADMIN',
-    organizationId: 'dev-org-id',
-    status: 'ACTIVE',
-    createdAt: null,
-    updatedAt: null,
-    organization: {
-      id: 'dev-org-id',
-      name: 'Dev Organization',
-      slug: 'dev',
-    },
-    preferences: {},
-  } as any;
-  req.organizationId = 'dev-org-id';
-  return next();
 };
 
 /**

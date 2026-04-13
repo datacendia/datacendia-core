@@ -112,7 +112,7 @@ export function initKeycloak(): Keycloak.Keycloak {
  */
 export function getSessionMiddleware() {
   return session({
-    secret: (() => { const s = process.env.SESSION_SECRET; if (!s && process.env.NODE_ENV === 'production') { throw new Error('SESSION_SECRET must be set in production'); } return s || 'dev-only-session-secret'; })(),
+    secret: (() => { const s = process.env.SESSION_SECRET; if (!s && process.env.NODE_ENV !== 'test') { throw new Error('SESSION_SECRET must be set. Generate one: node -e "console.log(require(\'crypto\').randomBytes(32).toString(\'hex\'))"'); } return s || 'test-only-session-secret'; })(),
     resave: false,
     saveUninitialized: false,
     store: memoryStore,
