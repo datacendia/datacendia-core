@@ -21,7 +21,8 @@ export interface ConstraintType { [key: string]: any; }
 
 export interface InstitutionalState { [key: string]: any; }
 
-export const collapseOrchestrator: any = withFallback({});
+export { collapseOrchestrator } from './CollapseOrchestrator.js';
+export type { PolicyContext, FailureEnvelope, DualTrackDeliberation, CollapseConfig } from './CollapseOrchestrator.js';
 
 export const config: any = withFallback({});
 
