@@ -70,6 +70,7 @@ class IISSServiceImpl {
     const seed = `iiss-${organizationId}-${Date.now()}`;
     const id = `iiss-${crypto.randomUUID().slice(0, 8)}`;
 
+    const localAssessments: Assessment[] = [];
     const dimensions: DimensionScore[] = DIMENSIONS.map(dim => {
       const score = deterministicPercentage(65, 20, seed, dim.id);
       const assessmentId = `assess-${crypto.randomUUID().slice(0, 8)}`;
@@ -81,6 +82,7 @@ class IISSServiceImpl {
         timestamp: new Date().toISOString(),
       };
       this.assessments.set(assessmentId, assessment);
+      localAssessments.push(assessment);
 
       return {
         id: dim.id,
@@ -107,9 +109,7 @@ class IISSServiceImpl {
       overallScore,
       band,
       dimensions,
-      assessments: dimensions.map(d => this.assessments.get(
-        [...this.assessments.values()].find(a => a.dimensionId === d.id)?.id || ''
-      )!).filter(Boolean),
+      assessments: localAssessments,
       generatedAt: new Date().toISOString(),
       generatedBy: initiatedBy,
     };

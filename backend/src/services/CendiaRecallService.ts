@@ -17,6 +17,8 @@ interface OutcomeTracker {
   actualOutcomes: Array<{ metric: string; actualValue: number; unit: string; recordedAt: string }>;
   actualROI?: number;
   status: 'active' | 'verified' | 'closed';
+  verifiedBy?: string;
+  decisionType?: string;
   trackedBy: string;
   lessonsLearned: string[];
   createdAt: string;
@@ -50,6 +52,7 @@ class CendiaRecallServiceImpl {
         unit: p.unit || '', confidence: p.confidence || 0.5,
       })),
       actualOutcomes: [], status: 'active', trackedBy,
+      decisionType: options?.decisionType,
       lessonsLearned: [], createdAt: new Date().toISOString(),
     };
     this.trackers.set(id, tracker);
@@ -66,30 +69,31 @@ class CendiaRecallServiceImpl {
 
   async getOutcome(id: string): Promise<OutcomeTracker | undefined> { return this.trackers.get(id); }
 
-  async recordActualOutcome(id: string, data: { metric: string; actualValue: number; unit: string; recordedBy: string }) {
+  async recordActualOutcome(orgId: string, id: string, data: { metric: string; actualValue: number; unit: string; recordedBy: string }) {
     const tracker = this.trackers.get(id);
-    if (!tracker) throw new Error(`Tracker ${id} not found`);
+    if (!tracker || tracker.organizationId !== orgId) throw new Error(`Tracker ${id} not found`);
     tracker.actualOutcomes.push({ metric: data.metric, actualValue: data.actualValue, unit: data.unit, recordedAt: new Date().toISOString() });
     return tracker;
   }
 
-  async recordActualROI(id: string, actualROI: number) {
+  async recordActualROI(orgId: string, id: string, actualROI: number) {
     const tracker = this.trackers.get(id);
-    if (!tracker) throw new Error(`Tracker ${id} not found`);
+    if (!tracker || tracker.organizationId !== orgId) throw new Error(`Tracker ${id} not found`);
     tracker.actualROI = actualROI;
     return tracker;
   }
 
-  async verifyOutcome(id: string, verifiedBy: string) {
+  async verifyOutcome(orgId: string, id: string, verifiedBy: string) {
     const tracker = this.trackers.get(id);
-    if (!tracker) throw new Error(`Tracker ${id} not found`);
+    if (!tracker || tracker.organizationId !== orgId) throw new Error(`Tracker ${id} not found`);
     tracker.status = 'verified';
+    tracker.verifiedBy = verifiedBy;
     return tracker;
   }
 
-  async closeOutcome(id: string, lessonsLearned: string[]) {
+  async closeOutcome(orgId: string, id: string, lessonsLearned: string[]) {
     const tracker = this.trackers.get(id);
-    if (!tracker) throw new Error(`Tracker ${id} not found`);
+    if (!tracker || tracker.organizationId !== orgId) throw new Error(`Tracker ${id} not found`);
     tracker.status = 'closed';
     tracker.lessonsLearned = lessonsLearned;
     for (const content of lessonsLearned) {

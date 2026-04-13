@@ -47,6 +47,14 @@ interface AuthenticityAssessment {
 
 class SyntheticMediaAuthServiceImpl {
   private assets = new Map<string, MediaAsset>();
+  private privateKey: crypto.KeyObject;
+  private publicKey: crypto.KeyObject;
+
+  constructor() {
+    const keyPair = crypto.generateKeyPairSync('ed25519');
+    this.privateKey = keyPair.privateKey;
+    this.publicKey = keyPair.publicKey;
+  }
 
   async signMedia(
     organizationId: string, fileName: string, mediaType: string,
@@ -55,7 +63,7 @@ class SyntheticMediaAuthServiceImpl {
   ): Promise<MediaAsset> {
     const id = `media-${crypto.randomUUID().slice(0, 8)}`;
     const contentHash = crypto.createHash('sha256').update(content).digest('hex');
-    const signature = crypto.createHash('sha256').update(`${id}|${contentHash}|${createdBy}`).digest('hex');
+    const signature = crypto.sign(null, Buffer.from(`${id}|${contentHash}|${createdBy}`), this.privateKey).toString('hex');
 
     const asset: MediaAsset = {
       id, organizationId, fileName, mediaType, mimeType, contentHash, signature,
@@ -76,7 +84,7 @@ class SyntheticMediaAuthServiceImpl {
     const asset = this.assets.get(assetId);
     if (!asset) throw new Error(`Asset ${assetId} not found`);
 
-    const seed = `auth-${assetId}-${Date.now()}`;
+    const seed = `auth-${assetId}-${asset.contentHash}`;
     const checks = [
       { name: 'Provenance Chain', passed: true, confidence: 99, details: 'C2PA provenance signature valid' },
       { name: 'Content Integrity', passed: true, confidence: 98, details: 'Content hash matches signed manifest' },
@@ -130,11 +138,12 @@ class SyntheticMediaAuthServiceImpl {
   addCustodyEntry(assetId: string, action: string, actor: string, actorRole: string, details: string, ipAddress?: string): CustodyEntry | null {
     const asset = this.assets.get(assetId);
     if (!asset) return null;
+    const ts = new Date().toISOString();
     const entry: CustodyEntry = {
       id: `cust-${crypto.randomUUID().slice(0, 8)}`,
       action, actor, actorRole, details, ipAddress,
-      timestamp: new Date().toISOString(),
-      hash: crypto.createHash('sha256').update(`${action}|${actor}|${assetId}|${Date.now()}`).digest('hex'),
+      timestamp: ts,
+      hash: crypto.createHash('sha256').update(`${action}|${actor}|${assetId}|${ts}`).digest('hex'),
     };
     asset.custodyChain.push(entry);
     return entry;

@@ -290,6 +290,7 @@ const COLLAPSE_AGENTS: CollapseAgentDescription[] = [
 // =============================================================================
 
 class CollapseOrchestrator {
+  private static readonly MAX_CACHE_SIZE = 1000;
   private deliberations = new Map<string, DualTrackDeliberation>();
   private envelopes = new Map<string, FailureEnvelope>();
   private config: CollapseConfig = {
@@ -302,6 +303,13 @@ class CollapseOrchestrator {
 
   constructor() {
     logger.info(`🔴 CendiaCOLLAPSE: Initialized with ${COLLAPSE_AGENTS.length} adversarial agents`);
+  }
+
+  private evictIfNeeded(map: Map<string, any>, maxSize = CollapseOrchestrator.MAX_CACHE_SIZE) {
+    if (map.size > maxSize) {
+      const keysToDelete = [...map.keys()].slice(0, map.size - maxSize);
+      keysToDelete.forEach(k => map.delete(k));
+    }
   }
 
   // ---------------------------------------------------------------------------
@@ -365,6 +373,8 @@ class CollapseOrchestrator {
 
     this.deliberations.set(deliberationId, deliberation);
     this.envelopes.set(collapseTrack.failureEnvelope.id, collapseTrack.failureEnvelope);
+    this.evictIfNeeded(this.deliberations);
+    this.evictIfNeeded(this.envelopes);
 
     logger.info(`CendiaCOLLAPSE: Deliberation ${deliberationId} complete — Trust Δ: ${trustDelta.trustDelta.toFixed(3)}, Recommendation: ${trustDelta.deploymentRecommendation}`);
 
@@ -408,9 +418,9 @@ class CollapseOrchestrator {
 
     return {
       confidence: Math.round(avgConfidence * 100) / 100,
-      recommendation: approvalRate >= 0.6 ? 'APPROVE' : 'CONDITIONAL_APPROVE',
+      recommendation: (avgConfidence >= requiredConfidence && approvalRate >= 0.6) ? 'APPROVE' : 'CONDITIONAL_APPROVE',
       agentVotes: votes,
-      synthesisNarrative: `Council reached ${approvalRate >= 0.6 ? 'majority approval' : 'conditional consensus'} with ${avgConfidence.toFixed(1)}% average confidence. ${votes.filter(v => v.vote !== 'APPROVE').length} agent(s) expressed reservations regarding ${ctx.policyDomain} impact on ${ctx.targetPopulation.toLocaleString()} affected individuals.`,
+      synthesisNarrative: `Council reached ${(avgConfidence >= requiredConfidence && approvalRate >= 0.6) ? 'majority approval' : 'conditional consensus'} with ${avgConfidence.toFixed(1)}% average confidence. ${votes.filter(v => v.vote !== 'APPROVE').length} agent(s) expressed reservations regarding ${ctx.policyDomain} impact on ${ctx.targetPopulation.toLocaleString()} affected individuals.`,
     };
   }
 

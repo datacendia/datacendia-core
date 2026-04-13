@@ -100,16 +100,16 @@ class CendiaAegisServiceImpl {
     return [...this.threats.values()].filter(t => t.organizationId === orgId && t.status === 'active');
   }
 
-  async updateThreatStatus(threatId: string, status: string): Promise<Threat> {
+  async updateThreatStatus(orgId: string, threatId: string, status: string): Promise<Threat> {
     const threat = this.threats.get(threatId);
-    if (!threat) throw new Error(`Threat ${threatId} not found`);
+    if (!threat || threat.organizationId !== orgId) throw new Error(`Threat ${threatId} not found`);
     threat.status = status;
     return threat;
   }
 
-  async generateScenarios(threatId: string): Promise<any[]> {
+  async generateScenarios(orgId: string, threatId: string): Promise<any[]> {
     const threat = this.threats.get(threatId);
-    if (!threat) throw new Error(`Threat ${threatId} not found`);
+    if (!threat || threat.organizationId !== orgId) throw new Error(`Threat ${threatId} not found`);
     const seed = `scenario-${threatId}`;
     const scenarios = Array.from({ length: 3 }, (_, i) => ({
       id: `scn-${crypto.randomUUID().slice(0, 8)}`,
@@ -126,9 +126,9 @@ class CendiaAegisServiceImpl {
     return this.threats.get(threatId)?.scenarios || [];
   }
 
-  async generateCountermeasures(threatId: string): Promise<any[]> {
+  async generateCountermeasures(orgId: string, threatId: string): Promise<any[]> {
     const threat = this.threats.get(threatId);
-    if (!threat) throw new Error(`Threat ${threatId} not found`);
+    if (!threat || threat.organizationId !== orgId) throw new Error(`Threat ${threatId} not found`);
     const seed = `cm-${threatId}`;
     const cms = Array.from({ length: 3 }, (_, i) => {
       const cm = {
@@ -149,9 +149,11 @@ class CendiaAegisServiceImpl {
     return this.threats.get(threatId)?.countermeasures || [];
   }
 
-  async implementCountermeasure(cmId: string): Promise<any> {
+  async implementCountermeasure(orgId: string, cmId: string): Promise<any> {
     const cm = this.countermeasures.get(cmId);
     if (!cm) throw new Error(`Countermeasure ${cmId} not found`);
+    const threat = this.threats.get(cm.threatId);
+    if (!threat || threat.organizationId !== orgId) throw new Error(`Countermeasure ${cmId} not found`);
     cm.status = 'implemented';
     cm.implementedAt = new Date().toISOString();
     return cm;
@@ -182,7 +184,7 @@ class CendiaAegisServiceImpl {
     const threatCount = deterministicInt(1, 5, seed, 'count');
 
     const activeThreats = Array.from({ length: threatCount }, (_, i) => ({
-      id: threatId || `threat-${crypto.randomUUID().slice(0, 8)}`,
+      id: (i === 0 && threatId) ? threatId : `threat-${crypto.randomUUID().slice(0, 8)}`,
       name: deterministicPick([
         'Suspicious API access pattern', 'Credential stuffing attempt',
         'Data exfiltration indicator', 'Anomalous privilege escalation',

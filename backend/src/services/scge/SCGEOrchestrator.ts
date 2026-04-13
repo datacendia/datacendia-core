@@ -419,11 +419,17 @@ class SyntheticPopulationService {
           suburban: deterministicPercentage(35, 10, s, 'geo-suburban', params.mobilityConstraintLevel),
           rural: deterministicPercentage(20, 10, s, 'geo-rural', params.mobilityConstraintLevel),
         },
-        employment: {
-          employed: deterministicPercentage(60, 12, s, 'emp-employed', params.resourceScarcityLevel),
-          unemployed: deterministicPercentage(8, 4, s, 'emp-unemployed', params.resourceScarcityLevel),
-          informal: deterministicPercentage(15, 8, s, 'emp-informal', params.resourceScarcityLevel),
-        },
+        employment: (() => {
+          const emp = deterministicPercentage(60, 12, s, 'emp-employed', params.resourceScarcityLevel);
+          const unemp = deterministicPercentage(8, 4, s, 'emp-unemployed', params.resourceScarcityLevel);
+          const inf = deterministicPercentage(15, 8, s, 'emp-informal', params.resourceScarcityLevel);
+          const total = emp + unemp + inf;
+          return {
+            employed: Math.round(emp / total * 100 * 10) / 10,
+            unemployed: Math.round(unemp / total * 100 * 10) / 10,
+            informal: Math.round(inf / total * 100 * 10) / 10,
+          };
+        })(),
       },
       generationSeed: seed,
       hash: crypto.createHash('sha256').update(JSON.stringify({ params, seed })).digest('hex'),
@@ -602,7 +608,9 @@ class StressorLibraryService {
     const selected: Array<Stressor & { startTime: number }> = [];
 
     for (let i = 0; i < Math.min(count, available.length); i++) {
-      const stressor = deterministicPick(available, s, `pick-${i}`);
+      const idx = deterministicInt(0, available.length - 1, s, `pick-${i}`);
+      const stressor = available[idx]!;
+      available.splice(idx, 1);
       selected.push({
         ...stressor,
         startTime: deterministicInt(0, Math.max(0, maxDuration - stressor.duration), s, `start-${i}`),
@@ -748,11 +756,17 @@ class SCGEOrchestrator {
         trustDelta: Math.round(trustDelta * 1000) / 1000,
         outcomeVariance: Math.round(outcomeVariance * 1000) / 1000,
         biasIndicators,
-        populationImpact: {
-          positivelyAffected: Math.round(popSize * deterministicFloat(s, 'pos') * 0.5),
-          negativelyAffected: Math.round(popSize * deterministicFloat(s, 'neg') * 0.3),
-          neutral: Math.round(popSize * deterministicFloat(s, 'neu') * 0.2),
-        },
+        populationImpact: (() => {
+          const rawPos = deterministicFloat(s, 'pos') * 0.5;
+          const rawNeg = deterministicFloat(s, 'neg') * 0.3;
+          const rawNeu = deterministicFloat(s, 'neu') * 0.2;
+          const total = rawPos + rawNeg + rawNeu;
+          return {
+            positivelyAffected: Math.round(popSize * rawPos / total),
+            negativelyAffected: Math.round(popSize * rawNeg / total),
+            neutral: popSize - Math.round(popSize * rawPos / total) - Math.round(popSize * rawNeg / total),
+          };
+        })(),
       },
       auditPacket,
       replayBundle: {

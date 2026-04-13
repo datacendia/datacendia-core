@@ -103,7 +103,12 @@ class CendiaVoxServiceImpl {
   async updateStakeholder(id: string, updates: Partial<Stakeholder>): Promise<Stakeholder> {
     const s = this.stakeholders.get(id);
     if (!s) throw new Error(`Stakeholder ${id} not found`);
-    Object.assign(s, updates);
+    const { name, role, influence, sentiment, engagementScore } = updates;
+    if (name !== undefined) s.name = name;
+    if (role !== undefined) s.role = role;
+    if (influence !== undefined) s.influence = influence;
+    if (sentiment !== undefined) s.sentiment = sentiment;
+    if (engagementScore !== undefined) s.engagementScore = engagementScore;
     return s;
   }
 
@@ -113,7 +118,7 @@ class CendiaVoxServiceImpl {
     const signal: Signal = {
       id: `sig-${crypto.randomUUID().slice(0, 8)}`,
       stakeholderId, type: data.type || 'feedback',
-      content: data.content || '', sentiment: data.sentiment || 0.5,
+      content: data.content || '', sentiment: data.sentiment ?? 0.5,
       urgency: data.urgency || 'medium', createdAt: new Date().toISOString(),
     };
     stakeholder.signals.push(signal);

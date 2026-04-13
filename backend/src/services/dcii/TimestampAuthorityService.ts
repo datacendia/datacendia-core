@@ -102,7 +102,7 @@ class TimestampAuthorityServiceImpl {
     if (!token) throw new Error(`Token ${tokenId} not found`);
 
     const expectedSig = crypto.createHash('sha256')
-      .update(`${token.id}|${token.dataHash}|${token.timestamp}|${token.serialNumber.replace('SN-', '')}`)
+      .update(`${token.id}|${token.dataHash}|${token.timestamp}|${parseInt(token.serialNumber.replace('SN-', ''), 10)}`)
       .digest('hex');
 
     const valid = expectedSig === token.signature;

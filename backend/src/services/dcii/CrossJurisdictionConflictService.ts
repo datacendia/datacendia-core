@@ -68,9 +68,10 @@ class CrossJurisdictionConflictServiceImpl {
   private assessments = new Map<string, JurisdictionAssessment>();
   private conflicts = new Map<string, Conflict>();
   private evidencePackets = new Map<string, EvidencePacket>();
+  private goodFaithDocuments = new Map<string, GoodFaithDocument>();
 
   async assessOrganization(orgId: string, orgName: string, jurisdictions: string[], assessedBy: string): Promise<JurisdictionAssessment> {
-    const seed = `jurisdiction-${orgId}-${Date.now()}`;
+    const seed = `jurisdiction-${orgId}-${jurisdictions.sort().join(',')}`;
     const id = `ja-${crypto.randomUUID().slice(0, 8)}`;
     const detectedConflicts: Conflict[] = [];
 
@@ -153,8 +154,9 @@ class CrossJurisdictionConflictServiceImpl {
         'Monitoring program established for regulatory updates',
       ],
       signedBy, signedAt: new Date().toISOString(),
-      hash: crypto.createHash('sha256').update(`gfd|${conflictId}|${signedBy}|${Date.now()}`).digest('hex'),
+      hash: crypto.createHash('sha256').update(`gfd|${conflictId}|${signedBy}|${doc.signedAt}`).digest('hex'),
     };
+    this.goodFaithDocuments.set(doc.id, doc);
     return doc;
   }
 

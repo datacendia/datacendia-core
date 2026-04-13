@@ -90,9 +90,9 @@ class CendiaEternalServiceImpl {
 
   async getArtifact(id: string): Promise<Artifact | undefined> { return this.artifacts.get(id); }
 
-  async verifyArtifact(artifactId: string, userId: string, validationType?: string): Promise<Validation> {
+  async verifyArtifact(orgId: string, artifactId: string, userId: string, validationType?: string): Promise<Validation> {
     const artifact = this.artifacts.get(artifactId);
-    if (!artifact) throw new Error(`Artifact ${artifactId} not found`);
+    if (!artifact || artifact.organizationId !== orgId) throw new Error(`Artifact ${artifactId} not found`);
     const validation: Validation = {
       id: `val-${crypto.randomUUID().slice(0, 8)}`,
       artifactId, validationType: validationType || 'integrity',
@@ -108,9 +108,9 @@ class CendiaEternalServiceImpl {
     return artifact ? artifact.validations : [];
   }
 
-  async correctArtifact(artifactId: string, correctedContent: string, userId: string): Promise<Artifact> {
+  async correctArtifact(orgId: string, artifactId: string, correctedContent: string, userId: string): Promise<Artifact> {
     const artifact = this.artifacts.get(artifactId);
-    if (!artifact) throw new Error(`Artifact ${artifactId} not found`);
+    if (!artifact || artifact.organizationId !== orgId) throw new Error(`Artifact ${artifactId} not found`);
     artifact.content = correctedContent;
     artifact.version++;
     artifact.updatedAt = new Date().toISOString();
@@ -151,9 +151,9 @@ class CendiaEternalServiceImpl {
     return [...this.successors.values()].filter(s => s.organizationId === orgId);
   }
 
-  async activateSuccessor(id: string): Promise<Successor> {
+  async activateSuccessor(orgId: string, id: string): Promise<Successor> {
     const successor = this.successors.get(id);
-    if (!successor) throw new Error(`Successor ${id} not found`);
+    if (!successor || successor.organizationId !== orgId) throw new Error(`Successor ${id} not found`);
     successor.status = 'active';
     return successor;
   }

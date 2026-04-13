@@ -55,7 +55,7 @@ class CendiaSymbiontServiceImpl {
       name: data.name || 'Unnamed Entity',
       entityType: data.entityType || 'agent',
       domain: data.domain || 'general',
-      health: data.health || deterministicPercentage(75, 15, `health-${id}`),
+      health: data.health ?? deterministicPercentage(75, 15, `health-${id}`),
       metadata: data.metadata || {},
       createdAt: new Date().toISOString(),
     };
@@ -73,8 +73,8 @@ class CendiaSymbiontServiceImpl {
 
   async detectOpportunities(orgId: string, entityId: string): Promise<Opportunity[]> {
     const entity = this.entities.get(entityId);
-    if (!entity) throw new Error(`Entity ${entityId} not found`);
-    const seed = `opp-${entityId}-${Date.now()}`;
+    if (!entity || entity.organizationId !== orgId) throw new Error(`Entity ${entityId} not found`);
+    const seed = `opp-${orgId}-${entityId}`;
     const types = ['optimization', 'collaboration', 'risk-reduction', 'automation', 'knowledge-transfer'];
     const detected: Opportunity[] = [];
     for (let i = 0; i < 3; i++) {
@@ -101,17 +101,17 @@ class CendiaSymbiontServiceImpl {
     return results;
   }
 
-  async updateOpportunityStatus(oppId: string, status: string): Promise<Opportunity> {
+  async updateOpportunityStatus(orgId: string, oppId: string, status: string): Promise<Opportunity> {
     const opp = this.opportunities.get(oppId);
-    if (!opp) throw new Error(`Opportunity ${oppId} not found`);
+    if (!opp || opp.organizationId !== orgId) throw new Error(`Opportunity ${oppId} not found`);
     opp.status = status;
     return opp;
   }
 
-  async simulateAlliance(oppId: string, simulationType?: string) {
+  async simulateAlliance(orgId: string, oppId: string, simulationType?: string) {
     const opp = this.opportunities.get(oppId);
-    if (!opp) throw new Error(`Opportunity ${oppId} not found`);
-    const seed = `alliance-${oppId}-${Date.now()}`;
+    if (!opp || opp.organizationId !== orgId) throw new Error(`Opportunity ${oppId} not found`);
+    const seed = `alliance-${orgId}-${oppId}`;
     const sim = {
       id: `asim-${crypto.randomUUID().slice(0, 8)}`,
       opportunityId: oppId, simulationType: simulationType || 'partnership',
@@ -125,7 +125,9 @@ class CendiaSymbiontServiceImpl {
     return sim;
   }
 
-  async getSimulations(oppId: string): Promise<any[]> {
+  async getSimulations(orgId: string, oppId: string): Promise<any[]> {
+    const opp = this.opportunities.get(oppId);
+    if (opp && opp.organizationId !== orgId) throw new Error(`Opportunity ${oppId} not found`);
     return this.allianceSimulations.get(oppId) || [];
   }
 
@@ -133,9 +135,9 @@ class CendiaSymbiontServiceImpl {
     return this.addRelationship(orgId, { sourceId: entityId, targetId: relatedEntityId, type: relationshipType });
   }
 
-  async updateRelationshipHealth(relId: string, data: any): Promise<Relationship> {
+  async updateRelationshipHealth(orgId: string, relId: string, data: any): Promise<Relationship> {
     const rel = this.relationships.get(relId);
-    if (!rel) throw new Error(`Relationship ${relId} not found`);
+    if (!rel || rel.organizationId !== orgId) throw new Error(`Relationship ${relId} not found`);
     if (data.strength !== undefined) rel.strength = data.strength;
     if (data.description) rel.description = data.description;
     return rel;
@@ -147,7 +149,7 @@ class CendiaSymbiontServiceImpl {
       id, organizationId: orgId,
       sourceId: data.sourceId, targetId: data.targetId,
       type: data.type || 'collaborates-with',
-      strength: data.strength || deterministicFloat(`str-${id}`) * 0.5 + 0.5,
+      strength: data.strength ?? deterministicFloat(`str-${id}`) * 0.5 + 0.5,
       description: data.description || '',
     };
     this.relationships.set(id, rel);

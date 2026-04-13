@@ -647,6 +647,18 @@ class SGASOrchestrator {
 
     logger.info(`SGAS: Starting deliberation ${graphId} for "${proposal.title}"`);
 
+    // Track active deliberation
+    this.activeDeliberations.set(graphId, {
+      id: graphId,
+      proposalId: proposal.id,
+      status: 'in_progress',
+      phase: 'decision',
+      nodes: [],
+      edges: [],
+      deterministicHash: '',
+      metadata: { seed: actualSeed, proposalTitle: proposal.title },
+    } as DeliberationGraph);
+
     // Phase 1: Decision agents analyze the proposal
     const decisionOutputs = await Promise.all(
       DECISION_AGENTS.map(agent => decisionAgentsService.executeAgent(agent.id, proposal, actualSeed)),
@@ -725,6 +737,7 @@ class SGASOrchestrator {
       },
     };
 
+    this.activeDeliberations.delete(graphId);
     this.completedDeliberations.set(graphId, result);
     this.statistics.totalDeliberations++;
     if (result.finalStatus.approved) this.statistics.totalApproved++;

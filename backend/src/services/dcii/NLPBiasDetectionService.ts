@@ -40,6 +40,7 @@ const BIAS_PATTERNS = [
 ];
 
 class NLPBiasDetectionServiceImpl {
+  private static readonly MAX_CACHE_SIZE = 1000;
   private analyses = new Map<string, NLPAnalysis>();
 
   async analyzeText(text: string): Promise<NLPAnalysis> {
@@ -76,6 +77,10 @@ class NLPBiasDetectionServiceImpl {
     };
 
     this.analyses.set(id, analysis);
+    if (this.analyses.size > NLPBiasDetectionServiceImpl.MAX_CACHE_SIZE) {
+      const keysToDelete = [...this.analyses.keys()].slice(0, this.analyses.size - NLPBiasDetectionServiceImpl.MAX_CACHE_SIZE);
+      keysToDelete.forEach(k => this.analyses.delete(k));
+    }
     return analysis;
   }
 

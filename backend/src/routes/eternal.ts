@@ -120,7 +120,8 @@ router.post('/artifacts/:id/verify', async (req: Request, res: Response) => {
   try {
     const userId = (req as any).user?.id || 'system';
     const { validationType } = req.body;
-    const result = await cendiaEternalService.verifyArtifact(req.params.id, userId, validationType);
+    const orgId = (req as any).organizationId;
+    const result = await cendiaEternalService.verifyArtifact(orgId, req.params.id, userId, validationType);
     res.json({ success: true, data: result });
   } catch (error) {
     res.status(500).json({ success: false, error: { message: String(error) } });
@@ -140,7 +141,8 @@ router.post('/artifacts/:id/correct', async (req: Request, res: Response) => {
   try {
     const userId = (req as any).user?.id || 'system';
     const { correctedContent } = req.body;
-    const artifact = await cendiaEternalService.correctArtifact(req.params.id, correctedContent, userId);
+    const orgId = (req as any).organizationId;
+    const artifact = await cendiaEternalService.correctArtifact(orgId, req.params.id, correctedContent, userId);
     res.json({ success: true, data: artifact });
   } catch (error) {
     res.status(500).json({ success: false, error: { message: String(error) } });
@@ -198,7 +200,8 @@ router.get('/successors', async (req: Request, res: Response) => {
 
 router.post('/successors/:id/activate', async (req: Request, res: Response) => {
   try {
-    const successor = await cendiaEternalService.activateSuccessor(req.params.id);
+    const orgId = (req as any).organizationId;
+    const successor = await cendiaEternalService.activateSuccessor(orgId, req.params.id);
     res.json({ success: true, data: successor });
   } catch (error) {
     res.status(500).json({ success: false, error: { message: String(error) } });

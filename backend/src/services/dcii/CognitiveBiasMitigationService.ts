@@ -79,7 +79,7 @@ class CognitiveBiasMitigationServiceImpl {
     crossExaminations?: any[];
     question?: string;
   }): Promise<BiasAnalysis> {
-    const seed = `bias-${params.deliberationId}-${Date.now()}`;
+    const seed = `bias-${params.organizationId}-${params.deliberationId}`;
     const id = `ba-${crypto.randomUUID().slice(0, 8)}`;
 
     const detections: BiasDetection[] = [];
@@ -199,7 +199,12 @@ class CognitiveBiasMitigationServiceImpl {
         .map(([biasType, count]) => ({ biasType, count }))
         .sort((a, b) => b.count - a.count)
         .slice(0, 5),
-      trendDirection: orgAnalyses.length > 1 ? 'improving' : 'insufficient_data',
+      trendDirection: orgAnalyses.length > 1 ? (() => {
+        const mid = Math.floor(orgAnalyses.length / 2);
+        const firstHalf = orgAnalyses.slice(0, mid).flatMap(a => a.detections).length;
+        const secondHalf = orgAnalyses.slice(mid).flatMap(a => a.detections).length;
+        return secondHalf < firstHalf ? 'improving' : secondHalf > firstHalf ? 'worsening' : 'stable';
+      })() : 'insufficient_data',
       generatedAt: new Date().toISOString(),
     };
 

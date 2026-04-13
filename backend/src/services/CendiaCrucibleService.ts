@@ -52,8 +52,8 @@ interface Simulation {
 }
 
 class CendiaCrucibleServiceImpl {
+  private static readonly MAX_CACHE_SIZE = 500;
   private simulations = new Map<string, Simulation>();
-  private quickSimulations = new Map<string, SimulationResult>();
 
   getScenarioTemplates() { return SCENARIO_TEMPLATES; }
 
@@ -197,7 +197,7 @@ class CendiaCrucibleServiceImpl {
       ],
       generatedAt: new Date().toISOString(),
     };
-    this.quickSimulations.set(id, result);
+    this.evictIfNeeded(this.simulations);
     return result;
   }
 
@@ -246,6 +246,12 @@ class CendiaCrucibleServiceImpl {
         type: s.simulationType, name: s.name, description: s.description, source: 'organization',
       })),
     };
+  }
+  private evictIfNeeded(map: Map<string, any>) {
+    if (map.size > CendiaCrucibleServiceImpl.MAX_CACHE_SIZE) {
+      const keysToDelete = [...map.keys()].slice(0, map.size - CendiaCrucibleServiceImpl.MAX_CACHE_SIZE);
+      keysToDelete.forEach(k => map.delete(k));
+    }
   }
 }
 
