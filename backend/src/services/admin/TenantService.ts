@@ -9,6 +9,7 @@ type TenantStatus = 'active' | 'suspended' | 'trial' | 'archived';
 interface Tenant {
   id: string; name: string; slug: string; plan: TenantPlan; status: TenantStatus;
   settings?: any; metadata?: any; suspendReason?: string;
+  userCount?: number; userLimit?: number; mrr?: number;
   createdAt: string; updatedAt: string;
 }
 

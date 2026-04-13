@@ -6,6 +6,7 @@
 // =============================================================================
 
 import crypto from 'crypto';
+import { BoundedMap } from '../utils/BoundedMap.js';
 import { withFallback } from './_serviceProxy.js';
 
 export type NotificationType = 'info' | 'warning' | 'error' | 'success' | 'deliberation' | 'decision';
@@ -24,7 +25,7 @@ interface Notification {
   createdAt: string;
 }
 
-const store = new Map<string, Notification>();
+const store = new BoundedMap<string, Notification>({ maxSize: 50000 });
 
 export const notificationService: any = withFallback({
   async send(data: {

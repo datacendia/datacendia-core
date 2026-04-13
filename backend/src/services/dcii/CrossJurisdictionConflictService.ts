@@ -7,6 +7,7 @@
 // =============================================================================
 
 import crypto from 'crypto';
+import { BoundedMap } from '../../utils/BoundedMap.js';
 import { deterministicPercentage, deterministicPick, deterministicBool, deterministicInt } from '../../utils/deterministic.js';
 
 const JURISDICTION_PROFILES: Record<string, { name: string; frameworks: string[]; dataProtection: string; aiRegulation: string }> = {
@@ -65,10 +66,10 @@ interface GoodFaithDocument {
 }
 
 class CrossJurisdictionConflictServiceImpl {
-  private assessments = new Map<string, JurisdictionAssessment>();
-  private conflicts = new Map<string, Conflict>();
-  private evidencePackets = new Map<string, EvidencePacket>();
-  private goodFaithDocuments = new Map<string, GoodFaithDocument>();
+  private assessments = new BoundedMap<string, JurisdictionAssessment>({ maxSize: 5000 });
+  private conflicts = new BoundedMap<string, Conflict>({ maxSize: 10000 });
+  private evidencePackets = new BoundedMap<string, EvidencePacket>({ maxSize: 5000 });
+  private goodFaithDocuments = new BoundedMap<string, GoodFaithDocument>({ maxSize: 5000 });
 
   async assessOrganization(orgId: string, orgName: string, jurisdictions: string[], assessedBy: string): Promise<JurisdictionAssessment> {
     const seed = `jurisdiction-${orgId}-${jurisdictions.sort().join(',')}`;
@@ -143,6 +144,7 @@ class CrossJurisdictionConflictServiceImpl {
   async generateGoodFaithDocument(conflictId: string, signedBy: string): Promise<GoodFaithDocument> {
     const conflict = this.conflicts.get(conflictId);
     if (!conflict) throw new Error(`Conflict ${conflictId} not found`);
+    const signedAt = new Date().toISOString();
     const doc: GoodFaithDocument = {
       id: `gfd-${crypto.randomUUID().slice(0, 8)}`,
       conflictId,
@@ -153,8 +155,8 @@ class CrossJurisdictionConflictServiceImpl {
         'Interim compliance measures implemented',
         'Monitoring program established for regulatory updates',
       ],
-      signedBy, signedAt: new Date().toISOString(),
-      hash: crypto.createHash('sha256').update(`gfd|${conflictId}|${signedBy}|${doc.signedAt}`).digest('hex'),
+      signedBy, signedAt,
+      hash: crypto.createHash('sha256').update(`gfd|${conflictId}|${signedBy}|${signedAt}`).digest('hex'),
     };
     this.goodFaithDocuments.set(doc.id, doc);
     return doc;

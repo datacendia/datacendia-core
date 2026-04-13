@@ -38,6 +38,20 @@ class HSMAdapterImpl {
     const sig = Buffer.from(signatureB64, 'base64');
     return crypto.verify(null, data, key._softwareKey.publicKey, sig);
   }
+
+  async wrapKey(keyToWrapId: string, wrappingKeyId: string) {
+    const keyToWrap = this.keys.get(keyToWrapId);
+    const wrappingKey = this.keys.get(wrappingKeyId);
+    if (!keyToWrap) throw new Error(`Key ${keyToWrapId} not found`);
+    if (!wrappingKey) throw new Error(`Wrapping key ${wrappingKeyId} not found`);
+    const wrapped = crypto.publicEncrypt(wrappingKey._softwareKey.publicKey, Buffer.from(keyToWrapId));
+    return { wrappedKey: wrapped.toString('base64'), wrappingKeyId, algorithm: wrappingKey.algorithm, wrappedAt: new Date().toISOString() };
+  }
+
+  async generateRandom(length: number) {
+    const data = crypto.randomBytes(length);
+    return { data, source: 'software-fallback', entropyBits: length * 8 };
+  }
 }
 
 export const hsmAdapter = new HSMAdapterImpl();

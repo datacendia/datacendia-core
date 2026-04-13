@@ -12,6 +12,7 @@
 // See LICENSE file for details.
 
 import crypto from 'crypto';
+import { BoundedMap } from '../../utils/BoundedMap.js';
 import { logger } from '../../utils/logger.js';
 import {
   deterministicFloat,
@@ -386,7 +387,7 @@ export const DEFAULT_STRESSOR_LIBRARY: Stressor[] = [
 // =============================================================================
 
 class SyntheticPopulationService {
-  private populations = new Map<string, Population>();
+  private populations = new BoundedMap<string, Population>({ maxSize: 2000 });
 
   generatePopulation(params: PopulationParameters): Population {
     const seed = params.seed || Date.now();
@@ -457,7 +458,7 @@ class SyntheticPopulationService {
 }
 
 class PolicyInjectionService {
-  private policies = new Map<string, PolicyBundle>();
+  private policies = new BoundedMap<string, PolicyBundle>({ maxSize: 2000 });
 
   constructor() {
     // Load templates as available policies
@@ -533,7 +534,7 @@ class PolicyInjectionService {
 }
 
 class EventInjectionService {
-  private sequences = new Map<string, EventSequence>();
+  private sequences = new BoundedMap<string, EventSequence>({ maxSize: 2000 });
 
   generateScenarioSequence(scenario: EventScenario, seed: number): EventSequence {
     const s = `event-${seed}-${scenario.id}`;
@@ -586,7 +587,7 @@ class EventInjectionService {
 }
 
 class StressorLibraryService {
-  private customStressors = new Map<string, Stressor>();
+  private customStressors = new BoundedMap<string, Stressor>({ maxSize: 2000 });
 
   constructor() {
     for (const str of DEFAULT_STRESSOR_LIBRARY) {
@@ -660,8 +661,8 @@ class StressorLibraryService {
 // =============================================================================
 
 class SCGEOrchestrator {
-  private activeSimulations = new Map<string, { id: string; phase: string; currentTime: number }>();
-  private completedSimulations = new Map<string, SimulationResult>();
+  private activeSimulations = new BoundedMap<string, { id: string; phase: string; currentTime: number }>({ maxSize: 100 });
+  private completedSimulations = new BoundedMap<string, SimulationResult>({ maxSize: 5000 });
   private statistics = {
     totalSimulations: 0,
     totalPopulationsGenerated: 0,

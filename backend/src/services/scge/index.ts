@@ -9,7 +9,7 @@ import { withFallback } from '../_serviceProxy.js';
 
 export interface OperationalRiskData { [key: string]: any; }
 
-export interface SimulationConfig { [key: string]: any; }
+export type { SimulationConfig } from './SCGEOrchestrator.js';
 
 export const DecisionType = { STRATEGIC: 'strategic', OPERATIONAL: 'operational', TACTICAL: 'tactical', REGULATORY: 'regulatory', EMERGENCY: 'emergency' } as const;
 

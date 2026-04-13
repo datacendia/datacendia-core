@@ -2,6 +2,7 @@
 // See LICENSE file for details.
 
 import crypto from 'crypto';
+import { BoundedMap } from '../../utils/BoundedMap.js';
 import { SPORTS_DECISION_TEMPLATES } from '../../config/sports/decision-templates.js';
 import { SPORTS_COMPLIANCE_FRAMEWORKS } from '../../config/sports/compliance-frameworks.js';
 
@@ -9,7 +10,7 @@ export interface Player { name: string; position: string; age: number; nationali
 export interface Club { name: string; league: string; country: string; [key: string]: any; }
 
 class SportsDecisionServiceImpl {
-  private decisions = new Map<string, any>();
+  private decisions = new BoundedMap<string, any>({ maxSize: 10000 });
 
   async healthCheck() { return { status: 'healthy', totalDecisions: this.decisions.size, timestamp: new Date().toISOString() }; }
 

@@ -3,7 +3,7 @@
 
 import crypto from 'node:crypto';
 
-interface Feature { id: string; name: string; type: string; category: string; enabled: boolean; visibility: string; description?: string; updatedAt: string }
+interface Feature { id: string; name: string; type: string; category: string; enabled: boolean; visibility: string; description?: string; updatedAt: string; config?: Record<string, unknown> }
 interface Agent { id: string; name: string; category: string; enabled: boolean; model?: string; temperature?: number; systemPrompt?: string; updatedAt: string }
 interface Suite { id: string; name: string; enabled: boolean; features: string[]; description?: string }
 interface PricingTier { id: string; name: string; price: number; features: string[]; visible: boolean; updatedAt: string }

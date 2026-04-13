@@ -6,6 +6,7 @@
 // =============================================================================
 
 import crypto from 'crypto';
+import { BoundedMap } from '../utils/BoundedMap.js';
 import { deterministicPercentage, deterministicPick, deterministicFloat } from '../utils/deterministic.js';
 
 interface Entity {
@@ -43,10 +44,10 @@ interface Opportunity {
 }
 
 class CendiaSymbiontServiceImpl {
-  private entities = new Map<string, Entity>();
-  private relationships = new Map<string, Relationship>();
-  private opportunities = new Map<string, Opportunity>();
-  private allianceSimulations = new Map<string, any[]>();
+  private entities = new BoundedMap<string, Entity>({ maxSize: 10000 });
+  private relationships = new BoundedMap<string, Relationship>({ maxSize: 10000 });
+  private opportunities = new BoundedMap<string, Opportunity>({ maxSize: 5000 });
+  private allianceSimulations = new BoundedMap<string, any[]>({ maxSize: 2000 });
 
   async addEntity(orgId: string, data: any): Promise<Entity> {
     const id = `ent-${crypto.randomUUID().slice(0, 8)}`;

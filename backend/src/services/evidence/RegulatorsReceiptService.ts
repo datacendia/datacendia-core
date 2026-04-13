@@ -690,7 +690,7 @@ export class RegulatorsReceiptService {
       return {
         overallScore: score.overallScore,
         band: score.band,
-        certificationLevel: score.certificationLevel,
+        certificationLevel: score.certificationLevel || 'unrated',
         dimensions: score.dimensions.map((d: any) => ({
           name: d.name,
           primitive: d.primitive,
@@ -698,7 +698,7 @@ export class RegulatorsReceiptService {
           maxScore: d.maxScore,
           normalizedScore: d.normalizedScore,
         })),
-        calculatedAt: score.calculatedAt,
+        calculatedAt: score.calculatedAt ? new Date(score.calculatedAt) : new Date(),
       };
     } catch (err) {
       logger.warn(`Failed to calculate IISS scores: ${(err as Error).message}`);

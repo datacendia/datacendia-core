@@ -6,6 +6,7 @@
 // =============================================================================
 
 import crypto from 'crypto';
+import { BoundedMap } from '../utils/BoundedMap.js';
 import { deterministicPercentage, deterministicPick, deterministicFloat, deterministicBool, deterministicInt } from '../utils/deterministic.js';
 
 interface Stakeholder {
@@ -73,11 +74,11 @@ const DEFAULT_STAKEHOLDERS = [
 ];
 
 class CendiaVoxServiceImpl {
-  private stakeholders = new Map<string, Stakeholder>();
-  private impacts = new Map<string, ImpactAssessment[]>();
-  private votes = new Map<string, Vote[]>();
-  private assemblies = new Map<string, Assembly>();
-  private signals = new Map<string, Signal>();
+  private stakeholders = new BoundedMap<string, Stakeholder>({ maxSize: 10000 });
+  private impacts = new BoundedMap<string, ImpactAssessment[]>({ maxSize: 5000 });
+  private votes = new BoundedMap<string, Vote[]>({ maxSize: 5000 });
+  private assemblies = new BoundedMap<string, Assembly>({ maxSize: 5000 });
+  private signals = new BoundedMap<string, Signal>({ maxSize: 50000 });
   private vetoes: any[] = [];
 
   async initializeStakeholders(orgId: string): Promise<Stakeholder[]> {

@@ -83,7 +83,8 @@ class VectorService {
    * SECURITY: This value is interpolated into SQL strings for pgvector's <=> operator
    * because Prisma cannot parameterize vector casts. The validation below ensures only
    * finite numbers are included, making SQL injection impossible — the output can only
-   * contain digits, dots, minus signs, commas, and brackets.
+   * contain digits, dots, minus signs, commas, brackets, and the characters 'e'/'+'
+   * (from scientific notation like 1.5e-10). None of these are SQL-significant.
    */
   private safeVectorString(embedding: number[]): string {
     if (!Array.isArray(embedding) || embedding.length === 0) {

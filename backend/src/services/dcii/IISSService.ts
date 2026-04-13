@@ -15,10 +15,12 @@ interface IISSScore {
   organizationName: string;
   overallScore: number;
   band: string;
+  certificationLevel?: string;
   dimensions: DimensionScore[];
   assessments: Assessment[];
   generatedAt: string;
   generatedBy: string;
+  calculatedAt?: string;
 }
 
 interface DimensionScore {
@@ -28,6 +30,9 @@ interface DimensionScore {
   weight: number;
   trend: string;
   findings: string[];
+  primitive?: string;
+  maxScore?: number;
+  normalizedScore?: number;
 }
 
 interface Assessment {

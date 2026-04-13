@@ -7,6 +7,7 @@
 
 import crypto from 'crypto';
 import { deterministicPercentage, deterministicPick, deterministicFloat, deterministicInt } from '../utils/deterministic.js';
+import { BoundedMap } from '../utils/BoundedMap.js';
 
 interface ThreatBriefing {
   id: string;
@@ -54,10 +55,10 @@ interface AegisSignal {
 }
 
 class CendiaAegisServiceImpl {
-  private briefings = new Map<string, ThreatBriefing>();
-  private threats = new Map<string, Threat>();
-  private signalStore = new Map<string, AegisSignal>();
-  private countermeasures = new Map<string, any>();
+  private briefings = new BoundedMap<string, ThreatBriefing>({ maxSize: 5000 });
+  private threats = new BoundedMap<string, Threat>({ maxSize: 10000 });
+  private signalStore = new BoundedMap<string, AegisSignal>({ maxSize: 50000 });
+  private countermeasures = new BoundedMap<string, any>({ maxSize: 5000 });
 
   async ingestSignal(orgId: string, data: any): Promise<AegisSignal> {
     const signal: AegisSignal = {

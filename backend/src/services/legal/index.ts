@@ -18,7 +18,7 @@ class LegalVerticalServiceImpl {
     { id: 'ip-review', name: 'IP Review', matterType: 'ip', agents: ['research-clerk', 'lead-counsel'] },
   ];
 
-  getHealth() { return { status: 'healthy', cases: this.cases.size, matters: this.matters.size, uptime: process.uptime() }; }
+  getHealth() { return { status: 'healthy', cases: this.cases.size, matters: this.matters.size, uptime: process.uptime(), caseLibrarySize: this.cases.size, mattersCount: this.matters.size, privilegeReviewsCount: 0 }; }
 
   async ingestCaseLaw(caseData: any): Promise<CaseLaw> {
     const c: CaseLaw = { id: crypto.randomUUID(), citation: caseData.citation || '', title: caseData.title || caseData.name || '', court: caseData.court || '', date: caseData.date || '', jurisdiction: caseData.jurisdiction || '', content: caseData.content || '', sourceSystem: caseData.sourceSystem || 'manual', importedBy: caseData.importedBy || 'system', importedAt: new Date().toISOString() };

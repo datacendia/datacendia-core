@@ -6,6 +6,7 @@
 // =============================================================================
 
 import crypto from 'crypto';
+import { BoundedMap } from '../utils/BoundedMap.js';
 import { deterministicPercentage, deterministicPick, deterministicFloat, deterministicBool } from '../utils/deterministic.js';
 
 interface OutcomeTracker {
@@ -36,8 +37,8 @@ interface Lesson {
 }
 
 class CendiaRecallServiceImpl {
-  private trackers = new Map<string, OutcomeTracker>();
-  private lessons = new Map<string, Lesson>();
+  private trackers = new BoundedMap<string, OutcomeTracker>({ maxSize: 10000 });
+  private lessons = new BoundedMap<string, Lesson>({ maxSize: 10000 });
 
   async getHealth() {
     return { status: 'healthy', trackers: this.trackers.size, lessons: this.lessons.size, uptime: process.uptime() };

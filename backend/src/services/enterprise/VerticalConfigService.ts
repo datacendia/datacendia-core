@@ -78,7 +78,7 @@ class VerticalConfigServiceImpl {
     return existing;
   }
 
-  async toggleService(organizationId: string, serviceId: string, enabled: boolean, _userId: string) {
+  async toggleService(organizationId: string, serviceId: string, enabled: boolean, _userId: string, _reason?: string) {
     const c = this.orgConfigs.get(organizationId); if (!c) return null;
     if (enabled) { c.enabledServices = [...new Set([...c.enabledServices, serviceId])]; c.disabledServices = c.disabledServices.filter(s => s !== serviceId); }
     else { c.enabledServices = c.enabledServices.filter(s => s !== serviceId); c.disabledServices = [...new Set([...c.disabledServices, serviceId])]; }

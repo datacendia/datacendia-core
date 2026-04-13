@@ -2,6 +2,7 @@
 // See LICENSE file for details.
 
 import crypto from 'node:crypto';
+import { BoundedMap } from '../utils/BoundedMap.js';
 
 export interface ApotheosisConfig { [key: string]: any; }
 export class ApotheosisRun { [key: string]: any; }
@@ -13,11 +14,11 @@ export class WeaknessItem { [key: string]: any; }
 export class AutoPatch { [key: string]: any; }
 
 class ApotheosisServiceImpl {
-  private configs = new Map<string, ApotheosisConfig>();
-  private runs = new Map<string, any[]>();
-  private escalations = new Map<string, any[]>();
-  private bans = new Map<string, any[]>();
-  private assignments = new Map<string, any[]>();
+  private configs = new BoundedMap<string, ApotheosisConfig>({ maxSize: 1000 });
+  private runs = new BoundedMap<string, any[]>({ maxSize: 5000 });
+  private escalations = new BoundedMap<string, any[]>({ maxSize: 5000 });
+  private bans = new BoundedMap<string, any[]>({ maxSize: 5000 });
+  private assignments = new BoundedMap<string, any[]>({ maxSize: 5000 });
 
   async getApotheosisScore(orgId: string) {
     return { orgId, overallScore: 87, agentScores: [{ agent: 'strategist', score: 92 }, { agent: 'risk-analyst', score: 85 }, { agent: 'compliance', score: 88 }], calculatedAt: new Date().toISOString() };

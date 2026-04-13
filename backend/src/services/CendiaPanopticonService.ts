@@ -2,6 +2,7 @@
 // See LICENSE file for details.
 
 import crypto from 'node:crypto';
+import { BoundedMap } from '../utils/BoundedMap.js';
 
 export const REGULATORY_FRAMEWORKS: Record<string, { name: string; region: string; category: string }> = {
   'EU_AI_ACT': { name: 'EU AI Act', region: 'EU', category: 'ai_governance' },
@@ -15,9 +16,9 @@ export const REGULATORY_FRAMEWORKS: Record<string, { name: string; region: strin
 };
 
 class CendiaPanopticonServiceImpl {
-  private regulations = new Map<string, any[]>();
-  private violations = new Map<string, any[]>();
-  private forecasts = new Map<string, any[]>();
+  private regulations = new BoundedMap<string, any[]>({ maxSize: 5000 });
+  private violations = new BoundedMap<string, any[]>({ maxSize: 10000 });
+  private forecasts = new BoundedMap<string, any[]>({ maxSize: 5000 });
 
   async getFrameworks() { return Object.entries(REGULATORY_FRAMEWORKS).map(([code, f]) => ({ code, ...f })); }
   async getFrameworksByCategory(category: string) { return Object.entries(REGULATORY_FRAMEWORKS).filter(([, f]) => f.category === category).map(([code, f]) => ({ code, ...f })); }

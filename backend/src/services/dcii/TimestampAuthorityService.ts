@@ -7,6 +7,7 @@
 // =============================================================================
 
 import crypto from 'crypto';
+import { BoundedMap } from '../../utils/BoundedMap.js';
 
 interface TimestampToken {
   id: string;
@@ -39,8 +40,8 @@ const PROVIDERS = [
 ];
 
 class TimestampAuthorityServiceImpl {
-  private tokens = new Map<string, TimestampToken>();
-  private batches = new Map<string, TimestampBatch>();
+  private tokens = new BoundedMap<string, TimestampToken>({ maxSize: 50000 });
+  private batches = new BoundedMap<string, TimestampBatch>({ maxSize: 5000 });
   private serial = 0;
 
   async issueTimestamp(

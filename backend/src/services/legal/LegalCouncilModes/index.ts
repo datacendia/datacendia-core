@@ -1,9 +1,9 @@
 // Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 
-export class LegalModeCategory { [key: string]: any; }
+export type LegalModeCategory = string;
 
-interface LegalMode { id: string; name: string; description: string; category: string; leadAgent: string; agents: string[]; maxRounds: number }
+export interface LegalMode { id: string; name: string; description: string; category: string; leadAgent: string; agents: string[]; maxRounds: number; purpose?: string; primeDirective?: string; defaultAgents?: string[]; optionalAgents?: string[] }
 
 const MODES: LegalMode[] = [
   { id: 'litigation-strategy', name: 'Litigation Strategy', description: 'Full litigation analysis and strategy', category: 'litigation', leadAgent: 'lead-counsel', agents: ['lead-counsel', 'risk-analyst', 'research-clerk'], maxRounds: 5 },

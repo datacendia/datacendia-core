@@ -2,13 +2,14 @@
 // See LICENSE file for details.
 
 import crypto from 'node:crypto';
+import { BoundedMap } from '../../utils/BoundedMap.js';
 
 interface IdP { id: string; organizationId: string; protocol: 'saml' | 'oidc'; name: string; entityId?: string; ssoUrl?: string; clientId?: string; issuer?: string; enabled: boolean; createdAt: string }
 interface SSOSession { id: string; email: string; idpId: string; organizationId: string; expiresAt: string; createdAt: string }
 
 class SSOServiceImpl {
-  private idps = new Map<string, IdP>();
-  private sessions = new Map<string, SSOSession>();
+  private idps = new BoundedMap<string, IdP>({ maxSize: 1000 });
+  private sessions = new BoundedMap<string, SSOSession>({ maxSize: 10000, ttlMs: 24 * 60 * 60 * 1000 });
 
   getStatus() { return { service: 'SSOService', status: 'operational', idpCount: this.idps.size, activeSessions: this.sessions.size }; }
 

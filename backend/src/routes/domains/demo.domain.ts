@@ -14,6 +14,7 @@
 
 import { Router } from 'express';
 import { authenticate } from '../../middleware/auth.js';
+import { config } from '../../config/index.js';
 import demoRoutes from '../demo.js';
 import advancedAnalysisRoutes from '../advancedAnalysis.js';
 import demoSeedRoutes from '../demo-seed.js';
@@ -21,9 +22,15 @@ import consolidatedRoutes from '../consolidated.js';
 
 const router = Router();
 
-// Public demo routes (unauthenticated access for demos/leads)
+// Public demo routes (unauthenticated access for lead capture only)
 router.use('/leads', demoRoutes);
-router.use('/demo', demoSeedRoutes);
+
+// Demo seed — require auth in production to prevent unauthorized DB manipulation
+if (config.nodeEnv === 'production') {
+  router.use('/demo', authenticate, demoSeedRoutes);
+} else {
+  router.use('/demo', demoSeedRoutes);
+}
 
 // Authenticated routes
 router.use(authenticate);

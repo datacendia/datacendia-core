@@ -6,6 +6,7 @@
 // =============================================================================
 
 import crypto from 'crypto';
+import { BoundedMap } from '../utils/BoundedMap.js';
 import { deterministicPercentage, deterministicPick, deterministicFloat } from '../utils/deterministic.js';
 
 interface Artifact {
@@ -53,9 +54,9 @@ interface Successor {
 }
 
 class CendiaEternalServiceImpl {
-  private artifacts = new Map<string, Artifact>();
-  private migrations = new Map<string, Migration>();
-  private successors = new Map<string, Successor>();
+  private artifacts = new BoundedMap<string, Artifact>({ maxSize: 10000 });
+  private migrations = new BoundedMap<string, Migration>({ maxSize: 5000 });
+  private successors = new BoundedMap<string, Successor>({ maxSize: 5000 });
 
   async archiveArtifact(orgId: string, userId: string, data: any): Promise<Artifact> {
     const id = `art-${crypto.randomUUID().slice(0, 8)}`;

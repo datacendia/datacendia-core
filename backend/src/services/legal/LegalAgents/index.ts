@@ -3,7 +3,7 @@
 
 export class JurorArchetype { [key: string]: any; }
 
-interface LegalAgentDef { id: string; name: string; role: string; expertise: string[]; isDefault: boolean; isOptional: boolean; isSilentGuard: boolean; systemPrompt: string }
+export interface LegalAgentDef { id: string; name: string; role: string; expertise: string[]; isDefault: boolean; isOptional: boolean; isSilentGuard: boolean; systemPrompt: string }
 
 const AGENTS: LegalAgentDef[] = [
   { id: 'lead-counsel', name: 'Lead Counsel', role: 'strategist', expertise: ['litigation', 'negotiation'], isDefault: true, isOptional: false, isSilentGuard: false, systemPrompt: 'You are the lead legal strategist.' },
@@ -35,14 +35,26 @@ export const getSilentGuardAgents = () => AGENTS.filter(a => a.isSilentGuard);
 export const getLegalAgentsByExpertise = (expertise: string) =>
   AGENTS.filter(a => a.expertise.some(e => e.includes(expertise.toLowerCase())));
 
-export const buildLegalAgentTeam = (opts?: { includeOptional?: boolean; expertiseFilter?: string }) => {
+export const buildLegalAgentTeam = (defaultIdsOrOpts?: string[] | { includeOptional?: boolean; expertiseFilter?: string }, optionalIds?: string[]) => {
+  if (Array.isArray(defaultIdsOrOpts)) {
+    const defaults = defaultIdsOrOpts.map(id => AGENTS.find(a => a.id === id)).filter(Boolean) as LegalAgentDef[];
+    const optionals = (optionalIds || []).map(id => AGENTS.find(a => a.id === id)).filter(Boolean) as LegalAgentDef[];
+    return { defaultAgents: defaults, optionalAgents: optionals };
+  }
+  const opts = defaultIdsOrOpts;
   let team = getDefaultLegalAgents();
   if (opts?.includeOptional) team = [...team, ...getOptionalLegalAgents()];
   if (opts?.expertiseFilter) team = team.filter(a => a.expertise.some(e => e.includes(opts.expertiseFilter!)));
-  return team;
+  return { defaultAgents: team, optionalAgents: [] as LegalAgentDef[] };
 };
 
-export const buildJuryPanel = (size = 6) => JUROR_ARCHETYPES.slice(0, size);
+export const buildJuryPanel = (caseIdOrSize?: string | number, _composition?: any, alternateCount = 2) => {
+  const size = typeof caseIdOrSize === 'number' ? caseIdOrSize : 6;
+  const jurors = JUROR_ARCHETYPES.slice(0, size);
+  const alternates = JUROR_ARCHETYPES.slice(0, alternateCount);
+  const foreperson = jurors[0] || { name: 'Unknown' };
+  return { jurors, alternates, foreperson, composition: { total: jurors.length, alternateCount: alternates.length } };
+};
 
 export const getJurorArchetypes = () => JUROR_ARCHETYPES;
 

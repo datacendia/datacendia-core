@@ -37,8 +37,8 @@ const configSchema = z.object({
   port: z.coerce.number().default(3001),
   
   // Authentication mode
-  requireAuth: z.coerce.boolean().default(false),
-  demoMode: z.coerce.boolean().default(false),
+  requireAuth: z.string().optional().transform(v => v !== undefined && v !== '' && v !== '0' && v.toLowerCase() !== 'false').default('false'),
+  demoMode: z.string().optional().transform(v => v !== undefined && v !== '' && v !== '0' && v.toLowerCase() !== 'false').default('false'),
   
   // Database
   databaseUrl: z.string().url(),

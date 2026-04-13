@@ -78,6 +78,11 @@ class CognitiveBiasMitigationServiceImpl {
     agentResponses?: any[];
     crossExaminations?: any[];
     question?: string;
+    devilsAdvocatePresent?: boolean;
+    challengeCount?: number;
+    unanimousVote?: boolean;
+    arguments?: any[];
+    analyzedBy?: string;
   }): Promise<BiasAnalysis> {
     const seed = `bias-${params.organizationId}-${params.deliberationId}`;
     const id = `ba-${crypto.randomUUID().slice(0, 8)}`;

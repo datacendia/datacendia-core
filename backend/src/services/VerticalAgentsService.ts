@@ -34,7 +34,7 @@ class VerticalAgentsServiceImpl {
   async getGlobalMetrics() { return { totalVerticals: VERTICALS.length, totalAgents: AGENTS.length, activeDecisions: 0, recentActivity: this.activity.length }; }
   async getRecentActivity(limit = 50) { return this.activity.slice(0, limit); }
 
-  async recordActivity(params: { agentId: string; verticalId: string; action: string; details?: any }) {
+  async recordActivity(params: { agentId: string; verticalId: string; action: string; details?: any; result?: any; duration?: number; success?: boolean }) {
     const entry = { id: crypto.randomUUID(), ...params, timestamp: new Date().toISOString() };
     this.activity.unshift(entry);
     if (this.activity.length > 1000) this.activity.pop();

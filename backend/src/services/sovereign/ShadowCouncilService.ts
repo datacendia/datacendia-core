@@ -2,10 +2,11 @@
 // See LICENSE file for details.
 
 import crypto from 'crypto';
+import { BoundedMap } from '../../utils/BoundedMap.js';
 import { deterministicPercentage, deterministicPick } from '../../utils/deterministic.js';
 
 class ShadowCouncilServiceImpl {
-  private sessions = new Map<string, any>();
+  private sessions = new BoundedMap<string, any>({ maxSize: 5000 });
 
   async createSession(data: any) {
     const session = { id: `shadow-${crypto.randomUUID().slice(0, 8)}`, organizationId: data.organizationId, createdBy: data.createdBy, name: data.name || 'Shadow Session', status: 'active', deliberations: [], createdAt: new Date().toISOString() };

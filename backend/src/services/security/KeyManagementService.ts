@@ -24,19 +24,21 @@ class KeyManagementServiceImpl {
 
   getStatus() { return { service: 'cendia-kms', status: 'operational', provider: 'local', keyCount: this.keys.size, initialized: true }; }
 
-  async sign(data: Buffer, keyId?: string): Promise<SignatureResult> {
+  async sign(data: string | Buffer, keyId?: string): Promise<SignatureResult> {
     const key = keyId ? this.keys.get(keyId) : [...this.keys.values()][0];
     if (!key) throw new Error('No signing key available');
     key.usageCount++; key.lastUsed = new Date();
-    const signature = crypto.sign('RSA-SHA256', data, key.privateKey).toString('base64');
+    const buf = typeof data === 'string' ? Buffer.from(data) : data;
+    const signature = crypto.sign('RSA-SHA256', buf, key.privateKey).toString('base64');
     return { signature, keyId: key.keyId, algorithm: key.algorithm, provider: key.provider, signedAt: new Date().toISOString() };
   }
 
-  async verify(data: Buffer, signatureB64: string, keyId?: string): Promise<boolean> {
+  async verify(data: string | Buffer, signatureB64: string, keyId?: string): Promise<boolean> {
     const key = keyId ? this.keys.get(keyId) : [...this.keys.values()][0];
     if (!key) throw new Error('No verification key available');
     key.usageCount++; key.lastUsed = new Date();
-    return crypto.verify('RSA-SHA256', data, key.publicKey, Buffer.from(signatureB64, 'base64'));
+    const buf = typeof data === 'string' ? Buffer.from(data) : data;
+    return crypto.verify('RSA-SHA256', buf, key.publicKey, Buffer.from(signatureB64, 'base64'));
   }
 
   async encrypt(data: Buffer, keyId?: string) {
@@ -81,8 +83,8 @@ class KeyManagementServiceImpl {
 
   listKeys() { return [...this.keys.values()].map(({ privateKey, ...k }) => k); }
 
-  getPublicKey(keyId: string) {
-    const key = this.keys.get(keyId);
+  getPublicKey(keyId?: string) {
+    const key = keyId ? this.keys.get(keyId) : [...this.keys.values()][0];
     return key ? key.publicKey : null;
   }
 }

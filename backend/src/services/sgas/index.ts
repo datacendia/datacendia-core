@@ -13,9 +13,7 @@ export interface SimulationConfig { [key: string]: any; }
 
 export { DecisionType } from './SGASOrchestrator.js';
 
-export interface DecisionContext { [key: string]: any; }
-
-export interface BudgetContext { [key: string]: any; }
+export type { DecisionContext, BudgetContext } from './SGASOrchestrator.js';
 
 export { ConstraintType } from './SGASOrchestrator.js';
 
