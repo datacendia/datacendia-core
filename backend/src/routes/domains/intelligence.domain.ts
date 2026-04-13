@@ -14,6 +14,7 @@
 
 import { Router } from 'express';
 import { mountEnterpriseRoutes } from './_enterprise.js';
+import { authenticate } from '../../middleware/auth.js';
 import personaRoutes from '../persona.js';
 import autopilotRoutes from '../autopilot.js';
 import decisionIntelRoutes from '../decision-intel.js';
@@ -21,6 +22,9 @@ import gnosisRoutes from '../gnosis.js';
 import visualizationRoutes from '../visualization.js';
 
 const router = Router();
+
+// Apply authentication to all intelligence domain routes
+router.use(authenticate);
 
 // Community routes
 router.use('/persona', personaRoutes);

@@ -14,6 +14,7 @@
 
 import { Router } from 'express';
 import { mountEnterpriseRoutes } from './_enterprise.js';
+import { authenticate } from '../../middleware/auth.js';
 import platformRoutes from '../platform.js';
 import coreRoutes from '../core.js';
 import adminSettingsRoutes from '../admin-settings.js';
@@ -35,17 +36,22 @@ import autoHealRoutes from '../auto-heal.js';
 
 const router = Router();
 
-// Community routes
+// Public routes (no auth required — load balancers, health probes)
+router.use('/health', healthRoutes);
+router.use('/errors', errorRoutes);
+router.use('/contact', contactRoutes);
+
+// Apply authentication to all remaining platform domain routes
+router.use(authenticate);
+
+// Authenticated routes
 router.use('/platform', platformRoutes);
 router.use('/core', coreRoutes);
 router.use('/admin/settings', adminSettingsRoutes); // Must come BEFORE /admin
 router.use('/admin', adminRoutes);
 router.use('/settings', settingsRoutes);
-router.use('/health', healthRoutes);
 router.use('/i18n', i18nRoutes);
 router.use('/notifications', notificationsRoutes);
-router.use('/errors', errorRoutes);
-router.use('/contact', contactRoutes);
 router.use('/upload', uploadRoutes);
 router.use('/schema', schemaRoutes);
 router.use('/command', commandRoutes);

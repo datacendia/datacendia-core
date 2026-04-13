@@ -990,7 +990,7 @@ router.post('/browser-log', async (req: Request, res: Response) => {
           policy_action: action || 'allow',
           policy_reason: '',
           integrity_hash: crypto.createHash('sha256').update(JSON.stringify(req.body)).digest('hex'),
-          signature: crypto.createHmac('sha256', process.env.GATEWAY_SIGNING_KEY || 'datacendia-gateway-default').update(JSON.stringify(req.body)).digest('hex'),
+          signature: crypto.createHmac('sha256', process.env.GATEWAY_SIGNING_KEY || 'UNSIGNED').update(JSON.stringify(req.body)).digest('hex'),
         },
       });
     } catch {

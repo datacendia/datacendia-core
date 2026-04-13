@@ -14,6 +14,7 @@
 
 import { Router } from 'express';
 import { mountEnterpriseRoutes } from './_enterprise.js';
+import { authenticate } from '../../middleware/auth.js';
 import enterpriseSecurityRoutes from '../enterprise.security.js';
 import ledgerRoutes from '../ledger.js';
 import auditPackagesRoutes from '../audit-packages.js';
@@ -24,6 +25,9 @@ import hrRoutes from '../hr.js';
 import salaryRoutes from '../salary.js';
 
 const router = Router();
+
+// Apply authentication to all enterprise domain routes
+router.use(authenticate);
 
 // Community routes
 router.use('/enterprise/security', enterpriseSecurityRoutes); // Must come BEFORE /enterprise

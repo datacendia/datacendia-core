@@ -57,7 +57,8 @@ export interface User {
   preferences?: Record<string, unknown>;
 }
 
-// Token storage
+// Token storage — uses sessionStorage (cleared on tab close) to limit XSS exposure.
+// TODO: Migrate to httpOnly cookies set by the backend for full XSS-proof token storage.
 class TokenManager {
   private accessToken: string | null = null;
   private refreshToken: string | null = null;
@@ -69,8 +70,8 @@ class TokenManager {
 
   private loadFromStorage(): void {
     if (typeof window !== 'undefined') {
-      this.accessToken = localStorage.getItem('dc_access_token');
-      this.refreshToken = localStorage.getItem('dc_refresh_token');
+      this.accessToken = sessionStorage.getItem('dc_access_token');
+      this.refreshToken = sessionStorage.getItem('dc_refresh_token');
     }
   }
 
@@ -78,8 +79,8 @@ class TokenManager {
     this.accessToken = tokens.accessToken;
     this.refreshToken = tokens.refreshToken;
     if (typeof window !== 'undefined') {
-      localStorage.setItem('dc_access_token', tokens.accessToken);
-      localStorage.setItem('dc_refresh_token', tokens.refreshToken);
+      sessionStorage.setItem('dc_access_token', tokens.accessToken);
+      sessionStorage.setItem('dc_refresh_token', tokens.refreshToken);
     }
   }
 
@@ -95,6 +96,10 @@ class TokenManager {
     this.accessToken = null;
     this.refreshToken = null;
     if (typeof window !== 'undefined') {
+      sessionStorage.removeItem('dc_access_token');
+      sessionStorage.removeItem('dc_refresh_token');
+      sessionStorage.removeItem('dc_demo_session');
+      // Clean up any legacy localStorage tokens
       localStorage.removeItem('dc_access_token');
       localStorage.removeItem('dc_refresh_token');
       localStorage.removeItem('dc_demo_session');
@@ -107,7 +112,7 @@ class TokenManager {
 
   isDemoSession(): boolean {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem('dc_demo_session') === 'true';
+      return sessionStorage.getItem('dc_demo_session') === 'true';
     }
     return false;
   }
@@ -115,9 +120,9 @@ class TokenManager {
   setDemoSession(isDemo: boolean): void {
     if (typeof window !== 'undefined') {
       if (isDemo) {
-        localStorage.setItem('dc_demo_session', 'true');
+        sessionStorage.setItem('dc_demo_session', 'true');
       } else {
-        localStorage.removeItem('dc_demo_session');
+        sessionStorage.removeItem('dc_demo_session');
       }
     }
   }

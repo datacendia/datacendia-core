@@ -826,7 +826,7 @@ router.get('/unleash/features', async (req: Request, res: Response) => {
     const unleashUrl = process.env.UNLEASH_URL || 'http://localhost:4242';
     const response = await fetch(`${unleashUrl}/api/client/features`, {
       headers: {
-        'Authorization': process.env.UNLEASH_API_TOKEN || '*:*.cendia-admin-token',
+        'Authorization': process.env.UNLEASH_API_TOKEN || '',
       },
     });
     
@@ -852,7 +852,7 @@ router.get('/unleash/feature/:name', async (req: Request, res: Response) => {
     const unleashUrl = process.env.UNLEASH_URL || 'http://localhost:4242';
     const response = await fetch(`${unleashUrl}/api/client/features/${name}`, {
       headers: {
-        'Authorization': process.env.UNLEASH_API_TOKEN || '*:*.cendia-admin-token',
+        'Authorization': process.env.UNLEASH_API_TOKEN || '',
       },
     });
     

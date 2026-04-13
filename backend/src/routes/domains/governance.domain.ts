@@ -14,6 +14,7 @@
 
 import { Router } from 'express';
 import { mountEnterpriseRoutes } from './_enterprise.js';
+import { authenticate } from '../../middleware/auth.js';
 import complianceRoutes from '../compliance.js';
 import governRoutes from '../govern.js';
 import pillarsRoutes from '../pillars.js';
@@ -25,6 +26,9 @@ import crossJurisdictionRoutes from '../cross-jurisdiction.js';
 import regulatorsReceiptRoutes from '../regulators-receipt.js';
 
 const router = Router();
+
+// Apply authentication to all governance domain routes
+router.use(authenticate);
 
 // Community routes
 router.use('/compliance', complianceRoutes);

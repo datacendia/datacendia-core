@@ -14,6 +14,7 @@
 
 import { Router } from 'express';
 import { mountEnterpriseRoutes } from './_enterprise.js';
+import { authenticate } from '../../middleware/auth.js';
 import deliberationsRoutes from '../deliberations.js';
 import councilRoutes from '../council.js';
 import deliberationsApiRoutes from '../deliberationsApi.js';
@@ -25,6 +26,9 @@ import dissentRoutes from '../dissent.js';
 import echoRoutes from '../echo.js';
 
 const router = Router();
+
+// Apply authentication to all council domain routes
+router.use(authenticate);
 
 // Community routes
 router.use('/council/deliberations', deliberationsRoutes); // Must come BEFORE /council
