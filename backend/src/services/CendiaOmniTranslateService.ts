@@ -2,6 +2,7 @@
 // See LICENSE file for details.
 
 import crypto from 'node:crypto';
+import { BoundedMap } from '../utils/BoundedMap.js';
 
 export const OMNITRANSLATE_LANGUAGES: Record<string, { name: string; nativeName: string; rtl?: boolean }> = {
   en: { name: 'English', nativeName: 'English' },
@@ -18,13 +19,13 @@ export const OMNITRANSLATE_LANGUAGES: Record<string, { name: string; nativeName:
 };
 
 class OmniTranslateServiceImpl {
-  private glossaries = new Map<string, any>();
-  private stats = new Map<string, { translations: number; characters: number }>();
+  private glossaries = new BoundedMap<string, any>({ maxSize: 1000 });
+  private stats = new BoundedMap<string, { translations: number; characters: number }>({ maxSize: 5000 });
 
   async getModelStatus() { return { loaded: true, model: 'nllb-200-distilled', languages: Object.keys(OMNITRANSLATE_LANGUAGES).length, memoryMb: 512 }; }
   async loadModel() { return { loaded: true, message: 'Model already loaded' }; }
 
-  async translate(opts: { text: string; sourceLanguage: string; targetLanguage: string; context?: string }) {
+  async translate(opts: { text: string; sourceLanguage: string; targetLanguage: string; context?: string; glossaryId?: string; preserveFormatting?: boolean; organizationId?: string }) {
     const lang = OMNITRANSLATE_LANGUAGES[opts.targetLanguage];
     const prefix = lang ? `[${lang.nativeName}]` : `[${opts.targetLanguage}]`;
     this.trackStats(opts.text.length);
@@ -36,7 +37,7 @@ class OmniTranslateServiceImpl {
   getLanguagesByRegion(region: string) { const regionMap: Record<string, string[]> = { americas: ['en', 'es', 'pt'], europe: ['en', 'fr', 'de', 'it'], asia: ['ja', 'ko', 'zh', 'hi'], middle_east: ['ar'] }; return (regionMap[region] || []).map(c => ({ code: c, ...OMNITRANSLATE_LANGUAGES[c] })).filter(l => l.name); }
   getRTLLanguages() { return Object.entries(OMNITRANSLATE_LANGUAGES).filter(([, l]) => l.rtl).map(([code, info]) => ({ code, ...info })); }
 
-  async batchTranslate(opts: { texts: string[]; sourceLanguage: string; targetLanguage: string }) {
+  async batchTranslate(opts: { texts: string[]; sourceLanguage: string; targetLanguage: string; context?: string; organizationId?: string }) {
     return Promise.all(opts.texts.map(text => this.translate({ text, sourceLanguage: opts.sourceLanguage, targetLanguage: opts.targetLanguage })));
   }
 

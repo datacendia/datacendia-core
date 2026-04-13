@@ -23,6 +23,7 @@
 
 import { v4 as uuidv4 } from 'uuid';
 import crypto from 'crypto';
+import { BoundedMap } from '../../../utils/BoundedMap.js';
 import {
   DataConnector, DataSource, IngestResult, ProvenanceRecord,
   VerticalKnowledgeBase, KnowledgeDocument, RetrievalResult,
@@ -278,10 +279,10 @@ export class SportsVerticalImplementation implements VerticalImplementation<Spor
   constructor() {
     this.dataConnector = new SportsDataConnector(); this.knowledgeBase = new SportsKnowledgeBaseLayer();
     this.complianceMapper = new SportsComplianceMapper();
-    this.decisionSchemas = new Map();
+    this.decisionSchemas = new BoundedMap({ maxSize: 100 });
     this.decisionSchemas.set('player-transfer', new PlayerTransferSchema() as unknown as DecisionSchema<SportsDecision>);
     this.decisionSchemas.set('financial-fair-play', new FinancialFairPlaySchema() as unknown as DecisionSchema<SportsDecision>);
-    this.agentPresets = new Map(); this.agentPresets.set('sports-governance', new SportsGovernancePreset());
+    this.agentPresets = new BoundedMap({ maxSize: 50 }); this.agentPresets.set('sports-governance', new SportsGovernancePreset());
     this.defensibleOutput = new SportsDefensibleOutput();
   }
 

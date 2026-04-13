@@ -22,6 +22,7 @@
 
 import { v4 as uuidv4 } from 'uuid';
 import crypto from 'crypto';
+import { BoundedMap } from '../../../utils/BoundedMap.js';
 import {
   DataConnector,
   IngestResult,
@@ -1336,14 +1337,14 @@ export class TransportationVerticalImplementation implements VerticalImplementat
     this.complianceMapper = new TransportationComplianceMapper();
     
     // All 4 decision schemas
-    this.decisionSchemas = new Map();
+    this.decisionSchemas = new BoundedMap({ maxSize: 100 });
     this.decisionSchemas.set('credit', new CreditDecisionSchema() as unknown as DecisionSchema<TransportationDecision>);
     this.decisionSchemas.set('trade', new TradeApprovalSchema() as unknown as DecisionSchema<TransportationDecision>);
     this.decisionSchemas.set('aml', new AMLEscalationSchema() as unknown as DecisionSchema<TransportationDecision>);
     this.decisionSchemas.set('rebalance', new PortfolioRebalanceSchema() as unknown as DecisionSchema<TransportationDecision>);
     
     // All 4 agent presets
-    this.agentPresets = new Map();
+    this.agentPresets = new BoundedMap({ maxSize: 50 });
     this.agentPresets.set('credit-analysis', new CreditAnalysisAgentPreset());
     this.agentPresets.set('trade-approval', new TradeApprovalAgentPreset());
     this.agentPresets.set('aml-investigation', new AMLInvestigationAgentPreset());

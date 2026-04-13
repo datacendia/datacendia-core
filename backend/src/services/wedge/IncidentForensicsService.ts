@@ -8,6 +8,7 @@
 // =============================================================================
 
 import crypto from 'crypto';
+import { BoundedMap } from '../../utils/BoundedMap.js';
 import { logger } from '../../utils/logger.js';
 import { persistServiceRecord, loadServiceRecords } from '../../utils/servicePersistence.js';
 
@@ -129,7 +130,7 @@ export interface ForensicAnalysis {
 // ---------------------------------------------------------------------------
 
 class IncidentForensicsService {
-  private incidents = new Map<string, ForensicAnalysis>();
+  private incidents = new BoundedMap<string, ForensicAnalysis>({ maxSize: 5000 });
   private initialized = false;
 
   async loadFromDB(): Promise<void> {

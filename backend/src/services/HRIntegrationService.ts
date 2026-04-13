@@ -2,6 +2,7 @@
 // See LICENSE file for details.
 
 import crypto from 'node:crypto';
+import { BoundedMap } from '../utils/BoundedMap.js';
 
 export type HRProvider = 'workday' | 'bamboohr' | 'adp' | 'gusto' | 'manual';
 
@@ -16,7 +17,7 @@ export interface HRCredentials {
 }
 
 interface Employee { id: string; name: string; email: string; department: string; title: string; provider: HRProvider; startDate: string }
-interface ConnectionStatus { provider: HRProvider; connected: boolean; lastSync?: string; employeeCount: number }
+interface ConnectionStatus { provider: HRProvider; connected: boolean; lastSync?: string; employeeCount: number; error?: string }
 
 const SEED_EMPLOYEES: Employee[] = [
   { id: 'emp-1', name: 'Alice Chen', email: 'alice@example.com', department: 'Engineering', title: 'Staff Engineer', provider: 'manual', startDate: '2022-03-15' },
@@ -26,8 +27,14 @@ const SEED_EMPLOYEES: Employee[] = [
 ];
 
 class HRIntegrationServiceImpl {
-  private connections = new Map<HRProvider, ConnectionStatus>();
-  private employees = new Map<string, Employee>(SEED_EMPLOYEES.map(e => [e.id, e]));
+  private connections = new BoundedMap<HRProvider, ConnectionStatus>({ maxSize: 10 });
+  private employees = new BoundedMap<string, Employee>({ maxSize: 50000 });
+
+  constructor() {
+    for (const emp of SEED_EMPLOYEES) {
+      this.employees.set(emp.id, emp);
+    }
+  }
 
   getAllConnectionStatuses(): ConnectionStatus[] {
     const providers: HRProvider[] = ['workday', 'bamboohr', 'adp', 'gusto', 'manual'];
