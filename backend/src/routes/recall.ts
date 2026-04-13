@@ -53,7 +53,7 @@ router.post('/recall/trackers', async (req: Request, res: Response) => {
 
 router.get('/recall/trackers', async (req: Request, res: Response) => {
   try {
-    const organizationId = (req.query.organizationId as string) || 'default';
+    const organizationId = (req as any).organizationId || (req.query.organizationId as string) || 'default';
     const status = req.query.status as string | undefined;
     const limit = parseInt(req.query.limit as string) || 50;
     const offset = parseInt(req.query.offset as string) || 0;
@@ -141,7 +141,7 @@ router.post('/recall/trackers/:id/close', async (req: Request, res: Response) =>
 
 router.get('/recall/accuracy', async (req: Request, res: Response) => {
   try {
-    const organizationId = (req.query.organizationId as string) || 'default';
+    const organizationId = (req as any).organizationId || (req.query.organizationId as string) || 'default';
     const period = (req.query.period as string) || 'last-90-days';
     const report = await cendiaRecallService.getPredictionAccuracyReport(organizationId, period);
     res.json({ success: true, data: report });
@@ -152,7 +152,7 @@ router.get('/recall/accuracy', async (req: Request, res: Response) => {
 
 router.get('/recall/lessons', async (req: Request, res: Response) => {
   try {
-    const organizationId = (req.query.organizationId as string) || 'default';
+    const organizationId = (req as any).organizationId || (req.query.organizationId as string) || 'default';
     const category = req.query.category as string | undefined;
     const impact = req.query.impact as string | undefined;
     const limit = parseInt(req.query.limit as string) || 20;
@@ -179,7 +179,7 @@ router.post('/recall/lessons/:id/endorse', async (req: Request, res: Response) =
 
 router.get('/recall/feedback/:decisionType', async (req: Request, res: Response) => {
   try {
-    const organizationId = (req.query.organizationId as string) || 'default';
+    const organizationId = (req as any).organizationId || (req.query.organizationId as string) || 'default';
     const feedback = await cendiaRecallService.getFeedbackForDecisionType(organizationId, req.params.decisionType);
     res.json({ success: true, data: feedback });
   } catch (error: any) {

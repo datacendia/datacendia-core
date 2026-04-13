@@ -22,6 +22,7 @@ import { createServer } from 'http';
 import { Server as SocketIOServer } from 'socket.io';
 import { SocketServer } from './websocket/SocketServer.js';
 import { rateLimit } from 'express-rate-limit';
+import { RedisStore as RateLimitRedisStore } from 'rate-limit-redis';
 import path from 'path';
 import fs from 'fs';
 import { config } from './config/index.js';
@@ -244,7 +245,7 @@ const corsMiddleware = cors({
 });
 app.use('/api/', corsMiddleware);
 
-// Rate limiting (higher limit for dev/test)
+// Rate limiting — Redis-backed in production for multi-instance consistency
 const limiter = rateLimit({
   windowMs: 1 * 60 * 1000, // 1 minute
   max: config.nodeEnv === 'production' ? 100 : 1000, // Higher limit in dev
@@ -252,6 +253,11 @@ const limiter = rateLimit({
   legacyHeaders: false,
   message: { error: { code: 'RATE_LIMITED', message: 'Too many requests' } },
   skip: () => config.nodeEnv === 'test', // Skip in test environment
+  ...(config.nodeEnv === 'production' && config.redisUrl ? {
+    store: new RateLimitRedisStore({
+      sendCommand: (...args: string[]) => redis.call(...(args as [string, ...string[]])) as any,
+    }),
+  } : {}),
 });
 app.use('/api/', limiter);
 
@@ -359,29 +365,29 @@ app.use('/api/v1', requireOrgScope, intelligenceDomain); // persona, autopilot, 
 app.use('/api/v1', demoDomain);                          // leads, premium, demo, consolidated (no org scope — public demos)
 // Express Intelligence — enterprise route loaded dynamically
 import('./routes/express.js').then(mod => {
-  app.use('/api/v1/express', mod.default as any);
+  app.use('/api/v1/express', requireOrgScope, mod.default as any);
 }).catch(() => { /* Enterprise module not available */ });
-app.use('/api/v1', recallRoutes);          // CendiaRecall™ - Decision Outcome Tracking
-app.use('/api/v1/eu-banking', euBankingRoutes); // EU Banking - Basel III + EU AI Act compliance
-app.use('/api/v1/kafka', kafkaRoutes);               // Kafka admin & monitoring
-app.use('/api/v1/guardrails', guardrailsRoutes);     // NeMo Guardrails admin & evaluation
-app.use('/api/v1/opa', opaRoutes);                   // Open Policy Agent policy-as-code
-app.use('/api/v1/temporal', temporalRoutes);         // Temporal.io workflow orchestration
-app.use('/api/v1/openbao', openbaoRoutes);           // OpenBao/Vault secrets & KMS
-app.use('/api/v1/rapids', rapidsRoutes);             // NVIDIA RAPIDS GPU analytics + Confidential Computing
-app.use('/api/v1/flink', flinkRoutes);               // Apache Flink CEP stream processing
-app.use('/api/v1/gateway', gatewayRoutes);           // CendiaGateway AI Governance Gateway
-app.use('/api/v1/wedge', wedgeRoutes);               // Wedge Products Shadow AI, Governance Report, Incident Forensics
-app.use('/api/v1/ops-agents', opsAgentsRoutes);      // Ops Agents Report, Analytics, NLP, Pipeline
-app.use('/api/v1/retention', retentionRoutes);       // 7-Year Audit Retention Management
-app.use('/api/v1/service-discovery', serviceDiscoveryRoutes);     // Unified Service Discovery & Marketplace
-app.use('/api/v1/policy-authoring', policyAuthoringRoutes);       // Custom Policy Authoring & Simulation
-app.use('/api/v1/analytics', analyticsReportingRoutes);           // Advanced Analytics & Reporting
-app.use('/api/v1/collaboration', stakeholderPortalsRoutes);       // Stakeholder Collaboration Portals
-app.use('/api/v1/remediation', remediationTicketingRoutes);       // Automated Remediation & Ticketing
-app.use('/api/v1/model-registry', modelRegistryRoutes);           // AI Model Lifecycle & Registry
-app.use('/api/v1/feedback', feedbackRoutes);                      // Continuous Feedback & Improvement Loop
-app.use('/api/v1/enterprise', enterprisePlatinumRoutes);          // Enterprise Platinum: Self-Healing, Governance Graph, RegSim, Ethics, Sovereignty, HITL, Trust, Agents
+app.use('/api/v1', requireOrgScope, recallRoutes);                              // CendiaRecall™ - Decision Outcome Tracking
+app.use('/api/v1/eu-banking', requireOrgScope, euBankingRoutes);                // EU Banking - Basel III + EU AI Act compliance
+app.use('/api/v1/kafka', requireOrgScope, kafkaRoutes);                         // Kafka admin & monitoring
+app.use('/api/v1/guardrails', requireOrgScope, guardrailsRoutes);               // NeMo Guardrails admin & evaluation
+app.use('/api/v1/opa', requireOrgScope, opaRoutes);                             // Open Policy Agent policy-as-code
+app.use('/api/v1/temporal', requireOrgScope, temporalRoutes);                   // Temporal.io workflow orchestration
+app.use('/api/v1/openbao', requireOrgScope, openbaoRoutes);                     // OpenBao/Vault secrets & KMS
+app.use('/api/v1/rapids', requireOrgScope, rapidsRoutes);                       // NVIDIA RAPIDS GPU analytics + Confidential Computing
+app.use('/api/v1/flink', requireOrgScope, flinkRoutes);                         // Apache Flink CEP stream processing
+app.use('/api/v1/gateway', requireOrgScope, gatewayRoutes);                     // CendiaGateway AI Governance Gateway
+app.use('/api/v1/wedge', requireOrgScope, wedgeRoutes);                         // Wedge Products Shadow AI, Governance Report, Incident Forensics
+app.use('/api/v1/ops-agents', requireOrgScope, opsAgentsRoutes);                // Ops Agents Report, Analytics, NLP, Pipeline
+app.use('/api/v1/retention', requireOrgScope, retentionRoutes);                 // 7-Year Audit Retention Management
+app.use('/api/v1/service-discovery', requireOrgScope, serviceDiscoveryRoutes);  // Unified Service Discovery & Marketplace
+app.use('/api/v1/policy-authoring', requireOrgScope, policyAuthoringRoutes);    // Custom Policy Authoring & Simulation
+app.use('/api/v1/analytics', requireOrgScope, analyticsReportingRoutes);        // Advanced Analytics & Reporting
+app.use('/api/v1/collaboration', requireOrgScope, stakeholderPortalsRoutes);    // Stakeholder Collaboration Portals
+app.use('/api/v1/remediation', requireOrgScope, remediationTicketingRoutes);    // Automated Remediation & Ticketing
+app.use('/api/v1/model-registry', requireOrgScope, modelRegistryRoutes);        // AI Model Lifecycle & Registry
+app.use('/api/v1/feedback', requireOrgScope, feedbackRoutes);                   // Continuous Feedback & Improvement Loop
+app.use('/api/v1/enterprise', requireOrgScope, enterprisePlatinumRoutes);       // Enterprise Platinum: Self-Healing, Governance Graph, RegSim, Ethics, Sovereignty, HITL, Trust, Agents
 
 // Sandbox Analytics - Track demo engagement for Thomson Reuters
 import('./routes/sandbox-analytics.js').then(mod => {
@@ -473,8 +479,9 @@ const startServer = async () => {
       if (config.demoMode) {
         logger.warn('⚠️  DEMO MODE ACTIVE — authentication bypass enabled. Not suitable for production data.');
       } else {
-        logger.warn('⚠️  SECURITY: REQUIRE_AUTH is not enabled in production. Set REQUIRE_AUTH=true for production use.');
-        logger.warn('⚠️  Dev auth bypass is active. This is acceptable for demo/staging deployments.');
+        logger.error('🛑 SECURITY: REQUIRE_AUTH must be enabled in production. Refusing to start without authentication.');
+        logger.error('   Set REQUIRE_AUTH=true or DEMO_MODE=true (for demos only).');
+        process.exit(1);
       }
     }
     const authMode = config.requireAuth ? 'enforced' : (config.nodeEnv === 'development' ? 'dev-bypass' : 'enforced');

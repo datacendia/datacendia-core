@@ -28,12 +28,12 @@ const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 50 
 // MIDDLEWARE
 // =============================================================================
 
-// Extract user info (production upgrade: from auth middleware)
+// Extract user info from auth middleware (never trust client-supplied headers)
 const extractUser = (req: Request) => {
   return {
-    id: req.headers['x-user-id'] as string || 'anonymous',
-    role: (req.headers['x-user-role'] as string || 'viewer') as any,
-    organizationId: req.headers['x-organization-id'] as string || 'default-org',
+    id: (req as any).user?.id || 'anonymous',
+    role: (req as any).user?.role || 'viewer',
+    organizationId: (req as any).organizationId || (req as any).user?.organizationId,
   };
 };
 

@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_USER: datacendia
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-datacendia_secure_2024}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
       POSTGRES_DB: datacendia
     volumes:
       - postgres_data:/var/lib/postgresql/data
@@ -24,13 +24,13 @@ services:
     image: redis:7-alpine
     container_name: datacendia-redis
     restart: unless-stopped
-    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-datacendia_redis_2024}
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:?Set REDIS_PASSWORD in .env}
     volumes:
       - redis_data:/data
     ports:
       - "6380:6379"
     healthcheck:
-      test: ["CMD", "redis-cli", "--pass", "${REDIS_PASSWORD:-datacendia_redis_2024}", "ping"]
+      test: ["CMD", "redis-cli", "--pass", "${REDIS_PASSWORD}", "ping"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -41,7 +41,7 @@ services:
     container_name: datacendia-neo4j
     restart: unless-stopped
     environment:
-      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:-datacendia_graph_2024}
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:?Set NEO4J_PASSWORD in .env}
       NEO4J_PLUGINS: '["apoc", "graph-data-science"]'
       NEO4J_dbms_security_procedures_unrestricted: apoc.*,gds.*
       NEO4J_dbms_memory_heap_initial__size: 512m
@@ -119,18 +119,18 @@ services:
     environment:
       NODE_ENV: development
       PORT: 3001
-      DATABASE_URL: postgresql://datacendia:${POSTGRES_PASSWORD:-datacendia_secure_2024}@postgres:5432/datacendia
-      REDIS_URL: redis://:${REDIS_PASSWORD:-datacendia_redis_2024}@redis:6379
+      DATABASE_URL: postgresql://datacendia:${POSTGRES_PASSWORD}@postgres:5432/datacendia
+      REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379
       NEO4J_URI: bolt://neo4j:7687
       NEO4J_USER: neo4j
-      NEO4J_PASSWORD: ${NEO4J_PASSWORD:-datacendia_graph_2024}
+      NEO4J_PASSWORD: ${NEO4J_PASSWORD}
       OLLAMA_BASE_URL: http://ollama:11434
       CLAMAV_HOST: clamav
       CLAMAV_PORT: "3310"
       FHIR_BASE_URL: http://fhir:8080/fhir
       FHIR_TOKEN_URL: http://fhir:8080/fhir/auth/token
-      JWT_SECRET: ${JWT_SECRET:-your-super-secret-jwt-key-change-in-production}
-      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:-your-refresh-secret-key-change-in-production}
+      JWT_SECRET: ${JWT_SECRET:?Set JWT_SECRET in .env}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:?Set JWT_REFRESH_SECRET in .env}
     volumes:
       - ./backend:/app
       - /app/node_modules

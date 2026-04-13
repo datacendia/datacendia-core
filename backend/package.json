@@ -88,6 +88,7 @@
     "pdf-parse": "^2.4.5",
     "pdfkit": "^0.17.2",
     "pg": "^8.11.3",
+    "rate-limit-redis": "^4.3.1",
     "redis": "^5.10.0",
     "snarkjs": "^0.7.6",
     "socket.io": "^4.8.3",

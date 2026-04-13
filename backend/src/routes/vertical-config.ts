@@ -21,10 +21,10 @@ import { getErrorMessage } from '../utils/errors.js';
 
 const router = Router();
 
-// Extract user/org info from request
+// Extract user/org info from auth middleware (never trust client-supplied headers)
 const extractContext = (req: Request) => ({
-  userId: req.headers['x-user-id'] as string || 'anonymous',
-  organizationId: req.headers['x-organization-id'] as string || 'default-org',
+  userId: (req as any).user?.id || 'anonymous',
+  organizationId: (req as any).organizationId || (req as any).user?.organizationId,
 });
 
 // =============================================================================
