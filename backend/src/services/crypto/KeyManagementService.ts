@@ -18,6 +18,7 @@ import { ml_dsa65 } from '@noble/post-quantum/ml-dsa';
 
 
 import crypto from 'crypto';
+import { config } from '../../config/index.js';
 import { logger } from '../../utils/logger.js';
 import { sha256, sha512, bytesToHex, hexToBytes, utf8ToBytes, concatBytes } from './nativeCrypto.js';
 
@@ -109,12 +110,18 @@ export class KeyManagementService {
         logger.info(`   Dilithium Public Key: ${this.dilithiumKeys.publicKeyHex.substring(0, 16)}...`);
         logger.info(`   Dilithium Fingerprint: ${this.dilithiumKeys.fingerprint}`);
 
-        // Log the private keys for first-boot persistence
+        // Warn that keys are ephemeral and need to be persisted via env vars
         if (!process.env.CENDIA_ED25519_PRIVATE_KEY) {
-          logger.warn('🔐 CendiaKMS: Set these environment variables to persist keys:');
-          logger.warn(`   CENDIA_ED25519_PRIVATE_KEY=${bytesToHex(this.ed25519Keys.privateKey)}`);
-          logger.warn(`   CENDIA_DILITHIUM_PRIVATE_KEY=${bytesToHex(this.dilithiumKeys.privateKey)}`);
-          logger.warn(`   CENDIA_MASTER_SEED=${masterSeed}`);
+          logger.warn('🔐 CendiaKMS: Keys were generated randomly and will change on restart.');
+          logger.warn('   Set CENDIA_ED25519_PRIVATE_KEY, CENDIA_DILITHIUM_PRIVATE_KEY, and CENDIA_MASTER_SEED to persist.');
+          logger.warn(`   Ed25519 Fingerprint:  ${this.ed25519Keys.fingerprint}`);
+          logger.warn(`   Dilithium Fingerprint: ${this.dilithiumKeys.fingerprint}`);
+          logger.warn('   Run with LOG_LEVEL=debug to output key material for initial provisioning.');
+          if (config.logLevel === 'debug') {
+            logger.debug(`   CENDIA_ED25519_PRIVATE_KEY=${bytesToHex(this.ed25519Keys.privateKey)}`);
+            logger.debug(`   CENDIA_DILITHIUM_PRIVATE_KEY=${bytesToHex(this.dilithiumKeys.privateKey)}`);
+            logger.debug(`   CENDIA_MASTER_SEED=${masterSeed}`);
+          }
         }
       }
 

@@ -308,8 +308,11 @@ if (config.nodeEnv === 'development') {
 // Token endpoint is exempt so clients can get initial token
 app.get('/api/v1/csrf-token', csrfTokenHandler);
 app.use('/api/', ensureCsrfToken);
-if (config.nodeEnv === 'production') {
+// CSRF protection enabled in all environments unless explicitly disabled
+if (process.env['DISABLE_CSRF'] !== 'true') {
   app.use('/api/', csrfProtection);
+} else {
+  logger.warn('⚠️  CSRF protection disabled via DISABLE_CSRF=true');
 }
 
 // NOTE: /health endpoint is defined BEFORE middleware (line ~143) for liveness probes

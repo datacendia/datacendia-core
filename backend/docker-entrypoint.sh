@@ -7,10 +7,14 @@ echo "=== Datacendia Backend Startup ==="
 if echo "$DATABASE_URL" | grep -q "postgresql"; then
   echo "Running Prisma migrations..."
   npx prisma migrate deploy --schema=prisma/schema 2>&1 || {
-    echo "Warning: Prisma migrate deploy failed. Falling back to db push..."
-    npx prisma db push --schema=prisma/schema --accept-data-loss 2>&1 || {
-      echo "Warning: Prisma db push also failed. Starting anyway..."
-    }
+    echo "ERROR: Prisma migrate deploy failed."
+    echo "Do NOT use 'db push --accept-data-loss' in production — it can drop columns/tables."
+    echo "Fix migrations manually or set SKIP_MIGRATIONS=true to start without migrating."
+    if [ "${SKIP_MIGRATIONS:-false}" = "true" ]; then
+      echo "SKIP_MIGRATIONS=true — proceeding without migrations."
+    else
+      exit 1
+    fi
   }
   echo "Database schema ready."
 else
