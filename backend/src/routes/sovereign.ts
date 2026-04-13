@@ -29,8 +29,8 @@ import { getErrorMessage } from '../utils/errors.js';
 
 const router = Router();
 
-// Default org for demo (production upgrade: from auth middleware)
-const DEFAULT_ORG = 'default-org';
+// Org ID extracted from auth middleware; fallback only for edge cases
+const getOrgId = (req: any): string => req.organizationId || req.user?.organizationId || 'default-org';
 
 type BucketName = (typeof BUCKETS)[keyof typeof BUCKETS];
 
@@ -70,7 +70,7 @@ const vaultUpload = multer({
 router.post('/druid/timeline', async (req: Request, res: Response) => {
   try {
     const { startTime, endTime, limit = 100, forceBackend } = req.body;
-    const orgId = (req as any).orgId || DEFAULT_ORG;
+    const orgId = getOrgId(req);
     
     // Use AnalyticsRouter for automatic backend selection
     const result = await analyticsRouter.getDecisionHistory(orgId, {
@@ -101,7 +101,7 @@ router.post('/druid/timeline', async (req: Request, res: Response) => {
 router.post('/druid/metrics', async (req: Request, res: Response) => {
   try {
     const { startTime, endTime, granularity = 'hour', forceBackend } = req.body;
-    const orgId = (req as any).orgId || DEFAULT_ORG;
+    const orgId = getOrgId(req);
     
     // Use AnalyticsRouter for automatic backend selection
     const result = await analyticsRouter.getAgentMetrics(orgId, {
@@ -189,7 +189,7 @@ router.post('/storage/upload', async (req: Request, res: Response) => {
         mimeType: contentType,
         originalName: fileName,
         uploadedBy: metadata?.uploadedBy || 'system',
-        organizationId: (req as any).orgId || DEFAULT_ORG,
+        organizationId: getOrgId(req),
       }
     );
 
@@ -304,7 +304,7 @@ router.post('/vault/upload', vaultUpload.single('file'), async (req: Request, re
         mimeType: file.mimetype,
         originalName: file.originalname,
         uploadedBy: metadata.uploadedBy || 'system',
-        organizationId: (req as any).orgId || DEFAULT_ORG,
+        organizationId: getOrgId(req),
       }
     );
 
@@ -430,7 +430,7 @@ router.get('/vault/health', async (_req: Request, res: Response) => {
 router.post('/vector/store', async (req: Request, res: Response) => {
   try {
     const { documentId, content, metadata, chunkSize = 500 } = req.body;
-    const orgId = (req as any).orgId || DEFAULT_ORG;
+    const orgId = getOrgId(req);
     
     // Split content into chunks and store each
     const chunks = content.match(new RegExp(`.{1,${chunkSize}}`, 'g')) || [content];
@@ -459,7 +459,7 @@ router.post('/vector/store', async (req: Request, res: Response) => {
 router.post('/vector/search', async (req: Request, res: Response) => {
   try {
     const { query, limit = 5, threshold = 0.7 } = req.body;
-    const orgId = (req as any).orgId || DEFAULT_ORG;
+    const orgId = getOrgId(req);
     
     const results = await vectorService.searchDocuments(orgId, query, { limit, threshold });
     
@@ -476,7 +476,7 @@ router.post('/vector/search', async (req: Request, res: Response) => {
 router.post('/vector/decision', async (req: Request, res: Response) => {
   try {
     const { decisionId, title, context, outcome, confidence } = req.body;
-    const orgId = (req as any).orgId || DEFAULT_ORG;
+    const orgId = getOrgId(req);
     
     await vectorService.storeDecisionContext(orgId, {
       decisionId,
@@ -498,7 +498,7 @@ router.post('/vector/decision', async (req: Request, res: Response) => {
 router.post('/vector/decisions/search', async (req: Request, res: Response) => {
   try {
     const { query, limit = 5 } = req.body;
-    const orgId = (req as any).orgId || DEFAULT_ORG;
+    const orgId = getOrgId(req);
     
     const results = await vectorService.searchDecisions(orgId, query, { limit });
     
@@ -515,7 +515,7 @@ router.post('/vector/decisions/search', async (req: Request, res: Response) => {
 router.post('/vector/agent-memory', async (req: Request, res: Response) => {
   try {
     const { agentId, memoryType, content, importance, expiresAt } = req.body;
-    const orgId = (req as any).orgId || DEFAULT_ORG;
+    const orgId = getOrgId(req);
     
     await vectorService.storeAgentMemory(orgId, agentId, {
       agentId,
@@ -538,7 +538,7 @@ router.post('/vector/agent-memory', async (req: Request, res: Response) => {
 router.post('/vector/agent-memory/recall', async (req: Request, res: Response) => {
   try {
     const { agentId, query, limit = 10 } = req.body;
-    const orgId = (req as any).orgId || DEFAULT_ORG;
+    const orgId = getOrgId(req);
     
     const memories = await vectorService.retrieveAgentMemory(orgId, agentId, query, { limit });
     
@@ -571,7 +571,7 @@ router.get('/vector/health', async (req: Request, res: Response) => {
 router.post('/queue/deliberation', async (req: Request, res: Response) => {
   try {
     const { sessionId, question, agents, context, priority = 'normal' } = req.body;
-    const orgId = (req as any).orgId || DEFAULT_ORG;
+    const orgId = getOrgId(req);
     
     const priorityMap: Record<string, number> = { critical: 1, high: 2, normal: 3, low: 4 };
     
@@ -597,7 +597,7 @@ router.post('/queue/deliberation', async (req: Request, res: Response) => {
 router.post('/queue/document', async (req: Request, res: Response) => {
   try {
     const { documentId, fileName, fileType, storageUrl, extractText, generateEmbeddings } = req.body;
-    const orgId = (req as any).orgId || DEFAULT_ORG;
+    const orgId = getOrgId(req);
     
     const job = await agentQueueService.addDocumentProcessing({
       organizationId: orgId,

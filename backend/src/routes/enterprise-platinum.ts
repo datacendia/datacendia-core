@@ -453,7 +453,7 @@ router.post('/marketplace/packages', async (req: Request, res: Response) => {
 router.post('/marketplace/packages/:id/install', async (req: Request, res: Response) => {
   try {
     const userId = (req as any).user?.id || 'system';
-    const result = await complianceMarketplace.installPackage(req.params.id, req.body.organizationId || 'default', userId);
+    const result = await complianceMarketplace.installPackage(req.params.id, (req as any).organizationId || req.body.organizationId || 'default', userId);
     if (!result) return res.status(404).json({ success: false, error: 'Package not found' });
     res.status(201).json({ success: true, data: result });
   } catch (e) { res.status(500).json({ success: false, error: 'Installation failed' }); }
@@ -473,13 +473,13 @@ router.post('/marketplace/packages/:id/reviews', async (req: Request, res: Respo
 });
 
 router.get('/marketplace/installed', async (req: Request, res: Response) => {
-  try { res.json({ success: true, data: await complianceMarketplace.getInstalledPackages(req.query.organizationId as string || 'default') }); }
+  try { res.json({ success: true, data: await complianceMarketplace.getInstalledPackages((req as any).organizationId || req.query.organizationId as string || 'default') }); }
   catch (e) { res.status(500).json({ success: false, error: 'Failed to list installed' }); }
 });
 
 router.delete('/marketplace/installed/:id', async (req: Request, res: Response) => {
   try {
-    await complianceMarketplace.uninstallPackage(req.query.organizationId as string || 'default', req.params.id);
+    await complianceMarketplace.uninstallPackage((req as any).organizationId || req.query.organizationId as string || 'default', req.params.id);
     res.json({ success: true });
   } catch (e) { res.status(500).json({ success: false, error: 'Uninstall failed' }); }
 });

@@ -84,12 +84,12 @@ function extractUserInfo(req: Request): {
     };
   }
 
-  // From custom headers (for API key auth / programmatic access)
+  // Fallback: use auth middleware org context (never trust client-supplied headers for org identity)
   return {
-    userId: (req.headers['x-gateway-user-id'] as string) || 'anonymous',
-    userEmail: (req.headers['x-gateway-user-email'] as string) || 'unknown@unknown.com',
-    userDepartment: (req.headers['x-gateway-department'] as string) || 'unknown',
-    organizationId: (req.headers['x-gateway-org-id'] as string) || 'default-org',
+    userId: (req as any).user?.id || 'anonymous',
+    userEmail: (req as any).user?.email || 'unknown@unknown.com',
+    userDepartment: 'unknown',
+    organizationId: (req as any).organizationId || (req as any).user?.organizationId || 'unknown',
   };
 }
 
@@ -626,7 +626,7 @@ router.get('/shadow-ai/events', async (req: Request, res: Response) => {
 
 router.get('/shadow-ai/report', async (req: Request, res: Response) => {
   try {
-    const orgId = (req.query.organizationId as string) || 'default-org';
+    const orgId = (req as any).organizationId || (req.query.organizationId as string) || 'unknown';
     const days = req.query.days ? parseInt(req.query.days as string) : 30;
     const report = shadowDetector.generateReport(orgId, days);
     return res.json(report);
@@ -823,7 +823,7 @@ router.post('/rate-limits/check', async (req: Request, res: Response) => {
     const result = rateLimiter.check({
       userId: req.body.userId || 'test-user',
       userDepartment: req.body.department || 'unknown',
-      organizationId: req.body.organizationId || 'default-org',
+      organizationId: (req as any).organizationId || req.body.organizationId || 'unknown',
     });
     return res.json(result);
   } catch (err: unknown) {

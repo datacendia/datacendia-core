@@ -36,8 +36,8 @@ router.post('/query', async (req: Request, res: Response) => {
       query: req.body.query,
       pillars: req.body.pillars,
       context: {
-        organizationId: req.body.context?.organizationId || req.headers['x-organization-id'] as string || 'default',
-        userId: req.body.context?.userId || req.headers['x-user-id'] as string,
+        organizationId: req.body.context?.organizationId || ((req as any).organizationId || (req as any).user?.organizationId) || 'default',
+        userId: req.body.context?.userId || ((req as any).user?.id),
         timeRange: req.body.context?.timeRange,
       },
     };
@@ -65,8 +65,8 @@ router.post('/analyze', async (req: Request, res: Response) => {
       subject: req.body.subject || { entityType: 'organization', entityId: 'default' },
       parameters: req.body.parameters,
       context: {
-        organizationId: req.body.context?.organizationId || req.headers['x-organization-id'] as string || 'default',
-        userId: req.body.context?.userId || req.headers['x-user-id'] as string,
+        organizationId: req.body.context?.organizationId || ((req as any).organizationId || (req as any).user?.organizationId) || 'default',
+        userId: req.body.context?.userId || ((req as any).user?.id),
       },
     };
 
@@ -95,8 +95,8 @@ router.post('/simulate', async (req: Request, res: Response) => {
       horizon: req.body.horizon || '30d',
       iterations: req.body.iterations,
       context: {
-        organizationId: req.body.context?.organizationId || req.headers['x-organization-id'] as string || 'default',
-        userId: req.body.context?.userId || req.headers['x-user-id'] as string,
+        organizationId: req.body.context?.organizationId || ((req as any).organizationId || (req as any).user?.organizationId) || 'default',
+        userId: req.body.context?.userId || ((req as any).user?.id),
       },
     };
 
@@ -124,8 +124,8 @@ router.post('/govern', async (req: Request, res: Response) => {
       governanceType: req.body.governanceType || 'compliance',
       parameters: req.body.parameters,
       context: {
-        organizationId: req.body.context?.organizationId || req.headers['x-organization-id'] as string || 'default',
-        userId: req.body.context?.userId || req.headers['x-user-id'] as string,
+        organizationId: req.body.context?.organizationId || ((req as any).organizationId || (req as any).user?.organizationId) || 'default',
+        userId: req.body.context?.userId || ((req as any).user?.id),
       },
       reason: req.body.reason,
     };
@@ -155,8 +155,8 @@ router.get('/context/:entityType/:entityId', async (req: Request, res: Response)
       exclude: req.query['exclude'] ? (req.query['exclude'] as string).split(',') as any : undefined,
     };
     const context = {
-      organizationId: req.headers['x-organization-id'] as string || 'default',
-      userId: req.headers['x-user-id'] as string,
+      organizationId: ((req as any).organizationId || (req as any).user?.organizationId) || 'default',
+      userId: ((req as any).user?.id),
     };
 
     const result = await cortexCore.getContext(entityType || '', entityId || '', options, context);
@@ -221,8 +221,8 @@ router.post('/natural-language', async (req: Request, res: Response) => {
       intent: 'natural_language',
       query: req.body.question || req.body.query,
       context: {
-        organizationId: req.body.organizationId || req.headers['x-organization-id'] as string || 'default',
-        userId: req.headers['x-user-id'] as string,
+        organizationId: req.body.organizationId || ((req as any).organizationId || (req as any).user?.organizationId) || 'default',
+        userId: ((req as any).user?.id),
       },
     });
     res.json(result);

@@ -52,8 +52,7 @@ const router = Router();
  * Require admin role for management operations
  */
 const requireAdmin = (req: Request, res: Response, next: NextFunction): void => {
-  // Production upgrade: integrate with Keycloak/auth system
-  const role = req.headers['x-user-role'] as string;
+  const role = ((req as any).user?.role || '').toLowerCase();
   if (!role || !['admin', 'super_admin'].includes(role)) {
     res.status(403).json({
       error: 'Admin access required',
@@ -68,7 +67,7 @@ const requireAdmin = (req: Request, res: Response, next: NextFunction): void => 
  * Require auditor role for read-only operations
  */
 const requireAuditor = (req: Request, res: Response, next: NextFunction): void => {
-  const role = req.headers['x-user-role'] as string;
+  const role = ((req as any).user?.role || '').toLowerCase();
   if (!role || !['admin', 'super_admin', 'auditor'].includes(role)) {
     res.status(403).json({
       error: 'Auditor access required',
@@ -175,7 +174,7 @@ router.post('/create', requireAdmin, async (req, res) => {
     const adapter = adapterManager.create(type, config || {});
     
     // Log creation for audit
-    logger.info(`[AUDIT] Adapter created: ${adapter['config'].id} (type: ${type}) by ${req.headers['x-user-id'] || 'unknown'}`);
+    logger.info(`[AUDIT] Adapter created: ${adapter['config'].id} (type: ${type}) by ${(req as any).user?.id || 'unknown'}`);
 
     res.status(201).json({
       success: true,
@@ -328,7 +327,7 @@ router.delete('/:id', requireAdmin, async (req, res) => {
     await adapterManager.destroy(req.params.id);
 
     // Log destruction for audit
-    logger.info(`[AUDIT] Adapter destroyed: ${req.params.id} by ${req.headers['x-user-id'] || 'unknown'}`);
+    logger.info(`[AUDIT] Adapter destroyed: ${req.params.id} by ${(req as any).user?.id || 'unknown'}`);
 
     res.json({
       success: true,

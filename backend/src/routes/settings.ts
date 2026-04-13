@@ -20,9 +20,9 @@ import { logger } from '../utils/logger.js';
 
 const router = Router();
 
-// Middleware to get tenant from auth context (simplified for demo)
+// Get tenant from auth middleware (never trust client-supplied headers)
 const getTenantId = (req: Request): string => {
-  return req.headers['x-tenant-id'] as string || 'tenant_acme_2024';
+  return (req as any).organizationId || (req as any).user?.organizationId || 'default';
 };
 
 // =============================================================================

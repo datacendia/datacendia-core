@@ -167,7 +167,7 @@ router.get('/languages/rtl', (_req: Request, res: Response) => {
 router.post('/translate', async (req: Request, res: Response) => {
   try {
     const { text, sourceLanguage, targetLanguage, context, preserveFormatting, glossaryId } = req.body;
-    const organizationId = req.headers['x-organization-id'] as string;
+    const organizationId = ((req as any).organizationId || (req as any).user?.organizationId);
 
     if (!text || !targetLanguage) {
       return res.status(400).json({ 
@@ -203,7 +203,7 @@ router.post('/translate', async (req: Request, res: Response) => {
 router.post('/translate/batch', async (req: Request, res: Response) => {
   try {
     const { texts, sourceLanguage, targetLanguage, context } = req.body;
-    const organizationId = req.headers['x-organization-id'] as string;
+    const organizationId = ((req as any).organizationId || (req as any).user?.organizationId);
 
     if (!texts || !Array.isArray(texts) || !targetLanguage) {
       return res.status(400).json({ 
@@ -267,7 +267,7 @@ router.post('/document/decision/:id', async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const { targetLanguage } = req.body;
-    const organizationId = req.headers['x-organization-id'] as string;
+    const organizationId = ((req as any).organizationId || (req as any).user?.organizationId);
 
     if (!targetLanguage) {
       return res.status(400).json({ success: false, error: 'Missing required field: targetLanguage' });
@@ -293,7 +293,7 @@ router.post('/document/summary/:id', async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const { targetLanguage } = req.body;
-    const organizationId = req.headers['x-organization-id'] as string;
+    const organizationId = ((req as any).organizationId || (req as any).user?.organizationId);
 
     if (!targetLanguage) {
       return res.status(400).json({ success: false, error: 'Missing required field: targetLanguage' });
@@ -322,7 +322,7 @@ router.post('/document/summary/:id', async (req: Request, res: Response) => {
 router.post('/glossary', async (req: Request, res: Response) => {
   try {
     const { name, description } = req.body;
-    const organizationId = req.headers['x-organization-id'] as string;
+    const organizationId = ((req as any).organizationId || (req as any).user?.organizationId);
 
     if (!name || !organizationId) {
       return res.status(400).json({ success: false, error: 'Missing required fields: name' });
@@ -348,7 +348,7 @@ router.post('/glossary/:id/term', async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const { sourceText, translations, caseSensitive } = req.body;
-    const organizationId = req.headers['x-organization-id'] as string;
+    const organizationId = ((req as any).organizationId || (req as any).user?.organizationId);
 
     if (!sourceText || !translations) {
       return res.status(400).json({ 
@@ -379,7 +379,7 @@ router.post('/glossary/:id/term', async (req: Request, res: Response) => {
  */
 router.get('/stats', async (req: Request, res: Response) => {
   try {
-    const organizationId = req.headers['x-organization-id'] as string;
+    const organizationId = ((req as any).organizationId || (req as any).user?.organizationId);
 
     if (!organizationId) {
       return res.status(400).json({ success: false, error: 'Missing organization ID' });
