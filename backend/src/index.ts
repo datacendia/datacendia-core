@@ -49,6 +49,7 @@ import {
 } from './security/DefenseInDepth.js';
 import { honeypotMiddleware } from './security/Honeypot.js';
 import { csrfProtection, csrfTokenHandler, ensureCsrfToken } from './middleware/csrf.js';
+import { requireOrgScope } from './middleware/tenantIsolation.js';
 import { 
   inputSanitizationMiddleware,
   pathTraversalMiddleware,
@@ -171,33 +172,7 @@ app.get('/api/v1/inference/status', async (_req, res) => {
 // Prometheus metrics - before middleware so scraping works without auth
 app.use('/metrics', prometheusRoutes);
 
-// Debug endpoint: test SMTP connection (remove after debugging)
-app.get('/debug/smtp', async (_req, res) => {
-  const nodemailer = await import('nodemailer');
-  const smtpConfig = {
-    host: process.env.SMTP_HOST || '(not set)',
-    port: parseInt(process.env.SMTP_PORT || '587', 10),
-    user: process.env.SMTP_USER || '(not set)',
-    passSet: !!process.env.SMTP_PASS,
-    from: process.env.SMTP_FROM || '(not set)',
-    salesEmail: process.env.SALES_EMAIL || '(not set)',
-  };
-  if (!process.env.SMTP_HOST) {
-    return res.json({ smtpConfig, error: 'SMTP_HOST not configured' });
-  }
-  try {
-    const transport = nodemailer.default.createTransport({
-      host: process.env.SMTP_HOST,
-      port: smtpConfig.port,
-      secure: smtpConfig.port === 465,
-      auth: process.env.SMTP_USER ? { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS || '' } : undefined,
-    });
-    await transport.verify();
-    res.json({ smtpConfig, status: 'SMTP connection OK — auth successful' });
-  } catch (err: any) {
-    res.json({ smtpConfig, error: err.message, code: err.code });
-  }
-});
+// Debug SMTP endpoint removed — was leaking credentials in production
 
 // ---------------------------------------------------------------------------
 // Static frontend serving (all-in-one / Railway deployment)
@@ -227,7 +202,7 @@ app.use(helmet({
       defaultSrc: ["'self'"],
       styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
       styleSrcElem: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
-      scriptSrc: ["'self'", "'unsafe-inline'"],
+      scriptSrc: ["'self'"],
       imgSrc: ["'self'", 'data:', 'https:'],
       connectSrc: ["'self'", 'wss:', 'ws:'],
       fontSrc: ["'self'", 'data:', 'https://fonts.gstatic.com'],
@@ -248,10 +223,13 @@ const corsMiddleware = cors({
       }
     }
     
-    // Allow same-origin requests (Railway domain)
-    if (origin.includes('railway.app') || origin.includes('datacendia')) {
-      return callback(null, true);
-    }
+    // Allow same-origin requests (Railway domain) — strict hostname check
+    try {
+      const hostname = new URL(origin).hostname;
+      if (hostname.endsWith('.railway.app') || hostname.endsWith('.datacendia.com') || hostname === 'datacendia.com') {
+        return callback(null, true);
+      }
+    } catch { /* invalid origin URL — fall through to rejection */ }
     
     // Check against configured origins
     if (config.corsOrigins.includes(origin)) {
@@ -365,20 +343,20 @@ app.use('/api/v1', apiCache({
 // API ROUTES - Domain Routers (14 domains, ~110 route modules)
 // All paths remain identical: /api/v1/{original-path}
 // =============================================================================
-app.use('/api/v1', authDomain);        // auth, users, organizations
-app.use('/api/v1', councilDomain);     // council, deliberations, decisions, veto, union, dissent, vox, echo
-app.use('/api/v1', dataDomain);        // metrics, alerts, forecasts, data-sources, lineage, druid, rag, graph, horizon
-app.use('/api/v1', governanceDomain);  // compliance, govern, panopticon, pillars, responsibility, constitutional-court
-app.use('/api/v1', securityDomain);    // crucible, aegis, kms, post-quantum, zkp, adversarial-redteam, redteam
-app.use('/api/v1', sovereignDomain);   // sovereign-organs, sovereign-infra, sovereign-arch, vault, evidence, mesh, eternal
-app.use('/api/v1', enterpriseDomain);  // enterprise, ledger, audit-packages, ai-insurance, cascade, connectors, hr
-app.use('/api/v1', legalDomain);       // legal, legal-research, legal-services
-app.use('/api/v1', verticalsDomain);   // financial, healthcare, insurance, energy, defense, sports, vertical-agents
-app.use('/api/v1', platformDomain);    // platform, core, cortex, admin, settings, health, i18n, notifications, upload
-app.use('/api/v1', simulationDomain);  // sgas, scge, collapse
-app.use('/api/v1', workflowsDomain);   // workflows, integrations, scheduler
-app.use('/api/v1', intelligenceDomain); // persona, autopilot, decision-intel, gnosis, apotheosis, visualization
-app.use('/api/v1', demoDomain);        // leads, premium, demo, consolidated
+app.use('/api/v1', authDomain);                          // auth, users, organizations (no org scope — handles login/register)
+app.use('/api/v1', requireOrgScope, councilDomain);      // council, deliberations, decisions, veto, union, dissent, vox, echo
+app.use('/api/v1', requireOrgScope, dataDomain);         // metrics, alerts, forecasts, data-sources, lineage, druid, rag, graph, horizon
+app.use('/api/v1', requireOrgScope, governanceDomain);   // compliance, govern, panopticon, pillars, responsibility, constitutional-court
+app.use('/api/v1', requireOrgScope, securityDomain);     // crucible, aegis, kms, post-quantum, zkp, adversarial-redteam, redteam
+app.use('/api/v1', requireOrgScope, sovereignDomain);    // sovereign-organs, sovereign-infra, sovereign-arch, vault, evidence, mesh, eternal
+app.use('/api/v1', requireOrgScope, enterpriseDomain);   // enterprise, ledger, audit-packages, ai-insurance, cascade, connectors, hr
+app.use('/api/v1', requireOrgScope, legalDomain);        // legal, legal-research, legal-services
+app.use('/api/v1', requireOrgScope, verticalsDomain);    // financial, healthcare, insurance, energy, defense, sports, vertical-agents
+app.use('/api/v1', requireOrgScope, platformDomain);     // platform, core, cortex, admin, settings, health, i18n, notifications, upload
+app.use('/api/v1', requireOrgScope, simulationDomain);   // sgas, scge, collapse
+app.use('/api/v1', requireOrgScope, workflowsDomain);    // workflows, integrations, scheduler
+app.use('/api/v1', requireOrgScope, intelligenceDomain); // persona, autopilot, decision-intel, gnosis, apotheosis, visualization
+app.use('/api/v1', demoDomain);                          // leads, premium, demo, consolidated (no org scope — public demos)
 // Express Intelligence — enterprise route loaded dynamically
 import('./routes/express.js').then(mod => {
   app.use('/api/v1/express', mod.default as any);

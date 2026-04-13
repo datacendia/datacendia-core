@@ -324,6 +324,8 @@ function generateStandaloneVerifier(receipt: any): string {
       });
     }
 
+    function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
     async function runVerification() {
       const checksEl = document.getElementById('checks');
       checksEl.innerHTML = '';
@@ -362,7 +364,7 @@ function generateStandaloneVerifier(receipt: any): string {
       let passCount = 0, failCount = 0;
       results.forEach(r => {
         if (r.pass) passCount++; else failCount++;
-        checksEl.innerHTML += '<div class="check"><div class="check-icon ' + (r.pass ? 'check-pass' : 'check-fail') + '">' + (r.pass ? '\u2713' : '\u2717') + '</div><div><div class="check-name">' + r.name + '</div><div class="check-detail">' + r.detail + '</div></div></div>';
+        checksEl.innerHTML += '<div class="check"><div class="check-icon ' + (r.pass ? 'check-pass' : 'check-fail') + '">' + (r.pass ? '\\u2713' : '\\u2717') + '</div><div><div class="check-name">' + esc(r.name) + '</div><div class="check-detail">' + esc(r.detail) + '</div></div></div>';
       });
 
       document.getElementById('pass-count').textContent = passCount;

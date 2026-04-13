@@ -104,9 +104,8 @@ export const csrfProtection = (
     return next();
   }
 
-  // Skip in development if explicitly disabled
-  if (config.nodeEnv === 'development' && process.env['DISABLE_CSRF'] === 'true') {
-    logger.warn('⚠️  CSRF protection disabled in development');
+  // Skip in test environment only if explicitly disabled
+  if (config.nodeEnv === 'test' && process.env['DISABLE_CSRF'] === 'true') {
     return next();
   }
 
