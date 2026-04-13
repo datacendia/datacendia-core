@@ -80,17 +80,17 @@ router.get('/recall/trackers/:id', async (req: Request, res: Response) => {
 
 router.post('/recall/trackers/:id/actual', async (req: Request, res: Response) => {
   try {
-    const { metric, actualValue, unit, evidenceSource, verified } = req.body;
+    const { metric, actualValue, unit } = req.body;
     if (!metric || actualValue === undefined) {
       return res.status(400).json({ success: false, error: 'Missing required fields: metric, actualValue' });
     }
-    const result = await cendiaRecallService.recordActualOutcome(req.params.id, {
+    const orgId = (req as any).organizationId;
+    const recordedBy = (req as any).user?.id || 'system';
+    const result = await cendiaRecallService.recordActualOutcome(orgId, req.params.id, {
       metric,
       actualValue,
       unit: unit || '',
-      measuredAt: new Date(),
-      evidenceSource: evidenceSource || 'manual',
-      verified: verified || false,
+      recordedBy,
     });
     res.json({ success: true, data: result });
   } catch (error: any) {
@@ -104,7 +104,8 @@ router.post('/recall/trackers/:id/roi', async (req: Request, res: Response) => {
     if (actualROI === undefined) {
       return res.status(400).json({ success: false, error: 'Missing required field: actualROI' });
     }
-    const result = await cendiaRecallService.recordActualROI(req.params.id, actualROI);
+    const orgId = (req as any).organizationId;
+    const result = await cendiaRecallService.recordActualROI(orgId, req.params.id, actualROI);
     res.json({ success: true, data: result });
   } catch (error: any) {
     res.status(500).json({ success: false, error: error.message });
@@ -118,7 +119,8 @@ router.post('/recall/trackers/:id/roi', async (req: Request, res: Response) => {
 router.post('/recall/trackers/:id/verify', async (req: Request, res: Response) => {
   try {
     const { verifiedBy } = req.body;
-    const result = await cendiaRecallService.verifyOutcome(req.params.id, verifiedBy || 'system');
+    const orgId = (req as any).organizationId;
+    const result = await cendiaRecallService.verifyOutcome(orgId, req.params.id, verifiedBy || 'system');
     res.json({ success: true, data: result });
   } catch (error: any) {
     res.status(500).json({ success: false, error: error.message });
@@ -128,7 +130,8 @@ router.post('/recall/trackers/:id/verify', async (req: Request, res: Response) =
 router.post('/recall/trackers/:id/close', async (req: Request, res: Response) => {
   try {
     const { lessonsLearned } = req.body;
-    const result = await cendiaRecallService.closeOutcome(req.params.id, lessonsLearned || []);
+    const orgId = (req as any).organizationId;
+    const result = await cendiaRecallService.closeOutcome(orgId, req.params.id, lessonsLearned || []);
     res.json({ success: true, data: result });
   } catch (error: any) {
     res.status(500).json({ success: false, error: error.message });

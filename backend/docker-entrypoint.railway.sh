@@ -44,15 +44,20 @@ until node -e "
 done
 echo "Database connection ready."
 
-# Run migrations
+# Run migrations (no --accept-data-loss fallback — too dangerous for production data)
 echo "Running Prisma migrations..."
-npx prisma migrate deploy --schema=prisma/schema 2>&1 || {
-  echo "Falling back to db push..."
-  npx prisma db push --schema=prisma/schema --accept-data-loss 2>&1 || {
-    echo "Warning: Schema push failed. Starting anyway..."
-  }
-}
-echo "Database schema ready."
+if npx prisma migrate deploy --schema=prisma/schema 2>&1; then
+  echo "Database schema ready."
+else
+  echo "ERROR: Prisma migrate deploy failed."
+  echo "Do NOT use 'db push --accept-data-loss' — it can drop columns/tables."
+  if [ "${SKIP_MIGRATIONS:-false}" = "true" ]; then
+    echo "WARNING: SKIP_MIGRATIONS=true — proceeding WITHOUT confirmed schema. Database may be out of date."
+  else
+    echo "Fix migrations or set SKIP_MIGRATIONS=true to start without migrating."
+    exit 1
+  fi
+fi
 
 # Seed demo data (idempotent — checks for existing data)
 if [ "${SKIP_SEED:-false}" != "true" ]; then

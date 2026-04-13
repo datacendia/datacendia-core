@@ -1,0 +1,88 @@
+﻿src/features/advanced-analysis/RegulatoryAbsorbV2.ts(723,13): error TS2322: Type '"MANDATORY"' is not assignable to type 'ConstraintType | undefined'.
+src/features/advanced-analysis/RegulatoryAbsorbV2.ts(962,9): error TS2322: Type '"CHANGES_REQUESTED"' is not assignable to type 'RegulatoryReviewStatus | EnumRegulatoryReviewStatusFieldUpdateOperationsInput | undefined'.
+src/routes/audit-packages.ts(160,57): error TS2345: Argument of type 'string' is not assignable to parameter of type 'Buffer<ArrayBufferLike>'.
+src/routes/audit-packages.ts(258,11): error TS2345: Argument of type 'string' is not assignable to parameter of type 'Buffer<ArrayBufferLike>'.
+src/routes/audit-packages.ts(345,44): error TS2554: Expected 1 arguments, but got 0.
+src/routes/dcii.ts(157,9): error TS2353: Object literal may only specify known properties, and 'devilsAdvocatePresent' does not exist in type '{ organizationId: string; deliberationId: string; deliberationTitle: string; deliberationDurationMinutes?: number | undefined; agentCount?: number | undefined; dissentCount?: number | undefined; agentResponses?: any[] | undefined; crossExaminations?: any[] | undefined; question?: string | undefined; }'.
+src/routes/dcii.ts(297,7): error TS2353: Object literal may only specify known properties, and 'devilsAdvocatePresent' does not exist in type '{ organizationId: string; deliberationId: string; deliberationTitle: string; deliberationDurationMinutes?: number | undefined; agentCount?: number | undefined; dissentCount?: number | undefined; agentResponses?: any[] | undefined; crossExaminations?: any[] | undefined; question?: string | undefined; }'.
+src/routes/enterprise.ts(99,7): error TS2322: Type 'Date' is not assignable to type 'string'.
+src/routes/enterprise.ts(100,7): error TS2322: Type 'Date' is not assignable to type 'string'.
+src/routes/enterprise.ts(101,7): error TS2322: Type 'Date' is not assignable to type 'string'.
+src/routes/hr.ts(72,44): error TS2339: Property 'error' does not exist on type 'ConnectionStatus'.
+src/routes/hsm.ts(114,37): error TS2339: Property 'wrapKey' does not exist on type 'HSMAdapterImpl'.
+src/routes/hsm.ts(124,37): error TS2339: Property 'generateRandom' does not exist on type 'HSMAdapterImpl'.
+src/routes/legal.ts(499,43): error TS2339: Property 'parseCourtListenerCases' does not exist on type 'CaseImportServiceImpl'.
+src/routes/legal.ts(535,75): error TS2339: Property 'parseCSV' does not exist on type 'CaseImportServiceImpl'.
+src/routes/legal.ts(699,43): error TS2345: Argument of type 'LegalModeCategory' is not assignable to parameter of type 'string'.
+src/routes/legal.ts(822,53): error TS2339: Property 'optionalAgents' does not exist on type 'LegalMode'.
+src/routes/legal.ts(823,43): error TS2339: Property 'defaultAgents' does not exist on type 'LegalMode'.
+src/routes/legal.ts(823,58): error TS2554: Expected 0-1 arguments, but got 2.
+src/routes/legal.ts(829,23): error TS2339: Property 'purpose' does not exist on type 'LegalMode'.
+src/routes/legal.ts(830,30): error TS2339: Property 'primeDirective' does not exist on type 'LegalMode'.
+src/routes/legal.ts(833,25): error TS2339: Property 'defaultAgents' does not exist on type 'LegalAgentDef[]'.
+src/routes/legal.ts(833,53): error TS2339: Property 'optionalAgents' does not exist on type 'LegalAgentDef[]'.
+src/routes/legal.ts(857,22): error TS2339: Property 'caseLibrarySize' does not exist on type '{ status: string; cases: number; matters: number; uptime: number; }'.
+src/routes/legal.ts(861,23): error TS2339: Property 'mattersCount' does not exist on type '{ status: string; cases: number; matters: number; uptime: number; }'.
+src/routes/legal.ts(866,29): error TS2339: Property 'privilegeReviewsCount' does not exist on type '{ status: string; cases: number; matters: number; uptime: number; }'.
+src/routes/legal.ts(996,7): error TS2554: Expected 0-1 arguments, but got 3.
+src/routes/legal.ts(1003,28): error TS2339: Property 'jurors' does not exist on type 'JurorArchetype[]'.
+src/routes/legal.ts(1004,32): error TS2339: Property 'alternates' does not exist on type 'JurorArchetype[]'.
+src/routes/legal.ts(1005,27): error TS2339: Property 'foreperson' does not exist on type 'JurorArchetype[]'.
+src/routes/legal.ts(1006,28): error TS2339: Property 'composition' does not exist on type 'JurorArchetype[]'.
+src/routes/legal.ts(1020,34): error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
+src/routes/legal.ts(1024,28): error TS2339: Property 'jurors' does not exist on type 'JurorArchetype[]'.
+src/routes/legal.ts(1025,32): error TS2339: Property 'alternates' does not exist on type 'JurorArchetype[]'.
+src/routes/legal.ts(1026,27): error TS2339: Property 'foreperson' does not exist on type 'JurorArchetype[]'.
+src/routes/legal.ts(1027,28): error TS2339: Property 'composition' does not exist on type 'JurorArchetype[]'.
+src/routes/mesh.ts(36,7): error TS2559: Type '{ organization_id: string; }' has no properties in common with type 'mesh_network_statsWhereInput'.
+src/routes/mesh.ts(44,11): error TS2353: Object literal may only specify known properties, and 'organization_id' does not exist in type '(Without<mesh_network_statsCreateInput, mesh_network_statsUncheckedCreateInput> & mesh_network_statsUncheckedCreateInput) | (Without<...> & mesh_network_statsCreateInput)'.
+src/routes/mesh.ts(74,9): error TS2353: Object literal may only specify known properties, and 'organization_id' does not exist in type '(Without<mesh_network_statsCreateInput, mesh_network_statsUncheckedCreateInput> & mesh_network_statsUncheckedCreateInput) | (Without<...> & mesh_network_statsCreateInput)'.
+src/routes/mesh.ts(200,9): error TS2353: Object literal may only specify known properties, and 'organization_id' does not exist in type '(Without<mesh_risk_signalsCreateInput, mesh_risk_signalsUncheckedCreateInput> & mesh_risk_signalsUncheckedCreateInput) | (Without<...> & mesh_risk_signalsCreateInput)'.
+src/routes/omnitranslate.ts(82,7): error TS2353: Object literal may only specify known properties, and 'glossaryId' does not exist in type '{ text: string; sourceLanguage: string; targetLanguage: string; context?: string | undefined; }'.
+src/routes/omnitranslate.ts(184,7): error TS2353: Object literal may only specify known properties, and 'preserveFormatting' does not exist in type '{ text: string; sourceLanguage: string; targetLanguage: string; context?: string | undefined; }'.
+src/routes/omnitranslate.ts(219,7): error TS2353: Object literal may only specify known properties, and 'context' does not exist in type '{ texts: string[]; sourceLanguage: string; targetLanguage: string; }'.
+src/routes/regulators-receipt.ts(133,71): error TS2339: Property 'filename' does not exist on type 'Buffer<ArrayBufferLike>'.
+src/routes/regulators-receipt.ts(134,37): error TS2339: Property 'hash' does not exist on type 'Buffer<ArrayBufferLike>'.
+src/routes/regulators-receipt.ts(135,45): error TS2339: Property 'pageCount' does not exist on type 'Buffer<ArrayBufferLike>'.
+src/routes/regulators-receipt.ts(173,71): error TS2339: Property 'filename' does not exist on type 'Buffer<ArrayBufferLike>'.
+src/routes/regulators-receipt.ts(174,37): error TS2339: Property 'hash' does not exist on type 'Buffer<ArrayBufferLike>'.
+src/routes/regulators-receipt.ts(175,45): error TS2339: Property 'pageCount' does not exist on type 'Buffer<ArrayBufferLike>'.
+src/routes/salary.ts(149,34): error TS2339: Property 'range' does not exist on type '{ title: string; location: string; median: number; p10: number; p25: number; p75: number; p90: number; sampleSize: number; lastUpdated: string; }'.
+src/routes/scge.ts(403,57): error TS2345: Argument of type 'import("C:/Users/User/datacendia-core-audit/backend/src/services/scge/index").SimulationConfig' is not assignable to parameter of type 'import("C:/Users/User/datacendia-core-audit/backend/src/services/scge/SCGEOrchestrator").SimulationConfig'.
+src/routes/settings.ts(46,25): error TS2339: Property 'userCount' does not exist on type 'Tenant'.
+src/routes/settings.ts(47,25): error TS2339: Property 'userLimit' does not exist on type 'Tenant'.
+src/routes/settings.ts(376,19): error TS2339: Property 'mrr' does not exist on type 'Tenant'.
+src/routes/settings.ts(377,25): error TS2339: Property 'userCount' does not exist on type 'Tenant'.
+src/routes/settings.ts(378,25): error TS2339: Property 'userLimit' does not exist on type 'Tenant'.
+src/routes/settings.ts(388,96): error TS2339: Property 'mrr' does not exist on type 'Tenant'.
+src/routes/settings.ts(389,96): error TS2339: Property 'mrr' does not exist on type 'Tenant'.
+src/routes/settings.ts(390,96): error TS2339: Property 'mrr' does not exist on type 'Tenant'.
+src/routes/sgas.ts(437,7): error TS2322: Type 'BudgetContext | BudgetContext' is not assignable to type 'BudgetContext'.
+src/routes/vertical-agents.ts(249,7): error TS2353: Object literal may only specify known properties, and 'result' does not exist in type '{ agentId: string; verticalId: string; action: string; details?: any; }'.
+src/routes/vertical-config.ts(282,7): error TS2554: Expected 4 arguments, but got 5.
+src/services/council/CouncilDecisionPacketService.ts(380,45): error TS2345: Argument of type 'string' is not assignable to parameter of type 'Buffer<ArrayBufferLike>'.
+src/services/council/CouncilDecisionPacketService.ts(411,45): error TS2345: Argument of type 'string' is not assignable to parameter of type 'Buffer<ArrayBufferLike>'.
+src/services/council/CouncilDecisionPacketService.ts(438,9): error TS2345: Argument of type 'string' is not assignable to parameter of type 'Buffer<ArrayBufferLike>'.
+src/services/council/CouncilDecisionPacketService.ts(533,51): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+src/services/dcii/CrossJurisdictionConflictService.ts(157,81): error TS2448: Block-scoped variable 'doc' used before its declaration.
+src/services/dcii/CrossJurisdictionConflictService.ts(157,81): error TS2454: Variable 'doc' is used before being assigned.
+src/services/evidence/RegulatorsReceiptService.ts(693,35): error TS2339: Property 'certificationLevel' does not exist on type 'IISSScore'.
+src/services/evidence/RegulatorsReceiptService.ts(701,29): error TS2339: Property 'calculatedAt' does not exist on type 'IISSScore'.
+src/services/evidence/RegulatorsReceiptService.ts(961,48): error TS2339: Property 'certificationLevel' does not exist on type 'IISSScore'.
+src/services/evidence/SignedTestReportService.ts(520,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(521,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(522,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(523,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(524,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(525,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(526,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(527,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(529,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(539,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(540,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(542,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(558,10): error TS2554: Expected 1-2 arguments, but got 3.
+src/services/evidence/SignedTestReportService.ts(565,44): error TS2345: Argument of type 'ArrayBufferLike' is not assignable to parameter of type 'string | Stream | ArrayBufferView<ArrayBufferLike> | Iterable<string | ArrayBufferView<ArrayBufferLike>> | AsyncIterable<...>'.
+src/services/evidence/SignedTestReportService.ts(571,28): error TS2339: Property 'size' does not exist on type 'Buffer<ArrayBufferLike>'.
+src/services/evidence/SignedTestReportService.ts(572,28): error TS2339: Property 'hash' does not exist on type 'Buffer<ArrayBufferLike>'.
+src/utils/permissions.ts(43,30): error TS2339: Property 'config' does not exist on type 'Feature'.

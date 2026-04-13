@@ -125,8 +125,9 @@ router.get('/opportunities', async (req: Request, res: Response) => {
 
 router.patch('/opportunities/:id/status', async (req: Request, res: Response) => {
   try {
+    const orgId = (req as any).organizationId;
     const { status } = req.body;
-    const opportunity = await cendiaSymbiontService.updateOpportunityStatus(req.params.id, status);
+    const opportunity = await cendiaSymbiontService.updateOpportunityStatus(orgId, req.params.id, status);
     res.json({ success: true, data: opportunity });
   } catch (error) {
     res.status(500).json({ success: false, error: { message: String(error) } });
@@ -139,8 +140,9 @@ router.patch('/opportunities/:id/status', async (req: Request, res: Response) =>
 
 router.post('/opportunities/:id/simulate', async (req: Request, res: Response) => {
   try {
+    const orgId = (req as any).organizationId;
     const { simulationType } = req.body;
-    const simulation = await cendiaSymbiontService.simulateAlliance(req.params.id, simulationType);
+    const simulation = await cendiaSymbiontService.simulateAlliance(orgId, req.params.id, simulationType);
     res.json({ success: true, data: simulation });
   } catch (error) {
     res.status(500).json({ success: false, error: { message: String(error) } });
@@ -149,7 +151,8 @@ router.post('/opportunities/:id/simulate', async (req: Request, res: Response) =
 
 router.get('/opportunities/:id/simulations', async (req: Request, res: Response) => {
   try {
-    const simulations = await cendiaSymbiontService.getSimulations(req.params.id);
+    const orgId = (req as any).organizationId;
+    const simulations = await cendiaSymbiontService.getSimulations(orgId, req.params.id);
     res.json({ success: true, data: simulations });
   } catch (error) {
     res.status(500).json({ success: false, error: { message: String(error) } });
@@ -185,7 +188,8 @@ router.get('/relationships', async (req: Request, res: Response) => {
 
 router.post('/relationships/:id/interaction', async (req: Request, res: Response) => {
   try {
-    const relationship = await cendiaSymbiontService.updateRelationshipHealth(req.params.id, req.body);
+    const orgId = (req as any).organizationId;
+    const relationship = await cendiaSymbiontService.updateRelationshipHealth(orgId, req.params.id, req.body);
     res.json({ success: true, data: relationship });
   } catch (error) {
     res.status(500).json({ success: false, error: { message: String(error) } });

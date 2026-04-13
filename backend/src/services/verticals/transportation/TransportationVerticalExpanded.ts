@@ -23,6 +23,7 @@
 
 import { v4 as uuidv4 } from 'uuid';
 import crypto from 'crypto';
+import { BoundedMap } from '../../../utils/BoundedMap.js';
 import {
   DataConnector, DataSource, IngestResult, ProvenanceRecord,
   VerticalKnowledgeBase, KnowledgeDocument, RetrievalResult,
@@ -271,10 +272,10 @@ export class TransportationVerticalImplementation implements VerticalImplementat
   constructor() {
     this.dataConnector = new TransportationDataConnector(); this.knowledgeBase = new TransportationKnowledgeBase();
     this.complianceMapper = new TransportationComplianceMapper();
-    this.decisionSchemas = new Map();
+    this.decisionSchemas = new BoundedMap({ maxSize: 100 });
     this.decisionSchemas.set('driver-safety', new DriverSafetySchema() as unknown as DecisionSchema<TransportationDecision>);
     this.decisionSchemas.set('hazmat', new HazmatSchema() as unknown as DecisionSchema<TransportationDecision>);
-    this.agentPresets = new Map(); this.agentPresets.set('fleet-safety-governance', new FleetSafetyGovernancePreset());
+    this.agentPresets = new BoundedMap({ maxSize: 50 }); this.agentPresets.set('fleet-safety-governance', new FleetSafetyGovernancePreset());
     this.defensibleOutput = new TransportationDefensibleOutput();
   }
 

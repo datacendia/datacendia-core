@@ -368,7 +368,7 @@ export const MissionControlDashboard: React.FC = () => {
                   {/* Tooltip */}
                   <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-neutral-800 border border-neutral-700 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-20 shadow-xl">
                     <p className="font-semibold">{p.name}</p>
-                    <p className="text-neutral-400">{p.score}/100 — {p.status === 'warning' ? `⚠ ${p.note}` : '✓ Operational'}</p>
+                    <p className="text-neutral-400">{p.score}/100 — {p.status === 'warning' ? `⚠ ${p.note || 'Below threshold'}` : '✓ Operational'}</p>
                   </div>
                 </div>
               ))}
@@ -376,7 +376,7 @@ export const MissionControlDashboard: React.FC = () => {
             {IISS_PRIMITIVES.some((p) => p.status === 'warning') && (
               <p className="text-xs text-yellow-400/80 mt-2 flex items-center gap-1">
                 <AlertTriangle className="w-3 h-3" />
-                {IISS_PRIMITIVES.filter((p) => p.status === 'warning').map((p) => `${p.id}: ${p.note}`).join(' · ')}
+                {IISS_PRIMITIVES.filter((p) => p.status === 'warning').map((p) => `${p.id}: ${p.note || `${p.name} — score below threshold`}`).join(' · ')}
               </p>
             )}
           </div>

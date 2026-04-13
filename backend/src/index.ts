@@ -308,7 +308,13 @@ if (config.nodeEnv === 'development') {
 // Token endpoint is exempt so clients can get initial token
 app.get('/api/v1/csrf-token', csrfTokenHandler);
 app.use('/api/', ensureCsrfToken);
-if (config.nodeEnv === 'production') {
+// CSRF protection — always enabled in production, opt-out only in dev/test
+if (process.env['DISABLE_CSRF'] === 'true' && config.nodeEnv !== 'production') {
+  logger.warn('⚠️  CSRF protection disabled via DISABLE_CSRF=true (non-production)');
+} else {
+  if (process.env['DISABLE_CSRF'] === 'true' && config.nodeEnv === 'production') {
+    logger.error('🚨 DISABLE_CSRF=true ignored in production — CSRF protection remains active');
+  }
   app.use('/api/', csrfProtection);
 }
 

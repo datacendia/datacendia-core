@@ -5,6 +5,7 @@
     "moduleResolution": "NodeNext",
     "lib": ["ES2022"],
     "types": ["node", "vitest/globals"],
+    "typeRoots": ["./node_modules/@types", "../node_modules/@types", "../node_modules"],
     "outDir": "./dist",
     "rootDir": "./src",
     

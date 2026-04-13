@@ -124,8 +124,9 @@ router.get('/threats', async (req: Request, res: Response) => {
 
 router.patch('/threats/:id/status', async (req: Request, res: Response) => {
   try {
+    const orgId = (req as any).organizationId;
     const { status } = req.body;
-    const threat = await cendiaAegisService.updateThreatStatus(req.params.id, status);
+    const threat = await cendiaAegisService.updateThreatStatus(orgId, req.params.id, status);
     res.json({ success: true, data: threat });
   } catch (error) {
     res.status(500).json({ success: false, error: { message: String(error) } });
@@ -138,7 +139,8 @@ router.patch('/threats/:id/status', async (req: Request, res: Response) => {
 
 router.post('/threats/:id/scenarios', async (req: Request, res: Response) => {
   try {
-    const scenarios = await cendiaAegisService.generateScenarios(req.params.id);
+    const orgId = (req as any).organizationId;
+    const scenarios = await cendiaAegisService.generateScenarios(orgId, req.params.id);
     res.json({ success: true, data: scenarios });
   } catch (error) {
     res.status(500).json({ success: false, error: { message: String(error) } });
@@ -160,7 +162,8 @@ router.get('/threats/:id/scenarios', async (req: Request, res: Response) => {
 
 router.post('/threats/:id/countermeasures', async (req: Request, res: Response) => {
   try {
-    const countermeasures = await cendiaAegisService.generateCountermeasures(req.params.id);
+    const orgId = (req as any).organizationId;
+    const countermeasures = await cendiaAegisService.generateCountermeasures(orgId, req.params.id);
     res.json({ success: true, data: countermeasures });
   } catch (error) {
     res.status(500).json({ success: false, error: { message: String(error) } });
@@ -178,7 +181,8 @@ router.get('/threats/:id/countermeasures', async (req: Request, res: Response) =
 
 router.post('/countermeasures/:id/implement', async (req: Request, res: Response) => {
   try {
-    const cm = await cendiaAegisService.implementCountermeasure(req.params.id);
+    const orgId = (req as any).organizationId;
+    const cm = await cendiaAegisService.implementCountermeasure(orgId, req.params.id);
     res.json({ success: true, data: cm });
   } catch (error) {
     res.status(500).json({ success: false, error: { message: String(error) } });

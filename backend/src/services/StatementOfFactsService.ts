@@ -7,7 +7,10 @@
 // =============================================================================
 
 import crypto from 'crypto';
+import { BoundedMap } from '../utils/BoundedMap.js';
 import { withFallback } from './_serviceProxy.js';
+
+const statements = new BoundedMap<string, any>({ maxSize: 10000 });
 
 export const statementOfFactsService: any = withFallback({
   async generate(data: {
@@ -16,11 +19,13 @@ export const statementOfFactsService: any = withFallback({
     synthesis: string;
     agentResponses?: any[];
     confidence?: number;
+    organizationId?: string;
   }): Promise<any> {
     const hash = crypto.createHash('sha256').update(JSON.stringify(data)).digest('hex');
-    return {
-      id: `sof-${Date.now()}`,
+    const statement = {
+      id: `sof-${crypto.randomUUID().slice(0, 8)}`,
       deliberationId: data.deliberationId,
+      organizationId: data.organizationId || 'default',
       hash,
       title: `Statement of Facts — ${data.question.slice(0, 60)}`,
       facts: [
@@ -37,9 +42,17 @@ export const statementOfFactsService: any = withFallback({
       },
       generatedAt: new Date().toISOString(),
     };
+    statements.set(data.deliberationId, statement);
+    return statement;
   },
 
   async getByDeliberation(deliberationId: string): Promise<any | null> {
-    return null; // In-memory: statements not persisted between calls
+    return statements.get(deliberationId) || null;
+  },
+
+  async list(organizationId?: string): Promise<any[]> {
+    let items = [...statements.values()];
+    if (organizationId) items = items.filter(s => s.organizationId === organizationId);
+    return items.sort((a, b) => b.generatedAt.localeCompare(a.generatedAt));
   },
 });

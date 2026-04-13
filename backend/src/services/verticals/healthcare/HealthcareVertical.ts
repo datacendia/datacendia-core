@@ -24,6 +24,7 @@
 
 import { v4 as uuidv4 } from 'uuid';
 import crypto from 'crypto';
+import { BoundedMap } from '../../../utils/BoundedMap.js';
 import { persistServiceRecord, loadServiceRecords } from '../../../utils/servicePersistence.js';
 import {
   DataConnector,
@@ -262,8 +263,8 @@ export interface OverrideRecord {
 }
 
 export class ConsentOverrideLedger {
-  private consents: Map<string, ConsentRecord[]> = new Map();
-  private overrides: Map<string, OverrideRecord[]> = new Map();
+  private consents: BoundedMap<string, ConsentRecord[]> = new BoundedMap({ maxSize: 10000 });
+  private overrides: BoundedMap<string, OverrideRecord[]> = new BoundedMap({ maxSize: 10000 });
 
   recordConsent(record: Omit<ConsentRecord, 'id' | 'documentHash'>): ConsentRecord {
     const consent: ConsentRecord = {
@@ -351,7 +352,7 @@ export interface SaMDBoundary {
 }
 
 export class SaMDBoundaryEnforcer {
-  private boundaries: Map<string, SaMDBoundary> = new Map();
+  private boundaries: BoundedMap<string, SaMDBoundary> = new BoundedMap({ maxSize: 5000 });
 
   constructor() {
     this.initializeBoundaries();
@@ -1352,7 +1353,7 @@ export class HealthcareVerticalImplementation implements VerticalImplementation<
     this.consentOverrideLedger = new ConsentOverrideLedger();
     this.samdBoundaryEnforcer = new SaMDBoundaryEnforcer();
 
-    this.decisionSchemas = new Map();
+    this.decisionSchemas = new BoundedMap({ maxSize: 100 });
     // Original 4 schemas
     this.decisionSchemas.set('diagnosis-support', new DiagnosisSupportSchema() as unknown as DecisionSchema<HealthcareDecision>);
     this.decisionSchemas.set('triage', new TriageRecommendationSchema() as unknown as DecisionSchema<HealthcareDecision>);
@@ -1368,7 +1369,7 @@ export class HealthcareVerticalImplementation implements VerticalImplementation<
     this.decisionSchemas.set('end-of-life-care', new EndOfLifeCareSchema() as unknown as DecisionSchema<HealthcareDecision>);
     this.decisionSchemas.set('behavioral-health-assessment', new BehavioralHealthAssessmentSchema() as unknown as DecisionSchema<HealthcareDecision>);
 
-    this.agentPresets = new Map();
+    this.agentPresets = new BoundedMap({ maxSize: 50 });
     this.agentPresets.set('clinical-triage', new ClinicalTriageAgentPreset());
 
     this.defensibleOutput = new HealthcareDefensibleOutput();

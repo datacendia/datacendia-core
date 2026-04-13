@@ -37,8 +37,8 @@ const configSchema = z.object({
   port: z.coerce.number().default(3001),
   
   // Authentication mode
-  requireAuth: z.coerce.boolean().default(false),
-  demoMode: z.coerce.boolean().default(false),
+  requireAuth: z.string().optional().transform(v => v !== undefined && v !== '' && v !== '0' && v.toLowerCase() !== 'false').default('false'),
+  demoMode: z.string().optional().transform(v => v !== undefined && v !== '' && v !== '0' && v.toLowerCase() !== 'false').default('false'),
   
   // Database
   databaseUrl: z.string().url(),
@@ -85,16 +85,18 @@ const configSchema = z.object({
   logLevel: z.enum(['error', 'warn', 'info', 'http', 'debug']).default('info'),
 });
 
-// Smart Redis URL default: includes password for Docker container
+// Build Redis URL from component env vars (no hardcoded password fallback)
 const getRedisUrl = (): string => {
   if (process.env['REDIS_URL']) {
     return process.env['REDIS_URL'];
   }
-  // Default to Docker container with password (matches docker-compose.yml)
-  const redisPassword = process.env['REDIS_PASSWORD'] || 'datacendia_redis_2024';
+  const redisPassword = process.env['REDIS_PASSWORD'];
   const redisHost = process.env['REDIS_HOST'] || 'localhost';
   const redisPort = process.env['REDIS_PORT'] || '6380';
-  return `redis://:${redisPassword}@${redisHost}:${redisPort}`;
+  if (redisPassword) {
+    return `redis://:${redisPassword}@${redisHost}:${redisPort}`;
+  }
+  return `redis://${redisHost}:${redisPort}`;
 };
 
 const envVars = {
@@ -118,7 +120,7 @@ const envVars = {
   nimBaseUrl: process.env.NIM_BASE_URL,
   nimModelName: process.env.NIM_MODEL_NAME,
   jwtSecret: process.env.JWT_SECRET,
-  jwtRefreshSecret: process.env.JWT_REFRESH_SECRET || (process.env.JWT_SECRET ? process.env.JWT_SECRET + '-refresh' : undefined),
+  jwtRefreshSecret: process.env.JWT_REFRESH_SECRET,
   jwtExpiresIn: process.env.JWT_EXPIRES_IN,
   jwtRefreshExpiresIn: process.env.JWT_REFRESH_EXPIRES_IN,
   corsOrigins: process.env.CORS_ORIGINS || 'http://localhost:5173,http://localhost:3000',
@@ -135,9 +137,21 @@ if (!parsed.success) {
   process.exit(1);
 }
 
-// Derive jwtRefreshSecret from jwtSecret if not explicitly provided
+// In production, require an independent JWT refresh secret
+if (parsed.data.nodeEnv === 'production' && !parsed.data.jwtRefreshSecret) {
+  console.error('❌ JWT_REFRESH_SECRET must be set in production (must differ from JWT_SECRET)');
+  process.exit(1);
+}
+
+// In development/test, derive refresh secret from main secret if not provided
 if (!parsed.data.jwtRefreshSecret) {
-  (parsed.data as any).jwtRefreshSecret = parsed.data.jwtSecret + '-refresh';
+  (parsed.data as any).jwtRefreshSecret = parsed.data.jwtSecret + '-dev-refresh';
+}
+
+// In production, enforce authentication by default
+if (parsed.data.nodeEnv === 'production' && !parsed.data.requireAuth && !parsed.data.demoMode) {
+  console.warn('⚠️  REQUIRE_AUTH not set in production — defaulting to true. Set REQUIRE_AUTH=false explicitly to disable.');
+  (parsed.data as any).requireAuth = true;
 }
 
 export const config = parsed.data as z.infer<typeof configSchema> & { jwtRefreshSecret: string };
