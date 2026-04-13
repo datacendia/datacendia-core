@@ -59,6 +59,11 @@ class DatacendiaHostedAdapter implements DataAdapter {
   }
 
   async rawQuery<T>(query: string, params?: unknown[]): Promise<T> {
+    // Block obvious SQL injection patterns — all user values MUST be in params
+    const dangerousPatterns = /;\s*(DROP|ALTER|TRUNCATE|DELETE\s+FROM|UPDATE\s+\w+\s+SET|INSERT\s+INTO|GRANT|REVOKE)/i;
+    if (dangerousPatterns.test(query)) {
+      throw new Error('Potentially dangerous SQL pattern detected — use parameterized queries');
+    }
     return prisma.$queryRawUnsafe(query, ...(params || [])) as Promise<T>;
   }
 }

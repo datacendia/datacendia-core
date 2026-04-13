@@ -23,11 +23,10 @@
 
 import { Router, Request, Response } from 'express';
 import { logger } from '../utils/logger.js';
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '../config/database.js';
 import { deterministicFloat, deterministicInt, deterministicPercentage, deterministicPick } from '../utils/deterministic.js';
 
 const router = Router();
-const prisma = new PrismaClient();
 
 // =============================================================================
 // DEMO DATA DEFINITIONS
@@ -766,35 +765,35 @@ router.delete('/clear/tr', async (_req: Request, res: Response) => {
         where: { id: { startsWith: 'tr-' } }
       });
       results.decisionPacket = packetResult.count;
-    } catch (e) {}
+    } catch (e) { logger.debug(`Demo cleanup step skipped: ${e}`); }
 
     try {
       const dissentResult = await prisma.dissents.deleteMany({
         where: { id: { startsWith: 'tr-' } }
       });
       results.dissent = dissentResult.count;
-    } catch (e) {}
+    } catch (e) { logger.debug(`Demo cleanup step skipped: ${e}`); }
 
     try {
       const msgResult = await prisma.deliberation_messages.deleteMany({
         where: { id: { startsWith: 'tr-' } }
       });
       results.messages = msgResult.count;
-    } catch (e) {}
+    } catch (e) { logger.debug(`Demo cleanup step skipped: ${e}`); }
 
     try {
       const dlbResult = await prisma.deliberations.deleteMany({
         where: { id: { startsWith: 'tr-' } }
       });
       results.deliberation = dlbResult.count;
-    } catch (e) {}
+    } catch (e) { logger.debug(`Demo cleanup step skipped: ${e}`); }
 
     try {
       const orgResult = await prisma.organizations.deleteMany({
         where: { id: { startsWith: 'tr-' } }
       });
       results.organization = orgResult.count;
-    } catch (e) {}
+    } catch (e) { logger.debug(`Demo cleanup step skipped: ${e}`); }
 
     res.json({
       success: true,
@@ -1041,25 +1040,25 @@ router.get('/status', async (req: Request, res: Response) => {
       status.deliberations = await prisma.deliberations.count({
         where: { id: { startsWith: 'demo-' } }
       });
-    } catch (e) {}
+    } catch (e) { logger.debug(`Demo cleanup step skipped: ${e}`); }
 
     try {
       status.contributions = await (prisma as any).agentContribution.count({
         where: { deliberationId: { startsWith: 'demo-' } }
       });
-    } catch (e) {}
+    } catch (e) { logger.debug(`Demo cleanup step skipped: ${e}`); }
 
     try {
       status.dissents = await (prisma as any).dissents.count({
         where: { id: { startsWith: 'demo-' } }
       });
-    } catch (e) {}
+    } catch (e) { logger.debug(`Demo cleanup step skipped: ${e}`); }
 
     try {
       status.events = await (prisma as any).decisionEvent.count({
         where: { id: { startsWith: 'demo-' } }
       });
-    } catch (e) {}
+    } catch (e) { logger.debug(`Demo cleanup step skipped: ${e}`); }
 
     status.isSeeded = status.deliberations > 0 || status.events > 0;
 

@@ -554,11 +554,6 @@ export class SignedTestReportService extends EventEmitter {
         title: config.title,
         author: config.preparedBy,
         subject: 'Test Execution Report',
-        keywords: ['test', 'report', 'evidence', reportId],
-      }, {
-        headerText: 'DATACENDIA TEST REPORT - CONFIDENTIAL',
-        footerText: `Report ID: ${reportId}`,
-        pdfaCompliant: true,
       });
 
       const pdfPath = path.join(this.storagePath, 'pdf', `${reportId}.pdf`);

@@ -8,6 +8,7 @@
 // =============================================================================
 
 import crypto from 'crypto';
+import { BoundedMap } from '../../utils/BoundedMap.js';
 import { logger } from '../../utils/logger.js';
 import { persistServiceRecord, loadServiceRecords } from '../../utils/servicePersistence.js';
 
@@ -252,9 +253,9 @@ function generateDetections(count: number): ShadowAIDetection[] {
 // ---------------------------------------------------------------------------
 
 class ShadowAIScannerService {
-  private scans = new Map<string, ShadowAIScanResult>();
+  private scans = new BoundedMap<string, ShadowAIScanResult>({ maxSize: 5000 });
   // Real detections buffered per organization, keyed by organizationId
-  private realDetections = new Map<string, ShadowAIDetection[]>();
+  private realDetections = new BoundedMap<string, ShadowAIDetection[]>({ maxSize: 5000 });
   private initialized = false;
 
   // ---------------------------------------------------------------------------

@@ -146,7 +146,7 @@ router.post('/negotiate/full', authenticate, async (req: Request, res: Response)
       negotiation,
       summary: {
         currentSalary,
-        marketMedian: marketData.range.median,
+        marketMedian: marketData.median,
         percentile: benchmark.percentile,
         targetSalary: negotiation.targetRange.target,
         potentialIncrease: negotiation.targetRange.target - currentSalary,

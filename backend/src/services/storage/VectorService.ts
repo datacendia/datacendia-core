@@ -77,11 +77,24 @@ class VectorService {
   /**
    * Initialize the vector service
    */
-  /** Safely serialize a numeric embedding array to pgvector string — prevents SQL injection */
+  /**
+   * Safely serialize a numeric embedding array to pgvector literal string.
+   *
+   * SECURITY: This value is interpolated into SQL strings for pgvector's <=> operator
+   * because Prisma cannot parameterize vector casts. The validation below ensures only
+   * finite numbers are included, making SQL injection impossible — the output can only
+   * contain digits, dots, minus signs, commas, brackets, and the characters 'e'/'+'
+   * (from scientific notation like 1.5e-10). None of these are SQL-significant.
+   */
   private safeVectorString(embedding: number[]): string {
-    const sanitized = embedding.map(v => {
+    if (!Array.isArray(embedding) || embedding.length === 0) {
+      throw new Error('Invalid embedding: must be a non-empty array');
+    }
+    const sanitized = embedding.map((v, i) => {
       const n = Number(v);
-      if (!Number.isFinite(n)) throw new Error('Invalid embedding value: must be finite numbers');
+      if (!Number.isFinite(n)) {
+        throw new Error(`Invalid embedding value at index ${i}: must be a finite number, got ${typeof v}`);
+      }
       return n;
     });
     return `[${sanitized.join(',')}]`;

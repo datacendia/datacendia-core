@@ -121,6 +121,7 @@ enum RegulatoryReviewStatus {
   APPROVED
   REJECTED
   SUPERSEDED
+  CHANGES_REQUESTED
 }
 
 enum RegulatorySeverity {
@@ -143,6 +144,7 @@ enum ConstraintType {
   ADVISORY
   INFORMATIONAL
   CONDITIONAL
+  MANDATORY
 }
 
 enum ConflictType {

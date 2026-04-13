@@ -8,6 +8,7 @@
 // =============================================================================
 
 import crypto from 'crypto';
+import { BoundedMap } from '../utils/BoundedMap.js';
 import { withFallback } from './_serviceProxy.js';
 
 interface Deliberation {
@@ -26,7 +27,7 @@ interface Deliberation {
   updatedAt: string;
 }
 
-const store = new Map<string, Deliberation>();
+const store = new BoundedMap<string, Deliberation>({ maxSize: 10000 });
 
 export const deliberationService: any = withFallback({
   async saveDeliberation(data: Partial<Deliberation>): Promise<Deliberation> {

@@ -8,6 +8,7 @@
 // =============================================================================
 
 import crypto from 'crypto';
+import { BoundedMap } from '../../utils/BoundedMap.js';
 import { logger } from '../../utils/logger.js';
 import { persistServiceRecord, loadServiceRecords } from '../../utils/servicePersistence.js';
 
@@ -263,7 +264,7 @@ function calculateScore(q: GovernanceQuestionnaire): GovernanceReport['governanc
 // ---------------------------------------------------------------------------
 
 class GovernanceReportService {
-  private reports = new Map<string, GovernanceReport>();
+  private reports = new BoundedMap<string, GovernanceReport>({ maxSize: 5000 });
   private initialized = false;
 
   async loadFromDB(): Promise<void> {

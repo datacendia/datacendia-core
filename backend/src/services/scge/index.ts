@@ -9,7 +9,7 @@ import { withFallback } from '../_serviceProxy.js';
 
 export interface OperationalRiskData { [key: string]: any; }
 
-export interface SimulationConfig { [key: string]: any; }
+export type { SimulationConfig } from './SCGEOrchestrator.js';
 
 export const DecisionType = { STRATEGIC: 'strategic', OPERATIONAL: 'operational', TACTICAL: 'tactical', REGULATORY: 'regulatory', EMERGENCY: 'emergency' } as const;
 
@@ -207,39 +207,39 @@ export const agentsService: any = withFallback({});
 
 export const initializePillarsForOrg: any = withFallback({});
 
-export const scgeOrchestrator: any = withFallback({});
+export { scgeOrchestrator } from './SCGEOrchestrator.js';
 
-export const syntheticPopulationService: any = withFallback({});
+export { syntheticPopulationService } from './SCGEOrchestrator.js';
 
-export const policyInjectionService: any = withFallback({});
+export { policyInjectionService } from './SCGEOrchestrator.js';
 
-export const eventInjectionService: any = withFallback({});
+export { eventInjectionService } from './SCGEOrchestrator.js';
 
-export const stressorLibraryService: any = withFallback({});
+export { stressorLibraryService } from './SCGEOrchestrator.js';
 
-export const DEFAULT_EVENT_SCENARIOS: any = withFallback({});
+export { DEFAULT_EVENT_SCENARIOS } from './SCGEOrchestrator.js';
 
-export const DEFAULT_POLICY_TEMPLATES: any = withFallback({});
+export { DEFAULT_POLICY_TEMPLATES } from './SCGEOrchestrator.js';
 
-export const DEFAULT_GOVERNANCE_PRESETS: any = withFallback({});
+export { DEFAULT_GOVERNANCE_PRESETS } from './SCGEOrchestrator.js';
 
-export const DEFAULT_STRESSOR_LIBRARY: any = withFallback({});
+export { DEFAULT_STRESSOR_LIBRARY } from './SCGEOrchestrator.js';
 
-export class PopulationParameters { [key: string]: any; }
+export type { PopulationParameters } from './SCGEOrchestrator.js';
 
-export const AccessVariance = { NONE: 'none', LOW: 'low', MODERATE: 'moderate', HIGH: 'high', EXTREME: 'extreme' } as const;
+export { AccessVariance } from './SCGEOrchestrator.js';
 
-export const InformationAsymmetry = { NONE: 'none', LOW: 'low', MODERATE: 'moderate', HIGH: 'high', EXTREME: 'extreme' } as const;
+export { InformationAsymmetry } from './SCGEOrchestrator.js';
 
-export const MobilityConstraint = { NONE: 'none', LIMITED: 'limited', MODERATE: 'moderate', SEVERE: 'severe', EXTREME: 'extreme' } as const;
+export { MobilityConstraint } from './SCGEOrchestrator.js';
 
-export const ResourceScarcity = { ABUNDANT: 'abundant', ADEQUATE: 'adequate', CONSTRAINED: 'constrained', SCARCE: 'scarce', CRITICAL: 'critical' } as const;
+export { ResourceScarcity } from './SCGEOrchestrator.js';
 
-export const ComplianceVariance = { FULL_COMPLIANCE: 'full_compliance', MODERATE_COMPLIANCE: 'moderate_compliance', LOW_COMPLIANCE: 'low_compliance', NON_COMPLIANCE: 'non_compliance' } as const;
+export { ComplianceVariance } from './SCGEOrchestrator.js';
 
-export const PolicyDomain = { ZONING: 'zoning', TAXATION: 'taxation', EDUCATION: 'education', HEALTHCARE: 'healthcare', TRANSPORT: 'transport', ENVIRONMENT: 'environment', HOUSING: 'housing', SAFETY: 'safety' } as const;
+export { PolicyDomain } from './SCGEOrchestrator.js';
 
-export const generateSCGEId: any = withFallback({});
+export { generateSCGEId } from './SCGEOrchestrator.js';
 
 export const schemaMapper: any = withFallback({});
 
