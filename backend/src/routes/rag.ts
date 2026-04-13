@@ -299,8 +299,23 @@ router.post('/ingest/url', async (req: Request, res: Response, next: NextFunctio
       collection: z.string().optional().default('web_content'),
     }).parse(req.body);
 
+    // SSRF protection — block private/internal IP ranges and non-HTTP schemes
+    const parsed = new URL(url);
+    if (!['http:', 'https:'].includes(parsed.protocol)) {
+      throw errors.badRequest('Only HTTP/HTTPS URLs are allowed');
+    }
+    const hostname = parsed.hostname.toLowerCase();
+    const blockedPatterns = [
+      /^localhost$/i, /^127\./, /^10\./, /^172\.(1[6-9]|2\d|3[01])\./, /^192\.168\./,
+      /^0\./, /^169\.254\./, /^::1$/, /^fc00:/i, /^fe80:/i, /^fd/i,
+      /\.local$/, /\.internal$/, /\.corp$/, /\.lan$/,
+    ];
+    if (blockedPatterns.some(p => p.test(hostname))) {
+      throw errors.badRequest('URL points to a private/internal address — request blocked');
+    }
+
     // Fetch content from URL
-    const response = await fetch(url);
+    const response = await fetch(url, { redirect: 'error' });
     if (!response.ok) {
       throw errors.badRequest(`Failed to fetch URL: HTTP ${response.status}`);
     }

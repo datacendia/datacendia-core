@@ -14,6 +14,7 @@
 
 import { Router } from 'express';
 import { mountEnterpriseRoutes } from './_enterprise.js';
+import { authenticate } from '../../middleware/auth.js';
 import financialRoutes from '../financial.js';
 import healthcareRoutes from '../healthcare.js';
 import insuranceRoutes from '../insurance.js';
@@ -26,6 +27,9 @@ import verticalSentinelsRoutes from '../vertical-sentinels.js';
 import fhirRoutes from '../fhir.js';
 
 const router = Router();
+
+// Apply authentication to all verticals domain routes
+router.use(authenticate);
 
 // Community routes
 router.use('/financial', financialRoutes);

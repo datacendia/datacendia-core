@@ -13,11 +13,15 @@
 // =============================================================================
 
 import { Router } from 'express';
+import { authenticate } from '../../middleware/auth.js';
 import workflowRoutes from '../workflows.js';
 import integrationsRoutes from '../integrations.js';
 import schedulerRoutes from '../scheduler.js';
 
 const router = Router();
+
+// Apply authentication to all workflows domain routes
+router.use(authenticate);
 
 router.use('/workflows', workflowRoutes);
 router.use('/integrations', integrationsRoutes);

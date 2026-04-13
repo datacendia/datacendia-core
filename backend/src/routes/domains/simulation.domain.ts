@@ -14,8 +14,12 @@
 
 import { Router } from 'express';
 import { mountEnterpriseRoutes } from './_enterprise.js';
+import { authenticate } from '../../middleware/auth.js';
 
 const router = Router();
+
+// Apply authentication to all simulation domain routes
+router.use(authenticate);
 
 mountEnterpriseRoutes(router, [
   ['/sgas', () => import('../sgas.js')],

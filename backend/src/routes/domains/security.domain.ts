@@ -14,6 +14,7 @@
 
 import { Router } from 'express';
 import { mountEnterpriseRoutes } from './_enterprise.js';
+import { authenticate } from '../../middleware/auth.js';
 import kmsRoutes from '../kms.js';
 import postQuantumRoutes from '../post-quantum.js';
 import zkpRoutes from '../zkp.js';
@@ -25,6 +26,9 @@ import sentryRoutes from '../sentry.js';
 import hsmRoutes from '../hsm.js';
 
 const router = Router();
+
+// Apply authentication to all security domain routes
+router.use(authenticate);
 
 // Community routes
 router.use('/sentry', sentryRoutes);

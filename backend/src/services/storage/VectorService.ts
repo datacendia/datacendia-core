@@ -77,6 +77,16 @@ class VectorService {
   /**
    * Initialize the vector service
    */
+  /** Safely serialize a numeric embedding array to pgvector string — prevents SQL injection */
+  private safeVectorString(embedding: number[]): string {
+    const sanitized = embedding.map(v => {
+      const n = Number(v);
+      if (!Number.isFinite(n)) throw new Error('Invalid embedding value: must be finite numbers');
+      return n;
+    });
+    return `[${sanitized.join(',')}]`;
+  }
+
   async initialize(): Promise<void> {
     if (this.isInitialized) return;
 
@@ -125,7 +135,7 @@ class VectorService {
     chunk: DocumentChunk
   ): Promise<string> {
     const embedding = chunk.embedding || await this.generateEmbedding(chunk.content);
-    const vectorString = `[${embedding.join(',')}]`;
+    const vectorString = this.safeVectorString(embedding);
 
     const result = await this.prisma.$queryRaw<{ id: string }[]>`
       INSERT INTO document_embeddings (
@@ -165,7 +175,7 @@ class VectorService {
 
     // Generate query embedding
     const queryEmbedding = await this.generateEmbedding(query);
-    const vectorString = `[${queryEmbedding.join(',')}]`;
+    const vectorString = this.safeVectorString(queryEmbedding);
 
     let sql = `
       SELECT 
@@ -210,7 +220,7 @@ class VectorService {
     context: DecisionContext
   ): Promise<string> {
     const embedding = context.embedding || await this.generateEmbedding(context.content);
-    const vectorString = `[${embedding.join(',')}]`;
+    const vectorString = this.safeVectorString(embedding);
 
     const result = await this.prisma.$queryRaw<{ id: string }[]>`
       INSERT INTO decision_embeddings (
@@ -249,7 +259,7 @@ class VectorService {
     const { limit = 5, threshold = 0.6, outcomeFilter } = options;
 
     const queryEmbedding = await this.generateEmbedding(query);
-    const vectorString = `[${queryEmbedding.join(',')}]`;
+    const vectorString = this.safeVectorString(queryEmbedding);
 
     let sql = `
       SELECT 
@@ -297,7 +307,7 @@ class VectorService {
     memory: AgentMemoryEntry
   ): Promise<string> {
     const embedding = memory.embedding || await this.generateEmbedding(memory.content);
-    const vectorString = `[${embedding.join(',')}]`;
+    const vectorString = this.safeVectorString(embedding);
 
     const result = await this.prisma.$queryRaw<{ id: string }[]>`
       INSERT INTO agent_memory (
@@ -338,7 +348,7 @@ class VectorService {
     const { limit = 10, memoryTypes } = options;
 
     const contextEmbedding = await this.generateEmbedding(context);
-    const vectorString = `[${contextEmbedding.join(',')}]`;
+    const vectorString = this.safeVectorString(contextEmbedding);
 
     let sql = `
       SELECT 

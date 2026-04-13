@@ -14,12 +14,16 @@
 
 import { Router } from 'express';
 import { mountEnterpriseRoutes } from './_enterprise.js';
+import { authenticate } from '../../middleware/auth.js';
 import sovereignRoutes from '../sovereign.js';
 import evidenceRoutes from '../evidence.js';
 import meshRoutes from '../mesh.js';
 import evidenceVaultRoutes from '../evidence-vault.js';
 
 const router = Router();
+
+// Apply authentication to all sovereign domain routes
+router.use(authenticate);
 
 // Community routes
 router.use('/sovereign-infra', sovereignRoutes);
