@@ -6,7 +6,7 @@
 
 | # | Document | Services Covered | Diagrams |
 |---|----------|-----------------|----------|
-| 1 | [Platform Overview](./platform-overview.md) | Full platform architecture, open-core model, deployment | 4 |
+| 1 | [Platform Overview](./platform-overview.md) | Full platform architecture, open-core model, deployment, full middleware chain | 4 |
 | 2 | [Council & Deliberation](./council-deliberation.md) | CouncilService, DeliberationService, DecisionService, PostDeliberation, Dissent, Echo, Gnosis, Red Team | 3 |
 | 3 | [Ops Agents](./ops-agents.md) | OpsAgentService (Report, Analytics, NLP, Pipeline), community vs enterprise | 4 |
 | 4 | [Shadow AI Scanner](./shadow-ai-scanner.md) | ShadowAIScannerService, real data ingestion, dynamic compliance gaps | 4 |
@@ -16,7 +16,7 @@
 | 8 | [Crypto & Evidence](./crypto-evidence.md) | KeyManagement, Merkle, Stamp, SelfContainedEvidence, ContentAddressedReceipt, DecisionEscrow, DCII, Red Team | 3 |
 | 9 | [Compliance & Legal](./compliance-services.md) | AIRegulatoryClassifier, IncidentMaterialityService, aiRegulatoryMiddleware, phiEnforcementMiddleware, ComplianceService, ContinuousMonitor, CrossJurisdiction, RegulatorySandbox, Legal (8 modules), 17 Privacy API endpoints | 7 |
 | 10 | [Cendia Product Services](./cendia-product-services.md) | Sentry, Aegis, Crucible, Panopticon, Horizon, ChronosAI, Vox, Dissent, Recall, Symbiont, Eternal, OmniTranslate, HR, Salary, Apotheosis | 4 |
-| 11 | [Gateway & Security](./gateway-security.md) | CendiaGateway (14 modules), Security middleware (8 modules), Vault, KeyManagement | 4 |
+| 11 | [Gateway & Security](./gateway-security.md) | CendiaGateway (14 modules), Security middleware (9 modules incl. demoGuardMiddleware), Demo Guard flow, Vault, KeyManagement | 6 |
 | 12 | [Pillars, Flow & Queue](./pillars-flow-queue.md) | FlowService, PipelineService, AgentQueueService, Scheduler (9 pillar modules) | 3 |
 | 13 | [Sovereign & Enterprise](./sovereign-enterprise.md) | Sovereign AI (22 modules), Enterprise (18 modules), Multi-tenancy, GPU management | 4 |
 | 14 | [Vertical Industry Agents](./vertical-agents.md) | VerticalAgentsService (107 modules), Healthcare, Finance, Legal, Manufacturing, Sports, Insurance | 3 |
@@ -24,10 +24,16 @@
 | 16 | [Strategic & Forecasting](./strategic-forecasting.md) | Strategic Intelligence (7 modules), Forecasting, EnhancedLLM, ExecutiveSummary, PostDeliberation | 3 |
 | 17 | [Advanced Analysis Features](./advanced-analysis-features.md) | Ghost Board, Chronos, Pre-Mortem, Decision Debt, Regulatory Absorb, Live Demo, Collapse Mode, Druid, SCGE, SGAS | 12 |
 | 18 | [SCGE & SGAS](./scge-sgas.md) | Synthetic Community Governance Engine, Self-Governing Agent System, Agent orchestration | 6 |
+| 19 | [Services Catalog](./services-catalog.md) | **Every service** — all 60 directories, 356+ files, middleware chain, connectors, vertical agents | 17 |
 
-**Total: 18 documents · ~74 Mermaid diagrams · Covering 360+ service files**
+**Total: 19 documents · ~90 Mermaid diagrams · Covering 360+ service files**
 
-> **v0.2.4-alpha (April 2026):** Compliance & Legal doc (#9) fully rewritten with 7 diagrams covering the new AI regulatory enforcement middleware chain, breach notification planner, and all 17 privacy API endpoints.
+> **v0.2.4-alpha (April 2026):**
+> - Compliance & Legal doc (#9) fully rewritten with 7 diagrams covering the new AI regulatory enforcement middleware chain, breach notification planner, and all 17 privacy API endpoints.
+> - Gateway & Security doc (#11) updated with demoGuardMiddleware (now 6 diagrams including Demo Guard tenant protection flow).
+> - Platform Overview (#1) updated with full middleware chain sequence diagram including `requireOrgScope` + `demoGuardMiddleware` + `aiRegulatoryMiddleware`.
+> - **NEW: Services Catalog (#19)** — comprehensive catalog of every service with diagrams, key exports, upstream/downstream dependencies.
+> - **See also: [Datacendia Bible](../DATACENDIA-BIBLE.md)** — master platform reference document.
 
 ## Service Count by Domain
 

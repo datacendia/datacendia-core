@@ -102,25 +102,44 @@ graph LR
 sequenceDiagram
     participant Browser
     participant Express as Express API
-    participant Auth as Auth Middleware
+    participant Auth as Auth Middleware<br/>(JWT + blockIfDemo①)
+    participant Sec as Security Chain
+    participant OrgScope as requireOrgScope<br/>(+ blockIfDemo②)
+    participant AIReg as aiRegulatoryMiddleware<br/>(AI routes only)
     participant Route as Route Handler
     participant Service as Business Logic
     participant AI as InferenceService
     participant DB as PostgreSQL
+    participant Audit as AuditService
 
     Browser->>Express: HTTP Request
     Express->>Auth: JWT Validation
 
-    alt Authenticated
-        Auth->>Route: Authorized request
+    alt Authenticated — Real Org
+        Auth->>Auth: Resolve user + org (DB → Redis cache)
+        Auth->>Auth: blockIfDemo() → false (UUID org)
+        Auth->>Sec: Authenticated
+        Sec->>Sec: Replay / Exfiltration / Threat checks
+        Sec->>OrgScope: Security approved
+        OrgScope->>OrgScope: Verify organizationId set
+        OrgScope->>OrgScope: blockIfDemo() → false
+        OrgScope->>AIReg: Org scope verified
+        AIReg->>AIReg: Classify AI use-case<br/>(CO SB 205, EU AI Act, etc.)
+        AIReg->>Route: ✓ Approved
         Route->>Service: Business logic
         Service->>AI: AI inference (if needed)
-        AI-->>Service: Response
+        AI-->>Service: Completion
         Service->>DB: Persist result
         Service-->>Route: Result
+        Route->>Audit: log(event, severity)
         Route-->>Browser: 200 JSON response
+    else Demo org + mutating method
+        Auth->>Auth: blockIfDemo("demo-org-001") → true
+        Auth-->>Browser: 200 { _demo: true } (nothing persisted)
     else Unauthenticated
         Auth-->>Browser: 401 Unauthorized
+    else Prohibited AI practice (EU AI Act Art. 5)
+        AIReg-->>Browser: 451 Unavailable For Legal Reasons
     end
 ```
 

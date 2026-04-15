@@ -106,11 +106,12 @@ datacendia-core/
 1. **Client** sends HTTP request to frontend (Vite dev server or Nginx)
 2. **Vite proxy** forwards `/api/*` requests to backend on port 3001
 3. **Express middleware chain**: Helmet → CORS → Rate Limit → Body Parse → Cookie Parse → Compression → Request Logger → Security Middleware → CSRF
-4. **Auth middleware** validates JWT, resolves user/org from PostgreSQL, caches in Redis
-5. **Domain router** dispatches to the appropriate route handler
-6. **Route handler** validates input (Zod), calls service layer
-7. **Service layer** executes business logic, queries Prisma/Redis/Neo4j
-8. **Response** returns JSON with standard envelope format
+4. **Auth middleware** validates JWT, resolves user/org from PostgreSQL, caches in Redis; calls `blockIfDemo()` — write-protects demo orgs
+5. **`requireOrgScope`** verifies `req.organizationId` is set; also calls `blockIfDemo()` as belt-and-suspenders (v0.2.4+)
+6. **Domain router** dispatches to the appropriate route handler
+7. **Route handler** validates input (Zod), calls service layer
+8. **Service layer** executes business logic, queries Prisma/Redis/Neo4j
+9. **Response** returns JSON with standard envelope format
 
 ### AI Route Middleware Chain (additional layers on `/api/v1/council`, `/api/v1/deliberations`, `/api/v1/inference`, `/api/v1/platform-assistant`)
 
