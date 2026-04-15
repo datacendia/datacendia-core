@@ -1,25 +1,103 @@
+# Security Vulnerability Disclosure — Datacendia, LLC
+# RFC 9116 compliant | NYDFS 23 NYCRR §500.20 | ISO/IEC 29147
+# Last updated: 2026-04-15
+
 Contact: mailto:security@datacendia.com
-Expires: 2027-05-01T00:00:00.000Z
+Contact: https://app.datacendia.com/security/report
+Expires: 2027-04-15T00:00:00.000Z
+Encryption: https://app.datacendia.com/.well-known/pgp-key.txt
 Acknowledgments: https://app.datacendia.com/security/acknowledgments
-Preferred-Languages: en
+Preferred-Languages: en, es, fr, de
 Canonical: https://app.datacendia.com/.well-known/security.txt
 Policy: https://app.datacendia.com/security/vulnerability-disclosure-policy
+Hiring: https://datacendia.com/careers
 
-# Vulnerability Disclosure Policy
-# Datacendia, LLC
+# =============================================================================
+# SCOPE
+# =============================================================================
 #
-# We welcome responsible disclosure of security vulnerabilities.
-# Please email security@datacendia.com with a description of the issue,
-# steps to reproduce, and any supporting evidence.
+# In-scope assets:
+#   - app.datacendia.com (Production SaaS platform)
+#   - api.datacendia.com (API endpoints)
+#   - *.datacendia.com (all subdomains)
+#   - datacendia/datacendia-core (GitHub — open-source components only)
 #
-# We commit to:
-# - Acknowledge receipt within 48 hours
-# - Provide a timeline for remediation within 7 business days
-# - Credit reporters in our acknowledgments page (with permission)
-# - Not pursue legal action for good-faith disclosures
+# Out-of-scope:
+#   - Physical security attacks
+#   - Social engineering / phishing of Datacendia employees
+#   - Denial of Service (DoS / DDoS) attacks
+#   - Attacks requiring physical access to Datacendia systems
+#   - Third-party services not under Datacendia's direct control
+#   - Vulnerabilities in dependencies without a demonstrated exploit path
+#   - Self-XSS or issues only exploitable by the authenticated user themselves
 #
-# Scope: app.datacendia.com and *.datacendia.com
-# Out of scope: Denial of service, physical attacks, social engineering
+# =============================================================================
+# DISCLOSURE PROCESS
+# =============================================================================
 #
-# This file satisfies NY DFS 23 NYCRR §500.20 and NYDFS 2024 amendment
-# vulnerability disclosure requirements.
+# 1. EMAIL  — security@datacendia.com (PGP-encrypted preferred)
+#    Subject line: [SECURITY] <brief description>
+#    Include: description, reproduction steps, impact assessment, CVE/CWE if known
+#
+# 2. RESPONSE TIMELINE:
+#    - Acknowledgment: within 48 hours of receipt
+#    - Initial triage and severity assessment: within 5 business days
+#    - Remediation timeline communicated: within 10 business days
+#    - Patch released (CVSS 9.0+): within 15 business days
+#    - Patch released (CVSS 7.0–8.9): within 30 business days
+#    - Patch released (CVSS < 7.0): within 90 business days
+#    - Public disclosure: coordinated with reporter (default 90-day window)
+#
+# 3. SEVERITY CLASSIFICATION (CVSS v3.1):
+#    CRITICAL (9.0–10.0) — Immediate escalation to CISO + CTO
+#    HIGH     (7.0–8.9)  — Security team response within 24 hours
+#    MEDIUM   (4.0–6.9)  — Standard remediation queue
+#    LOW      (0.1–3.9)  — Next scheduled security release
+#
+# =============================================================================
+# SAFE HARBOR
+# =============================================================================
+#
+# Datacendia, LLC will not pursue civil or criminal legal action against
+# security researchers who:
+#
+#   (a) Report vulnerabilities through this policy in good faith
+#   (b) Do not access, modify, or delete customer data beyond what is
+#       strictly necessary to demonstrate the vulnerability
+#   (c) Do not exploit the vulnerability for profit or competitive advantage
+#   (d) Do not disclose vulnerability details publicly before Datacendia
+#       has had reasonable opportunity to remediate (90 days)
+#   (e) Do not conduct Denial of Service attacks or disrupt service availability
+#
+# Good-faith security research is protected and valued by Datacendia.
+#
+# =============================================================================
+# RECOGNITION & BUG BOUNTY
+# =============================================================================
+#
+# Researchers who responsibly disclose valid security vulnerabilities will
+# receive:
+#   - Public acknowledgment on our Hall of Fame (with permission)
+#   - Written confirmation suitable for resume / portfolio use
+#   - Monetary rewards for CVSS 7.0+ vulnerabilities (case-by-case basis)
+#     Contact security@datacendia.com for bounty details
+#
+# =============================================================================
+# REGULATORY COMPLIANCE
+# =============================================================================
+#
+# This vulnerability disclosure file satisfies the following requirements:
+#   - NY DFS 23 NYCRR §500.20 (NYDFS 2023 Amendment)
+#   - NIST SP 800-216 (Coordinated Vulnerability Disclosure)
+#   - ISO/IEC 29147:2018 (Vulnerability Disclosure)
+#   - ISO/IEC 30111:2019 (Vulnerability Handling Processes)
+#   - CISA Binding Operational Directive 20-01 (model compliance)
+#
+# Datacendia maintains a CVD policy in alignment with:
+#   - SOC 2 Type II CC7.1 (detection and monitoring)
+#   - ISO 27001 A.12.6.1 (management of technical vulnerabilities)
+#   - CMMC 2.0 Level 2 CA.L2-3.12.2 (plan of action and milestones)
+#
+# Security contact for regulatory inquiries: security@datacendia.com
+# Legal contact for safe harbor inquiries: legal@datacendia.com
+# Privacy contact for data-related security issues: privacy@datacendia.com

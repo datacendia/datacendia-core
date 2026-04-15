@@ -58,15 +58,36 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - **NIST AI RMF profile updated** (`docs/nist-ai-rmf/ai-rmf-profile.md`) — MAP 1.3, MEASURE 2.8, GOVERN 1.7 marked complete; overall alignment updated to 68%.
 
+- **`demoGuardMiddleware` exported** (`backend/src/middleware/demoGuard.ts`) — Added `NextFunction` import and exported `demoGuardMiddleware` as a proper Express `RequestHandler` suitable for direct `app.use()` or `router.use()` mounting.
+
+- **`requireOrgScope` now globally enforces demo guard** (`backend/src/middleware/tenantIsolation.ts`) — `blockIfDemo()` integrated into `requireOrgScope`. All 25+ domain routers that use `requireOrgScope` automatically receive demo write-protection without any per-route change. Belt-and-suspenders: `auth.ts` calls `blockIfDemo()` first; `requireOrgScope` calls it second.
+
+- **`privacyRoutes` now uses `requireOrgScope`** (`backend/src/index.ts`) — Previously mounted without `requireOrgScope`, meaning privacy endpoints lacked the demo guard. Fixed: all 17 GDPR/CCPA/HIPAA privacy endpoints now have full tenant isolation and demo protection.
+
+- **Documentation — Datacendia Bible** (`docs/DATACENDIA-BIBLE.md`) — New master platform reference covering 18 sections: mission, full architecture, all 25+ named products, 60 service domain map, complete middleware chain, 40+ compliance frameworks, security controls, data model, API structure, 5 pricing tiers, deployment architecture, demo data isolation model, AI inference layer, cryptographic evidence chain, audit/telemetry, 35+ external integrations, roadmap, and all configuration variables.
+
+- **Documentation — Services Catalog** (`docs/architecture/services-catalog.md`) — New comprehensive catalog of every service with 17 Mermaid diagrams: Council deliberation state machine, compliance enforcement layer, inference provider chain, privacy DSR flow diagram, legal services map, governance services, cryptographic evidence pipeline, security middleware chain, CendiaGateway 14-module architecture, analytics/intelligence/LLM/cortex services, sovereign and enterprise services, simulation services (COLLAPSE, SGAS, SCGE), vertical industry agents, operations and infrastructure, platform services, connector map, and full middleware stack.
+
+- **Documentation — Glossary** (`docs/GLOSSARY.md`) — New comprehensive platform terminology glossary. 55+ terms defined: all named products, technical concepts (Merkle, VDF, Shamir, DCII), compliance terms (AEDT, PHI, ROPA, DPIA), architecture concepts (demo guard, tenant isolation, requireOrgScope, open core), and platform-specific vocabulary.
+
+- **Documentation — Demo Guide** (`docs/DEMO-GUIDE.md`) — New enterprise demo playbook covering: pre-demo preparation checklist, audience persona matrix, 4 persona-specific demo tracks (Compliance Officer, CISO/Security, General Counsel, Full Platform 60 min), 6 core demo flows with step-by-step scripts and talk tracks, 6 industry scenario library (Financial/Meridian Capital, Healthcare, Defense/CMMC, Legal, Manufacturing, Thomson Reuters), objection handling for 8 common objections, 3 closing sequences (POC, Architecture Review, Board Brief), technical deep-dive track, and demo environment setup.
+
+- **Documentation — Developer Onboarding** (`docs/DEVELOPER-ONBOARDING.md`) — New complete engineering onboarding guide covering: local environment setup, codebase orientation, full request lifecycle (24-step middleware chain), how to add a service (with templates and rules), how to add a route (with Zod validation patterns), how to add middleware (with examples), Prisma patterns (org-scoping, ownership verification), naming conventions, testing requirements and templates, PR checklist, 6 common pitfalls, and key files reference.
+
+- **Vulnerability Disclosure Policy upgraded** (`public/.well-known/security.txt`) — Expanded from minimal to RFC 9116 full compliance: dual contact methods, PGP encryption link, 4-language preference, CVSS-tiered response timeline (CRITICAL 15 days, HIGH 30 days, MEDIUM 90 days), full scope definition with in-scope/out-of-scope assets, formal safe harbor clause (a–e), bug bounty program description, and regulatory compliance attestation (NYDFS §500.20, NIST SP 800-216, ISO/IEC 29147:2018, ISO/IEC 30111:2019, SOC 2 CC7.1, ISO 27001 A.12.6.1, CMMC 2.0 CA.L2-3.12.2).
+
+- **Architecture diagrams updated** — `docs/architecture/gateway-security.md`: `demoGuardMiddleware` added to security services diagram (9 modules), sequence flow updated for dual-layer blockIfDemo, new Demo Guard tenant protection flowchart added. `docs/architecture/platform-overview.md`: request flow sequence expanded to include `requireOrgScope`, `aiRegulatoryMiddleware`, and `AuditService` in the full chain. `docs/architecture/README.md`: Services Catalog added as doc #19, diagram count updated to ~90, Bible cross-link added. `ARCHITECTURE.md` (root): request flow steps corrected with `requireOrgScope` and `demoGuardMiddleware` v0.2.4.
+
 ### Changed
 
-- **`backend/src/index.ts`** — Wired `aiRegulatoryMiddleware` on `/api/v1/council`, `/api/v1/deliberations`, `/api/v1/inference`, `/api/v1/platform-assistant`. Wired `phiEnforcementMiddleware` after `aiRegulatoryMiddleware` on same routes.
+- **`backend/src/index.ts`** — Wired `aiRegulatoryMiddleware` on `/api/v1/council`, `/api/v1/deliberations`, `/api/v1/inference`, `/api/v1/platform-assistant`. Wired `phiEnforcementMiddleware` after `aiRegulatoryMiddleware` on same routes. Added `requireOrgScope` to `privacyRoutes` mount.
 - **`backend/src/security/audit.service.ts`** — Added event types: `ai.inference`, `ai.regulatory_blocked`, `ai.regulatory_classified`, `ai.prohibited_practice_blocked`, `security.threat_detected`, `security.breach_detected`, `security.incident_created`. Added `error` severity level.
 - **CCPA status endpoint** — Updated `GET /api/v1/privacy/ccpa/status` to enumerate CPRA right to limit sensitive PI.
 
 ### Fixed
 
 - Removed unused `NextFunction` import from `backend/src/routes/privacy.ts`.
+- `privacyRoutes` now correctly protected by `requireOrgScope` (and therefore `demoGuardMiddleware`) — previously mounted without org scope.
 
 ---
 
