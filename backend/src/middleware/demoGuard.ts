@@ -14,7 +14,7 @@
 // Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 
 // =============================================================================
 // Constants
@@ -72,4 +72,14 @@ export function blockIfDemo(req: Request, res: Response): boolean {
   }
 
   return false; // let the request proceed normally
+}
+
+/**
+ * Express middleware adapter for blockIfDemo.
+ * Can be mounted directly with app.use() or router.use().
+ * Note: req.organizationId must already be set by auth middleware.
+ */
+export function demoGuardMiddleware(req: Request, res: Response, next: NextFunction): void {
+  if (blockIfDemo(req, res)) return;
+  next();
 }

@@ -432,7 +432,7 @@ app.use('/api/v1/collaboration', requireOrgScope, stakeholderPortalsRoutes);    
 app.use('/api/v1/remediation', requireOrgScope, remediationTicketingRoutes);    // Automated Remediation & Ticketing
 app.use('/api/v1/model-registry', requireOrgScope, modelRegistryRoutes);        // AI Model Lifecycle & Registry
 app.use('/api/v1/feedback', requireOrgScope, feedbackRoutes);                   // Continuous Feedback & Improvement Loop
-app.use('/api/v1/privacy', privacyRoutes);                                      // GDPR Art.15-22, CCPA, HIPAA §164.514 — Data Subject Rights + PHI De-identification
+app.use('/api/v1/privacy', requireOrgScope, privacyRoutes);                     // GDPR Art.15-22, CCPA, HIPAA §164.514 — Data Subject Rights + PHI De-identification
 app.use('/api/v1/enterprise', requireOrgScope, enterprisePlatinumRoutes);       // Enterprise Platinum: Self-Healing, Governance Graph, RegSim, Ethics, Sovereignty, HITL, Trust, Agents
 
 // Sandbox Analytics - Track demo engagement for Thomson Reuters

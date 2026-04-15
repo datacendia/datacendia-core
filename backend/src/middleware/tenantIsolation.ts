@@ -14,6 +14,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { errors } from './errorHandler.js';
 import { logger } from '../utils/logger.js';
+import { blockIfDemo } from './demoGuard.js';
 
 // =============================================================================
 // TENANT ISOLATION MIDDLEWARE
@@ -39,6 +40,7 @@ export const requireOrgScope = (
     next(errors.forbidden('Organization context required'));
     return;
   }
+  if (blockIfDemo(req, res)) return; // Demo guard — read-only protection for seeded demo orgs
   next();
 };
 
