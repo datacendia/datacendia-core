@@ -14,7 +14,7 @@
 | 6 | [Incident Forensics](./incident-forensics.md) | IncidentForensicsService, evidence chain, severity classification | 3 |
 | 7 | [Inference Layer](./inference-layer.md) | InferenceService, OpenAI/Ollama/Triton/NIM providers, health check | 4 |
 | 8 | [Crypto & Evidence](./crypto-evidence.md) | KeyManagement, Merkle, Stamp, SelfContainedEvidence, ContentAddressedReceipt, DecisionEscrow, DCII, Red Team | 3 |
-| 9 | [Compliance & Legal](./compliance-services.md) | ComplianceService, ContinuousMonitor, CrossJurisdiction, RegulatorySandbox, Legal (8 modules) | 3 |
+| 9 | [Compliance & Legal](./compliance-services.md) | AIRegulatoryClassifier, IncidentMaterialityService, aiRegulatoryMiddleware, phiEnforcementMiddleware, ComplianceService, ContinuousMonitor, CrossJurisdiction, RegulatorySandbox, Legal (8 modules), 17 Privacy API endpoints | 7 |
 | 10 | [Cendia Product Services](./cendia-product-services.md) | Sentry, Aegis, Crucible, Panopticon, Horizon, ChronosAI, Vox, Dissent, Recall, Symbiont, Eternal, OmniTranslate, HR, Salary, Apotheosis | 4 |
 | 11 | [Gateway & Security](./gateway-security.md) | CendiaGateway (14 modules), Security middleware (8 modules), Vault, KeyManagement | 4 |
 | 12 | [Pillars, Flow & Queue](./pillars-flow-queue.md) | FlowService, PipelineService, AgentQueueService, Scheduler (9 pillar modules) | 3 |
@@ -25,7 +25,9 @@
 | 17 | [Advanced Analysis Features](./advanced-analysis-features.md) | Ghost Board, Chronos, Pre-Mortem, Decision Debt, Regulatory Absorb, Live Demo, Collapse Mode, Druid, SCGE, SGAS | 12 |
 | 18 | [SCGE & SGAS](./scge-sgas.md) | Synthetic Community Governance Engine, Self-Governing Agent System, Agent orchestration | 6 |
 
-**Total: 18 documents · ~70 Mermaid diagrams · Covering 350+ service files**
+**Total: 18 documents · ~74 Mermaid diagrams · Covering 360+ service files**
+
+> **v0.2.4-alpha (April 2026):** Compliance & Legal doc (#9) fully rewritten with 7 diagrams covering the new AI regulatory enforcement middleware chain, breach notification planner, and all 17 privacy API endpoints.
 
 ## Service Count by Domain
 
@@ -41,7 +43,7 @@
 | Security | 8 | Documented |
 | Legal | 8 | Documented |
 | Council | 7 | Documented |
-| Compliance | 7 | Documented |
+| Compliance | 9 | Documented — updated v0.2.4 |
 | DCII | 7 | Documented |
 | Strategic | 7 | Documented |
 | Core | 7 | Documented |

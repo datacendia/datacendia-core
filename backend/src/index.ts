@@ -62,6 +62,10 @@ import { initTracing } from './telemetry/tracing.js';
 import { sentry } from './telemetry/sentry.js';
 import { policyEngine } from './security/PolicyEngine.js';
 import { databaseBackupService } from './services/backup/index.js';
+import { getRetentionService } from './services/compliance/RetentionService.js';
+import privacyRoutes from './routes/privacy.js';
+import { aiRegulatoryMiddleware } from './middleware/aiRegulatoryMiddleware.js';
+import { phiEnforcementMiddleware } from './middleware/phiEnforcementMiddleware.js';
 import { vectorDB } from './services/vectordb/index.js';
 
 // Initialize OpenTelemetry tracing (must be before other imports that need instrumentation)
@@ -282,6 +286,41 @@ app.use('/api/v1/council', inputSanitizationMiddleware); // Prompt injection def
 // Custom security headers (API only)
 app.use('/api/', customSecurityHeaders);
 
+// EU AI Act Article 50 — Transparency: label AI-generated responses
+// Applied to all routes that return AI-generated content
+const aiTransparencyMiddleware = (_req: any, res: any, next: any) => {
+  res.setHeader('X-AI-Generated', 'true');
+  res.setHeader('X-AI-Provider', 'Datacendia-Council');
+  next();
+};
+app.use('/api/v1/council', aiTransparencyMiddleware);
+app.use('/api/v1/deliberations', aiTransparencyMiddleware);
+app.use('/api/v1/inference', aiTransparencyMiddleware);
+app.use('/api/v1/platform-assistant', aiTransparencyMiddleware);
+
+// AI Regulatory Compliance Middleware — CO SB 205, NYC LL 144, IL AIVIA, EU AI Act, GDPR Art. 22
+// Classifies AI use cases, enforces consent gates, attaches regulatory headers, logs high-risk events
+app.use('/api/v1/council', aiRegulatoryMiddleware);
+app.use('/api/v1/deliberations', aiRegulatoryMiddleware);
+app.use('/api/v1/inference', aiRegulatoryMiddleware);
+app.use('/api/v1/platform-assistant', aiRegulatoryMiddleware);
+
+// PHI Before AI Enforcement Middleware — HIPAA §164.502(a) + FTC HBNR 2024
+// Blocks health-domain AI requests unless PHI is de-identified or a HIPAA BAA is on file
+// Must run AFTER aiRegulatoryMiddleware (uses classifier result for healthcare domain detection)
+app.use('/api/v1/council', phiEnforcementMiddleware);
+app.use('/api/v1/deliberations', phiEnforcementMiddleware);
+app.use('/api/v1/inference', phiEnforcementMiddleware);
+app.use('/api/v1/platform-assistant', phiEnforcementMiddleware);
+
+// Global Privacy Control (GPC) — Cal. Civ. Code §1798.135(b), CO CPA §6-1-1306(2), CT CTDPA, TX TDPSA, OR OCPA
+// Automatically detects Sec-GPC: 1 browser signal and attaches opt-out intent to request.
+// The privacy route reads req.gpcOptOut to auto-apply CCPA opt-out on first authenticated request.
+app.use('/api/', (req: any, _res: any, next: any) => {
+  req.gpcOptOut = req.headers['sec-gpc'] === '1';
+  next();
+});
+
 // Honeypot/deception - catches attackers probing for vulnerabilities
 app.use('/api/', honeypotMiddleware);
 
@@ -393,6 +432,7 @@ app.use('/api/v1/collaboration', requireOrgScope, stakeholderPortalsRoutes);    
 app.use('/api/v1/remediation', requireOrgScope, remediationTicketingRoutes);    // Automated Remediation & Ticketing
 app.use('/api/v1/model-registry', requireOrgScope, modelRegistryRoutes);        // AI Model Lifecycle & Registry
 app.use('/api/v1/feedback', requireOrgScope, feedbackRoutes);                   // Continuous Feedback & Improvement Loop
+app.use('/api/v1/privacy', privacyRoutes);                                      // GDPR Art.15-22, CCPA, HIPAA §164.514 — Data Subject Rights + PHI De-identification
 app.use('/api/v1/enterprise', requireOrgScope, enterprisePlatinumRoutes);       // Enterprise Platinum: Self-Healing, Governance Graph, RegSim, Ethics, Sovereignty, HITL, Trust, Agents
 
 // Sandbox Analytics - Track demo engagement for Thomson Reuters
@@ -653,6 +693,32 @@ const startServer = async () => {
       }
     } catch (e) {
       logger.warn('[CendiaBackup] Backup scheduler failed to start:', e);
+    }
+
+    // Start 7-year audit data retention scheduler (SOC 2 CC2 / data retention compliance)
+    try {
+      const retentionService = getRetentionService(prisma);
+      const THIRTY_DAYS = 30 * 24 * 60 * 60 * 1000;
+      // Run initial check 5 minutes after startup, then every 30 days
+      setTimeout(async () => {
+        try {
+          await retentionService.scheduleCleanup();
+          logger.info('[Retention] Initial retention cleanup scheduled');
+        } catch (err) {
+          logger.warn('[Retention] Initial retention schedule failed:', err);
+        }
+      }, 5 * 60 * 1000);
+      setInterval(async () => {
+        try {
+          const result = await retentionService.performCleanup();
+          logger.info(`[Retention] Monthly cleanup: ${result.deletedRecords} records purged across ${result.tablesProcessed.length} tables`);
+        } catch (err) {
+          logger.warn('[Retention] Monthly cleanup failed:', err);
+        }
+      }, THIRTY_DAYS);
+      logger.info('[Retention] 7-year audit retention scheduler active');
+    } catch (e) {
+      logger.warn('[Retention] Retention scheduler failed to start:', e);
     }
   } catch (error) {
     logger.error('Failed to start server:', error);

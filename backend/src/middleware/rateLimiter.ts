@@ -23,6 +23,7 @@
 
 import { Request, Response, NextFunction } from 'express';
 import type { SubscriptionTier } from '../core/subscriptions/SubscriptionTiers.js';
+import { redis } from '../config/redis.js';
 
 interface RateLimitConfig {
   windowMs: number;
@@ -71,18 +72,10 @@ const TIER_LIMITS: Record<SubscriptionTier, RateLimitConfig> = {
   },
 };
 
-// In-memory store; production upgrade: use Redis
-const rateLimitStore = new Map<string, RateLimitEntry>();
+// Redis-backed rate limit store — survives restarts and works across multiple instances
+const REDIS_RL_PREFIX = 'rl:tier:';
+const REDIS_BURST_PREFIX = 'rl:burst:';
 
-// Cleanup old entries every 5 minutes
-setInterval(() => {
-  const now = Date.now();
-  for (const [key, entry] of rateLimitStore.entries()) {
-    if (entry.resetAt < now && entry.burstResetAt < now) {
-      rateLimitStore.delete(key);
-    }
-  }
-}, 5 * 60 * 1000);
 
 /**
  * Get user's subscription tier from request
@@ -107,72 +100,67 @@ function getRateLimitKey(req: Request): string {
 }
 
 /**
- * Main rate limiter middleware
+ * Main rate limiter middleware — Redis-backed for multi-instance consistency (CC7.1)
  */
 export function rateLimiter(req: Request, res: Response, next: NextFunction): void {
   const tier = getUserTier(req);
-  const key = getRateLimitKey(req);
-  const config = TIER_LIMITS[tier];
+  const baseKey = getRateLimitKey(req);
+  const cfg = TIER_LIMITS[tier];
   const now = Date.now();
 
-  // Get or create rate limit entry
-  let entry = rateLimitStore.get(key);
-  if (!entry || entry.resetAt < now) {
-    entry = {
-      count: 0,
-      resetAt: now + config.windowMs,
-      burstCount: 0,
-      burstResetAt: now + 60000, // 1 minute burst window
-    };
-  }
+  const hourlyKey = `${REDIS_RL_PREFIX}${baseKey}`;
+  const burstKey  = `${REDIS_BURST_PREFIX}${baseKey}`;
 
-  // Reset burst counter if window passed
-  if (entry.burstResetAt < now) {
-    entry.burstCount = 0;
-    entry.burstResetAt = now + 60000;
-  }
+  // Redis pipeline: INCR + PEXPIRE for both windows atomically
+  Promise.all([
+    redis.multi()
+      .incr(hourlyKey)
+      .pexpire(hourlyKey, cfg.windowMs)
+      .exec(),
+    redis.multi()
+      .incr(burstKey)
+      .pexpire(burstKey, 60_000)
+      .exec(),
+  ]).then(([hourlyResults, burstResults]) => {
+    const hourlyCount = (hourlyResults?.[0]?.[1] as number) ?? 1;
+    const burstCount  = (burstResults?.[0]?.[1]  as number) ?? 1;
 
-  // Check burst limit
-  if (entry.burstCount >= config.burstLimit) {
-    res.status(429).json({
-      error: 'Too Many Requests',
-      message: 'Burst limit exceeded. Please slow down.',
-      retryAfter: Math.ceil((entry.burstResetAt - now) / 1000),
-      tier,
-      limit: config.burstLimit,
-      window: '1 minute',
-    });
-    return;
-  }
+    if (burstCount > cfg.burstLimit) {
+      res.status(429).json({
+        error: 'Too Many Requests',
+        message: 'Burst limit exceeded. Please slow down.',
+        retryAfter: 60,
+        tier,
+        limit: cfg.burstLimit,
+        window: '1 minute',
+      });
+      return;
+    }
 
-  // Check hourly limit
-  if (entry.count >= config.maxRequests) {
-    res.status(429).json({
-      error: 'Too Many Requests',
-      message: config.message,
-      retryAfter: Math.ceil((entry.resetAt - now) / 1000),
-      tier,
-      limit: config.maxRequests,
-      remaining: 0,
-      resetAt: new Date(entry.resetAt).toISOString(),
-    });
-    return;
-  }
+    if (cfg.maxRequests !== Infinity && hourlyCount > cfg.maxRequests) {
+      res.status(429).json({
+        error: 'Too Many Requests',
+        message: cfg.message,
+        retryAfter: Math.ceil(cfg.windowMs / 1000),
+        tier,
+        limit: cfg.maxRequests,
+        remaining: 0,
+      });
+      return;
+    }
 
-  // Increment counters
-  entry.count++;
-  entry.burstCount++;
-  rateLimitStore.set(key, entry);
+    // Set informational headers
+    res.setHeader('X-RateLimit-Tier', tier);
+    res.setHeader('X-RateLimit-Limit', cfg.maxRequests === Infinity ? 'unlimited' : cfg.maxRequests);
+    res.setHeader('X-RateLimit-Remaining', cfg.maxRequests === Infinity ? 'unlimited' : Math.max(0, cfg.maxRequests - hourlyCount));
+    res.setHeader('X-RateLimit-Burst-Limit', cfg.burstLimit);
+    res.setHeader('X-RateLimit-Burst-Remaining', Math.max(0, cfg.burstLimit - burstCount));
 
-  // Set rate limit headers
-  res.setHeader('X-RateLimit-Tier', tier);
-  res.setHeader('X-RateLimit-Limit', config.maxRequests === Infinity ? 'unlimited' : config.maxRequests);
-  res.setHeader('X-RateLimit-Remaining', Math.max(0, config.maxRequests - entry.count));
-  res.setHeader('X-RateLimit-Reset', Math.ceil(entry.resetAt / 1000));
-  res.setHeader('X-RateLimit-Burst-Limit', config.burstLimit);
-  res.setHeader('X-RateLimit-Burst-Remaining', Math.max(0, config.burstLimit - entry.burstCount));
-
-  next();
+    next();
+  }).catch(() => {
+    // Redis unavailable — fail open with a warning (availability over security for tier limiting)
+    next();
+  });
 }
 
 /**
@@ -224,26 +212,24 @@ export const deliberationRateLimiter = endpointRateLimiter(5, 60000); // 5 delib
 export const uploadRateLimiter = endpointRateLimiter(20, 60000); // 20 uploads per minute
 
 /**
- * Get current rate limit status for a user
+ * Get current rate limit status for a user (async — reads from Redis)
  */
-export function getRateLimitStatus(userId: string): {
+export async function getRateLimitStatus(userId: string): Promise<{
   tier: SubscriptionTier;
   hourlyLimit: number;
   hourlyUsed: number;
   hourlyRemaining: number;
-  resetAt: Date | null;
-} {
-  const key = `user:${userId}`;
-  const entry = rateLimitStore.get(key);
+}> {
   const tier: SubscriptionTier = 'foundation'; // Would be looked up from user record
-  const config = TIER_LIMITS[tier];
+  const cfg = TIER_LIMITS[tier];
+  const raw = await redis.get(`${REDIS_RL_PREFIX}user:${userId}`);
+  const used = raw ? parseInt(raw, 10) : 0;
 
   return {
     tier,
-    hourlyLimit: config.maxRequests,
-    hourlyUsed: entry?.count || 0,
-    hourlyRemaining: Math.max(0, config.maxRequests - (entry?.count || 0)),
-    resetAt: entry ? new Date(entry.resetAt) : null,
+    hourlyLimit: cfg.maxRequests,
+    hourlyUsed: used,
+    hourlyRemaining: cfg.maxRequests === Infinity ? Infinity : Math.max(0, cfg.maxRequests - used),
   };
 }
 

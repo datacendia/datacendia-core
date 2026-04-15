@@ -20,7 +20,7 @@ import { Router, Request, Response } from 'express';
 import { logger } from '../utils/logger.js';
 import { z } from 'zod';
 import { prisma } from '../config/database.js';
-import { authenticate } from '../middleware/auth.js';
+import { authenticate, markMfaVerified } from '../middleware/auth.js';
 import { errors } from '../middleware/errorHandler.js';
 import { 
   generateMFASecret, 
@@ -276,6 +276,10 @@ router.post('/verify', async (req: Request, res: Response) => {
       userAgent: req.headers['user-agent'],
       details: {},
     });
+
+    // Mark MFA as verified in Redis so authenticate middleware grants full access
+    // iat is unknown here (temp session flow) — use 0 as the session-level MFA flag key
+    await markMfaVerified(session.user_id, 0);
 
     res.json({
       message: 'MFA verification successful',

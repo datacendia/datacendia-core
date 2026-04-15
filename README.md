@@ -124,7 +124,12 @@ Datacendia is the only AI platform where every decision is auditable, explainabl
 - **Basic White-Labeling** -- CSS-based theming with brand customization
 - **SIEM Integration** -- Splunk, Datadog, Sentinel, ELK for security event forwarding
 - **Performance Monitoring** -- Core Web Vitals tracking with real-time metrics
-- **GDPR Compliance** -- Data subject rights implementation with audit trails
+- **Privacy & Regulatory Compliance** -- 16-framework global compliance engine:
+  - **AI Regulatory Middleware** -- Runtime enforcement on all AI routes: IL AIVIA consent gate, EU AI Act Art. 5 prohibited practice blocker (HTTP 451), NYC LL 144 AEDT warning header, CO SB 205 risk classification
+  - **PHI Enforcement Middleware** -- Blocks healthcare AI requests unless PHI is de-identified or org has HIPAA BAA on file (FTC HBNR 2024 + HIPAA §164.502)
+  - **Multi-framework Breach Notification** -- `IncidentMaterialityService` plans notifications across 14 jurisdictions (SEC, NYDFS, GDPR, HIPAA, FTC HBNR, Japan APPI, Singapore PDPA, Australia NDB, Nigeria NDPA, Brazil LGPD, and more)
+  - **17 Privacy API Endpoints** -- GDPR Arts. 15–20, CCPA §1798.100–§1798.135, CPRA §1798.121, WA MHMDA, CO SB 205 appeal, NYC LL 144 AEDT disclosure, EU Data Act Art. 23 org-export, AI Impact Assessment
+  - **Vulnerability Disclosure** -- `/.well-known/security.txt` (NYDFS 500 §500.20)
 
 ### Enterprise Infrastructure (Opt-In)
 - **Apache Kafka** -- Durable event streaming (`KAFKA_ENABLED=true`)
@@ -140,8 +145,9 @@ Datacendia is the only AI platform where every decision is auditable, explainabl
 - **Enterprise Connectors** -- SAP, Salesforce, Oracle integrations (Q3 2026)
 - **99.99% Uptime SLA** -- Multi-region infrastructure deployment (Q2 2026)
 - **Distributed Tracing** -- Jaeger/Zipkin integration (Q2 2026)
-- **7-Year Audit Retention** -- Long-term storage configuration (Q2 2026)
 - **Advanced Analytics** -- Predictive monitoring and business intelligence (Q4 2026)
+- **SOC 2 Type II** -- Observation period starts Nov 2026; report expected Q3 2027
+- **ISO 27001 Certification** -- Stage 1 audit Q4 2026; certificate Q1 2027
 
 See [enterprise-capabilities-audit.md](packages/widgets/enterprise-capabilities-audit.md) for complete capability matrix and [enterprise-roadmap.md](packages/widgets/enterprise-roadmap.md) for implementation timeline.
 
@@ -419,6 +425,9 @@ All infrastructure components are **opt-in** -- disabled by default, zero impact
 - **Immutable Audit Ledger** -- Merkle tree integrity, cryptographic signatures
 - **Post-Quantum KMS** -- Dilithium, SPHINCS+ support
 - **Confidential Computing** -- NVIDIA H100/H200 GPU attestation
+- **AI Regulatory Enforcement** -- Runtime middleware blocking prohibited AI practices (EU AI Act Art. 5), IL AIVIA consent gates, PHI-before-AI enforcement (FTC HBNR 2024)
+- **Vulnerability Disclosure Policy** -- `/.well-known/security.txt` (NYDFS 23 NYCRR §500.20)
+- **Multi-framework Incident Response** -- 14-jurisdiction breach notification planning with per-regulator deadlines and draft notices
 
 ---
 
@@ -487,6 +496,15 @@ Datacendia implements the **Datacendia Decision Governance Infrastructure (DDGI)
 | [DCII White Paper](https://github.com/datacendia/decision-governance-infrastructure/blob/main/docs/DCII_Framework_v2.1.md) | Reference implementation specification |
 | [API Specification](https://github.com/datacendia/decision-governance-infrastructure/blob/main/api/api-spec.yaml) | OpenAPI 3.0 (59 endpoints) |
 | [Compliance Mapping](https://github.com/datacendia/decision-governance-infrastructure/blob/main/docs/compliance-mapping.md) | Regulation-to-primitive matrix |
+| [Master Compliance Tracker](docs/compliance/MASTER-COMPLIANCE-TRACKER.md) | 50+ obligations across GDPR, HIPAA, AI Act, SOC 2, ISO 27001, and more |
+| [State AI Laws Guide](docs/compliance/state-ai-laws-implementation.md) | CO SB 205, NYC LL 144, IL AIVIA implementation |
+| [NIST AI RMF Profile](docs/nist-ai-rmf/ai-rmf-profile.md) | GOVERN/MAP/MEASURE/MANAGE — 68% aligned |
+| [NIST CSF 2.0 Mapping](docs/compliance/nist-csf2-mapping.md) | All 6 functions including new GOVERN |
+| [MITRE ATT&CK Mapping](docs/compliance/mitre-attack-mapping.md) | 79% tactic coverage + ATLAS AI threats |
+| [CIS Controls v8](docs/compliance/cis-controls-v8.md) | IG1+IG2 mapping, gap remediation plan |
+| [ISO 27001 ISMS](docs/iso27001/README.md) | Scope, asset register, risk register, SoA |
+| [DPIA Template](docs/legal/dpia-template.md) | GDPR Art. 35 / Quebec Law 25 — ready to use |
+| [ROPA](docs/legal/ropa-record-of-processing-activities.md) | GDPR Art. 30 record of processing activities |
 
 DDGI is being prepared for submission to **ISO/IEC JTC 1/SC 42** (Artificial Intelligence) as a New Work Item Proposal. See [standards body engagement](https://github.com/datacendia/decision-governance-infrastructure/blob/main/docs/standards-body-engagement.md) for details.
 
@@ -563,6 +581,6 @@ Built by [Datacendia](https://datacendia.com) &middot; [DDGI Framework](https://
 
 **→ [Try the Platform](#try-it-in-60-seconds)** &middot; **[Request a Free Pilot](https://datacendia.com/briefing.html)** &middot; [enterprise@datacendia.com](mailto:enterprise@datacendia.com)
 
-*Last updated: April 2026*
+*Last updated: April 15, 2026 — v0.2.4-alpha*
 
 </div>

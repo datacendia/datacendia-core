@@ -243,6 +243,44 @@ Respond with ONLY a JSON object:
     action: 'flag',
   },
 
+  // ── EU AI Act Art. 5 — Prohibited Practices Rail ─────────────────────
+  {
+    id: 'input-eu-ai-act-prohibited',
+    name: 'EU AI Act Art. 5 — Prohibited Practices Guardrail',
+    type: 'input',
+    enabled: true,
+    description: 'Blocks requests that would implement EU AI Act Article 5 prohibited AI practices (emotion recognition in workplace/education, social scoring, biometric mass surveillance, subliminal manipulation)',
+    regexPreFilter: [
+      // Emotion recognition in workplace / educational settings
+      /emotion\s*(?:recogni[sz]e?|detect(?:ion)?|analys[ie]s?|classif(?:y|ication))\s+(?:.*\s+)?(?:employe(?:e|r)|worker|staff|student|pupil|employee|classroom|office|workplace)/i,
+      /(?:detect|recogni[sz]e?|analys[ie]s?)\s+(?:.*\s+)?(?:emotional?\s+state|feelings?|mood|affect)\s+(?:.*\s+)?(?:employe(?:e|r)|worker|staff|student|pupil)/i,
+      // Social scoring / citizen scoring
+      /(?:social\s+(?:credit|scor(?:e|ing)|rank(?:ing)?)|citizen\s+(?:scor(?:e|ing)|rank(?:ing)?))/i,
+      // Biometric mass surveillance
+      /(?:real.time|live|mass)\s+(?:biometric|facial)\s+(?:identif(?:y|ication)|recogni(?:tion|[sz]e?)|surveillance|scanning)\s+(?:.*\s+)?(?:public|crowd|street|camera)/i,
+      // Subliminal / subconscious manipulation
+      /subliminal\s+(?:messag(?:e|ing)|technique|manipulat(?:e|ion)|influenc(?:e|ing))/i,
+      // Predictive policing based on profiling
+      /predict(?:ive)?\s+polic(?:e|ing)\s+(?:.*\s+)?(?:profile|profiling|ethnic|racial|religion|based\s+on)/i,
+    ],
+    promptTemplate: `You are a compliance officer enforcing EU AI Act Article 5 prohibited AI practices.
+
+Determine if the following request attempts to implement or enable any of these PROHIBITED practices:
+1. Emotion recognition systems in workplace or educational settings
+2. Social scoring or citizen ranking by public/private entities
+3. Real-time biometric identification in public spaces
+4. Subliminal manipulation techniques
+5. Predictive policing based solely on profiling
+6. Biometric mass surveillance
+
+User request: "{{input}}"
+
+Respond with ONLY a JSON object:
+{"is_prohibited": true/false, "prohibited_category": "emotion_recognition|social_scoring|biometric_surveillance|subliminal_manipulation|predictive_policing|none", "confidence": 0.0-1.0, "reasoning": "brief explanation", "legal_reference": "EU AI Act Article 5(1)(a-g)"}`,
+    severity: 'critical',
+    action: 'block',
+  },
+
   // ── Dialog Rails ─────────────────────────────────────────────────────
   {
     id: 'dialog-financial-disclaimer',

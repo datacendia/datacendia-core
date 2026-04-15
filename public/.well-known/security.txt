@@ -1,0 +1,25 @@
+Contact: mailto:security@datacendia.com
+Expires: 2027-05-01T00:00:00.000Z
+Acknowledgments: https://app.datacendia.com/security/acknowledgments
+Preferred-Languages: en
+Canonical: https://app.datacendia.com/.well-known/security.txt
+Policy: https://app.datacendia.com/security/vulnerability-disclosure-policy
+
+# Vulnerability Disclosure Policy
+# Datacendia, LLC
+#
+# We welcome responsible disclosure of security vulnerabilities.
+# Please email security@datacendia.com with a description of the issue,
+# steps to reproduce, and any supporting evidence.
+#
+# We commit to:
+# - Acknowledge receipt within 48 hours
+# - Provide a timeline for remediation within 7 business days
+# - Credit reporters in our acknowledgments page (with permission)
+# - Not pursue legal action for good-faith disclosures
+#
+# Scope: app.datacendia.com and *.datacendia.com
+# Out of scope: Denial of service, physical attacks, social engineering
+#
+# This file satisfies NY DFS 23 NYCRR §500.20 and NYDFS 2024 amendment
+# vulnerability disclosure requirements.

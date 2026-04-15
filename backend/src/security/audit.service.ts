@@ -23,6 +23,7 @@
 import crypto from 'crypto';
 import { logger } from '../utils/logger.js';
 import { druidEventStream } from '../services/DruidEventStream.js';
+import { prisma } from '../config/database.js';
 
 export type AuditEventType =
   // Authentication
@@ -72,9 +73,18 @@ export type AuditEventType =
   // Compliance
   | 'compliance.report_generated'
   | 'compliance.evidence_exported'
-  | 'compliance.policy_updated';
+  | 'compliance.policy_updated'
+  // AI Regulatory
+  | 'ai.inference'
+  | 'ai.regulatory_blocked'
+  | 'ai.regulatory_classified'
+  | 'ai.prohibited_practice_blocked'
+  // Security (extended)
+  | 'security.threat_detected'
+  | 'security.breach_detected'
+  | 'security.incident_created';
 
-export type AuditSeverity = 'info' | 'warning' | 'critical';
+export type AuditSeverity = 'info' | 'warning' | 'error' | 'critical';
 
 export interface AuditEvent {
   id: string;
@@ -173,10 +183,39 @@ class AuditService {
 
     this.events.push(auditEvent);
 
-    // Log to console for now (would go to secure audit log storage)
-    const logLevel = event.severity === 'critical' ? 'error' : 
+    // Persist to Postgres for durable audit trail (CC7.2 — SOC 2 evidence)
+    prisma.audit_logs.create({
+      data: {
+        id: auditEvent.id,
+        organization_id: auditEvent.organizationId,
+        user_id: auditEvent.userId ?? null,
+        action: auditEvent.eventType,
+        resource_type: auditEvent.resource.type,
+        resource_id: auditEvent.resource.id ?? null,
+        details: {
+          severity: auditEvent.severity,
+          outcome: auditEvent.outcome,
+          action: auditEvent.action,
+          sessionId: auditEvent.sessionId,
+          errorMessage: auditEvent.errorMessage,
+          ...auditEvent.details,
+        } as any,
+        ip_address: auditEvent.ipAddress ?? null,
+        user_agent: auditEvent.userAgent ?? null,
+      },
+    }).catch((err: unknown) => {
+      // Non-blocking: log failure but never let audit persistence crash the caller
+      logger.error('[AuditService] Failed to persist event to DB', {
+        eventId: auditEvent.id,
+        eventType: auditEvent.eventType,
+        error: err instanceof Error ? err.message : String(err),
+      });
+    });
+
+    // Log to structured logger
+    const logLevel = event.severity === 'critical' ? 'error' :
                      event.severity === 'warning' ? 'warn' : 'info';
-    console[logLevel](`[Audit] ${event.eventType}:`, {
+    logger[logLevel](`[Audit] ${event.eventType}`, {
       user: event.userName || event.userId,
       resource: `${event.resource.type}:${event.resource.id}`,
       outcome: event.outcome,

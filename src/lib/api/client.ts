@@ -15,6 +15,8 @@
  * Production-grade API client with authentication, error handling, and type safety
  */
 
+import { useUIStore } from '../../stores/uiStore';
+
 // In development, use relative path to go through Vite's proxy
 // In production, use the full URL from environment
 const API_BASE_URL =
@@ -279,6 +281,16 @@ class ApiClient {
           code: 'HTTP_ERROR',
           message: `HTTP ${response.status}: ${response.statusText}`,
         };
+      }
+
+      // Demo guard: backend signals that this org is read-only
+      if ((data as any)._demo === true) {
+        useUIStore.getState().addToast({
+          type: 'info',
+          title: 'Demo organisation — read only',
+          message: 'Changes are not saved in demo organisations. Your own organisation data is completely unaffected.',
+          duration: 5000,
+        });
       }
 
       return data;

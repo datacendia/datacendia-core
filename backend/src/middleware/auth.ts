@@ -17,6 +17,7 @@ import { prisma } from '../config/database.js';
 import { cache } from '../config/redis.js';
 import { errors } from './errorHandler.js';
 import { logger } from '../utils/logger.js';
+import { blockIfDemo } from './demoGuard.js';
 
 interface AuthOrganization {
   id: string;
@@ -55,7 +56,11 @@ interface JWTPayload {
   role: string;
   iat: number;
   exp: number;
+  mfaVerified?: boolean; // set when MFA TOTP step is completed
 }
+
+// Roles that MUST complete MFA if their account has MFA enabled (CC6.1)
+const MFA_REQUIRED_ROLES = new Set(['OWNER', 'SUPER_ADMIN', 'ADMIN']);
 
 const JWT_SECRET = new TextEncoder().encode(config.jwtSecret);
 
@@ -119,7 +124,32 @@ export const authenticate = async (
 
     req.user = user;
     req.organizationId = user.organizationId;
-    
+
+    // MFA enforcement for privileged roles (CC6.1)
+    if (MFA_REQUIRED_ROLES.has(user.role)) {
+      // Fetch live MFA status (not from cache — must be authoritative)
+      const dbUser = await prisma.users.findUnique({
+        where: { id: user.id },
+        select: { mfa_enabled: true },
+      });
+      if (dbUser?.mfa_enabled) {
+        // Check Redis for MFA verification flag tied to this token
+        const mfaKey = `mfa:verified:${payload.sub}:${payload.iat}`;
+        const mfaVerified = await cache.exists(mfaKey);
+        if (!mfaVerified && !payload.mfaVerified) {
+          res.status(403).json({
+            success: false,
+            error: {
+              code: 'MFA_REQUIRED',
+              message: 'Multi-factor authentication is required for your account. Please complete MFA verification.',
+            },
+          });
+          return;
+        }
+      }
+    }
+
+    if (blockIfDemo(req, res)) return;
     next();
   } catch (error) {
     if (error instanceof jose.errors.JWTExpired) {
@@ -225,6 +255,7 @@ export const devAuth = async (
         preferences: adminUser.preferences,
       } as any;
       req.organizationId = adminUser.organization_id;
+      if (blockIfDemo(req, res)) return;
       return next();
     }
   } catch (dbError) {
@@ -256,19 +287,28 @@ export const optionalAuth = async (
 };
 
 /**
- * Generate access token
+ * Mark MFA as verified for the given user+iat session in Redis.
+ * Called by the MFA verify endpoint after TOTP is confirmed.
  */
+export const markMfaVerified = async (userId: string, iat: number): Promise<void> => {
+  const mfaKey = `mfa:verified:${userId}:${iat}`;
+  // TTL matches JWT expiry (1 hour by default)
+  await cache.set(mfaKey, true, 3600);
+};
+
 export const generateAccessToken = async (user: {
   id: string;
   email: string;
   organizationId: string;
   role: string;
+  mfaVerified?: boolean;
 }): Promise<string> => {
   const token = await new jose.SignJWT({
     sub: user.id,
     email: user.email,
     organizationId: user.organizationId,
     role: user.role,
+    ...(user.mfaVerified ? { mfaVerified: true } : {}),
   })
     .setProtectedHeader({ alg: 'HS256' })
     .setIssuedAt()

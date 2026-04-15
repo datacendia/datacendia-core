@@ -147,14 +147,14 @@ model organizations {
 }
 
 model password_resets {
-  id         String    @id
-  user_id    String
-  token      String    @unique
-  expires_at DateTime
-  used_at    DateTime?
-  created_at DateTime  @default(now())
+  id          String    @id
+  user_id     String
+  token_hash  String    @unique // SHA-256 of the raw token — never store plaintext
+  expires_at  DateTime
+  used_at     DateTime?
+  created_at  DateTime  @default(now())
 
-  @@index([token])
+  @@index([token_hash])
   @@index([user_id])
 }
 
@@ -238,6 +238,10 @@ model users {
   created_at               DateTime               @default(now())
   updated_at               DateTime
   deleted_at               DateTime?
+  // Account lockout (CC6.7 — brute-force protection)
+  failed_login_attempts    Int                    @default(0)
+  locked_until             DateTime?
+  last_failed_at           DateTime?
   // MFA fields
   mfa_enabled              Boolean                @default(false)
   mfa_secret               String? // Encrypted TOTP secret
@@ -245,6 +249,10 @@ model users {
   mfa_enabled_at           DateTime?
   // Notification preferences
   notification_preferences Json                   @default("{\"email\":true,\"inApp\":true,\"push\":false,\"slack\":false}")
+  // CCPA §1798.120 / CPRA §1798.135 — Do Not Sell or Share opt-out
+  ccpa_opt_out             Boolean                @default(false)
+  ccpa_opt_out_at          DateTime?
+  ccpa_data_category_prefs Json                   @default("{}")
   api_keys                 api_keys[]
   approvals                approvals[]
   audit_logs               audit_logs[]
@@ -272,4 +280,5 @@ enum UserStatus {
   ACTIVE
   INVITED
   DISABLED
+  LOCKED
 }

@@ -29,6 +29,7 @@
     "check:boundary": "node ../scripts/check-community-boundary.mjs",
     "seed:demo": "tsx prisma/seed-full-demo.ts && tsx prisma/seed-council-showcase.ts",
     "seed:showcase": "tsx prisma/seed-council-showcase.ts",
+    "seed:demos": "tsx prisma/seed-industry-demos.ts",
     "load-test": "vitest run tests/load"
   },
   "dependencies": {

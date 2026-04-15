@@ -105,12 +105,34 @@ datacendia-core/
 
 1. **Client** sends HTTP request to frontend (Vite dev server or Nginx)
 2. **Vite proxy** forwards `/api/*` requests to backend on port 3001
-3. **Express middleware chain**: Helmet -> CORS -> Rate Limit -> Body Parse -> Cookie Parse -> Compression -> Request Logger -> Security Middleware -> CSRF
+3. **Express middleware chain**: Helmet → CORS → Rate Limit → Body Parse → Cookie Parse → Compression → Request Logger → Security Middleware → CSRF
 4. **Auth middleware** validates JWT, resolves user/org from PostgreSQL, caches in Redis
 5. **Domain router** dispatches to the appropriate route handler
 6. **Route handler** validates input (Zod), calls service layer
 7. **Service layer** executes business logic, queries Prisma/Redis/Neo4j
 8. **Response** returns JSON with standard envelope format
+
+### AI Route Middleware Chain (additional layers on `/api/v1/council`, `/api/v1/deliberations`, `/api/v1/inference`, `/api/v1/platform-assistant`)
+
+```
+Request
+  ↓
+[Auth Middleware]          ← validates JWT, resolves org
+  ↓
+[aiRegulatoryMiddleware]   ← classifies AI use-case against CO SB 205, NYC LL 144,
+                              IL AIVIA, EU AI Act Annex III, GDPR Art. 22, BDSG §26
+                              Hard-blocks prohibited practices (HTTP 451)
+                              Hard-blocks IL AIVIA without consent (HTTP 451)
+                              Attaches X-AI-Regulatory-Risk header
+  ↓
+[phiEnforcementMiddleware] ← if health domain: requires X-PHI-Deidentified: true
+                              OR org.preferences.hipaaBAASigned: true
+                              Otherwise blocks (HTTP 451) per HIPAA §164.502 + FTC HBNR
+  ↓
+[Route Handler / Council Engine]
+  ↓
+[AuditService.log()]       ← all regulatory decisions logged with severity
+```
 
 ## Key Concepts
 
@@ -170,12 +192,52 @@ All service info is centralized in `src/config/serviceInfo.ts` (22 definitions).
 ### Immutable Audit Ledger
 All decisions are recorded in a Merkle tree structure. Each entry is cryptographically linked to the previous one, creating a tamper-evident chain. Customer-owned signing keys ensure sovereignty.
 
+### Compliance Services
+
+Two new singleton services added in v0.2.4:
+
+| Service | File | Purpose |
+|---|---|---|
+| `AIRegulatoryClassifier` | `backend/src/services/compliance/AIRegulatoryClassifier.ts` | Runtime classification of AI use-cases against 6 regulatory frameworks. Used by `aiRegulatoryMiddleware` and all privacy endpoints. |
+| `IncidentMaterialityService` | `backend/src/services/compliance/IncidentMaterialityService.ts` | Multi-framework breach notification planning. Accepts incident metadata and returns a prioritised plan covering 14 regulatory frameworks with deadlines, draft notices, and regulator contacts. |
+
+Two new middleware files in v0.2.4:
+
+| Middleware | File | Applied To |
+|---|---|---|
+| `aiRegulatoryMiddleware` | `backend/src/middleware/aiRegulatoryMiddleware.ts` | All AI inference + deliberation routes |
+| `phiEnforcementMiddleware` | `backend/src/middleware/phiEnforcementMiddleware.ts` | All AI inference + deliberation routes (after `aiRegulatoryMiddleware`) |
+
+### Privacy API Routes
+
+All 17 privacy endpoints live in `backend/src/routes/privacy.ts` and are mounted at `/api/v1/privacy`:
+
+| Endpoint | Framework |
+|---|---|
+| `GET /access` | GDPR Art. 15 |
+| `PATCH /rectify` | GDPR Art. 16 |
+| `DELETE /erasure` | GDPR Art. 17 |
+| `POST /restrict` | GDPR Art. 18 |
+| `GET /export` | GDPR Art. 20 |
+| `POST /deidentify` | HIPAA §164.514(b) Safe Harbor |
+| `POST /appeal-ai-decision` | CO SB 205 §6-1-1703 / VA CDPA |
+| `GET /aedt-disclosure` | NYC LL 144 |
+| `GET /org-export` | EU Data Act Art. 23 |
+| `POST /opt-out-profiling` | TX TDPSA / VA CDPA / CO CPA |
+| `POST /ai-impact-assessment` | CO SB 205 / EU AI Act Art. 9 |
+| `POST /classify-ai-use-case` | Developer tool |
+| `GET /ccpa/notice` | CCPA §1798.130 |
+| `POST /ccpa/opt-out` | CCPA §1798.120 |
+| `GET /ccpa/status` | CCPA status |
+| `POST /ccpa/limit-sensitive` | CPRA §1798.121 |
+| `POST /wa-mhmda-consent` | WA MHMDA RCW 70.02 |
+
 ### Domain Routers
 The 156 route files are organized into 14 logical domain routers (auth, council, data, governance, security, sovereign, legal, verticals, platform, simulation, workflows, intelligence, demo, enterprise). Each domain router aggregates related routes under a single prefix.
 
 ## Pricing Tiers (5 Tiers)
 
-This is the **Community Edition** (Apache 2.0, free), providing the base platform: Council, Replay, DECIDE, DCII, Gateway, PII (regex), Evidence, 18+ verticals.
+This is the **Community Edition** (Apache 2.0, free) — **v0.2.4-alpha** — providing the base platform: Council, Replay, DECIDE, DCII, Gateway, PII (regex), Evidence, 18+ verticals, full privacy/regulatory compliance engine.
 
 Paid tiers (Pilot $50K, Foundation $150K–$500K, Enterprise $500K–$1.5M, Strategic $1.5M+) are in `datacendia-components`. See [TIER-MAPPING.md](TIER-MAPPING.md) and [docs/PRICING.md](docs/PRICING.md) for complete details.
 

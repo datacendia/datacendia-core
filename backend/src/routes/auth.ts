@@ -14,7 +14,7 @@ import crypto from 'crypto';
 import { z } from 'zod';
 import { Prisma } from '@prisma/client';
 import { prisma } from '../config/database.js';
-import { cache } from '../config/redis.js';
+import { cache, redis } from '../config/redis.js';
 import { logger } from '../utils/logger.js';
 import { errors } from '../middleware/errorHandler.js';
 import { emailService } from '../services/email.js';
@@ -27,15 +27,98 @@ import {
 
 const router = Router();
 
-// Validation schemas
+// =============================================================================
+// ACCOUNT LOCKOUT CONSTANTS (CC6.7)
+// =============================================================================
+const MAX_FAILED_ATTEMPTS = 10;          // Lock after 10 consecutive failures
+const LOCKOUT_DURATION_MS = 30 * 60 * 1000; // 30-minute lockout
+const REDIS_LOCKOUT_PREFIX = 'auth:lockout:';
+
+/**
+ * Hash a raw token with SHA-256 before storing in DB.
+ * Mirrors the refresh_token_hash pattern — never persist plaintext tokens.
+ */
+function hashToken(raw: string): string {
+  return crypto.createHash('sha256').update(raw).digest('hex');
+}
+
+/**
+ * Record a failed login attempt in Redis (fast path) and Postgres (durable).
+ * Returns true if the account is now locked.
+ */
+async function recordFailedAttempt(userId: string, email: string, ip: string): Promise<boolean> {
+  const key = `${REDIS_LOCKOUT_PREFIX}${userId}`;
+  const attempts = await redis.incr(key);
+  if (attempts === 1) {
+    // Set TTL on first failure so stale counters auto-expire
+    await redis.pexpire(key, LOCKOUT_DURATION_MS * 2);
+  }
+
+  const isLocked = attempts >= MAX_FAILED_ATTEMPTS;
+
+  await prisma.users.update({
+    where: { id: userId },
+    data: {
+      failed_login_attempts: attempts,
+      last_failed_at: new Date(),
+      ...(isLocked ? { locked_until: new Date(Date.now() + LOCKOUT_DURATION_MS), status: 'LOCKED' } : {}),
+    },
+  });
+
+  if (isLocked) {
+    logger.warn(`[Auth] Account locked after ${attempts} failed attempts`, { userId, email, ip });
+    await prisma.audit_logs.create({
+      data: {
+        id: crypto.randomUUID(),
+        organization_id: (await prisma.users.findUnique({ where: { id: userId }, select: { organization_id: true } }))?.organization_id ?? 'unknown',
+        user_id: userId,
+        action: 'auth.account_locked',
+        resource_type: 'user',
+        resource_id: userId,
+        details: { reason: 'max_failed_attempts', attempts, ip } as Prisma.InputJsonValue,
+        ip_address: ip,
+      },
+    });
+  }
+
+  return isLocked;
+}
+
+/**
+ * Clear lockout state on successful authentication.
+ */
+async function clearLockout(userId: string): Promise<void> {
+  await redis.del(`${REDIS_LOCKOUT_PREFIX}${userId}`);
+  await prisma.users.update({
+    where: { id: userId },
+    data: { failed_login_attempts: 0, locked_until: null, last_failed_at: null, status: 'ACTIVE' },
+  });
+}
+
+// =============================================================================
+// VALIDATION SCHEMAS (CC6.1 — password complexity)
+// =============================================================================
+
+/**
+ * SOC 2 / NIST SP 800-63B compliant password policy:
+ * min 12 chars, at least one uppercase, lowercase, digit, and special character.
+ */
+const PASSWORD_POLICY = z
+  .string()
+  .min(12, 'Password must be at least 12 characters')
+  .regex(/[A-Z]/, 'Password must contain at least one uppercase letter')
+  .regex(/[a-z]/, 'Password must contain at least one lowercase letter')
+  .regex(/[0-9]/, 'Password must contain at least one digit')
+  .regex(/[^A-Za-z0-9]/, 'Password must contain at least one special character');
+
 const loginSchema = z.object({
   email: z.string().email('Invalid email format'),
-  password: z.string().min(8, 'Password must be at least 8 characters'),
+  password: z.string().min(1, 'Password is required'), // login: don't enforce complexity (existing users)
 });
 
 const registerSchema = z.object({
   email: z.string().email('Invalid email format'),
-  password: z.string().min(8, 'Password must be at least 8 characters'),
+  password: PASSWORD_POLICY,
   name: z.string().min(2, 'Name must be at least 2 characters'),
   organizationName: z.string().min(2, 'Organization name required'),
 });
@@ -62,19 +145,30 @@ router.post('/login', async (req: Request, res: Response, next: NextFunction) =>
       throw errors.unauthorized('Invalid email or password');
     }
 
+    if (user.deleted_at) {
+      throw errors.unauthorized('Invalid email or password');
+    }
+
+    // Account lockout check (CC6.7)
+    if (user.status === 'LOCKED') {
+      const stillLocked = user.locked_until && user.locked_until > new Date();
+      if (stillLocked) {
+        const minutesLeft = Math.ceil((user.locked_until!.getTime() - Date.now()) / 60000);
+        throw errors.unauthorized(`Account temporarily locked due to too many failed attempts. Try again in ${minutesLeft} minute(s).`);
+      }
+      // Lock window expired — auto-unlock
+      await clearLockout(user.id);
+    }
+
     if (user.status !== 'ACTIVE') {
       throw errors.unauthorized('Account is not active');
     }
 
-    if (user.deleted_at) {
-      throw errors.unauthorized('Account has been deleted');
-    }
-
     // Verify password
-    const validPassword = await bcrypt.compare(password, user.password_hash); 
+    const validPassword = await bcrypt.compare(password, user.password_hash);
     if (!validPassword) {
-      // Log failed attempt
       logger.warn(`Failed login attempt for ${email}`, { ip: req.ip });
+      await recordFailedAttempt(user.id, email, req.ip ?? 'unknown');
       throw errors.unauthorized('Invalid email or password');
     }
 
@@ -99,6 +193,11 @@ router.post('/login', async (req: Request, res: Response, next: NextFunction) =>
         expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 30 days
       },
     });
+
+    // Clear any previous lockout state on successful auth
+    if (user.failed_login_attempts > 0) {
+      await clearLockout(user.id);
+    }
 
     // Update last login
     await prisma.users.update({
@@ -534,25 +633,26 @@ router.post('/forgot-password', async (req: Request, res: Response, next: NextFu
       return;
     }
 
-    // Generate reset token
+    // Generate reset token — store only the SHA-256 hash, never plaintext (CC6.1)
     const resetToken = crypto.randomBytes(32).toString('hex');
+    const resetTokenHash = hashToken(resetToken);
 
     // Delete any existing reset tokens for this user
     await prisma.password_resets.deleteMany({
       where: { user_id: user.id },
     });
 
-    // Create new password reset entry
+    // Create new password reset entry with hashed token
     await prisma.password_resets.create({
       data: {
         id: crypto.randomUUID(),
         user_id: user.id,
-        token: resetToken,
+        token_hash: resetTokenHash,
         expires_at: new Date(Date.now() + 60 * 60 * 1000), // 1 hour
       },
     });
 
-    // Send password reset email
+    // Send raw token in email (user receives it; we keep only the hash)
     await emailService.sendPasswordResetEmail(user.email, user.name, resetToken);
     logger.info(`Password reset email sent to ${email}`);
 
@@ -573,12 +673,13 @@ router.post('/reset-password', async (req: Request, res: Response, next: NextFun
   try {
     const { token, password } = z.object({
       token: z.string().min(1),
-      password: z.string().min(8),
+      password: PASSWORD_POLICY,
     }).parse(req.body);
 
-    // Find the reset token
+    // Look up by hashed token — never compare plaintext
+    const tokenHash = hashToken(token);
     const passwordReset = await prisma.password_resets.findUnique({
-      where: { token },
+      where: { token_hash: tokenHash },
     });
 
     if (!passwordReset) {

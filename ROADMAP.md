@@ -1,6 +1,6 @@
 # Datacendia Product Roadmap
 
-> Last audited: April 9, 2026
+> Last audited: April 15, 2026 — v0.2.4-alpha
 > Source: Automated audit of `datacendia-core` and `datacendia-components`
 
 ---
@@ -31,7 +31,7 @@
 | **CendiaGateway** (reverse proxy, PII, policies, browser ext, network proxy) | 16 | 213 KB | ✅ Production |
 | **Council** (50+ agent deliberation, WebSocket, decision packets) | 8 | 218 KB | ✅ Production |
 | **Evidence** (vault, export, ledger, compliance dashboard, signed reports) | 8 | 236 KB | ✅ Production |
-| **Compliance** (enforcer, continuous monitor, cross-jurisdiction, sandbox) | 7 | 174 KB | ✅ Production |
+| **Compliance** (enforcer, continuous monitor, cross-jurisdiction, sandbox, AI regulatory classifier, incident materiality, PHI enforcement) | 9 | 224 KB | ✅ Production |
 | **Crypto** (Merkle forest, ZKP, escrow, key mgmt, content-addressed receipts) | 14 | 152 KB | ✅ Production |
 | **Inference** (OpenAI, Anthropic, Gemini, Ollama, NIM, Triton, Together) | 10 | 80 KB | ✅ Production |
 | **Pillars** (Helm, Lineage, Predict, Flow, Health, Guard, Ethics, Agents) | 9 | 161 KB | ✅ Production |
@@ -159,31 +159,37 @@ This is the a16z opportunity. Core handles outbound (User → AI). Components ha
 |------|-------------|--------|-----------|
 | **Inbound scope definitions** | Define what enterprise data an agent can read (by resource type, department, data classification) | 1 week | 🔨 Build new |
 | **OAuth2 Scope Proxy** | Wrap Gmail/Outlook/Salesforce/ServiceNow APIs with CendiaGateway-enforced scopes | 2 weeks | 🔨 Build new |
-| **Local LLM governance** | Extend gateway to govern Ollama, vLLM, and on-prem model servers — not just cloud APIs | 1 week | 🔧 Harden |
-| **Agent credential vault** | Each AI agent gets its own scoped credentials, separate from user identity | 1 week | 🔨 Build new |
 
 ### E3. Compliance Automation (Weeks 5–12)
 
 | Item | Description | Effort | Work Type |
 |------|-------------|--------|-----------|
-| **EU AI Act Article 12** | Automated logging requirements compliance check — frameworks.ts (46KB) has the rules | 1 week | 🔧 Harden |
-| **SOC 2 Type II evidence package** | Auto-generate SOC 2 evidence from gateway logs + evidence vault | 2 weeks | 🔨 Build new |
-| **ISO 42001 gap scanner** | Map governance posture to ISO 42001 — `ComplianceService.ts` (28KB) has framework | 1 week | 🔧 Harden |
-| **DORA operational resilience** | Financial services compliance package | 1 week | 🔧 Harden |
+| ~~**State AI Laws (CO / NYC / IL)**~~ | ~~`AIRegulatoryClassifier` + `aiRegulatoryMiddleware` — runtime enforcement on all AI routes with hard-blocks and audit trail~~ | ~~1 week~~ | Done |
+| ~~**PHI before AI enforcement**~~ | ~~`phiEnforcementMiddleware` — HIPAA §164.502 + FTC HBNR 2024 — blocks health-domain AI without BAA or de-id~~ | ~~3 days~~ | Done |
+| ~~**Multi-framework breach notification**~~ | ~~`IncidentMaterialityService` — 14-jurisdiction plan with deadlines, draft notices, regulator contacts~~ | ~~1 week~~ | Done |
+| ~~**Privacy API endpoints**~~ | ~~17 endpoints: GDPR Arts 15–20, CO SB 205, NYC LL 144, EU Data Act Art. 23, CPRA, WA MHMDA~~ | ~~1 week~~ | Done |
+| ~~**Vulnerability disclosure**~~ | ~~`/.well-known/security.txt` — NYDFS 23 NYCRR §500.20~~ | ~~0.5 days~~ | Done |
+| ~~**NYDFS / SEC documentation**~~ | ~~Vendor addendum template + Form 8-K Item 1.05 draft~~ | ~~2 days~~ | Done |
+| ~~**Legal templates**~~ | ~~DPIA, Quebec PIA, ROPA, ISO 27001 management review, employee training record~~ | ~~3 days~~ | Done |
+| ~~**Global compliance docs**~~ | ~~Asia-Pacific (VN/PH/TW/HK/MY), Nigeria NDPA, Germany BDSG/France CNIL, CIS Controls v8, MITRE ATT&CK, 15-item watch list~~ | ~~1 week~~ | Done |
+| **EU AI Act Article 12** | Automated logging requirements compliance check — frameworks.ts (46KB) has the rules | 1 week | Harden |
+| **SOC 2 Type II evidence package** | Auto-generate SOC 2 evidence from gateway logs + evidence vault | 2 weeks | Build new |
+| **ISO 42001 gap scanner** | Map governance posture to ISO 42001 — `ComplianceService.ts` (28KB) has framework | 1 week | Harden |
+| **DORA operational resilience** | Financial services compliance package | 1 week | Harden |
 
 ### E4. Integration Connectors (Weeks 8–24)
 
 | Item | Description | Effort | Work Type |
 |------|-------------|--------|-----------|
-| **Salesforce connector** | Log AI-assisted CRM decisions through gateway | 2 weeks | 🔨 Build new |
-| **ServiceNow connector** | Governance tickets + approval workflows | 2 weeks | 🔨 Build new |
-| **Jira/Atlassian connector** | Decision tracking in project management | 1 week | 🔨 Build new |
-| **Slack/Teams bot** | Real-time governance alerts + approval requests | 1 week | 🔨 Build new |
-| **Power BI / Tableau embed** | Governance dashboards in existing BI tools | 1 week | 🔨 Build new |
-| **Terraform provider** | Infrastructure-as-code for gateway policies | 2 weeks | 🔨 Build new |
-| **Kafka event streaming** | kafka/ directory (41KB) exists — productize | 1 week | 🔗 Wire up |
-| **Neo4j graph database** | graphIngestion.ts (12KB) exists — connect for decision lineage | 1 week | 🔗 Wire up |
-| **Kubernetes Helm chart** | Production-grade multi-node deployment | 1 week | 🔨 Build new |
+| **Salesforce connector** | Log AI-assisted CRM decisions through gateway | 2 weeks | Build new |
+| **ServiceNow connector** | Governance tickets + approval workflows | 2 weeks | Build new |
+| **Jira/Atlassian connector** | Decision tracking in project management | 1 week | Build new |
+| **Slack/Teams bot** | Real-time governance alerts + approval requests | 1 week | Build new |
+| **Power BI / Tableau embed** | Governance dashboards in existing BI tools | 1 week | Build new |
+| **Terraform provider** | Infrastructure-as-code for gateway policies | 2 weeks | Build new |
+| **Kafka event streaming** | kafka/ directory (41KB) exists — productize | 1 week | Wire up |
+| **Neo4j graph database** | graphIngestion.ts (12KB) exists — connect for decision lineage | 1 week | Wire up |
+| **Kubernetes Helm chart** | Production-grade multi-node deployment | 1 week | Build new |
 
 ### E5. Web Components & Framework-Agnostic Widget Distribution (Weeks 8–24)
 
@@ -191,12 +197,12 @@ Enterprise customers standardize on Angular, Vue, or Svelte — not just React. 
 
 | Phase | Item | Description | Effort | Work Type |
 |-------|------|-------------|--------|-----------|
-| **Now** | Ship the launch | React + Vite core platform. No framework diversification until post-pilot. | — | 🚀 Ship |
-| **Post-pilot (Month 2–3)** | Evidence Viewer Web Component | `<dcii-evidence-viewer>` — renders a decision packet with hash verification, signature status, and Merkle proof. Built with Lit, zero framework dependencies. Embeddable in Angular, Vue, React, or vanilla HTML. | 1 week | 🔨 Build new |
-| **Post-pilot (Month 2–3)** | PII Scanner Web Component | `<cendia-pii-scanner>` — drop-in PII detection widget with real-time scanning, confidence badges, and redacted output preview. Connects to CendiaGateway `/scan` API. | 1 week | 🔨 Build new |
-| **Post-pilot (Month 2–3)** | Council Status Badge | `<council-status-badge>` — lightweight inline component showing deliberation status, confidence score, and agent count. For embedding in dashboards, ticketing systems, or CRM views. | 3 days | 🔨 Build new |
-| **Enterprise deals** | `@datacendia/widgets` npm package | Package all Web Components with typed Angular, Vue, and React wrappers. Tree-shakeable, SSR-compatible, themeable via CSS custom properties. | 2 weeks | 📦 Package |
-| **Enterprise deals** | Angular Admin Portal | Separate Angular-based enterprise admin console for SSO config, RBAC management, compliance reporting, and tenant settings. Hits existing Express API — no backend duplication. | 4 weeks | 🔨 Build new |
+| **Now** | Ship the launch | React + Vite core platform. No framework diversification until post-pilot. | — | Ship |
+| **Post-pilot (Month 2–3)** | Evidence Viewer Web Component | `<dcii-evidence-viewer>` — renders a decision packet with hash verification, signature status, and Merkle proof. Built with Lit, zero framework dependencies. Embeddable in Angular, Vue, React, or vanilla HTML. | 1 week | Build new |
+| **Post-pilot (Month 2–3)** | PII Scanner Web Component | `<cendia-pii-scanner>` — drop-in PII detection widget with real-time scanning, confidence badges, and redacted output preview. Connects to CendiaGateway `/scan` API. | 1 week | Build new |
+| **Post-pilot (Month 2–3)** | Council Status Badge | `<council-status-badge>` — lightweight inline component showing deliberation status, confidence score, and agent count. For embedding in dashboards, ticketing systems, or CRM views. | 3 days | Build new |
+| **Enterprise deals** | `@datacendia/widgets` npm package | Package all Web Components with typed Angular, Vue, and React wrappers. Tree-shakeable, SSR-compatible, themeable via CSS custom properties. | 2 weeks | Package |
+| **Enterprise deals** | Angular Admin Portal | Separate Angular-based enterprise admin console for SSO config, RBAC management, compliance reporting, and tenant settings. Hits existing Express API — no backend duplication. | 4 weeks | Build new |
 
 **Architecture decision:** Web Components (Lit) as the base layer, with thin framework wrappers generated via `@lit/react`, `@lit-labs/vue-utils`, and Angular's `CUSTOM_ELEMENTS_SCHEMA`. One codebase, all frameworks supported. This avoids maintaining parallel React/Angular/Vue implementations while giving enterprise customers native integration.
 
@@ -210,14 +216,14 @@ All of these are already built — the work is **testing, documentation, and cus
 
 | Item | Size | Work Type |
 |------|------|-----------|
-| Post-Quantum KMS | 20 KB | 📦 Package |
-| Time-Lock Encryption | 23 KB | 📦 Package |
-| Zero-Knowledge Proofs | 18 KB | 📦 Package |
-| Local RLHF | 33 KB | 📦 Package |
-| Shadow Council | 21 KB | 📦 Package |
-| Cognitive Bias Mitigation | 27 KB | 📦 Package |
-| Synthetic Media Auth | 36 KB | 📦 Package |
-| NLP Bias Detection | 17 KB | 📦 Package |
+| Post-Quantum KMS | 20 KB | Package |
+| Time-Lock Encryption | 23 KB | Package |
+| Zero-Knowledge Proofs | 18 KB | Package |
+| Local RLHF | 33 KB | Package |
+| Shadow Council | 21 KB | Package |
+| Cognitive Bias Mitigation | 27 KB | Package |
+| Synthetic Media Auth | 36 KB | Package |
+| NLP Bias Detection | 17 KB | Package |
 
 ---
 
@@ -227,11 +233,14 @@ These apply to both repos:
 
 | Item | Description | Effort | Priority |
 |------|-------------|--------|----------|
-| **SOC 2 Type II audit** | Required for enterprise procurement | 3 months | Critical |
-| **EU AI Act conformity assessment** | Third-party certification | 3 months | High |
+| **SOC 2 Type II audit** | Required for enterprise procurement — observation period starts Nov 2026 | 3 months | Critical |
+| **ISO 27001:2022 certification** | ISMS certification — Stage 1 audit Q4 2026, cert target Q1 2027 | 6 months | High |
+| **EU AI Act conformity assessment** | Third-party certification — obligations apply Aug 2026 for high-risk systems | 3 months | High |
 | **ISO 42001 certification** | AI management system certification | 3 months | High |
+| **CSA STAR Level 1** | CAIQ self-assessment — submit at cloudsecurityalliance.org (~1 hour) | 1 day | High |
 | **FedRAMP authorization** | Required for US government sales | 6+ months | High |
 | **IL4/IL5 certification** | Required for DoD classified environments | 6+ months | Medium |
+| ~~**Global privacy docs**~~ | ~~Asia-Pacific, Africa, EU supplemental docs completed~~ | — | Done |
 
 ---
 
@@ -268,16 +277,17 @@ These apply to both repos:
 
 | Date | Milestone |
 |------|-----------|
-| **Now** | Ship launch — HN, LinkedIn, Reddit, Product Hunt |
-| **Week 1** | Send first 10 design partner decks |
-| **Week 2** | First design partner call (PGIM / Matt Fitzgerald) |
-| **Week 4** | Agent Identity + Presidio PII live in core gateway |
-| **Week 6** | First design partner LOI signed |
-| **Week 8** | SOC 2 Type II audit initiated |
-| **Week 8–12** | Web Components proof-of-concept: `<dcii-evidence-viewer>`, `<cendia-pii-scanner>` |
-| **Week 12** | 3 design partners active, investor deck update |
-| **Week 16** | Pre-seed close ($1.5M) |
-| **Week 16–24** | `@datacendia/widgets` npm package with Angular/Vue/React wrappers |
-| **Week 24** | EU AI Act conformity assessment |
+| ~~**Mar 2026**~~ | ~~Ship launch — HN, LinkedIn, Reddit, Product Hunt~~ — Done |
+| ~~**Apr 2026**~~ | ~~Global compliance sprint — 16 regulatory frameworks engineered~~ — Done |
+| **Apr–May 2026** | CSA STAR Level 1 CAIQ submission |
+| **May 2026** | CEO/Legal: sign DPAs with 5 subprocessors, ICO registration, DPO appointment |
+| **May 2026** | CEO/Legal: add CNIL no-training clause + EU Data Act switching assistance clause to ToS |
+| **Jun 2026** | NYC LL 144 third-party bias auditor engagement |
+| **Aug 2026** | EU AI Act high-risk obligations apply — pre-conformity review |
+| **Nov 2026** | SOC 2 Type II observation period begins |
+| **Q4 2026** | ISO 27001 Stage 1 audit |
+| **Q4 2026** | Web Components proof-of-concept: `<dcii-evidence-viewer>`, `<cendia-pii-scanner>` |
+| **Q1 2027** | ISO 27001 Stage 2 audit — certificate target |
+| **Q3 2027** | SOC 2 Type II report issued |
 | **Week 36** | FedRAMP process initiated |
 | **Week 52** | 10 paying customers, Series A prep |

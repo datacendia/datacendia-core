@@ -19,7 +19,14 @@ We will acknowledge your report within 48 hours and provide a timeline for a fix
 
 | Version | Supported |
 |---------|-----------|
-| 0.1.x   | Yes (current) |
+| 0.2.x   | ✅ Yes (current) |
+| 0.1.x   | Security fixes only |
+
+## Vulnerability Disclosure
+
+A machine-readable vulnerability disclosure policy is available at `/.well-known/security.txt` (NYDFS 23 NYCRR §500.20 compliant).
+
+Email **security@datacendia.com** — PGP key available on request.
 
 ## Security Features
 
@@ -32,10 +39,14 @@ Datacendia is built with security as a core principle:
 - **Rate limiting** -- Per-endpoint and per-IP
 - **Input validation** -- Zod schemas on all API inputs
 - **CORS** -- Configurable origin allowlist
-- **Helmet.js** -- Security headers
+- **Helmet.js** -- Security headers (HSTS, CSP, X-Frame-Options, etc.)
 - **SQL injection protection** -- Prisma ORM parameterized queries
 - **Path traversal protection** -- Middleware validation
 - **CSRF protection** -- Token-based (production mode)
+- **AI Regulatory Enforcement** -- `aiRegulatoryMiddleware` classifies all AI inference requests; hard-blocks EU AI Act Art. 5 prohibited practices and IL AIVIA non-consent requests with HTTP 451
+- **PHI Enforcement** -- `phiEnforcementMiddleware` blocks health-domain AI requests unless PHI is de-identified or a HIPAA BAA is on file (FTC HBNR 2024 + HIPAA §164.502)
+- **Multi-framework Breach Detection** -- `IncidentMaterialityService` generates 14-jurisdiction breach notification plans
+- **7-year audit retention** -- All audit events stored in `audit_logs` with append-only policy
 
 ## Authentication Modes
 
@@ -150,8 +161,28 @@ The server will **refuse to start** if `NODE_ENV=production` and `REQUIRE_AUTH` 
 
 ## Responsible Disclosure
 
-We follow a 90-day responsible disclosure policy. If you report a vulnerability, we will:
+We follow a **90-day responsible disclosure policy** (coordinated disclosure). If you report a vulnerability, we will:
 
-1. Acknowledge within 48 hours
-2. Investigate and confirm within 7 days
-3. Issue a fix within 90 days
+1. Acknowledge within **48 hours**
+2. Investigate and confirm within **7 business days**
+3. Issue a fix within **90 days** (critical vulnerabilities: 30 days)
+4. Credit the reporter in the CHANGELOG unless anonymity is requested
+
+Hall of Fame: researchers who have responsibly disclosed vulnerabilities are acknowledged in [CHANGELOG.md](CHANGELOG.md).
+
+## Regulatory Compliance
+
+Datacendia's security controls are mapped to:
+
+| Framework | Document | Status |
+|---|---|---|
+| ISO 27001:2022 | `docs/iso27001/` | In progress — cert target Q1 2027 |
+| SOC 2 Type II | `docs/soc2/` | Observation starts Nov 2026 |
+| NIST CSF 2.0 | `docs/compliance/nist-csf2-mapping.md` | Mapped |
+| NIST AI RMF | `docs/nist-ai-rmf/ai-rmf-profile.md` | 68% aligned |
+| CIS Controls v8 | `docs/compliance/cis-controls-v8.md` | 57% IG1+IG2 |
+| MITRE ATT&CK v15 | `docs/compliance/mitre-attack-mapping.md` | 79% tactic coverage |
+| NYDFS 23 NYCRR 500 | `docs/compliance/nydfs-sec-compliance.md` | Substantially compliant |
+| HIPAA | `docs/legal/hipaa-baa-template.md` | BAA template ready |
+
+See [MASTER-COMPLIANCE-TRACKER.md](docs/compliance/MASTER-COMPLIANCE-TRACKER.md) for the full status of all 50+ regulatory obligations.
