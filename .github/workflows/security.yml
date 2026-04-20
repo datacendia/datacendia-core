@@ -38,11 +38,9 @@ jobs:
 
       - name: Install root dependencies
         run: npm ci --ignore-scripts
-        continue-on-error: true
 
       - name: Audit root packages
-        run: npm audit --audit-level=critical || true
-        continue-on-error: true
+        run: npm audit --audit-level=critical
 
       - name: Install system build tools
         run: sudo apt-get update && sudo apt-get install -y build-essential python3
@@ -50,18 +48,15 @@ jobs:
       - name: Install backend dependencies
         working-directory: backend
         run: npm ci
-        continue-on-error: true
 
       - name: Audit backend packages
         working-directory: backend
-        run: npm audit --audit-level=critical || true
-        continue-on-error: true
+        run: npm audit --audit-level=critical
 
   codeql:
     name: CodeQL SAST
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    continue-on-error: true
 
     permissions:
       actions: read
@@ -102,7 +97,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      # TruffleHog pinned to release tag (H10/N3). TODO: re-pin to commit SHA
+      # for full supply-chain hardening.
       - name: TruffleHog secret scan
-        uses: trufflesecurity/trufflehog@main
+        uses: trufflesecurity/trufflehog@v3.88.4
         with:
           extra_args: --only-verified --results=verified
