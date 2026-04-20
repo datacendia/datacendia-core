@@ -94,6 +94,9 @@ services:
 
   # ===========================================================================
   # POSTGRESQL - Primary Database
+  # Schema is managed exclusively by `prisma migrate deploy` from the backend
+  # container. Do NOT mount prisma/migrations here — the nested directory
+  # structure is incompatible with docker-entrypoint-initdb.d.
   # ===========================================================================
   postgres:
     image: postgres:16-alpine
@@ -108,7 +111,6 @@ services:
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - postgres-data:/var/lib/postgresql/data
-      - ./backend/prisma/migrations:/docker-entrypoint-initdb.d:ro
     networks:
       - datacendia-network
     healthcheck:
@@ -314,6 +316,12 @@ services:
 
   # ===========================================================================
   # VAULT - Secret Management
+  # TODO(C6): This server is currently running in dev mode via VAULT_DEV_* envs.
+  # Dev mode stores secrets in memory, unseals automatically, and disables
+  # audit logging. Before any real production deployment, replace with a
+  # server-mode config that includes proper storage backend, unseal keys
+  # (or auto-unseal via cloud KMS), audit backend, and policies.
+  # See docs/runbooks/vault-production.md (TBD).
   # ===========================================================================
   vault:
     image: hashicorp/vault:latest
