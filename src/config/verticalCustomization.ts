@@ -1202,6 +1202,150 @@ export const sportsVerticalCustomization: VerticalCustomization = {
 };
 
 // =============================================================================
+// AGRICULTURE & IRRIGATION VERTICAL CUSTOMIZATION
+// =============================================================================
+
+export const agricultureVerticalCustomization: VerticalCustomization = {
+  id: 'agriculture',
+  name: 'Agriculture & Irrigation',
+  shortName: 'Agriculture',
+  tier: 'growth',
+  status: 'beta',
+
+  branding: {
+    primaryColor: '#16A34A', // Green
+    secondaryColor: '#15803D',
+    accentColor: '#86EFAC',
+    icon: '🌾',
+    tagline: 'Decision evidence for agribusiness, irrigation, and dealer networks',
+    heroTitle: 'AI Governance for the Field and the Channel',
+    heroSubtitle: 'Audit-grade decision trails for dealer credit, demand forecasting, water-use compliance, and warranty adjudication',
+  },
+
+  coreServices: ['council', 'ledger', 'evidence-vault', 'predict', 'chronos', 'bridge'],
+  recommendedServices: ['veto', 'panopticon', 'crucible', 'sovereign'],
+  excludedServices: [],
+
+  defaultAgents: [
+    'agronomy-lead',
+    'dealer-credit-officer',
+    'channel-manager',
+    'water-compliance-officer',
+    'supply-chain-analyst',
+    'demand-forecaster',
+  ],
+  optionalAgents: [
+    'warranty-adjudicator',
+    'sustainability-officer',
+    'commercial-advisor',
+    'field-trial-analyst',
+  ],
+
+  agentPresets: [
+    {
+      id: 'dealer-onboarding',
+      name: 'Dealer / Distributor Onboarding',
+      description: 'Credit, compliance, and territory assessment for new dealers and distributors with full audit trail',
+      defaultAgents: ['dealer-credit-officer', 'channel-manager', 'commercial-advisor'],
+      optionalAgents: ['supply-chain-analyst'],
+      requiredApprovals: ['dealer-credit-officer'],
+      maxDeliberationRounds: 5,
+    },
+    {
+      id: 'demand-forecast',
+      name: 'Demand & Inventory Forecast',
+      description: 'Season-aware demand forecasting with weather, channel sell-through, and inventory optimization',
+      defaultAgents: ['demand-forecaster', 'supply-chain-analyst', 'agronomy-lead', 'channel-manager'],
+      optionalAgents: ['field-trial-analyst'],
+      requiredApprovals: ['supply-chain-analyst'],
+      maxDeliberationRounds: 6,
+    },
+    {
+      id: 'water-compliance',
+      name: 'Water-Use Compliance Pack',
+      description: 'Evidence packages for water entitlements, allocation limits, and sustainability disclosures',
+      defaultAgents: ['water-compliance-officer', 'sustainability-officer', 'agronomy-lead'],
+      optionalAgents: ['field-trial-analyst'],
+      requiredApprovals: ['water-compliance-officer'],
+      maxDeliberationRounds: 6,
+    },
+    {
+      id: 'warranty-adjudication',
+      name: 'Warranty Claim Adjudication',
+      description: 'Consistent, defensible warranty and product-failure claim decisions across the dealer network',
+      defaultAgents: ['warranty-adjudicator', 'agronomy-lead', 'commercial-advisor'],
+      optionalAgents: ['supply-chain-analyst'],
+      requiredApprovals: ['warranty-adjudicator'],
+      maxDeliberationRounds: 5,
+    },
+  ],
+
+  compliance: {
+    frameworks: [
+      'Australian Consumer Law',
+      'Privacy Act 1988 (AU)',
+      'Franchising Code of Conduct (AU)',
+      'Water Act 2007 / State Water Entitlements',
+      'APVMA Agvet Chemical Registration',
+      'EU AI Act',
+      'GDPR',
+      'ISO 14046 (Water Footprint)',
+    ],
+    certifications: ['SOC 2 Type II', 'ISO 27001', 'ISO 14001'],
+    dataResidency: ['Australia', 'US', 'EU', 'Client-Specified'],
+    retentionPolicies: {
+      default: 2555, // 7 years
+      audit: 3650,   // 10 years
+      legal: 5475,   // 15 years (product-liability / water disputes)
+    },
+    requiredApprovals: ['dealer-credit-officer', 'water-compliance-officer'],
+  },
+
+  integrations: [
+    { id: 'hubspot', name: 'HubSpot CRM', category: 'CRM', difficulty: 'easy', timeline: '2-4 weeks', notes: 'Dealer and customer records, enquiry routing, marketing automation sync', required: false },
+    { id: 'dealer-management', name: 'Dealer / Distributor Management System', category: 'Channel', difficulty: 'medium', timeline: '4-8 weeks', notes: 'Dealer locator, territory, and order data sync', required: false },
+    { id: 'netsuite', name: 'Oracle NetSuite', category: 'ERP', difficulty: 'medium', timeline: '6-10 weeks', notes: 'Inventory, orders, and financials integration', required: false },
+    { id: 'xero', name: 'Xero', category: 'Accounting', difficulty: 'easy', timeline: '2-4 weeks', notes: 'Invoicing, payments, and dealer credit reconciliation', required: false },
+    { id: 'john-deere-ops', name: 'John Deere Operations Center', category: 'Agronomy / Telemetry', difficulty: 'medium', timeline: '4-8 weeks', notes: 'Field operations, equipment telemetry, and as-applied data', required: false },
+    { id: 'weather-apis', name: 'Weather & Climate APIs (BoM / NOAA)', category: 'Environmental Data', difficulty: 'easy', timeline: '2-3 weeks', notes: 'Rainfall, evapotranspiration, and seasonal outlook feeds for demand and irrigation models', required: false },
+    { id: 'iot-soil-moisture', name: 'IoT Soil-Moisture & Flow Sensors', category: 'IoT / Telemetry', difficulty: 'medium', timeline: '4-8 weeks', notes: 'Soil-moisture, flow-meter, and pump telemetry for water-use evidence', required: false },
+    { id: 'shopify', name: 'Shopify', category: 'E-commerce', difficulty: 'easy', timeline: '2-4 weeks', notes: 'Online storefront orders, subscriptions, and parts sales', required: false },
+  ],
+
+  useCases: [
+    // Channel & Dealer Pack
+    { id: 'dealer-credit', name: 'Dealer Credit Decision', description: 'Multi-factor dealer credit assessment with explainable approval/decline evidence', services: ['council', 'predict', 'evidence-vault', 'veto'], category: 'channel', roi: 'Lower bad-debt exposure' },
+    { id: 'dealer-onboarding-compliance', name: 'Dealer Onboarding Compliance', description: 'Franchising-code and territory compliance checks with audit trail', services: ['council', 'veto', 'evidence-vault', 'ledger'], category: 'channel' },
+    { id: 'channel-performance', name: 'Channel / Distributor Performance', description: 'Sell-through, territory, and rebate performance analysis with intervention recommendations', services: ['predict', 'council', 'bridge'], category: 'channel' },
+    { id: 'rebate-governance', name: 'Pricing & Rebate Governance', description: 'Defensible pricing and rebate decisions with consistency and margin guardrails', services: ['council', 'veto', 'evidence-vault'], category: 'channel' },
+    // Demand & Supply Pack
+    { id: 'demand-forecast', name: 'Seasonal Demand Forecast', description: 'Weather- and channel-aware demand forecasting for irrigation and ag products', services: ['predict', 'council', 'chronos'], category: 'supply-chain', roi: 'Reduced stockouts and overstock' },
+    { id: 'inventory-optimization', name: 'Inventory & Parts Optimization', description: 'Multi-location inventory and spare-parts optimization with lead-time risk', services: ['predict', 'council', 'panopticon'], category: 'supply-chain' },
+    { id: 'supply-chain-risk', name: 'Supply Chain Risk Early Warning', description: 'Supplier and logistics disruption detection with mitigation options', services: ['predict', 'panopticon', 'council', 'evidence-vault'], category: 'supply-chain' },
+    // Field & Sustainability Pack
+    { id: 'water-use-evidence', name: 'Water-Use Compliance Evidence', description: 'Audit-grade evidence for water entitlements, allocation limits, and sustainability disclosures', services: ['ledger', 'evidence-vault', 'chronos', 'panopticon'], category: 'water', roi: '100% audit readiness' },
+    { id: 'irrigation-recommendation', name: 'Irrigation Recommendation Governance', description: 'Decision evidence for AI-assisted irrigation scheduling from soil, weather, and crop data', services: ['council', 'predict', 'evidence-vault'], category: 'water' },
+    { id: 'sustainability-reporting', name: 'Sustainability & Water-Efficiency Reporting', description: 'Cryptographically signed water-footprint and stewardship reporting', services: ['panopticon', 'evidence-vault', 'ledger', 'chronos'], category: 'sustainability' },
+    // Product & Warranty Pack
+    { id: 'warranty-adjudication', name: 'Warranty Claim Adjudication', description: 'Consistent, defensible warranty and product-failure decisions across the dealer network', services: ['council', 'evidence-vault', 'veto', 'bridge'], category: 'warranty', roi: 'Consistent claim outcomes' },
+    { id: 'product-failure-rca', name: 'Product Failure Root-Cause Analysis', description: 'Field-failure pattern analysis with supplier and batch traceability', services: ['council', 'chronos', 'evidence-vault', 'bridge'], category: 'warranty' },
+  ],
+
+  pricing: {
+    pilot: { price: '$40,000', includes: 'One decision workflow (e.g. dealer credit) end-to-end, 30 days' },
+    professional: { price: '$150,000–$400,000/year', includes: 'Core Suite + 6 Agriculture Agents + CRM/ERP Integration' },
+    enterprise: { price: '$400,000–$1,200,000/year', includes: '+ All specialists, multi-region dealer network, water-compliance packs' },
+    sovereign: { price: '$2,000,000+', includes: '+ On-prem / air-gapped, custom agronomic models, dedicated support' },
+  },
+
+  dashboardWidgets: ['dealer-network-status', 'demand-forecast', 'water-compliance-status', 'warranty-queue', 'channel-performance', 'inventory-levels', 'supply-chain-alerts'],
+  navigationItems: ['council', 'dealers', 'demand', 'water-compliance', 'supply-chain', 'warranty', 'reports', 'settings'],
+  featureFlags: { dealerCreditScoring: true, demandForecasting: true, waterCompliance: true, warrantyAdjudication: true, channelAnalytics: true, sustainabilityReporting: true, irrigationGovernance: false },
+  supportedDataSources: ['dealer-data', 'crm-data', 'sales-data', 'weather-data', 'iot-sensor-data', 'inventory-data', 'warranty-claims', 'water-usage-data'],
+  dataIngestionPipelines: ['hubspot-sync', 'dealer-management-sync', 'erp-import', 'weather-feed', 'iot-sensor-stream', 'warranty-import'],
+};
+
+// =============================================================================
 // VERTICAL REGISTRY
 // =============================================================================
 
@@ -1214,6 +1358,7 @@ export const VERTICAL_CUSTOMIZATIONS: Record<string, VerticalCustomization> = {
   sports: sportsVerticalCustomization,
   'climate-risk': climateRiskVerticalCustomization,
   'fairness-ai': fairnessAIVerticalCustomization,
+  agriculture: agricultureVerticalCustomization,
 };
 
 // =============================================================================
