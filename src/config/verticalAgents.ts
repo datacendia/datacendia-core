@@ -1169,6 +1169,106 @@ export const industrialServicesAgents: VerticalAgentConfig = {
 };
 
 // =============================================================================
+// AGRICULTURE & IRRIGATION AGENTS
+// =============================================================================
+export const agricultureAgents: VerticalAgentConfig = {
+  verticalId: 'agriculture',
+  verticalName: 'Agriculture & Irrigation',
+  agents: [
+    {
+      id: 'agronomy-lead',
+      name: 'AgronomyLead',
+      role: 'Agronomy Decision Lead AI',
+      description: 'Coordinates crop, soil, and irrigation guidance grounded in field data',
+      capabilities: ['Crop modeling', 'Soil analysis', 'Irrigation scheduling', 'Agronomic recommendations'],
+      specializations: ['Row crops', 'Horticulture', 'Irrigated agriculture'],
+      icon: '🌱',
+    },
+    {
+      id: 'dealer-credit-officer',
+      name: 'DealerCredit',
+      role: 'Dealer Credit Officer AI',
+      description: 'Assesses dealer and distributor creditworthiness with explainable approval evidence',
+      capabilities: ['Credit scoring', 'Exposure limits', 'Adverse-action documentation', 'Trade references'],
+      specializations: ['Dealer credit', 'Trade finance', 'Bad-debt risk'],
+      icon: '💳',
+    },
+    {
+      id: 'channel-manager',
+      name: 'ChannelManager',
+      role: 'Channel & Distribution AI',
+      description: 'Monitors dealer network performance, territories, and rebate programs',
+      capabilities: ['Sell-through analysis', 'Territory planning', 'Rebate modeling', 'Channel conflict detection'],
+      specializations: ['Dealer networks', 'Distribution', 'Trade marketing'],
+      icon: '🤝',
+    },
+    {
+      id: 'water-compliance-officer',
+      name: 'WaterGuardian',
+      role: 'Water Compliance Officer AI',
+      description: 'Tracks water entitlements, allocation limits, and sustainability disclosures',
+      capabilities: ['Entitlement tracking', 'Allocation monitoring', 'Water-footprint reporting', 'Regulatory evidence'],
+      specializations: ['Water rights', 'Sustainability disclosure', 'Stewardship'],
+      icon: '💧',
+    },
+    {
+      id: 'supply-chain-analyst',
+      name: 'SupplyChainAnalyst',
+      role: 'Supply Chain Analyst AI',
+      description: 'Optimizes inventory, parts, and logistics with disruption early warning',
+      capabilities: ['Inventory optimization', 'Lead-time risk', 'Supplier monitoring', 'Logistics planning'],
+      specializations: ['Spare parts', 'Seasonal stocking', 'Supplier risk'],
+      icon: '📦',
+    },
+    {
+      id: 'demand-forecaster',
+      name: 'DemandForecaster',
+      role: 'Demand Forecasting AI',
+      description: 'Produces weather- and season-aware demand forecasts for ag and irrigation products',
+      capabilities: ['Seasonal forecasting', 'Weather signals', 'Channel demand sensing', 'Scenario modeling'],
+      specializations: ['Seasonality', 'Weather-driven demand', 'New-product forecasting'],
+      icon: '📈',
+    },
+    {
+      id: 'warranty-adjudicator',
+      name: 'WarrantyAdjudicator',
+      role: 'Warranty Adjudication AI',
+      description: 'Drives consistent, defensible warranty and product-failure claim decisions',
+      capabilities: ['Claim assessment', 'Failure-mode analysis', 'Policy consistency', 'Evidence packaging'],
+      specializations: ['Warranty claims', 'Product liability', 'Field failures'],
+      icon: '🛠️',
+    },
+    {
+      id: 'sustainability-officer',
+      name: 'SustainabilityOfficer',
+      role: 'Sustainability & Stewardship AI',
+      description: 'Assembles water-efficiency and stewardship reporting with audit-grade evidence',
+      capabilities: ['Water-footprint accounting', 'Stewardship metrics', 'ISO 14046 alignment', 'Disclosure drafting'],
+      specializations: ['Water efficiency', 'Sustainability reporting', 'ESG disclosure'],
+      icon: '🌍',
+    },
+    {
+      id: 'commercial-advisor',
+      name: 'CommercialAdvisor',
+      role: 'Commercial Strategy AI',
+      description: 'Advises on pricing, rebates, and margin guardrails across the dealer network',
+      capabilities: ['Pricing analysis', 'Margin guardrails', 'Rebate strategy', 'Deal review'],
+      specializations: ['Pricing', 'Rebates', 'Commercial terms'],
+      icon: '💼',
+    },
+    {
+      id: 'field-trial-analyst',
+      name: 'FieldTrialAnalyst',
+      role: 'Field Trial & Agronomy Data AI',
+      description: 'Analyzes field trials and as-applied data to support product and irrigation decisions',
+      capabilities: ['Trial design', 'As-applied analysis', 'Yield correlation', 'Telemetry integration'],
+      specializations: ['Field trials', 'Sensor data', 'Yield analytics'],
+      icon: '🔬',
+    },
+  ],
+};
+
+// =============================================================================
 // EXPORT ALL AGENTS
 // =============================================================================
 
@@ -1191,6 +1291,7 @@ export const VERTICAL_AGENTS: Record<string, VerticalAgentConfig> = {
   transportation: transportationAgents,
   pharmaceutical: pharmaceuticalAgents,
   'industrial-services': industrialServicesAgents,
+  agriculture: agricultureAgents,
 };
 
 // Helper function to get agents for a vertical
