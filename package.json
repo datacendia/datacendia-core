@@ -62,7 +62,7 @@
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
         "cytoscape": "^3.33.1",
-        "dompurify": "^3.3.3",
+        "dompurify": "^3.4.9",
         "framer-motion": "^12.23.26",
         "i18next": "^25.7.3",
         "immer": "^11.0.1",
