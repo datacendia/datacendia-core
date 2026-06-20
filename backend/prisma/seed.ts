@@ -678,7 +678,7 @@ async function seedDefaultOrganization() {
   console.log(`  ✓ Organization: ${org.name}`);
   
   // Create owner user (Stuart Rainey - Platform Owner)
-  const ownerPasswordHash = await bcrypt.hash('DatacendiaOwner2024!', 12);
+  const ownerPasswordHash = await bcrypt.hash(process.env.SEED_OWNER_PASSWORD || 'CHANGE_ME_IN_ENV', 12);
   
   const owner = await prisma.users.upsert({
     where: { email: 'stuart.rainey@datacendia.com' },
@@ -706,7 +706,7 @@ async function seedDefaultOrganization() {
   console.log(`  ✓ Owner User: ${owner.email} (Stuart Rainey)`);
 
   // Create admin user
-  const passwordHash = await bcrypt.hash('DatacendiaAdmin2024!', 12);
+  const passwordHash = await bcrypt.hash(process.env.SEED_ADMIN_PASSWORD || 'CHANGE_ME_IN_ENV', 12);
   
   const admin = await prisma.users.upsert({
     where: { email: 'admin@datacendia.com' },
@@ -907,8 +907,8 @@ async function seedDataSources(organizationId: string) {
         schema: 'public',
       },
       credentials: {
-        username: 'postgres',
-        password: 'postgres',
+        username: process.env.SEED_PG_USER || 'postgres',
+        password: process.env.SEED_PG_PASSWORD || 'CHANGE_ME_IN_ENV',
       },
       lastSyncAt: new Date(),
       syncSchedule: '0 */6 * * *',
@@ -941,8 +941,8 @@ async function seedDataSources(organizationId: string) {
         uri: 'bolt://localhost:7687',
       },
       credentials: {
-        username: 'neo4j',
-        password: 'password',
+        username: process.env.NEO4J_USER || 'neo4j',
+        password: process.env.NEO4J_PASSWORD || 'CHANGE_ME_IN_ENV',
       },
       lastSyncAt: new Date(),
       metadata: {
@@ -1941,7 +1941,7 @@ async function main() {
     console.log('✅ Database seeding completed successfully!\n');
     console.log('📋 Default Credentials:');
     console.log('   Email: admin@datacendia.com');
-    console.log('   Password: DatacendiaAdmin2024!');
+    console.log('   Password: (set via SEED_ADMIN_PASSWORD env var)');
     console.log('');
   } catch (error) {
     console.error('❌ Seed failed:', error);
