@@ -13,6 +13,7 @@
 // Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import {
   Shield, Lock, ChevronRight, AlertTriangle, CheckCircle, XCircle,
   Radio, Activity, FileText, Download, Clock, Users, Zap,
@@ -364,6 +365,13 @@ function generateReceipt(template: Omit<ReceiptData, 'timestamp'>): ReceiptData 
 }
 
 // =============================================================================
+// CONSTANTS — ACCESS
+// =============================================================================
+
+const SANDBOX_ACCESS_KEY = 'CELTIC-PLC-26';
+const SANDBOX_PATH = '/sandbox/celtic';
+
+// =============================================================================
 // COMPONENT — ACCESS GATE
 // =============================================================================
 
@@ -382,7 +390,7 @@ const AccessGate: React.FC<{ onUnlock: () => void }> = ({ onUnlock }) => {
     setChecking(true);
     setError(false);
     setTimeout(() => {
-      if (key.trim().toUpperCase() === 'CELTIC-PLC-26') {
+      if (key.trim().toUpperCase() === SANDBOX_ACCESS_KEY) {
         onUnlock();
       } else {
         setError(true);
@@ -675,10 +683,19 @@ const CelticSandbox: React.FC = () => {
   const [typingAgent, setTypingAgent] = useState<string | null>(null);
   const [receipt, setReceipt] = useState<ReceiptData | null>(null);
   const [generatingReceipt, setGeneratingReceipt] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const [copyFailed, setCopyFailed] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const timeoutsRef = useRef<NodeJS.Timeout[]>([]);
+  const copyTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const scenario = SCENARIOS.find((s) => s.id === activeScenarioId) || SCENARIOS[0];
+
+  useEffect(() => {
+    return () => {
+      if (copyTimeoutRef.current) clearTimeout(copyTimeoutRef.current);
+    };
+  }, []);
 
   useEffect(() => {
     return () => { timeoutsRef.current.forEach(clearTimeout); };
@@ -757,6 +774,20 @@ const CelticSandbox: React.FC = () => {
   const activeAgentIds = scenario.script.slice(0, visibleMessages).map((m) => m.agentId);
   const isRunning = phase !== 'idle' && phase !== 'complete';
 
+  const handleCopyLink = () => {
+    const url = `${window.location.origin}${SANDBOX_PATH}?key=${SANDBOX_ACCESS_KEY}`;
+    navigator.clipboard.writeText(url).then(() => {
+      setCopied(true);
+      if (copyTimeoutRef.current) clearTimeout(copyTimeoutRef.current);
+      copyTimeoutRef.current = setTimeout(() => setCopied(false), 2000);
+    }).catch(() => {
+      // Clipboard API unavailable — show a brief error label so the user knows what happened
+      setCopyFailed(true);
+      if (copyTimeoutRef.current) clearTimeout(copyTimeoutRef.current);
+      copyTimeoutRef.current = setTimeout(() => setCopyFailed(false), 2000);
+    });
+  };
+
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-white">
       {/* Top Bar */}
@@ -774,6 +805,17 @@ const CelticSandbox: React.FC = () => {
                 <RotateCcw className="w-3 h-3" /> Reset
               </button>
             )}
+            <button
+              onClick={handleCopyLink}
+              title="Copy direct-access link"
+              className="px-3 py-1.5 text-[10px] bg-white/5 border border-white/10 rounded-lg text-white/50 hover:bg-white/10 flex items-center gap-1.5 transition-all"
+            >
+              {copied
+                ? <><CheckCircle className="w-3 h-3 text-emerald-400" /> Copied!</>
+                : copyFailed
+                  ? <><XCircle className="w-3 h-3 text-red-400" /> Copy failed</>
+                  : <><Link2 className="w-3 h-3" /> Copy link</>}
+            </button>
             <span className="text-[10px] text-white/30 tracking-wider font-mono">v2.4.1</span>
           </div>
         </div>
@@ -984,13 +1026,20 @@ function renderPhaseMarker(label: string, phaseId: Phase, currentPhase: Phase) {
 // =============================================================================
 
 const CelticSandboxPage: React.FC = () => {
+  const [searchParams] = useSearchParams();
   const [unlocked, setUnlocked] = useState(false);
 
   useEffect(() => {
     if (sessionStorage.getItem('celtic-sandbox-unlocked') === 'true') {
       setUnlocked(true);
+      return;
     }
-  }, []);
+    const keyParam = searchParams.get('key');
+    if (keyParam && keyParam.trim().toUpperCase() === SANDBOX_ACCESS_KEY) {
+      sessionStorage.setItem('celtic-sandbox-unlocked', 'true');
+      setUnlocked(true);
+    }
+  }, [searchParams]);
 
   const handleUnlock = () => {
     sessionStorage.setItem('celtic-sandbox-unlocked', 'true');

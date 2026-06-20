@@ -24,6 +24,10 @@ const PUBLIC_ROUTES = [
   { path: '/showcases', name: 'Showcases' },
   { path: '/privacy', name: 'Privacy Policy' },
   { path: '/terms', name: 'Terms of Service' },
+  // Sandbox — Design Partner Demos
+  { path: '/sandbox/celtic', name: 'Celtic FC Sandbox' },
+  { path: '/sandbox/uefa', name: 'UEFA Sandbox' },
+  { path: '/sandbox/fifa', name: 'FIFA Sandbox' },
 ];
 
 const AUTH_ROUTES = [
