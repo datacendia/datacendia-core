@@ -82,3 +82,16 @@ k6-results.json
 .stryker-tmp/
 k6-results.json
 *.log
+
+# Investor / sales collateral — never commit (see AUDIT-2026-08-10)
+pitch-decks/
+public/pitch-decks/
+docs/pitch-decks/
+*.pptx
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Stale local typecheck artefacts
+ts-errors*.txt
