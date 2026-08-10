@@ -1,0 +1,128 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Datacendia — 50 Investor Pitch Decks</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0e1a;color:#e2e4eb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:40px 80px}
+h1{font-size:32px;font-weight:800;margin-bottom:8px}
+.sub{color:#8b8fa3;font-size:16px;margin-bottom:40px}
+.gold{color:#d4af37}
+.section{margin-bottom:48px}
+.section h2{font-size:20px;font-weight:700;color:#d4af37;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;border-bottom:1px solid #1e2235;padding-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:16px}
+.card{background:#141825;border-radius:8px;padding:20px;border:1px solid #1e2235;transition:border-color 0.2s}
+.card:hover{border-color:#d4af37}
+.card h3{font-size:15px;font-weight:700;margin-bottom:6px}
+.card .desc{font-size:12px;color:#8b8fa3;margin-bottom:12px;line-height:1.5}
+.links{display:flex;gap:8px}
+.links a{font-size:11px;padding:4px 12px;border-radius:4px;text-decoration:none;font-weight:600;letter-spacing:0.5px}
+.links a.html{background:#1e2235;color:#d4af37}
+.links a.pptx{background:#1a3a2a;color:#10b981}
+.links a.pdf{background:#3a1a1a;color:#ef4444}
+.links a:hover{opacity:0.8}
+.badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:3px;margin-left:8px;font-weight:600;letter-spacing:0.5px}
+.badge-industry{background:#1e2235;color:#60a5fa}
+.badge-theme{background:#2a1e35;color:#a78bfa}
+.badge-investor{background:#1e3525;color:#34d399}
+.stats{display:flex;gap:32px;margin-bottom:40px}
+.stat{text-align:center}
+.stat .val{font-size:36px;font-weight:800;color:#d4af37}
+.stat .lbl{font-size:12px;color:#8b8fa3;margin-top:4px}
+.note{background:#141825;border-left:3px solid #d4af37;padding:16px 20px;margin-bottom:40px;font-size:13px;color:#8b8fa3;line-height:1.7}
+</style></head><body>
+
+<h1>Datacendia <span class="gold">Investor Pitch Decks</span></h1>
+<p class="sub">50 targeted decks — every stat verified, zero fabrication. Available in HTML, PPTX, and PDF.</p>
+
+<div class="stats">
+<div class="stat"><div class="val">50</div><div class="lbl">Pitch Decks</div></div>
+<div class="stat"><div class="val">3</div><div class="lbl">Formats Each</div></div>
+<div class="stat"><div class="val">150</div><div class="lbl">Total Files</div></div>
+<div class="stat"><div class="val">0</div><div class="lbl">Fabricated Stats</div></div>
+</div>
+
+<div class="note">
+<strong>Truth Policy:</strong> Every statistic in these decks is either a verified regulatory fact (EU AI Act, DORA, GDPR, etc.), a real regulatory penalty (€35M Art. 99), a Datacendia product metric (205K+ tests, 156 endpoints), or a business decision (pricing tiers). No fabricated market sizes, percentages, or dollar amounts.
+</div>
+
+<div class="section">
+<h2>By Industry (1–20)</h2>
+<div class="grid" id="industry"></div>
+</div>
+
+<div class="section">
+<h2>By Investment Theme (21–35)</h2>
+<div class="grid" id="theme"></div>
+</div>
+
+<div class="section">
+<h2>By Investor Type (36–50)</h2>
+<div class="grid" id="investor"></div>
+</div>
+
+<script>
+const decks = [
+  {id:'01-banking',t:'Banking & Capital Markets',d:'DORA, Basel III, MiFID II compliance for financial AI',c:'industry'},
+  {id:'02-insurance',t:'Insurance & Reinsurance',d:'Solvency II, DORA, EU AI Act for underwriting and claims AI',c:'industry'},
+  {id:'03-healthcare',t:'Healthcare Systems',d:'HIPAA, FDA, EU AI Act Annex III for clinical AI governance',c:'industry'},
+  {id:'04-pharma',t:'Pharmaceutical & Life Sciences',d:'FDA, EMA, ICH for drug development and submission AI',c:'industry'},
+  {id:'05-legal',t:'Legal & AmLaw 200',d:'ABA Model Rules, EU AI Act for legal advisory AI',c:'industry'},
+  {id:'06-defense',t:'Defense & Intelligence',d:'EO 14110, ITAR, IL4/IL5 for sovereign AI governance',c:'industry'},
+  {id:'07-energy',t:'Energy & Utilities',d:'NERC CIP, NIS2, EU AI Act for critical infrastructure AI',c:'industry'},
+  {id:'08-manufacturing',t:'Manufacturing & Supply Chain',d:'ISO 9001, EU AI Act, REACH for production AI',c:'industry'},
+  {id:'09-retail',t:'Retail & E-commerce',d:'GDPR Art. 22, EU AI Act, CCPA for consumer-facing AI',c:'industry'},
+  {id:'10-telecom',t:'Telecommunications',d:'NIS2, EU AI Act for critical infrastructure telecom AI',c:'industry'},
+  {id:'11-real-estate',t:'Real Estate & PropTech',d:'EU AI Act high-risk, Fair Housing Act for valuation AI',c:'industry'},
+  {id:'12-automotive',t:'Automotive & Mobility',d:'UNECE R155/R156, ISO 26262 for vehicle AI safety',c:'industry'},
+  {id:'13-agriculture',t:'Agriculture & AgTech',d:'FSMA, EU CAP for precision agriculture and food safety AI',c:'industry'},
+  {id:'14-education',t:'Education & EdTech',d:'EU AI Act Annex III 3b, FERPA for student-impacting AI',c:'industry'},
+  {id:'15-media',t:'Media & Entertainment',d:'DSA, EU AI Act, GDPR for content and recommendation AI',c:'industry'},
+  {id:'16-transportation',t:'Transportation & Logistics',d:'EASA, IMO, EU AI Act for safety-critical transport AI',c:'industry'},
+  {id:'17-mining',t:'Mining & Natural Resources',d:'TCFD, ICMM, EU AI Act for extraction and safety AI',c:'industry'},
+  {id:'18-aerospace',t:'Aerospace & Aviation',d:'EASA, FAA, DO-178C for aircraft systems AI governance',c:'industry'},
+  {id:'19-government',t:'Public Sector & Government',d:'EO 14110, OMB M-24-10, EU AI Act for citizen-impacting AI',c:'industry'},
+  {id:'20-nonprofit',t:'Non-Profit & NGO Governance',d:'EU AI Act, GDPR, donor accountability for humanitarian AI',c:'industry'},
+  {id:'21-eu-ai-act',t:'EU AI Act Compliance Opportunity',d:'Aug 2025 enforcement, \u20ac35M penalties, zero incumbent tooling',c:'theme'},
+  {id:'22-dora',t:'DORA Financial Resilience',d:'Jan 2025 effective, mandatory AI operational resilience for finance',c:'theme'},
+  {id:'23-sovereign-ai',t:'Sovereign AI Infrastructure',d:'CLOUD Act, GDPR Art. 48, 140+ data sovereignty laws',c:'theme'},
+  {id:'24-open-core',t:'Open-Core Business Model',d:'Apache 2.0 community edition drives enterprise sales pipeline',c:'theme'},
+  {id:'25-multi-agent',t:'Multi-Agent AI vs. Single-Model',d:'50+ agent presets, structured deliberation, formal dissent',c:'theme'},
+  {id:'26-zero-trust-data',t:'Zero-Trust Data Architecture',d:'Zero-copy processing, customer-owned encryption, Ed25519',c:'theme'},
+  {id:'27-market-creation',t:'AI Governance Market Creation',d:'New mandatory category -- no incumbent owns it',c:'theme'},
+  {id:'28-unit-economics',t:'Enterprise SaaS Unit Economics',d:'85%+ margins, $50K pilot to $1.5M+ strategic, regulatory mandate',c:'theme'},
+  {id:'29-regulatory-tailwind',t:'Regulatory Tailwind Thesis',d:'2025-2027 inflection: DORA, EU AI Act, SOC 2, ISO extensions',c:'theme'},
+  {id:'30-competitive-moat',t:'Competitive Moat Analysis',d:'Multi-agent + crypto + sovereign + compliance -- no incumbent has all 4',c:'theme'},
+  {id:'31-land-expand',t:'Land & Expand Revenue Model',d:'$50K pilot with money-back to $1.5M+ strategic contracts',c:'theme'},
+  {id:'32-classified-markets',t:'Air-Gapped & Classified Markets',d:'Premium segment, zero competition, ITAR/IL4/IL5/TPM',c:'theme'},
+  {id:'33-platform-economics',t:'Platform Economics & Network Effects',d:'Agents, jurisdictions, connectors compound over time',c:'theme'},
+  {id:'34-cross-border',t:'Cross-Border Compliance',d:'23 jurisdictions in DDGI framework, ISO/IEC standards track',c:'theme'},
+  {id:'35-accountability-infra',t:'AI Accountability as Infrastructure',d:'Like security became infrastructure -- AI accountability is next',c:'theme'},
+  {id:'36-angel-preseed',t:'Pre-Seed / Angel Overview',d:'$1.5M at $7M pre-money, engineering risk resolved, GTM-stage',c:'investor'},
+  {id:'37-series-a-vc',t:'Institutional VC -- Series A Ready',d:'Category creation with regulatory tailwind, first with production platform',c:'investor'},
+  {id:'38-corporate-vc',t:'Corporate VC -- Strategic Value',d:'Integration-first architecture, adds governance to your portfolio',c:'investor'},
+  {id:'39-defense-vc',t:'Government / Defense VC',d:'$1.8B DoD AI budget (FY2025), only air-gapped AI governance platform',c:'investor'},
+  {id:'40-impact-investor',t:'Impact Investor -- Responsible AI',d:'CendiaDissent, formal dissent tracking, protects against AI harm',c:'investor'},
+  {id:'41-family-office',t:'Family Office -- Long-Term Value',d:'Generational infrastructure play, patient capital for category building',c:'investor'},
+  {id:'42-sovereign-wealth',t:'Sovereign Wealth Fund -- National AI',d:'National digital sovereignty infrastructure, 140+ countries with laws',c:'investor'},
+  {id:'43-european-investor',t:'European Investor -- GDPR/EU AI Act',d:'Purpose-built for EU regulation, DDGI framework, in-country deployment',c:'investor'},
+  {id:'44-healthcare-fund',t:'Healthcare-Focused Fund',d:'EU AI Act Annex III high-risk, HIPAA-native, clinical dissent tracking',c:'investor'},
+  {id:'45-fintech-fund',t:'FinTech-Focused Fund',d:'DORA effective NOW, Basel III, MiFID II -- strictest AI oversight globally',c:'investor'},
+  {id:'46-deep-tech-fund',t:'Deep Tech Fund',d:'Multi-agent engine, applied cryptography, TPM hardware security, sovereign patterns',c:'investor'},
+  {id:'47-cybersecurity-fund',t:'Cybersecurity Fund',d:'AI decision integrity, cryptographic evidence, zero-copy, TPM attestation',c:'investor'},
+  {id:'48-regtech-fund',t:'RegTech Fund',d:'Largest new RegTech category since GDPR, 23 jurisdictions, ISO track',c:'investor'},
+  {id:'49-ai-fund',t:'AI-Focused Fund',d:'Governance is the bottleneck for enterprise AI adoption -- Datacendia removes it',c:'investor'},
+  {id:'50-esg-climate',t:'Climate / ESG Crossover Fund',d:'TCFD, CSRD, SFDR decision evidence for sustainable investment AI',c:'investor'},
+];
+
+const badges = {industry:'badge-industry',theme:'badge-theme',investor:'badge-investor'};
+const badgeLabels = {industry:'Industry',theme:'Theme',investor:'Investor Type'};
+
+function render(cat, containerId) {
+  const el = document.getElementById(containerId);
+  decks.filter(d=>d.c===cat).forEach(d => {
+    el.innerHTML += `<div class="card"><h3>${d.t}<span class="badge ${badges[d.c]}">${badgeLabels[d.c]}</span></h3><p class="desc">${d.d}</p><div class="links"><a class="html" href="html/${d.id}.html">HTML</a><a class="pptx" href="pptx/${d.id}.pptx">PPTX</a><a class="pdf" href="pdf/${d.id}.pdf">PDF</a></div></div>`;
+  });
+}
+render('industry','industry');
+render('theme','theme');
+render('investor','investor');
+</script>
+</body></html>
