@@ -1,0 +1,280 @@
+﻿src/config/database.ts(37,20): error TS7006: Parameter 'params' implicitly has an 'any' type.
+src/config/database.ts(37,28): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/config/tenantDatabase.ts(133,24): error TS7006: Parameter 'params' implicitly has an 'any' type.
+src/config/tenantDatabase.ts(133,32): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/database/seed.ts(163,52): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/database/seed.ts(164,50): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/database/seed.ts(176,52): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/database/seed.ts(177,50): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/database/seed.ts(182,21): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/database/seed.ts(205,19): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/database/seed.ts(228,19): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/database/seed.ts(256,76): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/database/seed.ts(278,19): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/features/advanced-analysis/DecisionDebt.ts(282,32): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/features/advanced-analysis/RegulatoryAbsorbV2.ts(21,24): error TS2305: Module '"@prisma/client"' has no exported member 'RegulatorySeverity'.
+src/features/advanced-analysis/RegulatoryAbsorbV2.ts(21,44): error TS2305: Module '"@prisma/client"' has no exported member 'RegulatoryDocStatus'.
+src/features/advanced-analysis/RegulatoryAbsorbV2.ts(21,65): error TS2305: Module '"@prisma/client"' has no exported member 'RegulatoryReviewStatus'.
+src/features/advanced-analysis/RegulatoryAbsorbV2.ts(21,89): error TS2305: Module '"@prisma/client"' has no exported member 'ConstraintType'.
+src/features/advanced-analysis/RegulatoryAbsorbV2.ts(21,105): error TS2305: Module '"@prisma/client"' has no exported member 'TriggerType'.
+src/features/advanced-analysis/RegulatoryAbsorbV2.ts(21,118): error TS2305: Module '"@prisma/client"' has no exported member 'ConflictType'.
+src/features/advanced-analysis/RegulatoryAbsorbV2.ts(21,132): error TS2305: Module '"@prisma/client"' has no exported member 'ConflictResolution'.
+src/features/advanced-analysis/RegulatoryAbsorbV2.ts(757,26): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/features/advanced-analysis/RegulatoryAbsorbV2.ts(1016,21): error TS7006: Parameter 'log' implicitly has an 'any' type.
+src/features/advanced-analysis/RegulatoryAbsorbV2.ts(1035,26): error TS7006: Parameter 'c' implicitly has an 'any' type.
+src/features/advanced-analysis/RegulatoryAbsorbV2.ts(1065,29): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/middleware/auth.ts(216,23): error TS2339: Property 'id' does not exist on type '{}'.
+src/middleware/auth.ts(217,26): error TS2339: Property 'email' does not exist on type '{}'.
+src/middleware/auth.ts(218,25): error TS2339: Property 'name' does not exist on type '{}'.
+src/middleware/auth.ts(219,25): error TS2339: Property 'role' does not exist on type '{}'.
+src/middleware/auth.ts(220,35): error TS2339: Property 'organization_id' does not exist on type '{}'.
+src/middleware/auth.ts(221,27): error TS2339: Property 'status' does not exist on type '{}'.
+src/middleware/auth.ts(222,30): error TS2339: Property 'created_at' does not exist on type '{}'.
+src/middleware/auth.ts(223,30): error TS2339: Property 'updated_at' does not exist on type '{}'.
+src/middleware/auth.ts(224,33): error TS2339: Property 'organizations' does not exist on type '{}'.
+src/middleware/auth.ts(225,32): error TS2339: Property 'preferences' does not exist on type '{}'.
+src/middleware/auth.ts(227,38): error TS2339: Property 'organization_id' does not exist on type '{}'.
+src/routes/admin-settings.ts(500,21): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/admin-settings.ts(569,21): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/alerts.ts(111,20): error TS7006: Parameter 'c' implicitly has an 'any' type.
+src/routes/alerts.ts(241,37): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/alerts.ts(323,54): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/audit-packages.ts(160,57): error TS2345: Argument of type 'string' is not assignable to parameter of type 'Buffer<ArrayBufferLike>'.
+src/routes/audit-packages.ts(258,11): error TS2345: Argument of type 'string' is not assignable to parameter of type 'Buffer<ArrayBufferLike>'.
+src/routes/audit-packages.ts(345,44): error TS2554: Expected 1 arguments, but got 0.
+src/routes/auth.ts(118,51): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/auth.ts(178,34): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/auth.ts(281,53): error TS7006: Parameter 'tx' implicitly has an 'any' type.
+src/routes/auth.ts(473,31): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/council.ts(624,24): error TS7006: Parameter 'agent' implicitly has an 'any' type.
+src/routes/council.ts(661,44): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/council.ts(707,63): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/council.ts(717,61): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/council.ts(760,23): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/council.ts(780,59): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/council.ts(854,23): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/council.ts(916,63): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/council.ts(926,61): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/council.ts(981,23): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/council.ts(1001,59): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/council.ts(1048,42): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/council.ts(1108,31): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/routes/council.ts(1118,57): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/routes/council.ts(1121,48): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/routes/council.ts(1621,69): error TS7006: Parameter 'msg' implicitly has an 'any' type.
+src/routes/council.ts(1676,25): error TS7006: Parameter 'q' implicitly has an 'any' type.
+src/routes/council.ts(1720,34): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/routes/council.ts(1726,32): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/routes/council.ts(1779,54): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/council.ts(1816,50): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/routes/council.ts(1860,25): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/routes/council.ts(1901,45): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/routes/council.ts(1922,21): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/dataSources.ts(74,23): error TS18046: 'dataSources' is of type 'unknown'.
+src/routes/dataSources.ts(74,39): error TS7006: Parameter 'ds' implicitly has an 'any' type.
+src/routes/dataSources.ts(146,69): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/dataSources.ts(147,50): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/dataSources.ts(160,71): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/dataSources.ts(238,38): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/dataSources.ts(239,44): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/dataSources.ts(255,43): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/dcii.ts(157,9): error TS2353: Object literal may only specify known properties, and 'devilsAdvocatePresent' does not exist in type '{ organizationId: string; deliberationId: string; deliberationTitle: string; deliberationDurationMinutes?: number | undefined; agentCount?: number | undefined; dissentCount?: number | undefined; agentResponses?: any[] | undefined; crossExaminations?: any[] | undefined; question?: string | undefined; }'.
+src/routes/dcii.ts(297,7): error TS2353: Object literal may only specify known properties, and 'devilsAdvocatePresent' does not exist in type '{ organizationId: string; deliberationId: string; deliberationTitle: string; deliberationDurationMinutes?: number | undefined; agentCount?: number | undefined; dissentCount?: number | undefined; agentResponses?: any[] | undefined; crossExaminations?: any[] | undefined; question?: string | undefined; }'.
+src/routes/deliberationsApi.ts(50,25): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'deliberationsWhereInput'.
+src/routes/deliberationsApi.ts(133,65): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/deliberationsApi.ts(148,56): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/deliberationsApi.ts(206,31): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/deliberationsApi.ts(245,38): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/enterprise.ts(99,7): error TS2322: Type 'Date' is not assignable to type 'string'.
+src/routes/enterprise.ts(100,7): error TS2322: Type 'Date' is not assignable to type 'string'.
+src/routes/enterprise.ts(101,7): error TS2322: Type 'Date' is not assignable to type 'string'.
+src/routes/forecasts.ts(82,41): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/forecasts.ts(84,51): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/forecasts.ts(182,49): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/forecasts.ts(386,48): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/health.ts(115,28): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/routes/health.ts(158,40): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/routes/health.ts(159,39): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/routes/health.ts(175,47): error TS7006: Parameter 'ds' implicitly has an 'any' type.
+src/routes/health.ts(186,45): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/routes/hr.ts(72,44): error TS2339: Property 'error' does not exist on type 'ConnectionStatus'.
+src/routes/hsm.ts(114,37): error TS2339: Property 'wrapKey' does not exist on type 'HSMAdapterImpl'.
+src/routes/hsm.ts(124,37): error TS2339: Property 'generateRandom' does not exist on type 'HSMAdapterImpl'.
+src/routes/integrations.ts(12,10): error TS2305: Module '"@prisma/client"' has no exported member 'DataSourceType'.
+src/routes/integrations.ts(127,39): error TS7006: Parameter 'conn' implicitly has an 'any' type.
+src/routes/integrations.ts(137,52): error TS7006: Parameter 'c' implicitly has an 'any' type.
+src/routes/integrations.ts(227,34): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/integrations.ts(228,59): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/integrations.ts(248,52): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/integrations.ts(295,42): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/integrations.ts(296,39): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/integrations.ts(451,77): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/kms.ts(441,23): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/routes/legal.ts(499,43): error TS2339: Property 'parseCourtListenerCases' does not exist on type 'CaseImportServiceImpl'.
+src/routes/legal.ts(535,75): error TS2339: Property 'parseCSV' does not exist on type 'CaseImportServiceImpl'.
+src/routes/legal.ts(699,43): error TS2345: Argument of type 'LegalModeCategory' is not assignable to parameter of type 'string'.
+src/routes/legal.ts(822,53): error TS2339: Property 'optionalAgents' does not exist on type 'LegalMode'.
+src/routes/legal.ts(823,43): error TS2339: Property 'defaultAgents' does not exist on type 'LegalMode'.
+src/routes/legal.ts(823,58): error TS2554: Expected 0-1 arguments, but got 2.
+src/routes/legal.ts(829,23): error TS2339: Property 'purpose' does not exist on type 'LegalMode'.
+src/routes/legal.ts(830,30): error TS2339: Property 'primeDirective' does not exist on type 'LegalMode'.
+src/routes/legal.ts(833,25): error TS2339: Property 'defaultAgents' does not exist on type 'LegalAgentDef[]'.
+src/routes/legal.ts(833,53): error TS2339: Property 'optionalAgents' does not exist on type 'LegalAgentDef[]'.
+src/routes/legal.ts(857,22): error TS2339: Property 'caseLibrarySize' does not exist on type '{ status: string; cases: number; matters: number; uptime: number; }'.
+src/routes/legal.ts(861,23): error TS2339: Property 'mattersCount' does not exist on type '{ status: string; cases: number; matters: number; uptime: number; }'.
+src/routes/legal.ts(866,29): error TS2339: Property 'privilegeReviewsCount' does not exist on type '{ status: string; cases: number; matters: number; uptime: number; }'.
+src/routes/legal.ts(996,7): error TS2554: Expected 0-1 arguments, but got 3.
+src/routes/legal.ts(1003,28): error TS2339: Property 'jurors' does not exist on type 'JurorArchetype[]'.
+src/routes/legal.ts(1004,32): error TS2339: Property 'alternates' does not exist on type 'JurorArchetype[]'.
+src/routes/legal.ts(1005,27): error TS2339: Property 'foreperson' does not exist on type 'JurorArchetype[]'.
+src/routes/legal.ts(1006,28): error TS2339: Property 'composition' does not exist on type 'JurorArchetype[]'.
+src/routes/legal.ts(1020,34): error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
+src/routes/legal.ts(1024,28): error TS2339: Property 'jurors' does not exist on type 'JurorArchetype[]'.
+src/routes/legal.ts(1025,32): error TS2339: Property 'alternates' does not exist on type 'JurorArchetype[]'.
+src/routes/legal.ts(1026,27): error TS2339: Property 'foreperson' does not exist on type 'JurorArchetype[]'.
+src/routes/legal.ts(1027,28): error TS2339: Property 'composition' does not exist on type 'JurorArchetype[]'.
+src/routes/metrics.ts(125,31): error TS7006: Parameter 'metric' implicitly has an 'any' type.
+src/routes/metrics.ts(221,41): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/metrics.ts(224,55): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/metrics.ts(240,69): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/metrics.ts(297,28): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/routes/metrics.ts(353,28): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/routes/omnitranslate.ts(82,7): error TS2353: Object literal may only specify known properties, and 'glossaryId' does not exist in type '{ text: string; sourceLanguage: string; targetLanguage: string; context?: string | undefined; }'.
+src/routes/omnitranslate.ts(184,7): error TS2353: Object literal may only specify known properties, and 'preserveFormatting' does not exist in type '{ text: string; sourceLanguage: string; targetLanguage: string; context?: string | undefined; }'.
+src/routes/omnitranslate.ts(219,7): error TS2353: Object literal may only specify known properties, and 'context' does not exist in type '{ texts: string[]; sourceLanguage: string; targetLanguage: string; }'.
+src/routes/organizations.ts(72,43): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/organizations.ts(85,33): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/organizations.ts(121,23): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/routes/organizations.ts(188,22): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/routes/rag.ts(91,29): error TS7006: Parameter 'c' implicitly has an 'any' type.
+src/routes/regulators-receipt.ts(47,28): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/routes/regulators-receipt.ts(133,71): error TS2339: Property 'filename' does not exist on type 'Buffer<ArrayBufferLike>'.
+src/routes/regulators-receipt.ts(134,37): error TS2339: Property 'hash' does not exist on type 'Buffer<ArrayBufferLike>'.
+src/routes/regulators-receipt.ts(135,45): error TS2339: Property 'pageCount' does not exist on type 'Buffer<ArrayBufferLike>'.
+src/routes/regulators-receipt.ts(173,71): error TS2339: Property 'filename' does not exist on type 'Buffer<ArrayBufferLike>'.
+src/routes/regulators-receipt.ts(174,37): error TS2339: Property 'hash' does not exist on type 'Buffer<ArrayBufferLike>'.
+src/routes/regulators-receipt.ts(175,45): error TS2339: Property 'pageCount' does not exist on type 'Buffer<ArrayBufferLike>'.
+src/routes/salary.ts(149,34): error TS2339: Property 'range' does not exist on type '{ title: string; location: string; median: number; p10: number; p25: number; p75: number; p90: number; sampleSize: number; lastUpdated: string; }'.
+src/routes/scge.ts(403,57): error TS2345: Argument of type 'import("C:/Users/User/datacendia-core-audit/backend/src/services/scge/index").SimulationConfig' is not assignable to parameter of type 'import("C:/Users/User/datacendia-core-audit/backend/src/services/scge/SCGEOrchestrator").SimulationConfig'.
+src/routes/settings.ts(46,25): error TS2339: Property 'userCount' does not exist on type 'Tenant'.
+src/routes/settings.ts(47,25): error TS2339: Property 'userLimit' does not exist on type 'Tenant'.
+src/routes/settings.ts(376,19): error TS2339: Property 'mrr' does not exist on type 'Tenant'.
+src/routes/settings.ts(377,25): error TS2339: Property 'userCount' does not exist on type 'Tenant'.
+src/routes/settings.ts(378,25): error TS2339: Property 'userLimit' does not exist on type 'Tenant'.
+src/routes/settings.ts(388,96): error TS2339: Property 'mrr' does not exist on type 'Tenant'.
+src/routes/settings.ts(389,96): error TS2339: Property 'mrr' does not exist on type 'Tenant'.
+src/routes/settings.ts(390,96): error TS2339: Property 'mrr' does not exist on type 'Tenant'.
+src/routes/sgas.ts(437,7): error TS2322: Type 'BudgetContext | BudgetContext' is not assignable to type 'BudgetContext'.
+src/routes/users.ts(84,49): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/users.ts(185,31): error TS7006: Parameter 'u' implicitly has an 'any' type.
+src/routes/users.ts(276,44): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/users.ts(337,71): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/vertical-agents.ts(249,7): error TS2353: Object literal may only specify known properties, and 'result' does not exist in type '{ agentId: string; verticalId: string; action: string; details?: any; }'.
+src/routes/vertical-config.ts(282,7): error TS2554: Expected 4 arguments, but got 5.
+src/routes/workflows.ts(195,41): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/workflows.ts(196,47): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/workflows.ts(211,52): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/workflows.ts(252,41): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/workflows.ts(253,47): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/workflows.ts(327,42): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/workflows.ts(537,39): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/workflows.ts(538,36): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/routes/workflows.ts(556,36): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/services/compliance/RetentionService.ts(62,29): error TS2347: Untyped function calls may not accept type arguments.
+src/services/compliance/RetentionService.ts(63,26): error TS7006: Parameter 'row' implicitly has an 'any' type.
+src/services/compliance/RetentionService.ts(142,28): error TS2347: Untyped function calls may not accept type arguments.
+src/services/compliance/RetentionService.ts(143,40): error TS7006: Parameter 'sum' implicitly has an 'any' type.
+src/services/compliance/RetentionService.ts(143,45): error TS7006: Parameter 'table' implicitly has an 'any' type.
+src/services/compliance/RetentionService.ts(181,35): error TS2347: Untyped function calls may not accept type arguments.
+src/services/compliance/RetentionService.ts(192,31): error TS2347: Untyped function calls may not accept type arguments.
+src/services/compliance/RetentionService.ts(202,32): error TS2347: Untyped function calls may not accept type arguments.
+src/services/council/CouncilDecisionPacketService.ts(380,45): error TS2345: Argument of type 'string' is not assignable to parameter of type 'Buffer<ArrayBufferLike>'.
+src/services/council/CouncilDecisionPacketService.ts(411,45): error TS2345: Argument of type 'string' is not assignable to parameter of type 'Buffer<ArrayBufferLike>'.
+src/services/council/CouncilDecisionPacketService.ts(438,9): error TS2345: Argument of type 'string' is not assignable to parameter of type 'Buffer<ArrayBufferLike>'.
+src/services/council/CouncilDecisionPacketService.ts(533,51): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+src/services/dcii/CrossJurisdictionConflictService.ts(157,81): error TS2448: Block-scoped variable 'doc' used before its declaration.
+src/services/dcii/CrossJurisdictionConflictService.ts(157,81): error TS2454: Variable 'doc' is used before being assigned.
+src/services/enterprise/_base.ts(61,23): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/services/evidence/RegulatorsReceiptService.ts(378,48): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/services/evidence/RegulatorsReceiptService.ts(378,79): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/services/evidence/RegulatorsReceiptService.ts(379,80): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/services/evidence/RegulatorsReceiptService.ts(379,83): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/services/evidence/RegulatorsReceiptService.ts(380,51): error TS7006: Parameter 'sum' implicitly has an 'any' type.
+src/services/evidence/RegulatorsReceiptService.ts(380,56): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/services/evidence/RegulatorsReceiptService.ts(415,28): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/services/evidence/RegulatorsReceiptService.ts(447,33): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/services/evidence/RegulatorsReceiptService.ts(450,31): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/services/evidence/RegulatorsReceiptService.ts(453,30): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/services/evidence/RegulatorsReceiptService.ts(576,52): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/services/evidence/RegulatorsReceiptService.ts(607,101): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/services/evidence/RegulatorsReceiptService.ts(638,48): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/services/evidence/RegulatorsReceiptService.ts(641,40): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/services/evidence/RegulatorsReceiptService.ts(643,38): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/services/evidence/RegulatorsReceiptService.ts(693,35): error TS2339: Property 'certificationLevel' does not exist on type 'IISSScore'.
+src/services/evidence/RegulatorsReceiptService.ts(701,29): error TS2339: Property 'calculatedAt' does not exist on type 'IISSScore'.
+src/services/evidence/RegulatorsReceiptService.ts(722,30): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/services/evidence/RegulatorsReceiptService.ts(877,50): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/services/evidence/RegulatorsReceiptService.ts(961,48): error TS2339: Property 'certificationLevel' does not exist on type 'IISSScore'.
+src/services/evidence/SignedTestReportService.ts(520,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(521,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(522,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(523,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(524,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(525,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(526,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(527,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(529,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(539,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(540,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(542,11): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'PDFSection'.
+src/services/evidence/SignedTestReportService.ts(558,10): error TS2554: Expected 1-2 arguments, but got 3.
+src/services/evidence/SignedTestReportService.ts(565,44): error TS2345: Argument of type 'ArrayBufferLike' is not assignable to parameter of type 'string | Stream | ArrayBufferView<ArrayBufferLike> | Iterable<string | ArrayBufferView<ArrayBufferLike>> | AsyncIterable<...>'.
+src/services/evidence/SignedTestReportService.ts(571,28): error TS2339: Property 'size' does not exist on type 'Buffer<ArrayBufferLike>'.
+src/services/evidence/SignedTestReportService.ts(572,28): error TS2339: Property 'hash' does not exist on type 'Buffer<ArrayBufferLike>'.
+src/services/governance/PolicyAuthoringService.ts(476,23): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/services/governance/PolicyAuthoringService.ts(667,23): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/services/metrics/ROIMetricsService.ts(118,44): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/services/metrics/ROIMetricsService.ts(124,12): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/services/metrics/ROIMetricsService.ts(134,16): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/services/metrics/ROIMetricsService.ts(135,14): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/services/metrics/ROIMetricsService.ts(135,17): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/services/metrics/ROIMetricsService.ts(138,27): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/services/metrics/ROIMetricsService.ts(138,30): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/services/metrics/ROIMetricsService.ts(150,12): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/services/metrics/ROIMetricsService.ts(151,16): error TS7006: Parameter 'c' implicitly has an 'any' type.
+src/services/metrics/ROIMetricsService.ts(154,29): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/services/metrics/ROIMetricsService.ts(154,32): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/services/metrics/ROIMetricsService.ts(159,32): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/services/metrics/ROIMetricsService.ts(173,45): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/services/metrics/ROIMetricsService.ts(228,37): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/services/pillars/GuardService.ts(262,55): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/services/pillars/LineageService.ts(161,57): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/services/pillars/LineageService.ts(194,61): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/services/pillars/LineageService.ts(259,40): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/services/pillars/LineageService.ts(260,40): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/services/pillars/LineageService.ts(352,43): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/services/pillars/PredictService.ts(148,51): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/services/pillars/PredictService.ts(233,37): error TS2694: Namespace '"C:/Users/User/datacendia-core-audit/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/services/security/ComplianceExportService.ts(162,57): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/services/security/ComplianceExportService.ts(170,55): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/services/security/ComplianceExportService.ts(189,39): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/services/security/ComplianceExportService.ts(190,43): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/services/security/ComplianceExportService.ts(213,39): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/services/security/ComplianceExportService.ts(214,43): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/services/security/ComplianceExportService.ts(284,39): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/services/security/ComplianceExportService.ts(304,49): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/services/security/ComplianceExportService.ts(314,59): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/services/security/ComplianceExportService.ts(324,46): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/services/security/ComplianceExportService.ts(324,68): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/services/security/ComplianceExportService.ts(325,46): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/services/security/ComplianceExportService.ts(326,39): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/services/security/ComplianceExportService.ts(327,31): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/services/storage/VectorService.ts(214,27): error TS2347: Untyped function calls may not accept type arguments.
+src/services/storage/VectorService.ts(216,24): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/services/storage/VectorService.ts(299,27): error TS2347: Untyped function calls may not accept type arguments.
+src/services/storage/VectorService.ts(301,24): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/services/storage/VectorService.ts(392,27): error TS2347: Untyped function calls may not accept type arguments.
+src/services/storage/VectorService.ts(396,31): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/services/storage/VectorService.ts(405,24): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/utils/permissions.ts(43,30): error TS2339: Property 'config' does not exist on type 'Feature'.
+src/utils/servicePersistence.ts(79,24): error TS7006: Parameter 'r' implicitly has an 'any' type.

@@ -1,0 +1,343 @@
+/**
+ * Investors 051-075: European VCs + Impact/ESG + Corporate Strategic
+ */
+module.exports = [
+  {
+    id: '051-lakestar', firm: 'Lakestar', type: 'Venture Capital',
+    hq: 'Zurich / London / Berlin', stage: 'Seed to Growth', aum: '$2B+',
+    thesis: 'European enterprise and consumer tech. Strong German-speaking market focus. Deep enterprise SaaS network.',
+    portfolio: ['Spotify', 'Revolut', 'Glovo', 'Sennder'],
+    whyAlign: 'Lakestar\'s DACH (Germany, Austria, Switzerland) focus is strategic: Germany\'s Federal Data Protection Act + EU AI Act create the strictest AI governance requirements globally.',
+    hookSlide: 'Lakestar dominates DACH enterprise. Germany has the strictest AI regulation in Europe. Datacendia is built for this: sovereign deployment, GDPR-native, EU AI Act compliance from day one.',
+    keyAngle: 'DACH market — strictest AI regulation globally',
+    sector: 'European Enterprise',
+  },
+  {
+    id: '052-cherry', firm: 'Cherry Ventures', type: 'Venture Capital',
+    hq: 'Berlin, Germany', stage: 'Pre-Seed to Series A', aum: '$1B+',
+    thesis: 'European early-stage. Strong operator network. Backs European founders building global B2B companies.',
+    portfolio: ['Flixbus', 'Auto1', 'Taxfix', 'Forto'],
+    whyAlign: 'Cherry\'s Berlin base puts them at the center of European AI regulation. German enterprises lead EU AI Act adoption — Datacendia serves them first.',
+    hookSlide: 'Cherry (Berlin) backs European B2B breakouts. German enterprises are first movers on EU AI Act compliance. Datacendia: sovereign deployment, German data residency, EU-first governance.',
+    keyAngle: 'German-first EU AI Act compliance',
+    sector: 'European B2B',
+  },
+  {
+    id: '053-speedinvest', firm: 'Speedinvest', type: 'Venture Capital',
+    hq: 'Vienna / Berlin / London', stage: 'Pre-Seed to Series A', aum: '$1B+',
+    thesis: 'Pan-European early-stage. Dedicated fintech and deep tech practices. Strong in regulatory technology.',
+    portfolio: ['GoStudent', 'Bitpanda', 'Refurbed', 'Adverity'],
+    whyAlign: 'Speedinvest\'s regtech practice + pan-European reach makes them ideal for Datacendia\'s EU AI Act governance platform. Vienna is an EU regulatory hub.',
+    hookSlide: 'Speedinvest\'s dedicated regtech practice understands regulatory technology. Datacendia is the defining regtech product for AI: EU AI Act compliance with cryptographic evidence.',
+    keyAngle: 'Defining regtech product for the AI era',
+    sector: 'European RegTech',
+  },
+  {
+    id: '054-point-nine', firm: 'Point Nine Capital', type: 'Venture Capital',
+    hq: 'Berlin, Germany', stage: 'Seed', aum: '$600M+',
+    thesis: 'B2B SaaS specialist. Deep metrics-driven approach to SaaS. Known for the SaaS funding napkin. European B2B authority.',
+    portfolio: ['Zendesk', 'Algolia', 'Chainalysis', 'Loom'],
+    whyAlign: 'Point Nine is the SaaS metrics authority. Datacendia\'s unit economics — $50K pilot, 3x expansion, <12 month payback — fit their SaaS quality bar.',
+    hookSlide: 'Point Nine wrote the SaaS playbook. Datacendia\'s metrics: $50K pilot → $150K-$1.5M expansion, regulatory forcing function = low churn, 4 deployment modes = high stickiness.',
+    keyAngle: 'SaaS metrics that exceed the bar',
+    sector: 'B2B SaaS',
+  },
+  {
+    id: '055-dawn', firm: 'Dawn Capital', type: 'Venture Capital',
+    hq: 'London, UK', stage: 'Series A to B', aum: '$2B+',
+    thesis: 'European enterprise software specialist. Deepest enterprise B2B bench in Europe. Backs category-defining enterprise companies.',
+    portfolio: ['Mimecast', 'iManage', 'Collibra', 'Darktrace'],
+    whyAlign: 'Dawn backed Collibra (data governance, $5.8B valuation). Datacendia is the AI decision governance layer — extending data governance to AI accountability.',
+    hookSlide: 'Dawn invested in Collibra ($5.8B data governance) and Darktrace (AI security). Datacendia sits at the intersection: AI decision governance with cryptographic security. Next Collibra-scale opportunity.',
+    keyAngle: 'AI decision governance — the next Collibra',
+    sector: 'European Enterprise',
+    customEmail: `**Subject:** Datacendia — AI decision governance (the next Collibra)
+
+**Body:**
+
+Hi Haakon,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build the accountability layer for enterprise AI — proving how and why every AI-assisted decision was made, with audit-grade evidence for regulators.
+
+**The pattern:** GDPR created Collibra ($5.8B). The EU AI Act creates the next category: AI decision governance. Every enterprise deploying AI needs verifiable proof of how decisions are made — and no platform provides this today.
+
+**Why Dawn:** You backed Collibra (data governance) and Darktrace (AI security). Datacendia sits at the intersection: AI decision governance with cryptographic security. You've already seen this category trajectory — Datacendia is the AI-era equivalent of what Collibra built for data.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Pre-seed stage, Peru + Ireland, operating across EU and US markets.
+
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering is resolved — funds go to first enterprise pilots and EU AI Act regulatory validation.
+
+Deck attached. Happy to do a 20-minute walkthrough at your convenience.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com`,
+  },
+  {
+    id: '056-singular', firm: 'Singular', type: 'Venture Capital',
+    hq: 'Paris / Berlin', stage: 'Seed to Series A', aum: '$500M+',
+    thesis: 'European AI and deep tech. Backs technical founders building AI infrastructure. Strong research network.',
+    portfolio: ['Mistral AI', 'Hugging Face', 'Poolside', 'Kyutai'],
+    whyAlign: 'Singular backed Mistral AI and Hugging Face — the AI models. Every enterprise deploying these models needs governance. Datacendia is the governance layer for the AI Singular backs.',
+    hookSlide: 'Singular backed Mistral AI and Hugging Face. As enterprises deploy those models, they need Datacendia: governance, audit trails, and compliance for every AI decision those models make.',
+    keyAngle: 'Governance layer for the AI ecosystem Singular builds',
+    sector: 'European AI',
+  },
+  {
+    id: '057-creandum', firm: 'Creandum', type: 'Venture Capital',
+    hq: 'Stockholm / Berlin / San Francisco', stage: 'Seed to Series A', aum: '$1B+',
+    thesis: 'Nordic-European early stage. Backs ambitious founders building category leaders. Spotify was their breakout.',
+    portfolio: ['Spotify', 'Klarna', 'Trade Republic', 'Depop'],
+    whyAlign: 'Creandum\'s Nordic roots and fintech wins (Klarna, Trade Republic) position them perfectly for Datacendia\'s AI governance in financial services under EU AI Act + DORA.',
+    hookSlide: 'Creandum backed Klarna and Trade Republic — fintechs now facing AI regulation. DORA + EU AI Act mandate AI governance for every fintech. Datacendia is purpose-built for this.',
+    keyAngle: 'AI governance for regulated European fintechs',
+    sector: 'European Fintech',
+  },
+  {
+    id: '058-hv-capital', firm: 'HV Capital', type: 'Venture Capital',
+    hq: 'Munich, Germany', stage: 'Seed to Growth', aum: '$3B+',
+    thesis: 'German enterprise technology authority. Deep Mittelstand network. Strong in enterprise SaaS and marketplace businesses.',
+    portfolio: ['Zalando', 'HelloFresh', 'Flixbus', 'Personio'],
+    whyAlign: 'HV\'s Mittelstand network (German mid-market) is Datacendia\'s ideal customer base: regulated, compliance-conscious enterprises adopting AI.',
+    hookSlide: 'HV Capital\'s Mittelstand network is 3.5M German companies adopting AI. EU AI Act makes governance mandatory. Datacendia serves German enterprise with sovereign deployment and local data residency.',
+    keyAngle: 'AI governance for the German Mittelstand',
+    sector: 'German Enterprise',
+  },
+  {
+    id: '059-project-a', firm: 'Project A Ventures', type: 'Venture Capital',
+    hq: 'Berlin, Germany', stage: 'Seed to Series B', aum: '$1B+',
+    thesis: 'Operational VC with 100+ in-house experts. Hands-on support in engineering, data, marketing, and sales.',
+    portfolio: ['WorldRemit', 'Spryker', 'Sennder', 'Trade Republic'],
+    whyAlign: 'Project A\'s operational approach (100+ in-house experts) can accelerate Datacendia\'s European GTM with hands-on engineering, data science, and sales support.',
+    hookSlide: 'Project A provides 100+ operational experts to portfolio companies. Datacendia needs European GTM acceleration — Project A\'s hands-on approach can fast-track enterprise sales.',
+    keyAngle: 'Operational support for European GTM acceleration',
+    sector: 'European Enterprise',
+  },
+  {
+    id: '060-molten', firm: 'Molten Ventures', type: 'Venture Capital',
+    hq: 'London, UK', stage: 'Series A to Growth', aum: '$2B+',
+    thesis: 'Publicly listed European VC (formerly Draper Esprit). Backs deep tech, enterprise, and cybersecurity across Europe.',
+    portfolio: ['Revolut', 'UiPath', 'Trustpilot', 'Ledger'],
+    whyAlign: 'Molten\'s public listing means patient capital. Their cybersecurity + enterprise portfolio (Ledger crypto security) aligns with Datacendia\'s cryptographic AI governance.',
+    hookSlide: 'Molten (LSE-listed) provides patient capital with cybersecurity expertise (Ledger). Datacendia uses cryptographic primitives (Ed25519, Merkle trees) for AI governance — deep security DNA.',
+    keyAngle: 'Cryptographic AI governance with patient European capital',
+    sector: 'European Deep Tech',
+  },
+  {
+    id: '061-omidyar', firm: 'Omidyar Network', type: 'Impact Investment',
+    hq: 'Redwood City, CA', stage: 'Seed to Growth', aum: '$1B+',
+    thesis: 'Responsible technology and digital rights. Backs companies that make technology more accountable, transparent, and beneficial.',
+    portfolio: ['Mozilla', 'Rappler', 'Change.org', 'Tala'],
+    whyAlign: 'Datacendia embodies responsible technology: every AI decision is transparent, accountable, with preserved dissent. Exactly what Omidyar champions.',
+    hookSlide: 'Omidyar champions responsible, accountable technology. Datacendia is accountability infrastructure: every AI decision has cryptographic proof, dissenting views are preserved — not buried.',
+    keyAngle: 'Accountability infrastructure for the AI era',
+    sector: 'Responsible Tech',
+  },
+  {
+    id: '062-generation-im', firm: 'Generation Investment Management', type: 'Growth Equity',
+    hq: 'London, UK', stage: 'Growth', aum: '$36B+',
+    thesis: 'Co-founded by Al Gore. Sustainable investing with long-term perspective. Backs companies that integrate sustainability into core operations.',
+    portfolio: ['Octopus Energy', 'Northvolt', 'Gogoro', 'Neste'],
+    whyAlign: 'Datacendia includes carbon-aware compute scheduling (CarbonAware module) and ESG governance agents. AI governance aligned with sustainability mandates.',
+    hookSlide: 'Generation IM (Al Gore) invests in sustainable infrastructure. Datacendia includes carbon-aware compute scheduling and ESG governance agents — AI governance that\'s sustainability-native.',
+    keyAngle: 'Carbon-aware AI governance infrastructure',
+    sector: 'Sustainable Tech',
+  },
+  {
+    id: '063-dbl', firm: 'DBL Partners', type: 'Venture Capital',
+    hq: 'San Francisco, CA', stage: 'Series A to Growth', aum: '$1B+',
+    thesis: 'Double bottom line: financial returns + social impact. Backed Tesla and SolarCity early. Focus on mission-driven tech.',
+    portfolio: ['Tesla', 'SolarCity', 'The Honest Company', 'Pandora'],
+    whyAlign: 'DBL\'s double bottom line thesis fits Datacendia: financial returns (enterprise SaaS) + social impact (AI accountability and transparency for society).',
+    hookSlide: 'DBL backs mission-driven companies (Tesla, SolarCity). Datacendia\'s mission: make AI accountable. Enterprise SaaS returns + societal impact of transparent, evidence-based AI decisions.',
+    keyAngle: 'Enterprise returns + AI accountability mission',
+    sector: 'Impact / Enterprise',
+  },
+  {
+    id: '064-rise-fund', firm: 'The Rise Fund (TPG)', type: 'Impact / Growth Equity',
+    hq: 'San Francisco, CA', stage: 'Growth', aum: '$14B+',
+    thesis: 'TPG\'s impact investing platform. Co-founded by Bono and Jeff Skoll. Largest impact fund globally. Measurable social outcomes.',
+    portfolio: ['Dodla Dairy', 'EverFi', 'Acorns', 'C2FO'],
+    whyAlign: 'The Rise Fund measures social impact. Datacendia\'s AI accountability has measurable impact: decisions governed, dissent preserved, audit trails created — quantifiable governance.',
+    hookSlide: 'The Rise Fund ($14B) requires measurable impact. Datacendia: every AI decision governed = measurable. Dissent preserved = measurable. Compliance automated = measurable. Enterprise SaaS returns.',
+    keyAngle: 'Measurable AI accountability impact at scale',
+    sector: 'Impact',
+  },
+  {
+    id: '065-breakthrough', firm: 'Breakthrough Energy Ventures', type: 'Venture Capital',
+    hq: 'Kirkland, WA', stage: 'Seed to Growth', aum: '$2B+',
+    thesis: 'Bill Gates-led fund. Climate and energy technology. Backs companies that can eliminate 500M+ tons of CO2 equivalent.',
+    portfolio: ['QuantumScape', 'Commonwealth Fusion', 'Form Energy', 'Koloma'],
+    whyAlign: 'Energy companies deploying AI for grid optimization need governance. Datacendia\'s carbon-aware compute + sovereign deployment serves BEV portfolio companies.',
+    hookSlide: 'BEV portfolio companies use AI for energy optimization. Those AI systems need governance under EU AI Act (critical infrastructure = high-risk). Datacendia: carbon-aware AI governance.',
+    keyAngle: 'AI governance for climate-critical energy infrastructure',
+    sector: 'Climate / Energy',
+  },
+  {
+    id: '066-m12', firm: 'M12 (Microsoft Ventures)', type: 'Corporate VC',
+    hq: 'San Francisco, CA', stage: 'Series A to C', aum: '$2B+',
+    thesis: 'Microsoft\'s venture fund. Strategic investments in AI, security, and enterprise. Portfolio companies integrate with Azure/Microsoft ecosystem.',
+    portfolio: ['Grab', 'FreshBooks', 'Innovium', 'CrowdStrike'],
+    whyAlign: 'Microsoft customers deploying Azure AI need governance. Datacendia integrates with Azure and provides the compliance layer Microsoft doesn\'t build natively.',
+    hookSlide: 'M12 backs AI/enterprise that extends Azure. As Azure AI scales, enterprise customers need governance — Datacendia provides compliance, audit trails, and accountability for Azure AI deployments.',
+    keyAngle: 'AI governance layer for Azure enterprise customers',
+    sector: 'Enterprise AI / Cloud',
+    customEmail: `**Subject:** Datacendia — AI governance layer for Azure enterprise customers
+
+**Body:**
+
+Hi Nagraj,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build the accountability layer for enterprise AI — proving how and why every AI-assisted decision was made, with audit-grade evidence exportable for regulators.
+
+**The problem:** Enterprises deploying Azure AI (Copilot, OpenAI Service, Cognitive Services) face EU AI Act and DORA mandates requiring verifiable governance for every AI decision. Microsoft doesn't build this compliance layer natively — it's an ecosystem opportunity.
+
+**Why M12:** Your portfolio extends the Azure enterprise ecosystem. Datacendia is the governance layer Azure customers need: compliance evidence for every AI decision, deployable on Azure or on-prem, integrating with existing Microsoft infrastructure. Every Azure AI deployment that adds Datacendia becomes stickier and more defensible.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Zero-copy architecture — connects to existing databases without data movement. Pre-seed stage.
+
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering is resolved — funds go to first enterprise pilots and EU AI Act regulatory validation.
+
+Deck attached. Happy to do a 20-minute walkthrough at your convenience.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com`,
+  },
+  {
+    id: '067-gv', firm: 'GV (Google Ventures)', type: 'Corporate VC',
+    hq: 'Mountain View, CA', stage: 'Seed to Growth', aum: '$8B+',
+    thesis: 'Google/Alphabet\'s venture arm. Backs enterprise, health, and AI companies. Deep technical expertise and AI knowledge.',
+    portfolio: ['Uber', 'Stripe', 'Slack', 'GitLab', 'Freshworks'],
+    whyAlign: 'Google AI powers millions of enterprise decisions. GV understands that AI governance is the missing enterprise infrastructure — Datacendia fills that gap.',
+    hookSlide: 'GV backs enterprise infrastructure (GitLab, Slack). As Google AI scales in enterprises, governance becomes mandatory. Datacendia: the compliance and accountability layer for enterprise AI.',
+    keyAngle: 'Enterprise AI governance infrastructure',
+    sector: 'Enterprise / AI',
+  },
+  {
+    id: '068-intel-capital', firm: 'Intel Capital', type: 'Corporate VC',
+    hq: 'Santa Clara, CA', stage: 'Seed to Growth', aum: '$5B+',
+    thesis: 'Strategic investments in AI, security, cloud. Intel\'s investment arm backs companies that drive compute demand and AI adoption.',
+    portfolio: ['MongoDB', 'DocuSign', 'Cloudera', 'UiPath'],
+    whyAlign: 'Intel Capital backs AI infrastructure that drives compute adoption. Datacendia\'s multi-agent deliberation requires significant compute — every enterprise deployment means more Intel hardware.',
+    hookSlide: 'Intel Capital backs AI infrastructure driving compute demand. Datacendia\'s multi-agent deliberation engine requires enterprise-grade compute — every deployment = more Intel processors.',
+    keyAngle: 'AI governance that drives enterprise compute demand',
+    sector: 'AI Infrastructure',
+  },
+  {
+    id: '069-nvidia-ventures', firm: 'NVIDIA Ventures', type: 'Corporate VC',
+    hq: 'Santa Clara, CA', stage: 'Series A to Growth', aum: '$1B+',
+    thesis: 'NVIDIA\'s strategic investment arm. Backs AI companies that expand GPU adoption and the NVIDIA ecosystem.',
+    portfolio: ['CoreWeave', 'Inflection AI', 'Recursion', 'Cohere'],
+    whyAlign: 'Datacendia is already an NVIDIA Inception member. As enterprises adopt AI at scale, they need governance infrastructure that proves every AI decision is accountable. That governance layer drives GPU demand — every deliberation runs inference.',
+    hookSlide: 'CoreWeave provides compute, Cohere provides models, Recursion applies AI to discovery. Datacendia adds what\'s missing: the accountability layer that makes enterprise AI deployable in regulated industries. More governed AI = more enterprise adoption = more GPU demand.',
+    keyAngle: 'AI governance drives enterprise GPU adoption at scale',
+    sector: 'AI / GPU Computing',
+    customEmail: `**Subject:** Datacendia — AI governance that drives enterprise GPU adoption
+
+**Body:**
+
+Hi [FIRST NAME],
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We're an NVIDIA Inception member building the accountability layer for enterprise AI — the infrastructure that proves how and why every AI-assisted decision was made.
+
+**The opportunity:** Enterprises want to deploy AI at scale but can't — regulators demand evidence of how AI decisions are made (EU AI Act, DORA, SEC AI guidance). Datacendia removes that blocker. More governed AI means more enterprise adoption means more GPU demand.
+
+**Why NVIDIA Ventures:** Your portfolio provides compute (CoreWeave), models (Cohere), and AI applications (Recursion). Datacendia adds the missing piece: governance infrastructure that makes enterprise AI deployable in regulated industries. We're already in the NVIDIA ecosystem through Inception — a Ventures investment deepens that strategic alignment.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, live at app.datacendia.com. Pre-seed stage, Peru + Ireland, operating across EU and US markets.
+
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering is resolved — funds go to first enterprise pilots and EU AI Act regulatory validation.
+
+Deck attached. Happy to do a 20-minute walkthrough or live demo at your convenience.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com`,
+  },
+  {
+    id: '070-cisco', firm: 'Cisco Investments', type: 'Corporate VC',
+    hq: 'San Jose, CA', stage: 'Series A to Growth', aum: '$3B+',
+    thesis: 'Strategic investments in networking, security, and enterprise collaboration. Backs companies that extend Cisco\'s enterprise platform.',
+    portfolio: ['Cloudlock', 'AppDynamics', 'ThousandEyes', 'Kenna Security'],
+    whyAlign: 'Cisco\'s enterprise security portfolio needs AI governance. Datacendia\'s zero-trust architecture and network-level deployment aligns with Cisco\'s infrastructure vision.',
+    hookSlide: 'Cisco Investments backs enterprise security (Kenna, Cloudlock). Datacendia adds AI decision security: zero-trust architecture, cryptographic audit trails, deployed within Cisco enterprise networks.',
+    keyAngle: 'AI decision security for Cisco enterprise networks',
+    sector: 'Enterprise Security',
+  },
+  {
+    id: '071-sap-io', firm: 'SAP.iO', type: 'Corporate VC / Accelerator',
+    hq: 'San Francisco / Berlin', stage: 'Seed to Series B', aum: '$500M+',
+    thesis: 'SAP\'s startup investment and acceleration arm. Backs companies that extend SAP\'s enterprise ecosystem with AI and analytics.',
+    portfolio: ['Qualtrics (early)', 'AppZen', 'Walk Me', 'Signavio'],
+    whyAlign: 'Datacendia integrates with SAP via zero-copy connectors. SAP customers can govern AI decisions on ERP data without data movement — strategic for SAP\'s enterprise base.',
+    hookSlide: 'SAP.iO accelerates SAP ecosystem extensions. Datacendia\'s SAP zero-copy integration governs AI decisions on ERP data in-place — no extraction, no risk, full compliance.',
+    keyAngle: 'AI governance natively integrated with SAP',
+    sector: 'Enterprise ERP',
+  },
+  {
+    id: '072-workday', firm: 'Workday Ventures', type: 'Corporate VC',
+    hq: 'Pleasanton, CA', stage: 'Series A to C', aum: '$500M+',
+    thesis: 'Strategic investments that extend Workday\'s enterprise HCM and finance platform. Focus on AI, analytics, and workforce tech.',
+    portfolio: ['Peakon', 'VNDLY', 'Scout RFP', 'Platfora'],
+    whyAlign: 'Workday customers use AI for workforce and financial decisions. Those decisions need governance — especially under EU AI Act which classifies HR AI as high-risk.',
+    hookSlide: 'EU AI Act classifies HR/workforce AI as high-risk. Every Workday customer using AI for hiring, promotion, or workforce planning needs governance. Datacendia delivers it.',
+    keyAngle: 'HR AI governance — EU AI Act high-risk category',
+    sector: 'Enterprise HR / AI',
+  },
+  {
+    id: '073-servicenow', firm: 'ServiceNow Ventures', type: 'Corporate VC',
+    hq: 'Santa Clara, CA', stage: 'Series A to C', aum: '$500M+',
+    thesis: 'Strategic investments extending ServiceNow\'s enterprise workflow platform. Focus on AI, automation, and IT operations.',
+    portfolio: ['Element AI', 'BigPanda', 'Passage AI', 'DotData'],
+    whyAlign: 'ServiceNow\'s IT workflow platform handles enterprise operations. Adding AI governance to ServiceNow workflows = every ITSM decision is auditable and compliant.',
+    hookSlide: 'ServiceNow Ventures backs AI-enhanced workflows. Datacendia adds governance to AI-driven workflows: every automated ITSM decision is cryptographically auditable. Extends ServiceNow compliance.',
+    keyAngle: 'AI governance for automated enterprise workflows',
+    sector: 'Enterprise Workflow',
+  },
+  {
+    id: '074-samsung-next', firm: 'Samsung NEXT', type: 'Corporate VC',
+    hq: 'San Francisco / Seoul', stage: 'Seed to Series B', aum: '$2B+',
+    thesis: 'Samsung\'s innovation arm. Backs AI, enterprise, and security companies. Bridge between Silicon Valley and Korean/Asian enterprise.',
+    portfolio: ['SmartThings', 'SparkBeyond', 'Kinetica', 'AdHive'],
+    whyAlign: 'Samsung NEXT bridges US and Asian enterprise. Datacendia\'s multi-jurisdiction coverage (23 jurisdictions including APAC) serves Samsung\'s global enterprise customers.',
+    hookSlide: 'Samsung NEXT bridges US-Asia enterprise tech. Datacendia covers 23 jurisdictions including Korean and APAC regulation — AI governance for Samsung\'s global enterprise ecosystem.',
+    keyAngle: 'Global AI governance spanning US, EU, and APAC',
+    sector: 'Global Enterprise',
+  },
+  {
+    id: '075-lockheed', firm: 'Lockheed Martin Ventures', type: 'Corporate VC',
+    hq: 'Bethesda, MD', stage: 'Series A to C', aum: '$500M+',
+    thesis: 'Strategic investments in defense technology, AI, cybersecurity, and space. Backs dual-use technology with defense applications.',
+    portfolio: ['Terran Orbital', 'Saildrone', 'Cognitive Scale', 'Dedrone'],
+    whyAlign: 'Lockheed\'s defense programs use AI for mission planning, logistics, and intelligence. Every AI decision needs governance with air-gapped, ITAR-compliant deployment.',
+    hookSlide: 'Lockheed Martin programs use AI at scale. Datacendia provides ITAR-compliant, air-gapped AI governance with TPM attestation — purpose-built for defense program requirements.',
+    keyAngle: 'ITAR-compliant AI governance for defense programs',
+    sector: 'Defense',
+    customEmail: `**Subject:** Datacendia — AI governance for defense programs (air-gapped, ITAR-ready)
+
+**Body:**
+
+Hi Chris,
+
+I'm Stuart Rainey, founder of Datacendia (datacendia.com). We build sovereign AI decision evidence infrastructure — cryptographic proof of how and why every AI-assisted decision was made, deployable in air-gapped and classified environments.
+
+**The problem:** Defense programs use AI for mission planning, intelligence analysis, and logistics — but have no way to produce verifiable evidence of how those AI decisions were made. Every AI decision is an unauditable artifact in environments where accountability is mandatory.
+
+**Why Lockheed Martin Ventures:** Your programs deploy AI at scale across defense and intelligence. Datacendia provides what's missing: ITAR-compliant AI governance with air-gapped deployment, TPM 2.0 hardware attestation, and cryptographic evidence chains — purpose-built for defense program requirements. Dual-use architecture also serves commercial regulated industries.
+
+**What's built:** 205K+ passing tests, 156 API endpoints, 11 sovereign deployment patterns. Air-gapped, on-prem, zero external dependencies. Pre-seed stage.
+
+**The ask:** $1.5M pre-seed at $7M pre-money. Engineering is resolved — funds go to first enterprise pilots and defense program validation.
+
+Deck attached. Happy to do a 20-minute walkthrough or classified-environment deployment demo.
+
+Best,
+Stuart Rainey
+Founder & CEO, Datacendia
+contact@datacendia.com | datacendia.com | app.datacendia.com`,
+  },
+];
