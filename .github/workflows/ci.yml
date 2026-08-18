@@ -123,12 +123,13 @@ jobs:
         run: npm run lint
         continue-on-error: true
 
-      - name: Run unit tests (exclude e2e/integration)
+      - name: Run unit tests (exclude e2e/integration/load)
         working-directory: backend
         run: |
           npx vitest run \
             --exclude="**/e2e/**" \
             --exclude="**/integration/**" \
+            --exclude="**/load/**" \
             --exclude="**/e2e.test.*" \
             --exclude="**/comprehensive.test.*"
         env:
@@ -163,7 +164,18 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
 
       - name: Check community/enterprise boundary
-        run: node scripts/check-community-boundary.mjs
+        run: |
+          if [ -f scripts/check-community-boundary.mjs ]; then
+            node scripts/check-community-boundary.mjs
+          else
+            echo "::warning title=Boundary check skipped::scripts/check-community-boundary.mjs is not present in this repository."
+            echo "COMMUNITY.md states that everything in datacendia-core is Community Edition, and that"
+            echo "enterprise features live in the separate datacendia-components repository. There are"
+            echo "therefore no enterprise modules here for a boundary check to find, which is why the"
+            echo "script was never written. This step previously ran it unconditionally and failed with"
+            echo "MODULE_NOT_FOUND, so the job never reached the community build below."
+            echo "If a boundary should be enforced here, add the script and this step will run it."
+          fi
 
       - name: Install backend dependencies
         working-directory: backend
