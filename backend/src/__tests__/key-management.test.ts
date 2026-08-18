@@ -18,17 +18,52 @@
 // secrets are the two failure modes this codebase has produced before.
 // =============================================================================
 
-import { describe, it, expect, beforeAll, vi } from 'vitest';
+import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
 import { ml_dsa65 } from '@noble/post-quantum/ml-dsa.js';
+
+// Every process.env key this file touches, captured before anything is changed
+// so the whole set can be put back in afterAll(). Vitest isolates files by
+// default, but that is a configuration choice rather than a guarantee -- under
+// `isolate: false`, or any pool that shares a process, unrestored mutations
+// would leak into unrelated suites. Restoring keeps this file self-contained
+// either way.
+const MUTATED_ENV_KEYS = [
+  'DATABASE_URL',
+  'JWT_SECRET',
+  'CENDIA_ED25519_PRIVATE_KEY',
+  'CENDIA_DILITHIUM_PRIVATE_KEY',
+  'CENDIA_MASTER_SEED',
+] as const;
+
+const ORIGINAL_ENV: Partial<Record<(typeof MUTATED_ENV_KEYS)[number], string | undefined>> = {};
+for (const key of MUTATED_ENV_KEYS) {
+  ORIGINAL_ENV[key] = process.env[key];
+}
+
+function restoreEnv(): void {
+  for (const key of MUTATED_ENV_KEYS) {
+    const original = ORIGINAL_ENV[key];
+    if (original === undefined) {
+      delete process.env[key];
+    } else {
+      process.env[key] = original;
+    }
+  }
+}
 
 // src/config/index.ts validates its schema at import time and throws under
 // NODE_ENV=test if these are missing. KeyManagementService reaches config only
 // transitively, via the logger, and never touches a database -- so these are
 // non-secret placeholders that exist purely to satisfy that schema. Real values
 // in the environment always win. They must be set before the service is
-// imported, which is why the import below is dynamic.
+// imported, which is why the imports in beforeAll() are dynamic.
 process.env.DATABASE_URL ||= 'postgresql://test:test@localhost:5432/test';
 process.env.JWT_SECRET ||= 'test-only-placeholder-not-a-real-secret-0123456789';
+
+afterAll(() => {
+  restoreEnv();
+  vi.restoreAllMocks();
+});
 
 // A fixed seed keeps these deterministic. It is a test vector, not a secret.
 const TEST_SEED = 'a'.repeat(128);
