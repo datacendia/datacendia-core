@@ -24,10 +24,14 @@ declare module '@noble/curves/ed25519' {
   }
 }
 
-declare module '@noble/post-quantum/ml-dsa' {
-  export const ml_dsa65: {
-    keygen(seed?: Uint8Array): { publicKey: Uint8Array; secretKey: Uint8Array };
-    sign(secretKey: Uint8Array, message: Uint8Array): Uint8Array;
-    verify(publicKey: Uint8Array, message: Uint8Array, signature: Uint8Array): boolean;
-  };
-}
+// @noble/post-quantum ships its own type definitions (ml-dsa.d.ts) and they are
+// authoritative. A hand-written `declare module '@noble/post-quantum/ml-dsa'`
+// block used to live here declaring the argument order backwards --
+// sign(secretKey, message) and verify(publicKey, message, signature) -- which
+// made the compiler accept call sites that throw at runtime. That is how the
+// reversed-argument bug survived review.
+//
+// Do not re-add it. Import from '@noble/post-quantum/ml-dsa.js' (the package
+// exports map defines no bare './ml-dsa' subpath) and rely on the real types:
+//   sign(message, secretKey)
+//   verify(signature, message, publicKey)
