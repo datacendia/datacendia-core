@@ -1,5 +1,5 @@
 // =============================================================================
-// @noble/curves v2 migration — AnonymousDissentService + ZeroKnowledgeProofService
+// Ristretto crypto — @noble/curves v2 migration + LSAG ring signatures
 // =============================================================================
 // Both services imported `RistrettoPoint` from '@noble/curves/ed25519'. In
 // curves v2 neither the bare subpath nor that export exists: the group moved to
@@ -7,10 +7,17 @@
 // toRawBytes() was renamed toBytes(). Every code path through either service
 // therefore threw at import time.
 //
+// AnonymousDissentService additionally had no working signature scheme.
+// verifyDissent() computed every value needed to check the ring signature,
+// discarded all of them, and returned true whenever the scalars were positive.
+// The signing side was not verifiable either: it drew random c_i/s_i for
+// non-signers and closed with c_signer = total - sum(others), with no challenge
+// chain, so a verifier had nothing to recompute. Both sides are now a proper
+// LSAG.
+//
 // Because "it imports now" is a low bar for cryptographic code, these tests
-// exercise the actual protocols and — more importantly — assert that
-// verification returns *false* when it should. A verifier that cannot fail is
-// the defect pattern this repository has produced more than once.
+// exercise the actual protocols, and the negative cases carry the weight: a
+// verifier that cannot return false is the defect pattern being fixed.
 // =============================================================================
 
 import { describe, it, expect, beforeAll } from 'vitest';
@@ -70,84 +77,220 @@ describe('ZeroKnowledgeProofService — Pedersen commitments and Schnorr proofs'
   });
 });
 
-describe('AnonymousDissentService — linkable ring signatures', () => {
+// =============================================================================
+// LSAG ring signatures
+// =============================================================================
+
+describe('AnonymousDissentService — LSAG ring signature', () => {
   let svc: any;
+
+  const ringOf = (n: number, prefix: string) =>
+    Array.from({ length: n }, (_, i) => svc.generateParticipantKeys(prefix + i));
+
+  const pubsOf = (members: any[]) => members.map((m: any) => m.publicKey);
+
+  const randHex64 = () =>
+    Array.from({ length: 64 }, () => '0123456789abcdef'[Math.floor(Math.random() * 16)]).join('');
+
+  const flipFirst = (hex: string) => (hex[0] === 'a' ? 'b' : 'a') + hex.slice(1);
 
   beforeAll(async () => {
     const mod = await import('../services/crypto/AnonymousDissentService.js');
     svc = mod.anonymousDissentService;
   });
 
-  it('loads at all (v1 import threw before reaching any of this)', () => {
-    expect(svc).toBeDefined();
-  });
+  // --- soundness ------------------------------------------------------------
 
-  it('produces a dissent that verifies against its ring', () => {
-    const members = ['p1', 'p2', 'p3', 'p4'].map(id => svc.generateParticipantKeys(id));
-    const delib = 'delib-verify';
-    svc.registerRing(delib, members.map((m: any) => m.publicKey));
-
+  it('accepts a genuine dissent', () => {
+    const members = ringOf(4, 'a');
+    svc.registerRing('d-ok', pubsOf(members));
     const signer = members[2];
-    const dissent = svc.submitDissent(delib, 'I object to the finding.', 'high', signer.privateKey, signer.publicKey);
+    const d = svc.submitDissent('d-ok', 'I object.', 'formal_objection', signer.privateKey, signer.publicKey);
 
-    const result = svc.verifyDissent(dissent);
-    expect(result.valid).toBe(true);
-    expect(result.membershipProven).toBe(true);
-    expect(result.anonymitySetSize).toBe(4);
+    const r = svc.verifyDissent(d);
+    expect(r.valid).toBe(true);
+    expect(r.membershipProven).toBe(true);
+    expect(r.issues).toEqual([]);
+    expect(r.anonymitySetSize).toBe(4);
   });
 
-  // ---------------------------------------------------------------------------
-  // CHARACTERISATION — documents a defect, not desired behaviour
-  // ---------------------------------------------------------------------------
-  // verifyDissent() does not verify the ring signature. It computes sG, cP, sH
-  // and cI for every ring member, discards all of them, leaves
-  // reconstructedAlphaG/H at ZERO, and returns:
-  //
-  //     membershipProven = challengeSum > 0n
-  //                     && challenges.every(c => c > 0n)
-  //                     && responses.every(s => s > 0n)
-  //
-  // — a check that the scalars are positive. The source says as much:
-  // "This is a simplified verification — in production would recompute full
-  // hash chain."
-  //
-  // The signing side cannot be verified as written either: it draws random
-  // c_i/s_i for non-signers and closes with c_signer = total - sum(others),
-  // with no challenge chain (c_{i+1} = H(m, L_i, R_i)), so a verifier has
-  // nothing to recompute. Repairing this means implementing a real LSAG on
-  // both sides, which is deliberately out of scope for a dependency migration.
-  //
-  // This test asserts the CURRENT behaviour so the gap is visible and cannot be
-  // mistaken for working anonymity. When the verifier is implemented, this test
-  // will fail — invert it to expect false at that point.
-  it('CHARACTERISATION: accepts a statement altered after signing (verifier is a stub)', () => {
-    const members = ['q1', 'q2', 'q3'].map(id => svc.generateParticipantKeys(id));
-    const delib = 'delib-tamper';
-    svc.registerRing(delib, members.map((m: any) => m.publicKey));
-
-    const signer = members[0];
-    const dissent = svc.submitDissent(delib, 'Original statement.', 'medium', signer.privateKey, signer.publicKey);
-
-    const forged = { ...dissent, statement: 'Rewritten statement.' };
-    const result = svc.verifyDissent(forged);
-
-    // Documents the defect: tampering is NOT detected.
-    expect(result.valid).toBe(true);
-    expect(result.membershipProven).toBe(true);
+  it('accepts a signature from every position in the ring', () => {
+    const members = ringOf(5, 'b');
+    const pks = pubsOf(members);
+    for (let i = 0; i < members.length; i++) {
+      svc.registerRing('d-pos-' + i, pks);
+      const d = svc.submitDissent('d-pos-' + i, 'Position test.', 'concern', members[i].privateKey, members[i].publicKey);
+      expect(svc.verifyDissent(d).valid).toBe(true);
+    }
   });
 
-  it('hides which ring member signed', () => {
-    const members = ['r1', 'r2', 'r3'].map(id => svc.generateParticipantKeys(id));
-    const delib = 'delib-anon';
-    svc.registerRing(delib, members.map((m: any) => m.publicKey));
+  it('closes for a ring of one (degenerate, but must still verify)', () => {
+    const [only] = ringOf(1, 'c');
+    svc.registerRing('d-one', [only.publicKey]);
+    const d = svc.submitDissent('d-one', 'Alone.', 'observation', only.privateKey, only.publicKey);
+    expect(svc.verifyDissent(d).valid).toBe(true);
+  });
 
+  // --- message binding: the defect this replaces ----------------------------
+
+  it('rejects a statement altered after signing', () => {
+    const members = ringOf(3, 'e');
+    svc.registerRing('d-stmt', pubsOf(members));
+    const d = svc.submitDissent('d-stmt', 'Original.', 'concern', members[0].privateKey, members[0].publicKey);
+
+    const r = svc.verifyDissent({ ...d, statement: 'Rewritten.' });
+    expect(r.valid).toBe(false);
+    expect(r.membershipProven).toBe(false);
+  });
+
+  it('rejects an altered severity', () => {
+    const members = ringOf(3, 'f');
+    svc.registerRing('d-sev', pubsOf(members));
+    const d = svc.submitDissent('d-sev', 'Same text.', 'observation', members[1].privateKey, members[1].publicKey);
+
+    expect(svc.verifyDissent({ ...d, severity: 'formal_objection' }).valid).toBe(false);
+  });
+
+  it('rejects a dissent re-pointed at another deliberation', () => {
+    const members = ringOf(3, 'g');
+    svc.registerRing('d-delib', pubsOf(members));
+    const d = svc.submitDissent('d-delib', 'Bound here.', 'concern', members[2].privateKey, members[2].publicKey);
+
+    expect(svc.verifyDissent({ ...d, deliberationId: 'other-deliberation' }).valid).toBe(false);
+  });
+
+  // --- forgery --------------------------------------------------------------
+
+  it('rejects a signature forged without any private key', () => {
+    const members = ringOf(4, 'h');
+    svc.registerRing('d-forge', pubsOf(members));
+    const real = svc.submitDissent('d-forge', 'Genuine.', 'concern', members[0].privateKey, members[0].publicKey);
+
+    // An attacker who knows the ring and a key image but holds no private key,
+    // inventing positive scalars — precisely what the old verifier accepted.
+    const forged = {
+      ...real,
+      statement: 'Forged dissent.',
+      ringSignature: {
+        ...real.ringSignature,
+        c0: randHex64(),
+        responses: real.ringSignature.responses.map(() => randHex64()),
+      },
+    };
+
+    expect(svc.verifyDissent(forged).valid).toBe(false);
+  });
+
+  it('rejects a tampered response scalar', () => {
+    const members = ringOf(4, 'i');
+    svc.registerRing('d-resp', pubsOf(members));
+    const d = svc.submitDissent('d-resp', 'Untouched.', 'concern', members[3].privateKey, members[3].publicKey);
+
+    const responses = [...d.ringSignature.responses];
+    responses[1] = flipFirst(responses[1]);
+    expect(svc.verifyDissent({ ...d, ringSignature: { ...d.ringSignature, responses } }).valid).toBe(false);
+  });
+
+  it('rejects a tampered seed challenge', () => {
+    const members = ringOf(3, 'j');
+    svc.registerRing('d-c0', pubsOf(members));
+    const d = svc.submitDissent('d-c0', 'Untouched.', 'concern', members[0].privateKey, members[0].publicKey);
+
+    const c0 = flipFirst(d.ringSignature.c0);
+    expect(svc.verifyDissent({ ...d, ringSignature: { ...d.ringSignature, c0 } }).valid).toBe(false);
+  });
+
+  it('rejects replay against a different anonymity set', () => {
+    const members = ringOf(4, 'k');
+    svc.registerRing('d-ring', pubsOf(members));
+    const d = svc.submitDissent('d-ring', 'Bound to a ring.', 'concern', members[1].privateKey, members[1].publicKey);
+
+    // Substitute one ring member for an outsider — the challenge prefix changes.
+    const outsider = svc.generateParticipantKeys('outsider');
+    const ring = [...d.ringSignature.ring];
+    ring[3] = outsider.publicKey;
+    expect(svc.verifyDissent({ ...d, ringSignature: { ...d.ringSignature, ring } }).valid).toBe(false);
+  });
+
+  it('rejects a swapped key image', () => {
+    const members = ringOf(3, 'l');
+    svc.registerRing('d-img', pubsOf(members));
+    const d = svc.submitDissent('d-img', 'Bound to an image.', 'concern', members[0].privateKey, members[0].publicKey);
+
+    const other = svc.generateParticipantKeys('other');
+    expect(
+      svc.verifyDissent({ ...d, ringSignature: { ...d.ringSignature, keyImage: other.publicKey } }).valid,
+    ).toBe(false);
+  });
+
+  it('refuses to sign for a non-member', () => {
+    const members = ringOf(3, 'm');
+    svc.registerRing('d-outsider', pubsOf(members));
+    const outsider = svc.generateParticipantKeys('nope');
+
+    expect(() =>
+      svc.submitDissent('d-outsider', 'Let me in.', 'concern', outsider.privateKey, outsider.publicKey),
+    ).toThrow(/not found in ring/i);
+  });
+
+  it('rejects a signature whose private key does not match the claimed ring position', () => {
+    const members = ringOf(4, 'q');
+    svc.registerRing('d-impersonate', pubsOf(members));
+    const victim = members[0];
+    const attacker = svc.generateParticipantKeys('attacker');
+
+    // The attacker claims the victim's position in the ring but can only sign
+    // with their own key. The closing step s_pi = alpha - c_pi * x is then made
+    // with the wrong x, so L_pi = s_pi*G + c_pi*P_victim no longer collapses to
+    // alpha*G and the chain cannot return to c_0.
+    const d = svc.submitDissent(
+      'd-impersonate',
+      'Impersonation attempt.',
+      'concern',
+      attacker.privateKey,
+      victim.publicKey,
+    );
+
+    expect(svc.verifyDissent(d).valid).toBe(false);
+    expect(svc.verifyDissent(d).membershipProven).toBe(false);
+  });
+
+  // --- linkability and anonymity -------------------------------------------
+
+  it('links a second dissent from the same signer', () => {
+    const members = ringOf(4, 'n');
+    svc.registerRing('d-link', pubsOf(members));
+    const signer = members[2];
+
+    svc.submitDissent('d-link', 'First.', 'concern', signer.privateKey, signer.publicKey);
+    expect(() =>
+      svc.submitDissent('d-link', 'Second.', 'concern', signer.privateKey, signer.publicKey),
+    ).toThrow(/double-dissent/i);
+  });
+
+  it('does not leak which member signed', () => {
+    const members = ringOf(4, 'o');
+    const pks = pubsOf(members);
+    svc.registerRing('d-anon', pks);
     const signer = members[1];
-    const dissent = svc.submitDissent(delib, 'Anonymous objection.', 'low', signer.privateKey, signer.publicKey);
+    const d = svc.submitDissent('d-anon', 'Anonymous.', 'concern', signer.privateKey, signer.publicKey);
 
-    // The signature must not carry the signer's identity or key.
-    const blob = JSON.stringify(dissent);
+    const blob = JSON.stringify(d);
     expect(blob).not.toContain(signer.privateKey);
-    expect(blob).not.toContain('r2');
-    expect(svc.getAnonymitySetSize(delib)).toBe(3);
+    expect(blob).not.toContain('o1');
+    // Every position carries a response; the signer's is indistinguishable.
+    expect(d.ringSignature.responses).toHaveLength(4);
+    expect(new Set(d.ringSignature.responses).size).toBe(4);
+    expect(d.ringSignature.ring).toEqual(pks);
+  });
+
+  it('derives a distinct key image per signer', () => {
+    const members = ringOf(3, 'p');
+    const pks = pubsOf(members);
+    const images = members.map((m: any, i: number) => {
+      svc.registerRing('d-keyimg-' + i, pks);
+      return svc.submitDissent('d-keyimg-' + i, 'x', 'concern', m.privateKey, m.publicKey).ringSignature.keyImage;
+    });
+    expect(new Set(images).size).toBe(3);
   });
 });

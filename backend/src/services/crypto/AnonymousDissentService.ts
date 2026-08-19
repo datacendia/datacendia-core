@@ -37,6 +37,11 @@ import { ristretto255, ristretto255_hasher } from '@noble/curves/ed25519.js';
 // hash-to-curve moved to a separate hasher object. Aliasing keeps the call
 // sites below unchanged; only construction and hashing differ.
 const RistrettoPoint = ristretto255.Point;
+type RistrettoPointT = InstanceType<typeof RistrettoPoint>;
+
+// Domain separator for the LSAG challenge chain. Changing this invalidates
+// every signature previously issued under it.
+const LSAG_DOMAIN = 'cendia-whistle-lsag-v1:';
 
 
 
@@ -72,8 +77,8 @@ export interface AnonymousDissent {
   ringSignature: {
     keyImage: string;        // H(sk) — linkable tag, prevents double-dissent
     ring: string[];          // All participant public keys
-    challenge: string[];     // c_1, c_2, ..., c_n
-    responses: string[];     // s_1, s_2, ..., s_n
+    c0: string;              // seed challenge; a valid ring closes back to this
+    responses: string[];     // s_0, s_1, ..., s_{n-1}
     ringSize: number;
   };
   verified: boolean;
@@ -195,43 +200,47 @@ export class AnonymousDissentService {
       throw new Error('Double-dissent detected — you have already submitted a dissent for this deliberation');
     }
 
-    // Generate linkable ring signature
+    // -------------------------------------------------------------------------
+    // Linkable Spontaneous Anonymous Group (LSAG) signature
+    // -------------------------------------------------------------------------
+    // The ring is a closed chain of challenges: each position derives the next
+    // position's challenge from its own (L_i, R_i) pair. The signer starts the
+    // chain at a random alpha, walks it around every other member using random
+    // responses, and closes it with
+    //
+    //     s_pi = alpha - c_pi * x   (mod l)
+    //
+    // which is the single step that requires the private key. A verifier walks
+    // the same chain from c_0 and accepts only if it arrives back at c_0.
     const n = ring.length;
     const ringPoints = ring.map(pk => RistrettoPoint.fromHex(pk));
 
-    // Random nonces for non-signer positions
-    const challenges: bigint[] = new Array(n).fill(0n);
-    const responses: bigint[] = new Array(n).fill(0n);
+    const c: bigint[] = new Array<bigint>(n).fill(0n);
+    const s: bigint[] = new Array<bigint>(n).fill(0n);
 
-    // Start with random alpha
-    const alpha = this.randomScalar();
-    const alphaG = G.multiply(alpha);
-    const alphaH = hP.multiply(alpha);
-
-    // For each non-signer position, generate random challenge and response
-    let challengeSum = 0n;
-    for (let i = 0; i < n; i++) {
-      if (i === signerIndex) continue;
-      challenges[i] = this.randomScalar();
-      responses[i] = this.randomScalar();
-      challengeSum = this.modOrder(challengeSum + challenges[i]);
-    }
-
-    // Compute aggregate challenge hash
-    const hashInput = concatBytes(
+    // Everything the challenge is bound to, hashed once and reused. Including
+    // the ring and the key image stops a signature being replayed against a
+    // different anonymity set.
+    const prefix = concatBytes(
+      utf8ToBytes(LSAG_DOMAIN),
       message,
-      alphaG.toBytes(),
-      alphaH.toBytes(),
       keyImage.toBytes(),
       ...ringPoints.map(p => p.toBytes()),
     );
-    const totalChallenge = this.hashToScalar(hashInput);
 
-    // Signer's challenge = totalChallenge - sum(other challenges) mod order
-    challenges[signerIndex] = this.modOrder(totalChallenge - challengeSum);
+    const alpha = this.randomScalar();
+    c[(signerIndex + 1) % n] = this.ringChallenge(prefix, G.multiply(alpha), hP.multiply(alpha));
 
-    // Signer's response: s_i = alpha - c_i * x mod order
-    responses[signerIndex] = this.modOrder(alpha - challenges[signerIndex] * privScalar);
+    for (let k = 1; k < n; k++) {
+      const i = (signerIndex + k) % n;
+      s[i] = this.randomScalar();
+      const L = G.multiply(s[i]).add(ringPoints[i].multiply(c[i]));
+      const R = this.hashToPoint(ringPoints[i]).multiply(s[i]).add(keyImage.multiply(c[i]));
+      c[(i + 1) % n] = this.ringChallenge(prefix, L, R);
+    }
+
+    // Close the ring.
+    s[signerIndex] = this.modOrder(alpha - this.modOrder(c[signerIndex] * privScalar));
 
     // Record key image to prevent double-dissent
     usedImages.add(keyImageHex);
@@ -246,8 +255,8 @@ export class AnonymousDissentService {
       ringSignature: {
         keyImage: keyImageHex,
         ring,
-        challenge: challenges.map(c => this.scalarToHex(c)),
-        responses: responses.map(s => this.scalarToHex(s)),
+        c0: this.scalarToHex(c[0]),
+        responses: s.map(v => this.scalarToHex(v)),
         ringSize: n,
       },
       verified: true,
@@ -279,46 +288,49 @@ export class AnonymousDissentService {
   verifyDissent(dissent: AnonymousDissent): DissentVerification {
     const issues: string[] = [];
     const sig = dissent.ringSignature;
+    let membershipProven = false;
 
     try {
       const message = utf8ToBytes(`${dissent.deliberationId}:${dissent.statement}:${dissent.severity}`);
       const keyImage = RistrettoPoint.fromHex(sig.keyImage);
       const ringPoints = sig.ring.map(pk => RistrettoPoint.fromHex(pk));
-      const challenges = sig.challenge.map(c => this.hexToScalar(c));
-      const responses = sig.responses.map(s => this.hexToScalar(s));
-      const n = sig.ringSize;
+      const responses = sig.responses.map(r => this.hexToScalar(r));
+      const n = ringPoints.length;
 
-      // Recompute: for each i, check s_i*G + c_i*P_i and s_i*H_p(P_i) + c_i*I
-      let reconstructedAlphaG = RistrettoPoint.ZERO;
-      let reconstructedAlphaH = RistrettoPoint.ZERO;
+      if (n === 0 || sig.ringSize !== n || responses.length !== n) {
+        issues.push('Ring signature is malformed — ring size and response count disagree');
+      } else {
+        // Bound to exactly what the signer bound: message, key image, ring.
+        // Any change to the statement, severity, deliberation, ring membership
+        // or key image alters this prefix and the chain will not close.
+        const prefix = concatBytes(
+          utf8ToBytes(LSAG_DOMAIN),
+          message,
+          keyImage.toBytes(),
+          ...ringPoints.map(p => p.toBytes()),
+        );
 
-      for (let i = 0; i < n; i++) {
-        const sG = G.multiply(responses[i]);
-        const cP = ringPoints[i].multiply(challenges[i]);
-        // These contribute to the aggregate
+        // Walk the chain from the stored seed and see whether it returns to it.
+        // For the true signer, s_pi*G + c_pi*P_pi collapses to alpha*G, which is
+        // what makes the chain close; no other position can be forced to.
+        const c0 = this.hexToScalar(sig.c0);
+        let c = c0;
+        for (let i = 0; i < n; i++) {
+          const L = G.multiply(responses[i]).add(ringPoints[i].multiply(c));
+          const R = this.hashToPoint(ringPoints[i])
+            .multiply(responses[i])
+            .add(keyImage.multiply(c));
+          c = this.ringChallenge(prefix, L, R);
+        }
 
-        const hPi = ristretto255_hasher.hashToCurve(sha512(ringPoints[i].toBytes()));
-        const sH = hPi.multiply(responses[i]);
-        const cI = keyImage.multiply(challenges[i]);
-
-        // For verification, we need to check the hash matches
+        membershipProven = c === c0;
+        if (!membershipProven) {
+          issues.push('Ring signature verification failed — signature does not close over this message and ring');
+        }
       }
 
-      // Verify: sum of challenges equals hash of (message, computed points, key image, ring)
-      let challengeSum = 0n;
-      for (const c of challenges) {
-        challengeSum = this.modOrder(challengeSum + c);
-      }
-
-      // The challenge sum should be deterministic from the public data
-      // This is a simplified verification — in production would recompute full hash chain
-      const membershipProven = challengeSum > 0n && challenges.every(c => c > 0n) && responses.every(s => s > 0n);
-
-      if (!membershipProven) {
-        issues.push('Ring signature verification failed — dissenter may not be a legitimate participant');
-      }
-
-      // Check key image uniqueness
+      // Linkability: the key image is deterministic in the signer's private key,
+      // so a repeat means the same participant dissented twice.
       const usedImages = this.keyImages.get(dissent.deliberationId);
       const keyImageUnique = usedImages ? usedImages.has(sig.keyImage) : true;
 
@@ -342,6 +354,27 @@ export class AnonymousDissentService {
         issues: [`Verification error: ${(err as Error).message}`],
       };
     }
+  }
+
+  // ---------------------------------------------------------------------------
+  // LSAG PRIMITIVES
+  // ---------------------------------------------------------------------------
+
+  /**
+   * H_p(P) — map a ring member's public key to an independent generator.
+   * Used for the key image, so that the image binds to the signer's key without
+   * revealing which ring position it came from.
+   */
+  private hashToPoint(point: RistrettoPointT): RistrettoPointT {
+    return ristretto255_hasher.hashToCurve(sha512(point.toBytes())) as RistrettoPointT;
+  }
+
+  /**
+   * c_{i+1} = H(domain || message || keyImage || ring || L_i || R_i)
+   * The prefix is precomputed once per signature; only L and R vary per step.
+   */
+  private ringChallenge(prefix: Uint8Array, L: RistrettoPointT, R: RistrettoPointT): bigint {
+    return this.hashToScalar(concatBytes(prefix, L.toBytes(), R.toBytes()));
   }
 
   // ---------------------------------------------------------------------------
