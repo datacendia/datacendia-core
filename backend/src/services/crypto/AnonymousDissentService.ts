@@ -56,9 +56,6 @@ import { sha256, sha512, bytesToHex, hexToBytes, utf8ToBytes, concatBytes } from
 const G = RistrettoPoint.BASE;
 const ORDER = BigInt('7237005577332262213973186563042994240857116359379907606001950938285454250989');
 
-// Second generator for key images (nothing-up-my-sleeve)
-const H_POINT = ristretto255_hasher.hashToCurve(sha512(utf8ToBytes('cendia-whistle-key-image-generator-v1')));
-
 // =============================================================================
 // TYPES
 // =============================================================================
