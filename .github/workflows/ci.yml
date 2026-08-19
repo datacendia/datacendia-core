@@ -143,14 +143,14 @@ jobs:
       - name: Run infrastructure service tests
         working-directory: backend
         run: |
-          if compgen -G "src/__tests__/infrastructure/*.test.ts" > /dev/null; then
+          if [ -n "$(find src/__tests__/infrastructure -name '*.test.ts' -type f -print -quit 2>/dev/null)" ]; then
             npx vitest run src/__tests__/infrastructure/ --reporter=verbose
           else
             echo "::warning title=Infrastructure tests skipped::src/__tests__/infrastructure/ contains no tests in this repository."
             echo "vitest exits 1 when a filter matches no files, so this step failed on every run."
-            echo "That directory exists in datacendia-components, not here; the step appears to have"
-            echo "been copied across. Add tests under src/__tests__/infrastructure/ and this step"
-            echo "will run them."
+            echo "That directory exists in datacendia-components but not here; the step appears to"
+            echo "have been copied across. Add tests under src/__tests__/infrastructure/ (at any"
+            echo "depth) and this step will run them."
           fi
         env:
           CI: true
