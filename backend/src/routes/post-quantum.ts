@@ -73,9 +73,9 @@ router.post('/keys', async (req: Request, res: Response): Promise<void> => {
       expiresInDays,
     });
 
-    // Return without private key
-    const { privateKey, ...metadata } = keyPair;
-    res.status(201).json({ success: true, data: metadata });
+    // PostQuantumKMSService.generateKeyPair already redacts the secret key;
+    // PQKeyRecord has no private material on it at all.
+    res.status(201).json({ success: true, data: keyPair });
   } catch (error) {
     logger.error('Error generating key pair:', error);
     res.status(500).json({ success: false, error: 'Failed to generate key pair' });
@@ -118,8 +118,8 @@ router.get('/keys/:id', (req: Request, res: Response): void => {
 router.post('/keys/:id/rotate', async (req: Request, res: Response): Promise<void> => {
   try {
     const newKey = await postQuantumKMSService.rotateKey(req.params['id']!);
-    const { privateKey, ...metadata } = newKey;
-    res.json({ success: true, data: metadata, message: 'Key rotated successfully' });
+    // rotateKey returns a redacted PQKeyRecord; it carries no private material.
+    res.json({ success: true, data: newKey, message: 'Key rotated successfully' });
   } catch (error) {
     logger.error('Error rotating key:', error);
     res.status(500).json({ success: false, error: 'Failed to rotate key' });
