@@ -20,10 +20,29 @@
 // cannot satisfy them: its public key is 32 bytes and its signature 64.
 // =============================================================================
 
-import { describe, it, expect, beforeAll } from 'vitest';
+import { describe, it, expect, beforeAll, afterAll } from 'vitest';
+
+// src/config/index.ts validates its schema at import time and throws under
+// NODE_ENV=test when these are absent, and the service reaches config through
+// the logger. They are non-secret placeholders that exist only to satisfy that
+// schema; real values in the environment always win. Captured first and put
+// back in afterAll(), so nothing leaks into other suites sharing this process.
+const MUTATED_ENV_KEYS = ['DATABASE_URL', 'JWT_SECRET'] as const;
+const ORIGINAL_ENV: Partial<Record<(typeof MUTATED_ENV_KEYS)[number], string | undefined>> = {};
+for (const key of MUTATED_ENV_KEYS) {
+  ORIGINAL_ENV[key] = process.env[key];
+}
 
 process.env.DATABASE_URL ||= 'postgresql://test:test@localhost:5432/test';
 process.env.JWT_SECRET ||= 'test-only-placeholder-not-a-real-secret-0123456789';
+
+afterAll(() => {
+  for (const key of MUTATED_ENV_KEYS) {
+    const original = ORIGINAL_ENV[key];
+    if (original === undefined) delete process.env[key];
+    else process.env[key] = original;
+  }
+});
 
 describe('PostQuantumKMSService', () => {
   let svc: any;
@@ -148,6 +167,61 @@ describe('PostQuantumKMSService', () => {
 
   it('rejects an unknown algorithm outright', () => {
     expect(() => normalizeAlgorithm('rot13')).toThrow(/Unsupported algorithm/i);
+  });
+
+  it('does not treat inherited Object properties as algorithms', () => {
+    // `key in ALGORITHMS` matched these; ALGORITHMS['constructor'] is then the
+    // Object constructor and impl() falls through to undefined, so the caller
+    // saw a TypeError from .keygen() instead of a clean rejection.
+    for (const name of ['constructor', 'toString', 'hasOwnProperty', '__proto__', 'valueOf']) {
+      expect(() => normalizeAlgorithm(name), name).toThrow(/Unsupported algorithm/i);
+    }
+  });
+
+  it('normalises the algorithm supplied to verify()', async () => {
+    const key = await svc.generateKeyPair({ algorithm: 'ml-dsa-65' });
+    const sig = await svc.sign('legacy verify path', key.id);
+
+    // A caller passing the legacy id must verify, not crash on impl(undefined).
+    const result = await svc.verify('legacy verify path', {
+      signature: sig.signature,
+      publicKeyHex: key.publicKeyHex,
+      algorithm: 'dilithium3',
+    });
+    expect(result.valid).toBe(true);
+  });
+
+  it('refuses to verify under a KEM algorithm', async () => {
+    const kem = await svc.generateKeyPair({ algorithm: 'ml-kem-768' });
+    const signer = await svc.generateKeyPair({ algorithm: 'ml-dsa-65' });
+    const sig = await svc.sign('payload', signer.id);
+
+    await expect(
+      svc.verify('payload', {
+        signature: sig.signature,
+        publicKeyHex: kem.publicKeyHex,
+        algorithm: 'ml-kem-768',
+      }),
+    ).rejects.toThrow(/KEM|cannot verify/i);
+  });
+
+  it('rejects an unknown algorithm supplied to verify() cleanly', async () => {
+    const key = await svc.generateKeyPair({ algorithm: 'ml-dsa-65' });
+    const sig = await svc.sign('payload', key.id);
+
+    await expect(
+      svc.verify('payload', {
+        signature: sig.signature,
+        publicKeyHex: key.publicKeyHex,
+        algorithm: 'constructor',
+      }),
+    ).rejects.toThrow(/Unsupported algorithm/i);
+  });
+
+  it('reports quantum resistance only after actually exercising the algorithms', () => {
+    // isQuantumResistant() returned this.verified, which nothing ever set,
+    // so it answered false forever regardless of what the service could do.
+    expect(svc.isQuantumResistant()).toBe(true);
   });
 
   it('no longer advertises an algorithm it cannot perform', () => {

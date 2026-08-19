@@ -65,13 +65,15 @@ export type PQAlgorithmInput = PQAlgorithm | keyof typeof LEGACY_ALGORITHM_IDS |
 export function normalizeAlgorithm(input: PQAlgorithmInput): PQAlgorithm {
   const key = String(input ?? '').trim().toLowerCase();
 
-  const withdrawn = WITHDRAWN_ALGORITHM_IDS[key];
-  if (withdrawn) throw new Error(withdrawn);
+  // Own-property lookups throughout. `key in ALGORITHMS` also matches inherited
+  // members, so an algorithm of "constructor" or "toString" would pass the
+  // guard and then fall through impl()'s switch as undefined, failing with a
+  // confusing TypeError rather than a clean "unsupported algorithm".
+  const own = (obj: object, k: string) => Object.prototype.hasOwnProperty.call(obj, k);
 
-  if (key in ALGORITHMS) return key as PQAlgorithm;
-
-  const mapped = LEGACY_ALGORITHM_IDS[key];
-  if (mapped) return mapped;
+  if (own(WITHDRAWN_ALGORITHM_IDS, key)) throw new Error(WITHDRAWN_ALGORITHM_IDS[key]!);
+  if (own(ALGORITHMS, key)) return key as PQAlgorithm;
+  if (own(LEGACY_ALGORITHM_IDS, key)) return LEGACY_ALGORITHM_IDS[key]!;
 
   throw new Error(
     `Unsupported algorithm: ${input}. Supported: ${Object.keys(ALGORITHMS).join(', ')}`
@@ -153,6 +155,7 @@ export interface PQKeyRecord {
 class PostQuantumKMSServiceImpl {
   private keys = new Map<string, PQKeyRecord & { secretKey: Uint8Array }>();
   private verified = false;
+  private selfTested = false;
 
   // ---------------------------------------------------------------------------
   // Introspection
@@ -220,6 +223,7 @@ class PostQuantumKMSServiceImpl {
       }
     });
 
+    this.selfTested = true;
     this.verified = results.every((r) => r.ok);
     for (const r of results) {
       if (r.ok) logger.info(`🔐 PQ self-test ${r.algorithm}: ${r.detail}`);
@@ -229,7 +233,16 @@ class PostQuantumKMSServiceImpl {
   }
 
   /** True only after a passing selfTest(). Health endpoints must gate on this. */
+  /**
+   * True only once every advertised algorithm has been round-tripped and its
+   * sizes checked. Nothing called selfTest() in production, so this used to
+   * answer `false` forever regardless of what the service could actually do —
+   * a claim about verification that no verification stood behind. It now runs
+   * the test on first ask and caches the result. Call selfTest() explicitly at
+   * startup if you would rather pay the cost there.
+   */
   isQuantumResistant(): boolean {
+    if (!this.selfTested) this.selfTest();
     return this.verified;
   }
 
@@ -349,12 +362,20 @@ class PostQuantumKMSServiceImpl {
 
     if (signatureObj.publicKeyHex && signatureObj.algorithm) {
       publicKey = Uint8Array.from(Buffer.from(signatureObj.publicKeyHex, 'hex'));
-      algorithm = signatureObj.algorithm;
+      // Caller-supplied, so it gets the same normalisation as generateKeyPair:
+      // a legacy alias must resolve, and anything unknown must fail cleanly
+      // rather than reaching impl() and throwing on undefined.
+      algorithm = normalizeAlgorithm(signatureObj.algorithm);
     } else {
       const key = signatureObj.keyId ? this.keys.get(signatureObj.keyId) : undefined;
       if (!key) throw new Error('Key not found and no public key supplied');
       publicKey = key.publicKey;
       algorithm = key.algorithm;
+    }
+
+    const spec = ALGORITHMS[algorithm];
+    if (spec.type !== 'signature') {
+      throw new Error(`${spec.name} is a KEM and cannot verify signatures`);
     }
 
     const valid = (impl(algorithm) as typeof ml_dsa65).verify(sig, msg, publicKey);
