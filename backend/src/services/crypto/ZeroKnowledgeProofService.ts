@@ -19,7 +19,13 @@
 // Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 
-import { RistrettoPoint } from '@noble/curves/ed25519';
+import { ristretto255, ristretto255_hasher } from '@noble/curves/ed25519.js';
+
+// @noble/curves v2 removed the top-level `RistrettoPoint` export and the bare
+// './ed25519' subpath. The group now lives at ristretto255.Point, and
+// hash-to-curve moved to a separate hasher object. Aliasing keeps the call
+// sites below unchanged; only construction and hashing differ.
+const RistrettoPoint = ristretto255.Point;
 
 
 
@@ -36,7 +42,7 @@ const G = RistrettoPoint.BASE;
 
 // H = nothing-up-my-sleeve second generator (hash-to-point)
 // Using domain separation to ensure H is independent of G
-const H = RistrettoPoint.hashToCurve(sha512(utf8ToBytes('datacendia-pedersen-generator-v1')));
+const H = ristretto255_hasher.hashToCurve(sha512(utf8ToBytes('datacendia-pedersen-generator-v1')));
 
 // Ristretto255 group order
 const ORDER = BigInt('7237005577332262213973186563042994240857116359379907606001950938285454250989');
@@ -125,7 +131,7 @@ export class ZeroKnowledgeProofService {
 
     return {
       commitment: {
-        commitment: bytesToHex(C.toRawBytes()),
+        commitment: bytesToHex(C.toBytes()),
         blindingFactor: bytesToHex(this.bigintToBytes32(r)),
       },
       blinding: r,
@@ -165,8 +171,8 @@ export class ZeroKnowledgeProofService {
 
     // Fiat-Shamir challenge
     const challengeInput = concatBytes(
-      R.toRawBytes(),
-      C.toRawBytes(),
+      R.toBytes(),
+      C.toBytes(),
       utf8ToBytes(context),
     );
     const e = this.hashToScalar(challengeInput);
@@ -184,7 +190,7 @@ export class ZeroKnowledgeProofService {
     return {
       commitment,
       proof: {
-        commitment: bytesToHex(R.toRawBytes()),
+        commitment: bytesToHex(R.toBytes()),
         challenge: bytesToHex(this.bigintToBytes32(e)),
         response: bytesToHex(responseBytes),
       },
@@ -205,8 +211,8 @@ export class ZeroKnowledgeProofService {
 
       // Recompute challenge
       const challengeInput = concatBytes(
-        R.toRawBytes(),
-        C.toRawBytes(),
+        R.toBytes(),
+        C.toBytes(),
         utf8ToBytes(context),
       );
       const expectedE = this.hashToScalar(challengeInput);
