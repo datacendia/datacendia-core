@@ -1110,8 +1110,47 @@ export class RegulatorsReceiptService {
   // CRYPTOGRAPHIC FUNCTIONS
   // -------------------------------------------------------------------------
 
+  /**
+   * Canonical JSON: object keys sorted at every depth, so that two structurally
+   * equal values always serialise identically.
+   *
+   * This previously read:
+   *
+   *     JSON.stringify(data, Object.keys(data).sort())
+   *
+   * The array form of the second argument is not a sort — it is a key allowlist
+   * applied at EVERY level. Only the top-level keys were listed, so every nested
+   * object serialised as `{}`. A receipt hashed that way covered its id fields
+   * and nothing else: the decision, its rationale and every finding hashed to
+   * the same value whatever they said, so altering the outcome of a receipt left
+   * its hash byte-identical. Asserted against in
+   * src/__tests__/evidence-verifier.test.ts.
+   *
+   * The offline verifier in SelfContainedEvidenceService reimplements this
+   * function. The two must stay in step or every package will report its own
+   * contents as altered.
+   */
+  private canonicalize(value: unknown): unknown {
+    if (value === null || typeof value !== 'object') return value;
+
+    // Dates and anything else with toJSON must be reduced first, or the key
+    // walk below would flatten them to {}.
+    const maybe = value as { toJSON?: () => unknown };
+    if (typeof maybe.toJSON === 'function') return this.canonicalize(maybe.toJSON());
+
+    if (Array.isArray(value)) return value.map(v => this.canonicalize(v));
+
+    const source = value as Record<string, unknown>;
+    const out: Record<string, unknown> = {};
+    for (const key of Object.keys(source).sort()) {
+      const canonical = this.canonicalize(source[key]);
+      if (canonical !== undefined) out[key] = canonical; // match JSON.stringify
+    }
+    return out;
+  }
+
   private hashData(data: unknown): string {
-    const json = JSON.stringify(data, Object.keys(data as object).sort());
+    const json = JSON.stringify(this.canonicalize(data));
     return crypto.createHash('sha256').update(json).digest('hex');
   }
 
@@ -1130,14 +1169,26 @@ export class RegulatorsReceiptService {
   }
 
   private computeReceiptHash(receipt: RegulatorsReceipt): string {
-    // Create a copy without the hash field
-    const receiptCopy = { ...receipt };
-    receiptCopy.cryptographicProof = { 
-      ...receiptCopy.cryptographicProof, 
+    // The hash covers the receipt's content, which necessarily excludes
+    // anything derived from the hash itself:
+    //
+    //   receiptHash    blanked  - it is the output
+    //   signature      dropped  - it signs the hash
+    //   dualSignature  dropped  - likewise
+    //   merkleForest   dropped  - the Merkle leaf commits to receiptHash, so
+    //                             including the proof would be circular
+    //
+    // The offline verifier in SelfContainedEvidenceService reconstructs exactly
+    // this shape. If the set changes here, it must change there too or every
+    // package will report its own contents as altered.
+    const { merkleForest: _merkleForest, ...receiptCopy } = receipt as Record<string, unknown> & typeof receipt;
+    (receiptCopy as Record<string, unknown>).cryptographicProof = {
+      ...(receipt.cryptographicProof as Record<string, unknown>),
       receiptHash: '',
       signature: undefined,
+      dualSignature: undefined,
     };
-    
+
     return this.hashData(receiptCopy);
   }
 
