@@ -73,9 +73,9 @@ router.post('/keys', async (req: Request, res: Response): Promise<void> => {
       expiresInDays,
     });
 
-    // Return without private key
-    const { privateKey, ...metadata } = keyPair;
-    res.status(201).json({ success: true, data: metadata });
+    // PostQuantumKMSService.generateKeyPair already redacts the secret key;
+    // PQKeyRecord has no private material on it at all.
+    res.status(201).json({ success: true, data: keyPair });
   } catch (error) {
     logger.error('Error generating key pair:', error);
     res.status(500).json({ success: false, error: 'Failed to generate key pair' });
