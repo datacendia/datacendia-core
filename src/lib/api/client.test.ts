@@ -85,7 +85,7 @@ describe('ApiClient CSRF handling', () => {
   });
 
   it('does not ask for a token on reads', async () => {
-    const fetchMock = vi.fn(async () => respond({ success: true }));
+    const fetchMock = vi.fn(async (_url: string) => respond({ success: true }));
     (globalThis as any).fetch = fetchMock;
     const { api: freshApi } = await import('./client');
 
