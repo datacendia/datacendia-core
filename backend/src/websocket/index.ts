@@ -13,8 +13,9 @@
 import { Server as SocketIOServer, Socket } from 'socket.io';
 import * as jose from 'jose';
 import { config } from '../config/index.js';
-import { pubsub } from '../config/redis.js';
+import { cache, pubsub } from '../config/redis.js';
 import { logger } from '../utils/logger.js';
+import { revocationKey } from '../utils/tokenRevocation.js';
 
 interface AuthenticatedSocket extends Socket {
   userId?: string;
@@ -34,7 +35,12 @@ export function setupWebSocketHandlers(io: SocketIOServer) {
       }
 
       const { payload } = await jose.jwtVerify(token, JWT_SECRET);
-      
+
+      // HTTP requests refuse logged-out tokens; sockets must too.
+      if (await cache.exists(revocationKey(token))) {
+        return next(new Error('Token has been revoked'));
+      }
+
       socket.userId = payload.sub as string;
       socket.organizationId = payload['organizationId'] as string;
 

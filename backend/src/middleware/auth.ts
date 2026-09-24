@@ -17,6 +17,7 @@ import { prisma } from '../config/database.js';
 import { cache } from '../config/redis.js';
 import { errors } from './errorHandler.js';
 import { logger } from '../utils/logger.js';
+import { revocationKey } from '../utils/tokenRevocation.js';
 
 interface AuthOrganization {
   id: string;
@@ -80,7 +81,7 @@ export const authenticate = async (
     const { payload } = await jose.jwtVerify(token, JWT_SECRET) as { payload: JWTPayload };
 
     // Check if token is in blacklist (logged out tokens)
-    const isBlacklisted = await cache.exists(`blacklist:${token}`);
+    const isBlacklisted = await cache.exists(revocationKey(token));
     if (isBlacklisted) {
       throw errors.unauthorized('Token has been revoked');
     }
