@@ -517,7 +517,9 @@ const startServer = async () => {
 
     // PostgreSQL
     try {
-      await timeout(5000, prisma.$connect(), 'PostgreSQL');
+      // A cold container can take several seconds to open the pool; 5s tripped routinely
+      // and skipped applyPerformanceIndexes below.
+      await timeout(15000, prisma.$connect(), 'PostgreSQL');
       logger.info('Connected to PostgreSQL');
 
       // Auto-apply performance indexes (idempotent - safe to run every startup)

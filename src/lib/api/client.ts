@@ -24,6 +24,42 @@ const API_BASE_URL =
 // Header used to propagate the currently selected data source
 const DATA_SOURCE_HEADER = 'X-Data-Source-Id';
 
+// CSRF: the API uses the double-submit cookie pattern (backend/src/middleware/csrf.ts).
+// GET /csrf-token sets the csrf_token cookie and returns the same value, which is
+// echoed in X-CSRF-Token on writes. Cookies must travel with cross-origin calls in
+// development (5173 -> 3001), hence credentials: 'include'; the API allows it.
+const CSRF_HEADER = 'X-CSRF-Token';
+const UNSAFE_METHODS = new Set(['POST', 'PUT', 'PATCH', 'DELETE']);
+let csrfToken: string | null = null;
+let csrfRequest: Promise<string | null> | null = null;
+
+export async function getCsrfToken(forceRefresh = false): Promise<string | null> {
+  if (csrfToken && !forceRefresh) return csrfToken;
+  if (!csrfRequest) {
+    csrfRequest = fetch(`${API_BASE_URL}/csrf-token`, { credentials: 'include' })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((body: { csrfToken?: string } | null) => {
+        csrfToken = body?.csrfToken ?? null;
+        return csrfToken;
+      })
+      .catch(() => null)
+      .finally(() => {
+        csrfRequest = null;
+      });
+  }
+  return csrfRequest;
+}
+
+async function isCsrfRejection(response: Response): Promise<boolean> {
+  if (response.status !== 403) return false;
+  try {
+    const body = await response.clone().json();
+    return typeof body?.error?.code === 'string' && body.error.code.startsWith('CSRF_');
+  } catch {
+    return false;
+  }
+}
+
 // Types
 export interface ApiResponse<T> {
   success: boolean;
@@ -145,9 +181,14 @@ class TokenManager {
     }
 
     try {
+      const csrf = await getCsrfToken();
       const response = await fetch(`${API_BASE_URL}/auth/refresh`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          ...(csrf ? { [CSRF_HEADER]: csrf } : {}),
+        },
+        credentials: 'include',
         body: JSON.stringify({ refreshToken: this.refreshToken }),
       });
 
@@ -225,6 +266,12 @@ class ApiClient {
       headers[DATA_SOURCE_HEADER] = dataSourceId;
     }
 
+    const isWrite = UNSAFE_METHODS.has((options.method ?? 'GET').toUpperCase());
+    if (isWrite) {
+      const csrf = await getCsrfToken();
+      if (csrf) headers[CSRF_HEADER] = csrf;
+    }
+
     // Add timeout to prevent slow loading (15 seconds)
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 15000);
@@ -233,16 +280,26 @@ class ApiClient {
       let response = await fetch(url, {
         ...options,
         headers,
+        credentials: 'include',
         signal: controller.signal,
       });
       clearTimeout(timeoutId);
+
+      // Token expired or rotated server-side: fetch a fresh one and retry once.
+      if (isWrite && (await isCsrfRejection(response))) {
+        const fresh = await getCsrfToken(true);
+        if (fresh) {
+          headers[CSRF_HEADER] = fresh;
+          response = await fetch(url, { ...options, headers, credentials: 'include' });
+        }
+      }
 
       // Handle token expiration
       if (response.status === 401 && accessToken) {
         const refreshed = await tokenManager.refreshAccessToken();
         if (refreshed) {
           headers['Authorization'] = `Bearer ${tokenManager.getAccessToken()}`;
-          response = await fetch(url, { ...options, headers });
+          response = await fetch(url, { ...options, headers, credentials: 'include' });
         } else {
           // Demo sessions: don't hard-redirect, let pages fall back to mock data
           if (tokenManager.isDemoSession()) {

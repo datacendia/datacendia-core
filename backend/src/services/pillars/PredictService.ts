@@ -16,6 +16,7 @@
 // Enterprise Platinum Intelligence - PostgreSQL Persistent Storage
 // =============================================================================
 
+import { getOllamaBaseUrl } from '../../config/ollama.js';
 import { PrismaClient, Prisma } from '@prisma/client';
 import { BaseService, ServiceConfig, ServiceHealth } from '../../core/services/BaseService.js';
 
@@ -111,7 +112,7 @@ export class PredictService extends BaseService {
       dependencies: ['prisma'],
       ...config,
     });
-    this.ollamaEndpoint = process.env.OLLAMA_HOST || 'http://127.0.0.1:11434';
+    this.ollamaEndpoint = getOllamaBaseUrl();
   }
 
   async initialize(): Promise<void> {

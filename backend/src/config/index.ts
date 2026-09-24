@@ -15,6 +15,7 @@ import { z } from 'zod';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { getOllamaBaseUrl } from './ollama.js';
 
 // @ts-ignore TS1470: import.meta used with CommonJS output (runtime uses tsx/ESM)
 const __filename = fileURLToPath(import.meta.url);
@@ -111,7 +112,7 @@ const envVars = {
   neo4jPassword: process.env.NEO4J_PASSWORD,
   inferenceProvider: process.env.INFERENCE_PROVIDER,
   inferenceFailover: process.env.INFERENCE_FAILOVER,
-  ollamaBaseUrl: process.env.OLLAMA_BASE_URL,
+  ollamaBaseUrl: getOllamaBaseUrl(),
   ollamaModel: process.env.OLLAMA_MODEL,
   ollamaModelFlagship: process.env.OLLAMA_MODEL_FLAGSHIP,
   ollamaModelFast: process.env.OLLAMA_MODEL_FAST,

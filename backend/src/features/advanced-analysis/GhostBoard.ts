@@ -15,6 +15,7 @@
 // AI-powered board meeting simulation for executive preparation
 // =============================================================================
 
+import { getOllamaBaseUrl } from '../../config/ollama.js';
 import { BaseService, ServiceConfig, ServiceHealth } from '../../core/services/BaseService.js';
 import { eventBus } from '../../core/events/EventBus.js';
 import { featureGating, SubscriptionTier } from '../../core/subscriptions/SubscriptionTiers.js';
@@ -259,7 +260,7 @@ export class GhostBoardService extends BaseService {
       dependencies: ['council'],
       ...config,
     });
-    this.ollamaEndpoint = process.env.OLLAMA_HOST || 'http://127.0.0.1:11434';
+    this.ollamaEndpoint = getOllamaBaseUrl();
   }
 
   async initialize(): Promise<void> {
