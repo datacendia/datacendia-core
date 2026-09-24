@@ -124,7 +124,9 @@ export const authenticate = async (
   } catch (error) {
     if (error instanceof jose.errors.JWTExpired) {
       next(errors.unauthorized('Token has expired'));
-    } else if (error instanceof jose.errors.JWTInvalid) {
+    } else if (error instanceof jose.errors.JOSEError) {
+      // A bad signature, a malformed token, the wrong algorithm or a failed
+      // claim check all mean the caller's token is unusable: 401, not 500.
       next(errors.unauthorized('Invalid token'));
     } else {
       next(error);
