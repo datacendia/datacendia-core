@@ -175,14 +175,17 @@ export const devAuth = async (
     return authenticate(req, res, next);
   }
   
+  // Errors go through next(): Express 4 ignores a rejected promise, so a throw
+  // here never answered and the request hung until the client gave up.
+
   // If REQUIRE_AUTH is set, don't allow bypass
   if (config.requireAuth) {
-    throw errors.unauthorized('Authentication required');
+    return next(errors.unauthorized('Authentication required'));
   }
 
   // Explicitly block bypass in non-development/test environments
   if (config.nodeEnv !== 'development' && config.nodeEnv !== 'test') {
-    throw errors.unauthorized('Authentication required');
+    return next(errors.unauthorized('Authentication required'));
   }
 
   // In development without REQUIRE_AUTH, use real seeded organization
@@ -232,8 +235,9 @@ export const devAuth = async (
     }
   } catch (dbError) {
     logger.error('Dev auth: DB lookup failed — no hardcoded fallback. Seed the database first.', { error: dbError instanceof Error ? dbError.message : String(dbError) });
-    throw errors.unauthorized('Dev auth bypass requires a seeded database with at least one admin user. Run: npx prisma db seed');
   }
+  // No admin user (or no database): this path used to end without answering.
+  next(errors.unauthorized('Dev auth bypass requires a seeded database with at least one admin user. Run: npx prisma db seed'));
 };
 
 /**
