@@ -160,8 +160,14 @@ function extractUserFromToken(req: AuthenticatedRequest): void {
  */
 export function protect(role?: CendiaRole | CendiaRole[]) {
   return async (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
-    // In development, allow bypass with header
-    if (process.env.NODE_ENV === 'development' && req.headers['x-bypass-auth'] === 'true') {
+    // In development, allow bypass with header — only when a developer opts in:
+    // the demo compose file runs NODE_ENV=development, and with this header any
+    // signed-in user became a Keycloak admin.
+    if (
+      process.env.NODE_ENV === 'development' &&
+      process.env.KEYCLOAK_DEV_BYPASS === 'true' &&
+      req.headers['x-bypass-auth'] === 'true'
+    ) {
       req.keycloakUser = {
         id: 'dev-user',
         username: 'developer',
