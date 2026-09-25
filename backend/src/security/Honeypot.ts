@@ -22,6 +22,7 @@ import { Router, Request, Response } from 'express';
 import { redis } from '../config/redis.js';
 import { logger } from '../utils/logger.js';
 import crypto from 'crypto';
+import { asyncRoute } from '../utils/asyncRoute.js';
 
 // =============================================================================
 // HONEYPOT ROUTES
@@ -233,11 +234,11 @@ function generateFakeResponse(type: string): any {
 /**
  * Main honeypot middleware
  */
-export async function honeypotMiddleware(
+export const honeypotMiddleware = asyncRoute(async (
   req: Request,
   res: Response,
   next: Function
-): Promise<void> {
+): Promise<void> => {
   const path = req.path.toLowerCase();
 
   // Check admin honeypots
@@ -275,7 +276,7 @@ export async function honeypotMiddleware(
   }
 
   next();
-}
+});
 
 // =============================================================================
 // FAKE DATA GENERATORS

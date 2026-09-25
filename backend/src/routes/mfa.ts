@@ -16,7 +16,7 @@
  * Implements TOTP-based two-factor authentication
  */
 
-import { Router, Request, Response } from 'express';
+import { Router, Request, Response, NextFunction } from 'express';
 import { logger } from '../utils/logger.js';
 import { z } from 'zod';
 import { prisma } from '../config/database.js';
@@ -75,7 +75,7 @@ const verifyBackupCodeSchema = z.object({
  * GET /api/v1/mfa/setup
  * Initialize MFA setup - generates secret and backup codes
  */
-router.get('/setup', authenticate, async (req: Request, res: Response) => {
+router.get('/setup', authenticate, async (req: Request, res: Response, next: NextFunction) => {
   try {
     const userId = req.user!.id;
 
@@ -136,7 +136,7 @@ router.get('/setup', authenticate, async (req: Request, res: Response) => {
       qrCodeUrl: `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(otpauthUrl)}`,
     });
   } catch (error) {
-    throw error;
+    next(error);
   }
 });
 
@@ -144,7 +144,7 @@ router.get('/setup', authenticate, async (req: Request, res: Response) => {
  * POST /api/v1/mfa/enable
  * Verify code and enable MFA
  */
-router.post('/enable', authenticate, async (req: Request, res: Response) => {
+router.post('/enable', authenticate, async (req: Request, res: Response, next: NextFunction) => {
   try {
     const userId = req.user!.id;
     const { code } = verifyCodeSchema.parse(req.body);
@@ -212,7 +212,7 @@ router.post('/enable', authenticate, async (req: Request, res: Response) => {
       mfaEnabled: true,
     });
   } catch (error) {
-    throw error;
+    next(error);
   }
 });
 
@@ -220,7 +220,7 @@ router.post('/enable', authenticate, async (req: Request, res: Response) => {
  * POST /api/v1/mfa/verify
  * Verify MFA code during login
  */
-router.post('/verify', async (req: Request, res: Response) => {
+router.post('/verify', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { code, tempToken } = verifyCodeSchema.extend({
       tempToken: z.string(),
@@ -282,7 +282,7 @@ router.post('/verify', async (req: Request, res: Response) => {
       verified: true,
     });
   } catch (error) {
-    throw error;
+    next(error);
   }
 });
 
@@ -290,7 +290,7 @@ router.post('/verify', async (req: Request, res: Response) => {
  * POST /api/v1/mfa/verify-backup
  * Verify using backup code
  */
-router.post('/verify-backup', async (req: Request, res: Response) => {
+router.post('/verify-backup', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { code, tempToken } = verifyBackupCodeSchema.extend({
       tempToken: z.string(),
@@ -357,7 +357,7 @@ router.post('/verify-backup', async (req: Request, res: Response) => {
       remainingBackupCodes: backupCodes.length,
     });
   } catch (error) {
-    throw error;
+    next(error);
   }
 });
 
@@ -365,7 +365,7 @@ router.post('/verify-backup', async (req: Request, res: Response) => {
  * DELETE /api/v1/mfa/disable
  * Disable MFA (requires current MFA code or password)
  */
-router.delete('/disable', authenticate, async (req: Request, res: Response) => {
+router.delete('/disable', authenticate, async (req: Request, res: Response, next: NextFunction) => {
   try {
     const userId = req.user!.id;
     const { code, password } = z.object({
@@ -424,7 +424,7 @@ router.delete('/disable', authenticate, async (req: Request, res: Response) => {
       mfaEnabled: false,
     });
   } catch (error) {
-    throw error;
+    next(error);
   }
 });
 
@@ -432,7 +432,7 @@ router.delete('/disable', authenticate, async (req: Request, res: Response) => {
  * POST /api/v1/mfa/regenerate-backup
  * Generate new backup codes (invalidates old ones)
  */
-router.post('/regenerate-backup', authenticate, async (req: Request, res: Response) => {
+router.post('/regenerate-backup', authenticate, async (req: Request, res: Response, next: NextFunction) => {
   try {
     const userId = req.user!.id;
     const { code } = verifyCodeSchema.parse(req.body);
@@ -479,7 +479,7 @@ router.post('/regenerate-backup', authenticate, async (req: Request, res: Respon
       backupCodes,
     });
   } catch (error) {
-    throw error;
+    next(error);
   }
 });
 

@@ -31,6 +31,7 @@ import {
   SubscriptionTier,
 } from '../core/subscriptions/SubscriptionTiers.js';
 import { getErrorMessage } from '../utils/errors.js';
+import { asyncRoute } from '../utils/asyncRoute.js';
 
 const router = Router();
 
@@ -424,9 +425,9 @@ router.post('/live-demo/connect', async (req: Request, res: Response) => {
  * GET /api/v1/premium/live-demo/session/:id
  * Get session status
  */
-router.get('/live-demo/session/:id', async (req: Request, res: Response) => {
+router.get('/live-demo/session/:id', asyncRoute(async (req: Request, res: Response) => {
   const session = await liveDemoModeService.getSession(req.params.id);
-  
+
   if (!session) {
     return res.status(404).json({
       error: 'Session not found',
@@ -434,7 +435,7 @@ router.get('/live-demo/session/:id', async (req: Request, res: Response) => {
   }
 
   res.json({ session });
-});
+}));
 
 /**
  * POST /api/v1/premium/live-demo/deliberate
