@@ -107,6 +107,16 @@ describe('tenantGate', () => {
   });
 });
 
+describe('authenticate', () => {
+  it('verifies a request once, however many routers run it', async () => {
+    const req = fakeReq(`Bearer ${await sign()}`);
+    for (let i = 0; i < 3; i++) {
+      expect(await through(authenticate, req)).toBeUndefined();
+    }
+    expect(findUnique).toHaveBeenCalledTimes(1);
+  });
+});
+
 describe('devAuth', () => {
   it('answers 401 without a token in production (it threw: no answer, then the process exited)', async () => {
     settings.nodeEnv = 'production';

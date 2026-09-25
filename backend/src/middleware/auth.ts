@@ -61,6 +61,14 @@ interface JWTPayload {
 const JWT_SECRET = new TextEncoder().encode(config.jwtSecret);
 
 /**
+ * Token each request has already been authenticated with. tenantGate and
+ * every domain router run authenticate, and a request walks through several
+ * routers, so without this one request verified its token, checked revocation
+ * and looked up its user up to ten times.
+ */
+const authenticatedTokens = new WeakMap<Request, string>();
+
+/**
  * Verify JWT token and attach user to request
  */
 export const authenticate = async (
@@ -76,6 +84,10 @@ export const authenticate = async (
     }
 
     const token = authHeader.substring(7);
+
+    if (req.user && authenticatedTokens.get(req) === token) {
+      return next();
+    }
 
     // Verify token
     const { payload } = await jose.jwtVerify(token, JWT_SECRET) as { payload: JWTPayload };
@@ -120,7 +132,8 @@ export const authenticate = async (
 
     req.user = user;
     req.organizationId = user.organizationId;
-    
+    authenticatedTokens.set(req, token);
+
     next();
   } catch (error) {
     if (error instanceof jose.errors.JWTExpired) {
