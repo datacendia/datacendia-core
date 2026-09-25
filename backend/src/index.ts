@@ -333,12 +333,23 @@ app.get('/api/docs.json', (_req, res) => {
 logger.info('📚 API Documentation available at /api/docs');
 
 // =============================================================================
+// API ROUTES - Domain Routers (14 domains, ~110 route modules)
+// All paths remain identical: /api/v1/{original-path}
+// =============================================================================
+app.use('/api/v1', authDomain);                          // auth, users, organizations (no org scope — handles login/register)
+// Every route below: a signed-in request must carry an organization. The gate
+// authenticates first; see tenantGate for why requireOrgScope can't stand alone.
+app.use('/api/v1', tenantGate);
+
+// =============================================================================
 // UNIVERSAL REDIS CACHE - Applied to all GET requests (40-60% faster responses)
 // Automatically invalidates on POST/PUT/DELETE mutations
+// After tenantGate, so each entry belongs to one signed-in user (see
+// cacheIdentity). Mounted before authentication, it served any user's cached
+// response to every caller of the same URL, anonymous ones included.
 // =============================================================================
 app.use('/api/v1', apiCache({
   ttl: CACHE_TTLS.DECISIONS,
-  varyByOrg: true,
   excludePaths: [
     /\/auth\//,
     /\/csrf-token/,
@@ -350,15 +361,6 @@ app.use('/api/v1', apiCache({
     /\/platform-assistant/, // Never cache AI assistant responses
   ],
 }));
-
-// =============================================================================
-// API ROUTES - Domain Routers (14 domains, ~110 route modules)
-// All paths remain identical: /api/v1/{original-path}
-// =============================================================================
-app.use('/api/v1', authDomain);                          // auth, users, organizations (no org scope — handles login/register)
-// Every route below: a signed-in request must carry an organization. The gate
-// authenticates first; see tenantGate for why requireOrgScope can't stand alone.
-app.use('/api/v1', tenantGate);
 app.use('/api/v1', councilDomain);      // council, deliberations, decisions, veto, union, dissent, vox, echo
 app.use('/api/v1', dataDomain);         // metrics, alerts, forecasts, data-sources, lineage, druid, rag, graph, horizon
 app.use('/api/v1', governanceDomain);   // compliance, govern, panopticon, pillars, responsibility, constitutional-court

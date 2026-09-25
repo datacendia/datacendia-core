@@ -25,15 +25,11 @@ import { logger } from '../utils/logger.js';
 interface CacheOptions {
   ttl?: number;           // TTL in milliseconds (default: 60s)
   keyPrefix?: string;     // Custom key prefix
-  varyByUser?: boolean;   // Include user ID in cache key
-  varyByOrg?: boolean;    // Include org ID in cache key
   excludePaths?: RegExp[]; // Paths to skip caching
 }
 
 const DEFAULT_OPTIONS: CacheOptions = {
   ttl: 60000,         // 1 minute default
-  varyByUser: false,
-  varyByOrg: true,
   excludePaths: [
     /\/auth\//,        // Never cache auth responses
     /\/csrf-token/,    // Never cache CSRF tokens
@@ -43,24 +39,46 @@ const DEFAULT_OPTIONS: CacheOptions = {
   ],
 };
 
+/** Headers that can authenticate a request somewhere other than tenantGate. */
+const CREDENTIAL_HEADERS = [
+  'authorization', 'x-api-key', 'x-api-key-id', 'x-admin-key',
+  'x-vault-token', 'x-signature', 'x-cendia-signature',
+];
+
+/**
+ * Whose response this is. A cached response may only be served back to the
+ * caller it was built for, so every key names one:
+ * - signed in (tenantGate, mounted before this, sets req.user): that user;
+ * - credentials nobody resolved (a rejected token, an API key): not cached;
+ * - no credentials: one shared anonymous entry, which only routes that answer
+ *   anonymous callers with a 2xx can fill.
+ *
+ * The key used to include the organization only if req.organizationId was
+ * already set, but this ran before any authentication, so it never was: one
+ * entry per URL, served to everyone, anonymous callers included.
+ */
+function cacheIdentity(req: Request): string | null {
+  const userId = (req as Request & { user?: { id?: string } }).user?.id;
+  if (userId) {
+    return `org:${req.organizationId ?? 'none'}:user:${userId}`;
+  }
+  if (CREDENTIAL_HEADERS.some((h) => req.headers[h])) {
+    return null;
+  }
+  return 'anonymous';
+}
+
 /**
  * Generate cache key from request
  */
-function generateCacheKey(req: Request, options: CacheOptions): string {
+function generateCacheKey(req: Request, identity: string, options: CacheOptions): string {
   const parts = ['api-cache'];
-  
+
   if (options.keyPrefix) {
     parts.push(options.keyPrefix);
   }
 
-  if (options.varyByOrg && (req as any).organizationId) {
-    parts.push(`org:${(req as any).organizationId}`);
-  }
-
-  if (options.varyByUser && (req as any).userId) {
-    parts.push(`user:${(req as any).userId}`);
-  }
-
+  parts.push(identity);
   parts.push(req.method);
   parts.push(req.originalUrl || req.url);
 
@@ -93,7 +111,12 @@ export function apiCache(options: CacheOptions = {}): (req: Request, res: Respon
       return;
     }
 
-    const cacheKey = generateCacheKey(req, opts);
+    const identity = cacheIdentity(req);
+    if (!identity) {
+      next();
+      return;
+    }
+    const cacheKey = generateCacheKey(req, identity, opts);
 
     // Try to serve from cache
     cacheService.get(cacheKey)
@@ -169,17 +192,17 @@ export const CACHE_TTLS = {
  * Pre-configured cache middleware for common route patterns
  */
 export const cacheMiddlewares = {
-  metrics:       apiCache({ ttl: CACHE_TTLS.METRICS, varyByOrg: true }),
-  agents:        apiCache({ ttl: CACHE_TTLS.AGENTS, varyByOrg: true }),
-  decisions:     apiCache({ ttl: CACHE_TTLS.DECISIONS, varyByOrg: true }),
-  deliberations: apiCache({ ttl: CACHE_TTLS.DELIBERATIONS, varyByOrg: true }),
-  compliance:    apiCache({ ttl: CACHE_TTLS.COMPLIANCE, varyByOrg: true }),
-  settings:      apiCache({ ttl: CACHE_TTLS.SETTINGS, varyByOrg: true, varyByUser: true }),
+  metrics:       apiCache({ ttl: CACHE_TTLS.METRICS }),
+  agents:        apiCache({ ttl: CACHE_TTLS.AGENTS }),
+  decisions:     apiCache({ ttl: CACHE_TTLS.DECISIONS }),
+  deliberations: apiCache({ ttl: CACHE_TTLS.DELIBERATIONS }),
+  compliance:    apiCache({ ttl: CACHE_TTLS.COMPLIANCE }),
+  settings:      apiCache({ ttl: CACHE_TTLS.SETTINGS }),
   translations:  apiCache({ ttl: CACHE_TTLS.TRANSLATIONS }),
   verticals:     apiCache({ ttl: CACHE_TTLS.VERTICALS }),
   health:        apiCache({ ttl: CACHE_TTLS.HEALTH }),
-  graph:         apiCache({ ttl: CACHE_TTLS.GRAPH, varyByOrg: true }),
-  forecasts:     apiCache({ ttl: CACHE_TTLS.FORECASTS, varyByOrg: true }),
-  auditLogs:     apiCache({ ttl: CACHE_TTLS.AUDIT_LOGS, varyByOrg: true }),
-  notifications: apiCache({ ttl: CACHE_TTLS.NOTIFICATIONS, varyByUser: true }),
+  graph:         apiCache({ ttl: CACHE_TTLS.GRAPH }),
+  forecasts:     apiCache({ ttl: CACHE_TTLS.FORECASTS }),
+  auditLogs:     apiCache({ ttl: CACHE_TTLS.AUDIT_LOGS }),
+  notifications: apiCache({ ttl: CACHE_TTLS.NOTIFICATIONS }),
 };
