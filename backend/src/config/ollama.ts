@@ -24,7 +24,9 @@ export const DEFAULT_OLLAMA_URL = 'http://127.0.0.1:11434';
  */
 export function normalizeOllamaUrl(raw: string): string {
   const trimmed = raw.trim().replace(/\/+$/, '');
-  if (!trimmed) return DEFAULT_OLLAMA_URL;
+  if (!trimmed) {
+    return DEFAULT_OLLAMA_URL;
+  }
 
   const hasScheme = /^[a-z][a-z0-9+.-]*:\/\//i.test(trimmed);
   let candidate = hasScheme ? trimmed : `http://${trimmed}`;
@@ -33,7 +35,9 @@ export function normalizeOllamaUrl(raw: string): string {
   try {
     const url = new URL(candidate);
     // Ollama-style host strings without a port mean the default port.
-    if (!hasScheme && !url.port) url.port = '11434';
+    if (!hasScheme && !url.port) {
+      url.port = '11434';
+    }
     return url.toString().replace(/\/+$/, '');
   } catch {
     return DEFAULT_OLLAMA_URL;

@@ -10,7 +10,6 @@
 ﻿// Copyright (c) 2024-2026 Datacendia, LLC. Licensed under Apache 2.0.
 // See LICENSE file for details.
 
-import { getOllamaBaseUrl } from '../config/ollama.js';
 import { logger } from './logger.js';
 
 /**
@@ -211,7 +210,7 @@ const ollamaBreaker = getCircuitBreaker('ollama');
 async function generateWithOllama(prompt: string) {
   return ollamaBreaker.execute(
     async () => {
-      const response = await fetch(`${getOllamaBaseUrl()}/api/generate`, {
+      const response = await fetch('http://127.0.0.1:11434/api/generate', {
         method: 'POST',
         body: JSON.stringify({ model: 'qwen2.5:14b', prompt }),
       });

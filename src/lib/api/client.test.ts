@@ -79,7 +79,9 @@ describe('ApiClient CSRF handling', () => {
 
     const urls = fetchMock.mock.calls.map(([u]) => String(u));
     expect(urls.filter((u) => u.endsWith('/csrf-token'))).toHaveLength(1);
-    const [, loginInit] = fetchMock.mock.calls.find(([u]) => String(u).endsWith('/auth/login'))! as any[];
+    const loginCall = fetchMock.mock.calls.find(([u]) => String(u).endsWith('/auth/login')) as any[] | undefined;
+    expect(loginCall).toBeDefined();
+    const loginInit = loginCall?.[1];
     expect(loginInit.headers['X-CSRF-Token']).toBe('tok-1');
     expect(loginInit.credentials).toBe('include');
   });
@@ -92,14 +94,16 @@ describe('ApiClient CSRF handling', () => {
     await freshApi.get('/council/agents');
 
     expect(fetchMock).toHaveBeenCalledTimes(1);
-    expect(String(fetchMock.mock.calls[0]![0])).not.toContain('/csrf-token');
+    expect(String(fetchMock.mock.calls[0]?.[0])).not.toContain('/csrf-token');
   });
 
   it('refreshes the token and retries once when the server rejects it', async () => {
     const tokens = ['stale', 'fresh'];
     let writes = 0;
     const fetchMock = vi.fn(async (url: string, init?: any) => {
-      if (url.endsWith('/csrf-token')) return respond({ success: true, csrfToken: tokens.shift() });
+      if (url.endsWith('/csrf-token')) {
+        return respond({ success: true, csrfToken: tokens.shift() });
+      }
       writes++;
       return init.headers['X-CSRF-Token'] === 'fresh'
         ? respond({ success: true, data: { saved: true } })
