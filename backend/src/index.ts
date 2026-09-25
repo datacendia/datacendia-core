@@ -14,6 +14,8 @@
  * @see {@link routes/} for all API route definitions
  */
 
+// First: must be installed before any module creates a router.
+import './utils/expressAsyncErrors.js';
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
