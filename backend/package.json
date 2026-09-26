@@ -121,14 +121,14 @@
     "@types/swagger-jsdoc": "^6.0.4",
     "@types/swagger-ui-express": "^4.1.8",
     "@types/uuid": "^9.0.7",
-    "@vitest/ui": "^4.0.15",
+    "@vitest/ui": "^4.1.11",
     "jest": "^30.2.0",
     "prisma": "^5.7.0",
     "supertest": "^7.1.4",
     "ts-jest": "^29.4.5",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3",
-    "vitest": "^4.0.15"
+    "vitest": "^4.1.11"
   },
   "engines": {
     "node": ">=20.0.0"
