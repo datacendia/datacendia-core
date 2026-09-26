@@ -65,17 +65,16 @@ const JAILBREAK_PATTERNS = [
 // DATA LEAKAGE PATTERNS
 // ============================================================================
 
+// Requests for the platform's own secrets. Mentioning one is not a probe:
+// "Evaluate our password policy" and "Should we rotate API keys after the
+// breach?" are ordinary governance questions, and the old list, which matched
+// the bare words, turned both away from the Council.
+const SECRET_NOUNS = String.raw`(api\s*keys?|secret\s*keys?|private\s*keys?|passwords?|connection\s*strings?|credentials|access\s*tokens?|environment\s*variables?|env\s*vars?|\.env\s*file)`;
 const LEAKAGE_REQUEST_PATTERNS = [
-  /api\s*key/i,
-  /secret\s*key/i,
-  /password/i,
-  /connection\s*string/i,
-  /database\s*(url|connection|credentials)/i,
-  /environment\s*variable/i,
-  /\.env\s*file/i,
-  /private\s*key/i,
-  /access\s*token/i,
-  /credentials/i,
+  // "show me your API key", "what are the server's credentials"
+  new RegExp(String.raw`\b(your|the\s+(system|server|platform|backend)'?s?)\s+(own\s+)?${SECRET_NOUNS}`, 'i'),
+  // "print the environment variables", "dump the .env file"
+  new RegExp(String.raw`\b(print|dump|reveal|echo|cat)\s+(me\s+)?(the\s+|all\s+|any\s+)?${SECRET_NOUNS}`, 'i'),
 ];
 
 // Patterns to redact from responses
@@ -332,29 +331,26 @@ export function corsSecurityMiddleware(req: Request, res: Response, next: NextFu
   next();
 }
 
+// Signatures of actual injection attempts. Queries go through Prisma, which
+// parameterises them; that is the defence, and this only turns away obvious
+// probes, so it must never match ordinary text. The previous list rejected any
+// apostrophe, '#' or '--' anywhere in a JSON body: "What's our exposure?" never
+// reached the Council, a feedback title like "lot #BC-2024" came back 400, and so
+// did every frontend crash report, because stack traces quote property names.
+export const SQL_INJECTION_PATTERNS = [
+  /'\s*(or|and)\s+('[^']*'|\d+)\s*=\s*('[^']*'|\d+)/i, // ' OR 1=1, ' or 'a'='a'
+  /'\s*;\s*(drop|delete|insert|update|alter|create|truncate|exec)\b/i, // '; DROP ...
+  /;\s*(drop|truncate)\s+table\b/i,
+  /\bunion\s+(all\s+)?select\b/i,
+  /\bexec(\s|\+)+(s|x)p\w+/i, // xp_cmdshell, sp_ procedures
+];
+
 /**
  * SQL injection prevention middleware
  */
 export function sqlInjectionMiddleware(req: Request, res: Response, next: NextFunction): void {
-  const sqlPatterns = [
-    /(\%27)|(\')|(\-\-)|(\%23)|(#)/i,
-    /((\%3D)|(=))[^\n]*((\%27)|(\')|(\-\-)|(\%3B)|(;))/i,
-    /\w*((\%27)|(\'))((\%6F)|o|(\%4F))((\%72)|r|(\%52))/i,
-    /((\%27)|(\'))union/i,
-    /exec(\s|\+)+(s|x)p\w+/i,
-    // URL-encoded SQL injection patterns
-    /%27/i, // URL-encoded single quote
-    /%22/i, // URL-encoded double quote
-    /1%27%20OR%20/i, // Common SQL injection
-    /OR%20%271%27%3D%271/i, // OR '1'='1'
-    /UNION%20SELECT/i,
-    /DROP%20TABLE/i,
-    /INSERT%20INTO/i,
-    /DELETE%20FROM/i,
-  ];
-
   const checkValue = (value: string): boolean => {
-    return sqlPatterns.some(pattern => pattern.test(value));
+    return SQL_INJECTION_PATTERNS.some(pattern => pattern.test(value));
   };
 
   // Check query params
