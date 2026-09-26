@@ -84,7 +84,7 @@ router.get('/users', async (req: Request, res: Response) => {
       status: status as any,
       search: search as string,
     });
-    const metrics = userManagementService.getUserMetrics(tenantId);
+    const metrics = await userManagementService.getUserMetrics(tenantId);
     res.json({ 
       users, 
       total: users.length,
