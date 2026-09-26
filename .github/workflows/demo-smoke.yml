@@ -1,0 +1,88 @@
+name: Demo smoke test
+
+# Boots docker-compose.demo.yml the way the README tells people to, and fails if
+# the API never becomes healthy, crash-loops, or starts without its seed data.
+# The build job alone can't catch this: in August the published images built
+# cleanly while the demo API couldn't start (Prisma engine missing libssl,
+# a Postgres wait loop that never exited).
+
+on:
+  pull_request:
+    paths:
+      - 'backend/Dockerfile'
+      - 'backend/docker-entrypoint*.sh'
+      - 'backend/prisma/**'
+      - 'backend/package*.json'
+      - 'Dockerfile.frontend'
+      - 'docker-compose.demo.yml'
+      - '.github/workflows/demo-smoke.yml'
+  push:
+    branches: [master]
+    paths:
+      - 'backend/**'
+      - 'Dockerfile.frontend'
+      - 'docker-compose.demo.yml'
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  demo:
+    name: docker compose demo boots
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build demo images
+        run: docker compose -f docker-compose.demo.yml build
+
+      - name: Start the demo
+        run: docker compose -f docker-compose.demo.yml up -d
+
+      - name: API becomes healthy without restarting
+        run: |
+          for i in $(seq 1 90); do
+            if curl -sf http://localhost:3001/health > /dev/null; then
+              echo "healthy after $((i * 5))s"
+              break
+            fi
+            restarts=$(docker inspect -f '{{.RestartCount}}' datacendia-demo-api)
+            if [ "$restarts" -gt 0 ]; then
+              echo "API container restarted $restarts time(s)"
+              exit 1
+            fi
+            sleep 5
+          done
+          curl -sf http://localhost:3001/health
+          sleep 15
+          restarts=$(docker inspect -f '{{.RestartCount}}' datacendia-demo-api)
+          [ "$restarts" -eq 0 ] || { echo "API restarted after becoming healthy"; exit 1; }
+
+      - name: Demo data was seeded
+        run: |
+          logs=$(docker logs datacendia-demo-api 2>&1)
+          if echo "$logs" | grep -qE "Seed failed|Base seed had issues|Showcase seed had issues"; then
+            echo "$logs" | grep -E "Seed failed|seed had issues" -A5
+            exit 1
+          fi
+          echo "$logs" | grep -q "DEMO READY"
+
+      - name: Frontend serves the app
+        run: |
+          for i in $(seq 1 30); do
+            curl -sf http://localhost:5173/ | grep -q '<div id="root"' && exit 0
+            sleep 5
+          done
+          exit 1
+
+      - name: Logs on failure
+        if: failure()
+        run: docker compose -f docker-compose.demo.yml logs --no-color --tail 200
+
+      - name: Tear down
+        if: always()
+        run: docker compose -f docker-compose.demo.yml down -v

@@ -42,7 +42,7 @@ cd datacendia-core
 docker compose -f docker-compose.demo.yml up -d
 
 # 3. Open http://localhost:5173
-#    Demo login: sarah.chen@acme.demo (no password needed)
+#    Demo login: sarah.chen@acme.demo / demo-password-2024
 ```
 
 > **What you'll see:** A pre-seeded Council dashboard with 5 real deliberations across 5 industries -- Energy grid emergency, Manufacturing safety defect, $1.7B CRE acquisition, Veterans IT modernization, and SaMD medical device deployment. Full agent transcripts, cross-examinations, and cryptographically signed decision packets.

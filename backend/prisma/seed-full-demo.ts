@@ -7,6 +7,7 @@
 import { PrismaClient } from '@prisma/client';
 import { randomUUID } from 'crypto';
 import * as crypto from 'crypto';
+import bcrypt from 'bcryptjs';
 
 const prisma = new PrismaClient();
 
@@ -23,6 +24,9 @@ const USER_IDS = {
 function randomDate(daysAgo: number): Date {
   return new Date(Date.now() - Math.random() * daysAgo * 24 * 60 * 60 * 1000);
 }
+
+/** Shared password for every seeded demo user. Printed in the demo banner. */
+export const DEMO_PASSWORD = 'demo-password-2024';
 
 function hash(data: string): string {
   return crypto.createHash('sha256').update(data).digest('hex');
@@ -74,6 +78,8 @@ async function seedUsers() {
     { id: USER_IDS.analyst, email: 'alex.johnson@acme.demo', name: 'Alex Johnson', role: 'ANALYST' as const },
   ];
   
+  const DEMO_PASSWORD_HASH = await bcrypt.hash(DEMO_PASSWORD, 10);
+
   for (const u of users) {
     const existing = await prisma.users.findUnique({ where: { email: u.email } });
     if (!existing) {
@@ -83,7 +89,9 @@ async function seedUsers() {
           organization_id: DEMO_ORG_ID,
           email: u.email,
           name: u.name,
-          password_hash: hash('demo-password-2024'),
+          // Login verifies with bcrypt (src/routes/auth.ts); a sha256 digest here meant no
+          // demo user could ever sign in.
+          password_hash: DEMO_PASSWORD_HASH,
           role: u.role,
           status: 'ACTIVE',
           email_verified: true,
