@@ -14,9 +14,15 @@
 // ADMIN SERVICE - Platform Owner Admin API Client
 // =============================================================================
 
-const API_BASE =
-  import.meta.env.VITE_API_URL ||
-  (import.meta.env.DEV ? '/api/v1' : 'http://localhost:3001/api/v1');
+import { API_BASE_URL, tokenManager } from '../lib/api/client';
+
+const API_BASE = API_BASE_URL;
+
+// The session, as ApiClient sends it; lib/api/fetchAuth adds the CSRF token on writes.
+function authHeaders(): Record<string, string> {
+  const token = tokenManager.getAccessToken();
+  return { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) };
+}
 
 // =============================================================================
 // TYPES
@@ -120,18 +126,13 @@ class AdminService {
 
   private async request<T>(endpoint: string, options?: RequestInit): Promise<T> {
     const response = await fetch(`${this.baseUrl}${endpoint}`, {
-      headers: {
-        'Content-Type': 'application/json',
-        ...(typeof window !== 'undefined' && window.localStorage?.getItem('auth-storage')
-          ? { 'Authorization': `Bearer ${JSON.parse(window.localStorage.getItem('auth-storage') || '{}')?.state?.token || ''}` }
-          : {}),
-      },
+      headers: authHeaders(),
       ...options,
     });
 
     if (!response.ok) {
       const error = await response.json().catch(() => ({ error: 'Request failed' }));
-      throw new Error(error.error || `HTTP ${response.status}`);
+      throw new Error(error.error?.message ?? error.error ?? `HTTP ${response.status}`);
     }
 
     return response.json();

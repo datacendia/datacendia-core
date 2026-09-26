@@ -16,6 +16,8 @@
 // Integrates with backend logging and optional Sentry
 // =============================================================================
 
+import { API_BASE_URL, tokenManager } from './api/client';
+
 interface ErrorContext {
   componentStack?: string;
   userId?: string;
@@ -34,7 +36,7 @@ interface ErrorReport {
 }
 
 // Configuration
-const ERROR_API_ENDPOINT = '/api/v1/errors/report';
+const ERROR_API_ENDPOINT = `${API_BASE_URL}/errors/report`;
 const ENABLE_CONSOLE_LOGGING = true;
 const BATCH_SIZE = 10;
 const FLUSH_INTERVAL = 30000; // 30 seconds
@@ -134,7 +136,9 @@ async function flushErrors(): Promise<void> {
   errorQueue = [];
 
   try {
-    const token = localStorage.getItem('accessToken');
+    // The session lives in tokenManager (sessionStorage), not localStorage; the
+    // CSRF token for this write is added by lib/api/fetchAuth.
+    const token = tokenManager.getAccessToken();
     const headers: Record<string, string> = {
       'Content-Type': 'application/json',
     };
@@ -148,10 +152,14 @@ async function flushErrors(): Promise<void> {
       body: JSON.stringify({ errors }),
     });
 
-    if (!response.ok) {
+    if (response.status >= 500) {
       // Put errors back in queue
       errorQueue = [...errors, ...errorQueue];
       console.warn('[ErrorTracking] Failed to send errors, will retry');
+    } else if (!response.ok) {
+      // A 4xx (signed out, or rejected) fails the same way every time; re-queueing
+      // it re-sent the same report on every flush for the rest of the session.
+      console.warn('[ErrorTracking] Error report rejected with', response.status);
     } else {
       console.log('[ErrorTracking] Sent', errors.length, 'error(s) to server');
     }
@@ -179,7 +187,7 @@ function getSessionId(): string {
  */
 function getUserId(): string | undefined {
   try {
-    const token = localStorage.getItem('accessToken');
+    const token = tokenManager.getAccessToken();
     if (token) {
       // Decode JWT to get user ID (basic decode, not verification)
       const payload = JSON.parse(atob(token.split('.')[1]));

@@ -19,6 +19,7 @@
 
 import React, { createContext, useContext, useState, useEffect, useCallback, useMemo, ReactNode } from 'react';
 import { verticalConfigApi, ServiceDefinition, VerticalTemplate, OrganizationVerticalConfig, ServiceToggle } from '../services/VerticalConfigService';
+import { tokenManager } from '../lib/api/client';
 
 // =============================================================================
 // TYPES
@@ -156,8 +157,7 @@ export const VerticalConfigProvider: React.FC<VerticalConfigProviderProps> = ({ 
 
   // Initialize only when authenticated (defer API calls until needed)
   useEffect(() => {
-    const token = localStorage.getItem('accessToken');
-    if (token) {
+    if (tokenManager.isAuthenticated()) {
       initialize();
     }
   }, [initialize]);

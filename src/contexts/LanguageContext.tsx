@@ -921,8 +921,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   // Load available languages only when authenticated (defer API calls)
   useEffect(() => {
-    const token = localStorage.getItem('accessToken');
-    if (!token) {
+    if (!apiClient.tokenManager.isAuthenticated()) {
       // Use fallback languages immediately without API call
       setLanguages([
         { code: 'en', name: 'English', nativeName: 'English', rtl: false },
