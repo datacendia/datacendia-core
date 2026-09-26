@@ -52,7 +52,11 @@ export default function FeedbackLoopPage() {
       if (statusFilter) params.append('status', statusFilter);
       if (typeFilter) params.append('type', typeFilter);
       const resp: any = await apiClient.api.get(`/feedback?${params.toString()}`);
-      setFeedback(resp?.data?.feedback || resp?.data?.entries || resp?.feedback || []);
+      // GET /feedback answers { data: FeedbackEntry[] }. Take the first candidate that
+      // is actually an array: on an array, `data.entries` is Array.prototype.entries,
+      // and React ran that function as a state updater, which crashed the page.
+      const list = [resp?.data, resp?.data?.feedback, resp?.data?.entries, resp?.feedback].find(Array.isArray);
+      setFeedback(list ?? []);
     } catch {
       setFeedback([]);
     }
