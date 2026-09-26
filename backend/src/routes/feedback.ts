@@ -9,7 +9,9 @@ import { feedbackService } from '../services/feedback/FeedbackService.js';
 const router = Router();
 
 // --- Feedback ---
-router.get('/feedback', async (req: Request, res: Response) => {
+// Mounted at /api/v1/feedback: these paths used to repeat /feedback, so the
+// list the page asks for (/api/v1/feedback) was served at /feedback/feedback.
+router.get('/', async (req: Request, res: Response) => {
   try {
     const entries = await feedbackService.listFeedback({
       type: req.query.type as any,
@@ -23,7 +25,7 @@ router.get('/feedback', async (req: Request, res: Response) => {
   } catch (error) { res.status(500).json({ success: false, error: 'Failed to list feedback' }); }
 });
 
-router.post('/feedback', async (req: Request, res: Response) => {
+router.post('/', async (req: Request, res: Response) => {
   try {
     const userId = (req as any).user?.id || 'anonymous';
     const entry = await feedbackService.submitFeedback({ ...req.body, submittedBy: userId });
@@ -31,15 +33,7 @@ router.post('/feedback', async (req: Request, res: Response) => {
   } catch (error) { res.status(500).json({ success: false, error: 'Failed to submit feedback' }); }
 });
 
-router.get('/feedback/:id', async (req: Request, res: Response) => {
-  try {
-    const entry = await feedbackService.getFeedback(req.params.id);
-    if (!entry) return res.status(404).json({ success: false, error: 'Feedback not found' });
-    res.json({ success: true, data: entry });
-  } catch (error) { res.status(500).json({ success: false, error: 'Failed to get feedback' }); }
-});
-
-router.put('/feedback/:id/status', async (req: Request, res: Response) => {
+router.put('/:id/status', async (req: Request, res: Response) => {
   try {
     const userId = (req as any).user?.id || 'system';
     const entry = await feedbackService.updateFeedbackStatus(req.params.id, req.body.status, userId, req.body.reason);
@@ -48,7 +42,7 @@ router.put('/feedback/:id/status', async (req: Request, res: Response) => {
   } catch (error) { res.status(500).json({ success: false, error: 'Failed to update status' }); }
 });
 
-router.post('/feedback/:id/vote', async (req: Request, res: Response) => {
+router.post('/:id/vote', async (req: Request, res: Response) => {
   try {
     const userId = (req as any).user?.id || 'anonymous';
     const entry = await feedbackService.voteFeedback(req.params.id, userId);
@@ -57,7 +51,7 @@ router.post('/feedback/:id/vote', async (req: Request, res: Response) => {
   } catch (error) { res.status(500).json({ success: false, error: 'Failed to vote' }); }
 });
 
-router.post('/feedback/:id/comments', async (req: Request, res: Response) => {
+router.post('/:id/comments', async (req: Request, res: Response) => {
   try {
     const comment = await feedbackService.addComment(req.params.id, req.body);
     if (!comment) return res.status(404).json({ success: false, error: 'Feedback not found' });
@@ -109,6 +103,15 @@ router.get('/analytics', async (_req: Request, res: Response) => {
     const analytics = await feedbackService.getAnalytics();
     res.json({ success: true, data: analytics });
   } catch (error) { res.status(500).json({ success: false, error: 'Failed to get analytics' }); }
+});
+
+// Last: GET /:id would otherwise capture /improvements, /lessons and /analytics.
+router.get('/:id', async (req: Request, res: Response) => {
+  try {
+    const entry = await feedbackService.getFeedback(req.params.id);
+    if (!entry) return res.status(404).json({ success: false, error: 'Feedback not found' });
+    res.json({ success: true, data: entry });
+  } catch (error) { res.status(500).json({ success: false, error: 'Failed to get feedback' }); }
 });
 
 export default router;
