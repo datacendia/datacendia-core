@@ -129,11 +129,13 @@ router.get('/setup', authenticate, async (req: Request, res: Response, next: Nex
       details: {},
     });
 
+    // No qrCodeUrl: it pointed at api.qrserver.com with otpauthUrl (the TOTP
+    // secret) in the query string, handing the seed to a third party and to
+    // anything logging that request. Render the QR from otpauthUrl locally.
     res.json({
       secret,
       otpauthUrl,
       backupCodes,
-      qrCodeUrl: `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(otpauthUrl)}`,
     });
   } catch (error) {
     next(error);
