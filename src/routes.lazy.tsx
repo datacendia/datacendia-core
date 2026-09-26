@@ -16,6 +16,7 @@
 
 // Error Pages (keep non-lazy for fast 404)
 import { NotFoundPage } from './pages/NotFoundPage';
+import { RouteErrorPage } from './components/RouteErrorPage';
 
 // =============================================================================
 // LAYOUTS - Load immediately (critical for shell)
@@ -42,39 +43,52 @@ import { lazyLoad } from './routes/utils';
 // ROUTE CONFIGURATION - Composed from domain modules
 // =============================================================================
 
+// A page that throws while rendering shows RouteErrorPage instead of React
+// Router's developer screen. Inside the app the boundary sits below the layout,
+// so the sidebar stays and the visitor can move on to another page.
 export const router = createBrowserRouter([
-  ...publicRoutes,
-  ...authRoutes,
-  ...verticalsRoutes,
-
-  // CORTEX APPLICATION
   {
-    path: '/cortex',
-    element: <CortexLayout />,
+    errorElement: <RouteErrorPage />,
     children: [
-      ...cortexCoreRoutes,
-      ...cortexIntelligenceRoutes,
-      ...cortexEnterpriseRoutes,
-      ...cortexSovereignRoutes,
-      ...cortexPlatformRoutes,
+      ...publicRoutes,
+      ...authRoutes,
+      ...verticalsRoutes,
+
+      // CORTEX APPLICATION
+      {
+        path: '/cortex',
+        element: <CortexLayout />,
+        children: [
+          {
+            errorElement: <RouteErrorPage homeHref="/cortex/dashboard" homeLabel="Back to dashboard" />,
+            children: [
+              ...cortexCoreRoutes,
+              ...cortexIntelligenceRoutes,
+              ...cortexEnterpriseRoutes,
+              ...cortexSovereignRoutes,
+              ...cortexPlatformRoutes,
+            ],
+          },
+        ],
+      },
+
+      ...adminRoutes,
+
+      // TOOLS
+      {
+        path: '/tools',
+        element: <CortexLayout />,
+        children: [
+          { path: 'roi-calculator', element: lazyLoad(() => import('./pages/tools').then((m) => ({ default: m.ROICalculator }))) },
+        ],
+      },
+
+      // 404
+      {
+        path: '*',
+        element: <NotFoundPage />,
+      },
     ],
-  },
-
-  ...adminRoutes,
-
-  // TOOLS
-  {
-    path: '/tools',
-    element: <CortexLayout />,
-    children: [
-      { path: 'roi-calculator', element: lazyLoad(() => import('./pages/tools').then((m) => ({ default: m.ROICalculator }))) },
-    ],
-  },
-
-  // 404
-  {
-    path: '*',
-    element: <NotFoundPage />,
   },
 ]);
 
