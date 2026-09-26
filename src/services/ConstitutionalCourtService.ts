@@ -116,17 +116,17 @@ export interface CourtStatistics {
 // API Functions
 export const ConstitutionalCourtService = {
   async getHealth() {
-    const response = await api.get<any>('/api/v1/constitutional-court/health');
+    const response = await api.get<any>('/constitutional-court/health');
     return response.data;
   },
 
   async getPrinciples(): Promise<ConstitutionalPrinciple[]> {
-    const response = await api.get<any>('/api/v1/constitutional-court/principles');
+    const response = await api.get<any>('/constitutional-court/principles');
     return response.data.data;
   },
 
   async getStatistics(): Promise<CourtStatistics> {
-    const response = await api.get<any>('/api/v1/constitutional-court/statistics');
+    const response = await api.get<any>('/constitutional-court/statistics');
     return response.data.data;
   },
 
@@ -139,34 +139,34 @@ export const ConstitutionalCourtService = {
     verticalId?: string;
     organizationId: string;
   }): Promise<Dispute> {
-    const response = await api.post<any>('/api/v1/constitutional-court/disputes', params);
+    const response = await api.post<any>('/constitutional-court/disputes', params);
     return response.data.data;
   },
 
   async getDispute(id: string): Promise<Dispute> {
-    const response = await api.get<any>(`/api/v1/constitutional-court/disputes/${id}`);
+    const response = await api.get<any>(`/constitutional-court/disputes/${id}`);
     return response.data.data;
   },
 
   async getDisputeByCaseNumber(caseNumber: string): Promise<Dispute> {
-    const response = await api.get<any>(`/api/v1/constitutional-court/disputes/case/${caseNumber}`);
+    const response = await api.get<any>(`/constitutional-court/disputes/case/${caseNumber}`);
     return response.data.data;
   },
 
   async getDisputesByOrganization(orgId: string): Promise<Dispute[]> {
-    const response = await api.get<any>(`/api/v1/constitutional-court/disputes/organization/${orgId}`);
+    const response = await api.get<any>(`/constitutional-court/disputes/organization/${orgId}`);
     return response.data.data;
   },
 
   async scheduleHearing(disputeId: string, hearingDate: Date): Promise<Dispute> {
-    const response = await api.post<any>(`/api/v1/constitutional-court/disputes/${disputeId}/schedule-hearing`, {
+    const response = await api.post<any>(`/constitutional-court/disputes/${disputeId}/schedule-hearing`, {
       hearingDate: hearingDate.toISOString(),
     });
     return response.data.data;
   },
 
   async beginDeliberation(disputeId: string): Promise<Dispute> {
-    const response = await api.post<any>(`/api/v1/constitutional-court/disputes/${disputeId}/begin-deliberation`);
+    const response = await api.post<any>(`/constitutional-court/disputes/${disputeId}/begin-deliberation`);
     return response.data.data;
   },
 
@@ -178,17 +178,17 @@ export const ConstitutionalCourtService = {
     principlesApplied?: string[];
     authoringJudge: string;
   }): Promise<CourtOpinion> {
-    const response = await api.post<any>(`/api/v1/constitutional-court/disputes/${disputeId}/draft-opinion`, params);
+    const response = await api.post<any>(`/constitutional-court/disputes/${disputeId}/draft-opinion`, params);
     return response.data.data;
   },
 
   async resolveDispute(disputeId: string): Promise<Dispute> {
-    const response = await api.post<any>(`/api/v1/constitutional-court/disputes/${disputeId}/resolve`);
+    const response = await api.post<any>(`/constitutional-court/disputes/${disputeId}/resolve`);
     return response.data.data;
   },
 
   async fileAppeal(disputeId: string, reason: string): Promise<Dispute> {
-    const response = await api.post<any>(`/api/v1/constitutional-court/disputes/${disputeId}/appeal`, { reason });
+    const response = await api.post<any>(`/constitutional-court/disputes/${disputeId}/appeal`, { reason });
     return response.data.data;
   },
 
@@ -197,7 +197,7 @@ export const ConstitutionalCourtService = {
     keywords?: string[];
     limit?: number;
   }): Promise<PrecedentSearchResult[]> {
-    const response = await api.post<any>('/api/v1/constitutional-court/precedents/search', params);
+    const response = await api.post<any>('/constitutional-court/precedents/search', params);
     return response.data.data;
   },
 };
