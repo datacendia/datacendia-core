@@ -54,6 +54,19 @@ export interface RegisterData {
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
+// ApiClient reports these when the API gave no usable answer at all: down,
+// restarting, or a proxy's error page. Any other error is the API's verdict.
+const API_UNREACHABLE = new Set(['NETWORK_ERROR', 'HTTP_ERROR', 'EMPTY_RESPONSE', 'PARSE_ERROR']);
+const LAST_USER_KEY = 'dc_last_user';
+
+function lastKnownUser(): User | null {
+  try {
+    return JSON.parse(sessionStorage.getItem(LAST_USER_KEY) ?? 'null') as User | null;
+  } catch {
+    return null;
+  }
+}
+
 // =============================================================================
 // PROVIDER
 // =============================================================================
@@ -108,9 +121,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
         try {
           const response = await authApi.getCurrentUser();
+          const remembered = lastKnownUser();
           if (response.success && response.data) {
             setState({
               user: response.data as User,
+              isAuthenticated: true,
+              isLoading: false,
+              isInitialized: true,
+              error: null,
+            });
+          } else if (API_UNREACHABLE.has(response.error?.code ?? '') && remembered) {
+            // The API couldn't answer (a restart or a deploy). Clearing the tokens
+            // here signed every open tab out; keep the session with the user
+            // /auth/me last returned. A token the API rejects still ends it.
+            setState({
+              user: remembered,
               isAuthenticated: true,
               isLoading: false,
               isInitialized: true,
@@ -163,6 +188,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     return unsubscribe;
   }, []);
+
+  // Kept for the session so an API restart doesn't sign the tab out (see initAuth).
+  useEffect(() => {
+    if (state.user && !tokenManager.isDemoSession()) {
+      sessionStorage.setItem(LAST_USER_KEY, JSON.stringify(state.user));
+    }
+  }, [state.user]);
 
   // Login
   const login = useCallback(async (email: string, password: string): Promise<boolean> => {

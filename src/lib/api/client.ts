@@ -139,6 +139,7 @@ class TokenManager {
       sessionStorage.removeItem('dc_access_token');
       sessionStorage.removeItem('dc_refresh_token');
       sessionStorage.removeItem('dc_demo_session');
+      sessionStorage.removeItem('dc_last_user');
       // Clean up any legacy localStorage tokens
       localStorage.removeItem('dc_access_token');
       localStorage.removeItem('dc_refresh_token');
