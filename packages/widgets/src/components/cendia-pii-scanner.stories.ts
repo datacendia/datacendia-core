@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/web-components';
+import type { Meta, StoryObj } from '@storybook/web-components-vite';
 import './cendia-pii-scanner.js';
 import type { CendiaPiiScanner } from './cendia-pii-scanner.js';
 
