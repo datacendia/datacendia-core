@@ -739,6 +739,8 @@ const MODE_TRANSLATIONS: Record<string, Record<string, { name: string; directive
 // Any other error (a deliberation that failed) stays until the user acts.
 const AI_NOT_CONFIGURED = 'AI agents are not configured. Please contact your administrator to set up an AI provider.';
 const AI_UNAVAILABLE = 'AI agents are temporarily unavailable. Please try again later.';
+const DELIBERATION_INTERRUPTED =
+  'This deliberation was interrupted when the page was left or reloaded. If it finished in the background, it is in Council History.';
 
 export const CouncilPage: React.FC = () => {
   const navigate = useNavigate();
@@ -768,7 +770,14 @@ export const CouncilPage: React.FC = () => {
   const [recentDecisions, setRecentDecisions] = useState<QueryResult[]>(() => {
     try {
       const saved = localStorage.getItem('council_deliberations');
-      return saved ? JSON.parse(saved) : [];
+      const decisions: QueryResult[] = saved ? JSON.parse(saved) : [];
+      // A deliberation streams into this page. One saved mid-run was cut off when
+      // the page was left or reloaded, and would otherwise stay "In Review" forever.
+      return decisions.map((d) =>
+        d.currentPhase && d.currentPhase !== 'completed' && d.currentPhase !== 'failed'
+          ? { ...d, currentPhase: 'failed', response: DELIBERATION_INTERRUPTED }
+          : d
+      );
     } catch { return []; }
   });
   const [isLoading, setIsLoading] = useState(true);
@@ -3704,8 +3713,8 @@ export const CouncilPage: React.FC = () => {
                     </div>
                   )}
 
-                  {/* FINAL: Council Synthesis/Recommendation */}
-                  {result.response && (
+                  {/* FINAL: Council Synthesis/Recommendation (a failed run's response is its reason) */}
+                  {result.response && result.currentPhase !== 'failed' && (
                     <div className="mt-4 pt-4 border-t border-neutral-700/50">
                       <div className="flex items-start gap-3">
                         <div className="flex-shrink-0">
