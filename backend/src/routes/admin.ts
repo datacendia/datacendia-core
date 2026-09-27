@@ -27,6 +27,7 @@ import {
 } from '../services/admin/index.js';
 import { logger } from '../utils/logger.js';
 import { devAuth, requireRole } from '../middleware/auth.js';
+import { ownTenantOnly } from '../middleware/tenantScope.js';
 import { deterministicFloat, deterministicInt, deterministicPercentage, deterministicPick } from '../utils/deterministic.js';
 
 const router = Router();
@@ -88,6 +89,12 @@ const updateFeatureSchema = z.object({
 router.use(devAuth);
 router.use(requireRole('OWNER', 'ADMIN', 'SUPER_ADMIN'));
 
+// The guard above admits any organization's OWNER or ADMIN, but the tenant
+// routes manage organizations. Listing, creating, upgrading and suspending
+// tenants is for the platform owner; a route naming one tenant is open to that
+// tenant's own admins too (see ownTenantOnly).
+const platformOwner = requireRole('SUPER_ADMIN');
+
 // =============================================================================
 // DASHBOARD
 // =============================================================================
@@ -106,7 +113,7 @@ router.get('/dashboard', async (_req: Request, res: Response) => {
 // TENANTS
 // =============================================================================
 
-router.get('/tenants', async (req: Request, res: Response) => {
+router.get('/tenants', platformOwner, async (req: Request, res: Response) => {
   try {
     const { status, plan, search } = req.query;
     const tenants = await tenantService.listTenants({
@@ -122,7 +129,7 @@ router.get('/tenants', async (req: Request, res: Response) => {
 });
 
 // NOTE: /tenants/metrics must be defined BEFORE /tenants/:id to avoid route collision
-router.get('/tenants/metrics', async (_req: Request, res: Response) => {
+router.get('/tenants/metrics', platformOwner, async (_req: Request, res: Response) => {
   try {
     const metrics = await tenantService.getMetrics();
     res.json(metrics);
@@ -132,7 +139,7 @@ router.get('/tenants/metrics', async (_req: Request, res: Response) => {
   }
 });
 
-router.post('/tenants', async (req: Request, res: Response) => {
+router.post('/tenants', platformOwner, async (req: Request, res: Response) => {
   try {
     const { name, slug, plan, metadata } = createTenantSchema.parse(req.body);
     const tenant = await tenantService.createTenant({ name, slug, plan, metadata });
@@ -143,7 +150,7 @@ router.post('/tenants', async (req: Request, res: Response) => {
   }
 });
 
-router.get('/tenants/:id', async (req: Request, res: Response) => {
+router.get('/tenants/:id', ownTenantOnly, async (req: Request, res: Response) => {
   try {
     const tenant = await tenantService.getTenant(req.params.id);
     if (!tenant) {
@@ -156,7 +163,7 @@ router.get('/tenants/:id', async (req: Request, res: Response) => {
   }
 });
 
-router.patch('/tenants/:id', async (req: Request, res: Response) => {
+router.patch('/tenants/:id', ownTenantOnly, async (req: Request, res: Response) => {
   try {
     const validated = updateTenantSchema.parse(req.body);
     const tenant = await tenantService.updateTenant(req.params.id, validated);
@@ -170,7 +177,7 @@ router.patch('/tenants/:id', async (req: Request, res: Response) => {
   }
 });
 
-router.post('/tenants/:id/upgrade', async (req: Request, res: Response) => {
+router.post('/tenants/:id/upgrade', platformOwner, async (req: Request, res: Response) => {
   try {
     const { plan } = upgradePlanSchema.parse(req.body);
     const tenant = await tenantService.upgradePlan(req.params.id, plan);
@@ -184,7 +191,7 @@ router.post('/tenants/:id/upgrade', async (req: Request, res: Response) => {
   }
 });
 
-router.post('/tenants/:id/suspend', async (req: Request, res: Response) => {
+router.post('/tenants/:id/suspend', platformOwner, async (req: Request, res: Response) => {
   try {
     const { reason } = suspendTenantSchema.parse(req.body);
     const tenant = await tenantService.suspendTenant(req.params.id, reason);
@@ -348,7 +355,7 @@ router.post('/health/alerts/:id/acknowledge', async (req: Request, res: Response
 // USER MANAGEMENT (FOR TENANTS)
 // =============================================================================
 
-router.get('/tenants/:tenantId/users', async (req: Request, res: Response) => {
+router.get('/tenants/:tenantId/users', ownTenantOnly, async (req: Request, res: Response) => {
   try {
     const { role, status, search } = req.query;
     const users = await userManagementService.listUsers(req.params.tenantId, {
@@ -363,7 +370,7 @@ router.get('/tenants/:tenantId/users', async (req: Request, res: Response) => {
   }
 });
 
-router.get('/tenants/:tenantId/teams', async (req: Request, res: Response) => {
+router.get('/tenants/:tenantId/teams', ownTenantOnly, async (req: Request, res: Response) => {
   try {
     const teams = await userManagementService.listTeams(req.params.tenantId);
     res.json({ teams, total: teams.length });
@@ -373,7 +380,7 @@ router.get('/tenants/:tenantId/teams', async (req: Request, res: Response) => {
   }
 });
 
-router.get('/tenants/:tenantId/api-keys', async (req: Request, res: Response) => {
+router.get('/tenants/:tenantId/api-keys', ownTenantOnly, async (req: Request, res: Response) => {
   try {
     const apiKeys = await userManagementService.listApiKeys(req.params.tenantId);
     res.json({ apiKeys, total: apiKeys.length });
