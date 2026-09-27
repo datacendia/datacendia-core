@@ -56,6 +56,7 @@ import {
   logComponentError,
   cleanupErrorTracking,
 } from '../errorTracking';
+import { tokenManager } from '../api/client';
 
 // =============================================================================
 // TESTS
@@ -216,17 +217,20 @@ describe('errorTracking', () => {
       expect(mockSessionStorage.setItem).not.toHaveBeenCalled();
     });
 
-    it('should extract user ID from JWT token', () => {
+    it('should extract user ID from the session token', async () => {
       vi.spyOn(console, 'error').mockImplementation(() => {});
-      // Create a mock JWT with payload { sub: 'user-123' }
+      vi.spyOn(console, 'log').mockImplementation(() => {});
+      // A JWT whose payload is { sub: 'user-123' }; the session lives in tokenManager
       const payload = btoa(JSON.stringify({ sub: 'user-123' }));
-      const mockToken = `header.${payload}.signature`;
-      mockLocalStorage.getItem.mockReturnValue(mockToken);
+      tokenManager.setTokens({ accessToken: `header.${payload}.signature`, refreshToken: 'r', expiresIn: 3600 });
 
-      logError(new Error('Test'));
+      logError(new Error('Test user id'), {}, 'critical');
+      await vi.runAllTimersAsync();
 
-      // User ID should be extracted from token
-      expect(mockLocalStorage.getItem).toHaveBeenCalledWith('accessToken');
+      const body = JSON.parse(mockFetch.mock.calls[0][1].body);
+      const report = body.errors.find((e: { message: string }) => e.message === 'Test user id');
+      expect(report.context.userId).toBe('user-123');
+      tokenManager.clearTokens();
     });
 
     it('should handle invalid JWT gracefully', () => {
@@ -341,10 +345,10 @@ describe('errorTracking', () => {
   });
 
   describe('flush error handling', () => {
-    it('should handle fetch failure gracefully', async () => {
+    it('should retry a batch the server failed to take (5xx)', async () => {
       vi.spyOn(console, 'error').mockImplementation(() => {});
       const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
-      mockFetch.mockResolvedValue({ ok: false });
+      mockFetch.mockResolvedValue({ ok: false, status: 503 });
 
       logError(new Error('Test'), {}, 'critical');
 
@@ -352,6 +356,26 @@ describe('errorTracking', () => {
       await vi.runAllTimersAsync();
 
       expect(warnSpy).toHaveBeenCalledWith('[ErrorTracking] Failed to send errors, will retry');
+      warnSpy.mockRestore();
+    });
+
+    it('should drop a batch the server rejected (4xx) instead of re-sending it', async () => {
+      vi.spyOn(console, 'error').mockImplementation(() => {});
+      vi.spyOn(console, 'log').mockImplementation(() => {});
+      const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+      mockFetch.mockResolvedValue({ ok: false, status: 401 });
+
+      logError(new Error('Rejected'), {}, 'critical');
+      await vi.runAllTimersAsync();
+      expect(warnSpy).toHaveBeenCalledWith('[ErrorTracking] Error report rejected with', 401);
+
+      mockFetch.mockClear();
+      mockFetch.mockResolvedValue({ ok: true });
+      logError(new Error('Next'), {}, 'critical');
+      await vi.runAllTimersAsync();
+
+      const body = JSON.parse(mockFetch.mock.calls[0][1].body);
+      expect(body.errors.map((e: { message: string }) => e.message)).not.toContain('Rejected');
       warnSpy.mockRestore();
     });
 
@@ -372,7 +396,7 @@ describe('errorTracking', () => {
     it('should include auth token in request if available', async () => {
       vi.spyOn(console, 'error').mockImplementation(() => {});
       vi.spyOn(console, 'log').mockImplementation(() => {});
-      mockLocalStorage.getItem.mockReturnValue('test-access-token');
+      tokenManager.setTokens({ accessToken: 'test-access-token', refreshToken: 'r', expiresIn: 3600 });
 
       logError(new Error('Test'), {}, 'critical');
 
@@ -386,6 +410,7 @@ describe('errorTracking', () => {
           }),
         })
       );
+      tokenManager.clearTokens();
     });
   });
 });
