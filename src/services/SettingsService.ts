@@ -14,15 +14,11 @@
 // SETTINGS SERVICE - Client Admin API Client
 // =============================================================================
 
-import { API_BASE_URL, tokenManager } from '../lib/api/client';
+import { API_BASE_URL } from '../lib/api/client';
 
+// Requests go through lib/api/fetchAuth, which attaches the session (and the
+// CSRF token on writes) and refreshes it when it expires, as ApiClient does.
 const API_BASE = API_BASE_URL;
-
-// The session, as ApiClient sends it; lib/api/fetchAuth adds the CSRF token on writes.
-function authHeaders(): Record<string, string> {
-  const token = tokenManager.getAccessToken();
-  return { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) };
-}
 
 // =============================================================================
 // TYPES
@@ -176,7 +172,7 @@ class SettingsService {
 
   private async request<T>(endpoint: string, options?: RequestInit): Promise<T> {
     const response = await fetch(`${this.baseUrl}${endpoint}`, {
-      headers: authHeaders(),
+      headers: { 'Content-Type': 'application/json' },
       ...options,
     });
 
