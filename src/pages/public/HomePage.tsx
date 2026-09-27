@@ -66,7 +66,7 @@ const platformFeatures = [
   {
     title: 'Cryptographic Audit Trail',
     description: 'Every decision signed with KMS, stored with Merkle proofs, and exportable for regulatory review.',
-    icon: '�',
+    icon: '🔐',
   },
   {
     title: 'Sovereign Deployment',

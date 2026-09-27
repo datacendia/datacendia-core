@@ -11,7 +11,7 @@
 // See LICENSE file for details.
 
 // =============================================================================
-// VECTOR SERVICE - pgvector for AI Memory (CendiaGnosis� RAG)
+// VECTOR SERVICE - pgvector for AI Memory (CendiaGnosis™ RAG)
 // =============================================================================
 // Uses PostgreSQL's pgvector extension for semantic search.
 // Powers: Document retrieval, Decision memory, Agent long-term context

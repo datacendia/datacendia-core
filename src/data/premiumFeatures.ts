@@ -231,7 +231,7 @@ export const PREMIUM_FEATURES: PremiumFeature[] = [
     id: 'operate',
     name: 'CendiaOps™',
     description: 'AI co-pilots for every department',
-    icon: '�',
+    icon: '⚙️',
     tier: 'enterprise',
     pillar: 'operate',
     features: [
