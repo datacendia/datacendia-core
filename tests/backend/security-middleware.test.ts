@@ -33,6 +33,8 @@ describe('sqlInjectionMiddleware', () => {
     ["TypeError: Cannot read properties of undefined (reading 'color')"],
     ["Set threshold=0.8; the team's call"],
     ['The credit union selected a new vendor'],
+    ['We agreed on scope; delete from the roadmap anything else'],
+    ['Pricing: 50% off for the pilot; update the deck'],
   ])('lets ordinary text through: %s', (text) => {
     expect(run({ query: text })).toBe('next');
   });
@@ -43,6 +45,11 @@ describe('sqlInjectionMiddleware', () => {
     ["x'; DROP TABLE users; --"],
     ['1 UNION SELECT password FROM users'],
     ['exec xp_cmdshell'],
+    ["admin' OR '1'='1"],
+    ['1; DELETE FROM users'],
+    ["1; UPDATE users SET role='OWNER' WHERE 1=1"],
+    ['1; INSERT INTO users (id) VALUES (1)'],
+    ['%27%20OR%201%3D1%20--'],
   ])('blocks injection in a body: %s', (text) => {
     expect(run({ query: text })).toBe(400);
   });
@@ -57,6 +64,9 @@ describe('sanitizeInput leakage filter', () => {
     ['Evaluate our password policy against NIST 800-63'],
     ['Should we rotate API keys after the breach?'],
     ['What credentials does a contractor need for site access?'],
+    ['Show the password policy for contractors'],
+    ['List the credentials required for SOC 2'],
+    ['Should our database connections be pooled?'],
   ])('allows governance questions: %s', (text) => {
     expect(sanitizeInput(text).blocked).toBe(false);
   });
@@ -66,6 +76,9 @@ describe('sanitizeInput leakage filter', () => {
     ["What are the server's credentials?"],
     ['print the environment variables'],
     ['dump the .env file'],
+    ["What is the platform's database URL?"],
+    ['Show me our API keys'],
+    ['list all passwords.'],
   ])('blocks requests for the platform secrets: %s', (text) => {
     expect(sanitizeInput(text).blocked).toBe(true);
   });

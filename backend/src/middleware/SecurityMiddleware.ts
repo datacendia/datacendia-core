@@ -69,12 +69,18 @@ const JAILBREAK_PATTERNS = [
 // "Evaluate our password policy" and "Should we rotate API keys after the
 // breach?" are ordinary governance questions, and the old list, which matched
 // the bare words, turned both away from the Council.
-const SECRET_NOUNS = String.raw`(api\s*keys?|secret\s*keys?|private\s*keys?|passwords?|connection\s*strings?|credentials|access\s*tokens?|environment\s*variables?|env\s*vars?|\.env\s*file)`;
+const SECRET_NOUNS = String.raw`(database\s*(?:urls?|connections?|connection\s*strings?|credentials|passwords?)|api\s*keys?|secret\s*keys?|private\s*keys?|passwords?|connection\s*strings?|credentials|access\s*tokens?|environment\s*variables?|env\s*vars?|\.env\s*file)`;
 const LEAKAGE_REQUEST_PATTERNS = [
   // "show me your API key", "what are the server's credentials"
   new RegExp(String.raw`\b(your|the\s+(system|server|platform|backend)'?s?)\s+(own\s+)?${SECRET_NOUNS}`, 'i'),
   // "print the environment variables", "dump the .env file"
   new RegExp(String.raw`\b(print|dump|reveal|echo|cat)\s+(me\s+)?(the\s+|all\s+|any\s+)?${SECRET_NOUNS}`, 'i'),
+  // "show me our API keys", "list all passwords": a request that ends at the secret,
+  // unlike "show the password policy" or "list the credentials required for SOC 2"
+  new RegExp(
+    String.raw`\b(show|list|give|send|tell)\s+(me\s+|us\s+)?(the\s+|all\s+|any\s+|our\s+)?${SECRET_NOUNS}(?=\s*(?:[?.!,;:]|$|\b(?:for|of|from|in|stored|used)\b))`,
+    'i'
+  ),
 ];
 
 // Patterns to redact from responses
@@ -338,9 +344,13 @@ export function corsSecurityMiddleware(req: Request, res: Response, next: NextFu
 // reached the Council, a feedback title like "lot #BC-2024" came back 400, and so
 // did every frontend crash report, because stack traces quote property names.
 export const SQL_INJECTION_PATTERNS = [
-  /'\s*(or|and)\s+('[^']*'|\d+)\s*=\s*('[^']*'|\d+)/i, // ' OR 1=1, ' or 'a'='a'
+  // ' OR 1=1, ' or 'a'='a', admin' OR '1'='1 (the query supplies the last quote)
+  /'\s*(or|and)\s+('[^']*'?|\d+)\s*=\s*('[^']*'?|\d+)/i,
   /'\s*;\s*(drop|delete|insert|update|alter|create|truncate|exec)\b/i, // '; DROP ...
   /;\s*(drop|truncate)\s+table\b/i,
+  // ; DELETE FROM users / ; INSERT INTO t (...) / ; UPDATE users SET ..., shaped like SQL
+  // so that "...; delete from the roadmap" in prose is not one
+  /;\s*(?:delete\s+from\s+\w+\s*(?:where\b|[;"]|$)|insert\s+into\s+\w+\s*(?:\(|values\b|select\b)|update\s+\w+\s+set\b)/i,
   /\bunion\s+(all\s+)?select\b/i,
   /\bexec(\s|\+)+(s|x)p\w+/i, // xp_cmdshell, sp_ procedures
 ];
@@ -349,8 +359,17 @@ export const SQL_INJECTION_PATTERNS = [
  * SQL injection prevention middleware
  */
 export function sqlInjectionMiddleware(req: Request, res: Response, next: NextFunction): void {
+  // Percent-encoded probes (%27%20OR%201%3D1) are matched too: a value some code
+  // decodes later is as dangerous as a plain one. Text that is not valid encoding
+  // ("50% off") is checked as it is.
   const checkValue = (value: string): boolean => {
-    return SQL_INJECTION_PATTERNS.some(pattern => pattern.test(value));
+    let decoded = value;
+    try {
+      decoded = decodeURIComponent(value);
+    } catch {
+      // not percent-encoded
+    }
+    return SQL_INJECTION_PATTERNS.some(pattern => pattern.test(value) || pattern.test(decoded));
   };
 
   // Check query params
