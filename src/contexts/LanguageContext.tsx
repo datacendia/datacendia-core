@@ -1223,7 +1223,7 @@ export function LanguageSelector({ className }: { className?: string }) {
         <span className="text-lg group-hover:scale-110 transition-transform">🌐</span>
         <span className="text-sm font-medium uppercase">{language}</span>
         {currentLanguage && (
-          <span className="hidden sm:inline text-sm text-neutral-500">
+          <span className="hidden min-[1700px]:inline text-sm text-neutral-500">
             {currentLanguage.nativeName}
           </span>
         )}

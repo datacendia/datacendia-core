@@ -73,6 +73,7 @@ export const DemoModeToggle: React.FC<DemoModeToggleProps> = ({ className }) => 
       {/* Main Toggle Button */}
       <button
         onClick={() => setShowDropdown(!showDropdown)}
+        title={isActive ? 'Demo Active' : 'Demo Mode'}
         className={`
           flex items-center gap-2 px-3 py-2 rounded-lg transition-all
           ${isActive 
@@ -82,7 +83,7 @@ export const DemoModeToggle: React.FC<DemoModeToggleProps> = ({ className }) => 
         `}
       >
         <Monitor className="w-4 h-4" />
-        <span className="text-sm font-medium">
+        <span className="hidden min-[1700px]:inline text-sm font-medium">
           {isActive ? 'Demo Active' : 'Demo Mode'}
         </span>
         <ChevronDown className={`w-4 h-4 transition-transform ${showDropdown ? 'rotate-180' : ''}`} />

@@ -1332,7 +1332,9 @@ const CortexLayoutInner: React.FC = () => {
         {/* ================================================================= */}
         {/* MAIN CONTENT AREA */}
         {/* ================================================================= */}
-        <div className="flex-1 flex flex-col min-h-0">
+        {/* min-w-0: a flex item otherwise grows to its widest content, and the
+            header alone used to push every page to ~1500px, scrolling sideways. */}
+        <div className="flex-1 flex flex-col min-h-0 min-w-0">
           {/* Header */}
           <header className="h-16 flex items-center justify-between px-4 lg:px-6 bg-sovereign-elevated border-b border-sovereign-border-subtle overflow-visible">
             {/* Mobile menu button */}
@@ -1345,12 +1347,12 @@ const CortexLayoutInner: React.FC = () => {
             </button>
 
             {/* Data Source Selector */}
-            <div className="hidden md:block w-64">
+            <div className="hidden xl:block w-48 2xl:w-56 shrink-0">
               <DataSourceSelector compact />
             </div>
 
             {/* Search - Opens Command Palette */}
-            <div className="flex-1 max-w-md mx-4">
+            <div className="flex-1 min-w-0 max-w-md mx-4">
               <button
                 onClick={() => {
                   // Trigger Cmd+K programmatically
@@ -1369,11 +1371,11 @@ const CortexLayoutInner: React.FC = () => {
                   'focus:outline-none focus:ring-2 focus:ring-cyan-500'
                 )}
               >
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 min-w-0">
                   <Icons.Search />
-                  <span>Search anything...</span>
+                  <span className="truncate">Search anything...</span>
                 </div>
-                <kbd className="hidden sm:inline-flex px-2 py-1 text-xs font-mono bg-sovereign-active text-gray-400 rounded">
+                <kbd className="hidden 2xl:inline-flex px-2 py-1 text-xs font-mono bg-sovereign-active text-gray-400 rounded">
                   Ctrl+K
                 </kbd>
               </button>
@@ -1381,13 +1383,13 @@ const CortexLayoutInner: React.FC = () => {
 
             {/* Quick Actions (show on main Cortex pages) */}
             {currentPage && (
-              <div className="hidden lg:block">
+              <div className="hidden min-[2200px]:block">
                 <QuickActionsBar currentPage={currentPage} />
               </div>
             )}
 
-            {/* Right side */}
-            <div className="flex items-center gap-3">
+            {/* Right side: labels only on wide screens, icons below */}
+            <div className="flex items-center gap-2 xl:gap-3 shrink-0">
               {/* API Health Status */}
               <HealthIndicator className="hidden sm:flex" />
 
@@ -1402,7 +1404,7 @@ const CortexLayoutInner: React.FC = () => {
                   )}
                 >
                   <Brain className="w-4 h-4" />
-                  <span className="hidden md:inline">Core Suite</span>
+                  <span className="hidden min-[1700px]:inline">Core Suite</span>
                   <svg
                     className={cn(
                       'w-4 h-4 transition-transform',
@@ -1515,7 +1517,7 @@ const CortexLayoutInner: React.FC = () => {
               </div>
 
               {/* Vertical Packs Dropdown (The "Specialist") */}
-              <div className="relative">
+              <div className="relative hidden md:block">
                 <button
                   onClick={() => setIsEnterpriseDropdownOpen(!isEnterpriseDropdownOpen)}
                   className={cn(
@@ -1525,7 +1527,7 @@ const CortexLayoutInner: React.FC = () => {
                   )}
                 >
                   <Factory className="w-4 h-4" />
-                  <span className="hidden md:inline">Verticals</span>
+                  <span className="hidden min-[1700px]:inline">Verticals</span>
                   <svg
                     className={cn(
                       'w-4 h-4 transition-transform',
@@ -1601,7 +1603,7 @@ const CortexLayoutInner: React.FC = () => {
               </div>
 
               {/* Admin Dropdown (hidden for non-admins in production) */}
-              <div className="relative">
+              <div className="relative hidden md:block">
                 <button
                   onClick={() => setIsSovereignDropdownOpen(!isSovereignDropdownOpen)}
                   className={cn(
@@ -1611,7 +1613,7 @@ const CortexLayoutInner: React.FC = () => {
                   )}
                 >
                   <Settings className="w-4 h-4" />
-                  <span className="hidden md:inline">Admin</span>
+                  <span className="hidden min-[1700px]:inline">Admin</span>
                   <svg
                     className={cn(
                       'w-4 h-4 transition-transform',
@@ -1707,7 +1709,7 @@ const CortexLayoutInner: React.FC = () => {
               </button>
 
               {/* Demo Mode Toggle */}
-              <DemoModeToggle />
+              <DemoModeToggle className="hidden md:block" />
 
               {/* Notifications */}
               <NotificationBell />
@@ -1716,7 +1718,7 @@ const CortexLayoutInner: React.FC = () => {
               <ThemeToggle />
 
               {/* Language Selector */}
-              <LanguageSelector />
+              <LanguageSelector className="hidden md:block" />
 
               {/* User menu */}
               <div className="relative">
