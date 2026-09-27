@@ -152,13 +152,13 @@ async function flushErrors(): Promise<void> {
       body: JSON.stringify({ errors }),
     });
 
-    if (response.status >= 500) {
-      // Put errors back in queue
+    if (response.status >= 500 || response.status === 429 || response.status === 408) {
+      // Temporary (server error, rate limit, timeout): put errors back in queue
       errorQueue = [...errors, ...errorQueue];
       console.warn('[ErrorTracking] Failed to send errors, will retry');
     } else if (!response.ok) {
-      // A 4xx (signed out, or rejected) fails the same way every time; re-queueing
-      // it re-sent the same report on every flush for the rest of the session.
+      // Any other 4xx (signed out, or rejected) fails the same way every time;
+      // re-queueing it re-sent the same report on every flush for the rest of the session.
       console.warn('[ErrorTracking] Error report rejected with', response.status);
     } else {
       console.log('[ErrorTracking] Sent', errors.length, 'error(s) to server');

@@ -74,6 +74,8 @@ describe('errorTracking', () => {
   afterEach(() => {
     vi.useRealTimers();
     cleanupErrorTracking();
+    // tokenManager is a module-level singleton: don't let one test's session leak into the next
+    tokenManager.clearTokens();
   });
 
   describe('initErrorTracking', () => {
@@ -230,15 +232,19 @@ describe('errorTracking', () => {
       const body = JSON.parse(mockFetch.mock.calls[0][1].body);
       const report = body.errors.find((e: { message: string }) => e.message === 'Test user id');
       expect(report.context.userId).toBe('user-123');
-      tokenManager.clearTokens();
     });
 
-    it('should handle invalid JWT gracefully', () => {
+    it('should handle invalid JWT gracefully', async () => {
       vi.spyOn(console, 'error').mockImplementation(() => {});
-      mockLocalStorage.getItem.mockReturnValue('invalid-token');
+      vi.spyOn(console, 'log').mockImplementation(() => {});
+      tokenManager.setTokens({ accessToken: 'invalid-token', refreshToken: 'r', expiresIn: 3600 });
 
-      // Should not throw
-      expect(() => logError(new Error('Test'))).not.toThrow();
+      // Should not throw, and the report goes out without a user ID
+      expect(() => logError(new Error('Invalid JWT'), {}, 'critical')).not.toThrow();
+      await vi.runAllTimersAsync();
+      const body = JSON.parse(mockFetch.mock.calls[0][1].body);
+      const report = body.errors.find((e: { message: string }) => e.message === 'Invalid JWT');
+      expect(report.context.userId).toBeUndefined();
     });
 
     it('should flush immediately for critical errors', () => {
@@ -345,17 +351,23 @@ describe('errorTracking', () => {
   });
 
   describe('flush error handling', () => {
-    it('should retry a batch the server failed to take (5xx)', async () => {
+    it.each([503, 429, 408])('should retry a batch the server could not take (%i)', async (status) => {
       vi.spyOn(console, 'error').mockImplementation(() => {});
+      vi.spyOn(console, 'log').mockImplementation(() => {});
       const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
-      mockFetch.mockResolvedValue({ ok: false, status: 503 });
+      mockFetch.mockResolvedValue({ ok: false, status });
 
-      logError(new Error('Test'), {}, 'critical');
-
-      // Wait for async flush
+      logError(new Error(`Retry ${status}`), {}, 'critical');
       await vi.runAllTimersAsync();
-
       expect(warnSpy).toHaveBeenCalledWith('[ErrorTracking] Failed to send errors, will retry');
+
+      // The next flush sends the queued report again
+      mockFetch.mockClear();
+      mockFetch.mockResolvedValue({ ok: true });
+      logError(new Error('Next'), {}, 'critical');
+      await vi.runAllTimersAsync();
+      const body = JSON.parse(mockFetch.mock.calls[0][1].body);
+      expect(body.errors.map((e: { message: string }) => e.message)).toContain(`Retry ${status}`);
       warnSpy.mockRestore();
     });
 
@@ -410,7 +422,6 @@ describe('errorTracking', () => {
           }),
         })
       );
-      tokenManager.clearTokens();
     });
   });
 });
