@@ -34,7 +34,8 @@ import {
   Send, User, MessageSquare, Archive, Calendar, FileJson, FileBadge,
   HardDrive, ClipboardList, ExternalLink, Stamp
 } from 'lucide-react';
-import ollamaService from '../../lib/ollama';
+import ollamaService, { OLLAMA_BASE_URL } from '../../lib/ollama';
+import { pickModel } from '../../lib/ollama/modelFallback';
 import councilPacketApi, { SignatureResult } from '../../services/CouncilPacketService';
 import { deterministicFloat, deterministicInt } from '../../lib/deterministic';
 
@@ -1033,11 +1034,11 @@ export const RegulatorsReceiptDemo: React.FC<{
     const dataPrompt = `Data Under Review:\n${dataContext}${context ? `\n\nPrevious Discussion:\n${context}` : ''}`;
     
     try {
-      const response = await fetch('http://localhost:11434/api/generate', {
+      const response = await fetch(`${OLLAMA_BASE_URL}/api/generate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'qwen2.5:7b',
+          model: pickModel('qwen2.5:7b', ollamaService.getStatus().models) ?? 'qwen2.5:7b',
           prompt: dataPrompt,
           system: systemPrompt,
           stream: false,

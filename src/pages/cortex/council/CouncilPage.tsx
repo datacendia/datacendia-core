@@ -735,6 +735,11 @@ const MODE_TRANSLATIONS: Record<string, Record<string, { name: string; directive
   },
 };
 
+// Errors about AI availability, which the status poll clears once AI is back.
+// Any other error (a deliberation that failed) stays until the user acts.
+const AI_NOT_CONFIGURED = 'AI agents are not configured. Please contact your administrator to set up an AI provider.';
+const AI_UNAVAILABLE = 'AI agents are temporarily unavailable. Please try again later.';
+
 export const CouncilPage: React.FC = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
@@ -1061,9 +1066,7 @@ export const CouncilPage: React.FC = () => {
 
         const ollamaStatus = ollamaService.getStatus();
         if (!backendAIAvailable && !ollamaStatus.available) {
-          setError(
-            'AI agents are not configured. Please contact your administrator to set up an AI provider.'
-          );
+          setError(AI_NOT_CONFIGURED);
         } else if (ollamaStatus.available) {
           // Pre-warm Ollama models in background for instant deliberations
           console.log('[Council] Pre-warming models in background...');
@@ -1074,7 +1077,7 @@ export const CouncilPage: React.FC = () => {
           });
         }
       } catch (err) {
-        setError('AI agents are temporarily unavailable. Please try again later.');
+        setError(AI_UNAVAILABLE);
         console.error('Council agent loading error:', err);
       } finally {
         setIsLoading(false);
@@ -1113,9 +1116,9 @@ export const CouncilPage: React.FC = () => {
         }))
       );
 
-      // Clear error if AI became available
+      // Clear an availability error once AI is back
       if (backendAIAvailable || ollamaService.getStatus().available) {
-        setError(null);
+        setError((prev) => (prev === AI_NOT_CONFIGURED || prev === AI_UNAVAILABLE ? null : prev));
       }
     }, 30000);
 
@@ -1414,10 +1417,12 @@ export const CouncilPage: React.FC = () => {
     setAttachedFiles([]);
     setExtractedContent('');
 
+    let activeDecisionId: string | null = null;
     try {
       if (queryMode === 'deliberation') {
         // Create initial streaming decision
         const decisionId = `decision-${Date.now()}`;
+        activeDecisionId = decisionId;
         const agentIds = selectedAgents.length > 0 ? selectedAgents : onlineAgents.map((a) => a.id);
 
         // Queue the deliberation job in the sovereign stack (BullMQ)
@@ -1708,8 +1713,19 @@ export const CouncilPage: React.FC = () => {
         setRecentDecisions((prev) => [newDecision, ...prev].slice(0, 10));
       }
     } catch (err: any) {
-      setError(err.message || 'Failed to process request. Ensure Ollama is running.');
+      const message = err.message || 'Failed to process request. Ensure Ollama is running.';
+      setError(message);
       console.error('Query error:', err);
+      // A deliberation that couldn't run used to stay "In Review" forever.
+      if (activeDecisionId) {
+        const failedId = activeDecisionId;
+        setStreamingDecision(null);
+        setCurrentPhase('');
+        setRecentDecisions((prev) =>
+          prev.map((d) => (d.id === failedId ? { ...d, currentPhase: 'failed', response: message } : d))
+        );
+        setDeliberations((prev) => prev.filter((d) => d.id !== failedId));
+      }
     } finally {
       setIsProcessing(false);
       // Note: Decision context storage moved to onComplete callback for accurate data
@@ -3241,7 +3257,9 @@ export const CouncilPage: React.FC = () => {
                       )}
                     >
                       {!result.confidence || result.confidence === 0
-                        ? result.currentPhase && result.currentPhase !== 'completed'
+                        ? result.currentPhase === 'failed'
+                          ? '✕ Not completed'
+                          : result.currentPhase && result.currentPhase !== 'completed'
                           ? '◐ Calibrating...'
                           : result.agentResponses?.length === 0
                             ? '○ Pending Evidence'
@@ -3300,12 +3318,16 @@ export const CouncilPage: React.FC = () => {
                       <span
                         className={cn(
                           'px-3 py-1.5 rounded-full text-xs font-semibold',
-                          result.currentPhase === 'completed' || !result.currentPhase
+                          result.currentPhase === 'failed'
+                            ? 'bg-red-900/40 text-red-400 border border-red-800'
+                            : result.currentPhase === 'completed' || !result.currentPhase
                             ? 'bg-green-900/50 text-green-400 border border-green-700'
                             : 'bg-yellow-900/50 text-yellow-400 border border-yellow-700'
                         )}
                       >
-                        {result.currentPhase === 'completed' || !result.currentPhase
+                        {result.currentPhase === 'failed'
+                          ? '✕ Not completed'
+                          : result.currentPhase === 'completed' || !result.currentPhase
                           ? '✓ Logged'
                           : '◐ In Review'}
                       </span>
@@ -3381,8 +3403,15 @@ export const CouncilPage: React.FC = () => {
                   </div>
                 </div>
 
+                {/* Why a deliberation didn't run */}
+                {result.currentPhase === 'failed' && (
+                  <div className="mb-4 ml-14 rounded-lg border border-red-900/60 bg-red-950/30 px-4 py-3 text-sm text-red-300">
+                    {result.response || 'The Council could not complete this deliberation.'}
+                  </div>
+                )}
+
                 {/* Phase Indicator */}
-                {result.currentPhase && result.currentPhase !== 'completed' && (
+                {result.currentPhase && result.currentPhase !== 'completed' && result.currentPhase !== 'failed' && (
                   <div className="flex items-center gap-2 mb-4 ml-14">
                     <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse" />
                     <span className="text-xs text-orange-400 font-mono uppercase">

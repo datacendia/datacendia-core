@@ -15,8 +15,9 @@
 // Real AI Agent Integration with Local Ollama Instance
 // =============================================================================
 
+import { pickModel } from './modelFallback';
 // Import DomainAgent type and agents from modular files for faster HMR
-import { 
+import {
   DomainAgent, 
   DOMAIN_AGENTS,
   CORE_AGENTS,
@@ -32,10 +33,12 @@ export { DOMAIN_AGENTS, CORE_AGENTS, LEGAL_AGENTS, PREMIUM_AGENTS, PRO_AGENTS, E
 
 // Personality trait type for type safety
 export type PersonalityTraitId = string;
-// Ollama API endpoint (default local installation)
-const OLLAMA_BASE_URL =
+// Ollama API endpoint (default local installation). Ollama binds 127.0.0.1 by
+// default; "localhost" can resolve to ::1 first, where Ollama isn't listening or,
+// with a container publishing 11434, a different Ollama answers instead.
+export const OLLAMA_BASE_URL =
   (typeof import.meta !== 'undefined' && (import.meta as any).env?.VITE_OLLAMA_URL) ||
-  'http://localhost:11434';
+  'http://127.0.0.1:11434';
 
 // =============================================================================
 // CENDIAGUARD™ - SOVEREIGN SECURITY CONSTITUTION
@@ -152,6 +155,17 @@ class OllamaService {
   private agents: DomainAgent[] = [...DOMAIN_AGENTS];
   private _hasLoggedConnection: boolean = false;
   private statusCheckInterval: number | null = null;
+  // The model each agent was configured with; `agent.model` is what it runs on.
+  private preferredModels = new Map<string, string>();
+
+  private preferredModel(agent: DomainAgent): string {
+    const known = this.preferredModels.get(agent.id);
+    if (known) {
+      return known;
+    }
+    this.preferredModels.set(agent.id, agent.model);
+    return agent.model;
+  }
 
   constructor(baseUrl: string = OLLAMA_BASE_URL) {
     this.baseUrl = baseUrl;
@@ -175,13 +189,16 @@ class OllamaService {
         this.availableModels = (data.models || []).map((m: OllamaModel) => m.name);
         this.isAvailable = true;
 
-        // Update agents to online if their model is available
-        this.agents = this.agents.map((agent) => ({
-          ...agent,
-          status: this.availableModels.some((m) => m.startsWith(agent.model?.split(':')[0] ?? ''))
-            ? ('online' as const)
-            : ('offline' as const),
-        }));
+        // Each agent runs on its own model if installed, else the closest one (see modelFallback)
+        this.agents = this.agents.map((agent) => {
+          const preferred = this.preferredModel(agent);
+          const model = pickModel(preferred, this.availableModels);
+          return {
+            ...agent,
+            model: model ?? preferred,
+            status: model ? ('online' as const) : ('offline' as const),
+          };
+        });
 
         // Only log once per session to reduce noise
         if (!this._hasLoggedConnection) {
@@ -657,7 +674,11 @@ class OllamaService {
         : this.agents.filter((a) => a.status === 'online');
 
     if (selectedAgents.length === 0) {
-      throw new Error('No agents are online');
+      throw new Error(
+        this.isAvailable
+          ? 'No Council agent can run: Ollama has no chat model installed (for example: ollama pull llama3.2).'
+          : `No Council agent can run: Ollama isn't reachable at ${this.baseUrl}.`
+      );
     }
 
     const responses: Array<{ agent: DomainAgent; response: string; duration: number }> = [];
