@@ -55,8 +55,9 @@ export interface RegisterData {
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
 // ApiClient reports these when the API gave no usable answer at all: down,
-// restarting, or a proxy's error page. Any other error is the API's verdict.
-const API_UNREACHABLE = new Set(['NETWORK_ERROR', 'HTTP_ERROR', 'EMPTY_RESPONSE', 'PARSE_ERROR']);
+// restarting, or a proxy's error page. Any other error is the API's verdict,
+// including HTTP_ERROR, which a live non-2xx response without a body also gets.
+const API_UNREACHABLE = new Set(['NETWORK_ERROR', 'EMPTY_RESPONSE', 'PARSE_ERROR']);
 const LAST_USER_KEY = 'dc_last_user';
 
 function lastKnownUser(): User | null {
