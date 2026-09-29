@@ -15,7 +15,7 @@
 // Real AI Agent Integration with Local Ollama Instance
 // =============================================================================
 
-import { pickModel } from './modelFallback';
+import { isChatModel, pickModel } from './modelFallback';
 // Import DomainAgent type and agents from modular files for faster HMR
 import {
   DomainAgent, 
@@ -186,13 +186,16 @@ class OllamaService {
 
       if (response.ok) {
         const data = await response.json();
-        this.availableModels = (data.models || []).map((m: OllamaModel) => m.name);
+        const models: OllamaModel[] = data.models || [];
+        this.availableModels = models.map((m) => m.name);
         this.isAvailable = true;
 
-        // Each agent runs on its own model if installed, else the closest one (see modelFallback)
+        // Each agent runs on its own model if installed, else the closest chat model
+        // (see modelFallback); embedding models are left out using Ollama's metadata.
+        const chatModels = models.filter(isChatModel).map((m) => m.name);
         this.agents = this.agents.map((agent) => {
           const preferred = this.preferredModel(agent);
-          const model = pickModel(preferred, this.availableModels);
+          const model = pickModel(preferred, chatModels);
           return {
             ...agent,
             model: model ?? preferred,
@@ -213,6 +216,18 @@ class OllamaService {
       this.agents = this.agents.map((agent) => ({ ...agent, status: 'offline' as const }));
     }
     return false;
+  }
+
+  /** Agents running on another model than the one they were configured with. */
+  getModelFallbacks(): Array<{ preferred: string; model: string }> {
+    const pairs = new Map<string, { preferred: string; model: string }>();
+    for (const agent of this.agents) {
+      const preferred = this.preferredModel(agent);
+      if (agent.status !== 'offline' && agent.model !== preferred) {
+        pairs.set(`${preferred}>${agent.model}`, { preferred, model: agent.model });
+      }
+    }
+    return [...pairs.values()];
   }
 
   /**
@@ -674,10 +689,13 @@ class OllamaService {
         : this.agents.filter((a) => a.status === 'online');
 
     if (selectedAgents.length === 0) {
+      const anyOnline = this.agents.some((a) => a.status === 'online');
       throw new Error(
-        this.isAvailable
-          ? 'No Council agent can run: Ollama has no chat model installed (for example: ollama pull llama3.2).'
-          : `No Council agent can run: Ollama isn't reachable at ${this.baseUrl}.`
+        !this.isAvailable
+          ? `No Council agent can run: Ollama isn't reachable at ${this.baseUrl}.`
+          : !anyOnline
+            ? 'No Council agent can run: Ollama has no chat model installed (for example: ollama pull llama3.2).'
+            : 'None of the selected agents can run right now. Select agents shown as online and try again.'
       );
     }
 

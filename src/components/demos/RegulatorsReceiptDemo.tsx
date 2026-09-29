@@ -1033,12 +1033,24 @@ export const RegulatorsReceiptDemo: React.FC<{
     const systemPrompt = getAgentPrompt(agentId, phase);
     const dataPrompt = `Data Under Review:\n${dataContext}${context ? `\n\nPrevious Discussion:\n${context}` : ''}`;
     
+    // Pick from the installed models, waiting for the first discovery if it hasn't
+    // finished; without a chat model, say so rather than post a model that isn't there.
+    let models = ollamaService.getStatus().models;
+    if (models.length === 0) {
+      await ollamaService.checkAvailability();
+      models = ollamaService.getStatus().models;
+    }
+    const model = pickModel('qwen2.5:7b', models);
+    if (!model) {
+      return '[Not generated: no chat model is installed in Ollama.]';
+    }
+
     try {
       const response = await fetch(`${OLLAMA_BASE_URL}/api/generate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: pickModel('qwen2.5:7b', ollamaService.getStatus().models) ?? 'qwen2.5:7b',
+          model,
           prompt: dataPrompt,
           system: systemPrompt,
           stream: false,
@@ -1048,12 +1060,13 @@ export const RegulatorsReceiptDemo: React.FC<{
       
       if (response.ok) {
         const data = await response.json();
-        return data.response?.trim() || 'Analysis complete.';
+        return data.response?.trim() || '[Not generated: the model returned no text.]';
       }
     } catch (error) {
       console.error('LLM generation failed:', error);
     }
-    return 'Analysis complete. Data reviewed.';
+    // Labelled, so a failed generation isn't read (or signed) as an agent's analysis
+    return '[Not generated: the model did not respond.]';
   };
 
   // Reset simulation

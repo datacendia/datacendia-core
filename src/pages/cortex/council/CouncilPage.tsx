@@ -1741,6 +1741,9 @@ export const CouncilPage: React.FC = () => {
     }
   };
 
+  // Re-read on each render; `agents` refreshes from the same service every 30 seconds
+  const modelFallbacks = ollamaService.getModelFallbacks();
+
   return (
     <div className="p-6 lg:p-8 max-w-7xl mx-auto">
       {/* ================================================================= */}
@@ -1813,6 +1816,13 @@ export const CouncilPage: React.FC = () => {
             )}
           </div>
         </div>
+        {/* Agents on a stand-in model: say so rather than falling back silently */}
+        {modelFallbacks.length > 0 && (
+          <p className="mt-3 text-xs text-amber-400/90">
+            Agents are running on {[...new Set(modelFallbacks.map((f) => f.model))].join(', ')}: the models they
+            were tuned on ({[...new Set(modelFallbacks.map((f) => f.preferred))].join(', ')}) are not installed in Ollama.
+          </p>
+        )}
       </div>
 
       {/* ================================================================= */}
@@ -3605,8 +3615,8 @@ export const CouncilPage: React.FC = () => {
                     </div>
                   )}
 
-                  {/* USER INPUT - Sticky at bottom like Teams/WhatsApp */}
-                  {result.currentPhase !== 'completed' && (
+                  {/* USER INPUT - Sticky at bottom like Teams/WhatsApp (not on a failed run: nothing would receive it) */}
+                  {result.currentPhase !== 'completed' && result.currentPhase !== 'failed' && (
                     <div className="sticky bottom-0 bg-neutral-900/95 backdrop-blur-sm pt-3 pb-2 -mx-5 px-5 mt-4 border-t border-neutral-700/50">
                       <form 
                         onSubmit={(e) => {

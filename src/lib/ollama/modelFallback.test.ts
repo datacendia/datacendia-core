@@ -8,7 +8,24 @@
 // See LICENSE file for details.
 
 import { describe, it, expect } from 'vitest';
-import { pickModel } from './modelFallback';
+import { isChatModel, pickModel } from './modelFallback';
+
+describe('isChatModel', () => {
+  it('recognizes embedding models by name, including ones not named *embed*', () => {
+    expect(isChatModel({ name: 'nomic-embed-text:latest' })).toBe(false);
+    expect(isChatModel({ name: 'bge-m3:latest' })).toBe(false);
+    expect(isChatModel({ name: 'all-minilm:latest' })).toBe(false);
+  });
+
+  it('recognizes embedding models by the family Ollama reports', () => {
+    expect(isChatModel({ name: 'custom-vectors:latest', details: { family: 'bert', families: ['bert'] } })).toBe(false);
+  });
+
+  it('accepts chat models', () => {
+    expect(isChatModel({ name: 'qwen2.5:7b', details: { family: 'qwen2', families: ['qwen2'] } })).toBe(true);
+    expect(isChatModel({ name: 'llama3.2:3b' })).toBe(true);
+  });
+});
 
 describe('pickModel', () => {
   it("uses the agent's own model when it is installed", () => {
