@@ -1394,8 +1394,8 @@ const CortexLayoutInner: React.FC = () => {
               {/* API Health Status */}
               <HealthIndicator className="hidden sm:flex" />
 
-              {/* Core Suite Dropdown (The "Brain"); its pages are in the navigation on phones */}
-              <div className="relative hidden sm:block">
+              {/* Core Suite Dropdown (The "Brain"), at every width: the phone navigation lacks its pages */}
+              <div className="relative">
                 <button
                   onClick={() => setIsPremiumDropdownOpen(!isPremiumDropdownOpen)}
                   aria-label="Core Suite"
