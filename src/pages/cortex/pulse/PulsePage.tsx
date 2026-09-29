@@ -81,7 +81,8 @@ const Sparkline: React.FC<{ data: number[]; color: string; height?: number }> = 
   const points = series
     .map((value, i) => {
       const x = (i / (series.length - 1)) * 100;
-      const y = height - ((value - min) / range) * height;
+      // A flat series sits mid-height: on the bottom edge half the stroke was clipped
+      const y = max === min ? height / 2 : height - ((value - min) / range) * height;
       return `${x},${y}`;
     })
     .join(' ');
