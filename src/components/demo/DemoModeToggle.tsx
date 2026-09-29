@@ -74,6 +74,8 @@ export const DemoModeToggle: React.FC<DemoModeToggleProps> = ({ className }) => 
       <button
         onClick={() => setShowDropdown(!showDropdown)}
         title={isActive ? 'Demo Active' : 'Demo Mode'}
+        aria-label={isActive ? 'Demo Active' : 'Demo Mode'}
+        aria-expanded={showDropdown}
         className={`
           flex items-center gap-2 px-3 py-2 rounded-lg transition-all
           ${isActive 

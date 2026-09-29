@@ -1175,6 +1175,13 @@ const CortexLayoutInner: React.FC = () => {
             </button>
           </div>
 
+          {/* The header shows the data source picker from xl; below that it lives here */}
+          {!isCollapsed && (
+            <div className="xl:hidden px-2 pt-3">
+              <DataSourceSelector compact />
+            </div>
+          )}
+
           {/* Main Navigation — Tier-Based */}
           <nav className="flex-1 py-3 px-2 space-y-1 overflow-y-auto">
             {/* Home / Mission Control */}
@@ -1381,22 +1388,19 @@ const CortexLayoutInner: React.FC = () => {
               </button>
             </div>
 
-            {/* Quick Actions (show on main Cortex pages) */}
-            {currentPage && (
-              <div className="hidden min-[2200px]:block">
-                <QuickActionsBar currentPage={currentPage} />
-              </div>
-            )}
 
             {/* Right side: labels only on wide screens, icons below */}
             <div className="flex items-center gap-2 xl:gap-3 shrink-0">
               {/* API Health Status */}
               <HealthIndicator className="hidden sm:flex" />
 
-              {/* Core Suite Dropdown (The "Brain") */}
-              <div className="relative">
+              {/* Core Suite Dropdown (The "Brain"); its pages are in the navigation on phones */}
+              <div className="relative hidden sm:block">
                 <button
                   onClick={() => setIsPremiumDropdownOpen(!isPremiumDropdownOpen)}
+                  aria-label="Core Suite"
+                  title="Core Suite"
+                  aria-expanded={isPremiumDropdownOpen}
                   className={cn(
                     'flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium',
                     'bg-sovereign-card border border-sovereign-border text-gray-300',
@@ -1517,9 +1521,12 @@ const CortexLayoutInner: React.FC = () => {
               </div>
 
               {/* Vertical Packs Dropdown (The "Specialist") */}
-              <div className="relative hidden md:block">
+              <div className="relative hidden sm:block">
                 <button
                   onClick={() => setIsEnterpriseDropdownOpen(!isEnterpriseDropdownOpen)}
+                  aria-label="Verticals"
+                  title="Verticals"
+                  aria-expanded={isEnterpriseDropdownOpen}
                   className={cn(
                     'flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium',
                     'bg-sovereign-card border border-sovereign-border text-gray-300',
@@ -1603,9 +1610,12 @@ const CortexLayoutInner: React.FC = () => {
               </div>
 
               {/* Admin Dropdown (hidden for non-admins in production) */}
-              <div className="relative hidden md:block">
+              <div className="relative hidden sm:block">
                 <button
                   onClick={() => setIsSovereignDropdownOpen(!isSovereignDropdownOpen)}
+                  aria-label="Admin"
+                  title="Admin"
+                  aria-expanded={isSovereignDropdownOpen}
                   className={cn(
                     'flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium',
                     'bg-sovereign-card border border-sovereign-border text-gray-300',
@@ -1696,26 +1706,16 @@ const CortexLayoutInner: React.FC = () => {
                 )}
               </div>
 
-              {/* Notifications */}
-              <button
-                aria-label="Notifications"
-                className="relative p-2 rounded-lg text-gray-400 hover:text-white hover:bg-sovereign-hover"
-              >
-                <Icons.Bell />
-                <span
-                  className="absolute top-1.5 right-1.5 w-2 h-2 bg-crimson-600 rounded-full"
-                  aria-hidden="true"
-                />
-              </button>
-
               {/* Demo Mode Toggle */}
-              <DemoModeToggle className="hidden md:block" />
+              <DemoModeToggle className="hidden sm:block" />
 
               {/* Notifications */}
               <NotificationBell />
 
               {/* Theme Toggle */}
-              <ThemeToggle />
+              <div className="hidden sm:block">
+                <ThemeToggle />
+              </div>
 
               {/* Language Selector */}
               <LanguageSelector className="hidden md:block" />
@@ -1783,9 +1783,12 @@ const CortexLayoutInner: React.FC = () => {
 
           {/* Page Content */}
           <main className="flex-1 overflow-y-auto overflow-x-hidden bg-sovereign-base">
-            {/* Breadcrumbs for deep navigation */}
-            <div className="px-4 lg:px-6 py-2 border-b border-sovereign-border-subtle bg-sovereign-elevated/50">
-              <Breadcrumbs className="text-slate-400" />
+            {/* Breadcrumbs for deep navigation, and on the main Cortex pages the quick
+                actions that carry the selected data across them. They used to sit in the
+                header, where they didn't fit next to everything else below ~2200px. */}
+            <div className="px-4 lg:px-6 py-2 border-b border-sovereign-border-subtle bg-sovereign-elevated/50 flex items-center justify-between gap-3">
+              <Breadcrumbs className="text-slate-400 min-w-0" />
+              {currentPage && <QuickActionsBar currentPage={currentPage} />}
             </div>
             <Outlet />
           </main>
@@ -1817,6 +1820,11 @@ const CortexLayoutInner: React.FC = () => {
                 >
                   ×
                 </button>
+              </div>
+
+              {/* Data source picker (the header hides it at this width) */}
+              <div className="px-2 pt-3">
+                <DataSourceSelector compact />
               </div>
 
               {/* Navigation */}
