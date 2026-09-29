@@ -18,12 +18,14 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { cn } from '../../../lib/utils';
 import { authApi } from '../../lib/api';
+import { useAuth } from '../../contexts/AuthContext';
 import { useI18n } from '../../lib/i18n';
 import { LanguageSwitcher } from '../../components/i18n/LanguageSwitcher';
 import { Logo } from '../../components/brand/Logo';
 
 export const RegisterPage: React.FC = () => {
   const navigate = useNavigate();
+  const { refreshUser } = useAuth();
   const { t } = useI18n();
   const [formData, setFormData] = useState({
     firstName: '',
@@ -125,6 +127,8 @@ export const RegisterPage: React.FC = () => {
       });
 
       if (response.success) {
+        // The call stored the tokens; tell the auth context about the session
+        await refreshUser();
         navigate('/cortex/dashboard');
       } else {
         setError(response.error?.message || t('auth.register.errors.registrationFailed'));

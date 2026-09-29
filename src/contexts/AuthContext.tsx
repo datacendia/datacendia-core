@@ -332,9 +332,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     try {
       const response = await authApi.getCurrentUser();
       if (response.success && response.data) {
+        // A user from /auth/me means a live session. The login and registration
+        // pages store the tokens themselves and call this so the context knows too;
+        // until they did, it thought nobody was signed in until the next reload.
         setState((prev) => ({
           ...prev,
           user: response.data as User,
+          isAuthenticated: true,
+          isInitialized: true,
         }));
       }
     } catch {

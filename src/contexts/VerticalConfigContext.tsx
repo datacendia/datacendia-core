@@ -19,7 +19,7 @@
 
 import React, { createContext, useContext, useState, useEffect, useCallback, useMemo, ReactNode } from 'react';
 import { verticalConfigApi, ServiceDefinition, VerticalTemplate, OrganizationVerticalConfig, ServiceToggle } from '../services/VerticalConfigService';
-import { tokenManager } from '../lib/api/client';
+import { useIsAuthenticated } from './AuthContext';
 
 // =============================================================================
 // TYPES
@@ -155,12 +155,15 @@ export const VerticalConfigProvider: React.FC<VerticalConfigProviderProps> = ({ 
     await initialize();
   }, [initialize]);
 
-  // Initialize only when authenticated (defer API calls until needed)
+  // Initialize once signed in (defer API calls until needed). The provider mounts
+  // with the app, usually before sign-in, so a check on mount alone never loaded
+  // the configuration for someone who signed in through the login page.
+  const isAuthenticated = useIsAuthenticated();
   useEffect(() => {
-    if (tokenManager.isAuthenticated()) {
+    if (isAuthenticated) {
       initialize();
     }
-  }, [initialize]);
+  }, [isAuthenticated, initialize]);
 
   // ===========================================================================
   // SERVICE ACCESS
