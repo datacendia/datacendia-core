@@ -36,7 +36,7 @@ import { cortexEnterpriseRoutes } from './routes/cortex/enterprise.routes';
 import { cortexSovereignRoutes } from './routes/cortex/sovereign.routes';
 import { cortexPlatformRoutes } from './routes/cortex/platform.routes';
 
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, type RouteObject } from 'react-router-dom';
 import { lazyLoad } from './routes/utils';
 
 // =============================================================================
@@ -44,8 +44,16 @@ import { lazyLoad } from './routes/utils';
 // =============================================================================
 
 // A page that throws while rendering shows RouteErrorPage instead of React
-// Router's developer screen. Inside the app the boundary sits below the layout,
-// so the sidebar stays and the visitor can move on to another page.
+// Router's developer screen. Under a layout route the boundary sits below the
+// layout, so the sidebar stays and the visitor can move on to another page.
+const withinLayout = (children: RouteObject[], homeHref: string, homeLabel: string): RouteObject[] => [
+  { errorElement: <RouteErrorPage homeHref={homeHref} homeLabel={homeLabel} />, children },
+];
+
+const adminWithinLayout = adminRoutes.map((route) =>
+  route.children ? { ...route, children: withinLayout(route.children, '/admin', 'Back to admin') } : route
+);
+
 export const router = createBrowserRouter([
   {
     errorElement: <RouteErrorPage />,
@@ -58,29 +66,30 @@ export const router = createBrowserRouter([
       {
         path: '/cortex',
         element: <CortexLayout />,
-        children: [
-          {
-            errorElement: <RouteErrorPage homeHref="/cortex/dashboard" homeLabel="Back to dashboard" />,
-            children: [
-              ...cortexCoreRoutes,
-              ...cortexIntelligenceRoutes,
-              ...cortexEnterpriseRoutes,
-              ...cortexSovereignRoutes,
-              ...cortexPlatformRoutes,
-            ],
-          },
-        ],
+        children: withinLayout(
+          [
+            ...cortexCoreRoutes,
+            ...cortexIntelligenceRoutes,
+            ...cortexEnterpriseRoutes,
+            ...cortexSovereignRoutes,
+            ...cortexPlatformRoutes,
+          ],
+          '/cortex/dashboard',
+          'Back to dashboard'
+        ),
       },
 
-      ...adminRoutes,
+      ...adminWithinLayout,
 
       // TOOLS
       {
         path: '/tools',
         element: <CortexLayout />,
-        children: [
-          { path: 'roi-calculator', element: lazyLoad(() => import('./pages/tools').then((m) => ({ default: m.ROICalculator }))) },
-        ],
+        children: withinLayout(
+          [{ path: 'roi-calculator', element: lazyLoad(() => import('./pages/tools').then((m) => ({ default: m.ROICalculator }))) }],
+          '/cortex/dashboard',
+          'Back to dashboard'
+        ),
       },
 
       // 404

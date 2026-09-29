@@ -24,13 +24,22 @@ export const RouteErrorPage: React.FC<Props> = ({ homeHref = '/', homeLabel = 'B
   const error = useRouteError();
   const { pathname } = useLocation();
 
-  useEffect(() => {
-    if (error instanceof Error) {
-      logError(error, { metadata: { source: 'RouteErrorPage', route: pathname } }, 'high');
-    }
-  }, [error, pathname]);
-
   const notFound = isRouteErrorResponse(error) && error.status === 404;
+
+  useEffect(() => {
+    // A route can also fail with a response (a loader's 500): report that too,
+    // but not an expected 404.
+    if (notFound) {
+      return;
+    }
+    const reported = error instanceof Error
+      ? error
+      : new Error(isRouteErrorResponse(error) ? `Route error ${error.status}: ${error.statusText}` : String(error));
+    logError(reported, { metadata: { source: 'RouteErrorPage', route: pathname } }, 'high');
+  }, [error, notFound, pathname]);
+
+  // The message is for developers; the demo runs the dev server but hides it.
+  const showDetails = import.meta.env.DEV && import.meta.env['VITE_HIDE_DEV_TOOLS'] !== 'true';
 
   return (
     <div className="flex min-h-[60vh] items-center justify-center p-6">
@@ -46,7 +55,7 @@ export const RouteErrorPage: React.FC<Props> = ({ homeHref = '/', homeLabel = 'B
             ? 'The page you were looking for does not exist.'
             : 'The rest of the platform is unaffected. Reload to try again, or go back and carry on.'}
         </p>
-        {import.meta.env.DEV && error instanceof Error && (
+        {showDetails && error instanceof Error && (
           <p className="mb-6 break-words rounded-lg border border-slate-800 bg-slate-950 p-3 text-left font-mono text-xs text-red-300">
             {error.message}
           </p>
