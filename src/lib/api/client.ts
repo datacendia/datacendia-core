@@ -181,30 +181,46 @@ class TokenManager {
   }
 
   private async _doRefresh(): Promise<boolean> {
-    if (!this.refreshToken) {
+    const refreshToken = this.refreshToken;
+    if (!refreshToken) {
       return false;
     }
 
     try {
-      const csrf = await getCsrfToken();
-      const response = await fetch(`${API_BASE_URL}/auth/refresh`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          ...(csrf ? { [CSRF_HEADER]: csrf } : {}),
-        },
-        credentials: 'include',
-        body: JSON.stringify({ refreshToken: this.refreshToken }),
-      });
+      // Refresh sends no bearer, so the API's CSRF check applies to it. The cached
+      // token can be stale (its cookie expired, or another tab had one issued), and
+      // a rejected refresh signed the user out: retry once with a fresh token.
+      const send = async (freshCsrf: boolean) => {
+        const csrf = await getCsrfToken(freshCsrf);
+        return fetch(`${API_BASE_URL}/auth/refresh`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            ...(csrf ? { [CSRF_HEADER]: csrf } : {}),
+          },
+          credentials: 'include',
+          body: JSON.stringify({ refreshToken }),
+        });
+      };
+      let response = await send(false);
+      if (await isCsrfRejection(response)) {
+        response = await send(true);
+      }
 
       if (!response.ok) {
         this.clearTokens();
         return false;
       }
 
-      const data: ApiResponse<AuthTokens> = await response.json();
-      if (data.success && data.data) {
-        this.setTokens(data.data);
+      const data: ApiResponse<Partial<AuthTokens>> = await response.json();
+      if (data.success && data.data?.accessToken) {
+        // The API returns a new access token but doesn't rotate the refresh token;
+        // storing the missing one as undefined signed the user out at the next expiry.
+        this.setTokens({
+          accessToken: data.data.accessToken,
+          refreshToken: data.data.refreshToken ?? refreshToken,
+          expiresIn: data.data.expiresIn ?? 3600,
+        });
         return true;
       }
 

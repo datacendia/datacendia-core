@@ -87,7 +87,9 @@ export function createApiFetch(next: typeof fetch, deps: ApiFetchDeps): typeof f
 
     // An expired session is refreshed once and the request retried, as ApiClient
     // does: only for a bearer added here, and only when the body can be sent again.
-    const resendable = !request && (init?.body === undefined || typeof init.body === 'string');
+    const resendable = request
+      ? request.body === null // a Request whose body is a stream can only be read once
+      : init?.body === undefined || typeof init.body === 'string';
     if (response.status === 401 && addsBearer && resendable && deps.refresh && (await deps.refresh())) {
       const fresh = deps.getToken();
       if (fresh) {

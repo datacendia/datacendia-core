@@ -123,6 +123,18 @@ describe('createApiFetch', () => {
     expect(sent(1).get('Authorization')).toBe('Bearer tok-2');
   });
 
+  it('retries a bodyless Request object too', async () => {
+    const holder: { setToken?: (t: string) => void } = {};
+    const refresh = vi.fn(async () => { holder.setToken?.('tok-2'); return true; });
+    const { apiFetch, next, sent, setToken } = setup({ refresh });
+    holder.setToken = setToken;
+    next.mockResolvedValueOnce(new Response('', { status: 401 })).mockResolvedValueOnce(new Response('{}'));
+
+    const response = await apiFetch(new Request(`${ORIGIN}/api/v1/settings/users`));
+    expect(response.status).toBe(200);
+    expect(sent(1).get('Authorization')).toBe('Bearer tok-2');
+  });
+
   it("doesn't refresh for a bearer the caller supplied", async () => {
     const refresh = vi.fn(async () => true);
     const { apiFetch, next } = setup({ refresh });
