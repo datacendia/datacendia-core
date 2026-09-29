@@ -340,6 +340,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           user: response.data as User,
           isAuthenticated: true,
           isInitialized: true,
+          isLoading: false,
         }));
       }
     } catch {
