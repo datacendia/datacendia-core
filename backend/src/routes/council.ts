@@ -1143,13 +1143,20 @@ router.post('/deliberations/save', async (req: Request, res: Response, next: Nex
     const { question, mode, agentResponses, crossExaminations, synthesis, confidence } = req.body;
     const orgId = req.organizationId!;
 
-    // Create deliberation record
+    // Create deliberation record. The mode and the agents who took part are kept
+    // so Council History can show them (it read "Council" and "0 agents" otherwise).
     const deliberationId = crypto.randomUUID();
+    const agentIds: string[] = Array.isArray(agentResponses)
+      ? agentResponses.map((ar: { agentId?: unknown; agentCode?: unknown }) => ar.agentId || ar.agentCode).filter((id): id is string => typeof id === 'string' && id !== '')
+      : [];
+    const modeId = typeof mode === 'string' && mode !== '' ? mode : undefined;
     const deliberation = await prisma.deliberations.create({
       data: {
         id: deliberationId,
         organization_id: orgId,
         question,
+        mode: modeId,
+        config: { mode: modeId, agents: agentIds } as Prisma.InputJsonValue,
         status: 'COMPLETED',
         current_phase: 'completed',
         progress: 100,

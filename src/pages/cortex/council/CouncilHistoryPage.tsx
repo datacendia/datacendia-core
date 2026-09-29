@@ -29,7 +29,7 @@ interface HistoryItem {
   id: string;
   title: string;
   mode: string;
-  status: 'consensus' | 'split' | 'overridden' | 'abandoned' | 'in_progress';
+  status: 'consensus' | 'split' | 'overridden' | 'abandoned' | 'in_progress' | 'pending';
   consensusScore: number | null;
   duration: string;
   agentCount: number;
@@ -44,6 +44,7 @@ const STATUS_CONFIG: Record<string, { icon: React.FC<{ className?: string }>; co
   overridden: { icon: XCircle, color: 'text-red-400', label: 'Overridden' },
   abandoned: { icon: XCircle, color: 'text-neutral-500', label: 'Abandoned' },
   in_progress: { icon: Clock, color: 'text-blue-400', label: 'In Progress' },
+  pending: { icon: Clock, color: 'text-neutral-400', label: 'Pending' },
 };
 
 const DEMO_HISTORY: HistoryItem[] = [
@@ -71,14 +72,15 @@ interface DeliberationRow {
   topic?: string;
   mode?: string;
   status?: string;
-  decision?: { status?: string; dissent?: unknown } | null;
+  decision?: { status?: string; dissent?: unknown; dissenting?: unknown } | null;
   confidence?: number | null;
   consensus_score?: number;
   consensusScore?: number;
   duration?: string;
   started_at?: string;
   completed_at?: string;
-  config?: { agents?: unknown[] } | null;
+  config?: { agents?: unknown[]; mode?: string } | null;
+  deliberation_messages?: Array<{ agent_id?: string }>;
   agent_count?: number;
   agentCount?: number;
   context?: { verticalLabel?: string; initiatedBy?: string } | null;
@@ -92,9 +94,22 @@ interface DeliberationRow {
 function toHistoryStatus(d: DeliberationRow): HistoryItem['status'] {
   const status = String(d.status ?? '').toUpperCase();
   if (status === 'CANCELLED') {return 'abandoned';}
+  if (status === 'PENDING') {return 'pending';}
   if (status !== 'COMPLETED') {return 'in_progress';}
   if (d.decision?.status === 'REJECTED' || d.decision?.status === 'OVERRIDDEN') {return 'overridden';}
-  return d.decision?.dissent ? 'split' : 'consensus';
+  // Recorded as `dissent` or `dissenting`, a view or a list of them; an empty list is no dissent
+  const dissent = d.decision?.dissent ?? d.decision?.dissenting;
+  return (Array.isArray(dissent) ? dissent.length > 0 : Boolean(dissent)) ? 'split' : 'consensus';
+}
+
+// The configured council if recorded, else the distinct agents who spoke.
+function countAgents(d: DeliberationRow): number {
+  const configured = d.config?.agents;
+  if (Array.isArray(configured) && configured.length > 0) {
+    return configured.length;
+  }
+  const speakers = new Set((d.deliberation_messages ?? []).map((m) => m.agent_id).filter(Boolean));
+  return speakers.size || d.agent_count || d.agentCount || 0;
 }
 
 function formatDuration(start?: string, end?: string): string {
@@ -106,16 +121,16 @@ function formatDuration(start?: string, end?: string): string {
 
 function toHistoryItem(d: DeliberationRow): HistoryItem {
   const score = d.confidence ?? d.consensus_score ?? d.consensusScore;
-  const agents = d.config?.agents;
+  const modeId = d.config?.mode || d.mode;
   const vertical = d.context?.verticalLabel;
   return {
     id: d.id,
     title: d.question || d.title || d.topic || 'Untitled Deliberation',
-    mode: d.mode ? COUNCIL_MODES[d.mode]?.name ?? d.mode.charAt(0).toUpperCase() + d.mode.slice(1) : 'Council',
+    mode: modeId ? COUNCIL_MODES[modeId]?.name ?? modeId.charAt(0).toUpperCase() + modeId.slice(1) : 'Council',
     status: toHistoryStatus(d),
     consensusScore: typeof score === 'number' ? Math.round(score <= 1 ? score * 100 : score) : null,
     duration: d.duration || formatDuration(d.started_at, d.completed_at),
-    agentCount: Array.isArray(agents) ? agents.length : d.agent_count || d.agentCount || 0,
+    agentCount: countAgents(d),
     date: d.created_at || d.createdAt || new Date().toISOString(),
     tags: d.tags || (vertical ? [vertical] : []),
     initiatedBy: d.context?.initiatedBy || d.initiated_by || d.initiatedBy || 'User',
