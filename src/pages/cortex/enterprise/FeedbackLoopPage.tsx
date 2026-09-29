@@ -43,7 +43,7 @@ export default function FeedbackLoopPage() {
   const [statusFilter, setStatusFilter] = useState('');
   const [typeFilter, setTypeFilter] = useState('');
   const [showForm, setShowForm] = useState(false);
-  const [formData, setFormData] = useState({ type: 'suggestion', title: '', description: '', priority: 'medium' });
+  const [formData, setFormData] = useState({ type: 'improvement', title: '', description: '', priority: 'medium' });
 
   const fetchFeedback = useCallback(async () => {
     setLoading(true);
@@ -69,14 +69,16 @@ export default function FeedbackLoopPage() {
     try {
       await apiClient.api.post('/feedback', formData);
       setShowForm(false);
-      setFormData({ type: 'suggestion', title: '', description: '', priority: 'medium' });
+      setFormData({ type: 'improvement', title: '', description: '', priority: 'medium' });
       fetchFeedback();
     } catch {}
   };
 
+  // FeedbackService's FeedbackStatus. The page used its own words (new, implemented,
+  // declined), so real entries counted as neither open nor done.
   const statusColors: Record<string, string> = {
-    new: 'bg-blue-600', under_review: 'bg-amber-600', in_progress: 'bg-purple-600',
-    implemented: 'bg-emerald-600', declined: 'bg-red-600', closed: 'bg-slate-600',
+    submitted: 'bg-blue-600', acknowledged: 'bg-cyan-600', triaged: 'bg-amber-600', in_progress: 'bg-purple-600',
+    resolved: 'bg-emerald-600', closed: 'bg-slate-600', wont_fix: 'bg-red-600',
   };
 
   const priorityColors: Record<string, string> = {
@@ -85,8 +87,8 @@ export default function FeedbackLoopPage() {
 
   const stats = {
     total: feedback.length,
-    open: feedback.filter((f) => ['new', 'under_review', 'in_progress'].includes(f.status)).length,
-    implemented: feedback.filter((f) => f.status === 'implemented').length,
+    open: feedback.filter((f) => ['submitted', 'acknowledged', 'triaged', 'in_progress'].includes(f.status)).length,
+    resolved: feedback.filter((f) => f.status === 'resolved').length,
     avgVotes: feedback.length > 0 ? Math.round(feedback.reduce((s, f) => s + (f.votes || 0), 0) / feedback.length) : 0,
   };
 
@@ -105,7 +107,7 @@ export default function FeedbackLoopPage() {
               </h1>
             </div>
             <p className="text-sm text-slate-400 ml-13">
-              {stats.total} entries &middot; {stats.open} open &middot; {stats.implemented} implemented
+              {stats.total} entries &middot; {stats.open} open &middot; {stats.resolved} resolved
             </p>
           </div>
           <div className="flex items-center gap-3">
@@ -130,7 +132,7 @@ export default function FeedbackLoopPage() {
           {[
             { label: 'Total', value: stats.total, icon: MessageSquare, color: 'pink' },
             { label: 'Open', value: stats.open, icon: Clock, color: 'amber' },
-            { label: 'Implemented', value: stats.implemented, icon: CheckCircle2, color: 'emerald' },
+            { label: 'Resolved', value: stats.resolved, icon: CheckCircle2, color: 'emerald' },
             { label: 'Avg Votes', value: stats.avgVotes, icon: ThumbsUp, color: 'blue' },
           ].map((s) => (
             <div key={s.label} className="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4">
@@ -153,11 +155,13 @@ export default function FeedbackLoopPage() {
             className="px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-sm text-white focus:outline-none"
           >
             <option value="">All Status</option>
-            <option value="new">New</option>
-            <option value="under_review">Under Review</option>
+            <option value="submitted">Submitted</option>
+            <option value="acknowledged">Acknowledged</option>
+            <option value="triaged">Triaged</option>
             <option value="in_progress">In Progress</option>
-            <option value="implemented">Implemented</option>
-            <option value="declined">Declined</option>
+            <option value="resolved">Resolved</option>
+            <option value="closed">Closed</option>
+            <option value="wont_fix">Won&apos;t Fix</option>
           </select>
           <select
             value={typeFilter}
@@ -166,9 +170,11 @@ export default function FeedbackLoopPage() {
           >
             <option value="">All Types</option>
             <option value="bug">Bug</option>
-            <option value="suggestion">Suggestion</option>
             <option value="feature_request">Feature Request</option>
-            <option value="compliance_issue">Compliance Issue</option>
+            <option value="improvement">Improvement</option>
+            <option value="question">Question</option>
+            <option value="complaint">Complaint</option>
+            <option value="praise">Praise</option>
           </select>
         </div>
 
@@ -187,10 +193,12 @@ export default function FeedbackLoopPage() {
                   <div>
                     <label className="text-xs text-slate-400 mb-1 block">Type</label>
                     <select value={formData.type} onChange={(e) => setFormData({ ...formData, type: e.target.value })} className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-sm text-white">
-                      <option value="suggestion">Suggestion</option>
-                      <option value="bug">Bug Report</option>
+                      <option value="bug">Bug</option>
                       <option value="feature_request">Feature Request</option>
-                      <option value="compliance_issue">Compliance Issue</option>
+                      <option value="improvement">Improvement</option>
+                      <option value="question">Question</option>
+                      <option value="complaint">Complaint</option>
+                      <option value="praise">Praise</option>
                     </select>
                   </div>
                   <div>
