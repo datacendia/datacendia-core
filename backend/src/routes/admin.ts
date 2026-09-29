@@ -163,7 +163,10 @@ router.get('/tenants/:id', ownTenantOnly, async (req: Request, res: Response) =>
   }
 });
 
-router.patch('/tenants/:id', ownTenantOnly, async (req: Request, res: Response) => {
+// The update can change plan and status, which the upgrade and suspend routes
+// reserve for the platform owner; organizations edit their own details through
+// PATCH /settings/organization.
+router.patch('/tenants/:id', platformOwner, async (req: Request, res: Response) => {
   try {
     const validated = updateTenantSchema.parse(req.body);
     const tenant = await tenantService.updateTenant(req.params.id, validated);
