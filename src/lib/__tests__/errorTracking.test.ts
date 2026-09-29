@@ -76,6 +76,8 @@ describe('errorTracking', () => {
     cleanupErrorTracking();
     // tokenManager is a module-level singleton: don't let one test's session leak into the next
     tokenManager.clearTokens();
+    // Nor one test's console spies (clearAllMocks in beforeEach keeps implementations)
+    vi.restoreAllMocks();
   });
 
   describe('initErrorTracking', () => {

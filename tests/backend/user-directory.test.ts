@@ -33,8 +33,28 @@ describe('userDirectory', () => {
     expect(users).toEqual([
       {
         id: 'u1', email: 'a@x.test', name: 'A', role: 'editor', status: 'pending',
-        lastLoginAt: undefined, createdAt: '2026-01-01T00:00:00.000Z', mfaEnabled: true,
+        createdAt: '2026-01-01T00:00:00.000Z', mfaEnabled: true,
       },
+    ]);
+    expect(users[0]).not.toHaveProperty('lastLoginAt', expect.anything());
+  });
+
+  it('reports the last sign-in when there is one', async () => {
+    findMany.mockResolvedValue([
+      {
+        id: 'u2', email: 'b@x.test', name: 'B', role: 'ADMIN', status: 'ACTIVE',
+        last_login_at: new Date('2026-09-20T08:30:00Z'), created_at: new Date('2026-01-01T00:00:00Z'), mfa_enabled: false,
+      },
+    ]);
+    const [user] = await userDirectory.listUsers('org-1');
+    expect(user.lastLoginAt).toBe('2026-09-20T08:30:00.000Z');
+  });
+
+  it('searches names and emails, case-insensitively', async () => {
+    await userDirectory.listUsers('org-1', { search: '  bob smith ' });
+    expect(findMany.mock.calls[0][0].where.OR).toEqual([
+      { name: { contains: 'bob smith', mode: 'insensitive' } },
+      { email: { contains: 'bob smith', mode: 'insensitive' } },
     ]);
   });
 
