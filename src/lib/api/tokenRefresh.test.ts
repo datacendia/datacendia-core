@@ -53,6 +53,22 @@ describe('tokenManager.refreshAccessToken', () => {
     expect(tokenManager.getAccessToken()).toBe('access-2');
   });
 
+  it("doesn't undo a sign-out that happened while it was in flight", async () => {
+    let answerRefresh: (r: Response) => void = () => {};
+    globalThis.fetch = vi.fn()
+      .mockResolvedValueOnce(json({ csrfToken: 'csrf-1' }))
+      .mockImplementationOnce(() => new Promise<Response>((resolve) => { answerRefresh = resolve; }));
+    const tokenManager = await signedIn();
+
+    const pending = tokenManager.refreshAccessToken();
+    await new Promise((r) => setTimeout(r, 0)); // the refresh request is now in flight
+    tokenManager.clearTokens();
+    answerRefresh(json({ success: true, data: { accessToken: 'access-2', expiresIn: 3600 } }));
+
+    await expect(pending).resolves.toBe(false);
+    expect(tokenManager.getAccessToken()).toBeNull();
+  });
+
   it('signs out when the refresh itself is refused', async () => {
     globalThis.fetch = vi.fn()
       .mockResolvedValueOnce(json({ csrfToken: 'csrf-1' }))

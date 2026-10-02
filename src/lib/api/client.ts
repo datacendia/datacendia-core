@@ -207,12 +207,23 @@ class TokenManager {
         response = await send(true);
       }
 
+      // The session changed while this was in flight (a sign-out, or a new
+      // sign-in): leave it alone rather than apply a stale answer over it or sign
+      // the new session out.
+      const superseded = () => this.refreshToken !== refreshToken;
+      if (superseded()) {
+        return this.accessToken !== null;
+      }
+
       if (!response.ok) {
         this.clearTokens();
         return false;
       }
 
       const data: ApiResponse<Partial<AuthTokens>> = await response.json();
+      if (superseded()) {
+        return this.accessToken !== null;
+      }
       if (data.success && data.data?.accessToken) {
         // The API returns a new access token but doesn't rotate the refresh token;
         // storing the missing one as undefined signed the user out at the next expiry.
@@ -227,6 +238,9 @@ class TokenManager {
       this.clearTokens();
       return false;
     } catch {
+      if (this.refreshToken !== refreshToken) {
+        return this.accessToken !== null;
+      }
       this.clearTokens();
       return false;
     }
