@@ -1032,27 +1032,30 @@ export const RegulatorsReceiptDemo: React.FC<{
     const systemPrompt = getAgentPrompt(agentId, phase);
     const dataPrompt = `Data Under Review:\n${dataContext}${context ? `\n\nPrevious Discussion:\n${context}` : ''}`;
     
+    // Wait for the first discovery if it hasn't finished, then take the closest
+    // installed model on local Ollama, or the API's choice when calls go through it
+    // (a hosted deployment). Without one, say so rather than post a model that isn't there.
+    if (!ollamaService.getStatus().available) {
+      await ollamaService.checkAvailability();
+    }
+    const model = ollamaService.getStatus().available ? ollamaService.resolveModel('qwen2.5:7b') : null;
+    if (!model) {
+      return '[Not generated: no AI model is available.]';
+    }
+
     try {
-      const response = await fetch('http://localhost:11434/api/generate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'qwen2.5:7b',
-          prompt: dataPrompt,
-          system: systemPrompt,
-          stream: false,
-          options: { temperature: 0.7, num_predict: 150 }
-        })
+      const data = await ollamaService.generate({
+        model,
+        prompt: dataPrompt,
+        system: systemPrompt,
+        options: { temperature: 0.7, num_predict: 150 },
       });
-      
-      if (response.ok) {
-        const data = await response.json();
-        return data.response?.trim() || 'Analysis complete.';
-      }
+      return data.response?.trim() || '[Not generated: the model returned no text.]';
     } catch (error) {
       console.error('LLM generation failed:', error);
     }
-    return 'Analysis complete. Data reviewed.';
+    // Labelled, so a failed generation isn't read (or signed) as an agent's analysis
+    return '[Not generated: the model did not respond.]';
   };
 
   // Reset simulation

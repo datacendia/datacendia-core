@@ -19,6 +19,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { cn } from '../../../../lib/utils';
 import apiClient from '../../../lib/api/client';
+import { COUNCIL_MODES } from '../../../data/councilModes';
 import {
   Search, Filter, Clock, Brain, CheckCircle, AlertTriangle, XCircle,
   ChevronRight, Download, Calendar, Users, BarChart3, Tag, SortAsc,
@@ -28,8 +29,8 @@ interface HistoryItem {
   id: string;
   title: string;
   mode: string;
-  status: 'consensus' | 'split' | 'overridden' | 'abandoned';
-  consensusScore: number;
+  status: 'consensus' | 'split' | 'overridden' | 'abandoned' | 'in_progress' | 'pending';
+  consensusScore: number | null;
   duration: string;
   agentCount: number;
   date: string;
@@ -42,6 +43,8 @@ const STATUS_CONFIG: Record<string, { icon: React.FC<{ className?: string }>; co
   split: { icon: AlertTriangle, color: 'text-amber-400', label: 'Split Decision' },
   overridden: { icon: XCircle, color: 'text-red-400', label: 'Overridden' },
   abandoned: { icon: XCircle, color: 'text-neutral-500', label: 'Abandoned' },
+  in_progress: { icon: Clock, color: 'text-blue-400', label: 'In Progress' },
+  pending: { icon: Clock, color: 'text-neutral-400', label: 'Pending' },
 };
 
 const DEMO_HISTORY: HistoryItem[] = [
@@ -56,6 +59,83 @@ const DEMO_HISTORY: HistoryItem[] = [
   { id: 'd9', title: 'Hiring Plan Q2 — Engineering Team Expansion', mode: 'Talent Strategy', status: 'consensus', consensusScore: 90, duration: '7m 33s', agentCount: 5, date: '2026-01-22T10:00:00Z', tags: ['hiring', 'talent', 'engineering'], initiatedBy: 'Admin' },
   { id: 'd10', title: 'Competitive Response — Market Disruption Alert', mode: "Devil's Advocate", status: 'split', consensusScore: 55, duration: '15m 20s', agentCount: 7, date: '2026-01-18T16:00:00Z', tags: ['competition', 'market', 'strategy'], initiatedBy: 'Stuart Rainey' },
 ];
+
+// GET /deliberations returns Prisma rows: status is the DeliberationStatus enum
+// (PENDING | IN_PROGRESS | AWAITING_APPROVAL | COMPLETED | CANCELLED), the topic
+// is `question`, and `confidence` is 0-1. Reading them as lowercase strings sent
+// "COMPLETED" to STATUS_CONFIG, which has no such key, and the page crashed.
+// The fields of a GET /deliberations row this page reads (older payloads used other names).
+interface DeliberationRow {
+  id: string;
+  question?: string;
+  title?: string;
+  topic?: string;
+  mode?: string;
+  status?: string;
+  decision?: { status?: string; dissent?: unknown; dissenting?: unknown } | null;
+  confidence?: number | null;
+  consensus_score?: number;
+  consensusScore?: number;
+  duration?: string;
+  started_at?: string;
+  completed_at?: string;
+  config?: { agents?: unknown[]; mode?: string } | null;
+  deliberation_messages?: Array<{ agent_id?: string }>;
+  agent_count?: number;
+  agentCount?: number;
+  context?: { verticalLabel?: string; initiatedBy?: string } | null;
+  created_at?: string;
+  createdAt?: string;
+  tags?: string[];
+  initiated_by?: string;
+  initiatedBy?: string;
+}
+
+function toHistoryStatus(d: DeliberationRow): HistoryItem['status'] {
+  const status = String(d.status ?? '').toUpperCase();
+  if (status === 'CANCELLED') {return 'abandoned';}
+  if (status === 'PENDING') {return 'pending';}
+  if (status !== 'COMPLETED') {return 'in_progress';}
+  if (d.decision?.status === 'REJECTED' || d.decision?.status === 'OVERRIDDEN') {return 'overridden';}
+  // Recorded as `dissent` or `dissenting`, a view or a list of them; an empty list is no dissent
+  const dissent = d.decision?.dissent ?? d.decision?.dissenting;
+  return (Array.isArray(dissent) ? dissent.length > 0 : Boolean(dissent)) ? 'split' : 'consensus';
+}
+
+// The configured council if recorded, else the distinct agents who spoke.
+function countAgents(d: DeliberationRow): number {
+  const configured = d.config?.agents;
+  if (Array.isArray(configured) && configured.length > 0) {
+    return configured.length;
+  }
+  const speakers = new Set((d.deliberation_messages ?? []).map((m) => m.agent_id).filter(Boolean));
+  return speakers.size || d.agent_count || d.agentCount || 0;
+}
+
+function formatDuration(start?: string, end?: string): string {
+  const ms = start && end ? new Date(end).getTime() - new Date(start).getTime() : NaN;
+  if (!Number.isFinite(ms) || ms <= 0) {return '—';}
+  const mins = Math.max(1, Math.round(ms / 60000));
+  return mins >= 60 ? `${Math.floor(mins / 60)}h ${mins % 60}m` : `${mins}m`;
+}
+
+function toHistoryItem(d: DeliberationRow): HistoryItem {
+  const score = d.confidence ?? d.consensus_score ?? d.consensusScore;
+  const modeId = d.config?.mode || d.mode;
+  const vertical = d.context?.verticalLabel;
+  return {
+    id: d.id,
+    title: d.question || d.title || d.topic || 'Untitled Deliberation',
+    mode: modeId ? COUNCIL_MODES[modeId]?.name ?? modeId.charAt(0).toUpperCase() + modeId.slice(1) : 'Council',
+    status: toHistoryStatus(d),
+    consensusScore: typeof score === 'number' ? Math.round(score <= 1 ? score * 100 : score) : null,
+    duration: d.duration || formatDuration(d.started_at, d.completed_at),
+    agentCount: countAgents(d),
+    date: d.created_at || d.createdAt || new Date().toISOString(),
+    tags: d.tags || (vertical ? [vertical] : []),
+    initiatedBy: d.context?.initiatedBy || d.initiated_by || d.initiatedBy || 'User',
+  };
+}
 
 type SortField = 'date' | 'consensus' | 'duration';
 
@@ -74,19 +154,7 @@ export const CouncilHistoryPage: React.FC = () => {
       try {
         const res = await apiClient.api.get<any[]>('/deliberations');
         if (res.success && Array.isArray(res.data) && res.data.length > 0) {
-          const mapped = res.data.map((d: any) => ({
-            id: d.id,
-            title: d.title || d.topic || 'Untitled Deliberation',
-            mode: d.mode || 'Strategic Advisory',
-            status: d.status === 'completed' ? 'consensus' : d.status || 'consensus',
-            consensusScore: d.consensus_score || d.consensusScore || 80,
-            duration: d.duration || '—',
-            agentCount: d.agent_count || d.agentCount || 7,
-            date: d.created_at || d.createdAt || new Date().toISOString(),
-            tags: d.tags || [],
-            initiatedBy: d.initiated_by || d.initiatedBy || 'User',
-          }));
-          setItems(mapped);
+          setItems(res.data.map(toHistoryItem));
         }
       } catch {
         // Keep demo data
@@ -107,14 +175,15 @@ export const CouncilHistoryPage: React.FC = () => {
     })
     .sort((a, b) => {
       if (sortBy === 'date') {return new Date(b.date).getTime() - new Date(a.date).getTime();}
-      if (sortBy === 'consensus') {return b.consensusScore - a.consensusScore;}
+      if (sortBy === 'consensus') {return (b.consensusScore ?? -1) - (a.consensusScore ?? -1);}
       return 0;
     });
 
+  const scores = items.map(i => i.consensusScore).filter((s): s is number => s !== null);
   const stats = {
     total: items.length,
     consensus: items.filter(i => i.status === 'consensus').length,
-    avgScore: Math.round(items.reduce((s, i) => s + i.consensusScore, 0) / items.length),
+    avgScore: scores.length ? Math.round(scores.reduce((s, v) => s + v, 0) / scores.length) : 0,
   };
 
   return (
@@ -193,7 +262,7 @@ export const CouncilHistoryPage: React.FC = () => {
       {/* Results */}
       <div className="space-y-2">
         {filtered.map(item => {
-          const statusCfg = STATUS_CONFIG[item.status];
+          const statusCfg = STATUS_CONFIG[item.status] ?? STATUS_CONFIG['in_progress'];
           return (
             <div
               key={item.id}
@@ -228,8 +297,9 @@ export const CouncilHistoryPage: React.FC = () => {
                   <div className="text-right">
                     <p className="text-xs text-neutral-500">Consensus</p>
                     <p className={cn('text-lg font-bold',
-                      item.consensusScore >= 80 ? 'text-green-400' : item.consensusScore >= 60 ? 'text-amber-400' : 'text-red-400'
-                    )}>{item.consensusScore}%</p>
+                      item.consensusScore === null ? 'text-neutral-500'
+                        : item.consensusScore >= 80 ? 'text-green-400' : item.consensusScore >= 60 ? 'text-amber-400' : 'text-red-400'
+                    )}>{item.consensusScore === null ? '—' : `${item.consensusScore}%`}</p>
                   </div>
                   <ChevronRight className="w-4 h-4 text-neutral-600 group-hover:text-neutral-400" />
                 </div>

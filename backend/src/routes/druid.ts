@@ -9,7 +9,7 @@
 // See LICENSE file for details.
 
 // =============================================================================
-// DRUID API ROUTES - Analytics Data for CendiaChronos�, CendiaWitness�, CendiaPulse�
+// DRUID API ROUTES - Analytics Data for CendiaChronos™, CendiaWitness™, CendiaPulse™
 // =============================================================================
 
 import { Router, Request, Response } from 'express';

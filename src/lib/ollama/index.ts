@@ -15,8 +15,10 @@
 // Real AI Agent Integration with Local Ollama Instance
 // =============================================================================
 
+import { isChatModel, pickModel } from './modelFallback';
+import { apiInferenceAvailable, chatViaApi } from './apiTransport';
 // Import DomainAgent type and agents from modular files for faster HMR
-import { 
+import {
   DomainAgent, 
   DOMAIN_AGENTS,
   CORE_AGENTS,
@@ -32,10 +34,12 @@ export { DOMAIN_AGENTS, CORE_AGENTS, LEGAL_AGENTS, PREMIUM_AGENTS, PRO_AGENTS, E
 
 // Personality trait type for type safety
 export type PersonalityTraitId = string;
-// Ollama API endpoint (default local installation)
-const OLLAMA_BASE_URL =
+// Ollama API endpoint (default local installation). Ollama binds 127.0.0.1 by
+// default; "localhost" can resolve to ::1 first, where Ollama isn't listening or,
+// with a container publishing 11434, a different Ollama answers instead.
+export const OLLAMA_BASE_URL =
   (typeof import.meta !== 'undefined' && (import.meta as any).env?.VITE_OLLAMA_URL) ||
-  'http://localhost:11434';
+  'http://127.0.0.1:11434';
 
 // =============================================================================
 // CENDIAGUARD™ - SOVEREIGN SECURITY CONSTITUTION
@@ -152,6 +156,21 @@ class OllamaService {
   private agents: DomainAgent[] = [...DOMAIN_AGENTS];
   private _hasLoggedConnection: boolean = false;
   private statusCheckInterval: number | null = null;
+  // The model each agent was configured with; `agent.model` is what it runs on.
+  private preferredModels = new Map<string, string>();
+  // Where model calls go: Ollama beside the browser, or the API's own provider
+  // (a hosted deployment has no Ollama next to the visitor; see apiTransport).
+  private transport: 'local' | 'api' = 'local';
+  private chatModels: string[] = [];
+
+  private preferredModel(agent: DomainAgent): string {
+    const known = this.preferredModels.get(agent.id);
+    if (known) {
+      return known;
+    }
+    this.preferredModels.set(agent.id, agent.model);
+    return agent.model;
+  }
 
   constructor(baseUrl: string = OLLAMA_BASE_URL) {
     this.baseUrl = baseUrl;
@@ -172,16 +191,24 @@ class OllamaService {
 
       if (response.ok) {
         const data = await response.json();
-        this.availableModels = (data.models || []).map((m: OllamaModel) => m.name);
+        const models: OllamaModel[] = data.models || [];
+        this.availableModels = models.map((m) => m.name);
         this.isAvailable = true;
 
-        // Update agents to online if their model is available
-        this.agents = this.agents.map((agent) => ({
-          ...agent,
-          status: this.availableModels.some((m) => m.startsWith(agent.model?.split(':')[0] ?? ''))
-            ? ('online' as const)
-            : ('offline' as const),
-        }));
+        // Each agent runs on its own model if installed, else the closest chat model
+        // (see modelFallback); embedding models are left out using Ollama's metadata.
+        const chatModels = models.filter(isChatModel).map((m) => m.name);
+        this.transport = 'local';
+        this.chatModels = chatModels;
+        this.agents = this.agents.map((agent) => {
+          const preferred = this.preferredModel(agent);
+          const model = pickModel(preferred, chatModels);
+          return {
+            ...agent,
+            model: model ?? preferred,
+            status: model ? ('online' as const) : ('offline' as const),
+          };
+        });
 
         // Only log once per session to reduce noise
         if (!this._hasLoggedConnection) {
@@ -190,21 +217,58 @@ class OllamaService {
         }
         return true;
       }
-    } catch (error) {
-      console.warn('[Ollama] Not available:', error);
-      this.isAvailable = false;
-      this.agents = this.agents.map((agent) => ({ ...agent, status: 'offline' as const }));
+    } catch {
+      // No Ollama beside this browser: see whether the API can run the calls
     }
+
+    if (await apiInferenceAvailable()) {
+      this.transport = 'api';
+      this.isAvailable = true;
+      this.availableModels = [];
+      this.chatModels = [];
+      // The API resolves each agent's model against its own provider
+      this.agents = this.agents.map((agent) => ({
+        ...agent,
+        model: this.preferredModel(agent),
+        status: 'online' as const,
+      }));
+      return true;
+    }
+
+    this.isAvailable = false;
+    this.agents = this.agents.map((agent) => ({ ...agent, status: 'offline' as const }));
     return false;
+  }
+
+  /**
+   * The model to request for an agent tuned on `preferred`: on local Ollama the
+   * closest installed chat model (null if there is none); through the API the
+   * preferred name, which the API resolves itself.
+   */
+  resolveModel(preferred: string): string | null {
+    return this.transport === 'api' ? preferred : pickModel(preferred, this.chatModels);
+  }
+
+  /** Agents running on another model than the one they were configured with. */
+  getModelFallbacks(): Array<{ preferred: string; model: string }> {
+    const pairs = new Map<string, { preferred: string; model: string }>();
+    for (const agent of this.agents) {
+      const preferred = this.preferredModel(agent);
+      if (agent.status !== 'offline' && agent.model !== preferred) {
+        pairs.set(`${preferred}>${agent.model}`, { preferred, model: agent.model });
+      }
+    }
+    return [...pairs.values()];
   }
 
   /**
    * Check if Ollama is currently available
    */
-  getStatus(): { available: boolean; models: string[] } {
+  getStatus(): { available: boolean; models: string[]; transport: 'local' | 'api' } {
     return {
       available: this.isAvailable,
       models: this.availableModels,
+      transport: this.transport,
     };
   }
 
@@ -213,8 +277,8 @@ class OllamaService {
    * Loads models into GPU memory for instant responses
    */
   async preWarmModels(onProgress?: (model: string, index: number, total: number) => void): Promise<void> {
-    if (!this.isAvailable) {
-      console.warn('[Ollama] Cannot pre-warm models - Ollama not available');
+    if (!this.isAvailable || this.transport === 'api') {
+      // Nothing to warm here: through the API, its provider manages its own models
       return;
     }
 
@@ -310,6 +374,18 @@ class OllamaService {
       stream: false,
     };
 
+    if (this.transport === 'api') {
+      const reply = await chatViaApi({
+        messages: [
+          { role: 'system', content: securedRequest.system },
+          { role: 'user', content: request.prompt },
+        ],
+        model: request.model,
+        options: request.options,
+      });
+      return { model: request.model, created_at: new Date().toISOString(), response: reply.content, done: true };
+    }
+
     const response = await fetch(`${this.baseUrl}/api/generate`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -335,6 +411,11 @@ class OllamaService {
 
     // Inject CendiaGuard constitution as the first system message
     const securedMessages = this.injectCendiaGuard(request.messages);
+
+    if (this.transport === 'api') {
+      const message = await chatViaApi({ messages: securedMessages, model: request.model, options: request.options });
+      return { model: request.model, created_at: new Date().toISOString(), message, done: true };
+    }
 
     // Add timeout to prevent hanging (2 minutes max per agent)
     const controller = new AbortController();
@@ -524,6 +605,14 @@ class OllamaService {
       }
       messages.push({ role: 'user', content: question });
 
+      if (this.transport === 'api') {
+        // Through the API the reply arrives whole: hand it over as a single token
+        const reply = await chatViaApi({ messages, model: agent.model, options: { temperature: 0.7, num_predict: 2048 } });
+        yield { type: 'token', content: reply.content, agent };
+        yield { type: 'complete', content: reply.content, agent };
+        return;
+      }
+
       const response = await fetch(`${this.baseUrl}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -657,7 +746,14 @@ class OllamaService {
         : this.agents.filter((a) => a.status === 'online');
 
     if (selectedAgents.length === 0) {
-      throw new Error('No agents are online');
+      const anyOnline = this.agents.some((a) => a.status === 'online');
+      throw new Error(
+        !this.isAvailable
+          ? `No Council agent can run: Ollama isn't reachable at ${this.baseUrl}.`
+          : !anyOnline
+            ? 'No Council agent can run: Ollama has no chat model installed (for example: ollama pull llama3.2).'
+            : 'None of the selected agents can run right now. Select agents shown as online and try again.'
+      );
     }
 
     const responses: Array<{ agent: DomainAgent; response: string; duration: number }> = [];

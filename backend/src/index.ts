@@ -152,26 +152,6 @@ app.get('/readiness', async (_req, res) => {
   res.status(200).send('OK');
 });
 
-// Inference provider status — public endpoint so frontend can check AI availability
-app.get('/api/v1/inference/status', async (_req, res) => {
-  try {
-    const { inference } = await import('./services/inference/InferenceService.js');
-    const status = inference.getStatus();
-    const health = await inference.healthCheck();
-    res.json({
-      available: health.available,
-      provider: status.activeProvider,
-      primaryProvider: status.primaryProvider,
-      failoverActive: status.failoverActive,
-      latencyMs: health.latencyMs,
-      modelsLoaded: health.modelsLoaded,
-      error: health.error,
-    });
-  } catch (err: any) {
-    res.json({ available: false, provider: 'unknown', error: err.message });
-  }
-});
-
 // Prometheus metrics - before middleware so scraping works without auth
 app.use('/metrics', prometheusRoutes);
 
@@ -249,6 +229,28 @@ const corsMiddleware = cors({
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Request-ID', 'X-Data-Source-Id', 'x-data-source-id', 'X-CSRF-Token'],
 });
 app.use('/api/', corsMiddleware);
+
+// Inference provider status — public, so the frontend can check AI availability.
+// Registered after CORS: the UI calls it cross-origin in the demo (:5173 -> :3001)
+// and in split deployments, and without CORS headers the browser blocked it.
+app.get('/api/v1/inference/status', async (_req, res) => {
+  try {
+    const { inference } = await import('./services/inference/InferenceService.js');
+    const status = inference.getStatus();
+    const health = await inference.healthCheck();
+    res.json({
+      available: health.available,
+      provider: status.activeProvider,
+      primaryProvider: status.primaryProvider,
+      failoverActive: status.failoverActive,
+      latencyMs: health.latencyMs,
+      modelsLoaded: health.modelsLoaded,
+      error: health.error,
+    });
+  } catch (err: any) {
+    res.json({ available: false, provider: 'unknown', error: err.message });
+  }
+});
 
 // Rate limiting — Redis-backed in production for multi-instance consistency
 const limiter = rateLimit({

@@ -1138,18 +1138,41 @@ router.get('/deliberations', async (req: Request, res: Response, next: NextFunct
  * POST /api/v1/council/deliberations/save
  * Save a completed deliberation from frontend (for Chronos integration)
  */
+// The Council page sends each response as { agent: { id, code, ... }, response };
+// older callers put agentId / agentCode at the top level. Cross-examinations name
+// the agent as `challenger`.
+type SavedAgentRef = { id?: unknown; code?: unknown };
+const firstString = (...values: unknown[]): string | undefined =>
+  values.find((v): v is string => typeof v === 'string' && v !== '');
+const savedAgent = (entry: { agent?: SavedAgentRef; challenger?: SavedAgentRef; agentId?: unknown; agentCode?: unknown; challengerId?: unknown }) => {
+  const ref = entry.agent ?? entry.challenger;
+  return {
+    id: firstString(ref?.id, entry.agentId, entry.challengerId),
+    code: firstString(ref?.code, entry.agentCode, entry.agentId, entry.challengerId),
+  };
+};
+
 router.post('/deliberations/save', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { question, mode, agentResponses, crossExaminations, synthesis, confidence } = req.body;
     const orgId = req.organizationId!;
 
-    // Create deliberation record
+    // Create deliberation record. The mode and the agents who took part are kept
+    // so Council History can show them (it read "Council" and "0 agents" otherwise).
     const deliberationId = crypto.randomUUID();
+    const agentIds: string[] = Array.isArray(agentResponses)
+      ? agentResponses
+          .map((ar: Parameters<typeof savedAgent>[0]) => savedAgent(ar).id ?? savedAgent(ar).code)
+          .filter((id): id is string => id !== undefined)
+      : [];
+    const modeId = typeof mode === 'string' && mode !== '' ? mode : undefined;
     const deliberation = await prisma.deliberations.create({
       data: {
         id: deliberationId,
         organization_id: orgId,
         question,
+        mode: modeId,
+        config: { mode: modeId, agents: agentIds } as Prisma.InputJsonValue,
         status: 'COMPLETED',
         current_phase: 'completed',
         progress: 100,
@@ -1174,8 +1197,8 @@ router.post('/deliberations/save', async (req: Request, res: Response, next: Nex
       if (agentResponses && Array.isArray(agentResponses)) {
         for (const ar of agentResponses) {
           // Try to find agent by code, fallback to default
-          const agentCode = ar.agentId || ar.agentCode || '';
-          const agent = agentCode 
+          const agentCode = savedAgent(ar).code;
+          const agent = agentCode
             ? await prisma.agents.findFirst({ where: { code: agentCode } })
             : null;
           
@@ -1195,7 +1218,7 @@ router.post('/deliberations/save', async (req: Request, res: Response, next: Nex
       // Save cross-examinations
       if (crossExaminations && Array.isArray(crossExaminations)) {
         for (const ce of crossExaminations) {
-          const agentCode = ce.challengerId || ce.agentId || '';
+          const agentCode = savedAgent(ce).code;
           const agent = agentCode
             ? await prisma.agents.findFirst({ where: { code: agentCode } })
             : null;
@@ -1234,7 +1257,7 @@ router.post('/deliberations/save', async (req: Request, res: Response, next: Nex
       sessionId: deliberationId,
       decisionId: deliberationId,
       question,
-      agentsInvolved: agentResponses?.map((ar: any) => ar.agentId || ar.agentCode) || [],
+      agentsInvolved: agentIds, // same participants as the record, read from either shape
       consensusReached: true,
       finalRecommendation: synthesis?.substring(0, 200) || 'Completed',
       confidenceScore: Math.round((confidence || 0.8) * 100),

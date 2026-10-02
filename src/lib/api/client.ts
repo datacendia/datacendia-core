@@ -17,7 +17,7 @@
 
 // In development, use relative path to go through Vite's proxy
 // In production, use the full URL from environment
-const API_BASE_URL =
+export const API_BASE_URL =
   import.meta.env.VITE_API_URL ||
   (import.meta.env.DEV ? '/api/v1' : '/api/v1');
 
@@ -139,6 +139,7 @@ class TokenManager {
       sessionStorage.removeItem('dc_access_token');
       sessionStorage.removeItem('dc_refresh_token');
       sessionStorage.removeItem('dc_demo_session');
+      sessionStorage.removeItem('dc_last_user');
       // Clean up any legacy localStorage tokens
       localStorage.removeItem('dc_access_token');
       localStorage.removeItem('dc_refresh_token');
@@ -180,36 +181,66 @@ class TokenManager {
   }
 
   private async _doRefresh(): Promise<boolean> {
-    if (!this.refreshToken) {
+    const refreshToken = this.refreshToken;
+    if (!refreshToken) {
       return false;
     }
 
     try {
-      const csrf = await getCsrfToken();
-      const response = await fetch(`${API_BASE_URL}/auth/refresh`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          ...(csrf ? { [CSRF_HEADER]: csrf } : {}),
-        },
-        credentials: 'include',
-        body: JSON.stringify({ refreshToken: this.refreshToken }),
-      });
+      // Refresh sends no bearer, so the API's CSRF check applies to it. The cached
+      // token can be stale (its cookie expired, or another tab had one issued), and
+      // a rejected refresh signed the user out: retry once with a fresh token.
+      const send = async (freshCsrf: boolean) => {
+        const csrf = await getCsrfToken(freshCsrf);
+        return fetch(`${API_BASE_URL}/auth/refresh`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            ...(csrf ? { [CSRF_HEADER]: csrf } : {}),
+          },
+          credentials: 'include',
+          body: JSON.stringify({ refreshToken }),
+        });
+      };
+      let response = await send(false);
+      if (await isCsrfRejection(response)) {
+        response = await send(true);
+      }
+
+      // The session changed while this was in flight (a sign-out, or a new
+      // sign-in): leave it alone rather than apply a stale answer over it or sign
+      // the new session out.
+      const superseded = () => this.refreshToken !== refreshToken;
+      if (superseded()) {
+        return this.accessToken !== null;
+      }
 
       if (!response.ok) {
         this.clearTokens();
         return false;
       }
 
-      const data: ApiResponse<AuthTokens> = await response.json();
-      if (data.success && data.data) {
-        this.setTokens(data.data);
+      const data: ApiResponse<Partial<AuthTokens>> = await response.json();
+      if (superseded()) {
+        return this.accessToken !== null;
+      }
+      if (data.success && data.data?.accessToken) {
+        // The API returns a new access token but doesn't rotate the refresh token;
+        // storing the missing one as undefined signed the user out at the next expiry.
+        this.setTokens({
+          accessToken: data.data.accessToken,
+          refreshToken: data.data.refreshToken ?? refreshToken,
+          expiresIn: data.data.expiresIn ?? 3600,
+        });
         return true;
       }
 
       this.clearTokens();
       return false;
     } catch {
+      if (this.refreshToken !== refreshToken) {
+        return this.accessToken !== null;
+      }
       this.clearTokens();
       return false;
     }
