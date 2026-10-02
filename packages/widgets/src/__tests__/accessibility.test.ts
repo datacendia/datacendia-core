@@ -118,8 +118,8 @@ describe('Accessibility - Keyboard Navigation', () => {
   it('council badge interactive elements are keyboard accessible', async () => {
     const el = document.createElement('council-status-badge') as CouncilStatusBadge;
     el.status = 'completed';
-    el.confidence = '0.85';
-    el.agentCount = '5';
+    el.confidence = 0.85;
+    el.agentCount = 5;
     document.body.appendChild(el);
     await el.updateComplete;
 
@@ -230,8 +230,8 @@ describe('Accessibility - ARIA Attributes', () => {
     const el = document.createElement('council-status-badge') as CouncilStatusBadge;
     el.variant = 'card';
     el.status = 'completed';
-    el.confidence = '0.85';
-    el.agentCount = '5';
+    el.confidence = 0.85;
+    el.agentCount = 5;
     document.body.appendChild(el);
     await el.updateComplete;
 
@@ -351,6 +351,7 @@ const MOCK_PACKET = {
   question: 'Test question?',
   recommendation: 'Test recommendation',
   confidence: 0.85,
+  confidenceBounds: { lower: 0.78, upper: 0.91 },
   consensusReached: true,
   artifactHashes: {
     question: 'abc123',

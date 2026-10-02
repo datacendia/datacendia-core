@@ -390,7 +390,7 @@ export const PLATFORM_PILLARS: Record<PillarId, PillarDefinition> = {
     displayName: 'RESILIENCE',
     tagline: 'Institutional survival systems',
     description: 'Simulate institutional collapse, build automated recovery, preserve knowledge across centuries, and detect long-range trends before competitors.',
-    icon: '�️',
+    icon: '🛡️',
     color: '#DC2626',
     services: [
       { id: 'collapse_sim', name: 'COLLAPSE (Institutional Failure Simulation)', description: 'Model institutional collapse — leadership vacuum, market failure, regulatory destruction, societal disruption', category: 'core' },

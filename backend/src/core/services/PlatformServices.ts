@@ -13,6 +13,7 @@
 // Registers all platform features as monitored services
 // =============================================================================
 
+import { getOllamaBaseUrl } from '../../config/ollama.js';
 import { BaseService, ServiceConfig, ServiceHealth } from './BaseService.js';
 import { serviceRegistry } from './ServiceRegistry.js';
 import { prisma } from '../../config/database.js';
@@ -177,7 +178,7 @@ class CouncilService extends BaseService {
     const start = Date.now();
     try {
       // Check Ollama connectivity
-      const response = await fetch('http://127.0.0.1:11434/api/tags');
+      const response = await fetch(`${getOllamaBaseUrl()}/api/tags`);
       const data = await response.json() as { models?: any[] };
       return {
         status: 'healthy',

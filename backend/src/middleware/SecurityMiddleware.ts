@@ -65,17 +65,22 @@ const JAILBREAK_PATTERNS = [
 // DATA LEAKAGE PATTERNS
 // ============================================================================
 
+// Requests for the platform's own secrets. Mentioning one is not a probe:
+// "Evaluate our password policy" and "Should we rotate API keys after the
+// breach?" are ordinary governance questions, and the old list, which matched
+// the bare words, turned both away from the Council.
+const SECRET_NOUNS = String.raw`(database\s*(?:urls?|connections?|connection\s*strings?|credentials|passwords?)|api\s*keys?|secret\s*keys?|private\s*keys?|passwords?|connection\s*strings?|credentials|access\s*tokens?|environment\s*variables?|env\s*vars?|\.env\s*file)`;
 const LEAKAGE_REQUEST_PATTERNS = [
-  /api\s*key/i,
-  /secret\s*key/i,
-  /password/i,
-  /connection\s*string/i,
-  /database\s*(url|connection|credentials)/i,
-  /environment\s*variable/i,
-  /\.env\s*file/i,
-  /private\s*key/i,
-  /access\s*token/i,
-  /credentials/i,
+  // "show me your API key", "what are the server's credentials"
+  new RegExp(String.raw`\b(your|the\s+(system|server|platform|backend)'?s?)\s+(own\s+)?${SECRET_NOUNS}`, 'i'),
+  // "print the environment variables", "dump the .env file"
+  new RegExp(String.raw`\b(print|dump|reveal|echo|cat)\s+(me\s+)?(the\s+|all\s+|any\s+)?${SECRET_NOUNS}`, 'i'),
+  // "show me our API keys", "list all passwords": a request that ends at the secret,
+  // unlike "show the password policy" or "list the credentials required for SOC 2"
+  new RegExp(
+    String.raw`\b(show|list|give|send|tell)\s+(me\s+|us\s+)?(the\s+|all\s+|any\s+|our\s+)?${SECRET_NOUNS}(?=\s*(?:[?.!,;:]|$|\b(?:for|of|from|in|stored|used)\b))`,
+    'i'
+  ),
 ];
 
 // Patterns to redact from responses
@@ -332,29 +337,39 @@ export function corsSecurityMiddleware(req: Request, res: Response, next: NextFu
   next();
 }
 
+// Signatures of actual injection attempts. Queries go through Prisma, which
+// parameterises them; that is the defence, and this only turns away obvious
+// probes, so it must never match ordinary text. The previous list rejected any
+// apostrophe, '#' or '--' anywhere in a JSON body: "What's our exposure?" never
+// reached the Council, a feedback title like "lot #BC-2024" came back 400, and so
+// did every frontend crash report, because stack traces quote property names.
+export const SQL_INJECTION_PATTERNS = [
+  // ' OR 1=1, ' or 'a'='a', admin' OR '1'='1 (the query supplies the last quote)
+  /'\s*(or|and)\s+('[^']*'?|\d+)\s*=\s*('[^']*'?|\d+)/i,
+  /'\s*;\s*(drop|delete|insert|update|alter|create|truncate|exec)\b/i, // '; DROP ...
+  /;\s*(drop|truncate)\s+table\b/i,
+  // ; DELETE FROM users / ; INSERT INTO t (...) / ; UPDATE users SET ..., shaped like SQL
+  // so that "...; delete from the roadmap" in prose is not one
+  /;\s*(?:delete\s+from\s+\w+\s*(?:where\b|[;"]|$)|insert\s+into\s+\w+\s*(?:\(|values\b|select\b)|update\s+\w+\s+set\b)/i,
+  /\bunion\s+(all\s+)?select\b/i,
+  /\bexec(\s|\+)+(s|x)p\w+/i, // xp_cmdshell, sp_ procedures
+];
+
 /**
  * SQL injection prevention middleware
  */
 export function sqlInjectionMiddleware(req: Request, res: Response, next: NextFunction): void {
-  const sqlPatterns = [
-    /(\%27)|(\')|(\-\-)|(\%23)|(#)/i,
-    /((\%3D)|(=))[^\n]*((\%27)|(\')|(\-\-)|(\%3B)|(;))/i,
-    /\w*((\%27)|(\'))((\%6F)|o|(\%4F))((\%72)|r|(\%52))/i,
-    /((\%27)|(\'))union/i,
-    /exec(\s|\+)+(s|x)p\w+/i,
-    // URL-encoded SQL injection patterns
-    /%27/i, // URL-encoded single quote
-    /%22/i, // URL-encoded double quote
-    /1%27%20OR%20/i, // Common SQL injection
-    /OR%20%271%27%3D%271/i, // OR '1'='1'
-    /UNION%20SELECT/i,
-    /DROP%20TABLE/i,
-    /INSERT%20INTO/i,
-    /DELETE%20FROM/i,
-  ];
-
+  // Percent-encoded probes (%27%20OR%201%3D1) are matched too: a value some code
+  // decodes later is as dangerous as a plain one. Text that is not valid encoding
+  // ("50% off") is checked as it is.
   const checkValue = (value: string): boolean => {
-    return sqlPatterns.some(pattern => pattern.test(value));
+    let decoded = value;
+    try {
+      decoded = decodeURIComponent(value);
+    } catch {
+      // not percent-encoded
+    }
+    return SQL_INJECTION_PATTERNS.some(pattern => pattern.test(value) || pattern.test(decoded));
   };
 
   // Check query params
@@ -394,6 +409,29 @@ export function sqlInjectionMiddleware(req: Request, res: Response, next: NextFu
 /**
  * Path traversal prevention middleware
  */
+// Traversal shapes inside a body value: ".." as a path segment, its encodings,
+// or a well-known system file. The body used to be matched as JSON text, which
+// caught prose: an ellipsis at the end of a line is "...\n" in JSON (a "..\"
+// match), and any value ending in "..." ended with "..". Agents' answers are full
+// of both, so Council turns and saved deliberations came back 400.
+export const BODY_TRAVERSAL_PATTERNS = [
+  /(^|[\\/])\.\.[\\/]/, // ../ or ..\ as a path segment
+  /(%2e%2e|\.\.)(%2f|%5c)/i, // encoded separator
+  /%2e%2e[\\/]/i, // encoded dots
+  /(^|[\\/])etc[\\/](passwd|shadow)\b/i,
+  /windows[\\/]system32/i,
+];
+
+function bodyHasTraversal(value: unknown, depth = 0): boolean {
+  if (typeof value === 'string') {
+    return BODY_TRAVERSAL_PATTERNS.some((pattern) => pattern.test(value));
+  }
+  if (depth > 20 || value === null || typeof value !== 'object') {
+    return false;
+  }
+  return Object.values(value as Record<string, unknown>).some((v) => bodyHasTraversal(v, depth + 1));
+}
+
 export function pathTraversalMiddleware(req: Request, res: Response, next: NextFunction): void {
   const traversalPatterns = [
     /\.\.\//, 
@@ -410,22 +448,17 @@ export function pathTraversalMiddleware(req: Request, res: Response, next: NextF
 
   const path = req.path + req.url;
   
-  // Also check request body for path traversal
-  if (req.body) {
-    const bodyStr = JSON.stringify(req.body);
-    for (const pattern of traversalPatterns) {
-      if (pattern.test(bodyStr)) {
-        logger.warn(`[Security] Path traversal attempt in body`);
-        res.status(400).json({
-          success: false,
-          error: {
-            code: 'SECURITY_VIOLATION',
-            message: 'Invalid path in request',
-          },
-        });
-        return;
-      }
-    }
+  // Also check request body values for path traversal
+  if (req.body && bodyHasTraversal(req.body)) {
+    logger.warn(`[Security] Path traversal attempt in body`);
+    res.status(400).json({
+      success: false,
+      error: {
+        code: 'SECURITY_VIOLATION',
+        message: 'Invalid path in request',
+      },
+    });
+    return;
   }
 
   for (const pattern of traversalPatterns) {

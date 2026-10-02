@@ -17,6 +17,7 @@ import { Router, Request, Response } from 'express';
 import { userManagementService } from '../services/admin/index.js';
 import { tenantService } from '../services/admin/TenantService.js';
 import { logger } from '../utils/logger.js';
+import { requireRole } from '../middleware/auth.js';
 
 const router = Router();
 
@@ -75,16 +76,13 @@ router.patch('/organization', async (req: Request, res: Response) => {
 // USERS
 // =============================================================================
 
-router.get('/users', async (req: Request, res: Response) => {
+// The directory carries emails, MFA status and last sign-in: admins only.
+router.get('/users', requireRole('OWNER', 'ADMIN', 'SUPER_ADMIN'), async (req: Request, res: Response) => {
   try {
     const tenantId = getTenantId(req);
     const { role, status, search } = req.query;
-    const users = await userManagementService.listUsers(tenantId, {
-      role: role as any,
-      status: status as any,
-      search: search as string,
-    });
-    const metrics = userManagementService.getUserMetrics(tenantId);
+    const users = await userManagementService.listUsers(tenantId, { role, status, search });
+    const metrics = await userManagementService.getUserMetrics(tenantId);
     res.json({ 
       users, 
       total: users.length,

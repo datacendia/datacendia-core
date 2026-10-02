@@ -2,6 +2,18 @@
 
 All notable changes to the Datacendia Web Components package.
 
+## [Unreleased]
+
+### Fixed
+
+- **Package contents** — the build no longer compiles the test suite and the Storybook stories into `dist`, so they are no longer published with the package.
+- **CI** — `package-lock.json` was out of sync with `package.json` (the Storybook dependencies were never locked), so `npm ci` failed before any check ran. Test files are now type-checked too (`tsconfig.test.json`).
+
+### Security
+
+- **Vitest 1 → 4** clears a critical advisory (GHSA-5xrq-8626-4rwp, file read through the Vitest UI server) and a high one in its bundled Vite.
+- **Storybook 7 → 10**: locking the Storybook 7 dependency tree would have added a critical (`tar`) and five high advisories. `npm audit` now reports none.
+
 ## [0.1.0] — 2026-04-09
 
 ### Added

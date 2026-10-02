@@ -921,8 +921,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   // Load available languages only when authenticated (defer API calls)
   useEffect(() => {
-    const token = localStorage.getItem('accessToken');
-    if (!token) {
+    if (!apiClient.tokenManager.isAuthenticated()) {
       // Use fallback languages immediately without API call
       setLanguages([
         { code: 'en', name: 'English', nativeName: 'English', rtl: false },
@@ -1224,7 +1223,7 @@ export function LanguageSelector({ className }: { className?: string }) {
         <span className="text-lg group-hover:scale-110 transition-transform">🌐</span>
         <span className="text-sm font-medium uppercase">{language}</span>
         {currentLanguage && (
-          <span className="hidden sm:inline text-sm text-neutral-500">
+          <span className="hidden min-[1700px]:inline text-sm text-neutral-500">
             {currentLanguage.nativeName}
           </span>
         )}

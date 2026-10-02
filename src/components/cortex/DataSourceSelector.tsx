@@ -492,21 +492,23 @@ export const QuickActionsBar: React.FC<QuickActionsBarProps> = ({ currentPage })
   ];
 
   return (
-    <div className="flex items-center gap-1 p-1 bg-sovereign-card/50 border border-sovereign-border-subtle rounded-lg">
+    <div className="flex shrink-0 items-center gap-0.5 p-0.5 bg-sovereign-card/50 border border-sovereign-border-subtle rounded-lg">
       {actions.map((action) => (
         <button
           key={action.page}
           onClick={action.action}
           disabled={action.disabled}
+          aria-label={action.label}
+          title={action.label}
           className={cn(
-            'flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm transition-colors',
+            'flex items-center gap-1.5 px-2 py-1 rounded-md text-xs transition-colors',
             action.disabled
               ? 'bg-sovereign-active text-gray-500 cursor-default'
               : 'hover:bg-sovereign-hover text-gray-400 hover:text-white'
           )}
         >
-          <span>{action.icon}</span>
-          <span>{action.label}</span>
+          <span aria-hidden="true">{action.icon}</span>
+          <span className="hidden lg:inline">{action.label}</span>
         </button>
       ))}
     </div>

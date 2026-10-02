@@ -18,7 +18,7 @@
 import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { api } from '../lib/api';
-import { setCurrentDataSourceId } from '../lib/api/client';
+import { setCurrentDataSourceId, tokenManager } from '../lib/api/client';
 
 // =============================================================================
 // TYPES
@@ -113,8 +113,7 @@ export const DataSourceProvider: React.FC<{ children: React.ReactNode }> = ({ ch
 
   // Load data sources only when authenticated (defer API calls)
   useEffect(() => {
-    const token = localStorage.getItem('accessToken');
-    if (!token) {return;} // Skip if not authenticated
+    if (!tokenManager.isAuthenticated()) {return;} // Skip if not authenticated
     
     const loadDataSources = async () => {
       setIsLoading(true);
@@ -144,7 +143,7 @@ export const DataSourceProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         }
       } catch (error) {
         // Silently fail if not authenticated - data sources will load after login
-        if (localStorage.getItem('accessToken')) {
+        if (tokenManager.isAuthenticated()) {
           console.error('Failed to load data sources:', error);
         }
       } finally {

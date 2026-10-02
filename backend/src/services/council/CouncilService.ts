@@ -15,6 +15,7 @@
 // Real-time Streaming, Cross-Examination, Memory & Persistence
 // =============================================================================
 
+import { getOllamaBaseUrl } from '../../config/ollama.js';
 import { Pool } from 'pg';
 import { EventEmitter } from 'events';
 import crypto from 'crypto';
@@ -168,7 +169,7 @@ export interface StreamEvent {
 // OLLAMA STREAMING CLIENT
 // =============================================================================
 
-const OLLAMA_URL = process.env['OLLAMA_URL'] || 'http://127.0.0.1:11434';
+const OLLAMA_URL = getOllamaBaseUrl();
 
 // Response metadata collected during streaming
 interface OllamaResponseMetadata {

@@ -1,0 +1,4 @@
+# Shell scripts run inside Linux containers. A CRLF checkout (core.autocrlf=true
+# on Windows) turns "#!/bin/sh" into "#!/bin/sh\r", and the container then fails
+# with "docker-entrypoint.sh: No such file or directory".
+*.sh text eol=lf

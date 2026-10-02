@@ -276,7 +276,7 @@ const integrations = [
   { name: 'MySQL', icon: '🐬', category: 'Native' },
   { name: 'SQL Server', icon: '🔷', category: 'Native' },
   { name: 'MongoDB', icon: '🍃', category: 'Via Adapter' },
-  { name: 'Oracle', icon: '�', category: 'Via Adapter' },
+  { name: 'Oracle', icon: '🗄️', category: 'Via Adapter' },
   { name: 'IBM DB2', icon: '🔵', category: 'Via Adapter' },
   { name: 'Snowflake', icon: '❄️', category: 'Data Warehouse' },
   { name: 'Salesforce', icon: '☁️', category: 'CRM' },

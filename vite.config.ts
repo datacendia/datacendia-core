@@ -18,7 +18,10 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:3001',
+        // Inside a container, 127.0.0.1 is the frontend container itself: every
+        // relative /api call (39 of them: gateway, verify, kms, inference, ...)
+        // answered 500. The compose files point this at the api service.
+        target: process.env['VITE_PROXY_TARGET'] || 'http://127.0.0.1:3001',
         changeOrigin: true,
         secure: false,
       },
@@ -97,6 +100,11 @@ export default defineConfig({
   },
   // Optimize deps for faster cold starts
   optimizeDeps: {
+    // Only crawl the app's own entry. By default Vite scans every .html file,
+    // which pulls in packages/widgets/demo*.html; those import `lit`, which the
+    // app doesn't install, so the scan failed and pre-bundling was skipped,
+    // leaving cold starts slow and serving "504 Outdated Optimize Dep" errors.
+    entries: ['index.html'],
     include: ['react', 'react-dom', 'react-router-dom', 'clsx'],
     exclude: ['data'],
   },
