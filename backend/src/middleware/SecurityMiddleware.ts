@@ -409,6 +409,29 @@ export function sqlInjectionMiddleware(req: Request, res: Response, next: NextFu
 /**
  * Path traversal prevention middleware
  */
+// Traversal shapes inside a body value: ".." as a path segment, its encodings,
+// or a well-known system file. The body used to be matched as JSON text, which
+// caught prose: an ellipsis at the end of a line is "...\n" in JSON (a "..\"
+// match), and any value ending in "..." ended with "..". Agents' answers are full
+// of both, so Council turns and saved deliberations came back 400.
+export const BODY_TRAVERSAL_PATTERNS = [
+  /(^|[\\/])\.\.[\\/]/, // ../ or ..\ as a path segment
+  /(%2e%2e|\.\.)(%2f|%5c)/i, // encoded separator
+  /%2e%2e[\\/]/i, // encoded dots
+  /(^|[\\/])etc[\\/](passwd|shadow)\b/i,
+  /windows[\\/]system32/i,
+];
+
+function bodyHasTraversal(value: unknown, depth = 0): boolean {
+  if (typeof value === 'string') {
+    return BODY_TRAVERSAL_PATTERNS.some((pattern) => pattern.test(value));
+  }
+  if (depth > 20 || value === null || typeof value !== 'object') {
+    return false;
+  }
+  return Object.values(value as Record<string, unknown>).some((v) => bodyHasTraversal(v, depth + 1));
+}
+
 export function pathTraversalMiddleware(req: Request, res: Response, next: NextFunction): void {
   const traversalPatterns = [
     /\.\.\//, 
@@ -425,22 +448,17 @@ export function pathTraversalMiddleware(req: Request, res: Response, next: NextF
 
   const path = req.path + req.url;
   
-  // Also check request body for path traversal
-  if (req.body) {
-    const bodyStr = JSON.stringify(req.body);
-    for (const pattern of traversalPatterns) {
-      if (pattern.test(bodyStr)) {
-        logger.warn(`[Security] Path traversal attempt in body`);
-        res.status(400).json({
-          success: false,
-          error: {
-            code: 'SECURITY_VIOLATION',
-            message: 'Invalid path in request',
-          },
-        });
-        return;
-      }
-    }
+  // Also check request body values for path traversal
+  if (req.body && bodyHasTraversal(req.body)) {
+    logger.warn(`[Security] Path traversal attempt in body`);
+    res.status(400).json({
+      success: false,
+      error: {
+        code: 'SECURITY_VIOLATION',
+        message: 'Invalid path in request',
+      },
+    });
+    return;
   }
 
   for (const pattern of traversalPatterns) {
