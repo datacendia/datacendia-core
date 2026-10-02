@@ -40,6 +40,13 @@ import {
   adapterRegistry,
 } from './SovereignAdapter.js';
 
+/** Constant-time string comparison that never throws on a length mismatch. */
+function safeEqual(given: string, expected: string): boolean {
+  const a = Buffer.from(given);
+  const b = Buffer.from(expected);
+  return a.length === b.length && crypto.timingSafeEqual(a, b);
+}
+
 // =============================================================================
 // TYPES
 // =============================================================================
@@ -67,6 +74,10 @@ export interface WebhookConfig extends AdapterConfig {
   // Dead letter
   enableDeadLetter?: boolean;
   maxRetries?: number;
+
+  // Admin routes (dead-letter view/retry/purge): callers send it as X-Admin-Key.
+  // Unset, those routes are closed.
+  adminKey?: string;
 }
 
 export interface WebhookEvent {
@@ -206,7 +217,9 @@ export class WebhookIngestAdapter extends SovereignAdapter {
         .digest('hex');
 
       const signatureValue = signature.replace(/^sha256=/, '');
-      if (!crypto.timingSafeEqual(Buffer.from(signatureValue), Buffer.from(expectedSignature))) {
+      // timingSafeEqual throws on unequal lengths; in this async method that
+      // was an unhandled rejection, so a short signature could exit the process.
+      if (!safeEqual(signatureValue, expectedSignature)) {
         res.status(401).json({ error: 'Invalid signature' });
         return;
       }
@@ -251,9 +264,10 @@ export class WebhookIngestAdapter extends SovereignAdapter {
   }
 
   private requireAdmin(req: Request, res: Response, next: NextFunction): void {
-    // Production upgrade: integrate with auth system
-    const adminKey = req.headers['x-admin-key'] as string;
-    if (!adminKey) {
+    // This only checked that an X-Admin-Key header existed: any value passed.
+    const expected = this.webhookConfig.adminKey;
+    const given = req.headers['x-admin-key'];
+    if (!expected || typeof given !== 'string' || !safeEqual(given, expected)) {
       res.status(403).json({ error: 'Admin access required' });
       return;
     }

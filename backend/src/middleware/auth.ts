@@ -17,6 +17,7 @@ import { prisma } from '../config/database.js';
 import { cache } from '../config/redis.js';
 import { errors } from './errorHandler.js';
 import { logger } from '../utils/logger.js';
+import { revocationKey } from '../utils/tokenRevocation.js';
 
 interface AuthOrganization {
   id: string;
@@ -60,6 +61,14 @@ interface JWTPayload {
 const JWT_SECRET = new TextEncoder().encode(config.jwtSecret);
 
 /**
+ * Token each request has already been authenticated with. tenantGate and
+ * every domain router run authenticate, and a request walks through several
+ * routers, so without this one request verified its token, checked revocation
+ * and looked up its user up to ten times.
+ */
+const authenticatedTokens = new WeakMap<Request, string>();
+
+/**
  * Verify JWT token and attach user to request
  */
 export const authenticate = async (
@@ -76,11 +85,15 @@ export const authenticate = async (
 
     const token = authHeader.substring(7);
 
+    if (req.user && authenticatedTokens.get(req) === token) {
+      return next();
+    }
+
     // Verify token
     const { payload } = await jose.jwtVerify(token, JWT_SECRET) as { payload: JWTPayload };
 
     // Check if token is in blacklist (logged out tokens)
-    const isBlacklisted = await cache.exists(`blacklist:${token}`);
+    const isBlacklisted = await cache.exists(revocationKey(token));
     if (isBlacklisted) {
       throw errors.unauthorized('Token has been revoked');
     }
@@ -119,12 +132,15 @@ export const authenticate = async (
 
     req.user = user;
     req.organizationId = user.organizationId;
-    
+    authenticatedTokens.set(req, token);
+
     next();
   } catch (error) {
     if (error instanceof jose.errors.JWTExpired) {
       next(errors.unauthorized('Token has expired'));
-    } else if (error instanceof jose.errors.JWTInvalid) {
+    } else if (error instanceof jose.errors.JOSEError) {
+      // A bad signature, a malformed token, the wrong algorithm or a failed
+      // claim check all mean the caller's token is unusable: 401, not 500.
       next(errors.unauthorized('Invalid token'));
     } else {
       next(error);
@@ -172,14 +188,17 @@ export const devAuth = async (
     return authenticate(req, res, next);
   }
   
+  // Errors go through next(): Express 4 ignores a rejected promise, so a throw
+  // here never answered and the request hung until the client gave up.
+
   // If REQUIRE_AUTH is set, don't allow bypass
   if (config.requireAuth) {
-    throw errors.unauthorized('Authentication required');
+    return next(errors.unauthorized('Authentication required'));
   }
 
   // Explicitly block bypass in non-development/test environments
   if (config.nodeEnv !== 'development' && config.nodeEnv !== 'test') {
-    throw errors.unauthorized('Authentication required');
+    return next(errors.unauthorized('Authentication required'));
   }
 
   // In development without REQUIRE_AUTH, use real seeded organization
@@ -229,8 +248,9 @@ export const devAuth = async (
     }
   } catch (dbError) {
     logger.error('Dev auth: DB lookup failed — no hardcoded fallback. Seed the database first.', { error: dbError instanceof Error ? dbError.message : String(dbError) });
-    throw errors.unauthorized('Dev auth bypass requires a seeded database with at least one admin user. Run: npx prisma db seed');
   }
+  // No admin user (or no database): this path used to end without answering.
+  next(errors.unauthorized('Dev auth bypass requires a seeded database with at least one admin user. Run: npx prisma db seed'));
 };
 
 /**

@@ -14,6 +14,8 @@
  * @see {@link routes/} for all API route definitions
  */
 
+// First: must be installed before any module creates a router.
+import './utils/expressAsyncErrors.js';
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
@@ -50,7 +52,7 @@ import {
 } from './security/DefenseInDepth.js';
 import { honeypotMiddleware } from './security/Honeypot.js';
 import { csrfProtection, csrfTokenHandler, ensureCsrfToken } from './middleware/csrf.js';
-import { requireOrgScope } from './middleware/tenantIsolation.js';
+import { tenantGate } from './middleware/tenantIsolation.js';
 import { 
   inputSanitizationMiddleware,
   pathTraversalMiddleware,
@@ -333,12 +335,23 @@ app.get('/api/docs.json', (_req, res) => {
 logger.info('📚 API Documentation available at /api/docs');
 
 // =============================================================================
+// API ROUTES - Domain Routers (14 domains, ~110 route modules)
+// All paths remain identical: /api/v1/{original-path}
+// =============================================================================
+app.use('/api/v1', authDomain);                          // auth, users, organizations (no org scope — handles login/register)
+// Every route below: a signed-in request must carry an organization. The gate
+// authenticates first; see tenantGate for why requireOrgScope can't stand alone.
+app.use('/api/v1', tenantGate);
+
+// =============================================================================
 // UNIVERSAL REDIS CACHE - Applied to all GET requests (40-60% faster responses)
 // Automatically invalidates on POST/PUT/DELETE mutations
+// After tenantGate, so each entry belongs to one signed-in user (see
+// cacheIdentity). Mounted before authentication, it served any user's cached
+// response to every caller of the same URL, anonymous ones included.
 // =============================================================================
 app.use('/api/v1', apiCache({
   ttl: CACHE_TTLS.DECISIONS,
-  varyByOrg: true,
   excludePaths: [
     /\/auth\//,
     /\/csrf-token/,
@@ -350,50 +363,44 @@ app.use('/api/v1', apiCache({
     /\/platform-assistant/, // Never cache AI assistant responses
   ],
 }));
-
-// =============================================================================
-// API ROUTES - Domain Routers (14 domains, ~110 route modules)
-// All paths remain identical: /api/v1/{original-path}
-// =============================================================================
-app.use('/api/v1', authDomain);                          // auth, users, organizations (no org scope — handles login/register)
-app.use('/api/v1', requireOrgScope, councilDomain);      // council, deliberations, decisions, veto, union, dissent, vox, echo
-app.use('/api/v1', requireOrgScope, dataDomain);         // metrics, alerts, forecasts, data-sources, lineage, druid, rag, graph, horizon
-app.use('/api/v1', requireOrgScope, governanceDomain);   // compliance, govern, panopticon, pillars, responsibility, constitutional-court
-app.use('/api/v1', requireOrgScope, securityDomain);     // crucible, aegis, kms, post-quantum, zkp, adversarial-redteam, redteam
-app.use('/api/v1', requireOrgScope, sovereignDomain);    // sovereign-organs, sovereign-infra, sovereign-arch, vault, evidence, mesh, eternal
-app.use('/api/v1', requireOrgScope, enterpriseDomain);   // enterprise, ledger, audit-packages, ai-insurance, cascade, connectors, hr
-app.use('/api/v1', requireOrgScope, legalDomain);        // legal, legal-research, legal-services
-app.use('/api/v1', requireOrgScope, verticalsDomain);    // financial, healthcare, insurance, energy, defense, sports, vertical-agents
-app.use('/api/v1', requireOrgScope, platformDomain);     // platform, core, cortex, admin, settings, health, i18n, notifications, upload
-app.use('/api/v1', requireOrgScope, simulationDomain);   // sgas, scge, collapse
-app.use('/api/v1', requireOrgScope, workflowsDomain);    // workflows, integrations, scheduler
-app.use('/api/v1', requireOrgScope, intelligenceDomain); // persona, autopilot, decision-intel, gnosis, apotheosis, visualization
+app.use('/api/v1', councilDomain);      // council, deliberations, decisions, veto, union, dissent, vox, echo
+app.use('/api/v1', dataDomain);         // metrics, alerts, forecasts, data-sources, lineage, druid, rag, graph, horizon
+app.use('/api/v1', governanceDomain);   // compliance, govern, panopticon, pillars, responsibility, constitutional-court
+app.use('/api/v1', securityDomain);     // crucible, aegis, kms, post-quantum, zkp, adversarial-redteam, redteam
+app.use('/api/v1', sovereignDomain);    // sovereign-organs, sovereign-infra, sovereign-arch, vault, evidence, mesh, eternal
+app.use('/api/v1', enterpriseDomain);   // enterprise, ledger, audit-packages, ai-insurance, cascade, connectors, hr
+app.use('/api/v1', legalDomain);        // legal, legal-research, legal-services
+app.use('/api/v1', verticalsDomain);    // financial, healthcare, insurance, energy, defense, sports, vertical-agents
+app.use('/api/v1', platformDomain);     // platform, core, cortex, admin, settings, health, i18n, notifications, upload
+app.use('/api/v1', simulationDomain);   // sgas, scge, collapse
+app.use('/api/v1', workflowsDomain);    // workflows, integrations, scheduler
+app.use('/api/v1', intelligenceDomain); // persona, autopilot, decision-intel, gnosis, apotheosis, visualization
 app.use('/api/v1', demoDomain);                          // leads, premium, demo, consolidated (no org scope — public demos)
 // Express Intelligence — enterprise route loaded dynamically
 import('./routes/express.js').then(mod => {
-  app.use('/api/v1/express', requireOrgScope, mod.default as any);
+  app.use('/api/v1/express', mod.default as any);
 }).catch(() => { /* Enterprise module not available */ });
-app.use('/api/v1', requireOrgScope, recallRoutes);                              // CendiaRecall™ - Decision Outcome Tracking
-app.use('/api/v1/eu-banking', requireOrgScope, euBankingRoutes);                // EU Banking - Basel III + EU AI Act compliance
-app.use('/api/v1/kafka', requireOrgScope, kafkaRoutes);                         // Kafka admin & monitoring
-app.use('/api/v1/guardrails', requireOrgScope, guardrailsRoutes);               // NeMo Guardrails admin & evaluation
-app.use('/api/v1/opa', requireOrgScope, opaRoutes);                             // Open Policy Agent policy-as-code
-app.use('/api/v1/temporal', requireOrgScope, temporalRoutes);                   // Temporal.io workflow orchestration
-app.use('/api/v1/openbao', requireOrgScope, openbaoRoutes);                     // OpenBao/Vault secrets & KMS
-app.use('/api/v1/rapids', requireOrgScope, rapidsRoutes);                       // NVIDIA RAPIDS GPU analytics + Confidential Computing
-app.use('/api/v1/flink', requireOrgScope, flinkRoutes);                         // Apache Flink CEP stream processing
-app.use('/api/v1/gateway', requireOrgScope, gatewayRoutes);                     // CendiaGateway AI Governance Gateway
-app.use('/api/v1/wedge', requireOrgScope, wedgeRoutes);                         // Wedge Products Shadow AI, Governance Report, Incident Forensics
-app.use('/api/v1/ops-agents', requireOrgScope, opsAgentsRoutes);                // Ops Agents Report, Analytics, NLP, Pipeline
-app.use('/api/v1/retention', requireOrgScope, retentionRoutes);                 // 7-Year Audit Retention Management
-app.use('/api/v1/service-discovery', requireOrgScope, serviceDiscoveryRoutes);  // Unified Service Discovery & Marketplace
-app.use('/api/v1/policy-authoring', requireOrgScope, policyAuthoringRoutes);    // Custom Policy Authoring & Simulation
-app.use('/api/v1/analytics', requireOrgScope, analyticsReportingRoutes);        // Advanced Analytics & Reporting
-app.use('/api/v1/collaboration', requireOrgScope, stakeholderPortalsRoutes);    // Stakeholder Collaboration Portals
-app.use('/api/v1/remediation', requireOrgScope, remediationTicketingRoutes);    // Automated Remediation & Ticketing
-app.use('/api/v1/model-registry', requireOrgScope, modelRegistryRoutes);        // AI Model Lifecycle & Registry
-app.use('/api/v1/feedback', requireOrgScope, feedbackRoutes);                   // Continuous Feedback & Improvement Loop
-app.use('/api/v1/enterprise', requireOrgScope, enterprisePlatinumRoutes);       // Enterprise Platinum: Self-Healing, Governance Graph, RegSim, Ethics, Sovereignty, HITL, Trust, Agents
+app.use('/api/v1', recallRoutes);                              // CendiaRecall™ - Decision Outcome Tracking
+app.use('/api/v1/eu-banking', euBankingRoutes);                // EU Banking - Basel III + EU AI Act compliance
+app.use('/api/v1/kafka', kafkaRoutes);                         // Kafka admin & monitoring
+app.use('/api/v1/guardrails', guardrailsRoutes);               // NeMo Guardrails admin & evaluation
+app.use('/api/v1/opa', opaRoutes);                             // Open Policy Agent policy-as-code
+app.use('/api/v1/temporal', temporalRoutes);                   // Temporal.io workflow orchestration
+app.use('/api/v1/openbao', openbaoRoutes);                     // OpenBao/Vault secrets & KMS
+app.use('/api/v1/rapids', rapidsRoutes);                       // NVIDIA RAPIDS GPU analytics + Confidential Computing
+app.use('/api/v1/flink', flinkRoutes);                         // Apache Flink CEP stream processing
+app.use('/api/v1/gateway', gatewayRoutes);                     // CendiaGateway AI Governance Gateway
+app.use('/api/v1/wedge', wedgeRoutes);                         // Wedge Products Shadow AI, Governance Report, Incident Forensics
+app.use('/api/v1/ops-agents', opsAgentsRoutes);                // Ops Agents Report, Analytics, NLP, Pipeline
+app.use('/api/v1/retention', retentionRoutes);                 // 7-Year Audit Retention Management
+app.use('/api/v1/service-discovery', serviceDiscoveryRoutes);  // Unified Service Discovery & Marketplace
+app.use('/api/v1/policy-authoring', policyAuthoringRoutes);    // Custom Policy Authoring & Simulation
+app.use('/api/v1/analytics', analyticsReportingRoutes);        // Advanced Analytics & Reporting
+app.use('/api/v1/collaboration', stakeholderPortalsRoutes);    // Stakeholder Collaboration Portals
+app.use('/api/v1/remediation', remediationTicketingRoutes);    // Automated Remediation & Ticketing
+app.use('/api/v1/model-registry', modelRegistryRoutes);        // AI Model Lifecycle & Registry
+app.use('/api/v1/feedback', feedbackRoutes);                   // Continuous Feedback & Improvement Loop
+app.use('/api/v1/enterprise', enterprisePlatinumRoutes);       // Enterprise Platinum: Self-Healing, Governance Graph, RegSim, Ethics, Sovereignty, HITL, Trust, Agents
 
 // Sandbox Analytics - Track demo engagement for Thomson Reuters
 import('./routes/sandbox-analytics.js').then(mod => {

@@ -13,6 +13,7 @@
 
 import { Request, Response, NextFunction } from 'express';
 import { errors } from './errorHandler.js';
+import { authenticate } from './auth.js';
 import { logger } from '../utils/logger.js';
 
 // =============================================================================
@@ -40,6 +41,35 @@ export const requireOrgScope = (
     return;
   }
   next();
+};
+
+/**
+ * Middleware: tenant gate for the org-scoped API, mounted once at app level.
+ *
+ * requireOrgScope needs req.organizationId, which authentication sets, but the
+ * domain routers authenticate per route, after app-level middleware has run.
+ * Mounted ahead of them on its own, as it was from 12 April 2026, it refused
+ * every API request past login, signed in or not.
+ *
+ * The gate only ever adds a check. A request with a usable session must have
+ * an organization. Any other request (no token, or a token authenticate
+ * rejects) goes on to its route, whose own authentication decides, so public
+ * routes stay public and protected routes still answer 401.
+ */
+export const tenantGate = (req: Request, res: Response, next: NextFunction): void => {
+  if (!req.headers.authorization?.startsWith('Bearer ')) {
+    next();
+    return;
+  }
+  void authenticate(req, res, (err?: unknown) => {
+    if (!err) {
+      requireOrgScope(req, res, next);
+    } else if ((err as { statusCode?: number }).statusCode === 401) {
+      next();
+    } else {
+      next(err);
+    }
+  });
 };
 
 /**
@@ -129,6 +159,7 @@ export function auditTenantAccess(
 
 export default {
   requireOrgScope,
+  tenantGate,
   verifyOrgOwnership,
   orgWhere,
   auditTenantAccess,
