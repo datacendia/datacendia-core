@@ -97,6 +97,11 @@ export default defineConfig({
   },
   // Optimize deps for faster cold starts
   optimizeDeps: {
+    // Only crawl the app's own entry. By default Vite scans every .html file,
+    // which pulls in packages/widgets/demo*.html; those import `lit`, which the
+    // app doesn't install, so the scan failed and pre-bundling was skipped,
+    // leaving cold starts slow and serving "504 Outdated Optimize Dep" errors.
+    entries: ['index.html'],
     include: ['react', 'react-dom', 'react-router-dom', 'clsx'],
     exclude: ['data'],
   },

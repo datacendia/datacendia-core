@@ -4,6 +4,21 @@ All notable changes to Datacendia Core will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+- **Demo API never started** -- `docker compose -f docker-compose.demo.yml up` left the API looping on "waiting for PostgreSQL": the entrypoint probed Postgres with `wget` (Postgres doesn't speak HTTP) or `pg_isready` (not in the image). It now checks the TCP port with `nc` and gives up after 120s with a clear message
+- **Demo API crash-looped once past the wait** -- the Alpine image had no `openssl` package, so Prisma picked its OpenSSL 1.1 engine and failed to load `libssl.so.1.1`; the seed failed and the server restarted continuously. The image now installs `openssl` and the Prisma generator targets `linux-musl-openssl-3.0.x`
+- **Model calls from inside containers went to the container itself** -- code read three different variables (`OLLAMA_BASE_URL`, `OLLAMA_URL`, `OLLAMA_HOST`) or hardcoded `127.0.0.1:11434` in 13 places, so the demo's `OLLAMA_BASE_URL` was ignored by the Council, embeddings and several analysis features. Everything now resolves through `config/ollama.ts`
+- **Slow, flaky frontend cold start** -- Vite scanned `packages/widgets/demo*.html`, failed on their `lit` import and skipped dependency pre-bundling, serving "504 Outdated Optimize Dep". The scan is now limited to the app's `index.html`
+- **Images built on Windows couldn't start** -- a CRLF checkout broke the entrypoint shebang. `.gitattributes` pins `*.sh` to LF and the Dockerfile strips CRs defensively
+
+### Changed
+- **Faster, smaller API image** -- files are owned by the runtime user at copy time instead of a trailing `chown -R` that duplicated `node_modules` into a second layer
+
+### Added
+- **Demo smoke test** -- CI now boots the demo compose stack and fails if the API crash-loops, never becomes healthy, or starts without its seed data
+
 ## [0.2.3-alpha] - 2026-03-14
 
 ### Added

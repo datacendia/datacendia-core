@@ -1,3 +1,4 @@
+import { getOllamaBaseUrl } from '../../config/ollama.js';
 import crypto from 'crypto';
 import type { PIIScanResult, PIIType } from './PIIDetector';
 
@@ -201,7 +202,7 @@ export const DEFAULT_PROVIDERS: GatewayProvider[] = [
   {
     id: 'ollama',
     name: 'Ollama (Local)',
-    baseUrl: 'http://localhost:11434',
+    baseUrl: getOllamaBaseUrl(),
     authHeader: '',
     authPrefix: '',
     models: ['llama3.1', 'mistral', 'codellama', 'phi3'],

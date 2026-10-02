@@ -15,6 +15,7 @@
 // Connect to customer data in real-time during sales demos
 // =============================================================================
 
+import { getOllamaBaseUrl } from '../../config/ollama.js';
 import { BaseService, ServiceConfig, ServiceHealth } from '../../core/services/BaseService.js';
 import { featureGating, SubscriptionTier } from '../../core/subscriptions/SubscriptionTiers.js';
 import { deterministicFloat, deterministicInt, deterministicPercentage, deterministicPick } from '../../utils/deterministic.js';
@@ -199,7 +200,7 @@ export class LiveDemoModeService extends BaseService {
       dependencies: ['council'],
       ...config,
     });
-    this.ollamaEndpoint = process.env.OLLAMA_HOST || 'http://127.0.0.1:11434';
+    this.ollamaEndpoint = getOllamaBaseUrl();
   }
 
   async initialize(): Promise<void> {
