@@ -13,7 +13,7 @@ import type { CouncilStatusBadge } from '../components/council-status-badge.js';
 
 // Mock fetch for error testing
 const mockFetch = vi.fn();
-global.fetch = mockFetch;
+globalThis.fetch = mockFetch;
 
 describe('Error Handling - Network Failures', () => {
   beforeEach(() => {
@@ -151,7 +151,7 @@ describe('Error Handling - Network Failures', () => {
     (mockWebSocket as any).OPEN = 1;
     (mockWebSocket as any).CLOSING = 2;
     (mockWebSocket as any).CLOSED = 3;
-    global.WebSocket = mockWebSocket as any;
+    globalThis.WebSocket = mockWebSocket as any;
 
     const el = document.createElement('council-status-badge') as CouncilStatusBadge;
     el.wsUrl = 'wss://api.test.com';
@@ -376,7 +376,7 @@ describe('Error Events', () => {
     (mockWebSocket as any).OPEN = 1;
     (mockWebSocket as any).CLOSING = 2;
     (mockWebSocket as any).CLOSED = 3;
-    global.WebSocket = mockWebSocket as any;
+    globalThis.WebSocket = mockWebSocket as any;
 
     const el = document.createElement('council-status-badge') as CouncilStatusBadge;
     el.wsUrl = 'wss://api.test.com';

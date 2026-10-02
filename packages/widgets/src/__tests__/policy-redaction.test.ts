@@ -10,7 +10,7 @@ import type { PIIScanResult } from '../components/cendia-pii-scanner.js';
 
 // Mock fetch for policy testing
 const mockFetch = vi.fn();
-global.fetch = mockFetch;
+globalThis.fetch = mockFetch;
 
 describe('Policy-Based Redaction - GDPR', () => {
   beforeEach(() => {

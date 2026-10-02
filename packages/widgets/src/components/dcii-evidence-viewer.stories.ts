@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/web-components';
+import type { Meta, StoryObj } from '@storybook/web-components-vite';
 import './dcii-evidence-viewer.js';
 import type { DciiEvidenceViewer, EvidencePacket } from './dcii-evidence-viewer.js';
 
