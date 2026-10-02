@@ -16,6 +16,7 @@
 // =============================================================================
 
 import { isChatModel, pickModel } from './modelFallback';
+import { apiInferenceAvailable, chatViaApi } from './apiTransport';
 // Import DomainAgent type and agents from modular files for faster HMR
 import {
   DomainAgent, 
@@ -157,6 +158,10 @@ class OllamaService {
   private statusCheckInterval: number | null = null;
   // The model each agent was configured with; `agent.model` is what it runs on.
   private preferredModels = new Map<string, string>();
+  // Where model calls go: Ollama beside the browser, or the API's own provider
+  // (a hosted deployment has no Ollama next to the visitor; see apiTransport).
+  private transport: 'local' | 'api' = 'local';
+  private chatModels: string[] = [];
 
   private preferredModel(agent: DomainAgent): string {
     const known = this.preferredModels.get(agent.id);
@@ -193,6 +198,8 @@ class OllamaService {
         // Each agent runs on its own model if installed, else the closest chat model
         // (see modelFallback); embedding models are left out using Ollama's metadata.
         const chatModels = models.filter(isChatModel).map((m) => m.name);
+        this.transport = 'local';
+        this.chatModels = chatModels;
         this.agents = this.agents.map((agent) => {
           const preferred = this.preferredModel(agent);
           const model = pickModel(preferred, chatModels);
@@ -210,12 +217,36 @@ class OllamaService {
         }
         return true;
       }
-    } catch (error) {
-      console.warn('[Ollama] Not available:', error);
-      this.isAvailable = false;
-      this.agents = this.agents.map((agent) => ({ ...agent, status: 'offline' as const }));
+    } catch {
+      // No Ollama beside this browser: see whether the API can run the calls
     }
+
+    if (await apiInferenceAvailable()) {
+      this.transport = 'api';
+      this.isAvailable = true;
+      this.availableModels = [];
+      this.chatModels = [];
+      // The API resolves each agent's model against its own provider
+      this.agents = this.agents.map((agent) => ({
+        ...agent,
+        model: this.preferredModel(agent),
+        status: 'online' as const,
+      }));
+      return true;
+    }
+
+    this.isAvailable = false;
+    this.agents = this.agents.map((agent) => ({ ...agent, status: 'offline' as const }));
     return false;
+  }
+
+  /**
+   * The model to request for an agent tuned on `preferred`: on local Ollama the
+   * closest installed chat model (null if there is none); through the API the
+   * preferred name, which the API resolves itself.
+   */
+  resolveModel(preferred: string): string | null {
+    return this.transport === 'api' ? preferred : pickModel(preferred, this.chatModels);
   }
 
   /** Agents running on another model than the one they were configured with. */
@@ -233,10 +264,11 @@ class OllamaService {
   /**
    * Check if Ollama is currently available
    */
-  getStatus(): { available: boolean; models: string[] } {
+  getStatus(): { available: boolean; models: string[]; transport: 'local' | 'api' } {
     return {
       available: this.isAvailable,
       models: this.availableModels,
+      transport: this.transport,
     };
   }
 
@@ -245,8 +277,8 @@ class OllamaService {
    * Loads models into GPU memory for instant responses
    */
   async preWarmModels(onProgress?: (model: string, index: number, total: number) => void): Promise<void> {
-    if (!this.isAvailable) {
-      console.warn('[Ollama] Cannot pre-warm models - Ollama not available');
+    if (!this.isAvailable || this.transport === 'api') {
+      // Nothing to warm here: through the API, its provider manages its own models
       return;
     }
 
@@ -342,6 +374,18 @@ class OllamaService {
       stream: false,
     };
 
+    if (this.transport === 'api') {
+      const reply = await chatViaApi({
+        messages: [
+          { role: 'system', content: securedRequest.system },
+          { role: 'user', content: request.prompt },
+        ],
+        model: request.model,
+        options: request.options,
+      });
+      return { model: request.model, created_at: new Date().toISOString(), response: reply.content, done: true };
+    }
+
     const response = await fetch(`${this.baseUrl}/api/generate`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -367,6 +411,11 @@ class OllamaService {
 
     // Inject CendiaGuard constitution as the first system message
     const securedMessages = this.injectCendiaGuard(request.messages);
+
+    if (this.transport === 'api') {
+      const message = await chatViaApi({ messages: securedMessages, model: request.model, options: request.options });
+      return { model: request.model, created_at: new Date().toISOString(), message, done: true };
+    }
 
     // Add timeout to prevent hanging (2 minutes max per agent)
     const controller = new AbortController();
@@ -555,6 +604,14 @@ class OllamaService {
         messages.push({ role: 'user', content: `Context: ${context}` });
       }
       messages.push({ role: 'user', content: question });
+
+      if (this.transport === 'api') {
+        // Through the API the reply arrives whole: hand it over as a single token
+        const reply = await chatViaApi({ messages, model: agent.model, options: { temperature: 0.7, num_predict: 2048 } });
+        yield { type: 'token', content: reply.content, agent };
+        yield { type: 'complete', content: reply.content, agent };
+        return;
+      }
 
       const response = await fetch(`${this.baseUrl}/api/chat`, {
         method: 'POST',
