@@ -1433,7 +1433,10 @@ const CortexLayoutInner: React.FC = () => {
                       className="fixed inset-0 z-40"
                       onClick={() => setIsPremiumDropdownOpen(false)}
                     />
-                    <div className="absolute top-full right-0 mt-2 w-96 bg-sovereign-card rounded-xl shadow-2xl border border-sovereign-border z-50">
+                    {/* On phones a 384px menu anchored to the button ran off-screen, so there it's
+                        a full-width panel below the header; at every width it scrolls within the
+                        window, since its ~35 entries are taller than most screens. */}
+                    <div className="fixed inset-x-4 top-16 sm:absolute sm:inset-x-auto sm:top-full sm:right-0 sm:mt-2 sm:w-96 max-h-[calc(100vh-5rem)] overflow-y-auto bg-sovereign-card rounded-xl shadow-2xl border border-sovereign-border z-50">
                       {/* Core Suite Section */}
                       <div className="p-3 bg-gradient-to-r from-cyan-900/30 to-blue-900/30 border-b border-sovereign-border-subtle rounded-t-xl">
                         <h3 className="font-semibold text-white flex items-center gap-2"><Brain className="w-4 h-4 text-cyan-400" /> The Core Suite</h3>
