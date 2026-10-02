@@ -18,7 +18,10 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:3001',
+        // Inside a container, 127.0.0.1 is the frontend container itself: every
+        // relative /api call (39 of them: gateway, verify, kms, inference, ...)
+        // answered 500. The compose files point this at the api service.
+        target: process.env['VITE_PROXY_TARGET'] || 'http://127.0.0.1:3001',
         changeOrigin: true,
         secure: false,
       },

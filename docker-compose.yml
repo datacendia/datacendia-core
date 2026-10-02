@@ -155,6 +155,8 @@ services:
     environment:
       VITE_API_URL: http://localhost:3001/api/v1
       VITE_WS_URL: ws://localhost:3001
+      # Vite proxies relative /api calls; from this container the API is the api service.
+      VITE_PROXY_TARGET: http://api:3001
     volumes:
       - .:/app
       - /app/node_modules
