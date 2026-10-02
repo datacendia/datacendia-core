@@ -243,7 +243,10 @@ const corsMiddleware = cors({
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Request-ID', 'X-Data-Source-Id', 'x-data-source-id'],
+  // X-CSRF-Token: the API client sends it on every write. Without it here the
+  // browser's preflight fails, so cross-origin sign-in (the demo: :5173 -> :3001)
+  // failed with "Failed to fetch".
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Request-ID', 'X-Data-Source-Id', 'x-data-source-id', 'X-CSRF-Token'],
 });
 app.use('/api/', corsMiddleware);
 
