@@ -1257,7 +1257,7 @@ router.post('/deliberations/save', async (req: Request, res: Response, next: Nex
       sessionId: deliberationId,
       decisionId: deliberationId,
       question,
-      agentsInvolved: agentResponses?.map((ar: any) => ar.agentId || ar.agentCode) || [],
+      agentsInvolved: agentIds, // same participants as the record, read from either shape
       consensusReached: true,
       finalRecommendation: synthesis?.substring(0, 200) || 'Completed',
       confidenceScore: Math.round((confidence || 0.8) * 100),
