@@ -245,7 +245,7 @@ export const DashboardPage: React.FC = () => {
   const [alerts, setAlerts] = useState<Alert[]>([]);
   const [metrics, setMetrics] = useState<Metric[]>([]);
   const [healthScore, setHealthScore] = useState<HealthScore>(fallbackHealthScore);
-  const [userName, setUserName] = useState('User');
+  const [userName, setUserName] = useState(user?.name?.split(' ')[0] || 'User');
   const [orgName, setOrgName] = useState('Your Company');
 
   // Get translated fallback data

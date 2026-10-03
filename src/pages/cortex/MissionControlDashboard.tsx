@@ -213,7 +213,7 @@ export const MissionControlDashboard: React.FC = () => {
   const navigate = useNavigate();
   const { t } = useLanguage();
   const { user } = useAuth();
-  const [userName, setUserName] = useState('User');
+  const [userName, setUserName] = useState(user?.name?.split(' ')[0] || 'User');
   const [orgName, setOrgName] = useState('Your Organization');
   const [isLoading, setIsLoading] = useState(true);
 

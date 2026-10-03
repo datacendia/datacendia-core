@@ -22,6 +22,7 @@ import { RouteErrorPage } from './components/RouteErrorPage';
 // LAYOUTS - Load immediately (critical for shell)
 // =============================================================================
 import { CortexLayout } from './layouts/CortexLayout';
+import { ProtectedRoute } from './components/auth/ProtectedRoute';
 
 // =============================================================================
 // DOMAIN ROUTE MODULES - 9 files replacing 2,400+ lines of inline routes
@@ -65,7 +66,11 @@ export const router = createBrowserRouter([
       // CORTEX APPLICATION
       {
         path: '/cortex',
-        element: <CortexLayout />,
+        element: (
+          <ProtectedRoute>
+            <CortexLayout />
+          </ProtectedRoute>
+        ),
         children: withinLayout(
           [
             ...cortexCoreRoutes,
@@ -84,7 +89,11 @@ export const router = createBrowserRouter([
       // TOOLS
       {
         path: '/tools',
-        element: <CortexLayout />,
+        element: (
+          <ProtectedRoute>
+            <CortexLayout />
+          </ProtectedRoute>
+        ),
         children: withinLayout(
           [{ path: 'roi-calculator', element: lazyLoad(() => import('./pages/tools').then((m) => ({ default: m.ROICalculator }))) }],
           '/cortex/dashboard',

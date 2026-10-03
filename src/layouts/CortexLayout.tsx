@@ -1077,6 +1077,15 @@ const sovereignFeatures = [
 // RENAMED: Panopticon ? Oversight (in Trust Layer)
 
 // Inner layout component that can use translations
+// Sidebar label for each role. A role missing here shows the generic "User".
+const ROLE_LABELS: Record<string, string> = {
+  OWNER: 'label.owner',
+  SUPER_ADMIN: 'label.platform_admin',
+  ADMIN: 'label.admin',
+  ANALYST: 'label.analyst',
+  VIEWER: 'label.viewer',
+};
+
 const CortexLayoutInner: React.FC = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -1128,7 +1137,7 @@ const CortexLayoutInner: React.FC = () => {
         .join('')
         .slice(0, 2)
         .toUpperCase()
-    : 'SR';
+    : (user?.email?.[0] ?? '').toUpperCase();
 
   return (
     <DataSourceProvider>
@@ -1328,8 +1337,8 @@ const CortexLayoutInner: React.FC = () => {
                   <span className="text-crimson-400 font-medium text-sm">{userInitials}</span>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium text-white truncate">{user?.name || 'Stuart Rainey'}</p>
-                  <p className="text-xs text-gray-500 truncate">{user?.role === 'OWNER' ? t('label.owner') : t('label.admin')}</p>
+                  <p className="text-sm font-medium text-white truncate">{user?.name || user?.email}</p>
+                  <p className="text-xs text-gray-500 truncate">{user?.role ? t(ROLE_LABELS[user.role] ?? 'label.user') : ''}</p>
                 </div>
               </div>
             </div>
@@ -1741,10 +1750,10 @@ const CortexLayoutInner: React.FC = () => {
                     <div className="absolute top-full right-0 mt-2 w-56 bg-sovereign-card rounded-xl shadow-2xl border border-sovereign-border z-50">
                       <div className="p-4 border-b border-sovereign-border-subtle">
                         <p className="text-sm font-semibold text-white">
-                          {user?.name || 'John Smith'}
+                          {user?.name || user?.email}
                         </p>
                         <p className="text-xs text-gray-500 truncate">
-                          {user?.email || 'john@datacendia.com'}
+                          {user?.email}
                         </p>
                       </div>
                       <div className="py-1">

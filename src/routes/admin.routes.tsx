@@ -17,6 +17,7 @@
 import React, { Suspense, lazy } from 'react';
 import { RouteObject } from 'react-router-dom';
 import { PageLoader } from '../components/ui/PageLoader';
+import { ProtectedRoute } from '../components/auth/ProtectedRoute';
 import { SuspenseWrapper } from './utils';
 
 const AdminLayout = lazy(() => import('../pages/admin').then((m) => ({ default: m.AdminLayout })));
@@ -62,9 +63,11 @@ export const adminRoutes: RouteObject[] = [
   {
     path: '/admin',
     element: (
-      <Suspense fallback={<PageLoader />}>
-        <AdminLayout />
-      </Suspense>
+      <ProtectedRoute requiredRoles={['OWNER', 'ADMIN', 'SUPER_ADMIN']}>
+        <Suspense fallback={<PageLoader />}>
+          <AdminLayout />
+        </Suspense>
+      </ProtectedRoute>
     ),
     children: [
       { index: true, element: w(AdminDashboardPage) },

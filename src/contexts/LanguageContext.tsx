@@ -85,6 +85,10 @@ const DEFAULT_TRANSLATIONS: Record<string, string> = {
   'label.premium': 'Premium',
   'label.locked': 'Locked',
   'label.admin': 'Admin',
+  'label.owner': 'Owner',
+  'label.platform_admin': 'Platform admin',
+  'label.analyst': 'Analyst',
+  'label.viewer': 'Viewer',
   'label.user': 'User',
   'label.lead': 'Lead',
 
@@ -464,6 +468,10 @@ const STATIC_TRANSLATIONS: Record<string, Record<string, string>> = {
     'label.premium': 'Premium',
     'label.locked': 'Bloqueado',
     'label.admin': 'Administrador',
+    'label.owner': 'Propietario',
+    'label.platform_admin': 'Administrador de plataforma',
+    'label.analyst': 'Analista',
+    'label.viewer': 'Lector',
     'label.user': 'Usuario',
     'label.lead': 'Líder',
 

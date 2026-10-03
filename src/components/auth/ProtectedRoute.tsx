@@ -27,7 +27,7 @@ import { Loader2, Shield, AlertTriangle } from 'lucide-react';
 interface ProtectedRouteProps {
   children: React.ReactNode;
   /** Required roles - user must have at least one */
-  requiredRoles?: Array<'VIEWER' | 'ANALYST' | 'ADMIN' | 'SUPER_ADMIN'>;
+  requiredRoles?: Array<'VIEWER' | 'ANALYST' | 'ADMIN' | 'OWNER' | 'SUPER_ADMIN'>;
   /** Required permissions - user must have all */
   requiredPermissions?: string[];
   /** Redirect path when not authenticated */
@@ -96,27 +96,32 @@ export function ProtectedRoute({
   children,
   requiredRoles,
   requiredPermissions,
-  redirectTo = '/auth/login',
+  redirectTo = '/login',
   showLoading = true,
   fallback,
 }: ProtectedRouteProps) {
-  const { isAuthenticated, isLoading, isInitialized, user, hasRole, hasPermission } = useAuth();
+  const { isAuthenticated, isInitialized, user, hasRole, hasPermission } = useAuth();
   const location = useLocation();
 
-  // Still loading auth state
-  if (!isInitialized || isLoading) {
+  // Only the session check at startup holds the page back. isLoading also turns
+  // on while signing in or out; unmounting the app for that would throw away
+  // whatever the page was doing, such as a deliberation in progress.
+  if (!isInitialized) {
     if (showLoading) {
       return <AuthLoading />;
     }
     return null;
   }
 
-  // Not authenticated - redirect to login
+  // Not authenticated - sign in first, then come back to this exact page
   if (!isAuthenticated || !user) {
     return (
       <Navigate
         to={redirectTo}
-        state={{ from: location.pathname, message: 'Please sign in to continue' }}
+        state={{
+          from: `${location.pathname}${location.search}${location.hash}`,
+          message: 'Please sign in to continue',
+        }}
         replace
       />
     );
