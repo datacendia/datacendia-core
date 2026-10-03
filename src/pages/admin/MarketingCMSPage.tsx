@@ -85,7 +85,7 @@ export const MarketingCMSPage: React.FC = () => {
           <div className="text-6xl mb-4">🔒</div>
           <h1 className="text-2xl mb-2" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>ACCESS DENIED</h1>
           <p className="text-neutral-400">
-            Only the platform owner (Stuart Rainey) can access the Marketing CMS.
+            Only the platform owner can access the Marketing CMS.
           </p>
           <p className="text-neutral-500 text-sm mt-4">
             Your role: {user?.role || 'Unknown'}

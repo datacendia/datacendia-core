@@ -92,14 +92,15 @@ router.use(requireRole('OWNER', 'ADMIN', 'SUPER_ADMIN'));
 // The guard above admits any organization's OWNER or ADMIN, but the tenant
 // routes manage organizations. Listing, creating, upgrading and suspending
 // tenants is for the platform owner; a route naming one tenant is open to that
-// tenant's own admins too (see ownTenantOnly).
+// tenant's own admins too (see ownTenantOnly). The dashboard sums every
+// tenant's revenue and activity, so it is the platform owner's too.
 const platformOwner = requireRole('SUPER_ADMIN');
 
 // =============================================================================
 // DASHBOARD
 // =============================================================================
 
-router.get('/dashboard', async (_req: Request, res: Response) => {
+router.get('/dashboard', platformOwner, async (_req: Request, res: Response) => {
   try {
     const dashboard = await getPlatformDashboard();
     res.json(dashboard);

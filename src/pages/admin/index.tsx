@@ -15,16 +15,11 @@
 // =============================================================================
 
 import React, { useState, useEffect } from 'react';
-import { useNavigate, Outlet, useLocation } from 'react-router-dom';
+import { Link, useNavigate, Outlet, useLocation } from 'react-router-dom';
 import { cn, formatNumber, formatCurrency, formatRelativeTime } from '../../../lib/utils';
 import { LogoSimple } from '../../components/brand/Logo';
-import {
-  adminService,
-  type PlatformDashboard,
-  type Tenant,
-  type License,
-  type HealthDashboard,
-} from '../../services/AdminService';
+import { useAuth } from '../../contexts/AuthContext';
+import { AdminRequestError, adminService, type PlatformDashboard } from '../../services/AdminService';
 
 // =============================================================================
 // ADMIN LAYOUT
@@ -33,6 +28,14 @@ import {
 export const AdminLayout: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const { user } = useAuth();
+  const initials = (user?.name || user?.email || '')
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((part) => part[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase();
 
   const adminNav = [
     { id: 'dashboard', label: 'Dashboard', icon: '📊', path: '/admin' },
@@ -68,8 +71,11 @@ export const AdminLayout: React.FC = () => {
           <a href="/cortex" className="text-neutral-400 hover:text-white text-sm">
             ← Back to Cortex
           </a>
-          <div className="w-8 h-8 bg-neutral-700 rounded-full flex items-center justify-center">
-            <span className="text-white text-sm">A</span>
+          <div
+            className="w-8 h-8 bg-neutral-700 rounded-full flex items-center justify-center"
+            title={user?.name || user?.email}
+          >
+            <span className="text-white text-sm">{initials}</span>
           </div>
         </div>
       </header>
@@ -78,7 +84,8 @@ export const AdminLayout: React.FC = () => {
         {/* Sidebar */}
         <aside className="w-64 bg-neutral-800 min-h-[calc(100vh-64px)] p-4">
           <nav className="space-y-1">
-            {adminNav.map((item) => (
+            {/* The marketing tools are the platform owner's, as their pages enforce. */}
+            {adminNav.filter((item) => !item.ownerOnly || user?.role === 'OWNER').map((item) => (
               <button
                 key={item.id}
                 onClick={() => navigate(item.path)}
@@ -112,100 +119,50 @@ export const AdminLayout: React.FC = () => {
 export const AdminDashboardPage: React.FC = () => {
   const [dashboard, setDashboard] = useState<PlatformDashboard | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<{ status?: number; message: string } | null>(null);
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
+    let stopped = false;
+    const refresh: { timer?: ReturnType<typeof setInterval> } = {};
     const loadDashboard = async () => {
       try {
         setLoading(true);
         const data = await adminService.getDashboard();
-        setDashboard(data);
-        setError(null);
+        if (!stopped) {
+          setDashboard(data);
+          setError(null);
+        }
       } catch (err) {
-        setError('Failed to load dashboard. Using cached data.');
-        // Fallback to demo data
-        setDashboard({
-          tenants: { total: 127, active: 98, trial: 12, churned: 17 },
-          revenue: { mrr: 842000, arr: 10104000, avgPerTenant: 8590 },
-          licenses: { total: 127, active: 110, expiring: 5, revenueAtRisk: 75000 },
-          system: { status: 'healthy', apiRequests24h: 12500000, avgLatency: 45, errorRate: 0.8 },
-          users: { total: 3482 },
-          recentActivity: [
-            {
-              event: 'New tenant created',
-              tenant: 'HealthTech Labs',
-              time: new Date(Date.now() - 1800000).toISOString(),
-            },
-            {
-              event: 'License upgraded',
-              tenant: 'TechStart Inc',
-              time: new Date(Date.now() - 3600000).toISOString(),
-            },
-            {
-              event: 'User limit warning',
-              tenant: 'GlobalCo',
-              time: new Date(Date.now() - 7200000).toISOString(),
-              isAlert: true,
-            },
-            {
-              event: 'SSO configured',
-              tenant: 'FinanceFirst',
-              time: new Date(Date.now() - 14400000).toISOString(),
-            },
-          ],
-          lastUpdated: new Date().toISOString(),
-        });
+        if (stopped) {
+          return;
+        }
+        const status = err instanceof AdminRequestError ? err.status : undefined;
+        setError({ status, message: err instanceof Error ? err.message : 'Request failed' });
+        // Asking again every 30 seconds will not change a refusal.
+        if (status === 401 || status === 403) {
+          clearInterval(refresh.timer);
+        }
       } finally {
-        setLoading(false);
+        if (!stopped) {
+          setLoading(false);
+        }
       }
     };
     loadDashboard();
     // Refresh every 30 seconds
-    const interval = setInterval(loadDashboard, 30000);
-    return () => clearInterval(interval);
-  }, []);
+    refresh.timer = setInterval(loadDashboard, 30000);
+    return () => {
+      stopped = true;
+      clearInterval(refresh.timer);
+    };
+  }, [attempt]);
 
-  const stats = dashboard
-    ? [
-        {
-          label: 'Total Tenants',
-          value: dashboard.tenants.total,
-          change: +5,
-          color: 'text-primary-400',
-        },
-        {
-          label: 'Active Users',
-          value: dashboard.users.total,
-          change: +142,
-          color: 'text-success-main',
-        },
-        {
-          label: 'MRR',
-          value: dashboard.revenue.mrr,
-          isCurrency: true,
-          change: +8.5,
-          isPercent: true,
-          color: 'text-success-main',
-        },
-        {
-          label: 'API Calls (24h)',
-          value: dashboard.system.apiRequests24h,
-          change: +12,
-          isPercent: true,
-          color: 'text-info-main',
-        },
-      ]
-    : [];
+  const title = (
+    <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>ADMIN DASHBOARD</h1>
+  );
 
-  const recentActivity =
-    dashboard?.recentActivity.map((a) => ({
-      event: a.event,
-      tenant: a.tenant,
-      time: new Date(a.time),
-      isAlert: a.isAlert,
-    })) || [];
-
-  if (loading && !dashboard) {
+  if (loading && !dashboard && !error) {
     return (
       <div className="flex items-center justify-center h-64">
         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-500"></div>
@@ -213,16 +170,85 @@ export const AdminDashboardPage: React.FC = () => {
     );
   }
 
+  if (!dashboard) {
+    const refused = error?.status === 403;
+    return (
+      <div>
+        {title}
+        <div className="mt-6 max-w-xl bg-neutral-800 rounded-xl p-8 border border-neutral-700">
+          <h2 className="text-lg font-semibold text-white mb-2">
+            {refused ? 'For platform operators' : 'The dashboard could not be loaded'}
+          </h2>
+          {refused ? (
+            <p className="text-neutral-400 text-sm">
+              This dashboard adds up every tenant&apos;s revenue and activity, so only platform operators can open it.
+              Your organization&apos;s users, teams and settings are in{' '}
+              <Link to="/cortex/settings" className="text-primary-400 hover:underline">
+                Settings
+              </Link>
+              .
+            </p>
+          ) : (
+            <>
+              <p className="text-neutral-400 text-sm">{error?.message}</p>
+              <button
+                type="button"
+                onClick={() => setAttempt((n) => n + 1)}
+                className="mt-4 px-4 py-2 text-sm rounded-lg bg-neutral-700 hover:bg-neutral-600 text-white"
+              >
+                Try again
+              </button>
+            </>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  const stats = [
+    {
+      label: 'Tenants',
+      value: formatNumber(dashboard.tenants.total),
+      detail: `${formatNumber(dashboard.tenants.active)} active · ${formatNumber(dashboard.tenants.trial)} on trial`,
+      color: 'text-primary-400',
+    },
+    { label: 'Users', value: formatNumber(dashboard.users.total), detail: 'Across all tenants', color: 'text-success-main' },
+    {
+      label: 'MRR',
+      value: formatCurrency(dashboard.revenue.mrr),
+      detail: `ARR ${formatCurrency(dashboard.revenue.arr)}`,
+      color: 'text-success-main',
+    },
+    {
+      label: 'Licenses',
+      value: formatNumber(dashboard.licenses.total),
+      detail: `${formatNumber(dashboard.licenses.expiring)} expiring within 30 days`,
+      color: 'text-info-main',
+    },
+  ];
+
+  const growthPeak = Math.max(1, ...dashboard.tenantGrowth.map((m) => m.count));
+  const hasGrowth = dashboard.tenantGrowth.some((m) => m.count > 0);
+  const planPeak = Math.max(1, ...dashboard.revenueByPlan.map((p) => p.mrr));
+  const monthLabel = (month: string) =>
+    new Date(`${month}-01T00:00:00Z`).toLocaleString('en-US', { month: 'short', timeZone: 'UTC' });
+  const planLabel = (plan: string) => plan.charAt(0) + plan.slice(1).toLowerCase();
+
+  const recentActivity = dashboard.recentActivity.map((a) => ({
+    event: a.event,
+    tenant: a.tenant,
+    time: new Date(a.time),
+    isAlert: a.isAlert,
+  }));
+
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>ADMIN DASHBOARD</h1>
-        {error && <span className="text-warning-main text-sm">{error}</span>}
-        {dashboard && (
-          <span className="text-neutral-500 text-xs">
-            Last updated: {formatRelativeTime(new Date(dashboard.lastUpdated))}
-          </span>
-        )}
+        {title}
+        {error && <span className="text-warning-main text-sm">Could not refresh: {error.message}</span>}
+        <span className="text-neutral-500 text-xs">
+          Last updated: {formatRelativeTime(new Date(dashboard.lastUpdated))}
+        </span>
       </div>
 
       {/* Stats Grid */}
@@ -230,12 +256,8 @@ export const AdminDashboardPage: React.FC = () => {
         {stats.map((stat) => (
           <div key={stat.label} className="bg-neutral-800 rounded-xl p-6 border border-neutral-700">
             <p className="text-neutral-400 text-sm mb-1">{stat.label}</p>
-            <p className={cn('text-3xl font-bold', stat.color)}>
-              {stat.isCurrency ? formatCurrency(stat.value) : formatNumber(stat.value)}
-            </p>
-            <p className="text-success-main text-sm mt-1">
-              ↑ {stat.isPercent ? `${stat.change}%` : `+${stat.change}`}
-            </p>
+            <p className={cn('text-3xl font-bold', stat.color)}>{stat.value}</p>
+            <p className="text-neutral-500 text-sm mt-1">{stat.detail}</p>
           </div>
         ))}
       </div>
@@ -243,22 +265,52 @@ export const AdminDashboardPage: React.FC = () => {
       {/* Charts Row */}
       <div className="grid grid-cols-2 gap-6 mb-8">
         <div className="bg-neutral-800 rounded-xl p-6 border border-neutral-700">
-          <h2 className="text-lg font-semibold text-white mb-4">Tenant Growth</h2>
-          <div className="h-48 flex items-center justify-center text-neutral-500">
-            [Chart Placeholder]
-          </div>
+          <h2 className="text-lg font-semibold text-white mb-4">New Tenants by Month</h2>
+          {hasGrowth ? (
+            <div className="h-48 flex items-end gap-3">
+              {dashboard.tenantGrowth.map((m) => (
+                <div key={m.month} className="flex-1 flex flex-col items-center justify-end gap-2">
+                  <span className="text-xs text-neutral-400">{m.count}</span>
+                  <div
+                    className="w-full rounded-t bg-primary-500/70"
+                    style={{ height: Math.max(2, Math.round((m.count / growthPeak) * 120)) }}
+                  />
+                  <span className="text-xs text-neutral-500">{monthLabel(m.month)}</span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="h-48 flex items-center justify-center text-neutral-500 text-sm">
+              No new tenants in the last six months
+            </p>
+          )}
         </div>
         <div className="bg-neutral-800 rounded-xl p-6 border border-neutral-700">
-          <h2 className="text-lg font-semibold text-white mb-4">Revenue Trend</h2>
-          <div className="h-48 flex items-center justify-center text-neutral-500">
-            [Chart Placeholder]
-          </div>
+          <h2 className="text-lg font-semibold text-white mb-4">MRR by Plan</h2>
+          {dashboard.revenueByPlan.length > 0 ? (
+            <div className="space-y-4">
+              {dashboard.revenueByPlan.map((p) => (
+                <div key={p.plan}>
+                  <div className="flex justify-between text-sm mb-1">
+                    <span className="text-neutral-300">{planLabel(p.plan)}</span>
+                    <span className="text-neutral-400">{formatCurrency(p.mrr)}</span>
+                  </div>
+                  <div className="h-2 rounded bg-neutral-700">
+                    <div className="h-2 rounded bg-success-main" style={{ width: `${(p.mrr / planPeak) * 100}%` }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="h-48 flex items-center justify-center text-neutral-500 text-sm">No paying tenants yet</p>
+          )}
         </div>
       </div>
 
       {/* Recent Activity */}
       <div className="bg-neutral-800 rounded-xl p-6 border border-neutral-700">
         <h2 className="text-lg font-semibold text-white mb-4">Recent Activity</h2>
+        {recentActivity.length === 0 && <p className="text-neutral-500 text-sm">No activity yet</p>}
         <div className="space-y-3">
           {recentActivity.map((item, i) => (
             <div

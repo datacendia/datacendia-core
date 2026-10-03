@@ -86,8 +86,11 @@ export interface PlatformDashboard {
   tenants: { total: number; active: number; trial: number; churned: number };
   revenue: { mrr: number; arr: number; avgPerTenant: number };
   licenses: { total: number; active: number; expiring: number; revenueAtRisk: number };
-  system: { status: string; apiRequests24h: number; avgLatency: number; errorRate: number };
   users: { total: number };
+  /** New tenants per calendar month (UTC), oldest first. */
+  tenantGrowth: Array<{ month: string; count: number }>;
+  /** MRR of active tenants by plan, largest first. */
+  revenueByPlan: Array<{ plan: string; mrr: number }>;
   recentActivity: Array<{ event: string; tenant: string; time: string; isAlert?: boolean }>;
   lastUpdated: string;
 }
@@ -117,6 +120,17 @@ export interface HealthDashboard {
 // API CLIENT
 // =============================================================================
 
+/** A failed admin API call. The status tells a refusal (403) from an outage. */
+export class AdminRequestError extends Error {
+  constructor(
+    message: string,
+    readonly status: number
+  ) {
+    super(message);
+    this.name = 'AdminRequestError';
+  }
+}
+
 class AdminService {
   private baseUrl = `${API_BASE}/admin`;
 
@@ -128,7 +142,7 @@ class AdminService {
 
     if (!response.ok) {
       const error = await response.json().catch(() => ({ error: 'Request failed' }));
-      throw new Error(error.error?.message ?? error.error ?? `HTTP ${response.status}`);
+      throw new AdminRequestError(error.error?.message ?? error.error ?? `HTTP ${response.status}`, response.status);
     }
 
     return response.json();
