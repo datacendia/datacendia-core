@@ -23,6 +23,9 @@ router.use(devAuth);
 
 const updateOrgSchema = z.object({
   name: z.string().min(2).optional(),
+  industry: z.string().max(100).optional(),
+  companySize: z.string().max(50).optional(),
+  // Merged into the stored settings: other features keep their own keys there.
   settings: z.record(z.unknown()).optional(),
 });
 
@@ -61,15 +64,31 @@ router.get('/current', async (req: Request, res: Response, next: NextFunction) =
  * PUT /api/v1/organizations/current
  * Update organization (admin only)
  */
-router.put('/current', requireRole('ADMIN', 'SUPER_ADMIN'), async (req: Request, res: Response, next: NextFunction) => {
+router.put('/current', requireRole('OWNER', 'ADMIN', 'SUPER_ADMIN'), async (req: Request, res: Response, next: NextFunction) => {
   try {
     const data = updateOrgSchema.parse(req.body);
+    const orgId = req.organizationId;
+    if (!orgId) {
+      throw errors.unauthorized('Organization context required');
+    }
+
+    let settings: Prisma.InputJsonValue | undefined;
+    if (data.settings) {
+      const current = await prisma.organizations.findUnique({
+        where: { id: orgId },
+        select: { settings: true },
+      });
+      const stored = (current?.settings ?? {}) as Record<string, unknown>;
+      settings = { ...stored, ...data.settings } as Prisma.InputJsonValue;
+    }
 
     const updated = await prisma.organizations.update({
-      where: { id: req.organizationId! },
+      where: { id: orgId },
       data: {
         name: data.name,
-        settings: data.settings as Prisma.InputJsonValue,
+        industry: data.industry,
+        company_size: data.companySize,
+        settings,
       },
     });
 
@@ -77,11 +96,11 @@ router.put('/current', requireRole('ADMIN', 'SUPER_ADMIN'), async (req: Request,
     await prisma.audit_logs.create({
       data: {
         id: crypto.randomUUID(),
-        organization_id: req.organizationId!,
+        organization_id: orgId,
         user_id: req.user!.id,
         action: 'organization.update',
         resource_type: 'organization',
-        resource_id: req.organizationId!,
+        resource_id: orgId,
         details: data as Prisma.InputJsonValue,
       },
     });
@@ -92,6 +111,8 @@ router.put('/current', requireRole('ADMIN', 'SUPER_ADMIN'), async (req: Request,
         id: updated.id,
         name: updated.name,
         slug: updated.slug,
+        industry: updated.industry,
+        companySize: updated.company_size,
         settings: updated.settings,
       },
     });

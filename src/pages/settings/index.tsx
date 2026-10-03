@@ -27,6 +27,7 @@ import {
   type ApiKey,
   type BillingInfo,
 } from '../../services/SettingsService';
+import { organizationsApi } from '../../lib/api';
 import { useVerticalConfig } from '../../contexts/VerticalConfigContext';
 import { deterministicFloat, deterministicInt } from '../../lib/deterministic';
 
@@ -55,8 +56,8 @@ export const SettingsLayout: React.FC = () => {
   return (
     <div className="flex h-full">
       {/* Settings Sidebar */}
-      <aside className="w-64 border-r border-neutral-200 bg-white p-4">
-        <h2 className="text-lg font-semibold text-neutral-900 mb-4">Settings</h2>
+      <aside className="w-64 border-r border-sovereign-border bg-sovereign-card p-4">
+        <h2 className="text-lg font-semibold text-white mb-4">Settings</h2>
         <nav className="space-y-1">
           {settingsNav.map((item) => (
             <button
@@ -65,8 +66,8 @@ export const SettingsLayout: React.FC = () => {
               className={cn(
                 'w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors text-left',
                 currentPath === item.id
-                  ? 'bg-primary-50 text-primary-700'
-                  : 'text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900'
+                  ? 'bg-primary-900/20 text-primary-300'
+                  : 'text-neutral-400 hover:bg-sovereign-hover hover:text-white'
               )}
             >
               <span>{item.icon}</span>
@@ -77,7 +78,7 @@ export const SettingsLayout: React.FC = () => {
       </aside>
 
       {/* Settings Content */}
-      <main className="flex-1 overflow-y-auto p-6 lg:p-8 bg-neutral-50">
+      <main className="flex-1 overflow-y-auto p-6 lg:p-8 bg-sovereign-elevated">
         <Outlet />
       </main>
     </div>
@@ -114,6 +115,9 @@ const INDUSTRY_TO_VERTICAL: Record<string, string> = {
   'pharmaceutical': 'pharmaceutical',
 };
 
+const isIndustryValue = (value: string): boolean =>
+  Object.prototype.hasOwnProperty.call(INDUSTRY_TO_VERTICAL, value);
+
 export const OrganizationSettingsPage: React.FC = () => {
   const { addToast } = useToast();
   const { selectVertical, currentVertical } = useVerticalConfig();
@@ -124,22 +128,61 @@ export const OrganizationSettingsPage: React.FC = () => {
   const navigate = useNavigate();
 
   const [orgData, setOrgData] = useState({
-    name: 'Acme Corporation',
-    id: 'org_acme_2024',
-    industry: 'technology',
-    companySize: '201-1000',
-    primaryContact: 'John Smith',
-    primaryEmail: 'john@acme.com',
+    name: '',
+    id: '',
+    industry: '',
+    companySize: '',
+    primaryContact: '',
+    primaryEmail: '',
     timezone: 'America/New_York',
     dateFormat: 'MM/DD/YYYY',
     currency: 'USD',
     numberFormat: 'en-US',
   });
+  const [loadError, setLoadError] = useState<string | null>(null);
+
+  // The organization's own record. The regional fields keep their defaults
+  // until the organization has saved its own.
+  useEffect(() => {
+    let cancelled = false;
+    organizationsApi.getCurrent().then((res) => {
+      if (cancelled) {
+        return;
+      }
+      if (!res.success || !res.data) {
+        setLoadError(res.error?.message ?? 'The organization could not be loaded.');
+        return;
+      }
+      const org = res.data;
+      const saved = org.settings ?? {};
+      // Seeds store labels ("Technology"); the select uses values ("technology").
+      const industry = (org.industry ?? '').trim();
+      setOrgData((prev) => ({
+        ...prev,
+        name: org.name,
+        id: org.id,
+        industry: isIndustryValue(industry.toLowerCase()) ? industry.toLowerCase() : industry,
+        companySize: org.companySize ?? '',
+        primaryContact: saved.primaryContact ?? '',
+        primaryEmail: saved.primaryEmail ?? '',
+        timezone: saved.timezone ?? prev.timezone,
+        dateFormat: saved.dateFormat ?? prev.dateFormat,
+        currency: saved.currency ?? prev.currency,
+        numberFormat: saved.numberFormat ?? prev.numberFormat,
+      }));
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   // Sync industry with vertical config on change
   const handleIndustryChange = async (newIndustry: string) => {
     setOrgData({ ...orgData, industry: newIndustry });
-    
+    if (!isIndustryValue(newIndustry)) {
+      return;
+    }
+
     // Map to vertical ID and update vertical config
     const verticalId = INDUSTRY_TO_VERTICAL[newIndustry] || 'technology';
     try {
@@ -157,45 +200,50 @@ export const OrganizationSettingsPage: React.FC = () => {
   return (
     <div className="max-w-3xl">
       <h1 className="text-2xl mb-6" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>ORGANIZATION</h1>
+      {loadError && <p className="text-sm text-error-main mb-4">{loadError}</p>}
 
       {/* Organization Profile */}
-      <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">
-        <h2 className="text-lg font-semibold text-neutral-900 mb-4">Organization Profile</h2>
+      <div className="bg-sovereign-card rounded-xl border border-sovereign-border p-6 mb-6">
+        <h2 className="text-lg font-semibold text-white mb-4">Organization Profile</h2>
 
         <div className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1">
+              <label className="block text-sm font-medium text-neutral-300 mb-1">
                 Organization Name
               </label>
               <input
                 type="text"
                 value={orgData.name}
                 onChange={(e) => setOrgData({ ...orgData, name: e.target.value })}
-                className="w-full h-10 px-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500"
+                className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg focus:ring-2 focus:ring-primary-500"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1">
+              <label className="block text-sm font-medium text-neutral-300 mb-1">
                 Organization ID
               </label>
               <input
                 type="text"
                 value={orgData.id}
                 disabled
-                className="w-full h-10 px-3 border border-neutral-200 rounded-lg bg-neutral-50 text-neutral-500"
+                className="w-full h-10 px-3 border border-sovereign-border rounded-lg bg-sovereign-elevated text-neutral-500 cursor-not-allowed"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1">Industry</label>
+              <label className="block text-sm font-medium text-neutral-300 mb-1">Industry</label>
               <select
                 value={orgData.industry}
                 onChange={(e) => handleIndustryChange(e.target.value)}
-                className="w-full h-10 px-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500"
+                className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg focus:ring-2 focus:ring-primary-500"
               >
+                <option value="">Not set</option>
+                {orgData.industry && !isIndustryValue(orgData.industry) && (
+                  <option value={orgData.industry}>{orgData.industry}</option>
+                )}
                 <option value="technology">Technology</option>
                 <option value="finance">Financial Services</option>
                 <option value="healthcare">Healthcare</option>
@@ -221,19 +269,20 @@ export const OrganizationSettingsPage: React.FC = () => {
               </select>
               {currentVertical && (
                 <p className="text-xs text-neutral-500 mt-1">
-                  Dashboard configured for: <span className="font-medium text-primary-600">{currentVertical.name}</span>
+                  Dashboard configured for: <span className="font-medium text-primary-400">{currentVertical.name}</span>
                 </p>
               )}
             </div>
             <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1">
+              <label className="block text-sm font-medium text-neutral-300 mb-1">
                 Company Size
               </label>
               <select
                 value={orgData.companySize}
                 onChange={(e) => setOrgData({ ...orgData, companySize: e.target.value })}
-                className="w-full h-10 px-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500"
+                className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg focus:ring-2 focus:ring-primary-500"
               >
+                <option value="">Not set</option>
                 <option value="1-50">1-50</option>
                 <option value="51-200">51-200</option>
                 <option value="201-1000">201-1,000</option>
@@ -245,25 +294,25 @@ export const OrganizationSettingsPage: React.FC = () => {
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1">
+              <label className="block text-sm font-medium text-neutral-300 mb-1">
                 Primary Contact
               </label>
               <input
                 type="text"
                 value={orgData.primaryContact}
                 onChange={(e) => setOrgData({ ...orgData, primaryContact: e.target.value })}
-                className="w-full h-10 px-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500"
+                className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg focus:ring-2 focus:ring-primary-500"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1">
+              <label className="block text-sm font-medium text-neutral-300 mb-1">
                 Primary Email
               </label>
               <input
                 type="email"
                 value={orgData.primaryEmail}
                 onChange={(e) => setOrgData({ ...orgData, primaryEmail: e.target.value })}
-                className="w-full h-10 px-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500"
+                className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg focus:ring-2 focus:ring-primary-500"
               />
             </div>
           </div>
@@ -271,16 +320,16 @@ export const OrganizationSettingsPage: React.FC = () => {
       </div>
 
       {/* Regional Settings */}
-      <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">
-        <h2 className="text-lg font-semibold text-neutral-900 mb-4">Regional Settings</h2>
+      <div className="bg-sovereign-card rounded-xl border border-sovereign-border p-6 mb-6">
+        <h2 className="text-lg font-semibold text-white mb-4">Regional Settings</h2>
 
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-neutral-700 mb-1">Timezone</label>
+            <label className="block text-sm font-medium text-neutral-300 mb-1">Timezone</label>
             <select
               value={orgData.timezone}
               onChange={(e) => setOrgData({ ...orgData, timezone: e.target.value })}
-              className="w-full h-10 px-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500"
+              className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg focus:ring-2 focus:ring-primary-500"
             >
               <option value="America/New_York">Eastern Time (ET)</option>
               <option value="America/Chicago">Central Time (CT)</option>
@@ -290,11 +339,11 @@ export const OrganizationSettingsPage: React.FC = () => {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-neutral-700 mb-1">Date Format</label>
+            <label className="block text-sm font-medium text-neutral-300 mb-1">Date Format</label>
             <select
               value={orgData.dateFormat}
               onChange={(e) => setOrgData({ ...orgData, dateFormat: e.target.value })}
-              className="w-full h-10 px-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500"
+              className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg focus:ring-2 focus:ring-primary-500"
             >
               <option value="MM/DD/YYYY">MM/DD/YYYY</option>
               <option value="DD/MM/YYYY">DD/MM/YYYY</option>
@@ -302,11 +351,11 @@ export const OrganizationSettingsPage: React.FC = () => {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-neutral-700 mb-1">Currency</label>
+            <label className="block text-sm font-medium text-neutral-300 mb-1">Currency</label>
             <select
               value={orgData.currency}
               onChange={(e) => setOrgData({ ...orgData, currency: e.target.value })}
-              className="w-full h-10 px-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500"
+              className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg focus:ring-2 focus:ring-primary-500"
             >
               <option value="USD">USD ($)</option>
               <option value="EUR">EUR (€)</option>
@@ -315,11 +364,11 @@ export const OrganizationSettingsPage: React.FC = () => {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-neutral-700 mb-1">Number Format</label>
+            <label className="block text-sm font-medium text-neutral-300 mb-1">Number Format</label>
             <select
               value={orgData.numberFormat}
               onChange={(e) => setOrgData({ ...orgData, numberFormat: e.target.value })}
-              className="w-full h-10 px-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500"
+              className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg focus:ring-2 focus:ring-primary-500"
             >
               <option value="en-US">1,234.56</option>
               <option value="de-DE">1.234,56</option>
@@ -330,13 +379,13 @@ export const OrganizationSettingsPage: React.FC = () => {
       </div>
 
       {/* Danger Zone */}
-      <div className="bg-white rounded-xl border border-error-main/20 p-6">
-        <h2 className="text-lg font-semibold text-error-dark mb-4">Danger Zone</h2>
+      <div className="bg-sovereign-card rounded-xl border border-error-main/20 p-6">
+        <h2 className="text-lg font-semibold text-error-main mb-4">Danger Zone</h2>
 
         <div className="space-y-4">
-          <div className="flex items-center justify-between p-4 bg-error-light/50 rounded-lg">
+          <div className="flex items-center justify-between p-4 bg-error-main/10 rounded-lg">
             <div>
-              <p className="font-medium text-neutral-900">Export All Data</p>
+              <p className="font-medium text-white">Export All Data</p>
               <p className="text-sm text-neutral-500">
                 Download all organization data as a ZIP file
               </p>
@@ -353,15 +402,15 @@ export const OrganizationSettingsPage: React.FC = () => {
                 });
               }}
               disabled={isExporting}
-              className="px-4 py-2 border border-neutral-300 text-neutral-700 rounded-lg hover:bg-white transition-colors disabled:opacity-50"
+              className="px-4 py-2 border border-sovereign-border-strong text-neutral-300 rounded-lg hover:bg-sovereign-card transition-colors disabled:opacity-50"
             >
               {isExporting ? 'Exporting...' : 'Export'}
             </button>
           </div>
 
-          <div className="flex items-center justify-between p-4 bg-error-light/50 rounded-lg">
+          <div className="flex items-center justify-between p-4 bg-error-main/10 rounded-lg">
             <div>
-              <p className="font-medium text-neutral-900">Delete Organization</p>
+              <p className="font-medium text-white">Delete Organization</p>
               <p className="text-sm text-neutral-500">
                 Permanently delete this organization and all data
               </p>
@@ -381,15 +430,31 @@ export const OrganizationSettingsPage: React.FC = () => {
         <button
           onClick={async () => {
             setIsSaving(true);
-            await new Promise((r) => setTimeout(r, 1000));
-            setIsSaving(false);
-            addToast({
-              status: 'success',
-              title: 'Settings Saved',
-              description: 'Organization settings have been updated.',
+            const res = await organizationsApi.updateCurrent({
+              name: orgData.name,
+              industry: orgData.industry || undefined,
+              companySize: orgData.companySize || undefined,
+              settings: {
+                primaryContact: orgData.primaryContact,
+                primaryEmail: orgData.primaryEmail,
+                timezone: orgData.timezone,
+                dateFormat: orgData.dateFormat,
+                currency: orgData.currency,
+                numberFormat: orgData.numberFormat,
+              },
             });
+            setIsSaving(false);
+            addToast(
+              res.success
+                ? { status: 'success', title: 'Settings Saved', description: 'Organization settings have been updated.' }
+                : {
+                    status: 'error',
+                    title: 'Not Saved',
+                    description: res.error?.message ?? 'The organization could not be updated.',
+                  }
+            );
           }}
-          disabled={isSaving}
+          disabled={isSaving || !orgData.id}
           className="px-6 py-2 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors disabled:opacity-50"
         >
           {isSaving ? 'Saving...' : 'Save Changes'}
@@ -400,9 +465,9 @@ export const OrganizationSettingsPage: React.FC = () => {
       {showDeleteModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div className="fixed inset-0 bg-black/50" onClick={() => setShowDeleteModal(false)} />
-          <div className="relative bg-white rounded-xl shadow-2xl w-full max-w-md p-6">
-            <h2 className="text-xl font-semibold text-neutral-900 mb-2">Delete Organization</h2>
-            <p className="text-neutral-600 mb-4">
+          <div className="relative bg-sovereign-card rounded-xl shadow-2xl w-full max-w-md p-6">
+            <h2 className="text-xl font-semibold text-white mb-2">Delete Organization</h2>
+            <p className="text-neutral-400 mb-4">
               This action cannot be undone. This will permanently delete the organization
               <strong> {orgData.name}</strong> and all associated data.
             </p>
@@ -413,7 +478,7 @@ export const OrganizationSettingsPage: React.FC = () => {
               type="text"
               value={deleteConfirmText}
               onChange={(e) => setDeleteConfirmText(e.target.value)}
-              className="w-full h-10 px-3 border border-neutral-300 rounded-lg mb-4"
+              className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg mb-4"
               placeholder="Organization name"
             />
             <div className="flex gap-3">
@@ -422,7 +487,7 @@ export const OrganizationSettingsPage: React.FC = () => {
                   setShowDeleteModal(false);
                   setDeleteConfirmText('');
                 }}
-                className="flex-1 px-4 py-2 border border-neutral-300 text-neutral-700 rounded-lg hover:bg-neutral-50"
+                className="flex-1 px-4 py-2 border border-sovereign-border-strong text-neutral-300 rounded-lg hover:bg-sovereign-hover"
               >
                 Cancel
               </button>
@@ -517,22 +582,22 @@ export const UsersSettingsPage: React.FC = () => {
       {showInviteModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div className="fixed inset-0 bg-black/50" onClick={() => setShowInviteModal(false)} />
-          <div className="relative bg-white rounded-xl shadow-2xl w-full max-w-md p-6">
-            <h2 className="text-xl font-semibold text-neutral-900 mb-4">Invite User</h2>
+          <div className="relative bg-sovereign-card rounded-xl shadow-2xl w-full max-w-md p-6">
+            <h2 className="text-xl font-semibold text-white mb-4">Invite User</h2>
             <form onSubmit={handleInviteUser} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-neutral-700 mb-1">Full Name</label>
+                <label className="block text-sm font-medium text-neutral-300 mb-1">Full Name</label>
                 <input
                   type="text"
                   required
                   value={inviteData.name}
                   onChange={(e) => setInviteData({ ...inviteData, name: e.target.value })}
-                  className="w-full h-10 px-3 border border-neutral-300 rounded-lg"
+                  className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg"
                   placeholder="John Doe"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-neutral-700 mb-1">
+                <label className="block text-sm font-medium text-neutral-300 mb-1">
                   Email Address
                 </label>
                 <input
@@ -540,16 +605,16 @@ export const UsersSettingsPage: React.FC = () => {
                   required
                   value={inviteData.email}
                   onChange={(e) => setInviteData({ ...inviteData, email: e.target.value })}
-                  className="w-full h-10 px-3 border border-neutral-300 rounded-lg"
+                  className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg"
                   placeholder="user@company.com"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-neutral-700 mb-1">Role</label>
+                <label className="block text-sm font-medium text-neutral-300 mb-1">Role</label>
                 <select
                   value={inviteData.role}
                   onChange={(e) => setInviteData({ ...inviteData, role: e.target.value })}
-                  className="w-full h-10 px-3 border border-neutral-300 rounded-lg"
+                  className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg"
                 >
                   <option value="viewer">Viewer</option>
                   <option value="editor">Editor</option>
@@ -560,7 +625,7 @@ export const UsersSettingsPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setShowInviteModal(false)}
-                  className="flex-1 px-4 py-2 border border-neutral-300 text-neutral-700 rounded-lg hover:bg-neutral-50"
+                  className="flex-1 px-4 py-2 border border-sovereign-border-strong text-neutral-300 rounded-lg hover:bg-sovereign-hover"
                 >
                   Cancel
                 </button>
@@ -578,12 +643,12 @@ export const UsersSettingsPage: React.FC = () => {
       )}
 
       {/* License Usage */}
-      <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">
+      <div className="bg-sovereign-card rounded-xl border border-sovereign-border p-6 mb-6">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-semibold text-neutral-900">License Usage</h2>
+          <h2 className="text-lg font-semibold text-white">License Usage</h2>
           <span className="text-sm text-neutral-500">{metrics?.totalUsers || 0} of 50 users</span>
         </div>
-        <div className="w-full h-2 bg-neutral-200 rounded-full overflow-hidden">
+        <div className="w-full h-2 bg-sovereign-active rounded-full overflow-hidden">
           <div
             className="h-full bg-primary-500 rounded-full transition-all"
             style={{ width: `${Math.min(((metrics?.totalUsers || 0) / 50) * 100, 100)}%` }}
@@ -592,14 +657,14 @@ export const UsersSettingsPage: React.FC = () => {
       </div>
 
       {/* User List */}
-      <div className="bg-white rounded-xl border border-neutral-200 overflow-hidden">
-        <div className="p-4 border-b border-neutral-200">
+      <div className="bg-sovereign-card rounded-xl border border-sovereign-border overflow-hidden">
+        <div className="p-4 border-b border-sovereign-border">
           <input
             type="text"
             placeholder="Search users..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full h-10 px-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500"
+            className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg focus:ring-2 focus:ring-primary-500"
           />
         </div>
 
@@ -609,7 +674,7 @@ export const UsersSettingsPage: React.FC = () => {
           </div>
         ) : (
           <table className="w-full">
-            <thead className="bg-neutral-50 border-b border-neutral-200">
+            <thead className="bg-sovereign-elevated border-b border-sovereign-border">
               <tr>
                 <th className="text-left px-4 py-3 text-xs font-semibold text-neutral-500 uppercase">
                   User
@@ -628,11 +693,11 @@ export const UsersSettingsPage: React.FC = () => {
             </thead>
             <tbody>
               {users.map((user) => (
-                <tr key={user.id} className="border-b border-neutral-100 hover:bg-neutral-50">
+                <tr key={user.id} className="border-b border-sovereign-border-subtle hover:bg-sovereign-hover">
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 bg-primary-100 rounded-full flex items-center justify-center">
-                        <span className="text-primary-700 font-medium text-sm">
+                      <div className="w-9 h-9 bg-primary-900/40 rounded-full flex items-center justify-center">
+                        <span className="text-primary-300 font-medium text-sm">
                           {user.name
                             .split(' ')
                             .map((n) => n[0])
@@ -640,20 +705,20 @@ export const UsersSettingsPage: React.FC = () => {
                         </span>
                       </div>
                       <div>
-                        <p className="font-medium text-neutral-900">{user.name}</p>
+                        <p className="font-medium text-white">{user.name}</p>
                         <p className="text-sm text-neutral-500">{user.email}</p>
                       </div>
                     </div>
                   </td>
-                  <td className="px-4 py-3 text-sm text-neutral-600 capitalize">{user.role}</td>
+                  <td className="px-4 py-3 text-sm text-neutral-400 capitalize">{user.role}</td>
                   <td className="px-4 py-3">
                     <span
                       className={cn(
                         'px-2 py-1 rounded-full text-xs font-medium',
-                        user.status === 'active' && 'bg-success-light text-success-dark',
-                        user.status === 'pending' && 'bg-warning-light text-warning-dark',
-                        user.status === 'inactive' && 'bg-neutral-100 text-neutral-600',
-                        user.status === 'suspended' && 'bg-error-light text-error-dark'
+                        user.status === 'active' && 'bg-success-main/15 text-success-main',
+                        user.status === 'pending' && 'bg-warning-main/15 text-warning-main',
+                        user.status === 'inactive' && 'bg-sovereign-hover text-neutral-400',
+                        user.status === 'suspended' && 'bg-error-main/15 text-error-main'
                       )}
                     >
                       {user.status}
@@ -663,7 +728,7 @@ export const UsersSettingsPage: React.FC = () => {
                     {user.lastLoginAt ? formatRelativeTime(new Date(user.lastLoginAt)) : 'Never'}
                   </td>
                   <td className="px-4 py-3 text-right">
-                    <button className="text-neutral-400 hover:text-neutral-600">•••</button>
+                    <button className="text-neutral-400 hover:text-neutral-300">•••</button>
                   </td>
                 </tr>
               ))}
@@ -724,28 +789,28 @@ export const TeamsSettingsPage: React.FC = () => {
       {showCreateModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div className="fixed inset-0 bg-black/50" onClick={() => setShowCreateModal(false)} />
-          <div className="relative bg-white rounded-xl shadow-2xl w-full max-w-md p-6">
-            <h2 className="text-xl font-semibold text-neutral-900 mb-4">Create Team</h2>
+          <div className="relative bg-sovereign-card rounded-xl shadow-2xl w-full max-w-md p-6">
+            <h2 className="text-xl font-semibold text-white mb-4">Create Team</h2>
             <form onSubmit={handleCreateTeam} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-neutral-700 mb-1">Team Name</label>
+                <label className="block text-sm font-medium text-neutral-300 mb-1">Team Name</label>
                 <input
                   type="text"
                   required
                   value={newTeam.name}
                   onChange={(e) => setNewTeam({ ...newTeam, name: e.target.value })}
-                  className="w-full h-10 px-3 border border-neutral-300 rounded-lg"
+                  className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg"
                   placeholder="e.g., Product Team"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-neutral-700 mb-1">Team Lead</label>
+                <label className="block text-sm font-medium text-neutral-300 mb-1">Team Lead</label>
                 <input
                   type="text"
                   required
                   value={newTeam.lead}
                   onChange={(e) => setNewTeam({ ...newTeam, lead: e.target.value })}
-                  className="w-full h-10 px-3 border border-neutral-300 rounded-lg"
+                  className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg"
                   placeholder="Lead name"
                 />
               </div>
@@ -753,7 +818,7 @@ export const TeamsSettingsPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setShowCreateModal(false)}
-                  className="flex-1 px-4 py-2 border border-neutral-300 text-neutral-700 rounded-lg hover:bg-neutral-50"
+                  className="flex-1 px-4 py-2 border border-sovereign-border-strong text-neutral-300 rounded-lg hover:bg-sovereign-hover"
                 >
                   Cancel
                 </button>
@@ -774,11 +839,11 @@ export const TeamsSettingsPage: React.FC = () => {
         {teams.map((team) => (
           <div
             key={team.id}
-            className="bg-white rounded-xl border border-neutral-200 p-6 hover:border-primary-300 transition-colors cursor-pointer"
+            className="bg-sovereign-card rounded-xl border border-sovereign-border p-6 hover:border-primary-300 transition-colors cursor-pointer"
           >
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="font-semibold text-neutral-900">{team.name}</h3>
+                <h3 className="font-semibold text-white">{team.name}</h3>
                 <p className="text-sm text-neutral-500">
                   {team.members} members • Lead: {team.lead}
                 </p>
@@ -791,7 +856,7 @@ export const TeamsSettingsPage: React.FC = () => {
                     description: 'Edit, archive, or delete team.',
                   })
                 }
-                className="text-neutral-400 hover:text-neutral-600"
+                className="text-neutral-400 hover:text-neutral-300"
               >
                 •••
               </button>
@@ -883,22 +948,22 @@ export const RolesSettingsPage: React.FC = () => {
       {showCreateModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div className="fixed inset-0 bg-black/50" onClick={() => setShowCreateModal(false)} />
-          <div className="relative bg-white rounded-xl shadow-2xl w-full max-w-md p-6">
-            <h2 className="text-xl font-semibold text-neutral-900 mb-4">Create Role</h2>
+          <div className="relative bg-sovereign-card rounded-xl shadow-2xl w-full max-w-md p-6">
+            <h2 className="text-xl font-semibold text-white mb-4">Create Role</h2>
             <form onSubmit={handleCreateRole} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-neutral-700 mb-1">Role Name</label>
+                <label className="block text-sm font-medium text-neutral-300 mb-1">Role Name</label>
                 <input
                   type="text"
                   required
                   value={newRole.name}
                   onChange={(e) => setNewRole({ ...newRole, name: e.target.value })}
-                  className="w-full h-10 px-3 border border-neutral-300 rounded-lg"
+                  className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg"
                   placeholder="e.g., Data Analyst"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-neutral-700 mb-1">
+                <label className="block text-sm font-medium text-neutral-300 mb-1">
                   Description
                 </label>
                 <input
@@ -906,7 +971,7 @@ export const RolesSettingsPage: React.FC = () => {
                   required
                   value={newRole.description}
                   onChange={(e) => setNewRole({ ...newRole, description: e.target.value })}
-                  className="w-full h-10 px-3 border border-neutral-300 rounded-lg"
+                  className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg"
                   placeholder="What can this role do?"
                 />
               </div>
@@ -914,7 +979,7 @@ export const RolesSettingsPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setShowCreateModal(false)}
-                  className="flex-1 px-4 py-2 border border-neutral-300 text-neutral-700 rounded-lg hover:bg-neutral-50"
+                  className="flex-1 px-4 py-2 border border-sovereign-border-strong text-neutral-300 rounded-lg hover:bg-sovereign-hover"
                 >
                   Cancel
                 </button>
@@ -938,26 +1003,26 @@ export const RolesSettingsPage: React.FC = () => {
             className="fixed inset-0 bg-black/50"
             onClick={() => setShowPermissionsModal(null)}
           />
-          <div className="relative bg-white rounded-xl shadow-2xl w-full max-w-lg p-6 max-h-[80vh] overflow-y-auto">
-            <h2 className="text-xl font-semibold text-neutral-900 mb-4">
+          <div className="relative bg-sovereign-card rounded-xl shadow-2xl w-full max-w-lg p-6 max-h-[80vh] overflow-y-auto">
+            <h2 className="text-xl font-semibold text-white mb-4">
               Permissions: {showPermissionsModal}
             </h2>
             <div className="space-y-4">
               {permissions.map((group) => (
                 <div key={group.category}>
-                  <h3 className="font-medium text-neutral-700 mb-2">{group.category}</h3>
+                  <h3 className="font-medium text-neutral-300 mb-2">{group.category}</h3>
                   <div className="space-y-2">
                     {group.items.map((item) => (
                       <label
                         key={item}
-                        className="flex items-center gap-3 p-2 bg-neutral-50 rounded-lg"
+                        className="flex items-center gap-3 p-2 bg-sovereign-elevated rounded-lg"
                       >
                         <input
                           type="checkbox"
                           defaultChecked={showPermissionsModal === 'Admin'}
-                          className="rounded text-primary-600"
+                          className="rounded text-primary-400"
                         />
-                        <span className="text-sm text-neutral-700">{item}</span>
+                        <span className="text-sm text-neutral-300">{item}</span>
                       </label>
                     ))}
                   </div>
@@ -967,7 +1032,7 @@ export const RolesSettingsPage: React.FC = () => {
             <div className="flex gap-3 mt-6">
               <button
                 onClick={() => setShowPermissionsModal(null)}
-                className="flex-1 px-4 py-2 border border-neutral-300 text-neutral-700 rounded-lg hover:bg-neutral-50"
+                className="flex-1 px-4 py-2 border border-sovereign-border-strong text-neutral-300 rounded-lg hover:bg-sovereign-hover"
               >
                 Close
               </button>
@@ -987,12 +1052,12 @@ export const RolesSettingsPage: React.FC = () => {
 
       <div className="space-y-4">
         {roles.map((role) => (
-          <div key={role.id} className="bg-white rounded-xl border border-neutral-200 p-6">
+          <div key={role.id} className="bg-sovereign-card rounded-xl border border-sovereign-border p-6">
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-3">
-                <h3 className="font-semibold text-neutral-900">{role.name}</h3>
+                <h3 className="font-semibold text-white">{role.name}</h3>
                 {role.isSystem && (
-                  <span className="px-2 py-0.5 bg-neutral-100 text-neutral-600 text-xs rounded-full">
+                  <span className="px-2 py-0.5 bg-sovereign-hover text-neutral-400 text-xs rounded-full">
                     System
                   </span>
                 )}
@@ -1002,7 +1067,7 @@ export const RolesSettingsPage: React.FC = () => {
             <p className="text-sm text-neutral-500 mb-4">{role.description}</p>
             <button
               onClick={() => setShowPermissionsModal(role.name)}
-              className="text-primary-600 hover:text-primary-700 text-sm font-medium"
+              className="text-primary-400 hover:text-primary-300 text-sm font-medium"
             >
               View Permissions →
             </button>
@@ -1028,28 +1093,28 @@ export const BillingSettingsPage: React.FC = () => {
       <h1 className="text-2xl mb-6" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>BILLING</h1>
 
       {/* Current Plan */}
-      <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">
+      <div className="bg-sovereign-card rounded-xl border border-sovereign-border p-6 mb-6">
         <div className="flex items-start justify-between mb-4">
           <div>
-            <h2 className="text-lg font-semibold text-neutral-900">Current Plan</h2>
-            <p className="text-3xl font-bold text-neutral-900 mt-2">Intelligence</p>
+            <h2 className="text-lg font-semibold text-white">Current Plan</h2>
+            <p className="text-3xl font-bold text-white mt-2">Intelligence</p>
             <p className="text-neutral-500">{formatCurrency(10000)}/month</p>
           </div>
-          <span className="px-3 py-1 bg-success-light text-success-dark text-sm font-medium rounded-full">
+          <span className="px-3 py-1 bg-success-main/15 text-success-main text-sm font-medium rounded-full">
             Active
           </span>
         </div>
         <button
           onClick={() => navigate('/pricing')}
-          className="px-4 py-2 border border-neutral-300 text-neutral-700 rounded-lg hover:bg-neutral-50 transition-colors"
+          className="px-4 py-2 border border-sovereign-border-strong text-neutral-300 rounded-lg hover:bg-sovereign-hover transition-colors"
         >
           Upgrade Plan
         </button>
       </div>
 
       {/* Usage */}
-      <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">
-        <h2 className="text-lg font-semibold text-neutral-900 mb-4">Usage This Month</h2>
+      <div className="bg-sovereign-card rounded-xl border border-sovereign-border p-6 mb-6">
+        <h2 className="text-lg font-semibold text-white mb-4">Usage This Month</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {[
             { name: 'Users', used: 32, limit: 50 },
@@ -1058,9 +1123,9 @@ export const BillingSettingsPage: React.FC = () => {
             { name: 'Storage', used: 12, limit: 50, unit: 'GB' },
             { name: 'Workflows', used: 47, limit: null },
           ].map((item) => (
-            <div key={item.name} className="p-4 bg-neutral-50 rounded-lg">
+            <div key={item.name} className="p-4 bg-sovereign-elevated rounded-lg">
               <p className="text-sm text-neutral-500 mb-1">{item.name}</p>
-              <p className="text-xl font-bold text-neutral-900">
+              <p className="text-xl font-bold text-white">
                 {item.used.toLocaleString()}
                 {item.unit ? ` ${item.unit}` : ''}
                 {item.limit && (
@@ -1071,7 +1136,7 @@ export const BillingSettingsPage: React.FC = () => {
                 )}
               </p>
               {item.limit && (
-                <div className="mt-2 h-1.5 bg-neutral-200 rounded-full overflow-hidden">
+                <div className="mt-2 h-1.5 bg-sovereign-active rounded-full overflow-hidden">
                   <div
                     className={cn(
                       'h-full rounded-full',
@@ -1087,15 +1152,15 @@ export const BillingSettingsPage: React.FC = () => {
       </div>
 
       {/* Payment Method */}
-      <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">
-        <h2 className="text-lg font-semibold text-neutral-900 mb-4">Payment Method</h2>
-        <div className="flex items-center justify-between p-4 bg-neutral-50 rounded-lg">
+      <div className="bg-sovereign-card rounded-xl border border-sovereign-border p-6 mb-6">
+        <h2 className="text-lg font-semibold text-white mb-4">Payment Method</h2>
+        <div className="flex items-center justify-between p-4 bg-sovereign-elevated rounded-lg">
           <div className="flex items-center gap-4">
             <div className="w-12 h-8 bg-neutral-900 rounded flex items-center justify-center text-white text-xs font-bold">
               VISA
             </div>
             <div>
-              <p className="font-medium text-neutral-900">•••• •••• •••• 4242</p>
+              <p className="font-medium text-white">•••• •••• •••• 4242</p>
               <p className="text-sm text-neutral-500">Expires 12/2026</p>
             </div>
           </div>
@@ -1107,7 +1172,7 @@ export const BillingSettingsPage: React.FC = () => {
                 description: 'Contact billing@datacendia.com to update payment method.',
               })
             }
-            className="text-primary-600 hover:text-primary-700 text-sm font-medium"
+            className="text-primary-400 hover:text-primary-300 text-sm font-medium"
           >
             Update
           </button>
@@ -1115,11 +1180,11 @@ export const BillingSettingsPage: React.FC = () => {
       </div>
 
       {/* Billing History */}
-      <div className="bg-white rounded-xl border border-neutral-200 p-6">
-        <h2 className="text-lg font-semibold text-neutral-900 mb-4">Billing History</h2>
+      <div className="bg-sovereign-card rounded-xl border border-sovereign-border p-6">
+        <h2 className="text-lg font-semibold text-white mb-4">Billing History</h2>
         <table className="w-full">
           <thead>
-            <tr className="border-b border-neutral-200">
+            <tr className="border-b border-sovereign-border">
               <th className="text-left py-2 text-sm font-medium text-neutral-500">Date</th>
               <th className="text-left py-2 text-sm font-medium text-neutral-500">Description</th>
               <th className="text-right py-2 text-sm font-medium text-neutral-500">Amount</th>
@@ -1132,10 +1197,10 @@ export const BillingSettingsPage: React.FC = () => {
               { date: 'Oct 1, 2025', desc: 'Intelligence Plan', amount: 10000 },
               { date: 'Sep 1, 2025', desc: 'Intelligence Plan', amount: 10000 },
             ].map((invoice, i) => (
-              <tr key={i} className="border-b border-neutral-100">
-                <td className="py-3 text-sm text-neutral-600">{invoice.date}</td>
-                <td className="py-3 text-sm text-neutral-900">{invoice.desc}</td>
-                <td className="py-3 text-sm text-neutral-900 text-right">
+              <tr key={i} className="border-b border-sovereign-border-subtle">
+                <td className="py-3 text-sm text-neutral-400">{invoice.date}</td>
+                <td className="py-3 text-sm text-white">{invoice.desc}</td>
+                <td className="py-3 text-sm text-white text-right">
                   {formatCurrency(invoice.amount)}
                 </td>
                 <td className="py-3 text-right">
@@ -1147,7 +1212,7 @@ export const BillingSettingsPage: React.FC = () => {
                         description: 'Invoice PDF saved to downloads.',
                       })
                     }
-                    className="text-primary-600 hover:text-primary-700 text-sm"
+                    className="text-primary-400 hover:text-primary-300 text-sm"
                   >
                     Download
                   </button>
@@ -1260,14 +1325,14 @@ export const ApiKeysSettingsPage: React.FC = () => {
               setNewKeyName('');
             }}
           />
-          <div className="relative bg-white rounded-xl shadow-2xl w-full max-w-md p-6">
+          <div className="relative bg-sovereign-card rounded-xl shadow-2xl w-full max-w-md p-6">
             {createdKey ? (
               <>
-                <h2 className="text-xl font-semibold text-neutral-900 mb-4">API Key Created</h2>
-                <p className="text-neutral-600 mb-4">
+                <h2 className="text-xl font-semibold text-white mb-4">API Key Created</h2>
+                <p className="text-neutral-400 mb-4">
                   Copy this key now. You won't be able to see it again.
                 </p>
-                <div className="p-3 bg-neutral-100 rounded-lg font-mono text-sm break-all mb-4">
+                <div className="p-3 bg-sovereign-hover rounded-lg font-mono text-sm break-all mb-4">
                   {createdKey}
                 </div>
                 <button
@@ -1275,7 +1340,7 @@ export const ApiKeysSettingsPage: React.FC = () => {
                     navigator.clipboard.writeText(createdKey);
                     addToast({ status: 'success', title: 'Copied to clipboard' });
                   }}
-                  className="w-full px-4 py-2 border border-neutral-300 rounded-lg hover:bg-neutral-50 mb-2"
+                  className="w-full px-4 py-2 border border-sovereign-border-strong rounded-lg hover:bg-sovereign-hover mb-2"
                 >
                   Copy to Clipboard
                 </button>
@@ -1292,10 +1357,10 @@ export const ApiKeysSettingsPage: React.FC = () => {
               </>
             ) : (
               <>
-                <h2 className="text-xl font-semibold text-neutral-900 mb-4">Create API Key</h2>
+                <h2 className="text-xl font-semibold text-white mb-4">Create API Key</h2>
                 <form onSubmit={handleCreateKey}>
                   <div className="mb-4">
-                    <label className="block text-sm font-medium text-neutral-700 mb-1">
+                    <label className="block text-sm font-medium text-neutral-300 mb-1">
                       Key Name
                     </label>
                     <input
@@ -1303,7 +1368,7 @@ export const ApiKeysSettingsPage: React.FC = () => {
                       required
                       value={newKeyName}
                       onChange={(e) => setNewKeyName(e.target.value)}
-                      className="w-full h-10 px-3 border border-neutral-300 rounded-lg"
+                      className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg"
                       placeholder="e.g., Production API"
                     />
                   </div>
@@ -1311,7 +1376,7 @@ export const ApiKeysSettingsPage: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setShowCreateModal(false)}
-                      className="flex-1 px-4 py-2 border border-neutral-300 text-neutral-700 rounded-lg hover:bg-neutral-50"
+                      className="flex-1 px-4 py-2 border border-sovereign-border-strong text-neutral-300 rounded-lg hover:bg-sovereign-hover"
                     >
                       Cancel
                     </button>
@@ -1330,14 +1395,14 @@ export const ApiKeysSettingsPage: React.FC = () => {
         </div>
       )}
 
-      <div className="bg-white rounded-xl border border-neutral-200 overflow-hidden">
+      <div className="bg-sovereign-card rounded-xl border border-sovereign-border overflow-hidden">
         {keys.map((key, i) => (
-          <div key={key.id} className={cn('p-4', i > 0 && 'border-t border-neutral-100')}>
+          <div key={key.id} className={cn('p-4', i > 0 && 'border-t border-sovereign-border-subtle')}>
             <div className="flex items-center justify-between">
               <div>
                 <div className="flex items-center gap-2">
-                  <h3 className="font-medium text-neutral-900">{key.name}</h3>
-                  <code className="px-2 py-0.5 bg-neutral-100 text-neutral-600 text-xs rounded">
+                  <h3 className="font-medium text-white">{key.name}</h3>
+                  <code className="px-2 py-0.5 bg-sovereign-hover text-neutral-400 text-xs rounded">
                     {revealedKeys.has(key.id) ? key.key : `${key.prefix}••••••••`}
                   </code>
                 </div>
@@ -1356,13 +1421,13 @@ export const ApiKeysSettingsPage: React.FC = () => {
                       setRevealedKeys(new Set([...revealedKeys, key.id]));
                     }
                   }}
-                  className="px-3 py-1.5 text-sm border border-neutral-300 rounded-lg hover:bg-neutral-50 transition-colors"
+                  className="px-3 py-1.5 text-sm text-neutral-300 border border-sovereign-border-strong rounded-lg hover:bg-sovereign-hover transition-colors"
                 >
                   {revealedKeys.has(key.id) ? 'Hide' : 'Reveal'}
                 </button>
                 <button
                   onClick={() => handleRevoke(key.id, key.name)}
-                  className="px-3 py-1.5 text-sm text-error-main border border-error-main/20 rounded-lg hover:bg-error-light transition-colors"
+                  className="px-3 py-1.5 text-sm text-error-main border border-error-main/20 rounded-lg hover:bg-error-main/20 transition-colors"
                 >
                   Revoke
                 </button>
@@ -1372,8 +1437,8 @@ export const ApiKeysSettingsPage: React.FC = () => {
         ))}
       </div>
 
-      <div className="mt-6 p-4 bg-warning-light/50 rounded-lg">
-        <p className="text-sm text-warning-dark">
+      <div className="mt-6 p-4 bg-warning-main/10 rounded-lg">
+        <p className="text-sm text-warning-main">
           <strong>Security Tip:</strong> Keep your API keys secure and never expose them in
           client-side code. Rotate keys periodically and revoke any that may have been compromised.
         </p>
@@ -1463,12 +1528,12 @@ export const IntegrationSettingsPage: React.FC = () => {
 
       <div className="grid gap-4">
         {integrations.map((integration) => (
-          <div key={integration.id} className="bg-white rounded-xl border border-neutral-200 p-4">
+          <div key={integration.id} className="bg-sovereign-card rounded-xl border border-sovereign-border p-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <div className="text-3xl">{integration.icon}</div>
                 <div>
-                  <h3 className="font-medium text-neutral-900">{integration.name}</h3>
+                  <h3 className="font-medium text-white">{integration.name}</h3>
                   <p className="text-sm text-neutral-500">
                     {integration.status === 'connected' &&
                       `Last synced ${formatRelativeTime(integration.lastSync!)}`}
@@ -1489,7 +1554,7 @@ export const IntegrationSettingsPage: React.FC = () => {
                 {integration.status === 'connected' ? (
                   <button
                     onClick={() => handleDisconnect(integration.id, integration.name)}
-                    className="px-3 py-1.5 text-sm font-medium rounded-lg transition-colors border border-neutral-300 text-neutral-700 hover:bg-neutral-50"
+                    className="px-3 py-1.5 text-sm font-medium rounded-lg transition-colors border border-sovereign-border-strong text-neutral-300 hover:bg-sovereign-hover"
                   >
                     Disconnect
                   </button>
@@ -1533,8 +1598,8 @@ export const PreferencesSettingsPage: React.FC = () => {
       <h1 className="text-2xl mb-6" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>PREFERENCES</h1>
 
       {/* Appearance */}
-      <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">
-        <h2 className="text-lg font-semibold text-neutral-900 mb-4">Appearance</h2>
+      <div className="bg-sovereign-card rounded-xl border border-sovereign-border p-6 mb-6">
+        <h2 className="text-lg font-semibold text-white mb-4">Appearance</h2>
         <div className="grid grid-cols-3 gap-4">
           {['light', 'dark', 'system'].map((theme) => (
             <button
@@ -1543,8 +1608,8 @@ export const PreferencesSettingsPage: React.FC = () => {
               className={cn(
                 'p-4 rounded-lg border-2 text-center transition-colors capitalize',
                 prefs.theme === theme
-                  ? 'border-primary-500 bg-primary-50'
-                  : 'border-neutral-200 hover:border-neutral-300'
+                  ? 'border-primary-500 bg-primary-900/20 text-white'
+                  : 'border-sovereign-border hover:border-sovereign-border-strong text-neutral-400'
               )}
             >
               {theme}
@@ -1554,12 +1619,12 @@ export const PreferencesSettingsPage: React.FC = () => {
       </div>
 
       {/* Language */}
-      <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">
-        <h2 className="text-lg font-semibold text-neutral-900 mb-4">Language</h2>
+      <div className="bg-sovereign-card rounded-xl border border-sovereign-border p-6 mb-6">
+        <h2 className="text-lg font-semibold text-white mb-4">Language</h2>
         <select
           value={prefs.language}
           onChange={(e) => setPrefs({ ...prefs, language: e.target.value })}
-          className="w-full h-10 px-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500"
+          className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg focus:ring-2 focus:ring-primary-500"
         >
           <option value="en">English</option>
           <option value="es">Español</option>
@@ -1572,8 +1637,8 @@ export const PreferencesSettingsPage: React.FC = () => {
       </div>
 
       {/* Notifications */}
-      <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">
-        <h2 className="text-lg font-semibold text-neutral-900 mb-4">Notifications</h2>
+      <div className="bg-sovereign-card rounded-xl border border-sovereign-border p-6 mb-6">
+        <h2 className="text-lg font-semibold text-white mb-4">Notifications</h2>
         <div className="space-y-4">
           {[
             {
@@ -1594,7 +1659,7 @@ export const PreferencesSettingsPage: React.FC = () => {
           ].map((item) => (
             <div key={item.key} className="flex items-center justify-between">
               <div>
-                <p className="font-medium text-neutral-900">{item.label}</p>
+                <p className="font-medium text-white">{item.label}</p>
                 <p className="text-sm text-neutral-500">{item.desc}</p>
               </div>
               <button
@@ -1612,12 +1677,12 @@ export const PreferencesSettingsPage: React.FC = () => {
                   'w-11 h-6 rounded-full transition-colors relative',
                   prefs.notifications[item.key as keyof typeof prefs.notifications]
                     ? 'bg-primary-600'
-                    : 'bg-neutral-200'
+                    : 'bg-sovereign-active'
                 )}
               >
                 <span
                   className={cn(
-                    'absolute top-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform',
+                    'absolute top-0.5 w-5 h-5 bg-sovereign-card rounded-full shadow transition-transform',
                     prefs.notifications[item.key as keyof typeof prefs.notifications]
                       ? 'left-5'
                       : 'left-0.5'
@@ -1702,12 +1767,12 @@ export const SecuritySettingsPage: React.FC = () => {
       <h1 className="text-2xl mb-6" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>SECURITY</h1>
 
       {/* Password */}
-      <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">
-        <h2 className="text-lg font-semibold text-neutral-900 mb-4">Password</h2>
+      <div className="bg-sovereign-card rounded-xl border border-sovereign-border p-6 mb-6">
+        <h2 className="text-lg font-semibold text-white mb-4">Password</h2>
         <p className="text-neutral-500 mb-4">Last changed 45 days ago</p>
         <button
           onClick={() => setShowPasswordModal(true)}
-          className="px-4 py-2 border border-neutral-300 text-neutral-700 rounded-lg hover:bg-neutral-50 transition-colors"
+          className="px-4 py-2 border border-sovereign-border-strong text-neutral-300 rounded-lg hover:bg-sovereign-hover transition-colors"
         >
           Change Password
         </button>
@@ -1717,8 +1782,8 @@ export const SecuritySettingsPage: React.FC = () => {
       {showPasswordModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div className="fixed inset-0 bg-black/50" onClick={() => setShowPasswordModal(false)} />
-          <div className="relative bg-white rounded-xl shadow-2xl w-full max-w-md p-6">
-            <h2 className="text-xl font-semibold text-neutral-900 mb-4">Change Password</h2>
+          <div className="relative bg-sovereign-card rounded-xl shadow-2xl w-full max-w-md p-6">
+            <h2 className="text-xl font-semibold text-white mb-4">Change Password</h2>
             <form
               onSubmit={async (e) => {
                 e.preventDefault();
@@ -1733,33 +1798,33 @@ export const SecuritySettingsPage: React.FC = () => {
             >
               <div className="space-y-4 mb-4">
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-1">
+                  <label className="block text-sm font-medium text-neutral-300 mb-1">
                     Current Password
                   </label>
                   <input
                     type="password"
                     required
-                    className="w-full h-10 px-3 border border-neutral-300 rounded-lg"
+                    className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-1">
+                  <label className="block text-sm font-medium text-neutral-300 mb-1">
                     New Password
                   </label>
                   <input
                     type="password"
                     required
-                    className="w-full h-10 px-3 border border-neutral-300 rounded-lg"
+                    className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-1">
+                  <label className="block text-sm font-medium text-neutral-300 mb-1">
                     Confirm New Password
                   </label>
                   <input
                     type="password"
                     required
-                    className="w-full h-10 px-3 border border-neutral-300 rounded-lg"
+                    className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg"
                   />
                 </div>
               </div>
@@ -1767,7 +1832,7 @@ export const SecuritySettingsPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setShowPasswordModal(false)}
-                  className="flex-1 px-4 py-2 border border-neutral-300 text-neutral-700 rounded-lg hover:bg-neutral-50"
+                  className="flex-1 px-4 py-2 border border-sovereign-border-strong text-neutral-300 rounded-lg hover:bg-sovereign-hover"
                 >
                   Cancel
                 </button>
@@ -1784,13 +1849,13 @@ export const SecuritySettingsPage: React.FC = () => {
       )}
 
       {/* Two-Factor Authentication */}
-      <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">
+      <div className="bg-sovereign-card rounded-xl border border-sovereign-border p-6 mb-6">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className="text-lg font-semibold text-neutral-900">Two-Factor Authentication</h2>
+            <h2 className="text-lg font-semibold text-white">Two-Factor Authentication</h2>
             <p className="text-neutral-500">Add an extra layer of security to your account</p>
           </div>
-          <span className="px-2 py-1 bg-success-light text-success-dark text-xs font-medium rounded-full">
+          <span className="px-2 py-1 bg-success-main/15 text-success-main text-xs font-medium rounded-full">
             Enabled
           </span>
         </div>
@@ -1803,26 +1868,26 @@ export const SecuritySettingsPage: React.FC = () => {
                 'Your authenticator app is configured. Backup codes available in your profile.',
             })
           }
-          className="px-4 py-2 border border-neutral-300 text-neutral-700 rounded-lg hover:bg-neutral-50 transition-colors"
+          className="px-4 py-2 border border-sovereign-border-strong text-neutral-300 rounded-lg hover:bg-sovereign-hover transition-colors"
         >
           Manage 2FA
         </button>
       </div>
 
       {/* Active Sessions */}
-      <div className="bg-white rounded-xl border border-neutral-200 p-6 mb-6">
-        <h2 className="text-lg font-semibold text-neutral-900 mb-4">Active Sessions</h2>
+      <div className="bg-sovereign-card rounded-xl border border-sovereign-border p-6 mb-6">
+        <h2 className="text-lg font-semibold text-white mb-4">Active Sessions</h2>
         <div className="space-y-4">
           {sessions.map((session) => (
             <div
               key={session.id}
-              className="flex items-center justify-between p-4 bg-neutral-50 rounded-lg"
+              className="flex items-center justify-between p-4 bg-sovereign-elevated rounded-lg"
             >
               <div>
                 <div className="flex items-center gap-2">
-                  <p className="font-medium text-neutral-900">{session.device}</p>
+                  <p className="font-medium text-white">{session.device}</p>
                   {session.current && (
-                    <span className="px-2 py-0.5 bg-primary-100 text-primary-700 text-xs rounded-full">
+                    <span className="px-2 py-0.5 bg-primary-900/40 text-primary-300 text-xs rounded-full">
                       Current
                     </span>
                   )}
@@ -1834,7 +1899,7 @@ export const SecuritySettingsPage: React.FC = () => {
               {!session.current && (
                 <button
                   onClick={() => handleRevokeSession(session.id, session.device)}
-                  className="text-error-main hover:text-error-dark text-sm font-medium"
+                  className="text-error-main hover:text-error-main text-sm font-medium"
                 >
                   Revoke
                 </button>
@@ -1845,7 +1910,7 @@ export const SecuritySettingsPage: React.FC = () => {
         {sessions.filter((s) => !s.current).length > 0 && (
           <button
             onClick={handleRevokeAllSessions}
-            className="mt-4 text-error-main hover:text-error-dark text-sm font-medium"
+            className="mt-4 text-error-main hover:text-error-main text-sm font-medium"
           >
             Sign out all other sessions
           </button>
@@ -1853,8 +1918,8 @@ export const SecuritySettingsPage: React.FC = () => {
       </div>
 
       {/* SSO */}
-      <div className="bg-white rounded-xl border border-neutral-200 p-6">
-        <h2 className="text-lg font-semibold text-neutral-900 mb-4">Single Sign-On (SSO)</h2>
+      <div className="bg-sovereign-card rounded-xl border border-sovereign-border p-6">
+        <h2 className="text-lg font-semibold text-white mb-4">Single Sign-On (SSO)</h2>
         <p className="text-neutral-500 mb-4">Configure SAML-based SSO for your organization</p>
         <button
           onClick={() =>
