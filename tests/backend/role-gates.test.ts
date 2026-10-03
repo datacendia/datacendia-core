@@ -69,12 +69,12 @@ describe('vertical-config', () => {
 
   it.each([['OWNER'], ['ADMIN'], ['SUPER_ADMIN']])('%s can change the configuration', async (role) => {
     const res = await request(verticals).post('/vertical-config/toggle/council').set('x-test-role', role).send({ enabled: true });
-    expect(res.status).not.toBe(403);
+    expect(res.status).toBe(200);
   });
 
   it("any member can read the organization's configuration", async () => {
     const res = await request(verticals).get('/vertical-config/organization').set('x-test-role', 'ANALYST');
-    expect(res.status).not.toBe(403);
+    expect(res.status).toBe(200);
   });
 });
 
@@ -86,6 +86,6 @@ describe('marketing-studio', () => {
 
   it('lets the platform owner in', async () => {
     const res = await request(studio).post('/marketing-studio/copy').set('x-test-role', 'SUPER_ADMIN').send({ topic: 'x' });
-    expect(res.status).not.toBe(403);
+    expect(res.status).toBe(200);
   });
 });
