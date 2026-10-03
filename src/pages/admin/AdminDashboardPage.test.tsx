@@ -7,7 +7,7 @@
  */
 
 import { afterEach, describe, it, expect, vi } from 'vitest';
-import { cleanup, render, screen } from '@testing-library/react';
+import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
 const getDashboard = vi.hoisted(() => vi.fn());
@@ -26,9 +26,26 @@ const renderPage = () =>
     </MemoryRouter>
   );
 
+const DASHBOARD = {
+  tenants: { total: 6, active: 3, trial: 2, churned: 1 },
+  revenue: { mrr: 10500, arr: 126000, avgPerTenant: 3500 },
+  licenses: { total: 6, active: 4, expiring: 1, revenueAtRisk: 1200 },
+  users: { total: 42 },
+  tenantGrowth: [
+    { month: '2026-09', count: 0 },
+    { month: '2026-10', count: 2 },
+  ],
+  revenueByPlan: [{ plan: 'ENTERPRISE', mrr: 9000 }],
+  recentActivity: [
+    { event: 'User login failed', organization: 'Acme', time: new Date().toISOString(), isAlert: true },
+  ],
+  lastUpdated: new Date().toISOString(),
+};
+
 afterEach(() => {
   cleanup();
   getDashboard.mockReset();
+  vi.useRealTimers();
 });
 
 describe('AdminDashboardPage', () => {
@@ -41,30 +58,35 @@ describe('AdminDashboardPage', () => {
     expect(screen.queryByText(/127|842/)).toBeNull();
   });
 
-  it('offers a retry when the API fails', async () => {
-    getDashboard.mockRejectedValue(new AdminRequestError('Failed to load dashboard', 500));
+  it('retries when asked after the API fails', async () => {
+    getDashboard
+      .mockRejectedValueOnce(new AdminRequestError('Failed to load dashboard', 500))
+      .mockResolvedValueOnce(DASHBOARD);
     renderPage();
     expect(await screen.findByText('The dashboard could not be loaded')).toBeTruthy();
     expect(screen.getByText('Failed to load dashboard')).toBeTruthy();
-    expect(screen.getByText('Try again')).toBeTruthy();
+    fireEvent.click(screen.getByText('Try again'));
+    expect(await screen.findByText('$10,500.00')).toBeTruthy();
+    expect(getDashboard).toHaveBeenCalledTimes(2);
+    expect(screen.queryByText('The dashboard could not be loaded')).toBeNull();
+  });
+
+  it('drops the figures when a later refresh is refused', async () => {
+    vi.useFakeTimers({ shouldAdvanceTime: true });
+    getDashboard
+      .mockResolvedValueOnce(DASHBOARD)
+      .mockRejectedValueOnce(new AdminRequestError('Insufficient permissions', 403));
+    renderPage();
+    expect(await screen.findByText('$10,500.00')).toBeTruthy();
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(30_000);
+    });
+    expect(await screen.findByText('For platform operators')).toBeTruthy();
+    expect(screen.queryByText('$10,500.00')).toBeNull();
   });
 
   it('shows the figures the API returns', async () => {
-    getDashboard.mockResolvedValue({
-      tenants: { total: 6, active: 3, trial: 2, churned: 1 },
-      revenue: { mrr: 10500, arr: 126000, avgPerTenant: 3500 },
-      licenses: { total: 6, active: 4, expiring: 1, revenueAtRisk: 1200 },
-      users: { total: 42 },
-      tenantGrowth: [
-        { month: '2026-09', count: 0 },
-        { month: '2026-10', count: 2 },
-      ],
-      revenueByPlan: [{ plan: 'ENTERPRISE', mrr: 9000 }],
-      recentActivity: [
-        { event: 'User login failed', tenant: 'Acme', time: new Date().toISOString(), isAlert: true },
-      ],
-      lastUpdated: new Date().toISOString(),
-    });
+    getDashboard.mockResolvedValue(DASHBOARD);
     renderPage();
     expect(await screen.findByText('$10,500.00')).toBeTruthy();
     expect(screen.getByText('3 active · 2 on trial')).toBeTruthy();

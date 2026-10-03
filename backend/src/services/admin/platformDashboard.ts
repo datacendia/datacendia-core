@@ -27,7 +27,12 @@ export interface PlatformDashboard {
   tenantGrowth: Array<{ month: string; count: number }>;
   /** MRR of active tenants by plan, largest first; plans without revenue are left out. */
   revenueByPlan: Array<{ plan: string; mrr: number }>;
-  recentActivity: Array<{ event: string; tenant: string; time: string; isAlert: boolean }>;
+  /**
+   * Latest audit events. They are recorded per organization (the unit all app
+   * data is scoped to), which the `tenants` billing registry doesn't link to,
+   * so each event names its organization rather than a tenant.
+   */
+  recentActivity: Array<{ event: string; organization: string; time: string; isAlert: boolean }>;
   lastUpdated: string;
 }
 
@@ -51,13 +56,13 @@ export async function getPlatformDashboard(now: Date = new Date()): Promise<Plat
     await Promise.all([
       prisma.tenants.groupBy({ by: ['status'], where: live, _count: { _all: true } }),
       prisma.tenants.groupBy({ by: ['plan'], where: { ...live, status: 'ACTIVE' }, _sum: { mrr: true } }),
-      prisma.licenses.groupBy({ by: ['status'], _count: { _all: true } }),
+      prisma.licenses.groupBy({ by: ['status'], where: { tenant: live }, _count: { _all: true } }),
       prisma.licenses.aggregate({
-        where: { status: { in: ['ACTIVE', 'EXPIRING'] }, expires_at: { gte: now, lte: expiringBy } },
+        where: { tenant: live, status: { in: ['ACTIVE', 'EXPIRING'] }, expires_at: { gte: now, lte: expiringBy } },
         _count: { _all: true },
         _sum: { revenue: true },
       }),
-      prisma.users.count(),
+      prisma.users.count({ where: { deleted_at: null } }),
       prisma.tenants.findMany({ where: { ...live, created_at: { gte: growthStart } }, select: { created_at: true } }),
       prisma.audit_logs.findMany({
         orderBy: { created_at: 'desc' },
@@ -103,7 +108,7 @@ export async function getPlatformDashboard(now: Date = new Date()): Promise<Plat
       .sort((a, b) => b.mrr - a.mrr),
     recentActivity: events.map((event) => ({
       event: describeAction(event.action),
-      tenant: event.organizations?.name ?? '',
+      organization: event.organizations?.name ?? '',
       time: event.created_at.toISOString(),
       isAlert: ALERT_ACTION.test(event.action),
     })),

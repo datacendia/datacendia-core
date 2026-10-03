@@ -84,8 +84,9 @@ export const AdminLayout: React.FC = () => {
         {/* Sidebar */}
         <aside className="w-64 bg-neutral-800 min-h-[calc(100vh-64px)] p-4">
           <nav className="space-y-1">
-            {/* The marketing tools are the platform owner's, as their pages enforce. */}
-            {adminNav.filter((item) => !item.ownerOnly || user?.role === 'OWNER').map((item) => (
+            {/* The marketing tools are the platform owner's: SUPER_ADMIN, the same
+                role the dashboard API requires. Their routes are guarded too. */}
+            {adminNav.filter((item) => !item.ownerOnly || user?.role === 'SUPER_ADMIN').map((item) => (
               <button
                 key={item.id}
                 onClick={() => navigate(item.path)}
@@ -139,8 +140,10 @@ export const AdminDashboardPage: React.FC = () => {
         }
         const status = err instanceof AdminRequestError ? err.status : undefined;
         setError({ status, message: err instanceof Error ? err.message : 'Request failed' });
-        // Asking again every 30 seconds will not change a refusal.
         if (status === 401 || status === 403) {
+          // Access was withdrawn: stop showing the figures an earlier refresh
+          // loaded. Asking again every 30 seconds won't change a refusal.
+          setDashboard(null);
           clearInterval(refresh.timer);
         }
       } finally {
@@ -236,7 +239,7 @@ export const AdminDashboardPage: React.FC = () => {
 
   const recentActivity = dashboard.recentActivity.map((a) => ({
     event: a.event,
-    tenant: a.tenant,
+    organization: a.organization,
     time: new Date(a.time),
     isAlert: a.isAlert,
   }));
@@ -326,7 +329,7 @@ export const AdminDashboardPage: React.FC = () => {
                 />
                 <div>
                   <p className="text-white">{item.event}</p>
-                  <p className="text-sm text-neutral-400">{item.tenant}</p>
+                  <p className="text-sm text-neutral-400">{item.organization}</p>
                 </div>
               </div>
               <span className="text-sm text-neutral-500">{formatRelativeTime(item.time)}</span>

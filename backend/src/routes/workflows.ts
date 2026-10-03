@@ -148,6 +148,20 @@ router.get('/', async (req: Request, res: Response, next: NextFunction) => {
   }
 });
 
+// Executions are listed a page at a time, at most 100 per page, so a client
+// can't pull a whole history in one response. Missing or bad values mean
+// page 1, 20 per page.
+const EXECUTIONS_PER_PAGE_MAX = 100;
+
+function executionsPage(query: Request['query']): { page: number; limit: number; skip: number } {
+  const page = Math.max(1, Number.parseInt(String(query.page ?? ''), 10) || 1);
+  const limit = Math.min(
+    EXECUTIONS_PER_PAGE_MAX,
+    Math.max(1, Number.parseInt(String(query.limit ?? ''), 10) || 20)
+  );
+  return { page, limit, skip: (page - 1) * limit };
+}
+
 /**
  * GET /api/v1/workflows/executions
  * Get all workflow executions for the organization
@@ -157,13 +171,14 @@ router.get('/', async (req: Request, res: Response, next: NextFunction) => {
  */
 router.get('/executions', async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { status, page = 1, limit = 20 } = req.query;
+    const { status } = req.query;
+    const { page, limit, skip } = executionsPage(req.query);
     const orgId = req.organizationId!;
 
     const where: any = {
       workflows: { organization_id: orgId },
     };
-    if (status) where.status = status;
+    if (typeof status === 'string' && status) where.status = status;
 
     const [executions, total] = await Promise.all([
       prisma.workflow_executions.findMany({
@@ -172,8 +187,8 @@ router.get('/executions', async (req: Request, res: Response, next: NextFunction
           workflows: { select: { name: true } },
         },
         orderBy: { created_at: 'desc' },
-        skip: (Number(page) - 1) * Number(limit),
-        take: Number(limit),
+        skip,
+        take: limit,
       }),
       prisma.workflow_executions.count({ where }),
     ]);
@@ -181,7 +196,7 @@ router.get('/executions', async (req: Request, res: Response, next: NextFunction
     res.json({
       success: true,
       data: executions,
-      pagination: { page: Number(page), limit: Number(limit), total },
+      pagination: { page, limit, total },
     });
   } catch (error) {
     next(error);
@@ -406,7 +421,8 @@ router.post('/:id/execute', async (req: Request, res: Response, next: NextFuncti
  */
 router.get('/:id/executions', async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { status, page = 1, limit = 20 } = req.query;
+    const { status } = req.query;
+    const { page, limit, skip } = executionsPage(req.query);
     
     const workflow = await prisma.workflows.findUnique({
       where: { id: req.params.id },
@@ -421,14 +437,14 @@ router.get('/:id/executions', async (req: Request, res: Response, next: NextFunc
     }
 
     const where: any = { workflow_id: req.params.id };
-    if (status) where.status = status;
+    if (typeof status === 'string' && status) where.status = status;
 
     const [executions, total] = await Promise.all([
       prisma.workflow_executions.findMany({
         where,
         orderBy: { created_at: 'desc' },
-        skip: (Number(page) - 1) * Number(limit),
-        take: Number(limit),
+        skip,
+        take: limit,
       }),
       prisma.workflow_executions.count({ where }),
     ]);
@@ -436,7 +452,7 @@ router.get('/:id/executions', async (req: Request, res: Response, next: NextFunc
     res.json({
       success: true,
       data: executions,
-      pagination: { page: Number(page), limit: Number(limit), total },
+      pagination: { page, limit, total },
     });
   } catch (error) {
     next(error);

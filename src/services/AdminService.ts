@@ -91,7 +91,8 @@ export interface PlatformDashboard {
   tenantGrowth: Array<{ month: string; count: number }>;
   /** MRR of active tenants by plan, largest first. */
   revenueByPlan: Array<{ plan: string; mrr: number }>;
-  recentActivity: Array<{ event: string; tenant: string; time: string; isAlert?: boolean }>;
+  /** Latest audit events, each with the organization it happened in. */
+  recentActivity: Array<{ event: string; organization: string; time: string; isAlert?: boolean }>;
   lastUpdated: string;
 }
 

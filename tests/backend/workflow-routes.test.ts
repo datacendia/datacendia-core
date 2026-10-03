@@ -64,6 +64,20 @@ describe('workflow routes', () => {
     expect(db.workflowsFindUnique).not.toHaveBeenCalled();
   });
 
+  it('caps the page size and ignores nonsense paging', async () => {
+    const res = await request(app).get('/workflows/executions?limit=100000&page=0');
+    expect(res.status).toBe(200);
+    expect(db.executionsFindMany.mock.calls[0][0]).toMatchObject({ skip: 0, take: 100 });
+    expect(res.body.pagination).toEqual({ page: 1, limit: 100, total: 1 });
+  });
+
+  it("caps a single workflow's execution list too", async () => {
+    db.workflowsFindUnique.mockResolvedValue({ id: 'wf-1', organization_id: 'org-1' });
+    const res = await request(app).get('/workflows/wf-1/executions?limit=5000&page=3');
+    expect(res.status).toBe(200);
+    expect(db.executionsFindMany.mock.calls[0][0]).toMatchObject({ skip: 200, take: 100 });
+  });
+
   it('GET /:id still looks up a single workflow', async () => {
     const res = await request(app).get('/workflows/wf-missing');
     expect(res.status).toBe(404);

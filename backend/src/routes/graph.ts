@@ -427,16 +427,17 @@ router.post('/query', async (req: Request, res: Response, next: NextFunction) =>
  */
 router.get('/search', async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const q = req.query.q as string;
-    const type = req.query.type as string | undefined;
+    // A repeated parameter (?q=a&q=b) arrives as an array; only one string is a query.
+    const q = req.query.q;
+    const type = req.query.type;
     const limit = Math.min(Math.max(parseInt(req.query.limit as string) || 20, 1), SEARCH_LIMIT_MAX);
     const orgId = req.organizationId!;
     const dataSourceId = getSelectedDataSourceId(req);
 
-    if (!q || q.length < 2) {
+    if (typeof q !== 'string' || q.length < 2) {
       throw errors.badRequest('Search query must be at least 2 characters');
     }
-    if (type !== undefined && !NODE_LABEL.test(type)) {
+    if (type !== undefined && (typeof type !== 'string' || !NODE_LABEL.test(type))) {
       throw errors.badRequest('type must be a node label');
     }
 

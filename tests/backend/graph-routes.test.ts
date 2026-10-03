@@ -67,6 +67,15 @@ describe('graph routes', () => {
     expect(read).not.toHaveBeenCalled();
   });
 
+  it.each([['/graph/search?q=risk&q=fraud'], ['/graph/search?q=risk&type=Person&type=Asset']])(
+    'refuses a repeated parameter instead of failing: %s',
+    async (url) => {
+      const res = await request(app).get(url);
+      expect(res.status).toBe(400);
+      expect(read).not.toHaveBeenCalled();
+    }
+  );
+
   it('matches search text literally', async () => {
     await request(app).get('/graph/search?q=C%2B%2B%20(v2)&type=Person');
     const [cypher, params] = read.mock.calls[0];

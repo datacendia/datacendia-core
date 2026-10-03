@@ -29,6 +29,26 @@ const updateOrgSchema = z.object({
   settings: z.record(z.unknown()).optional(),
 });
 
+// Settings are a JSON object, but the TR demo seed stored them as a JSON
+// string. Read either; anything else counts as no settings.
+function settingsObject(value: unknown): Record<string, unknown> {
+  let parsed = value;
+  if (typeof parsed === 'string') {
+    try {
+      parsed = JSON.parse(parsed);
+    } catch {
+      return {};
+    }
+  }
+  return parsed !== null && typeof parsed === 'object' && !Array.isArray(parsed)
+    ? (parsed as Record<string, unknown>)
+    : {};
+}
+
+// A save rereads the row and writes only if updated_at hasn't moved since, so
+// two concurrent saves can't drop each other's settings keys.
+const SAVE_ATTEMPTS = 3;
+
 /**
  * GET /api/v1/organizations/current
  * Get current organization
@@ -51,7 +71,7 @@ router.get('/current', async (req: Request, res: Response, next: NextFunction) =
         slug: org.slug,
         industry: org.industry,
         companySize: org.company_size,
-        settings: org.settings,
+        settings: settingsObject(org.settings),
         createdAt: org.created_at,
       },
     });
@@ -72,25 +92,40 @@ router.put('/current', requireRole('OWNER', 'ADMIN', 'SUPER_ADMIN'), async (req:
       throw errors.unauthorized('Organization context required');
     }
 
-    let settings: Prisma.InputJsonValue | undefined;
-    if (data.settings) {
+    // An empty string is the Settings page's "Not set": clear the column.
+    const clearable = (value: string | undefined) => (value === undefined ? undefined : value || null);
+    const fields = {
+      name: data.name,
+      industry: clearable(data.industry),
+      company_size: clearable(data.companySize),
+    };
+
+    let saved = false;
+    for (let attempt = 0; attempt < SAVE_ATTEMPTS && !saved; attempt++) {
       const current = await prisma.organizations.findUnique({
         where: { id: orgId },
-        select: { settings: true },
+        select: { settings: true, updated_at: true },
       });
-      const stored = (current?.settings ?? {}) as Record<string, unknown>;
-      settings = { ...stored, ...data.settings } as Prisma.InputJsonValue;
+      if (!current) {
+        throw errors.notFound('Organization');
+      }
+      const settings = data.settings
+        ? ({ ...settingsObject(current.settings), ...data.settings } as Prisma.InputJsonValue)
+        : undefined;
+      const { count } = await prisma.organizations.updateMany({
+        where: { id: orgId, updated_at: current.updated_at },
+        data: { ...fields, settings, updated_at: new Date() },
+      });
+      saved = count === 1;
+    }
+    if (!saved) {
+      throw errors.conflict('The organization was changed by another save. Reload and try again.');
     }
 
-    const updated = await prisma.organizations.update({
-      where: { id: orgId },
-      data: {
-        name: data.name,
-        industry: data.industry,
-        company_size: data.companySize,
-        settings,
-      },
-    });
+    const updated = await prisma.organizations.findUnique({ where: { id: orgId } });
+    if (!updated) {
+      throw errors.notFound('Organization');
+    }
 
     // Audit log
     await prisma.audit_logs.create({
@@ -113,7 +148,7 @@ router.put('/current', requireRole('OWNER', 'ADMIN', 'SUPER_ADMIN'), async (req:
         slug: updated.slug,
         industry: updated.industry,
         companySize: updated.company_size,
-        settings: updated.settings,
+        settings: settingsObject(updated.settings),
       },
     });
   } catch (error) {

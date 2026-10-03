@@ -84,6 +84,13 @@ describe('getPlatformDashboard', () => {
     expect(where.expires_at).toEqual({ gte: NOW, lte: new Date('2026-11-14T12:00:00Z') });
   });
 
+  it("leaves out deleted users and deleted tenants' licenses", async () => {
+    await getPlatformDashboard(NOW);
+    expect(db.usersCount).toHaveBeenCalledWith({ where: { deleted_at: null } });
+    expect(db.licensesGroupBy.mock.calls[0][0].where).toEqual({ tenant: { deleted_at: null } });
+    expect(db.licensesAggregate.mock.calls[0][0].where.tenant).toEqual({ deleted_at: null });
+  });
+
   it('buckets new tenants into the last six calendar months', async () => {
     const dashboard = await getPlatformDashboard(NOW);
     expect(db.tenantsFindMany.mock.calls[0][0].where.created_at).toEqual({ gte: new Date('2026-05-01T00:00:00Z') });
@@ -101,8 +108,8 @@ describe('getPlatformDashboard', () => {
     const dashboard = await getPlatformDashboard(NOW);
     expect(dashboard.users.total).toBe(42);
     expect(dashboard.recentActivity).toEqual([
-      { event: 'User login failed', tenant: 'Acme', time: '2026-10-15T11:00:00.000Z', isAlert: true },
-      { event: 'Council deliberation completed', tenant: 'Acme', time: '2026-10-15T10:00:00.000Z', isAlert: false },
+      { event: 'User login failed', organization: 'Acme', time: '2026-10-15T11:00:00.000Z', isAlert: true },
+      { event: 'Council deliberation completed', organization: 'Acme', time: '2026-10-15T10:00:00.000Z', isAlert: false },
     ]);
     expect(dashboard.lastUpdated).toBe(NOW.toISOString());
   });
