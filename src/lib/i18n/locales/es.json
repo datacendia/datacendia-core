@@ -67,6 +67,7 @@
     "login": {
       "title": "Bienvenido de vuelta",
       "subtitle": "Inicia sesión en tu cuenta",
+      "signInToContinue": "Inicia sesión para continuar.",
       "email": "Correo electrónico",
       "password": "Contraseña",
       "rememberMe": "Recordarme",

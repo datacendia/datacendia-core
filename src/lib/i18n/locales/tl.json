@@ -67,6 +67,7 @@
     "login": {
       "title": "Maligayang pagbabalik",
       "subtitle": "Mag-login sa iyong account",
+      "signInToContinue": "Mangyaring mag-sign in upang magpatuloy.",
       "email": "Email address",
       "password": "Password",
       "rememberMe": "Tandaan ako",

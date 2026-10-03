@@ -44,12 +44,14 @@ interface SearchSuggestion {
 }
 
 // Why the canvas shows the built-in sample graph instead of the organization's.
-type SampleReason = 'unavailable' | 'failed' | 'empty';
+// 'empty' is for the whole graph; 'entity-missing' for one entity's lineage.
+type SampleReason = 'unavailable' | 'failed' | 'empty' | 'entity-missing';
 
 const SAMPLE_NOTICE: Record<SampleReason, string> = {
   unavailable: "Sample graph. The knowledge graph database (Neo4j) isn't connected in this deployment.",
   failed: "Sample graph. Your organization's graph couldn't be loaded.",
   empty: 'Sample graph. Your organization has no graph entities yet.',
+  'entity-missing': "Sample graph. That entity isn't in your organization's graph.",
 };
 
 // Node colors by type (dark theme optimized)
@@ -348,7 +350,16 @@ export const GraphExplorerPage: React.FC = () => {
           }
           if (lineageRes.success && lineageRes.data) {
             const data = lineageRes.data as any;
-            loadedNodes = (data.entities || data.nodes || []).map((e: any) => ({
+            // The entity itself comes back as `root`. One without links has
+            // nothing else, and it still belongs on the canvas.
+            const lineageNodes = new Map<string, { id: string }>();
+            const candidates: Array<{ id?: string } | undefined> = [data.root, ...(data.entities || data.nodes || [])];
+            for (const e of candidates) {
+              if (e?.id && !lineageNodes.has(e.id)) {
+                lineageNodes.set(e.id, e as { id: string });
+              }
+            }
+            loadedNodes = [...lineageNodes.values()].map((e: any) => ({
               id: e.id,
               type: e.type || 'entity',
               name: e.name || e.label || e.id,
@@ -415,7 +426,7 @@ export const GraphExplorerPage: React.FC = () => {
       if (loadedNodes.length === 0) {
         loadedNodes = demoNodes;
         loadedEdges = demoEdges;
-        setSampleReason(failure ?? 'empty');
+        setSampleReason(failure ?? (searchParams.get('entity') ? 'entity-missing' : 'empty'));
       } else {
         setSampleReason(null);
       }
@@ -437,9 +448,7 @@ export const GraphExplorerPage: React.FC = () => {
         setSelectedEntity(null);
         return;
       }
-      // d3-force may have swapped an edge's ends for the node objects.
-      const endId = (end: unknown) =>
-        typeof end === 'object' && end !== null ? (end as { id?: string }).id : end;
+      // GraphCanvas (Cytoscape) draws copies of these edges, so their ends stay ids.
       const owner = node.properties?.owner;
       setSelectedEntity({
         id: node.id,
@@ -448,8 +457,8 @@ export const GraphExplorerPage: React.FC = () => {
         properties: node.properties,
         owner: typeof owner === 'string' ? owner : undefined,
         connections: {
-          incoming: edges.filter((e) => endId(e.target) === node.id).length,
-          outgoing: edges.filter((e) => endId(e.source) === node.id).length,
+          incoming: edges.filter((e) => e.target === node.id).length,
+          outgoing: edges.filter((e) => e.source === node.id).length,
         },
       });
     },

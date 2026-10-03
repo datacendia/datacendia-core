@@ -770,6 +770,11 @@ const STATIC_TRANSLATIONS: Record<string, Record<string, string>> = {
     'label.offline': 'Hors ligne',
     'settings.language': 'Langue',
     'search.placeholder': 'Rechercher...',
+    'label.owner': 'Propriétaire',
+    'label.admin': 'Administrateur',
+    'label.platform_admin': 'Administrateur de la plateforme',
+    'label.analyst': 'Analyste',
+    'label.viewer': 'Lecteur',
   },
   de: {
     'app.tagline': 'Enterprise Intelligence Plattform',
@@ -786,6 +791,11 @@ const STATIC_TRANSLATIONS: Record<string, Record<string, string>> = {
     'label.offline': 'Offline',
     'settings.language': 'Sprache',
     'search.placeholder': 'Suchen...',
+    'label.owner': 'Inhaber',
+    'label.admin': 'Administrator',
+    'label.platform_admin': 'Plattform-Administrator',
+    'label.analyst': 'Analyst',
+    'label.viewer': 'Betrachter',
   },
   zh: {
     'app.tagline': '企业智能平台',
@@ -802,6 +812,11 @@ const STATIC_TRANSLATIONS: Record<string, Record<string, string>> = {
     'label.offline': '离线',
     'settings.language': '语言',
     'search.placeholder': '搜索...',
+    'label.owner': '所有者',
+    'label.admin': '管理员',
+    'label.platform_admin': '平台管理员',
+    'label.analyst': '分析师',
+    'label.viewer': '查看者',
   },
   ja: {
     'app.tagline': 'エンタープライズインテリジェンスプラットフォーム',
@@ -818,6 +833,11 @@ const STATIC_TRANSLATIONS: Record<string, Record<string, string>> = {
     'label.offline': 'オフライン',
     'settings.language': '言語',
     'search.placeholder': '検索...',
+    'label.owner': 'オーナー',
+    'label.admin': '管理者',
+    'label.platform_admin': 'プラットフォーム管理者',
+    'label.analyst': 'アナリスト',
+    'label.viewer': '閲覧者',
   },
   ar: {
     'app.tagline': 'منصة ذكاء المؤسسات',
@@ -832,6 +852,11 @@ const STATIC_TRANSLATIONS: Record<string, Record<string, string>> = {
     'label.offline': 'غير متصل',
     'settings.language': 'اللغة',
     'search.placeholder': 'بحث...',
+    'label.owner': 'المالك',
+    'label.admin': 'المسؤول',
+    'label.platform_admin': 'مسؤول المنصة',
+    'label.analyst': 'المحلل',
+    'label.viewer': 'المشاهد',
   },
 };
 
@@ -1259,7 +1284,7 @@ export function LanguageSelector({
           <div
             className={`absolute ${
               placement === 'above-left' ? 'left-0 bottom-full mb-2' : 'right-0 top-full mt-2'
-            } w-72 bg-sovereign-card rounded-xl shadow-xl border border-sovereign-border z-50 overflow-hidden animate-in fade-in duration-200`}
+            } w-72 max-h-[calc(100vh-7rem)] overflow-y-auto bg-sovereign-card rounded-xl shadow-xl border border-sovereign-border z-50 animate-in fade-in duration-200`}
           >
             {/* Header with search */}
             <div className="p-3 border-b border-sovereign-border-subtle bg-sovereign-elevated">
@@ -1279,6 +1304,7 @@ export function LanguageSelector({
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search languages..."
+                  aria-label="Search languages"
                   className="w-full pl-8 pr-3 py-2 text-sm bg-sovereign-base text-white placeholder:text-neutral-600 border border-sovereign-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
                 <svg

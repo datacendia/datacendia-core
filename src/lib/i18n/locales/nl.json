@@ -67,6 +67,7 @@
     "login": {
       "title": "Welkom terug",
       "subtitle": "Log in op uw account",
+      "signInToContinue": "Meld je aan om door te gaan.",
       "email": "E-mailadres",
       "password": "Wachtwoord",
       "rememberMe": "Onthoud mij",

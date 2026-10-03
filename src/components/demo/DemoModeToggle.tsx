@@ -181,11 +181,11 @@ export const DemoModeToggle: React.FC<DemoModeToggleProps> = ({ className, place
       {/* Active Demo Controls */}
       {isActive && currentDemo && (
         <div 
-          className="fixed bottom-4 left-1/2 -translate-x-1/2 bg-slate-900 rounded-2xl shadow-2xl border border-slate-700 p-4 z-50"
+          className="fixed bottom-4 left-1/2 -translate-x-1/2 max-w-[calc(100vw-2rem)] bg-slate-900 rounded-2xl shadow-2xl border border-slate-700 p-4 z-50"
           data-tour="demo-controls"
         >
-          {/* Progress Bar */}
-          <div className="w-96 mb-3">
+          {/* Progress Bar: 24rem, or the screen width less the margins on a phone */}
+          <div className="w-[min(24rem,calc(100vw-4rem))] mb-3">
             <div className="flex justify-between text-xs text-slate-400 mb-1">
               <span>{currentDemo.name}</span>
               <span>{Math.round(progress)}%</span>
@@ -209,7 +209,7 @@ export const DemoModeToggle: React.FC<DemoModeToggleProps> = ({ className, place
           {/* Script (if visible) */}
           {showScript && currentStep && (
             <div 
-              className="mb-3 p-3 bg-slate-800 rounded-lg border border-slate-700 max-w-md"
+              className="mb-3 p-3 bg-slate-800 rounded-lg border border-slate-700 max-w-[min(28rem,calc(100vw-4rem))]"
               data-tour="demo-script"
             >
               <div className="flex items-center gap-2 text-xs text-slate-500 mb-1">
@@ -223,7 +223,7 @@ export const DemoModeToggle: React.FC<DemoModeToggleProps> = ({ className, place
           )}
 
           {/* Controls */}
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex flex-wrap items-center justify-center gap-2">
             <button
               onClick={prevStep}
               className="p-2 rounded-lg bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition-colors"

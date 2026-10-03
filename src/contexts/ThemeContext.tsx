@@ -46,7 +46,15 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     return DEFAULT_THEME;
   });
 
-  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>('light');
+  // Resolved on the first render too, so the toggle shows the right icon at once.
+  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>(() => {
+    if (theme !== 'system') {
+      return theme;
+    }
+    return typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
+  });
 
   // Resolve system preference
   const resolveTheme = useCallback((themeValue: Theme): ResolvedTheme => {

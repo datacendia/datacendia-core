@@ -68,7 +68,6 @@ describe('ProtectedRoute', () => {
     expect(screen.queryByTestId('page')).toBeNull();
     expect(JSON.parse(screen.getByTestId('sign-in').textContent ?? 'null')).toEqual({
       from: '/cortex/council?mode=advisory#top',
-      message: 'Please sign in to continue',
     });
   });
 

@@ -67,6 +67,7 @@
     "login": {
       "title": "Content de vous revoir",
       "subtitle": "Connectez-vous à votre compte",
+      "signInToContinue": "Veuillez vous connecter pour continuer.",
       "email": "Adresse e-mail",
       "password": "Mot de passe",
       "rememberMe": "Se souvenir de moi",

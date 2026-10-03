@@ -58,8 +58,8 @@ export const LoginPage: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { refreshUser } = useAuth();
-  // Set by ProtectedRoute when it sent a signed-out visitor here.
-  const notice = (location.state as { message?: unknown } | null)?.message;
+  // ProtectedRoute sends a signed-out visitor here with the page they asked for.
+  const redirected = typeof (location.state as { from?: unknown } | null)?.from === 'string';
   const { t } = useI18n();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -225,12 +225,12 @@ export const LoginPage: React.FC = () => {
 
           {/* Login Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
-            {typeof notice === 'string' && !error && (
+            {redirected && !error && (
               <div
                 role="status"
                 className="p-3 bg-[#c9a84c]/5 border border-[#c9a84c]/20 rounded-lg text-sm text-[#c9a84c]/90"
               >
-                {notice}
+                {t('auth.login.signInToContinue')}
               </div>
             )}
             {error && (

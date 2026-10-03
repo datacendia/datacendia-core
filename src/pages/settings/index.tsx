@@ -118,6 +118,10 @@ const INDUSTRY_TO_VERTICAL: Record<string, string> = {
 const isIndustryValue = (value: string): boolean =>
   Object.prototype.hasOwnProperty.call(INDUSTRY_TO_VERTICAL, value);
 
+// The Company Size options. A stored size outside them (seeds use others,
+// such as "5000-10000") gets an option of its own instead of showing "Not set".
+const COMPANY_SIZE_VALUES: string[] = ['1-50', '51-200', '201-1000', '1001-5000', '5000+'];
+
 export const OrganizationSettingsPage: React.FC = () => {
   const { addToast } = useToast();
   const { selectVertical, currentVertical } = useVerticalConfig();
@@ -140,6 +144,7 @@ export const OrganizationSettingsPage: React.FC = () => {
     numberFormat: 'en-US',
   });
   const [loadError, setLoadError] = useState<string | null>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   // The organization's own record. The regional fields keep their defaults
   // until the organization has saved its own.
@@ -170,6 +175,7 @@ export const OrganizationSettingsPage: React.FC = () => {
         currency: saved.currency ?? prev.currency,
         numberFormat: saved.numberFormat ?? prev.numberFormat,
       }));
+      setIsLoaded(true);
     });
     return () => {
       cancelled = true;
@@ -202,6 +208,9 @@ export const OrganizationSettingsPage: React.FC = () => {
       <h1 className="text-2xl mb-6" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>ORGANIZATION</h1>
       {loadError && <p className="text-sm text-error-main mb-4">{loadError}</p>}
 
+      {/* Disabled until the organization has loaded: its response would
+          otherwise overwrite anything typed meanwhile. */}
+      <fieldset disabled={!isLoaded} className="min-w-0">
       {/* Organization Profile */}
       <div className="bg-sovereign-card rounded-xl border border-sovereign-border p-6 mb-6">
         <h2 className="text-lg font-semibold text-white mb-4">Organization Profile</h2>
@@ -283,6 +292,9 @@ export const OrganizationSettingsPage: React.FC = () => {
                 className="bg-sovereign-base text-white placeholder:text-neutral-600 w-full h-10 px-3 border border-sovereign-border-strong rounded-lg focus:ring-2 focus:ring-primary-500"
               >
                 <option value="">Not set</option>
+                {orgData.companySize && !COMPANY_SIZE_VALUES.includes(orgData.companySize) && (
+                  <option value={orgData.companySize}>{orgData.companySize}</option>
+                )}
                 <option value="1-50">1-50</option>
                 <option value="51-200">51-200</option>
                 <option value="201-1000">201-1,000</option>
@@ -378,6 +390,8 @@ export const OrganizationSettingsPage: React.FC = () => {
         </div>
       </div>
 
+      </fieldset>
+
       {/* Danger Zone */}
       <div className="bg-sovereign-card rounded-xl border border-error-main/20 p-6">
         <h2 className="text-lg font-semibold text-error-main mb-4">Danger Zone</h2>
@@ -432,8 +446,9 @@ export const OrganizationSettingsPage: React.FC = () => {
             setIsSaving(true);
             const res = await organizationsApi.updateCurrent({
               name: orgData.name,
-              industry: orgData.industry || undefined,
-              companySize: orgData.companySize || undefined,
+              // An empty string is "Not set": the API clears the field.
+              industry: orgData.industry,
+              companySize: orgData.companySize,
               settings: {
                 primaryContact: orgData.primaryContact,
                 primaryEmail: orgData.primaryEmail,
@@ -454,7 +469,7 @@ export const OrganizationSettingsPage: React.FC = () => {
                   }
             );
           }}
-          disabled={isSaving || !orgData.id}
+          disabled={isSaving || !isLoaded}
           className="px-6 py-2 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors disabled:opacity-50"
         >
           {isSaving ? 'Saving...' : 'Save Changes'}

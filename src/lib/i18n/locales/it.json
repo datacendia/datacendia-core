@@ -67,6 +67,7 @@
     "login": {
       "title": "Bentornato",
       "subtitle": "Accedi al tuo account",
+      "signInToContinue": "Accedi per continuare.",
       "email": "Indirizzo email",
       "password": "Password",
       "rememberMe": "Ricordami",

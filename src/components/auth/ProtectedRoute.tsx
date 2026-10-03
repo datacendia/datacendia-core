@@ -113,15 +113,13 @@ export function ProtectedRoute({
     return null;
   }
 
-  // Not authenticated - sign in first, then come back to this exact page
+  // Not authenticated - sign in first, then come back to this exact page. The
+  // sign-in page shows its own (translated) notice for a redirected visit.
   if (!isAuthenticated || !user) {
     return (
       <Navigate
         to={redirectTo}
-        state={{
-          from: `${location.pathname}${location.search}${location.hash}`,
-          message: 'Please sign in to continue',
-        }}
+        state={{ from: `${location.pathname}${location.search}${location.hash}` }}
         replace
       />
     );
