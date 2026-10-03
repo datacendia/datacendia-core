@@ -1677,23 +1677,26 @@ const CortexLayoutInner: React.FC = () => {
                           </button>
                         ))}
                       </div>
-                      <div className="p-2 bg-sovereign-elevated border-t border-sovereign-border-subtle rounded-b-xl flex-shrink-0">
-                        <button
-                          onClick={() => {
-                            navigate('/cortex/admin/vertical-config');
-                            setIsEnterpriseDropdownOpen(false);
-                          }}
-                          className="w-full text-xs text-purple-400 hover:text-purple-300 text-center"
-                        >
-                          Configure Vertical Services
-                        </button>
-                      </div>
+                      {isOwnerOrAdmin && (
+                        <div className="p-2 bg-sovereign-elevated border-t border-sovereign-border-subtle rounded-b-xl flex-shrink-0">
+                          <button
+                            onClick={() => {
+                              navigate('/cortex/admin/vertical-config');
+                              setIsEnterpriseDropdownOpen(false);
+                            }}
+                            className="w-full text-xs text-purple-400 hover:text-purple-300 text-center"
+                          >
+                            Configure Vertical Services
+                          </button>
+                        </div>
+                      )}
                     </div>
                   </>
                 )}
               </div>
 
-              {/* Admin Dropdown (hidden for non-admins in production) */}
+              {/* Admin Dropdown: organization admins only, as the pages and API behind it */}
+              {isOwnerOrAdmin && (
               <div className="relative hidden sm:block">
                 <button
                   onClick={() => setIsSovereignDropdownOpen(!isSovereignDropdownOpen)}
@@ -1789,6 +1792,7 @@ const CortexLayoutInner: React.FC = () => {
                   </>
                 )}
               </div>
+              )}
 
               {/* Demo Mode Toggle */}
               <DemoModeToggle className="hidden sm:block" />
@@ -1938,7 +1942,7 @@ const CortexLayoutInner: React.FC = () => {
                       Factory,
                       verticalPacks.map((pack) => ({ id: pack.id, label: pack.label, path: pack.path, Icon: pack.Icon }))
                     )}
-                    {renderDrawerMenu('admin', 'Administration', Settings, [
+                    {isOwnerOrAdmin && renderDrawerMenu('admin', 'Administration', Settings, [
                       { id: 'vertical-config', label: 'Vertical Config', path: '/cortex/admin/vertical-config', Icon: Settings },
                       ...filteredSovereignFeatures.map((feature) => ({
                         id: feature.id,

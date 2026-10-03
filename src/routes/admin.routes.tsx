@@ -84,9 +84,17 @@ export const adminRoutes: RouteObject[] = [
       { path: 'control-center', element: w(ControlCenterPage) },
       { path: 'ai', element: w(AdminAIPage) },
       { path: 'sovereign-stack', element: w(SovereignStackPage) },
-      { path: 'marketing', element: w(MarketingCMSPage) },
+      // The marketing tools are the platform owner's (SUPER_ADMIN, as the
+      // dashboard and studio APIs require): guarded here, not only hidden in the nav.
+      {
+        path: 'marketing',
+        element: <ProtectedRoute requiredRoles={['SUPER_ADMIN']}>{w(MarketingCMSPage)}</ProtectedRoute>,
+      },
       { path: 'env-config', element: w(EnvironmentConfigPage) },
-      { path: 'marketing-studio', element: w(MarketingStudioPage) },
+      {
+        path: 'marketing-studio',
+        element: <ProtectedRoute requiredRoles={['SUPER_ADMIN']}>{w(MarketingStudioPage)}</ProtectedRoute>,
+      },
       { path: 'pitch-decks', element: w(PitchDeckManagerPage) },
     ],
   },

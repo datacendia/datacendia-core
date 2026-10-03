@@ -17,6 +17,7 @@
 import React, { Suspense, lazy } from 'react';
 import { RouteObject, Navigate } from 'react-router-dom';
 import { PageLoader } from '../../components/ui/PageLoader';
+import { ProtectedRoute } from '../../components/auth/ProtectedRoute';
 import { SuspenseWrapper } from '../utils';
 
 // Pillar Pages
@@ -237,7 +238,11 @@ export const cortexPlatformRoutes: RouteObject[] = [
 
   // Admin
   { path: 'admin', element: <Navigate to="/cortex/admin/vertical-config" replace /> },
-  { path: 'admin/vertical-config', element: w(VerticalConfigPage) },
+  // Changing the organization's verticals is for its admins; the API checks too.
+  {
+    path: 'admin/vertical-config',
+    element: <ProtectedRoute requiredRoles={['OWNER', 'ADMIN', 'SUPER_ADMIN']}>{w(VerticalConfigPage)}</ProtectedRoute>,
+  },
 
   // Showcase & Demo
   { path: 'showcase', element: w(ShowcaseDashboard) },
