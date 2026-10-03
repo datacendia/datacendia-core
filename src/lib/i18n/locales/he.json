@@ -67,7 +67,7 @@
     "login": {
       "title": "ברוך שובך",
       "subtitle": "היכנס לחשבון שלך",
-      "signInToContinue": "יש להתחבר כדי להמשיך.",
+      "signInToContinue": "יש להיכנס כדי להמשיך.",
       "email": "כתובת דוא\"ל",
       "password": "סיסמה",
       "rememberMe": "זכור אותי",

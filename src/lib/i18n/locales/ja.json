@@ -67,7 +67,7 @@
     "login": {
       "title": "お帰りなさい",
       "subtitle": "アカウントにログイン",
-      "signInToContinue": "続行するにはサインインしてください。",
+      "signInToContinue": "続行するにはログインしてください。",
       "email": "メールアドレス",
       "password": "パスワード",
       "rememberMe": "ログイン状態を保持",

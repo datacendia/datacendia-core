@@ -67,13 +67,13 @@ describe('vertical-config', () => {
     expect(res.status).toBe(403);
   });
 
-  it('an admin can change the configuration', async () => {
-    const res = await request(verticals).post('/vertical-config/toggle/council').set('x-test-role', 'ADMIN').send({ enabled: true });
+  it.each([['OWNER'], ['ADMIN'], ['SUPER_ADMIN']])('%s can change the configuration', async (role) => {
+    const res = await request(verticals).post('/vertical-config/toggle/council').set('x-test-role', role).send({ enabled: true });
     expect(res.status).not.toBe(403);
   });
 
-  it('any member can read it', async () => {
-    const res = await request(verticals).get('/vertical-config/services').set('x-test-role', 'ANALYST');
+  it("any member can read the organization's configuration", async () => {
+    const res = await request(verticals).get('/vertical-config/organization').set('x-test-role', 'ANALYST');
     expect(res.status).not.toBe(403);
   });
 });
