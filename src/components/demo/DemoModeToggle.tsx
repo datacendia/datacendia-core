@@ -29,9 +29,11 @@ import { WALKTHROUGHS, GuidedWalkthrough, WalkthroughConfig } from './GuidedWalk
 
 interface DemoModeToggleProps {
   className?: string;
+  /** Where the menu opens. The phone drawer opens it upward from the left. */
+  placement?: 'below-right' | 'above-left';
 }
 
-export const DemoModeToggle: React.FC<DemoModeToggleProps> = ({ className }) => {
+export const DemoModeToggle: React.FC<DemoModeToggleProps> = ({ className, placement = 'below-right' }) => {
   const {
     isActive,
     currentDemo,
@@ -93,7 +95,11 @@ export const DemoModeToggle: React.FC<DemoModeToggleProps> = ({ className }) => 
 
       {/* Dropdown Menu */}
       {showDropdown && (
-        <div className="absolute right-0 top-full mt-2 w-80 bg-slate-800 rounded-xl shadow-xl border border-slate-700 z-50">
+        <div
+          className={`absolute ${
+            placement === 'above-left' ? 'left-0 bottom-full mb-2' : 'right-0 top-full mt-2'
+          } w-80 max-w-[calc(100vw-2rem)] max-h-[calc(100vh-7rem)] overflow-y-auto bg-slate-800 rounded-xl shadow-xl border border-slate-700 z-50`}
+        >
           {/* Header */}
           <div className="p-4 border-b border-slate-700">
             <h3 className="text-lg font-semibold text-white">Demo Mode</h3>

@@ -382,9 +382,11 @@ export const MissionControlDashboard: React.FC = () => {
           </div>
         </div>
 
+        {/* In the flow, not pinned to the corner: there it covered the score
+            heading on phones and the primitives label on mid-size screens. */}
         <button
           onClick={() => navigate('/cortex/dcii')}
-          className="absolute top-4 right-4 text-xs text-neutral-400 hover:text-neutral-200 flex items-center gap-1 transition-colors"
+          className="mt-4 ml-auto w-fit text-xs text-neutral-400 hover:text-neutral-200 flex items-center gap-1 transition-colors"
         >
           View Full DCII Report <ChevronRight className="w-3 h-3" />
         </button>
@@ -888,10 +890,13 @@ export const MissionControlDashboard: React.FC = () => {
       {!activeJourney && !showJourneySelector && (
         <button
           onClick={() => setShowJourneySelector(true)}
-          className="fixed bottom-24 right-6 z-40 flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-amber-600 to-amber-500 text-black rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 font-semibold"
+          aria-label="Start Your Journey"
+          title="Start Your Journey"
+          className="fixed bottom-24 right-6 z-40 flex items-center gap-2 p-3 sm:px-4 bg-gradient-to-r from-amber-600 to-amber-500 text-black rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 font-semibold"
         >
           <Compass className="w-5 h-5" />
-          <span>Start Your Journey</span>
+          {/* Icon only on phones, where the full button covered the dashboard. */}
+          <span className="hidden sm:inline">Start Your Journey</span>
         </button>
       )}
 
