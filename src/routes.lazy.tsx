@@ -16,6 +16,7 @@
 
 // Error Pages (keep non-lazy for fast 404)
 import { NotFoundPage } from './pages/NotFoundPage';
+import { RouteErrorPage } from './components/RouteErrorPage';
 
 // =============================================================================
 // LAYOUTS - Load immediately (critical for shell)
@@ -35,46 +36,68 @@ import { cortexEnterpriseRoutes } from './routes/cortex/enterprise.routes';
 import { cortexSovereignRoutes } from './routes/cortex/sovereign.routes';
 import { cortexPlatformRoutes } from './routes/cortex/platform.routes';
 
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, type RouteObject } from 'react-router-dom';
 import { lazyLoad } from './routes/utils';
 
 // =============================================================================
 // ROUTE CONFIGURATION - Composed from domain modules
 // =============================================================================
 
+// A page that throws while rendering shows RouteErrorPage instead of React
+// Router's developer screen. Under a layout route the boundary sits below the
+// layout, so the sidebar stays and the visitor can move on to another page.
+const withinLayout = (children: RouteObject[], homeHref: string, homeLabel: string): RouteObject[] => [
+  { errorElement: <RouteErrorPage homeHref={homeHref} homeLabel={homeLabel} />, children },
+];
+
+const adminWithinLayout = adminRoutes.map((route) =>
+  route.children ? { ...route, children: withinLayout(route.children, '/admin', 'Back to admin') } : route
+);
+
 export const router = createBrowserRouter([
-  ...publicRoutes,
-  ...authRoutes,
-  ...verticalsRoutes,
-
-  // CORTEX APPLICATION
   {
-    path: '/cortex',
-    element: <CortexLayout />,
+    errorElement: <RouteErrorPage />,
     children: [
-      ...cortexCoreRoutes,
-      ...cortexIntelligenceRoutes,
-      ...cortexEnterpriseRoutes,
-      ...cortexSovereignRoutes,
-      ...cortexPlatformRoutes,
+      ...publicRoutes,
+      ...authRoutes,
+      ...verticalsRoutes,
+
+      // CORTEX APPLICATION
+      {
+        path: '/cortex',
+        element: <CortexLayout />,
+        children: withinLayout(
+          [
+            ...cortexCoreRoutes,
+            ...cortexIntelligenceRoutes,
+            ...cortexEnterpriseRoutes,
+            ...cortexSovereignRoutes,
+            ...cortexPlatformRoutes,
+          ],
+          '/cortex/dashboard',
+          'Back to dashboard'
+        ),
+      },
+
+      ...adminWithinLayout,
+
+      // TOOLS
+      {
+        path: '/tools',
+        element: <CortexLayout />,
+        children: withinLayout(
+          [{ path: 'roi-calculator', element: lazyLoad(() => import('./pages/tools').then((m) => ({ default: m.ROICalculator }))) }],
+          '/cortex/dashboard',
+          'Back to dashboard'
+        ),
+      },
+
+      // 404
+      {
+        path: '*',
+        element: <NotFoundPage />,
+      },
     ],
-  },
-
-  ...adminRoutes,
-
-  // TOOLS
-  {
-    path: '/tools',
-    element: <CortexLayout />,
-    children: [
-      { path: 'roi-calculator', element: lazyLoad(() => import('./pages/tools').then((m) => ({ default: m.ROICalculator }))) },
-    ],
-  },
-
-  // 404
-  {
-    path: '*',
-    element: <NotFoundPage />,
   },
 ]);
 

@@ -48,3 +48,73 @@ describe('ApiClient data source header propagation', () => {
     expect(headers['X-Data-Source-Id']).toBe(dataSourceId);
   });
 });
+
+// The API enforces double-submit CSRF on writes (backend/src/middleware/csrf.ts).
+describe('ApiClient CSRF handling', () => {
+  function respond(body: unknown, status = 200): any {
+    const text = JSON.stringify(body);
+    return {
+      ok: status < 400,
+      status,
+      statusText: '',
+      json: async () => JSON.parse(text),
+      text: async () => text,
+      clone: () => respond(body, status),
+    };
+  }
+
+  beforeEach(() => {
+    vi.resetModules(); // fresh module = no cached token
+  });
+
+  it('fetches a token once and sends it on writes, with cookies', async () => {
+    const fetchMock = vi.fn(async (url: string) =>
+      url.endsWith('/csrf-token') ? respond({ success: true, csrfToken: 'tok-1' }) : respond({ success: true })
+    );
+    (globalThis as any).fetch = fetchMock;
+    const { api: freshApi } = await import('./client');
+
+    await freshApi.post('/auth/login', { email: 'sarah.chen@acme.demo', password: 'x' });
+    await freshApi.post('/decisions', { title: 'y' });
+
+    const urls = fetchMock.mock.calls.map(([u]) => String(u));
+    expect(urls.filter((u) => u.endsWith('/csrf-token'))).toHaveLength(1);
+    const loginCall = fetchMock.mock.calls.find(([u]) => String(u).endsWith('/auth/login')) as any[] | undefined;
+    expect(loginCall).toBeDefined();
+    const loginInit = loginCall?.[1];
+    expect(loginInit.headers['X-CSRF-Token']).toBe('tok-1');
+    expect(loginInit.credentials).toBe('include');
+  });
+
+  it('does not ask for a token on reads', async () => {
+    const fetchMock = vi.fn(async (_url: string) => respond({ success: true }));
+    (globalThis as any).fetch = fetchMock;
+    const { api: freshApi } = await import('./client');
+
+    await freshApi.get('/council/agents');
+
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(String(fetchMock.mock.calls[0]?.[0])).not.toContain('/csrf-token');
+  });
+
+  it('refreshes the token and retries once when the server rejects it', async () => {
+    const tokens = ['stale', 'fresh'];
+    let writes = 0;
+    const fetchMock = vi.fn(async (url: string, init?: any) => {
+      if (url.endsWith('/csrf-token')) {
+        return respond({ success: true, csrfToken: tokens.shift() });
+      }
+      writes++;
+      return init.headers['X-CSRF-Token'] === 'fresh'
+        ? respond({ success: true, data: { saved: true } })
+        : respond({ success: false, error: { code: 'CSRF_TOKEN_INVALID', message: 'Invalid CSRF token' } }, 403);
+    });
+    (globalThis as any).fetch = fetchMock;
+    const { api: freshApi } = await import('./client');
+
+    const result = await freshApi.post('/decisions', {});
+
+    expect(result).toMatchObject({ success: true, data: { saved: true } });
+    expect(writes).toBe(2);
+  });
+});

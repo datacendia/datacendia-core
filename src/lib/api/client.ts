@@ -17,12 +17,52 @@
 
 // In development, use relative path to go through Vite's proxy
 // In production, use the full URL from environment
-const API_BASE_URL =
+export const API_BASE_URL =
   import.meta.env.VITE_API_URL ||
   (import.meta.env.DEV ? '/api/v1' : '/api/v1');
 
 // Header used to propagate the currently selected data source
 const DATA_SOURCE_HEADER = 'X-Data-Source-Id';
+
+// CSRF: the API uses the double-submit cookie pattern (backend/src/middleware/csrf.ts).
+// GET /csrf-token sets the csrf_token cookie and returns the same value, which is
+// echoed in X-CSRF-Token on writes. Cookies must travel with cross-origin calls in
+// development (5173 -> 3001), hence credentials: 'include'; the API allows it.
+const CSRF_HEADER = 'X-CSRF-Token';
+const UNSAFE_METHODS = new Set(['POST', 'PUT', 'PATCH', 'DELETE']);
+let csrfToken: string | null = null;
+let csrfRequest: Promise<string | null> | null = null;
+
+export async function getCsrfToken(forceRefresh = false): Promise<string | null> {
+  if (csrfToken && !forceRefresh) {
+    return csrfToken;
+  }
+  if (!csrfRequest) {
+    csrfRequest = fetch(`${API_BASE_URL}/csrf-token`, { credentials: 'include' })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((body: { csrfToken?: string } | null) => {
+        csrfToken = body?.csrfToken ?? null;
+        return csrfToken;
+      })
+      .catch(() => null)
+      .finally(() => {
+        csrfRequest = null;
+      });
+  }
+  return csrfRequest;
+}
+
+async function isCsrfRejection(response: Response): Promise<boolean> {
+  if (response.status !== 403) {
+    return false;
+  }
+  try {
+    const body = await response.clone().json();
+    return typeof body?.error?.code === 'string' && body.error.code.startsWith('CSRF_');
+  } catch {
+    return false;
+  }
+}
 
 // Types
 export interface ApiResponse<T> {
@@ -99,6 +139,7 @@ class TokenManager {
       sessionStorage.removeItem('dc_access_token');
       sessionStorage.removeItem('dc_refresh_token');
       sessionStorage.removeItem('dc_demo_session');
+      sessionStorage.removeItem('dc_last_user');
       // Clean up any legacy localStorage tokens
       localStorage.removeItem('dc_access_token');
       localStorage.removeItem('dc_refresh_token');
@@ -140,31 +181,66 @@ class TokenManager {
   }
 
   private async _doRefresh(): Promise<boolean> {
-    if (!this.refreshToken) {
+    const refreshToken = this.refreshToken;
+    if (!refreshToken) {
       return false;
     }
 
     try {
-      const response = await fetch(`${API_BASE_URL}/auth/refresh`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ refreshToken: this.refreshToken }),
-      });
+      // Refresh sends no bearer, so the API's CSRF check applies to it. The cached
+      // token can be stale (its cookie expired, or another tab had one issued), and
+      // a rejected refresh signed the user out: retry once with a fresh token.
+      const send = async (freshCsrf: boolean) => {
+        const csrf = await getCsrfToken(freshCsrf);
+        return fetch(`${API_BASE_URL}/auth/refresh`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            ...(csrf ? { [CSRF_HEADER]: csrf } : {}),
+          },
+          credentials: 'include',
+          body: JSON.stringify({ refreshToken }),
+        });
+      };
+      let response = await send(false);
+      if (await isCsrfRejection(response)) {
+        response = await send(true);
+      }
+
+      // The session changed while this was in flight (a sign-out, or a new
+      // sign-in): leave it alone rather than apply a stale answer over it or sign
+      // the new session out.
+      const superseded = () => this.refreshToken !== refreshToken;
+      if (superseded()) {
+        return this.accessToken !== null;
+      }
 
       if (!response.ok) {
         this.clearTokens();
         return false;
       }
 
-      const data: ApiResponse<AuthTokens> = await response.json();
-      if (data.success && data.data) {
-        this.setTokens(data.data);
+      const data: ApiResponse<Partial<AuthTokens>> = await response.json();
+      if (superseded()) {
+        return this.accessToken !== null;
+      }
+      if (data.success && data.data?.accessToken) {
+        // The API returns a new access token but doesn't rotate the refresh token;
+        // storing the missing one as undefined signed the user out at the next expiry.
+        this.setTokens({
+          accessToken: data.data.accessToken,
+          refreshToken: data.data.refreshToken ?? refreshToken,
+          expiresIn: data.data.expiresIn ?? 3600,
+        });
         return true;
       }
 
       this.clearTokens();
       return false;
     } catch {
+      if (this.refreshToken !== refreshToken) {
+        return this.accessToken !== null;
+      }
       this.clearTokens();
       return false;
     }
@@ -225,6 +301,14 @@ class ApiClient {
       headers[DATA_SOURCE_HEADER] = dataSourceId;
     }
 
+    const isWrite = UNSAFE_METHODS.has((options.method ?? 'GET').toUpperCase());
+    if (isWrite) {
+      const csrf = await getCsrfToken();
+      if (csrf) {
+        headers[CSRF_HEADER] = csrf;
+      }
+    }
+
     // Add timeout to prevent slow loading (15 seconds)
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 15000);
@@ -233,16 +317,26 @@ class ApiClient {
       let response = await fetch(url, {
         ...options,
         headers,
+        credentials: 'include',
         signal: controller.signal,
       });
       clearTimeout(timeoutId);
+
+      // Token expired or rotated server-side: fetch a fresh one and retry once.
+      if (isWrite && (await isCsrfRejection(response))) {
+        const fresh = await getCsrfToken(true);
+        if (fresh) {
+          headers[CSRF_HEADER] = fresh;
+          response = await fetch(url, { ...options, headers, credentials: 'include' });
+        }
+      }
 
       // Handle token expiration
       if (response.status === 401 && accessToken) {
         const refreshed = await tokenManager.refreshAccessToken();
         if (refreshed) {
           headers['Authorization'] = `Bearer ${tokenManager.getAccessToken()}`;
-          response = await fetch(url, { ...options, headers });
+          response = await fetch(url, { ...options, headers, credentials: 'include' });
         } else {
           // Demo sessions: don't hard-redirect, let pages fall back to mock data
           if (tokenManager.isDemoSession()) {

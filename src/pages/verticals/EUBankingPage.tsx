@@ -17,6 +17,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { tokenManager } from '../../lib/api/client';
 import {
   Shield,
   TrendingUp,
@@ -230,7 +231,7 @@ export const EUBankingPage: React.FC = () => {
   const fetchDashboard = useCallback(async () => {
     setLoading(true);
     try {
-      const token = localStorage.getItem('token');
+      const token = tokenManager.getAccessToken();
       const resp = await fetch('/api/v1/eu-banking/dashboard', {
         headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) },
       });

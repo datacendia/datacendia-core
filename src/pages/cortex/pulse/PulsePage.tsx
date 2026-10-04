@@ -68,14 +68,21 @@ const Sparkline: React.FC<{ data: number[]; color: string; height?: number }> = 
   color,
   height = 32,
 }) => {
-  const max = Math.max(...data);
-  const min = Math.min(...data);
+  if (data.length === 0) {
+    return null;
+  }
+  // A single sample has no slope; x = i / (length - 1) would be 0/0 = NaN,
+  // so draw it as a flat line until a second sample arrives.
+  const series = data.length === 1 ? data.concat(data) : data;
+  const max = Math.max(...series);
+  const min = Math.min(...series);
   const range = max - min || 1;
 
-  const points = data
+  const points = series
     .map((value, i) => {
-      const x = (i / (data.length - 1)) * 100;
-      const y = height - ((value - min) / range) * height;
+      const x = (i / (series.length - 1)) * 100;
+      // A flat series sits mid-height: on the bottom edge half the stroke was clipped
+      const y = max === min ? height / 2 : height - ((value - min) / range) * height;
       return `${x},${y}`;
     })
     .join(' ');

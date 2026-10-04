@@ -5,6 +5,7 @@
 
 
 import { withFallback } from '../_serviceProxy.js';
+import { userDirectory } from './userDirectory.js';
 // Auto-generated stub — implement as needed
 
 export interface OperationalRiskData { [key: string]: any; }
@@ -73,7 +74,8 @@ export const licenseService: any = withFallback({});
 
 export const systemHealthService: any = withFallback({});
 
-export const userManagementService: any = withFallback({});
+// Users are read from the users table; the rest of user management is stubbed.
+export const userManagementService: any = withFallback(userDirectory);
 
 export const featureControlService: any = withFallback({});
 

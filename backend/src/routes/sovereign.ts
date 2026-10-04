@@ -26,6 +26,7 @@ import { agentQueueService, QUEUE_NAMES } from '../services/queue/AgentQueueServ
 import { analyticsRouter } from '../services/storage/AnalyticsRouter';
 import { CLICKHOUSE_TABLES } from '../services/storage/ClickHouseService';
 import { getErrorMessage } from '../utils/errors.js';
+import { asyncRoute } from '../utils/asyncRoute.js';
 
 const router = Router();
 
@@ -889,7 +890,7 @@ router.get('/unleash/health', async (req: Request, res: Response) => {
 /**
  * Get health status of all sovereign services
  */
-router.get('/health', async (req: Request, res: Response) => {
+router.get('/health', asyncRoute(async (req: Request, res: Response) => {
   const services: Record<string, { available: boolean; latency?: number }> = {};
   
   const checkService = async (name: string, checkFn: () => Promise<boolean>) => {
@@ -941,6 +942,6 @@ router.get('/health', async (req: Request, res: Response) => {
     services,
     timestamp: new Date().toISOString(),
   });
-});
+}));
 
 export default router;

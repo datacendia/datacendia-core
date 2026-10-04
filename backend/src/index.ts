@@ -14,6 +14,8 @@
  * @see {@link routes/} for all API route definitions
  */
 
+// First: must be installed before any module creates a router.
+import './utils/expressAsyncErrors.js';
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
@@ -50,7 +52,7 @@ import {
 } from './security/DefenseInDepth.js';
 import { honeypotMiddleware } from './security/Honeypot.js';
 import { csrfProtection, csrfTokenHandler, ensureCsrfToken } from './middleware/csrf.js';
-import { requireOrgScope } from './middleware/tenantIsolation.js';
+import { tenantGate } from './middleware/tenantIsolation.js';
 import { 
   inputSanitizationMiddleware,
   pathTraversalMiddleware,
@@ -107,6 +109,7 @@ import stakeholderPortalsRoutes from './routes/stakeholder-portals.js';
 import remediationTicketingRoutes from './routes/remediation-ticketing.js';
 import modelRegistryRoutes from './routes/model-registry.js';
 import feedbackRoutes from './routes/feedback.js';
+import marketingLeadsRoutes from './routes/marketing-leads.js';
 import enterprisePlatinumRoutes from './routes/enterprise-platinum.js';
 import { registerPlatformServices } from './core/services/PlatformServices.js';
 import { applyPerformanceIndexes } from './startup/applyIndexes.js';
@@ -148,26 +151,6 @@ app.get('/liveness', (_req, res) => {
 app.get('/readiness', async (_req, res) => {
   // Basic readiness - could add DB/Redis checks here
   res.status(200).send('OK');
-});
-
-// Inference provider status — public endpoint so frontend can check AI availability
-app.get('/api/v1/inference/status', async (_req, res) => {
-  try {
-    const { inference } = await import('./services/inference/InferenceService.js');
-    const status = inference.getStatus();
-    const health = await inference.healthCheck();
-    res.json({
-      available: health.available,
-      provider: status.activeProvider,
-      primaryProvider: status.primaryProvider,
-      failoverActive: status.failoverActive,
-      latencyMs: health.latencyMs,
-      modelsLoaded: health.modelsLoaded,
-      error: health.error,
-    });
-  } catch (err: any) {
-    res.json({ available: false, provider: 'unknown', error: err.message });
-  }
 });
 
 // Prometheus metrics - before middleware so scraping works without auth
@@ -241,9 +224,34 @@ const corsMiddleware = cors({
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Request-ID', 'X-Data-Source-Id', 'x-data-source-id'],
+  // X-CSRF-Token: the API client sends it on every write. Without it here the
+  // browser's preflight fails, so cross-origin sign-in (the demo: :5173 -> :3001)
+  // failed with "Failed to fetch".
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Request-ID', 'X-Data-Source-Id', 'x-data-source-id', 'X-CSRF-Token'],
 });
 app.use('/api/', corsMiddleware);
+
+// Inference provider status — public, so the frontend can check AI availability.
+// Registered after CORS: the UI calls it cross-origin in the demo (:5173 -> :3001)
+// and in split deployments, and without CORS headers the browser blocked it.
+app.get('/api/v1/inference/status', async (_req, res) => {
+  try {
+    const { inference } = await import('./services/inference/InferenceService.js');
+    const status = inference.getStatus();
+    const health = await inference.healthCheck();
+    res.json({
+      available: health.available,
+      provider: status.activeProvider,
+      primaryProvider: status.primaryProvider,
+      failoverActive: status.failoverActive,
+      latencyMs: health.latencyMs,
+      modelsLoaded: health.modelsLoaded,
+      error: health.error,
+    });
+  } catch (err: any) {
+    res.json({ available: false, provider: 'unknown', error: err.message });
+  }
+});
 
 // Rate limiting — Redis-backed in production for multi-instance consistency
 const limiter = rateLimit({
@@ -333,12 +341,28 @@ app.get('/api/docs.json', (_req, res) => {
 logger.info('📚 API Documentation available at /api/docs');
 
 // =============================================================================
+// API ROUTES - Domain Routers (14 domains, ~110 route modules)
+// All paths remain identical: /api/v1/{original-path}
+// =============================================================================
+app.use('/api/v1', authDomain);                          // auth, users, organizations (no org scope — handles login/register)
+// Public: the site's lead and newsletter forms submit here anonymously. Inside
+// the platform domain they were unreachable: the first domain router's
+// router.use(authenticate) answers 401 before later domains are tried. Listing
+// leads checks its own role (SUPER_ADMIN).
+app.use('/api/v1/marketing-leads', marketingLeadsRoutes);
+// Every route below: a signed-in request must carry an organization. The gate
+// authenticates first; see tenantGate for why requireOrgScope can't stand alone.
+app.use('/api/v1', tenantGate);
+
+// =============================================================================
 // UNIVERSAL REDIS CACHE - Applied to all GET requests (40-60% faster responses)
 // Automatically invalidates on POST/PUT/DELETE mutations
+// After tenantGate, so each entry belongs to one signed-in user (see
+// cacheIdentity). Mounted before authentication, it served any user's cached
+// response to every caller of the same URL, anonymous ones included.
 // =============================================================================
 app.use('/api/v1', apiCache({
   ttl: CACHE_TTLS.DECISIONS,
-  varyByOrg: true,
   excludePaths: [
     /\/auth\//,
     /\/csrf-token/,
@@ -350,50 +374,44 @@ app.use('/api/v1', apiCache({
     /\/platform-assistant/, // Never cache AI assistant responses
   ],
 }));
-
-// =============================================================================
-// API ROUTES - Domain Routers (14 domains, ~110 route modules)
-// All paths remain identical: /api/v1/{original-path}
-// =============================================================================
-app.use('/api/v1', authDomain);                          // auth, users, organizations (no org scope — handles login/register)
-app.use('/api/v1', requireOrgScope, councilDomain);      // council, deliberations, decisions, veto, union, dissent, vox, echo
-app.use('/api/v1', requireOrgScope, dataDomain);         // metrics, alerts, forecasts, data-sources, lineage, druid, rag, graph, horizon
-app.use('/api/v1', requireOrgScope, governanceDomain);   // compliance, govern, panopticon, pillars, responsibility, constitutional-court
-app.use('/api/v1', requireOrgScope, securityDomain);     // crucible, aegis, kms, post-quantum, zkp, adversarial-redteam, redteam
-app.use('/api/v1', requireOrgScope, sovereignDomain);    // sovereign-organs, sovereign-infra, sovereign-arch, vault, evidence, mesh, eternal
-app.use('/api/v1', requireOrgScope, enterpriseDomain);   // enterprise, ledger, audit-packages, ai-insurance, cascade, connectors, hr
-app.use('/api/v1', requireOrgScope, legalDomain);        // legal, legal-research, legal-services
-app.use('/api/v1', requireOrgScope, verticalsDomain);    // financial, healthcare, insurance, energy, defense, sports, vertical-agents
-app.use('/api/v1', requireOrgScope, platformDomain);     // platform, core, cortex, admin, settings, health, i18n, notifications, upload
-app.use('/api/v1', requireOrgScope, simulationDomain);   // sgas, scge, collapse
-app.use('/api/v1', requireOrgScope, workflowsDomain);    // workflows, integrations, scheduler
-app.use('/api/v1', requireOrgScope, intelligenceDomain); // persona, autopilot, decision-intel, gnosis, apotheosis, visualization
+app.use('/api/v1', councilDomain);      // council, deliberations, decisions, veto, union, dissent, vox, echo
+app.use('/api/v1', dataDomain);         // metrics, alerts, forecasts, data-sources, lineage, druid, rag, graph, horizon
+app.use('/api/v1', governanceDomain);   // compliance, govern, panopticon, pillars, responsibility, constitutional-court
+app.use('/api/v1', securityDomain);     // crucible, aegis, kms, post-quantum, zkp, adversarial-redteam, redteam
+app.use('/api/v1', sovereignDomain);    // sovereign-organs, sovereign-infra, sovereign-arch, vault, evidence, mesh, eternal
+app.use('/api/v1', enterpriseDomain);   // enterprise, ledger, audit-packages, ai-insurance, cascade, connectors, hr
+app.use('/api/v1', legalDomain);        // legal, legal-research, legal-services
+app.use('/api/v1', verticalsDomain);    // financial, healthcare, insurance, energy, defense, sports, vertical-agents
+app.use('/api/v1', platformDomain);     // platform, core, cortex, admin, settings, health, i18n, notifications, upload
+app.use('/api/v1', simulationDomain);   // sgas, scge, collapse
+app.use('/api/v1', workflowsDomain);    // workflows, integrations, scheduler
+app.use('/api/v1', intelligenceDomain); // persona, autopilot, decision-intel, gnosis, apotheosis, visualization
 app.use('/api/v1', demoDomain);                          // leads, premium, demo, consolidated (no org scope — public demos)
 // Express Intelligence — enterprise route loaded dynamically
 import('./routes/express.js').then(mod => {
-  app.use('/api/v1/express', requireOrgScope, mod.default as any);
+  app.use('/api/v1/express', mod.default as any);
 }).catch(() => { /* Enterprise module not available */ });
-app.use('/api/v1', requireOrgScope, recallRoutes);                              // CendiaRecall™ - Decision Outcome Tracking
-app.use('/api/v1/eu-banking', requireOrgScope, euBankingRoutes);                // EU Banking - Basel III + EU AI Act compliance
-app.use('/api/v1/kafka', requireOrgScope, kafkaRoutes);                         // Kafka admin & monitoring
-app.use('/api/v1/guardrails', requireOrgScope, guardrailsRoutes);               // NeMo Guardrails admin & evaluation
-app.use('/api/v1/opa', requireOrgScope, opaRoutes);                             // Open Policy Agent policy-as-code
-app.use('/api/v1/temporal', requireOrgScope, temporalRoutes);                   // Temporal.io workflow orchestration
-app.use('/api/v1/openbao', requireOrgScope, openbaoRoutes);                     // OpenBao/Vault secrets & KMS
-app.use('/api/v1/rapids', requireOrgScope, rapidsRoutes);                       // NVIDIA RAPIDS GPU analytics + Confidential Computing
-app.use('/api/v1/flink', requireOrgScope, flinkRoutes);                         // Apache Flink CEP stream processing
-app.use('/api/v1/gateway', requireOrgScope, gatewayRoutes);                     // CendiaGateway AI Governance Gateway
-app.use('/api/v1/wedge', requireOrgScope, wedgeRoutes);                         // Wedge Products Shadow AI, Governance Report, Incident Forensics
-app.use('/api/v1/ops-agents', requireOrgScope, opsAgentsRoutes);                // Ops Agents Report, Analytics, NLP, Pipeline
-app.use('/api/v1/retention', requireOrgScope, retentionRoutes);                 // 7-Year Audit Retention Management
-app.use('/api/v1/service-discovery', requireOrgScope, serviceDiscoveryRoutes);  // Unified Service Discovery & Marketplace
-app.use('/api/v1/policy-authoring', requireOrgScope, policyAuthoringRoutes);    // Custom Policy Authoring & Simulation
-app.use('/api/v1/analytics', requireOrgScope, analyticsReportingRoutes);        // Advanced Analytics & Reporting
-app.use('/api/v1/collaboration', requireOrgScope, stakeholderPortalsRoutes);    // Stakeholder Collaboration Portals
-app.use('/api/v1/remediation', requireOrgScope, remediationTicketingRoutes);    // Automated Remediation & Ticketing
-app.use('/api/v1/model-registry', requireOrgScope, modelRegistryRoutes);        // AI Model Lifecycle & Registry
-app.use('/api/v1/feedback', requireOrgScope, feedbackRoutes);                   // Continuous Feedback & Improvement Loop
-app.use('/api/v1/enterprise', requireOrgScope, enterprisePlatinumRoutes);       // Enterprise Platinum: Self-Healing, Governance Graph, RegSim, Ethics, Sovereignty, HITL, Trust, Agents
+app.use('/api/v1', recallRoutes);                              // CendiaRecall™ - Decision Outcome Tracking
+app.use('/api/v1/eu-banking', euBankingRoutes);                // EU Banking - Basel III + EU AI Act compliance
+app.use('/api/v1/kafka', kafkaRoutes);                         // Kafka admin & monitoring
+app.use('/api/v1/guardrails', guardrailsRoutes);               // NeMo Guardrails admin & evaluation
+app.use('/api/v1/opa', opaRoutes);                             // Open Policy Agent policy-as-code
+app.use('/api/v1/temporal', temporalRoutes);                   // Temporal.io workflow orchestration
+app.use('/api/v1/openbao', openbaoRoutes);                     // OpenBao/Vault secrets & KMS
+app.use('/api/v1/rapids', rapidsRoutes);                       // NVIDIA RAPIDS GPU analytics + Confidential Computing
+app.use('/api/v1/flink', flinkRoutes);                         // Apache Flink CEP stream processing
+app.use('/api/v1/gateway', gatewayRoutes);                     // CendiaGateway AI Governance Gateway
+app.use('/api/v1/wedge', wedgeRoutes);                         // Wedge Products Shadow AI, Governance Report, Incident Forensics
+app.use('/api/v1/ops-agents', opsAgentsRoutes);                // Ops Agents Report, Analytics, NLP, Pipeline
+app.use('/api/v1/retention', retentionRoutes);                 // 7-Year Audit Retention Management
+app.use('/api/v1/service-discovery', serviceDiscoveryRoutes);  // Unified Service Discovery & Marketplace
+app.use('/api/v1/policy-authoring', policyAuthoringRoutes);    // Custom Policy Authoring & Simulation
+app.use('/api/v1/analytics', analyticsReportingRoutes);        // Advanced Analytics & Reporting
+app.use('/api/v1/collaboration', stakeholderPortalsRoutes);    // Stakeholder Collaboration Portals
+app.use('/api/v1/remediation', remediationTicketingRoutes);    // Automated Remediation & Ticketing
+app.use('/api/v1/model-registry', modelRegistryRoutes);        // AI Model Lifecycle & Registry
+app.use('/api/v1/feedback', feedbackRoutes);                   // Continuous Feedback & Improvement Loop
+app.use('/api/v1/enterprise', enterprisePlatinumRoutes);       // Enterprise Platinum: Self-Healing, Governance Graph, RegSim, Ethics, Sovereignty, HITL, Trust, Agents
 
 // Sandbox Analytics - Track demo engagement for Thomson Reuters
 import('./routes/sandbox-analytics.js').then(mod => {
@@ -517,7 +535,9 @@ const startServer = async () => {
 
     // PostgreSQL
     try {
-      await timeout(5000, prisma.$connect(), 'PostgreSQL');
+      // A cold container can take several seconds to open the pool; 5s tripped routinely
+      // and skipped applyPerformanceIndexes below.
+      await timeout(15000, prisma.$connect(), 'PostgreSQL');
       logger.info('Connected to PostgreSQL');
 
       // Auto-apply performance indexes (idempotent - safe to run every startup)

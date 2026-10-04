@@ -42,8 +42,9 @@ export const App: React.FC = () => {
             <DemoModeProvider>
               <ToastProvider>
                 <RouterProvider router={router} />
-                {/* AI Tech Team - Auto-Heal Panel (dev only) */}
-                {import.meta.env.DEV && <TechTeamPanel />}
+                {/* AI Tech Team - Auto-Heal Panel (dev only). The demo runs the dev
+                    server too, so it opts out: visitors shouldn't get an error counter. */}
+                {import.meta.env.DEV && import.meta.env['VITE_HIDE_DEV_TOOLS'] !== 'true' && <TechTeamPanel />}
                 {/* Demo Recording Overlay */}
                 <DemoOverlay />
               </ToastProvider>

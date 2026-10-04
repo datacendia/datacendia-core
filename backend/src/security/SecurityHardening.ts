@@ -31,6 +31,7 @@ import crypto from 'crypto';
 import { Request, Response, NextFunction } from 'express';
 import { redis } from '../config/redis.js';
 import { logger } from '../utils/logger.js';
+import { asyncRoute } from '../utils/asyncRoute.js';
 
 // =============================================================================
 // CRYPTOGRAPHIC STANDARDS (FIPS 140-3 COMPLIANT)
@@ -491,11 +492,11 @@ export async function requestSigningMiddleware(
 /**
  * IP allowlist/blocklist middleware
  */
-export async function ipFilterMiddleware(
+export const ipFilterMiddleware = asyncRoute(async (
   req: Request,
   res: Response,
   next: NextFunction
-): Promise<void> {
+): Promise<void> => {
   const ip = req.ip || req.socket.remoteAddress || 'unknown';
   
   // Check blocklist
@@ -527,16 +528,16 @@ export async function ipFilterMiddleware(
   }
 
   next();
-}
+});
 
 /**
  * Advanced rate limiting with sliding window
  */
-export async function advancedRateLimitMiddleware(
+export const advancedRateLimitMiddleware = asyncRoute(async (
   req: Request,
   res: Response,
   next: NextFunction
-): Promise<void> {
+): Promise<void> => {
   const ip = req.ip || 'unknown';
   const userId = req.user?.id || 'anonymous';
   const endpoint = `${req.method}:${req.path}`;
@@ -583,7 +584,7 @@ export async function advancedRateLimitMiddleware(
   }
 
   next();
-}
+});
 
 // =============================================================================
 // AUDIT LOGGING (TAMPER-EVIDENT)

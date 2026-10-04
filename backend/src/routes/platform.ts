@@ -296,12 +296,12 @@ router.get('/events/history', (req: Request, res: Response) => {
 });
 
 // =============================================================================
-// PLATFORM CATALOG � 3-Tier Architecture Endpoints
+// PLATFORM CATALOG — 3-Tier Architecture Endpoints
 // =============================================================================
 
 /**
  * GET /api/v1/platform/catalog
- * Complete platform catalog � 3 tiers, 12 pillars, all services
+ * Complete platform catalog — 3 tiers, 12 pillars, all services
  */
 router.get('/catalog', (req: Request, res: Response) => {
   res.json(getPlatformSummary());

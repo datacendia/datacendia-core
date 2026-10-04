@@ -11,12 +11,13 @@
 // See LICENSE file for details.
 
 // =============================================================================
-// VECTOR SERVICE - pgvector for AI Memory (CendiaGnosis� RAG)
+// VECTOR SERVICE - pgvector for AI Memory (CendiaGnosis™ RAG)
 // =============================================================================
 // Uses PostgreSQL's pgvector extension for semantic search.
 // Powers: Document retrieval, Decision memory, Agent long-term context
 // =============================================================================
 
+import { getOllamaBaseUrl } from '../../config/ollama.js';
 import { PrismaClient } from '@prisma/client';
 import { getErrorMessage } from '../../utils/errors.js';
 
@@ -122,7 +123,7 @@ class VectorService {
    */
   async generateEmbedding(text: string, model: string = 'qwen3-embedding:4b'): Promise<number[]> {
     try {
-      const response = await fetch(`${process.env.OLLAMA_HOST || 'http://127.0.0.1:11434'}/api/embeddings`, {
+      const response = await fetch(`${getOllamaBaseUrl()}/api/embeddings`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ model, prompt: text }),

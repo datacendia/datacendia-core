@@ -14,6 +14,7 @@
 
 import { Router, Request, Response } from 'express';
 import { devAuth } from '../middleware/auth.js';
+import { asyncRoute } from '../utils/asyncRoute.js';
 import { nlpBiasDetectionService } from '../services/dcii/NLPBiasDetectionService.js';
 
 const router = Router();
@@ -23,7 +24,7 @@ router.get('/health', (_req: Request, res: Response) => {
   res.json({ success: true, data: { status: 'healthy', service: 'bias-detection', timestamp: new Date().toISOString() } });
 });
 
-router.get('/status', async (_req: Request, res: Response) => {
+router.get('/status', asyncRoute(async (_req: Request, res: Response) => {
   const ollamaAvailable = await nlpBiasDetectionService.checkOllama();
   res.json({
     success: true,
@@ -36,7 +37,7 @@ router.get('/status', async (_req: Request, res: Response) => {
       ],
     },
   });
-});
+}));
 
 router.use(devAuth);
 

@@ -16,6 +16,7 @@ import { Prisma } from '@prisma/client';
 import { prisma } from '../config/database.js';
 import { cache } from '../config/redis.js';
 import { logger } from '../utils/logger.js';
+import { revocationKey } from '../utils/tokenRevocation.js';
 import { errors } from '../middleware/errorHandler.js';
 import { emailService } from '../services/email.js';
 import {
@@ -450,7 +451,7 @@ router.post('/logout', authenticate, async (req: Request, res: Response, next: N
 
     if (token) {
       // Add token to blacklist (expires when token would expire)
-      await cache.set(`blacklist:${token}`, '1', 3600);
+      await cache.set(revocationKey(token), '1', 3600);
     }
 
     // Delete all sessions for user

@@ -97,6 +97,13 @@ export const errorHandler = (
     });
   }
 
+  // A handler can fail after it started answering (rejected promises reach
+  // here now); Express's default handler then closes the connection.
+  if (res.headersSent) {
+    next(err);
+    return;
+  }
+
   // Handle Zod validation errors
   if (err instanceof ZodError) {
     res.status(400).json({

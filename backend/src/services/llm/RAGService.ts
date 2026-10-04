@@ -15,6 +15,7 @@
  * Enables the Council to "read" and recall documents
  */
 
+import { getOllamaBaseUrl } from '../../config/ollama.js';
 import crypto from 'crypto';
 import { prisma } from '../../lib/prisma.js';
 
@@ -51,7 +52,7 @@ export interface RAGContext {
  * Call Ollama to generate embeddings
  */
 async function generateEmbedding(text: string, model: string = 'qwen3-embedding:4b'): Promise<number[]> {
-  const response = await fetch('http://127.0.0.1:11434/api/embeddings', {
+  const response = await fetch(`${getOllamaBaseUrl()}/api/embeddings`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ model, prompt: text }),

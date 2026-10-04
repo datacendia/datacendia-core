@@ -95,3 +95,6 @@ __pycache__/
 
 # Stale local typecheck artefacts
 ts-errors*.txt
+
+# Contract-test output (tests/contract); regenerated on every run
+pacts/

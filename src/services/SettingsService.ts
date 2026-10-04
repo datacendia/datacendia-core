@@ -14,9 +14,11 @@
 // SETTINGS SERVICE - Client Admin API Client
 // =============================================================================
 
-const API_BASE =
-  import.meta.env.VITE_API_URL ||
-  (import.meta.env.DEV ? '/api/v1' : 'http://localhost:3001/api/v1');
+import { API_BASE_URL } from '../lib/api/client';
+
+// Requests go through lib/api/fetchAuth, which attaches the session (and the
+// CSRF token on writes) and refreshes it when it expires, as ApiClient does.
+const API_BASE = API_BASE_URL;
 
 // =============================================================================
 // TYPES
@@ -170,16 +172,13 @@ class SettingsService {
 
   private async request<T>(endpoint: string, options?: RequestInit): Promise<T> {
     const response = await fetch(`${this.baseUrl}${endpoint}`, {
-      headers: {
-        'Content-Type': 'application/json',
-        // Add auth token here in production
-      },
+      headers: { 'Content-Type': 'application/json' },
       ...options,
     });
 
     if (!response.ok) {
       const error = await response.json().catch(() => ({ error: 'Request failed' }));
-      throw new Error(error.error || `HTTP ${response.status}`);
+      throw new Error(error.error?.message ?? error.error ?? `HTTP ${response.status}`);
     }
 
     return response.json();

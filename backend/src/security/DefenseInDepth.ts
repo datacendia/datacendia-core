@@ -38,6 +38,7 @@ import { Request, Response, NextFunction } from 'express';
 import crypto from 'crypto';
 import { redis } from '../config/redis.js';
 import { logger } from '../utils/logger.js';
+import { asyncRoute } from '../utils/asyncRoute.js';
 
 // =============================================================================
 // ATTACK DETECTION PATTERNS
@@ -789,11 +790,11 @@ export function generateCsrfToken(): string {
   return crypto.randomBytes(32).toString('base64url');
 }
 
-export async function validateCsrfToken(
+export const validateCsrfToken = asyncRoute(async (
   req: Request,
   res: Response,
   next: NextFunction
-): Promise<void> {
+): Promise<void> => {
   // Skip for safe methods
   if (['GET', 'HEAD', 'OPTIONS'].includes(req.method)) {
     return next();
@@ -814,17 +815,17 @@ export async function validateCsrfToken(
   }
 
   next();
-}
+});
 
 // =============================================================================
 // REPLAY ATTACK PROTECTION
 // =============================================================================
 
-export async function preventReplayAttack(
+export const preventReplayAttack = asyncRoute(async (
   req: Request,
   res: Response,
   next: NextFunction
-): Promise<void> {
+): Promise<void> => {
   const nonce = req.headers['x-nonce'] as string;
   const timestamp = req.headers['x-timestamp'] as string;
 
@@ -853,7 +854,7 @@ export async function preventReplayAttack(
   // Store nonce for 10 minutes
   await redis.setex(nonceKey, 600, '1');
   next();
-}
+});
 
 // =============================================================================
 // DATA EXFILTRATION PREVENTION

@@ -23,7 +23,11 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
 import { initErrorTracking } from './lib/errorTracking';
+import { installFetchAuth } from './lib/api/fetchAuth';
 import { ThemeProvider } from './contexts/ThemeContext';
+
+// Direct fetch() calls to the API carry the session (see lib/api/fetchAuth)
+installFetchAuth();
 
 // Initialize error tracking for production-grade error monitoring
 initErrorTracking();

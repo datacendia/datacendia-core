@@ -6,9 +6,18 @@ echo "║         DATACENDIA DEMO MODE                               ║"
 echo "║         Auto-migrate + Auto-seed                           ║"
 echo "╚════════════════════════════════════════════════════════════╝"
 
-# Wait for postgres
-echo "Waiting for PostgreSQL..."
-until wget -q --spider http://postgres:5432 2>/dev/null || pg_isready -h postgres -U datacendia_demo 2>/dev/null; do
+# Wait for postgres. Postgres doesn't speak HTTP and the image has no
+# pg_isready, so check the TCP port directly (busybox nc ships with Alpine).
+PG_HOST="${PG_HOST:-postgres}"
+PG_PORT="${PG_PORT:-5432}"
+echo "Waiting for PostgreSQL at ${PG_HOST}:${PG_PORT}..."
+tries=0
+until nc -z "$PG_HOST" "$PG_PORT" 2>/dev/null; do
+  tries=$((tries + 1))
+  if [ "$tries" -ge 60 ]; then
+    echo "PostgreSQL did not accept connections after 120s. Giving up."
+    exit 1
+  fi
   sleep 2
   echo "  ...waiting for PostgreSQL"
 done
@@ -30,11 +39,15 @@ npx tsx prisma/seed-full-demo.ts 2>&1 || {
   echo "Warning: Base seed had issues. Demo may have partial data."
 }
 
-# Seed showcase deliberations (5 verticals + human override)
-echo "Seeding Council showcase deliberations..."
-npx tsx prisma/seed-council-showcase.ts 2>&1 || {
-  echo "Warning: Showcase seed had issues. Deliberations may be incomplete."
-}
+# Seed showcase deliberations (5 verticals + human override) when this edition ships them
+if [ -f prisma/seed-council-showcase.ts ]; then
+  echo "Seeding Council showcase deliberations..."
+  npx tsx prisma/seed-council-showcase.ts 2>&1 || {
+    echo "Warning: Showcase seed had issues. Deliberations may be incomplete."
+  }
+else
+  echo "No showcase deliberations in this edition (prisma/seed-council-showcase.ts not present)."
+fi
 
 echo ""
 echo "╔════════════════════════════════════════════════════════════╗"
@@ -44,8 +57,8 @@ echo "║  Frontend:  http://localhost:5173                          ║"
 echo "║  API:       http://localhost:3001                          ║"
 echo "║  API Docs:  http://localhost:3001/api/v1                   ║"
 echo "║                                                            ║"
-echo "║  Demo Login: sarah.chen@acme.demo                         ║"
-echo "║  (dev auth bypass — no password needed)                    ║"
+echo "║  Demo login:    sarah.chen@acme.demo                       ║"
+echo "║  Password:      demo-password-2024                         ║"
 echo "╚════════════════════════════════════════════════════════════╝"
 echo ""
 

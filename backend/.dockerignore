@@ -1,0 +1,12 @@
+# Installed inside the image. A host copy (Windows binaries, non-hoisted
+# workspace packages) would overwrite it at `COPY . .`.
+node_modules
+
+# Never bake local secrets into an image layer.
+.env
+.env.*
+!.env.example
+
+dist
+coverage
+*.log

@@ -104,6 +104,16 @@ export const csrfProtection = (
     return next();
   }
 
+  // Bearer-authenticated requests can't be forged cross-site: browsers only
+  // attach ambient credentials (cookies) on their own, and another origin can't
+  // add an Authorization header without a CORS preflight this API rejects. The
+  // app authenticates with bearer tokens, so the double-submit check guards
+  // the anonymous writes (login, registration, password reset) and anything
+  // cookie-authenticated.
+  if (/^Bearer\s+\S+/i.test(req.get('authorization') ?? '')) {
+    return next();
+  }
+
   // Skip in test environment only if explicitly disabled
   if (config.nodeEnv === 'test' && process.env['DISABLE_CSRF'] === 'true') {
     return next();
