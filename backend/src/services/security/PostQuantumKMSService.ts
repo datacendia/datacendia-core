@@ -71,9 +71,13 @@ export function normalizeAlgorithm(input: PQAlgorithmInput): PQAlgorithm {
   // confusing TypeError rather than a clean "unsupported algorithm".
   const own = (obj: object, k: string) => Object.prototype.hasOwnProperty.call(obj, k);
 
-  if (own(WITHDRAWN_ALGORITHM_IDS, key)) throw new Error(WITHDRAWN_ALGORITHM_IDS[key]!);
+  if (own(WITHDRAWN_ALGORITHM_IDS, key) && WITHDRAWN_ALGORITHM_IDS[key] !== undefined) {
+    throw new Error(WITHDRAWN_ALGORITHM_IDS[key]);
+  }
   if (own(ALGORITHMS, key)) return key as PQAlgorithm;
-  if (own(LEGACY_ALGORITHM_IDS, key)) return LEGACY_ALGORITHM_IDS[key]!;
+  if (own(LEGACY_ALGORITHM_IDS, key) && LEGACY_ALGORITHM_IDS[key] !== undefined) {
+    return LEGACY_ALGORITHM_IDS[key];
+  }
 
   throw new Error(
     `Unsupported algorithm: ${input}. Supported: ${Object.keys(ALGORITHMS).join(', ')}`
