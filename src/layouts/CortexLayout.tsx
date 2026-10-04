@@ -46,7 +46,7 @@ import {
   Factory, Gavel, HeartPulse, Banknote, Building, ShieldCheck, Pill,
   Zap, Monitor, ShoppingCart, HardHat, Truck, Clapperboard,
   GraduationCap, Trophy, Columns, FileSignature, TrendingUp, Siren,
-  Compass, FileCheck, Bot,
+  Compass, FileCheck, Bot, ChevronDown,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -473,7 +473,6 @@ const bottomNavigationItems: NavItem[] = [
 ];
 
 // Legacy compat
-const navigationItems = [homeItem, ...foundationGroup.items];
 const pillarItems: { id: string; labelKey: string; emoji: string; path: string; tooltip: string }[] = [];
 
 // Get current page for quick actions
@@ -1077,9 +1076,20 @@ const sovereignFeatures = [
 // RENAMED: Panopticon ? Oversight (in Trust Layer)
 
 // Inner layout component that can use translations
+// Sidebar label for each role. A role missing here shows the generic "User".
+const ROLE_LABELS: Record<string, string> = {
+  OWNER: 'label.owner',
+  SUPER_ADMIN: 'label.platform_admin',
+  ADMIN: 'label.admin',
+  ANALYST: 'label.analyst',
+  VIEWER: 'label.viewer',
+};
+
 const CortexLayoutInner: React.FC = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // Phone drawer: which of the header's menus is expanded in it.
+  const [mobileSection, setMobileSection] = useState<'verticals' | 'admin' | null>(null);
   const [isPremiumDropdownOpen, setIsPremiumDropdownOpen] = useState(false);
   const [isEnterpriseDropdownOpen, setIsEnterpriseDropdownOpen] = useState(false);
   const [isSovereignDropdownOpen, setIsSovereignDropdownOpen] = useState(false);
@@ -1128,7 +1138,78 @@ const CortexLayoutInner: React.FC = () => {
         .join('')
         .slice(0, 2)
         .toUpperCase()
-    : 'SR';
+    : (user?.email?.[0] ?? '').toUpperCase();
+
+  // ---------------------------------------------------------------------------
+  // Phone drawer rows. Below lg the sidebar is a drawer, and below sm the
+  // header hides its Verticals, Admin, Demo and Language menus, so the drawer
+  // carries all of them.
+  // ---------------------------------------------------------------------------
+  const goFromDrawer = (path: string) => {
+    navigate(path);
+    setIsMobileMenuOpen(false);
+  };
+
+  const renderDrawerItem = (item: NavItem) => {
+    const Icon = item.icon as React.ComponentType<{ className?: string }>;
+    const active = isActive(item.path) && !item.locked;
+    return (
+      <button
+        key={item.id}
+        onClick={() => goFromDrawer(item.path)}
+        className={cn(
+          'w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors text-sm font-medium',
+          item.locked
+            ? 'text-gray-600 hover:bg-sovereign-hover hover:text-gray-400'
+            : active
+              ? 'bg-sovereign-active text-white border-l-2 border-cyan-500'
+              : 'text-gray-400 hover:bg-sovereign-hover hover:text-white'
+        )}
+      >
+        <Icon className={cn('w-5 h-5 shrink-0', item.locked && 'opacity-40')} />
+        <span className="flex-1 text-left">{item.labelKey ? t(item.labelKey) : item.label}</span>
+        {item.locked && <Lock className="w-3 h-3 opacity-30" />}
+      </button>
+    );
+  };
+
+  const renderDrawerMenu = (
+    id: 'verticals' | 'admin',
+    label: string,
+    MenuIcon: LucideIcon,
+    links: Array<{ id: string; label: string; path: string; Icon: React.ComponentType<{ className?: string }> }>
+  ) => {
+    const open = mobileSection === id;
+    return (
+      <div key={id}>
+        <button
+          onClick={() => setMobileSection(open ? null : id)}
+          aria-expanded={open}
+          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-400 hover:bg-sovereign-hover hover:text-white transition-colors"
+        >
+          <MenuIcon className="w-5 h-5 shrink-0" />
+          <span className="flex-1 text-left">{label}</span>
+          <ChevronDown className={cn('w-4 h-4 transition-transform', open && 'rotate-180')} />
+        </button>
+        {open &&
+          links.map((link) => (
+            <button
+              key={link.id}
+              onClick={() => goFromDrawer(link.path)}
+              className={cn(
+                'w-full flex items-center gap-3 pl-8 pr-3 py-2 rounded-lg text-sm transition-colors',
+                location.pathname === link.path
+                  ? 'bg-sovereign-active text-white'
+                  : 'text-gray-400 hover:bg-sovereign-hover hover:text-white'
+              )}
+            >
+              <link.Icon className="w-4 h-4 shrink-0" />
+              <span className="text-left">{link.label}</span>
+            </button>
+          ))}
+      </div>
+    );
+  };
 
   return (
     <DataSourceProvider>
@@ -1328,8 +1409,8 @@ const CortexLayoutInner: React.FC = () => {
                   <span className="text-crimson-400 font-medium text-sm">{userInitials}</span>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium text-white truncate">{user?.name || 'Stuart Rainey'}</p>
-                  <p className="text-xs text-gray-500 truncate">{user?.role === 'OWNER' ? t('label.owner') : t('label.admin')}</p>
+                  <p className="text-sm font-medium text-white truncate">{user?.name || user?.email}</p>
+                  <p className="text-xs text-gray-500 truncate">{user?.role ? t(ROLE_LABELS[user.role] ?? 'label.user') : ''}</p>
                 </div>
               </div>
             </div>
@@ -1596,23 +1677,26 @@ const CortexLayoutInner: React.FC = () => {
                           </button>
                         ))}
                       </div>
-                      <div className="p-2 bg-sovereign-elevated border-t border-sovereign-border-subtle rounded-b-xl flex-shrink-0">
-                        <button
-                          onClick={() => {
-                            navigate('/cortex/admin/vertical-config');
-                            setIsEnterpriseDropdownOpen(false);
-                          }}
-                          className="w-full text-xs text-purple-400 hover:text-purple-300 text-center"
-                        >
-                          Configure Vertical Services
-                        </button>
-                      </div>
+                      {isOwnerOrAdmin && (
+                        <div className="p-2 bg-sovereign-elevated border-t border-sovereign-border-subtle rounded-b-xl flex-shrink-0">
+                          <button
+                            onClick={() => {
+                              navigate('/cortex/admin/vertical-config');
+                              setIsEnterpriseDropdownOpen(false);
+                            }}
+                            className="w-full text-xs text-purple-400 hover:text-purple-300 text-center"
+                          >
+                            Configure Vertical Services
+                          </button>
+                        </div>
+                      )}
                     </div>
                   </>
                 )}
               </div>
 
-              {/* Admin Dropdown (hidden for non-admins in production) */}
+              {/* Admin Dropdown: organization admins only, as the pages and API behind it */}
+              {isOwnerOrAdmin && (
               <div className="relative hidden sm:block">
                 <button
                   onClick={() => setIsSovereignDropdownOpen(!isSovereignDropdownOpen)}
@@ -1708,6 +1792,7 @@ const CortexLayoutInner: React.FC = () => {
                   </>
                 )}
               </div>
+              )}
 
               {/* Demo Mode Toggle */}
               <DemoModeToggle className="hidden sm:block" />
@@ -1741,10 +1826,10 @@ const CortexLayoutInner: React.FC = () => {
                     <div className="absolute top-full right-0 mt-2 w-56 bg-sovereign-card rounded-xl shadow-2xl border border-sovereign-border z-50">
                       <div className="p-4 border-b border-sovereign-border-subtle">
                         <p className="text-sm font-semibold text-white">
-                          {user?.name || 'John Smith'}
+                          {user?.name || user?.email}
                         </p>
                         <p className="text-xs text-gray-500 truncate">
-                          {user?.email || 'john@datacendia.com'}
+                          {user?.email}
                         </p>
                       </div>
                       <div className="py-1">
@@ -1812,9 +1897,9 @@ const CortexLayoutInner: React.FC = () => {
             />
 
             {/* Sidebar */}
-            <aside className="absolute left-0 top-0 bottom-0 w-64 bg-sovereign-elevated shadow-2xl border-r border-sovereign-border-subtle">
+            <aside className="absolute left-0 top-0 bottom-0 w-72 max-w-[85vw] flex flex-col bg-sovereign-elevated shadow-2xl border-r border-sovereign-border-subtle">
               {/* Logo */}
-              <div className="h-16 flex items-center justify-between px-4 border-b border-sovereign-border-subtle">
+              <div className="h-16 shrink-0 flex items-center justify-between px-4 border-b border-sovereign-border-subtle">
                 <Logo size="sm" />
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -1825,37 +1910,63 @@ const CortexLayoutInner: React.FC = () => {
                 </button>
               </div>
 
-              {/* Data source picker (the header hides it at this width) */}
-              <div className="px-2 pt-3">
-                <DataSourceSelector compact />
+              <div className="flex-1 overflow-y-auto">
+                {/* Data source picker (the header hides it at this width) */}
+                <div className="px-2 pt-3">
+                  <DataSourceSelector compact />
+                </div>
+
+                {/* Navigation: everything the desktop sidebar lists */}
+                <nav className="py-4 px-2 space-y-1">
+                  {renderDrawerItem(homeItem)}
+                  {tierGroups.map((group) => (
+                    <div key={group.id} className="pt-3 mt-2 border-t border-sovereign-border-subtle">
+                      <p className="px-3 mb-2 text-[10px] font-bold uppercase tracking-widest text-gray-500">
+                        {group.label}
+                      </p>
+                      {group.items.map(renderDrawerItem)}
+                    </div>
+                  ))}
+                  <div className="pt-3 mt-2 border-t border-sovereign-border-subtle">
+                    <p className="px-3 mb-2 text-[10px] font-bold uppercase tracking-widest text-gray-500">
+                      SYSTEM
+                    </p>
+                    {[...systemItems, ...bottomNavigationItems].map(renderDrawerItem)}
+                  </div>
+
+                  {/* The header's Verticals and Admin menus */}
+                  <div className="pt-3 mt-2 border-t border-sovereign-border-subtle">
+                    {renderDrawerMenu(
+                      'verticals',
+                      'Industry Verticals',
+                      Factory,
+                      verticalPacks.map((pack) => ({ id: pack.id, label: pack.label, path: pack.path, Icon: pack.Icon }))
+                    )}
+                    {isOwnerOrAdmin && renderDrawerMenu('admin', 'Administration', Settings, [
+                      { id: 'vertical-config', label: 'Vertical Config', path: '/cortex/admin/vertical-config', Icon: Settings },
+                      ...filteredSovereignFeatures.map((feature) => ({
+                        id: feature.id,
+                        label: feature.label,
+                        path: feature.path,
+                        Icon: feature.Icon,
+                      })),
+                    ])}
+                  </div>
+                </nav>
               </div>
 
-              {/* Navigation */}
-              <nav className="py-4 px-2 space-y-1">
-                {navigationItems.map((item) => {
-                  const Icon = item.icon;
-                  const active = isActive(item.path);
-                  return (
-                    <button
-                      key={item.id}
-                      onClick={() => {
-                        navigate(item.path);
-                        setIsMobileMenuOpen(false);
-                      }}
-                      className={cn(
-                        'w-full flex items-center gap-3 px-3 py-2.5 rounded-lg',
-                        'transition-colors text-sm font-medium',
-                        active
-                          ? 'bg-sovereign-active text-white border-l-2 border-cyan-500'
-                          : 'text-gray-400 hover:bg-sovereign-hover hover:text-white'
-                      )}
-                    >
-                      <Icon />
-                      <span>{item.labelKey ? t(item.labelKey) : item.label}</span>
-                    </button>
-                  );
-                })}
-              </nav>
+              {/* Demo mode and language. Outside the scrolling list so their
+                  menus, which open upward, aren't clipped. */}
+              <div className="shrink-0 px-3 py-2 border-t border-sovereign-border-subtle space-y-1">
+                <div className="flex items-center gap-3">
+                  <DemoModeToggle placement="above-left" />
+                  <span className="text-xs text-gray-500">Demo mode</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <LanguageSelector placement="above-left" />
+                  <span className="text-xs text-gray-500">Language</span>
+                </div>
+              </div>
             </aside>
           </div>
         )}

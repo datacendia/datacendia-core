@@ -67,6 +67,7 @@
     "login": {
       "title": "Willkommen zurück",
       "subtitle": "Melden Sie sich bei Ihrem Konto an",
+      "signInToContinue": "Bitte melden Sie sich an, um fortzufahren.",
       "email": "E-Mail-Adresse",
       "password": "Passwort",
       "rememberMe": "Angemeldet bleiben",

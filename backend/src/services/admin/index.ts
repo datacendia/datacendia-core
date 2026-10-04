@@ -83,7 +83,7 @@ export const rdProjectService: any = withFallback({});
 
 export const adminAIService: any = withFallback({});
 
-export const getPlatformDashboard: any = withFallback({});
+export { getPlatformDashboard } from './platformDashboard.js';
 
 export const preMortemService: any = withFallback({});
 

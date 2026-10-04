@@ -67,6 +67,7 @@
     "login": {
       "title": "Karibu tena",
       "subtitle": "Ingia kwenye akaunti yako",
+      "signInToContinue": "Tafadhali ingia ili uendelee.",
       "email": "Anwani ya barua pepe",
       "password": "Nenosiri",
       "rememberMe": "Nikumbuke",

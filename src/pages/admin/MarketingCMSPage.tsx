@@ -74,18 +74,18 @@ export const MarketingCMSPage: React.FC = () => {
   const [editMode, setEditMode] = useState(false);
   const [editContent, setEditContent] = useState('');
 
-  // Check if user is OWNER
-  const isOwner = user?.role === 'OWNER';
+  // The platform owner is SUPER_ADMIN, as everywhere else in the admin console.
+  // OWNER is an organization role: any customer organization has one.
+  const isPlatformOwner = user?.role === 'SUPER_ADMIN';
 
-  // If not owner, show access denied
-  if (!isOwner) {
+  if (!isPlatformOwner) {
     return (
       <div className="min-h-[60vh] flex items-center justify-center">
         <div className="text-center">
           <div className="text-6xl mb-4">🔒</div>
           <h1 className="text-2xl mb-2" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>ACCESS DENIED</h1>
           <p className="text-neutral-400">
-            Only the platform owner (Stuart Rainey) can access the Marketing CMS.
+            Only the platform owner can access the Marketing CMS.
           </p>
           <p className="text-neutral-500 text-sm mt-4">
             Your role: {user?.role || 'Unknown'}
@@ -144,7 +144,7 @@ export const MarketingCMSPage: React.FC = () => {
           <h1 className="text-2xl flex items-center gap-3" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>
             🌐 MARKETING WEBSITE CMS
             <span className="px-2 py-0.5 bg-amber-500/20 text-amber-400 text-xs rounded-full">
-              OWNER ONLY
+              PLATFORM OWNER ONLY
             </span>
           </h1>
           <p className="text-neutral-400 mt-1">

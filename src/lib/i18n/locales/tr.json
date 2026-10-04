@@ -67,6 +67,7 @@
     "login": {
       "title": "Tekrar hoş geldiniz",
       "subtitle": "Hesabınıza giriş yapın",
+      "signInToContinue": "Devam etmek için lütfen giriş yapın.",
       "email": "E-posta adresi",
       "password": "Şifre",
       "rememberMe": "Beni hatırla",

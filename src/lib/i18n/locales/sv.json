@@ -67,6 +67,7 @@
     "login": {
       "title": "Välkommen tillbaka",
       "subtitle": "Logga in på ditt konto",
+      "signInToContinue": "Logga in för att fortsätta.",
       "email": "E-postadress",
       "password": "Lösenord",
       "rememberMe": "Kom ihåg mig",

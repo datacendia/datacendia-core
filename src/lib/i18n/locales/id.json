@@ -67,6 +67,7 @@
     "login": {
       "title": "Selamat datang kembali",
       "subtitle": "Masuk ke akun Anda",
+      "signInToContinue": "Silakan masuk untuk melanjutkan.",
       "email": "Alamat email",
       "password": "Kata sandi",
       "rememberMe": "Ingat saya",
