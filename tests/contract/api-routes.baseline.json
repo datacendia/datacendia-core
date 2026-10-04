@@ -1,0 +1,23 @@
+[
+  "DELETE /api/v1/workflows/:p",
+  "GET /api/v1/compliance-monitor/alerts",
+  "GET /api/v1/compliance-monitor/frameworks/:p/controls",
+  "GET /api/v1/compliance-monitor/scans",
+  "GET /api/v1/council/agents/:p/status",
+  "GET /api/v1/council/sessions",
+  "GET /api/v1/cross-jurisdiction/matrix",
+  "GET /api/v1/horizon/scenarios",
+  "GET /api/v1/predict/scenarios/:p",
+  "GET /api/v1/sgas/agents/status",
+  "POST /api/v1/auth/find-account",
+  "POST /api/v1/compliance-monitor/frameworks/:p/scan",
+  "POST /api/v1/council/deliberations/:p/control",
+  "POST /api/v1/council/deliberations/:p/intervention",
+  "POST /api/v1/cross-jurisdiction/assess",
+  "POST /api/v1/decision-intel/research/start",
+  "POST /api/v1/decision-intel/similar",
+  "POST /api/v1/decision-intel/synthesize",
+  "POST /api/v1/decision-intel/verify-claim",
+  "POST /api/v1/deliberations/:p/intervene",
+  "POST /api/v1/druid/query"
+]

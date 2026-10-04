@@ -60,12 +60,14 @@ export default function PolicyAuthoringPage() {
   const fetchData = useCallback(async () => {
     setLoading(true);
     try {
+      // Both endpoints answer { success, data: [...] }: the list is `data` itself.
+      // Reading data.templates / data.policies left both lists always empty.
       const [tplResp, polResp] = await Promise.allSettled([
-        apiClient.api.get<any>('/policy-authoring/templates'),
-        apiClient.api.get<any>('/policy-authoring/policies'),
+        apiClient.api.get<PolicyTemplate[]>('/policy-authoring/templates'),
+        apiClient.api.get<PolicyDefinition[]>('/policy-authoring/policies'),
       ]);
-      if (tplResp.status === 'fulfilled') setTemplates(tplResp.value?.data?.templates || tplResp.value?.templates || []);
-      if (polResp.status === 'fulfilled') setPolicies(polResp.value?.data?.policies || polResp.value?.policies || []);
+      if (tplResp.status === 'fulfilled') setTemplates(tplResp.value?.data ?? []);
+      if (polResp.status === 'fulfilled') setPolicies(polResp.value?.data ?? []);
     } catch {}
     setLoading(false);
   }, []);
@@ -74,8 +76,10 @@ export default function PolicyAuthoringPage() {
 
   const fetchAudit = async (policyId: string) => {
     try {
-      const resp: any = await apiClient.api.get(`/policy-authoring/policies/${policyId}/audit`);
-      setAuditLog(resp?.data?.auditLog || resp?.auditLog || []);
+      // The route is GET /audit?policyId=…, answering { success, data: [...] };
+      // /policies/:id/audit doesn't exist, so the trail was always empty.
+      const resp = await apiClient.api.get<any[]>('/policy-authoring/audit', { policyId });
+      setAuditLog(resp?.data ?? []);
     } catch { setAuditLog([]); }
   };
 

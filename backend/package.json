@@ -24,6 +24,7 @@
     "test:coverage": "vitest run --coverage",
     "test:e2e": "vitest run tests/e2e.test.ts",
     "lint": "eslint src --ext .ts",
+    "lint:ratchet": "node ../scripts/lint-ratchet.mjs .eslint-baseline.json --ext .ts src",
     "typecheck": "tsc --noEmit",
     "build:community": "tsc -p tsconfig.community.json",
     "check:boundary": "node ../scripts/check-community-boundary.mjs",

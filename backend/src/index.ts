@@ -109,6 +109,7 @@ import stakeholderPortalsRoutes from './routes/stakeholder-portals.js';
 import remediationTicketingRoutes from './routes/remediation-ticketing.js';
 import modelRegistryRoutes from './routes/model-registry.js';
 import feedbackRoutes from './routes/feedback.js';
+import marketingLeadsRoutes from './routes/marketing-leads.js';
 import enterprisePlatinumRoutes from './routes/enterprise-platinum.js';
 import { registerPlatformServices } from './core/services/PlatformServices.js';
 import { applyPerformanceIndexes } from './startup/applyIndexes.js';
@@ -344,6 +345,11 @@ logger.info('📚 API Documentation available at /api/docs');
 // All paths remain identical: /api/v1/{original-path}
 // =============================================================================
 app.use('/api/v1', authDomain);                          // auth, users, organizations (no org scope — handles login/register)
+// Public: the site's lead and newsletter forms submit here anonymously. Inside
+// the platform domain they were unreachable: the first domain router's
+// router.use(authenticate) answers 401 before later domains are tried. Listing
+// leads checks its own role (SUPER_ADMIN).
+app.use('/api/v1/marketing-leads', marketingLeadsRoutes);
 // Every route below: a signed-in request must carry an organization. The gate
 // authenticates first; see tenantGate for why requireOrgScope can't stand alone.
 app.use('/api/v1', tenantGate);

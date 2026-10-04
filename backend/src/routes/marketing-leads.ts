@@ -16,6 +16,7 @@
 import express, { Request, Response, Router } from 'express';
 import { PrismaClient } from '@prisma/client';
 import { logger } from '../utils/logger.js';
+import { authenticate, requireRole } from '../middleware/auth.js';
 
 const router: Router = express.Router();
 const prisma = new PrismaClient();
@@ -129,9 +130,12 @@ router.post('/newsletter', async (req: Request, res: Response) => {
 
 /**
  * GET /marketing-leads
- * Get marketing leads (admin only)
+ * Get marketing leads (platform admins only: these are Datacendia's prospects,
+ * not a tenant's data). It checked no role, so any signed-in user of any
+ * organization could list them. This router is mounted publicly for the two
+ * submission routes above, so the check lives here.
  */
-router.get('/', async (req: Request, res: Response) => {
+router.get('/', authenticate, requireRole('SUPER_ADMIN'), async (req: Request, res: Response) => {
   try {
     const { limit = 50, source } = req.query;
 
