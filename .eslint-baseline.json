@@ -1,0 +1,1088 @@
+{
+  "src/components/agents/ModelSwitcher.tsx": {
+    "@typescript-eslint/no-unused-vars": 6
+  },
+  "src/components/agents/PersonalityTraitsPanel.tsx": {
+    "@typescript-eslint/no-unused-vars": 4,
+    "react/no-unescaped-entities": 2
+  },
+  "src/components/ai-assistant/PlatformAssistant.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 1,
+    "react/no-unescaped-entities": 2
+  },
+  "src/components/AskCouncilButton.tsx": {
+    "@typescript-eslint/no-explicit-any": 1
+  },
+  "src/components/CommandPalette.tsx": {
+    "@typescript-eslint/no-unused-vars": 2,
+    "react/no-unescaped-entities": 2
+  },
+  "src/components/common/CrossModuleActions.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/components/common/DecisionLifecycle.tsx": {
+    "@typescript-eslint/no-unused-vars": 1,
+    "react/no-unescaped-entities": 1
+  },
+  "src/components/common/KeyboardShortcuts.tsx": {
+    "@typescript-eslint/no-unused-vars": 1,
+    "react/no-unescaped-entities": 2
+  },
+  "src/components/common/StatusPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 4
+  },
+  "src/components/compliance/ComplianceEnforcerDemo.tsx": {
+    "react/no-unescaped-entities": 3
+  },
+  "src/components/cortex/RelatedDecisions.tsx": {
+    "@typescript-eslint/no-explicit-any": 1
+  },
+  "src/components/council/AgentDropdown.tsx": {
+    "@typescript-eslint/no-unused-vars": 6
+  },
+  "src/components/council/CouncilModeSelector.tsx": {
+    "@typescript-eslint/no-unused-vars": 6,
+    "react/no-unescaped-entities": 4
+  },
+  "src/components/council/CouncilVideoSimulation.tsx": {
+    "@typescript-eslint/no-unused-vars": 1,
+    "react/no-unescaped-entities": 4
+  },
+  "src/components/council/DeliberationView.tsx": {
+    "@typescript-eslint/no-unused-vars": 4,
+    "no-console": 1
+  },
+  "src/components/council/ExecutiveSummary.tsx": {
+    "@typescript-eslint/no-unused-vars": 3
+  },
+  "src/components/council/LoadOptimizationDashboard.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/components/council/PostDeliberationPanel.tsx": {
+    "@typescript-eslint/no-explicit-any": 1
+  },
+  "src/components/council/RedTeamReportPanel.tsx": {
+    "@typescript-eslint/no-unused-vars": 2,
+    "curly": 7
+  },
+  "src/components/council/SimilarDecisionsPanel.tsx": {
+    "@typescript-eslint/no-unused-vars": 4,
+    "curly": 4
+  },
+  "src/components/crypto/CendiaStampSeal.tsx": {
+    "@typescript-eslint/no-unused-vars": 2
+  },
+  "src/components/crypto/EvidencePackageDownload.tsx": {
+    "@typescript-eslint/no-explicit-any": 3,
+    "@typescript-eslint/no-unused-vars": 2
+  },
+  "src/components/dashboard/LayoutMapRenderer.tsx": {
+    "@typescript-eslint/no-unused-vars": 6
+  },
+  "src/components/dashboard/VerticalDashboard.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/components/dashboard/widgets/AgricultureDashboard.tsx": {
+    "@typescript-eslint/no-unused-vars": 1,
+    "react/no-unescaped-entities": 1
+  },
+  "src/components/dashboard/widgets/FleetTrackingMap.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/components/dashboard/widgets/HospitalityDashboard.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/components/dashboard/widgets/MarketPulse.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/components/dashboard/widgets/PowerGridVisualization.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/components/dashboard/widgets/PropertyPortfolio.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/components/dashboard/widgets/RetailStoreDashboard.tsx": {
+    "@typescript-eslint/no-unused-vars": 2
+  },
+  "src/components/dashboard/widgets/StudentSuccessDashboard.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/components/dashboard/widgets/SystemHealthMatrix.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/components/dashboard/widgets/TelecomNetworkDashboard.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/components/demo/DemoOverlay.tsx": {
+    "@typescript-eslint/no-unused-vars": 1,
+    "react/no-unescaped-entities": 2
+  },
+  "src/components/demo/GuidedWalkthrough.tsx": {
+    "@typescript-eslint/no-non-null-assertion": 2
+  },
+  "src/components/demos/RegulatorsReceiptDemo.tsx": {
+    "@typescript-eslint/no-unused-vars": 21,
+    "react/no-unescaped-entities": 7
+  },
+  "src/components/dev/TechTeamPanel.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 3
+  },
+  "src/components/ErrorBoundary.tsx": {
+    "@typescript-eslint/no-unused-vars": 1,
+    "react/no-unescaped-entities": 1
+  },
+  "src/components/graph/GraphCanvas.tsx": {
+    "@typescript-eslint/no-unused-vars": 2
+  },
+  "src/components/modes/ModeSelector.tsx": {
+    "react/no-unescaped-entities": 2
+  },
+  "src/components/navigation/Breadcrumbs.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/components/navigation/HealthCheck.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/components/notifications/NotificationBell.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/components/onboarding/OnboardingWizard.tsx": {
+    "react/no-unescaped-entities": 3
+  },
+  "src/components/PageGuide.tsx": {
+    "@typescript-eslint/no-unused-vars": 2,
+    "react/no-unescaped-entities": 1
+  },
+  "src/components/reports/DrillDownReportKit.tsx": {
+    "@typescript-eslint/no-explicit-any": 4,
+    "@typescript-eslint/no-unused-vars": 5,
+    "curly": 7,
+    "eqeqeq": 2
+  },
+  "src/components/reports/ExportCompareKit.tsx": {
+    "@typescript-eslint/no-explicit-any": 3,
+    "@typescript-eslint/no-unused-vars": 2,
+    "curly": 7
+  },
+  "src/components/reports/HeatmapTimelineKit.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 1,
+    "curly": 4
+  },
+  "src/components/reports/InteractionKit.tsx": {
+    "@typescript-eslint/no-explicit-any": 4,
+    "@typescript-eslint/no-unused-vars": 10,
+    "curly": 6
+  },
+  "src/components/reports/TrendSparklineKit.tsx": {
+    "@typescript-eslint/no-explicit-any": 5,
+    "curly": 3
+  },
+  "src/components/SEO.tsx": {
+    "unused-disable-directive": 1
+  },
+  "src/components/showcase/ShowcaseDashboard.tsx": {
+    "@typescript-eslint/no-unused-vars": 4,
+    "react/no-unescaped-entities": 2
+  },
+  "src/components/ui/EnterpriseGate.tsx": {
+    "curly": 8,
+    "react/no-unescaped-entities": 1
+  },
+  "src/components/ui/NarrativeGuide.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/components/ui/Toast.tsx": {
+    "@typescript-eslint/no-unused-vars": 2
+  },
+  "src/components/ui/UpgradeNudge.tsx": {
+    "@typescript-eslint/no-unused-vars": 2,
+    "curly": 1
+  },
+  "src/components/workflow/WorkflowBuilder.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 4,
+    "react/no-unescaped-entities": 2
+  },
+  "src/contexts/AuthContext.tsx": {
+    "@typescript-eslint/no-explicit-any": 1
+  },
+  "src/contexts/CouncilQueryContext.tsx": {
+    "@typescript-eslint/no-explicit-any": 3
+  },
+  "src/contexts/DataSourceContext.tsx": {
+    "@typescript-eslint/no-explicit-any": 2
+  },
+  "src/contexts/DemoModeContext.tsx": {
+    "@typescript-eslint/no-non-null-assertion": 1
+  },
+  "src/contexts/LanguageContext.tsx": {
+    "no-console": 2
+  },
+  "src/contexts/VerticalConfigContext.tsx": {
+    "@typescript-eslint/no-non-null-assertion": 1
+  },
+  "src/data/apotheosisModes.ts": {
+    "@typescript-eslint/no-explicit-any": 1
+  },
+  "src/data/cascadeModes.ts": {
+    "@typescript-eslint/no-explicit-any": 1
+  },
+  "src/data/councilModes.ts": {
+    "@typescript-eslint/no-explicit-any": 1
+  },
+  "src/data/crucibleModes.ts": {
+    "@typescript-eslint/no-explicit-any": 1
+  },
+  "src/data/dissentModes.ts": {
+    "@typescript-eslint/no-explicit-any": 1
+  },
+  "src/data/horizonModes.ts": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "no-case-declarations": 3
+  },
+  "src/hooks/usePremiumFeatures.ts": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/hooks/useWebSocket.ts": {
+    "@typescript-eslint/no-explicit-any": 3,
+    "@typescript-eslint/no-unused-vars": 1,
+    "no-console": 3
+  },
+  "src/layouts/CortexLayout.tsx": {
+    "@typescript-eslint/no-unused-vars": 8,
+    "no-console": 3
+  },
+  "src/layouts/MarketingLayout.tsx": {
+    "@typescript-eslint/no-unused-vars": 2
+  },
+  "src/lib/accessibility/useAnnounce.ts": {
+    "@typescript-eslint/no-non-null-assertion": 1
+  },
+  "src/lib/agents/agentPersonalityDefaults.ts": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/lib/agents/techTeam.ts": {
+    "@typescript-eslint/no-unused-vars": 2
+  },
+  "src/lib/algorithms/anomaly.ts": {
+    "@typescript-eslint/no-unused-vars": 4,
+    "curly": 13
+  },
+  "src/lib/algorithms/crypto.ts": {
+    "curly": 4
+  },
+  "src/lib/algorithms/fairness.ts": {
+    "@typescript-eslint/no-unused-vars": 2,
+    "curly": 10
+  },
+  "src/lib/algorithms/iiss-scoring.ts": {
+    "curly": 14
+  },
+  "src/lib/algorithms/real-world-benchmarks.ts": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/lib/algorithms/risk.ts": {
+    "curly": 9
+  },
+  "src/lib/algorithms/statistics.ts": {
+    "curly": 25
+  },
+  "src/lib/api/cortex.ts": {
+    "@typescript-eslint/no-explicit-any": 26
+  },
+  "src/lib/api/index.ts": {
+    "@typescript-eslint/no-explicit-any": 50
+  },
+  "src/lib/api/websocket.ts": {
+    "@typescript-eslint/no-non-null-assertion": 1,
+    "no-console": 2
+  },
+  "src/lib/caselaw/offline.ts": {
+    "no-console": 1
+  },
+  "src/lib/caselaw/sources.ts": {
+    "@typescript-eslint/no-non-null-assertion": 1
+  },
+  "src/lib/council/CouncilStreamClient.ts": {
+    "@typescript-eslint/no-explicit-any": 3,
+    "@typescript-eslint/no-non-null-assertion": 1,
+    "no-console": 8
+  },
+  "src/lib/council/useCouncilStream.ts": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-non-null-assertion": 3,
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/lib/deterministic.ts": {
+    "@typescript-eslint/no-non-null-assertion": 1
+  },
+  "src/lib/errorTracking.ts": {
+    "no-console": 2
+  },
+  "src/lib/featureFlags.ts": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/lib/laws/sec-edgar.ts": {
+    "@typescript-eslint/no-unused-vars": 2
+  },
+  "src/lib/ollama/index.ts": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "no-console": 5
+  },
+  "src/lib/sovereignApi.ts": {
+    "@typescript-eslint/no-explicit-any": 21
+  },
+  "src/main.tsx": {
+    "@typescript-eslint/no-non-null-assertion": 1
+  },
+  "src/pages/admin/AdminAIPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 4
+  },
+  "src/pages/admin/AdminDashboard.tsx": {
+    "@typescript-eslint/no-unused-vars": 2,
+    "no-console": 1
+  },
+  "src/pages/admin/ControlCenterPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 28,
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/pages/admin/CorePage.tsx": {
+    "@typescript-eslint/no-explicit-any": 9,
+    "@typescript-eslint/no-unused-vars": 7,
+    "no-console": 3,
+    "react/no-unescaped-entities": 7
+  },
+  "src/pages/admin/EnvironmentConfigPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 3,
+    "@typescript-eslint/no-unused-vars": 8
+  },
+  "src/pages/admin/FeatureFlagsPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 11,
+    "@typescript-eslint/no-unused-vars": 4
+  },
+  "src/pages/admin/index.tsx": {
+    "@typescript-eslint/no-unused-vars": 3
+  },
+  "src/pages/admin/LicensesPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 10,
+    "@typescript-eslint/no-non-null-assertion": 1,
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/pages/admin/MarketingCMSPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 1,
+    "no-console": 2
+  },
+  "src/pages/admin/MarketingStudioPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 6,
+    "@typescript-eslint/no-unused-vars": 8
+  },
+  "src/pages/admin/ModeAnalytics.tsx": {
+    "@typescript-eslint/no-explicit-any": 1
+  },
+  "src/pages/admin/PitchDeckManagerPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 13,
+    "curly": 8,
+    "no-useless-escape": 10
+  },
+  "src/pages/admin/SchemaMappingPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 3,
+    "@typescript-eslint/no-unused-vars": 6,
+    "react/no-unescaped-entities": 1
+  },
+  "src/pages/admin/SovereignStackPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 5
+  },
+  "src/pages/admin/SystemHealthPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 4,
+    "@typescript-eslint/no-unused-vars": 9
+  },
+  "src/pages/admin/TenantsPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 9,
+    "@typescript-eslint/no-unused-vars": 10
+  },
+  "src/pages/admin/UsageAnalyticsPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 9,
+    "@typescript-eslint/no-unused-vars": 8
+  },
+  "src/pages/apex/CendiaForecastPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/pages/apex/CendiaSentryPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/pages/auth/FindAccountPage.tsx": {
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/auth/ForgotPasswordPage.tsx": {
+    "react/no-unescaped-entities": 5
+  },
+  "src/pages/auth/index.tsx": {
+    "@typescript-eslint/no-unused-vars": 2,
+    "no-console": 1,
+    "react/no-unescaped-entities": 4
+  },
+  "src/pages/auth/LoginPage.tsx": {
+    "no-console": 1,
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/auth/RegisterPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/pages/auth/ResetPasswordPage.tsx": {
+    "react/no-unescaped-entities": 1
+  },
+  "src/pages/cortex/admin/VerticalConfigPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/pages/cortex/bridge/BridgePage.tsx": {
+    "@typescript-eslint/no-explicit-any": 2,
+    "@typescript-eslint/no-unused-vars": 5,
+    "no-console": 4
+  },
+  "src/pages/cortex/bridge/subpages.tsx": {
+    "@typescript-eslint/no-explicit-any": 2,
+    "@typescript-eslint/no-non-null-assertion": 1,
+    "@typescript-eslint/no-unused-vars": 2,
+    "no-console": 2
+  },
+  "src/pages/cortex/compliance/ComplianceDashboard.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "react/no-unescaped-entities": 1
+  },
+  "src/pages/cortex/compliance/ComplianceReadinessPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/pages/cortex/compliance/ContinuousComplianceMonitorPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 12,
+    "@typescript-eslint/no-unused-vars": 11,
+    "curly": 1
+  },
+  "src/pages/cortex/compliance/CrossJurisdictionPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 3,
+    "@typescript-eslint/no-unused-vars": 3,
+    "react/no-unescaped-entities": 1
+  },
+  "src/pages/cortex/compliance/GapScannerPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 9,
+    "curly": 2
+  },
+  "src/pages/cortex/compliance/RegulatorsReceiptPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 6,
+    "@typescript-eslint/no-unused-vars": 8,
+    "curly": 1,
+    "eqeqeq": 1,
+    "react/no-unescaped-entities": 1
+  },
+  "src/pages/cortex/compliance/RegulatorySandboxPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 6,
+    "@typescript-eslint/no-unused-vars": 3,
+    "react/no-unescaped-entities": 1
+  },
+  "src/pages/cortex/council/CouncilAnalyticsPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 11
+  },
+  "src/pages/cortex/council/CouncilHistoryPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 2,
+    "@typescript-eslint/no-unused-vars": 5
+  },
+  "src/pages/cortex/council/CouncilModesPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 8
+  },
+  "src/pages/cortex/council/CouncilPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 38,
+    "@typescript-eslint/no-unused-vars": 2,
+    "no-console": 13,
+    "react/no-unescaped-entities": 9
+  },
+  "src/pages/cortex/council/CourtroomLayout.tsx": {
+    "@typescript-eslint/no-unused-vars": 2,
+    "react/no-unescaped-entities": 1
+  },
+  "src/pages/cortex/council/DecisionReplayTheaterPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 6,
+    "@typescript-eslint/no-unused-vars": 5
+  },
+  "src/pages/cortex/council/DecisionsPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 3,
+    "react/no-unescaped-entities": 4
+  },
+  "src/pages/cortex/council/DeliberationVisualizationPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 5,
+    "@typescript-eslint/no-unused-vars": 16
+  },
+  "src/pages/cortex/council/ExecutiveSummaryPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 4
+  },
+  "src/pages/cortex/council/PostDeliberationPanel.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 10
+  },
+  "src/pages/cortex/council/subpages.tsx": {
+    "@typescript-eslint/no-explicit-any": 2,
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/pages/cortex/council/UserInterventionPanel.tsx": {
+    "@typescript-eslint/no-unused-vars": 4
+  },
+  "src/pages/cortex/crown/EchoPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 3,
+    "@typescript-eslint/no-unused-vars": 2,
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/cortex/crown/GnosisPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-non-null-assertion": 11,
+    "@typescript-eslint/no-unused-vars": 5,
+    "no-console": 5,
+    "react/no-unescaped-entities": 1
+  },
+  "src/pages/cortex/crown/RedTeamPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 4
+  },
+  "src/pages/cortex/crypto/EscrowManagementPage.tsx": {
+    "@typescript-eslint/no-non-null-assertion": 3,
+    "@typescript-eslint/no-unused-vars": 10,
+    "curly": 2
+  },
+  "src/pages/cortex/DashboardPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 3,
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/cortex/data/index.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/pages/cortex/dcii/MemoryPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 7
+  },
+  "src/pages/cortex/dcii/NotaryPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 2,
+    "@typescript-eslint/no-unused-vars": 8
+  },
+  "src/pages/cortex/dcii/SimilarityPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 5
+  },
+  "src/pages/cortex/dcii/StatementOfFactsPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 5
+  },
+  "src/pages/cortex/dcii/TimestampPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 3
+  },
+  "src/pages/cortex/dcii/TruthPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 5,
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/cortex/dcii/WitnessPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 4
+  },
+  "src/pages/cortex/demo/LegalDemoShowcasePage.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 2,
+    "react/no-unescaped-entities": 4
+  },
+  "src/pages/cortex/enterprise/EnterpriseCorporationHub.tsx": {
+    "@typescript-eslint/no-explicit-any": 6,
+    "@typescript-eslint/no-unused-vars": 3,
+    "curly": 1
+  },
+  "src/pages/cortex/enterprise/EnterprisePlatinumDashboard.tsx": {
+    "@typescript-eslint/no-explicit-any": 24,
+    "@typescript-eslint/no-unused-vars": 6,
+    "curly": 5,
+    "no-empty": 1,
+    "react-hooks/exhaustive-deps": 1
+  },
+  "src/pages/cortex/enterprise/FeedbackLoopPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 8,
+    "curly": 2,
+    "no-empty": 1
+  },
+  "src/pages/cortex/enterprise/ModelRegistryPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 4,
+    "@typescript-eslint/no-unused-vars": 9,
+    "curly": 1
+  },
+  "src/pages/cortex/enterprise/PolicyAuthoringPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 7,
+    "@typescript-eslint/no-unused-vars": 5,
+    "curly": 3,
+    "no-empty": 1
+  },
+  "src/pages/cortex/gateway/CendiaGatewayPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 12,
+    "curly": 7
+  },
+  "src/pages/cortex/governance/ConstitutionalCourtPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 2,
+    "@typescript-eslint/no-unused-vars": 4
+  },
+  "src/pages/cortex/governance/DecisionPacketsPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 9,
+    "@typescript-eslint/no-unused-vars": 14
+  },
+  "src/pages/cortex/graph/GraphExplorerPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 5,
+    "@typescript-eslint/no-unused-vars": 1,
+    "no-console": 1
+  },
+  "src/pages/cortex/help/GettingStartedPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 1,
+    "react/no-unescaped-entities": 1
+  },
+  "src/pages/cortex/intelligence/AuditProvenancePage.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/pages/cortex/intelligence/CendiaLensPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 8
+  },
+  "src/pages/cortex/intelligence/ChronosPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 76,
+    "@typescript-eslint/no-non-null-assertion": 43,
+    "@typescript-eslint/no-unused-vars": 15,
+    "no-console": 17,
+    "no-irregular-whitespace": 1,
+    "react/no-unescaped-entities": 11
+  },
+  "src/pages/cortex/intelligence/ConsensusBuilderPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 9,
+    "curly": 2,
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/cortex/intelligence/DecisionDebtPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 2,
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/cortex/intelligence/DecisionDNAPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 20,
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/pages/cortex/intelligence/GhostBoardPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 3,
+    "react/no-unescaped-entities": 3
+  },
+  "src/pages/cortex/intelligence/LiveDemoPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 8
+  },
+  "src/pages/cortex/intelligence/OrbitPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 7
+  },
+  "src/pages/cortex/intelligence/PreMortemPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 2
+  },
+  "src/pages/cortex/intelligence/RDPServicePage.tsx": {
+    "@typescript-eslint/no-unused-vars": 9
+  },
+  "src/pages/cortex/intelligence/RegulatoryAbsorbPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 2,
+    "@typescript-eslint/no-unused-vars": 1,
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/cortex/intelligence/SynthesisEnginePage.tsx": {
+    "@typescript-eslint/no-unused-vars": 6
+  },
+  "src/pages/cortex/intelligence/WhatIfScenariosPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 7
+  },
+  "src/pages/cortex/MissionControlDashboard.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 1,
+    "react/no-unescaped-entities": 1
+  },
+  "src/pages/cortex/monitor/LiveAgentMonitorPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 9
+  },
+  "src/pages/cortex/ops/OpsAgentsPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 2,
+    "curly": 8
+  },
+  "src/pages/cortex/pillars/index.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/cortex/PlatformMapPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 5,
+    "curly": 1
+  },
+  "src/pages/cortex/profile/UserProfilePage.tsx": {
+    "@typescript-eslint/no-explicit-any": 3,
+    "@typescript-eslint/no-unused-vars": 2
+  },
+  "src/pages/cortex/pulse/PulsePage.tsx": {
+    "@typescript-eslint/no-explicit-any": 2,
+    "@typescript-eslint/no-unused-vars": 3,
+    "curly": 2,
+    "no-console": 2
+  },
+  "src/pages/cortex/pulse/subpages.tsx": {
+    "@typescript-eslint/no-explicit-any": 2,
+    "@typescript-eslint/no-unused-vars": 2
+  },
+  "src/pages/cortex/security/index.tsx": {
+    "@typescript-eslint/no-unused-vars": 4,
+    "no-console": 3,
+    "react/no-unescaped-entities": 1
+  },
+  "src/pages/cortex/security/ZKPPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 6,
+    "@typescript-eslint/no-unused-vars": 4
+  },
+  "src/pages/cortex/sovereign/DefenseVerticalPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 2,
+    "@typescript-eslint/no-unused-vars": 8
+  },
+  "src/pages/cortex/sovereign/NotaryPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 13
+  },
+  "src/pages/cortex/sovereign/VaultPage.tsx": {
+    "@typescript-eslint/no-non-null-assertion": 1,
+    "@typescript-eslint/no-unused-vars": 9
+  },
+  "src/pages/cortex/trust/RegulatorsReceiptPage.tsx": {
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/cortex/UpgradePage.tsx": {
+    "@typescript-eslint/no-unused-vars": 5,
+    "curly": 1,
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/cortex/verticals/FIFAGovernanceScenariosPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 2,
+    "react/no-unescaped-entities": 13
+  },
+  "src/pages/cortex/verticals/SportsPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 9,
+    "react/no-unescaped-entities": 1
+  },
+  "src/pages/cortex/verticals/UEFAWalkthroughPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 5,
+    "react/no-unescaped-entities": 10
+  },
+  "src/pages/cortex/walkthroughs/WalkthroughsPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 1
+  },
+  "src/pages/cortex/wedge/GovernanceReportPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 8,
+    "curly": 3
+  },
+  "src/pages/cortex/wedge/IncidentForensicsPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 7,
+    "curly": 1,
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/cortex/wedge/ShadowAIScannerPage.tsx": {
+    "curly": 1,
+    "react/no-unescaped-entities": 1
+  },
+  "src/pages/cortex/workflows/LegalWorkflowPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 1,
+    "react/no-unescaped-entities": 3
+  },
+  "src/pages/cortex/workflows/WorkflowBuilderPage.tsx": {
+    "@typescript-eslint/no-non-null-assertion": 2,
+    "@typescript-eslint/no-unused-vars": 4,
+    "curly": 8
+  },
+  "src/pages/legal/PrivacyPolicyPage.tsx": {
+    "react/no-unescaped-entities": 12
+  },
+  "src/pages/legal/TermsPage.tsx": {
+    "react/no-unescaped-entities": 7
+  },
+  "src/pages/marketing/LandingPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 5,
+    "react/no-unescaped-entities": 11
+  },
+  "src/pages/marketing/ManifestoHomePage.tsx": {
+    "react/no-unescaped-entities": 7
+  },
+  "src/pages/marketing/SovereignLandingPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 5,
+    "curly": 2,
+    "react/no-unescaped-entities": 3
+  },
+  "src/pages/NotFoundPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 1,
+    "react/no-unescaped-entities": 3
+  },
+  "src/pages/onboarding/OnboardingWizard.tsx": {
+    "@typescript-eslint/no-unused-vars": 1,
+    "react/no-unescaped-entities": 4
+  },
+  "src/pages/pitch/PitchDeck.tsx": {
+    "@typescript-eslint/no-unused-vars": 5,
+    "react/no-unescaped-entities": 3
+  },
+  "src/pages/pricing/PricingPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 2,
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/public/BlogPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/pages/public/ChangelogPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 2,
+    "react/no-unescaped-entities": 1
+  },
+  "src/pages/public/DocsPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/pages/public/DownloadsPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 4,
+    "no-console": 1
+  },
+  "src/pages/public/HomePage.tsx": {
+    "@typescript-eslint/no-unused-vars": 2,
+    "react/no-unescaped-entities": 12
+  },
+  "src/pages/public/HonestyMatricesPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 1,
+    "react/no-unescaped-entities": 6
+  },
+  "src/pages/public/index.tsx": {
+    "@typescript-eslint/no-unused-vars": 3,
+    "no-console": 1,
+    "react/no-unescaped-entities": 13
+  },
+  "src/pages/public/LicensePage.tsx": {
+    "react/no-unescaped-entities": 7
+  },
+  "src/pages/public/ProductPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/pages/public/SecurityPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/pages/public/services-packages.tsx": {
+    "@typescript-eslint/no-unused-vars": 2,
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/public/ShowcasesPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/public/SovereignEnterpriseIntelligencePage.tsx": {
+    "react/jsx-no-comment-textnodes": 1,
+    "react/no-unescaped-entities": 12
+  },
+  "src/pages/public/SupportPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 1,
+    "react/no-unescaped-entities": 1
+  },
+  "src/pages/public/VerifyPage.tsx": {
+    "@typescript-eslint/no-explicit-any": 2,
+    "@typescript-eslint/no-non-null-assertion": 1,
+    "curly": 1,
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/sandbox/CelticSandboxPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 4,
+    "curly": 3,
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/sandbox/ComplianceScorePro.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/pages/sandbox/ConmebolSandboxPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 2,
+    "curly": 2
+  },
+  "src/pages/sandbox/GrupoFigerSandboxPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 1,
+    "curly": 1
+  },
+  "src/pages/sandbox/ProductShowcase.tsx": {
+    "@typescript-eslint/no-unused-vars": 9
+  },
+  "src/pages/sandbox/Rule11Certification.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/pages/sandbox/Rule11CertificationPro.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/pages/sandbox/SandboxEnhanced.tsx": {
+    "@typescript-eslint/no-unused-vars": 11,
+    "curly": 14
+  },
+  "src/pages/sandbox/SandboxShared.tsx": {
+    "@typescript-eslint/no-unused-vars": 8,
+    "curly": 7,
+    "eqeqeq": 3,
+    "react/no-unescaped-entities": 1
+  },
+  "src/pages/sandbox/SandboxTemplate.tsx": {
+    "@typescript-eslint/no-non-null-assertion": 2,
+    "@typescript-eslint/no-unused-vars": 1,
+    "curly": 2
+  },
+  "src/pages/sandbox/SandboxTracker.tsx": {
+    "@typescript-eslint/no-explicit-any": 4,
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/pages/services/index.tsx": {
+    "react/no-unescaped-entities": 1
+  },
+  "src/pages/settings/index.tsx": {
+    "@typescript-eslint/no-non-null-assertion": 1,
+    "@typescript-eslint/no-unused-vars": 20,
+    "react/no-unescaped-entities": 1
+  },
+  "src/pages/tools/ROICalculator.tsx": {
+    "@typescript-eslint/no-unused-vars": 2
+  },
+  "src/pages/verticals/AerospacePage.tsx": {
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/verticals/EnergyUtilitiesPage.tsx": {
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/verticals/EUBankingPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 2,
+    "react/no-unescaped-entities": 1
+  },
+  "src/pages/verticals/FinancialServicesPage.tsx": {
+    "react/no-unescaped-entities": 5
+  },
+  "src/pages/verticals/GovernmentLegalPage.tsx": {
+    "react/no-unescaped-entities": 4
+  },
+  "src/pages/verticals/HealthcarePage.tsx": {
+    "react/no-unescaped-entities": 4
+  },
+  "src/pages/verticals/HigherEducationPage.tsx": {
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/verticals/InsurancePage.tsx": {
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/verticals/LegalPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 1,
+    "react/no-unescaped-entities": 7
+  },
+  "src/pages/verticals/ManufacturingPage.tsx": {
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/verticals/MediaEntertainmentPage.tsx": {
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/verticals/PharmaceuticalPage.tsx": {
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/verticals/ProfessionalServicesPage.tsx": {
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/verticals/RealEstateConstructionPage.tsx": {
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/verticals/RetailHospitalityPage.tsx": {
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/verticals/SmartCityPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 4
+  },
+  "src/pages/verticals/SportsPage.tsx": {
+    "react/no-unescaped-entities": 5
+  },
+  "src/pages/verticals/TechnologyPage.tsx": {
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/verticals/TransportationLogisticsPage.tsx": {
+    "react/no-unescaped-entities": 2
+  },
+  "src/pages/verticals/VerticalsHubPage.tsx": {
+    "@typescript-eslint/no-unused-vars": 1,
+    "curly": 1
+  },
+  "src/routes/cortex/core.routes.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/routes/cortex/platform.routes.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/routes/cortex/sovereign.routes.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/routes/public.routes.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/routes/sandbox-analytics.ts": {
+    "@typescript-eslint/no-explicit-any": 5,
+    "@typescript-eslint/no-var-requires": 1,
+    "no-console": 7
+  },
+  "src/routes/utils.tsx": {
+    "@typescript-eslint/no-explicit-any": 1
+  },
+  "src/routes/verticals.routes.tsx": {
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/services/AutoHealService.ts": {
+    "@typescript-eslint/no-explicit-any": 2,
+    "no-console": 11
+  },
+  "src/services/CommandService.ts": {
+    "@typescript-eslint/no-explicit-any": 11
+  },
+  "src/services/ConstitutionalCourtService.ts": {
+    "@typescript-eslint/no-explicit-any": 13
+  },
+  "src/services/DecisionIntelligenceService.ts": {
+    "@typescript-eslint/no-explicit-any": 2,
+    "@typescript-eslint/no-unused-vars": 1,
+    "no-console": 1
+  },
+  "src/services/DocumentExportService.ts": {
+    "@typescript-eslint/no-explicit-any": 3,
+    "@typescript-eslint/no-unused-vars": 2
+  },
+  "src/services/LedgerService.ts": {
+    "@typescript-eslint/no-explicit-any": 4,
+    "no-console": 1
+  },
+  "src/services/NotificationService.ts": {
+    "@typescript-eslint/no-explicit-any": 3
+  },
+  "src/services/RegulatorySandboxService.ts": {
+    "@typescript-eslint/no-explicit-any": 8
+  },
+  "src/services/SettingsService.ts": {
+    "@typescript-eslint/no-explicit-any": 1
+  },
+  "src/services/UnionService.ts": {
+    "@typescript-eslint/no-explicit-any": 2
+  },
+  "src/services/VerticalAgentsService.ts": {
+    "@typescript-eslint/ban-ts-comment": 1
+  },
+  "src/services/VetoService.ts": {
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-non-null-assertion": 2,
+    "@typescript-eslint/no-unused-vars": 1
+  },
+  "src/services/WorkflowPersistenceService.ts": {
+    "@typescript-eslint/no-non-null-assertion": 1,
+    "curly": 2
+  },
+  "src/stores/councilStore.ts": {
+    "@typescript-eslint/no-non-null-assertion": 1
+  },
+  "src/stores/dataSourceStore.ts": {
+    "@typescript-eslint/no-non-null-assertion": 1
+  },
+  "src/stores/notificationStore.ts": {
+    "@typescript-eslint/no-non-null-assertion": 1
+  }
+}
