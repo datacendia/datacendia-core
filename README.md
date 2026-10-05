@@ -8,7 +8,7 @@
 
 **Cryptographic proof and forensic trails for every AI decision.**
 
-When your AI makes a $500M acquisition recommendation, can you prove in court exactly what it considered, what it dissented on, and who signed off? Datacendia can.
+When your AI makes a $500M acquisition recommendation, can you reconstruct exactly what it considered, what it dissented on, and who signed off? Datacendia can.
 
 [![CI](https://github.com/datacendia/datacendia-core/actions/workflows/ci.yml/badge.svg)](https://github.com/datacendia/datacendia-core/actions/workflows/ci.yml)
 [![Security](https://github.com/datacendia/datacendia-core/actions/workflows/security.yml/badge.svg)](https://github.com/datacendia/datacendia-core/actions/workflows/security.yml)
@@ -64,7 +64,7 @@ docker pull ghcr.io/datacendia/datacendia:latest
 
 ## What is Datacendia?
 
-Datacendia is the only AI platform where every decision is auditable, explainable, and independently verifiable at forensic grade. Multiple AI agents with distinct perspectives deliberate on your behalf -- then every interaction is recorded in an immutable, cryptographically signed audit ledger.
+Datacendia records every Council decision in an auditable, independently verifiable trail (Merkle-signed ledger, Ed25519 stamps, Shamir 3-of-5 key custody). Multiple AI agents with distinct perspectives deliberate on your behalf -- then every interaction is recorded in an immutable, cryptographically signed audit ledger.
 
 **This is not another chatbot.** It's an operating system for enterprise decisions.
 
@@ -86,7 +86,7 @@ Datacendia is the only AI platform where every decision is auditable, explainabl
 |                  |                                        |
 |         +--------v---------+                              |
 |         | DECISION PACKET  |  <- Signed, Merkle-rooted   |
-|         | + Audit Trail    |     forensic-grade, independently verifiable        |
+|         | + Audit Trail    |     independently verifiable        |
 |         +------------------+                              |
 +-----------------------------------------------------------+
 ```
@@ -107,7 +107,7 @@ Datacendia is the only AI platform where every decision is auditable, explainabl
 - **CendiaGateway** -- AI governance proxy with PII detection, policy enforcement, and SIEM integration
 - **The Council** -- Multi-agent deliberation with configurable agent panels
 - **Immutable Audit Ledger** -- Every decision cryptographically signed with Merkle tree integrity
-- **Cryptographic Services** -- 8 frontend UIs for forensic-grade verification:
+- **Cryptographic Services** -- 8 frontend UIs for cryptographic verification:
   - **CendiaVerify** -- Public verification portal (`/verify`) for third-party receipt validation
   - **CendiaEvidence** -- Evidence package download (ZIP, standalone HTML verifier, JSON)
   - **CendiaGapScan** -- Compliance gap scanner across 8 regulatory frameworks
@@ -136,12 +136,13 @@ Datacendia is the only AI platform where every decision is auditable, explainabl
 - **Apache Flink CEP** -- Real-time complex event processing (`FLINK_ENABLED=true`)
 
 ### Roadmap Features (In Development)
-- **HSM Key Management** -- Hardware Security Module integration (Q2 2026)
-- **Enterprise Connectors** -- SAP, Salesforce, Oracle integrations (Q3 2026)
-- **99.99% Uptime SLA** -- Multi-region infrastructure deployment (Q2 2026)
-- **Distributed Tracing** -- Jaeger/Zipkin integration (Q2 2026)
-- **7-Year Audit Retention** -- Long-term storage configuration (Q2 2026)
-- **Advanced Analytics** -- Predictive monitoring and business intelligence (Q4 2026)
+Status as of October 2026. Items below are not yet delivered; dates are re-planned, not committed.
+- **HSM Key Management** -- Hardware Security Module integration (slipped from Q2 2026; not yet scheduled)
+- **Enterprise Connectors** -- SAP, Salesforce, Oracle integrations (slipped from Q3 2026; under review)
+- **99.99% Uptime SLA** -- Multi-region infrastructure deployment (slipped from Q2 2026; not yet scheduled)
+- **Distributed Tracing** -- Jaeger/Zipkin integration (slipped from Q2 2026; not yet scheduled)
+- **7-Year Audit Retention** -- Long-term storage configuration (slipped from Q2 2026; not yet scheduled)
+- **Advanced Analytics** -- Predictive monitoring and business intelligence (Q4 2026, target)
 
 See [enterprise-capabilities-audit.md](packages/widgets/enterprise-capabilities-audit.md) for complete capability matrix and [enterprise-roadmap.md](packages/widgets/enterprise-roadmap.md) for implementation timeline.
 
@@ -149,7 +150,7 @@ See [enterprise-capabilities-audit.md](packages/widgets/enterprise-capabilities-
 
 ## CendiaGateway™ -- AI Governance Proxy
 
-CendiaGateway governs every AI interaction in your organization -- API calls, browser-based AI usage, and internal systems. Three coverage layers provide 100% governance:
+CendiaGateway governs every AI interaction in your organization -- API calls, browser-based AI usage, and internal systems. Three coverage layers aim to cover all AI traffic routed through it:
 
 ### Layer 1: API Gateway (Reverse Proxy)
 
@@ -380,7 +381,7 @@ Datacendia ships with **30 industry vertical definitions**. Each vertical provid
 |----------|----------------------|:------:|
 | **Financial Services** | Basel III, MiFID II, SOX, GLBA, DORA | 100% |
 | **Healthcare** | HIPAA, FDA SaMD, HITRUST, JCAHO | 100% |
-| **Legal** | ABA Ethics, privilege gates, citation enforcement | 100% |
+| **Legal** | ABA Ethics, privilege gates, citation enforcement | Framework defined; Council legal tools not yet connected |
 | **Insurance** | NAIC, Solvency II, bias/fairness engine | 100% |
 | **Government** | FAR, FISMA, GPRA, FedRAMP architecture | 100% |
 | **Energy** | NERC CIP, IEC 62443, FERC | 100% |
@@ -563,6 +564,6 @@ Built by [Datacendia](https://datacendia.com) &middot; [DDGI Framework](https://
 
 **→ [Try the Platform](#try-it-in-60-seconds)** &middot; **[Request a Free Pilot](https://datacendia.com/briefing.html)** &middot; [enterprise@datacendia.com](mailto:enterprise@datacendia.com)
 
-*Last updated: April 2026*
+*Last updated: October 2026*
 
 </div>
