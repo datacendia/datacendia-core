@@ -41,7 +41,8 @@ const row = (fields: Record<string, unknown>) => ({
   ...fields,
 });
 
-// Catches the export's download; the returned function reads the CSV it built.
+// Catches the export's download. The returned function checks that exactly one
+// download started, of that file as a dated .csv, then reads the CSV it carried.
 function captureCsv(): () => Promise<string[]> {
   const blobs: Blob[] = [];
   URL.createObjectURL = vi.fn((blob: Blob) => {
@@ -49,13 +50,18 @@ function captureCsv(): () => Promise<string[]> {
     return 'blob:csv';
   });
   URL.revokeObjectURL = vi.fn();
-  vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
-  return () =>
-    new Promise<string[]>((resolve) => {
+  const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
+  return () => {
+    expect(click).toHaveBeenCalledTimes(1);
+    const link = click.mock.contexts[0] as HTMLAnchorElement;
+    expect(link.href).toBe('blob:csv');
+    expect(link.download).toMatch(/^council-history-\d{4}-\d{2}-\d{2}\.csv$/);
+    return new Promise<string[]>((resolve) => {
       const reader = new FileReader();
       reader.onload = () => resolve(String(reader.result).split('\r\n'));
       reader.readAsText(blobs[0]);
     });
+  };
 }
 
 describe('CouncilHistoryPage', () => {
