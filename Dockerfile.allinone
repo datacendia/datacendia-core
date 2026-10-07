@@ -31,8 +31,11 @@ RUN node -e "\
 
 RUN npm install --no-audit --no-fund
 
-# Copy frontend source files
+# Copy frontend source files. public/ holds the files Vite copies into dist
+# as-is (theme-init.js, logo, og-image, robots.txt, sitemap); without it the
+# server answered those paths with index.html.
 COPY index.html ./
+COPY public ./public
 COPY vite.config.ts tsconfig.json tsconfig.node.json ./
 COPY tailwind.config.js ./
 COPY src ./src
