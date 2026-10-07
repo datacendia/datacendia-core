@@ -385,7 +385,7 @@
     "no-irregular-whitespace": 1
   },
   "src/index.ts": {
-    "@typescript-eslint/no-explicit-any": 6,
+    "@typescript-eslint/no-explicit-any": 5,
     "curly": 2
   },
   "src/lib/prisma.ts": {
@@ -423,7 +423,6 @@
   "src/middleware/SecurityMiddleware.ts": {
     "@typescript-eslint/no-explicit-any": 1,
     "no-irregular-whitespace": 1,
-    "no-useless-escape": 19,
     "prefer-const": 1
   },
   "src/middleware/sportsAuth.ts": {
@@ -563,7 +562,7 @@
     "no-irregular-whitespace": 1
   },
   "src/routes/council.ts": {
-    "@typescript-eslint/no-explicit-any": 30,
+    "@typescript-eslint/no-explicit-any": 29,
     "@typescript-eslint/no-non-null-assertion": 18,
     "@typescript-eslint/no-unused-vars": 9,
     "curly": 11,
@@ -926,7 +925,7 @@
     "curly": 2
   },
   "src/routes/organizations.ts": {
-    "@typescript-eslint/no-non-null-assertion": 9,
+    "@typescript-eslint/no-non-null-assertion": 6,
     "@typescript-eslint/no-unused-vars": 1,
     "no-irregular-whitespace": 1
   },
@@ -1041,7 +1040,7 @@
     "curly": 2
   },
   "src/routes/settings.ts": {
-    "@typescript-eslint/no-explicit-any": 4,
+    "@typescript-eslint/no-explicit-any": 2,
     "no-irregular-whitespace": 1
   },
   "src/routes/sgas.ts": {
@@ -1217,7 +1216,7 @@
     "curly": 9
   },
   "src/services/admin/index.ts": {
-    "@typescript-eslint/no-explicit-any": 134
+    "@typescript-eslint/no-explicit-any": 133
   },
   "src/services/admin/TenantService.ts": {
     "@typescript-eslint/no-explicit-any": 3,

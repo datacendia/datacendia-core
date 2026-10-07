@@ -47,19 +47,6 @@ const STATUS_CONFIG: Record<string, { icon: React.FC<{ className?: string }>; co
   pending: { icon: Clock, color: 'text-neutral-400', label: 'Pending' },
 };
 
-const DEMO_HISTORY: HistoryItem[] = [
-  { id: 'd1', title: 'Q1 Cloud Infrastructure Migration Strategy', mode: 'Strategic Advisory', status: 'consensus', consensusScore: 87, duration: '11m 42s', agentCount: 7, date: '2026-02-14T09:30:00Z', tags: ['infrastructure', 'cloud', 'migration'], initiatedBy: 'Stuart Rainey' },
-  { id: 'd2', title: 'Vendor Selection — Enterprise Security Stack', mode: 'Vendor Selection', status: 'consensus', consensusScore: 92, duration: '8m 15s', agentCount: 5, date: '2026-02-13T14:00:00Z', tags: ['vendor', 'security', 'procurement'], initiatedBy: 'Stuart Rainey' },
-  { id: 'd3', title: 'EU AI Act Compliance Gap Assessment', mode: 'Compliance Review', status: 'consensus', consensusScore: 95, duration: '14m 22s', agentCount: 6, date: '2026-02-12T10:00:00Z', tags: ['compliance', 'eu-ai-act', 'regulation'], initiatedBy: 'Admin' },
-  { id: 'd4', title: 'Annual Budget Reallocation — R&D vs Operations', mode: 'Financial Analysis', status: 'split', consensusScore: 62, duration: '18m 05s', agentCount: 7, date: '2026-02-11T16:00:00Z', tags: ['budget', 'finance', 'resource-allocation'], initiatedBy: 'Stuart Rainey' },
-  { id: 'd5', title: 'Partnership Evaluation — TechCorp AI Division', mode: 'Strategic Advisory', status: 'consensus', consensusScore: 78, duration: '12m 30s', agentCount: 7, date: '2026-02-10T11:00:00Z', tags: ['partnership', 'strategy', 'ai'], initiatedBy: 'Stuart Rainey' },
-  { id: 'd6', title: 'Data Residency Policy — Multi-Jurisdiction', mode: 'Governance Audit', status: 'consensus', consensusScore: 89, duration: '9m 48s', agentCount: 6, date: '2026-02-09T09:00:00Z', tags: ['data', 'governance', 'jurisdiction'], initiatedBy: 'Admin' },
-  { id: 'd7', title: 'Crisis Response — Service Outage January 28', mode: 'Crisis Response', status: 'overridden', consensusScore: 71, duration: '4m 12s', agentCount: 5, date: '2026-01-28T03:15:00Z', tags: ['crisis', 'incident', 'outage'], initiatedBy: 'Stuart Rainey' },
-  { id: 'd8', title: 'Product Pricing Strategy — Enterprise Tier', mode: 'Financial Analysis', status: 'consensus', consensusScore: 83, duration: '10m 55s', agentCount: 5, date: '2026-01-25T14:30:00Z', tags: ['pricing', 'strategy', 'enterprise'], initiatedBy: 'Stuart Rainey' },
-  { id: 'd9', title: 'Hiring Plan Q2 — Engineering Team Expansion', mode: 'Talent Strategy', status: 'consensus', consensusScore: 90, duration: '7m 33s', agentCount: 5, date: '2026-01-22T10:00:00Z', tags: ['hiring', 'talent', 'engineering'], initiatedBy: 'Admin' },
-  { id: 'd10', title: 'Competitive Response — Market Disruption Alert', mode: "Devil's Advocate", status: 'split', consensusScore: 55, duration: '15m 20s', agentCount: 7, date: '2026-01-18T16:00:00Z', tags: ['competition', 'market', 'strategy'], initiatedBy: 'Stuart Rainey' },
-];
-
 // GET /deliberations returns Prisma rows: status is the DeliberationStatus enum
 // (PENDING | IN_PROGRESS | AWAITING_APPROVAL | COMPLETED | CANCELLED), the topic
 // is `question`, and `confidence` is 0-1. Reading them as lowercase strings sent
@@ -137,15 +124,39 @@ function toHistoryItem(d: DeliberationRow): HistoryItem {
   };
 }
 
+// Quote every cell; a leading =, +, - or @ would run as a formula in a spreadsheet.
+function csvCell(value: string | number | null): string {
+  const text = value === null ? '' : String(value);
+  const safe = /^[=+\-@]/.test(text) ? `'${text}` : text;
+  return `"${safe.replace(/"/g, '""')}"`;
+}
+
+// Downloads the deliberations as shown (search, filter and sort applied).
+function exportCsv(rows: HistoryItem[]): void {
+  const header = ['Title', 'Status', 'Consensus %', 'Mode', 'Agents', 'Duration', 'Date', 'Tags'];
+  const lines = rows.map((r) =>
+    [r.title, STATUS_CONFIG[r.status]?.label ?? r.status, r.consensusScore, r.mode, r.agentCount,
+      r.duration, r.date, r.tags.join('; ')].map(csvCell).join(',')
+  );
+  const blob = new Blob([[header.map(csvCell).join(','), ...lines].join('\r\n')], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = `council-history-${new Date().toISOString().slice(0, 10)}.csv`;
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
 type SortField = 'date' | 'consensus' | 'duration';
 
 export const CouncilHistoryPage: React.FC = () => {
   const navigate = useNavigate();
-  const [items, setItems] = useState<HistoryItem[]>(DEMO_HISTORY);
+  const [items, setItems] = useState<HistoryItem[]>([]);
+  const [loadFailed, setLoadFailed] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('all');
   const [sortBy, setSortBy] = useState<SortField>('date');
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Load real data from API
   useEffect(() => {
@@ -153,11 +164,13 @@ export const CouncilHistoryPage: React.FC = () => {
       setIsLoading(true);
       try {
         const res = await apiClient.api.get<any[]>('/deliberations');
-        if (res.success && Array.isArray(res.data) && res.data.length > 0) {
+        if (res.success && Array.isArray(res.data)) {
           setItems(res.data.map(toHistoryItem));
+        } else {
+          setLoadFailed(true);
         }
       } catch {
-        // Keep demo data
+        setLoadFailed(true);
       } finally {
         setIsLoading(false);
       }
@@ -199,8 +212,12 @@ export const CouncilHistoryPage: React.FC = () => {
           <h1 className="text-2xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: 300, letterSpacing: '0.35em', color: '#e8e4e0' }}>COUNCIL HISTORY</h1>
           <p className="text-sm text-neutral-500 mt-0.5">Browse and search all past deliberations</p>
         </div>
-        <button className="px-3 py-2 border border-neutral-700 rounded-lg text-sm text-neutral-300 hover:bg-neutral-800 flex items-center gap-2">
-          <Download className="w-4 h-4" /> Export All
+        <button
+          onClick={() => exportCsv(filtered)}
+          disabled={filtered.length === 0}
+          className="px-3 py-2 border border-neutral-700 rounded-lg text-sm text-neutral-300 hover:bg-neutral-800 disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2"
+        >
+          <Download className="w-4 h-4" /> Export CSV
         </button>
       </div>
 
@@ -309,7 +326,27 @@ export const CouncilHistoryPage: React.FC = () => {
         })}
       </div>
 
-      {filtered.length === 0 && (
+      {isLoading && (
+        <p className="text-center py-12 text-neutral-500 text-sm">Loading deliberations…</p>
+      )}
+
+      {!isLoading && loadFailed && (
+        <p className="text-center py-12 text-red-400 text-sm">The deliberations could not be loaded.</p>
+      )}
+
+      {!isLoading && !loadFailed && items.length === 0 && (
+        <div className="text-center py-12">
+          <p className="text-neutral-400 text-sm mb-4">No deliberations in this workspace yet.</p>
+          <button
+            onClick={() => navigate('/cortex/council')}
+            className="px-4 py-2 rounded-lg bg-primary-600 hover:bg-primary-700 text-white text-sm"
+          >
+            Ask the Council
+          </button>
+        </div>
+      )}
+
+      {items.length > 0 && filtered.length === 0 && (
         <div className="text-center py-12">
           <Search className="w-10 h-10 text-neutral-700 mx-auto mb-3" />
           <p className="text-neutral-500 text-sm">No deliberations match your search</p>

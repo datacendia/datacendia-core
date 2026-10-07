@@ -364,9 +364,6 @@
     "@typescript-eslint/no-explicit-any": 11,
     "@typescript-eslint/no-unused-vars": 4
   },
-  "src/pages/admin/index.tsx": {
-    "@typescript-eslint/no-unused-vars": 3
-  },
   "src/pages/admin/LicensesPage.tsx": {
     "@typescript-eslint/no-explicit-any": 10,
     "@typescript-eslint/no-non-null-assertion": 1,
@@ -489,8 +486,8 @@
     "@typescript-eslint/no-unused-vars": 11
   },
   "src/pages/cortex/council/CouncilHistoryPage.tsx": {
-    "@typescript-eslint/no-explicit-any": 2,
-    "@typescript-eslint/no-unused-vars": 5
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 4
   },
   "src/pages/cortex/council/CouncilModesPage.tsx": {
     "@typescript-eslint/no-unused-vars": 8
@@ -698,7 +695,6 @@
   },
   "src/pages/cortex/MissionControlDashboard.tsx": {
     "@typescript-eslint/no-explicit-any": 1,
-    "@typescript-eslint/no-unused-vars": 1,
     "react/no-unescaped-entities": 1
   },
   "src/pages/cortex/monitor/LiveAgentMonitorPage.tsx": {

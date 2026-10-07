@@ -61,6 +61,24 @@ const STATS = [
   { value: '16', suffix: '', label: 'Languages Supported', color: 'text-rose-400' },
 ];
 
+// What to tell a visitor the demo form refused, or null when the refusal isn't
+// theirs to fix (demo off, server down) and the stand-in session should open.
+function demoRefusal(status: number, message: unknown): string | null {
+  if (status === 409 && typeof message === 'string') {
+    return message;
+  }
+  if (status === 400) {
+    return 'Please check your name and email.';
+  }
+  if (status === 403) {
+    return 'This demo account is not active.';
+  }
+  if (status === 429) {
+    return 'Too many attempts. Please wait a minute and try again.';
+  }
+  return null;
+}
+
 const useScrollReveal = () => {
   const ref = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -140,7 +158,7 @@ const SovereignLandingPage: React.FC = () => {
       id: `usr-demo-${Date.now()}`,
       email: demoEmail.trim(),
       name: demoName.trim(),
-      role: 'ADMIN' as const,
+      role: 'ANALYST' as const,
     };
 
     try {
@@ -150,12 +168,21 @@ const SovereignLandingPage: React.FC = () => {
         body: JSON.stringify({ name: demoName.trim(), email: demoEmail.trim() }),
       });
 
-      const data = await res.json();
+      // A refusal from the rate limiter or a proxy may not be JSON
+      const data = await res.json().catch(() => null);
 
-      if (data.success && data.data) {
+      if (data?.success && data.data) {
         tokenManager.setDemoSession(true);
         loginWithToken(data.data.accessToken, data.data.refreshToken, data.data.user || userPayload);
         navigate('/cortex');
+        return;
+      }
+      // The server said no for a reason the visitor can act on (a registered
+      // email, a bad field, too many tries): say so instead of a stand-in session.
+      const refusal = demoRefusal(res.status, data?.error?.message);
+      if (refusal) {
+        setError(refusal);
+        setIsSubmitting(false);
         return;
       }
     } catch {
@@ -851,7 +878,7 @@ const SovereignLandingPage: React.FC = () => {
                 </>
               )}
             </button>
-            <p className="text-[10px] text-gray-600 text-center">No password needed. Instant access to the full platform.</p>
+            <p className="text-[10px] text-gray-600 text-center">No password needed. This is a shared sample workspace, so please do not enter confidential data.</p>
           </form>
           {error && (
             <p className="text-red-400 text-xs text-center mt-4">{error}</p>
