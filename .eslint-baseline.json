@@ -486,7 +486,6 @@
     "@typescript-eslint/no-unused-vars": 11
   },
   "src/pages/cortex/council/CouncilHistoryPage.tsx": {
-    "@typescript-eslint/no-explicit-any": 1,
     "@typescript-eslint/no-unused-vars": 4
   },
   "src/pages/cortex/council/CouncilModesPage.tsx": {

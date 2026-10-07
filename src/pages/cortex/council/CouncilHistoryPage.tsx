@@ -18,7 +18,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { cn } from '../../../../lib/utils';
-import apiClient from '../../../lib/api/client';
+import apiClient, { type ApiResponse } from '../../../lib/api/client';
 import { COUNCIL_MODES } from '../../../data/councilModes';
 import {
   Search, Filter, Clock, Brain, CheckCircle, AlertTriangle, XCircle,
@@ -124,11 +124,34 @@ function toHistoryItem(d: DeliberationRow): HistoryItem {
   };
 }
 
-// Quote every cell; a leading =, +, - or @ would run as a formula in a spreadsheet.
+// Quote every cell; a leading =, +, - or @ (or a tab or line break before one)
+// would run as a formula in a spreadsheet.
 function csvCell(value: string | number | null): string {
   const text = value === null ? '' : String(value);
-  const safe = /^[=+\-@]/.test(text) ? `'${text}` : text;
+  const safe = /^[=+\-@\t\r\n]/.test(text) ? `'${text}` : text;
   return `"${safe.replace(/"/g, '""')}"`;
+}
+
+// GET /deliberations returns at most 100 rows a page. History lists (and
+// exports) every page, up to MAX_PAGES so a huge workspace can't stall it.
+const PAGE_SIZE = 100;
+const MAX_PAGES = 20;
+
+type DeliberationPage = ApiResponse<DeliberationRow[]> & { pagination?: { totalPages?: number } };
+
+async function loadDeliberations(): Promise<DeliberationRow[] | null> {
+  const rows: DeliberationRow[] = [];
+  for (let page = 1; page <= MAX_PAGES; page++) {
+    const res: DeliberationPage = await apiClient.api.get<DeliberationRow[]>('/deliberations', { page, limit: PAGE_SIZE });
+    if (!res.success || !Array.isArray(res.data)) {
+      return null;
+    }
+    rows.push(...res.data);
+    if (res.data.length < PAGE_SIZE || page >= (res.pagination?.totalPages ?? page)) {
+      break;
+    }
+  }
+  return rows;
 }
 
 // Downloads the deliberations as shown (search, filter and sort applied).
@@ -163,9 +186,9 @@ export const CouncilHistoryPage: React.FC = () => {
     const load = async () => {
       setIsLoading(true);
       try {
-        const res = await apiClient.api.get<any[]>('/deliberations');
-        if (res.success && Array.isArray(res.data)) {
-          setItems(res.data.map(toHistoryItem));
+        const rows = await loadDeliberations();
+        if (rows) {
+          setItems(rows.map(toHistoryItem));
         } else {
           setLoadFailed(true);
         }

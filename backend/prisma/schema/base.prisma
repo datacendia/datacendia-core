@@ -234,6 +234,9 @@ model users {
   email_verified           Boolean                @default(false)
   email_verified_at        DateTime?
   preferences              Json                   @default("{}")
+  // Created by the landing page demo form (POST /auth/demo-access), the only
+  // accounts it may reopen without a password. Server-set only.
+  demo_visitor             Boolean                @default(false)
   last_login_at            DateTime?
   created_at               DateTime               @default(now())
   updated_at               DateTime

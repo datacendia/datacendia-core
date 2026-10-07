@@ -2,8 +2,9 @@
  * Demo Access — Unit Tests
  * POST /auth/demo-access signs a visitor in with only a name and an email, so
  * it must never open a registered account: it is off unless DEMO_MODE is set,
- * it refuses any email it did not create itself, and the seats it hands out
- * are Analyst seats in the showcase workspace with a session that can refresh.
+ * it reopens only accounts it created (users.demo_visitor, which no user can
+ * set) that still hold their Analyst seat, and the seats it hands out live in
+ * the showcase workspace with a session the refresh endpoint accepts.
  *
  * Run: npx vitest run tests/backend/demo-access.test.ts
  */
@@ -20,7 +21,9 @@ const db = vi.hoisted(() => ({
   findOrg: vi.fn(),
   upsertOrg: vi.fn(),
   createSession: vi.fn(),
+  findSessions: vi.fn(),
 }));
+const verifyRefreshToken = vi.hoisted(() => vi.fn());
 const sendEmail = vi.hoisted(() => vi.fn());
 
 vi.mock('../../backend/src/config/index.js', () => ({ config: cfg }));
@@ -28,7 +31,7 @@ vi.mock('../../backend/src/config/database.js', () => ({
   prisma: {
     users: { findUnique: db.findUser, create: db.createUser, update: db.updateUser },
     organizations: { findUnique: db.findOrg, upsert: db.upsertOrg },
-    sessions: { create: db.createSession },
+    sessions: { create: db.createSession, findMany: db.findSessions },
   },
 }));
 vi.mock('../../backend/src/config/redis.js', () => ({ cache: { get: vi.fn(), set: vi.fn(), del: vi.fn() } }));
@@ -40,10 +43,13 @@ vi.mock('../../backend/src/middleware/auth.js', () => ({
   authenticate: (_req: Request, _res: Response, next: NextFunction) => next(),
   generateAccessToken: vi.fn(async () => 'access-token'),
   generateRefreshToken: vi.fn(async () => 'refresh-token'),
-  verifyRefreshToken: vi.fn(),
+  verifyRefreshToken,
 }));
-// Real bcrypt at cost 12 takes seconds per hash in pure JS
-vi.mock('bcryptjs', () => ({ default: { hash: vi.fn(async () => 'hashed'), compare: vi.fn() } }));
+// Real bcrypt at its lowest cost: fast, and a stored session still has to match its token
+vi.mock('bcryptjs', async (importOriginal) => {
+  const real = (await importOriginal<{ default: typeof import('bcryptjs') }>()).default;
+  return { default: { ...real, hash: (s: string) => real.hash(s, 4) } };
+});
 
 import authRoutes from '../../backend/src/routes/auth';
 import { errorHandler } from '../../backend/src/middleware/errorHandler';
@@ -65,6 +71,7 @@ function account(overrides: Record<string, unknown> = {}) {
     deleted_at: null,
     organization_id: SHOWCASE.id,
     preferences: {},
+    demo_visitor: false,
     ...overrides,
   };
 }
@@ -76,6 +83,7 @@ beforeEach(() => {
   for (const fn of Object.values(db)) {
     fn.mockReset();
   }
+  verifyRefreshToken.mockReset();
   db.findOrg.mockResolvedValue(SHOWCASE);
   db.createUser.mockImplementation(async ({ data }: { data: Record<string, unknown> }) => ({ deleted_at: null, ...data }));
   db.updateUser.mockResolvedValue({});
@@ -107,6 +115,25 @@ describe('POST /auth/demo-access', () => {
     expect(sendEmail).not.toHaveBeenCalled();
   });
 
+  it('ignores a demo flag a user wrote into their own preferences', async () => {
+    // PUT /users/me lets a user store any preferences; they carry no authority here
+    db.findUser.mockResolvedValue(account({ preferences: { demoVisitor: true }, demo_visitor: false }));
+
+    const res = await visit({ name: 'Mallory', email: 'cfo@acme.example' });
+
+    expect(res.status).toBe(409);
+    expect(db.createSession).not.toHaveBeenCalled();
+  });
+
+  it('asks for the password once a demo account has been promoted', async () => {
+    db.findUser.mockResolvedValue(account({ email: 'ada@example.com', role: 'ADMIN', demo_visitor: true }));
+
+    const res = await visit({ name: 'Ada', email: 'ada@example.com' });
+
+    expect(res.status).toBe(409);
+    expect(db.createSession).not.toHaveBeenCalled();
+  });
+
   it('gives a new visitor an Analyst seat in the showcase workspace', async () => {
     db.findUser.mockResolvedValue(null);
 
@@ -121,8 +148,9 @@ describe('POST /auth/demo-access', () => {
       role: 'ANALYST',
       status: 'ACTIVE',
       organization_id: 'demo-acme-corp',
-      preferences: { demoVisitor: true },
+      demo_visitor: true,
     });
+    expect(data.preferences).toBeUndefined();
     expect(db.upsertOrg).not.toHaveBeenCalled();
     expect(res.body.data).toMatchObject({
       accessToken: 'access-token',
@@ -131,15 +159,31 @@ describe('POST /auth/demo-access', () => {
     });
   });
 
-  it('stores the session so the visitor can refresh past the first hour', async () => {
-    db.findUser.mockResolvedValue(null);
+  it('stores a session the refresh endpoint accepts', async () => {
+    let created: Record<string, unknown> | undefined;
+    db.createUser.mockImplementation(async ({ data }: { data: Record<string, unknown> }) => {
+      created = { deleted_at: null, ...data };
+      return created;
+    });
+    db.findUser.mockImplementation(async ({ where }: { where: { id?: string } }) => (where.id ? created : null));
+    const sessions: Array<{ refresh_token_hash: string; expires_at: Date }> = [];
+    db.createSession.mockImplementation(async ({ data }: { data: (typeof sessions)[number] }) => {
+      sessions.push(data);
+      return data;
+    });
+    db.findSessions.mockImplementation(async () => sessions);
+    verifyRefreshToken.mockImplementation(async () => created?.id);
 
-    await visit({ name: 'Ada', email: 'ada@example.com' });
+    const entry = await visit({ name: 'Ada', email: 'ada@example.com' });
 
-    expect(db.createSession).toHaveBeenCalledTimes(1);
-    const { data } = db.createSession.mock.calls[0][0];
-    expect(data.refresh_token_hash).toBe('hashed');
-    expect(data.expires_at.getTime()).toBeGreaterThan(Date.now() + 29 * 24 * 60 * 60 * 1000);
+    expect(sessions).toHaveLength(1);
+    expect(sessions[0].expires_at.getTime()).toBeGreaterThan(Date.now() + 29 * 24 * 60 * 60 * 1000);
+    const refreshed = await request(app).post('/auth/refresh').send({ refreshToken: entry.body.data.refreshToken });
+    expect(refreshed.status).toBe(200);
+    expect(refreshed.body.data.accessToken).toBe('access-token');
+    // The stored hash belongs to that token alone
+    const forged = await request(app).post('/auth/refresh').send({ refreshToken: 'another-token' });
+    expect(forged.status).toBe(401);
   });
 
   it('uses the shared demo workspace when the showcase one was not seeded', async () => {
@@ -156,7 +200,7 @@ describe('POST /auth/demo-access', () => {
 
   it('lets a returning visitor back in without creating another account', async () => {
     db.findUser.mockResolvedValue(
-      account({ id: 'usr-demo', email: 'ada@example.com', role: 'ANALYST', preferences: { demoVisitor: true } })
+      account({ id: 'usr-demo', email: 'ada@example.com', role: 'ANALYST', demo_visitor: true })
     );
 
     const res = await visit({ name: 'Ada', email: 'ada@example.com' });
@@ -168,7 +212,7 @@ describe('POST /auth/demo-access', () => {
   });
 
   it('keeps a deactivated demo account closed', async () => {
-    db.findUser.mockResolvedValue(account({ status: 'SUSPENDED', preferences: { demoVisitor: true } }));
+    db.findUser.mockResolvedValue(account({ status: 'SUSPENDED', role: 'ANALYST', demo_visitor: true }));
 
     const res = await visit({ name: 'Ada', email: 'cfo@acme.example' });
 

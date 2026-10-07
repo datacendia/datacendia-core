@@ -166,17 +166,6 @@ const demoAccessSchema = z.object({
   email: z.string().trim().email('Valid email required').max(254),
 });
 
-// Set on accounts this form created. The form takes no password, so these are
-// the only accounts it may open again.
-function isDemoVisitor(preferences: Prisma.JsonValue): boolean {
-  return (
-    typeof preferences === 'object' &&
-    preferences !== null &&
-    !Array.isArray(preferences) &&
-    preferences.demoVisitor === true
-  );
-}
-
 async function demoOrganization() {
   const showcase = await prisma.organizations.findUnique({ where: { id: SHOWCASE_ORG_ID } });
   return (
@@ -216,7 +205,10 @@ router.post('/demo-access', async (req: Request, res: Response, next: NextFuncti
     });
     const returning = user !== null;
 
-    if (user && !isDemoVisitor(user.preferences)) {
+    // The form takes no password, so it reopens only accounts it created
+    // (demo_visitor, which only the server sets) that still hold the Analyst
+    // seat it gave them. A promoted account needs its password like any other.
+    if (user && !(user.demo_visitor && user.role === 'ANALYST')) {
       throw errors.conflict('This email belongs to a registered account. Sign in with your password.');
     }
     if (user && (user.status !== 'ACTIVE' || user.deleted_at)) {
@@ -237,7 +229,7 @@ router.post('/demo-access', async (req: Request, res: Response, next: NextFuncti
           role: 'ANALYST',
           status: 'ACTIVE',
           organization_id: demoOrg.id,
-          preferences: { demoVisitor: true },
+          demo_visitor: true,
           updated_at: new Date(),
         },
       });
