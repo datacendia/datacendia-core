@@ -67,6 +67,7 @@
     "login": {
       "title": "欢迎回来",
       "subtitle": "登录您的账户",
+      "signInToContinue": "请登录以继续。",
       "email": "电子邮箱",
       "password": "密码",
       "rememberMe": "记住我",

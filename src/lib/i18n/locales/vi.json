@@ -67,6 +67,7 @@
     "login": {
       "title": "Chào mừng trở lại",
       "subtitle": "Đăng nhập vào tài khoản của bạn",
+      "signInToContinue": "Vui lòng đăng nhập để tiếp tục.",
       "email": "Địa chỉ email",
       "password": "Mật khẩu",
       "rememberMe": "Ghi nhớ tôi",

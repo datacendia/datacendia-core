@@ -43,6 +43,17 @@ interface SearchSuggestion {
   type: string;
 }
 
+// Why the canvas shows the built-in sample graph instead of the organization's.
+// 'empty' is for the whole graph; 'entity-missing' for one entity's lineage.
+type SampleReason = 'unavailable' | 'failed' | 'empty' | 'entity-missing';
+
+const SAMPLE_NOTICE: Record<SampleReason, string> = {
+  unavailable: "Sample graph. The knowledge graph database (Neo4j) isn't connected in this deployment.",
+  failed: "Sample graph. Your organization's graph couldn't be loaded.",
+  empty: 'Sample graph. Your organization has no graph entities yet.',
+  'entity-missing': "Sample graph. That entity isn't in your organization's graph.",
+};
+
 // Node colors by type (dark theme optimized)
 const nodeColors: Record<string, { bg: string; border: string; glow: string }> = {
   dataset: { bg: '#1E3A5F', border: '#3B82F6', glow: 'rgba(59, 130, 246, 0.3)' },
@@ -252,6 +263,7 @@ export const GraphExplorerPage: React.FC = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [sampleReason, setSampleReason] = useState<SampleReason | null>(null);
 
   // Search suggestions
   const suggestions = useMemo<SearchSuggestion[]>(() => {
@@ -321,6 +333,8 @@ export const GraphExplorerPage: React.FC = () => {
     const loadGraph = async () => {
       let loadedNodes: GraphNode[] = [];
       let loadedEdges: GraphEdge[] = [];
+      let failure: SampleReason | null = null;
+      const failureOf = (code?: string): SampleReason => (code === 'GRAPH_UNAVAILABLE' ? 'unavailable' : 'failed');
 
       try {
         setIsLoading(true);
@@ -331,9 +345,21 @@ export const GraphExplorerPage: React.FC = () => {
         if (entityId) {
           // Load lineage for specific entity
           const lineageRes = await lineageApi.getLineage(entityId, { direction: 'both', depth: 3 });
+          if (!lineageRes.success) {
+            failure = failureOf(lineageRes.error?.code);
+          }
           if (lineageRes.success && lineageRes.data) {
             const data = lineageRes.data as any;
-            loadedNodes = (data.entities || data.nodes || []).map((e: any) => ({
+            // The entity itself comes back as `root`. One without links has
+            // nothing else, and it still belongs on the canvas.
+            const lineageNodes = new Map<string, { id: string }>();
+            const candidates: Array<{ id?: string } | undefined> = [data.root, ...(data.entities || data.nodes || [])];
+            for (const e of candidates) {
+              if (e?.id && !lineageNodes.has(e.id)) {
+                lineageNodes.set(e.id, e as { id: string });
+              }
+            }
+            loadedNodes = [...lineageNodes.values()].map((e: any) => ({
               id: e.id,
               type: e.type || 'entity',
               name: e.name || e.label || e.id,
@@ -352,6 +378,9 @@ export const GraphExplorerPage: React.FC = () => {
         } else {
           // Load full graph (nodes + relationships)
           const graphRes = await graphApi.getEntities({ pageSize: 100 });
+          if (!graphRes.success) {
+            failure = failureOf(graphRes.error?.code);
+          }
           if (graphRes.success && graphRes.data) {
             const entities = graphRes.data as GraphEntity[];
             loadedNodes = entities.map((e) => ({
@@ -390,12 +419,16 @@ export const GraphExplorerPage: React.FC = () => {
         }
       } catch (err) {
         console.error('Graph load error:', err);
+        failure = 'failed';
       }
 
-      // Fallback: if no data was loaded, use demo data
+      // Fallback: if no data was loaded, show the sample graph, and say why
       if (loadedNodes.length === 0) {
         loadedNodes = demoNodes;
         loadedEdges = demoEdges;
+        setSampleReason(failure ?? (searchParams.get('entity') ? 'entity-missing' : 'empty'));
+      } else {
+        setSampleReason(null);
       }
 
       setNodes(loadedNodes);
@@ -407,22 +440,30 @@ export const GraphExplorerPage: React.FC = () => {
     loadGraph();
   }, [searchParams, demoNodes, demoEdges]);
 
-  // Handle node selection from GraphCanvas
-  const handleNodeSelect = useCallback((node: GraphNode | null) => {
-    if (node) {
+  // Handle node selection from GraphCanvas. The details come from the graph:
+  // links are counted, and an owner shows only when the node records one.
+  const handleNodeSelect = useCallback(
+    (node: GraphNode | null) => {
+      if (!node) {
+        setSelectedEntity(null);
+        return;
+      }
+      // GraphCanvas (Cytoscape) draws copies of these edges, so their ends stay ids.
+      const owner = node.properties?.owner;
       setSelectedEntity({
         id: node.id,
         type: node.type,
         name: node.name,
         properties: node.properties,
-        owner: 'Data Team',
-        lastUpdated: 'Recently',
-        connections: { incoming: 5, outgoing: 3 },
+        owner: typeof owner === 'string' ? owner : undefined,
+        connections: {
+          incoming: edges.filter((e) => e.target === node.id).length,
+          outgoing: edges.filter((e) => e.source === node.id).length,
+        },
       });
-    } else {
-      setSelectedEntity(null);
-    }
-  }, []);
+    },
+    [edges]
+  );
 
   // Handle node double-click (drill down)
   const handleNodeDoubleClick = useCallback(
@@ -534,6 +575,14 @@ export const GraphExplorerPage: React.FC = () => {
 
       {/* Graph Canvas */}
       <div className="flex-1 relative bg-neutral-950">
+        {sampleReason && !isLoading && (
+          <div
+            role="status"
+            className="absolute top-3 left-1/2 -translate-x-1/2 z-10 max-w-[90%] px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs text-center"
+          >
+            {SAMPLE_NOTICE[sampleReason]}
+          </div>
+        )}
         {isLoading ? (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="flex flex-col items-center gap-3">

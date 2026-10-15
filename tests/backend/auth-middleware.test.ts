@@ -41,11 +41,12 @@ vi.mock('../../backend/src/utils/logger.js', () => ({
   },
 }));
 
+// Static: vi.mock is hoisted above it. Importing inside the first test spent that
+// test's 5s timeout loading the module graph, which failed under a full run.
+import { devAuth, requireRole } from '../../backend/src/middleware/auth.js';
+
 describe('Auth Middleware — requireRole', () => {
   it('should reject when no user is attached to request', async () => {
-    // Import after mocks are set up
-    const { requireRole } = await import('../../backend/src/middleware/auth.js');
-
     const req = { user: undefined } as any;
     const res = {} as any;
     const next = vi.fn();
@@ -58,8 +59,6 @@ describe('Auth Middleware — requireRole', () => {
   });
 
   it('should reject when user has wrong role', async () => {
-    const { requireRole } = await import('../../backend/src/middleware/auth.js');
-
     const req = { user: { role: 'viewer' } } as any;
     const res = {} as any;
     const next = vi.fn();
@@ -72,8 +71,6 @@ describe('Auth Middleware — requireRole', () => {
   });
 
   it('should pass when user has correct role', async () => {
-    const { requireRole } = await import('../../backend/src/middleware/auth.js');
-
     const req = { user: { role: 'ADMIN' } } as any;
     const res = {} as any;
     const next = vi.fn();
@@ -84,8 +81,6 @@ describe('Auth Middleware — requireRole', () => {
   });
 
   it('should accept any of multiple allowed roles', async () => {
-    const { requireRole } = await import('../../backend/src/middleware/auth.js');
-
     const req = { user: { role: 'analyst' } } as any;
     const res = {} as any;
     const next = vi.fn();
@@ -98,8 +93,6 @@ describe('Auth Middleware — requireRole', () => {
 
 describe('Auth Middleware — devAuth environment guards', () => {
   it('should use real auth when Bearer token is provided', async () => {
-    const { devAuth } = await import('../../backend/src/middleware/auth.js');
-
     const req = {
       headers: { authorization: 'Bearer invalid-token' },
     } as any;

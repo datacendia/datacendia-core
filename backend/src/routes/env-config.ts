@@ -29,6 +29,9 @@ const __dirname = path.dirname(__filename);
 
 const ENV_PATH = path.resolve(__dirname, '../../../.env');
 
+/** Environment variable names: an uppercase letter, then A-Z, 0-9 or _. */
+const ENV_NAME = /^[A-Z][A-Z0-9_]*$/;
+
 /** Mask a sensitive value, showing only first/last 2 chars */
 function maskValue(val: string): string {
   if (!val || val.length < 6) return '••••••••';
@@ -155,6 +158,15 @@ router.get('/', async (_req: Request, res: Response) => {
  */
 router.post('/', async (req: Request, res: Response) => {
   try {
+    // A production server's environment belongs to its deployment platform;
+    // rewriting the running server's .env over HTTP isn't offered there.
+    if (process.env.NODE_ENV === 'production') {
+      return res.status(403).json({
+        success: false,
+        error: 'Editing the environment is disabled in production. Change it in your deployment settings.',
+      });
+    }
+
     const { variables } = req.body;
     
     if (!variables || typeof variables !== 'object') {
@@ -164,15 +176,44 @@ router.post('/', async (req: Request, res: Response) => {
       });
     }
     
-    // Backup existing .env
-    if (fs.existsSync(ENV_PATH)) {
-      const backupPath = `${ENV_PATH}.backup.${Date.now()}`;
-      fs.copyFileSync(ENV_PATH, backupPath);
+    // Names like DATABASE_URL only, and single-line values: anything else could
+    // add lines to the file or reach object internals (__proto__).
+    const entries = Object.entries(variables as Record<string, unknown>);
+    const invalid = entries.find(([key, value]) => !ENV_NAME.test(key) || typeof value !== 'string' || /[\r\n]/.test(value));
+    if (invalid) {
+      return res.status(400).json({
+        success: false,
+        error: `Invalid variable: ${String(invalid[0]).slice(0, 64)}. Names use A-Z, 0-9 and _; values are a single line.`,
+      });
     }
-    
+
+    // Read the current file once, and back up exactly what was read
+    let current: string | null = null;
+    try {
+      current = fs.readFileSync(ENV_PATH, 'utf8');
+    } catch (err) {
+      if ((err as NodeJS.ErrnoException).code !== 'ENOENT') {
+        throw err;
+      }
+    }
+    const existing = new Map(Object.entries(current === null ? {} : parseEnvFile(current)));
+    // The backup holds the same secrets, so it is created owner-only (0600)
+    if (current !== null) {
+      fs.writeFileSync(`${ENV_PATH}.backup.${Date.now()}`, current, { encoding: 'utf8', mode: 0o600 });
+    }
+
+    // GET sends secrets masked; a masked value coming back unchanged keeps the
+    // stored secret instead of writing the mask over it.
+    const toWrite = new Map<string, string>();
+    for (const [key, value] of entries as Array<[string, string]>) {
+      const stored = existing.get(key);
+      toWrite.set(key, stored !== undefined && isSensitive(key) && value === maskValue(stored) ? stored : value);
+    }
+
     // Write new .env
-    const content = serializeEnvFile(variables);
-    fs.writeFileSync(ENV_PATH, content, 'utf8');
+    const content = serializeEnvFile(Object.fromEntries(toWrite));
+    // mode applies only if the file is new; an existing .env keeps its own
+    fs.writeFileSync(ENV_PATH, content, { encoding: 'utf8', mode: 0o600 });
     
     res.json({
       success: true,

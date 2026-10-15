@@ -85,6 +85,10 @@ const DEFAULT_TRANSLATIONS: Record<string, string> = {
   'label.premium': 'Premium',
   'label.locked': 'Locked',
   'label.admin': 'Admin',
+  'label.owner': 'Owner',
+  'label.platform_admin': 'Platform admin',
+  'label.analyst': 'Analyst',
+  'label.viewer': 'Viewer',
   'label.user': 'User',
   'label.lead': 'Lead',
 
@@ -464,6 +468,10 @@ const STATIC_TRANSLATIONS: Record<string, Record<string, string>> = {
     'label.premium': 'Premium',
     'label.locked': 'Bloqueado',
     'label.admin': 'Administrador',
+    'label.owner': 'Propietario',
+    'label.platform_admin': 'Administrador de plataforma',
+    'label.analyst': 'Analista',
+    'label.viewer': 'Lector',
     'label.user': 'Usuario',
     'label.lead': 'Líder',
 
@@ -762,6 +770,11 @@ const STATIC_TRANSLATIONS: Record<string, Record<string, string>> = {
     'label.offline': 'Hors ligne',
     'settings.language': 'Langue',
     'search.placeholder': 'Rechercher...',
+    'label.owner': 'Propriétaire',
+    'label.admin': 'Administrateur',
+    'label.platform_admin': 'Administrateur de la plateforme',
+    'label.analyst': 'Analyste',
+    'label.viewer': 'Lecteur',
   },
   de: {
     'app.tagline': 'Enterprise Intelligence Plattform',
@@ -778,6 +791,11 @@ const STATIC_TRANSLATIONS: Record<string, Record<string, string>> = {
     'label.offline': 'Offline',
     'settings.language': 'Sprache',
     'search.placeholder': 'Suchen...',
+    'label.owner': 'Inhaber',
+    'label.admin': 'Administrator',
+    'label.platform_admin': 'Plattform-Administrator',
+    'label.analyst': 'Analyst',
+    'label.viewer': 'Betrachter',
   },
   zh: {
     'app.tagline': '企业智能平台',
@@ -794,6 +812,11 @@ const STATIC_TRANSLATIONS: Record<string, Record<string, string>> = {
     'label.offline': '离线',
     'settings.language': '语言',
     'search.placeholder': '搜索...',
+    'label.owner': '所有者',
+    'label.admin': '管理员',
+    'label.platform_admin': '平台管理员',
+    'label.analyst': '分析师',
+    'label.viewer': '查看者',
   },
   ja: {
     'app.tagline': 'エンタープライズインテリジェンスプラットフォーム',
@@ -810,6 +833,11 @@ const STATIC_TRANSLATIONS: Record<string, Record<string, string>> = {
     'label.offline': 'オフライン',
     'settings.language': '言語',
     'search.placeholder': '検索...',
+    'label.owner': 'オーナー',
+    'label.admin': '管理者',
+    'label.platform_admin': 'プラットフォーム管理者',
+    'label.analyst': 'アナリスト',
+    'label.viewer': '閲覧者',
   },
   ar: {
     'app.tagline': 'منصة ذكاء المؤسسات',
@@ -824,6 +852,11 @@ const STATIC_TRANSLATIONS: Record<string, Record<string, string>> = {
     'label.offline': 'غير متصل',
     'settings.language': 'اللغة',
     'search.placeholder': 'بحث...',
+    'label.owner': 'المالك',
+    'label.admin': 'المسؤول',
+    'label.platform_admin': 'مسؤول المنصة',
+    'label.analyst': 'المحلل',
+    'label.viewer': 'المشاهد',
   },
 };
 
@@ -1146,7 +1179,12 @@ export function useLanguage(): LanguageContextType {
 // LANGUAGE SELECTOR COMPONENT
 // =============================================================================
 
-export function LanguageSelector({ className }: { className?: string }) {
+// placement: where the menu opens. The header uses the default; the phone
+// drawer opens it upward from the left so it isn't cut off.
+export function LanguageSelector({
+  className,
+  placement = 'below-right',
+}: { className?: string; placement?: 'below-right' | 'above-left' }) {
   const { language, languages, setLanguage, isLoading, t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -1216,7 +1254,7 @@ export function LanguageSelector({ className }: { className?: string }) {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-neutral-100 transition-colors group"
+        className="flex items-center gap-2 px-3 py-2 rounded-lg text-gray-300 hover:bg-sovereign-hover hover:text-white transition-colors group"
         disabled={isLoading}
         title="Change language (Alt+L)"
       >
@@ -1243,14 +1281,18 @@ export function LanguageSelector({ className }: { className?: string }) {
       {isOpen && (
         <>
           <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
-          <div className="absolute right-0 top-full mt-2 w-72 bg-white rounded-xl shadow-xl border border-neutral-200 z-50 overflow-hidden animate-in slide-in-from-top-2 fade-in duration-200">
+          <div
+            className={`absolute ${
+              placement === 'above-left' ? 'left-0 bottom-full mb-2' : 'right-0 top-full mt-2'
+            } w-72 max-h-[calc(100vh-7rem)] overflow-y-auto bg-sovereign-card rounded-xl shadow-xl border border-sovereign-border z-50 animate-in fade-in duration-200`}
+          >
             {/* Header with search */}
-            <div className="p-3 border-b border-neutral-100 bg-gradient-to-b from-neutral-50 to-white">
+            <div className="p-3 border-b border-sovereign-border-subtle bg-sovereign-elevated">
               <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-sm text-neutral-900">
+                <h3 className="font-semibold text-sm text-white">
                   {t('settings.language') || 'Language'}
                 </h3>
-                <span className="text-xs text-neutral-400 bg-neutral-100 px-2 py-0.5 rounded-full">
+                <span className="text-xs text-neutral-400 bg-sovereign-hover px-2 py-0.5 rounded-full">
                   {languages.length}
                 </span>
               </div>
@@ -1262,7 +1304,8 @@ export function LanguageSelector({ className }: { className?: string }) {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search languages..."
-                  className="w-full pl-8 pr-3 py-2 text-sm bg-white border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  aria-label="Search languages"
+                  className="w-full pl-8 pr-3 py-2 text-sm bg-sovereign-base text-white placeholder:text-neutral-600 border border-sovereign-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
                 <svg
                   className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400"
@@ -1291,19 +1334,19 @@ export function LanguageSelector({ className }: { className?: string }) {
                   <button
                     key={lang.code}
                     onClick={() => handleLanguageChange(lang.code)}
-                    className={`w-full flex items-center justify-between px-4 py-2.5 text-left hover:bg-neutral-50 transition-all duration-150 ${
+                    className={`w-full flex items-center justify-between px-4 py-2.5 text-left hover:bg-sovereign-hover transition-all duration-150 ${
                       language === lang.code
-                        ? 'bg-primary-50 border-l-2 border-primary-500'
+                        ? 'bg-primary-900/20 border-l-2 border-primary-500'
                         : 'border-l-2 border-transparent'
                     }`}
                   >
                     <div className="flex items-center gap-3">
-                      <span className="text-xs font-mono uppercase w-7 text-neutral-400 bg-neutral-100 rounded px-1 py-0.5 text-center">
+                      <span className="text-xs font-mono uppercase w-7 text-neutral-400 bg-sovereign-hover rounded px-1 py-0.5 text-center">
                         {lang.code}
                       </span>
                       <div>
                         <p
-                          className={`font-medium text-sm ${language === lang.code ? 'text-primary-700' : 'text-neutral-900'}`}
+                          className={`font-medium text-sm ${language === lang.code ? 'text-primary-300' : 'text-white'}`}
                         >
                           {lang.nativeName}
                         </p>
@@ -1312,12 +1355,12 @@ export function LanguageSelector({ className }: { className?: string }) {
                     </div>
                     <div className="flex items-center gap-2">
                       {lang.rtl && (
-                        <span className="text-[10px] px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded font-medium">
+                        <span className="text-[10px] px-1.5 py-0.5 bg-amber-900/30 text-amber-400 rounded font-medium">
                           RTL
                         </span>
                       )}
                       {language === lang.code && (
-                        <span className="text-primary-600 text-lg">✓</span>
+                        <span className="text-primary-400 text-lg">✓</span>
                       )}
                     </div>
                   </button>
@@ -1326,16 +1369,16 @@ export function LanguageSelector({ className }: { className?: string }) {
             </div>
 
             {/* Footer with keyboard hint */}
-            <div className="px-3 py-2 border-t border-neutral-100 bg-neutral-50 text-xs text-neutral-400 flex items-center justify-between">
+            <div className="px-3 py-2 border-t border-sovereign-border-subtle bg-sovereign-elevated text-xs text-neutral-400 flex items-center justify-between">
               <span>
                 Press{' '}
-                <kbd className="px-1.5 py-0.5 bg-neutral-200 rounded text-neutral-600 font-mono text-[10px]">
+                <kbd className="px-1.5 py-0.5 bg-sovereign-active rounded text-neutral-300 font-mono text-[10px]">
                   Alt+L
                 </kbd>{' '}
                 to toggle
               </span>
               <span>
-                <kbd className="px-1.5 py-0.5 bg-neutral-200 rounded text-neutral-600 font-mono text-[10px]">
+                <kbd className="px-1.5 py-0.5 bg-sovereign-active rounded text-neutral-300 font-mono text-[10px]">
                   Esc
                 </kbd>{' '}
                 to close

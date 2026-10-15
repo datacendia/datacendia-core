@@ -24,7 +24,7 @@ import { createServer } from 'http';
 import { Server as SocketIOServer } from 'socket.io';
 import { SocketServer } from './websocket/SocketServer.js';
 import { rateLimit } from 'express-rate-limit';
-import { RedisStore as RateLimitRedisStore } from 'rate-limit-redis';
+import { RedisStore as RateLimitRedisStore, type SendCommandFn } from 'rate-limit-redis';
 import path from 'path';
 import fs from 'fs';
 import { config } from './config/index.js';
@@ -160,7 +160,9 @@ app.use('/metrics', prometheusRoutes);
 
 // ---------------------------------------------------------------------------
 // Static frontend serving (all-in-one / Railway deployment)
-// MUST be before Helmet/security middleware so assets aren't blocked
+// Assets are served ahead of Helmet. index.html is not: `/` and every other page
+// fall through to the SPA catch-all below, after Helmet, so the app shell always
+// gets the CSP and frame protection.
 // ---------------------------------------------------------------------------
 const frontendDist = path.resolve(process.cwd(), '../dist');
 
@@ -171,7 +173,8 @@ if (fs.existsSync(frontendDist)) {
     const files = fs.readdirSync(frontendDist);
     logger.info(`[Static] dist/ contents: ${files.join(', ')}`);
   }
-  app.use(express.static(frontendDist));
+  app.get('/index.html', (_req, res) => res.redirect(301, '/'));
+  app.use(express.static(frontendDist, { index: false }));
 } else {
   logger.warn(`[Static] Frontend dist NOT found at ${frontendDist} — cwd: ${process.cwd()}`);
   try {
@@ -254,6 +257,9 @@ app.get('/api/v1/inference/status', async (_req, res) => {
 });
 
 // Rate limiting — Redis-backed in production for multi-instance consistency
+const sendRedisCommand: SendCommandFn = (...args) =>
+  redis.call(...(args as [string, ...string[]])) as ReturnType<SendCommandFn>;
+
 const limiter = rateLimit({
   windowMs: 1 * 60 * 1000, // 1 minute
   max: config.nodeEnv === 'production' ? 100 : 1000, // Higher limit in dev
@@ -263,11 +269,33 @@ const limiter = rateLimit({
   skip: () => config.nodeEnv === 'test', // Skip in test environment
   ...(config.nodeEnv === 'production' && config.redisUrl ? {
     store: new RateLimitRedisStore({
-      sendCommand: (...args: string[]) => redis.call(...(args as [string, ...string[]])) as any,
+      sendCommand: sendRedisCommand,
     }),
   } : {}),
 });
 app.use('/api/', limiter);
+
+// Sign-in endpoints get a far smaller budget per IP: password guessing on
+// login, and account creation on register and the demo form (each demo visit
+// also emails sales). Own Redis prefix, so it doesn't count all API traffic.
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: config.nodeEnv === 'production' ? 20 : 200,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, error: { code: 'RATE_LIMITED', message: 'Too many attempts. Please wait and try again.' } },
+  skip: () => config.nodeEnv === 'test',
+  ...(config.nodeEnv === 'production' && config.redisUrl ? {
+    store: new RateLimitRedisStore({
+      prefix: 'rl-auth:',
+      sendCommand: sendRedisCommand,
+    }),
+  } : {}),
+});
+app.use(
+  ['/api/v1/auth/login', '/api/v1/auth/register', '/api/v1/auth/forgot-password', '/api/v1/auth/demo-access'],
+  authLimiter
+);
 
 // Body parsing
 app.use(express.json({ limit: '10mb' }));

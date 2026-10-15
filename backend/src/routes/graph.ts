@@ -28,8 +28,19 @@ function getSelectedDataSourceId(req: Request): string | undefined {
   return trimmed ? trimmed : undefined;
 }
 
+// `type` becomes a node label in the Cypher text (labels can't be query
+// parameters), so it must be a plain identifier. Anything else could append
+// clauses of its own, such as a UNION reading other organizations' nodes.
+const NODE_LABEL = /^[A-Za-z_][A-Za-z0-9_]*$/;
+
+// Search text is matched with =~, a regular expression. Escaped, it matches
+// literally ("C++" works) and can't be a pattern that ties Neo4j up.
+const escapeRegex = (text: string): string => text.replace(/[.*+?^$(){}|[\]\\]/g, '\\$&');
+
+const SEARCH_LIMIT_MAX = 100;
+
 const entityQuerySchema = z.object({
-  type: z.string().optional(),
+  type: z.string().regex(NODE_LABEL, 'type must be a node label').optional(),
   search: z.string().optional(),
   page: z.coerce.number().min(1).default(1),
   pageSize: z.coerce.number().min(1).max(100).default(50),
@@ -86,7 +97,7 @@ router.get('/entities', async (req: Request, res: Response, next: NextFunction) 
 
     if (search) {
       cypher += ` AND (e.name =~ $searchPattern OR e.description =~ $searchPattern)`;
-      params.searchPattern = `(?i).*${search}.*`;
+      params.searchPattern = `(?i).*${escapeRegex(search)}.*`;
     }
 
     // Get total count
@@ -416,17 +427,21 @@ router.post('/query', async (req: Request, res: Response, next: NextFunction) =>
  */
 router.get('/search', async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const q = req.query.q as string;
-    const type = req.query.type as string | undefined;
-    const limit = parseInt(req.query.limit as string) || 20;
+    // A repeated parameter (?q=a&q=b) arrives as an array; only one string is a query.
+    const q = req.query.q;
+    const type = req.query.type;
+    const limit = Math.min(Math.max(parseInt(req.query.limit as string) || 20, 1), SEARCH_LIMIT_MAX);
     const orgId = req.organizationId!;
     const dataSourceId = getSelectedDataSourceId(req);
 
-    if (!q || q.length < 2) {
+    if (typeof q !== 'string' || q.length < 2) {
       throw errors.badRequest('Search query must be at least 2 characters');
     }
+    if (type !== undefined && (typeof type !== 'string' || !NODE_LABEL.test(type))) {
+      throw errors.badRequest('type must be a node label');
+    }
 
-    const pattern = `(?i).*${q}.*`;
+    const pattern = `(?i).*${escapeRegex(q)}.*`;
     let cypher = `
       MATCH (n)
       WHERE n.organizationId = $orgId
@@ -607,6 +622,28 @@ router.get('/stats/history', async (_req: Request, res: Response, _next: NextFun
     success: true,
     data: [],
     note: 'Historical snapshots require scheduled capture job',
+  });
+});
+
+// Neo4j is optional: the quick-start demo runs without it. A route that needed
+// it answers 503 with a code the UI can explain, instead of a 500 carrying the
+// driver's connection advice.
+const GRAPH_DOWN_CODES = new Set(['ServiceUnavailable', 'SessionExpired']);
+
+export function isGraphUnavailable(error: unknown): boolean {
+  const code = (error as { code?: unknown } | null)?.code;
+  return typeof code === 'string' && GRAPH_DOWN_CODES.has(code);
+}
+
+router.use((error: unknown, _req: Request, res: Response, next: NextFunction) => {
+  if (!isGraphUnavailable(error)) {
+    next(error);
+    return;
+  }
+  logger.warn('[Graph] Neo4j is not reachable');
+  res.status(503).json({
+    success: false,
+    error: { code: 'GRAPH_UNAVAILABLE', message: 'The knowledge graph database (Neo4j) is not connected.' },
   });
 });
 

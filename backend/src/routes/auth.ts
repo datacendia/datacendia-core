@@ -15,6 +15,7 @@ import { z } from 'zod';
 import { Prisma } from '@prisma/client';
 import { prisma } from '../config/database.js';
 import { cache } from '../config/redis.js';
+import { config } from '../config/index.js';
 import { logger } from '../utils/logger.js';
 import { revocationKey } from '../utils/tokenRevocation.js';
 import { errors } from '../middleware/errorHandler.js';
@@ -151,56 +152,84 @@ router.post('/login', async (req: Request, res: Response, next: NextFunction) =>
   }
 });
 
+// The seeded showcase workspace (prisma/seed-full-demo.ts). Visitors join it
+// when it exists, so the demo opens on sample data instead of an empty org.
+const SHOWCASE_ORG_ID = 'demo-acme-corp';
+
+const demoAccessSchema = z.object({
+  name: z
+    .string()
+    .trim()
+    .min(1, 'Name is required')
+    .max(100, 'Name is too long')
+    .regex(/^[^\p{Cc}]+$/u, 'Name contains invalid characters'),
+  email: z.string().trim().email('Valid email required').max(254),
+});
+
+async function demoOrganization() {
+  const showcase = await prisma.organizations.findUnique({ where: { id: SHOWCASE_ORG_ID } });
+  return (
+    showcase ??
+    prisma.organizations.upsert({
+      where: { slug: 'demo' },
+      update: {},
+      create: {
+        id: crypto.randomUUID(),
+        name: 'Demo Organization',
+        slug: 'demo',
+        settings: {} as Prisma.InputJsonValue,
+        updated_at: new Date(),
+      },
+    })
+  );
+}
+
 /**
  * POST /api/v1/auth/demo-access
- * Frictionless demo entry — name + email → JWT token
- * Creates or finds a demo user, returns auth tokens for immediate platform access
+ * Frictionless demo entry — name + email → JWT token, on demo deployments
+ * (DEMO_MODE) only. A new visitor gets an Analyst seat in the showcase
+ * workspace. An email that belongs to a registered account is refused: without
+ * a password, anyone could otherwise sign in as that user by typing the address.
  */
 router.post('/demo-access', async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { name, email } = z.object({
-      name: z.string().min(1, 'Name is required'),
-      email: z.string().email('Valid email required'),
-    }).parse(req.body);
-
-    const normalizedEmail = email.toLowerCase().trim();
-
-    // Find or create demo organization
-    let demoOrg = await prisma.organizations.findFirst({
-      where: { slug: 'demo' },
-    });
-
-    if (!demoOrg) {
-      demoOrg = await prisma.organizations.create({
-        data: {
-          id: crypto.randomUUID(),
-          name: 'Demo Organization',
-          slug: 'demo',
-          settings: {} as Prisma.InputJsonValue,
-          updated_at: new Date(),
-        },
-      });
+    if (!config.demoMode) {
+      throw errors.notFound('Route');
     }
 
-    // Find or create user
+    const { name, email } = demoAccessSchema.parse(req.body);
+    const normalizedEmail = email.toLowerCase();
+
     let user = await prisma.users.findUnique({
       where: { email: normalizedEmail },
     });
+    const returning = user !== null;
+
+    // The form takes no password, so it reopens only accounts it created
+    // (demo_visitor, which only the server sets) that still hold the Analyst
+    // seat it gave them. A promoted account needs its password like any other.
+    if (user && !(user.demo_visitor && user.role === 'ANALYST')) {
+      throw errors.conflict('This email belongs to a registered account. Sign in with your password.');
+    }
+    if (user && (user.status !== 'ACTIVE' || user.deleted_at)) {
+      throw errors.forbidden('This demo account is not active.');
+    }
 
     if (!user) {
-      // Create demo user with random password (they won't need it)
-      const randomPass = crypto.randomBytes(32).toString('hex');
-      const passwordHash = await bcrypt.hash(randomPass, 12);
+      const demoOrg = await demoOrganization();
+      // Random password: the account is reached through this form, never by password
+      const passwordHash = await bcrypt.hash(crypto.randomBytes(32).toString('hex'), 12);
 
       user = await prisma.users.create({
         data: {
           id: crypto.randomUUID(),
           email: normalizedEmail,
-          name: name.trim(),
+          name,
           password_hash: passwordHash,
-          role: 'ADMIN',
+          role: 'ANALYST',
           status: 'ACTIVE',
           organization_id: demoOrg.id,
+          demo_visitor: true,
           updated_at: new Date(),
         },
       });
@@ -218,6 +247,19 @@ router.post('/demo-access', async (req: Request, res: Response, next: NextFuncti
 
     const refreshToken = await generateRefreshToken(user.id);
 
+    // Stored like a sign-in's, so the session can refresh past the first hour
+    const refreshTokenHash = await bcrypt.hash(refreshToken, 10);
+    await prisma.sessions.create({
+      data: {
+        id: crypto.randomUUID(),
+        user_id: user.id,
+        refresh_token_hash: refreshTokenHash,
+        user_agent: req.get('user-agent') || null,
+        ip_address: req.ip,
+        expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+      },
+    });
+
     // Update last login
     await prisma.users.update({
       where: { id: user.id },
@@ -229,14 +271,14 @@ router.post('/demo-access', async (req: Request, res: Response, next: NextFuncti
     // Notify sales@ (fire-and-forget — don't block demo access)
     emailService.send({
       to: process.env.SALES_EMAIL || 'sales@datacendia.com',
-      subject: `🚀 New Demo Access: ${name.trim()} (${normalizedEmail})`,
+      subject: `🚀 New Demo Access: ${name} (${normalizedEmail})`,
       text: [
         `New demo platform access`,
         ``,
-        `Name:  ${name.trim()}`,
+        `Name:  ${name}`,
         `Email: ${normalizedEmail}`,
         `Time:  ${new Date().toISOString()}`,
-        `New user: ${!user ? 'Yes' : 'Returning'}`,
+        `New user: ${returning ? 'Returning' : 'Yes'}`,
         ``,
         `— Datacendia Platform`,
       ].join('\n'),

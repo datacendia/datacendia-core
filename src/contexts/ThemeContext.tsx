@@ -31,16 +31,30 @@ const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
 const STORAGE_KEY = 'datacendia-theme';
 
+// The product is designed dark. Its own palette (sovereign-*) doesn't follow
+// the theme; only the shared components and inherited text do. Following a
+// light OS setting by default gave those light popovers and near-black text
+// on dark pages, so dark is the default. A stored choice still wins.
+const DEFAULT_THEME: Theme = 'dark';
+
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<Theme>(() => {
     if (typeof window !== 'undefined') {
       const stored = localStorage.getItem(STORAGE_KEY) as Theme | null;
-      return stored || 'system';
+      return stored || DEFAULT_THEME;
     }
-    return 'system';
+    return DEFAULT_THEME;
   });
 
-  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>('light');
+  // Resolved on the first render too, so the toggle shows the right icon at once.
+  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>(() => {
+    if (theme !== 'system') {
+      return theme;
+    }
+    return typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
+  });
 
   // Resolve system preference
   const resolveTheme = useCallback((themeValue: Theme): ResolvedTheme => {

@@ -17,6 +17,7 @@
 import React, { Suspense, lazy } from 'react';
 import { RouteObject } from 'react-router-dom';
 import { PageLoader } from '../components/ui/PageLoader';
+import { ProtectedRoute } from '../components/auth/ProtectedRoute';
 import { SuspenseWrapper } from './utils';
 
 const AdminLayout = lazy(() => import('../pages/admin').then((m) => ({ default: m.AdminLayout })));
@@ -62,9 +63,11 @@ export const adminRoutes: RouteObject[] = [
   {
     path: '/admin',
     element: (
-      <Suspense fallback={<PageLoader />}>
-        <AdminLayout />
-      </Suspense>
+      <ProtectedRoute requiredRoles={['OWNER', 'ADMIN', 'SUPER_ADMIN']}>
+        <Suspense fallback={<PageLoader />}>
+          <AdminLayout />
+        </Suspense>
+      </ProtectedRoute>
     ),
     children: [
       { index: true, element: w(AdminDashboardPage) },
@@ -81,9 +84,17 @@ export const adminRoutes: RouteObject[] = [
       { path: 'control-center', element: w(ControlCenterPage) },
       { path: 'ai', element: w(AdminAIPage) },
       { path: 'sovereign-stack', element: w(SovereignStackPage) },
-      { path: 'marketing', element: w(MarketingCMSPage) },
+      // The marketing tools are the platform owner's (SUPER_ADMIN, as the
+      // dashboard and studio APIs require): guarded here, not only hidden in the nav.
+      {
+        path: 'marketing',
+        element: <ProtectedRoute requiredRoles={['SUPER_ADMIN']}>{w(MarketingCMSPage)}</ProtectedRoute>,
+      },
       { path: 'env-config', element: w(EnvironmentConfigPage) },
-      { path: 'marketing-studio', element: w(MarketingStudioPage) },
+      {
+        path: 'marketing-studio',
+        element: <ProtectedRoute requiredRoles={['SUPER_ADMIN']}>{w(MarketingStudioPage)}</ProtectedRoute>,
+      },
       { path: 'pitch-decks', element: w(PitchDeckManagerPage) },
     ],
   },

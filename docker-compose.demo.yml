@@ -88,6 +88,8 @@ services:
     restart: unless-stopped
     environment:
       NODE_ENV: development
+      # Opens the landing page's name-and-email demo form (POST /auth/demo-access)
+      DEMO_MODE: "true"
       PORT: 3001
       DATABASE_URL: postgresql://datacendia_demo:demo_password_not_for_production@postgres:5432/datacendia_demo
       REDIS_URL: redis://redis:6379

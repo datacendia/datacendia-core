@@ -67,6 +67,7 @@
     "login": {
       "title": "Witaj ponownie",
       "subtitle": "Zaloguj się na swoje konto",
+      "signInToContinue": "Zaloguj się, aby kontynuować.",
       "email": "Adres e-mail",
       "password": "Hasło",
       "rememberMe": "Zapamiętaj mnie",
