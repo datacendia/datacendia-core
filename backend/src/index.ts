@@ -160,7 +160,9 @@ app.use('/metrics', prometheusRoutes);
 
 // ---------------------------------------------------------------------------
 // Static frontend serving (all-in-one / Railway deployment)
-// MUST be before Helmet/security middleware so assets aren't blocked
+// Assets are served ahead of Helmet. index.html is not: `/` and every other page
+// fall through to the SPA catch-all below, after Helmet, so the app shell always
+// gets the CSP and frame protection.
 // ---------------------------------------------------------------------------
 const frontendDist = path.resolve(process.cwd(), '../dist');
 
@@ -171,7 +173,8 @@ if (fs.existsSync(frontendDist)) {
     const files = fs.readdirSync(frontendDist);
     logger.info(`[Static] dist/ contents: ${files.join(', ')}`);
   }
-  app.use(express.static(frontendDist));
+  app.get('/index.html', (_req, res) => res.redirect(301, '/'));
+  app.use(express.static(frontendDist, { index: false }));
 } else {
   logger.warn(`[Static] Frontend dist NOT found at ${frontendDist} — cwd: ${process.cwd()}`);
   try {
