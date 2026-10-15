@@ -59,7 +59,7 @@
     "better-sqlite3": "^12.5.0",
     "bullmq": "^5.66.0",
     "casbin": "^5.45.0",
-    "compression": "^1.7.4",
+    "compression": "^1.8.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "csv-parse": "^6.1.0",
