@@ -155,6 +155,15 @@ router.get('/', async (_req: Request, res: Response) => {
  */
 router.post('/', async (req: Request, res: Response) => {
   try {
+    // A production server's environment belongs to its deployment platform;
+    // rewriting the running server's .env over HTTP isn't offered there.
+    if (process.env.NODE_ENV === 'production') {
+      return res.status(403).json({
+        success: false,
+        error: 'Editing the environment is disabled in production. Change it in your deployment settings.',
+      });
+    }
+
     const { variables } = req.body;
     
     if (!variables || typeof variables !== 'object') {
@@ -165,13 +174,22 @@ router.post('/', async (req: Request, res: Response) => {
     }
     
     // Backup existing .env
+    const existing = fs.existsSync(ENV_PATH) ? parseEnvFile(fs.readFileSync(ENV_PATH, 'utf8')) : {};
     if (fs.existsSync(ENV_PATH)) {
       const backupPath = `${ENV_PATH}.backup.${Date.now()}`;
       fs.copyFileSync(ENV_PATH, backupPath);
     }
     
+    // GET sends secrets masked; a masked value coming back unchanged keeps the
+    // stored secret instead of writing the mask over it.
+    const toWrite: Record<string, string> = {};
+    for (const [key, value] of Object.entries(variables as Record<string, string>)) {
+      const current = existing[key];
+      toWrite[key] = current !== undefined && isSensitive(key) && value === maskValue(current) ? current : value;
+    }
+
     // Write new .env
-    const content = serializeEnvFile(variables);
+    const content = serializeEnvFile(toWrite);
     fs.writeFileSync(ENV_PATH, content, 'utf8');
     
     res.json({
