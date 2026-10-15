@@ -29,6 +29,9 @@ const __dirname = path.dirname(__filename);
 
 const ENV_PATH = path.resolve(__dirname, '../../../.env');
 
+/** Environment variable names: an uppercase letter, then A-Z, 0-9 or _. */
+const ENV_NAME = /^[A-Z][A-Z0-9_]*$/;
+
 /** Mask a sensitive value, showing only first/last 2 chars */
 function maskValue(val: string): string {
   if (!val || val.length < 6) return '••••••••';
@@ -173,23 +176,41 @@ router.post('/', async (req: Request, res: Response) => {
       });
     }
     
-    // Backup existing .env
-    const existing = fs.existsSync(ENV_PATH) ? parseEnvFile(fs.readFileSync(ENV_PATH, 'utf8')) : {};
-    if (fs.existsSync(ENV_PATH)) {
-      const backupPath = `${ENV_PATH}.backup.${Date.now()}`;
-      fs.copyFileSync(ENV_PATH, backupPath);
+    // Names like DATABASE_URL only, and single-line values: anything else could
+    // add lines to the file or reach object internals (__proto__).
+    const entries = Object.entries(variables as Record<string, unknown>);
+    const invalid = entries.find(([key, value]) => !ENV_NAME.test(key) || typeof value !== 'string' || /[\r\n]/.test(value));
+    if (invalid) {
+      return res.status(400).json({
+        success: false,
+        error: `Invalid variable: ${String(invalid[0]).slice(0, 64)}. Names use A-Z, 0-9 and _; values are a single line.`,
+      });
     }
-    
+
+    // Read the current file once, and back up exactly what was read
+    let current: string | null = null;
+    try {
+      current = fs.readFileSync(ENV_PATH, 'utf8');
+    } catch (err) {
+      if ((err as NodeJS.ErrnoException).code !== 'ENOENT') {
+        throw err;
+      }
+    }
+    const existing = new Map(Object.entries(current === null ? {} : parseEnvFile(current)));
+    if (current !== null) {
+      fs.writeFileSync(`${ENV_PATH}.backup.${Date.now()}`, current, 'utf8');
+    }
+
     // GET sends secrets masked; a masked value coming back unchanged keeps the
     // stored secret instead of writing the mask over it.
-    const toWrite: Record<string, string> = {};
-    for (const [key, value] of Object.entries(variables as Record<string, string>)) {
-      const current = existing[key];
-      toWrite[key] = current !== undefined && isSensitive(key) && value === maskValue(current) ? current : value;
+    const toWrite = new Map<string, string>();
+    for (const [key, value] of entries as Array<[string, string]>) {
+      const stored = existing.get(key);
+      toWrite.set(key, stored !== undefined && isSensitive(key) && value === maskValue(stored) ? stored : value);
     }
 
     // Write new .env
-    const content = serializeEnvFile(toWrite);
+    const content = serializeEnvFile(Object.fromEntries(toWrite));
     fs.writeFileSync(ENV_PATH, content, 'utf8');
     
     res.json({

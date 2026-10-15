@@ -3,7 +3,8 @@
  * Environment Editor — Unit Tests
  * /api/v1/admin/env-config reads and writes the server's .env. Secrets leave
  * the server masked (read and download), a masked value saved back unchanged
- * keeps the stored secret, and production refuses writes. (The mount in
+ * keeps the stored secret, writes take only variable names and single-line
+ * values, and production refuses writes. (The mount in
  * platform.domain.ts limits the whole route to SUPER_ADMIN.)
  *
  * Run: npx vitest run tests/backend/env-config.test.ts
@@ -23,7 +24,7 @@ vi.mock('fs', () => {
     existsSync: (p: string) => files.has(String(p)),
     readFileSync: (p: string) => {
       const v = files.get(String(p));
-      if (v === undefined) throw new Error('ENOENT');
+      if (v === undefined) throw Object.assign(new Error('ENOENT'), { code: 'ENOENT' });
       return v;
     },
     writeFileSync: (p: string, data: string) => void files.set(String(p), String(data)),
@@ -99,5 +100,34 @@ describe('env-config', () => {
 
     expect(res.status).toBe(403);
     expect(files.get(envPath())).toBe(ENV);
+  });
+
+  it('rejects names that are not environment variable names', async () => {
+    for (const body of ['{"variables":{"__proto__":"x"}}', '{"variables":{"lower_case":"x"}}', '{"variables":{"A=B":"x"}}']) {
+      const res = await request(app).post('/env').set('Content-Type', 'application/json').send(body);
+
+      expect(res.status).toBe(400);
+    }
+    expect(files.get(envPath())).toBe(ENV);
+  });
+
+  it('rejects values that would add lines to the file', async () => {
+    const res = await request(app).post('/env').send({ variables: { PORT: '3001\nJWT_SECRET=attacker-chosen' } });
+
+    expect(res.status).toBe(400);
+    expect(files.get(envPath())).toBe(ENV);
+  });
+
+  it('backs up the file it replaced, and creates one when none exists', async () => {
+    await request(app).post('/env').send({ variables: { PORT: '4000' } });
+    const backups = [...files.keys()].filter((k) => k.includes('.env.backup.'));
+    expect(backups).toHaveLength(1);
+    expect(files.get(backups[0])).toBe(ENV);
+
+    files.clear();
+    const res = await request(app).post('/env').send({ variables: { PORT: '5000' } });
+    expect(res.status).toBe(200);
+    expect([...files.keys()].filter((k) => k.includes('.env.backup.'))).toHaveLength(0);
+    expect(files.get(envPath())).toContain('PORT=5000');
   });
 });
