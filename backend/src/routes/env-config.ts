@@ -197,8 +197,9 @@ router.post('/', async (req: Request, res: Response) => {
       }
     }
     const existing = new Map(Object.entries(current === null ? {} : parseEnvFile(current)));
+    // The backup holds the same secrets, so it is created owner-only (0600)
     if (current !== null) {
-      fs.writeFileSync(`${ENV_PATH}.backup.${Date.now()}`, current, 'utf8');
+      fs.writeFileSync(`${ENV_PATH}.backup.${Date.now()}`, current, { encoding: 'utf8', mode: 0o600 });
     }
 
     // GET sends secrets masked; a masked value coming back unchanged keeps the
@@ -211,7 +212,8 @@ router.post('/', async (req: Request, res: Response) => {
 
     // Write new .env
     const content = serializeEnvFile(Object.fromEntries(toWrite));
-    fs.writeFileSync(ENV_PATH, content, 'utf8');
+    // mode applies only if the file is new; an existing .env keeps its own
+    fs.writeFileSync(ENV_PATH, content, { encoding: 'utf8', mode: 0o600 });
     
     res.json({
       success: true,
