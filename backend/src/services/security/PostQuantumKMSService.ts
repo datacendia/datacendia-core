@@ -74,7 +74,7 @@ export function normalizeAlgorithm(input: PQAlgorithmInput): PQAlgorithm {
   if (own(WITHDRAWN_ALGORITHM_IDS, key) && WITHDRAWN_ALGORITHM_IDS[key] !== undefined) {
     throw new Error(WITHDRAWN_ALGORITHM_IDS[key]);
   }
-  if (own(ALGORITHMS, key)) return key as PQAlgorithm;
+  if (own(ALGORITHMS, key)) {return key as PQAlgorithm;}
   if (own(LEGACY_ALGORITHM_IDS, key) && LEGACY_ALGORITHM_IDS[key] !== undefined) {
     return LEGACY_ALGORITHM_IDS[key];
   }
@@ -212,7 +212,7 @@ class PostQuantumKMSServiceImpl {
         if (signature.length !== spec.signatureBytes) {
           throw new Error(`signature ${signature.length}B, expected ${spec.signatureBytes}B`);
         }
-        if (!sig.verify(signature, msg, kp.publicKey)) throw new Error('verify failed');
+        if (!sig.verify(signature, msg, kp.publicKey)) {throw new Error('verify failed');}
         const tampered = new TextEncoder().encode('datacendia-pq-selftesT');
         if (sig.verify(signature, tampered, kp.publicKey)) {
           throw new Error('verify accepted a tampered message');
@@ -230,8 +230,8 @@ class PostQuantumKMSServiceImpl {
     this.selfTested = true;
     this.verified = results.every((r) => r.ok);
     for (const r of results) {
-      if (r.ok) logger.info(`🔐 PQ self-test ${r.algorithm}: ${r.detail}`);
-      else logger.error(`🔐 PQ self-test FAILED ${r.algorithm}: ${r.detail}`);
+      if (r.ok) {logger.info(`🔐 PQ self-test ${r.algorithm}: ${r.detail}`);}
+      else {logger.error(`🔐 PQ self-test FAILED ${r.algorithm}: ${r.detail}`);}
     }
     return results;
   }
@@ -246,7 +246,7 @@ class PostQuantumKMSServiceImpl {
    * startup if you would rather pay the cost there.
    */
   isQuantumResistant(): boolean {
-    if (!this.selfTested) this.selfTest();
+    if (!this.selfTested) {this.selfTest();}
     return this.verified;
   }
 
@@ -306,7 +306,7 @@ class PostQuantumKMSServiceImpl {
 
   async rotateKey(id: string): Promise<PQKeyRecord> {
     const old = this.keys.get(id);
-    if (!old) throw new Error('Key not found');
+    if (!old) {throw new Error('Key not found');}
     old.status = 'rotated';
     return this.generateKeyPair({ algorithm: old.algorithm });
   }
@@ -328,7 +328,7 @@ class PostQuantumKMSServiceImpl {
     const key = keyId
       ? this.keys.get(keyId)
       : [...this.keys.values()].find((k) => k.status === 'active' && k.algorithmDetails.type === 'signature');
-    if (!key) throw new Error('No active signing key available');
+    if (!key) {throw new Error('No active signing key available');}
     if (key.algorithmDetails.type !== 'signature') {
       // ml-kem-768 is a KEM. The previous implementation happily "signed" with
       // it because everything was Ed25519 underneath.
@@ -372,7 +372,7 @@ class PostQuantumKMSServiceImpl {
       algorithm = normalizeAlgorithm(signatureObj.algorithm);
     } else {
       const key = signatureObj.keyId ? this.keys.get(signatureObj.keyId) : undefined;
-      if (!key) throw new Error('Key not found and no public key supplied');
+      if (!key) {throw new Error('Key not found and no public key supplied');}
       publicKey = key.publicKey;
       algorithm = key.algorithm;
     }
@@ -401,8 +401,8 @@ class PostQuantumKMSServiceImpl {
 
   decapsulate(cipherTextB64: string, keyId: string) {
     const key = this.keys.get(keyId);
-    if (!key) throw new Error('Key not found');
-    if (key.algorithm !== 'ml-kem-768') throw new Error('Not an ML-KEM key');
+    if (!key) {throw new Error('Key not found');}
+    if (key.algorithm !== 'ml-kem-768') {throw new Error('Not an ML-KEM key');}
     const ct = Uint8Array.from(Buffer.from(cipherTextB64, 'base64'));
     const shared = ml_kem768.decapsulate(ct, key.secretKey);
     return { sharedSecret: Buffer.from(shared).toString('base64') };

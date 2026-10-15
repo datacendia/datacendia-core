@@ -39,8 +39,8 @@ process.env.JWT_SECRET ||= 'test-only-placeholder-not-a-real-secret-0123456789';
 afterAll(() => {
   for (const key of MUTATED_ENV_KEYS) {
     const original = ORIGINAL_ENV[key];
-    if (original === undefined) delete process.env[key];
-    else process.env[key] = original;
+    if (original === undefined) {delete process.env[key];}
+    else {process.env[key] = original;}
   }
 });
 
