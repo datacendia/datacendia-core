@@ -5,7 +5,7 @@
 // EMAIL SERVICE — SendGrid HTTP API (primary) + Nodemailer SMTP (fallback)
 // =============================================================================
 
-import nodemailer from 'nodemailer';
+import nodemailer, { type Transporter } from 'nodemailer';
 import { logger } from '../utils/logger.js';
 
 const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY || '';
@@ -16,9 +16,9 @@ const SMTP_PASS = process.env.SMTP_PASS || '';
 const EMAIL_FROM = process.env.SMTP_FROM || process.env.EMAIL_FROM || 'noreply@datacendia.com';
 const SALES_EMAIL = process.env.SALES_EMAIL || 'sales@datacendia.com';
 
-let transporter: nodemailer.Transporter | null = null;
+let transporter: Transporter | null = null;
 
-function getTransporter(): nodemailer.Transporter | null {
+function getTransporter(): Transporter | null {
   if (transporter) return transporter;
   if (!SMTP_HOST) return null;
   transporter = nodemailer.createTransport({
