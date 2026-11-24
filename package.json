@@ -66,7 +66,7 @@
         "cytoscape": "^3.33.1",
         "dompurify": "^3.3.3",
         "framer-motion": "^12.23.26",
-        "i18next": "^25.7.3",
+        "i18next": "^27.2.7",
         "immer": "^11.0.1",
         "leaflet": "^1.9.4",
         "lucide-react": "^0.294.0",
